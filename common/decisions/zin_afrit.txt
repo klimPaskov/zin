@@ -4,7 +4,7 @@ zin_afrit_council = {
 	zin_afrit_open_house = {
 		icon = zin_afrit_house_first_light
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		target_root_trigger = {
 			has_country_flag = zin_worshipdom_houses_open
@@ -72,7 +72,7 @@ zin_afrit_council = {
 	zin_afrit_hear_confession = {
 		icon = zin_afrit_confessional
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		target_root_trigger = {
 			has_country_flag = zin_worshipdom_confessors
@@ -109,7 +109,7 @@ zin_afrit_council = {
 	zin_afrit_call_debt = {
 		icon = zin_afrit_ledger_coins
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		target_root_trigger = {
 			has_country_flag = zin_worshipdom_debts
@@ -143,7 +143,7 @@ zin_afrit_council = {
 	zin_afrit_silence_dissenter = {
 		icon = zin_afrit_seal_wax
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -182,7 +182,7 @@ zin_afrit_council = {
 	zin_afrit_steer_the_court = {
 		icon = zin_afrit_seal_chancellor
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -210,7 +210,7 @@ zin_afrit_council = {
 	zin_afrit_edict_of_arms = {
 		icon = zin_afrit_scroll_sealed
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -242,7 +242,7 @@ zin_afrit_council = {
 	zin_afrit_edict_of_the_faithful = {
 		icon = zin_afrit_scroll_sealed
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -279,7 +279,7 @@ zin_afrit_council = {
 	zin_afrit_edict_of_the_temple_treasury = {
 		icon = zin_afrit_scroll_sealed
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -317,7 +317,7 @@ zin_afrit_council = {
 	zin_afrit_edict_of_summons = {
 		icon = zin_afrit_scroll_sealed
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -353,7 +353,7 @@ zin_afrit_council = {
 	zin_afrit_open_famine_stores = {
 		icon = zin_afrit_granary
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		target_root_trigger = {
 			has_country_flag = zin_worshipdom_famine_stores
@@ -395,7 +395,7 @@ zin_afrit_council = {
 	zin_afrit_draw_on_necklace = {
 		icon = zin_afrit_necklace_deep
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		visible = {
 			zin_afrit_is_hub = yes
@@ -432,7 +432,7 @@ zin_afrit_council = {
 	zin_afrit_send_the_thief = {
 		icon = zin_afrit_scout_lantern
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		target_root_trigger = {
 			has_country_flag = zin_worshipdom_thief
@@ -486,7 +486,7 @@ zin_afrit_council = {
 	zin_afrit_raise_the_faithful = {
 		icon = zin_afrit_banner_plain
 		allowed = {
-			original_tag = Y8G
+			original_tag = WOR
 		}
 		target_root_trigger = {
 			has_country_flag = zin_worshipdom_faithful_rise
@@ -530,7 +530,7 @@ zin_afrit_council = {
 			base = 1
 			modifier = {
 				factor = 0
-				NOT = { has_game_rule = { rule = zin_rule_afrit option = ASHEN } }
+				NOT = { zin_rules_ai_branch_afrit_ashen = yes }
 			}
 		}
 	}

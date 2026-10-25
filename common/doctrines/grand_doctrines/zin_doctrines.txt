@@ -18,11 +18,11 @@ zin_gd_shield_wall = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y0L
-				original_tag = Y0G
-				original_tag = Y19
-				original_tag = Y0Y
-				original_tag = Y02
+				original_tag = AEN
+				original_tag = LER
+				original_tag = DND
+				original_tag = MIR
+				original_tag = MLK
 				has_country_flag = zin_region_middle_lands
 			}
 		}
@@ -68,10 +68,10 @@ zin_gd_horse_and_lance = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y4W
-				original_tag = Y14
-				original_tag = Y16
-				original_tag = Y01
+				original_tag = HNH
+				original_tag = NRS
+				original_tag = STA
+				original_tag = CLD
 			}
 		}
 	}
@@ -127,16 +127,16 @@ zin_gd_great_muster = {
 			}
 			NOT = {
 				OR = {
-					original_tag = Y0L
-					original_tag = Y0G
-					original_tag = Y19
-					original_tag = Y0Y
-					original_tag = Y02
-					original_tag = Y4W
-					original_tag = Y14
-					original_tag = Y16
-					original_tag = Y01
-					original_tag = Y1A
+					original_tag = AEN
+					original_tag = LER
+					original_tag = DND
+					original_tag = MIR
+					original_tag = MLK
+					original_tag = HNH
+					original_tag = NRS
+					original_tag = STA
+					original_tag = CLD
+					original_tag = GOL
 				}
 			}
 		}
@@ -281,8 +281,8 @@ zin_gd_warband = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y1A
-				original_tag = Y45
+				original_tag = GOL
+				original_tag = TRO
 				zin_tech_people_trolls = yes
 			}
 		}
@@ -426,10 +426,10 @@ zin_gd_grave_muster = {
 	description = zin_gd_grave_muster_desc
 	icon = GFX_zin_gd_grave_muster_medium
 	available = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	visible = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	xp_cost = 100
 	xp_type = army
@@ -437,7 +437,7 @@ zin_gd_grave_muster = {
 		base = 1
 		modifier = {
 			factor = 10
-			original_tag = Y8D
+			original_tag = PUV
 		}
 	}
 	tracks = { zin_track_foot zin_track_siege zin_track_mounted zin_track_command }
@@ -471,10 +471,10 @@ zin_gd_deathless_tide = {
 	description = zin_gd_deathless_tide_desc
 	icon = GFX_zin_gd_deathless_tide_medium
 	available = {
-		original_tag = Y0U
+		original_tag = ZOL
 	}
 	visible = {
-		original_tag = Y0U
+		original_tag = ZOL
 	}
 	xp_cost = 100
 	xp_type = army
@@ -482,7 +482,7 @@ zin_gd_deathless_tide = {
 		base = 1
 		modifier = {
 			factor = 10
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 	}
 	tracks = { zin_track_foot zin_track_siege zin_track_mounted zin_track_command }
@@ -512,13 +512,13 @@ zin_gd_command_of_the_sea = {
 	available = {
 		always = yes
 		NOT = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 	}
 	visible = {
 		always = yes
 		NOT = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 	}
 	xp_cost = 100
@@ -528,8 +528,8 @@ zin_gd_command_of_the_sea = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y0L
-				original_tag = Y0G
+				original_tag = AEN
+				original_tag = LER
 			}
 		}
 	}
@@ -570,13 +570,13 @@ zin_gd_oar_and_ram = {
 	available = {
 		always = yes
 		NOT = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 	}
 	visible = {
 		always = yes
 		NOT = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 	}
 	xp_cost = 100
@@ -587,10 +587,10 @@ zin_gd_oar_and_ram = {
 			factor = 10
 			NOT = {
 				OR = {
-					original_tag = Y0L
-					original_tag = Y0G
+					original_tag = AEN
+					original_tag = LER
 					has_country_flag = zin_region_tritons_islands
-					original_tag = Y0U
+					original_tag = ZOL
 				}
 			}
 		}
@@ -641,7 +641,7 @@ zin_gd_corsair_fleets = {
 			factor = 10
 			OR = {
 				has_country_flag = zin_region_tritons_islands
-				original_tag = Y0U
+				original_tag = ZOL
 			}
 		}
 	}

@@ -21,16 +21,16 @@ zin_eindil_regard_opinion = {
 		if = {
 			limit = { zin_eindil_friend = yes }
 			add_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered }
-			if = { limit = { has_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged } } remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged } }
+			remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged }
 		}
 		else_if = {
 			limit = { zin_eindil_resents = yes }
 			add_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged }
-			if = { limit = { has_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered } } remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered } }
+			remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered }
 		}
 		else = {
-			if = { limit = { has_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered } } remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered } }
-			if = { limit = { has_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged } } remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged } }
+			remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_remembered }
+			remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = zin_eindil_wronged }
 		}
 	}
 }
@@ -125,25 +125,25 @@ zin_eindil_arm_pulse = {
 		}
 	}
 	else_if = {
-		limit = { Y6X = { exists = yes } }
-		Y6X = {
+		limit = { GAA = { exists = yes } }
+		GAA = {
 			country_event = { id = zin_eindil.2 days = 7 }
 		}
 	}
 	else_if = {
-		limit = { Y8F = { exists = yes } }
-		Y8F = {
+		limit = { MAG = { exists = yes } }
+		MAG = {
 			country_event = { id = zin_eindil.2 days = 7 }
 		}
 	}
 	else_if = {
-		limit = { Y0M = { exists = yes } }
-		Y0M = {
+		limit = { SEL = { exists = yes } }
+		SEL = {
 			country_event = { id = zin_eindil.2 days = 7 }
 		}
 	}
 	else = {
-		Y0L = {
+		AEN = {
 			country_event = { id = zin_eindil.2 days = 7 }
 		}
 	}
@@ -453,6 +453,7 @@ zin_eindil_lose_heir = {
 			limit = { is_ai = no }
 			news_event = { id = zin_eindil.140 }
 		}
+		zin_ending_heir_lost = yes
 	}
 }
 zin_eindil_wound = {
@@ -478,7 +479,7 @@ zin_eindil_enter_1 = {
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_ice_host } }
 		random_country = {
-			limit = { has_country_flag = zin_region_cold_lands exists = yes NOT = { original_tag = Y01 } NOT = { original_tag = Y02 } NOT = { zin_glo_hall_owner = yes } }
+			limit = { has_country_flag = zin_region_cold_lands exists = yes NOT = { original_tag = CLD } NOT = { original_tag = MLK } NOT = { zin_glo_hall_owner = yes } }
 			set_variable = { global.zin_eindil_ice_host = THIS }
 		}
 	}
@@ -506,8 +507,8 @@ zin_eindil_enter_2 = {
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_bridge_host } }
 		if = {
-			limit = { Y07 = { exists = yes } }
-			Y07 = {
+			limit = { GNW = { exists = yes } }
+			GNW = {
 				set_variable = { global.zin_eindil_bridge_host = THIS }
 			}
 		}
@@ -522,8 +523,8 @@ zin_eindil_enter_2 = {
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_ford_host } }
 		if = {
-			limit = { Y08 = { exists = yes } }
-			Y08 = {
+			limit = { GIR = { exists = yes } }
+			GIR = {
 				set_variable = { global.zin_eindil_ford_host = THIS }
 			}
 		}
@@ -553,7 +554,7 @@ zin_eindil_form_confederation = {
 	clear_variable = global.zin_eindil_confed_leader
 	set_temp_variable = { eind_best = -999999 }
 	every_country = {
-		limit = { has_country_flag = zin_region_west_lands exists = yes NOT = { original_tag = Y07 } NOT = { original_tag = Y08 } has_capitulated = no }
+		limit = { has_country_flag = zin_region_west_lands exists = yes NOT = { original_tag = GNW } NOT = { original_tag = GIR } has_capitulated = no }
 		set_temp_variable = { eind_score = zin_eindil_regard }
 		multiply_temp_variable = { eind_score = 1000 }
 		add_to_temp_variable = { eind_score = num_owned_states }
@@ -563,7 +564,7 @@ zin_eindil_form_confederation = {
 		}
 	}
 	every_country = {
-		limit = { has_country_flag = zin_region_west_lands exists = yes NOT = { original_tag = Y07 } NOT = { original_tag = Y08 } has_capitulated = no }
+		limit = { has_country_flag = zin_region_west_lands exists = yes NOT = { original_tag = GNW } NOT = { original_tag = GIR } has_capitulated = no }
 		set_temp_variable = { eind_score = zin_eindil_regard }
 		multiply_temp_variable = { eind_score = 1000 }
 		add_to_temp_variable = { eind_score = num_owned_states }
@@ -574,7 +575,7 @@ zin_eindil_form_confederation = {
 		}
 	}
 	every_country = {
-		limit = { has_country_flag = zin_region_west_lands exists = yes NOT = { original_tag = Y07 } NOT = { original_tag = Y08 } has_capitulated = no check_variable = { zin_eindil_regard > -1 } }
+		limit = { has_country_flag = zin_region_west_lands exists = yes NOT = { original_tag = GNW } NOT = { original_tag = GIR } has_capitulated = no check_variable = { zin_eindil_regard > -1 } }
 		set_country_flag = zin_eindil_confed_member
 	}
 }
@@ -614,8 +615,8 @@ zin_eindil_enter_4 = {
 	}
 	clear_variable = global.zin_eindil_wreck_host
 	if = {
-		limit = { Y1D = { exists = yes } }
-		Y1D = {
+		limit = { HWN = { exists = yes } }
+		HWN = {
 			set_variable = { global.zin_eindil_wreck_host = THIS }
 		}
 	}
@@ -628,7 +629,7 @@ zin_eindil_enter_4 = {
 	}
 	clear_variable = global.zin_eindil_reef_host
 	random_country = {
-		limit = { exists = yes OR = { original_tag = Y1E original_tag = Y60 } }
+		limit = { exists = yes OR = { original_tag = NAR original_tag = VER } }
 		set_variable = { global.zin_eindil_reef_host = THIS }
 	}
 	if = {
@@ -647,8 +648,8 @@ zin_eindil_enter_4 = {
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_shrine_host } }
 		if = {
-			limit = { Y62 = { exists = yes } }
-			Y62 = {
+			limit = { ENH = { exists = yes } }
+			ENH = {
 				set_variable = { global.zin_eindil_shrine_host = THIS }
 			}
 		}
@@ -667,8 +668,8 @@ zin_eindil_pick_gala_host = {
 	# The Gala Elves; else the country that employs Lorien; else the owner of Gala's capital.
 	clear_variable = global.zin_eindil_gala_host
 	if = {
-		limit = { Y6X = { exists = yes } }
-		Y6X = {
+		limit = { GAA = { exists = yes } }
+		GAA = {
 			set_variable = { global.zin_eindil_gala_host = THIS }
 		}
 	}
@@ -765,8 +766,8 @@ zin_eindil_pick_stage8_host = {
 	# Selen (Alleria); if Selen is gone, capitulated or ruled by the Deliverer, the Middle Lands country with the highest regard that is not an Aenor realm; then the Magical Forest.
 	clear_variable = global.zin_eindil_stage8_host
 	if = {
-		limit = { Y0M = { exists = yes has_capitulated = no NOT = { zin_afrit_rules_here = yes } } }
-		Y0M = {
+		limit = { SEL = { exists = yes has_capitulated = no NOT = { zin_afrit_rules_here = yes } } }
+		SEL = {
 			set_variable = { global.zin_eindil_stage8_host = THIS }
 		}
 	}
@@ -789,8 +790,8 @@ zin_eindil_pick_stage8_host = {
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_stage8_host } }
 		if = {
-			limit = { Y8F = { exists = yes } }
-			Y8F = {
+			limit = { MAG = { exists = yes } }
+			MAG = {
 				set_variable = { global.zin_eindil_stage8_host = THIS }
 			}
 		}
@@ -814,20 +815,20 @@ zin_eindil_pick_battlefield = {
 	# The battlefield of the return: an Aenor-cored state held by Zol, else by Volgan, else any Aenor-cored state held by an enemy (stored as a state variable for the first wave of Glo).
 	clear_variable = global.zin_eindil_battlefield
 	random_state = {
-		limit = { is_core_of = Y0L controller = { OR = { original_tag = Y0U is_subject_of = Y0U } } }
+		limit = { is_core_of = AEN controller = { OR = { original_tag = ZOL is_subject_of = ZOL } } }
 		set_variable = { global.zin_eindil_battlefield = THIS }
 	}
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_battlefield } }
 		random_state = {
-			limit = { is_core_of = Y0L controller = { OR = { original_tag = Y8D is_subject_of = Y8D } } }
+			limit = { is_core_of = AEN controller = { OR = { original_tag = PUV is_subject_of = PUV } } }
 			set_variable = { global.zin_eindil_battlefield = THIS }
 		}
 	}
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_battlefield } }
 		random_state = {
-			limit = { is_core_of = Y0L NOT = { is_controlled_by = OWNER } }
+			limit = { is_core_of = AEN NOT = { is_controlled_by = OWNER } }
 			set_variable = { global.zin_eindil_battlefield = THIS }
 		}
 	}
@@ -1038,11 +1039,11 @@ zin_eindil_compute_ambush = {
 		add_to_temp_variable = { eind_str = 1 }
 	}
 	if = {
-		limit = { has_global_flag = zin_worshipdom_ships_ready }
+		limit = { any_country = { has_country_flag = zin_worshipdom_ships_ready } }
 		add_to_temp_variable = { eind_str = 1 }
 	}
 	if = {
-		limit = { has_global_flag = zin_worshipdom_hunters }
+		limit = { any_country = { has_country_flag = zin_worshipdom_hunters } }
 		add_to_temp_variable = { eind_str = 1 }
 	}
 	if = {
@@ -1126,7 +1127,7 @@ zin_eindil_to_the_forest = {
 	if = {
 		limit = { NOT = { has_global_flag = zin_eindil_s8_forest_fired } }
 		set_global_flag = zin_eindil_s8_forest_fired
-		Y8F = {
+		MAG = {
 			if = {
 				limit = { exists = yes }
 				country_event = { id = zin_eindil.86 }
@@ -1182,8 +1183,8 @@ zin_eindil_pick_host_candidate = {
 	# The sworn country that exists (Selen first); unset when there is none.
 	clear_variable = global.zin_eindil_host_candidate
 	if = {
-		limit = { Y0M = { exists = yes has_country_flag = zin_eindil_sworn has_capitulated = no } }
-		Y0M = {
+		limit = { SEL = { exists = yes has_country_flag = zin_eindil_sworn has_capitulated = no } }
+		SEL = {
 			set_variable = { global.zin_eindil_host_candidate = THIS }
 		}
 	}
@@ -1248,7 +1249,7 @@ zin_eindil_raise_host = {
 				limit = { check_variable = { zin_arg_choice = 1 } }
 				set_cosmetic_tag = zin_host_of_eindil
 				every_state = {
-					limit = { is_core_of = Y0L NOT = { is_owned_by = PREV } owner = { OR = { original_tag = Y8D original_tag = Y0U is_subject_of = Y8D is_subject_of = Y0U zin_afrit_rules_here = yes } } }
+					limit = { is_core_of = AEN NOT = { is_owned_by = PREV } owner = { OR = { original_tag = PUV original_tag = ZOL is_subject_of = PUV is_subject_of = ZOL zin_afrit_rules_here = yes } } }
 					add_claim_by = PREV
 				}
 			}
@@ -1261,7 +1262,7 @@ zin_eindil_raise_host = {
 }
 zin_eindil_create_dynamic_host = {
 	# No sworn country: a dynamic country of Aenor's original tag is raised as the Host (renown / 10 hosts of survivors, at least 3), or a court in exile in the Magical Forest.
-	create_dynamic_country = { original_tag = Y0L set_global_flag = zin_eindil_host_dynamic set_variable = { global.zin_eindil_dynamic_host = THIS } zin_eindil_stock_dynamic_host = yes }
+	create_dynamic_country = { original_tag = AEN set_global_flag = zin_eindil_host_dynamic set_variable = { global.zin_eindil_dynamic_host = THIS } zin_eindil_stock_dynamic_host = yes }
 }
 zin_eindil_stock_dynamic_host = {
 	# The scope is the new Host: a state, a leader, survivors, a coalition. Without a state it is a court in exile in the Magical Forest.
@@ -1269,12 +1270,12 @@ zin_eindil_stock_dynamic_host = {
 	set_politics = { ruling_party = democratic last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 	set_popularities = { democratic = 80 neutrality = 15 fascism = 5 communism = 0 }
 	random_state = {
-		limit = { is_core_of = Y0L owner = { zin_aenor_is_realm = yes NOT = { zin_afrit_rules_here = yes } OR = { has_war_with = Y8D has_war_with = Y0U } } }
+		limit = { is_core_of = AEN owner = { zin_aenor_is_realm = yes NOT = { zin_afrit_rules_here = yes } OR = { has_war_with = PUV has_war_with = ZOL } } }
 		transfer_state_to = PREV
 	}
 	if = {
 		limit = { check_variable = { num_owned_states = 0 } }
-		become_exiled_in = { target = Y8F legitimacy = 100 }
+		become_exiled_in = { target = MAG legitimacy = 100 }
 	}
 	add_ideas = zin_eindil_host_of_the_heir
 	set_temp_variable = { zin_arg_role = 2 }
@@ -1375,11 +1376,16 @@ zin_eindil_battles = {
 	}
 	else = {
 		if = {
-			limit = { check_variable = { global.zin_eindil_battle < 3 } OR = { NOT = { Y8D = { exists = yes } } has_global_flag = zin_volgan_body_destroyed } }
+			limit = { check_variable = { global.zin_eindil_battle < 3 } OR = { NOT = { PUV = { exists = yes } } has_global_flag = zin_volgan_body_destroyed } }
 			set_variable = { global.zin_eindil_battle = 3 }
 		}
 		if = {
-			limit = { check_variable = { global.zin_eindil_battle = 0 } zin_eindil_has_host = yes OR = { AND = { zin_eindil_historical = yes zin_eindil_date_1757_06 = yes } AND = { zin_eindil_historical = no any_state = { zin_eindil_army_near = yes controller = { OR = { original_tag = Y8D is_subject_of = Y8D } } } } } }
+			limit = { check_variable = { global.zin_eindil_battle < 3 } OR = { zin_eindil_date_1758_03 = yes check_variable = { global.zin_eindil_stage_age > 365 } } }
+			set_variable = { global.zin_eindil_battle = 3 }
+			set_global_flag = zin_eindil_south_unfought
+		}
+		if = {
+			limit = { check_variable = { global.zin_eindil_battle = 0 } zin_eindil_has_host = yes OR = { AND = { zin_eindil_historical = yes zin_eindil_date_1757_06 = yes } AND = { zin_eindil_historical = no any_state = { zin_eindil_army_near = yes controller = { OR = { original_tag = PUV is_subject_of = PUV } } } } } }
 			set_variable = { global.zin_eindil_battle = 1 }
 			set_variable = { global.zin_eindil_battle_next = global.zin_eindil_clock }
 			add_to_variable = { global.zin_eindil_battle_next = 30 }
@@ -1419,7 +1425,7 @@ zin_eindil_battles = {
 			}
 		}
 		if = {
-			limit = { check_variable = { global.zin_eindil_battle = 2 } check_variable = { global.zin_eindil_clock > global.zin_eindil_battle_next } OR = { AND = { zin_eindil_historical = yes zin_eindil_date_1757_08 = yes } AND = { zin_eindil_historical = no any_state = { zin_eindil_army_near = yes controller = { OR = { original_tag = Y8D is_subject_of = Y8D } } } } } }
+			limit = { check_variable = { global.zin_eindil_battle = 2 } check_variable = { global.zin_eindil_clock > global.zin_eindil_battle_next } OR = { AND = { zin_eindil_historical = yes zin_eindil_date_1757_08 = yes } AND = { zin_eindil_historical = no any_state = { zin_eindil_army_near = yes controller = { OR = { original_tag = PUV is_subject_of = PUV } } } } } }
 			set_variable = { global.zin_eindil_battle = 3 }
 			if = {
 				limit = { has_variable = global.zin_eindil_host }
@@ -1432,11 +1438,11 @@ zin_eindil_battles = {
 			}
 		}
 		if = {
-			limit = { check_variable = { global.zin_eindil_battle = 3 } OR = { has_global_flag = zin_zol_manifested has_global_flag = zin_horos_sword_broken } }
+			limit = { check_variable = { global.zin_eindil_battle = 3 } OR = { has_global_flag = zin_kusven_forth has_global_flag = zin_horos_sword_broken } }
 			set_variable = { global.zin_eindil_battle = 4 }
 		}
 		if = {
-			limit = { OR = { check_variable = { global.zin_eindil_battle = 3 } check_variable = { global.zin_eindil_battle = 4 } } OR = { has_global_flag = zin_zol_withdrawn AND = { zin_eindil_date_1757_12 = yes NOT = { has_global_flag = zin_zol_manifested } } } }
+			limit = { OR = { check_variable = { global.zin_eindil_battle = 3 } check_variable = { global.zin_eindil_battle = 4 } } OR = { has_global_flag = zin_kusven_withdrawn AND = { zin_eindil_date_1757_12 = yes NOT = { has_global_flag = zin_kusven_forth } } zin_eindil_date_1758_09 = yes } }
 			set_variable = { global.zin_eindil_battle = 5 }
 			set_global_flag = zin_eindil_stage_9_done
 			zin_eindil_hail_the_king = yes
@@ -1487,14 +1493,14 @@ zin_eindil_found_parim_realm = {
 	# No Aenor realm exists but the Host or a coalition member owns Parim: a new Aenor realm is created there and takes every Aenor-cored state the coalition owns.
 	if = {
 		limit = { any_state = { zin_is_site_parim = yes owner = { zin_eindil_coalition_ally = yes } } }
-		create_dynamic_country = { original_tag = Y0L set_variable = { global.zin_eindil_crowning_realm = THIS } set_politics = { ruling_party = democratic last_election = "1746.3.1" election_frequency = 48 elections_allowed = no } }
+		create_dynamic_country = { original_tag = AEN set_variable = { global.zin_eindil_crowning_realm = THIS } set_politics = { ruling_party = democratic last_election = "1746.3.1" election_frequency = 48 elections_allowed = no } }
 		var:global.zin_eindil_crowning_realm = {
 			every_state = {
 				limit = { zin_is_site_parim = yes }
 				transfer_state_to = PREV
 			}
 			every_state = {
-				limit = { is_core_of = Y0L owner = { zin_eindil_coalition_ally = yes } }
+				limit = { is_core_of = AEN owner = { zin_eindil_coalition_ally = yes } }
 				transfer_state_to = PREV
 			}
 		}
@@ -1636,6 +1642,10 @@ zin_eindil_stage_runner = {
 	if = {
 		limit = { check_variable = { global.zin_eindil_stage = 5 } check_variable = { global.zin_eindil_stage_age > 400 } NOT = { has_global_flag = zin_eindil_named } }
 		zin_eindil_name_him = yes
+		every_country = {
+			limit = { is_ai = no }
+			news_event = { id = zin_eindil.170 }
+		}
 	}
 	if = {
 		limit = { check_variable = { global.zin_eindil_stage = 6 } check_variable = { global.zin_eindil_stage_age > 39 } NOT = { has_global_flag = zin_eindil_s6_port2 } }

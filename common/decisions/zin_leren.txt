@@ -3,7 +3,7 @@ zin_leren_strait = {
 	zin_leren_toll_lower = {
 		icon = zin_leren_toll_lower
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		visible = {
 			always = yes
@@ -37,7 +37,7 @@ zin_leren_strait = {
 	zin_leren_toll_raise = {
 		icon = zin_leren_toll_raise
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		visible = {
 			always = yes
@@ -88,7 +88,7 @@ zin_leren_strait = {
 	zin_leren_appeal_to_the_treaty = {
 		icon = zin_leren_appeal_to_the_treaty
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		visible = {
 			always = yes
@@ -101,7 +101,7 @@ zin_leren_strait = {
 		complete_effect = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_leren_add_strait_standing = yes
-			Y0L = { add_opinion_modifier = { target = Y0G modifier = zin_leren_appeal_heard } }
+			AEN = { add_opinion_modifier = { target = LER modifier = zin_leren_appeal_heard } }
 		}
 		ai_will_do = {
 			base = 0
@@ -114,7 +114,7 @@ zin_leren_strait = {
 	zin_leren_close_the_strait = {
 		icon = zin_leren_close_the_strait
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		target_root_trigger = {
 			OR = {
@@ -167,7 +167,7 @@ zin_leren_strait = {
 			}
 			modifier = {
 				add = 40
-				FROM = { original_tag = Y0U }
+				FROM = { original_tag = ZOL }
 				has_global_flag = zin_leren_withdrawal
 			}
 			modifier = {
@@ -181,7 +181,7 @@ zin_leren_compact = {
 	zin_leren_send_envoys = {
 		icon = zin_leren_send_envoys
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		target_root_trigger = {
 			zin_leren_tree_envoys = yes
@@ -214,7 +214,7 @@ zin_leren_compact = {
 	zin_leren_trade_charter = {
 		icon = zin_leren_trade_charter
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		target_root_trigger = {
 			zin_leren_tree_tariff = yes
@@ -248,7 +248,7 @@ zin_leren_compact = {
 	zin_leren_marriage_pact = {
 		icon = zin_leren_marriage_pact
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		target_root_trigger = {
 			zin_leren_tree_marriages = yes
@@ -269,7 +269,7 @@ zin_leren_compact = {
 				set_temp_variable = { zin_arg_value = 25 }
 				zin_leren_add_lean = yes
 			}
-			FROM = { add_opinion_modifier = { target = Y0G modifier = zin_leren_marriage_ties } }
+			FROM = { add_opinion_modifier = { target = LER modifier = zin_leren_marriage_ties } }
 		}
 		ai_will_do = {
 			base = 0
@@ -282,7 +282,7 @@ zin_leren_compact = {
 	zin_leren_invite_to_compact = {
 		icon = zin_leren_invite_to_compact
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		target_root_trigger = {
 			zin_leren_tree_open_compact = yes
@@ -297,10 +297,7 @@ zin_leren_compact = {
 			FROM = {
 				check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals }
 				is_in_faction = no
-				OR = {
-					NOT = { has_country_flag = zin_elven_refusal }
-					has_country_flag = zin_refusal_lifted
-				}
+				NOT = { zin_diplo_refusal_binds = yes }
 			}
 		}
 		cost = 25
@@ -315,14 +312,14 @@ zin_leren_compact = {
 				add = 60
 				FROM = { check_variable = { var = zin_leren_lean value = 60 compare = greater_than_or_equals } }
 				check_variable = { var = global.zin_gathering_dark value = 25 compare = greater_than_or_equals }
-				NOT = { Y0L = { has_guaranteed = FROM } }
+				NOT = { AEN = { has_guaranteed = FROM } }
 			}
 		}
 	}
 	zin_leren_offer_protection = {
 		icon = zin_leren_offer_protection
 		allowed = {
-			original_tag = Y0G
+			original_tag = LER
 		}
 		target_root_trigger = {
 			zin_leren_tree_one_banner = yes
@@ -340,12 +337,12 @@ zin_leren_compact = {
 			}
 			check_variable = { var = zin_leren_hegemony value = 60 compare = greater_than_or_equals }
 			FROM = {
-				NOT = { original_tag = Y0W }
+				NOT = { original_tag = ANE }
 				OR = {
 					check_variable = { var = zin_leren_lean value = 80 compare = greater_than_or_equals }
 					AND = {
 						check_variable = { var = zin_leren_lean value = 60 compare = greater_than_or_equals }
-						Y0G = { has_country_flag = zin_leren_route_supremacy }
+						LER = { has_country_flag = zin_leren_route_supremacy }
 					}
 					AND = {
 						check_variable = { var = zin_leren_lean value = 60 compare = greater_than_or_equals }

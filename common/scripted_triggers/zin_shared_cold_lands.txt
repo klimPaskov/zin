@@ -20,12 +20,12 @@ zin_shared_cold_lands_on_the_neck = {
 	any_owned_state = { zin_is_site_neck_road = yes }
 }
 zin_shared_cold_lands_accord_open = {
-	country_exists = Y01
-	Y01 = { is_faction_leader = yes }
+	country_exists = CLD
+	CLD = { is_faction_leader = yes }
 }
 zin_shared_cold_lands_free_steadings_exist = {
-	country_exists = Y21
-	Y21 = {
+	country_exists = FEA
+	FEA = {
 		is_faction_leader = yes
 		has_country_flag = zin_regional_fearno_steadings_path
 	}

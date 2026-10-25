@@ -29,11 +29,11 @@ zin_east_courts = {
 		OR = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					has_country_flag = zin_east_courts_noris
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					has_country_flag = zin_east_courts_stabilo
 				}
 			}
@@ -45,10 +45,10 @@ zin_east_courts = {
 zin_east_ledger = {
 	icon = GFX_idea_zin_ledger_coins
 	allowed = {
-		original_tag = Y16
+		original_tag = STA
 	}
 	visible = {
-		original_tag = Y16
+		original_tag = STA
 		has_country_flag = zin_stabilo_ledger_open
 	}
 }

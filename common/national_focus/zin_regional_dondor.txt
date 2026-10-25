@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y19
+			original_tag = DND
 		}
 	}
 	initial_show_position = { focus = zin_regional_dondor_the_brute_kings_hall }
@@ -383,7 +383,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_dark_add_accord_resolve = yes
-			Y1B = {
+			BLN = {
 				country_event = zin_regional_dondor.3
 			}
 		}
@@ -399,14 +399,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y1B
+			country_exists = BLN
 			zin_regional_dondor_belonton_in_accord = yes
 		}
 		ai_will_do = {
 			factor = 25
 		}
 		completion_reward = {
-			Y1B = {
+			BLN = {
 				country_event = zin_regional_dondor.4
 			}
 		}
@@ -463,14 +463,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y4I
+			country_exists = BLK
 			zin_regional_dondor_blackton_unbound = yes
 		}
 		ai_will_do = {
 			factor = 15
 		}
 		completion_reward = {
-			Y4I = {
+			BLK = {
 				country_event = zin_regional_dondor.5
 			}
 		}
@@ -545,7 +545,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0L
+			country_exists = AEN
 			NOT = {
 				has_country_flag = zin_dark_petitioned_parim
 			}
@@ -558,7 +558,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_dark.30
 			}
 			set_country_flag = zin_dark_petitioned_parim
@@ -575,9 +575,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0G
+			country_exists = LER
 			NOT = {
-				has_war_with = Y0G
+				has_war_with = LER
 			}
 		}
 		ai_will_do = {
@@ -588,7 +588,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				country_event = zin_dark.31
 			}
 			set_temp_variable = { zin_arg_value = 10 }
@@ -615,7 +615,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_regional_dondor.6
 			}
 		}
@@ -857,7 +857,7 @@ focus_tree = {
 		available = {
 			has_war = yes
 			OR = {
-				has_war_with = Y1A
+				has_war_with = GOL
 				has_global_flag = zin_volgan_marches
 				has_global_flag = zin_war_of_last_crowns
 			}
@@ -934,10 +934,10 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				country_event = zin_regional_dondor.7
 			}
-			Y0L = {
+			AEN = {
 				country_event = zin_regional_dondor.7
 			}
 		}
@@ -953,7 +953,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		cost = 5
 		available = {
-			has_war_with = Y1A
+			has_war_with = GOL
 			zin_regional_dondor_cores_held = yes
 		}
 		ai_will_do = {
@@ -1025,7 +1025,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 3
 		available = {
-			has_war_with = Y0U
+			has_war_with = ZOL
 		}
 		ai_will_do = {
 			factor = 100

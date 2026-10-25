@@ -3,13 +3,13 @@ zin_dominion_grave_musters = {
 	zin_dominion_wake_old_barrows = {
 		icon = zin_dominion_wake_old_barrows
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			always = yes
 		}
 		available = {
-			NOT = { has_country_flag = zin_dominion_barrows_wait }
+			hidden_trigger = { has_country_flag = zin_volgan_musters_open }
 		}
 		cost = 50
 		days_re_enable = 180
@@ -33,7 +33,7 @@ zin_dominion_grave_musters = {
 	zin_dominion_muster_beneath_the_storms = {
 		icon = zin_dominion_muster_beneath_the_storms
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			always = yes
@@ -61,7 +61,7 @@ zin_dominion_grave_musters = {
 	zin_dominion_raise_a_grave_host = {
 		icon = zin_dominion_raise_a_grave_host
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			always = yes
@@ -98,7 +98,7 @@ zin_dominion_grave_musters = {
 	zin_dominion_bind_the_restless = {
 		icon = zin_dominion_bind_the_restless
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			has_country_flag = zin_volgan_bind_open
@@ -124,7 +124,7 @@ zin_dominion_grave_musters = {
 	zin_dominion_wake_old_battlefields = {
 		icon = zin_dominion_wake_old_battlefields
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			has_country_flag = zin_volgan_battlefields_open
@@ -167,7 +167,7 @@ zin_dominion_court = {
 	zin_dominion_summon_the_dominion = {
 		icon = zin_dominion_summon_the_dominion
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			always = yes
@@ -188,9 +188,9 @@ zin_dominion_court = {
 			modifier = {
 				add = 70
 				OR = {
-					Y7T = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
-					Y7U = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
-					Y10 = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
+					KHO = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
+					DLN = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
+					NEZ = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
 				}
 			}
 		}
@@ -198,7 +198,7 @@ zin_dominion_court = {
 	zin_dominion_demand_tribute = {
 		icon = zin_dominion_demand_tribute
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		target_root_trigger = {
 			has_country_flag = zin_volgan_court_open
@@ -237,7 +237,7 @@ zin_dominion_court = {
 	zin_dominion_grant_spoils = {
 		icon = zin_dominion_grant_spoils
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		target_root_trigger = {
 			has_country_flag = zin_volgan_court_open
@@ -258,24 +258,24 @@ zin_dominion_court = {
 		days_re_enable = 180
 		complete_effect = {
 			if = {
-				limit = { FROM = { original_tag = Y7T } }
+				limit = { FROM = { original_tag = KHO } }
 				random_owned_state = {
 					limit = { NOT = { is_core_of = ROOT } }
-					transfer_state_to = Y7T
+					transfer_state_to = KHO
 				}
 			}
 			if = {
-				limit = { FROM = { original_tag = Y7U } }
+				limit = { FROM = { original_tag = DLN } }
 				random_owned_state = {
 					limit = { NOT = { is_core_of = ROOT } }
-					transfer_state_to = Y7U
+					transfer_state_to = DLN
 				}
 			}
 			if = {
-				limit = { FROM = { original_tag = Y10 } }
+				limit = { FROM = { original_tag = NEZ } }
 				random_owned_state = {
 					limit = { NOT = { is_core_of = ROOT } }
-					transfer_state_to = Y10
+					transfer_state_to = NEZ
 				}
 			}
 			FROM = {
@@ -284,7 +284,7 @@ zin_dominion_court = {
 				set_temp_variable = { zin_arg_value = 20 }
 				zin_volgan_add_oath = yes
 				if = {
-					limit = { NOT = { Y8D = { has_country_flag = zin_volgan_spoils_promised } } }
+					limit = { NOT = { PUV = { has_country_flag = zin_volgan_spoils_promised } } }
 					set_country_flag = { flag = zin_dominion_spoils_wait days = 185 }
 				}
 			}
@@ -300,7 +300,7 @@ zin_dominion_court = {
 	zin_dominion_nether_gate = {
 		icon = zin_dominion_nether_gate
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		state_trigger = any
 		target_root_trigger = {
@@ -311,7 +311,7 @@ zin_dominion_court = {
 			FROM = {
 				NOT = { is_controlled_by = ROOT }
 				controller = { has_war_with = ROOT }
-				any_neighbor_state = { controller = { OR = { original_tag = Y8D is_subject_of = Y8D } } }
+				any_neighbor_state = { controller = { OR = { original_tag = PUV is_subject_of = PUV } } }
 			}
 		}
 		visible = {
@@ -351,7 +351,7 @@ zin_dominion_court = {
 	zin_dominion_descend_again = {
 		icon = zin_dominion_descend_again
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			has_completed_focus = zin_volgan_descend_into_the_abyss
@@ -372,13 +372,13 @@ zin_dominion_court = {
 	zin_dominion_silence_the_watchers = {
 		icon = zin_dominion_silence_the_watchers
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		visible = {
 			has_country_flag = zin_volgan_silence_open
 		}
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		cost = 50
 		days_re_enable = 180
@@ -387,21 +387,21 @@ zin_dominion_court = {
 			zin_mirolon_add_proof = yes
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_volgan_add_veil = yes
-			Y0Y = { country_event = { id = zin_dominion.7 } }
+			MIR = { country_event = { id = zin_dominion.7 } }
 		}
 		ai_will_do = {
 			base = 0
 			modifier = {
 				add = 60
-				country_exists = Y0Y
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 40 compare = greater_than_or_equals } }
+				country_exists = MIR
+				MIR = { check_variable = { var = zin_mirolon_proof value = 40 compare = greater_than_or_equals } }
 			}
 		}
 	}
 	zin_dominion_make_a_client_crown = {
 		icon = zin_dominion_make_a_client_crown
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		target_root_trigger = {
 			has_country_flag = zin_volgan_client_crowns
@@ -410,48 +410,40 @@ zin_dominion_court = {
 			FROM = {
 				OR = {
 					zin_dominion_is_ember_lands_country = yes
-					original_tag = Y0L
-					original_tag = Y0M
-					original_tag = Y0N
-					original_tag = Y0O
-					original_tag = Y0P
-					original_tag = Y0Q
-					original_tag = Y0R
-					original_tag = Y0S
-					original_tag = Y0T
-					original_tag = Y4M
-					original_tag = Y4N
-					original_tag = Y4O
-					original_tag = Y4P
-					original_tag = Y4Q
-					original_tag = Y4R
-					original_tag = Y4S
-					original_tag = Y4T
-					original_tag = Y4U
-					original_tag = Y4V
-					original_tag = Y4W
-					original_tag = Y4X
-					original_tag = Y4Y
-					original_tag = Y4Z
-					original_tag = Y50
-					original_tag = Y51
-					original_tag = Y52
-					original_tag = Y53
-					original_tag = Y54
-					original_tag = Y55
-					original_tag = Y8E
+					original_tag = AEN
+					original_tag = SEL
+					original_tag = KIN
+					original_tag = HIR
+					original_tag = KON
+					original_tag = HNH
+					original_tag = KLU
+					original_tag = HER
+					original_tag = NOL
+					original_tag = KIL
+					original_tag = SFT
+					original_tag = FRE
+					original_tag = PAZ
+					original_tag = ORH
+					original_tag = FOT
+					original_tag = KUN
+					original_tag = BRR
+					original_tag = OLO
+					original_tag = ANR
+					original_tag = CUR
+					original_tag = BLO
+					original_tag = TIR
 				}
 				OR = {
 					AND = {
 						exists = yes
 						has_capitulated = yes
-						capital_scope = { controller = { original_tag = Y8D } }
+						capital_scope = { controller = { original_tag = PUV } }
 					}
 					AND = {
 						exists = no
 						any_state = {
 							is_core_of = PREV
-							controller = { original_tag = Y8D }
+							controller = { original_tag = PUV }
 						}
 					}
 				}
@@ -483,7 +475,7 @@ zin_dominion_court = {
 	zin_dominion_send_envoys = {
 		icon = zin_dominion_send_envoys
 		allowed = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		target_root_trigger = {
 			has_country_flag = zin_volgan_envoys_open
@@ -527,7 +519,7 @@ zin_dominion_mirolon_watch = {
 	zin_dominion_send_scouts_south = {
 		icon = zin_dominion_send_scouts_south
 		allowed = {
-			original_tag = Y0Y
+			original_tag = MIR
 		}
 		visible = {
 			always = yes
@@ -553,7 +545,7 @@ zin_dominion_mirolon_watch = {
 	zin_dominion_send_word_to_parim = {
 		icon = zin_dominion_send_word_to_parim
 		allowed = {
-			original_tag = Y0Y
+			original_tag = MIR
 		}
 		visible = {
 			always = yes
@@ -583,7 +575,7 @@ zin_dominion_mirolon_watch = {
 	zin_dominion_raise_the_pass_forts = {
 		icon = zin_dominion_raise_the_pass_forts
 		allowed = {
-			original_tag = Y0Y
+			original_tag = MIR
 		}
 		visible = {
 			always = yes

@@ -66,11 +66,11 @@ country_event = {
 			factor = 70
 		}
 		add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_envoys_welcomed
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_envoys_welcomed
 		}
 	}
@@ -80,7 +80,7 @@ country_event = {
 			factor = 30
 		}
 		add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_envoys_received
 		}
 	}
@@ -100,7 +100,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_aenor_add_concord_loyalty = yes
-		Y0L = {
+		AEN = {
 			army_experience = 5
 		}
 	}
@@ -109,18 +109,18 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		Y0L = {
+		AEN = {
 			if = {
 				limit = {
 					has_country_flag = zin_aenor_free_charters_open
 				}
-				Y0M = {
+				SEL = {
 					set_temp_variable = { zin_arg_charter = 3 }
 					zin_aenor_set_charter = yes
 				}
 			}
 			else = {
-				Y0M = {
+				SEL = {
 					set_temp_variable = { zin_arg_value = -5 }
 					zin_aenor_add_concord_loyalty = yes
 				}
@@ -151,7 +151,7 @@ country_event = {
 		}
 		set_country_flag = zin_lost_cause_member
 		add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_honorary_crown
 		}
 	}
@@ -196,7 +196,7 @@ country_event = {
 			factor = 60
 		}
 		add_manpower = -1000
-		Y0L = {
+		AEN = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_aenor_add_lost_cause = yes
 		}
@@ -260,7 +260,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_aenor_add_lost_cause = yes
-		Y0Y = {
+		MIR = {
 			country_event = zin_aenor.514
 		}
 	}
@@ -337,7 +337,7 @@ country_event = {
 			factor = 60
 		}
 		add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_gifts_accepted
 		}
 	}
@@ -347,7 +347,7 @@ country_event = {
 			factor = 40
 		}
 		add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_gifts_refused
 		}
 	}
@@ -395,7 +395,7 @@ country_event = {
 		set_temp_variable = { zin_arg_act = 4 }
 		zin_aenor_event_diplomacy = yes
 		add_opinion_modifier = {
-			target = Y0L
+			target = AEN
 			modifier = zin_aenor_opinion_southern_aid
 		}
 	}
@@ -427,8 +427,8 @@ country_event = {
 			modifier = {
 				add = 70
 				OR = {
-					has_war_with = Y8D
-					has_war_with = Y0U
+					has_war_with = PUV
+					has_war_with = ZOL
 				}
 			}
 		}

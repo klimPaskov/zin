@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y6X
+			original_tag = GAA
 		}
 	}
 	initial_show_position = { focus = zin_gala_what_lorien_remembers }
@@ -647,7 +647,7 @@ focus_tree = {
 			factor = 25
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_sun_add_gala_counsel = yes
@@ -687,7 +687,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y6U = {
+			LIG = {
 				country_event = zin_gala.5
 			}
 		}
@@ -835,7 +835,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			Y6U = {
+			LIG = {
 				country_event = zin_gala.7
 			}
 		}
@@ -971,7 +971,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = 1 }
 			zin_afrit_add_footholds = yes
 			add_stability = 0.03
-			set_temp_variable = { zin_arg_target = Y8G }
+			set_temp_variable = { zin_arg_target = WOR }
 			zin_elves_goodwill = yes
 		}
 	}
@@ -1267,7 +1267,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y0L }
+			set_temp_variable = { zin_arg_target = AEN }
 			zin_elves_goodwill = yes
 			add_political_power = -25
 		}
@@ -1551,6 +1551,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = zin_gala.12
+			set_country_flag = zin_gala_word_from_the_north
 			add_war_support = 0.05
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_sun_add_gala_counsel = yes
@@ -1816,7 +1817,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_sun_add_concord = yes
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 		}
 	}

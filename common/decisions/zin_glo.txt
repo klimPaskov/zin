@@ -5,7 +5,7 @@ zin_glo_seekers = {
 		allowed = { always = yes }
 		visible = {
 			zin_horos_alive = yes
-			NOT = { original_tag = Y8H }
+			NOT = { original_tag = YEL }
 			NOT = { zin_afrit_is_hub = yes }
 			NOT = { has_country_flag = zin_glo_petitioned }
 		}
@@ -23,8 +23,8 @@ zin_glo_seekers = {
 			modifier = {
 				add = 3
 				OR = {
-					original_tag = Y01
-					original_tag = Y02
+					original_tag = CLD
+					original_tag = MLK
 				}
 				zin_eindil_historical = no
 			}
@@ -46,7 +46,7 @@ zin_glo_seekers = {
 		days_re_enable = 180
 		complete_effect = {
 			set_variable = { global.zin_glo_watch_sender = THIS }
-			Y8H = { country_event = { id = zin_glo.60 } }
+			YEL = { country_event = { id = zin_glo.60 } }
 		}
 		ai_will_do = {
 			base = 0

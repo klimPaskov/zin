@@ -5,91 +5,23 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0K
+			original_tag = DOL
 		}
 		modifier = {
 			add = 10
-			original_tag = Y2M
+			original_tag = HEO
 		}
 		modifier = {
 			add = 10
-			original_tag = Y2N
+			original_tag = KER
 		}
 		modifier = {
 			add = 10
-			original_tag = Y2O
+			original_tag = MUS
 		}
 		modifier = {
 			add = 10
-			original_tag = Y2P
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2R
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2S
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2T
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2U
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2V
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2W
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2X
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2Y
-		}
-		modifier = {
-			add = 10
-			original_tag = Y2Z
-		}
-		modifier = {
-			add = 10
-			original_tag = Y30
-		}
-		modifier = {
-			add = 10
-			original_tag = Y31
-		}
-		modifier = {
-			add = 10
-			original_tag = Y32
-		}
-		modifier = {
-			add = 10
-			original_tag = Y33
-		}
-		modifier = {
-			add = 10
-			original_tag = Y35
-		}
-		modifier = {
-			add = 10
-			original_tag = Y36
-		}
-		modifier = {
-			add = 10
-			original_tag = Y37
-		}
-		modifier = {
-			add = 10
-			original_tag = Y38
+			original_tag = TOL
 		}
 	}
 	initial_show_position = { focus = zin_shared_north_lands_crown_of_the_north }
@@ -248,7 +180,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -310,7 +242,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y2Q = {
+			TLV = {
 				add_to_faction = PREV
 			}
 		}
@@ -992,10 +924,10 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			is_subject_of = Y0G
+			is_subject_of = LER
 		}
 		allow_branch = {
-			is_subject_of = Y0G
+			is_subject_of = LER
 		}
 		ai_will_do = {
 			factor = 60
@@ -1524,7 +1456,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			OR = {
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 				has_global_flag = zin_eindil_crowned
 				has_global_flag = zin_afrit_dead
 				AND = {

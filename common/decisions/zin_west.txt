@@ -25,8 +25,8 @@ zin_west_council = {
 		allowed = { always = yes }
 		visible = {
 			OR = {
-				original_tag = Y07
-				original_tag = Y08
+				original_tag = GNW
+				original_tag = GIR
 			}
 			NOT = { has_global_flag = zin_west_truce_broken }
 		}
@@ -54,7 +54,7 @@ zin_west_council = {
 		visible = {
 			zin_west_is_western = yes
 			zin_west_is_leader = yes
-			NOT = { original_tag = Y07 }
+			NOT = { original_tag = GNW }
 			zin_west_question_open = yes
 			NOT = { has_global_flag = zin_west_route_crossing }
 			NOT = { has_global_flag = zin_west_route_divided }
@@ -143,7 +143,7 @@ zin_west_crossing = {
 		allowed = { always = yes }
 		visible = {
 			zin_west_is_leader = yes
-			NOT = { original_tag = Y07 }
+			NOT = { original_tag = GNW }
 			NOT = { has_global_flag = zin_western_crossing }
 		}
 		available = {
@@ -161,7 +161,7 @@ zin_west_crossing = {
 		allowed = { always = yes }
 		visible = {
 			zin_west_is_leader = yes
-			NOT = { original_tag = Y07 }
+			NOT = { original_tag = GNW }
 			has_global_flag = zin_western_crossing
 		}
 		available = {

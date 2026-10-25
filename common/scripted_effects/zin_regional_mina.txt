@@ -5,17 +5,19 @@ zin_regional_mina_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 1 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_regional_mina_friendship
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_regional_mina_friendship
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_regional_mina_friendship
+				}
 			}
 		}
 	}
@@ -23,17 +25,19 @@ zin_regional_mina_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 2 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_regional_mina_hill_roads
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_regional_mina_hill_roads
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_regional_mina_hill_roads
+				}
 			}
 		}
 	}

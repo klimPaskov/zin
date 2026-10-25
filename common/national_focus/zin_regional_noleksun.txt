@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0S
+			original_tag = NOL
 		}
 	}
 	initial_show_position = { focus = zin_regional_noleksun_the_eight_towns }
@@ -258,7 +258,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -482,7 +482,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -533,7 +533,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -916,7 +916,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0M
+			country_exists = SEL
 		}
 		ai_will_do = {
 			factor = 10
@@ -929,7 +929,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -939,7 +939,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0M = {
+			SEL = {
 				country_event = zin_regional_noleksun.3
 			}
 		}

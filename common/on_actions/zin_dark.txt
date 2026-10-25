@@ -4,10 +4,10 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y1A = { country_event = { id = zin_dark.1 } }
+			GOL = { country_event = { id = zin_dark.1 } }
 		}
 	}
-	on_monthly_Y1A = {
+	on_monthly_GOL = {
 		effect = {
 			if = {
 				limit = { zin_dark_is_runner = yes }
@@ -15,7 +15,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y19 = {
+	on_monthly_DND = {
 		effect = {
 			if = {
 				limit = { zin_dark_is_runner = yes }

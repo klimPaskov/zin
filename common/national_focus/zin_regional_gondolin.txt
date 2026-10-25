@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y12
+			original_tag = NAA
 		}
 	}
 	initial_show_position = { focus = zin_regional_gondolin_the_sea_crown }
@@ -174,7 +174,7 @@ focus_tree = {
 					}
 				}
 			}
-			Y14 = {
+			NRS = {
 				set_temp_variable = { zin_arg_road = 1 }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_east_add_road_influence = yes
@@ -389,7 +389,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y14 = {
+			NRS = {
 				add_political_power = 25
 			}
 			set_temp_variable = { zin_arg_value = 5 }
@@ -476,7 +476,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			zin_shared_east_lands_road_infra = yes
-			Y14 = {
+			NRS = {
 				set_temp_variable = { zin_arg_road = 1 }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_east_add_road_influence = yes
@@ -526,9 +526,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			Y14 = {
+			NRS = {
 				add_opinion_modifier = {
-					target = Y12
+					target = NAA
 					modifier = zin_regional_gondolin_a_voice_at_the_table
 				}
 			}

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y6U
+			original_tag = LIG
 		}
 	}
 	initial_show_position = { focus = zin_regional_the_lands_of_light_the_radiant_seat }
@@ -174,7 +174,7 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 		}
 		ai_will_do = {
 			factor = 40
@@ -184,7 +184,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6X }
+			set_temp_variable = { zin_arg_target = GAA }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_sun_add_gala_counsel = yes
@@ -364,9 +364,9 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 			OR = {
-				Y6X = { has_war = yes }
+				GAA = { has_war = yes }
 				check_variable = { global.zin_gathering_dark > 24 }
 			}
 		}
@@ -374,11 +374,11 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				factor = 3
-				Y6X = { has_war = yes }
+				GAA = { has_war = yes }
 			}
 		}
 		completion_reward = {
-			give_guarantee = Y6X
+			give_guarantee = GAA
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_sun_add_gala_counsel = yes
 		}
@@ -453,16 +453,16 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 10
 		available = {
-			country_exists = Y5W
+			country_exists = ALR
 			NOT = {
-				has_war_with = Y5W
+				has_war_with = ALR
 			}
 		}
 		ai_will_do = {
 			factor = 25
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y5W }
+			set_temp_variable = { zin_arg_target = ALR }
 			zin_elves_goodwill = yes
 			add_political_power = 50
 		}
@@ -477,9 +477,9 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			country_exists = Y18
+			country_exists = MIE
 			NOT = {
-				has_war_with = Y18
+				has_war_with = MIE
 			}
 		}
 		ai_will_do = {
@@ -487,7 +487,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y18
+				country = MIE
 				relation = non_aggression_pact
 				active = yes
 			}

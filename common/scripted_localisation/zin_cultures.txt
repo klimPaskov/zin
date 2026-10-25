@@ -6,7 +6,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_lake_aenoran } localization_key = zin_cname_lake_aenoran }
 	text = { trigger = { has_country_flag = zin_culture_selen_ranger } localization_key = zin_cname_selen_ranger }
 	text = { trigger = { has_country_flag = zin_culture_steppe_rider } localization_key = zin_cname_steppe_rider }
-	text = { trigger = { has_country_flag = zin_culture_wall_folk } localization_key = zin_cname_wall_folk }
+	text = { trigger = { has_country_flag = zin_culture_vale_folk } localization_key = zin_cname_vale_folk }
 	text = { trigger = { has_country_flag = zin_culture_march_folk } localization_key = zin_cname_march_folk }
 	text = { trigger = { has_country_flag = zin_culture_isle_houses } localization_key = zin_cname_isle_houses }
 	text = { trigger = { has_country_flag = zin_culture_veiled_folk } localization_key = zin_cname_veiled_folk }
@@ -15,12 +15,12 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_free_crowns_north } localization_key = zin_cname_free_crowns_north }
 	text = { trigger = { has_country_flag = zin_culture_dondor_brutes } localization_key = zin_cname_dondor_brutes }
 	text = { trigger = { has_country_flag = zin_culture_mirolon_wardens } localization_key = zin_cname_mirolon_wardens }
-	text = { trigger = { has_country_flag = zin_culture_ember_lands_freeholds } localization_key = zin_cname_ember_lands_freeholds }
+	text = { trigger = { has_country_flag = zin_culture_ember_freeholds } localization_key = zin_cname_ember_freeholds }
 	text = { trigger = { has_country_flag = zin_culture_winter_crown } localization_key = zin_cname_winter_crown }
 	text = { trigger = { has_country_flag = zin_culture_ice_clans } localization_key = zin_cname_ice_clans }
-	text = { trigger = { has_country_flag = zin_culture_isengard_warlords } localization_key = zin_cname_isengard_warlords }
-	text = { trigger = { has_country_flag = zin_culture_windwaith_seafarers } localization_key = zin_cname_windwaith_seafarers }
-	text = { trigger = { has_country_flag = zin_culture_gunwaith_clans } localization_key = zin_cname_gunwaith_clans }
+	text = { trigger = { has_country_flag = zin_culture_melkgard_warlords } localization_key = zin_cname_melkgard_warlords }
+	text = { trigger = { has_country_flag = zin_culture_vindael_seafarers } localization_key = zin_cname_vindael_seafarers }
+	text = { trigger = { has_country_flag = zin_culture_gunwyn_clans } localization_key = zin_cname_gunwyn_clans }
 	text = { trigger = { has_country_flag = zin_culture_girdon_wardens } localization_key = zin_cname_girdon_wardens }
 	text = { trigger = { has_country_flag = zin_culture_western_guilds } localization_key = zin_cname_western_guilds }
 	text = { trigger = { has_country_flag = zin_culture_buldor_companies } localization_key = zin_cname_buldor_companies }
@@ -56,6 +56,35 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_grave_hosts } localization_key = zin_cname_grave_hosts }
 	text = { trigger = { has_country_flag = zin_culture_zols_dead } localization_key = zin_cname_zols_dead }
 	text = { trigger = { has_country_flag = zin_culture_netherborn } localization_key = zin_cname_netherborn }
+	text = { trigger = { has_country_flag = zin_culture_wall_delvers } localization_key = zin_cname_wall_delvers }
+	text = { trigger = { has_country_flag = zin_culture_west_delvers } localization_key = zin_cname_west_delvers }
+	text = { trigger = { has_country_flag = zin_culture_north_delvers } localization_key = zin_cname_north_delvers }
+	text = { trigger = { has_country_flag = zin_culture_hearth_folk } localization_key = zin_cname_hearth_folk }
+	text = { trigger = { has_country_flag = zin_culture_holt_gnomes } localization_key = zin_cname_holt_gnomes }
+	text = { trigger = { has_country_flag = zin_culture_road_warrens } localization_key = zin_cname_road_warrens }
+	text = { trigger = { has_country_flag = zin_culture_baelim } localization_key = zin_cname_baelim }
+	text = { trigger = { has_country_flag = zin_culture_mycid_rings } localization_key = zin_cname_mycid_rings }
+	text = { trigger = { has_country_flag = zin_culture_kingdom_forest_elves } localization_key = zin_cname_kingdom_forest_elves }
+	text = { trigger = { has_country_flag = zin_culture_roost_keepers } localization_key = zin_cname_roost_keepers }
+	text = { trigger = { has_country_flag = zin_culture_god_forest_keepers } localization_key = zin_cname_god_forest_keepers }
+	text = { trigger = { has_country_flag = zin_culture_strait_folk } localization_key = zin_cname_strait_folk }
+	text = { trigger = { has_country_flag = zin_culture_hilofrim_herders } localization_key = zin_cname_hilofrim_herders }
+	text = { trigger = { has_country_flag = zin_culture_teste_valley_folk } localization_key = zin_cname_teste_valley_folk }
+	text = { trigger = { has_country_flag = zin_culture_quay_folk } localization_key = zin_cname_quay_folk }
+	text = { trigger = { has_country_flag = zin_culture_reindeer_clans } localization_key = zin_cname_reindeer_clans }
+	text = { trigger = { has_country_flag = zin_culture_woqood_sealers } localization_key = zin_cname_woqood_sealers }
+	text = { trigger = { has_country_flag = zin_culture_naamis_sea_crown } localization_key = zin_cname_naamis_sea_crown }
+	text = { trigger = { has_country_flag = zin_culture_orato_fishers } localization_key = zin_cname_orato_fishers }
+	text = { trigger = { has_country_flag = zin_culture_miaed_pass_lords } localization_key = zin_cname_miaed_pass_lords }
+	text = { trigger = { has_country_flag = zin_culture_wahatud_oasis_folk } localization_key = zin_cname_wahatud_oasis_folk }
+	text = { trigger = { has_country_flag = zin_culture_king_warrens } localization_key = zin_cname_king_warrens }
+	text = { trigger = { has_country_flag = zin_culture_spring_warrens } localization_key = zin_cname_spring_warrens }
+	text = { trigger = { has_country_flag = zin_culture_ogre_clans } localization_key = zin_cname_ogre_clans }
+	text = { trigger = { has_country_flag = zin_culture_plateau_soldiery } localization_key = zin_cname_plateau_soldiery }
+	text = { trigger = { has_country_flag = zin_culture_cairn_giants } localization_key = zin_cname_cairn_giants }
+	text = { trigger = { has_country_flag = zin_culture_height_yeti } localization_key = zin_cname_height_yeti }
+	text = { trigger = { has_country_flag = zin_culture_nether_houses } localization_key = zin_cname_nether_houses }
+	text = { trigger = { has_country_flag = zin_culture_veshazel_court } localization_key = zin_cname_veshazel_court }
 	text = { localization_key = zin_cname_unknown }
 }
 
@@ -64,7 +93,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_lake_aenoran } localization_key = zin_cadj_lake_aenoran }
 	text = { trigger = { has_country_flag = zin_culture_selen_ranger } localization_key = zin_cadj_selen_ranger }
 	text = { trigger = { has_country_flag = zin_culture_steppe_rider } localization_key = zin_cadj_steppe_rider }
-	text = { trigger = { has_country_flag = zin_culture_wall_folk } localization_key = zin_cadj_wall_folk }
+	text = { trigger = { has_country_flag = zin_culture_vale_folk } localization_key = zin_cadj_vale_folk }
 	text = { trigger = { has_country_flag = zin_culture_march_folk } localization_key = zin_cadj_march_folk }
 	text = { trigger = { has_country_flag = zin_culture_isle_houses } localization_key = zin_cadj_isle_houses }
 	text = { trigger = { has_country_flag = zin_culture_veiled_folk } localization_key = zin_cadj_veiled_folk }
@@ -73,12 +102,12 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_free_crowns_north } localization_key = zin_cadj_free_crowns_north }
 	text = { trigger = { has_country_flag = zin_culture_dondor_brutes } localization_key = zin_cadj_dondor_brutes }
 	text = { trigger = { has_country_flag = zin_culture_mirolon_wardens } localization_key = zin_cadj_mirolon_wardens }
-	text = { trigger = { has_country_flag = zin_culture_ember_lands_freeholds } localization_key = zin_cadj_ember_lands_freeholds }
+	text = { trigger = { has_country_flag = zin_culture_ember_freeholds } localization_key = zin_cadj_ember_freeholds }
 	text = { trigger = { has_country_flag = zin_culture_winter_crown } localization_key = zin_cadj_winter_crown }
 	text = { trigger = { has_country_flag = zin_culture_ice_clans } localization_key = zin_cadj_ice_clans }
-	text = { trigger = { has_country_flag = zin_culture_isengard_warlords } localization_key = zin_cadj_isengard_warlords }
-	text = { trigger = { has_country_flag = zin_culture_windwaith_seafarers } localization_key = zin_cadj_windwaith_seafarers }
-	text = { trigger = { has_country_flag = zin_culture_gunwaith_clans } localization_key = zin_cadj_gunwaith_clans }
+	text = { trigger = { has_country_flag = zin_culture_melkgard_warlords } localization_key = zin_cadj_melkgard_warlords }
+	text = { trigger = { has_country_flag = zin_culture_vindael_seafarers } localization_key = zin_cadj_vindael_seafarers }
+	text = { trigger = { has_country_flag = zin_culture_gunwyn_clans } localization_key = zin_cadj_gunwyn_clans }
 	text = { trigger = { has_country_flag = zin_culture_girdon_wardens } localization_key = zin_cadj_girdon_wardens }
 	text = { trigger = { has_country_flag = zin_culture_western_guilds } localization_key = zin_cadj_western_guilds }
 	text = { trigger = { has_country_flag = zin_culture_buldor_companies } localization_key = zin_cadj_buldor_companies }
@@ -114,6 +143,35 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_grave_hosts } localization_key = zin_cadj_grave_hosts }
 	text = { trigger = { has_country_flag = zin_culture_zols_dead } localization_key = zin_cadj_zols_dead }
 	text = { trigger = { has_country_flag = zin_culture_netherborn } localization_key = zin_cadj_netherborn }
+	text = { trigger = { has_country_flag = zin_culture_wall_delvers } localization_key = zin_cadj_wall_delvers }
+	text = { trigger = { has_country_flag = zin_culture_west_delvers } localization_key = zin_cadj_west_delvers }
+	text = { trigger = { has_country_flag = zin_culture_north_delvers } localization_key = zin_cadj_north_delvers }
+	text = { trigger = { has_country_flag = zin_culture_hearth_folk } localization_key = zin_cadj_hearth_folk }
+	text = { trigger = { has_country_flag = zin_culture_holt_gnomes } localization_key = zin_cadj_holt_gnomes }
+	text = { trigger = { has_country_flag = zin_culture_road_warrens } localization_key = zin_cadj_road_warrens }
+	text = { trigger = { has_country_flag = zin_culture_baelim } localization_key = zin_cadj_baelim }
+	text = { trigger = { has_country_flag = zin_culture_mycid_rings } localization_key = zin_cadj_mycid_rings }
+	text = { trigger = { has_country_flag = zin_culture_kingdom_forest_elves } localization_key = zin_cadj_kingdom_forest_elves }
+	text = { trigger = { has_country_flag = zin_culture_roost_keepers } localization_key = zin_cadj_roost_keepers }
+	text = { trigger = { has_country_flag = zin_culture_god_forest_keepers } localization_key = zin_cadj_god_forest_keepers }
+	text = { trigger = { has_country_flag = zin_culture_strait_folk } localization_key = zin_cadj_strait_folk }
+	text = { trigger = { has_country_flag = zin_culture_hilofrim_herders } localization_key = zin_cadj_hilofrim_herders }
+	text = { trigger = { has_country_flag = zin_culture_teste_valley_folk } localization_key = zin_cadj_teste_valley_folk }
+	text = { trigger = { has_country_flag = zin_culture_quay_folk } localization_key = zin_cadj_quay_folk }
+	text = { trigger = { has_country_flag = zin_culture_reindeer_clans } localization_key = zin_cadj_reindeer_clans }
+	text = { trigger = { has_country_flag = zin_culture_woqood_sealers } localization_key = zin_cadj_woqood_sealers }
+	text = { trigger = { has_country_flag = zin_culture_naamis_sea_crown } localization_key = zin_cadj_naamis_sea_crown }
+	text = { trigger = { has_country_flag = zin_culture_orato_fishers } localization_key = zin_cadj_orato_fishers }
+	text = { trigger = { has_country_flag = zin_culture_miaed_pass_lords } localization_key = zin_cadj_miaed_pass_lords }
+	text = { trigger = { has_country_flag = zin_culture_wahatud_oasis_folk } localization_key = zin_cadj_wahatud_oasis_folk }
+	text = { trigger = { has_country_flag = zin_culture_king_warrens } localization_key = zin_cadj_king_warrens }
+	text = { trigger = { has_country_flag = zin_culture_spring_warrens } localization_key = zin_cadj_spring_warrens }
+	text = { trigger = { has_country_flag = zin_culture_ogre_clans } localization_key = zin_cadj_ogre_clans }
+	text = { trigger = { has_country_flag = zin_culture_plateau_soldiery } localization_key = zin_cadj_plateau_soldiery }
+	text = { trigger = { has_country_flag = zin_culture_cairn_giants } localization_key = zin_cadj_cairn_giants }
+	text = { trigger = { has_country_flag = zin_culture_height_yeti } localization_key = zin_cadj_height_yeti }
+	text = { trigger = { has_country_flag = zin_culture_nether_houses } localization_key = zin_cadj_nether_houses }
+	text = { trigger = { has_country_flag = zin_culture_veshazel_court } localization_key = zin_cadj_veshazel_court }
 	text = { localization_key = zin_cadj_unknown }
 }
 
@@ -122,7 +180,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_lake_aenoran } localization_key = zin_ctext_lake_aenoran }
 	text = { trigger = { has_country_flag = zin_culture_selen_ranger } localization_key = zin_ctext_selen_ranger }
 	text = { trigger = { has_country_flag = zin_culture_steppe_rider } localization_key = zin_ctext_steppe_rider }
-	text = { trigger = { has_country_flag = zin_culture_wall_folk } localization_key = zin_ctext_wall_folk }
+	text = { trigger = { has_country_flag = zin_culture_vale_folk } localization_key = zin_ctext_vale_folk }
 	text = { trigger = { has_country_flag = zin_culture_march_folk } localization_key = zin_ctext_march_folk }
 	text = { trigger = { has_country_flag = zin_culture_isle_houses } localization_key = zin_ctext_isle_houses }
 	text = { trigger = { has_country_flag = zin_culture_veiled_folk } localization_key = zin_ctext_veiled_folk }
@@ -131,12 +189,12 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_free_crowns_north } localization_key = zin_ctext_free_crowns_north }
 	text = { trigger = { has_country_flag = zin_culture_dondor_brutes } localization_key = zin_ctext_dondor_brutes }
 	text = { trigger = { has_country_flag = zin_culture_mirolon_wardens } localization_key = zin_ctext_mirolon_wardens }
-	text = { trigger = { has_country_flag = zin_culture_ember_lands_freeholds } localization_key = zin_ctext_ember_lands_freeholds }
+	text = { trigger = { has_country_flag = zin_culture_ember_freeholds } localization_key = zin_ctext_ember_freeholds }
 	text = { trigger = { has_country_flag = zin_culture_winter_crown } localization_key = zin_ctext_winter_crown }
 	text = { trigger = { has_country_flag = zin_culture_ice_clans } localization_key = zin_ctext_ice_clans }
-	text = { trigger = { has_country_flag = zin_culture_isengard_warlords } localization_key = zin_ctext_isengard_warlords }
-	text = { trigger = { has_country_flag = zin_culture_windwaith_seafarers } localization_key = zin_ctext_windwaith_seafarers }
-	text = { trigger = { has_country_flag = zin_culture_gunwaith_clans } localization_key = zin_ctext_gunwaith_clans }
+	text = { trigger = { has_country_flag = zin_culture_melkgard_warlords } localization_key = zin_ctext_melkgard_warlords }
+	text = { trigger = { has_country_flag = zin_culture_vindael_seafarers } localization_key = zin_ctext_vindael_seafarers }
+	text = { trigger = { has_country_flag = zin_culture_gunwyn_clans } localization_key = zin_ctext_gunwyn_clans }
 	text = { trigger = { has_country_flag = zin_culture_girdon_wardens } localization_key = zin_ctext_girdon_wardens }
 	text = { trigger = { has_country_flag = zin_culture_western_guilds } localization_key = zin_ctext_western_guilds }
 	text = { trigger = { has_country_flag = zin_culture_buldor_companies } localization_key = zin_ctext_buldor_companies }
@@ -172,6 +230,35 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture_grave_hosts } localization_key = zin_ctext_grave_hosts }
 	text = { trigger = { has_country_flag = zin_culture_zols_dead } localization_key = zin_ctext_zols_dead }
 	text = { trigger = { has_country_flag = zin_culture_netherborn } localization_key = zin_ctext_netherborn }
+	text = { trigger = { has_country_flag = zin_culture_wall_delvers } localization_key = zin_ctext_wall_delvers }
+	text = { trigger = { has_country_flag = zin_culture_west_delvers } localization_key = zin_ctext_west_delvers }
+	text = { trigger = { has_country_flag = zin_culture_north_delvers } localization_key = zin_ctext_north_delvers }
+	text = { trigger = { has_country_flag = zin_culture_hearth_folk } localization_key = zin_ctext_hearth_folk }
+	text = { trigger = { has_country_flag = zin_culture_holt_gnomes } localization_key = zin_ctext_holt_gnomes }
+	text = { trigger = { has_country_flag = zin_culture_road_warrens } localization_key = zin_ctext_road_warrens }
+	text = { trigger = { has_country_flag = zin_culture_baelim } localization_key = zin_ctext_baelim }
+	text = { trigger = { has_country_flag = zin_culture_mycid_rings } localization_key = zin_ctext_mycid_rings }
+	text = { trigger = { has_country_flag = zin_culture_kingdom_forest_elves } localization_key = zin_ctext_kingdom_forest_elves }
+	text = { trigger = { has_country_flag = zin_culture_roost_keepers } localization_key = zin_ctext_roost_keepers }
+	text = { trigger = { has_country_flag = zin_culture_god_forest_keepers } localization_key = zin_ctext_god_forest_keepers }
+	text = { trigger = { has_country_flag = zin_culture_strait_folk } localization_key = zin_ctext_strait_folk }
+	text = { trigger = { has_country_flag = zin_culture_hilofrim_herders } localization_key = zin_ctext_hilofrim_herders }
+	text = { trigger = { has_country_flag = zin_culture_teste_valley_folk } localization_key = zin_ctext_teste_valley_folk }
+	text = { trigger = { has_country_flag = zin_culture_quay_folk } localization_key = zin_ctext_quay_folk }
+	text = { trigger = { has_country_flag = zin_culture_reindeer_clans } localization_key = zin_ctext_reindeer_clans }
+	text = { trigger = { has_country_flag = zin_culture_woqood_sealers } localization_key = zin_ctext_woqood_sealers }
+	text = { trigger = { has_country_flag = zin_culture_naamis_sea_crown } localization_key = zin_ctext_naamis_sea_crown }
+	text = { trigger = { has_country_flag = zin_culture_orato_fishers } localization_key = zin_ctext_orato_fishers }
+	text = { trigger = { has_country_flag = zin_culture_miaed_pass_lords } localization_key = zin_ctext_miaed_pass_lords }
+	text = { trigger = { has_country_flag = zin_culture_wahatud_oasis_folk } localization_key = zin_ctext_wahatud_oasis_folk }
+	text = { trigger = { has_country_flag = zin_culture_king_warrens } localization_key = zin_ctext_king_warrens }
+	text = { trigger = { has_country_flag = zin_culture_spring_warrens } localization_key = zin_ctext_spring_warrens }
+	text = { trigger = { has_country_flag = zin_culture_ogre_clans } localization_key = zin_ctext_ogre_clans }
+	text = { trigger = { has_country_flag = zin_culture_plateau_soldiery } localization_key = zin_ctext_plateau_soldiery }
+	text = { trigger = { has_country_flag = zin_culture_cairn_giants } localization_key = zin_ctext_cairn_giants }
+	text = { trigger = { has_country_flag = zin_culture_height_yeti } localization_key = zin_ctext_height_yeti }
+	text = { trigger = { has_country_flag = zin_culture_nether_houses } localization_key = zin_ctext_nether_houses }
+	text = { trigger = { has_country_flag = zin_culture_veshazel_court } localization_key = zin_ctext_veshazel_court }
 	text = { localization_key = zin_ctext_unknown }
 }
 
@@ -180,7 +267,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture2_lake_aenoran } localization_key = zin_cname_lake_aenoran }
 	text = { trigger = { has_country_flag = zin_culture2_selen_ranger } localization_key = zin_cname_selen_ranger }
 	text = { trigger = { has_country_flag = zin_culture2_steppe_rider } localization_key = zin_cname_steppe_rider }
-	text = { trigger = { has_country_flag = zin_culture2_wall_folk } localization_key = zin_cname_wall_folk }
+	text = { trigger = { has_country_flag = zin_culture2_vale_folk } localization_key = zin_cname_vale_folk }
 	text = { trigger = { has_country_flag = zin_culture2_march_folk } localization_key = zin_cname_march_folk }
 	text = { trigger = { has_country_flag = zin_culture2_isle_houses } localization_key = zin_cname_isle_houses }
 	text = { trigger = { has_country_flag = zin_culture2_veiled_folk } localization_key = zin_cname_veiled_folk }
@@ -189,12 +276,12 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture2_free_crowns_north } localization_key = zin_cname_free_crowns_north }
 	text = { trigger = { has_country_flag = zin_culture2_dondor_brutes } localization_key = zin_cname_dondor_brutes }
 	text = { trigger = { has_country_flag = zin_culture2_mirolon_wardens } localization_key = zin_cname_mirolon_wardens }
-	text = { trigger = { has_country_flag = zin_culture2_ember_lands_freeholds } localization_key = zin_cname_ember_lands_freeholds }
+	text = { trigger = { has_country_flag = zin_culture2_ember_freeholds } localization_key = zin_cname_ember_freeholds }
 	text = { trigger = { has_country_flag = zin_culture2_winter_crown } localization_key = zin_cname_winter_crown }
 	text = { trigger = { has_country_flag = zin_culture2_ice_clans } localization_key = zin_cname_ice_clans }
-	text = { trigger = { has_country_flag = zin_culture2_isengard_warlords } localization_key = zin_cname_isengard_warlords }
-	text = { trigger = { has_country_flag = zin_culture2_windwaith_seafarers } localization_key = zin_cname_windwaith_seafarers }
-	text = { trigger = { has_country_flag = zin_culture2_gunwaith_clans } localization_key = zin_cname_gunwaith_clans }
+	text = { trigger = { has_country_flag = zin_culture2_melkgard_warlords } localization_key = zin_cname_melkgard_warlords }
+	text = { trigger = { has_country_flag = zin_culture2_vindael_seafarers } localization_key = zin_cname_vindael_seafarers }
+	text = { trigger = { has_country_flag = zin_culture2_gunwyn_clans } localization_key = zin_cname_gunwyn_clans }
 	text = { trigger = { has_country_flag = zin_culture2_girdon_wardens } localization_key = zin_cname_girdon_wardens }
 	text = { trigger = { has_country_flag = zin_culture2_western_guilds } localization_key = zin_cname_western_guilds }
 	text = { trigger = { has_country_flag = zin_culture2_buldor_companies } localization_key = zin_cname_buldor_companies }
@@ -230,6 +317,35 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_culture2_grave_hosts } localization_key = zin_cname_grave_hosts }
 	text = { trigger = { has_country_flag = zin_culture2_zols_dead } localization_key = zin_cname_zols_dead }
 	text = { trigger = { has_country_flag = zin_culture2_netherborn } localization_key = zin_cname_netherborn }
+	text = { trigger = { has_country_flag = zin_culture2_wall_delvers } localization_key = zin_cname_wall_delvers }
+	text = { trigger = { has_country_flag = zin_culture2_west_delvers } localization_key = zin_cname_west_delvers }
+	text = { trigger = { has_country_flag = zin_culture2_north_delvers } localization_key = zin_cname_north_delvers }
+	text = { trigger = { has_country_flag = zin_culture2_hearth_folk } localization_key = zin_cname_hearth_folk }
+	text = { trigger = { has_country_flag = zin_culture2_holt_gnomes } localization_key = zin_cname_holt_gnomes }
+	text = { trigger = { has_country_flag = zin_culture2_road_warrens } localization_key = zin_cname_road_warrens }
+	text = { trigger = { has_country_flag = zin_culture2_baelim } localization_key = zin_cname_baelim }
+	text = { trigger = { has_country_flag = zin_culture2_mycid_rings } localization_key = zin_cname_mycid_rings }
+	text = { trigger = { has_country_flag = zin_culture2_kingdom_forest_elves } localization_key = zin_cname_kingdom_forest_elves }
+	text = { trigger = { has_country_flag = zin_culture2_roost_keepers } localization_key = zin_cname_roost_keepers }
+	text = { trigger = { has_country_flag = zin_culture2_god_forest_keepers } localization_key = zin_cname_god_forest_keepers }
+	text = { trigger = { has_country_flag = zin_culture2_strait_folk } localization_key = zin_cname_strait_folk }
+	text = { trigger = { has_country_flag = zin_culture2_hilofrim_herders } localization_key = zin_cname_hilofrim_herders }
+	text = { trigger = { has_country_flag = zin_culture2_teste_valley_folk } localization_key = zin_cname_teste_valley_folk }
+	text = { trigger = { has_country_flag = zin_culture2_quay_folk } localization_key = zin_cname_quay_folk }
+	text = { trigger = { has_country_flag = zin_culture2_reindeer_clans } localization_key = zin_cname_reindeer_clans }
+	text = { trigger = { has_country_flag = zin_culture2_woqood_sealers } localization_key = zin_cname_woqood_sealers }
+	text = { trigger = { has_country_flag = zin_culture2_naamis_sea_crown } localization_key = zin_cname_naamis_sea_crown }
+	text = { trigger = { has_country_flag = zin_culture2_orato_fishers } localization_key = zin_cname_orato_fishers }
+	text = { trigger = { has_country_flag = zin_culture2_miaed_pass_lords } localization_key = zin_cname_miaed_pass_lords }
+	text = { trigger = { has_country_flag = zin_culture2_wahatud_oasis_folk } localization_key = zin_cname_wahatud_oasis_folk }
+	text = { trigger = { has_country_flag = zin_culture2_king_warrens } localization_key = zin_cname_king_warrens }
+	text = { trigger = { has_country_flag = zin_culture2_spring_warrens } localization_key = zin_cname_spring_warrens }
+	text = { trigger = { has_country_flag = zin_culture2_ogre_clans } localization_key = zin_cname_ogre_clans }
+	text = { trigger = { has_country_flag = zin_culture2_plateau_soldiery } localization_key = zin_cname_plateau_soldiery }
+	text = { trigger = { has_country_flag = zin_culture2_cairn_giants } localization_key = zin_cname_cairn_giants }
+	text = { trigger = { has_country_flag = zin_culture2_height_yeti } localization_key = zin_cname_height_yeti }
+	text = { trigger = { has_country_flag = zin_culture2_nether_houses } localization_key = zin_cname_nether_houses }
+	text = { trigger = { has_country_flag = zin_culture2_veshazel_court } localization_key = zin_cname_veshazel_court }
 	text = { localization_key = zin_cname_second_none }
 }
 
@@ -239,7 +355,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_faith_lamp_furrow } localization_key = zin_fname_lamp_furrow }
 	text = { trigger = { has_country_flag = zin_faith_green_lords } localization_key = zin_fname_green_lords }
 	text = { trigger = { has_country_flag = zin_faith_horse_oath } localization_key = zin_fname_horse_oath }
-	text = { trigger = { has_country_flag = zin_faith_stone_vigil } localization_key = zin_fname_stone_vigil }
+	text = { trigger = { has_country_flag = zin_faith_pass_vigil } localization_key = zin_fname_pass_vigil }
 	text = { trigger = { has_country_flag = zin_faith_isle_tide } localization_key = zin_fname_isle_tide }
 	text = { trigger = { has_country_flag = zin_faith_old_knots } localization_key = zin_fname_old_knots }
 	text = { trigger = { has_country_flag = zin_faith_strait_litany } localization_key = zin_fname_strait_litany }
@@ -253,7 +369,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_faith_ransom_tide } localization_key = zin_fname_ransom_tide }
 	text = { trigger = { has_country_flag = zin_faith_well_oath } localization_key = zin_fname_well_oath }
 	text = { trigger = { has_country_flag = zin_faith_scale_creed } localization_key = zin_fname_scale_creed }
-	text = { trigger = { has_country_flag = zin_faith_river_temples } localization_key = zin_fname_river_temples }
+	text = { trigger = { has_country_flag = zin_faith_flood_stair } localization_key = zin_fname_flood_stair }
 	text = { trigger = { has_country_flag = zin_faith_lake_litany } localization_key = zin_fname_lake_litany }
 	text = { trigger = { has_country_flag = zin_faith_red_hearth } localization_key = zin_fname_red_hearth }
 	text = { trigger = { has_country_flag = zin_faith_wave_tally } localization_key = zin_fname_wave_tally }
@@ -274,6 +390,13 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_faith_warden_vigil } localization_key = zin_fname_warden_vigil }
 	text = { trigger = { has_country_flag = zin_faith_hearth_iron } localization_key = zin_fname_hearth_iron }
 	text = { trigger = { has_country_flag = zin_faith_none } localization_key = zin_fname_none }
+	text = { trigger = { has_country_flag = zin_faith_deep_reckoning } localization_key = zin_fname_deep_reckoning }
+	text = { trigger = { has_country_flag = zin_faith_hearth_table } localization_key = zin_fname_hearth_table }
+	text = { trigger = { has_country_flag = zin_faith_full_pot } localization_key = zin_fname_full_pot }
+	text = { trigger = { has_country_flag = zin_faith_road_due } localization_key = zin_fname_road_due }
+	text = { trigger = { has_country_flag = zin_faith_standing_silence } localization_key = zin_fname_standing_silence }
+	text = { trigger = { has_country_flag = zin_faith_pass_fires } localization_key = zin_fname_pass_fires }
+	text = { trigger = { has_country_flag = zin_faith_water_share } localization_key = zin_fname_water_share }
 	text = { localization_key = zin_fname_unknown }
 }
 
@@ -283,7 +406,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_faith_lamp_furrow } localization_key = zin_ftext_lamp_furrow }
 	text = { trigger = { has_country_flag = zin_faith_green_lords } localization_key = zin_ftext_green_lords }
 	text = { trigger = { has_country_flag = zin_faith_horse_oath } localization_key = zin_ftext_horse_oath }
-	text = { trigger = { has_country_flag = zin_faith_stone_vigil } localization_key = zin_ftext_stone_vigil }
+	text = { trigger = { has_country_flag = zin_faith_pass_vigil } localization_key = zin_ftext_pass_vigil }
 	text = { trigger = { has_country_flag = zin_faith_isle_tide } localization_key = zin_ftext_isle_tide }
 	text = { trigger = { has_country_flag = zin_faith_old_knots } localization_key = zin_ftext_old_knots }
 	text = { trigger = { has_country_flag = zin_faith_strait_litany } localization_key = zin_ftext_strait_litany }
@@ -297,7 +420,7 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_faith_ransom_tide } localization_key = zin_ftext_ransom_tide }
 	text = { trigger = { has_country_flag = zin_faith_well_oath } localization_key = zin_ftext_well_oath }
 	text = { trigger = { has_country_flag = zin_faith_scale_creed } localization_key = zin_ftext_scale_creed }
-	text = { trigger = { has_country_flag = zin_faith_river_temples } localization_key = zin_ftext_river_temples }
+	text = { trigger = { has_country_flag = zin_faith_flood_stair } localization_key = zin_ftext_flood_stair }
 	text = { trigger = { has_country_flag = zin_faith_lake_litany } localization_key = zin_ftext_lake_litany }
 	text = { trigger = { has_country_flag = zin_faith_red_hearth } localization_key = zin_ftext_red_hearth }
 	text = { trigger = { has_country_flag = zin_faith_wave_tally } localization_key = zin_ftext_wave_tally }
@@ -318,6 +441,13 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_faith_warden_vigil } localization_key = zin_ftext_warden_vigil }
 	text = { trigger = { has_country_flag = zin_faith_hearth_iron } localization_key = zin_ftext_hearth_iron }
 	text = { trigger = { has_country_flag = zin_faith_none } localization_key = zin_ftext_none }
+	text = { trigger = { has_country_flag = zin_faith_deep_reckoning } localization_key = zin_ftext_deep_reckoning }
+	text = { trigger = { has_country_flag = zin_faith_hearth_table } localization_key = zin_ftext_hearth_table }
+	text = { trigger = { has_country_flag = zin_faith_full_pot } localization_key = zin_ftext_full_pot }
+	text = { trigger = { has_country_flag = zin_faith_road_due } localization_key = zin_ftext_road_due }
+	text = { trigger = { has_country_flag = zin_faith_standing_silence } localization_key = zin_ftext_standing_silence }
+	text = { trigger = { has_country_flag = zin_faith_pass_fires } localization_key = zin_ftext_pass_fires }
+	text = { trigger = { has_country_flag = zin_faith_water_share } localization_key = zin_ftext_water_share }
 	text = { localization_key = zin_ftext_unknown }
 }
 
@@ -347,6 +477,11 @@ defined_text = {
 	text = { trigger = { has_country_flag = zin_language_orcish } localization_key = zin_lname_orcish }
 	text = { trigger = { has_country_flag = zin_language_trollish } localization_key = zin_lname_trollish }
 	text = { trigger = { has_country_flag = zin_language_yetic } localization_key = zin_lname_yetic }
+	text = { trigger = { has_country_flag = zin_language_dwarvish } localization_key = zin_lname_dwarvish }
+	text = { trigger = { has_country_flag = zin_language_gnomish } localization_key = zin_lname_gnomish }
+	text = { trigger = { has_country_flag = zin_language_hearthspeech } localization_key = zin_lname_hearthspeech }
+	text = { trigger = { has_country_flag = zin_language_pack_tongue } localization_key = zin_lname_pack_tongue }
+	text = { trigger = { has_country_flag = zin_language_lowspeech } localization_key = zin_lname_lowspeech }
 	text = { localization_key = zin_lname_unknown }
 }
 
@@ -355,7 +490,7 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture = 1 } } localization_key = zin_cname_lake_aenoran }
 	text = { trigger = { check_variable = { zin_state_culture = 2 } } localization_key = zin_cname_selen_ranger }
 	text = { trigger = { check_variable = { zin_state_culture = 3 } } localization_key = zin_cname_steppe_rider }
-	text = { trigger = { check_variable = { zin_state_culture = 4 } } localization_key = zin_cname_wall_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 4 } } localization_key = zin_cname_vale_folk }
 	text = { trigger = { check_variable = { zin_state_culture = 5 } } localization_key = zin_cname_march_folk }
 	text = { trigger = { check_variable = { zin_state_culture = 6 } } localization_key = zin_cname_isle_houses }
 	text = { trigger = { check_variable = { zin_state_culture = 7 } } localization_key = zin_cname_veiled_folk }
@@ -364,12 +499,12 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture = 10 } } localization_key = zin_cname_free_crowns_north }
 	text = { trigger = { check_variable = { zin_state_culture = 11 } } localization_key = zin_cname_dondor_brutes }
 	text = { trigger = { check_variable = { zin_state_culture = 12 } } localization_key = zin_cname_mirolon_wardens }
-	text = { trigger = { check_variable = { zin_state_culture = 13 } } localization_key = zin_cname_ember_lands_freeholds }
+	text = { trigger = { check_variable = { zin_state_culture = 13 } } localization_key = zin_cname_ember_freeholds }
 	text = { trigger = { check_variable = { zin_state_culture = 14 } } localization_key = zin_cname_winter_crown }
 	text = { trigger = { check_variable = { zin_state_culture = 15 } } localization_key = zin_cname_ice_clans }
-	text = { trigger = { check_variable = { zin_state_culture = 16 } } localization_key = zin_cname_isengard_warlords }
-	text = { trigger = { check_variable = { zin_state_culture = 17 } } localization_key = zin_cname_windwaith_seafarers }
-	text = { trigger = { check_variable = { zin_state_culture = 18 } } localization_key = zin_cname_gunwaith_clans }
+	text = { trigger = { check_variable = { zin_state_culture = 16 } } localization_key = zin_cname_melkgard_warlords }
+	text = { trigger = { check_variable = { zin_state_culture = 17 } } localization_key = zin_cname_vindael_seafarers }
+	text = { trigger = { check_variable = { zin_state_culture = 18 } } localization_key = zin_cname_gunwyn_clans }
 	text = { trigger = { check_variable = { zin_state_culture = 19 } } localization_key = zin_cname_girdon_wardens }
 	text = { trigger = { check_variable = { zin_state_culture = 20 } } localization_key = zin_cname_western_guilds }
 	text = { trigger = { check_variable = { zin_state_culture = 21 } } localization_key = zin_cname_buldor_companies }
@@ -405,6 +540,35 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture = 51 } } localization_key = zin_cname_grave_hosts }
 	text = { trigger = { check_variable = { zin_state_culture = 52 } } localization_key = zin_cname_zols_dead }
 	text = { trigger = { check_variable = { zin_state_culture = 53 } } localization_key = zin_cname_netherborn }
+	text = { trigger = { check_variable = { zin_state_culture = 54 } } localization_key = zin_cname_wall_delvers }
+	text = { trigger = { check_variable = { zin_state_culture = 55 } } localization_key = zin_cname_west_delvers }
+	text = { trigger = { check_variable = { zin_state_culture = 56 } } localization_key = zin_cname_north_delvers }
+	text = { trigger = { check_variable = { zin_state_culture = 57 } } localization_key = zin_cname_hearth_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 58 } } localization_key = zin_cname_holt_gnomes }
+	text = { trigger = { check_variable = { zin_state_culture = 59 } } localization_key = zin_cname_road_warrens }
+	text = { trigger = { check_variable = { zin_state_culture = 60 } } localization_key = zin_cname_baelim }
+	text = { trigger = { check_variable = { zin_state_culture = 61 } } localization_key = zin_cname_mycid_rings }
+	text = { trigger = { check_variable = { zin_state_culture = 62 } } localization_key = zin_cname_kingdom_forest_elves }
+	text = { trigger = { check_variable = { zin_state_culture = 63 } } localization_key = zin_cname_roost_keepers }
+	text = { trigger = { check_variable = { zin_state_culture = 64 } } localization_key = zin_cname_god_forest_keepers }
+	text = { trigger = { check_variable = { zin_state_culture = 65 } } localization_key = zin_cname_strait_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 66 } } localization_key = zin_cname_hilofrim_herders }
+	text = { trigger = { check_variable = { zin_state_culture = 67 } } localization_key = zin_cname_teste_valley_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 68 } } localization_key = zin_cname_quay_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 69 } } localization_key = zin_cname_reindeer_clans }
+	text = { trigger = { check_variable = { zin_state_culture = 70 } } localization_key = zin_cname_woqood_sealers }
+	text = { trigger = { check_variable = { zin_state_culture = 71 } } localization_key = zin_cname_naamis_sea_crown }
+	text = { trigger = { check_variable = { zin_state_culture = 72 } } localization_key = zin_cname_orato_fishers }
+	text = { trigger = { check_variable = { zin_state_culture = 73 } } localization_key = zin_cname_miaed_pass_lords }
+	text = { trigger = { check_variable = { zin_state_culture = 74 } } localization_key = zin_cname_wahatud_oasis_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 75 } } localization_key = zin_cname_king_warrens }
+	text = { trigger = { check_variable = { zin_state_culture = 76 } } localization_key = zin_cname_spring_warrens }
+	text = { trigger = { check_variable = { zin_state_culture = 77 } } localization_key = zin_cname_ogre_clans }
+	text = { trigger = { check_variable = { zin_state_culture = 78 } } localization_key = zin_cname_plateau_soldiery }
+	text = { trigger = { check_variable = { zin_state_culture = 79 } } localization_key = zin_cname_cairn_giants }
+	text = { trigger = { check_variable = { zin_state_culture = 80 } } localization_key = zin_cname_height_yeti }
+	text = { trigger = { check_variable = { zin_state_culture = 81 } } localization_key = zin_cname_nether_houses }
+	text = { trigger = { check_variable = { zin_state_culture = 82 } } localization_key = zin_cname_veshazel_court }
 	text = { localization_key = zin_cname_unknown }
 }
 
@@ -413,7 +577,7 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture = 1 } } localization_key = zin_cadj_lake_aenoran }
 	text = { trigger = { check_variable = { zin_state_culture = 2 } } localization_key = zin_cadj_selen_ranger }
 	text = { trigger = { check_variable = { zin_state_culture = 3 } } localization_key = zin_cadj_steppe_rider }
-	text = { trigger = { check_variable = { zin_state_culture = 4 } } localization_key = zin_cadj_wall_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 4 } } localization_key = zin_cadj_vale_folk }
 	text = { trigger = { check_variable = { zin_state_culture = 5 } } localization_key = zin_cadj_march_folk }
 	text = { trigger = { check_variable = { zin_state_culture = 6 } } localization_key = zin_cadj_isle_houses }
 	text = { trigger = { check_variable = { zin_state_culture = 7 } } localization_key = zin_cadj_veiled_folk }
@@ -422,12 +586,12 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture = 10 } } localization_key = zin_cadj_free_crowns_north }
 	text = { trigger = { check_variable = { zin_state_culture = 11 } } localization_key = zin_cadj_dondor_brutes }
 	text = { trigger = { check_variable = { zin_state_culture = 12 } } localization_key = zin_cadj_mirolon_wardens }
-	text = { trigger = { check_variable = { zin_state_culture = 13 } } localization_key = zin_cadj_ember_lands_freeholds }
+	text = { trigger = { check_variable = { zin_state_culture = 13 } } localization_key = zin_cadj_ember_freeholds }
 	text = { trigger = { check_variable = { zin_state_culture = 14 } } localization_key = zin_cadj_winter_crown }
 	text = { trigger = { check_variable = { zin_state_culture = 15 } } localization_key = zin_cadj_ice_clans }
-	text = { trigger = { check_variable = { zin_state_culture = 16 } } localization_key = zin_cadj_isengard_warlords }
-	text = { trigger = { check_variable = { zin_state_culture = 17 } } localization_key = zin_cadj_windwaith_seafarers }
-	text = { trigger = { check_variable = { zin_state_culture = 18 } } localization_key = zin_cadj_gunwaith_clans }
+	text = { trigger = { check_variable = { zin_state_culture = 16 } } localization_key = zin_cadj_melkgard_warlords }
+	text = { trigger = { check_variable = { zin_state_culture = 17 } } localization_key = zin_cadj_vindael_seafarers }
+	text = { trigger = { check_variable = { zin_state_culture = 18 } } localization_key = zin_cadj_gunwyn_clans }
 	text = { trigger = { check_variable = { zin_state_culture = 19 } } localization_key = zin_cadj_girdon_wardens }
 	text = { trigger = { check_variable = { zin_state_culture = 20 } } localization_key = zin_cadj_western_guilds }
 	text = { trigger = { check_variable = { zin_state_culture = 21 } } localization_key = zin_cadj_buldor_companies }
@@ -463,6 +627,35 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture = 51 } } localization_key = zin_cadj_grave_hosts }
 	text = { trigger = { check_variable = { zin_state_culture = 52 } } localization_key = zin_cadj_zols_dead }
 	text = { trigger = { check_variable = { zin_state_culture = 53 } } localization_key = zin_cadj_netherborn }
+	text = { trigger = { check_variable = { zin_state_culture = 54 } } localization_key = zin_cadj_wall_delvers }
+	text = { trigger = { check_variable = { zin_state_culture = 55 } } localization_key = zin_cadj_west_delvers }
+	text = { trigger = { check_variable = { zin_state_culture = 56 } } localization_key = zin_cadj_north_delvers }
+	text = { trigger = { check_variable = { zin_state_culture = 57 } } localization_key = zin_cadj_hearth_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 58 } } localization_key = zin_cadj_holt_gnomes }
+	text = { trigger = { check_variable = { zin_state_culture = 59 } } localization_key = zin_cadj_road_warrens }
+	text = { trigger = { check_variable = { zin_state_culture = 60 } } localization_key = zin_cadj_baelim }
+	text = { trigger = { check_variable = { zin_state_culture = 61 } } localization_key = zin_cadj_mycid_rings }
+	text = { trigger = { check_variable = { zin_state_culture = 62 } } localization_key = zin_cadj_kingdom_forest_elves }
+	text = { trigger = { check_variable = { zin_state_culture = 63 } } localization_key = zin_cadj_roost_keepers }
+	text = { trigger = { check_variable = { zin_state_culture = 64 } } localization_key = zin_cadj_god_forest_keepers }
+	text = { trigger = { check_variable = { zin_state_culture = 65 } } localization_key = zin_cadj_strait_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 66 } } localization_key = zin_cadj_hilofrim_herders }
+	text = { trigger = { check_variable = { zin_state_culture = 67 } } localization_key = zin_cadj_teste_valley_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 68 } } localization_key = zin_cadj_quay_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 69 } } localization_key = zin_cadj_reindeer_clans }
+	text = { trigger = { check_variable = { zin_state_culture = 70 } } localization_key = zin_cadj_woqood_sealers }
+	text = { trigger = { check_variable = { zin_state_culture = 71 } } localization_key = zin_cadj_naamis_sea_crown }
+	text = { trigger = { check_variable = { zin_state_culture = 72 } } localization_key = zin_cadj_orato_fishers }
+	text = { trigger = { check_variable = { zin_state_culture = 73 } } localization_key = zin_cadj_miaed_pass_lords }
+	text = { trigger = { check_variable = { zin_state_culture = 74 } } localization_key = zin_cadj_wahatud_oasis_folk }
+	text = { trigger = { check_variable = { zin_state_culture = 75 } } localization_key = zin_cadj_king_warrens }
+	text = { trigger = { check_variable = { zin_state_culture = 76 } } localization_key = zin_cadj_spring_warrens }
+	text = { trigger = { check_variable = { zin_state_culture = 77 } } localization_key = zin_cadj_ogre_clans }
+	text = { trigger = { check_variable = { zin_state_culture = 78 } } localization_key = zin_cadj_plateau_soldiery }
+	text = { trigger = { check_variable = { zin_state_culture = 79 } } localization_key = zin_cadj_cairn_giants }
+	text = { trigger = { check_variable = { zin_state_culture = 80 } } localization_key = zin_cadj_height_yeti }
+	text = { trigger = { check_variable = { zin_state_culture = 81 } } localization_key = zin_cadj_nether_houses }
+	text = { trigger = { check_variable = { zin_state_culture = 82 } } localization_key = zin_cadj_veshazel_court }
 	text = { localization_key = zin_cadj_unknown }
 }
 
@@ -471,7 +664,7 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture2 = 1 } } localization_key = zin_cname_lake_aenoran }
 	text = { trigger = { check_variable = { zin_state_culture2 = 2 } } localization_key = zin_cname_selen_ranger }
 	text = { trigger = { check_variable = { zin_state_culture2 = 3 } } localization_key = zin_cname_steppe_rider }
-	text = { trigger = { check_variable = { zin_state_culture2 = 4 } } localization_key = zin_cname_wall_folk }
+	text = { trigger = { check_variable = { zin_state_culture2 = 4 } } localization_key = zin_cname_vale_folk }
 	text = { trigger = { check_variable = { zin_state_culture2 = 5 } } localization_key = zin_cname_march_folk }
 	text = { trigger = { check_variable = { zin_state_culture2 = 6 } } localization_key = zin_cname_isle_houses }
 	text = { trigger = { check_variable = { zin_state_culture2 = 7 } } localization_key = zin_cname_veiled_folk }
@@ -480,12 +673,12 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture2 = 10 } } localization_key = zin_cname_free_crowns_north }
 	text = { trigger = { check_variable = { zin_state_culture2 = 11 } } localization_key = zin_cname_dondor_brutes }
 	text = { trigger = { check_variable = { zin_state_culture2 = 12 } } localization_key = zin_cname_mirolon_wardens }
-	text = { trigger = { check_variable = { zin_state_culture2 = 13 } } localization_key = zin_cname_ember_lands_freeholds }
+	text = { trigger = { check_variable = { zin_state_culture2 = 13 } } localization_key = zin_cname_ember_freeholds }
 	text = { trigger = { check_variable = { zin_state_culture2 = 14 } } localization_key = zin_cname_winter_crown }
 	text = { trigger = { check_variable = { zin_state_culture2 = 15 } } localization_key = zin_cname_ice_clans }
-	text = { trigger = { check_variable = { zin_state_culture2 = 16 } } localization_key = zin_cname_isengard_warlords }
-	text = { trigger = { check_variable = { zin_state_culture2 = 17 } } localization_key = zin_cname_windwaith_seafarers }
-	text = { trigger = { check_variable = { zin_state_culture2 = 18 } } localization_key = zin_cname_gunwaith_clans }
+	text = { trigger = { check_variable = { zin_state_culture2 = 16 } } localization_key = zin_cname_melkgard_warlords }
+	text = { trigger = { check_variable = { zin_state_culture2 = 17 } } localization_key = zin_cname_vindael_seafarers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 18 } } localization_key = zin_cname_gunwyn_clans }
 	text = { trigger = { check_variable = { zin_state_culture2 = 19 } } localization_key = zin_cname_girdon_wardens }
 	text = { trigger = { check_variable = { zin_state_culture2 = 20 } } localization_key = zin_cname_western_guilds }
 	text = { trigger = { check_variable = { zin_state_culture2 = 21 } } localization_key = zin_cname_buldor_companies }
@@ -521,6 +714,35 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_culture2 = 51 } } localization_key = zin_cname_grave_hosts }
 	text = { trigger = { check_variable = { zin_state_culture2 = 52 } } localization_key = zin_cname_zols_dead }
 	text = { trigger = { check_variable = { zin_state_culture2 = 53 } } localization_key = zin_cname_netherborn }
+	text = { trigger = { check_variable = { zin_state_culture2 = 54 } } localization_key = zin_cname_wall_delvers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 55 } } localization_key = zin_cname_west_delvers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 56 } } localization_key = zin_cname_north_delvers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 57 } } localization_key = zin_cname_hearth_folk }
+	text = { trigger = { check_variable = { zin_state_culture2 = 58 } } localization_key = zin_cname_holt_gnomes }
+	text = { trigger = { check_variable = { zin_state_culture2 = 59 } } localization_key = zin_cname_road_warrens }
+	text = { trigger = { check_variable = { zin_state_culture2 = 60 } } localization_key = zin_cname_baelim }
+	text = { trigger = { check_variable = { zin_state_culture2 = 61 } } localization_key = zin_cname_mycid_rings }
+	text = { trigger = { check_variable = { zin_state_culture2 = 62 } } localization_key = zin_cname_kingdom_forest_elves }
+	text = { trigger = { check_variable = { zin_state_culture2 = 63 } } localization_key = zin_cname_roost_keepers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 64 } } localization_key = zin_cname_god_forest_keepers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 65 } } localization_key = zin_cname_strait_folk }
+	text = { trigger = { check_variable = { zin_state_culture2 = 66 } } localization_key = zin_cname_hilofrim_herders }
+	text = { trigger = { check_variable = { zin_state_culture2 = 67 } } localization_key = zin_cname_teste_valley_folk }
+	text = { trigger = { check_variable = { zin_state_culture2 = 68 } } localization_key = zin_cname_quay_folk }
+	text = { trigger = { check_variable = { zin_state_culture2 = 69 } } localization_key = zin_cname_reindeer_clans }
+	text = { trigger = { check_variable = { zin_state_culture2 = 70 } } localization_key = zin_cname_woqood_sealers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 71 } } localization_key = zin_cname_naamis_sea_crown }
+	text = { trigger = { check_variable = { zin_state_culture2 = 72 } } localization_key = zin_cname_orato_fishers }
+	text = { trigger = { check_variable = { zin_state_culture2 = 73 } } localization_key = zin_cname_miaed_pass_lords }
+	text = { trigger = { check_variable = { zin_state_culture2 = 74 } } localization_key = zin_cname_wahatud_oasis_folk }
+	text = { trigger = { check_variable = { zin_state_culture2 = 75 } } localization_key = zin_cname_king_warrens }
+	text = { trigger = { check_variable = { zin_state_culture2 = 76 } } localization_key = zin_cname_spring_warrens }
+	text = { trigger = { check_variable = { zin_state_culture2 = 77 } } localization_key = zin_cname_ogre_clans }
+	text = { trigger = { check_variable = { zin_state_culture2 = 78 } } localization_key = zin_cname_plateau_soldiery }
+	text = { trigger = { check_variable = { zin_state_culture2 = 79 } } localization_key = zin_cname_cairn_giants }
+	text = { trigger = { check_variable = { zin_state_culture2 = 80 } } localization_key = zin_cname_height_yeti }
+	text = { trigger = { check_variable = { zin_state_culture2 = 81 } } localization_key = zin_cname_nether_houses }
+	text = { trigger = { check_variable = { zin_state_culture2 = 82 } } localization_key = zin_cname_veshazel_court }
 	text = { localization_key = zin_cname_second_none }
 }
 
@@ -530,7 +752,7 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_faith = 2 } } localization_key = zin_fname_lamp_furrow }
 	text = { trigger = { check_variable = { zin_state_faith = 3 } } localization_key = zin_fname_green_lords }
 	text = { trigger = { check_variable = { zin_state_faith = 4 } } localization_key = zin_fname_horse_oath }
-	text = { trigger = { check_variable = { zin_state_faith = 5 } } localization_key = zin_fname_stone_vigil }
+	text = { trigger = { check_variable = { zin_state_faith = 5 } } localization_key = zin_fname_pass_vigil }
 	text = { trigger = { check_variable = { zin_state_faith = 6 } } localization_key = zin_fname_isle_tide }
 	text = { trigger = { check_variable = { zin_state_faith = 7 } } localization_key = zin_fname_old_knots }
 	text = { trigger = { check_variable = { zin_state_faith = 8 } } localization_key = zin_fname_strait_litany }
@@ -544,7 +766,7 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_faith = 16 } } localization_key = zin_fname_ransom_tide }
 	text = { trigger = { check_variable = { zin_state_faith = 17 } } localization_key = zin_fname_well_oath }
 	text = { trigger = { check_variable = { zin_state_faith = 18 } } localization_key = zin_fname_scale_creed }
-	text = { trigger = { check_variable = { zin_state_faith = 19 } } localization_key = zin_fname_river_temples }
+	text = { trigger = { check_variable = { zin_state_faith = 19 } } localization_key = zin_fname_flood_stair }
 	text = { trigger = { check_variable = { zin_state_faith = 20 } } localization_key = zin_fname_lake_litany }
 	text = { trigger = { check_variable = { zin_state_faith = 21 } } localization_key = zin_fname_red_hearth }
 	text = { trigger = { check_variable = { zin_state_faith = 22 } } localization_key = zin_fname_wave_tally }
@@ -565,5 +787,12 @@ defined_text = {
 	text = { trigger = { check_variable = { zin_state_faith = 37 } } localization_key = zin_fname_warden_vigil }
 	text = { trigger = { check_variable = { zin_state_faith = 38 } } localization_key = zin_fname_hearth_iron }
 	text = { trigger = { check_variable = { zin_state_faith = 39 } } localization_key = zin_fname_none }
+	text = { trigger = { check_variable = { zin_state_faith = 40 } } localization_key = zin_fname_deep_reckoning }
+	text = { trigger = { check_variable = { zin_state_faith = 41 } } localization_key = zin_fname_hearth_table }
+	text = { trigger = { check_variable = { zin_state_faith = 42 } } localization_key = zin_fname_full_pot }
+	text = { trigger = { check_variable = { zin_state_faith = 43 } } localization_key = zin_fname_road_due }
+	text = { trigger = { check_variable = { zin_state_faith = 44 } } localization_key = zin_fname_standing_silence }
+	text = { trigger = { check_variable = { zin_state_faith = 45 } } localization_key = zin_fname_pass_fires }
+	text = { trigger = { check_variable = { zin_state_faith = 46 } } localization_key = zin_fname_water_share }
 	text = { localization_key = zin_fname_unknown }
 }

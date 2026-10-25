@@ -9,42 +9,19 @@ zin_default_navy_sea_power = {
 	}
 	enable = {
 		OR = {
-			original_tag = Y0C
-			original_tag = Y0D
-			original_tag = Y0E
-			original_tag = Y0F
-			original_tag = Y0G
-			original_tag = Y39
-			original_tag = Y3A
-			original_tag = Y3B
-			original_tag = Y3C
-			original_tag = Y3D
-			original_tag = Y3E
-			original_tag = Y3F
-			original_tag = Y3G
-			original_tag = Y3H
-			original_tag = Y3I
-			original_tag = Y3J
-			original_tag = Y3K
-			original_tag = Y3L
-			original_tag = Y3M
-			original_tag = Y3N
-			original_tag = Y3O
-			original_tag = Y3P
-			original_tag = Y3Q
-			original_tag = Y3R
-			original_tag = Y3S
-			original_tag = Y3T
-			original_tag = Y3U
-			original_tag = Y3V
-			original_tag = Y3W
-			original_tag = Y3X
-			original_tag = Y3Y
-			original_tag = Y3Z
-			original_tag = Y40
-			original_tag = Y41
-			original_tag = Y42
-			original_tag = Y6X
+			original_tag = ADE
+			original_tag = BEN
+			original_tag = FNG
+			original_tag = GAA
+			original_tag = HLN
+			original_tag = LEN
+			original_tag = LER
+			original_tag = NND
+			original_tag = PLL
+			original_tag = RAE
+			original_tag = SEI
+			original_tag = SNT
+			original_tag = WND
 		}
 	}
 	abort_when_not_enabled = yes
@@ -96,45 +73,22 @@ zin_default_navy_coastal = {
 	}
 	enable = {
 		any_owned_state = { is_coastal = yes }
-		NOT = { original_tag = Y0U }
+		NOT = { original_tag = ZOL }
 		NOT = {
 			OR = {
-				original_tag = Y0C
-				original_tag = Y0D
-				original_tag = Y0E
-				original_tag = Y0F
-				original_tag = Y0G
-				original_tag = Y39
-				original_tag = Y3A
-				original_tag = Y3B
-				original_tag = Y3C
-				original_tag = Y3D
-				original_tag = Y3E
-				original_tag = Y3F
-				original_tag = Y3G
-				original_tag = Y3H
-				original_tag = Y3I
-				original_tag = Y3J
-				original_tag = Y3K
-				original_tag = Y3L
-				original_tag = Y3M
-				original_tag = Y3N
-				original_tag = Y3O
-				original_tag = Y3P
-				original_tag = Y3Q
-				original_tag = Y3R
-				original_tag = Y3S
-				original_tag = Y3T
-				original_tag = Y3U
-				original_tag = Y3V
-				original_tag = Y3W
-				original_tag = Y3X
-				original_tag = Y3Y
-				original_tag = Y3Z
-				original_tag = Y40
-				original_tag = Y41
-				original_tag = Y42
-				original_tag = Y6X
+				original_tag = ADE
+				original_tag = BEN
+				original_tag = FNG
+				original_tag = GAA
+				original_tag = HLN
+				original_tag = LEN
+				original_tag = LER
+				original_tag = NND
+				original_tag = PLL
+				original_tag = RAE
+				original_tag = SEI
+				original_tag = SNT
+				original_tag = WND
 			}
 		}
 	}
@@ -186,7 +140,7 @@ zin_default_navy_zol = {
 		always = yes
 	}
 	enable = {
-		original_tag = Y0U
+		original_tag = ZOL
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

@@ -7,6 +7,36 @@ zin_rules_is_historical = {
 zin_rules_is_free = {
 	has_game_rule = { rule = zin_rule_historical_path option = FREE }
 }
+# zin_rule_start_variety forces OFF, or it is DEFAULT and the path rule is HISTORICAL. RANDOM makes it false.
+zin_rules_ai_branch_variety_off = {
+	OR = {
+		has_game_rule = { rule = zin_rule_start_variety option = OFF }
+		AND = {
+			has_game_rule = { rule = zin_rule_start_variety option = DEFAULT }
+			has_game_rule = { rule = zin_rule_historical_path option = HISTORICAL }
+		}
+	}
+}
+# zin_rule_start_variety forces LIGHT, or it is DEFAULT and the path rule is PLAUSIBLE. RANDOM makes it false.
+zin_rules_ai_branch_variety_light = {
+	OR = {
+		has_game_rule = { rule = zin_rule_start_variety option = LIGHT }
+		AND = {
+			has_game_rule = { rule = zin_rule_start_variety option = DEFAULT }
+			has_game_rule = { rule = zin_rule_historical_path option = PLAUSIBLE }
+		}
+	}
+}
+# zin_rule_start_variety forces FULL, or it is DEFAULT and the path rule is FREE. RANDOM makes it false.
+zin_rules_ai_branch_variety_full = {
+	OR = {
+		has_game_rule = { rule = zin_rule_start_variety option = FULL }
+		AND = {
+			has_game_rule = { rule = zin_rule_start_variety option = DEFAULT }
+			has_game_rule = { rule = zin_rule_historical_path option = FREE }
+		}
+	}
+}
 # zin_rule_ai_aenor_succession forces GOLDEN_COURT. RANDOM makes it false.
 zin_rules_ai_branch_aenor_golden_court = {
 	OR = {

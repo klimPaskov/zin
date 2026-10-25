@@ -20,142 +20,142 @@ zin_magical_forest_recruit = {
 zin_magical_forest_kin_goodwill = {
 	if = {
 		limit = {
-			country_exists = Y83
+			country_exists = LCC
 		}
-		set_temp_variable = { zin_arg_target = Y83 }
+		set_temp_variable = { zin_arg_target = LCC }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y82
+			country_exists = ELD
 		}
-		set_temp_variable = { zin_arg_target = Y82 }
+		set_temp_variable = { zin_arg_target = ELD }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y84
+			country_exists = LUV
 		}
-		set_temp_variable = { zin_arg_target = Y84 }
+		set_temp_variable = { zin_arg_target = LUV }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y85
+			country_exists = LCC
 		}
-		set_temp_variable = { zin_arg_target = Y85 }
+		set_temp_variable = { zin_arg_target = LCC }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y86
+			country_exists = LCC
 		}
-		set_temp_variable = { zin_arg_target = Y86 }
+		set_temp_variable = { zin_arg_target = LCC }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y0V
+			country_exists = HRR
 		}
-		set_temp_variable = { zin_arg_target = Y0V }
+		set_temp_variable = { zin_arg_target = HRR }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y0W
+			country_exists = ANE
 		}
-		set_temp_variable = { zin_arg_target = Y0W }
+		set_temp_variable = { zin_arg_target = ANE }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y0X
+			country_exists = NLR
 		}
-		set_temp_variable = { zin_arg_target = Y0X }
+		set_temp_variable = { zin_arg_target = NLR }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y7Y
+			country_exists = ELD
 		}
-		set_temp_variable = { zin_arg_target = Y7Y }
+		set_temp_variable = { zin_arg_target = ELD }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y80
+			country_exists = DNL
 		}
-		set_temp_variable = { zin_arg_target = Y80 }
+		set_temp_variable = { zin_arg_target = DNL }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y89
+			country_exists = ANE
 		}
-		set_temp_variable = { zin_arg_target = Y89 }
+		set_temp_variable = { zin_arg_target = ANE }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y7Z
+			country_exists = NLR
 		}
-		set_temp_variable = { zin_arg_target = Y7Z }
+		set_temp_variable = { zin_arg_target = NLR }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y8B
+			country_exists = MAG
 		}
-		set_temp_variable = { zin_arg_target = Y8B }
+		set_temp_variable = { zin_arg_target = MAG }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y88
+			country_exists = ANE
 		}
-		set_temp_variable = { zin_arg_target = Y88 }
+		set_temp_variable = { zin_arg_target = ANE }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y7X
+			country_exists = TES
 		}
-		set_temp_variable = { zin_arg_target = Y7X }
+		set_temp_variable = { zin_arg_target = TES }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y81
+			country_exists = ELD
 		}
-		set_temp_variable = { zin_arg_target = Y81 }
+		set_temp_variable = { zin_arg_target = ELD }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y87
+			country_exists = YAV
 		}
-		set_temp_variable = { zin_arg_target = Y87 }
+		set_temp_variable = { zin_arg_target = YAV }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y7W
+			country_exists = HRR
 		}
-		set_temp_variable = { zin_arg_target = Y7W }
+		set_temp_variable = { zin_arg_target = HRR }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y7V
+			country_exists = HRR
 		}
-		set_temp_variable = { zin_arg_target = Y7V }
+		set_temp_variable = { zin_arg_target = HRR }
 		zin_elves_goodwill = yes
 	}
 	if = {
 		limit = {
-			country_exists = Y8A
+			country_exists = MAG
 		}
-		set_temp_variable = { zin_arg_target = Y8A }
+		set_temp_variable = { zin_arg_target = MAG }
 		zin_elves_goodwill = yes
 	}
 }

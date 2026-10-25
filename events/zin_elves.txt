@@ -166,10 +166,10 @@ country_event = {
 		zin_elves_add_wall_grievance = yes
 		set_global_flag = zin_elves_dragon_paid
 		if = {
-			limit = { country_exists = Y0L }
-			set_temp_variable = { zin_arg_target = Y0L }
+			limit = { country_exists = AEN }
+			set_temp_variable = { zin_arg_target = AEN }
 			zin_elves_goodwill = yes
-			Y0L = { country_event = { id = zin_elves.8 } }
+			AEN = { country_event = { id = zin_elves.8 } }
 		}
 	}
 	option = {
@@ -181,9 +181,9 @@ country_event = {
 		zin_elves_add_wall_grievance = yes
 		clr_global_flag = zin_elves_dragon_paid
 		if = {
-			limit = { country_exists = Y0L }
-			add_opinion_modifier = { target = Y0L modifier = zin_opinion_cold_roads }
-			Y0L = { country_event = { id = zin_elves.8 } }
+			limit = { country_exists = AEN }
+			add_opinion_modifier = { target = AEN modifier = zin_opinion_cold_roads }
+			AEN = { country_event = { id = zin_elves.8 } }
 		}
 	}
 }
@@ -232,10 +232,10 @@ country_event = {
 	desc = zin_elves.20.d
 	picture = GFX_zin_evt_generic_wilds
 	trigger = {
-		original_tag = Y0V
-		country_exists = Y0W
+		original_tag = HRR
+		country_exists = ANE
 		NOT = { has_war = yes }
-		Y0W = { NOT = { has_war = yes } }
+		ANE = { NOT = { has_war = yes } }
 	}
 	mean_time_to_happen = {
 		days = 540
@@ -265,10 +265,10 @@ country_event = {
 	desc = zin_elves.21.d
 	picture = GFX_zin_evt_generic_wilds
 	trigger = {
-		original_tag = Y0W
-		country_exists = Y0V
+		original_tag = ANE
+		country_exists = HRR
 		NOT = { has_war = yes }
-		Y0V = { NOT = { has_war = yes } }
+		HRR = { NOT = { has_war = yes } }
 	}
 	mean_time_to_happen = {
 		days = 540
@@ -301,11 +301,11 @@ country_event = {
 	trigger = {
 		zin_world_is_dragon_keeper = yes
 		zin_elves_is_magical_realm = yes
-		country_exists = Y0V
-		country_exists = Y0W
+		country_exists = HRR
+		country_exists = ANE
 		NOT = { has_war = yes }
-		Y0V = { NOT = { has_war = yes } }
-		Y0W = { NOT = { has_war = yes } }
+		HRR = { NOT = { has_war = yes } }
+		ANE = { NOT = { has_war = yes } }
 	}
 	mean_time_to_happen = {
 		days = 540
@@ -378,8 +378,8 @@ country_event = {
 	trigger = {
 		has_global_flag = zin_elves_feud
 		OR = {
-			has_war_with = Y0V
-			has_war_with = Y0W
+			has_war_with = HRR
+			has_war_with = ANE
 		}
 	}
 	timeout_days = 30
@@ -389,11 +389,11 @@ country_event = {
 			base = 80
 		}
 		if = {
-			limit = { original_tag = Y0V }
-			white_peace = Y0W
+			limit = { original_tag = HRR }
+			white_peace = ANE
 		}
 		else = {
-			white_peace = Y0V
+			white_peace = HRR
 		}
 		clr_global_flag = zin_elves_feud
 	}
@@ -422,9 +422,9 @@ country_event = {
 		every_country = {
 			limit = {
 				zin_elves_is_magical_realm = yes
-				NOT = { original_tag = Y8F }
+				NOT = { original_tag = MAG }
 			}
-			add_opinion_modifier = { target = Y8F modifier = zin_opinion_elven_goodwill }
+			add_opinion_modifier = { target = MAG modifier = zin_opinion_elven_goodwill }
 		}
 	}
 	option = {
@@ -491,14 +491,14 @@ country_event = {
 				check_variable = { var = global.zin_elves_rivalry value = 60 compare = greater_than_or_equals }
 				OR = {
 					AND = {
-						original_tag = Y0V
-						country_exists = Y0W
-						Y0W = { zin_elves_in_kindred = yes }
+						original_tag = HRR
+						country_exists = ANE
+						ANE = { zin_elves_in_kindred = yes }
 					}
 					AND = {
-						original_tag = Y0W
-						country_exists = Y0V
-						Y0V = { zin_elves_in_kindred = yes }
+						original_tag = ANE
+						country_exists = HRR
+						HRR = { zin_elves_in_kindred = yes }
 					}
 				}
 			}
@@ -547,7 +547,7 @@ country_event = {
 		ai_chance = {
 			base = 100
 		}
-		add_opinion_modifier = { target = Y8F modifier = zin_opinion_elven_goodwill }
+		add_opinion_modifier = { target = MAG modifier = zin_opinion_elven_goodwill }
 	}
 }
 

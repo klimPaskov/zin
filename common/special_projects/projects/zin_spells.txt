@@ -135,8 +135,8 @@ zin_sp_calm_waters = {
 			any_owned_state = {
 				is_coastal = yes
 			}
-			NOT = { original_tag = Y8D }
-			NOT = { original_tag = Y0U }
+			NOT = { original_tag = PUV }
+			NOT = { original_tag = ZOL }
 		}
 	}
 	breakthrough_cost = {
@@ -352,7 +352,7 @@ zin_sp_wellspring_rite = {
 	}
 	visible = {
 		FROM = {
-			NOT = { original_tag = Y0U }
+			NOT = { original_tag = ZOL }
 		}
 	}
 	breakthrough_cost = {
@@ -401,8 +401,8 @@ zin_sp_lifting_the_curse = {
 	}
 	visible = {
 		FROM = {
-			NOT = { original_tag = Y0U }
-			NOT = { original_tag = Y8D }
+			NOT = { original_tag = ZOL }
+			NOT = { original_tag = PUV }
 		}
 	}
 	breakthrough_cost = {
@@ -511,7 +511,7 @@ zin_sp_grave_binding_rite = {
 	visible = {
 		FROM = {
 			OR = {
-				original_tag = Y8D
+				original_tag = PUV
 			}
 		}
 	}

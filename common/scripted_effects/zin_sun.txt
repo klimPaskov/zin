@@ -3,14 +3,14 @@
 # sight codes: north 1, south 2, seas 3, east 4, centre 5, any 0.
 
 zin_sun_add_gala_counsel = {
-	Y6X = {
+	GAA = {
 		add_to_variable = { zin_gala_counsel = zin_arg_value }
 		clamp_variable = { var = zin_gala_counsel min = 0 max = 100 }
 	}
 }
 
 zin_sun_add_old_lords = {
-	Y6X = {
+	GAA = {
 		add_to_variable = { zin_gala_old_lords = zin_arg_value }
 		clamp_variable = { var = zin_gala_old_lords min = 0 max = 5 }
 	}
@@ -46,12 +46,12 @@ zin_sun_startup = {
 	set_variable = { global.zin_sun_concord = 40 }
 	set_variable = { global.zin_mirror_clarity = 60 }
 	set_variable = { global.zin_sun_league_peace_days = 0 }
-	Y6X = {
+	GAA = {
 		set_variable = { zin_gala_counsel = 50 }
 		set_variable = { zin_gala_old_lords = 1 }
 		set_variable = { zin_sun_last_sight = 0 }
 	}
-	Y6U = { set_country_flag = zin_sun_council_president }
+	LIG = { set_country_flag = zin_sun_council_president }
 }
 
 zin_sun_mirror_vision = {
@@ -153,7 +153,7 @@ zin_sun_send_warning = {
 			check_variable = { zin_sun_pick = 0 }
 			check_variable = { zin_arg_sight = 5 }
 			has_country_flag = zin_sun_sight_centre
-			var:zin_arg_target = { original_tag = Y0L }
+			var:zin_arg_target = { original_tag = AEN }
 		}
 		set_temp_variable = { zin_sun_pick = 5 }
 	}
@@ -194,7 +194,7 @@ zin_sun_send_warning = {
 			check_variable = { zin_sun_pick = 0 }
 			check_variable = { zin_arg_sight = 0 }
 			has_country_flag = zin_sun_sight_centre
-			var:zin_arg_target = { original_tag = Y0L }
+			var:zin_arg_target = { original_tag = AEN }
 		}
 		set_temp_variable = { zin_sun_pick = 5 }
 	}
@@ -269,7 +269,7 @@ zin_sun_send_warning = {
 	if = {
 		limit = { check_variable = { zin_sun_pick > 0 } }
 		if = {
-			limit = { var:zin_arg_target = { original_tag = Y0L } }
+			limit = { var:zin_arg_target = { original_tag = AEN } }
 			set_country_flag = zin_sun_warned_aenor
 		}
 		var:zin_arg_target = {
@@ -283,7 +283,7 @@ zin_sun_prophecy_fear = {
 	add_war_support = 0.05
 	set_temp_variable = { zin_arg_value = 1 }
 	zin_world_add_gathering_dark = yes
-	Y6X = { country_event = { id = zin_sun.21 } }
+	GAA = { country_event = { id = zin_sun.21 } }
 }
 
 zin_sun_heed_warning = {
@@ -314,7 +314,7 @@ zin_sun_heed_warning = {
 		zin_afrit_add_veil = yes
 	}
 	if = {
-		limit = { Y6X = { has_country_flag = zin_gala_cautious_seers } }
+		limit = { GAA = { has_country_flag = zin_gala_cautious_seers } }
 		random_list = {
 			10 = { zin_sun_prophecy_fear = yes }
 			90 = { }
@@ -342,7 +342,7 @@ zin_sun_form_noon_league = {
 			limit = {
 				OR = {
 					zin_sun_is_sunhot_realm = yes
-					original_tag = Y6X
+					original_tag = GAA
 				}
 				NOT = { is_in_faction_with = PREV }
 				is_in_faction = no
@@ -364,18 +364,18 @@ zin_sun_lorien_rides = {
 		zin_sun_add_old_lords = yes
 	}
 	if = {
-		limit = { NOT = { has_war_with = Y0U } }
+		limit = { NOT = { has_war_with = ZOL } }
 		if = {
 			limit = {
 				has_variable = global.zin_eindil_host
-				var:global.zin_eindil_host = { has_war_with = Y0U }
+				var:global.zin_eindil_host = { has_war_with = ZOL }
 			}
 			var:global.zin_eindil_host = {
-				Y6X = { add_to_war = { targeted_alliance = PREV enemy = Y0U hostility_reason = asked_to_join } }
+				GAA = { add_to_war = { targeted_alliance = PREV enemy = ZOL hostility_reason = asked_to_join } }
 			}
 		}
 		else = {
-			Y0U = {
+			ZOL = {
 				every_enemy_country = {
 					set_variable = { zin_sun_mid_states = 0 }
 					every_controlled_state = {
@@ -385,25 +385,25 @@ zin_sun_lorien_rides = {
 				}
 			}
 			if = {
-				limit = { any_country = { has_war_with = Y0U } }
+				limit = { any_country = { has_war_with = ZOL } }
 				random_country = {
 					limit = {
-						has_war_with = Y0U
-						NOT = { original_tag = Y6X }
+						has_war_with = ZOL
+						NOT = { original_tag = GAA }
 						NOT = {
 							any_other_country = {
-								has_war_with = Y0U
-								NOT = { original_tag = Y6X }
+								has_war_with = ZOL
+								NOT = { original_tag = GAA }
 								check_variable = { zin_sun_mid_states > PREV.zin_sun_mid_states }
 							}
 						}
 					}
-					Y6X = { add_to_war = { targeted_alliance = PREV enemy = Y0U hostility_reason = asked_to_join } }
+					GAA = { add_to_war = { targeted_alliance = PREV enemy = ZOL hostility_reason = asked_to_join } }
 				}
 			}
 			else = {
 				set_country_flag = { flag = zin_story_war days = 1 }
-				declare_war_on = { target = Y0U type = annex_everything }
+				declare_war_on = { target = ZOL type = annex_everything }
 			}
 		}
 	}
@@ -414,8 +414,8 @@ zin_sun_lorien_rides = {
 	clamp_temp_variable = { var = zin_sun_stand_days min = 14 max = 49 }
 	every_country = {
 		limit = {
-			has_war_with = Y0U
-			Y6X = {
+			has_war_with = ZOL
+			GAA = {
 				check_variable = { zin_gala_old_lords > -0.01 }
 				check_variable = { zin_gala_old_lords < 1.99 }
 			}
@@ -424,8 +424,8 @@ zin_sun_lorien_rides = {
 	}
 	every_country = {
 		limit = {
-			has_war_with = Y0U
-			Y6X = {
+			has_war_with = ZOL
+			GAA = {
 				check_variable = { zin_gala_old_lords > 1.99 }
 				check_variable = { zin_gala_old_lords < 3.99 }
 			}
@@ -434,8 +434,8 @@ zin_sun_lorien_rides = {
 	}
 	every_country = {
 		limit = {
-			has_war_with = Y0U
-			Y6X = {
+			has_war_with = ZOL
+			GAA = {
 				check_variable = { zin_gala_old_lords > 3.99 }
 				check_variable = { zin_gala_old_lords < 5.99 }
 			}
@@ -463,7 +463,7 @@ zin_sun_lorien_falls = {
 			}
 			retire_character = zin_lorien
 		}
-		Y6X = {
+		GAA = {
 			set_variable = { zin_gala_old_lords = 0 }
 			multiply_variable = { zin_gala_counsel = 0.5 }
 			add_timed_idea = { idea = zin_sun_king_fallen days = 730 }
@@ -489,7 +489,7 @@ zin_sun_refresh_foreign_hold = {
 				any_enemy_country = {
 					OR = {
 						zin_sun_is_sunhot_realm = yes
-						original_tag = Y6X
+						original_tag = GAA
 					}
 				}
 			}
@@ -508,8 +508,8 @@ zin_sun_refresh_president = {
 		clr_country_flag = zin_sun_council_president
 	}
 	if = {
-		limit = { country_exists = Y6U }
-		Y6U = { set_country_flag = zin_sun_council_president }
+		limit = { country_exists = LIG }
+		LIG = { set_country_flag = zin_sun_council_president }
 	}
 	else = {
 		random_country = {
@@ -567,7 +567,7 @@ zin_sun_monthly = {
 	}
 	set_temp_variable = { zin_sun_regain = 2 }
 	if = {
-		limit = { Y6X = { has_idea = zin_gala_still_water_spirit } }
+		limit = { GAA = { has_idea = zin_gala_still_water_spirit } }
 		add_to_temp_variable = { zin_sun_regain = 1 }
 	}
 	set_temp_variable = { zin_arg_value = zin_sun_regain }
@@ -612,27 +612,27 @@ zin_sun_on_declare_war = {
 zin_sun_on_capitulation = {
 	if = {
 		limit = {
-			original_tag = Y6X
+			original_tag = GAA
 			NOT = { has_global_flag = zin_lorien_rides }
 			NOT = { has_global_flag = zin_lorien_dead }
 		}
 		if = {
 			limit = {
-				country_exists = Y6U
-				Y6U = {
-					NOT = { original_tag = Y6X }
+				country_exists = LIG
+				LIG = {
+					NOT = { original_tag = GAA }
 					NOT = { tag = FROM }
 					NOT = { has_war_with = FROM }
 					has_capitulated = no
 				}
 			}
-			become_exiled_in = { target = Y6U legitimacy = 60 }
+			become_exiled_in = { target = LIG legitimacy = 60 }
 		}
 		else_if = {
 			limit = {
 				any_country = {
 					zin_sun_is_elven_realm = yes
-					NOT = { original_tag = Y6X }
+					NOT = { original_tag = GAA }
 					NOT = { tag = FROM }
 					NOT = { has_war_with = FROM }
 					has_capitulated = no
@@ -641,14 +641,14 @@ zin_sun_on_capitulation = {
 			random_country = {
 				limit = {
 					zin_sun_is_elven_realm = yes
-					NOT = { original_tag = Y6X }
+					NOT = { original_tag = GAA }
 					NOT = { tag = FROM }
 					NOT = { has_war_with = FROM }
 					has_capitulated = no
 					NOT = {
 						any_other_country = {
 							zin_sun_is_elven_realm = yes
-							NOT = { original_tag = Y6X }
+							NOT = { original_tag = GAA }
 							NOT = { tag = FROM }
 							NOT = { has_war_with = FROM }
 							has_capitulated = no
@@ -661,10 +661,10 @@ zin_sun_on_capitulation = {
 		}
 		else_if = {
 			limit = {
-				country_exists = Y8F
-				Y8F = { NOT = { tag = FROM } }
+				country_exists = MAG
+				MAG = { NOT = { tag = FROM } }
 			}
-			become_exiled_in = { target = Y8F legitimacy = 60 }
+			become_exiled_in = { target = MAG legitimacy = 60 }
 		}
 	}
 }
@@ -676,12 +676,12 @@ zin_sun_on_state_control = {
 			if = {
 				limit = { ROOT = { zin_sun_is_elven_realm = no } }
 				if = {
-					limit = { Y6X = { has_country_flag = zin_gala_courtyard_guarded } }
-					Y6X = { country_event = { id = zin_sun.36 days = 30 } }
+					limit = { GAA = { has_country_flag = zin_gala_courtyard_guarded } }
+					GAA = { country_event = { id = zin_sun.36 days = 30 } }
 				}
 				else = {
 					set_global_flag = zin_mirror_stilled
-					Y6X = { country_event = { id = zin_sun.35 } }
+					GAA = { country_event = { id = zin_sun.35 } }
 					ROOT = { country_event = { id = zin_sun.35 } }
 				}
 			}
@@ -702,7 +702,7 @@ zin_sun_on_state_control = {
 					FROM = {
 						OR = {
 							zin_sun_is_sunhot_realm = yes
-							original_tag = Y6X
+							original_tag = GAA
 						}
 					}
 				}

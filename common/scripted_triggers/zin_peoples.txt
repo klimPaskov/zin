@@ -11,47 +11,37 @@ zin_people_includes_men = {
 zin_people_is_elves = {
 	has_country_flag = zin_people_elves
 }
+# No realm holds elves as a minor people at the start.
 zin_people_includes_elves = {
-	OR = {
-		has_country_flag = zin_people_elves
-		has_country_flag = zin_people_minor_elves
-	}
+	has_country_flag = zin_people_elves
 }
 zin_people_is_sun_elves = {
 	has_country_flag = zin_people_sun_elves
 }
+# No realm holds sun_elves as a minor people at the start.
 zin_people_includes_sun_elves = {
-	OR = {
-		has_country_flag = zin_people_sun_elves
-		has_country_flag = zin_people_minor_sun_elves
-	}
+	has_country_flag = zin_people_sun_elves
 }
 zin_people_is_giants = {
 	has_country_flag = zin_people_giants
 }
+# No realm holds giants as a minor people at the start.
 zin_people_includes_giants = {
-	OR = {
-		has_country_flag = zin_people_giants
-		has_country_flag = zin_people_minor_giants
-	}
+	has_country_flag = zin_people_giants
 }
 zin_people_is_ents = {
 	has_country_flag = zin_people_ents
 }
+# No realm holds ents as a minor people at the start.
 zin_people_includes_ents = {
-	OR = {
-		has_country_flag = zin_people_ents
-		has_country_flag = zin_people_minor_ents
-	}
+	has_country_flag = zin_people_ents
 }
 zin_people_is_yeti = {
 	has_country_flag = zin_people_yeti
 }
+# No realm holds yeti as a minor people at the start.
 zin_people_includes_yeti = {
-	OR = {
-		has_country_flag = zin_people_yeti
-		has_country_flag = zin_people_minor_yeti
-	}
+	has_country_flag = zin_people_yeti
 }
 zin_people_is_trolls = {
 	has_country_flag = zin_people_trolls
@@ -74,11 +64,9 @@ zin_people_includes_orcs = {
 zin_people_is_the_dead = {
 	has_country_flag = zin_people_the_dead
 }
+# No realm holds the_dead as a minor people at the start.
 zin_people_includes_the_dead = {
-	OR = {
-		has_country_flag = zin_people_the_dead
-		has_country_flag = zin_people_minor_the_dead
-	}
+	has_country_flag = zin_people_the_dead
 }
 zin_people_is_demons = {
 	has_country_flag = zin_people_demons

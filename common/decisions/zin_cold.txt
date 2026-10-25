@@ -4,7 +4,7 @@ zin_cold_accord = {
 	zin_cold_send_envoys = {
 		icon = GFX_idea_zin_envoy
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			has_country_flag = zin_coldor_accord_decisions
@@ -49,7 +49,7 @@ zin_cold_accord = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_guaranteed_by = Y02 }
+				FROM = { is_guaranteed_by = MLK }
 			}
 			modifier = {
 				factor = 0
@@ -61,7 +61,7 @@ zin_cold_accord = {
 	zin_cold_send_envoys_cheap = {
 		icon = GFX_idea_zin_envoy
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			has_country_flag = zin_coldor_accord_decisions
@@ -106,7 +106,7 @@ zin_cold_accord = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_guaranteed_by = Y02 }
+				FROM = { is_guaranteed_by = MLK }
 			}
 			modifier = {
 				factor = 0
@@ -118,7 +118,7 @@ zin_cold_accord = {
 	zin_cold_feed_the_steadings = {
 		icon = GFX_idea_zin_alms_bread
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			has_country_flag = zin_coldor_accord_decisions
@@ -160,7 +160,7 @@ zin_cold_accord = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_guaranteed_by = Y02 }
+				FROM = { is_guaranteed_by = MLK }
 			}
 			modifier = {
 				factor = 0
@@ -172,7 +172,7 @@ zin_cold_accord = {
 	zin_cold_feed_the_steadings_cheap = {
 		icon = GFX_idea_zin_alms_bread
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			has_country_flag = zin_coldor_accord_decisions
@@ -214,7 +214,7 @@ zin_cold_accord = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_guaranteed_by = Y02 }
+				FROM = { is_guaranteed_by = MLK }
 			}
 			modifier = {
 				factor = 0
@@ -226,7 +226,7 @@ zin_cold_accord = {
 	zin_cold_invite_to_accord = {
 		icon = GFX_idea_zin_handshake_oath
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			has_country_flag = zin_coldor_accord_open
@@ -260,7 +260,7 @@ zin_cold_accord = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_guaranteed_by = Y02 }
+				FROM = { is_guaranteed_by = MLK }
 			}
 			modifier = {
 				factor = 0
@@ -272,7 +272,7 @@ zin_cold_accord = {
 	zin_cold_offer_protection = {
 		icon = GFX_idea_zin_pass_fort
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			has_country_flag = zin_coldor_accord_decisions
@@ -310,7 +310,7 @@ zin_cold_accord = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { is_guaranteed_by = Y02 }
+				FROM = { is_guaranteed_by = MLK }
 			}
 			modifier = {
 				factor = 0
@@ -322,7 +322,7 @@ zin_cold_accord = {
 	zin_cold_bread_for_isengard = {
 		icon = GFX_idea_zin_granary
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		visible = {
 			has_country_flag = zin_cold_open_hand
@@ -332,13 +332,13 @@ zin_cold_accord = {
 				tooltip = zin_cold_tt_hard_winter
 				zin_cold_winter_is_hard = yes
 			}
-			country_exists = Y02
-			NOT = { Y02 = { has_idea = zin_cold_bread_from_fandanar } }
+			country_exists = MLK
+			NOT = { MLK = { has_idea = zin_cold_bread_from_fandanar } }
 		}
 		cost = 75
 		days_re_enable = 200
 		complete_effect = {
-			Y02 = { add_timed_idea = { idea = zin_cold_bread_from_fandanar days = 90 } }
+			MLK = { add_timed_idea = { idea = zin_cold_bread_from_fandanar days = 90 } }
 		}
 		ai_will_do = {
 			base = 0
@@ -354,10 +354,10 @@ zin_cold_isengard = {
 	zin_cold_winter_gifts = {
 		icon = GFX_idea_zin_tribute_chest
 		allowed = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 		target_root_trigger = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 		target_trigger = {
 			FROM = {
@@ -366,7 +366,7 @@ zin_cold_isengard = {
 			}
 		}
 		visible = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -399,7 +399,7 @@ zin_cold_isengard = {
 	zin_cold_isengard_feeds = {
 		icon = GFX_idea_zin_alms_bread
 		allowed = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 		target_root_trigger = {
 			zin_cold_winter_is_hard = yes
@@ -411,7 +411,7 @@ zin_cold_isengard = {
 			}
 		}
 		visible = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -450,7 +450,7 @@ zin_cold_trade = {
 	zin_cold_sell_timber_west = {
 		icon = GFX_idea_zin_timber_mill
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		visible = {
 			has_country_flag = zin_cold_timber_market
@@ -507,7 +507,7 @@ zin_cold_trade = {
 	zin_cold_renew_old_pact = {
 		icon = GFX_idea_zin_yeti_claw
 		allowed = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		target_root_trigger = {
 			OR = {
@@ -515,11 +515,11 @@ zin_cold_trade = {
 				has_country_flag = zin_cold_giant_refused
 			}
 		}
-		targets = { Y1X Y1J }
+		targets = { YEI NIV }
 		target_trigger = {
 			OR = {
 				AND = {
-					FROM = { original_tag = Y1X }
+					FROM = { original_tag = YEI }
 					ROOT = {
 						check_variable = { zin_cold_yeti_pact < 0.99 }
 						has_country_flag = zin_cold_yeti_refused
@@ -527,7 +527,7 @@ zin_cold_trade = {
 					FROM = { NOT = { has_country_flag = zin_regional_yeti_lands_apart } }
 				}
 				AND = {
-					FROM = { original_tag = Y1J }
+					FROM = { original_tag = NIV }
 					ROOT = {
 						check_variable = { zin_cold_giant_pact < 0.99 }
 						has_country_flag = zin_cold_giant_refused
@@ -537,18 +537,18 @@ zin_cold_trade = {
 			}
 		}
 		visible = {
-			original_tag = Y01
+			original_tag = CLD
 		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = zin_cold_tt_pact_waiting
 				OR = {
 					AND = {
-						FROM = { original_tag = Y1X }
+						FROM = { original_tag = YEI }
 						NOT = { has_country_flag = zin_cold_yeti_waiting }
 					}
 					AND = {
-						FROM = { original_tag = Y1J }
+						FROM = { original_tag = NIV }
 						NOT = { has_country_flag = zin_cold_giant_waiting }
 					}
 				}
@@ -558,11 +558,11 @@ zin_cold_trade = {
 		days_re_enable = 180
 		complete_effect = {
 			if = {
-				limit = { FROM = { original_tag = Y1X } }
+				limit = { FROM = { original_tag = YEI } }
 				FROM = { country_event = { id = zin_cold.51 } }
 			}
 			else_if = {
-				limit = { FROM = { original_tag = Y1J } }
+				limit = { FROM = { original_tag = NIV } }
 				FROM = { country_event = { id = zin_cold.52 } }
 			}
 		}

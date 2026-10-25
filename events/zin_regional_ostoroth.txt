@@ -20,16 +20,16 @@ country_event = {
 			factor = 70
 		}
 		diplomatic_relation = {
-			country = Y11
+			country = OST
 			relation = non_aggression_pact
 			active = yes
 		}
 		add_opinion_modifier = {
-			target = Y11
+			target = OST
 			modifier = zin_regional_ostoroth_neighbours_pact
 		}
 		reverse_add_opinion_modifier = {
-			target = Y11
+			target = OST
 			modifier = zin_regional_ostoroth_neighbours_pact
 		}
 	}

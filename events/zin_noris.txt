@@ -96,7 +96,7 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		Y12 = {
+		NAA = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_east_add_lean = yes
 		}
@@ -140,12 +140,12 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 15 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			set_temp_variable = { zin_arg_road = 1 }
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_east_add_road_influence = yes
 		}
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.22
 		}
 	}
@@ -164,7 +164,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -5 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.26
 		}
 	}
@@ -184,7 +184,7 @@ country_event = {
 		}
 		add_political_power = 50
 		add_opinion_modifier = {
-			target = Y8G
+			target = WOR
 			modifier = zin_noris_pilgrim_tax
 		}
 	}
@@ -195,7 +195,7 @@ country_event = {
 		}
 		add_stability = 0.02
 		add_opinion_modifier = {
-			target = Y8G
+			target = WOR
 			modifier = zin_noris_pilgrim_welcome
 		}
 	}
@@ -243,14 +243,14 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 15 }
 		zin_east_add_lean = yes
 		add_opinion_modifier = {
-			target = Y14
+			target = NRS
 			modifier = zin_noris_treaty_renewed
 		}
 		reverse_add_opinion_modifier = {
-			target = Y14
+			target = NRS
 			modifier = zin_noris_treaty_renewed
 		}
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.23
 		}
 	}
@@ -262,7 +262,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_east_add_lean = yes
 		add_political_power = 25
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.23
 		}
 	}
@@ -290,7 +290,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 15 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.24
 		}
 	}
@@ -301,7 +301,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.24
 		}
 	}
@@ -320,7 +320,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.24
 		}
 	}
@@ -348,12 +348,12 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 15 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			set_temp_variable = { zin_arg_road = 5 }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_east_add_road_influence = yes
 		}
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.25
 		}
 	}
@@ -372,7 +372,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -5 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			country_event = zin_noris.27
 		}
 	}

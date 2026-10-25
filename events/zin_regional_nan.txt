@@ -48,7 +48,7 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		Y0Z = {
+		NAN = {
 			country_event = zin_regional_nan.7
 		}
 	}
@@ -62,15 +62,15 @@ country_event = {
 			days = 730
 		}
 		diplomatic_relation = {
-			country = Y0Z
+			country = NAN
 			relation = non_aggression_pact
 			active = yes
 		}
-		Y0Z = {
+		NAN = {
 			add_political_power = 50
 			set_country_flag = zin_dominion_tributary_friend
 		}
-		Y0Z = {
+		NAN = {
 			country_event = zin_regional_nan.5
 		}
 	}
@@ -89,7 +89,7 @@ country_event = {
 			factor = 100
 		}
 		add_manpower = 3000
-		Y0Z = {
+		NAN = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = zin_regional_nan_exiles_carried
@@ -122,7 +122,7 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		Y0Z = {
+		NAN = {
 			country_event = zin_regional_nan.7
 		}
 	}
@@ -131,18 +131,18 @@ country_event = {
 		ai_chance = {
 			factor = 70
 		}
-		Y0Z = {
+		NAN = {
 			set_country_flag = zin_mirolon_league_friend
 		}
 		add_opinion_modifier = {
-			target = Y0Z
+			target = NAN
 			modifier = zin_regional_nan_pilots_friend
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0Z
+			target = NAN
 			modifier = zin_regional_nan_pilots_friend
 		}
-		Y0Z = {
+		NAN = {
 			country_event = zin_regional_nan.5
 		}
 	}

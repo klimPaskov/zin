@@ -7,7 +7,7 @@ on_actions = {
 			set_variable = { global.zin_glo_power_cap = constant:zin_glo.power_max }
 			set_variable = { global.zin_glo_regen_days = 0 }
 			set_variable = { global.zin_yeldenne_wards = constant:zin_glo.wards_start }
-			Y8H = { country_event = { id = zin_glo.1 days = 2 } }
+			YEL = { country_event = { id = zin_glo.1 days = 2 } }
 		}
 	}
 	on_state_control_changed = {
@@ -27,7 +27,7 @@ on_actions = {
 	on_annex = {
 		effect = {
 			if = {
-				limit = { FROM = { original_tag = Y8H } zin_horos_alive = yes }
+				limit = { FROM = { original_tag = YEL } zin_horos_alive = yes }
 				country_event = { id = zin_glo.63 }
 			}
 		}
@@ -35,7 +35,7 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			if = {
-				limit = { NOT = { has_country_flag = zin_glo_conqueror } FROM = { NOT = { OR = { original_tag = Y0U original_tag = Y8D is_subject_of = Y0U is_subject_of = Y8D AND = { has_global_flag = zin_afrit_revealed OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } } } }
+				limit = { NOT = { has_country_flag = zin_glo_conqueror } FROM = { NOT = { OR = { original_tag = ZOL original_tag = PUV is_subject_of = ZOL is_subject_of = PUV AND = { has_global_flag = zin_afrit_revealed OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } } } }
 				set_country_flag = zin_glo_conqueror
 			}
 		}

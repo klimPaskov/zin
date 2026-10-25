@@ -131,7 +131,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_elves_add_wall_grievance = yes
 		add_political_power = -25
-		set_temp_variable = { zin_arg_target = Y8F }
+		set_temp_variable = { zin_arg_target = MAG }
 		zin_elves_goodwill = yes
 	}
 	option = {
@@ -167,10 +167,10 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -20 }
 		zin_elves_add_wall_grievance = yes
-		set_temp_variable = { zin_arg_target = Y8F }
+		set_temp_variable = { zin_arg_target = MAG }
 		zin_elves_goodwill = yes
 		add_stability = 0.02
-		Y8F = {
+		MAG = {
 			add_stability = 0.02
 		}
 	}
@@ -400,10 +400,10 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -30 }
 		zin_elves_add_wall_grievance = yes
-		set_temp_variable = { zin_arg_target = Y8F }
+		set_temp_variable = { zin_arg_target = MAG }
 		zin_elves_goodwill = yes
-		Y8F = {
-			set_temp_variable = { zin_arg_target = Y0L }
+		MAG = {
+			set_temp_variable = { zin_arg_target = AEN }
 			zin_elves_goodwill = yes
 		}
 		add_stability = 0.03
@@ -474,7 +474,7 @@ country_event = {
 			}
 		}
 		give_military_access = FROM
-		set_temp_variable = { zin_arg_target = Y8F }
+		set_temp_variable = { zin_arg_target = MAG }
 		zin_elves_goodwill = yes
 	}
 	option = {

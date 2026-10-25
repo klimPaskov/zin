@@ -75,7 +75,7 @@ country_event = {
 			factor = 40
 		}
 		add_political_power = 75
-		Y07 = {
+		GNW = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_west_add_grudge = yes
 		}
@@ -93,7 +93,7 @@ country_event = {
 				zin_west_historical = yes
 			}
 		}
-		Y07 = {
+		GNW = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_west_add_grudge = yes
 		}
@@ -196,16 +196,16 @@ country_event = {
 			}
 		}
 		diplomatic_relation = {
-			country = Y07
+			country = GNW
 			relation = non_aggression_pact
 			active = yes
 		}
 		add_opinion_modifier = {
-			target = Y07
+			target = GNW
 			modifier = zin_gunwaith_opinion_equals
 		}
 		reverse_add_opinion_modifier = {
-			target = Y07
+			target = GNW
 			modifier = zin_gunwaith_opinion_equals
 		}
 	}

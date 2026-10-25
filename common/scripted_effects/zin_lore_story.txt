@@ -72,9 +72,9 @@ zin_story_tick_lore = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y01
-					original_tag = Y03
-					original_tag = Y21
+					original_tag = CLD
+					original_tag = HOR
+					original_tag = FEA
 				}
 			}
 			country_event = {
@@ -133,7 +133,7 @@ zin_story_tick_lore = {
 		set_global_flag = zin_story_done_lore_405
 		every_country = {
 			limit = {
-				original_tag = Y2B
+				original_tag = BLD
 			}
 			country_event = {
 				id = zin_lore.405
@@ -145,7 +145,7 @@ zin_story_tick_lore = {
 			limit = {
 				has_country_flag = zin_region_west_lands
 				NOT = {
-					original_tag = Y2B
+					original_tag = BLD
 				}
 			}
 			random_list = {
@@ -212,9 +212,9 @@ zin_story_tick_lore = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y0Y
-					original_tag = Y7R
-					original_tag = Y0Z
+					original_tag = MIR
+					original_tag = OLE
+					original_tag = NAN
 				}
 			}
 			country_event = {
@@ -253,7 +253,7 @@ zin_story_tick_lore = {
 			limit = {
 				has_country_flag = zin_region_lands_of_the_sun
 				NOT = {
-					original_tag = Y6X
+					original_tag = GAA
 				}
 			}
 			country_event = {
@@ -267,7 +267,7 @@ zin_story_tick_lore = {
 	# zin_lore.410 Refugees Come Home
 	if = {
 		limit = {
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 			NOT = { has_global_flag = zin_story_done_lore_410 }
 		}
 		set_global_flag = zin_story_done_lore_410
@@ -334,7 +334,7 @@ zin_story_tick_lore = {
 		set_global_flag = zin_story_done_lore_413
 		every_country = {
 			limit = {
-				original_tag = Y0P
+				original_tag = KIN
 			}
 			country_event = {
 				id = zin_lore.413

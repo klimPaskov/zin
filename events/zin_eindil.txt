@@ -257,7 +257,7 @@ country_event = {
 	option = {
 		name = zin_eindil.11.c
 		trigger = {
-			original_tag = Y01
+			original_tag = CLD
 			has_country_flag = zin_cold_far_ice_charted
 			NOT = { has_country_flag = zin_eindil_summoned }
 		}
@@ -336,9 +336,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y01
+				country_exists = CLD
 			}
-			Y01 = {
+			CLD = {
 				if = {
 					limit = {
 						has_global_flag = zin_cold_neck_road
@@ -773,8 +773,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						original_tag = Y07
-						original_tag = Y08
+						original_tag = GNW
+						original_tag = GIR
 					}
 				}
 				set_temp_variable = { zin_arg_value = 5 }
@@ -876,8 +876,8 @@ country_event = {
 						check_variable = { zin_eindil_regard > -0.001 }
 						NOT = {
 							OR = {
-								original_tag = Y07
-								original_tag = Y08
+								original_tag = GNW
+								original_tag = GIR
 							}
 						}
 					}
@@ -952,8 +952,8 @@ country_event = {
 			every_country = {
 				limit = {
 					OR = {
-						original_tag = Y07
-						original_tag = Y08
+						original_tag = GNW
+						original_tag = GIR
 					}
 				}
 				country_event = {
@@ -1022,8 +1022,8 @@ country_event = {
 			every_country = {
 				limit = {
 					OR = {
-						original_tag = Y07
-						original_tag = Y08
+						original_tag = GNW
+						original_tag = GIR
 					}
 					NOT = { original_tag = ROOT }
 					has_country_flag = zin_eindil_accepted_peace
@@ -2162,11 +2162,14 @@ country_event = {
 			limit = {
 				has_global_flag = zin_afrit_at_yeldenne
 			}
-			every_country = {
+			hidden_effect = { zin_afrit_resolve_seat = yes }
+			if = {
 				limit = {
-					zin_afrit_is_hub = yes
+					has_event_target = zin_afrit_seat
 				}
-				country_event = zin_afrit.33
+				event_target:zin_afrit_seat = {
+					country_event = zin_afrit.33
+				}
 			}
 		}
 		if = {
@@ -2767,6 +2770,7 @@ country_event = {
 		add_stability = 0.03
 		hidden_effect = {
 			set_country_flag = zin_aenor_eindil_denounced
+			set_global_flag = zin_aenor_eindil_denounced
 			set_global_flag = zin_afrit_impostor_denounced
 			zin_eindil_start_hunt = yes
 			country_event = zin_reign.83
@@ -2876,12 +2880,9 @@ country_event = {
 				}
 			}
 			40 = {
-				add_opinion_modifier = {
-					target = var:global.zin_eindil_host
-					modifier = zin_eindil_seize_failed
-				}
 				var:global.zin_eindil_host = {
 					add_opinion_modifier = { target = ROOT modifier = zin_eindil_seize_failed }
+					reverse_add_opinion_modifier = { target = ROOT modifier = zin_eindil_seize_failed }
 				}
 			}
 		}
@@ -2980,7 +2981,7 @@ country_event = {
 	desc = {
 		text = zin_eindil.83.d_mirolon
 		trigger = {
-			original_tag = Y0Y
+			original_tag = MIR
 			NOT = {
 				zin_aenor_is_concord_dominion = yes
 			}
@@ -2990,13 +2991,13 @@ country_event = {
 		text = zin_eindil.83.d_cold
 		trigger = {
 			OR = {
-				original_tag = Y01
-				original_tag = Y02
+				original_tag = CLD
+				original_tag = MLK
 			}
 			NOT = {
 				OR = {
 					zin_aenor_is_concord_dominion = yes
-					original_tag = Y0Y
+					original_tag = MIR
 				}
 			}
 		}
@@ -3009,11 +3010,11 @@ country_event = {
 			NOT = {
 				OR = {
 					zin_aenor_is_concord_dominion = yes
-					original_tag = Y0Y
+					original_tag = MIR
 					AND = {
 						OR = {
-							original_tag = Y01
-							original_tag = Y02
+							original_tag = CLD
+							original_tag = MLK
 						}
 					}
 				}
@@ -3027,11 +3028,11 @@ country_event = {
 			NOT = {
 				OR = {
 					zin_aenor_is_concord_dominion = yes
-					original_tag = Y0Y
+					original_tag = MIR
 					AND = {
 						OR = {
-							original_tag = Y01
-							original_tag = Y02
+							original_tag = CLD
+							original_tag = MLK
 						}
 					}
 					AND = {
@@ -3050,11 +3051,11 @@ country_event = {
 			NOT = {
 				OR = {
 					zin_aenor_is_concord_dominion = yes
-					original_tag = Y0Y
+					original_tag = MIR
 					AND = {
 						OR = {
-							original_tag = Y01
-							original_tag = Y02
+							original_tag = CLD
+							original_tag = MLK
 						}
 					}
 					AND = {
@@ -3073,11 +3074,11 @@ country_event = {
 			NOT = {
 				OR = {
 					zin_aenor_is_concord_dominion = yes
-					original_tag = Y0Y
+					original_tag = MIR
 					AND = {
 						OR = {
-							original_tag = Y01
-							original_tag = Y02
+							original_tag = CLD
+							original_tag = MLK
 						}
 					}
 					AND = {
@@ -3099,11 +3100,11 @@ country_event = {
 			NOT = {
 				OR = {
 					zin_aenor_is_concord_dominion = yes
-					original_tag = Y0Y
+					original_tag = MIR
 					AND = {
 						OR = {
-							original_tag = Y01
-							original_tag = Y02
+							original_tag = CLD
+							original_tag = MLK
 						}
 					}
 					AND = {
@@ -3131,9 +3132,9 @@ country_event = {
 			set_global_flag = zin_eindil_83_done
 			if = {
 				limit = {
-					country_exists = Y0G
+					country_exists = LER
 				}
-				Y0G = {
+				LER = {
 					country_event = zin_leren.45
 				}
 			}
@@ -3155,12 +3156,12 @@ country_event = {
 				add = 90
 				zin_rules_is_historical = yes
 				OR = {
-					original_tag = Y0M
-					original_tag = Y0Y
-					original_tag = Y0P
-					original_tag = Y0Q
-					original_tag = Y8F
-					original_tag = Y6X
+					original_tag = SEL
+					original_tag = MIR
+					original_tag = KIN
+					original_tag = HIR
+					original_tag = MAG
+					original_tag = GAA
 				}
 			}
 			modifier = {
@@ -3168,12 +3169,12 @@ country_event = {
 				zin_rules_is_historical = yes
 				NOT = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
-						original_tag = Y6X
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
+						original_tag = GAA
 					}
 				}
 			}
@@ -3182,24 +3183,24 @@ country_event = {
 				zin_story_rules_plausible = yes
 				NOT = { zin_story_rules_plausible_diverged = yes }
 				OR = {
-					original_tag = Y0M
-					original_tag = Y0Y
-					original_tag = Y0P
-					original_tag = Y0Q
-					original_tag = Y8F
-					original_tag = Y6X
+					original_tag = SEL
+					original_tag = MIR
+					original_tag = KIN
+					original_tag = HIR
+					original_tag = MAG
+					original_tag = GAA
 				}
 			}
 			modifier = {
 				add = 50
 				zin_story_rules_plausible_diverged = yes
 				OR = {
-					original_tag = Y0M
-					original_tag = Y0Y
-					original_tag = Y0P
-					original_tag = Y0Q
-					original_tag = Y8F
-					original_tag = Y6X
+					original_tag = SEL
+					original_tag = MIR
+					original_tag = KIN
+					original_tag = HIR
+					original_tag = MAG
+					original_tag = GAA
 				}
 			}
 			modifier = {
@@ -3208,12 +3209,12 @@ country_event = {
 				NOT = { zin_story_rules_plausible_diverged = yes }
 				NOT = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
-						original_tag = Y6X
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
+						original_tag = GAA
 					}
 				}
 			}
@@ -3222,12 +3223,12 @@ country_event = {
 				zin_story_rules_plausible_diverged = yes
 				NOT = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
-						original_tag = Y6X
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
+						original_tag = GAA
 					}
 				}
 			}
@@ -3279,12 +3280,12 @@ country_event = {
 				zin_rules_is_historical = yes
 				NOT = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
-						original_tag = Y6X
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
+						original_tag = GAA
 					}
 					zin_aenor_is_realm = yes
 				}
@@ -3295,12 +3296,12 @@ country_event = {
 				NOT = {
 					NOT = {
 						OR = {
-							original_tag = Y0M
-							original_tag = Y0Y
-							original_tag = Y0P
-							original_tag = Y0Q
-							original_tag = Y8F
-							original_tag = Y6X
+							original_tag = SEL
+							original_tag = MIR
+							original_tag = KIN
+							original_tag = HIR
+							original_tag = MAG
+							original_tag = GAA
 						}
 						zin_aenor_is_realm = yes
 					}
@@ -3312,12 +3313,12 @@ country_event = {
 				NOT = { zin_story_rules_plausible_diverged = yes }
 				NOT = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
-						original_tag = Y6X
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
+						original_tag = GAA
 					}
 					zin_aenor_is_realm = yes
 				}
@@ -3327,12 +3328,12 @@ country_event = {
 				zin_story_rules_plausible_diverged = yes
 				NOT = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
-						original_tag = Y6X
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
+						original_tag = GAA
 					}
 					zin_aenor_is_realm = yes
 				}
@@ -3344,12 +3345,12 @@ country_event = {
 				NOT = {
 					NOT = {
 						OR = {
-							original_tag = Y0M
-							original_tag = Y0Y
-							original_tag = Y0P
-							original_tag = Y0Q
-							original_tag = Y8F
-							original_tag = Y6X
+							original_tag = SEL
+							original_tag = MIR
+							original_tag = KIN
+							original_tag = HIR
+							original_tag = MAG
+							original_tag = GAA
 						}
 						zin_aenor_is_realm = yes
 					}
@@ -3361,12 +3362,12 @@ country_event = {
 				NOT = {
 					NOT = {
 						OR = {
-							original_tag = Y0M
-							original_tag = Y0Y
-							original_tag = Y0P
-							original_tag = Y0Q
-							original_tag = Y8F
-							original_tag = Y6X
+							original_tag = SEL
+							original_tag = MIR
+							original_tag = KIN
+							original_tag = HIR
+							original_tag = MAG
+							original_tag = GAA
 						}
 						zin_aenor_is_realm = yes
 					}
@@ -3680,9 +3681,9 @@ country_event = {
 			zin_eindil_clear_host = yes
 			if = {
 				limit = {
-					country_exists = Y0X
+					country_exists = NLR
 				}
-				Y0X = {
+				NLR = {
 					country_event = {
 						id = zin_eindil.86
 						days = 3
@@ -3862,9 +3863,9 @@ news_event = {
 			}
 			if = {
 				limit = {
-					country_exists = Y0U
+					country_exists = ZOL
 				}
-				Y0U = {
+				ZOL = {
 					country_event = {
 						id = zin_eindil.91
 						days = 1
@@ -4346,17 +4347,17 @@ country_event = {
 			add_timed_idea = { idea = zin_eindil_heir_has_fallen days = 60 }
 			if = {
 				limit = {
-					country_exists = Y8D
+					country_exists = PUV
 				}
-				Y8D = {
+				PUV = {
 					country_event = zin_dominion.16
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y8D
+					country_exists = PUV
 				}
-				Y8D = {
+				PUV = {
 					country_event = zin_eindil.96
 				}
 			}
@@ -4380,9 +4381,9 @@ country_event = {
 				country_event = zin_eindil.97
 				if = {
 					limit = {
-						country_exists = Y8F
+						country_exists = MAG
 					}
-					Y8F = {
+					MAG = {
 						country_event = zin_eindil.97
 					}
 				}
@@ -4537,9 +4538,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					country_exists = Y8D
+					country_exists = PUV
 				}
-				Y8D = {
+				PUV = {
 					zin_volgan_destroy_body = yes
 				}
 			}
@@ -4556,13 +4557,13 @@ country_event = {
 	}
 }
 
-# The Old God Comes Forth
+# The Heir Struck Down
 # to: the Host; hist: Harvest 1757
 country_event = {
 	id = zin_eindil.101
 	title = zin_eindil.101.t
 	desc = zin_eindil.101.d
-	picture = GFX_zin_evt_vast_shadow
+	picture = GFX_zin_evt_generic_war
 	is_triggered_only = yes
 	timeout_days = 30
 	option = {
@@ -5112,39 +5113,6 @@ news_event = {
 	major = yes
 	is_triggered_only = yes
 	timeout_days = 30
-	immediate = {
-		if = {
-			limit = {
-				NOT = { has_global_flag = zin_eindil_140_done }
-			}
-			set_global_flag = zin_eindil_140_done
-			if = {
-				limit = {
-					zin_eindil_has_host = yes
-				}
-				if = {
-					limit = {
-						zin_eindil_has_host = yes
-					}
-					var:global.zin_eindil_host = {
-						country_event = {
-							id = zin_ending.80
-							days = 14
-						}
-					}
-				}
-			}
-			else = {
-				zin_aenor_event_for_parim = yes
-				event_target:zin_aenor_parim_realm = {
-					country_event = {
-						id = zin_ending.80
-						days = 14
-					}
-				}
-			}
-		}
-	}
 	option = {
 		name = zin_eindil.140.a
 		ai_chance = {
@@ -5172,9 +5140,9 @@ country_event = {
 			zin_eindil_add_renown = yes
 			if = {
 				limit = {
-					country_exists = Y01
+					country_exists = CLD
 				}
-				Y01 = {
+				CLD = {
 					country_event = {
 						id = zin_eindil.11
 						days = 15
@@ -5183,9 +5151,9 @@ country_event = {
 			}
 			if = {
 				limit = {
-					country_exists = Y02
+					country_exists = MLK
 				}
-				Y02 = {
+				MLK = {
 					country_event = {
 						id = zin_eindil.11
 						days = 15
@@ -5203,9 +5171,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					country_exists = Y01
+					country_exists = CLD
 				}
-				Y01 = {
+				CLD = {
 					country_event = {
 						id = zin_eindil.11
 						days = 30
@@ -5214,9 +5182,9 @@ country_event = {
 			}
 			if = {
 				limit = {
-					country_exists = Y02
+					country_exists = MLK
 				}
-				Y02 = {
+				MLK = {
 					country_event = {
 						id = zin_eindil.11
 						days = 30
@@ -5312,7 +5280,7 @@ country_event = {
 }
 
 # The Lawspeaker's Ruling
-# to: Gunwaith; hist: Ironfrost 1750
+# to: Gunwyn; hist: Ironfrost 1750
 country_event = {
 	id = zin_eindil.155
 	title = zin_eindil.155.t
@@ -5390,8 +5358,8 @@ country_event = {
 	timeout_days = 30
 	trigger = {
 		OR = {
-			original_tag = Y07
-			original_tag = Y08
+			original_tag = GNW
+			original_tag = GIR
 		}
 		has_country_flag = zin_eindil_accepted_peace
 	}
@@ -5404,8 +5372,8 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y07
-					original_tag = Y08
+					original_tag = GNW
+					original_tag = GIR
 				}
 				NOT = { original_tag = ROOT }
 			}
@@ -5898,6 +5866,37 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_eindil.169.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# The Mirror Without Its King
+# to: news: every country; hist: divergence
+news_event = {
+	id = zin_eindil.170
+	title = zin_eindil.170.t
+	desc = {
+		text = zin_eindil.170.d_lorien
+		trigger = {
+			has_global_flag = zin_lorien_dead
+		}
+	}
+	desc = {
+		text = zin_eindil.170.d
+		trigger = {
+			NOT = {
+				has_global_flag = zin_lorien_dead
+			}
+		}
+	}
+	picture = GFX_zin_news_generic_court
+	major = yes
+	is_triggered_only = yes
+	timeout_days = 30
+	option = {
+		name = zin_eindil.170.a
 		ai_chance = {
 			base = 100
 		}

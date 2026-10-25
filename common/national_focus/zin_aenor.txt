@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0L
+			original_tag = AEN
 		}
 	}
 	initial_show_position = { focus = zin_aenor_the_golden_court }
@@ -633,10 +633,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
-			Y14 = {
+			NRS = {
 				country_event = zin_aenor.502
 			}
-			Y16 = {
+			STA = {
 				country_event = zin_aenor.502
 			}
 		}
@@ -683,7 +683,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = zin_aenor_learned_halls
-			Y0M = {
+			SEL = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -871,7 +871,7 @@ focus_tree = {
 			factor = 30
 		}
 		completion_reward = {
-			Y0P = {
+			KIN = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -939,10 +939,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0M = {
+			SEL = {
 				country_event = zin_aenor.503
 			}
-			Y0M = {
+			SEL = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -962,7 +962,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y0T = {
+			ORH = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 				capital_scope = {
@@ -993,7 +993,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y0P = {
+			KIN = {
 				capital_scope = {
 					add_building_construction = {
 						type = bunker
@@ -1057,15 +1057,15 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			Y0O = {
+			KIL = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 			}
-			Y0Q = {
+			HIR = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 			}
-			Y4W = {
+			HNH = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -1193,7 +1193,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1245,19 +1245,19 @@ focus_tree = {
 			factor = 60
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				country_event = zin_aenor.504
 			}
-			Y07 = {
+			GNW = {
 				country_event = zin_aenor.504
 			}
-			Y08 = {
+			GIR = {
 				country_event = zin_aenor.504
 			}
-			Y01 = {
+			CLD = {
 				country_event = zin_aenor.504
 			}
-			Y19 = {
+			DND = {
 				country_event = zin_aenor.504
 			}
 		}
@@ -1276,10 +1276,10 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			Y0M = {
+			SEL = {
 				country_event = zin_aenor.506
 			}
-			Y0M = {
+			SEL = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -1327,7 +1327,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1964,7 +1964,7 @@ focus_tree = {
 					}
 				}
 			}
-			Y0P = {
+			KIN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -2026,7 +2026,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			has_war = no
-			country_exists = Y8E
+			country_exists = BLO
 		}
 		ai_will_do = {
 			factor = 0
@@ -2038,9 +2038,9 @@ focus_tree = {
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
-				target = Y8E
+				target = BLO
 			}
-			Y54 = {
+			CUR = {
 				every_owned_state = {
 					add_claim_by = PREV.PREV
 				}
@@ -2376,12 +2376,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y0G
+				country = LER
 				relation = non_aggression_pact
 				active = yes
 			}
 			diplomatic_relation = {
-				country = Y07
+				country = GNW
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -2628,13 +2628,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
-			Y14 = {
+			NRS = {
 				country_event = zin_aenor.512
 			}
-			Y16 = {
+			STA = {
 				country_event = zin_aenor.512
 			}
-			Y5W = {
+			ALR = {
 				country_event = zin_aenor.512
 			}
 		}
@@ -2661,6 +2661,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = -20 }
 			zin_aenor_add_camp_support = yes
 			set_country_flag = zin_aenor_eindil_denounced
+			set_global_flag = zin_aenor_eindil_denounced
 			add_stability = 0.03
 		}
 	}
@@ -2932,13 +2933,13 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				country_event = zin_aenor.515
 			}
-			Y0G = {
+			LER = {
 				country_event = zin_aenor.515
 			}
-			Y07 = {
+			GNW = {
 				country_event = zin_aenor.515
 			}
 		}
@@ -3036,10 +3037,10 @@ focus_tree = {
 			factor = 90
 		}
 		completion_reward = {
-			Y0M = {
+			SEL = {
 				country_event = zin_aenor.513
 			}
-			Y0M = {
+			SEL = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -3498,7 +3499,7 @@ focus_tree = {
 					}
 				}
 			}
-			Y0P = {
+			KIN = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_concord_loyalty = yes
 			}
@@ -3532,7 +3533,7 @@ focus_tree = {
 					}
 				}
 			}
-			Y0Y = {
+			MIR = {
 				country_event = zin_aenor.514
 			}
 		}

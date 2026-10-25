@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y54
+			original_tag = CUR
 		}
 	}
 	initial_show_position = { focus = zin_regional_cursed_lands_the_veil }
@@ -689,13 +689,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y8E
+			country_exists = BLO
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			Y8E = {
+			BLO = {
 				country_event = zin_regional_cursed_lands.2
 			}
 		}

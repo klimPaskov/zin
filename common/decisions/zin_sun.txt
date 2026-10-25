@@ -4,14 +4,14 @@ zin_sun_counsel = {
 	zin_sun_audience = {
 		icon = GFX_idea_zin_envoy
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		target_root_trigger = {
 			has_country_flag = zin_gala_audiences
 		}
 		target_trigger = {
 			FROM = {
-				NOT = { original_tag = Y6X }
+				NOT = { original_tag = GAA }
 				OR = {
 					zin_sun_is_lands_of_the_sun_country = yes
 					zin_sun_is_elven_realm = yes
@@ -32,7 +32,7 @@ zin_sun_counsel = {
 			base = 3
 			modifier = {
 				add = 6
-				FROM = { original_tag = Y6U }
+				FROM = { original_tag = LIG }
 			}
 			modifier = {
 				add = 3
@@ -48,7 +48,7 @@ zin_sun_counsel = {
 	zin_sun_ask_timber = {
 		icon = GFX_idea_zin_timber_mill
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		available = {
 			NOT = { has_idea = zin_sun_council_timber }
@@ -80,7 +80,7 @@ zin_sun_counsel = {
 	zin_sun_ask_sun_guard = {
 		icon = GFX_idea_zin_pass_fort
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		available = {
 			OR = {
@@ -122,7 +122,7 @@ zin_sun_counsel = {
 	zin_sun_speak_quarrel = {
 		icon = GFX_idea_zin_olive_branch
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		target_root_trigger = {
 			has_country_flag = zin_gala_mediator
@@ -132,12 +132,12 @@ zin_sun_counsel = {
 				zin_sun_is_sunhot_realm = yes
 				OR = {
 					AND = {
-						original_tag = Y1G
-						country_exists = Y1H
+						original_tag = ELV
+						country_exists = IGA
 					}
 					AND = {
-						original_tag = Y1H
-						country_exists = Y1G
+						original_tag = IGA
+						country_exists = ELV
 					}
 					any_other_country = {
 						zin_sun_is_sunhot_realm = yes
@@ -160,20 +160,20 @@ zin_sun_counsel = {
 			FROM = {
 				if = {
 					limit = {
-						original_tag = Y1G
-						country_exists = Y1H
+						original_tag = ELV
+						country_exists = IGA
 					}
-					Y1H = {
+					IGA = {
 						set_temp_variable = { zin_arg_target = PREV }
 						zin_elves_goodwill = yes
 					}
 				}
 				else_if = {
 					limit = {
-						original_tag = Y1H
-						country_exists = Y1G
+						original_tag = IGA
+						country_exists = ELV
 					}
-					Y1G = {
+					ELV = {
 						set_temp_variable = { zin_arg_target = PREV }
 						zin_elves_goodwill = yes
 					}
@@ -206,7 +206,7 @@ zin_sun_mirror = {
 	zin_sun_look_mirror = {
 		icon = GFX_idea_zin_mirror_rain
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		visible = {
 			has_country_flag = zin_gala_mirror_open
@@ -233,14 +233,14 @@ zin_sun_mirror = {
 	zin_sun_send_word = {
 		icon = GFX_idea_zin_scroll_sealed
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		target_root_trigger = {
 			zin_sun_has_any_sight = yes
 		}
 		target_trigger = {
 			FROM = {
-				NOT = { original_tag = Y6X }
+				NOT = { original_tag = GAA }
 			}
 		}
 		visible = {
@@ -263,17 +263,17 @@ zin_sun_mirror = {
 				add = 10
 				FROM = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
 					}
 				}
 			}
 			modifier = {
 				add = 6
-				FROM = { original_tag = Y0L }
+				FROM = { original_tag = AEN }
 				NOT = { has_country_flag = zin_sun_warned_aenor }
 			}
 			modifier = {
@@ -282,7 +282,7 @@ zin_sun_mirror = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { original_tag = Y8G }
+				FROM = { original_tag = WOR }
 			}
 			modifier = {
 				factor = 0
@@ -298,14 +298,14 @@ zin_sun_mirror = {
 	zin_sun_send_word_half = {
 		icon = GFX_idea_zin_scroll_sealed
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		target_root_trigger = {
 			zin_sun_has_any_sight = yes
 		}
 		target_trigger = {
 			FROM = {
-				NOT = { original_tag = Y6X }
+				NOT = { original_tag = GAA }
 			}
 		}
 		visible = {
@@ -336,17 +336,17 @@ zin_sun_mirror = {
 				add = 10
 				FROM = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
 					}
 				}
 			}
 			modifier = {
 				add = 6
-				FROM = { original_tag = Y0L }
+				FROM = { original_tag = AEN }
 				NOT = { has_country_flag = zin_sun_warned_aenor }
 			}
 			modifier = {
@@ -355,7 +355,7 @@ zin_sun_mirror = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { original_tag = Y8G }
+				FROM = { original_tag = WOR }
 			}
 			modifier = {
 				factor = 0
@@ -371,14 +371,14 @@ zin_sun_mirror = {
 	zin_sun_send_word_free = {
 		icon = GFX_idea_zin_scroll_sealed
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		target_root_trigger = {
 			zin_sun_has_any_sight = yes
 		}
 		target_trigger = {
 			FROM = {
-				NOT = { original_tag = Y6X }
+				NOT = { original_tag = GAA }
 			}
 		}
 		visible = {
@@ -401,17 +401,17 @@ zin_sun_mirror = {
 				add = 10
 				FROM = {
 					OR = {
-						original_tag = Y0M
-						original_tag = Y0Y
-						original_tag = Y0P
-						original_tag = Y0Q
-						original_tag = Y8F
+						original_tag = SEL
+						original_tag = MIR
+						original_tag = KIN
+						original_tag = HIR
+						original_tag = MAG
 					}
 				}
 			}
 			modifier = {
 				add = 6
-				FROM = { original_tag = Y0L }
+				FROM = { original_tag = AEN }
 				NOT = { has_country_flag = zin_sun_warned_aenor }
 			}
 			modifier = {
@@ -420,7 +420,7 @@ zin_sun_mirror = {
 			}
 			modifier = {
 				factor = 0
-				FROM = { original_tag = Y8G }
+				FROM = { original_tag = WOR }
 			}
 			modifier = {
 				factor = 0
@@ -436,7 +436,7 @@ zin_sun_mirror = {
 	zin_sun_old_lords = {
 		icon = GFX_idea_zin_forest_ancient
 		allowed = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		available = {
 			OR = {

@@ -39,11 +39,11 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_mirolon_add_proof = yes
-		Y8D = {
+		PUV = {
 			set_temp_variable = { zin_arg_value = -3 }
 			zin_volgan_add_veil = yes
 		}
-		Y8D = {
+		PUV = {
 			if = {
 				limit = {
 					check_variable = { zin_volgan_veil > 69 }
@@ -82,14 +82,14 @@ country_event = {
 			}
 		}
 		add_opinion_modifier = {
-			target = Y0Y
+			target = MIR
 			modifier = zin_dominion_mirolon_friendship
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0Y
+			target = MIR
 			modifier = zin_dominion_mirolon_friendship
 		}
-		Y0Y = {
+		MIR = {
 			set_country_flag = zin_mirolon_herez_friend
 		}
 		set_country_flag = zin_herez_heard_mirolon
@@ -126,7 +126,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				is_subject_of = Y8D
+				is_subject_of = PUV
 			}
 			modifier = {
 				factor = 0
@@ -185,10 +185,10 @@ country_event = {
 				zin_mirolon_court_corrupt = yes
 			}
 		}
-		Y0Y = {
+		MIR = {
 			set_country_flag = zin_mirolon_lost_cause_friend
 		}
-		Y0Y = {
+		MIR = {
 			set_country_flag = zin_lost_cause_member
 		}
 	}
@@ -197,7 +197,7 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
-		Y0Y = {
+		MIR = {
 			set_country_flag = zin_mirolon_parim_laughed
 		}
 	}
@@ -219,13 +219,13 @@ country_event = {
 				has_country_flag = zin_mirolon_elves_remember
 			}
 		}
-		Y0Y = {
+		MIR = {
 			add_equipment_to_stockpile = {
 				type = zin_arms_equipment
 				amount = 500
 			}
 		}
-		Y0Y = {
+		MIR = {
 			set_country_flag = zin_gala_rangers_mirolon
 		}
 	}
@@ -302,12 +302,12 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					has_war_with = Y8D
+					has_war_with = PUV
 				}
 			}
 			create_wargoal = {
 				type = annex_everything
-				target = Y8D
+				target = PUV
 			}
 		}
 		add_timed_idea = {

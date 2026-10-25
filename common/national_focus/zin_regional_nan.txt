@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0Z
+			original_tag = NAN
 		}
 	}
 	initial_show_position = { focus = zin_regional_nan_warlord_of_vez_nan }
@@ -348,7 +348,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y8D
+			country_exists = PUV
 		}
 		ai_will_do = {
 			factor = 10
@@ -362,7 +362,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				country_event = zin_regional_nan.3
 			}
 		}
@@ -382,7 +382,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 10
@@ -392,7 +392,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				country_event = zin_regional_nan.6
 			}
 		}
@@ -460,7 +460,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				country_event = zin_regional_nan.4
 			}
 		}

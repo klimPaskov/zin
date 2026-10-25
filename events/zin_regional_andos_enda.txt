@@ -65,16 +65,16 @@ country_event = {
 		zin_elves_add_kinship = yes
 		if = {
 			limit = {
-				country_exists = Y0W
+				country_exists = ANE
 			}
-			set_temp_variable = { zin_arg_target = Y0W }
+			set_temp_variable = { zin_arg_target = ANE }
 			zin_elves_goodwill = yes
 		}
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			set_temp_variable = { zin_arg_target = Y0V }
+			set_temp_variable = { zin_arg_target = HRR }
 			zin_elves_goodwill = yes
 		}
 	}
@@ -102,8 +102,8 @@ country_event = {
 		zin_elves_add_rivalry = yes
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_elves_add_kinship = yes
-		remove_opinion_modifier = { target = Y0W modifier = zin_opinion_old_rivalry }
-		Y0W = { remove_opinion_modifier = { target = ROOT modifier = zin_opinion_old_rivalry } }
+		remove_opinion_modifier = { target = ANE modifier = zin_opinion_old_rivalry }
+		ANE = { remove_opinion_modifier = { target = ROOT modifier = zin_opinion_old_rivalry } }
 	}
 	option = {
 		name = zin_regional_andos_enda.4.b

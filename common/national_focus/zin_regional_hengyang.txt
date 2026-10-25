@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1F
+			original_tag = SOY
 		}
 	}
 	initial_show_position = { focus = zin_regional_hengyang_the_archipelago_council }
@@ -425,13 +425,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 30
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_sun_add_concord = yes

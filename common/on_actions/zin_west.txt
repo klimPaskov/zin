@@ -13,28 +13,22 @@ on_actions = {
 			set_variable = { global.zin_west_pledged_count = 0 }
 			set_variable = { global.zin_west_month = 0 }
 			set_variable = { global.zin_west_lift_factor = 1 }
-			Y07 = { set_variable = { zin_west_grudge = 55 } country_event = { id = zin_west.1 days = 2 } }
-			Y08 = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y09 = { set_variable = { zin_west_grudge = 60 } country_event = { id = zin_west.1 days = 2 } }
-			Y0A = { set_variable = { zin_west_grudge = 50 } country_event = { id = zin_west.1 days = 2 } }
-			Y0B = { set_variable = { zin_west_grudge = 45 } country_event = { id = zin_west.1 days = 2 } }
-			Y26 = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y27 = { set_variable = { zin_west_grudge = 45 } country_event = { id = zin_west.1 days = 2 } }
-			Y28 = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y29 = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2A = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2B = { set_variable = { zin_west_grudge = 35 } country_event = { id = zin_west.1 days = 2 } }
-			Y2C = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2D = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2E = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2F = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2G = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2H = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2I = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2J = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2K = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y2L = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
-			Y07 = { country_event = { id = zin_west.2 days = 9 } }
+			GNW = { set_variable = { zin_west_grudge = 55 } country_event = { id = zin_west.1 days = 2 } }
+			GIR = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			WER = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			LAB = { set_variable = { zin_west_grudge = 45 } country_event = { id = zin_west.1 days = 2 } }
+			THN = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			DOB = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			BRU = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			GRO = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			SAO = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			BLD = { set_variable = { zin_west_grudge = 35 } country_event = { id = zin_west.1 days = 2 } }
+			KRA = { set_variable = { zin_west_grudge = 60 } country_event = { id = zin_west.1 days = 2 } }
+			CRG = { set_variable = { zin_west_grudge = 50 } country_event = { id = zin_west.1 days = 2 } }
+			VRN = { set_variable = { zin_west_grudge = 45 } country_event = { id = zin_west.1 days = 2 } }
+			WEN = { set_variable = { zin_west_grudge = 40 } country_event = { id = zin_west.1 days = 2 } }
+			GNW = { country_event = { id = zin_west.2 days = 9 } }
+			set_global_flag = zin_wall_accord
 		}
 	}
 	on_annex = {
@@ -43,6 +37,14 @@ on_actions = {
 				limit = { zin_west_is_western = yes FROM = { zin_west_is_western = yes } }
 				set_temp_variable = { zin_arg_value = -15 }
 				zin_west_add_unity = yes
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = { has_global_flag = zin_wall_accord NOT = { has_global_flag = zin_wall_accord_broken } has_war_with = FROM FROM.FROM = { zin_is_site_great_wall = yes } }
+				set_global_flag = zin_wall_accord_broken
 			}
 		}
 	}

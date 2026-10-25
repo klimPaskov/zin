@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y60
+			original_tag = VER
 		}
 	}
 	initial_show_position = { focus = zin_regional_verde_the_green_isle }
@@ -171,7 +171,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 		}
 		ai_will_do = {
 			factor = 20
@@ -329,7 +329,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			check_variable = { global.zin_eindil_stage > 4 }
-			country_exists = Y6X
+			country_exists = GAA
 		}
 		ai_will_do = {
 			factor = 100
@@ -470,7 +470,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 		}
 		ai_will_do = {
 			factor = 20

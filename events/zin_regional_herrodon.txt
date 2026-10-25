@@ -65,23 +65,23 @@ country_event = {
 		zin_elves_add_kinship = yes
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			set_temp_variable = { zin_arg_target = Y0V }
+			set_temp_variable = { zin_arg_target = HRR }
 			zin_elves_goodwill = yes
 		}
 		if = {
 			limit = {
-				country_exists = Y0W
+				country_exists = ANE
 			}
-			set_temp_variable = { zin_arg_target = Y0W }
+			set_temp_variable = { zin_arg_target = ANE }
 			zin_elves_goodwill = yes
 		}
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_herrodon.6
 			}
 		}
@@ -93,9 +93,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_herrodon.6
 			}
 		}
@@ -118,13 +118,13 @@ country_event = {
 		zin_elves_add_rivalry = yes
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_elves_add_kinship = yes
-		remove_opinion_modifier = { target = Y0V modifier = zin_opinion_old_rivalry }
-		Y0V = { remove_opinion_modifier = { target = ROOT modifier = zin_opinion_old_rivalry } }
+		remove_opinion_modifier = { target = HRR modifier = zin_opinion_old_rivalry }
+		HRR = { remove_opinion_modifier = { target = ROOT modifier = zin_opinion_old_rivalry } }
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_herrodon.6
 			}
 		}
@@ -138,9 +138,9 @@ country_event = {
 		zin_elves_add_rivalry = yes
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_herrodon.6
 			}
 		}
@@ -161,9 +161,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_herrodon.6
 			}
 		}
@@ -178,21 +178,21 @@ country_event = {
 			}
 			modifier = {
 				add = 5
-				has_opinion = { target = Y0V value > 39 }
+				has_opinion = { target = HRR value > 39 }
 			}
 			modifier = {
 				add = 5
-				has_opinion = { target = Y0V value > 19 }
+				has_opinion = { target = HRR value > 19 }
 			}
 		}
 		if = {
 			limit = {
-				country_exists = Y0V
+				country_exists = HRR
 			}
-			Y0V = {
+			HRR = {
 				puppet = ROOT
 			}
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_herrodon.6
 			}
 		}

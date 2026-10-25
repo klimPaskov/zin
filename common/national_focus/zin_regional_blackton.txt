@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y4I
+			original_tag = BLK
 		}
 	}
 	initial_show_position = { focus = zin_regional_blackton_the_five_towns }
@@ -341,7 +341,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0G
+			country_exists = LER
 		}
 		ai_will_do = {
 			factor = 30
@@ -402,16 +402,16 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0G
+			country_exists = LER
 			NOT = {
-				has_war_with = Y0G
+				has_war_with = LER
 			}
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				country_event = zin_regional_blackton.2
 			}
 		}
@@ -440,7 +440,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 3
-				has_war_with = Y1A
+				has_war_with = GOL
 			}
 		}
 		completion_reward = {
@@ -538,7 +538,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y19
+			country_exists = DND
 			zin_regional_blackton_unbound = yes
 		}
 		ai_will_do = {
@@ -553,7 +553,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y19 = {
+			DND = {
 				country_event = zin_regional_blackton.4
 			}
 		}
@@ -586,7 +586,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_goldoroth_add_sway = yes
-			Y1A = {
+			GOL = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_blackton_good_customers
@@ -677,7 +677,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = -1 }
 			zin_dark_add_volgan_pact = yes
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_blackton_chains_for_envoys

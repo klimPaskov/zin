@@ -3,8 +3,8 @@ zin_regional_dulundur_moot_allowed = {
 	zin_dark_is_free_hold = yes
 	check_variable = { zin_volgan_pact < 3 }
 	OR = {
-		Y1A = { check_variable = { var = zin_goldoroth_unity value = 30 compare = greater_than_or_equals } }
-		Y1A = { any_enemy_country = { zin_dark_is_hold = yes } }
+		GOL = { check_variable = { var = zin_goldoroth_unity value = 30 compare = greater_than_or_equals } }
+		GOL = { any_enemy_country = { zin_dark_is_hold = yes } }
 		AND = {
 			zin_dark_date_defiance_cb = yes
 			any_other_country = {

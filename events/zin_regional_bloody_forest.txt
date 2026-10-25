@@ -30,10 +30,10 @@ country_event = {
 		add_political_power = 25
 		if = {
 			limit = {
-				country_exists = Y0L
+				country_exists = AEN
 			}
 			add_opinion_modifier = {
-				target = Y0L
+				target = AEN
 				modifier = zin_regional_bloody_forest_cart_taken
 			}
 		}
@@ -64,14 +64,14 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y8E
+				country_exists = BLO
 			}
 			diplomatic_relation = {
-				country = Y8E
+				country = BLO
 				relation = non_aggression_pact
 				active = yes
 			}
-			Y8E = {
+			BLO = {
 				add_ideas = zin_regional_bloody_forest_forest_truce
 			}
 		}
@@ -99,19 +99,19 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y8E
+				country_exists = BLO
 			}
 			diplomatic_relation = {
-				country = Y8E
+				country = BLO
 				relation = non_aggression_pact
 				active = yes
 			}
 			add_opinion_modifier = {
-				target = Y8E
+				target = BLO
 				modifier = zin_regional_bloody_forest_forest_peace
 			}
 			reverse_add_opinion_modifier = {
-				target = Y8E
+				target = BLO
 				modifier = zin_regional_bloody_forest_forest_peace
 			}
 		}
@@ -138,16 +138,16 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y8E
+				country_exists = BLO
 			}
-			give_military_access = Y8E
-			Y8E = { give_military_access = ROOT }
+			give_military_access = BLO
+			BLO = { give_military_access = ROOT }
 			add_opinion_modifier = {
-				target = Y8E
+				target = BLO
 				modifier = zin_regional_bloody_forest_blades_accepted
 			}
 			reverse_add_opinion_modifier = {
-				target = Y8E
+				target = BLO
 				modifier = zin_regional_bloody_forest_blades_accepted
 			}
 		}

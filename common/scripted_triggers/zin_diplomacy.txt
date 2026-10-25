@@ -10,9 +10,9 @@ zin_diplo_refusal_binds = {
 # Scope: a country. The dark powers: Volgan, the Southern Dominion, Zol and, once the secret is out, the realm Afrit rules and the Worshipdom.
 zin_diplo_is_dark_power = {
 	OR = {
-		tag = Y8D
+		tag = PUV
 		has_faction_template = zin_faction_southern_dominion
-		tag = Y0U
+		tag = ZOL
 		AND = {
 			has_global_flag = zin_afrit_revealed
 			OR = {

@@ -79,7 +79,7 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		Y0I = {
+		EEK = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_leren_add_lean = yes
 		}
@@ -165,7 +165,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 		}
-		Y0I = {
+		EEK = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_leren_add_lean = yes
 		}
@@ -195,14 +195,14 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 20 }
 		zin_leren_add_lean = yes
 		add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_friendship
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_friendship
 		}
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.21
 		}
 	}
@@ -213,7 +213,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_leren_add_lean = yes
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.27
 		}
 	}
@@ -262,11 +262,11 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 15 }
 		zin_leren_add_lean = yes
 		diplomatic_relation = {
-			country = Y0G
+			country = LER
 			relation = non_aggression_pact
 			active = yes
 		}
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.22
 		}
 	}
@@ -277,7 +277,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -5 }
 		zin_leren_add_lean = yes
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.28
 		}
 	}
@@ -320,13 +320,13 @@ country_event = {
 			factor = 60
 		}
 		diplomatic_relation = {
-			country = Y0G
+			country = LER
 			relation = non_aggression_pact
 			active = yes
 		}
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_leren_add_lean = yes
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.23
 		}
 	}
@@ -337,7 +337,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_leren_add_lean = yes
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.29
 		}
 	}
@@ -437,12 +437,12 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_leren_add_strait_standing = yes
 		add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_oaths
 		}
 		give_military_access = FROM
 		FROM = { give_military_access = ROOT }
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.24
 		}
 	}
@@ -453,7 +453,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_leren_add_strait_standing = yes
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.30
 		}
 	}
@@ -545,17 +545,17 @@ country_event = {
 			factor = 70
 		}
 		add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_equals
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_equals
 		}
-		Y0G = {
+		LER = {
 			set_country_flag = zin_lerendor_new_treaty
 		}
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.25
 		}
 	}
@@ -565,14 +565,14 @@ country_event = {
 			factor = 30
 		}
 		add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_refused
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_refused
 		}
-		Y0G = {
+		LER = {
 			country_event = zin_lerendor.31
 		}
 	}
@@ -705,11 +705,11 @@ country_event = {
 			factor = 60
 		}
 		add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_friendship
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_lerendor_opinion_friendship
 		}
 	}

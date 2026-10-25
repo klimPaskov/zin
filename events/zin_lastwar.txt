@@ -229,39 +229,39 @@ country_event = {
 			modifier = {
 				add = 70
 				zin_rules_is_historical = yes
-				NOT = { original_tag = Y0M }
+				NOT = { original_tag = SEL }
 			}
 			modifier = {
 				factor = 0
 				zin_rules_is_historical = yes
 				NOT = {
-					NOT = { original_tag = Y0M }
+					NOT = { original_tag = SEL }
 				}
 			}
 			modifier = {
 				add = 45
 				zin_story_rules_plausible = yes
 				NOT = { zin_story_rules_plausible_diverged = yes }
-				NOT = { original_tag = Y0M }
+				NOT = { original_tag = SEL }
 			}
 			modifier = {
 				add = 30
 				zin_story_rules_plausible_diverged = yes
-				NOT = { original_tag = Y0M }
+				NOT = { original_tag = SEL }
 			}
 			modifier = {
 				add = -5
 				zin_story_rules_plausible = yes
 				NOT = { zin_story_rules_plausible_diverged = yes }
 				NOT = {
-					NOT = { original_tag = Y0M }
+					NOT = { original_tag = SEL }
 				}
 			}
 			modifier = {
 				add = 10
 				zin_story_rules_plausible_diverged = yes
 				NOT = {
-					NOT = { original_tag = Y0M }
+					NOT = { original_tag = SEL }
 				}
 			}
 			modifier = {
@@ -285,39 +285,39 @@ country_event = {
 			modifier = {
 				add = 70
 				zin_rules_is_historical = yes
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				factor = 0
 				zin_rules_is_historical = yes
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
 				add = 45
 				zin_story_rules_plausible = yes
 				NOT = { zin_story_rules_plausible_diverged = yes }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = 30
 				zin_story_rules_plausible_diverged = yes
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = -5
 				zin_story_rules_plausible = yes
 				NOT = { zin_story_rules_plausible_diverged = yes }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
 				add = 10
 				zin_story_rules_plausible_diverged = yes
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -406,14 +406,14 @@ country_event = {
 	desc = {
 		text = zin_lastwar.20.d_asgard
 		trigger = {
-			original_tag = Y0T
+			original_tag = ORH
 		}
 	}
 	desc = {
 		text = zin_lastwar.20.d
 		trigger = {
 			NOT = {
-				original_tag = Y0T
+				original_tag = ORH
 			}
 		}
 	}
@@ -423,7 +423,7 @@ country_event = {
 	option = {
 		name = zin_lastwar.20.a
 		trigger = {
-			original_tag = Y0T
+			original_tag = ORH
 		}
 		ai_chance = {
 			base = 70
@@ -433,7 +433,7 @@ country_event = {
 	option = {
 		name = zin_lastwar.20.b
 		trigger = {
-			original_tag = Y0T
+			original_tag = ORH
 		}
 		ai_chance = {
 			base = 30
@@ -449,7 +449,7 @@ country_event = {
 	option = {
 		name = zin_lastwar.20.c
 		trigger = {
-			NOT = { original_tag = Y0T }
+			NOT = { original_tag = ORH }
 		}
 		ai_chance = {
 			base = 100
@@ -550,7 +550,7 @@ country_event = {
 		}
 		custom_effect_tooltip = zin_lastwar.40.b_tip
 		add_political_power = -50
-		send_equipment = { equipment = zin_arms_equipment amount = 1000 target = Y0Y }
+		send_equipment = { equipment = zin_arms_equipment amount = 1000 target = MIR }
 	}
 }
 

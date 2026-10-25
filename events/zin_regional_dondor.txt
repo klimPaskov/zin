@@ -55,7 +55,7 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
-		Y19 = {
+		DND = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = zin_regional_dondor_beacon_kin
@@ -108,7 +108,7 @@ country_event = {
 				has_country_flag = zin_regional_blackton_free_harbour
 			}
 		}
-		Y19 = {
+		DND = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = zin_regional_dondor_polite_refusal
@@ -128,8 +128,8 @@ country_event = {
 				check_variable = { global.zin_dark_border_tension > 49 }
 			}
 		}
-		Y19 = {
-			add_to_faction = Y4I
+		DND = {
+			add_to_faction = BLK
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_dark_add_accord_resolve = yes
@@ -158,12 +158,12 @@ country_event = {
 				check_variable = { zin_aenor_lost_cause > 40 }
 			}
 		}
-		Y19 = {
+		DND = {
 			set_country_flag = zin_lost_cause_member
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_lost_cause_add_strength = yes
 		}
-		Y19 = {
+		DND = {
 			country_event = zin_regional_dondor.8
 		}
 	}
@@ -192,11 +192,11 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_war_with = Y19
+				has_war_with = DND
 			}
 		}
 		zin_regional_dondor_join_war = yes
-		Y19 = {
+		DND = {
 			country_event = zin_regional_dondor.8
 		}
 	}

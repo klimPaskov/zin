@@ -279,16 +279,16 @@ zin_sub_grave_ranks = {
 	xp_cost = 100
 	xp_type = army
 	available = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	visible = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	ai_will_do = {
 		base = 1
 		modifier = {
 			factor = 10
-			original_tag = Y8D
+			original_tag = PUV
 		}
 	}
 	zin_the_dead_revenant = {
@@ -865,7 +865,7 @@ zin_sub_dread = {
 	xp_type = army
 	available = {
 		OR = {
-			original_tag = Y8D
+			original_tag = PUV
 			zin_tech_people_demons = yes
 			zin_tech_people_orcs = yes
 			zin_tech_people_trolls = yes
@@ -873,7 +873,7 @@ zin_sub_dread = {
 	}
 	visible = {
 		OR = {
-			original_tag = Y8D
+			original_tag = PUV
 			zin_tech_people_demons = yes
 			zin_tech_people_orcs = yes
 			zin_tech_people_trolls = yes
@@ -884,7 +884,7 @@ zin_sub_dread = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y8D
+				original_tag = PUV
 				zin_tech_people_demons = yes
 			}
 		}

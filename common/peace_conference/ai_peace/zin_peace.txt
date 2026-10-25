@@ -317,17 +317,17 @@ peace_ai_desires = {
 	zin_peace_volgan_takes_the_marches = {
 		peace_action_type = { take_states }
 		enable = {
-			ROOT = { tag = Y8D }
-			ROOT.FROM = { tag = Y8D }
-			ROOT.FROM.FROM = { tag = Y0Y }
+			ROOT = { tag = PUV }
+			ROOT.FROM = { tag = PUV }
+			ROOT.FROM.FROM = { tag = MIR }
 		}
 		ai_desire = 150
 	}
 	zin_peace_volgan_swears_the_ember_lands = {
 		peace_action_type = { puppet }
 		enable = {
-			ROOT = { tag = Y8D }
-			ROOT.FROM = { tag = Y8D }
+			ROOT = { tag = PUV }
+			ROOT.FROM = { tag = PUV }
 			ROOT.FROM.FROM.FROM = { zin_is_region_ember_lands = yes }
 		}
 		ai_desire = 50
@@ -335,7 +335,7 @@ peace_ai_desires = {
 	zin_peace_zol_takes_no_land = {
 		peace_action_type = { take_states puppet force_government liberate }
 		enable = {
-			ROOT = { tag = Y0U }
+			ROOT = { tag = ZOL }
 		}
 		ai_desire = -1000
 	}

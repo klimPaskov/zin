@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y6Z
+			original_tag = GOO
 		}
 	}
 	initial_show_position = { focus = zin_regional_goodin_the_sunfolk_steadings }
@@ -141,13 +141,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 10
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 25
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			add_political_power = -10
 		}
@@ -163,13 +163,13 @@ focus_tree = {
 		cost = 5
 		available = {
 			has_global_flag = zin_sun_noon_council
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 25
 		}
 		completion_reward = {
-			Y6U = {
+			LIG = {
 				country_event = zin_regional_goodin.1
 			}
 		}
@@ -190,20 +190,20 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = Y70
+					country_exists = GOO
 				}
 				diplomatic_relation = {
-					country = Y70
+					country = GOO
 					relation = non_aggression_pact
 					active = yes
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y71
+					country_exists = GOO
 				}
 				diplomatic_relation = {
-					country = Y71
+					country = GOO
 					relation = non_aggression_pact
 					active = yes
 				}

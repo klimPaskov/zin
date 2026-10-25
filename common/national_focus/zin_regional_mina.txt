@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y34
+			original_tag = MIA
 		}
 	}
 	initial_show_position = { focus = zin_regional_mina_the_lord_of_mina }
@@ -404,7 +404,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_leren_add_lean = yes
-			Y0G = {
+			LER = {
 				country_event = zin_regional_mina.2
 			}
 		}
@@ -698,13 +698,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y30
+			country_exists = DOL
 		}
 		ai_will_do = {
 			factor = 30
 		}
 		completion_reward = {
-			Y30 = {
+			DOL = {
 				country_event = zin_regional_mina.3
 			}
 		}
@@ -736,7 +736,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -789,7 +789,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -898,7 +898,7 @@ focus_tree = {
 				limit = {
 					zin_north_with_lerendor = yes
 				}
-				Y0G = {
+				LER = {
 					add_equipment_to_stockpile = {
 						type = zin_arms_equipment
 						amount = 1000
@@ -971,7 +971,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			OR = {
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 				has_global_flag = zin_eindil_crowned
 				has_global_flag = zin_afrit_dead
 				AND = {

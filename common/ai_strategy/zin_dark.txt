@@ -2,769 +2,493 @@
 
 zin_dark_goldoroth_stance = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = antagonize
-		id = "Y19"
+		id = "DND"
 		value = 20
 	}
 	ai_strategy = {
 		type = befriend
-		id = "Y4H"
+		id = "DUL"
 		value = 30
 	}
 	ai_strategy = {
 		type = befriend
-		id = "Y43"
+		id = "BOR"
 		value = 30
 	}
 	ai_strategy = {
 		type = befriend
-		id = "Y44"
+		id = "DRE"
 		value = 30
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y1B"
+		id = "DRK"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y1C"
+		id = "BUN"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y43"
+		id = "BLN"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y44"
+		id = "BOR"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y45"
+		id = "DRE"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y46"
+		id = "DUL"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y47"
+		id = "TRO"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y48"
+		id = "DAK"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y49"
+		id = "SKR"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y4A"
+		id = "DUN"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y4B"
+		id = "BRT"
 		value = 40
 	}
 	ai_strategy = {
 		type = influence
-		id = "Y4C"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4D"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4E"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4F"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4G"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4H"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4J"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4K"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y4L"
-		value = 40
-	}
-	ai_strategy = {
-		type = influence
-		id = "Y8C"
+		id = "WIL"
 		value = 40
 	}
 }
 
 zin_dark_dondor_ready = {
 	enable = {
-		original_tag = Y19
+		original_tag = DND
 		check_variable = { global.zin_dark_border_tension > 59.99 }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = prepare_for_war
-		id = "Y1A"
+		id = "GOL"
 		value = 100
 	}
 }
 
-zin_dark_goldoroth_defiant_y1b = {
+zin_dark_goldoroth_defiant_drk = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y1B = { has_country_flag = zin_dark_refused_yoke }
+		DRK = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y1B"
+		id = "DRK"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y1c = {
+zin_dark_goldoroth_defiant_bun = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y1C = { has_country_flag = zin_dark_refused_yoke }
+		BUN = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y1C"
+		id = "BUN"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y43 = {
+zin_dark_goldoroth_defiant_bln = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y43 = { has_country_flag = zin_dark_refused_yoke }
+		BLN = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y43"
+		id = "BLN"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y44 = {
+zin_dark_goldoroth_defiant_bor = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y44 = { has_country_flag = zin_dark_refused_yoke }
+		BOR = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y44"
+		id = "BOR"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y45 = {
+zin_dark_goldoroth_defiant_dre = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y45 = { has_country_flag = zin_dark_refused_yoke }
+		DRE = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y45"
+		id = "DRE"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y46 = {
+zin_dark_goldoroth_defiant_dul = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y46 = { has_country_flag = zin_dark_refused_yoke }
+		DUL = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y46"
+		id = "DUL"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y47 = {
+zin_dark_goldoroth_defiant_tro = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y47 = { has_country_flag = zin_dark_refused_yoke }
+		TRO = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y47"
+		id = "TRO"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y48 = {
+zin_dark_goldoroth_defiant_dak = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y48 = { has_country_flag = zin_dark_refused_yoke }
+		DAK = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y48"
+		id = "DAK"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y49 = {
+zin_dark_goldoroth_defiant_skr = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y49 = { has_country_flag = zin_dark_refused_yoke }
+		SKR = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y49"
+		id = "SKR"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y4a = {
+zin_dark_goldoroth_defiant_dun = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y4A = { has_country_flag = zin_dark_refused_yoke }
+		DUN = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4A"
+		id = "DUN"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y4b = {
+zin_dark_goldoroth_defiant_brt = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y4B = { has_country_flag = zin_dark_refused_yoke }
+		BRT = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4B"
+		id = "BRT"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y4c = {
+zin_dark_goldoroth_defiant_wil = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		zin_goldoroth_war_open = yes
-		Y4C = { has_country_flag = zin_dark_refused_yoke }
+		WIL = { has_country_flag = zin_dark_refused_yoke }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4C"
+		id = "WIL"
 		value = 60
 	}
 }
 
-zin_dark_goldoroth_defiant_y4d = {
+zin_dark_goldoroth_conquer_drk = {
 	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4D = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4D"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4e = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4E = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4E"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4f = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4F = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4F"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4g = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4G = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4G"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4h = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4H = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4H"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4j = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4J = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4J"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4k = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4K = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4K"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y4l = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y4L = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4L"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_defiant_y8c = {
-	enable = {
-		original_tag = Y1A
-		zin_goldoroth_war_open = yes
-		Y8C = { has_country_flag = zin_dark_refused_yoke }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y8C"
-		value = 60
-	}
-}
-
-zin_dark_goldoroth_conquer_y1b = {
-	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y1B = { check_variable = { zin_volgan_pact > 2.99 } }
+		DRK = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y1B"
+		id = "DRK"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y1c = {
+zin_dark_goldoroth_conquer_bun = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y1C = { check_variable = { zin_volgan_pact > 2.99 } }
+		BUN = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y1C"
+		id = "BUN"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y43 = {
+zin_dark_goldoroth_conquer_ves = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y43 = { check_variable = { zin_volgan_pact > 2.99 } }
+		VES = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y43"
+		id = "VES"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y44 = {
+zin_dark_goldoroth_conquer_blk = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y44 = { check_variable = { zin_volgan_pact > 2.99 } }
+		BLK = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y44"
+		id = "BLK"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y45 = {
+zin_dark_goldoroth_conquer_bln = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y45 = { check_variable = { zin_volgan_pact > 2.99 } }
+		BLN = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y45"
+		id = "BLN"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y46 = {
+zin_dark_goldoroth_conquer_bor = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y46 = { check_variable = { zin_volgan_pact > 2.99 } }
+		BOR = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y46"
+		id = "BOR"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y47 = {
+zin_dark_goldoroth_conquer_dre = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y47 = { check_variable = { zin_volgan_pact > 2.99 } }
+		DRE = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y47"
+		id = "DRE"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y48 = {
+zin_dark_goldoroth_conquer_dul = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y48 = { check_variable = { zin_volgan_pact > 2.99 } }
+		DUL = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y48"
+		id = "DUL"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y49 = {
+zin_dark_goldoroth_conquer_tro = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y49 = { check_variable = { zin_volgan_pact > 2.99 } }
+		TRO = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y49"
+		id = "TRO"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y4a = {
+zin_dark_goldoroth_conquer_hoo = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y4A = { check_variable = { zin_volgan_pact > 2.99 } }
+		HOO = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4A"
+		id = "HOO"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y4b = {
+zin_dark_goldoroth_conquer_dak = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y4B = { check_variable = { zin_volgan_pact > 2.99 } }
+		DAK = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4B"
+		id = "DAK"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y4c = {
+zin_dark_goldoroth_conquer_skr = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y4C = { check_variable = { zin_volgan_pact > 2.99 } }
+		SKR = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4C"
+		id = "SKR"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y4d = {
+zin_dark_goldoroth_conquer_dun = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y4D = { check_variable = { zin_volgan_pact > 2.99 } }
+		DUN = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4D"
+		id = "DUN"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y4e = {
+zin_dark_goldoroth_conquer_brt = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y4E = { check_variable = { zin_volgan_pact > 2.99 } }
+		BRT = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4E"
+		id = "BRT"
 		value = 50
 	}
 }
 
-zin_dark_goldoroth_conquer_y4f = {
+zin_dark_goldoroth_conquer_wil = {
 	enable = {
-		original_tag = Y1A
+		original_tag = GOL
 		has_country_flag = zin_goldoroth_no_masters
 		has_global_flag = zin_volgan_marches
-		Y4F = { check_variable = { zin_volgan_pact > 2.99 } }
+		WIL = { check_variable = { zin_volgan_pact > 2.99 } }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = conquer
-		id = "Y4F"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y4g = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y4G = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4G"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y4h = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y4H = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4H"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y4i = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y4I = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4I"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y4j = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y4J = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4J"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y4k = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y4K = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4K"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y4l = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y4L = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y4L"
-		value = 50
-	}
-}
-
-zin_dark_goldoroth_conquer_y8c = {
-	enable = {
-		original_tag = Y1A
-		has_country_flag = zin_goldoroth_no_masters
-		has_global_flag = zin_volgan_marches
-		Y8C = { check_variable = { zin_volgan_pact > 2.99 } }
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = conquer
-		id = "Y8C"
+		id = "WIL"
 		value = 50
 	}
 }

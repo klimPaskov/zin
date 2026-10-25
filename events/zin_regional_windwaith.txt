@@ -38,7 +38,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		Y04 = {
+		VND = {
 			set_temp_variable = { zin_arg_value = -10 }
 			zin_cold_add_lean = yes
 		}
@@ -49,7 +49,7 @@ country_event = {
 			factor = 80
 		}
 		add_ideas = zin_cold_harbour_compact
-		Y04 = {
+		VND = {
 			add_ideas = zin_cold_harbour_compact
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_cold_add_lean = yes

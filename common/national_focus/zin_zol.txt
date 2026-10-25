@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 	}
 	initial_show_position = { focus = zin_zol_servants_unseen }
@@ -1433,12 +1433,12 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						has_war_with = Y0L
+						has_war_with = AEN
 					}
 				}
 				create_wargoal = {
 					type = annex_everything
-					target = Y0L
+					target = AEN
 				}
 			}
 			add_timed_idea = {
@@ -1471,12 +1471,12 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						has_war_with = Y0G
+						has_war_with = LER
 					}
 				}
 				create_wargoal = {
 					type = annex_everything
-					target = Y0G
+					target = LER
 				}
 			}
 		}
@@ -1859,12 +1859,12 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						has_war_with = Y0L
+						has_war_with = AEN
 					}
 				}
 				create_wargoal = {
 					type = annex_everything
-					target = Y0L
+					target = AEN
 				}
 			}
 			add_timed_idea = {
@@ -2029,15 +2029,16 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 2
 		available = {
-			has_global_flag = zin_zol_manifested
+			has_global_flag = zin_kusven_forth
 		}
 		bypass = {
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		ai_will_do = {
 			factor = 200
 		}
 		completion_reward = {
+			set_country_flag = zin_zol_cost_of_form
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_zol_set_manifest_cost = yes
 		}
@@ -2053,10 +2054,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		cost = 2
 		available = {
-			has_global_flag = zin_zol_manifested
+			has_global_flag = zin_kusven_forth
 		}
 		bypass = {
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		ai_will_do = {
 			factor = 150
@@ -2080,7 +2081,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		ai_will_do = {
 			factor = 100
@@ -2103,7 +2104,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 10
 		available = {
-			has_global_flag = zin_zol_manifested
+			has_global_flag = zin_kusven_forth
 		}
 		ai_will_do = {
 			factor = 30
@@ -2166,7 +2167,7 @@ focus_tree = {
 				}
 				AND = {
 					check_variable = { global.zin_story_pace = 1.5 }
-					date > 1766.3.2
+					date > 1766.3.1
 				}
 				AND = {
 					check_variable = { global.zin_story_pace = 0.75 }

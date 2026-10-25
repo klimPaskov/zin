@@ -153,348 +153,228 @@ zin_inst_market_buy = {
 
 zin_inst_lend_selen = {
 	enable = {
-		original_tag = Y0L
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y0M
-		value = 60
-	}
-}
-
-zin_inst_lend_konori = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y0N
-		value = 60
-	}
-}
-
-zin_inst_lend_kilinti = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y0O
+		id = SEL
 		value = 60
 	}
 }
 
 zin_inst_lend_kingson = {
 	enable = {
-		original_tag = Y0L
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y0P
+		id = KIN
 		value = 60
 	}
 }
 
-zin_inst_lend_hiloron = {
+zin_inst_lend_konori = {
 	enable = {
-		original_tag = Y0L
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y0Q
-		value = 60
-	}
-}
-
-zin_inst_lend_safeton = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y0R
-		value = 60
-	}
-}
-
-zin_inst_lend_noleksun = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y0S
-		value = 60
-	}
-}
-
-zin_inst_lend_asgard = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y0T
-		value = 60
-	}
-}
-
-zin_inst_lend_nezer = {
-	enable = {
-		original_tag = Y8D
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y10
-		value = 60
-	}
-}
-
-zin_inst_lend_ulgus = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4N
-		value = 60
-	}
-}
-
-zin_inst_lend_vothrim = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4O
-		value = 60
-	}
-}
-
-zin_inst_lend_stendorler = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4P
-		value = 60
-	}
-}
-
-zin_inst_lend_olvinc_un = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4Q
-		value = 60
-	}
-}
-
-zin_inst_lend_svenlor = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4R
-		value = 60
-	}
-}
-
-zin_inst_lend_tieri = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4S
-		value = 60
-	}
-}
-
-zin_inst_lend_hilofrim = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4T
-		value = 60
-	}
-}
-
-zin_inst_lend_klungori_guard = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4U
-		value = 60
-	}
-}
-
-zin_inst_lend_kunhrim = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4V
+		id = KON
 		value = 60
 	}
 }
 
 zin_inst_lend_hunhun = {
 	enable = {
-		original_tag = Y0L
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y4W
+		id = HNH
 		value = 60
 	}
 }
 
-zin_inst_lend_dariap = {
+zin_inst_lend_klungori_guard = {
 	enable = {
-		original_tag = Y0L
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y4X
-		value = 60
-	}
-}
-
-zin_inst_lend_novez = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4Y
-		value = 60
-	}
-}
-
-zin_inst_lend_noloreh = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y4Z
-		value = 60
-	}
-}
-
-zin_inst_lend_mondon = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y50
-		value = 60
-	}
-}
-
-zin_inst_lend_freshon = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y51
-		value = 60
-	}
-}
-
-zin_inst_lend_belurithon = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y52
-		value = 60
-	}
-}
-
-zin_inst_lend_pazoma = {
-	enable = {
-		original_tag = Y0L
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = Y53
+		id = KLU
 		value = 60
 	}
 }
 
 zin_inst_lend_herez = {
 	enable = {
-		original_tag = Y0L
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y55
+		id = HER
 		value = 60
 	}
 }
 
-zin_inst_lend_demon = {
+zin_inst_lend_noleksun = {
 	enable = {
-		original_tag = Y8D
+		original_tag = AEN
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y7T
+		id = NOL
+		value = 60
+	}
+}
+
+zin_inst_lend_kilinti = {
+	enable = {
+		original_tag = AEN
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = KIL
+		value = 60
+	}
+}
+
+zin_inst_lend_safeton = {
+	enable = {
+		original_tag = AEN
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SFT
+		value = 60
+	}
+}
+
+zin_inst_lend_freshon = {
+	enable = {
+		original_tag = AEN
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = FRE
+		value = 60
+	}
+}
+
+zin_inst_lend_pazoma = {
+	enable = {
+		original_tag = AEN
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = PAZ
+		value = 60
+	}
+}
+
+zin_inst_lend_orohaf = {
+	enable = {
+		original_tag = AEN
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = ORH
+		value = 60
+	}
+}
+
+zin_inst_lend_kunhrim = {
+	enable = {
+		original_tag = AEN
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = KUN
+		value = 60
+	}
+}
+
+zin_inst_lend_dark_gate = {
+	enable = {
+		original_tag = GOL
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = DRK
+		value = 60
+	}
+}
+
+zin_inst_lend_khorvrath = {
+	enable = {
+		original_tag = PUV
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = KHO
 		value = 60
 	}
 }
 
 zin_inst_lend_dolon = {
 	enable = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = send_lend_lease_desire
-		id = Y7U
+		id = DLN
+		value = 60
+	}
+}
+
+zin_inst_lend_nezer = {
+	enable = {
+		original_tag = PUV
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = NEZ
+		value = 60
+	}
+}
+
+zin_inst_lend_teste = {
+	enable = {
+		original_tag = HRR
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = TES
+		value = 60
+	}
+}
+
+zin_inst_lend_tirlan = {
+	enable = {
+		original_tag = HIR
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = TIR
 		value = 60
 	}
 }

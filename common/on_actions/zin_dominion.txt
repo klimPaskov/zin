@@ -2,15 +2,15 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y8D = { country_event = { id = zin_dominion.1 days = 1 } }
+			PUV = { country_event = { id = zin_dominion.1 days = 1 } }
 		}
 	}
-	on_monthly_Y8D = {
+	on_monthly_PUV = {
 		effect = {
 			zin_dominion_monthly_volgan = yes
 		}
 	}
-	on_monthly_Y0Y = {
+	on_monthly_MIR = {
 		effect = {
 			zin_dominion_monthly_mirolon = yes
 		}
@@ -34,16 +34,31 @@ on_actions = {
 			}
 		}
 	}
+	# ROOT is the new controller, FROM the old one, FROM.FROM the state (the hook runs in the state's scope)
 	on_state_control_changed = {
+		effect = {
+			FROM.FROM = {
+				if = {
+					limit = {
+						OR = {
+							zin_is_site_mirolon_passes = yes
+							zin_is_site_nafeher = yes
+						}
+					}
+					zin_dominion_state_changed = yes
+				}
+			}
+		}
+	}
+	# ROOT annexed FROM: Volgan's realm conquered with his body unbroken (B34.D2)
+	on_annex = {
 		effect = {
 			if = {
 				limit = {
-					OR = {
-						zin_is_site_mirolon_passes = yes
-						zin_is_site_nafeher = yes
-					}
+					FROM = { tag = PUV }
+					NOT = { has_global_flag = zin_volgan_body_destroyed }
 				}
-				zin_dominion_state_changed = yes
+				zin_volgan_withdraws_south = yes
 			}
 		}
 	}

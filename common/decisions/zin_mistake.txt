@@ -4,7 +4,7 @@ zin_mistake_presence = {
 	zin_zol_tend_the_presence = {
 		icon = zol_sigil
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -37,7 +37,7 @@ zin_mistake_presence = {
 	zin_zol_call_upon_great = {
 		icon = order_great
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -65,7 +65,7 @@ zin_mistake_presence = {
 	zin_zol_call_upon_lesser = {
 		icon = order_lesser
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -93,7 +93,7 @@ zin_mistake_presence = {
 	zin_zol_call_upon_divine = {
 		icon = order_divine
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -129,7 +129,7 @@ zin_mistake_presence = {
 	zin_zol_wake_an_island = {
 		icon = black_isles
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		state_trigger = any_owned_state
 		target_trigger = {
@@ -155,16 +155,12 @@ zin_mistake_presence = {
 		}
 		ai_will_do = {
 			base = 4
-			modifier = {
-				factor = 0
-				has_country_flag = zin_zol_wake_cd
-			}
 		}
 	}
 	zin_zol_raise_a_host = {
 		icon = grave_host
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -203,7 +199,7 @@ zin_mistake_presence = {
 	zin_zol_call_the_rising = {
 		icon = bones_risen
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -224,20 +220,20 @@ zin_mistake_presence = {
 			base = 1000
 		}
 	}
-	zin_zol_come_forth = {
+	zin_zol_send_kusven_decision = {
 		icon = vast_shadow
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
 			has_country_flag = zin_zol_manifest_open
 		}
 		available = {
-			zin_zol_can_manifest = yes
+			zin_kusven_can_come_forth = yes
 		}
 		complete_effect = {
-			zin_zol_manifest = yes
+			zin_zol_send_kusven = yes
 		}
 		ai_will_do = {
 			base = 0
@@ -255,7 +251,7 @@ zin_mistake_presence = {
 	zin_zol_shadow_on_the_land = {
 		icon = banner_black
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		target_trigger = {
 			FROM = {
@@ -287,7 +283,7 @@ zin_mistake_presence = {
 	zin_zol_stillness_before_the_form = {
 		icon = silent_throne
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -316,7 +312,7 @@ zin_mistake_presence = {
 	zin_zol_the_dead_endure = {
 		icon = dead_ranks_far
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -343,7 +339,7 @@ zin_mistake_presence = {
 	zin_zol_second_stirring = {
 		icon = zol_sigil
 		allowed = {
-			original_tag = Y0U
+			original_tag = ZOL
 		}
 		visible = {
 			zin_is_zol = yes
@@ -353,7 +349,7 @@ zin_mistake_presence = {
 			zin_zol_after_second_stirring = yes
 			check_variable = { zin_mistake_power > 59 }
 			check_variable = { zin_zol_islands_stirring > 3 }
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		complete_effect = {
 			zin_zol_second_rise = yes
@@ -375,7 +371,8 @@ zin_mistake_presence = {
 		days_mission_timeout = 63
 		ai_will_do = { base = 0 }
 		timeout_effect = {
-			zin_zol_withdraw = yes
+			set_temp_variable = { zin_arg_cause = 1 }
+			zin_kusven_withdraw = yes
 		}
 	}
 }

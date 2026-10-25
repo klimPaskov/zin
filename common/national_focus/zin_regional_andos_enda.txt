@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0W
+			original_tag = ANE
 		}
 	}
 	initial_show_position = { focus = zin_regional_andos_enda_the_speakers_federation }
@@ -197,7 +197,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -320,7 +320,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y8F
+			country_exists = MAG
 		}
 		ai_will_do = {
 			factor = 20
@@ -344,7 +344,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8F = {
+			MAG = {
 				country_event = zin_regional_andos_enda.3
 			}
 		}
@@ -412,7 +412,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			check_variable = { global.zin_elves_rivalry < 31 }
-			country_exists = Y0V
+			country_exists = HRR
 		}
 		ai_will_do = {
 			factor = 30
@@ -426,7 +426,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -436,7 +436,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0V = {
+			HRR = {
 				country_event = zin_regional_andos_enda.4
 			}
 		}
@@ -449,7 +449,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0G
+			country_exists = LER
 		}
 		ai_will_do = {
 			factor = 20
@@ -460,11 +460,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_opinion_modifier = {
-				target = Y0G
+				target = LER
 				modifier = zin_regional_andos_enda_northern_letters
 			}
 			reverse_add_opinion_modifier = {
-				target = Y0G
+				target = LER
 				modifier = zin_regional_andos_enda_northern_letters
 			}
 			add_political_power = 25
@@ -673,7 +673,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -709,7 +709,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_elves_add_kinship = yes
-			set_temp_variable = { zin_arg_target = Y8F }
+			set_temp_variable = { zin_arg_target = MAG }
 			zin_elves_goodwill = yes
 		}
 	}
@@ -802,7 +802,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -876,7 +876,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -916,7 +916,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				factor = 3
-				Y8F = { has_country_flag = zin_magical_forest_forewarned_east }
+				MAG = { has_country_flag = zin_magical_forest_forewarned_east }
 			}
 		}
 		completion_reward = {
@@ -969,7 +969,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1006,7 +1006,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1043,7 +1043,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

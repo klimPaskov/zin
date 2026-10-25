@@ -2,27 +2,43 @@
  "schema": "zin-names-report/1",
  "spec": "docs/specs/02_lore/06_languages.md",
  "pools": {
-  "blocks": 306,
+  "blocks": 157,
   "entries": {
-   "male": 18120,
-   "female": 15113,
-   "surnames": 24522,
-   "callsigns": 3672
+   "male": 9310,
+   "female": 7716,
+   "surnames": 12762,
+   "callsigns": 1884
   },
   "distinct": {
-   "male": 1631,
-   "female": 1248,
-   "surnames": 2165,
-   "callsigns": 2310
+   "male": 2033,
+   "female": 1542,
+   "surnames": 2672,
+   "callsigns": 1527
   }
  },
  "blend": [
   {
    "language": "aenoran",
-   "weight": 5.099
+   "weight": 3.606
+  },
+  {
+   "language": "dwarvish",
+   "weight": 1
   },
   {
    "language": "gigantic",
+   "weight": 1
+  },
+  {
+   "language": "gnomish",
+   "weight": 1
+  },
+  {
+   "language": "goblin",
+   "weight": 1
+  },
+  {
+   "language": "hearthspeech",
    "weight": 1
   },
   {
@@ -30,8 +46,16 @@
    "weight": 1
   },
   {
+   "language": "lowspeech",
+   "weight": 1
+  },
+  {
    "language": "orran",
    "weight": 1.414
+  },
+  {
+   "language": "sylvan",
+   "weight": 1
   }
  ],
  "collisions": {
@@ -41,16 +65,16 @@
   "reserved": 0,
   "glyphs": 0
  },
- "registrySize": 13610,
+ "registrySize": 16721,
  "languages": {
   "aenoran": {
-   "countries": 27,
-   "entries": 5724,
+   "countries": 15,
+   "entries": 3180,
    "distinct": {
-    "male": 197,
-    "female": 113,
-    "surnames": 280,
-    "callsigns": 169
+    "male": 194,
+    "female": 109,
+    "surnames": 216,
+    "callsigns": 117
    },
    "reference": {
     "places": 250,
@@ -71,13 +95,13 @@
    }
   },
   "alerhic": {
-   "countries": 16,
-   "entries": 3392,
+   "countries": 10,
+   "entries": 2120,
    "distinct": {
     "male": 77,
     "female": 55,
-    "surnames": 132,
-    "callsigns": 151
+    "surnames": 131,
+    "callsigns": 102
    },
    "reference": {
     "places": 250,
@@ -95,13 +119,13 @@
    }
   },
   "coldic": {
-   "countries": 29,
-   "entries": 6148,
+   "countries": 16,
+   "entries": 3392,
    "distinct": {
     "male": 90,
-    "female": 63,
-    "surnames": 129,
-    "callsigns": 232
+    "female": 62,
+    "surnames": 128,
+    "callsigns": 159
    },
    "reference": {
     "places": 250,
@@ -122,9 +146,9 @@
    "countries": 2,
    "entries": 424,
    "distinct": {
-    "male": 78,
-    "female": 57,
-    "surnames": 106,
+    "male": 73,
+    "female": 60,
+    "surnames": 108,
     "callsigns": 24
    },
    "reference": {
@@ -132,7 +156,7 @@
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.772,
+    "signatureShare": 0.752,
     "infeasibleKinds": []
    },
    "relatedness": {
@@ -142,14 +166,38 @@
     "rate": 1
    }
   },
-  "galic": {
-   "countries": 3,
-   "entries": 510,
+  "dwarvish": {
+   "countries": 4,
+   "entries": 848,
    "distinct": {
-    "male": 47,
+    "male": 93,
+    "female": 63,
+    "surnames": 135,
+    "callsigns": 47
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.768,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "delving",
+    "regular": 91,
+    "matched": 91,
+    "rate": 1
+   }
+  },
+  "galic": {
+   "countries": 1,
+   "entries": 170,
+   "distinct": {
+    "male": 46,
     "female": 37,
-    "surnames": 74,
-    "callsigns": 33
+    "surnames": 75,
+    "callsigns": 12
    },
    "reference": {
     "places": 250,
@@ -167,20 +215,58 @@
    }
   },
   "gigantic": {
-   "countries": 2,
-   "entries": 360,
+   "countries": 3,
+   "entries": 531,
    "distinct": {
-    "male": 61,
+    "male": 63,
     "female": 44,
-    "surnames": 64,
-    "callsigns": 19
+    "surnames": 61,
+    "callsigns": 30
    },
    "reference": {
     "places": 250,
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.892,
+    "signatureShare": 0.888,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "gnomish": {
+   "countries": 1,
+   "entries": 212,
+   "distinct": {
+    "male": 60,
+    "female": 50,
+    "surnames": 90,
+    "callsigns": 12
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.976,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "goblin": {
+   "countries": 3,
+   "entries": 558,
+   "distinct": {
+    "male": 64,
+    "female": 53,
+    "surnames": 64,
+    "callsigns": 28
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.9,
     "infeasibleKinds": []
    },
    "relatedness": null
@@ -199,7 +285,7 @@
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.956,
+    "signatureShare": 0.948,
     "infeasibleKinds": []
    },
    "relatedness": {
@@ -210,13 +296,13 @@
    }
   },
   "gunwaithic": {
-   "countries": 21,
-   "entries": 4452,
+   "countries": 11,
+   "entries": 2332,
    "distinct": {
     "male": 91,
     "female": 52,
-    "surnames": 152,
-    "callsigns": 195
+    "surnames": 148,
+    "callsigns": 119
    },
    "reference": {
     "places": 250,
@@ -233,14 +319,33 @@
     "rate": 0.985
    }
   },
+  "hearthspeech": {
+   "countries": 2,
+   "entries": 424,
+   "distinct": {
+    "male": 68,
+    "female": 51,
+    "surnames": 119,
+    "callsigns": 20
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.956,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
   "infernal": {
-   "countries": 3,
-   "entries": 543,
+   "countries": 5,
+   "entries": 900,
    "distinct": {
     "male": 68,
     "female": 46,
-    "surnames": 63,
-    "callsigns": 29
+    "surnames": 62,
+    "callsigns": 37
    },
    "reference": {
     "places": 250,
@@ -253,20 +358,20 @@
    "relatedness": null
   },
   "leren": {
-   "countries": 28,
-   "entries": 5936,
+   "countries": 10,
+   "entries": 2120,
    "distinct": {
-    "male": 69,
+    "male": 70,
     "female": 73,
-    "surnames": 145,
-    "callsigns": 158
+    "surnames": 143,
+    "callsigns": 87
    },
    "reference": {
     "places": 250,
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.684,
+    "signatureShare": 0.688,
     "infeasibleKinds": []
    },
    "relatedness": {
@@ -295,21 +400,40 @@
    },
    "relatedness": null
   },
-  "mirolic": {
-   "countries": 9,
-   "entries": 1629,
+  "lowspeech": {
+   "countries": 1,
+   "entries": 212,
    "distinct": {
-    "male": 45,
-    "female": 44,
-    "surnames": 80,
-    "callsigns": 77
+    "male": 60,
+    "female": 50,
+    "surnames": 90,
+    "callsigns": 12
    },
    "reference": {
     "places": 250,
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.613,
+    "signatureShare": 0.992,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "mirolic": {
+   "countries": 4,
+   "entries": 716,
+   "distinct": {
+    "male": 45,
+    "female": 43,
+    "surnames": 79,
+    "callsigns": 41
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.609,
     "infeasibleKinds": [
      "mountain"
     ]
@@ -322,13 +446,13 @@
    }
   },
   "noric": {
-   "countries": 9,
-   "entries": 1908,
+   "countries": 5,
+   "entries": 1060,
    "distinct": {
     "male": 60,
     "female": 59,
-    "surnames": 130,
-    "callsigns": 98
+    "surnames": 127,
+    "callsigns": 56
    },
    "reference": {
     "places": 250,
@@ -346,13 +470,13 @@
    }
   },
   "orcish": {
-   "countries": 21,
-   "entries": 3843,
+   "countries": 11,
+   "entries": 2013,
    "distinct": {
     "male": 94,
     "female": 48,
     "surnames": 63,
-    "callsigns": 139
+    "callsigns": 95
    },
    "reference": {
     "places": 250,
@@ -368,10 +492,10 @@
    "countries": 2,
    "entries": 362,
    "distinct": {
-    "male": 75,
+    "male": 73,
     "female": 56,
     "surnames": 59,
-    "callsigns": 20
+    "callsigns": 23
    },
    "reference": {
     "places": 250,
@@ -383,21 +507,40 @@
    },
    "relatedness": null
   },
-  "stabilic": {
-   "countries": 10,
-   "entries": 2120,
+  "pack_tongue": {
+   "countries": 1,
+   "entries": 212,
    "distinct": {
-    "male": 69,
-    "female": 82,
-    "surnames": 105,
-    "callsigns": 105
+    "male": 60,
+    "female": 50,
+    "surnames": 90,
+    "callsigns": 12
    },
    "reference": {
     "places": 250,
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.904,
+    "signatureShare": 0.86,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "stabilic": {
+   "countries": 6,
+   "entries": 1272,
+   "distinct": {
+    "male": 70,
+    "female": 80,
+    "surnames": 108,
+    "callsigns": 67
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.9,
     "infeasibleKinds": []
    },
    "relatedness": {
@@ -408,13 +551,13 @@
    }
   },
   "sunhot": {
-   "countries": 44,
-   "entries": 7744,
+   "countries": 9,
+   "entries": 1584,
    "distinct": {
-    "male": 61,
+    "male": 60,
     "female": 54,
     "surnames": 54,
-    "callsigns": 241
+    "callsigns": 89
    },
    "reference": {
     "places": 250,
@@ -432,20 +575,20 @@
    }
   },
   "sylvan": {
-   "countries": 21,
-   "entries": 4389,
+   "countries": 8,
+   "entries": 1664,
    "distinct": {
-    "male": 57,
-    "female": 51,
+    "male": 56,
+    "female": 50,
     "surnames": 96,
-    "callsigns": 175
+    "callsigns": 82
    },
    "reference": {
     "places": 250,
     "persons": 250,
     "failures": 0,
     "duplicates": 0,
-    "signatureShare": 0.772,
+    "signatureShare": 0.776,
     "infeasibleKinds": []
    },
    "relatedness": {
@@ -456,13 +599,13 @@
    }
   },
   "tritonic": {
-   "countries": 34,
-   "entries": 6800,
+   "countries": 11,
+   "entries": 2167,
    "distinct": {
     "male": 73,
     "female": 57,
-    "surnames": 78,
-    "callsigns": 282
+    "surnames": 75,
+    "callsigns": 118
    },
    "reference": {
     "places": 250,
@@ -481,11 +624,11 @@
   },
   "trollish": {
    "countries": 1,
-   "entries": 161,
+   "entries": 158,
    "distinct": {
-    "male": 59,
-    "female": 35,
-    "surnames": 55,
+    "male": 58,
+    "female": 34,
+    "surnames": 54,
     "callsigns": 12
    },
    "reference": {
@@ -499,13 +642,13 @@
    "relatedness": null
   },
   "yetic": {
-   "countries": 1,
-   "entries": 181,
+   "countries": 2,
+   "entries": 360,
    "distinct": {
-    "male": 60,
+    "male": 63,
     "female": 46,
-    "surnames": 63,
-    "callsigns": 12
+    "surnames": 62,
+    "callsigns": 20
    },
    "reference": {
     "places": 250,
@@ -518,13 +661,13 @@
    "relatedness": null
   },
   "yonic": {
-   "countries": 19,
-   "entries": 4028,
+   "countries": 8,
+   "entries": 1696,
    "distinct": {
     "male": 81,
-    "female": 85,
-    "surnames": 121,
-    "callsigns": 105
+    "female": 69,
+    "surnames": 119,
+    "callsigns": 63
    },
    "reference": {
     "places": 250,
@@ -538,7 +681,8 @@
   }
  },
  "countriesWithoutLanguage": [
-  "Y0U"
+  "MSH",
+  "ZOL"
  ],
- "cultures": 52
+ "cultures": 79
 }

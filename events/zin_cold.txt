@@ -62,8 +62,8 @@ country_event = {
 	picture = GFX_zin_evt_generic_wilds
 	trigger = {
 		OR = {
-			original_tag = Y01
-			original_tag = Y02
+			original_tag = CLD
+			original_tag = MLK
 		}
 		check_variable = { global.zin_cold_winter > 1.99 }
 		has_global_flag = zin_cold_winter_season
@@ -95,7 +95,7 @@ country_event = {
 		}
 		army_experience = 5
 		if = {
-			limit = { original_tag = Y01 }
+			limit = { original_tag = CLD }
 			event_target:zin_cold_raider = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_cold_add_lean = yes
@@ -115,7 +115,7 @@ country_event = {
 		}
 		add_political_power = -25
 		if = {
-			limit = { original_tag = Y01 }
+			limit = { original_tag = CLD }
 			event_target:zin_cold_raider = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_cold_add_lean = yes
@@ -163,12 +163,12 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { country_exists = Y01 }
-			Y01 = { country_event = { id = zin_cold.21 } }
+			limit = { country_exists = CLD }
+			CLD = { country_event = { id = zin_cold.21 } }
 		}
 		if = {
-			limit = { country_exists = Y02 }
-			Y02 = { country_event = { id = zin_cold.21 } }
+			limit = { country_exists = MLK }
+			MLK = { country_event = { id = zin_cold.21 } }
 		}
 		zin_cold_next_moot = yes
 	}
@@ -228,11 +228,11 @@ country_event = {
 	desc = zin_cold.31.d
 	picture = GFX_zin_evt_generic_war
 	trigger = {
-		original_tag = Y01
-		country_exists = Y02
+		original_tag = CLD
+		country_exists = MLK
 		zin_cold_historical = no
 		zin_cold_march_war_allowed = yes
-		Y02 = {
+		MLK = {
 			is_ai = yes
 			check_variable = { zin_cold_isengard_defiance > 79.99 }
 		}
@@ -307,8 +307,8 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_cold_add_defiance = yes
-		add_opinion_modifier = { target = Y01 modifier = zin_cold_marriage_kin }
-		Y01 = { add_opinion_modifier = { target = Y02 modifier = zin_cold_marriage_kin } }
+		add_opinion_modifier = { target = CLD modifier = zin_cold_marriage_kin }
+		CLD = { add_opinion_modifier = { target = MLK modifier = zin_cold_marriage_kin } }
 	}
 }
 
@@ -968,7 +968,7 @@ country_event = {
 	picture = GFX_zin_evt_generic_wilds
 	fire_only_once = yes
 	trigger = {
-		original_tag = Y01
+		original_tag = CLD
 		has_country_flag = zin_cold_watch_fires
 		has_global_flag = zin_afrit_at_yeldenne
 		NOT = { has_global_flag = zin_horos_dead }
@@ -1050,8 +1050,8 @@ country_event = {
 			base = 0
 		}
 		if = {
-			limit = { country_exists = Y07 }
-			Y07 = { add_opinion_modifier = { target = ROOT modifier = zin_cold_road_refused } }
+			limit = { country_exists = GNW }
+			GNW = { add_opinion_modifier = { target = ROOT modifier = zin_cold_road_refused } }
 		}
 	}
 	option = {

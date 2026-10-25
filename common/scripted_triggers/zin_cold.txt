@@ -10,9 +10,9 @@ zin_cold_is_clan_realm = {
 	zin_cold_is_cold = yes
 	has_variable = zin_cold_lean
 	NOT = {
-		original_tag = Y01
-		original_tag = Y02
-		original_tag = Y8H
+		original_tag = CLD
+		original_tag = MLK
+		original_tag = YEL
 	}
 }
 
@@ -64,16 +64,16 @@ zin_cold_date_timber_2 = {
 # The peace gate of the March Forts (section 1): after 1 Thaw 1751 with the dark gathering or Isengard defiant, or after 1 Thaw 1752 under the historical rule; fought once.
 zin_cold_march_war_allowed = {
 	NOT = { has_global_flag = zin_cold_march_war_active }
-	country_exists = Y01
-	country_exists = Y02
-	NOT = { Y01 = { has_country_flag = zin_cold_march_war_fought } }
-	NOT = { Y01 = { has_war_with = Y02 } }
+	country_exists = CLD
+	country_exists = MLK
+	NOT = { CLD = { has_country_flag = zin_cold_march_war_fought } }
+	NOT = { CLD = { has_war_with = MLK } }
 	OR = {
 		AND = {
 			zin_cold_date_march_open = yes
 			OR = {
 				check_variable = { global.zin_gathering_dark > 14.99 }
-				Y02 = { check_variable = { zin_cold_isengard_defiance > 79.99 } }
+				MLK = { check_variable = { zin_cold_isengard_defiance > 79.99 } }
 			}
 		}
 		AND = {
@@ -84,10 +84,10 @@ zin_cold_march_war_allowed = {
 }
 
 zin_cold_isengard_may_swear = {
-	country_exists = Y02
-	Y02 = {
+	country_exists = MLK
+	MLK = {
 		check_variable = { zin_cold_isengard_defiance < 30.01 }
-		NOT = { has_war_with = Y01 }
+		NOT = { has_war_with = CLD }
 	}
 }
 
@@ -96,13 +96,13 @@ zin_cold_isengard_settled = {
 	OR = {
 		has_global_flag = zin_cold_isengard_sworn
 		AND = {
-			country_exists = Y02
-			Y02 = { is_subject_of = Y01 }
+			country_exists = MLK
+			MLK = { is_subject_of = CLD }
 		}
 		AND = {
-			NOT = { country_exists = Y02 }
+			NOT = { country_exists = MLK }
 			has_variable = global.zin_cold_isengard_seat
-			var:global.zin_cold_isengard_seat = { is_owned_by = Y01 }
+			var:global.zin_cold_isengard_seat = { is_owned_by = CLD }
 		}
 	}
 }
@@ -116,9 +116,9 @@ zin_cold_winter_is_hard = {
 zin_cold_is_runner = {
 	NOT = { has_global_flag = zin_cold_month_ran }
 	OR = {
-		original_tag = Y01
+		original_tag = CLD
 		AND = {
-			NOT = { country_exists = Y01 }
+			NOT = { country_exists = CLD }
 			zin_cold_is_cold = yes
 			NOT = {
 				any_other_country = {

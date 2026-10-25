@@ -46,12 +46,12 @@ country_event = {
 			idea = zin_dark_troll_hirelings
 			days = 365
 		}
-		Y45 = {
+		TRO = {
 			country_event = zin_dark.75
 		}
 		if = {
 			limit = {
-				original_tag = Y19
+				original_tag = DND
 			}
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_dark_add_accord_resolve = yes

@@ -66,13 +66,13 @@ defined_text = {
 	name = zin_dominion_oath_demon
 	text = {
 		trigger = {
-			Y7T = { check_variable = { var = zin_dominion_oath value = 25 compare = less_than } }
+			KHO = { check_variable = { var = zin_dominion_oath value = 25 compare = less_than } }
 		}
 		localization_key = ZIN_DOM_OATH_DEMON_LOW
 	}
 	text = {
 		trigger = {
-			Y7T = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
+			KHO = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
 		}
 		localization_key = ZIN_DOM_OATH_DEMON_WARN
 	}
@@ -83,13 +83,13 @@ defined_text = {
 	name = zin_dominion_oath_dolon
 	text = {
 		trigger = {
-			Y7U = { check_variable = { var = zin_dominion_oath value = 25 compare = less_than } }
+			DLN = { check_variable = { var = zin_dominion_oath value = 25 compare = less_than } }
 		}
 		localization_key = ZIN_DOM_OATH_DOLON_LOW
 	}
 	text = {
 		trigger = {
-			Y7U = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
+			DLN = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
 		}
 		localization_key = ZIN_DOM_OATH_DOLON_WARN
 	}
@@ -100,13 +100,13 @@ defined_text = {
 	name = zin_dominion_oath_nezer
 	text = {
 		trigger = {
-			Y10 = { check_variable = { var = zin_dominion_oath value = 25 compare = less_than } }
+			NEZ = { check_variable = { var = zin_dominion_oath value = 25 compare = less_than } }
 		}
 		localization_key = ZIN_DOM_OATH_NEZER_LOW
 	}
 	text = {
 		trigger = {
-			Y10 = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
+			NEZ = { check_variable = { var = zin_dominion_oath value = 45 compare = less_than } }
 		}
 		localization_key = ZIN_DOM_OATH_NEZER_WARN
 	}
@@ -279,25 +279,25 @@ defined_text = {
 	name = zin_strait_lean_eekedor
 	text = {
 		trigger = {
-			Y0I = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
+			EEK = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_EEKEDOR_1
 	}
 	text = {
 		trigger = {
-			Y0I = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
+			EEK = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_EEKEDOR_2
 	}
 	text = {
 		trigger = {
-			Y0I = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
+			EEK = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_EEKEDOR_3
 	}
 	text = {
 		trigger = {
-			Y0I = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
+			EEK = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_EEKEDOR_4
 	}
@@ -305,57 +305,57 @@ defined_text = {
 }
 
 defined_text = {
-	name = zin_strait_lean_sensai
+	name = zin_strait_lean_tolvael
 	text = {
 		trigger = {
-			Y2Q = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
+			TLV = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
 		}
-		localization_key = ZIN_STRAIT_LEAN_SENSAI_1
+		localization_key = ZIN_STRAIT_LEAN_TOLVAEL_1
 	}
 	text = {
 		trigger = {
-			Y2Q = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
+			TLV = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
 		}
-		localization_key = ZIN_STRAIT_LEAN_SENSAI_2
+		localization_key = ZIN_STRAIT_LEAN_TOLVAEL_2
 	}
 	text = {
 		trigger = {
-			Y2Q = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
+			TLV = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
 		}
-		localization_key = ZIN_STRAIT_LEAN_SENSAI_3
+		localization_key = ZIN_STRAIT_LEAN_TOLVAEL_3
 	}
 	text = {
 		trigger = {
-			Y2Q = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
+			TLV = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
 		}
-		localization_key = ZIN_STRAIT_LEAN_SENSAI_4
+		localization_key = ZIN_STRAIT_LEAN_TOLVAEL_4
 	}
-	text = { localization_key = ZIN_STRAIT_LEAN_SENSAI_5 }
+	text = { localization_key = ZIN_STRAIT_LEAN_TOLVAEL_5 }
 }
 
 defined_text = {
 	name = zin_strait_lean_molot
 	text = {
 		trigger = {
-			Y0H = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
+			MOO = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MOLOT_1
 	}
 	text = {
 		trigger = {
-			Y0H = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
+			MOO = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MOLOT_2
 	}
 	text = {
 		trigger = {
-			Y0H = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
+			MOO = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MOLOT_3
 	}
 	text = {
 		trigger = {
-			Y0H = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
+			MOO = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MOLOT_4
 	}
@@ -366,25 +366,25 @@ defined_text = {
 	name = zin_strait_lean_ren
 	text = {
 		trigger = {
-			Y0J = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
+			REN = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_REN_1
 	}
 	text = {
 		trigger = {
-			Y0J = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
+			REN = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_REN_2
 	}
 	text = {
 		trigger = {
-			Y0J = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
+			REN = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_REN_3
 	}
 	text = {
 		trigger = {
-			Y0J = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
+			REN = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_REN_4
 	}
@@ -395,25 +395,25 @@ defined_text = {
 	name = zin_strait_lean_mina
 	text = {
 		trigger = {
-			Y34 = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
+			MIA = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MINA_1
 	}
 	text = {
 		trigger = {
-			Y34 = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
+			MIA = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MINA_2
 	}
 	text = {
 		trigger = {
-			Y34 = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
+			MIA = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MINA_3
 	}
 	text = {
 		trigger = {
-			Y34 = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
+			MIA = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_MINA_4
 	}
@@ -424,25 +424,25 @@ defined_text = {
 	name = zin_strait_lean_hold
 	text = {
 		trigger = {
-			Y30 = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
+			DOL = { check_variable = { var = zin_leren_lean value = 50 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_HOLD_1
 	}
 	text = {
 		trigger = {
-			Y30 = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
+			DOL = { check_variable = { var = zin_leren_lean value = 15 compare = greater_than_or_equals } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_HOLD_2
 	}
 	text = {
 		trigger = {
-			Y30 = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
+			DOL = { check_variable = { var = zin_leren_lean value = -15 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_HOLD_3
 	}
 	text = {
 		trigger = {
-			Y30 = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
+			DOL = { check_variable = { var = zin_leren_lean value = -50 compare = greater_than } }
 		}
 		localization_key = ZIN_STRAIT_LEAN_HOLD_4
 	}

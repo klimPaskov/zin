@@ -2,7 +2,6 @@
 # Every per-power rule opens with DEFAULT, which follows zin_rule_historical_path (decision R1). Rules never act on a player's country.
 zin_rule_historical_path = {
 	name = "ZIN_RULE_HISTORICAL_PATH"
-	desc = "ZIN_RULE_HISTORICAL_PATH_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = HISTORICAL
@@ -22,7 +21,6 @@ zin_rule_historical_path = {
 }
 zin_rule_story_pace = {
 	name = "ZIN_RULE_STORY_PACE"
-	desc = "ZIN_RULE_STORY_PACE_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = STANDARD
@@ -42,7 +40,6 @@ zin_rule_story_pace = {
 }
 zin_rule_eindil_waking = {
 	name = "ZIN_RULE_EINDIL_WAKING"
-	desc = "ZIN_RULE_EINDIL_WAKING_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = HISTORICAL
@@ -62,7 +59,6 @@ zin_rule_eindil_waking = {
 }
 zin_rule_dark_powers = {
 	name = "ZIN_RULE_DARK_POWERS"
-	desc = "ZIN_RULE_DARK_POWERS_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = HISTORICAL
@@ -80,9 +76,51 @@ zin_rule_dark_powers = {
 		desc = "ZIN_RULE_DARK_POWERS_RESTRAINED_DESC"
 	}
 }
+zin_rule_gathering_dark = {
+	name = "ZIN_RULE_GATHERING_DARK"
+	group = "RULE_GROUP_ZIN"
+	default = {
+		name = NORMAL
+		text = "ZIN_RULE_GATHERING_DARK_NORMAL"
+		desc = "ZIN_RULE_GATHERING_DARK_NORMAL_DESC"
+	}
+	option = {
+		name = SLOW
+		text = "ZIN_RULE_GATHERING_DARK_SLOW"
+		desc = "ZIN_RULE_GATHERING_DARK_SLOW_DESC"
+	}
+	option = {
+		name = FAST
+		text = "ZIN_RULE_GATHERING_DARK_FAST"
+		desc = "ZIN_RULE_GATHERING_DARK_FAST_DESC"
+	}
+}
+zin_rule_start_variety = {
+	name = "ZIN_RULE_START_VARIETY"
+	group = "RULE_GROUP_ZIN"
+	default = {
+		name = DEFAULT
+		text = "ZIN_RULE_START_VARIETY_DEFAULT"
+		desc = "ZIN_RULE_START_VARIETY_DEFAULT_DESC"
+	}
+	option = {
+		name = OFF
+		text = "ZIN_RULE_START_VARIETY_OFF"
+		desc = "ZIN_RULE_START_VARIETY_OFF_DESC"
+	}
+	option = {
+		name = LIGHT
+		text = "ZIN_RULE_START_VARIETY_LIGHT"
+		desc = "ZIN_RULE_START_VARIETY_LIGHT_DESC"
+	}
+	option = {
+		name = FULL
+		text = "ZIN_RULE_START_VARIETY_FULL"
+		desc = "ZIN_RULE_START_VARIETY_FULL_DESC"
+	}
+}
 zin_rule_ai_aenor_succession = {
 	name = "ZIN_RULE_AI_AENOR_SUCCESSION"
-	desc = "ZIN_RULE_AI_AENOR_SUCCESSION_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DEFAULT
@@ -107,7 +145,6 @@ zin_rule_ai_aenor_succession = {
 }
 zin_rule_ai_east = {
 	name = "ZIN_RULE_AI_EAST"
-	desc = "ZIN_RULE_AI_EAST_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DEFAULT
@@ -132,7 +169,6 @@ zin_rule_ai_east = {
 }
 zin_rule_ai_elves = {
 	name = "ZIN_RULE_AI_ELVES"
-	desc = "ZIN_RULE_AI_ELVES_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DEFAULT
@@ -152,7 +188,6 @@ zin_rule_ai_elves = {
 }
 zin_rule_ai_goldoroth = {
 	name = "ZIN_RULE_AI_GOLDOROTH"
-	desc = "ZIN_RULE_AI_GOLDOROTH_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DEFAULT
@@ -177,7 +212,6 @@ zin_rule_ai_goldoroth = {
 }
 zin_rule_golden_king_death = {
 	name = "ZIN_RULE_GOLDEN_KING_DEATH"
-	desc = "ZIN_RULE_GOLDEN_KING_DEATH_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DYNAMIC
@@ -202,7 +236,6 @@ zin_rule_golden_king_death = {
 }
 zin_rule_afrit = {
 	name = "ZIN_RULE_AFRIT"
-	desc = "ZIN_RULE_AFRIT_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DEFAULT
@@ -232,7 +265,6 @@ zin_rule_afrit = {
 }
 zin_rule_cold_isengard = {
 	name = "ZIN_RULE_COLD_ISENGARD"
-	desc = "ZIN_RULE_COLD_ISENGARD_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = DEFAULT
@@ -262,7 +294,6 @@ zin_rule_cold_isengard = {
 }
 zin_rule_debug_checks = {
 	name = "ZIN_RULE_DEBUG_CHECKS"
-	desc = "ZIN_RULE_DEBUG_CHECKS_DESC"
 	group = "RULE_GROUP_ZIN"
 	default = {
 		name = OFF

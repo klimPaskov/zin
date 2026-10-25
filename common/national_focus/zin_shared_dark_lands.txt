@@ -5,71 +5,43 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1B
+			original_tag = BLN
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1C
+			original_tag = BRT
 		}
 		modifier = {
 			add = 10
-			original_tag = Y46
+			original_tag = BUN
 		}
 		modifier = {
 			add = 10
-			original_tag = Y47
+			original_tag = DAK
 		}
 		modifier = {
 			add = 10
-			original_tag = Y48
+			original_tag = DRK
 		}
 		modifier = {
 			add = 10
-			original_tag = Y49
+			original_tag = DUN
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4A
+			original_tag = HOO
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4B
+			original_tag = SKR
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4C
+			original_tag = VES
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4D
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4E
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4F
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4G
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4J
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4K
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4L
-		}
-		modifier = {
-			add = 10
-			original_tag = Y8C
+			original_tag = WIL
 		}
 	}
 	initial_show_position = { focus = zin_shared_dark_lands_hall_of_the_hold }
@@ -409,9 +381,9 @@ focus_tree = {
 			set_country_flag = zin_dark_gifts_returned
 			if = {
 				limit = {
-					country_exists = Y1A
+					country_exists = GOL
 				}
-				Y1A = {
+				GOL = {
 					add_opinion_modifier = {
 						target = ROOT
 						modifier = zin_shared_dark_lands_gifts_returned
@@ -489,7 +461,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -557,9 +529,9 @@ focus_tree = {
 			army_experience = 10
 			if = {
 				limit = {
-					country_exists = Y1A
+					country_exists = GOL
 				}
-				Y1A = {
+				GOL = {
 					add_opinion_modifier = {
 						target = ROOT
 						modifier = zin_shared_dark_lands_warbands_sent
@@ -727,9 +699,9 @@ focus_tree = {
 			zin_dark_add_accord_resolve = yes
 			if = {
 				limit = {
-					country_exists = Y19
+					country_exists = DND
 				}
-				Y19 = {
+				DND = {
 					add_opinion_modifier = {
 						target = ROOT
 						modifier = zin_shared_dark_lands_accord_oath
@@ -978,9 +950,9 @@ focus_tree = {
 			zin_dark_add_volgan_pact = yes
 			if = {
 				limit = {
-					country_exists = Y8D
+					country_exists = PUV
 				}
-				Y8D = {
+				PUV = {
 					add_opinion_modifier = {
 						target = ROOT
 						modifier = zin_shared_dark_lands_south_refused
@@ -1314,7 +1286,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			has_war_with = Y0U
+			has_war_with = ZOL
 		}
 		ai_will_do = {
 			factor = 100

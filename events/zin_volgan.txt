@@ -33,13 +33,13 @@ country_event = {
 			}
 		}
 		diplomatic_relation = {
-			country = Y8D
+			country = PUV
 			relation = non_aggression_pact
 			active = yes
 		}
 		set_temp_variable = { zin_arg_value = -5 }
 		zin_mirolon_add_proof = yes
-		Y8D = {
+		PUV = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_volgan_add_veil = yes
 		}
@@ -51,7 +51,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_mirolon_add_proof = yes
-		Y8D = {
+		PUV = {
 			set_temp_variable = { zin_arg_value = -2 }
 			zin_volgan_add_veil = yes
 		}
@@ -74,7 +74,7 @@ country_event = {
 				check_variable = { zin_dominion_oath > 39 }
 			}
 		}
-		Y8D = {
+		PUV = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_volgan_add_oath = yes
@@ -85,7 +85,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		Y8D = {
+		PUV = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_volgan_add_oath = yes
@@ -269,7 +269,7 @@ country_event = {
 			factor = 70
 		}
 		add_opinion_modifier = {
-			target = Y8D
+			target = PUV
 			modifier = zin_volgan_goldoroth_refused
 		}
 	}
@@ -300,7 +300,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		Y8D = {
+		PUV = {
 			white_peace = ROOT
 		}
 	}

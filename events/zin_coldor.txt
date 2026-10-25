@@ -44,11 +44,11 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 20 }
 		zin_cold_add_lean = yes
 		add_opinion_modifier = {
-			target = Y01
+			target = CLD
 			modifier = zin_coldor_opinion_friendship
 		}
 		reverse_add_opinion_modifier = {
-			target = Y01
+			target = CLD
 			modifier = zin_coldor_opinion_friendship
 		}
 	}

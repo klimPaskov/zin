@@ -5,95 +5,51 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y05
+			original_tag = AUT
 		}
 		modifier = {
 			add = 10
-			original_tag = Y06
+			original_tag = GHH
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1I
+			original_tag = GLI
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1K
+			original_tag = HLD
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1L
+			original_tag = KVI
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1M
+			original_tag = OMR
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1N
+			original_tag = ORW
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1O
+			original_tag = PLT
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1P
+			original_tag = POT
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1Q
+			original_tag = PRT
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1R
+			original_tag = WRL
 		}
 		modifier = {
 			add = 10
-			original_tag = Y1S
-		}
-		modifier = {
-			add = 10
-			original_tag = Y1T
-		}
-		modifier = {
-			add = 10
-			original_tag = Y1U
-		}
-		modifier = {
-			add = 10
-			original_tag = Y1V
-		}
-		modifier = {
-			add = 10
-			original_tag = Y1W
-		}
-		modifier = {
-			add = 10
-			original_tag = Y1Y
-		}
-		modifier = {
-			add = 10
-			original_tag = Y1Z
-		}
-		modifier = {
-			add = 10
-			original_tag = Y20
-		}
-		modifier = {
-			add = 10
-			original_tag = Y22
-		}
-		modifier = {
-			add = 10
-			original_tag = Y23
-		}
-		modifier = {
-			add = 10
-			original_tag = Y24
-		}
-		modifier = {
-			add = 10
-			original_tag = Y25
+			original_tag = XIS
 		}
 	}
 	initial_show_position = { focus = zin_shared_cold_lands_the_steading_hall }
@@ -555,7 +511,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y01 = {
+			CLD = {
 				country_event = zin_shared_cold_lands.2
 			}
 		}
@@ -590,13 +546,13 @@ focus_tree = {
 		cost = 5
 		available = {
 			check_variable = { zin_cold_lean < -49 }
-			country_exists = Y02
+			country_exists = MLK
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		completion_reward = {
-			Y02 = {
+			MLK = {
 				country_event = zin_shared_cold_lands.3
 			}
 		}
@@ -655,7 +611,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y21 = {
+			FEA = {
 				country_event = zin_shared_cold_lands.4
 			}
 		}
@@ -1146,14 +1102,14 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y8H
+			country_exists = YEL
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y8H
+				country = YEL
 				relation = non_aggression_pact
 				active = yes
 			}

@@ -36,7 +36,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 		}
-		Y4I = {
+		BLK = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_leren_add_lean = yes
 		}
@@ -50,12 +50,12 @@ country_event = {
 				zin_regional_blackton_leren_lean_over_40 = yes
 			}
 		}
-		give_guarantee = Y4I
-		Y4I = {
+		give_guarantee = BLK
+		BLK = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_leren_add_lean = yes
 		}
-		Y4I = {
+		BLK = {
 			country_event = zin_regional_blackton.6
 		}
 	}
@@ -73,13 +73,13 @@ country_event = {
 			limit = {
 				has_country_flag = zin_leren_dark_shore
 			}
-			set_temp_variable = { zin_arg_target = Y4I }
+			set_temp_variable = { zin_arg_target = BLK }
 			zin_leren_offer_protection = yes
 		}
 		else = {
-			give_guarantee = Y4I
+			give_guarantee = BLK
 		}
-		Y4I = {
+		BLK = {
 			country_event = zin_regional_blackton.6
 		}
 	}
@@ -102,7 +102,7 @@ country_event = {
 			flag = zin_regional_blackton_paid_corsairs
 			days = 730
 		}
-		Y1A = {
+		GOL = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = zin_regional_blackton_good_customers
@@ -150,10 +150,10 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
-		add_to_faction = Y4I
+		add_to_faction = BLK
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_dark_add_accord_resolve = yes
-		Y4I = {
+		BLK = {
 			country_event = zin_regional_blackton.6
 		}
 	}

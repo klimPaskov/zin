@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0D
+			original_tag = PLL
 		}
 	}
 	initial_show_position = { focus = zin_regional_pollos_the_guild_masters }
@@ -113,7 +113,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -255,7 +255,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -313,7 +313,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0C
+			country_exists = ADE
 		}
 		ai_will_do = {
 			factor = 10
@@ -336,7 +336,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0C = {
+			ADE = {
 				country_event = zin_regional_pollos.1
 			}
 		}
@@ -351,7 +351,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0F
+			country_exists = RAE
 		}
 		ai_will_do = {
 			factor = 10
@@ -374,7 +374,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0F = {
+			RAE = {
 				country_event = zin_regional_pollos.1
 			}
 		}
@@ -410,7 +410,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -443,7 +443,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -479,7 +479,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -520,7 +520,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0A
+			country_exists = CRG
 		}
 		ai_will_do = {
 			factor = 10
@@ -533,7 +533,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -575,7 +575,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -643,7 +643,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

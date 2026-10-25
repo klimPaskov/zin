@@ -2,21 +2,27 @@
 # Integration note: docs/design/stage2/mech_east.md.
 
 zin_is_noris = {
-	original_tag = Y14
+	original_tag = NRS
 }
 
 zin_is_stabilo = {
-	original_tag = Y16
+	original_tag = STA
+}
+
+zin_east_has_capital = {
+	exists = yes
+	num_of_controlled_states > 0
 }
 
 zin_east_in_region = {
+	zin_east_has_capital = yes
 	capital_scope = { zin_is_region_east_lands = yes }
 }
 
 zin_east_is_power = {
 	OR = {
-		original_tag = Y14
-		original_tag = Y16
+		original_tag = NRS
+		original_tag = STA
 	}
 }
 
@@ -132,6 +138,7 @@ zin_east_free_crown = {
 
 zin_east_at_war_in_the_west = {
 	any_enemy_country = {
+		zin_east_has_capital = yes
 		capital_scope = {
 			OR = {
 				zin_is_region_magical_lands = yes

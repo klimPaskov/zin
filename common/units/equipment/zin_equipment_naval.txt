@@ -30,22 +30,12 @@ equipments = {
 		}
 	}
 
-	convoy_0 = {
+	convoy_1 = {
 		year = 1600
 		archetype = convoy
 		priority = 10
 		max_strength = 60
 		naval_speed = 12
-	}
-
-	convoy_1 = {
-		year = 1752
-		archetype = convoy
-		parent = convoy_0
-		priority = 11
-		max_strength = 80
-		naval_speed = 13
-		build_cost_ic = 90
 	}
 
 	zin_hull_galley = {

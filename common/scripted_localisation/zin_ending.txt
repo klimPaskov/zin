@@ -106,6 +106,20 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { global.zin_path_cp05 = 2 }
+			has_global_flag = zin_golden_king_exiled
+		}
+		localization_key = zin_chronicle_cp05_2_exiled
+	}
+	text = {
+		trigger = {
+			check_variable = { global.zin_path_cp05 = 2 }
+			has_global_flag = zin_golden_king_natural
+		}
+		localization_key = zin_chronicle_cp05_2_natural
+	}
+	text = {
+		trigger = {
+			check_variable = { global.zin_path_cp05 = 2 }
 			has_global_flag = zin_afrit_revealed
 		}
 		localization_key = zin_chronicle_cp05_2_revealed
@@ -683,7 +697,7 @@ defined_text = {
 	text = {
 		trigger = {
 			has_global_flag = zin_volgan_body_destroyed
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		localization_key = zin_chronicle_unknown_vz
 	}
@@ -691,7 +705,7 @@ defined_text = {
 		trigger = {
 			has_global_flag = zin_volgan_body_destroyed
 			NOT = {
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 			}
 		}
 		localization_key = zin_chronicle_unknown_v
@@ -701,7 +715,7 @@ defined_text = {
 			NOT = {
 				has_global_flag = zin_volgan_body_destroyed
 			}
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		localization_key = zin_chronicle_unknown_z
 	}
@@ -711,7 +725,7 @@ defined_text = {
 				has_global_flag = zin_volgan_body_destroyed
 			}
 			NOT = {
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 			}
 		}
 		localization_key = zin_chronicle_unknown_
@@ -792,7 +806,7 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				is_subject_of = Y8D
+				is_subject_of = PUV
 				has_country_flag = zin_afrit_eastern_client
 			}
 		}
@@ -882,6 +896,9 @@ defined_text = {
 			NOT = {
 				has_global_flag = zin_golden_king_dead
 			}
+			NOT = {
+				has_global_flag = zin_golden_king_exiled
+			}
 		}
 		localization_key = zin_list_outcome_golden
 	}
@@ -894,7 +911,7 @@ defined_text = {
 	name = zin_loc_list_outcome_western
 	text = {
 		trigger = {
-			has_global_flag = zin_west_holds_parim
+			zin_west_holds_parim = yes
 		}
 		localization_key = zin_list_outcome_western
 	}
@@ -949,9 +966,12 @@ defined_text = {
 						NOT = {
 							has_global_flag = zin_golden_king_dead
 						}
+						NOT = {
+							has_global_flag = zin_golden_king_exiled
+						}
 					}
 					AND = {
-						has_global_flag = zin_west_holds_parim
+						zin_west_holds_parim = yes
 					}
 					AND = {
 						has_global_flag = zin_leren_strait_supremacy
@@ -1181,7 +1201,7 @@ defined_text = {
 	name = zin_loc_cost_zol
 	text = {
 		trigger = {
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		localization_key = zin_cost_zol
 	}

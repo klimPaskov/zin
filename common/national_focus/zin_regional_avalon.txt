@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y17
+			original_tag = RHA
 		}
 	}
 	initial_show_position = { focus = zin_regional_avalon_the_tribunes_republic }
@@ -282,9 +282,9 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			country_exists = Y5O
+			country_exists = STA
 			NOT = {
-				has_war_with = Y5O
+				has_war_with = STA
 			}
 		}
 		ai_will_do = {
@@ -292,7 +292,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y5O
+				country = STA
 				relation = non_aggression_pact
 				active = yes
 			}

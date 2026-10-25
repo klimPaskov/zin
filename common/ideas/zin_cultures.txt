@@ -38,7 +38,7 @@ ideas = {
 				production_speed_buildings_factor = -0.08
 			}
 		}
-		zin_culture_wall_folk = {
+		zin_culture_vale_folk = {
 			picture = zin_people_men
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -110,7 +110,7 @@ ideas = {
 				army_org_factor = 0.03
 			}
 		}
-		zin_culture_isengard_warlords = {
+		zin_culture_melkgard_warlords = {
 			picture = zin_people_men
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -122,7 +122,7 @@ ideas = {
 				army_leader_cost_factor = -0.15
 			}
 		}
-		zin_culture_gunwaith_clans = {
+		zin_culture_gunwyn_clans = {
 			picture = zin_people_men
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -351,6 +351,54 @@ ideas = {
 				opinion_gain_monthly_factor = -0.15
 			}
 		}
+		zin_culture_wall_delvers = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.08
+				max_dig_in_factor = 0.08
+				army_defence_factor = 0.04
+				trade_opinion_factor = -0.1
+			}
+		}
+		zin_culture_naamis_sea_crown = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = 0.05
+				naval_speed_factor = 0.03
+				cavalry_attack_factor = 0.04
+				opinion_gain_monthly_factor = 0.08
+			}
+		}
+		zin_culture_miaed_pass_lords = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				heat_attrition_factor = -0.12
+				dig_in_speed_factor = 0.08
+				trade_opinion_factor = 0.08
+				army_leader_cost_factor = -0.1
+			}
+		}
+		zin_culture_nether_houses = {
+			picture = zin_people_demons
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_morale_factor = 0.04
+				political_power_gain = 0.04
+				opinion_gain_monthly_factor = -0.12
+			}
+		}
 		zin_faith_deliverer = {
 			picture = zin_people_men
 			allowed = { always = no }
@@ -395,7 +443,7 @@ ideas = {
 				stability_factor = 0.02
 			}
 		}
-		zin_faith_stone_vigil = {
+		zin_faith_pass_vigil = {
 			picture = zin_people_men
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -542,7 +590,7 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.03
 			}
 		}
-		zin_faith_river_temples = {
+		zin_faith_flood_stair = {
 			picture = zin_people_men
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -753,6 +801,67 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.03
 			}
 		}
+		zin_faith_deep_reckoning = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.04
+				stability_factor = 0.03
+				justify_war_goal_time = 0.1
+			}
+		}
+		zin_faith_hearth_table = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.04
+				stability_factor = 0.03
+			}
+		}
+		zin_faith_full_pot = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.06
+				political_power_gain = 0.03
+			}
+		}
+		zin_faith_road_due = {
+			picture = zin_people_orcs
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.04
+				army_speed_factor = 0.02
+			}
+		}
+		zin_faith_pass_fires = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				heat_attrition_factor = -0.06
+				supply_consumption_factor = -0.03
+			}
+		}
+		zin_faith_water_share = {
+			picture = zin_people_men
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				opinion_gain_monthly_factor = 0.08
+				stability_factor = 0.03
+			}
+		}
 	}
 	hidden_ideas = {
 		zin_culture2_lake_aenoran = {
@@ -788,7 +897,7 @@ ideas = {
 				production_speed_buildings_factor = -0.04
 			}
 		}
-		zin_culture2_wall_folk = {
+		zin_culture2_vale_folk = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -931,7 +1040,7 @@ ideas = {
 				special_project_speed_factor = 0.05
 			}
 		}
-		zin_culture_ember_lands_freeholds = {
+		zin_culture_ember_freeholds = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -942,7 +1051,7 @@ ideas = {
 				army_org_factor = -0.03
 			}
 		}
-		zin_culture2_ember_lands_freeholds = {
+		zin_culture2_ember_freeholds = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -986,7 +1095,7 @@ ideas = {
 				production_speed_buildings_factor = -0.025
 			}
 		}
-		zin_culture2_isengard_warlords = {
+		zin_culture2_melkgard_warlords = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -997,7 +1106,7 @@ ideas = {
 				army_leader_cost_factor = -0.075
 			}
 		}
-		zin_culture_windwaith_seafarers = {
+		zin_culture_vindael_seafarers = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -1008,7 +1117,7 @@ ideas = {
 				trade_opinion_factor = 0.1
 			}
 		}
-		zin_culture2_windwaith_seafarers = {
+		zin_culture2_vindael_seafarers = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -1019,7 +1128,7 @@ ideas = {
 				trade_opinion_factor = 0.05
 			}
 		}
-		zin_culture2_gunwaith_clans = {
+		zin_culture2_gunwyn_clans = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
@@ -1602,6 +1711,590 @@ ideas = {
 				army_attack_factor = 0.02
 				justify_war_goal_time = -0.075
 				opinion_gain_monthly_factor = -0.075
+			}
+		}
+		zin_culture2_wall_delvers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.04
+				max_dig_in_factor = 0.04
+				army_defence_factor = 0.02
+				trade_opinion_factor = -0.05
+			}
+		}
+		zin_culture_west_delvers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.06
+				trade_opinion_factor = 0.1
+				army_attack_factor = 0.03
+				army_speed_factor = -0.03
+			}
+		}
+		zin_culture2_west_delvers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.03
+				trade_opinion_factor = 0.05
+				army_attack_factor = 0.015
+				army_speed_factor = -0.015
+			}
+		}
+		zin_culture_north_delvers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+				army_core_defence_factor = 0.06
+				conscription_factor = -0.05
+			}
+		}
+		zin_culture2_north_delvers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.025
+				army_core_defence_factor = 0.03
+				conscription_factor = -0.025
+			}
+		}
+		zin_culture_hearth_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.06
+				stability_factor = 0.05
+				war_support_factor = -0.08
+				production_speed_buildings_factor = 0.04
+			}
+		}
+		zin_culture2_hearth_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.03
+				stability_factor = 0.025
+				war_support_factor = -0.04
+				production_speed_buildings_factor = 0.02
+			}
+		}
+		zin_culture_holt_gnomes = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.06
+				recon_factor = 0.08
+				trade_opinion_factor = 0.08
+				conscription_factor = -0.06
+			}
+		}
+		zin_culture2_holt_gnomes = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.03
+				recon_factor = 0.04
+				trade_opinion_factor = 0.04
+				conscription_factor = -0.03
+			}
+		}
+		zin_culture_road_warrens = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.06
+				army_speed_factor = 0.04
+				trade_opinion_factor = 0.06
+				army_defence_factor = -0.04
+			}
+		}
+		zin_culture2_road_warrens = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+				army_speed_factor = 0.02
+				trade_opinion_factor = 0.03
+				army_defence_factor = -0.02
+			}
+		}
+		zin_culture_baelim = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.1
+				army_speed_factor = -0.08
+				justify_war_goal_time = 0.2
+				enemy_attrition = 0.08
+			}
+		}
+		zin_culture2_baelim = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.05
+				army_speed_factor = -0.04
+				justify_war_goal_time = 0.1
+				enemy_attrition = 0.04
+			}
+		}
+		zin_culture_mycid_rings = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				enemy_attrition = 0.12
+				required_garrison_factor = -0.1
+				monthly_population = 0.04
+			}
+		}
+		zin_culture2_mycid_rings = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				enemy_attrition = 0.06
+				required_garrison_factor = -0.05
+				monthly_population = 0.02
+			}
+		}
+		zin_culture_kingdom_forest_elves = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				recon_factor = 0.1
+				org_loss_when_moving = -0.08
+				experience_gain_army_factor = 0.06
+				conscription_factor = -0.05
+			}
+		}
+		zin_culture2_kingdom_forest_elves = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				recon_factor = 0.05
+				org_loss_when_moving = -0.04
+				experience_gain_army_factor = 0.03
+				conscription_factor = -0.025
+			}
+		}
+		zin_culture_roost_keepers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				special_project_speed_factor = 0.08
+				recon_factor = 0.06
+				stability_factor = -0.03
+			}
+		}
+		zin_culture2_roost_keepers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.025
+				special_project_speed_factor = 0.04
+				recon_factor = 0.03
+				stability_factor = -0.015
+			}
+		}
+		zin_culture_god_forest_keepers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.08
+				stability_factor = 0.04
+				trade_opinion_factor = -0.12
+				required_garrison_factor = -0.08
+			}
+		}
+		zin_culture2_god_forest_keepers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.04
+				stability_factor = 0.02
+				trade_opinion_factor = -0.06
+				required_garrison_factor = -0.04
+			}
+		}
+		zin_culture_strait_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.12
+				navy_org_factor = 0.04
+				political_power_gain = 0.04
+				army_defence_factor = -0.03
+			}
+		}
+		zin_culture2_strait_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.06
+				navy_org_factor = 0.02
+				political_power_gain = 0.02
+				army_defence_factor = -0.015
+			}
+		}
+		zin_culture_hilofrim_herders = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				planning_speed = 0.06
+				monthly_population = 0.04
+			}
+		}
+		zin_culture2_hilofrim_herders = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.025
+				planning_speed = 0.03
+				monthly_population = 0.02
+			}
+		}
+		zin_culture_teste_valley_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				land_reinforce_rate = 0.06
+				recon_factor = 0.05
+				production_speed_buildings_factor = 0.04
+				conscription_factor = 0.03
+			}
+		}
+		zin_culture2_teste_valley_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				land_reinforce_rate = 0.03
+				recon_factor = 0.025
+				production_speed_buildings_factor = 0.02
+				conscription_factor = 0.015
+			}
+		}
+		zin_culture_quay_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.15
+				naval_speed_factor = 0.04
+				opinion_gain_monthly_factor = 0.1
+				army_attack_factor = -0.04
+			}
+		}
+		zin_culture2_quay_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.075
+				naval_speed_factor = 0.02
+				opinion_gain_monthly_factor = 0.05
+				army_attack_factor = -0.02
+			}
+		}
+		zin_culture_reindeer_clans = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.12
+				army_speed_factor = 0.05
+				cavalry_attack_factor = 0.04
+				production_speed_buildings_factor = -0.06
+			}
+		}
+		zin_culture2_reindeer_clans = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.06
+				army_speed_factor = 0.025
+				cavalry_attack_factor = 0.02
+				production_speed_buildings_factor = -0.03
+			}
+		}
+		zin_culture_woqood_sealers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.2
+				navy_org_factor = 0.03
+				winter_attrition_factor = -0.08
+				trade_opinion_factor = 0.05
+			}
+		}
+		zin_culture2_woqood_sealers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.1
+				navy_org_factor = 0.015
+				winter_attrition_factor = -0.04
+				trade_opinion_factor = 0.025
+			}
+		}
+		zin_culture2_naamis_sea_crown = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = 0.025
+				naval_speed_factor = 0.015
+				cavalry_attack_factor = 0.02
+				opinion_gain_monthly_factor = 0.04
+			}
+		}
+		zin_culture_orato_fishers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				experience_gain_navy_factor = 0.06
+				monthly_population = 0.03
+				stability_factor = 0.03
+			}
+		}
+		zin_culture2_orato_fishers = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				experience_gain_navy_factor = 0.03
+				monthly_population = 0.015
+				stability_factor = 0.015
+			}
+		}
+		zin_culture2_miaed_pass_lords = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				heat_attrition_factor = -0.06
+				dig_in_speed_factor = 0.04
+				trade_opinion_factor = 0.04
+				army_leader_cost_factor = -0.05
+			}
+		}
+		zin_culture_wahatud_oasis_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				heat_attrition_factor = -0.15
+				supply_consumption_factor = -0.06
+				opinion_gain_monthly_factor = 0.12
+			}
+		}
+		zin_culture2_wahatud_oasis_folk = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				heat_attrition_factor = -0.075
+				supply_consumption_factor = -0.03
+				opinion_gain_monthly_factor = 0.06
+			}
+		}
+		zin_culture_king_warrens = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				enemy_attrition = 0.08
+				conscription_factor = 0.06
+				army_infantry_defence_factor = 0.04
+				equipment_capture_factor = 0.08
+			}
+		}
+		zin_culture2_king_warrens = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				enemy_attrition = 0.04
+				conscription_factor = 0.03
+				army_infantry_defence_factor = 0.02
+				equipment_capture_factor = 0.04
+			}
+		}
+		zin_culture_spring_warrens = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.1
+				recon_factor = 0.06
+				conscription_factor = 0.05
+				army_org_factor = -0.04
+			}
+		}
+		zin_culture2_spring_warrens = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.05
+				recon_factor = 0.03
+				conscription_factor = 0.025
+				army_org_factor = -0.02
+			}
+		}
+		zin_culture_ogre_clans = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.06
+				army_speed_factor = -0.06
+				conscription_factor = -0.06
+			}
+		}
+		zin_culture2_ogre_clans = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.03
+				army_speed_factor = -0.03
+				conscription_factor = -0.03
+			}
+		}
+		zin_culture_plateau_soldiery = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.1
+				army_org_factor = 0.04
+				war_support_factor = 0.04
+				stability_factor = -0.04
+			}
+		}
+		zin_culture2_plateau_soldiery = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.05
+				army_org_factor = 0.02
+				war_support_factor = 0.02
+				stability_factor = -0.02
+			}
+		}
+		zin_culture_cairn_giants = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.08
+				max_dig_in_factor = 0.06
+				stability_factor = 0.04
+				conscription_factor = -0.06
+			}
+		}
+		zin_culture2_cairn_giants = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.04
+				max_dig_in_factor = 0.03
+				stability_factor = 0.02
+				conscription_factor = -0.03
+			}
+		}
+		zin_culture_height_yeti = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.15
+				army_org_factor = 0.04
+				opinion_gain_monthly_factor = -0.1
+				recon_factor = 0.05
+			}
+		}
+		zin_culture2_height_yeti = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.075
+				army_org_factor = 0.02
+				opinion_gain_monthly_factor = -0.05
+				recon_factor = 0.025
+			}
+		}
+		zin_culture2_nether_houses = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				army_morale_factor = 0.02
+				political_power_gain = 0.02
+				opinion_gain_monthly_factor = -0.06
+			}
+		}
+		zin_culture_veshazel_court = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				equipment_capture_factor = 0.06
+				resistance_damage_to_garrison = 0.08
+				stability_factor = -0.04
+			}
+		}
+		zin_culture2_veshazel_court = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.025
+				equipment_capture_factor = 0.03
+				resistance_damage_to_garrison = 0.04
+				stability_factor = -0.02
 			}
 		}
 	}

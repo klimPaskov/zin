@@ -46,15 +46,15 @@ country_event = {
 			factor = 50
 		}
 		add_political_power = 150
-		Y14 = {
+		NRS = {
 			add_opinion_modifier = {
-				target = Y5W
+				target = ALR
 				modifier = zin_regional_alerhia_bargain_resented
 			}
 		}
-		Y16 = {
+		STA = {
 			add_opinion_modifier = {
-				target = Y5W
+				target = ALR
 				modifier = zin_regional_alerhia_bargain_resented
 			}
 		}
@@ -67,7 +67,7 @@ country_event = {
 		add_political_power = 100
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_east_add_lean = yes
-		Y14 = {
+		NRS = {
 			set_temp_variable = { zin_arg_road = 3 }
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_east_add_road_influence = yes
@@ -81,7 +81,7 @@ country_event = {
 		add_political_power = 100
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			set_temp_variable = { zin_arg_road = 2 }
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_east_add_road_influence = yes

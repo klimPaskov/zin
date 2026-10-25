@@ -5,159 +5,15 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1H
+			original_tag = GOF
 		}
 		modifier = {
 			add = 10
-			original_tag = Y6E
+			original_tag = IGA
 		}
 		modifier = {
 			add = 10
-			original_tag = Y6F
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6G
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6H
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6I
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6J
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6K
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6L
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6M
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6N
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6P
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6Q
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6R
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6S
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6T
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6V
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6W
-		}
-		modifier = {
-			add = 10
-			original_tag = Y6Y
-		}
-		modifier = {
-			add = 10
-			original_tag = Y70
-		}
-		modifier = {
-			add = 10
-			original_tag = Y71
-		}
-		modifier = {
-			add = 10
-			original_tag = Y72
-		}
-		modifier = {
-			add = 10
-			original_tag = Y73
-		}
-		modifier = {
-			add = 10
-			original_tag = Y74
-		}
-		modifier = {
-			add = 10
-			original_tag = Y75
-		}
-		modifier = {
-			add = 10
-			original_tag = Y76
-		}
-		modifier = {
-			add = 10
-			original_tag = Y77
-		}
-		modifier = {
-			add = 10
-			original_tag = Y78
-		}
-		modifier = {
-			add = 10
-			original_tag = Y79
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7A
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7B
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7C
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7E
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7F
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7G
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7H
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7J
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7K
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7L
+			original_tag = IHU
 		}
 	}
 	initial_show_position = { focus = zin_shared_lands_of_the_sun_under_the_sun }
@@ -310,13 +166,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 30
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_sun_add_concord = yes
@@ -550,13 +406,13 @@ focus_tree = {
 		cost = 5
 		available = {
 			has_global_flag = zin_sun_noon_council
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_sun_add_concord = yes
@@ -685,7 +541,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 		}
 		ai_will_do = {
 			factor = 30
@@ -693,7 +549,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_sun_add_gala_counsel = yes
-			set_temp_variable = { zin_arg_target = Y6X }
+			set_temp_variable = { zin_arg_target = GAA }
 			zin_elves_goodwill = yes
 		}
 	}

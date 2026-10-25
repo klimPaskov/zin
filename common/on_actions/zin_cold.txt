@@ -2,10 +2,10 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y01 = { country_event = { id = zin_cold.1 } }
+			CLD = { country_event = { id = zin_cold.1 } }
 		}
 	}
-	on_monthly_Y01 = {
+	on_monthly_CLD = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -13,7 +13,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y02 = {
+	on_monthly_MLK = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -21,7 +21,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y03 = {
+	on_monthly_HOR = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -29,7 +29,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y04 = {
+	on_monthly_YEL = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -37,7 +37,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y05 = {
+	on_monthly_FEA = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -45,7 +45,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y06 = {
+	on_monthly_AUT = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -53,7 +53,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1I = {
+	on_monthly_WRL = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -61,7 +61,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1J = {
+	on_monthly_PLT = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -69,7 +69,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1K = {
+	on_monthly_HLD = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -77,7 +77,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1L = {
+	on_monthly_GLI = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -85,7 +85,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1M = {
+	on_monthly_XIS = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -93,7 +93,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1N = {
+	on_monthly_PRT = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -101,7 +101,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1O = {
+	on_monthly_OMR = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -109,7 +109,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1P = {
+	on_monthly_POT = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -117,7 +117,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1Q = {
+	on_monthly_KVI = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -125,7 +125,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1R = {
+	on_monthly_ORW = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -133,7 +133,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1S = {
+	on_monthly_NIV = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -141,7 +141,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1T = {
+	on_monthly_YEI = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -149,7 +149,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1U = {
+	on_monthly_GHH = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }
@@ -157,95 +157,7 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_Y1V = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y1W = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y1X = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y1Y = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y1Z = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y20 = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y21 = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y22 = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y23 = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y24 = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y25 = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
-	on_monthly_Y8H = {
+	on_monthly_VND = {
 		effect = {
 			if = {
 				limit = { zin_cold_is_runner = yes }

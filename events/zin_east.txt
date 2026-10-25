@@ -57,11 +57,11 @@ country_event = {
 		trigger = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					check_variable = { global.zin_east_last_winner = 1 }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					check_variable = { global.zin_east_last_winner = 2 }
 				}
 			}
@@ -72,11 +72,11 @@ country_event = {
 		trigger = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					check_variable = { global.zin_east_last_winner = 2 }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					check_variable = { global.zin_east_last_winner = 1 }
 				}
 			}
@@ -96,11 +96,11 @@ country_event = {
 		trigger = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					check_variable = { global.zin_east_last_winner = 1 }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					check_variable = { global.zin_east_last_winner = 2 }
 				}
 			}
@@ -111,11 +111,11 @@ country_event = {
 		trigger = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					check_variable = { global.zin_east_last_winner = 2 }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					check_variable = { global.zin_east_last_winner = 1 }
 				}
 			}
@@ -139,21 +139,21 @@ country_event = {
 		check_variable = { global.zin_east_rivalry > 59.99 }
 		OR = {
 			AND = {
-				original_tag = Y14
-				country_exists = Y16
+				original_tag = NRS
+				country_exists = STA
 			}
 			AND = {
-				original_tag = Y16
-				country_exists = Y14
+				original_tag = STA
+				country_exists = NRS
 			}
 		}
 		OR = {
 			AND = {
-				original_tag = Y14
+				original_tag = NRS
 				check_variable = { global.zin_east_wells_turn = 1 }
 			}
 			AND = {
-				original_tag = Y16
+				original_tag = STA
 				check_variable = { global.zin_east_wells_turn = 2 }
 			}
 		}
@@ -164,7 +164,7 @@ country_event = {
 	timeout_days = 30
 	immediate = {
 		if = {
-			limit = { original_tag = Y14 }
+			limit = { original_tag = NRS }
 			set_variable = { global.zin_east_wells_turn = 2 }
 		}
 		else = {
@@ -195,13 +195,13 @@ country_event = {
 			base = 20
 		}
 		if = {
-			limit = { original_tag = Y14 }
-			Y16 = {
+			limit = { original_tag = NRS }
+			STA = {
 				country_event = { id = zin_east.16 }
 			}
 		}
 		else = {
-			Y14 = {
+			NRS = {
 				country_event = { id = zin_east.16 }
 			}
 		}
@@ -478,9 +478,9 @@ country_event = {
 	option = {
 		name = zin_east.30.c
 		trigger = {
-			country_exists = Y16
-			NOT = { has_war_with = Y16 }
-			Y16 = { has_country_flag = zin_stabilo_ledger_open }
+			country_exists = STA
+			NOT = { has_war_with = STA }
+			STA = { has_country_flag = zin_stabilo_ledger_open }
 		}
 		ai_chance = {
 			base = 0
@@ -492,7 +492,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_stabilo_add_debt = yes
 		add_political_power = 50
-		Y16 = { country_event = { id = zin_east.32 } }
+		STA = { country_event = { id = zin_east.32 } }
 	}
 }
 
@@ -604,21 +604,21 @@ country_event = {
 	desc = {
 		text = zin_east.70.d_noris
 		trigger = {
-			FROM = { original_tag = Y14 }
+			FROM = { original_tag = NRS }
 		}
 	}
 	desc = {
 		text = zin_east.70.d_stabilo
 		trigger = {
-			FROM = { original_tag = Y16 }
+			FROM = { original_tag = STA }
 		}
 	}
 	desc = {
 		text = zin_east.70.d_free
 		trigger = {
 			FROM = {
-				NOT = { original_tag = Y14 }
-				NOT = { original_tag = Y16 }
+				NOT = { original_tag = NRS }
+				NOT = { original_tag = STA }
 			}
 		}
 	}
@@ -632,88 +632,88 @@ country_event = {
 			modifier = {
 				add = -70
 				FROM = {
-					NOT = { original_tag = Y14 }
-					NOT = { original_tag = Y16 }
+					NOT = { original_tag = NRS }
+					NOT = { original_tag = STA }
 				}
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 29.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -29.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 39.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -39.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 49.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -49.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 59.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -59.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 69.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -69.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 79.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -79.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 89.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -89.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 99.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -99.99 }
 			}
 			modifier = {
@@ -724,24 +724,24 @@ country_event = {
 				add = 30
 				OR = {
 					AND = {
-						FROM = { original_tag = Y14 }
-						any_neighbor_country = { original_tag = Y16 }
+						FROM = { original_tag = NRS }
+						any_neighbor_country = { original_tag = STA }
 					}
 					AND = {
-						FROM = { original_tag = Y16 }
-						any_neighbor_country = { original_tag = Y14 }
+						FROM = { original_tag = STA }
+						any_neighbor_country = { original_tag = NRS }
 					}
 				}
 			}
 		}
 		set_variable = { global.zin_east_invite_result = 0 }
 		if = {
-			limit = { FROM = { original_tag = Y14 } }
+			limit = { FROM = { original_tag = NRS } }
 			set_temp_variable = { zin_arg_value = -10 }
 			zin_east_add_lean = yes
 		}
 		else_if = {
-			limit = { FROM = { original_tag = Y16 } }
+			limit = { FROM = { original_tag = STA } }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_east_add_lean = yes
 		}
@@ -754,88 +754,88 @@ country_event = {
 			modifier = {
 				add = 70
 				FROM = {
-					NOT = { original_tag = Y14 }
-					NOT = { original_tag = Y16 }
+					NOT = { original_tag = NRS }
+					NOT = { original_tag = STA }
 				}
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 29.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -29.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 39.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -39.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 49.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -49.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 59.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -59.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 69.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -69.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 79.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -79.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 89.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -89.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 99.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -99.99 }
 			}
 			modifier = {
@@ -846,12 +846,12 @@ country_event = {
 				add = -30
 				OR = {
 					AND = {
-						FROM = { original_tag = Y14 }
-						any_neighbor_country = { original_tag = Y16 }
+						FROM = { original_tag = NRS }
+						any_neighbor_country = { original_tag = STA }
 					}
 					AND = {
-						FROM = { original_tag = Y16 }
-						any_neighbor_country = { original_tag = Y14 }
+						FROM = { original_tag = STA }
+						any_neighbor_country = { original_tag = NRS }
 					}
 				}
 			}
@@ -884,68 +884,68 @@ country_event = {
 			base = 100
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 49.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -49.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 59.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -59.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 69.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -69.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 79.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -79.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 89.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -89.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 99.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -99.99 }
 			}
 		}
 		set_variable = { global.zin_east_invite_result = 0 }
 		if = {
-			limit = { FROM = { original_tag = Y14 } }
+			limit = { FROM = { original_tag = NRS } }
 			set_temp_variable = { zin_arg_value = -20 }
 			zin_east_add_lean = yes
 		}
@@ -961,62 +961,62 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 49.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -49.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 59.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -59.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 69.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -69.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 79.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -79.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 89.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -89.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 99.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -99.99 }
 			}
 			modifier = {
@@ -1071,82 +1071,82 @@ country_event = {
 			base = 100
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 29.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -29.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 39.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -39.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 49.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -49.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 59.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -59.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 69.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -69.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 79.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -79.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 89.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -89.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 99.99 }
 			}
 			modifier = {
 				add = -10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -99.99 }
 			}
 		}
@@ -1174,82 +1174,82 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 29.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -29.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 39.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -39.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 49.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -49.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 59.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -59.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 69.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -69.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 79.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -79.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 89.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -89.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y14 }
+				FROM = { original_tag = NRS }
 				check_variable = { zin_east_lean > 99.99 }
 			}
 			modifier = {
 				add = 10
-				FROM = { original_tag = Y16 }
+				FROM = { original_tag = STA }
 				check_variable = { zin_east_lean < -99.99 }
 			}
 		}

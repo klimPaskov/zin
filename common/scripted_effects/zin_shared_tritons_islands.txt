@@ -113,9 +113,9 @@ zin_tritons_join_charter = {
 zin_tritons_offer_banks_mediation = {
 	if = {
 		limit = {
-			country_exists = Y0E
+			country_exists = NND
 		}
-		Y0E = {
+		NND = {
 			if = {
 				limit = {
 					NOT = {
@@ -128,9 +128,9 @@ zin_tritons_offer_banks_mediation = {
 	}
 	if = {
 		limit = {
-			country_exists = Y3G
+			country_exists = SEI
 		}
-		Y3G = {
+		SEI = {
 			if = {
 				limit = {
 					NOT = {

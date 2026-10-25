@@ -44,7 +44,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 		}
-		Y15 = {
+		DRA = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_stabilo_add_debt = yes
 		}
@@ -94,12 +94,12 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			set_temp_variable = { zin_arg_road = 5 }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_east_add_road_influence = yes
 		}
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.21
 		}
 	}
@@ -118,7 +118,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.26
 		}
 	}
@@ -139,14 +139,14 @@ country_event = {
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_east_add_lean = yes
 		add_opinion_modifier = {
-			target = Y16
+			target = STA
 			modifier = zin_stabilo_pact_renewed
 		}
 		reverse_add_opinion_modifier = {
-			target = Y16
+			target = STA
 			modifier = zin_stabilo_pact_renewed
 		}
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.22
 		}
 	}
@@ -159,7 +159,7 @@ country_event = {
 		zin_stabilo_add_debt = yes
 		set_temp_variable = { zin_arg_value = -5 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.22
 		}
 	}
@@ -187,7 +187,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.23
 		}
 	}
@@ -199,7 +199,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_stabilo_add_debt = yes
 		add_political_power = 50
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.23
 		}
 	}
@@ -218,7 +218,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.23
 		}
 	}
@@ -247,7 +247,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_east_add_lean = yes
 		add_political_power = 25
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.24
 		}
 	}
@@ -266,7 +266,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.27
 		}
 	}
@@ -294,12 +294,12 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -15 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			set_temp_variable = { zin_arg_road = 5 }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_east_add_road_influence = yes
 		}
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.25
 		}
 	}
@@ -318,7 +318,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_east_add_lean = yes
-		Y16 = {
+		STA = {
 			country_event = zin_stabilo.28
 		}
 	}
@@ -336,7 +336,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 		}
-		Y15 = {
+		DRA = {
 			set_temp_variable = { zin_arg_value = -20 }
 			zin_east_add_lean = yes
 		}
@@ -346,7 +346,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 		}
-		Y5V = {
+		PLO = {
 			set_temp_variable = { zin_arg_value = -20 }
 			zin_east_add_lean = yes
 		}

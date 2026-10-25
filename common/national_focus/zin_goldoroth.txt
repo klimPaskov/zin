@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1A
+			original_tag = GOL
 		}
 	}
 	initial_show_position = { focus = zin_goldoroth_warking_of_cocanoor }
@@ -792,10 +792,10 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y43 }
+			set_temp_variable = { zin_arg_target = BOR }
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_goldoroth_add_sway = yes
-			set_temp_variable = { zin_arg_target = Y43 }
+			set_temp_variable = { zin_arg_target = BOR }
 			zin_goldoroth_yoke_check = yes
 		}
 	}
@@ -814,10 +814,10 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y44 }
+			set_temp_variable = { zin_arg_target = DRE }
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_goldoroth_add_sway = yes
-			set_temp_variable = { zin_arg_target = Y44 }
+			set_temp_variable = { zin_arg_target = DRE }
 			zin_goldoroth_yoke_check = yes
 		}
 	}
@@ -835,16 +835,16 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y4H }
+			set_temp_variable = { zin_arg_target = DUL }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_goldoroth_add_sway = yes
-			Y4H = {
+			DUL = {
 				add_opinion_modifier = {
-					target = Y1A
+					target = GOL
 					modifier = zin_dark_gifts
 				}
 			}
-			set_temp_variable = { zin_arg_target = Y4H }
+			set_temp_variable = { zin_arg_target = DUL }
 			zin_goldoroth_yoke_check = yes
 		}
 	}
@@ -862,7 +862,7 @@ focus_tree = {
 			factor = 8
 		}
 		completion_reward = {
-			Y45 = {
+			TRO = {
 				country_event = zin_goldoroth.7
 			}
 		}
@@ -998,12 +998,12 @@ focus_tree = {
 			factor = 8
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y4I }
+			set_temp_variable = { zin_arg_target = BLK }
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_goldoroth_add_sway = yes
-			Y4I = {
+			BLK = {
 				add_opinion_modifier = {
-					target = Y1A
+					target = GOL
 					modifier = zin_dark_gifts
 				}
 			}
@@ -1133,7 +1133,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = -8 }
 			zin_dark_add_accord_resolve = yes
-			Y1B = {
+			BLN = {
 				country_event = zin_goldoroth.8
 			}
 		}
@@ -1244,7 +1244,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1756.12.2
+						date < 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1265,7 +1265,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1275,7 +1275,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y19 = {
+			DND = {
 				every_owned_state = {
 					add_claim_by = PREV.PREV
 				}
@@ -1303,7 +1303,7 @@ focus_tree = {
 				zin_dark_tension_band_brink = yes
 			}
 			NOT = {
-				has_war_with = Y19
+				has_war_with = DND
 			}
 		}
 		ai_will_do = {
@@ -1321,7 +1321,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1756.12.2
+						date < 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1370,7 +1370,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1423,9 +1423,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_goldoroth_no_masters
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
-					target = Y1A
+					target = GOL
 					modifier = zin_dark_refused_nafeher
 				}
 			}
@@ -1454,232 +1454,232 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_goldoroth_hunt_open
-			Y19 = {
+			DND = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y19 }
+					set_temp_variable = { zin_arg_target = DND }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y1B = {
+			BLN = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y1B }
+					set_temp_variable = { zin_arg_target = BLN }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y1C = {
+			DUN = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y1C }
+					set_temp_variable = { zin_arg_target = DUN }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y43 = {
+			BOR = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y43 }
+					set_temp_variable = { zin_arg_target = BOR }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y44 = {
+			DRE = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y44 }
+					set_temp_variable = { zin_arg_target = DRE }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y45 = {
+			TRO = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y45 }
+					set_temp_variable = { zin_arg_target = TRO }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y46 = {
+			WIL = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y46 }
+					set_temp_variable = { zin_arg_target = WIL }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y47 = {
+			WIL = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y47 }
+					set_temp_variable = { zin_arg_target = WIL }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y48 = {
+			GOL = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y48 }
+					set_temp_variable = { zin_arg_target = GOL }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y49 = {
+			DRK = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y49 }
+					set_temp_variable = { zin_arg_target = DRK }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4A = {
+			GOL = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4A }
+					set_temp_variable = { zin_arg_target = GOL }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4B = {
+			DRK = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4B }
+					set_temp_variable = { zin_arg_target = DRK }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4C = {
+			GOL = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4C }
+					set_temp_variable = { zin_arg_target = GOL }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4D = {
+			BRT = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4D }
+					set_temp_variable = { zin_arg_target = BRT }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4E = {
+			BLN = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4E }
+					set_temp_variable = { zin_arg_target = BLN }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4F = {
+			BRT = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4F }
+					set_temp_variable = { zin_arg_target = BRT }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4G = {
+			BLN = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4G }
+					set_temp_variable = { zin_arg_target = BLN }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4H = {
+			DUL = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4H }
+					set_temp_variable = { zin_arg_target = DUL }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4I = {
+			BLK = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4I }
+					set_temp_variable = { zin_arg_target = BLK }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4J = {
+			SKR = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4J }
+					set_temp_variable = { zin_arg_target = SKR }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4K = {
+			DAK = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4K }
+					set_temp_variable = { zin_arg_target = DAK }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y4L = {
+			DUN = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y4L }
+					set_temp_variable = { zin_arg_target = DUN }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
 			}
-			Y8C = {
+			SKR = {
 				if = {
 					limit = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 					}
-					set_temp_variable = { zin_arg_target = Y8C }
+					set_temp_variable = { zin_arg_target = SKR }
 					set_temp_variable = { zin_arg_value = -1 }
 					zin_dark_add_volgan_pact = yes
 				}
@@ -1807,7 +1807,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1755.7.18
+						date > 1755.7.17
 					}
 				}
 			}
@@ -1853,9 +1853,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_goldoroth_southern_bargain
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
-					target = Y1A
+					target = GOL
 					modifier = zin_dark_bargain_struck
 				}
 			}
@@ -1903,7 +1903,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				country_event = zin_goldoroth.13
 			}
 		}
@@ -1923,7 +1923,7 @@ focus_tree = {
 			factor = 8
 		}
 		completion_reward = {
-			Y19 = {
+			DND = {
 				every_owned_state = {
 					add_claim_by = PREV.PREV
 				}
@@ -1951,7 +1951,7 @@ focus_tree = {
 				type = zin_arms_equipment
 				amount = -1000
 			}
-			Y8D = {
+			PUV = {
 				add_equipment_to_stockpile = {
 					type = zin_arms_equipment
 					amount = 1000
@@ -1959,9 +1959,9 @@ focus_tree = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_volgan_add_dominion_strength = yes
 			}
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
-					target = Y1A
+					target = GOL
 					modifier = zin_dark_bargain_struck
 				}
 			}
@@ -2021,7 +2021,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				country_event = zin_goldoroth.14
 			}
 		}
@@ -2041,7 +2041,7 @@ focus_tree = {
 			has_global_flag = zin_volgan_marches
 			OR = {
 				check_variable = { zin_volgan_pact > 2 }
-				is_subject_of = Y8D
+				is_subject_of = PUV
 			}
 		}
 		ai_will_do = {
@@ -2050,7 +2050,7 @@ focus_tree = {
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
-				target = Y19
+				target = DND
 			}
 			zin_goldoroth_wargoal_strait_south = yes
 			set_temp_variable = { zin_arg_value = 2 }
@@ -2253,7 +2253,7 @@ focus_tree = {
 			factor = 6
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				country_event = zin_goldoroth.16
 			}
 		}
@@ -2655,7 +2655,7 @@ focus_tree = {
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
-				target = Y19
+				target = DND
 			}
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_world_add_gathering_dark = yes
@@ -2725,7 +2725,7 @@ focus_tree = {
 		cost = 3
 		available = {
 			zin_goldoroth_war_open = yes
-			has_war_with = Y19
+			has_war_with = DND
 		}
 		ai_will_do = {
 			factor = 100
@@ -2754,7 +2754,7 @@ focus_tree = {
 			factor = 60
 		}
 		completion_reward = {
-			Y1B = {
+			BLN = {
 				country_event = zin_goldoroth.19
 			}
 		}
@@ -2819,7 +2819,7 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 180
-				has_war_with = Y0U
+				has_war_with = ZOL
 			}
 		}
 		completion_reward = {
@@ -2910,13 +2910,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		cost = 5
 		available = {
-			has_war_with = Y0U
+			has_war_with = ZOL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			Y19 = {
+			DND = {
 				country_event = zin_goldoroth.18
 			}
 			zin_goldoroth_offer_access_against_dead = yes

@@ -70,11 +70,11 @@ country_event = {
 			factor = 50
 		}
 		add_opinion_modifier = {
-			target = Y0S
+			target = NOL
 			modifier = zin_regional_noleksun_dominion_accord
 		}
 		reverse_add_opinion_modifier = {
-			target = Y0S
+			target = NOL
 			modifier = zin_regional_noleksun_dominion_accord
 		}
 	}
@@ -97,9 +97,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y0S
+				country_exists = NOL
 			}
-			Y0S = {
+			NOL = {
 				add_to_faction = PREV
 			}
 		}

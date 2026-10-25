@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y14
+			original_tag = NRS
 		}
 	}
 	initial_show_position = { focus = zin_noris_desert_throne }
@@ -377,7 +377,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y5H = {
+			NRS = {
 				country_event = zin_noris.5
 			}
 			set_temp_variable = { zin_arg_road = 1 }
@@ -439,11 +439,11 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y12 = {
+			NAA = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
-			Y12 = {
+			NAA = {
 				capital_scope = {
 					add_building_construction = {
 						type = industrial_complex
@@ -475,7 +475,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_road = 3 }
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_east_add_road_influence = yes
-			Y5J = {
+			DLB = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
@@ -523,7 +523,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_road = 4 }
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_east_add_road_influence = yes
-			Y13 = {
+			MOA = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
@@ -901,7 +901,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_east_courts_noris
-			Y12 = {
+			NAA = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
@@ -922,7 +922,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y12 = {
+			NAA = {
 				country_event = zin_noris.8
 			}
 		}
@@ -977,7 +977,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y5W = {
+			ALR = {
 				country_event = zin_noris.9
 			}
 		}
@@ -996,15 +996,15 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y13 = {
+			MOA = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_east_add_lean = yes
 			}
-			Y5B = {
+			OST = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
-			Y11 = {
+			OST = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
@@ -1044,7 +1044,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y18 = {
+			MIE = {
 				country_event = zin_noris.10
 			}
 		}
@@ -1085,11 +1085,11 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y5P = {
+			ERC = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
-			Y5V = {
+			PLO = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
@@ -1120,12 +1120,12 @@ focus_tree = {
 				limit = {
 					has_global_flag = zin_zol_rising
 				}
-				Y12 = {
+				NAA = {
 					country_event = zin_noris.28
 				}
 			}
 			else = {
-				Y12 = {
+				NAA = {
 					country_event = zin_noris.14
 				}
 			}
@@ -1476,11 +1476,11 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1754.3.2
+						date > 1754.3.1
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1751.3.2
+						date > 1751.3.1
 					}
 				}
 			}
@@ -1501,7 +1501,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date < 1752.8.30
+						date < 1752.8.31
 					}
 				}
 			}
@@ -2567,7 +2567,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_temp_variable = { zin_arg_cb = 3 }
-			set_temp_variable = { zin_arg_target = Y16 }
+			set_temp_variable = { zin_arg_target = STA }
 			set_temp_variable = { zin_arg_days = 365 }
 			zin_diplo_grant_cb = yes
 			set_temp_variable = { zin_arg_value = 5 }
@@ -2585,7 +2585,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		cost = 10
 		available = {
-			has_war_with = Y16
+			has_war_with = STA
 		}
 		ai_will_do = {
 			factor = 100
@@ -2606,7 +2606,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			has_war_with = Y16
+			has_war_with = STA
 			zin_noris_holds_gold_road = yes
 		}
 		ai_will_do = {

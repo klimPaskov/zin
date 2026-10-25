@@ -39,9 +39,9 @@ country_event = {
 		zin_elves_add_kinship = yes
 		if = {
 			limit = {
-				country_exists = Y8F
+				country_exists = MAG
 			}
-			Y8F = {
+			MAG = {
 				set_country_flag = zin_magical_forest_forewarned_east
 			}
 		}

@@ -27,10 +27,10 @@ zin_faith_horse_oath_hold_festival = {
 	if = { limit = { check_variable = { zin_arg_festival = 3 } } set_country_flag = { flag = zin_festival_horse_oath_last_ride days = 7 } set_country_flag = { flag = zin_festival_horse_oath_any days = 7 } }
 }
 
-zin_faith_stone_vigil_hold_festival = {
-	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_stone_vigil_accord_day days = 7 } set_country_flag = { flag = zin_festival_stone_vigil_any days = 7 } }
-	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_stone_vigil_night_watch days = 7 } set_country_flag = { flag = zin_festival_stone_vigil_any days = 7 } }
-	if = { limit = { check_variable = { zin_arg_festival = 3 } } set_country_flag = { flag = zin_festival_stone_vigil_reading_of_names days = 7 } set_country_flag = { flag = zin_festival_stone_vigil_any days = 7 } }
+zin_faith_pass_vigil_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_pass_vigil_accord_day days = 7 } set_country_flag = { flag = zin_festival_pass_vigil_any days = 7 } }
+	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_pass_vigil_night_watch days = 7 } set_country_flag = { flag = zin_festival_pass_vigil_any days = 7 } }
+	if = { limit = { check_variable = { zin_arg_festival = 3 } } set_country_flag = { flag = zin_festival_pass_vigil_reading_of_names days = 7 } set_country_flag = { flag = zin_festival_pass_vigil_any days = 7 } }
 }
 
 zin_faith_isle_tide_hold_festival = {
@@ -100,10 +100,10 @@ zin_faith_scale_creed_hold_festival = {
 	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_scale_creed_opening_of_the_roads days = 7 } set_country_flag = { flag = zin_festival_scale_creed_any days = 7 } }
 }
 
-zin_faith_river_temples_hold_festival = {
-	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_river_temples_the_rising days = 7 } set_country_flag = { flag = zin_festival_river_temples_any days = 7 } }
-	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_river_temples_the_falling days = 7 } set_country_flag = { flag = zin_festival_river_temples_any days = 7 } }
-	if = { limit = { check_variable = { zin_arg_festival = 3 } } set_country_flag = { flag = zin_festival_river_temples_kings_walk days = 7 } set_country_flag = { flag = zin_festival_river_temples_any days = 7 } }
+zin_faith_flood_stair_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_flood_stair_the_rising days = 7 } set_country_flag = { flag = zin_festival_flood_stair_any days = 7 } }
+	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_flood_stair_the_falling days = 7 } set_country_flag = { flag = zin_festival_flood_stair_any days = 7 } }
+	if = { limit = { check_variable = { zin_arg_festival = 3 } } set_country_flag = { flag = zin_festival_flood_stair_kings_walk days = 7 } set_country_flag = { flag = zin_festival_flood_stair_any days = 7 } }
 }
 
 zin_faith_lake_litany_hold_festival = {
@@ -195,4 +195,30 @@ zin_faith_warden_vigil_hold_festival = {
 zin_faith_hearth_iron_hold_festival = {
 	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_hearth_iron_the_forging days = 7 } set_country_flag = { flag = zin_festival_hearth_iron_any days = 7 } }
 	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_hearth_iron_iron_night days = 7 } set_country_flag = { flag = zin_festival_hearth_iron_any days = 7 } }
+}
+
+zin_faith_deep_reckoning_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_deep_reckoning_first_strike days = 7 } set_country_flag = { flag = zin_festival_deep_reckoning_any days = 7 } }
+	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_deep_reckoning_settling_of_accounts days = 7 } set_country_flag = { flag = zin_festival_deep_reckoning_any days = 7 } }
+}
+
+zin_faith_hearth_table_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_hearth_table_first_furrow days = 7 } set_country_flag = { flag = zin_festival_hearth_table_any days = 7 } }
+	if = { limit = { check_variable = { zin_arg_festival = 2 } } set_country_flag = { flag = zin_festival_hearth_table_long_table days = 7 } set_country_flag = { flag = zin_festival_hearth_table_any days = 7 } }
+}
+
+zin_faith_full_pot_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_full_pot_crowning days = 7 } set_country_flag = { flag = zin_festival_full_pot_any days = 7 } }
+}
+
+zin_faith_road_due_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_road_due_homecoming days = 7 } set_country_flag = { flag = zin_festival_road_due_any days = 7 } }
+}
+
+zin_faith_pass_fires_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_pass_fires_rekindling days = 7 } set_country_flag = { flag = zin_festival_pass_fires_any days = 7 } }
+}
+
+zin_faith_water_share_hold_festival = {
+	if = { limit = { check_variable = { zin_arg_festival = 1 } } set_country_flag = { flag = zin_festival_water_share_sharing days = 7 } set_country_flag = { flag = zin_festival_water_share_any days = 7 } }
 }

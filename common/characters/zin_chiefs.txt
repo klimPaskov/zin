@@ -173,84 +173,84 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_volgan = {
-		name = zin_cmd_army_volgan
+	zin_cmd_army_puvulan = {
+		name = zin_cmd_army_puvulan
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_volgan_adv
+			idea_token = zin_cmd_army_puvulan_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_banner_2 }
+			traits = { zin_chief_march_3 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_navy_volgan = {
-		name = zin_cmd_navy_volgan
-		gender = male
+	zin_cmd_navy_puvulan = {
+		name = zin_cmd_navy_puvulan
+		gender = female
 		advisor = {
 			slot = navy_chief
-			idea_token = zin_cmd_navy_volgan_adv
+			idea_token = zin_cmd_navy_puvulan_adv
 			ledger = navy
 			cost = 150
-			traits = { zin_chief_seamanship_2 }
+			traits = { zin_chief_battle_line_2 }
 			visible = { any_owned_state = { is_coastal = yes } }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_air_volgan = {
-		name = zin_cmd_air_volgan
-		gender = male
+	zin_cmd_air_puvulan = {
+		name = zin_cmd_air_puvulan
+		gender = female
 		advisor = {
 			slot = air_chief
-			idea_token = zin_cmd_air_volgan_adv
+			idea_token = zin_cmd_air_puvulan_adv
 			ledger = air
 			cost = 150
-			traits = { zin_chief_field_support_2 }
+			traits = { zin_chief_safe_landings_3 }
 			visible = { zin_rules_skies_present = yes }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_marshal_1_volgan = {
-		name = zin_cmd_marshal_1_volgan
-		gender = male
-		advisor = {
-			slot = high_command
-			idea_token = zin_cmd_marshal_1_volgan_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_ditch_2 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_marshal_2_volgan = {
-		name = zin_cmd_marshal_2_volgan
-		gender = male
-		advisor = {
-			slot = high_command
-			idea_token = zin_cmd_marshal_2_volgan_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_march_2 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_master_volgan = {
-		name = zin_cmd_master_volgan
+	zin_cmd_marshal_1_puvulan = {
+		name = zin_cmd_marshal_1_puvulan
 		gender = female
 		advisor = {
+			slot = high_command
+			idea_token = zin_cmd_marshal_1_puvulan_adv
+			ledger = army
+			cost = 150
+			traits = { zin_chief_spear_3 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	zin_cmd_marshal_2_puvulan = {
+		name = zin_cmd_marshal_2_puvulan
+		gender = male
+		advisor = {
+			slot = high_command
+			idea_token = zin_cmd_marshal_2_puvulan_adv
+			ledger = army
+			cost = 150
+			traits = { zin_chief_old_guard_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	zin_cmd_master_puvulan = {
+		name = zin_cmd_master_puvulan
+		gender = male
+		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_volgan_adv
+			idea_token = zin_cmd_master_puvulan_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_3 }
@@ -431,84 +431,84 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_gala_elves = {
-		name = zin_cmd_army_gala_elves
-		gender = male
+	zin_cmd_army_gala = {
+		name = zin_cmd_army_gala
+		gender = female
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_gala_elves_adv
+			idea_token = zin_cmd_army_gala_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_old_guard_1 }
+			traits = { zin_chief_shield_3 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_navy_gala_elves = {
-		name = zin_cmd_navy_gala_elves
+	zin_cmd_navy_gala = {
+		name = zin_cmd_navy_gala
 		gender = male
 		advisor = {
 			slot = navy_chief
-			idea_token = zin_cmd_navy_gala_elves_adv
+			idea_token = zin_cmd_navy_gala_adv
 			ledger = navy
 			cost = 150
-			traits = { zin_chief_yards_2 }
+			traits = { zin_chief_seamanship_2 }
 			visible = { any_owned_state = { is_coastal = yes } }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_air_gala_elves = {
-		name = zin_cmd_air_gala_elves
+	zin_cmd_air_gala = {
+		name = zin_cmd_air_gala
 		gender = male
 		advisor = {
 			slot = air_chief
-			idea_token = zin_cmd_air_gala_elves_adv
+			idea_token = zin_cmd_air_gala_adv
 			ledger = air
 			cost = 150
-			traits = { zin_chief_safe_landings_2 }
+			traits = { zin_chief_field_support_2 }
 			visible = { zin_rules_skies_present = yes }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_marshal_1_gala_elves = {
-		name = zin_cmd_marshal_1_gala_elves
+	zin_cmd_marshal_1_gala = {
+		name = zin_cmd_marshal_1_gala
+		gender = female
+		advisor = {
+			slot = high_command
+			idea_token = zin_cmd_marshal_1_gala_adv
+			ledger = army
+			cost = 150
+			traits = { zin_chief_ditch_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	zin_cmd_marshal_2_gala = {
+		name = zin_cmd_marshal_2_gala
+		gender = female
+		advisor = {
+			slot = high_command
+			idea_token = zin_cmd_marshal_2_gala_adv
+			ledger = army
+			cost = 150
+			traits = { zin_chief_banner_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	zin_cmd_master_gala = {
+		name = zin_cmd_master_gala
 		gender = male
 		advisor = {
-			slot = high_command
-			idea_token = zin_cmd_marshal_1_gala_elves_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_drill_3 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_marshal_2_gala_elves = {
-		name = zin_cmd_marshal_2_gala_elves
-		gender = female
-		advisor = {
-			slot = high_command
-			idea_token = zin_cmd_marshal_2_gala_elves_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_march_3 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_master_gala_elves = {
-		name = zin_cmd_master_gala_elves
-		gender = female
-		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_gala_elves_adv
+			idea_token = zin_cmd_master_gala_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_2 }
@@ -775,87 +775,87 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_gunwaith = {
-		name = zin_cmd_army_gunwaith
-		gender = female
+	zin_cmd_army_gunwyn = {
+		name = zin_cmd_army_gunwyn
+		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_gunwaith_adv
+			idea_token = zin_cmd_army_gunwyn_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_ditch_2 }
+			traits = { zin_chief_banner_3 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_navy_gunwaith = {
-		name = zin_cmd_navy_gunwaith
-		gender = male
+	zin_cmd_navy_gunwyn = {
+		name = zin_cmd_navy_gunwyn
+		gender = female
 		advisor = {
 			slot = navy_chief
-			idea_token = zin_cmd_navy_gunwaith_adv
+			idea_token = zin_cmd_navy_gunwyn_adv
 			ledger = navy
 			cost = 150
-			traits = { zin_chief_seamanship_3 }
+			traits = { zin_chief_yards_3 }
 			visible = { any_owned_state = { is_coastal = yes } }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_air_gunwaith = {
-		name = zin_cmd_air_gunwaith
+	zin_cmd_air_gunwyn = {
+		name = zin_cmd_air_gunwyn
 		gender = male
 		advisor = {
 			slot = air_chief
-			idea_token = zin_cmd_air_gunwaith_adv
+			idea_token = zin_cmd_air_gunwyn_adv
 			ledger = air
 			cost = 150
-			traits = { zin_chief_field_support_2 }
+			traits = { zin_chief_wing_craft_3 }
 			visible = { zin_rules_skies_present = yes }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_marshal_1_gunwaith = {
-		name = zin_cmd_marshal_1_gunwaith
+	zin_cmd_marshal_1_gunwyn = {
+		name = zin_cmd_marshal_1_gunwyn
 		gender = male
 		advisor = {
 			slot = high_command
-			idea_token = zin_cmd_marshal_1_gunwaith_adv
+			idea_token = zin_cmd_marshal_1_gunwyn_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_shield_2 }
+			traits = { zin_chief_old_guard_1 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_marshal_2_gunwaith = {
-		name = zin_cmd_marshal_2_gunwaith
-		gender = male
+	zin_cmd_marshal_2_gunwyn = {
+		name = zin_cmd_marshal_2_gunwyn
+		gender = female
 		advisor = {
 			slot = high_command
-			idea_token = zin_cmd_marshal_2_gunwaith_adv
+			idea_token = zin_cmd_marshal_2_gunwyn_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_spear_2 }
+			traits = { zin_chief_march_3 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_gunwaith = {
-		name = zin_cmd_master_gunwaith
+	zin_cmd_master_gunwyn = {
+		name = zin_cmd_master_gunwyn
 		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_gunwaith_adv
+			idea_token = zin_cmd_master_gunwyn_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_lore_3 }
+			traits = { zin_chief_lore_2 }
 			ai_will_do = {
 				factor = 1
 			}
@@ -1257,29 +1257,29 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_hiloron = {
-		name = zin_cmd_army_hiloron
-		gender = male
+	zin_cmd_army_hirolon = {
+		name = zin_cmd_army_hirolon
+		gender = female
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_hiloron_adv
+			idea_token = zin_cmd_army_hirolon_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_march_1 }
+			traits = { zin_chief_shield_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_hiloron = {
-		name = zin_cmd_master_hiloron
-		gender = female
+	zin_cmd_master_hirolon = {
+		name = zin_cmd_master_hirolon
+		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_hiloron_adv
+			idea_token = zin_cmd_master_hirolon_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_lore_1 }
+			traits = { zin_chief_lore_2 }
 			ai_will_do = {
 				factor = 1
 			}
@@ -1313,26 +1313,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_asgard = {
-		name = zin_cmd_army_asgard
-		gender = male
+	zin_cmd_army_orohaf = {
+		name = zin_cmd_army_orohaf
+		gender = female
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_asgard_adv
+			idea_token = zin_cmd_army_orohaf_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_banner_2 }
+			traits = { zin_chief_spear_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_asgard = {
-		name = zin_cmd_master_asgard
-		gender = female
+	zin_cmd_master_orohaf = {
+		name = zin_cmd_master_orohaf
+		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_asgard_adv
+			idea_token = zin_cmd_master_orohaf_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_2 }
@@ -1341,26 +1341,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_sensai = {
-		name = zin_cmd_army_sensai
+	zin_cmd_army_tolvael = {
+		name = zin_cmd_army_tolvael
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_sensai_adv
+			idea_token = zin_cmd_army_tolvael_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_shield_2 }
+			traits = { zin_chief_banner_1 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_sensai = {
-		name = zin_cmd_master_sensai
-		gender = male
+	zin_cmd_master_tolvael = {
+		name = zin_cmd_master_tolvael
+		gender = female
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_sensai_adv
+			idea_token = zin_cmd_master_tolvael_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_1 }
@@ -1565,26 +1565,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_isengard = {
-		name = zin_cmd_army_isengard
+	zin_cmd_army_melkgard = {
+		name = zin_cmd_army_melkgard
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_isengard_adv
+			idea_token = zin_cmd_army_melkgard_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_spear_2 }
+			traits = { zin_chief_spear_1 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_isengard = {
-		name = zin_cmd_master_isengard
-		gender = male
+	zin_cmd_master_melkgard = {
+		name = zin_cmd_master_melkgard
+		gender = female
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_isengard_adv
+			idea_token = zin_cmd_master_melkgard_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_2 }
@@ -1593,26 +1593,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_windwaith = {
-		name = zin_cmd_army_windwaith
+	zin_cmd_army_vindael = {
+		name = zin_cmd_army_vindael
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_windwaith_adv
+			idea_token = zin_cmd_army_vindael_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_ditch_1 }
+			traits = { zin_chief_ditch_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_windwaith = {
-		name = zin_cmd_master_windwaith
+	zin_cmd_master_vindael = {
+		name = zin_cmd_master_vindael
 		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_windwaith_adv
+			idea_token = zin_cmd_master_vindael_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_1 }
@@ -1621,26 +1621,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_titanos = {
-		name = zin_cmd_army_titanos
-		gender = female
+	zin_cmd_army_nivaros = {
+		name = zin_cmd_army_nivaros
+		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_titanos_adv
+			idea_token = zin_cmd_army_nivaros_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_ditch_1 }
+			traits = { zin_chief_spear_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_titanos = {
-		name = zin_cmd_master_titanos
-		gender = male
+	zin_cmd_master_nivaros = {
+		name = zin_cmd_master_nivaros
+		gender = female
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_titanos_adv
+			idea_token = zin_cmd_master_nivaros_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_1 }
@@ -2209,29 +2209,29 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_the_end = {
-		name = zin_cmd_army_the_end
+	zin_cmd_army_eldafaen = {
+		name = zin_cmd_army_eldafaen
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_the_end_adv
+			idea_token = zin_cmd_army_eldafaen_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_drill_1 }
+			traits = { zin_chief_shield_1 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_the_end = {
-		name = zin_cmd_master_the_end
+	zin_cmd_master_eldafaen = {
+		name = zin_cmd_master_eldafaen
 		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_the_end_adv
+			idea_token = zin_cmd_master_eldafaen_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_lore_1 }
+			traits = { zin_chief_lore_2 }
 			ai_will_do = {
 				factor = 1
 			}
@@ -2377,26 +2377,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_demon = {
-		name = zin_cmd_army_demon
-		gender = male
+	zin_cmd_army_khorvrath = {
+		name = zin_cmd_army_khorvrath
+		gender = female
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_demon_adv
+			idea_token = zin_cmd_army_khorvrath_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_drill_1 }
+			traits = { zin_chief_ditch_1 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_demon = {
-		name = zin_cmd_master_demon
+	zin_cmd_master_khorvrath = {
+		name = zin_cmd_master_khorvrath
 		gender = female
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_demon_adv
+			idea_token = zin_cmd_master_khorvrath_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_2 }
@@ -2629,29 +2629,29 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_gondolin = {
-		name = zin_cmd_army_gondolin
+	zin_cmd_army_naamis = {
+		name = zin_cmd_army_naamis
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_gondolin_adv
+			idea_token = zin_cmd_army_naamis_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_banner_2 }
+			traits = { zin_chief_march_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_gondolin = {
-		name = zin_cmd_master_gondolin
+	zin_cmd_master_naamis = {
+		name = zin_cmd_master_naamis
 		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_gondolin_adv
+			idea_token = zin_cmd_master_naamis_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_lore_1 }
+			traits = { zin_chief_lore_2 }
 			ai_will_do = {
 				factor = 1
 			}
@@ -2685,26 +2685,26 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_avalon = {
-		name = zin_cmd_army_avalon
+	zin_cmd_army_rhachia = {
+		name = zin_cmd_army_rhachia
 		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_avalon_adv
+			idea_token = zin_cmd_army_rhachia_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_spear_2 }
+			traits = { zin_chief_banner_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_avalon = {
-		name = zin_cmd_master_avalon
+	zin_cmd_master_rhachia = {
+		name = zin_cmd_master_rhachia
 		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_avalon_adv
+			idea_token = zin_cmd_master_rhachia_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_2 }
@@ -2853,40 +2853,12 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_poyang = {
-		name = zin_cmd_army_poyang
-		gender = male
-		advisor = {
-			slot = army_chief
-			idea_token = zin_cmd_army_poyang_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_drill_1 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_master_poyang = {
-		name = zin_cmd_master_poyang
+	zin_cmd_army_soyano = {
+		name = zin_cmd_army_soyano
 		gender = female
 		advisor = {
-			slot = theorist
-			idea_token = zin_cmd_master_poyang_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_lore_2 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_army_godland = {
-		name = zin_cmd_army_godland
-		gender = male
-		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_godland_adv
+			idea_token = zin_cmd_army_soyano_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_banner_2 }
@@ -2895,40 +2867,40 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_master_godland = {
-		name = zin_cmd_master_godland
+	zin_cmd_master_soyano = {
+		name = zin_cmd_master_soyano
+		gender = male
+		advisor = {
+			slot = theorist
+			idea_token = zin_cmd_master_soyano_adv
+			ledger = army
+			cost = 150
+			traits = { zin_chief_lore_1 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	zin_cmd_army_tor_luni = {
+		name = zin_cmd_army_tor_luni
 		gender = female
 		advisor = {
-			slot = theorist
-			idea_token = zin_cmd_master_godland_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_lore_2 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_army_hengyang = {
-		name = zin_cmd_army_hengyang
-		gender = male
-		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_hengyang_adv
+			idea_token = zin_cmd_army_tor_luni_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_old_guard_1 }
+			traits = { zin_chief_march_2 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_hengyang = {
-		name = zin_cmd_master_hengyang
+	zin_cmd_master_tor_luni = {
+		name = zin_cmd_master_tor_luni
 		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_hengyang_adv
+			idea_token = zin_cmd_master_tor_luni_adv
 			ledger = army
 			cost = 150
 			traits = { zin_chief_lore_2 }
@@ -2993,29 +2965,29 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_heaven = {
-		name = zin_cmd_army_heaven
-		gender = female
+	zin_cmd_army_yeni_alang = {
+		name = zin_cmd_army_yeni_alang
+		gender = male
 		advisor = {
 			slot = army_chief
-			idea_token = zin_cmd_army_heaven_adv
+			idea_token = zin_cmd_army_yeni_alang_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_shield_2 }
+			traits = { zin_chief_old_guard_1 }
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-	zin_cmd_master_heaven = {
-		name = zin_cmd_master_heaven
-		gender = female
+	zin_cmd_master_yeni_alang = {
+		name = zin_cmd_master_yeni_alang
+		gender = male
 		advisor = {
 			slot = theorist
-			idea_token = zin_cmd_master_heaven_adv
+			idea_token = zin_cmd_master_yeni_alang_adv
 			ledger = army
 			cost = 150
-			traits = { zin_chief_lore_1 }
+			traits = { zin_chief_lore_2 }
 			ai_will_do = {
 				factor = 1
 			}

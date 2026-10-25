@@ -43,18 +43,18 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y0Y
+				country_exists = MIR
 			}
-			Y0Y = {
+			MIR = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_mirolon_add_proof = yes
 			}
 		}
 		if = {
 			limit = {
-				country_exists = Y8D
+				country_exists = PUV
 			}
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = -2 }
 				zin_volgan_add_veil = yes
 			}
@@ -78,11 +78,11 @@ country_event = {
 			factor = 80
 		}
 		add_opinion_modifier = {
-			target = Y55
+			target = HER
 			modifier = zin_regional_herez_marcher_welcome
 		}
 		reverse_add_opinion_modifier = {
-			target = Y55
+			target = HER
 			modifier = zin_regional_herez_marcher_welcome
 		}
 	}
@@ -125,7 +125,7 @@ country_event = {
 			}
 		}
 		add_political_power = 25
-		Y55 = {
+		HER = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_concord_add_own_loyalty = yes
 		}
@@ -169,7 +169,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		Y55 = {
+		HER = {
 			add_equipment_to_stockpile = {
 				type = zin_arms_equipment
 				amount = 1000
@@ -191,7 +191,7 @@ country_event = {
 			}
 		}
 		add_political_power = 25
-		Y55 = {
+		HER = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_concord_add_own_loyalty = yes
 		}

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7I
+			original_tag = YEN
 		}
 	}
 	initial_show_position = { focus = zin_regional_heaven_the_high_terraces }
@@ -205,7 +205,7 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 			NOT = {
 				has_global_flag = zin_mirror_stilled
 			}
@@ -216,7 +216,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_sun_add_clarity = yes
-			set_temp_variable = { zin_arg_target = Y6X }
+			set_temp_variable = { zin_arg_target = GAA }
 			zin_elves_goodwill = yes
 		}
 	}
@@ -366,13 +366,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 30
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_sun_add_concord = yes

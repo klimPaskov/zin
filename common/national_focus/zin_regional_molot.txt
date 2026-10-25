@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0H
+			original_tag = MOO
 		}
 	}
 	initial_show_position = { focus = zin_regional_molot_the_margravate }
@@ -642,7 +642,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_leren_add_lean = yes
-			Y0G = {
+			LER = {
 				country_event = zin_regional_molot.2
 			}
 		}
@@ -746,7 +746,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			check_variable = { zin_leren_lean > 39 }
-			country_exists = Y0G
+			country_exists = LER
 		}
 		ai_will_do = {
 			factor = 10
@@ -759,7 +759,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_leren_add_lean = yes
 			diplomatic_relation = {
-				country = Y0G
+				country = LER
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -1187,7 +1187,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			OR = {
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 				has_global_flag = zin_eindil_crowned
 				has_global_flag = zin_afrit_dead
 				AND = {

@@ -54,7 +54,7 @@ country_event = {
 			}
 		}
 		add_political_power = -75
-		Y0G = {
+		LER = {
 			set_country_flag = zin_leren_toll_redressed
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_leren_add_strait_standing = yes
@@ -72,7 +72,7 @@ country_event = {
 				NOT = { has_global_flag = zin_golden_king_dead }
 			}
 		}
-		Y0G = {
+		LER = {
 			set_country_flag = zin_leren_toll_arbitrated
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_leren_add_strait_standing = yes
@@ -95,11 +95,11 @@ country_event = {
 			}
 		}
 		add_political_power = 25
-		Y0G = {
+		LER = {
 			set_country_flag = zin_leren_toll_mocked
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_leren_add_strait_standing = yes
-			add_opinion_modifier = { target = Y0L modifier = zin_leren_envoys_mocked }
+			add_opinion_modifier = { target = AEN modifier = zin_leren_envoys_mocked }
 			country_event = { id = zin_leren.12 days = 2 }
 		}
 	}
@@ -178,8 +178,8 @@ country_event = {
 	immediate = {
 		set_temp_variable = { zin_leren_t_chance = 50 }
 		if = {
-			limit = { country_exists = Y0I }
-			Y0I = { set_temp_variable = { zin_leren_t_eek = zin_leren_lean } }
+			limit = { country_exists = EEK }
+			EEK = { set_temp_variable = { zin_leren_t_eek = zin_leren_lean } }
 			divide_temp_variable = { zin_leren_t_eek = 4 }
 			add_to_temp_variable = { zin_leren_t_chance = zin_leren_t_eek }
 		}
@@ -224,7 +224,7 @@ country_event = {
 	desc = zin_leren.15.d
 	picture = GFX_zin_evt_strait_toll
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 		zin_leren_treaty_in_force = yes
 		check_variable = { var = zin_leren_toll_level value = 2 compare = greater_than_or_equals }
 	}
@@ -265,7 +265,7 @@ country_event = {
 		add_political_power = -25
 		set_temp_variable = { zin_arg_value = 2 }
 		zin_leren_add_strait_standing = yes
-		Y0L = { add_opinion_modifier = { target = Y0G modifier = zin_leren_appeal_heard } }
+		AEN = { add_opinion_modifier = { target = LER modifier = zin_leren_appeal_heard } }
 	}
 }
 
@@ -299,7 +299,7 @@ country_event = {
 			set_country_flag = { flag = zin_leren_asked_for_time days = 90 }
 			country_event = { id = zin_leren.20 days = 90 }
 		}
-		Y0L = { country_event = { id = zin_leren.21 } }
+		AEN = { country_event = { id = zin_leren.21 } }
 	}
 	option = {
 		name = zin_leren.20.b
@@ -326,7 +326,7 @@ country_event = {
 			limit = { check_variable = { var = zin_strait_standing value = -40 compare = less_than_or_equals } }
 			zin_leren_withdraw = yes
 		}
-		Y0L = { country_event = { id = zin_leren.21 } }
+		AEN = { country_event = { id = zin_leren.21 } }
 	}
 	option = {
 		name = zin_leren.20.c
@@ -349,7 +349,7 @@ country_event = {
 		zin_leren_join_aenor_defence = yes
 		set_temp_variable = { zin_arg_value = 20 }
 		zin_leren_add_strait_standing = yes
-		Y0L = { country_event = { id = zin_leren.21 } }
+		AEN = { country_event = { id = zin_leren.21 } }
 	}
 }
 
@@ -374,7 +374,7 @@ country_event = {
 	desc = zin_leren.50.d
 	picture = GFX_zin_evt_black_ships_tale
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 		zin_leren_date_tales = yes
 		has_country_flag = zin_leren_heard_fishermen
 	}
@@ -438,14 +438,13 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_country_flag = zin_elven_refusal
-				NOT = { has_country_flag = zin_refusal_lifted }
+				zin_diplo_refusal_binds = yes
 			}
 		}
-		Y0G = { add_to_faction = PREV }
-		add_opinion_modifier = { target = Y0G modifier = zin_leren_compact_kin }
-		reverse_add_opinion_modifier = { target = Y0G modifier = zin_leren_compact_kin }
-		Y0G = { country_event = { id = zin_leren.72 } }
+		LER = { add_to_faction = PREV }
+		add_opinion_modifier = { target = LER modifier = zin_leren_compact_kin }
+		reverse_add_opinion_modifier = { target = LER modifier = zin_leren_compact_kin }
+		LER = { country_event = { id = zin_leren.72 } }
 	}
 	option = {
 		name = zin_leren.70.b
@@ -454,7 +453,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_leren_add_lean = yes
-		Y0G = { country_event = { id = zin_leren.72 } }
+		LER = { country_event = { id = zin_leren.72 } }
 	}
 }
 
@@ -475,15 +474,15 @@ country_event = {
 			}
 			modifier = {
 				add = 40
-				has_war_with = Y0U
+				has_war_with = ZOL
 			}
 			modifier = {
 				factor = 0
-				has_country_flag = zin_elven_refusal
+				zin_diplo_refusal_binds = yes
 			}
 		}
-		Y0G = { puppet = PREV }
-		Y0G = { country_event = { id = zin_leren.72 } }
+		LER = { puppet = PREV }
+		LER = { country_event = { id = zin_leren.72 } }
 	}
 	option = {
 		name = zin_leren.71.b
@@ -492,7 +491,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = -20 }
 		zin_leren_add_lean = yes
-		Y0G = { country_event = { id = zin_leren.72 } }
+		LER = { country_event = { id = zin_leren.72 } }
 	}
 }
 
@@ -517,7 +516,7 @@ country_event = {
 	desc = zin_leren.80.d
 	picture = GFX_zin_evt_generic_court
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 		check_variable = { var = zin_leren_union_cohesion value = 25 compare = less_than_or_equals }
 	}
 	mean_time_to_happen = {

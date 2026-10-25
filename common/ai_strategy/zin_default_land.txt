@@ -2,13 +2,13 @@
 
 # Generic land strategies (L1 of docs/specs/09_validation/02_ai_defaults.md): role ratios by people, tier shifts of the garrison share, and the peace-first army size. Values are weights; probe AI-P1 calibrates the scale.
 
-# Role ratios of Volgan
-zin_default_land_volgan = {
+# Role ratios of Puvulan
+zin_default_land_puvulan = {
 	allowed = {
 		always = yes
 	}
 	enable = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -43,13 +43,13 @@ zin_default_land_volgan = {
 	}
 }
 
-# Role ratios of Zol
-zin_default_land_zol = {
+# Role ratios of Zol's Mistake
+zin_default_land_zols_mistake = {
 	allowed = {
 		always = yes
 	}
 	enable = {
-		original_tag = Y0U
+		original_tag = ZOL
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

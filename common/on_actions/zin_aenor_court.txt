@@ -3,7 +3,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y0L = { country_event = { id = zin_aenor.1 } }
+			AEN = { country_event = { id = zin_aenor.1 } }
 		}
 	}
 	on_monthly = {
@@ -22,6 +22,23 @@ on_actions = {
 					FROM = { zin_aenor_is_realm = yes }
 				}
 				country_event = { id = zin_aenor.230 }
+			}
+		}
+	}
+	# SL-25: the original Aenor capitulates (ROOT) or is annexed while the Golden King lives; he goes into exile.
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = { tag = AEN }
+				zin_aenor_exile_king = yes
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = { NOT = { country_exists = AEN } }
+				zin_aenor_exile_king = yes
 			}
 		}
 	}

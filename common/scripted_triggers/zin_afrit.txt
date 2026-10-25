@@ -40,7 +40,7 @@ zin_afrit_can_deepen_foothold = {
 	# Scope: the target country.
 	NOT = { zin_afrit_is_hub = yes }
 	NOT = { has_country_flag = zin_afrit_houses_purged }
-	NOT = { has_war_with = Y8G }
+	NOT = { has_war_with = WOR }
 	check_variable = { zin_afrit_cap > 0 }
 	NOT = { check_variable = { zin_footholds = zin_afrit_cap } }
 	NOT = { check_variable = { zin_footholds > zin_afrit_cap } }
@@ -54,15 +54,16 @@ zin_afrit_eastern_candidate = {
 			has_country_flag = zin_east_pledged
 		}
 	}
-	NOT = { has_war_with = Y8G }
+	NOT = { has_war_with = WOR }
 	NOT = { zin_afrit_is_hub = yes }
+	NOT = { has_character = zin_aurevan }
 	NOT = {
 		AND = {
 			is_subject = yes
 			OVERLORD = {
 				OR = {
 					zin_aenor_is_realm = yes
-					tag = Y8D
+					tag = PUV
 				}
 			}
 		}
@@ -82,13 +83,62 @@ zin_afrit_holds_parim = {
 	}
 }
 zin_afrit_is_hub = {
-	original_tag = Y8G
+	original_tag = WOR
+}
+zin_afrit_pulse_here = {
+	OR = {
+		tag = WOR
+		AND = {
+			NOT = { country_exists = WOR }
+			has_character = zin_aurevan
+		}
+		AND = {
+			tag = AEN
+			NOT = { country_exists = WOR }
+			NOT = { any_country = { has_character = zin_aurevan } }
+		}
+	}
+}
+zin_afrit_reduced = {
+	NOT = { has_global_flag = zin_afrit_dead }
+	OR = {
+		has_global_flag = { flag = zin_afrit_hidden days > 365 }
+		AND = {
+			NOT = {
+				any_country = {
+					OR = {
+						zin_afrit_is_hub = yes
+						zin_afrit_rules_here = yes
+						AND = {
+							is_subject = yes
+							OVERLORD = { zin_afrit_is_hub = yes }
+						}
+					}
+					any_controlled_state = { zin_is_region_middle_lands = yes }
+				}
+			}
+			any_state = {
+				zin_is_site_parim = yes
+				controller = { zin_eindil_coalition_ally = yes }
+			}
+			OR = {
+				check_variable = { global.zin_path_cp24 > 1 }
+				zin_afrit_date_reduced = yes
+			}
+		}
+	}
 }
 zin_afrit_rules_here = {
 	has_country_leader = { character = zin_aurevan }
 }
 zin_afrit_secret_kept = {
 	NOT = { has_global_flag = zin_afrit_revealed }
+}
+zin_afrit_side_holds_middle = {
+	OR = {
+		any_controlled_state = { zin_is_region_middle_lands = yes }
+		any_subject_country = { any_controlled_state = { zin_is_region_middle_lands = yes } }
+	}
 }
 # zin_afrit_date_regicide_fallback: 1750.10.15 at the standard pace, shifted by zin_story_pace
 zin_afrit_date_regicide_fallback = {
@@ -111,6 +161,30 @@ zin_afrit_date_regicide_fallback = {
 				}
 			}
 			date > 1750.10.14
+		}
+	}
+}
+# zin_afrit_date_crown_latest: 1751.2.8 at the standard pace, shifted by zin_story_pace
+zin_afrit_date_crown_latest = {
+	OR = {
+		AND = {
+			check_variable = { global.zin_story_pace > 1.25 }
+			date > 1752.7.29
+		}
+		AND = {
+			check_variable = { global.zin_story_pace > 0 }
+			check_variable = { global.zin_story_pace < 0.875 }
+			date > 1750.5.15
+		}
+		AND = {
+			OR = {
+				check_variable = { global.zin_story_pace = 0 }
+				AND = {
+					check_variable = { global.zin_story_pace > 0.875 }
+					check_variable = { global.zin_story_pace < 1.25 }
+				}
+			}
+			date > 1751.2.7
 		}
 	}
 }
@@ -207,6 +281,30 @@ zin_afrit_date_parim = {
 				}
 			}
 			date > 1758.8.31
+		}
+	}
+}
+# zin_afrit_date_reduced: 1759.3.1 at the standard pace, shifted by zin_story_pace
+zin_afrit_date_reduced = {
+	OR = {
+		AND = {
+			check_variable = { global.zin_story_pace > 1.25 }
+			date > 1764.8.30
+		}
+		AND = {
+			check_variable = { global.zin_story_pace > 0 }
+			check_variable = { global.zin_story_pace < 0.875 }
+			date > 1756.5.30
+		}
+		AND = {
+			OR = {
+				check_variable = { global.zin_story_pace = 0 }
+				AND = {
+					check_variable = { global.zin_story_pace > 0.875 }
+					check_variable = { global.zin_story_pace < 1.25 }
+				}
+			}
+			date > 1759.2.28
 		}
 	}
 }

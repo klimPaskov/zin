@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7D
+			original_tag = TOR
 		}
 	}
 	initial_show_position = { focus = zin_regional_godland_the_high_places }
@@ -250,7 +250,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		cost = 5
 		available = {
-			country_exists = Y6X
+			country_exists = GAA
 		}
 		ai_will_do = {
 			factor = 15
@@ -404,13 +404,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 30
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_sun_add_concord = yes

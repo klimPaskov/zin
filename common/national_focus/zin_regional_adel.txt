@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0C
+			original_tag = ADE
 		}
 	}
 	initial_show_position = { focus = zin_regional_adel_the_speakers_hall }
@@ -115,7 +115,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -148,7 +148,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -273,7 +273,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -317,7 +317,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -381,7 +381,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0D
+			country_exists = PLL
 		}
 		ai_will_do = {
 			factor = 10
@@ -404,7 +404,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0D = {
+			PLL = {
 				country_event = zin_regional_adel.2
 			}
 		}
@@ -419,7 +419,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0F
+			country_exists = RAE
 		}
 		ai_will_do = {
 			factor = 10
@@ -442,7 +442,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0F = {
+			RAE = {
 				country_event = zin_regional_adel.2
 			}
 		}
@@ -508,7 +508,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -551,7 +551,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -590,7 +590,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -626,7 +626,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -704,7 +704,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -738,7 +738,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

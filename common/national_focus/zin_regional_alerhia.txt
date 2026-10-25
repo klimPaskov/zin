@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y5W
+			original_tag = ALR
 		}
 	}
 	initial_show_position = { focus = zin_regional_alerhia_the_rift_crown }
@@ -380,7 +380,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_east_add_lean = yes
-			Y14 = {
+			NRS = {
 				set_temp_variable = { zin_arg_road = 3 }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_east_add_road_influence = yes
@@ -443,7 +443,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = -20 }
 			zin_east_add_lean = yes
-			Y16 = {
+			STA = {
 				set_temp_variable = { zin_arg_road = 2 }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_east_add_road_influence = yes

@@ -21,7 +21,7 @@ zin_leren_update_treaty_band = {
 zin_leren_add_strait_standing = {
 	if = {
 		limit = { zin_leren_treaty_in_force = yes }
-		Y0G = {
+		LER = {
 			add_to_variable = { zin_strait_standing = zin_arg_value }
 			clamp_variable = { var = zin_strait_standing min = -100 max = 100 }
 			zin_leren_update_treaty_band = yes
@@ -120,7 +120,7 @@ zin_leren_update_hegemony = {
 			add_to_temp_variable = { zin_leren_t_heg = 1.5 }
 		}
 		else_if = {
-			limit = { controller = { is_in_faction_with = Y0G } }
+			limit = { controller = { is_in_faction_with = LER } }
 			add_to_temp_variable = { zin_leren_t_heg = 1 }
 		}
 	}
@@ -140,9 +140,9 @@ zin_leren_clear_grievances = {
 	if = { limit = { has_idea = zin_leren_grievance_1716 } remove_ideas = zin_leren_grievance_1716 }
 	if = { limit = { has_idea = zin_leren_grievance_unanswered } remove_ideas = zin_leren_grievance_unanswered }
 	if = {
-		limit = { country_exists = Y0L }
-		remove_opinion_modifier = { target = Y0L modifier = zin_opinion_toll_of_1716 }
-		remove_opinion_modifier = { target = Y0L modifier = zin_leren_envoys_mocked }
+		limit = { country_exists = AEN }
+		remove_opinion_modifier = { target = AEN modifier = zin_opinion_toll_of_1716 }
+		remove_opinion_modifier = { target = AEN modifier = zin_leren_envoys_mocked }
 	}
 }
 
@@ -155,19 +155,19 @@ zin_leren_withdraw = {
 		set_global_flag = zin_leren_withdrawal
 		set_variable = { global.zin_leren_withdrawal_date = global.date }
 		set_variable = { global.zin_leren_withdrawal_year = global.year }
-		Y0G = {
-			remove_opinion_modifier = { target = Y0L modifier = zin_leren_treaty_partner }
-			add_opinion_modifier = { target = Y0L modifier = zin_leren_treaty_broken }
-			diplomatic_relation = { country = Y0L relation = military_access active = no }
-			if = { limit = { is_in_faction_with = Y0L } leave_faction = yes }
+		LER = {
+			remove_opinion_modifier = { target = AEN modifier = zin_leren_treaty_partner }
+			add_opinion_modifier = { target = AEN modifier = zin_leren_treaty_broken }
+			diplomatic_relation = { country = AEN relation = military_access active = no }
+			if = { limit = { is_in_faction_with = AEN } leave_faction = yes }
 			add_timed_idea = { idea = zin_leren_treaty_torn days = 365 }
 			if = { limit = { has_idea = zin_leren_grievance_unanswered } remove_ideas = zin_leren_grievance_unanswered }
 			country_event = { id = zin_leren.30 }
 		}
-		Y0L = {
-			remove_opinion_modifier = { target = Y0G modifier = zin_leren_treaty_partner }
-			add_opinion_modifier = { target = Y0G modifier = zin_leren_treaty_broken }
-			diplomatic_relation = { country = Y0G relation = military_access active = no }
+		AEN = {
+			remove_opinion_modifier = { target = LER modifier = zin_leren_treaty_partner }
+			add_opinion_modifier = { target = LER modifier = zin_leren_treaty_broken }
+			diplomatic_relation = { country = LER relation = military_access active = no }
 			country_event = { id = zin_leren.31 }
 		}
 		set_temp_variable = { zin_arg_value = 4 }
@@ -181,18 +181,18 @@ zin_leren_withdraw = {
 
 # Any scope. Lerendor joins every defensive war of Aenor under the treaty (section 6).
 zin_leren_join_aenor_defence = {
-	if = { limit = { zin_leren_treaty_in_force = yes } Y0G = {
-			Y0L = {
+	if = { limit = { zin_leren_treaty_in_force = yes } LER = {
+			AEN = {
 				every_enemy_country = {
 					limit = {
-						Y0L = { has_defensive_war_with = PREV }
-						NOT = { is_in_faction_with = Y0G }
-						NOT = { is_subject_of = Y0G }
+						AEN = { has_defensive_war_with = PREV }
+						NOT = { is_in_faction_with = LER }
+						NOT = { is_subject_of = LER }
 					}
 					save_event_target_as = zin_leren_foe
-					Y0G = {
+					LER = {
 						add_to_war = {
-							targeted_alliance = Y0L
+							targeted_alliance = AEN
 							enemy = event_target:zin_leren_foe
 							hostility_reason = asked_to_join
 							single_target_only = yes
@@ -223,7 +223,7 @@ zin_leren_offer_protection = {
 zin_leren_close_strait = {
 	var:zin_arg_target = {
 		add_timed_idea = { idea = zin_leren_strait_closed days = 180 }
-		add_opinion_modifier = { target = Y0G modifier = zin_leren_strait_closed_on_us }
+		add_opinion_modifier = { target = LER modifier = zin_leren_strait_closed_on_us }
 		country_event = { id = zin_leren.90 }
 	}
 }
@@ -233,12 +233,12 @@ zin_leren_claim_r_en = {
 	if = {
 		limit = { zin_leren_gate_ren = yes }
 		every_state = {
-			limit = { owner = { original_tag = Y0J } }
-			add_claim_by = Y0G
+			limit = { owner = { original_tag = REN } }
+			add_claim_by = LER
 		}
 		create_wargoal = {
 			type = puppet_wargoal_focus
-			target = Y0J
+			target = REN
 		}
 	}
 }
@@ -250,16 +250,16 @@ zin_leren_claim_far_shore = {
 		every_state = {
 			limit = {
 				zin_is_site_strait_south = yes
-				NOT = { owner = { original_tag = Y0G } }
+				NOT = { owner = { original_tag = LER } }
 			}
-			add_claim_by = Y0G
+			add_claim_by = LER
 		}
 		every_country = {
 			limit = {
-				NOT = { original_tag = Y0G }
+				NOT = { original_tag = LER }
 				any_owned_state = { zin_is_site_strait_south = yes }
 			}
-			Y0G = { create_wargoal = { type = take_claimed_state target = PREV } }
+			LER = { create_wargoal = { type = take_claimed_state target = PREV } }
 		}
 	}
 }
@@ -289,9 +289,9 @@ zin_leren_ui_refresh = {
 	every_country = {
 		limit = {
 			zin_leren_is_north_crown = yes
-			is_in_faction_with = Y0G
+			is_in_faction_with = LER
 		}
-		Y0G = { add_to_variable = { zin_ui_compact_members = 1 } }
+		LER = { add_to_variable = { zin_ui_compact_members = 1 } }
 	}
 	add_to_variable = { global.zin_ui_tick = 1 }
 }
@@ -299,7 +299,7 @@ zin_leren_ui_refresh = {
 # Run by the hidden event zin_leren.1: start values, spirits, dynamic modifiers, the leans, the treaty partner opinions (section 4 and the start situation).
 zin_leren_startup = {
 	# Lerendor
-	Y0G = {
+	LER = {
 		save_global_event_target_as = zin_leren_country
 		set_variable = { zin_strait_standing = -15 }
 		set_variable = { zin_leren_toll_level = 1 }
@@ -320,62 +320,39 @@ zin_leren_startup = {
 		zin_leren_update_hegemony = yes
 		zin_leren_update_treaty_band = yes
 		zin_leren_ui_refresh = yes
-		add_opinion_modifier = { target = Y0L modifier = zin_leren_treaty_partner }
-		reverse_add_opinion_modifier = { target = Y0L modifier = zin_leren_treaty_partner }
+		add_opinion_modifier = { target = AEN modifier = zin_leren_treaty_partner }
+		reverse_add_opinion_modifier = { target = AEN modifier = zin_leren_treaty_partner }
 	}
 	# the leans of the smaller crowns
-	Y0H = { set_variable = { zin_leren_lean = -20 } }
-	Y0I = { set_variable = { zin_leren_lean = 60 } }
-	Y0J = { set_variable = { zin_leren_lean = -25 } }
-	Y0K = { set_variable = { zin_leren_lean = 10 } }
-	Y2M = { set_variable = { zin_leren_lean = 5 } }
-	Y2N = { set_variable = { zin_leren_lean = 5 } }
-	Y2O = { set_variable = { zin_leren_lean = 10 } }
-	Y2P = { set_variable = { zin_leren_lean = 5 } }
-	Y2Q = { set_variable = { zin_leren_lean = -5 } }
-	Y2R = { set_variable = { zin_leren_lean = 5 } }
-	Y2S = { set_variable = { zin_leren_lean = 5 } }
-	Y2T = { set_variable = { zin_leren_lean = 5 } }
-	Y2U = { set_variable = { zin_leren_lean = 5 } }
-	Y2V = { set_variable = { zin_leren_lean = 5 } }
-	Y2W = { set_variable = { zin_leren_lean = 5 } }
-	Y2X = { set_variable = { zin_leren_lean = 5 } }
-	Y2Y = { set_variable = { zin_leren_lean = 5 } }
-	Y2Z = { set_variable = { zin_leren_lean = 5 } }
-	Y30 = { set_variable = { zin_leren_lean = 15 } }
-	Y31 = { set_variable = { zin_leren_lean = 5 } }
-	Y32 = { set_variable = { zin_leren_lean = 5 } }
-	Y33 = { set_variable = { zin_leren_lean = 5 } }
-	Y34 = { set_variable = { zin_leren_lean = 15 } }
-	Y35 = { set_variable = { zin_leren_lean = 5 } }
-	Y36 = { set_variable = { zin_leren_lean = 5 } }
-	Y37 = { set_variable = { zin_leren_lean = 5 } }
-	Y38 = { set_variable = { zin_leren_lean = 5 } }
-	Y19 = { set_variable = { zin_leren_lean = 10 } }
-	Y1A = { set_variable = { zin_leren_lean = -20 } }
-	Y1B = { set_variable = { zin_leren_lean = 0 } }
-	Y1C = { set_variable = { zin_leren_lean = 0 } }
-	Y43 = { set_variable = { zin_leren_lean = 0 } }
-	Y44 = { set_variable = { zin_leren_lean = 0 } }
-	Y45 = { set_variable = { zin_leren_lean = 0 } }
-	Y46 = { set_variable = { zin_leren_lean = 0 } }
-	Y47 = { set_variable = { zin_leren_lean = 0 } }
-	Y48 = { set_variable = { zin_leren_lean = 0 } }
-	Y49 = { set_variable = { zin_leren_lean = 0 } }
-	Y4A = { set_variable = { zin_leren_lean = 0 } }
-	Y4B = { set_variable = { zin_leren_lean = 0 } }
-	Y4C = { set_variable = { zin_leren_lean = 0 } }
-	Y4D = { set_variable = { zin_leren_lean = 0 } }
-	Y4E = { set_variable = { zin_leren_lean = 0 } }
-	Y4F = { set_variable = { zin_leren_lean = 0 } }
-	Y4G = { set_variable = { zin_leren_lean = 0 } }
-	Y4H = { set_variable = { zin_leren_lean = 0 } }
-	Y4I = { set_variable = { zin_leren_lean = 10 } }
-	Y4J = { set_variable = { zin_leren_lean = 0 } }
-	Y4K = { set_variable = { zin_leren_lean = 0 } }
-	Y4L = { set_variable = { zin_leren_lean = 0 } }
-	Y8C = { set_variable = { zin_leren_lean = 0 } }
-	Y0W = { set_variable = { zin_leren_lean = 10 } }
+	EEK = { set_variable = { zin_leren_lean = 60 } }
+	REN = { set_variable = { zin_leren_lean = -25 } }
+	MOO = { set_variable = { zin_leren_lean = -20 } }
+	KER = { set_variable = { zin_leren_lean = 10 } }
+	TLV = { set_variable = { zin_leren_lean = -5 } }
+	TOL = { set_variable = { zin_leren_lean = 10 } }
+	HEO = { set_variable = { zin_leren_lean = 5 } }
+	HRA = { set_variable = { zin_leren_lean = 5 } }
+	MIA = { set_variable = { zin_leren_lean = 15 } }
+	DOL = { set_variable = { zin_leren_lean = 15 } }
+	MUS = { set_variable = { zin_leren_lean = 5 } }
+	GOL = { set_variable = { zin_leren_lean = -20 } }
+	DND = { set_variable = { zin_leren_lean = 10 } }
+	DRK = { set_variable = { zin_leren_lean = 0 } }
+	BUN = { set_variable = { zin_leren_lean = 0 } }
+	VES = { set_variable = { zin_leren_lean = 0 } }
+	BLK = { set_variable = { zin_leren_lean = 10 } }
+	BLN = { set_variable = { zin_leren_lean = 0 } }
+	BOR = { set_variable = { zin_leren_lean = 0 } }
+	DRE = { set_variable = { zin_leren_lean = 0 } }
+	DUL = { set_variable = { zin_leren_lean = 0 } }
+	TRO = { set_variable = { zin_leren_lean = 0 } }
+	HOO = { set_variable = { zin_leren_lean = 0 } }
+	DAK = { set_variable = { zin_leren_lean = 0 } }
+	SKR = { set_variable = { zin_leren_lean = 0 } }
+	DUN = { set_variable = { zin_leren_lean = 0 } }
+	BRT = { set_variable = { zin_leren_lean = 0 } }
+	WIL = { set_variable = { zin_leren_lean = 0 } }
+	ANE = { set_variable = { zin_leren_lean = 10 } }
 }
 
 # Scope: Lerendor. The monthly pulse of section 1 to 7: drifts, hegemony, bands, the Keepers of the Strait, the call to the treaty, the withdrawal checks, the layouts.
@@ -386,7 +363,7 @@ zin_leren_monthly = {
 	if = { limit = { check_variable = { var = zin_leren_toll_level value = 2 compare = equals } } add_to_temp_variable = { zin_leren_t_drift = -0.2 } }
 	if = { limit = { check_variable = { var = zin_leren_toll_level value = 3 compare = equals } } add_to_temp_variable = { zin_leren_t_drift = -0.4 } }
 	if = { limit = { check_variable = { var = zin_leren_toll_level value = 4 compare = equals } } add_to_temp_variable = { zin_leren_t_drift = -0.6 } }
-	if = { limit = { country_exists = Y0L Y0L = { check_variable = { var = zin_court_corruption value = 70 compare = greater_than_or_equals } } } add_to_temp_variable = { zin_leren_t_drift = -0.1 } }
+	if = { limit = { country_exists = AEN AEN = { check_variable = { var = zin_court_corruption value = 70 compare = greater_than_or_equals } } } add_to_temp_variable = { zin_leren_t_drift = -0.1 } }
 	if = { limit = { has_country_flag = zin_leren_route_honour } add_to_temp_variable = { zin_leren_t_drift = 0.5 } }
 	if = { limit = { has_country_flag = zin_leren_route_break } add_to_temp_variable = { zin_leren_t_drift = -0.2 } }
 	if = { limit = { has_country_flag = zin_leren_route_supremacy } add_to_temp_variable = { zin_leren_t_drift = -0.4 } }
@@ -443,7 +420,7 @@ zin_leren_monthly = {
 	every_country = {
 		limit = {
 			has_country_flag = zin_leren_called_against
-			NOT = { has_war_with = Y0L }
+			NOT = { has_war_with = AEN }
 		}
 		clr_country_flag = zin_leren_called_against
 	}
@@ -455,10 +432,10 @@ zin_leren_monthly = {
 		}
 		random_country = {
 			limit = {
-				has_war_with = Y0L
-				Y0L = { has_defensive_war_with = PREV }
-				NOT = { is_in_faction_with = Y0G }
-				NOT = { is_subject_of = Y0G }
+				has_war_with = AEN
+				AEN = { has_defensive_war_with = PREV }
+				NOT = { is_in_faction_with = LER }
+				NOT = { is_subject_of = LER }
 				NOT = { has_country_flag = zin_leren_called_against }
 			}
 			save_event_target_as = zin_leren_first_attacker
@@ -467,12 +444,12 @@ zin_leren_monthly = {
 			limit = { has_event_target = zin_leren_first_attacker }
 			every_country = {
 				limit = {
-					has_war_with = Y0L
-					Y0L = { has_defensive_war_with = PREV }
+					has_war_with = AEN
+					AEN = { has_defensive_war_with = PREV }
 				}
 				set_country_flag = zin_leren_called_against
 			}
-			event_target:zin_leren_first_attacker = { Y0G = { country_event = { id = zin_leren.20 } } }
+			event_target:zin_leren_first_attacker = { LER = { country_event = { id = zin_leren.20 } } }
 			clear_global_event_target = zin_leren_first_attacker
 		}
 	}

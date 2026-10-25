@@ -66,12 +66,12 @@ zin_glo_lost_cause_leader = {
 		AND = {
 			NOT = { has_global_flag = zin_lost_cause_with_eindil }
 			NOT = { has_global_flag = zin_lost_cause_shield }
-			original_tag = Y0L
+			original_tag = AEN
 		}
 	}
 }
 zin_glo_hunt_possible = {
-	original_tag = Y8D
+	original_tag = PUV
 	NOT = { has_war = yes }
 	NOT = { has_country_flag = zin_glo_hunt_sent }
 	OR = {
@@ -106,7 +106,7 @@ zin_glo_dark_power = {
 	OR = {
 		zin_afrit_is_hub = yes
 		zin_afrit_rules_here = yes
-		original_tag = Y8D
+		original_tag = PUV
 	}
 }
 zin_glo_bearer_near = {
@@ -128,5 +128,5 @@ zin_glo_bearer_near = {
 }
 zin_glo_wave_target = {
 	zin_glo_bearer_near = yes
-	controller = { OR = { original_tag = Y0U is_subject_of = Y0U } }
+	controller = { OR = { original_tag = ZOL is_subject_of = ZOL } }
 }

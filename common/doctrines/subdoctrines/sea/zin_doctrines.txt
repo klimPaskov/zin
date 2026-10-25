@@ -147,8 +147,8 @@ zin_sub_line_of_battle = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y0L
-				original_tag = Y0G
+				original_tag = AEN
+				original_tag = LER
 			}
 		}
 	}
@@ -244,8 +244,8 @@ zin_sub_sea_castles = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y0L
-				original_tag = Y0G
+				original_tag = AEN
+				original_tag = LER
 			}
 		}
 	}
@@ -296,7 +296,7 @@ zin_sub_night_raiders = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y0U
+				original_tag = ZOL
 				has_country_flag = zin_region_tritons_islands
 			}
 		}
@@ -341,7 +341,7 @@ zin_sub_corsair_packs = {
 			factor = 10
 			OR = {
 				has_country_flag = zin_region_tritons_islands
-				original_tag = Y0U
+				original_tag = ZOL
 			}
 		}
 	}
@@ -385,7 +385,7 @@ zin_sub_dread_ships = {
 		modifier = {
 			factor = 10
 			OR = {
-				original_tag = Y0U
+				original_tag = ZOL
 				has_country_flag = zin_region_tritons_islands
 			}
 		}

@@ -123,17 +123,19 @@ zin_lerendor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 1 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_lerendor_opinion_friendship
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_lerendor_opinion_friendship
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_lerendor_opinion_friendship
+				}
 			}
 		}
 	}
@@ -141,17 +143,19 @@ zin_lerendor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 2 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_lerendor_opinion_oaths
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_lerendor_opinion_oaths
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_lerendor_opinion_oaths
+				}
 			}
 		}
 	}
@@ -159,17 +163,19 @@ zin_lerendor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 3 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_lerendor_opinion_equals
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_lerendor_opinion_equals
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_lerendor_opinion_equals
+				}
 			}
 		}
 	}
@@ -177,17 +183,19 @@ zin_lerendor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 4 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_lerendor_opinion_refused
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_lerendor_opinion_refused
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_lerendor_opinion_refused
+				}
 			}
 		}
 	}

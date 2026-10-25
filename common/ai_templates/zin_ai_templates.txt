@@ -2,16 +2,16 @@
 
 # Role-level AI template entries (one per people and role). A country has exactly one entry for each role it can use: men are written with blocked_for (so dynamic tags, which are men by default, are covered), every other people with available_for.
 
-zin_ai_volgan_infantry = {
+zin_ai_puvulan_infantry = {
 	available_for = {
-		Y8D
+		PUV
 	}
 	role = infantry
 	upgrade_prio = {
 		factor = 1
 	}
 
-	zin_ai_volgan_grave_host = {
+	zin_ai_puvulan_grave_host = {
 		upgrade_prio = {
 			factor = 2
 		}
@@ -26,7 +26,7 @@ zin_ai_volgan_infantry = {
 		}
 	}
 
-	zin_ai_volgan_monster_clan = {
+	zin_ai_puvulan_monster_clan = {
 		upgrade_prio = {
 			factor = 1
 		}
@@ -43,16 +43,16 @@ zin_ai_volgan_infantry = {
 	}
 }
 
-zin_ai_volgan_garrison = {
+zin_ai_puvulan_garrison = {
 	available_for = {
-		Y8D
+		PUV
 	}
 	role = garrison
 	upgrade_prio = {
 		factor = 1
 	}
 
-	zin_ai_volgan_grave_watch = {
+	zin_ai_puvulan_grave_watch = {
 		reinforce_prio = 0
 		upgrade_prio = {
 			factor = 1
@@ -65,16 +65,16 @@ zin_ai_volgan_garrison = {
 	}
 }
 
-zin_ai_volgan_mobile = {
+zin_ai_puvulan_mobile = {
 	available_for = {
-		Y8D
+		PUV
 	}
 	role = mobile
 	upgrade_prio = {
 		factor = 1
 	}
 
-	zin_ai_volgan_grave_riders = {
+	zin_ai_puvulan_grave_riders = {
 		upgrade_prio = {
 			factor = 1
 		}
@@ -90,16 +90,16 @@ zin_ai_volgan_mobile = {
 	}
 }
 
-zin_ai_volgan_armor = {
+zin_ai_puvulan_armor = {
 	available_for = {
-		Y8D
+		PUV
 	}
 	role = armor
 	upgrade_prio = {
 		factor = 1
 	}
 
-	zin_ai_volgan_vanguard = {
+	zin_ai_puvulan_vanguard = {
 		reinforce_prio = 2
 		upgrade_prio = {
 			factor = 1
@@ -117,16 +117,16 @@ zin_ai_volgan_armor = {
 	}
 }
 
-zin_ai_volgan_siege_role = {
+zin_ai_puvulan_siege_role = {
 	available_for = {
-		Y8D
+		PUV
 	}
 	role = siege_role
 	upgrade_prio = {
 		factor = 1
 	}
 
-	zin_ai_volgan_siege_park = {
+	zin_ai_puvulan_siege_park = {
 		upgrade_prio = {
 			factor = 1
 		}
@@ -143,16 +143,16 @@ zin_ai_volgan_siege_role = {
 	}
 }
 
-zin_ai_zol_infantry = {
+zin_ai_zols_mistake_infantry = {
 	available_for = {
-		Y0U
+		ZOL
 	}
 	role = infantry
 	upgrade_prio = {
 		factor = 0
 	}
 
-	zin_ai_zol_deathless = {
+	zin_ai_zols_mistake_deathless = {
 		upgrade_prio = {
 			factor = 1
 		}
@@ -164,16 +164,16 @@ zin_ai_zol_infantry = {
 	}
 }
 
-zin_ai_zol_garrison = {
+zin_ai_zols_mistake_garrison = {
 	available_for = {
-		Y0U
+		ZOL
 	}
 	role = garrison
 	upgrade_prio = {
 		factor = 0
 	}
 
-	zin_ai_zol_watch = {
+	zin_ai_zols_mistake_watch = {
 		reinforce_prio = 0
 		upgrade_prio = {
 			factor = 1
@@ -186,16 +186,16 @@ zin_ai_zol_garrison = {
 	}
 }
 
-zin_ai_zol_marines = {
+zin_ai_zols_mistake_marines = {
 	available_for = {
-		Y0U
+		ZOL
 	}
 	role = marines
 	upgrade_prio = {
 		factor = 0
 	}
 
-	zin_ai_zol_crews = {
+	zin_ai_zols_mistake_crews = {
 		upgrade_prio = {
 			factor = 1
 		}
@@ -209,7 +209,7 @@ zin_ai_zol_marines = {
 
 zin_ai_demons_infantry = {
 	available_for = {
-		Y10 Y7T Y7U
+		DLN KHO NET NEZ VES
 	}
 	role = infantry
 	upgrade_prio = {
@@ -233,7 +233,7 @@ zin_ai_demons_infantry = {
 
 zin_ai_demons_garrison = {
 	available_for = {
-		Y10 Y7T Y7U
+		DLN KHO NET NEZ VES
 	}
 	role = garrison
 	upgrade_prio = {
@@ -255,8 +255,7 @@ zin_ai_demons_garrison = {
 
 zin_ai_elves_infantry = {
 	available_for = {
-		Y0V Y0W Y0X Y6V Y6X Y73 Y7V Y7W Y7X Y7Y Y7Z Y80
-		Y81 Y82 Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8F
+		ANE DNL ELD GAA GOF HRR LCC MAG MSH NLR YAV
 	}
 	role = infantry
 	upgrade_prio = {
@@ -282,8 +281,7 @@ zin_ai_elves_infantry = {
 
 zin_ai_elves_garrison = {
 	available_for = {
-		Y0V Y0W Y0X Y6V Y6X Y73 Y7V Y7W Y7X Y7Y Y7Z Y80
-		Y81 Y82 Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8F
+		ANE DNL ELD GAA GOF HRR LCC MAG MSH NLR YAV
 	}
 	role = garrison
 	upgrade_prio = {
@@ -305,8 +303,7 @@ zin_ai_elves_garrison = {
 
 zin_ai_elves_mobile = {
 	available_for = {
-		Y0V Y0W Y0X Y6V Y6X Y73 Y7V Y7W Y7X Y7Y Y7Z Y80
-		Y81 Y82 Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8F
+		ANE DNL ELD GAA GOF HRR LCC MAG MSH NLR YAV
 	}
 	role = mobile
 	upgrade_prio = {
@@ -331,8 +328,7 @@ zin_ai_elves_mobile = {
 
 zin_ai_elves_siege_role = {
 	available_for = {
-		Y0V Y0W Y0X Y6V Y6X Y73 Y7V Y7W Y7X Y7Y Y7Z Y80
-		Y81 Y82 Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8F
+		ANE DNL ELD GAA GOF HRR LCC MAG MSH NLR YAV
 	}
 	role = siege_role
 	upgrade_prio = {
@@ -361,8 +357,7 @@ zin_ai_elves_siege_role = {
 
 zin_ai_elves_rangers_role = {
 	available_for = {
-		Y0V Y0W Y0X Y6V Y6X Y73 Y7V Y7W Y7X Y7Y Y7Z Y80
-		Y81 Y82 Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8F
+		ANE DNL ELD GAA GOF HRR LCC MAG MSH NLR YAV
 	}
 	role = rangers_role
 	upgrade_prio = {
@@ -387,7 +382,7 @@ zin_ai_elves_rangers_role = {
 
 zin_ai_ents_infantry = {
 	available_for = {
-		Y0O
+		ANR KIL
 	}
 	role = infantry
 	upgrade_prio = {
@@ -412,7 +407,7 @@ zin_ai_ents_infantry = {
 
 zin_ai_ents_garrison = {
 	available_for = {
-		Y0O
+		ANR KIL
 	}
 	role = garrison
 	upgrade_prio = {
@@ -434,7 +429,7 @@ zin_ai_ents_garrison = {
 
 zin_ai_ents_armor = {
 	available_for = {
-		Y0O
+		ANR KIL
 	}
 	role = armor
 	upgrade_prio = {
@@ -459,7 +454,7 @@ zin_ai_ents_armor = {
 
 zin_ai_giants_infantry = {
 	available_for = {
-		Y0Q Y1J
+		HIR HOO NIV
 	}
 	role = infantry
 	upgrade_prio = {
@@ -484,7 +479,7 @@ zin_ai_giants_infantry = {
 
 zin_ai_giants_garrison = {
 	available_for = {
-		Y0Q Y1J
+		HIR HOO NIV
 	}
 	role = garrison
 	upgrade_prio = {
@@ -506,7 +501,7 @@ zin_ai_giants_garrison = {
 
 zin_ai_giants_armor = {
 	available_for = {
-		Y0Q Y1J
+		HIR HOO NIV
 	}
 	role = armor
 	upgrade_prio = {
@@ -531,7 +526,7 @@ zin_ai_giants_armor = {
 
 zin_ai_giants_siege_role = {
 	available_for = {
-		Y0Q Y1J
+		HIR HOO NIV
 	}
 	role = siege_role
 	upgrade_prio = {
@@ -556,14 +551,10 @@ zin_ai_giants_siege_role = {
 
 zin_ai_men_infantry = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = infantry
 	upgrade_prio = {
@@ -637,14 +628,10 @@ zin_ai_men_infantry = {
 
 zin_ai_men_garrison = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = garrison
 	upgrade_prio = {
@@ -666,14 +653,10 @@ zin_ai_men_garrison = {
 
 zin_ai_men_mobile = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = mobile
 	upgrade_prio = {
@@ -698,14 +681,10 @@ zin_ai_men_mobile = {
 
 zin_ai_men_armor = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = armor
 	upgrade_prio = {
@@ -735,14 +714,10 @@ zin_ai_men_armor = {
 
 zin_ai_men_siege_role = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = siege_role
 	upgrade_prio = {
@@ -771,14 +746,10 @@ zin_ai_men_siege_role = {
 
 zin_ai_men_marines = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = marines
 	upgrade_prio = {
@@ -802,14 +773,10 @@ zin_ai_men_marines = {
 
 zin_ai_men_rangers_role = {
 	blocked_for = {
-		Y0O Y0Q Y0U Y0V Y0W Y0X Y10 Y1A Y1B Y1C Y1F Y1G
-		Y1H Y1J Y1X Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B
-		Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y6E Y6F Y6G
-		Y6H Y6I Y6J Y6K Y6L Y6M Y6N Y6O Y6P Y6Q Y6R Y6S
-		Y6T Y6U Y6V Y6W Y6X Y6Y Y72 Y73 Y74 Y75 Y76 Y77
-		Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G Y7H Y7I Y7J
-		Y7K Y7L Y7T Y7U Y7V Y7W Y7X Y7Y Y7Z Y80 Y81 Y82
-		Y83 Y84 Y85 Y86 Y87 Y88 Y89 Y8A Y8B Y8C Y8D Y8F
+		ANE ANR BLN BOR BRR BRT BUN DAK DLN DNL DRE DRK
+		DUL DUN ELD ELV GAA GHH GLI GOF GOL HIR HOO HRR
+		IGA IHU KHO KIL LCC LIG MAG MSH MUS NET NEZ NIV
+		NLR PUV SKR SOY TOR TRO VES WIL YAV YEI YEN ZOL
 	}
 	role = rangers_role
 	upgrade_prio = {
@@ -834,8 +801,8 @@ zin_ai_men_rangers_role = {
 
 zin_ai_orcs_infantry = {
 	available_for = {
-		Y1A Y1B Y1C Y43 Y44 Y46 Y47 Y48 Y49 Y4A Y4B Y4C
-		Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C
+		BLN BOR BRR BRT BUN DAK DRE DRK DUL DUN GLI GOL
+		MUS SKR WIL
 	}
 	role = infantry
 	upgrade_prio = {
@@ -860,8 +827,8 @@ zin_ai_orcs_infantry = {
 
 zin_ai_orcs_garrison = {
 	available_for = {
-		Y1A Y1B Y1C Y43 Y44 Y46 Y47 Y48 Y49 Y4A Y4B Y4C
-		Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C
+		BLN BOR BRR BRT BUN DAK DRE DRK DUL DUN GLI GOL
+		MUS SKR WIL
 	}
 	role = garrison
 	upgrade_prio = {
@@ -883,8 +850,8 @@ zin_ai_orcs_garrison = {
 
 zin_ai_orcs_mobile = {
 	available_for = {
-		Y1A Y1B Y1C Y43 Y44 Y46 Y47 Y48 Y49 Y4A Y4B Y4C
-		Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C
+		BLN BOR BRR BRT BUN DAK DRE DRK DUL DUN GLI GOL
+		MUS SKR WIL
 	}
 	role = mobile
 	upgrade_prio = {
@@ -909,8 +876,8 @@ zin_ai_orcs_mobile = {
 
 zin_ai_orcs_armor = {
 	available_for = {
-		Y1A Y1B Y1C Y43 Y44 Y46 Y47 Y48 Y49 Y4A Y4B Y4C
-		Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C
+		BLN BOR BRR BRT BUN DAK DRE DRK DUL DUN GLI GOL
+		MUS SKR WIL
 	}
 	role = armor
 	upgrade_prio = {
@@ -935,8 +902,8 @@ zin_ai_orcs_armor = {
 
 zin_ai_orcs_siege_role = {
 	available_for = {
-		Y1A Y1B Y1C Y43 Y44 Y46 Y47 Y48 Y49 Y4A Y4B Y4C
-		Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C
+		BLN BOR BRR BRT BUN DAK DRE DRK DUL DUN GLI GOL
+		MUS SKR WIL
 	}
 	role = siege_role
 	upgrade_prio = {
@@ -964,10 +931,7 @@ zin_ai_orcs_siege_role = {
 
 zin_ai_sun_elves_infantry = {
 	available_for = {
-		Y1F Y1G Y1H Y6E Y6F Y6G Y6H Y6I Y6J Y6K Y6L Y6M
-		Y6N Y6O Y6P Y6Q Y6R Y6S Y6T Y6U Y6W Y6Y Y72 Y74
-		Y75 Y76 Y77 Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G
-		Y7H Y7I Y7J Y7K Y7L
+		ELV IGA IHU LIG SOY TOR YEN
 	}
 	role = infantry
 	upgrade_prio = {
@@ -993,10 +957,7 @@ zin_ai_sun_elves_infantry = {
 
 zin_ai_sun_elves_garrison = {
 	available_for = {
-		Y1F Y1G Y1H Y6E Y6F Y6G Y6H Y6I Y6J Y6K Y6L Y6M
-		Y6N Y6O Y6P Y6Q Y6R Y6S Y6T Y6U Y6W Y6Y Y72 Y74
-		Y75 Y76 Y77 Y78 Y79 Y7A Y7B Y7C Y7D Y7E Y7F Y7G
-		Y7H Y7I Y7J Y7K Y7L
+		ELV IGA IHU LIG SOY TOR YEN
 	}
 	role = garrison
 	upgrade_prio = {
@@ -1018,7 +979,7 @@ zin_ai_sun_elves_garrison = {
 
 zin_ai_trolls_infantry = {
 	available_for = {
-		Y45
+		TRO
 	}
 	role = infantry
 	upgrade_prio = {
@@ -1043,7 +1004,7 @@ zin_ai_trolls_infantry = {
 
 zin_ai_trolls_garrison = {
 	available_for = {
-		Y45
+		TRO
 	}
 	role = garrison
 	upgrade_prio = {
@@ -1065,7 +1026,7 @@ zin_ai_trolls_garrison = {
 
 zin_ai_trolls_armor = {
 	available_for = {
-		Y45
+		TRO
 	}
 	role = armor
 	upgrade_prio = {
@@ -1090,7 +1051,7 @@ zin_ai_trolls_armor = {
 
 zin_ai_yeti_infantry = {
 	available_for = {
-		Y1X
+		GHH YEI
 	}
 	role = infantry
 	upgrade_prio = {
@@ -1114,7 +1075,7 @@ zin_ai_yeti_infantry = {
 
 zin_ai_yeti_garrison = {
 	available_for = {
-		Y1X
+		GHH YEI
 	}
 	role = garrison
 	upgrade_prio = {

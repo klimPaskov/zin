@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y8G
+			original_tag = WOR
 		}
 	}
 	initial_show_position = { focus = zin_worshipdom_zilin_hermitage }
@@ -21,10 +21,7 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				add = 70
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -71,10 +68,7 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 59
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -252,7 +246,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y8F = {
+			MAG = {
 				country_event = zin_worshipdom.3
 			}
 		}
@@ -332,17 +326,11 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				add = 68
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -369,10 +357,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 50
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -398,10 +383,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 49
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -410,7 +392,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_count = 3 }
 			set_temp_variable = { zin_arg_below = 3 }
 			zin_afrit_spread_footholds = yes
-			Y0M = {
+			SEL = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -453,10 +435,7 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -474,15 +453,12 @@ focus_tree = {
 			}
 			modifier = {
 				add = 48
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
 			add_political_power = 50
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -506,7 +482,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_seat = 2 }
 			set_temp_variable = { zin_arg_value = 1 }
 			zin_afrit_raise_seat = yes
-			Y0M = {
+			SEL = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -531,7 +507,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_count = 5 }
 			set_temp_variable = { zin_arg_below = 3 }
 			zin_afrit_spread_footholds = yes
-			Y0G = {
+			LER = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -551,10 +527,7 @@ focus_tree = {
 			factor = 8
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -572,10 +545,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 42
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -584,11 +554,11 @@ focus_tree = {
 			set_temp_variable = { zin_arg_count = 5 }
 			set_temp_variable = { zin_arg_below = 3 }
 			zin_afrit_spread_footholds = yes
-			Y07 = {
+			GNW = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
-			Y08 = {
+			GIR = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -659,10 +629,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -670,7 +637,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -680,10 +647,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 41
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -692,7 +656,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_count = 4 }
 			set_temp_variable = { zin_arg_below = 2 }
 			zin_afrit_spread_footholds = yes
-			Y6X = {
+			GAA = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -795,10 +759,7 @@ focus_tree = {
 			factor = 25
 			modifier = {
 				add = 58
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -839,10 +800,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -860,10 +818,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 57
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -893,7 +848,7 @@ focus_tree = {
 			factor = 8
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -920,7 +875,7 @@ focus_tree = {
 			factor = 5
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_afrit_add_footholds = yes
 			}
@@ -941,10 +896,7 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -962,10 +914,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 54
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1011,10 +960,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 25
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -1032,10 +978,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 43
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1114,10 +1057,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 25
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -1125,7 +1065,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1135,10 +1075,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 40
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1225,24 +1162,18 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				add = 69
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
 			set_temp_variable = { zin_arg_seat = 1 }
 			set_temp_variable = { zin_arg_value = 1 }
 			zin_afrit_raise_seat = yes
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -1262,10 +1193,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 67
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1290,19 +1218,16 @@ focus_tree = {
 			factor = 25
 			modifier = {
 				add = 66
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
 			add_political_power = -50
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_council_influence = yes
 			}
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_court_corruption = yes
 			}
@@ -1322,14 +1247,11 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 63
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -1374,10 +1296,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 65
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1401,7 +1320,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = -25
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_court_corruption = yes
 			}
@@ -1427,10 +1346,7 @@ focus_tree = {
 			factor = 25
 			modifier = {
 				add = 61
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1459,17 +1375,11 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 			modifier = {
 				add = 64
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1493,17 +1403,11 @@ focus_tree = {
 			factor = 0
 			modifier = {
 				add = 50
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1530,7 +1434,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_afrit_add_veil = yes
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = -3 }
 				zin_aenor_add_concord_loyalty_all = yes
 			}
@@ -1555,22 +1459,16 @@ focus_tree = {
 			factor = 0
 			modifier = {
 				add = 50
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
 			set_global_flag = zin_afrit_kingdom_behind_throne
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -1595,10 +1493,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 62
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1633,10 +1528,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 60
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1664,10 +1556,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 56
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1694,10 +1583,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 55
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1735,10 +1621,7 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 40
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -1756,10 +1639,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 52
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1786,17 +1666,11 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 			modifier = {
 				add = 51
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1824,17 +1698,11 @@ focus_tree = {
 			factor = 5
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1852,10 +1720,7 @@ focus_tree = {
 			factor = 25
 			modifier = {
 				add = 53
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1879,10 +1744,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 47
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1905,10 +1767,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 21
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1931,10 +1790,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 46
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -1963,17 +1819,14 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				add = 20
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				add_stability = 0.03
 			}
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -1996,10 +1849,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 19
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2111,10 +1961,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 39
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2137,10 +1984,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				add = 38
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2164,10 +2008,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				add = 37
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2194,10 +2035,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				add = 35
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2225,10 +2063,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				add = 34
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2256,10 +2091,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				add = 33
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2310,10 +2142,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -2321,7 +2150,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.6.2
+						date > 1753.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -2331,10 +2160,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 32
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2368,10 +2194,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 31
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2400,10 +2223,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 28
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2431,10 +2251,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 27
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2463,10 +2280,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 26
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2491,10 +2305,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 25
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2529,10 +2340,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 10
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -2560,17 +2368,11 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				add = 45
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -2597,17 +2399,11 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -2634,21 +2430,15 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 36
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				army_experience = 15
 				add_war_support = 0.05
 			}
@@ -2674,21 +2464,15 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				add = 44
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -2721,17 +2505,11 @@ focus_tree = {
 			}
 			modifier = {
 				add = 29
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -2763,23 +2541,17 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 24
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
 			set_temp_variable = { zin_arg_artifact = 2 }
 			zin_afrit_attune_artifact = yes
-			Y0L = {
+			AEN = {
 				add_stability = 0.05
 			}
 		}
@@ -2807,10 +2579,7 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -2818,7 +2587,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -2828,17 +2597,11 @@ focus_tree = {
 			}
 			modifier = {
 				add = 23
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -2869,10 +2632,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -2880,7 +2640,7 @@ focus_tree = {
 				remove_idea = zin_worshipdom_crowned_deliverer
 				add_idea = zin_worshipdom_new_god_of_men_spirit
 			}
-			Y0L = {
+			AEN = {
 				add_stability = 0.05
 			}
 		}
@@ -2904,48 +2664,36 @@ focus_tree = {
 			NOT = {
 				has_global_flag = zin_afrit_dead
 			}
+			NOT = {
+				has_global_flag = zin_afrit_abandoned_aenor
+			}
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				add = 60
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				add = 20
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = FREE
-				}
+				zin_rules_ai_branch_afrit_free = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
 			set_global_flag = zin_afrit_stand_in_parim
-			Y0L = {
+			AEN = {
 				add_ideas = zin_worshipdom_parim_shall_not_fall_spirit
 				random_owned_state = {
 					limit = {
@@ -2984,14 +2732,11 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -3018,17 +2763,11 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				add = 20
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 		}
 		completion_reward = {
@@ -3056,21 +2795,15 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				add = 20
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_aenor_add_council_influence = yes
 			}
@@ -3113,17 +2846,11 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				add = 20
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = DORMANT
-				}
+				zin_rules_ai_branch_afrit_dormant = yes
 			}
 		}
 		completion_reward = {
@@ -3161,10 +2888,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 30
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -3172,7 +2896,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1756.12.2
+						date > 1756.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -3182,24 +2906,15 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				add = 22
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3241,24 +2956,15 @@ focus_tree = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				add = 18
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3285,24 +2991,15 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				add = 17
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3351,10 +3048,7 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 16
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -3381,10 +3075,7 @@ focus_tree = {
 			factor = 30
 			modifier = {
 				add = 15
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -3411,10 +3102,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				add = 14
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -3447,10 +3135,7 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 40
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -3468,10 +3153,7 @@ focus_tree = {
 			}
 			modifier = {
 				add = 13
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -3502,42 +3184,30 @@ focus_tree = {
 			factor = 0
 			modifier = {
 				add = 15
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = FREE
-				}
+				zin_rules_ai_branch_afrit_free = yes
 			}
 			modifier = {
 				add = 15
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
-			Y8F = {
+			MAG = {
 				every_owned_state = {
 					add_claim_by = PREV.PREV
 				}
 			}
 			create_wargoal = {
 				type = take_state
-				target = Y8F
+				target = MAG
 			}
 		}
 	}
@@ -3561,7 +3231,7 @@ focus_tree = {
 			has_global_flag = zin_afrit_king_of_east
 			OR = {
 				has_global_flag = zin_volgan_body_destroyed
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -3573,7 +3243,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1755.7.18
+						date > 1755.7.17
 					}
 				}
 			}
@@ -3585,10 +3255,7 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				add = 40
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -3600,30 +3267,21 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1755.7.18
+						date > 1755.7.17
 					}
 				}
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				add = 12
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3651,10 +3309,7 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				add = 40
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -3666,16 +3321,13 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1755.7.18
+						date > 1755.7.17
 					}
 				}
 			}
 			modifier = {
 				add = 11
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 		}
 		completion_reward = {
@@ -3714,17 +3366,11 @@ focus_tree = {
 			}
 			modifier = {
 				add = 40
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3759,10 +3405,7 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3788,10 +3431,7 @@ focus_tree = {
 			factor = 20
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3820,10 +3460,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3857,10 +3494,7 @@ focus_tree = {
 			factor = 15
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3908,17 +3542,11 @@ focus_tree = {
 			factor = 60
 			modifier = {
 				add = 10
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3945,17 +3573,11 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				add = 10
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -3991,10 +3613,7 @@ focus_tree = {
 			factor = 40
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {
@@ -4036,17 +3655,11 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = HISTORICAL
-				}
+				zin_rules_ai_branch_afrit_historical = yes
 			}
 			modifier = {
 				factor = 3
-				has_game_rule = {
-					rule = zin_rule_afrit
-					option = ASHEN
-				}
+				zin_rules_ai_branch_afrit_ashen = yes
 			}
 		}
 		completion_reward = {

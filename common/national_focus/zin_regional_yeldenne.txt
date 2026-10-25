@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y8H
+			original_tag = YEL
 		}
 	}
 	initial_show_position = { focus = zin_regional_yeldenne_the_long_watch }
@@ -321,7 +321,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y01
+			country_exists = CLD
 		}
 		ai_will_do = {
 			factor = 30
@@ -344,7 +344,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y01 = {
+			CLD = {
 				country_event = zin_regional_yeldenne.2
 			}
 		}
@@ -406,9 +406,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			country_exists = Y1X
+			country_exists = YEI
 			NOT = {
-				has_war_with = Y1X
+				has_war_with = YEI
 			}
 		}
 		ai_will_do = {
@@ -433,7 +433,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y1X
+				country = YEI
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -636,7 +636,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.8.30
+						date > 1752.8.31
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -657,7 +657,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -723,7 +723,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

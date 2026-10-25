@@ -67,7 +67,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 2
-				original_tag = Y0E
+				original_tag = NND
 				OR = {
 					AND = {
 						check_variable = { global.zin_story_pace = 1 }
@@ -75,7 +75,7 @@ country_event = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.8.30
+						date > 1752.8.31
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

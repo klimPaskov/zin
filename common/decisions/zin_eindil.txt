@@ -68,7 +68,7 @@ zin_eindil_guest = {
 		}
 		available = {
 			zin_eindil_is_host = yes
-			custom_trigger_tooltip = { tooltip = zin_eindil_tt_not_gala NOT = { original_tag = Y6X } NOT = { zin_glo_hall_owner = yes } }
+			custom_trigger_tooltip = { tooltip = zin_eindil_tt_not_gala NOT = { original_tag = GAA } NOT = { zin_glo_hall_owner = yes } }
 		}
 		days_re_enable = 365
 		complete_effect = {
@@ -113,7 +113,7 @@ zin_eindil_guest = {
 			modifier = {
 				add = 100
 				zin_eindil_historical = yes
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = 25
@@ -139,7 +139,7 @@ zin_eindil_guest = {
 		days_re_enable = 90
 		complete_effect = {
 			every_country = {
-				limit = { OR = { original_tag = Y07 original_tag = Y08 } exists = yes }
+				limit = { OR = { original_tag = GNW original_tag = GIR } exists = yes }
 				add_timed_idea = { idea = zin_eindil_ford_shunned days = 90 }
 				country_event = { id = zin_eindil.33 }
 			}

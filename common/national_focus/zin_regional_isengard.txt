@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y02
+			original_tag = MLK
 		}
 	}
 	initial_show_position = { focus = zin_regional_isengard_the_iron_hall }
@@ -597,7 +597,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y01 = {
+			CLD = {
 				country_event = zin_regional_isengard.1
 			}
 		}
@@ -618,7 +618,7 @@ focus_tree = {
 				has_global_flag = zin_war_of_last_crowns
 				check_variable = { global.zin_gathering_dark > 39 }
 			}
-			country_exists = Y01
+			country_exists = CLD
 			has_war = no
 		}
 		ai_will_do = {

@@ -2,8 +2,8 @@
 # Run by the hidden event zin_dominion.1 the day after the start: start values, the dynamic modifier, the start spirits of both trees, Mirolon's forts at level 2 and High Warden Maeric (section "Files").
 zin_dominion_startup = {
 	if = {
-		limit = { country_exists = Y8D }
-		Y8D = {
+		limit = { country_exists = PUV }
+		PUV = {
 			set_variable = { zin_dominion_strength = 45 }
 			set_variable = { zin_volgan_veil = 85 }
 			set_variable = { zin_nether_pact = 20 }
@@ -22,24 +22,24 @@ zin_dominion_startup = {
 	}
 	set_variable = { global.zin_volgan_veil_band = 0 }
 	if = {
-		limit = { country_exists = Y7T }
-		Y7T = { set_variable = { zin_dominion_oath = 60 } }
+		limit = { country_exists = KHO }
+		KHO = { set_variable = { zin_dominion_oath = 60 } }
 	}
 	if = {
-		limit = { country_exists = Y7U }
-		Y7U = { set_variable = { zin_dominion_oath = 55 } }
+		limit = { country_exists = DLN }
+		DLN = { set_variable = { zin_dominion_oath = 55 } }
 	}
 	if = {
-		limit = { country_exists = Y10 }
-		Y10 = { set_variable = { zin_dominion_oath = 50 } }
+		limit = { country_exists = NEZ }
+		NEZ = { set_variable = { zin_dominion_oath = 50 } }
 	}
 	every_country = {
 		limit = { zin_dominion_is_dark_lands_country = yes }
 		set_variable = { zin_volgan_pact = 0 }
 	}
 	if = {
-		limit = { country_exists = Y0Y }
-		Y0Y = {
+		limit = { country_exists = MIR }
+		MIR = {
 			set_variable = { zin_mirolon_proof = 15 }
 			set_variable = { zin_mirolon_passes = 30 }
 			set_variable = { zin_mirolon_fort_level = 0 }
@@ -74,15 +74,15 @@ zin_dominion_ui_refresh_volgan = {
 	set_variable = { zin_ui_dark_3 = 0 }
 	every_country = {
 		limit = { zin_dominion_is_dark_lands_country = yes check_variable = { var = zin_volgan_pact value = 1 compare = equals } }
-		Y8D = { add_to_variable = { zin_ui_dark_1 = 1 } }
+		PUV = { add_to_variable = { zin_ui_dark_1 = 1 } }
 	}
 	every_country = {
 		limit = { zin_dominion_is_dark_lands_country = yes check_variable = { var = zin_volgan_pact value = 2 compare = equals } }
-		Y8D = { add_to_variable = { zin_ui_dark_2 = 1 } }
+		PUV = { add_to_variable = { zin_ui_dark_2 = 1 } }
 	}
 	every_country = {
 		limit = { zin_dominion_is_dark_lands_country = yes check_variable = { var = zin_volgan_pact value = 3 compare = equals } }
-		Y8D = { add_to_variable = { zin_ui_dark_3 = 1 } }
+		PUV = { add_to_variable = { zin_ui_dark_3 = 1 } }
 	}
 	add_to_variable = { global.zin_ui_tick = 1 }
 }
@@ -107,22 +107,22 @@ zin_dominion_monthly_volgan = {
 		set_temp_variable = { zin_volgan_t_members = 0 }
 		if = {
 			limit = {
-				country_exists = Y7T
-				Y7T = { check_variable = { var = zin_dominion_oath value = 50 compare = greater_than_or_equals } }
+				country_exists = KHO
+				KHO = { check_variable = { var = zin_dominion_oath value = 50 compare = greater_than_or_equals } }
 			}
 			add_to_temp_variable = { zin_volgan_t_members = 0.05 }
 		}
 		if = {
 			limit = {
-				country_exists = Y7U
-				Y7U = { check_variable = { var = zin_dominion_oath value = 50 compare = greater_than_or_equals } }
+				country_exists = DLN
+				DLN = { check_variable = { var = zin_dominion_oath value = 50 compare = greater_than_or_equals } }
 			}
 			add_to_temp_variable = { zin_volgan_t_members = 0.05 }
 		}
 		if = {
 			limit = {
-				country_exists = Y10
-				Y10 = { check_variable = { var = zin_dominion_oath value = 50 compare = greater_than_or_equals } }
+				country_exists = NEZ
+				NEZ = { check_variable = { var = zin_dominion_oath value = 50 compare = greater_than_or_equals } }
 			}
 			add_to_temp_variable = { zin_volgan_t_members = 0.05 }
 		}
@@ -175,39 +175,39 @@ zin_dominion_monthly_volgan = {
 	}
 	if = {
 		limit = {
-			country_exists = Y7T
-			Y7T = {
+			country_exists = KHO
+			KHO = {
 				check_variable = { var = zin_dominion_oath value = 25 compare = less_than }
 				NOT = { has_country_flag = zin_dominion_oath_warned }
 			}
 		}
-		Y7T = {
+		KHO = {
 			set_country_flag = { flag = zin_dominion_oath_warned days = 365 }
 			country_event = { id = zin_dominion.22 }
 		}
 	}
 	if = {
 		limit = {
-			country_exists = Y7U
-			Y7U = {
+			country_exists = DLN
+			DLN = {
 				check_variable = { var = zin_dominion_oath value = 25 compare = less_than }
 				NOT = { has_country_flag = zin_dominion_oath_warned }
 			}
 		}
-		Y7U = {
+		DLN = {
 			set_country_flag = { flag = zin_dominion_oath_warned days = 365 }
 			country_event = { id = zin_dominion.22 }
 		}
 	}
 	if = {
 		limit = {
-			country_exists = Y10
-			Y10 = {
+			country_exists = NEZ
+			NEZ = {
 				check_variable = { var = zin_dominion_oath value = 25 compare = less_than }
 				NOT = { has_country_flag = zin_dominion_oath_warned }
 			}
 		}
-		Y10 = {
+		NEZ = {
 			set_country_flag = { flag = zin_dominion_oath_warned days = 365 }
 			country_event = { id = zin_dominion.22 }
 		}
@@ -249,17 +249,29 @@ zin_dominion_monthly_volgan = {
 	# Mirolon falls when it yields, or when its capital and its passes are in Volgan's hands
 	if = {
 		limit = {
-			country_exists = Y0Y
-			has_war_with = Y0Y
+			country_exists = MIR
+			has_war_with = MIR
 			NOT = { has_global_flag = zin_mirolon_fallen }
 			zin_volgan_mirolon_taken = yes
 		}
 		zin_dominion_mirolon_falls = yes
 	}
+	# the march catch-up (SL-34): under the historical branch an AI Volgan that has not taken its focus marches 30 days after Mirolon's fall
+	if = {
+		limit = {
+			is_ai = yes
+			zin_rules_is_historical = yes
+			has_game_rule = { rule = zin_rule_dark_powers option = HISTORICAL }
+			has_global_flag = { flag = zin_mirolon_fallen days > 29 }
+			NOT = { has_global_flag = zin_volgan_marches }
+			NOT = { has_global_flag = zin_volgan_body_destroyed }
+		}
+		zin_volgan_begin_march = yes
+	}
 	# the dead against the dead
 	if = {
 		limit = {
-			has_war_with = Y0U
+			has_war_with = ZOL
 			NOT = { has_global_flag = zin_volgan_zol_clash }
 		}
 		set_global_flag = zin_volgan_zol_clash
@@ -290,7 +302,7 @@ zin_dominion_monthly_volgan = {
 	if = {
 		limit = {
 			zin_dominion_compact_active = yes
-			has_global_flag = zin_zol_withdrawn
+			has_global_flag = zin_kusven_withdrawn
 		}
 		zin_dominion_end_compact = yes
 	}
@@ -320,20 +332,20 @@ zin_dominion_monthly_volgan = {
 	# last, the trees refresh their layouts (decision E4)
 	mark_focus_tree_layout_dirty = yes
 	if = {
-		limit = { country_exists = Y0Y }
-		Y0Y = { mark_focus_tree_layout_dirty = yes }
+		limit = { country_exists = MIR }
+		MIR = { mark_focus_tree_layout_dirty = yes }
 	}
 	if = {
-		limit = { country_exists = Y7T }
-		Y7T = { mark_focus_tree_layout_dirty = yes }
+		limit = { country_exists = KHO }
+		KHO = { mark_focus_tree_layout_dirty = yes }
 	}
 	if = {
-		limit = { country_exists = Y7U }
-		Y7U = { mark_focus_tree_layout_dirty = yes }
+		limit = { country_exists = DLN }
+		DLN = { mark_focus_tree_layout_dirty = yes }
 	}
 	if = {
-		limit = { country_exists = Y10 }
-		Y10 = { mark_focus_tree_layout_dirty = yes }
+		limit = { country_exists = NEZ }
+		NEZ = { mark_focus_tree_layout_dirty = yes }
 	}
 }
 
@@ -342,12 +354,12 @@ zin_dominion_monthly_mirolon = {
 	# days at war without losing a pass
 	if = {
 		limit = {
-			country_exists = Y8D
-			has_war_with = Y8D
+			country_exists = PUV
+			has_war_with = PUV
 			NOT = {
 				any_state = {
 					zin_is_site_mirolon_passes = yes
-					controller = { original_tag = Y8D }
+					controller = { original_tag = PUV }
 				}
 			}
 		}
@@ -363,8 +375,8 @@ zin_dominion_monthly_mirolon = {
 		}
 		set_country_flag = zin_mirolon_holds
 		if = {
-			limit = { country_exists = Y8D }
-			Y8D = {
+			limit = { country_exists = PUV }
+			PUV = {
 				set_temp_variable = { zin_arg_value = -15 }
 				zin_volgan_add_dominion_strength = yes
 				add_timed_idea = { idea = zin_dominion_march_stalls days = 365 }
@@ -376,8 +388,8 @@ zin_dominion_monthly_mirolon = {
 	# Hold the Passes: forts ready, proof earned, and no pass state lost
 	if = {
 		limit = {
-			country_exists = Y8D
-			has_war_with = Y8D
+			country_exists = PUV
+			has_war_with = PUV
 			check_variable = { var = zin_mirolon_passes value = 80 compare = greater_than_or_equals }
 			check_variable = { var = zin_mirolon_proof value = 50 compare = greater_than_or_equals }
 			zin_mirolon_passes_held = yes
@@ -397,7 +409,7 @@ zin_dominion_state_changed = {
 	if = {
 		limit = {
 			zin_is_site_nafeher = yes
-			NOT = { controller = { original_tag = Y8D } }
+			NOT = { controller = { original_tag = PUV } }
 			NOT = { has_global_flag = zin_dominion_nafeher_lost }
 		}
 		set_global_flag = zin_dominion_nafeher_lost
@@ -407,8 +419,8 @@ zin_dominion_state_changed = {
 	if = {
 		limit = { zin_is_site_mirolon_passes = yes }
 		if = {
-			limit = { country_exists = Y0Y }
-			Y0Y = {
+			limit = { country_exists = MIR }
+			MIR = {
 				if = {
 					limit = { has_idea = zin_dominion_hold_the_passes }
 					remove_ideas = zin_dominion_hold_the_passes

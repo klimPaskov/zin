@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y4H
+			original_tag = DUL
 		}
 	}
 	initial_show_position = { focus = zin_regional_dulundur_the_four_fires }
@@ -220,7 +220,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y4I
+			country_exists = BLK
 		}
 		ai_will_do = {
 			factor = 10
@@ -228,11 +228,11 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = zin_regional_dulundur_iron_trade
 			add_opinion_modifier = {
-				target = Y4I
+				target = BLK
 				modifier = zin_regional_dulundur_iron_friends
 			}
 			reverse_add_opinion_modifier = {
-				target = Y4I
+				target = BLK
 				modifier = zin_regional_dulundur_iron_friends
 			}
 		}
@@ -322,7 +322,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_goldoroth_add_sway = yes
 			set_country_flag = zin_dark_gifts_returned
-			Y1A = {
+			GOL = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_dulundur_gifts_returned
@@ -400,7 +400,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -586,7 +586,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = -1 }
 			zin_dark_add_volgan_pact = yes
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_dulundur_sent_south
@@ -736,7 +736,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		cost = 3
 		available = {
-			has_war_with = Y1A
+			has_war_with = GOL
 		}
 		ai_will_do = {
 			factor = 300
@@ -808,7 +808,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			has_war_with = Y1A
+			has_war_with = GOL
 		}
 		ai_will_do = {
 			factor = 15
@@ -832,14 +832,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			has_war_with = Y1A
+			has_war_with = GOL
 			zin_regional_dulundur_cores_held = yes
 		}
 		ai_will_do = {
 			factor = 50
 		}
 		completion_reward = {
-			Y1A = {
+			GOL = {
 				country_event = zin_regional_dulundur.3
 			}
 		}
@@ -864,7 +864,7 @@ focus_tree = {
 				}
 				AND = {
 					check_variable = { global.zin_story_pace = 1.5 }
-					date > 1759.12.2
+					date > 1759.12.3
 				}
 				AND = {
 					check_variable = { global.zin_story_pace = 0.75 }

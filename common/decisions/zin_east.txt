@@ -10,11 +10,11 @@ zin_east_roads = {
 			NOT = {
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						check_variable = { global.zin_east_road_salt = 1 }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						check_variable = { global.zin_east_road_salt = 2 }
 					}
 				}
@@ -50,11 +50,11 @@ zin_east_roads = {
 			NOT = {
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						check_variable = { global.zin_east_road_gold = 1 }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						check_variable = { global.zin_east_road_gold = 2 }
 					}
 				}
@@ -90,11 +90,11 @@ zin_east_roads = {
 			NOT = {
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						check_variable = { global.zin_east_road_rift = 1 }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						check_variable = { global.zin_east_road_rift = 2 }
 					}
 				}
@@ -130,11 +130,11 @@ zin_east_roads = {
 			NOT = {
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						check_variable = { global.zin_east_road_lake = 1 }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						check_variable = { global.zin_east_road_lake = 2 }
 					}
 				}
@@ -170,11 +170,11 @@ zin_east_roads = {
 			NOT = {
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						check_variable = { global.zin_east_road_sand = 1 }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						check_variable = { global.zin_east_road_sand = 2 }
 					}
 				}
@@ -226,7 +226,7 @@ zin_east_roads = {
 		days_re_enable = 120
 		complete_effect = {
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				FROM = {
 					set_temp_variable = { zin_arg_value = 10 }
 					zin_east_add_lean = yes
@@ -312,12 +312,12 @@ zin_east_roads = {
 			check_variable = { global.zin_east_rivalry < 90 }
 			OR = {
 				AND = {
-					original_tag = Y14
-					country_exists = Y16
+					original_tag = NRS
+					country_exists = STA
 				}
 				AND = {
-					original_tag = Y16
-					country_exists = Y14
+					original_tag = STA
+					country_exists = NRS
 				}
 			}
 		}
@@ -352,12 +352,12 @@ zin_east_roads = {
 			check_variable = { global.zin_east_rivalry > 19.99 }
 			OR = {
 				AND = {
-					original_tag = Y14
-					NOT = { has_war_with = Y16 }
+					original_tag = NRS
+					NOT = { has_war_with = STA }
 				}
 				AND = {
-					original_tag = Y16
-					NOT = { has_war_with = Y14 }
+					original_tag = STA
+					NOT = { has_war_with = NRS }
 				}
 			}
 		}
@@ -365,13 +365,13 @@ zin_east_roads = {
 		days_re_enable = 365
 		complete_effect = {
 			if = {
-				limit = { original_tag = Y14 }
-				Y16 = {
+				limit = { original_tag = NRS }
+				STA = {
 					country_event = { id = zin_east.20 }
 				}
 			}
 			else = {
-				Y14 = {
+				NRS = {
 					country_event = { id = zin_east.20 }
 				}
 			}
@@ -404,25 +404,25 @@ zin_east_roads = {
 			NOT = { has_global_flag = zin_east_roads_concord }
 			OR = {
 				AND = {
-					original_tag = Y14
-					NOT = { has_war_with = Y16 }
+					original_tag = NRS
+					NOT = { has_war_with = STA }
 				}
 				AND = {
-					original_tag = Y16
-					NOT = { has_war_with = Y14 }
+					original_tag = STA
+					NOT = { has_war_with = NRS }
 				}
 			}
 		}
 		cost = 100
 		complete_effect = {
 			if = {
-				limit = { original_tag = Y14 }
-				Y16 = {
+				limit = { original_tag = NRS }
+				STA = {
 					country_event = { id = zin_east.23 }
 				}
 			}
 			else = {
-				Y14 = {
+				NRS = {
 					country_event = { id = zin_east.23 }
 				}
 			}
@@ -497,11 +497,11 @@ zin_east_courts = {
 		visible = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					has_country_flag = zin_east_courts_noris
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					has_country_flag = zin_east_courts_stabilo
 				}
 			}
@@ -510,7 +510,7 @@ zin_east_courts = {
 		days_re_enable = 120
 		complete_effect = {
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				FROM = {
 					set_temp_variable = { zin_arg_value = 10 }
 					zin_east_add_lean = yes
@@ -529,11 +529,11 @@ zin_east_courts = {
 				add = 6
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						FROM = { check_variable = { zin_east_lean > 29.99 } }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						FROM = { check_variable = { zin_east_lean < -29.99 } }
 					}
 				}
@@ -562,11 +562,11 @@ zin_east_courts = {
 		visible = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					has_country_flag = zin_noris_envoys
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					has_country_flag = zin_stabilo_envoys
 				}
 			}
@@ -575,7 +575,7 @@ zin_east_courts = {
 		days_re_enable = 365
 		complete_effect = {
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				FROM = {
 					set_temp_variable = { zin_arg_value = 15 }
 					zin_east_add_lean = yes
@@ -595,11 +595,11 @@ zin_east_courts = {
 				add = 4
 				OR = {
 					AND = {
-						original_tag = Y14
+						original_tag = NRS
 						FROM = { check_variable = { zin_east_lean > 14.99 } }
 					}
 					AND = {
-						original_tag = Y16
+						original_tag = STA
 						FROM = { check_variable = { zin_east_lean < -14.99 } }
 					}
 				}
@@ -627,11 +627,11 @@ zin_east_courts = {
 			}
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					FROM = { check_variable = { zin_east_lean > 49.99 } }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					FROM = { check_variable = { zin_east_lean < -49.99 } }
 				}
 			}
@@ -639,11 +639,11 @@ zin_east_courts = {
 		visible = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					has_country_flag = zin_noris_open_treaty
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					has_country_flag = zin_stabilo_open_pact
 				}
 			}
@@ -659,12 +659,12 @@ zin_east_courts = {
 				factor = 0
 				OR = {
 					AND = {
-						original_tag = Y14
-						FROM = { is_guaranteed_by = Y16 }
+						original_tag = NRS
+						FROM = { is_guaranteed_by = STA }
 					}
 					AND = {
-						original_tag = Y16
-						FROM = { is_guaranteed_by = Y14 }
+						original_tag = STA
+						FROM = { is_guaranteed_by = NRS }
 					}
 				}
 			}
@@ -691,20 +691,20 @@ zin_east_courts = {
 			}
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					FROM = { check_variable = { zin_east_lean > 79.99 } }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					FROM = { check_variable = { zin_east_lean < -79.99 } }
 				}
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					has_country_flag = zin_noris_route_high_king
 					FROM = { check_variable = { zin_east_lean > 59.99 } }
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					has_country_flag = zin_stabilo_route_empire
 					FROM = { check_variable = { zin_east_lean < -59.99 } }
 				}
@@ -713,14 +713,14 @@ zin_east_courts = {
 		visible = {
 			OR = {
 				AND = {
-					original_tag = Y14
+					original_tag = NRS
 					OR = {
 						has_country_flag = zin_noris_banner
 						has_country_flag = zin_noris_route_high_king
 					}
 				}
 				AND = {
-					original_tag = Y16
+					original_tag = STA
 					OR = {
 						has_country_flag = zin_stabilo_pact_under_prince
 						has_country_flag = zin_stabilo_route_empire
@@ -779,7 +779,7 @@ zin_east_ledger = {
 	zin_stabilo_lend = {
 		icon = GFX_idea_zin_ledger_coins
 		allowed = {
-			original_tag = Y16
+			original_tag = STA
 		}
 		target_root_trigger = {
 			has_country_flag = zin_stabilo_ledger_open
@@ -819,7 +819,7 @@ zin_east_ledger = {
 	zin_stabilo_great_loan = {
 		icon = GFX_idea_zin_ledger_coins
 		allowed = {
-			original_tag = Y16
+			original_tag = STA
 		}
 		target_root_trigger = {
 			has_country_flag = zin_stabilo_loans_to_kings
@@ -851,10 +851,10 @@ zin_east_ledger = {
 				add = 8
 				FROM = {
 					OR = {
-						original_tag = Y5W
-						original_tag = Y18
-						original_tag = Y5P
-						original_tag = Y5V
+						original_tag = ALR
+						original_tag = MIE
+						original_tag = ERC
+						original_tag = PLO
 					}
 				}
 			}
@@ -868,7 +868,7 @@ zin_east_ledger = {
 	zin_stabilo_call_in_debt = {
 		icon = GFX_idea_zin_ledger_coins
 		allowed = {
-			original_tag = Y16
+			original_tag = STA
 		}
 		target_root_trigger = {
 			has_country_flag = zin_stabilo_collect
@@ -900,7 +900,7 @@ zin_east_ledger = {
 	zin_stabilo_forgive_debt = {
 		icon = GFX_idea_zin_ledger_coins
 		allowed = {
-			original_tag = Y16
+			original_tag = STA
 		}
 		target_root_trigger = {
 			has_country_flag = zin_stabilo_ledger_open
@@ -947,8 +947,8 @@ zin_afrit_council = {
 			zin_afrit_is_hub = yes
 		}
 		available = {
-			Y14 = { check_variable = { zin_footholds > 2.99 } }
-			Y16 = { check_variable = { zin_footholds > 2.99 } }
+			NRS = { check_variable = { zin_footholds > 2.99 } }
+			STA = { check_variable = { zin_footholds > 2.99 } }
 			check_variable = { global.zin_east_rivalry < 90 }
 		}
 		cost = 50

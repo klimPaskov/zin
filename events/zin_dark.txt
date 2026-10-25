@@ -189,8 +189,8 @@ news_event = {
 	show_major = {
 		OR = {
 			zin_dark_is_dark = yes
-			original_tag = Y0G
-			original_tag = Y0L
+			original_tag = LER
+			original_tag = AEN
 		}
 	}
 	is_triggered_only = yes
@@ -206,13 +206,13 @@ country_event = {
 	desc = {
 		text = zin_dark.16.d_gol
 		trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 	}
 	desc = {
 		text = zin_dark.16.d_other
 		trigger = {
-			NOT = { original_tag = Y1A }
+			NOT = { original_tag = GOL }
 		}
 	}
 	picture = GFX_zin_evt_generic_war
@@ -221,11 +221,11 @@ country_event = {
 	option = {
 		name = zin_dark.16.a
 		if = {
-			limit = { original_tag = Y1A }
+			limit = { original_tag = GOL }
 			add_political_power = 50
 			set_temp_variable = { zin_arg_value = -20 }
 			zin_goldoroth_add_temper = yes
-			Y19 = { add_stability = -0.05 }
+			DND = { add_stability = -0.05 }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_dark_add_border_tension = yes
 		}
@@ -238,13 +238,13 @@ country_event = {
 	desc = {
 		text = zin_dark.17.d_gol
 		trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 	}
 	desc = {
 		text = zin_dark.17.d_other
 		trigger = {
-			NOT = { original_tag = Y1A }
+			NOT = { original_tag = GOL }
 		}
 	}
 	picture = GFX_zin_evt_generic_war
@@ -253,7 +253,7 @@ country_event = {
 	option = {
 		name = zin_dark.17.a
 		if = {
-			limit = { original_tag = Y1A }
+			limit = { original_tag = GOL }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_goldoroth_add_temper = yes
 			set_temp_variable = { zin_arg_bloc = 3 }
@@ -275,7 +275,7 @@ country_event = {
 	option = {
 		name = zin_dark.18.a
 		if = {
-			limit = { original_tag = Y1A }
+			limit = { original_tag = GOL }
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_dark_add_border_tension = yes
 		}
@@ -331,31 +331,31 @@ country_event = {
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 34.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 34.99 } }
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 44.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 44.99 } }
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 54.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 54.99 } }
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 64.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 64.99 } }
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 74.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 74.99 } }
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 84.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 84.99 } }
 			}
 			modifier = {
 				add = 5
-				Y1A = { check_variable = { zin_goldoroth_unity > 94.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 94.99 } }
 			}
 			modifier = {
 				add = -10
@@ -458,31 +458,31 @@ country_event = {
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 34.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 34.99 } }
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 44.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 44.99 } }
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 54.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 54.99 } }
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 64.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 64.99 } }
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 74.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 74.99 } }
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 84.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 84.99 } }
 			}
 			modifier = {
 				add = -5
-				Y1A = { check_variable = { zin_goldoroth_unity > 94.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 94.99 } }
 			}
 			modifier = {
 				add = 10
@@ -569,46 +569,46 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 9.99 }
+				has_opinion = { target = DND value > 9.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 19.99 }
+				has_opinion = { target = DND value > 19.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 29.99 }
+				has_opinion = { target = DND value > 29.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 39.99 }
+				has_opinion = { target = DND value > 39.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 49.99 }
+				has_opinion = { target = DND value > 49.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 59.99 }
+				has_opinion = { target = DND value > 59.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 69.99 }
+				has_opinion = { target = DND value > 69.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 79.99 }
+				has_opinion = { target = DND value > 79.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 89.99 }
+				has_opinion = { target = DND value > 89.99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y19 value > 99.99 }
+				has_opinion = { target = DND value > 99.99 }
 			}
 		}
-		add_opinion_modifier = { target = Y19 modifier = zin_dark_stood_with_accord }
+		add_opinion_modifier = { target = DND modifier = zin_dark_stood_with_accord }
 	}
 	option = {
 		name = zin_dark.22.b
@@ -616,83 +616,83 @@ country_event = {
 			base = 100
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 9.99 }
+				has_opinion = { target = DND value > 9.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 19.99 }
+				has_opinion = { target = DND value > 19.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 29.99 }
+				has_opinion = { target = DND value > 29.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 39.99 }
+				has_opinion = { target = DND value > 39.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 49.99 }
+				has_opinion = { target = DND value > 49.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 59.99 }
+				has_opinion = { target = DND value > 59.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 69.99 }
+				has_opinion = { target = DND value > 69.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 79.99 }
+				has_opinion = { target = DND value > 79.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 89.99 }
+				has_opinion = { target = DND value > 89.99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y19 value > 99.99 }
+				has_opinion = { target = DND value > 99.99 }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -90.01 } }
+				NOT = { has_opinion = { target = DND value > -90.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -80.01 } }
+				NOT = { has_opinion = { target = DND value > -80.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -70.01 } }
+				NOT = { has_opinion = { target = DND value > -70.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -60.01 } }
+				NOT = { has_opinion = { target = DND value > -60.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -50.01 } }
+				NOT = { has_opinion = { target = DND value > -50.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -40.01 } }
+				NOT = { has_opinion = { target = DND value > -40.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -30.01 } }
+				NOT = { has_opinion = { target = DND value > -30.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -20.01 } }
+				NOT = { has_opinion = { target = DND value > -20.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -10.01 } }
+				NOT = { has_opinion = { target = DND value > -10.01 } }
 			}
 			modifier = {
 				add = 10
-				NOT = { has_opinion = { target = Y19 value > -0.01 } }
+				NOT = { has_opinion = { target = DND value > -0.01 } }
 			}
 		}
 		leave_faction = yes
@@ -751,7 +751,7 @@ country_event = {
 				check_variable = { zin_court_corruption > 99.99 }
 			}
 		}
-		Y19 = { add_political_power = 10 }
+		DND = { add_political_power = 10 }
 	}
 	option = {
 		name = zin_dark.30.b
@@ -802,7 +802,7 @@ country_event = {
 				zin_rules_is_historical = yes
 			}
 		}
-		give_guarantee = Y19
+		give_guarantee = DND
 		set_temp_variable = { zin_arg_value = 10 }
 		zin_dark_add_accord_resolve = yes
 	}
@@ -855,7 +855,7 @@ country_event = {
 				zin_rules_is_historical = yes
 			}
 		}
-		Y19 = { country_event = { id = zin_diplo.23 } }
+		DND = { country_event = { id = zin_diplo.23 } }
 	}
 }
 
@@ -872,67 +872,67 @@ country_event = {
 			base = 30
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 9.99 } }
+				DND = { check_variable = { zin_leren_lean > 9.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 19.99 } }
+				DND = { check_variable = { zin_leren_lean > 19.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 29.99 } }
+				DND = { check_variable = { zin_leren_lean > 29.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 39.99 } }
+				DND = { check_variable = { zin_leren_lean > 39.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 49.99 } }
+				DND = { check_variable = { zin_leren_lean > 49.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 59.99 } }
+				DND = { check_variable = { zin_leren_lean > 59.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 69.99 } }
+				DND = { check_variable = { zin_leren_lean > 69.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 79.99 } }
+				DND = { check_variable = { zin_leren_lean > 79.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 89.99 } }
+				DND = { check_variable = { zin_leren_lean > 89.99 } }
 			}
 			modifier = {
 				add = 5
-				Y19 = { check_variable = { zin_leren_lean > 99.99 } }
+				DND = { check_variable = { zin_leren_lean > 99.99 } }
 			}
 			modifier = {
 				add = -5
-				Y19 = { check_variable = { zin_leren_lean < -9.99 } }
+				DND = { check_variable = { zin_leren_lean < -9.99 } }
 			}
 			modifier = {
 				add = -5
-				Y19 = { check_variable = { zin_leren_lean < -19.99 } }
+				DND = { check_variable = { zin_leren_lean < -19.99 } }
 			}
 			modifier = {
 				add = -5
-				Y19 = { check_variable = { zin_leren_lean < -29.99 } }
+				DND = { check_variable = { zin_leren_lean < -29.99 } }
 			}
 			modifier = {
 				add = -5
-				Y19 = { check_variable = { zin_leren_lean < -39.99 } }
+				DND = { check_variable = { zin_leren_lean < -39.99 } }
 			}
 			modifier = {
 				add = -5
-				Y19 = { check_variable = { zin_leren_lean < -49.99 } }
+				DND = { check_variable = { zin_leren_lean < -49.99 } }
 			}
 			modifier = {
 				add = -5
-				Y19 = { check_variable = { zin_leren_lean < -59.99 } }
+				DND = { check_variable = { zin_leren_lean < -59.99 } }
 			}
 			modifier = {
 				factor = 2
@@ -943,8 +943,8 @@ country_event = {
 				has_completed_focus = zin_lerendor_bargain_with_goldoroth
 			}
 		}
-		give_guarantee = Y19
-		Y19 = {
+		give_guarantee = DND
+		DND = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_leren_add_lean = yes
 		}
@@ -956,7 +956,7 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		Y19 = {
+		DND = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_leren_add_lean = yes
 		}
@@ -1097,9 +1097,9 @@ country_event = {
 			base = 50
 		}
 		if = {
-			limit = { country_exists = Y19 }
+			limit = { country_exists = DND }
 			set_temp_variable = { zin_arg_kind = 1 }
-			set_temp_variable = { zin_arg_target = Y19 }
+			set_temp_variable = { zin_arg_target = DND }
 			zin_dark_resolve_raid = yes
 		}
 		set_temp_variable = { zin_arg_value = 2 }
@@ -1284,47 +1284,47 @@ country_event = {
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 9.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 9.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 19.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 19.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 29.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 29.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 39.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 39.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 49.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 49.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 59.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 59.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 69.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 69.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 79.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 79.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 89.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 89.99 } }
 			}
 			modifier = {
 				add = 3
-				Y1A = { check_variable = { zin_goldoroth_unity > 99.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 99.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { has_country_flag = zin_goldoroth_light_yoke }
+				GOL = { has_country_flag = zin_goldoroth_light_yoke }
 			}
 			modifier = {
 				add = -20
@@ -1395,47 +1395,47 @@ country_event = {
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 9.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 9.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 19.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 19.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 29.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 29.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 39.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 39.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 49.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 49.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 59.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 59.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 69.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 69.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 79.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 79.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 89.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 89.99 } }
 			}
 			modifier = {
 				add = -3
-				Y1A = { check_variable = { zin_goldoroth_unity > 99.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 99.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { has_country_flag = zin_goldoroth_light_yoke }
+				GOL = { has_country_flag = zin_goldoroth_light_yoke }
 			}
 			modifier = {
 				add = 20
@@ -1513,8 +1513,8 @@ news_event = {
 	show_major = {
 		OR = {
 			zin_dark_is_dark = yes
-			original_tag = Y0G
-			original_tag = Y0L
+			original_tag = LER
+			original_tag = AEN
 		}
 	}
 	is_triggered_only = yes
@@ -1563,43 +1563,43 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 9.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 9.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 19.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 19.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 29.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 29.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 39.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 39.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 49.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 49.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 59.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 59.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 69.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 69.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 79.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 79.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 89.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 89.99 } }
 			}
 			modifier = {
 				add = 10
-				Y1A = { check_variable = { zin_goldoroth_unity > 99.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 99.99 } }
 			}
 			modifier = {
 				add = 20
@@ -1654,43 +1654,43 @@ country_event = {
 			base = 100
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 9.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 9.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 19.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 19.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 29.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 29.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 39.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 39.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 49.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 49.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 59.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 59.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 69.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 69.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 79.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 79.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 89.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 89.99 } }
 			}
 			modifier = {
 				add = -10
-				Y1A = { check_variable = { zin_goldoroth_unity > 99.99 } }
+				GOL = { check_variable = { zin_goldoroth_unity > 99.99 } }
 			}
 			modifier = {
 				add = -20

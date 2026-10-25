@@ -23,7 +23,7 @@ zin_glo_on_sword_broken = {
 }
 zin_glo_clear_seal_keepers = {
 	# Glo has left the hall (or dimmed): the regional tree's seal-keepers spirit has nothing left to keep.
-	Y8H = {
+	YEL = {
 		if = { limit = { has_idea = zin_regional_yeldenne_seal_keepers } remove_ideas = zin_regional_yeldenne_seal_keepers }
 	}
 }
@@ -330,17 +330,17 @@ zin_glo_wave = {
 		limit = { check_variable = { zin_arg_first = 1 } }
 		damage_units = {
 			state = THIS
-			limit = { OR = { original_tag = Y0U is_subject_of = Y0U } }
+			limit = { OR = { original_tag = ZOL is_subject_of = ZOL } }
 			org_damage = 1
 			str_damage = 1
 			ratio = yes
 			army = yes
 		}
 		every_neighbor_state = {
-			limit = { controller = { OR = { original_tag = Y0U is_subject_of = Y0U } } }
+			limit = { controller = { OR = { original_tag = ZOL is_subject_of = ZOL } } }
 			damage_units = {
 				state = THIS
-				limit = { OR = { original_tag = Y0U is_subject_of = Y0U } }
+				limit = { OR = { original_tag = ZOL is_subject_of = ZOL } }
 				org_damage = 1
 				str_damage = 1
 				ratio = yes
@@ -352,7 +352,7 @@ zin_glo_wave = {
 	else = {
 		damage_units = {
 			state = THIS
-			limit = { OR = { original_tag = Y0U is_subject_of = Y0U } }
+			limit = { OR = { original_tag = ZOL is_subject_of = ZOL } }
 			org_damage = 1
 			str_damage = 0.5
 			ratio = yes
@@ -384,7 +384,7 @@ zin_glo_wave_decided = {
 }
 zin_yeldenne_install_warden = {
 	# Horos is dust: the Warden of Mp'E rules for the hall. The wards spirits of the regional tree stay only while the crystal lies sealed.
-	Y8H = {
+	YEL = {
 		if = {
 			limit = { exists = yes }
 			recruit_character = zin_yeldenne_warden
@@ -413,7 +413,7 @@ zin_glo_horos_falls = {
 		retire_character = zin_horos
 	}
 	zin_yeldenne_install_warden = yes
-	Y8H = {
+	YEL = {
 		if = {
 			limit = { exists = yes }
 			if = { limit = { has_idea = zin_yeldenne_guardian_of_glo } remove_ideas = zin_yeldenne_guardian_of_glo }
@@ -567,7 +567,7 @@ zin_glo_resolve_hall = {
 		if = {
 			limit = { check_variable = { global.zin_glo_hall_score > 49 } }
 			zin_glo_hall_holds = yes
-			Y8D = {
+			PUV = {
 				add_timed_idea = { idea = zin_glo_wound_of_yeldenne days = 365 }
 				country_event = { id = zin_glo.24 days = 1 }
 			}
@@ -581,7 +581,7 @@ zin_glo_resolve_hall = {
 			zin_glo_horos_falls = yes
 			set_temp_variable = { zin_arg_to = 3 }
 			zin_glo_transfer = yes
-			Y8D = {
+			PUV = {
 				country_event = { id = zin_glo.25 days = 1 }
 			}
 			1063 = {

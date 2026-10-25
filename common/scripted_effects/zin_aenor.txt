@@ -3,8 +3,8 @@ zin_aenor_call_free_peoples = {
 	every_country = {
 		limit = {
 			OR = {
-				has_war_with = Y8D
-				has_war_with = Y0U
+				has_war_with = PUV
+				has_war_with = ZOL
 			}
 			NOT = { has_war_with = ROOT }
 			NOT = { is_subject_of = ROOT }
@@ -17,8 +17,8 @@ zin_aenor_offer_common_cause = {
 	every_country = {
 		limit = {
 			OR = {
-				has_war_with = Y8D
-				has_war_with = Y0U
+				has_war_with = PUV
+				has_war_with = ZOL
 			}
 			NOT = { has_war_with = ROOT }
 		}
@@ -30,10 +30,10 @@ zin_aenor_offer_treaties = {
 	every_country = {
 		limit = {
 			has_war_with = ROOT
-			NOT = { original_tag = Y8D }
-			NOT = { original_tag = Y0U }
-			NOT = { original_tag = Y8G }
-			NOT = { is_subject_of = Y8G }
+			NOT = { original_tag = PUV }
+			NOT = { original_tag = ZOL }
+			NOT = { original_tag = WOR }
+			NOT = { is_subject_of = WOR }
 		}
 		country_event = zin_aenor.516
 	}
@@ -50,31 +50,31 @@ zin_aenor_announce_fourth_age = {
 zin_aenor_event_diplomacy = {
 	if = {
 		limit = { check_variable = { zin_arg_act = 1 } }
-		Y0L = { white_peace = { tag = ROOT } }
+		AEN = { white_peace = { tag = ROOT } }
 	}
 	if = {
 		limit = { check_variable = { zin_arg_act = 2 } }
-		give_military_access = Y0L
-		Y0L = { give_military_access = ROOT }
+		give_military_access = AEN
+		AEN = { give_military_access = ROOT }
 	}
 	if = {
 		limit = { check_variable = { zin_arg_act = 3 } }
 		if = {
-			limit = { Y0L = { is_faction_leader = yes } }
-			Y0L = { add_to_faction = ROOT }
+			limit = { AEN = { is_faction_leader = yes } }
+			AEN = { add_to_faction = ROOT }
 		}
 		else = {
-			give_military_access = Y0L
-			Y0L = { give_military_access = ROOT }
+			give_military_access = AEN
+			AEN = { give_military_access = ROOT }
 		}
 	}
 	if = {
 		limit = { check_variable = { zin_arg_act = 4 } }
-		Y0L = { send_equipment = { equipment = zin_arms_equipment amount = 2000 target = ROOT } }
+		AEN = { send_equipment = { equipment = zin_arms_equipment amount = 2000 target = ROOT } }
 	}
 	if = {
 		limit = { check_variable = { zin_arg_act = 5 } }
-		give_military_access = Y0L
+		give_military_access = AEN
 	}
 }
 
@@ -84,17 +84,19 @@ zin_aenor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 1 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_aenor_opinion_envoys_welcomed
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_aenor_opinion_envoys_welcomed
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_aenor_opinion_envoys_welcomed
+				}
 			}
 		}
 	}
@@ -102,17 +104,19 @@ zin_aenor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 2 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_aenor_opinion_envoys_received
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_aenor_opinion_envoys_received
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_aenor_opinion_envoys_received
+				}
 			}
 		}
 	}
@@ -120,17 +124,19 @@ zin_aenor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 3 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_aenor_opinion_honorary_crown
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_aenor_opinion_honorary_crown
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_aenor_opinion_honorary_crown
+				}
 			}
 		}
 	}
@@ -138,17 +144,19 @@ zin_aenor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 4 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_aenor_opinion_gifts_accepted
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_aenor_opinion_gifts_accepted
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_aenor_opinion_gifts_accepted
+				}
 			}
 		}
 	}
@@ -156,17 +164,19 @@ zin_aenor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 5 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_aenor_opinion_gifts_refused
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_aenor_opinion_gifts_refused
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_aenor_opinion_gifts_refused
+				}
 			}
 		}
 	}
@@ -174,17 +184,19 @@ zin_aenor_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 6 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_aenor_opinion_southern_aid
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_aenor_opinion_southern_aid
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_aenor_opinion_southern_aid
+				}
 			}
 		}
 	}

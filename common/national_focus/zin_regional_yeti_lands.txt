@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1X
+			original_tag = YEI
 		}
 	}
 	initial_show_position = { focus = zin_regional_yeti_lands_the_eldests_fire }
@@ -250,14 +250,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			country_exists = Y8H
+			country_exists = YEL
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y8H
+				country = YEL
 				relation = non_aggression_pact
 				active = yes
 			}

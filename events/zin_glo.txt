@@ -248,7 +248,7 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		text = zin_glo.24.d_volgan
 	}
@@ -277,7 +277,7 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			original_tag = Y8D
+			original_tag = PUV
 		}
 		text = zin_glo.25.d_volgan
 	}
@@ -498,7 +498,7 @@ country_event = {
 	}
 	option = {
 		name = zin_glo.64.a
-		Y8H = { country_event = { id = zin_glo.60 days = 1 } }
+		YEL = { country_event = { id = zin_glo.60 days = 1 } }
 		ai_chance = {
 			base = 60
 			modifier = {
@@ -513,7 +513,7 @@ country_event = {
 	}
 	option = {
 		name = zin_glo.64.b
-		Y8H = { add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked } }
+		YEL = { add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked } }
 		ai_chance = {
 			base = 40
 		}

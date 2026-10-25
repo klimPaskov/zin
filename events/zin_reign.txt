@@ -20,6 +20,11 @@ country_event = {
 		ai_chance = {
 			base = 70
 			modifier = {
+				add = 20
+				zin_rules_is_free = yes
+				has_country_flag = zin_gk_temper_gilded
+			}
+			modifier = {
 				add = 30
 				zin_rules_is_historical = yes
 			}
@@ -48,6 +53,11 @@ country_event = {
 		name = zin_reign.10.opt2
 		ai_chance = {
 			base = 30
+			modifier = {
+				add = 30
+				zin_rules_is_free = yes
+				has_country_flag = zin_gk_temper_fearful
+			}
 			modifier = {
 				add = -30
 				zin_rules_is_historical = yes
@@ -133,7 +143,7 @@ country_event = {
 		}
 		add_political_power = -50
 		hidden_effect = {
-			Y0M = {
+			SEL = {
 				country_event = {
 					id = zin_reign.12
 					days = 3
@@ -284,6 +294,11 @@ country_event = {
 		ai_chance = {
 			base = 70
 			modifier = {
+				add = 20
+				zin_rules_is_free = yes
+				has_country_flag = zin_gk_temper_gilded
+			}
+			modifier = {
 				add = 30
 				zin_rules_is_historical = yes
 			}
@@ -309,6 +324,11 @@ country_event = {
 		name = zin_reign.14.opt2
 		ai_chance = {
 			base = 30
+			modifier = {
+				add = 30
+				zin_rules_is_free = yes
+				has_country_flag = zin_gk_temper_restless
+			}
 			modifier = {
 				add = -30
 				zin_rules_is_historical = yes
@@ -400,6 +420,16 @@ country_event = {
 		name = zin_reign.16.opt2
 		ai_chance = {
 			base = 20
+			modifier = {
+				add = 25
+				zin_rules_is_free = yes
+				has_country_flag = zin_gk_temper_restless
+			}
+			modifier = {
+				add = 15
+				zin_rules_is_free = yes
+				has_country_flag = zin_gk_temper_fearful
+			}
 			modifier = {
 				add = -20
 				zin_rules_is_historical = yes
@@ -943,7 +973,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 3 }
 		zin_aenor_add_council_influence = yes
-		Y0M = {
+		SEL = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_aenor_add_concord_loyalty = yes
 		}
@@ -975,7 +1005,7 @@ country_event = {
 		set_temp_variable = { zin_arg_camp = 3 }
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_aenor_add_camp_support = yes
-		Y0M = {
+		SEL = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_aenor_add_concord_loyalty = yes
 		}
@@ -2116,7 +2146,7 @@ country_event = {
 				add = 70
 				zin_rules_is_historical = yes
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -2125,7 +2155,7 @@ country_event = {
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence < 50 }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -2134,27 +2164,27 @@ country_event = {
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence > 49.999 }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
 				add = -30
 				zin_rules_is_historical = yes
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = -8.571
 				zin_rules_is_historical = no
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence < 50 }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = 4.286
 				zin_rules_is_historical = no
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence > 49.999 }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 		}
 		set_temp_variable = { zin_arg_value = 5 }
@@ -2170,7 +2200,7 @@ country_event = {
 				add = -25
 				zin_rules_is_historical = yes
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -2179,7 +2209,7 @@ country_event = {
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence < 50 }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -2188,27 +2218,27 @@ country_event = {
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence > 49.999 }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
 				add = 75
 				zin_rules_is_historical = yes
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = 50
 				zin_rules_is_historical = no
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence < 50 }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = 35
 				zin_rules_is_historical = no
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence > 49.999 }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 		}
 	}
@@ -2231,7 +2261,7 @@ country_event = {
 				add = -5
 				zin_rules_is_historical = yes
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -2240,7 +2270,7 @@ country_event = {
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence < 50 }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
@@ -2249,27 +2279,27 @@ country_event = {
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence > 49.999 }
 				NOT = {
-					original_tag = Y0M
+					original_tag = SEL
 				}
 			}
 			modifier = {
 				add = -5
 				zin_rules_is_historical = yes
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = -1.429
 				zin_rules_is_historical = no
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence < 50 }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 			modifier = {
 				add = 0.714
 				zin_rules_is_historical = no
 				zin_rules_is_free = no
 				check_variable = { global.zin_path_divergence > 49.999 }
-				original_tag = Y0M
+				original_tag = SEL
 			}
 		}
 		set_temp_variable = { zin_arg_value = -15 }
@@ -3165,7 +3195,7 @@ country_event = {
 				limit = {
 					zin_aenor_is_concord_dominion = yes
 					NOT = {
-						original_tag = Y0M
+						original_tag = SEL
 					}
 				}
 				country_event = {

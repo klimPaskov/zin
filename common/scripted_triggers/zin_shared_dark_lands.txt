@@ -13,31 +13,31 @@ zin_shared_dark_lands_faces_the_north = {
 zin_shared_dark_lands_moot_allowed = {
 	zin_dark_is_free_hold = yes
 	check_variable = { zin_volgan_pact < 3 }
-	NOT = { is_in_faction_with = Y8D }
-	country_exists = Y1A
+	NOT = { is_in_faction_with = PUV }
+	country_exists = GOL
 	OR = {
-		Y1A = { check_variable = { zin_goldoroth_unity > 29 } }
+		GOL = { check_variable = { zin_goldoroth_unity > 29 } }
 		any_country = {
 			zin_dark_is_hold = yes
 			OR = {
-				has_war_with = Y1A
-				Y1A = { has_dynamic_modifier = { modifier = zin_cb_hold_defiance scope = PREV } }
+				has_war_with = GOL
+				GOL = { has_dynamic_modifier = { modifier = zin_cb_hold_defiance scope = PREV } }
 			}
 		}
 	}
 }
 zin_shared_dark_lands_south_bargain = {
-	country_exists = Y1A
-	Y1A = { has_country_flag = zin_goldoroth_southern_bargain }
+	country_exists = GOL
+	GOL = { has_country_flag = zin_goldoroth_southern_bargain }
 }
 zin_shared_dark_lands_goldoroth_busy = {
-	country_exists = Y1A
-	Y1A = {
+	country_exists = GOL
+	GOL = {
 		has_war = yes
 		NOT = { has_war_with = ROOT }
 	}
 }
 zin_shared_dark_lands_dulundur_free = {
-	country_exists = Y4H
-	Y4H = { zin_dark_is_free_hold = yes }
+	country_exists = DUL
+	DUL = { zin_dark_is_free_hold = yes }
 }

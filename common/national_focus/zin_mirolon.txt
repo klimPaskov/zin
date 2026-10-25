@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0Y
+			original_tag = MIR
 		}
 	}
 	initial_show_position = { focus = zin_mirolon_lake_and_coast }
@@ -343,7 +343,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_mirolon_add_proof = yes
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = -3 }
 				zin_volgan_add_veil = yes
 			}
@@ -439,7 +439,7 @@ focus_tree = {
 			add_ideas = zin_mirolon_deep_patrols_spirit
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_mirolon_add_proof = yes
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = -5 }
 				zin_volgan_add_veil = yes
 			}
@@ -1005,7 +1005,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y55 = {
+			HER = {
 				country_event = zin_mirolon.3
 			}
 		}
@@ -1025,65 +1025,65 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = Y7R
+					country_exists = OLE
 				}
-				Y7R = {
+				OLE = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y7O
+					country_exists = OLE
 				}
-				Y7O = {
+				OLE = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y7Q
+					country_exists = HAL
 				}
-				Y7Q = {
+				HAL = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y7N
+					country_exists = HAL
 				}
-				Y7N = {
+				HAL = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y7P
+					country_exists = HAL
 				}
-				Y7P = {
+				HAL = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y7S
+					country_exists = HAL
 				}
-				Y7S = {
+				HAL = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y7M
+					country_exists = HAL
 				}
-				Y7M = {
+				HAL = {
 					country_event = zin_mirolon.4
 				}
 			}
 			if = {
 				limit = {
-					country_exists = Y0Z
+					country_exists = NAN
 				}
-				Y0Z = {
+				NAN = {
 					country_event = zin_mirolon.4
 				}
 			}
@@ -1109,7 +1109,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_mirolon.6
 			}
 		}
@@ -1130,7 +1130,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y55 = {
+			HER = {
 				country_event = zin_mirolon.5
 			}
 		}
@@ -1192,7 +1192,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y6X = {
+			GAA = {
 				country_event = zin_mirolon.7
 			}
 		}
@@ -1430,7 +1430,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			OR = {
-				has_war_with = Y8D
+				has_war_with = PUV
 				check_variable = { zin_mirolon_proof > 49 }
 			}
 		}
@@ -1449,7 +1449,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		cost = 2
 		available = {
-			has_war_with = Y8D
+			has_war_with = PUV
 		}
 		ai_will_do = {
 			factor = 500

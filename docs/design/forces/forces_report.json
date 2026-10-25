@@ -1,16 +1,16 @@
 {
  "aiTemplateCoverage": {
-  "country:Volgan": {
-   "armor": "zin_ai_volgan_armor",
-   "garrison": "zin_ai_volgan_garrison",
-   "infantry": "zin_ai_volgan_infantry",
-   "mobile": "zin_ai_volgan_mobile",
-   "siege_role": "zin_ai_volgan_siege_role"
+  "country:Puvulan": {
+   "armor": "zin_ai_puvulan_armor",
+   "garrison": "zin_ai_puvulan_garrison",
+   "infantry": "zin_ai_puvulan_infantry",
+   "mobile": "zin_ai_puvulan_mobile",
+   "siege_role": "zin_ai_puvulan_siege_role"
   },
-  "country:Zol": {
-   "garrison": "zin_ai_zol_garrison",
-   "infantry": "zin_ai_zol_infantry",
-   "marines": "zin_ai_zol_marines"
+  "country:Zol's Mistake": {
+   "garrison": "zin_ai_zols_mistake_garrison",
+   "infantry": "zin_ai_zols_mistake_infantry",
+   "marines": "zin_ai_zols_mistake_marines"
   },
   "demons": {
    "garrison": "zin_ai_demons_garrison",
@@ -65,440 +65,27 @@
   }
  },
  "countries": {
-  "Y01": {
-   "divisions": 16,
-   "garrisons": 2,
-   "name": "Coldor",
-   "notes": [
-    "zin_ship_galley (6): the country has no port",
-    "zin_ship_warship (3): the country has no port"
-   ],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 9510,
-    "zin_bows_equipment_1": 2690,
-    "zin_camp_equipment_0": 360,
-    "zin_mounts_equipment_1": 2860
-   },
-   "templates": {
-    "Hill Companies": 2,
-    "Levy Garrison": 2,
-    "Line Host": 8,
-    "Riders": 4
-   },
-   "tier": "a"
-  },
-  "Y02": {
-   "divisions": 10,
-   "garrisons": 2,
-   "name": "Isengard",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_armour_equipment_1": 1440,
-    "zin_arms_equipment_1": 5720,
-    "zin_bows_equipment_1": 1920,
-    "zin_camp_equipment_0": 230,
-    "zin_catapult_equipment_1": 110,
-    "zin_mounts_equipment_1": 40
-   },
-   "templates": {
-    "Heavy Host": 5,
-    "Levy Garrison": 2,
-    "Line Host": 3
-   },
-   "tier": "b"
-  },
-  "Y03": {
-   "divisions": 12,
-   "garrisons": 4,
-   "name": "Horidor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 6460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 1160,
-    "zin_camp_equipment_0": 200,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1130
-   },
-   "templates": {
-    "Hill Companies": 1,
-    "Knight Host": 1,
-    "Levy Garrison": 4,
-    "Line Host": 4,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y04": {
-   "divisions": 9,
-   "garrisons": 3,
-   "name": "Windwaith",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 9
-   },
-   "stock": {
-    "zin_arms_equipment_1": 5760,
-    "zin_bows_equipment_1": 1440
-   },
-   "templates": {
-    "Levy Garrison": 3,
-    "Line Host": 6
-   },
-   "tier": "b"
-  },
-  "Y05": {
-   "divisions": 4,
-   "garrisons": 2,
-   "name": "Holdon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 2310,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 80,
-    "zin_mounts_equipment_0": 30
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2
-   },
-   "tier": "c"
-  },
-  "Y06": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Wonderland",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y07": {
-   "divisions": 8,
-   "garrisons": 2,
-   "name": "Gunwaith",
-   "notes": [
-    "zin_ship_galley (4): the country has no port"
-   ],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 5280,
-    "zin_bows_equipment_1": 960,
-    "zin_camp_equipment_0": 170,
-    "zin_mounts_equipment_1": 80
-   },
-   "templates": {
-    "Hill Companies": 2,
-    "Levy Garrison": 2,
-    "Line Host": 4
-   },
-   "tier": "a"
-  },
-  "Y08": {
-   "divisions": 8,
-   "garrisons": 2,
-   "name": "Girdon",
-   "notes": [
-    "zin_ship_galley (4): the country has no port"
-   ],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 4230,
-    "zin_bows_equipment_1": 1540,
-    "zin_camp_equipment_0": 170,
-    "zin_mounts_equipment_1": 80
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 4,
-    "Ranger Companies": 2
-   },
-   "tier": "b"
-  },
-  "Y09": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Kradlon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y0A": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Corogon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2360,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y0B": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Varnondor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2740,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y0C": {
-   "divisions": 2,
+  "ADE": {
+   "divisions": 6,
    "garrisons": 2,
    "name": "Adel",
    "notes": [],
    "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "b"
-  },
-  "Y0D": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Pollos",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y0E": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Nondondor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y0F": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Raerby",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y0G": {
-   "divisions": 16,
-   "garrisons": 2,
-   "name": "Lerendor",
-   "notes": [],
-   "people": "men",
    "production": "zin_arms_equipment_1",
    "ships": {
-    "zin_ship_galley": 12,
-    "zin_ship_warship": 8
+    "zin_ship_galley": 6
    },
    "stock": {
-    "zin_arms_equipment_1": 10040,
-    "zin_bows_equipment_1": 1880,
-    "zin_camp_equipment_0": 360,
-    "zin_catapult_equipment_1": 110,
-    "zin_mounts_equipment_1": 820
+    "zin_arms_equipment_1": 3840,
+    "zin_bows_equipment_1": 960
    },
    "templates": {
     "Levy Garrison": 2,
-    "Line Host": 7,
-    "Riders": 1,
-    "Sea Soldiers": 4,
-    "Siege Park": 2
-   },
-   "tier": "a"
-  },
-  "Y0H": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Molot",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1160
-   },
-   "templates": {
-    "Levy Garrison": 3
+    "Line Host": 4
    },
    "tier": "b"
   },
-  "Y0I": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Eekedor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1160
-   },
-   "templates": {
-    "Levy Garrison": 3
-   },
-   "tier": "b"
-  },
-  "Y0J": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "R'en",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_armour_equipment_0": 290,
-    "zin_arms_equipment_1": 2400,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 80,
-    "zin_mounts_equipment_1": 410
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 1,
-    "Line Host": 2
-   },
-   "tier": "b"
-  },
-  "Y0K": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Tolhon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y0L": {
+  "AEN": {
    "divisions": 36,
    "garrisons": 5,
    "name": "Aenor",
@@ -528,3795 +115,7 @@
    },
    "tier": "a"
   },
-  "Y0M": {
-   "divisions": 3,
-   "garrisons": 0,
-   "name": "Selen",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1160,
-    "zin_bows_equipment_1": 820,
-    "zin_camp_equipment_0": 60,
-    "zin_mounts_equipment_1": 40
-   },
-   "templates": {
-    "Line Host": 1,
-    "Ranger Companies": 2
-   },
-   "tier": "b"
-  },
-  "Y0N": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Konori",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2880,
-    "zin_bows_equipment_1": 870,
-    "zin_camp_equipment_0": 100,
-    "zin_mounts_equipment_1": 1400
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 2
-   },
-   "tier": "b"
-  },
-  "Y0O": {
-   "divisions": 3,
-   "garrisons": 0,
-   "name": "Kilinti",
-   "notes": [],
-   "people": "ents",
-   "production": "zin_ent_grove_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 360,
-    "zin_bows_equipment_1": 840,
-    "zin_camp_equipment_0": 40,
-    "zin_ent_grove_equipment_0": 290,
-    "zin_mounts_equipment_0": 40
-   },
-   "templates": {
-    "Forest Archers": 1,
-    "Grove Host": 2
-   },
-   "tier": "b"
-  },
-  "Y0P": {
-   "divisions": 4,
-   "garrisons": 0,
-   "name": "Kingson",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2120,
-    "zin_ballista_equipment_0": 30,
-    "zin_bows_equipment_1": 960,
-    "zin_camp_equipment_0": 100
-   },
-   "templates": {
-    "Wall Garrison": 4
-   },
-   "tier": "b"
-  },
-  "Y0Q": {
-   "divisions": 3,
-   "garrisons": 0,
-   "name": "Hiloron",
-   "notes": [],
-   "people": "giants",
-   "production": "zin_giant_gear_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 720,
-    "zin_camp_equipment_0": 40,
-    "zin_giant_gear_equipment_0": 360,
-    "zin_mounts_equipment_0": 40
-   },
-   "templates": {
-    "Giant Host": 2,
-    "Hill Foot": 1
-   },
-   "tier": "b"
-  },
-  "Y0R": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Safeton",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y0S": {
-   "divisions": 8,
-   "garrisons": 3,
-   "name": "Noleksun",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 4230,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 120,
-    "zin_mounts_equipment_1": 1110
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 3,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y0T": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Asgard",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1160
-   },
-   "templates": {
-    "Levy Garrison": 3
-   },
-   "tier": "b"
-  },
-  "Y0U": {
-   "divisions": 0,
-   "garrisons": 0,
-   "name": "Zol",
-   "notes": [],
-   "people": "country:Zol",
-   "production": null,
-   "ships": {
-    "zin_ship_raider": 3
-   },
-   "stock": {},
-   "templates": {},
-   "tier": "a"
-  },
-  "Y0V": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Herrodon",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "b"
-  },
-  "Y0W": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Andos Enda",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "b"
-  },
-  "Y0X": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Nolorim",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "b"
-  },
-  "Y0Y": {
-   "divisions": 10,
-   "garrisons": 2,
-   "name": "Mirolon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 6720,
-    "zin_bows_equipment_1": 960,
-    "zin_camp_equipment_0": 200,
-    "zin_mounts_equipment_1": 100
-   },
-   "templates": {
-    "Hill Companies": 4,
-    "Levy Garrison": 2,
-    "Line Host": 4
-   },
-   "tier": "a"
-  },
-  "Y0Z": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Nan",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y10": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Nezer",
-   "notes": [],
-   "people": "demons",
-   "production": "zin_nether_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_camp_equipment_0": 110,
-    "zin_mounts_equipment_0": 40,
-    "zin_nether_arms_equipment_1": 2160
-   },
-   "templates": {
-    "Nether Watch": 1,
-    "Netherborn Host": 3
-   },
-   "tier": "b"
-  },
-  "Y11": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Ostoroth",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2960,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 110,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y12": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Gondolin",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y13": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Mora",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2360,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y14": {
-   "divisions": 14,
-   "garrisons": 2,
-   "name": "Noris",
-   "notes": [
-    "zin_ship_galley (4): the country has no port"
-   ],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 8070,
-    "zin_bows_equipment_1": 1400,
-    "zin_camp_equipment_0": 270,
-    "zin_mounts_equipment_1": 3700
-   },
-   "templates": {
-    "Camel Riders": 6,
-    "Levy Garrison": 2,
-    "Line Host": 5,
-    "Riders": 1
-   },
-   "tier": "a"
-  },
-  "Y15": {
-   "divisions": 9,
-   "garrisons": 3,
-   "name": "Drak",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 4590,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 150,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1110
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 3,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y16": {
-   "divisions": 12,
-   "garrisons": 2,
-   "name": "Stabilo",
-   "notes": [
-    "zin_ship_galley (4): the country has no port"
-   ],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 6600,
-    "zin_bows_equipment_1": 2020,
-    "zin_camp_equipment_0": 280,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 2130
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 6,
-    "Riders": 3,
-    "Siege Park": 1
-   },
-   "tier": "a"
-  },
-  "Y17": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Avalon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2360,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y18": {
-   "divisions": 15,
-   "garrisons": 5,
-   "name": "Miaed",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 7950,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 1830,
-    "zin_camp_equipment_0": 270,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1830
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 5,
-    "Line Host": 6,
-    "Riders": 2,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y19": {
-   "divisions": 10,
-   "garrisons": 2,
-   "name": "Dondor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_armour_equipment_1": 1440,
-    "zin_arms_equipment_1": 5720,
-    "zin_bows_equipment_1": 1920,
-    "zin_camp_equipment_0": 230,
-    "zin_catapult_equipment_1": 110,
-    "zin_mounts_equipment_1": 40
-   },
-   "templates": {
-    "Heavy Host": 5,
-    "Levy Garrison": 2,
-    "Line Host": 3
-   },
-   "tier": "b"
-  },
-  "Y1A": {
-   "divisions": 14,
-   "garrisons": 2,
-   "name": "Goldoroth",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 8450,
-    "zin_bows_equipment_0": 1440,
-    "zin_catapult_equipment_0": 40,
-    "zin_mounts_equipment_0": 480,
-    "zin_ogre_gear_equipment_0": 390
-   },
-   "templates": {
-    "Brute Host": 4,
-    "Goblin Watch": 2,
-    "Raiders": 1,
-    "Siege Band": 1,
-    "Warband": 6
-   },
-   "tier": "a"
-  },
-  "Y1B": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Belonton",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 290
-   },
-   "templates": {
-    "Goblin Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y1C": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Dun",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 290
-   },
-   "templates": {
-    "Goblin Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y1D": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Howan",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y1E": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Nara",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y1F": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Hengyang",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "b"
-  },
-  "Y1G": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Elvana",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "b"
-  },
-  "Y1H": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Igara",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y1I": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Celen",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 2740,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_0": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1J": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Titanos",
-   "notes": [],
-   "people": "giants",
-   "production": "zin_giant_gear_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y1K": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Radeon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1L": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Orewele",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3080,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1M": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Gaadon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 1920,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 80,
-    "zin_mounts_equipment_0": 30
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2
-   },
-   "tier": "c"
-  },
-  "Y1N": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Portogalor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1O": {
-   "divisions": 8,
-   "garrisons": 3,
-   "name": "Omar",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 4230,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 120,
-    "zin_mounts_equipment_1": 1110
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 3,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1P": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Felkond",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1Q": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Greenle",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 1920,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 80,
-    "zin_mounts_equipment_0": 30
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2
-   },
-   "tier": "c"
-  },
-  "Y1R": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Yeneldmore",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y1S": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Rion",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 2740,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_0": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1T": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Xison",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1U": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Hendair",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 2740,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_0": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y1V": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Agoron",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y1W": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Belor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y1X": {
-   "divisions": 5,
-   "garrisons": 1,
-   "name": "Yeti Lands",
-   "notes": [],
-   "people": "yeti",
-   "production": "zin_yeti_gear_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_0": 50,
-    "zin_yeti_gear_equipment_0": 1370
-   },
-   "templates": {
-    "Winter Watch": 1,
-    "Yeti Bands": 4
-   },
-   "tier": "b"
-  },
-  "Y1Y": {
-   "divisions": 4,
-   "garrisons": 2,
-   "name": "Pertolor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 2310,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 80,
-    "zin_mounts_equipment_0": 30
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2
-   },
-   "tier": "c"
-  },
-  "Y1Z": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Londor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y20": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Naepu",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y21": {
-   "divisions": 18,
-   "garrisons": 6,
-   "name": "Fearno",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 7
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 9770,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 1830,
-    "zin_camp_equipment_0": 290,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1850
-   },
-   "templates": {
-    "Hill Companies": 1,
-    "Knight Host": 1,
-    "Levy Garrison": 6,
-    "Line Host": 6,
-    "Riders": 2,
-    "Sea Soldiers": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y22": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Neridor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_0": 2740,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_0": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y23": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Poloto",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y24": {
-   "divisions": 9,
-   "garrisons": 4,
-   "name": "Worlond",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 4610,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 120,
-    "zin_mounts_equipment_1": 1110
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 4,
-    "Line Host": 3,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y25": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Hozoson",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 2740,
-    "zin_bows_equipment_0": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_0": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y26": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Werlendor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3080,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y27": {
-   "divisions": 11,
-   "garrisons": 4,
-   "name": "Lambin",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 5690,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 160,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1120
-   },
-   "templates": {
-    "Hill Companies": 1,
-    "Knight Host": 1,
-    "Levy Garrison": 4,
-    "Line Host": 3,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y28": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Thenon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2740,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y29": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Hky",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2740,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2A": {
-   "divisions": 4,
-   "garrisons": 2,
-   "name": "Lothoro",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1970,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2B": {
-   "divisions": 7,
-   "garrisons": 2,
-   "name": "Buldor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3480,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 140,
-    "zin_catapult_equipment_1": 80,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Heavy Host": 1,
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y2C": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Toples",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2D": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Sarudon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2E": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Saopon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1160,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 40,
-    "zin_mounts_equipment_1": 20
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1
-   },
-   "tier": "c"
-  },
-  "Y2F": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Sobre",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1160,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 40,
-    "zin_mounts_equipment_1": 20
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1
-   },
-   "tier": "c"
-  },
-  "Y2G": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Canako",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2H": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Forbo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2I": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Argo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2J": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Pernogon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2K": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Oslinod",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2L": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Trilino",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2M": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Allegro",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2N": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Keredor-Hellekton",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2O": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Belg",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2P": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Goran",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2Q": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Tolvael",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 4
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3080,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y2R": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Gil'dul",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2S": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Ashorn",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2T": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Gul'dur",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2U": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Low-ness Islands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2V": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Heodwa Lands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2W": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Nuatax",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2X": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Solenkovi",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y2Y": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Stork",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y2Z": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Cinargo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y30": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "The Hold",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y31": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Mustnom",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y32": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Ferlinon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y33": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Thowson",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y34": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Mina",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2360,
-    "zin_bows_equipment_1": 480,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y35": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Mine Din",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y36": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Oirt",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y37": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Pertawn",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y38": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Filit",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y39": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Ziza",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3A": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "The Lens",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3B": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Fineger",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3C": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Tses - The Vestes",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3D": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Beemste",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3E": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Hiohon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3F": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Anbei",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3G": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Seite Islands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1920,
-    "zin_bows_equipment_1": 480
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2
-   },
-   "tier": "b"
-  },
-  "Y3H": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Mondeluz",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3I": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Kile Islands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3J": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Hesos",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3K": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Aatah",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3L": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Previous Dark",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3M": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Benan",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3N": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Bono",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3O": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "The Cursed Square",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3P": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Kusu",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3Q": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Santon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3R": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Dani",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3S": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Kim",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3T": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Tined",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3U": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Halenor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1920,
-    "zin_bows_equipment_1": 480
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 2
-   },
-   "tier": "b"
-  },
-  "Y3V": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Li",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3W": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Urbolon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3X": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Lemo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3Y": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Arpos",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y3Z": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sondor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y40": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Cheko",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y41": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Amarelo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y42": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Windy Lands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y43": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Bordon",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 580
-   },
-   "templates": {
-    "Goblin Watch": 2
-   },
-   "tier": "b"
-  },
-  "Y44": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Dreson",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 580
-   },
-   "templates": {
-    "Goblin Watch": 2
-   },
-   "tier": "b"
-  },
-  "Y45": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Troll Forest",
-   "notes": [],
-   "people": "trolls",
-   "production": "zin_troll_gear_equipment_0",
-   "ships": {},
-   "stock": {
-    "zin_troll_gear_equipment_0": 100
-   },
-   "templates": {
-    "Troll Watch": 1
-   },
-   "tier": "b"
-  },
-  "Y46": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "The Doltu",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 290
-   },
-   "templates": {
-    "Goblin Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y47": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Wild Lands",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 290
-   },
-   "templates": {
-    "Goblin Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y48": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Sungodor",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 870
-   },
-   "templates": {
-    "Goblin Watch": 3
-   },
-   "tier": "c"
-  },
-  "Y49": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Dark Gate",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 870
-   },
-   "templates": {
-    "Goblin Watch": 3
-   },
-   "tier": "c"
-  },
-  "Y4A": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Zuriath",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 870
-   },
-   "templates": {
-    "Goblin Watch": 3
-   },
-   "tier": "c"
-  },
-  "Y4B": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Bold",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 870
-   },
-   "templates": {
-    "Goblin Watch": 3
-   },
-   "tier": "c"
-  },
-  "Y4C": {
-   "divisions": 3,
-   "garrisons": 3,
-   "name": "Gord",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 870
-   },
-   "templates": {
-    "Goblin Watch": 3
-   },
-   "tier": "c"
-  },
-  "Y4D": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Beriath",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 580
-   },
-   "templates": {
-    "Goblin Watch": 2
-   },
-   "tier": "c"
-  },
-  "Y4E": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Gull Kingdom",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 290
-   },
-   "templates": {
-    "Goblin Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y4F": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Britadon",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 580
-   },
-   "templates": {
-    "Goblin Watch": 2
-   },
-   "tier": "c"
-  },
-  "Y4G": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Lestern Isles",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_bows_equipment_0": 290
-   },
-   "templates": {
-    "Goblin Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y4H": {
-   "divisions": 5,
-   "garrisons": 1,
-   "name": "Dulundur",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 3050,
-    "zin_bows_equipment_0": 720,
-    "zin_mounts_equipment_0": 480
-   },
-   "templates": {
-    "Goblin Watch": 1,
-    "Raiders": 1,
-    "Warband": 3
-   },
-   "tier": "b"
-  },
-  "Y4I": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Blackton",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_armour_equipment_0": 290,
-    "zin_arms_equipment_1": 3270,
-    "zin_bows_equipment_1": 720,
-    "zin_camp_equipment_0": 110,
-    "zin_catapult_equipment_1": 30,
-    "zin_mounts_equipment_1": 760
-   },
-   "templates": {
-    "Heavy Host": 1,
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y4J": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Colost",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2210,
-    "zin_bows_equipment_0": 580,
-    "zin_mounts_equipment_0": 480
-   },
-   "templates": {
-    "Goblin Watch": 1,
-    "Raiders": 1,
-    "Warband": 2
-   },
-   "tier": "c"
-  },
-  "Y4K": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "The Darks",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2210,
-    "zin_bows_equipment_0": 580,
-    "zin_mounts_equipment_0": 480
-   },
-   "templates": {
-    "Goblin Watch": 1,
-    "Raiders": 1,
-    "Warband": 2
-   },
-   "tier": "c"
-  },
-  "Y4L": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Dunbulinor",
-   "notes": [],
-   "people": "orcs",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2210,
-    "zin_bows_equipment_0": 580,
-    "zin_mounts_equipment_0": 480
-   },
-   "templates": {
-    "Goblin Watch": 1,
-    "Raiders": 1,
-    "Warband": 2
-   },
-   "tier": "c"
-  },
-  "Y4M": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Fotan",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4N": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Ulgus",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4O": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Vothrim",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4P": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Stendorler",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4Q": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Olvinc-un",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4R": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Svenlor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4S": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Tieri",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4T": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Hilofrim",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4U": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Klungori Guard",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4V": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Kunhrim",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1440,
-    "zin_bows_equipment_1": 440,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 700
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y4W": {
-   "divisions": 4,
-   "garrisons": 0,
-   "name": "Hunhun",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1160,
-    "zin_bows_equipment_1": 770,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 2740
-   },
-   "templates": {
-    "Riders": 4
-   },
-   "tier": "b"
-  },
-  "Y4X": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Dariap",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4Y": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Novez",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y4Z": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Noloreh",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y50": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Mondon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y51": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Freshon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1440,
-    "zin_bows_equipment_1": 440,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 700
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y52": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Belurithon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y53": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Pazoma",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1440,
-    "zin_bows_equipment_1": 440,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 700
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y54": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Cursed Lands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y55": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Herez",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "b"
-  },
-  "Y56": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Woqood",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y57": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Hacsen",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y58": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Vigodor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y59": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Fladev",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y5A": {
-   "divisions": 4,
-   "garrisons": 2,
-   "name": "Orato",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_arms_equipment_1": 1970,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5B": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Ernois",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2960,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 110,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "c"
-  },
-  "Y5C": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Cream",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2960,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 110,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "c"
-  },
-  "Y5D": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Nethnu",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5E": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Eraver",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5F": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Grova",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5G": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Lorvens",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1160,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 40,
-    "zin_mounts_equipment_1": 20
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1
-   },
-   "tier": "c"
-  },
-  "Y5H": {
-   "divisions": 3,
-   "garrisons": 1,
-   "name": "Mylunur",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1590,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5I": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Fosoco",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_1": 3340,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 110,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "c"
-  },
-  "Y5J": {
-   "divisions": 11,
-   "garrisons": 4,
-   "name": "Delbiz Grasslands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 5740,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 1160,
-    "zin_camp_equipment_0": 180,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1120
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 4,
-    "Line Host": 4,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "c"
-  },
-  "Y5K": {
-   "divisions": 9,
-   "garrisons": 4,
-   "name": "The Moco",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 4610,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 920,
-    "zin_camp_equipment_0": 120,
-    "zin_mounts_equipment_1": 1110
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 4,
-    "Line Host": 3,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5L": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Mostok",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5M": {
-   "divisions": 6,
-   "garrisons": 2,
-   "name": "Kersian",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2960,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 110,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "c"
-  },
-  "Y5N": {
-   "divisions": 7,
-   "garrisons": 3,
-   "name": "Azano",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 3460,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 1100
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 3,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5O": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Oreton",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5P": {
-   "divisions": 14,
-   "garrisons": 5,
-   "name": "Erco",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 7080,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 1680,
-    "zin_camp_equipment_0": 230,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1140
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 5,
-    "Line Host": 5,
-    "Ranger Companies": 1,
-    "Riders": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y5Q": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Arcon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5R": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Obmi",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5S": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Pornivior",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5T": {
-   "divisions": 5,
-   "garrisons": 2,
-   "name": "Furro",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 2600,
-    "zin_bows_equipment_1": 680,
-    "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 2,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5U": {
-   "divisions": 4,
-   "garrisons": 2,
-   "name": "Olor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_arms_equipment_1": 1970,
-    "zin_bows_equipment_1": 240,
-    "zin_camp_equipment_0": 50,
-    "zin_mounts_equipment_1": 750
-   },
-   "templates": {
-    "Levy Garrison": 2,
-    "Line Host": 1,
-    "Riders": 1
-   },
-   "tier": "c"
-  },
-  "Y5V": {
-   "divisions": 14,
-   "garrisons": 5,
-   "name": "Plutondo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_armour_equipment_1": 290,
-    "zin_arms_equipment_1": 7610,
-    "zin_ballista_equipment_0": 10,
-    "zin_bows_equipment_1": 1400,
-    "zin_camp_equipment_0": 230,
-    "zin_catapult_equipment_1": 60,
-    "zin_mounts_equipment_1": 1140
-   },
-   "templates": {
-    "Knight Host": 1,
-    "Levy Garrison": 5,
-    "Line Host": 5,
-    "Riders": 1,
-    "Sea Soldiers": 1,
-    "Siege Park": 1
-   },
-   "tier": "b"
-  },
-  "Y5W": {
+  "ALR": {
    "divisions": 21,
    "garrisons": 7,
    "name": "Alerhia",
@@ -4346,610 +145,445 @@
    },
    "tier": "b"
   },
-  "Y5X": {
+  "ANE": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Dunn",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y5Y": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Finn",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y5Z": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Lua",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y60": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Verde",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y61": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Angsutz",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y62": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Enhis Is Rond",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "b"
-  },
-  "Y63": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Yowi-yoor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y64": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Yongyong",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y65": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Jingar",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y66": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Torsor",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y67": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Yongrost",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y68": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Meng",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y69": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sidea Islands",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y6A": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Kea",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 1160,
-    "zin_bows_equipment_0": 240,
-    "zin_camp_equipment_0": 40,
-    "zin_mounts_equipment_0": 20
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1
-   },
-   "tier": "c"
-  },
-  "Y6B": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Agla",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_arms_equipment_0": 1160,
-    "zin_bows_equipment_0": 240,
-    "zin_camp_equipment_0": 40,
-    "zin_mounts_equipment_0": 20
-   },
-   "templates": {
-    "Levy Garrison": 1,
-    "Line Host": 1
-   },
-   "tier": "c"
-  },
-  "Y6C": {
-   "divisions": 2,
-   "garrisons": 2,
-   "name": "Yumbo",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 770
-   },
-   "templates": {
-    "Levy Garrison": 2
-   },
-   "tier": "c"
-  },
-  "Y6D": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Pon",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_0",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_0": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y6E": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Soyano",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6F": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Tangsie",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6G": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Wenyene",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6H": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Pinion",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6I": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sus",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6J": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Tei",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6K": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Armic",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6L": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Hel",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6M": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Ofos",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6N": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Hol",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6O": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Poyang",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_ballista_equipment_0": 10,
-    "zin_camp_equipment_0": 20,
-    "zin_elven_arms_equipment_1": 1250,
-    "zin_mounts_equipment_0": 20
-   },
-   "templates": {
-    "Sun Guard": 1,
-    "Sun Watch": 1
-   },
-   "tier": "b"
-  },
-  "Y6P": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Heilmon",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6Q": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Yungin",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6R": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Rana",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6S": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Loyol",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6T": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Biggen",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y6U": {
-   "divisions": 6,
-   "garrisons": 1,
-   "name": "The Lands of Light",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_ballista_equipment_0": 40,
-    "zin_camp_equipment_0": 60,
-    "zin_elven_arms_equipment_1": 4520,
-    "zin_mounts_equipment_0": 60
-   },
-   "templates": {
-    "Sun Guard": 5,
-    "Sun Watch": 1
-   },
-   "tier": "b"
-  },
-  "Y6V": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "North Gala",
+   "name": "Andos Enda",
    "notes": [],
    "people": "elves",
    "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "b"
+  },
+  "ANR": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Aenor Forest",
+   "notes": [],
+   "people": "ents",
+   "production": "zin_ent_grove_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_0": 290
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "c"
+  },
+  "AUT": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Austklev",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1440,
+    "zin_bows_equipment_1": 440,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 700
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "AZA": {
+   "divisions": 7,
+   "garrisons": 3,
+   "name": "Azano",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3460,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 3,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "BEN": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Benan",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "BLD": {
+   "divisions": 10,
+   "garrisons": 4,
+   "name": "Buldor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 5020,
+    "zin_bows_equipment_1": 1160,
+    "zin_camp_equipment_0": 170,
+    "zin_catapult_equipment_1": 80,
+    "zin_mounts_equipment_1": 720
+   },
+   "templates": {
+    "Heavy Host": 1,
+    "Levy Garrison": 4,
+    "Line Host": 3,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "BLK": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Blackton",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_armour_equipment_0": 290,
+    "zin_arms_equipment_1": 2840,
+    "zin_bows_equipment_1": 720,
+    "zin_camp_equipment_0": 100,
+    "zin_catapult_equipment_1": 30,
+    "zin_mounts_equipment_1": 30
+   },
+   "templates": {
+    "Heavy Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2
+   },
+   "tier": "b"
+  },
+  "BLN": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Belonton",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1680,
+    "zin_bows_equipment_0": 580
+   },
+   "templates": {
+    "Goblin Watch": 1,
+    "Warband": 2
+   },
+   "tier": "c"
+  },
+  "BLO": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Bloody Forest",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
    "ships": {
     "zin_ship_galley": 1
    },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "b"
+  },
+  "BOR": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Bordon",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 290
+   },
+   "templates": {
+    "Goblin Watch": 1
+   },
+   "tier": "b"
+  },
+  "BRR": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Burrikkrit",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 580
+   },
+   "templates": {
+    "Goblin Watch": 2
+   },
+   "tier": "c"
+  },
+  "BRT": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Britadon",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 580
+   },
+   "templates": {
+    "Goblin Watch": 2
+   },
+   "tier": "c"
+  },
+  "BRU": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Brundahrim",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "c"
+  },
+  "BUN": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Burnikit",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 580
+   },
+   "templates": {
+    "Goblin Watch": 2
+   },
+   "tier": "c"
+  },
+  "CLD": {
+   "divisions": 16,
+   "garrisons": 2,
+   "name": "Coldor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 6,
+    "zin_ship_warship": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 9510,
+    "zin_bows_equipment_1": 2690,
+    "zin_camp_equipment_0": 360,
+    "zin_mounts_equipment_1": 2860
+   },
+   "templates": {
+    "Hill Companies": 2,
+    "Levy Garrison": 2,
+    "Line Host": 8,
+    "Riders": 4
+   },
+   "tier": "a"
+  },
+  "CRG": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Corogon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_arms_equipment_1": 2960,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 110,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "CUR": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Cursed Lands",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "b"
+  },
+  "DAK": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "The Darks",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 840,
+    "zin_bows_equipment_0": 440
+   },
+   "templates": {
+    "Goblin Watch": 1,
+    "Warband": 1
+   },
+   "tier": "c"
+  },
+  "DLB": {
+   "divisions": 17,
+   "garrisons": 7,
+   "name": "Delbiz",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 5
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 8570,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 1680,
+    "zin_camp_equipment_0": 240,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1160
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 7,
+    "Line Host": 5,
+    "Ranger Companies": 1,
+    "Riders": 1,
+    "Sea Soldiers": 1,
+    "Siege Park": 1
+   },
+   "tier": "c"
+  },
+  "DLN": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "Dolon",
+   "notes": [],
+   "people": "demons",
+   "production": "zin_nether_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_camp_equipment_0": 110,
+    "zin_mounts_equipment_0": 40,
+    "zin_nether_arms_equipment_1": 2160
+   },
+   "templates": {
+    "Nether Watch": 1,
+    "Netherborn Host": 3
+   },
+   "tier": "b"
+  },
+  "DND": {
+   "divisions": 10,
+   "garrisons": 2,
+   "name": "Dondor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 1440,
+    "zin_arms_equipment_1": 5720,
+    "zin_bows_equipment_1": 1920,
+    "zin_camp_equipment_0": 230,
+    "zin_catapult_equipment_1": 110,
+    "zin_mounts_equipment_1": 40
+   },
+   "templates": {
+    "Heavy Host": 5,
+    "Levy Garrison": 2,
+    "Line Host": 3
+   },
+   "tier": "b"
+  },
+  "DNL": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Dunelaeth",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
    "stock": {
     "zin_elven_arms_equipment_1": 360
    },
@@ -4958,10 +592,200 @@
    },
    "tier": "c"
   },
-  "Y6W": {
+  "DOB": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Dobbum",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1590,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "DOL": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Dolpar",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "DRA": {
+   "divisions": 9,
+   "garrisons": 3,
+   "name": "Drak",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 4590,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 920,
+    "zin_camp_equipment_0": 150,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1110
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 3,
+    "Line Host": 3,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "DRE": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Godrela",
+   "name": "Dreson",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 290
+   },
+   "templates": {
+    "Goblin Watch": 1
+   },
+   "tier": "b"
+  },
+  "DRK": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Dark Gate",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 840,
+    "zin_bows_equipment_0": 440
+   },
+   "templates": {
+    "Goblin Watch": 1,
+    "Warband": 1
+   },
+   "tier": "c"
+  },
+  "DUL": {
+   "divisions": 5,
+   "garrisons": 1,
+   "name": "Dulundur",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 3050,
+    "zin_bows_equipment_0": 720,
+    "zin_mounts_equipment_0": 480
+   },
+   "templates": {
+    "Goblin Watch": 1,
+    "Raiders": 1,
+    "Warband": 3
+   },
+   "tier": "b"
+  },
+  "DUN": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Dun",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 840,
+    "zin_bows_equipment_0": 440
+   },
+   "templates": {
+    "Goblin Watch": 1,
+    "Warband": 1
+   },
+   "tier": "c"
+  },
+  "EEK": {
+   "divisions": 7,
+   "garrisons": 2,
+   "name": "Eekedor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 4280,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 720,
+    "zin_camp_equipment_0": 120,
+    "zin_mounts_equipment_1": 440
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 3,
+    "Sea Soldiers": 1
+   },
+   "tier": "b"
+  },
+  "ELD": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Eldafaen",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "b"
+  },
+  "ELV": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Elvana",
    "notes": [],
    "people": "sun_elves",
    "production": "zin_elven_arms_equipment_1",
@@ -4972,12 +796,148 @@
    "templates": {
     "Sun Watch": 1
    },
+   "tier": "b"
+  },
+  "ENH": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Enhis Is Rond",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_0": 1920,
+    "zin_bows_equipment_0": 480,
+    "zin_camp_equipment_0": 80,
+    "zin_mounts_equipment_0": 30
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "b"
+  },
+  "ERC": {
+   "divisions": 14,
+   "garrisons": 5,
+   "name": "Erco",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 7080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 1680,
+    "zin_camp_equipment_0": 230,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1140
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 5,
+    "Line Host": 5,
+    "Ranger Companies": 1,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "FEA": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Fearno",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 7
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "FNG": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Fineger",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
    "tier": "c"
   },
-  "Y6X": {
+  "FOT": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Fotan",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 770
+   },
+   "templates": {
+    "Levy Garrison": 2
+   },
+   "tier": "c"
+  },
+  "FRE": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Freshon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1440,
+    "zin_bows_equipment_1": 440,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 700
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "GAA": {
    "divisions": 4,
    "garrisons": 1,
-   "name": "Gala Elves",
+   "name": "Gala",
    "notes": [],
    "people": "elves",
    "production": "zin_elven_arms_equipment_1",
@@ -4996,96 +956,88 @@
    },
    "tier": "a"
   },
-  "Y6Y": {
+  "GHH": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Sunweli",
+   "name": "Ghaahu",
    "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
+   "people": "yeti",
+   "production": "zin_yeti_gear_equipment_0",
    "ships": {},
    "stock": {
-    "zin_elven_arms_equipment_1": 440
+    "zin_yeti_gear_equipment_0": 220
    },
    "templates": {
-    "Sun Watch": 1
+    "Winter Watch": 1
    },
    "tier": "c"
   },
-  "Y6Z": {
-   "divisions": 2,
+  "GIR": {
+   "divisions": 8,
    "garrisons": 2,
-   "name": "Goodin",
+   "name": "Girdon",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
    "ships": {
-    "zin_ship_galley": 1
+    "zin_ship_galley": 4
    },
    "stock": {
-    "zin_arms_equipment_1": 770
+    "zin_arms_equipment_1": 4230,
+    "zin_bows_equipment_1": 1540,
+    "zin_camp_equipment_0": 170,
+    "zin_mounts_equipment_1": 80
    },
    "templates": {
-    "Levy Garrison": 2
+    "Levy Garrison": 2,
+    "Line Host": 4,
+    "Ranger Companies": 2
    },
    "tier": "b"
   },
-  "Y70": {
+  "GLI": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Goodton",
+   "name": "Glimkit",
    "notes": [],
-   "people": "men",
+   "people": "orcs",
    "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y71": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Guuden",
-   "notes": [],
-   "people": "men",
-   "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
-   "stock": {
-    "zin_arms_equipment_1": 390
-   },
-   "templates": {
-    "Levy Garrison": 1
-   },
-   "tier": "c"
-  },
-  "Y72": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Land of the Sun",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
    "ships": {},
    "stock": {
-    "zin_elven_arms_equipment_1": 440
+    "zin_bows_equipment_0": 290
    },
    "templates": {
-    "Sun Watch": 1
+    "Goblin Watch": 1
    },
    "tier": "c"
   },
-  "Y73": {
+  "GNW": {
+   "divisions": 8,
+   "garrisons": 2,
+   "name": "Gunwyn",
+   "notes": [
+    "zin_ship_galley (4): the country has no port"
+   ],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 5280,
+    "zin_bows_equipment_1": 960,
+    "zin_camp_equipment_0": 170,
+    "zin_mounts_equipment_1": 80
+   },
+   "templates": {
+    "Hill Companies": 2,
+    "Levy Garrison": 2,
+    "Line Host": 4
+   },
+   "tier": "a"
+  },
+  "GOF": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Gala",
+   "name": "God Forest",
    "notes": [],
    "people": "elves",
    "production": "zin_elven_arms_equipment_1",
@@ -5098,298 +1050,59 @@
    },
    "tier": "c"
   },
-  "Y74": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Godson",
+  "GOL": {
+   "divisions": 14,
+   "garrisons": 2,
+   "name": "Goldoroth",
    "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
    "stock": {
-    "zin_elven_arms_equipment_1": 440
+    "zin_arms_equipment_1": 8450,
+    "zin_bows_equipment_0": 1440,
+    "zin_catapult_equipment_0": 40,
+    "zin_mounts_equipment_0": 480,
+    "zin_ogre_gear_equipment_0": 390
    },
    "templates": {
-    "Sun Watch": 1
+    "Brute Host": 4,
+    "Goblin Watch": 2,
+    "Raiders": 1,
+    "Siege Band": 1,
+    "Warband": 6
    },
-   "tier": "c"
+   "tier": "a"
   },
-  "Y75": {
-   "divisions": 1,
+  "GOO": {
+   "divisions": 3,
    "garrisons": 1,
-   "name": "Beforelands of Gulia",
+   "name": "Goodin",
    "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
    "stock": {
-    "zin_elven_arms_equipment_1": 440
+    "zin_arms_equipment_1": 1590,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
    },
    "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y76": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Menga",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y77": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sono",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y78": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sunny",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y79": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Via",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7A": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Lovis",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7B": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sensun",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7C": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sun God Land",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7D": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Godland",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
    },
    "tier": "b"
   },
-  "Y7E": {
+  "GRO": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Godton",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7F": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Flame",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7G": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sali",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7H": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Helen",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7I": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Heaven",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "b"
-  },
-  "Y7J": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Him",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7K": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Dreamland",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7L": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Dein Lands",
-   "notes": [],
-   "people": "sun_elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 440
-   },
-   "templates": {
-    "Sun Watch": 1
-   },
-   "tier": "c"
-  },
-  "Y7M": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Mirodor",
+   "name": "Gromkerm",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
@@ -5404,16 +1117,204 @@
    },
    "tier": "c"
   },
-  "Y7N": {
-   "divisions": 2,
+  "HAL": {
+   "divisions": 5,
    "garrisons": 2,
-   "name": "Mencnon",
+   "name": "Halia",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "HEO": {
+   "divisions": 4,
+   "garrisons": 2,
+   "name": "Heodwa Lands",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
    "ships": {
     "zin_ship_galley": 1
    },
+   "stock": {
+    "zin_arms_equipment_1": 1970,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "HER": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Herez",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "HIR": {
+   "divisions": 3,
+   "garrisons": 0,
+   "name": "Hirolon",
+   "notes": [],
+   "people": "giants",
+   "production": "zin_giant_gear_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_0": 720,
+    "zin_camp_equipment_0": 40,
+    "zin_giant_gear_equipment_0": 360,
+    "zin_mounts_equipment_0": 40
+   },
+   "templates": {
+    "Giant Host": 2,
+    "Hill Foot": 1
+   },
+   "tier": "b"
+  },
+  "HLD": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Holdon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_0": 1160,
+    "zin_bows_equipment_0": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_0": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "HLN": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Halenor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 6
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "b"
+  },
+  "HNH": {
+   "divisions": 4,
+   "garrisons": 0,
+   "name": "Hunhun",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 770,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 2740
+   },
+   "templates": {
+    "Riders": 4
+   },
+   "tier": "b"
+  },
+  "HOO": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Hoorunoron",
+   "notes": [],
+   "people": "giants",
+   "production": "zin_giant_gear_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_0": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "c"
+  },
+  "HOR": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Horidor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "HRA": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Hrakbrund",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
    "stock": {
     "zin_arms_equipment_1": 770
    },
@@ -5422,10 +1323,714 @@
    },
    "tier": "c"
   },
-  "Y7O": {
+  "HRR": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Luminor",
+   "name": "Herrodon",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "b"
+  },
+  "HWN": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Howan",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_0": 770
+   },
+   "templates": {
+    "Levy Garrison": 2
+   },
+   "tier": "b"
+  },
+  "IGA": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Igara",
+   "notes": [],
+   "people": "sun_elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 440
+   },
+   "templates": {
+    "Sun Watch": 1
+   },
+   "tier": "c"
+  },
+  "IHU": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Ihuy",
+   "notes": [],
+   "people": "sun_elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_ballista_equipment_0": 10,
+    "zin_camp_equipment_0": 20,
+    "zin_elven_arms_equipment_1": 1250,
+    "zin_mounts_equipment_0": 20
+   },
+   "templates": {
+    "Sun Guard": 1,
+    "Sun Watch": 1
+   },
+   "tier": "c"
+  },
+  "KAM": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Kamu Lamo",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_0": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "c"
+  },
+  "KEA": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Kea",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_0": 1920,
+    "zin_bows_equipment_0": 480,
+    "zin_camp_equipment_0": 80,
+    "zin_mounts_equipment_0": 30
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "c"
+  },
+  "KER": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Keredor-Hellekton",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1920,
+    "zin_bows_equipment_1": 480,
+    "zin_camp_equipment_0": 80,
+    "zin_mounts_equipment_1": 30
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "c"
+  },
+  "KHO": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "Khorvrath",
+   "notes": [],
+   "people": "demons",
+   "production": "zin_nether_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_camp_equipment_0": 110,
+    "zin_mounts_equipment_0": 40,
+    "zin_nether_arms_equipment_1": 2160
+   },
+   "templates": {
+    "Nether Watch": 1,
+    "Netherborn Host": 3
+   },
+   "tier": "b"
+  },
+  "KIL": {
+   "divisions": 3,
+   "garrisons": 0,
+   "name": "Kilinti",
+   "notes": [],
+   "people": "ents",
+   "production": "zin_ent_grove_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_0": 360,
+    "zin_bows_equipment_1": 840,
+    "zin_camp_equipment_0": 40,
+    "zin_ent_grove_equipment_0": 290,
+    "zin_mounts_equipment_0": 40
+   },
+   "templates": {
+    "Forest Archers": 1,
+    "Grove Host": 2
+   },
+   "tier": "b"
+  },
+  "KIN": {
+   "divisions": 4,
+   "garrisons": 0,
+   "name": "Kingson",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 2120,
+    "zin_ballista_equipment_0": 30,
+    "zin_bows_equipment_1": 960,
+    "zin_camp_equipment_0": 100
+   },
+   "templates": {
+    "Wall Garrison": 4
+   },
+   "tier": "b"
+  },
+  "KLU": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Klungori Guard",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 770
+   },
+   "templates": {
+    "Levy Garrison": 2
+   },
+   "tier": "c"
+  },
+  "KON": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Konori",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 2880,
+    "zin_bows_equipment_1": 870,
+    "zin_camp_equipment_0": 100,
+    "zin_mounts_equipment_1": 1400
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 2
+   },
+   "tier": "b"
+  },
+  "KRA": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Kradlon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1590,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "KRS": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Kersian",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 2960,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 110,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "c"
+  },
+  "KUN": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Kunhrim",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "KVI": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Kvittumm",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "LAB": {
+   "divisions": 10,
+   "garrisons": 4,
+   "name": "Lambin",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 4970,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 920,
+    "zin_camp_equipment_0": 150,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1110
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 4,
+    "Line Host": 3,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "LCC": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Lccimio",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 5
+   },
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "b"
+  },
+  "LEN": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "The Lens",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_0": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "c"
+  },
+  "LER": {
+   "divisions": 16,
+   "garrisons": 2,
+   "name": "Lerendor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 12,
+    "zin_ship_warship": 8
+   },
+   "stock": {
+    "zin_arms_equipment_1": 10040,
+    "zin_bows_equipment_1": 1880,
+    "zin_camp_equipment_0": 360,
+    "zin_catapult_equipment_1": 110,
+    "zin_mounts_equipment_1": 820
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 7,
+    "Riders": 1,
+    "Sea Soldiers": 4,
+    "Siege Park": 2
+   },
+   "tier": "a"
+  },
+  "LIG": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "The Lands of Light",
+   "notes": [],
+   "people": "sun_elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_ballista_equipment_0": 30,
+    "zin_camp_equipment_0": 40,
+    "zin_elven_arms_equipment_1": 2880,
+    "zin_mounts_equipment_0": 40
+   },
+   "templates": {
+    "Sun Guard": 3,
+    "Sun Watch": 1
+   },
+   "tier": "b"
+  },
+  "LUV": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Luv-zhise",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "MAG": {
+   "divisions": 12,
+   "garrisons": 1,
+   "name": "Magical Forest",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_camp_equipment_0": 140,
+    "zin_elven_arms_equipment_1": 8670,
+    "zin_mounts_equipment_0": 1290,
+    "zin_ward_equipment_1": 200
+   },
+   "templates": {
+    "Elven Riders": 3,
+    "Wall Wardens": 1,
+    "Warden Host": 8
+   },
+   "tier": "a"
+  },
+  "MIA": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Mina",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "MIE": {
+   "divisions": 11,
+   "garrisons": 4,
+   "name": "Miaed",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 5740,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 1160,
+    "zin_camp_equipment_0": 180,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1120
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 4,
+    "Line Host": 4,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "MIR": {
+   "divisions": 10,
+   "garrisons": 2,
+   "name": "Mirolon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 6720,
+    "zin_bows_equipment_1": 960,
+    "zin_camp_equipment_0": 200,
+    "zin_mounts_equipment_1": 100
+   },
+   "templates": {
+    "Hill Companies": 4,
+    "Levy Garrison": 2,
+    "Line Host": 4
+   },
+   "tier": "a"
+  },
+  "MLK": {
+   "divisions": 10,
+   "garrisons": 2,
+   "name": "Melkgard",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_armour_equipment_1": 1440,
+    "zin_arms_equipment_1": 5720,
+    "zin_bows_equipment_1": 1920,
+    "zin_camp_equipment_0": 230,
+    "zin_catapult_equipment_1": 110,
+    "zin_mounts_equipment_1": 40
+   },
+   "templates": {
+    "Heavy Host": 5,
+    "Levy Garrison": 2,
+    "Line Host": 3
+   },
+   "tier": "b"
+  },
+  "MOA": {
+   "divisions": 9,
+   "garrisons": 3,
+   "name": "Mora",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 4590,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 920,
+    "zin_camp_equipment_0": 150,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1110
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 3,
+    "Line Host": 3,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "MOO": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "Molot",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 2360,
+    "zin_bows_equipment_1": 480,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 760
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "MOS": {
+   "divisions": 7,
+   "garrisons": 3,
+   "name": "Mostok",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3460,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 3,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "MSH": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Mushroom Forest",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "c"
+  },
+  "MUS": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Mustnom",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 580
+   },
+   "templates": {
+    "Goblin Watch": 2
+   },
+   "tier": "c"
+  },
+  "NAA": {
+   "divisions": 16,
+   "garrisons": 6,
+   "name": "Naamis",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 8330,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 1830,
+    "zin_camp_equipment_0": 270,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1830
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 6,
+    "Line Host": 6,
+    "Riders": 2,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "NAN": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Nan",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
@@ -5438,12 +2043,115 @@
    "templates": {
     "Levy Garrison": 1
    },
-   "tier": "c"
+   "tier": "b"
   },
-  "Y7P": {
+  "NAR": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Nara",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_0": 770
+   },
+   "templates": {
+    "Levy Garrison": 2
+   },
+   "tier": "b"
+  },
+  "NET": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Bennen",
+   "name": "Nether",
+   "notes": [],
+   "people": "demons",
+   "production": "zin_nether_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_nether_arms_equipment_1": 360
+   },
+   "templates": {
+    "Nether Watch": 1
+   },
+   "tier": "c"
+  },
+  "NEZ": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "Nezer",
+   "notes": [],
+   "people": "demons",
+   "production": "zin_nether_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_camp_equipment_0": 110,
+    "zin_mounts_equipment_0": 40,
+    "zin_nether_arms_equipment_1": 2160
+   },
+   "templates": {
+    "Nether Watch": 1,
+    "Netherborn Host": 3
+   },
+   "tier": "b"
+  },
+  "NIV": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Nivaros",
+   "notes": [],
+   "people": "giants",
+   "production": "zin_giant_gear_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_0": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "b"
+  },
+  "NLR": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Nolorim",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "b"
+  },
+  "NND": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Nondondor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_0": 770
+   },
+   "templates": {
+    "Levy Garrison": 2
+   },
+   "tier": "b"
+  },
+  "NOL": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Noleksun",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
@@ -5451,32 +2159,67 @@
     "zin_ship_galley": 1
    },
    "stock": {
-    "zin_arms_equipment_1": 390
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
    },
    "templates": {
-    "Levy Garrison": 1
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
    },
-   "tier": "c"
+   "tier": "b"
   },
-  "Y7Q": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Gelon",
+  "NRS": {
+   "divisions": 14,
+   "garrisons": 2,
+   "name": "Noris",
+   "notes": [
+    "zin_ship_galley (4): the country has no port"
+   ],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 8070,
+    "zin_bows_equipment_1": 1400,
+    "zin_camp_equipment_0": 270,
+    "zin_mounts_equipment_1": 3700
+   },
+   "templates": {
+    "Camel Riders": 6,
+    "Levy Garrison": 2,
+    "Line Host": 5,
+    "Riders": 1
+   },
+   "tier": "a"
+  },
+  "OBM": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Obmi",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
+   "ships": {},
    "stock": {
-    "zin_arms_equipment_1": 390
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
    },
    "templates": {
-    "Levy Garrison": 1
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
    },
    "tier": "c"
   },
-  "Y7R": {
+  "OLE": {
    "divisions": 4,
    "garrisons": 1,
    "name": "Olen",
@@ -5499,16 +2242,14 @@
    },
    "tier": "b"
   },
-  "Y7S": {
+  "OLO": {
    "divisions": 1,
    "garrisons": 1,
-   "name": "Dra",
+   "name": "Olodor",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 1
-   },
+   "ships": {},
    "stock": {
     "zin_arms_equipment_1": 390
    },
@@ -5517,374 +2258,276 @@
    },
    "tier": "c"
   },
-  "Y7T": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Demon",
-   "notes": [],
-   "people": "demons",
-   "production": "zin_nether_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_camp_equipment_0": 110,
-    "zin_mounts_equipment_0": 40,
-    "zin_nether_arms_equipment_1": 2160
-   },
-   "templates": {
-    "Nether Watch": 1,
-    "Netherborn Host": 3
-   },
-   "tier": "b"
-  },
-  "Y7U": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Dolon",
-   "notes": [],
-   "people": "demons",
-   "production": "zin_nether_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_camp_equipment_0": 110,
-    "zin_mounts_equipment_0": 40,
-    "zin_nether_arms_equipment_1": 2160
-   },
-   "templates": {
-    "Nether Watch": 1,
-    "Netherborn Host": 3
-   },
-   "tier": "b"
-  },
-  "Y7V": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Sacomananos",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y7W": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Velakton",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y7X": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Teste",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y7Y": {
+  "OMR": {
    "divisions": 2,
    "garrisons": 1,
-   "name": "Filion",
+   "name": "Omar",
    "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_camp_equipment_0": 20,
-    "zin_elven_arms_equipment_1": 1200,
-    "zin_mounts_equipment_0": 20,
-    "zin_ward_equipment_1": 30
-   },
-   "templates": {
-    "Wall Wardens": 1,
-    "Warden Host": 1
-   },
-   "tier": "c"
-  },
-  "Y7Z": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Nolivorak",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
+   "people": "men",
+   "production": "zin_arms_equipment_1",
    "ships": {},
    "stock": {
-    "zin_elven_arms_equipment_1": 360
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
    },
    "templates": {
-    "Wall Wardens": 1
+    "Levy Garrison": 1,
+    "Line Host": 1
    },
    "tier": "c"
   },
-  "Y80": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Kingdom",
+  "ORA": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Orato",
    "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y81": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Endelond",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y82": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "The End",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
+   "people": "men",
+   "production": "zin_arms_equipment_1",
    "ships": {
     "zin_ship_galley": 3
    },
    "stock": {
-    "zin_camp_equipment_0": 20,
-    "zin_elven_arms_equipment_1": 1200,
-    "zin_mounts_equipment_0": 20,
-    "zin_ward_equipment_1": 30
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
    },
    "templates": {
-    "Wall Wardens": 1,
-    "Warden Host": 1
-   },
-   "tier": "b"
-  },
-  "Y83": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Lccimio",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_camp_equipment_0": 20,
-    "zin_elven_arms_equipment_1": 1200,
-    "zin_mounts_equipment_0": 20,
-    "zin_ward_equipment_1": 30
-   },
-   "templates": {
-    "Wall Wardens": 1,
-    "Warden Host": 1
-   },
-   "tier": "b"
-  },
-  "Y84": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Luv-zhise",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 2
-   },
-   "stock": {
-    "zin_camp_equipment_0": 20,
-    "zin_elven_arms_equipment_1": 1200,
-    "zin_mounts_equipment_0": 20,
-    "zin_ward_equipment_1": 30
-   },
-   "templates": {
-    "Wall Wardens": 1,
-    "Warden Host": 1
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
    },
    "tier": "c"
   },
-  "Y85": {
-   "divisions": 2,
-   "garrisons": 1,
-   "name": "Lengoli",
+  "ORH": {
+   "divisions": 3,
+   "garrisons": 3,
+   "name": "Orohaf",
    "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {
-    "zin_ship_galley": 3
-   },
-   "stock": {
-    "zin_camp_equipment_0": 20,
-    "zin_elven_arms_equipment_1": 1200,
-    "zin_mounts_equipment_0": 20,
-    "zin_ward_equipment_1": 30
-   },
-   "templates": {
-    "Wall Wardens": 1,
-    "Warden Host": 1
-   },
-   "tier": "c"
-  },
-  "Y86": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Lusteli",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
+   "people": "men",
+   "production": "zin_arms_equipment_1",
    "ships": {
     "zin_ship_galley": 1
    },
    "stock": {
-    "zin_elven_arms_equipment_1": 360
+    "zin_arms_equipment_1": 1160
    },
    "templates": {
-    "Wall Wardens": 1
+    "Levy Garrison": 3
    },
-   "tier": "c"
+   "tier": "b"
   },
-  "Y87": {
-   "divisions": 1,
+  "ORW": {
+   "divisions": 2,
    "garrisons": 1,
-   "name": "Greenland",
+   "name": "Orewele",
    "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y88": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Perloia",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y89": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Ossa",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y8A": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Dulo-Dulo",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y8B": {
-   "divisions": 1,
-   "garrisons": 1,
-   "name": "Heron",
-   "notes": [],
-   "people": "elves",
-   "production": "zin_elven_arms_equipment_1",
-   "ships": {},
-   "stock": {
-    "zin_elven_arms_equipment_1": 360
-   },
-   "templates": {
-    "Wall Wardens": 1
-   },
-   "tier": "c"
-  },
-  "Y8C": {
-   "divisions": 4,
-   "garrisons": 1,
-   "name": "Fondor",
-   "notes": [],
-   "people": "orcs",
+   "people": "men",
    "production": "zin_arms_equipment_1",
    "ships": {},
    "stock": {
-    "zin_arms_equipment_1": 2210,
-    "zin_bows_equipment_0": 580,
-    "zin_mounts_equipment_0": 480
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
    },
    "templates": {
-    "Goblin Watch": 1,
-    "Raiders": 1,
-    "Warband": 2
+    "Levy Garrison": 1,
+    "Line Host": 1
    },
    "tier": "c"
   },
-  "Y8D": {
+  "OST": {
+   "divisions": 18,
+   "garrisons": 6,
+   "name": "Ostoroth",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 9240,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 2120,
+    "zin_camp_equipment_0": 290,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1850
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 6,
+    "Line Host": 6,
+    "Ranger Companies": 1,
+    "Riders": 2,
+    "Sea Soldiers": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "PAZ": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Pazoma",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1440,
+    "zin_bows_equipment_1": 440,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 700
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "PLL": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Pollos",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1920,
+    "zin_bows_equipment_1": 480
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "b"
+  },
+  "PLO": {
+   "divisions": 14,
+   "garrisons": 5,
+   "name": "Plutondo",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 7610,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 1400,
+    "zin_camp_equipment_0": 230,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1140
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 5,
+    "Line Host": 5,
+    "Riders": 1,
+    "Sea Soldiers": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "PLT": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Poloto",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "PON": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Pornivior",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 2600,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 710
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "POT": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Portogalor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "PRT": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Pertolor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "PUV": {
    "divisions": 40,
    "garrisons": 0,
-   "name": "Volgan",
+   "name": "Puvulan",
    "notes": [],
-   "people": "country:Volgan",
+   "people": "country:Puvulan",
    "production": "zin_grave_arms_equipment_1",
    "ships": {
     "zin_ship_galley": 4
@@ -5906,21 +2549,64 @@
    },
    "tier": "a"
   },
-  "Y8E": {
-   "divisions": 4,
+  "RAE": {
+   "divisions": 3,
    "garrisons": 1,
-   "name": "Bloody Forest",
+   "name": "Raerby",
    "notes": [],
    "people": "men",
    "production": "zin_arms_equipment_1",
    "ships": {
-    "zin_ship_galley": 1
+    "zin_ship_galley": 3
    },
    "stock": {
-    "zin_arms_equipment_1": 2210,
-    "zin_bows_equipment_1": 680,
+    "zin_arms_equipment_1": 1920,
+    "zin_bows_equipment_1": 480
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "b"
+  },
+  "REN": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "R'en",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_0": 290,
+    "zin_arms_equipment_1": 2400,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 480,
+    "zin_camp_equipment_0": 80,
+    "zin_mounts_equipment_1": 410
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "b"
+  },
+  "RHA": {
+   "divisions": 4,
+   "garrisons": 1,
+   "name": "Rhachia",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 2360,
+    "zin_bows_equipment_1": 480,
     "zin_camp_equipment_0": 90,
-    "zin_mounts_equipment_1": 710
+    "zin_mounts_equipment_1": 760
    },
    "templates": {
     "Levy Garrison": 1,
@@ -5929,28 +2615,555 @@
    },
    "tier": "b"
   },
-  "Y8F": {
-   "divisions": 12,
+  "SAO": {
+   "divisions": 3,
    "garrisons": 1,
-   "name": "Magical Forest",
+   "name": "Saopon",
    "notes": [],
-   "people": "elves",
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1590,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "SDE": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Sidea",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_0": 1160,
+    "zin_bows_equipment_0": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_0": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "SEI": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Seite Islands",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "b"
+  },
+  "SEL": {
+   "divisions": 3,
+   "garrisons": 0,
+   "name": "Selen",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 820,
+    "zin_camp_equipment_0": 60,
+    "zin_mounts_equipment_1": 40
+   },
+   "templates": {
+    "Line Host": 1,
+    "Ranger Companies": 2
+   },
+   "tier": "b"
+  },
+  "SFT": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Safeton",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1440,
+    "zin_bows_equipment_1": 440,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 700
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "SKR": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Skragdurg",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 840,
+    "zin_bows_equipment_0": 440
+   },
+   "templates": {
+    "Goblin Watch": 1,
+    "Warband": 1
+   },
+   "tier": "c"
+  },
+  "SNT": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Santon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "SOY": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Soyano",
+   "notes": [],
+   "people": "sun_elves",
    "production": "zin_elven_arms_equipment_1",
    "ships": {},
    "stock": {
-    "zin_camp_equipment_0": 140,
-    "zin_elven_arms_equipment_1": 8670,
-    "zin_mounts_equipment_0": 1290,
-    "zin_ward_equipment_1": 200
+    "zin_ballista_equipment_0": 10,
+    "zin_camp_equipment_0": 20,
+    "zin_elven_arms_equipment_1": 1250,
+    "zin_mounts_equipment_0": 20
    },
    "templates": {
-    "Elven Riders": 3,
-    "Wall Wardens": 1,
-    "Warden Host": 8
+    "Sun Guard": 1,
+    "Sun Watch": 1
+   },
+   "tier": "b"
+  },
+  "STA": {
+   "divisions": 12,
+   "garrisons": 2,
+   "name": "Stabilo",
+   "notes": [
+    "zin_ship_galley (4): the country has no port"
+   ],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 6600,
+    "zin_bows_equipment_1": 2020,
+    "zin_camp_equipment_0": 280,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 2130
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 6,
+    "Riders": 3,
+    "Siege Park": 1
    },
    "tier": "a"
   },
-  "Y8G": {
+  "TES": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Teste",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 40,
+    "zin_mounts_equipment_1": 20
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "THN": {
+   "divisions": 5,
+   "garrisons": 2,
+   "name": "Thenon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 2740,
+    "zin_bows_equipment_1": 480,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 760
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "TIR": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Tirlan",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_1": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "c"
+  },
+  "TLV": {
+   "divisions": 9,
+   "garrisons": 3,
+   "name": "Tolvael",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 4590,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 920,
+    "zin_camp_equipment_0": 150,
+    "zin_catapult_equipment_1": 60,
+    "zin_mounts_equipment_1": 1110
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 3,
+    "Line Host": 3,
+    "Riders": 1,
+    "Siege Park": 1
+   },
+   "tier": "b"
+  },
+  "TOL": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Tolhon",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 2
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1590,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "TOR": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Tor Luni",
+   "notes": [],
+   "people": "sun_elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 440
+   },
+   "templates": {
+    "Sun Watch": 1
+   },
+   "tier": "b"
+  },
+  "TRO": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Troll Forest",
+   "notes": [],
+   "people": "trolls",
+   "production": "zin_troll_gear_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_troll_gear_equipment_0": 100
+   },
+   "templates": {
+    "Troll Watch": 1
+   },
+   "tier": "b"
+  },
+  "VER": {
+   "divisions": 2,
+   "garrisons": 2,
+   "name": "Verde",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 1
+   },
+   "stock": {
+    "zin_arms_equipment_0": 770
+   },
+   "templates": {
+    "Levy Garrison": 2
+   },
+   "tier": "b"
+  },
+  "VES": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Veshazel",
+   "notes": [],
+   "people": "demons",
+   "production": "zin_nether_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_nether_arms_equipment_1": 360
+   },
+   "templates": {
+    "Nether Watch": 1
+   },
+   "tier": "c"
+  },
+  "VND": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Vindael",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 9
+   },
+   "stock": {
+    "zin_arms_equipment_1": 390
+   },
+   "templates": {
+    "Levy Garrison": 1
+   },
+   "tier": "b"
+  },
+  "VRN": {
+   "divisions": 7,
+   "garrisons": 2,
+   "name": "Varnondor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3840,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 920,
+    "zin_camp_equipment_0": 120,
+    "zin_mounts_equipment_1": 1110
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 3,
+    "Riders": 1
+   },
+   "tier": "b"
+  },
+  "WAH": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Wahatud",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_arms_equipment_1": 1590,
+    "zin_bows_equipment_1": 240,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 750
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "WEN": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Wennarith",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "WER": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Werlendor",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "WIL": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Wild Lands",
+   "notes": [],
+   "people": "orcs",
+   "production": "zin_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_bows_equipment_0": 290
+   },
+   "templates": {
+    "Goblin Watch": 1
+   },
+   "tier": "c"
+  },
+  "WND": {
+   "divisions": 2,
+   "garrisons": 1,
+   "name": "Windy Lands",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 4
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1160,
+    "zin_bows_equipment_1": 240
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1
+   },
+   "tier": "c"
+  },
+  "WOQ": {
+   "divisions": 6,
+   "garrisons": 2,
+   "name": "Woqood",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_armour_equipment_1": 290,
+    "zin_arms_equipment_1": 3080,
+    "zin_ballista_equipment_0": 10,
+    "zin_bows_equipment_1": 680,
+    "zin_camp_equipment_0": 90,
+    "zin_mounts_equipment_1": 1100
+   },
+   "templates": {
+    "Knight Host": 1,
+    "Levy Garrison": 2,
+    "Line Host": 2,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "WOR": {
    "divisions": 1,
    "garrisons": 0,
    "name": "Worshipdom",
@@ -5967,7 +3180,85 @@
    },
    "tier": "a"
   },
-  "Y8H": {
+  "WRL": {
+   "divisions": 4,
+   "garrisons": 2,
+   "name": "Worlond",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1830,
+    "zin_bows_equipment_1": 440,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 700
+   },
+   "templates": {
+    "Levy Garrison": 2,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "XIS": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Xison",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_1",
+   "ships": {
+    "zin_ship_galley": 5
+   },
+   "stock": {
+    "zin_arms_equipment_1": 1440,
+    "zin_bows_equipment_1": 440,
+    "zin_camp_equipment_0": 50,
+    "zin_mounts_equipment_1": 700
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 1,
+    "Riders": 1
+   },
+   "tier": "c"
+  },
+  "YAV": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Yavieth",
+   "notes": [],
+   "people": "elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 360
+   },
+   "templates": {
+    "Wall Wardens": 1
+   },
+   "tier": "c"
+  },
+  "YEI": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Yeti Lands",
+   "notes": [],
+   "people": "yeti",
+   "production": "zin_yeti_gear_equipment_0",
+   "ships": {},
+   "stock": {
+    "zin_yeti_gear_equipment_0": 220
+   },
+   "templates": {
+    "Winter Watch": 1
+   },
+   "tier": "b"
+  },
+  "YEL": {
    "divisions": 0,
    "garrisons": 0,
    "name": "Yeldenne",
@@ -5978,6 +3269,58 @@
    "stock": {},
    "templates": {},
    "tier": "b"
+  },
+  "YEN": {
+   "divisions": 1,
+   "garrisons": 1,
+   "name": "Yeni Alang",
+   "notes": [],
+   "people": "sun_elves",
+   "production": "zin_elven_arms_equipment_1",
+   "ships": {},
+   "stock": {
+    "zin_elven_arms_equipment_1": 440
+   },
+   "templates": {
+    "Sun Watch": 1
+   },
+   "tier": "b"
+  },
+  "YON": {
+   "divisions": 3,
+   "garrisons": 1,
+   "name": "Yongyong",
+   "notes": [],
+   "people": "men",
+   "production": "zin_arms_equipment_0",
+   "ships": {
+    "zin_ship_galley": 3
+   },
+   "stock": {
+    "zin_arms_equipment_0": 1920,
+    "zin_bows_equipment_0": 480,
+    "zin_camp_equipment_0": 80,
+    "zin_mounts_equipment_0": 30
+   },
+   "templates": {
+    "Levy Garrison": 1,
+    "Line Host": 2
+   },
+   "tier": "c"
+  },
+  "ZOL": {
+   "divisions": 0,
+   "garrisons": 0,
+   "name": "Zol's Mistake",
+   "notes": [],
+   "people": "country:Zol's Mistake",
+   "production": null,
+   "ships": {
+    "zin_ship_raider": 3
+   },
+   "stock": {},
+   "templates": {},
+   "tier": "a"
   }
  },
  "designGroups": [
@@ -5986,5 +3329,5 @@
   "zin_ai_ships_dominion",
   "zin_ai_ships_mistake"
  ],
- "divisions": 1035
+ "divisions": 725
 }

@@ -34,19 +34,19 @@ country_event = {
 		}
 		if = {
 			limit = {
-				country_exists = Y54
+				country_exists = CUR
 			}
 			diplomatic_relation = {
-				country = Y54
+				country = CUR
 				relation = non_aggression_pact
 				active = yes
 			}
 			add_opinion_modifier = {
-				target = Y54
+				target = CUR
 				modifier = zin_regional_cursed_lands_veil_accord
 			}
 			reverse_add_opinion_modifier = {
-				target = Y54
+				target = CUR
 				modifier = zin_regional_cursed_lands_veil_accord
 			}
 		}
@@ -68,10 +68,10 @@ country_event = {
 		add_war_support = 0.03
 		if = {
 			limit = {
-				country_exists = Y0L
+				country_exists = AEN
 			}
 			add_opinion_modifier = {
-				target = Y0L
+				target = AEN
 				modifier = zin_regional_cursed_lands_tax_men_turned
 			}
 		}
@@ -84,10 +84,10 @@ country_event = {
 		add_political_power = -25
 		if = {
 			limit = {
-				country_exists = Y0L
+				country_exists = AEN
 			}
 			add_opinion_modifier = {
-				target = Y0L
+				target = AEN
 				modifier = zin_regional_cursed_lands_token_paid
 			}
 		}
@@ -120,10 +120,10 @@ country_event = {
 		zin_lost_cause_add_strength = yes
 		if = {
 			limit = {
-				country_exists = Y0L
+				country_exists = AEN
 			}
 			add_opinion_modifier = {
-				target = Y0L
+				target = AEN
 				modifier = zin_regional_cursed_lands_tallies_read
 			}
 		}

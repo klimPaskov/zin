@@ -48,7 +48,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		Y7R = {
+		OLE = {
 			country_event = zin_regional_olen.6
 		}
 	}
@@ -58,16 +58,16 @@ country_event = {
 			factor = 80
 		}
 		diplomatic_relation = {
-			country = Y7R
+			country = OLE
 			relation = non_aggression_pact
 			active = yes
 		}
 		add_political_power = 25
-		Y7R = {
+		OLE = {
 			add_political_power = -50
 			set_country_flag = zin_dominion_tributary_friend
 		}
-		Y7R = {
+		OLE = {
 			country_event = zin_regional_olen.5
 		}
 	}
@@ -85,7 +85,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		Y7R = {
+		OLE = {
 			country_event = zin_regional_olen.6
 		}
 	}
@@ -94,18 +94,18 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
-		Y7R = {
+		OLE = {
 			set_country_flag = zin_mirolon_league_friend
 		}
 		add_opinion_modifier = {
-			target = Y7R
+			target = OLE
 			modifier = zin_regional_olen_healers_sent
 		}
 		reverse_add_opinion_modifier = {
-			target = Y7R
+			target = OLE
 			modifier = zin_regional_olen_healers_sent
 		}
-		Y7R = {
+		OLE = {
 			country_event = zin_regional_olen.5
 		}
 	}

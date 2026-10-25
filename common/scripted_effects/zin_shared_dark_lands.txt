@@ -26,7 +26,7 @@ zin_shared_dark_lands_access_against_dead = {
 	every_country = {
 		limit = {
 			has_country_flag = zin_region_dark_lands
-			has_war_with = Y0U
+			has_war_with = ZOL
 			NOT = { tag = ROOT }
 		}
 		give_military_access = ROOT
@@ -40,17 +40,19 @@ zin_shared_dark_lands_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 1 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_shared_dark_lands_gifts_returned
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_shared_dark_lands_gifts_returned
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_shared_dark_lands_gifts_returned
+				}
 			}
 		}
 	}
@@ -58,17 +60,19 @@ zin_shared_dark_lands_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 2 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_shared_dark_lands_warbands_sent
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_shared_dark_lands_warbands_sent
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_shared_dark_lands_warbands_sent
+				}
 			}
 		}
 	}
@@ -76,17 +80,19 @@ zin_shared_dark_lands_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 3 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_shared_dark_lands_accord_oath
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_shared_dark_lands_accord_oath
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_shared_dark_lands_accord_oath
+				}
 			}
 		}
 	}
@@ -94,17 +100,19 @@ zin_shared_dark_lands_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 4 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_shared_dark_lands_south_refused
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_shared_dark_lands_south_refused
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_shared_dark_lands_south_refused
+				}
 			}
 		}
 	}
@@ -112,17 +120,19 @@ zin_shared_dark_lands_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 5 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_shared_dark_lands_hold_kin
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_shared_dark_lands_hold_kin
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_shared_dark_lands_hold_kin
+				}
 			}
 		}
 	}

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y45
+			original_tag = TRO
 		}
 	}
 	initial_show_position = { focus = zin_regional_troll_forest_the_old_ones_forest }
@@ -177,13 +177,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y19
+			country_exists = DND
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			Y19 = {
+			DND = {
 				country_event = zin_regional_troll_forest.2
 			}
 		}
@@ -203,13 +203,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y1A
+			country_exists = GOL
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			Y1A = {
+			GOL = {
 				country_event = zin_regional_troll_forest.2
 			}
 			set_temp_variable = { zin_arg_target = ROOT }
@@ -392,7 +392,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -466,7 +466,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = -1 }
 			zin_dark_add_volgan_pact = yes
 			add_political_power = 25
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_troll_forest_lighter_envoys

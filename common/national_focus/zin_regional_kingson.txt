@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0P
+			original_tag = KIN
 		}
 	}
 	initial_show_position = { focus = zin_regional_kingson_the_gate_of_kingson }
@@ -1034,7 +1034,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			country_exists = Y8F
+			country_exists = MAG
 		}
 		ai_will_do = {
 			factor = 10
@@ -1048,7 +1048,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1061,7 +1061,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_elves_add_wall_grievance = yes
 			add_stability = 0.03
-			Y8F = {
+			MAG = {
 				country_event = zin_regional_kingson.3
 			}
 		}
@@ -1090,7 +1090,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1201,9 +1201,9 @@ focus_tree = {
 			set_country_flag = zin_kingson_gates_open
 			if = {
 				limit = {
-					country_exists = Y8F
+					country_exists = MAG
 				}
-				Y8F = {
+				MAG = {
 					country_event = zin_regional_kingson.4
 				}
 			}

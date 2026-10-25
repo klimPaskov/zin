@@ -3,15 +3,15 @@ zin_shared_ember_lands_is_coastal = {
 	any_owned_state = { is_coastal = yes }
 }
 zin_shared_ember_lands_borders_volgan = {
-	any_neighbor_country = { tag = Y8D }
+	any_neighbor_country = { tag = PUV }
 }
 zin_shared_ember_lands_borders_mirolon = {
-	any_neighbor_country = { tag = Y0Y }
+	any_neighbor_country = { tag = MIR }
 }
 zin_shared_ember_lands_league_open = {
 	has_country_flag = zin_mirolon_league_friend
-	country_exists = Y0Y
-	Y0Y = { is_faction_leader = yes }
+	country_exists = MIR
+	MIR = { is_faction_leader = yes }
 	is_in_faction = no
 }
 zin_shared_ember_lands_core_occupied = {

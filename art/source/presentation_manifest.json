@@ -5178,16 +5178,15 @@
   },
   {
    "out": "gfx/interface/logo_game.dds",
-   "source": "art/source/menu/frontend-emblem.png",
-   "sourceSha256": "d1abe8cbbfbe9a69dce5f6b1ff161d783de39539dc1bcffb21e4693cd622ee10",
+   "source": "art/source/branding/branding_emblem_v1.png",
+   "sourceSha256": "f1c97db590ce3614e41bb92a07a066ef4f8e5d2dc7b374c84af732d72a05e5c5",
    "ops": [
-    "magenta key matte",
-    "trim to alpha",
+    "black ground keyed to alpha",
     "lanczos3 contain 440x167",
     "pad 4",
     "dds a8r8g8b8"
    ],
-   "sha256": "dfb85b57a67e619c97830c1770aac29cf0560680e3b91a4b69958c2643994501"
+   "sha256": "4c755e236f79c7aeecf72a11e8d098903df7722918728525c4052057f7b75866"
   },
   {
    "out": "gfx/interface/select_date_1936.dds",
@@ -5475,6 +5474,16 @@
    "sha256": "b022054c860766bbe3e6c924c1301bdd90150f8f3562a83d8988f2b30d5c3616"
   },
   {
+   "out": "gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds",
+   "source": "art/source/branding/branding_menu_backdrop_v1.png",
+   "sourceSha256": "7d1f94fa9f8f297e754ea31ed05b1397eb3366340009d9c3dcccce0ca6dc18f9",
+   "ops": [
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e9d1d3d3c19df397a29f5cf02b7ee294774fddb36a23c4f6018f8db0014d54a0"
+  },
+  {
    "out": "gfx/interface/zin/loadingscreens/zin_menu_parim_small.dds",
    "source": "art/source/menu/zin_menu_parim.png",
    "sourceSha256": "4077223345b56d82287fe1e3b11cd72477735926c9e3cc897213f0026e181158",
@@ -5760,6 +5769,17 @@
    "sha256": "78890ea271b5a2111ba4d1a7f86e2207892320e2e52e5d414389c84d6c55c043"
   },
   {
+   "out": "gfx/loadingscreens/zin_menu_backdrop.dds",
+   "source": "art/source/branding/branding_menu_backdrop_v1.png",
+   "sourceSha256": "7d1f94fa9f8f297e754ea31ed05b1397eb3366340009d9c3dcccce0ca6dc18f9",
+   "ops": [
+    "centre crop 4:3 1255x941",
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "12bc96e9d221d621996385a8d25349ce2a5c46b19fe0a6cd631f98e80d9be748"
+  },
+  {
    "out": "gfx/loadingscreens/zin_menu_parim.dds",
    "source": "art/source/menu/zin_menu_parim.png",
    "sourceSha256": "4077223345b56d82287fe1e3b11cd72477735926c9e3cc897213f0026e181158",
@@ -5788,6 +5808,16 @@
     "dds a8r8g8b8"
    ],
    "sha256": "de9d3abf4caa26e635a1d9c23a8d04e3795d3e186e666ea5a3f3050473b2373c"
+  },
+  {
+   "out": "thumbnail.png",
+   "source": "art/source/branding/branding_emblem_v1.png",
+   "sourceSha256": "f1c97db590ce3614e41bb92a07a066ef4f8e5d2dc7b374c84af732d72a05e5c5",
+   "ops": [
+    "lanczos3 cover 250x250",
+    "png rgb"
+   ],
+   "sha256": "8752f08a132d4c1b22935f79713634748e4ee6a685043be7a2ab510a0823148e"
   }
  ]
 }

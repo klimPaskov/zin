@@ -58,7 +58,7 @@ country_event = {
 			factor = 70
 		}
 		diplomatic_relation = {
-			country = Y8G
+			country = WOR
 			relation = non_aggression_pact
 			active = yes
 		}
@@ -69,7 +69,7 @@ country_event = {
 			factor = 30
 		}
 		add_opinion_modifier = {
-			target = Y8G
+			target = WOR
 			modifier = zin_worshipdom_elves_declined
 		}
 	}
@@ -84,13 +84,13 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_worshipdom.4.a
-		Y0G = {
+		LER = {
 			add_to_variable = { zin_strait_standing = -5 }
 		}
 	}
 	option = {
 		name = zin_worshipdom.4.b
-		Y0G = {
+		LER = {
 			add_to_variable = { zin_strait_standing = 5 }
 		}
 	}
@@ -110,12 +110,12 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_worshipdom.5.a
-		Y0L = {
+		AEN = {
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_aenor_add_council_influence = yes
 		}
 		add_opinion_modifier = {
-			target = Y0Y
+			target = MIR
 			modifier = zin_worshipdom_warned_quietly
 		}
 		set_temp_variable = { zin_arg_value = -2 }
@@ -141,7 +141,7 @@ country_event = {
 	}
 	option = {
 		name = zin_worshipdom.6.b
-		Y0L = {
+		AEN = {
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_aenor_add_council_influence = yes
 		}
@@ -170,6 +170,7 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_worshipdom.8.a
+		set_country_flag = zin_afrit_sevrin_guest
 		recruit_character = zin_sevrin
 	}
 	option = {
@@ -259,7 +260,7 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_worshipdom.12.a
-		Y0L = {
+		AEN = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_aenor_add_council_influence = yes
 		}
@@ -275,7 +276,7 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_worshipdom.13.a
-		Y0L = {
+		AEN = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_aenor_add_council_influence = yes
 		}

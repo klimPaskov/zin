@@ -43,14 +43,14 @@ country_event = {
 			factor = 90
 		}
 		add_opinion_modifier = {
-			target = Y21
+			target = FEA
 			modifier = zin_regional_fearno_friendship
 		}
 		reverse_add_opinion_modifier = {
-			target = Y21
+			target = FEA
 			modifier = zin_regional_fearno_friendship
 		}
-		Y21 = {
+		FEA = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_cold_add_lean = yes
 		}
@@ -83,7 +83,7 @@ country_event = {
 				check_variable = { zin_cold_lean < -40 }
 			}
 		}
-		Y21 = {
+		FEA = {
 			add_to_faction = PREV
 		}
 	}

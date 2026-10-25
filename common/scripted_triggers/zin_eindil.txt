@@ -175,6 +175,31 @@ zin_eindil_date_1758_03 = {
 		}
 	}
 }
+zin_eindil_date_1758_09 = {
+	OR = {
+		AND = {
+			check_variable = { global.zin_story_pace > 1.25 }
+			date > 1763.12.2
+		}
+		AND = {
+			check_variable = { global.zin_story_pace > 0.1 }
+			check_variable = { global.zin_story_pace < 0.9 }
+			date > 1756.1.16
+		}
+		AND = {
+			NOT = {
+				check_variable = { global.zin_story_pace > 1.25 }
+			}
+			NOT = {
+				AND = {
+					check_variable = { global.zin_story_pace > 0.1 }
+					check_variable = { global.zin_story_pace < 0.9 }
+				}
+			}
+			date > 1758.9.1
+		}
+	}
+}
 zin_eindil_date_1759_03 = {
 	OR = {
 		AND = {
@@ -219,13 +244,7 @@ zin_eindil_resents = {
 	check_variable = { zin_eindil_regard < -24 }
 }
 zin_eindil_historical = {
-	OR = {
-		has_game_rule = { rule = zin_rule_eindil_journey option = HISTORICAL }
-		AND = {
-			has_game_rule = { rule = zin_rule_eindil_journey option = DEFAULT }
-			zin_rules_is_historical = yes
-		}
-	}
+	zin_rules_ai_branch_eindil_historical = yes
 }
 zin_eindil_can_lead = {
 	has_character = zin_eindil
@@ -254,7 +273,7 @@ zin_eindil_coalition_ally = {
 }
 zin_eindil_zol_in_field = {
 	has_global_flag = zin_zol_rising
-	Y0U = {
+	ZOL = {
 		exists = yes
 		any_enemy_country = {
 			zin_eindil_coalition_ally = yes
@@ -272,10 +291,10 @@ zin_eindil_host_offends = {
 	any_enemy_country = {
 		NOT = {
 			OR = {
-				original_tag = Y0U
-				original_tag = Y8D
-				is_subject_of = Y0U
-				is_subject_of = Y8D
+				original_tag = ZOL
+				original_tag = PUV
+				is_subject_of = ZOL
+				is_subject_of = PUV
 				AND = {
 					has_global_flag = zin_afrit_revealed
 					OR = {
@@ -620,7 +639,7 @@ zin_eindil_ready_7 = {
 	OR = {
 		check_variable = { global.zin_eindil_stage_age > 149 }
 		AND = {
-			has_global_flag = zin_gala_great_ship
+			any_country = { has_country_flag = zin_gala_great_ship }
 			check_variable = { global.zin_eindil_stage_age > 119 }
 		}
 	}
@@ -667,7 +686,7 @@ zin_eindil_ready_11 = {
 	zin_eindil_floor_reached = yes
 	has_global_flag = zin_eindil_recovered
 	OR = {
-		has_global_flag = zin_afrit_holds_parim
+		zin_afrit_holds_parim = yes
 		has_global_flag = zin_afrit_stand_in_parim
 	}
 	NOT = { has_global_flag = zin_afrit_dead }
@@ -691,6 +710,7 @@ zin_eindil_ready_12 = {
 	OR = {
 		has_global_flag = zin_afrit_dead
 		NOT = { zin_eindil_afrit_foes_exist = yes }
+		zin_afrit_reduced = yes
 	}
 }
 zin_eindil_next_stage_ready = {
@@ -714,7 +734,7 @@ zin_eindil_battle_ground = {
 	any_state = {
 		zin_eindil_army_near = yes
 		controller = {
-			OR = { original_tag = Y8D is_subject_of = Y8D }
+			OR = { original_tag = PUV is_subject_of = PUV }
 		}
 	}
 }

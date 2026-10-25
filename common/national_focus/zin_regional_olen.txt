@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7R
+			original_tag = OLE
 		}
 	}
 	initial_show_position = { focus = zin_regional_olen_the_holy_breeze }
@@ -308,7 +308,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y8D
+			country_exists = PUV
 		}
 		ai_will_do = {
 			factor = 20
@@ -318,7 +318,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				country_event = zin_regional_olen.3
 			}
 		}
@@ -338,7 +338,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 20
@@ -348,10 +348,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				country_event = zin_regional_olen.4
 			}
-			Y0Y = {
+			MIR = {
 				set_temp_variable = { zin_arg_value = 2 }
 				zin_mirolon_add_proof = yes
 			}
@@ -445,7 +445,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				add_to_faction = PREV
 			}
 		}
@@ -492,21 +492,21 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 15
 		}
 		completion_reward = {
 			add_opinion_modifier = {
-				target = Y0Y
+				target = MIR
 				modifier = zin_regional_olen_healers_sent
 			}
 			reverse_add_opinion_modifier = {
-				target = Y0Y
+				target = MIR
 				modifier = zin_regional_olen_healers_sent
 			}
-			Y0Y = {
+			MIR = {
 				set_temp_variable = { zin_arg_value = 2 }
 				zin_mirolon_add_proof = yes
 			}
@@ -523,18 +523,18 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y0L
+			country_exists = AEN
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
 			add_opinion_modifier = {
-				target = Y0L
+				target = AEN
 				modifier = zin_regional_olen_healers_sent
 			}
 			reverse_add_opinion_modifier = {
-				target = Y0L
+				target = AEN
 				modifier = zin_regional_olen_healers_sent
 			}
 		}

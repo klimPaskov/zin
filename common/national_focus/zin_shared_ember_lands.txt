@@ -5,27 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7M
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7N
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7O
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7P
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7Q
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7S
+			original_tag = HAL
 		}
 	}
 	initial_show_position = { focus = zin_shared_ember_lands_the_freehold }
@@ -292,14 +272,14 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y8D
+			country_exists = PUV
 			NOT = {
-				is_subject_of = Y8D
+				is_subject_of = PUV
 			}
 		}
 		allow_branch = {
 			NOT = {
-				is_subject_of = Y8D
+				is_subject_of = PUV
 			}
 		}
 		ai_will_do = {
@@ -330,7 +310,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				country_event = zin_shared_ember_lands.3
 			}
 		}
@@ -349,7 +329,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 15
@@ -372,14 +352,14 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				country_event = zin_shared_ember_lands.4
 			}
 			if = {
 				limit = {
-					country_exists = Y0Y
+					country_exists = MIR
 				}
-				Y0Y = {
+				MIR = {
 					set_temp_variable = { zin_arg_value = 2 }
 					zin_mirolon_add_proof = yes
 				}
@@ -467,7 +447,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				add_to_faction = PREV
 			}
 		}
@@ -603,10 +583,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			is_subject_of = Y8D
+			is_subject_of = PUV
 		}
 		allow_branch = {
-			is_subject_of = Y8D
+			is_subject_of = PUV
 		}
 		ai_will_do = {
 			factor = 100
@@ -632,9 +612,9 @@ focus_tree = {
 			add_political_power = -25
 			if = {
 				limit = {
-					country_exists = Y8D
+					country_exists = PUV
 				}
-				Y8D = {
+				PUV = {
 					set_temp_variable = { zin_arg_value = 1 }
 					zin_volgan_add_dominion_strength = yes
 				}
@@ -684,9 +664,9 @@ focus_tree = {
 			zin_politics_add_drift = yes
 			if = {
 				limit = {
-					country_exists = Y8D
+					country_exists = PUV
 				}
-				Y8D = {
+				PUV = {
 					set_temp_variable = { zin_arg_value = 1 }
 					zin_volgan_add_dominion_strength = yes
 				}
@@ -763,10 +743,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			is_subject_of = Y0Y
+			is_subject_of = MIR
 		}
 		allow_branch = {
-			is_subject_of = Y0Y
+			is_subject_of = MIR
 		}
 		ai_will_do = {
 			factor = 100
@@ -792,9 +772,9 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = Y0Y
+					country_exists = MIR
 				}
-				Y0Y = {
+				MIR = {
 					set_temp_variable = { zin_arg_value = 3 }
 					zin_mirolon_add_passes = yes
 				}
@@ -836,9 +816,9 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = Y0Y
+					country_exists = MIR
 				}
-				Y0Y = {
+				MIR = {
 					set_temp_variable = { zin_arg_value = 2 }
 					zin_mirolon_add_proof = yes
 				}
@@ -1115,7 +1095,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 50
@@ -1123,9 +1103,9 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = Y0Y
+					country_exists = MIR
 				}
-				Y0Y = {
+				MIR = {
 					add_opinion_modifier = {
 						target = ROOT
 						modifier = zin_shared_ember_lands_exiles_return
@@ -1149,7 +1129,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			is_subject_of = Y8D
+			is_subject_of = PUV
 		}
 		ai_will_do = {
 			factor = 100

@@ -2,27 +2,15 @@
 # Generated: the Magical Lands elven realms (roster sheet Magical Lands, people elves).
 zin_elves_is_magical_realm = {
 	OR = {
-		original_tag = Y0V
-		original_tag = Y0W
-		original_tag = Y0X
-		original_tag = Y7V
-		original_tag = Y7W
-		original_tag = Y7X
-		original_tag = Y7Y
-		original_tag = Y7Z
-		original_tag = Y80
-		original_tag = Y81
-		original_tag = Y82
-		original_tag = Y83
-		original_tag = Y84
-		original_tag = Y85
-		original_tag = Y86
-		original_tag = Y87
-		original_tag = Y88
-		original_tag = Y89
-		original_tag = Y8A
-		original_tag = Y8B
-		original_tag = Y8F
+		original_tag = ANE
+		original_tag = DNL
+		original_tag = ELD
+		original_tag = HRR
+		original_tag = LCC
+		original_tag = MAG
+		original_tag = MSH
+		original_tag = NLR
+		original_tag = YAV
 	}
 }
 
@@ -30,50 +18,15 @@ zin_elves_is_magical_realm = {
 zin_elves_is_elven_country = {
 	OR = {
 		zin_elves_is_magical_realm = yes
-		original_tag = Y1F
-		original_tag = Y1G
-		original_tag = Y1H
-		original_tag = Y6E
-		original_tag = Y6F
-		original_tag = Y6G
-		original_tag = Y6H
-		original_tag = Y6I
-		original_tag = Y6J
-		original_tag = Y6K
-		original_tag = Y6L
-		original_tag = Y6M
-		original_tag = Y6N
-		original_tag = Y6O
-		original_tag = Y6P
-		original_tag = Y6Q
-		original_tag = Y6R
-		original_tag = Y6S
-		original_tag = Y6T
-		original_tag = Y6U
-		original_tag = Y6V
-		original_tag = Y6W
-		original_tag = Y6X
-		original_tag = Y6Y
-		original_tag = Y72
-		original_tag = Y73
-		original_tag = Y74
-		original_tag = Y75
-		original_tag = Y76
-		original_tag = Y77
-		original_tag = Y78
-		original_tag = Y79
-		original_tag = Y7A
-		original_tag = Y7B
-		original_tag = Y7C
-		original_tag = Y7D
-		original_tag = Y7E
-		original_tag = Y7F
-		original_tag = Y7G
-		original_tag = Y7H
-		original_tag = Y7I
-		original_tag = Y7J
-		original_tag = Y7K
-		original_tag = Y7L
+		original_tag = ELV
+		original_tag = GAA
+		original_tag = GOF
+		original_tag = IGA
+		original_tag = IHU
+		original_tag = LIG
+		original_tag = SOY
+		original_tag = TOR
+		original_tag = YEN
 	}
 }
 
@@ -181,7 +134,7 @@ zin_elves_date_question = {
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 1.5 }
-			date > 1752.8.30
+			date > 1752.8.31
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 0.75 }
@@ -233,7 +186,7 @@ zin_elves_march_allowed = {
 				any_enemy_country = { zin_diplo_is_dark_power = yes }
 			}
 		}
-		has_global_flag = zin_zol_manifested
+		has_global_flag = zin_kusven_forth
 	}
 }
 

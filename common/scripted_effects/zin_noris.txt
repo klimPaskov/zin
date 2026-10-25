@@ -312,9 +312,9 @@ zin_noris_withdraw_from_rift = {
 zin_noris_ask_homage = {
 	if = {
 		limit = {
-			country_exists = Y5W
+			country_exists = ALR
 		}
-		Y5W = {
+		ALR = {
 			if = {
 				limit = {
 					NOT = {
@@ -327,9 +327,9 @@ zin_noris_ask_homage = {
 	}
 	if = {
 		limit = {
-			country_exists = Y18
+			country_exists = MIE
 		}
-		Y18 = {
+		MIE = {
 			if = {
 				limit = {
 					NOT = {
@@ -342,9 +342,9 @@ zin_noris_ask_homage = {
 	}
 	if = {
 		limit = {
-			country_exists = Y5P
+			country_exists = ERC
 		}
-		Y5P = {
+		ERC = {
 			if = {
 				limit = {
 					NOT = {
@@ -357,9 +357,9 @@ zin_noris_ask_homage = {
 	}
 	if = {
 		limit = {
-			country_exists = Y5V
+			country_exists = PLO
 		}
-		Y5V = {
+		PLO = {
 			if = {
 				limit = {
 					NOT = {
@@ -383,9 +383,9 @@ zin_noris_tree_temple_loan = {
 zin_noris_tree_kneel_offer = {
 	if = {
 		limit = {
-			country_exists = Y8G
+			country_exists = WOR
 		}
-		Y8G = {
+		WOR = {
 			ROOT = {
 				country_event = zin_afrit.51
 			}
@@ -402,9 +402,9 @@ zin_noris_tree_lead_free_crowns = {
 zin_noris_tree_caravan_peace = {
 	if = {
 		limit = {
-			country_exists = Y16
+			country_exists = STA
 		}
-		Y16 = {
+		STA = {
 			country_event = zin_east.26
 		}
 	}
@@ -416,17 +416,19 @@ zin_noris_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 1 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_noris_pilgrim_tax
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_noris_pilgrim_tax
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_noris_pilgrim_tax
+				}
 			}
 		}
 	}
@@ -434,17 +436,19 @@ zin_noris_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 2 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_noris_pilgrim_welcome
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_noris_pilgrim_welcome
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_noris_pilgrim_welcome
+				}
 			}
 		}
 	}
@@ -452,17 +456,19 @@ zin_noris_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 3 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_noris_treaty_renewed
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_noris_treaty_renewed
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_noris_treaty_renewed
+				}
 			}
 		}
 	}
@@ -470,17 +476,19 @@ zin_noris_opinion = {
 		limit = {
 			check_variable = { zin_arg_modifier = 4 }
 		}
-		add_opinion_modifier = {
-			target = var:zin_arg_who
-			modifier = zin_noris_gift_goodwill
-		}
-		if = {
-			limit = {
-				check_variable = { zin_arg_both = 1 }
-			}
+		var:zin_arg_who = {
 			reverse_add_opinion_modifier = {
-				target = var:zin_arg_who
+				target = PREV
 				modifier = zin_noris_gift_goodwill
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_noris_gift_goodwill
+				}
 			}
 		}
 	}

@@ -4,18 +4,18 @@ zin_dark_raids = {
 	zin_dark_raid_marches = {
 		icon = GFX_idea_zin_orc_axe
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			NOT = { has_country_flag = zin_goldoroth_swift_raids }
 		}
 		available = {
-			NOT = { has_war_with = Y19 }
+			NOT = { has_war_with = DND }
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_no_clash
 				NOT = { has_global_flag = zin_dark_clash_active }
 			}
-			country_exists = Y19
+			country_exists = DND
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_cooldown
 				NOT = { has_country_flag = zin_dark_cd_raid_marches }
@@ -30,7 +30,7 @@ zin_dark_raids = {
 		}
 		remove_effect = {
 			set_temp_variable = { zin_arg_kind = 1 }
-			set_temp_variable = { zin_arg_target = Y19 }
+			set_temp_variable = { zin_arg_target = DND }
 			zin_dark_resolve_raid = yes
 		}
 		ai_will_do = {
@@ -57,18 +57,18 @@ zin_dark_raids = {
 	zin_dark_raid_marches_swift = {
 		icon = GFX_idea_zin_orc_axe
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			has_country_flag = zin_goldoroth_swift_raids
 		}
 		available = {
-			NOT = { has_war_with = Y19 }
+			NOT = { has_war_with = DND }
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_no_clash
 				NOT = { has_global_flag = zin_dark_clash_active }
 			}
-			country_exists = Y19
+			country_exists = DND
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_cooldown
 				NOT = { has_country_flag = zin_dark_cd_raid_marches }
@@ -83,7 +83,7 @@ zin_dark_raids = {
 		}
 		remove_effect = {
 			set_temp_variable = { zin_arg_kind = 1 }
-			set_temp_variable = { zin_arg_target = Y19 }
+			set_temp_variable = { zin_arg_target = DND }
 			zin_dark_resolve_raid = yes
 		}
 		ai_will_do = {
@@ -110,12 +110,12 @@ zin_dark_raids = {
 	zin_dark_raid_hold = {
 		icon = GFX_idea_zin_goblin_raiders
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN BLN BOR DRE DUL TRO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				zin_dark_is_free_hold = yes
@@ -162,17 +162,17 @@ zin_dark_raids = {
 	zin_dark_corsair_raid = {
 		icon = GFX_idea_zin_corsair_raider
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y19 Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4I Y4J Y4K Y4L Y8C }
+		targets = { DND DRK BUN VES BLK BLN BOR DRE DUL TRO HOO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				OR = {
 					zin_dark_is_accord_member = yes
-					original_tag = Y4I
+					original_tag = BLK
 					zin_dark_is_free_hold = yes
 				}
 				any_owned_state = { zin_is_site_sea_of_darkness_coast = yes }
@@ -206,7 +206,7 @@ zin_dark_raids = {
 			modifier = {
 				factor = 0.25
 				FROM = {
-					original_tag = Y4I
+					original_tag = BLK
 					has_country_flag = zin_regional_blackton_paid_corsairs
 				}
 			}
@@ -220,7 +220,7 @@ zin_dark_raids = {
 	zin_dark_clash_on_the_march = {
 		icon = GFX_idea_zin_fort_wall
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			has_country_flag = zin_goldoroth_clash_open
@@ -234,7 +234,7 @@ zin_dark_raids = {
 				tooltip = zin_dark_tt_war_floor
 				zin_dark_date_war_floor = yes
 			}
-			NOT = { has_war_with = Y19 }
+			NOT = { has_war_with = DND }
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_no_clash
 				NOT = { has_global_flag = zin_dark_clash_active }
@@ -266,7 +266,7 @@ zin_dark_horde = {
 	zin_dark_great_moot = {
 		icon = GFX_idea_zin_council_table
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			NOT = { has_country_flag = zin_goldoroth_centralised }
@@ -304,7 +304,7 @@ zin_dark_horde = {
 	zin_dark_great_moot_central = {
 		icon = GFX_idea_zin_council_table
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			has_country_flag = zin_goldoroth_centralised
@@ -342,7 +342,7 @@ zin_dark_horde = {
 	zin_dark_feast_the_clans = {
 		icon = GFX_idea_zin_feast_table
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		available = {
 			has_equipment = { zin_arms_equipment > 299 }
@@ -387,7 +387,7 @@ zin_dark_horde = {
 	zin_dark_blood_contest = {
 		icon = GFX_idea_zin_spear_levy
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			NOT = { has_country_flag = zin_goldoroth_contests }
@@ -415,7 +415,7 @@ zin_dark_horde = {
 	zin_dark_blood_contest_cheap = {
 		icon = GFX_idea_zin_spear_levy
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			has_country_flag = zin_goldoroth_contests
@@ -445,12 +445,12 @@ zin_dark_sway = {
 	zin_dark_send_gifts = {
 		icon = GFX_idea_zin_tribute_chest
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4I Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN VES BLK BLN BOR DRE DUL TRO HOO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				NOT = { has_war_with = ROOT }
@@ -493,12 +493,12 @@ zin_dark_sway = {
 	zin_dark_send_gifts_cheap = {
 		icon = GFX_idea_zin_tribute_chest
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4I Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN VES BLK BLN BOR DRE DUL TRO HOO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				NOT = { has_war_with = ROOT }
@@ -541,12 +541,12 @@ zin_dark_sway = {
 	zin_dark_bind_by_marriage = {
 		icon = GFX_idea_zin_handshake_oath
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN BLN BOR DRE DUL TRO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				zin_dark_is_free_hold = yes
@@ -579,12 +579,12 @@ zin_dark_sway = {
 	zin_dark_show_the_host = {
 		icon = GFX_idea_zin_levy_muster
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4I Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN VES BLK BLN BOR DRE DUL TRO HOO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				NOT = { has_war_with = ROOT }
@@ -605,7 +605,7 @@ zin_dark_sway = {
 				zin_goldoroth_add_sway = yes
 				FROM = { add_opinion_modifier = { target = ROOT modifier = zin_dark_host_shown } }
 				if = {
-					limit = { FROM = { is_neighbor_of = Y19 } }
+					limit = { FROM = { is_neighbor_of = DND } }
 					set_temp_variable = { zin_arg_value = 2 }
 					zin_dark_add_border_tension = yes
 				}
@@ -626,12 +626,12 @@ zin_dark_sway = {
 	zin_dark_offer_iron_yoke = {
 		icon = GFX_idea_zin_chain_broken
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN BLN BOR DRE DUL TRO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				zin_dark_is_free_hold = yes
@@ -669,12 +669,12 @@ zin_dark_sway = {
 	zin_dark_offer_iron_yoke_cheap = {
 		icon = GFX_idea_zin_chain_broken
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN BLN BOR DRE DUL TRO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				zin_dark_is_free_hold = yes
@@ -712,12 +712,12 @@ zin_dark_sway = {
 	zin_dark_one_fire = {
 		icon = GFX_idea_zin_crown_iron
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN BLN BOR DRE DUL TRO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				zin_dark_is_tributary = yes
@@ -748,12 +748,12 @@ zin_dark_sway = {
 	zin_dark_one_fire_hard = {
 		icon = GFX_idea_zin_crown_iron
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN BLN BOR DRE DUL TRO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				zin_dark_is_tributary = yes
@@ -784,12 +784,12 @@ zin_dark_sway = {
 	zin_dark_hunt_envoys = {
 		icon = GFX_idea_zin_eye_watchful
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4I Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN VES BLK BLN BOR DRE DUL TRO HOO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				check_variable = { zin_volgan_pact > 0.99 }
@@ -811,7 +811,7 @@ zin_dark_sway = {
 				zin_dark_add_volgan_pact = yes
 				set_temp_variable = { zin_arg_value = -1 }
 				zin_volgan_add_veil = yes
-				Y8D = {
+				PUV = {
 					country_event = { id = zin_dark.85 }
 					add_opinion_modifier = { target = ROOT modifier = zin_dark_envoys_hunted }
 				}
@@ -846,7 +846,7 @@ zin_dark_accord = {
 	zin_dark_light_beacons = {
 		icon = GFX_idea_zin_beacon
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		visible = {
 			NOT = { has_country_flag = zin_regional_dondor_beacon_chain }
@@ -880,7 +880,7 @@ zin_dark_accord = {
 	zin_dark_light_beacons_chain = {
 		icon = GFX_idea_zin_beacon
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		visible = {
 			has_country_flag = zin_regional_dondor_beacon_chain
@@ -914,14 +914,14 @@ zin_dark_accord = {
 	zin_dark_pay_blood_price = {
 		icon = GFX_idea_zin_coin_chest
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_tension_blood
 				check_variable = { global.zin_dark_border_tension > 39.99 }
 			}
-			country_exists = Y1A
+			country_exists = GOL
 		}
 		cost = 40
 		days_re_enable = 365
@@ -942,12 +942,12 @@ zin_dark_accord = {
 	zin_dark_invite_to_accord = {
 		icon = GFX_idea_zin_envoy
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		target_root_trigger = {
-			original_tag = Y19
+			original_tag = DND
 		}
-		targets = { Y1B Y1C Y43 Y44 Y45 Y46 Y47 Y48 Y49 Y4A Y4B Y4C Y4D Y4E Y4F Y4G Y4H Y4I Y4J Y4K Y4L Y8C }
+		targets = { DRK BUN VES BLK BLN BOR DRE DUL TRO HOO DAK SKR DUN BRT WIL }
 		target_trigger = {
 			FROM = {
 				is_in_faction = no
@@ -978,7 +978,7 @@ zin_dark_accord = {
 	zin_dark_muster_brutes = {
 		icon = GFX_idea_zin_levy_muster
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		visible = {
 			NOT = { has_country_flag = zin_regional_dondor_muster_drill }
@@ -988,7 +988,7 @@ zin_dark_accord = {
 				tooltip = zin_dark_tt_muster
 				OR = {
 					check_variable = { global.zin_dark_border_tension > 59.99 }
-					has_war_with = Y1A
+					has_war_with = GOL
 				}
 			}
 			custom_trigger_tooltip = {
@@ -1010,7 +1010,7 @@ zin_dark_accord = {
 			}
 			modifier = {
 				add = 12
-				has_war_with = Y1A
+				has_war_with = GOL
 			}
 		}
 	}
@@ -1018,7 +1018,7 @@ zin_dark_accord = {
 	zin_dark_muster_brutes_drill = {
 		icon = GFX_idea_zin_levy_muster
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		visible = {
 			has_country_flag = zin_regional_dondor_muster_drill
@@ -1028,7 +1028,7 @@ zin_dark_accord = {
 				tooltip = zin_dark_tt_muster
 				OR = {
 					check_variable = { global.zin_dark_border_tension > 59.99 }
-					has_war_with = Y1A
+					has_war_with = GOL
 				}
 			}
 			custom_trigger_tooltip = {
@@ -1050,7 +1050,7 @@ zin_dark_accord = {
 			}
 			modifier = {
 				add = 12
-				has_war_with = Y1A
+				has_war_with = GOL
 			}
 		}
 	}
@@ -1058,7 +1058,7 @@ zin_dark_accord = {
 	zin_dark_petition_parim = {
 		icon = GFX_idea_zin_scroll_treaty
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		cost = 25
 		fire_only_once = yes
@@ -1080,16 +1080,16 @@ zin_dark_accord = {
 	zin_dark_call_on_the_north = {
 		icon = GFX_idea_zin_ship_voyage
 		allowed = {
-			original_tag = Y19
+			original_tag = DND
 		}
 		available = {
-			country_exists = Y0G
-			NOT = { has_war_with = Y0G }
+			country_exists = LER
+			NOT = { has_war_with = LER }
 		}
 		cost = 25
 		days_re_enable = 365
 		complete_effect = {
-			Y0G = { country_event = { id = zin_dark.31 } }
+			LER = { country_event = { id = zin_dark.31 } }
 		}
 		ai_will_do = {
 			base = 0
@@ -1106,27 +1106,18 @@ zin_dark_free_holds = {
 		icon = GFX_idea_zin_concord_circle
 		allowed = {
 			OR = {
-				original_tag = Y1B
-				original_tag = Y1C
-				original_tag = Y43
-				original_tag = Y44
-				original_tag = Y45
-				original_tag = Y46
-				original_tag = Y47
-				original_tag = Y48
-				original_tag = Y49
-				original_tag = Y4A
-				original_tag = Y4B
-				original_tag = Y4C
-				original_tag = Y4D
-				original_tag = Y4E
-				original_tag = Y4F
-				original_tag = Y4G
-				original_tag = Y4H
-				original_tag = Y4J
-				original_tag = Y4K
-				original_tag = Y4L
-				original_tag = Y8C
+				original_tag = DRK
+				original_tag = BUN
+				original_tag = BLN
+				original_tag = BOR
+				original_tag = DRE
+				original_tag = DUL
+				original_tag = TRO
+				original_tag = DAK
+				original_tag = SKR
+				original_tag = DUN
+				original_tag = BRT
+				original_tag = WIL
 			}
 		}
 		visible = {
@@ -1141,7 +1132,7 @@ zin_dark_free_holds = {
 				tooltip = zin_dark_tt_moot_none
 				NOT = { has_global_flag = zin_dark_free_moot }
 			}
-			country_exists = Y1A
+			country_exists = GOL
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_moot_cause
 				zin_dark_moot_may_be_called = yes
@@ -1155,7 +1146,7 @@ zin_dark_free_holds = {
 			base = 5
 			modifier = {
 				factor = 3
-				original_tag = Y4H
+				original_tag = DUL
 			}
 			modifier = {
 				factor = 0
@@ -1168,27 +1159,18 @@ zin_dark_free_holds = {
 		icon = GFX_idea_zin_chain_broken
 		allowed = {
 			OR = {
-				original_tag = Y1B
-				original_tag = Y1C
-				original_tag = Y43
-				original_tag = Y44
-				original_tag = Y45
-				original_tag = Y46
-				original_tag = Y47
-				original_tag = Y48
-				original_tag = Y49
-				original_tag = Y4A
-				original_tag = Y4B
-				original_tag = Y4C
-				original_tag = Y4D
-				original_tag = Y4E
-				original_tag = Y4F
-				original_tag = Y4G
-				original_tag = Y4H
-				original_tag = Y4J
-				original_tag = Y4K
-				original_tag = Y4L
-				original_tag = Y8C
+				original_tag = DRK
+				original_tag = BUN
+				original_tag = BLN
+				original_tag = BOR
+				original_tag = DRE
+				original_tag = DUL
+				original_tag = TRO
+				original_tag = DAK
+				original_tag = SKR
+				original_tag = DUN
+				original_tag = BRT
+				original_tag = WIL
 			}
 		}
 		visible = {
@@ -1206,52 +1188,45 @@ zin_dark_free_holds = {
 		icon = GFX_idea_zin_troll_club
 		allowed = {
 			OR = {
-				original_tag = Y19
-				original_tag = Y1A
-				original_tag = Y1B
-				original_tag = Y1C
-				original_tag = Y43
-				original_tag = Y44
-				original_tag = Y46
-				original_tag = Y47
-				original_tag = Y48
-				original_tag = Y49
-				original_tag = Y4A
-				original_tag = Y4B
-				original_tag = Y4C
-				original_tag = Y4D
-				original_tag = Y4E
-				original_tag = Y4F
-				original_tag = Y4G
-				original_tag = Y4H
-				original_tag = Y4I
-				original_tag = Y4J
-				original_tag = Y4K
-				original_tag = Y4L
-				original_tag = Y8C
+				original_tag = GOL
+				original_tag = DND
+				original_tag = DRK
+				original_tag = BUN
+				original_tag = VES
+				original_tag = BLK
+				original_tag = BLN
+				original_tag = BOR
+				original_tag = DRE
+				original_tag = DUL
+				original_tag = HOO
+				original_tag = DAK
+				original_tag = SKR
+				original_tag = DUN
+				original_tag = BRT
+				original_tag = WIL
 			}
 		}
 		visible = {
-			NOT = { original_tag = Y45 }
-			country_exists = Y45
+			NOT = { original_tag = TRO }
+			country_exists = TRO
 		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = zin_dark_tt_trolls
 				OR = {
 					has_country_flag = zin_dark_trolls_for_pay
-					Y45 = { has_opinion = { target = ROOT value > 24 } }
+					TRO = { has_opinion = { target = ROOT value > 24 } }
 				}
 			}
 			has_equipment = { zin_arms_equipment > 299 }
-			NOT = { has_war_with = Y45 }
+			NOT = { has_war_with = TRO }
 		}
 		cost = 75
 		days_re_enable = 365
 		complete_effect = {
 			add_equipment_to_stockpile = { type = zin_arms_equipment amount = -300 }
 			add_timed_idea = { idea = zin_dark_troll_hirelings days = 365 }
-			Y45 = { country_event = { id = zin_dark.75 } }
+			TRO = { country_event = { id = zin_dark.75 } }
 		}
 		ai_will_do = {
 			base = 0
@@ -1268,7 +1243,7 @@ zin_dark_straits = {
 	zin_dark_levy_shore_tolls = {
 		icon = GFX_idea_zin_toll_house
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		visible = {
 			has_country_flag = zin_goldoroth_tolls_open
@@ -1280,12 +1255,12 @@ zin_dark_straits = {
 					AND = {
 						set_temp_variable = { zin_arg_strait = 1 }
 						zin_dark_holds_strait_shore = yes
-						NOT = { has_war_with = Y0G }
+						NOT = { has_war_with = LER }
 					}
 					AND = {
 						set_temp_variable = { zin_arg_strait = 2 }
 						zin_dark_holds_strait_shore = yes
-						NOT = { has_war_with = Y0L }
+						NOT = { has_war_with = AEN }
 					}
 				}
 			}
@@ -1299,12 +1274,12 @@ zin_dark_straits = {
 				if = {
 					limit = {
 						zin_dark_holds_strait_shore = yes
-						NOT = { has_war_with = Y0G }
+						NOT = { has_war_with = LER }
 					}
-					Y0G = { add_opinion_modifier = { target = ROOT modifier = zin_dark_shore_tolls } }
+					LER = { add_opinion_modifier = { target = ROOT modifier = zin_dark_shore_tolls } }
 				}
 				else = {
-					Y0L = { add_opinion_modifier = { target = ROOT modifier = zin_dark_shore_tolls } }
+					AEN = { add_opinion_modifier = { target = ROOT modifier = zin_dark_shore_tolls } }
 				}
 			}
 			custom_effect_tooltip = zin_dark_tt_tolls_paid
@@ -1317,10 +1292,10 @@ zin_dark_straits = {
 	zin_dark_close_strait = {
 		icon = GFX_idea_zin_strait_chain
 		allowed = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_root_trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		target_trigger = {
 			FROM = {

@@ -93,7 +93,7 @@ zin_ending_start_epilogue = {
 		}
 		every_country = {
 			limit = {
-				is_subject_of = Y8D
+				is_subject_of = PUV
 			}
 			country_event = {
 				id = zin_ending.21
@@ -118,7 +118,7 @@ zin_ending_start_epilogue = {
 					zin_is_volgan = yes
 				}
 				NOT = {
-					is_subject_of = Y8D
+					is_subject_of = PUV
 				}
 				NOT = {
 					zin_is_zol = yes
@@ -223,7 +223,7 @@ zin_ending_start_epilogue = {
 		}
 		every_country = {
 			limit = {
-				original_tag = Y0G
+				original_tag = LER
 			}
 			country_event = {
 				id = zin_ending.60
@@ -237,10 +237,10 @@ zin_ending_start_epilogue = {
 					zin_aenor_is_realm = yes
 				}
 				NOT = {
-					original_tag = Y0G
+					original_tag = LER
 				}
 				NOT = {
-					is_subject_of = Y0G
+					is_subject_of = LER
 				}
 			}
 			country_event = {

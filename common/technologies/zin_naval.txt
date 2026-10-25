@@ -25,7 +25,7 @@ technologies = {
 		categories = { zin_cat_galleys }
 	}
 	zin_tech_merchant_cogs = {
-		enable_equipments = { convoy_0 }
+		enable_equipments = { convoy_1 }
 		path = {
 			leads_to_tech = zin_tech_harbour_works
 			research_cost_coeff = 1
@@ -221,7 +221,6 @@ technologies = {
 	}
 	zin_tech_deep_water_hulls = {
 		navy_max_range_factor = 0.2
-		enable_equipments = { convoy_1 }
 		path = {
 			leads_to_tech = zin_tech_great_warships
 			research_cost_coeff = 1

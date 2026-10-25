@@ -2,40 +2,40 @@
 # Zol's AI after the rising: Aenor first. A barred northern shore moves the weight to the other route (the strait's own scripts set the bar).
 zin_mistake_conquer_aenor = {
 	enable = {
-		original_tag = Y0U
+		original_tag = ZOL
 		has_global_flag = zin_zol_rising
 		NOT = { has_country_flag = zin_zol_presence_lapsed }
 	}
-	abort = { has_global_flag = zin_zol_withdrawn }
+	abort = { has_global_flag = zin_kusven_withdrawn }
 	ai_strategy = {
 		type = conquer
-		id = "Y0L"
+		id = "AEN"
 		value = 200
 	}
 }
 zin_mistake_antagonize_aenor = {
 	enable = {
-		original_tag = Y0U
+		original_tag = ZOL
 		has_global_flag = zin_zol_rising
 		NOT = { has_country_flag = zin_zol_presence_lapsed }
 	}
-	abort = { has_global_flag = zin_zol_withdrawn }
+	abort = { has_global_flag = zin_kusven_withdrawn }
 	ai_strategy = {
 		type = antagonize
-		id = "Y0L"
+		id = "AEN"
 		value = 200
 	}
 }
 zin_mistake_invade_aenor = {
 	enable = {
-		original_tag = Y0U
+		original_tag = ZOL
 		has_global_flag = zin_zol_rising
 		NOT = { has_country_flag = zin_zol_presence_lapsed }
 	}
-	abort = { has_global_flag = zin_zol_withdrawn }
+	abort = { has_global_flag = zin_kusven_withdrawn }
 	ai_strategy = {
 		type = invade
-		id = "Y0L"
+		id = "AEN"
 		value = 150
 	}
 }

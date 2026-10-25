@@ -16,10 +16,10 @@ zin_culture_clear = {
 	if = { limit = { has_idea = zin_culture2_steppe_rider } remove_ideas = zin_culture2_steppe_rider }
 	clr_country_flag = zin_culture_steppe_rider
 	clr_country_flag = zin_culture2_steppe_rider
-	if = { limit = { has_idea = zin_culture_wall_folk } remove_ideas = zin_culture_wall_folk }
-	if = { limit = { has_idea = zin_culture2_wall_folk } remove_ideas = zin_culture2_wall_folk }
-	clr_country_flag = zin_culture_wall_folk
-	clr_country_flag = zin_culture2_wall_folk
+	if = { limit = { has_idea = zin_culture_vale_folk } remove_ideas = zin_culture_vale_folk }
+	if = { limit = { has_idea = zin_culture2_vale_folk } remove_ideas = zin_culture2_vale_folk }
+	clr_country_flag = zin_culture_vale_folk
+	clr_country_flag = zin_culture2_vale_folk
 	if = { limit = { has_idea = zin_culture_march_folk } remove_ideas = zin_culture_march_folk }
 	if = { limit = { has_idea = zin_culture2_march_folk } remove_ideas = zin_culture2_march_folk }
 	clr_country_flag = zin_culture_march_folk
@@ -52,10 +52,10 @@ zin_culture_clear = {
 	if = { limit = { has_idea = zin_culture2_mirolon_wardens } remove_ideas = zin_culture2_mirolon_wardens }
 	clr_country_flag = zin_culture_mirolon_wardens
 	clr_country_flag = zin_culture2_mirolon_wardens
-	if = { limit = { has_idea = zin_culture_ember_lands_freeholds } remove_ideas = zin_culture_ember_lands_freeholds }
-	if = { limit = { has_idea = zin_culture2_ember_lands_freeholds } remove_ideas = zin_culture2_ember_lands_freeholds }
-	clr_country_flag = zin_culture_ember_lands_freeholds
-	clr_country_flag = zin_culture2_ember_lands_freeholds
+	if = { limit = { has_idea = zin_culture_ember_freeholds } remove_ideas = zin_culture_ember_freeholds }
+	if = { limit = { has_idea = zin_culture2_ember_freeholds } remove_ideas = zin_culture2_ember_freeholds }
+	clr_country_flag = zin_culture_ember_freeholds
+	clr_country_flag = zin_culture2_ember_freeholds
 	if = { limit = { has_idea = zin_culture_winter_crown } remove_ideas = zin_culture_winter_crown }
 	if = { limit = { has_idea = zin_culture2_winter_crown } remove_ideas = zin_culture2_winter_crown }
 	clr_country_flag = zin_culture_winter_crown
@@ -64,18 +64,18 @@ zin_culture_clear = {
 	if = { limit = { has_idea = zin_culture2_ice_clans } remove_ideas = zin_culture2_ice_clans }
 	clr_country_flag = zin_culture_ice_clans
 	clr_country_flag = zin_culture2_ice_clans
-	if = { limit = { has_idea = zin_culture_isengard_warlords } remove_ideas = zin_culture_isengard_warlords }
-	if = { limit = { has_idea = zin_culture2_isengard_warlords } remove_ideas = zin_culture2_isengard_warlords }
-	clr_country_flag = zin_culture_isengard_warlords
-	clr_country_flag = zin_culture2_isengard_warlords
-	if = { limit = { has_idea = zin_culture_windwaith_seafarers } remove_ideas = zin_culture_windwaith_seafarers }
-	if = { limit = { has_idea = zin_culture2_windwaith_seafarers } remove_ideas = zin_culture2_windwaith_seafarers }
-	clr_country_flag = zin_culture_windwaith_seafarers
-	clr_country_flag = zin_culture2_windwaith_seafarers
-	if = { limit = { has_idea = zin_culture_gunwaith_clans } remove_ideas = zin_culture_gunwaith_clans }
-	if = { limit = { has_idea = zin_culture2_gunwaith_clans } remove_ideas = zin_culture2_gunwaith_clans }
-	clr_country_flag = zin_culture_gunwaith_clans
-	clr_country_flag = zin_culture2_gunwaith_clans
+	if = { limit = { has_idea = zin_culture_melkgard_warlords } remove_ideas = zin_culture_melkgard_warlords }
+	if = { limit = { has_idea = zin_culture2_melkgard_warlords } remove_ideas = zin_culture2_melkgard_warlords }
+	clr_country_flag = zin_culture_melkgard_warlords
+	clr_country_flag = zin_culture2_melkgard_warlords
+	if = { limit = { has_idea = zin_culture_vindael_seafarers } remove_ideas = zin_culture_vindael_seafarers }
+	if = { limit = { has_idea = zin_culture2_vindael_seafarers } remove_ideas = zin_culture2_vindael_seafarers }
+	clr_country_flag = zin_culture_vindael_seafarers
+	clr_country_flag = zin_culture2_vindael_seafarers
+	if = { limit = { has_idea = zin_culture_gunwyn_clans } remove_ideas = zin_culture_gunwyn_clans }
+	if = { limit = { has_idea = zin_culture2_gunwyn_clans } remove_ideas = zin_culture2_gunwyn_clans }
+	clr_country_flag = zin_culture_gunwyn_clans
+	clr_country_flag = zin_culture2_gunwyn_clans
 	if = { limit = { has_idea = zin_culture_girdon_wardens } remove_ideas = zin_culture_girdon_wardens }
 	if = { limit = { has_idea = zin_culture2_girdon_wardens } remove_ideas = zin_culture2_girdon_wardens }
 	clr_country_flag = zin_culture_girdon_wardens
@@ -216,6 +216,122 @@ zin_culture_clear = {
 	if = { limit = { has_idea = zin_culture2_netherborn } remove_ideas = zin_culture2_netherborn }
 	clr_country_flag = zin_culture_netherborn
 	clr_country_flag = zin_culture2_netherborn
+	if = { limit = { has_idea = zin_culture_wall_delvers } remove_ideas = zin_culture_wall_delvers }
+	if = { limit = { has_idea = zin_culture2_wall_delvers } remove_ideas = zin_culture2_wall_delvers }
+	clr_country_flag = zin_culture_wall_delvers
+	clr_country_flag = zin_culture2_wall_delvers
+	if = { limit = { has_idea = zin_culture_west_delvers } remove_ideas = zin_culture_west_delvers }
+	if = { limit = { has_idea = zin_culture2_west_delvers } remove_ideas = zin_culture2_west_delvers }
+	clr_country_flag = zin_culture_west_delvers
+	clr_country_flag = zin_culture2_west_delvers
+	if = { limit = { has_idea = zin_culture_north_delvers } remove_ideas = zin_culture_north_delvers }
+	if = { limit = { has_idea = zin_culture2_north_delvers } remove_ideas = zin_culture2_north_delvers }
+	clr_country_flag = zin_culture_north_delvers
+	clr_country_flag = zin_culture2_north_delvers
+	if = { limit = { has_idea = zin_culture_hearth_folk } remove_ideas = zin_culture_hearth_folk }
+	if = { limit = { has_idea = zin_culture2_hearth_folk } remove_ideas = zin_culture2_hearth_folk }
+	clr_country_flag = zin_culture_hearth_folk
+	clr_country_flag = zin_culture2_hearth_folk
+	if = { limit = { has_idea = zin_culture_holt_gnomes } remove_ideas = zin_culture_holt_gnomes }
+	if = { limit = { has_idea = zin_culture2_holt_gnomes } remove_ideas = zin_culture2_holt_gnomes }
+	clr_country_flag = zin_culture_holt_gnomes
+	clr_country_flag = zin_culture2_holt_gnomes
+	if = { limit = { has_idea = zin_culture_road_warrens } remove_ideas = zin_culture_road_warrens }
+	if = { limit = { has_idea = zin_culture2_road_warrens } remove_ideas = zin_culture2_road_warrens }
+	clr_country_flag = zin_culture_road_warrens
+	clr_country_flag = zin_culture2_road_warrens
+	if = { limit = { has_idea = zin_culture_baelim } remove_ideas = zin_culture_baelim }
+	if = { limit = { has_idea = zin_culture2_baelim } remove_ideas = zin_culture2_baelim }
+	clr_country_flag = zin_culture_baelim
+	clr_country_flag = zin_culture2_baelim
+	if = { limit = { has_idea = zin_culture_mycid_rings } remove_ideas = zin_culture_mycid_rings }
+	if = { limit = { has_idea = zin_culture2_mycid_rings } remove_ideas = zin_culture2_mycid_rings }
+	clr_country_flag = zin_culture_mycid_rings
+	clr_country_flag = zin_culture2_mycid_rings
+	if = { limit = { has_idea = zin_culture_kingdom_forest_elves } remove_ideas = zin_culture_kingdom_forest_elves }
+	if = { limit = { has_idea = zin_culture2_kingdom_forest_elves } remove_ideas = zin_culture2_kingdom_forest_elves }
+	clr_country_flag = zin_culture_kingdom_forest_elves
+	clr_country_flag = zin_culture2_kingdom_forest_elves
+	if = { limit = { has_idea = zin_culture_roost_keepers } remove_ideas = zin_culture_roost_keepers }
+	if = { limit = { has_idea = zin_culture2_roost_keepers } remove_ideas = zin_culture2_roost_keepers }
+	clr_country_flag = zin_culture_roost_keepers
+	clr_country_flag = zin_culture2_roost_keepers
+	if = { limit = { has_idea = zin_culture_god_forest_keepers } remove_ideas = zin_culture_god_forest_keepers }
+	if = { limit = { has_idea = zin_culture2_god_forest_keepers } remove_ideas = zin_culture2_god_forest_keepers }
+	clr_country_flag = zin_culture_god_forest_keepers
+	clr_country_flag = zin_culture2_god_forest_keepers
+	if = { limit = { has_idea = zin_culture_strait_folk } remove_ideas = zin_culture_strait_folk }
+	if = { limit = { has_idea = zin_culture2_strait_folk } remove_ideas = zin_culture2_strait_folk }
+	clr_country_flag = zin_culture_strait_folk
+	clr_country_flag = zin_culture2_strait_folk
+	if = { limit = { has_idea = zin_culture_hilofrim_herders } remove_ideas = zin_culture_hilofrim_herders }
+	if = { limit = { has_idea = zin_culture2_hilofrim_herders } remove_ideas = zin_culture2_hilofrim_herders }
+	clr_country_flag = zin_culture_hilofrim_herders
+	clr_country_flag = zin_culture2_hilofrim_herders
+	if = { limit = { has_idea = zin_culture_teste_valley_folk } remove_ideas = zin_culture_teste_valley_folk }
+	if = { limit = { has_idea = zin_culture2_teste_valley_folk } remove_ideas = zin_culture2_teste_valley_folk }
+	clr_country_flag = zin_culture_teste_valley_folk
+	clr_country_flag = zin_culture2_teste_valley_folk
+	if = { limit = { has_idea = zin_culture_quay_folk } remove_ideas = zin_culture_quay_folk }
+	if = { limit = { has_idea = zin_culture2_quay_folk } remove_ideas = zin_culture2_quay_folk }
+	clr_country_flag = zin_culture_quay_folk
+	clr_country_flag = zin_culture2_quay_folk
+	if = { limit = { has_idea = zin_culture_reindeer_clans } remove_ideas = zin_culture_reindeer_clans }
+	if = { limit = { has_idea = zin_culture2_reindeer_clans } remove_ideas = zin_culture2_reindeer_clans }
+	clr_country_flag = zin_culture_reindeer_clans
+	clr_country_flag = zin_culture2_reindeer_clans
+	if = { limit = { has_idea = zin_culture_woqood_sealers } remove_ideas = zin_culture_woqood_sealers }
+	if = { limit = { has_idea = zin_culture2_woqood_sealers } remove_ideas = zin_culture2_woqood_sealers }
+	clr_country_flag = zin_culture_woqood_sealers
+	clr_country_flag = zin_culture2_woqood_sealers
+	if = { limit = { has_idea = zin_culture_naamis_sea_crown } remove_ideas = zin_culture_naamis_sea_crown }
+	if = { limit = { has_idea = zin_culture2_naamis_sea_crown } remove_ideas = zin_culture2_naamis_sea_crown }
+	clr_country_flag = zin_culture_naamis_sea_crown
+	clr_country_flag = zin_culture2_naamis_sea_crown
+	if = { limit = { has_idea = zin_culture_orato_fishers } remove_ideas = zin_culture_orato_fishers }
+	if = { limit = { has_idea = zin_culture2_orato_fishers } remove_ideas = zin_culture2_orato_fishers }
+	clr_country_flag = zin_culture_orato_fishers
+	clr_country_flag = zin_culture2_orato_fishers
+	if = { limit = { has_idea = zin_culture_miaed_pass_lords } remove_ideas = zin_culture_miaed_pass_lords }
+	if = { limit = { has_idea = zin_culture2_miaed_pass_lords } remove_ideas = zin_culture2_miaed_pass_lords }
+	clr_country_flag = zin_culture_miaed_pass_lords
+	clr_country_flag = zin_culture2_miaed_pass_lords
+	if = { limit = { has_idea = zin_culture_wahatud_oasis_folk } remove_ideas = zin_culture_wahatud_oasis_folk }
+	if = { limit = { has_idea = zin_culture2_wahatud_oasis_folk } remove_ideas = zin_culture2_wahatud_oasis_folk }
+	clr_country_flag = zin_culture_wahatud_oasis_folk
+	clr_country_flag = zin_culture2_wahatud_oasis_folk
+	if = { limit = { has_idea = zin_culture_king_warrens } remove_ideas = zin_culture_king_warrens }
+	if = { limit = { has_idea = zin_culture2_king_warrens } remove_ideas = zin_culture2_king_warrens }
+	clr_country_flag = zin_culture_king_warrens
+	clr_country_flag = zin_culture2_king_warrens
+	if = { limit = { has_idea = zin_culture_spring_warrens } remove_ideas = zin_culture_spring_warrens }
+	if = { limit = { has_idea = zin_culture2_spring_warrens } remove_ideas = zin_culture2_spring_warrens }
+	clr_country_flag = zin_culture_spring_warrens
+	clr_country_flag = zin_culture2_spring_warrens
+	if = { limit = { has_idea = zin_culture_ogre_clans } remove_ideas = zin_culture_ogre_clans }
+	if = { limit = { has_idea = zin_culture2_ogre_clans } remove_ideas = zin_culture2_ogre_clans }
+	clr_country_flag = zin_culture_ogre_clans
+	clr_country_flag = zin_culture2_ogre_clans
+	if = { limit = { has_idea = zin_culture_plateau_soldiery } remove_ideas = zin_culture_plateau_soldiery }
+	if = { limit = { has_idea = zin_culture2_plateau_soldiery } remove_ideas = zin_culture2_plateau_soldiery }
+	clr_country_flag = zin_culture_plateau_soldiery
+	clr_country_flag = zin_culture2_plateau_soldiery
+	if = { limit = { has_idea = zin_culture_cairn_giants } remove_ideas = zin_culture_cairn_giants }
+	if = { limit = { has_idea = zin_culture2_cairn_giants } remove_ideas = zin_culture2_cairn_giants }
+	clr_country_flag = zin_culture_cairn_giants
+	clr_country_flag = zin_culture2_cairn_giants
+	if = { limit = { has_idea = zin_culture_height_yeti } remove_ideas = zin_culture_height_yeti }
+	if = { limit = { has_idea = zin_culture2_height_yeti } remove_ideas = zin_culture2_height_yeti }
+	clr_country_flag = zin_culture_height_yeti
+	clr_country_flag = zin_culture2_height_yeti
+	if = { limit = { has_idea = zin_culture_nether_houses } remove_ideas = zin_culture_nether_houses }
+	if = { limit = { has_idea = zin_culture2_nether_houses } remove_ideas = zin_culture2_nether_houses }
+	clr_country_flag = zin_culture_nether_houses
+	clr_country_flag = zin_culture2_nether_houses
+	if = { limit = { has_idea = zin_culture_veshazel_court } remove_ideas = zin_culture_veshazel_court }
+	if = { limit = { has_idea = zin_culture2_veshazel_court } remove_ideas = zin_culture2_veshazel_court }
+	clr_country_flag = zin_culture_veshazel_court
+	clr_country_flag = zin_culture2_veshazel_court
 	if = { limit = { has_idea = zin_faith_deliverer } remove_ideas = zin_faith_deliverer }
 	clr_country_flag = zin_faith_deliverer
 	if = { limit = { has_idea = zin_faith_lamp_furrow } remove_ideas = zin_faith_lamp_furrow }
@@ -224,8 +340,8 @@ zin_culture_clear = {
 	clr_country_flag = zin_faith_green_lords
 	if = { limit = { has_idea = zin_faith_horse_oath } remove_ideas = zin_faith_horse_oath }
 	clr_country_flag = zin_faith_horse_oath
-	if = { limit = { has_idea = zin_faith_stone_vigil } remove_ideas = zin_faith_stone_vigil }
-	clr_country_flag = zin_faith_stone_vigil
+	if = { limit = { has_idea = zin_faith_pass_vigil } remove_ideas = zin_faith_pass_vigil }
+	clr_country_flag = zin_faith_pass_vigil
 	if = { limit = { has_idea = zin_faith_isle_tide } remove_ideas = zin_faith_isle_tide }
 	clr_country_flag = zin_faith_isle_tide
 	if = { limit = { has_idea = zin_faith_old_knots } remove_ideas = zin_faith_old_knots }
@@ -252,8 +368,8 @@ zin_culture_clear = {
 	clr_country_flag = zin_faith_well_oath
 	if = { limit = { has_idea = zin_faith_scale_creed } remove_ideas = zin_faith_scale_creed }
 	clr_country_flag = zin_faith_scale_creed
-	if = { limit = { has_idea = zin_faith_river_temples } remove_ideas = zin_faith_river_temples }
-	clr_country_flag = zin_faith_river_temples
+	if = { limit = { has_idea = zin_faith_flood_stair } remove_ideas = zin_faith_flood_stair }
+	clr_country_flag = zin_faith_flood_stair
 	if = { limit = { has_idea = zin_faith_lake_litany } remove_ideas = zin_faith_lake_litany }
 	clr_country_flag = zin_faith_lake_litany
 	if = { limit = { has_idea = zin_faith_red_hearth } remove_ideas = zin_faith_red_hearth }
@@ -293,6 +409,19 @@ zin_culture_clear = {
 	if = { limit = { has_idea = zin_faith_hearth_iron } remove_ideas = zin_faith_hearth_iron }
 	clr_country_flag = zin_faith_hearth_iron
 	clr_country_flag = zin_faith_none
+	if = { limit = { has_idea = zin_faith_deep_reckoning } remove_ideas = zin_faith_deep_reckoning }
+	clr_country_flag = zin_faith_deep_reckoning
+	if = { limit = { has_idea = zin_faith_hearth_table } remove_ideas = zin_faith_hearth_table }
+	clr_country_flag = zin_faith_hearth_table
+	if = { limit = { has_idea = zin_faith_full_pot } remove_ideas = zin_faith_full_pot }
+	clr_country_flag = zin_faith_full_pot
+	if = { limit = { has_idea = zin_faith_road_due } remove_ideas = zin_faith_road_due }
+	clr_country_flag = zin_faith_road_due
+	clr_country_flag = zin_faith_standing_silence
+	if = { limit = { has_idea = zin_faith_pass_fires } remove_ideas = zin_faith_pass_fires }
+	clr_country_flag = zin_faith_pass_fires
+	if = { limit = { has_idea = zin_faith_water_share } remove_ideas = zin_faith_water_share }
+	clr_country_flag = zin_faith_water_share
 	clr_country_flag = zin_language_aenoran
 	clr_country_flag = zin_language_ainic
 	clr_country_flag = zin_language_dondric
@@ -317,6 +446,11 @@ zin_culture_clear = {
 	clr_country_flag = zin_language_orcish
 	clr_country_flag = zin_language_trollish
 	clr_country_flag = zin_language_yetic
+	clr_country_flag = zin_language_dwarvish
+	clr_country_flag = zin_language_gnomish
+	clr_country_flag = zin_language_hearthspeech
+	clr_country_flag = zin_language_pack_tongue
+	clr_country_flag = zin_language_lowspeech
 	clear_variable = zin_culture_id
 	clear_variable = zin_culture2_id
 	clear_variable = zin_faith_id
@@ -328,7 +462,7 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_culture = 1 } } set_country_flag = zin_culture_lake_aenoran add_ideas = zin_culture_lake_aenoran set_variable = { zin_culture_id = 1 } }
 	if = { limit = { check_variable = { zin_arg_culture = 2 } } set_country_flag = zin_culture_selen_ranger add_ideas = zin_culture_selen_ranger set_variable = { zin_culture_id = 2 } }
 	if = { limit = { check_variable = { zin_arg_culture = 3 } } set_country_flag = zin_culture_steppe_rider add_ideas = zin_culture_steppe_rider set_variable = { zin_culture_id = 3 } }
-	if = { limit = { check_variable = { zin_arg_culture = 4 } } set_country_flag = zin_culture_wall_folk add_ideas = zin_culture_wall_folk set_variable = { zin_culture_id = 4 } }
+	if = { limit = { check_variable = { zin_arg_culture = 4 } } set_country_flag = zin_culture_vale_folk add_ideas = zin_culture_vale_folk set_variable = { zin_culture_id = 4 } }
 	if = { limit = { check_variable = { zin_arg_culture = 5 } } set_country_flag = zin_culture_march_folk add_ideas = zin_culture_march_folk set_variable = { zin_culture_id = 5 } }
 	if = { limit = { check_variable = { zin_arg_culture = 6 } } set_country_flag = zin_culture_isle_houses add_ideas = zin_culture_isle_houses set_variable = { zin_culture_id = 6 } }
 	if = { limit = { check_variable = { zin_arg_culture = 7 } } set_country_flag = zin_culture_veiled_folk add_ideas = zin_culture_veiled_folk set_variable = { zin_culture_id = 7 } }
@@ -337,12 +471,12 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_culture = 10 } } set_country_flag = zin_culture_free_crowns_north add_ideas = zin_culture_free_crowns_north set_variable = { zin_culture_id = 10 } }
 	if = { limit = { check_variable = { zin_arg_culture = 11 } } set_country_flag = zin_culture_dondor_brutes add_ideas = zin_culture_dondor_brutes set_variable = { zin_culture_id = 11 } }
 	if = { limit = { check_variable = { zin_arg_culture = 12 } } set_country_flag = zin_culture_mirolon_wardens add_ideas = zin_culture_mirolon_wardens set_variable = { zin_culture_id = 12 } }
-	if = { limit = { check_variable = { zin_arg_culture = 13 } } set_country_flag = zin_culture_ember_lands_freeholds add_ideas = zin_culture_ember_lands_freeholds set_variable = { zin_culture_id = 13 } }
+	if = { limit = { check_variable = { zin_arg_culture = 13 } } set_country_flag = zin_culture_ember_freeholds add_ideas = zin_culture_ember_freeholds set_variable = { zin_culture_id = 13 } }
 	if = { limit = { check_variable = { zin_arg_culture = 14 } } set_country_flag = zin_culture_winter_crown add_ideas = zin_culture_winter_crown set_variable = { zin_culture_id = 14 } }
 	if = { limit = { check_variable = { zin_arg_culture = 15 } } set_country_flag = zin_culture_ice_clans add_ideas = zin_culture_ice_clans set_variable = { zin_culture_id = 15 } }
-	if = { limit = { check_variable = { zin_arg_culture = 16 } } set_country_flag = zin_culture_isengard_warlords add_ideas = zin_culture_isengard_warlords set_variable = { zin_culture_id = 16 } }
-	if = { limit = { check_variable = { zin_arg_culture = 17 } } set_country_flag = zin_culture_windwaith_seafarers add_ideas = zin_culture_windwaith_seafarers set_variable = { zin_culture_id = 17 } }
-	if = { limit = { check_variable = { zin_arg_culture = 18 } } set_country_flag = zin_culture_gunwaith_clans add_ideas = zin_culture_gunwaith_clans set_variable = { zin_culture_id = 18 } }
+	if = { limit = { check_variable = { zin_arg_culture = 16 } } set_country_flag = zin_culture_melkgard_warlords add_ideas = zin_culture_melkgard_warlords set_variable = { zin_culture_id = 16 } }
+	if = { limit = { check_variable = { zin_arg_culture = 17 } } set_country_flag = zin_culture_vindael_seafarers add_ideas = zin_culture_vindael_seafarers set_variable = { zin_culture_id = 17 } }
+	if = { limit = { check_variable = { zin_arg_culture = 18 } } set_country_flag = zin_culture_gunwyn_clans add_ideas = zin_culture_gunwyn_clans set_variable = { zin_culture_id = 18 } }
 	if = { limit = { check_variable = { zin_arg_culture = 19 } } set_country_flag = zin_culture_girdon_wardens add_ideas = zin_culture_girdon_wardens set_variable = { zin_culture_id = 19 } }
 	if = { limit = { check_variable = { zin_arg_culture = 20 } } set_country_flag = zin_culture_western_guilds add_ideas = zin_culture_western_guilds set_variable = { zin_culture_id = 20 } }
 	if = { limit = { check_variable = { zin_arg_culture = 21 } } set_country_flag = zin_culture_buldor_companies add_ideas = zin_culture_buldor_companies set_variable = { zin_culture_id = 21 } }
@@ -378,10 +512,39 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_culture = 51 } } set_country_flag = zin_culture_grave_hosts add_ideas = zin_culture_grave_hosts set_variable = { zin_culture_id = 51 } }
 	if = { limit = { check_variable = { zin_arg_culture = 52 } } set_country_flag = zin_culture_zols_dead add_ideas = zin_culture_zols_dead set_variable = { zin_culture_id = 52 } }
 	if = { limit = { check_variable = { zin_arg_culture = 53 } } set_country_flag = zin_culture_netherborn add_ideas = zin_culture_netherborn set_variable = { zin_culture_id = 53 } }
+	if = { limit = { check_variable = { zin_arg_culture = 54 } } set_country_flag = zin_culture_wall_delvers add_ideas = zin_culture_wall_delvers set_variable = { zin_culture_id = 54 } }
+	if = { limit = { check_variable = { zin_arg_culture = 55 } } set_country_flag = zin_culture_west_delvers add_ideas = zin_culture_west_delvers set_variable = { zin_culture_id = 55 } }
+	if = { limit = { check_variable = { zin_arg_culture = 56 } } set_country_flag = zin_culture_north_delvers add_ideas = zin_culture_north_delvers set_variable = { zin_culture_id = 56 } }
+	if = { limit = { check_variable = { zin_arg_culture = 57 } } set_country_flag = zin_culture_hearth_folk add_ideas = zin_culture_hearth_folk set_variable = { zin_culture_id = 57 } }
+	if = { limit = { check_variable = { zin_arg_culture = 58 } } set_country_flag = zin_culture_holt_gnomes add_ideas = zin_culture_holt_gnomes set_variable = { zin_culture_id = 58 } }
+	if = { limit = { check_variable = { zin_arg_culture = 59 } } set_country_flag = zin_culture_road_warrens add_ideas = zin_culture_road_warrens set_variable = { zin_culture_id = 59 } }
+	if = { limit = { check_variable = { zin_arg_culture = 60 } } set_country_flag = zin_culture_baelim add_ideas = zin_culture_baelim set_variable = { zin_culture_id = 60 } }
+	if = { limit = { check_variable = { zin_arg_culture = 61 } } set_country_flag = zin_culture_mycid_rings add_ideas = zin_culture_mycid_rings set_variable = { zin_culture_id = 61 } }
+	if = { limit = { check_variable = { zin_arg_culture = 62 } } set_country_flag = zin_culture_kingdom_forest_elves add_ideas = zin_culture_kingdom_forest_elves set_variable = { zin_culture_id = 62 } }
+	if = { limit = { check_variable = { zin_arg_culture = 63 } } set_country_flag = zin_culture_roost_keepers add_ideas = zin_culture_roost_keepers set_variable = { zin_culture_id = 63 } }
+	if = { limit = { check_variable = { zin_arg_culture = 64 } } set_country_flag = zin_culture_god_forest_keepers add_ideas = zin_culture_god_forest_keepers set_variable = { zin_culture_id = 64 } }
+	if = { limit = { check_variable = { zin_arg_culture = 65 } } set_country_flag = zin_culture_strait_folk add_ideas = zin_culture_strait_folk set_variable = { zin_culture_id = 65 } }
+	if = { limit = { check_variable = { zin_arg_culture = 66 } } set_country_flag = zin_culture_hilofrim_herders add_ideas = zin_culture_hilofrim_herders set_variable = { zin_culture_id = 66 } }
+	if = { limit = { check_variable = { zin_arg_culture = 67 } } set_country_flag = zin_culture_teste_valley_folk add_ideas = zin_culture_teste_valley_folk set_variable = { zin_culture_id = 67 } }
+	if = { limit = { check_variable = { zin_arg_culture = 68 } } set_country_flag = zin_culture_quay_folk add_ideas = zin_culture_quay_folk set_variable = { zin_culture_id = 68 } }
+	if = { limit = { check_variable = { zin_arg_culture = 69 } } set_country_flag = zin_culture_reindeer_clans add_ideas = zin_culture_reindeer_clans set_variable = { zin_culture_id = 69 } }
+	if = { limit = { check_variable = { zin_arg_culture = 70 } } set_country_flag = zin_culture_woqood_sealers add_ideas = zin_culture_woqood_sealers set_variable = { zin_culture_id = 70 } }
+	if = { limit = { check_variable = { zin_arg_culture = 71 } } set_country_flag = zin_culture_naamis_sea_crown add_ideas = zin_culture_naamis_sea_crown set_variable = { zin_culture_id = 71 } }
+	if = { limit = { check_variable = { zin_arg_culture = 72 } } set_country_flag = zin_culture_orato_fishers add_ideas = zin_culture_orato_fishers set_variable = { zin_culture_id = 72 } }
+	if = { limit = { check_variable = { zin_arg_culture = 73 } } set_country_flag = zin_culture_miaed_pass_lords add_ideas = zin_culture_miaed_pass_lords set_variable = { zin_culture_id = 73 } }
+	if = { limit = { check_variable = { zin_arg_culture = 74 } } set_country_flag = zin_culture_wahatud_oasis_folk add_ideas = zin_culture_wahatud_oasis_folk set_variable = { zin_culture_id = 74 } }
+	if = { limit = { check_variable = { zin_arg_culture = 75 } } set_country_flag = zin_culture_king_warrens add_ideas = zin_culture_king_warrens set_variable = { zin_culture_id = 75 } }
+	if = { limit = { check_variable = { zin_arg_culture = 76 } } set_country_flag = zin_culture_spring_warrens add_ideas = zin_culture_spring_warrens set_variable = { zin_culture_id = 76 } }
+	if = { limit = { check_variable = { zin_arg_culture = 77 } } set_country_flag = zin_culture_ogre_clans add_ideas = zin_culture_ogre_clans set_variable = { zin_culture_id = 77 } }
+	if = { limit = { check_variable = { zin_arg_culture = 78 } } set_country_flag = zin_culture_plateau_soldiery add_ideas = zin_culture_plateau_soldiery set_variable = { zin_culture_id = 78 } }
+	if = { limit = { check_variable = { zin_arg_culture = 79 } } set_country_flag = zin_culture_cairn_giants add_ideas = zin_culture_cairn_giants set_variable = { zin_culture_id = 79 } }
+	if = { limit = { check_variable = { zin_arg_culture = 80 } } set_country_flag = zin_culture_height_yeti add_ideas = zin_culture_height_yeti set_variable = { zin_culture_id = 80 } }
+	if = { limit = { check_variable = { zin_arg_culture = 81 } } set_country_flag = zin_culture_nether_houses add_ideas = zin_culture_nether_houses set_variable = { zin_culture_id = 81 } }
+	if = { limit = { check_variable = { zin_arg_culture = 82 } } set_country_flag = zin_culture_veshazel_court add_ideas = zin_culture_veshazel_court set_variable = { zin_culture_id = 82 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 1 } } set_country_flag = zin_culture2_lake_aenoran add_ideas = zin_culture2_lake_aenoran set_variable = { zin_culture2_id = 1 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 2 } } set_country_flag = zin_culture2_selen_ranger add_ideas = zin_culture2_selen_ranger set_variable = { zin_culture2_id = 2 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 3 } } set_country_flag = zin_culture2_steppe_rider add_ideas = zin_culture2_steppe_rider set_variable = { zin_culture2_id = 3 } }
-	if = { limit = { check_variable = { zin_arg_culture2 = 4 } } set_country_flag = zin_culture2_wall_folk add_ideas = zin_culture2_wall_folk set_variable = { zin_culture2_id = 4 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 4 } } set_country_flag = zin_culture2_vale_folk add_ideas = zin_culture2_vale_folk set_variable = { zin_culture2_id = 4 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 5 } } set_country_flag = zin_culture2_march_folk add_ideas = zin_culture2_march_folk set_variable = { zin_culture2_id = 5 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 6 } } set_country_flag = zin_culture2_isle_houses add_ideas = zin_culture2_isle_houses set_variable = { zin_culture2_id = 6 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 7 } } set_country_flag = zin_culture2_veiled_folk add_ideas = zin_culture2_veiled_folk set_variable = { zin_culture2_id = 7 } }
@@ -390,12 +553,12 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_culture2 = 10 } } set_country_flag = zin_culture2_free_crowns_north add_ideas = zin_culture2_free_crowns_north set_variable = { zin_culture2_id = 10 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 11 } } set_country_flag = zin_culture2_dondor_brutes add_ideas = zin_culture2_dondor_brutes set_variable = { zin_culture2_id = 11 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 12 } } set_country_flag = zin_culture2_mirolon_wardens add_ideas = zin_culture2_mirolon_wardens set_variable = { zin_culture2_id = 12 } }
-	if = { limit = { check_variable = { zin_arg_culture2 = 13 } } set_country_flag = zin_culture2_ember_lands_freeholds add_ideas = zin_culture2_ember_lands_freeholds set_variable = { zin_culture2_id = 13 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 13 } } set_country_flag = zin_culture2_ember_freeholds add_ideas = zin_culture2_ember_freeholds set_variable = { zin_culture2_id = 13 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 14 } } set_country_flag = zin_culture2_winter_crown add_ideas = zin_culture2_winter_crown set_variable = { zin_culture2_id = 14 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 15 } } set_country_flag = zin_culture2_ice_clans add_ideas = zin_culture2_ice_clans set_variable = { zin_culture2_id = 15 } }
-	if = { limit = { check_variable = { zin_arg_culture2 = 16 } } set_country_flag = zin_culture2_isengard_warlords add_ideas = zin_culture2_isengard_warlords set_variable = { zin_culture2_id = 16 } }
-	if = { limit = { check_variable = { zin_arg_culture2 = 17 } } set_country_flag = zin_culture2_windwaith_seafarers add_ideas = zin_culture2_windwaith_seafarers set_variable = { zin_culture2_id = 17 } }
-	if = { limit = { check_variable = { zin_arg_culture2 = 18 } } set_country_flag = zin_culture2_gunwaith_clans add_ideas = zin_culture2_gunwaith_clans set_variable = { zin_culture2_id = 18 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 16 } } set_country_flag = zin_culture2_melkgard_warlords add_ideas = zin_culture2_melkgard_warlords set_variable = { zin_culture2_id = 16 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 17 } } set_country_flag = zin_culture2_vindael_seafarers add_ideas = zin_culture2_vindael_seafarers set_variable = { zin_culture2_id = 17 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 18 } } set_country_flag = zin_culture2_gunwyn_clans add_ideas = zin_culture2_gunwyn_clans set_variable = { zin_culture2_id = 18 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 19 } } set_country_flag = zin_culture2_girdon_wardens add_ideas = zin_culture2_girdon_wardens set_variable = { zin_culture2_id = 19 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 20 } } set_country_flag = zin_culture2_western_guilds add_ideas = zin_culture2_western_guilds set_variable = { zin_culture2_id = 20 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 21 } } set_country_flag = zin_culture2_buldor_companies add_ideas = zin_culture2_buldor_companies set_variable = { zin_culture2_id = 21 } }
@@ -431,11 +594,40 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_culture2 = 51 } } set_country_flag = zin_culture2_grave_hosts add_ideas = zin_culture2_grave_hosts set_variable = { zin_culture2_id = 51 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 52 } } set_country_flag = zin_culture2_zols_dead add_ideas = zin_culture2_zols_dead set_variable = { zin_culture2_id = 52 } }
 	if = { limit = { check_variable = { zin_arg_culture2 = 53 } } set_country_flag = zin_culture2_netherborn add_ideas = zin_culture2_netherborn set_variable = { zin_culture2_id = 53 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 54 } } set_country_flag = zin_culture2_wall_delvers add_ideas = zin_culture2_wall_delvers set_variable = { zin_culture2_id = 54 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 55 } } set_country_flag = zin_culture2_west_delvers add_ideas = zin_culture2_west_delvers set_variable = { zin_culture2_id = 55 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 56 } } set_country_flag = zin_culture2_north_delvers add_ideas = zin_culture2_north_delvers set_variable = { zin_culture2_id = 56 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 57 } } set_country_flag = zin_culture2_hearth_folk add_ideas = zin_culture2_hearth_folk set_variable = { zin_culture2_id = 57 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 58 } } set_country_flag = zin_culture2_holt_gnomes add_ideas = zin_culture2_holt_gnomes set_variable = { zin_culture2_id = 58 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 59 } } set_country_flag = zin_culture2_road_warrens add_ideas = zin_culture2_road_warrens set_variable = { zin_culture2_id = 59 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 60 } } set_country_flag = zin_culture2_baelim add_ideas = zin_culture2_baelim set_variable = { zin_culture2_id = 60 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 61 } } set_country_flag = zin_culture2_mycid_rings add_ideas = zin_culture2_mycid_rings set_variable = { zin_culture2_id = 61 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 62 } } set_country_flag = zin_culture2_kingdom_forest_elves add_ideas = zin_culture2_kingdom_forest_elves set_variable = { zin_culture2_id = 62 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 63 } } set_country_flag = zin_culture2_roost_keepers add_ideas = zin_culture2_roost_keepers set_variable = { zin_culture2_id = 63 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 64 } } set_country_flag = zin_culture2_god_forest_keepers add_ideas = zin_culture2_god_forest_keepers set_variable = { zin_culture2_id = 64 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 65 } } set_country_flag = zin_culture2_strait_folk add_ideas = zin_culture2_strait_folk set_variable = { zin_culture2_id = 65 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 66 } } set_country_flag = zin_culture2_hilofrim_herders add_ideas = zin_culture2_hilofrim_herders set_variable = { zin_culture2_id = 66 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 67 } } set_country_flag = zin_culture2_teste_valley_folk add_ideas = zin_culture2_teste_valley_folk set_variable = { zin_culture2_id = 67 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 68 } } set_country_flag = zin_culture2_quay_folk add_ideas = zin_culture2_quay_folk set_variable = { zin_culture2_id = 68 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 69 } } set_country_flag = zin_culture2_reindeer_clans add_ideas = zin_culture2_reindeer_clans set_variable = { zin_culture2_id = 69 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 70 } } set_country_flag = zin_culture2_woqood_sealers add_ideas = zin_culture2_woqood_sealers set_variable = { zin_culture2_id = 70 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 71 } } set_country_flag = zin_culture2_naamis_sea_crown add_ideas = zin_culture2_naamis_sea_crown set_variable = { zin_culture2_id = 71 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 72 } } set_country_flag = zin_culture2_orato_fishers add_ideas = zin_culture2_orato_fishers set_variable = { zin_culture2_id = 72 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 73 } } set_country_flag = zin_culture2_miaed_pass_lords add_ideas = zin_culture2_miaed_pass_lords set_variable = { zin_culture2_id = 73 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 74 } } set_country_flag = zin_culture2_wahatud_oasis_folk add_ideas = zin_culture2_wahatud_oasis_folk set_variable = { zin_culture2_id = 74 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 75 } } set_country_flag = zin_culture2_king_warrens add_ideas = zin_culture2_king_warrens set_variable = { zin_culture2_id = 75 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 76 } } set_country_flag = zin_culture2_spring_warrens add_ideas = zin_culture2_spring_warrens set_variable = { zin_culture2_id = 76 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 77 } } set_country_flag = zin_culture2_ogre_clans add_ideas = zin_culture2_ogre_clans set_variable = { zin_culture2_id = 77 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 78 } } set_country_flag = zin_culture2_plateau_soldiery add_ideas = zin_culture2_plateau_soldiery set_variable = { zin_culture2_id = 78 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 79 } } set_country_flag = zin_culture2_cairn_giants add_ideas = zin_culture2_cairn_giants set_variable = { zin_culture2_id = 79 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 80 } } set_country_flag = zin_culture2_height_yeti add_ideas = zin_culture2_height_yeti set_variable = { zin_culture2_id = 80 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 81 } } set_country_flag = zin_culture2_nether_houses add_ideas = zin_culture2_nether_houses set_variable = { zin_culture2_id = 81 } }
+	if = { limit = { check_variable = { zin_arg_culture2 = 82 } } set_country_flag = zin_culture2_veshazel_court add_ideas = zin_culture2_veshazel_court set_variable = { zin_culture2_id = 82 } }
 	if = { limit = { check_variable = { zin_arg_faith = 1 } } set_country_flag = zin_faith_deliverer add_ideas = zin_faith_deliverer set_variable = { zin_faith_id = 1 } }
 	if = { limit = { check_variable = { zin_arg_faith = 2 } } set_country_flag = zin_faith_lamp_furrow add_ideas = zin_faith_lamp_furrow set_variable = { zin_faith_id = 2 } }
 	if = { limit = { check_variable = { zin_arg_faith = 3 } } set_country_flag = zin_faith_green_lords add_ideas = zin_faith_green_lords set_variable = { zin_faith_id = 3 } }
 	if = { limit = { check_variable = { zin_arg_faith = 4 } } set_country_flag = zin_faith_horse_oath add_ideas = zin_faith_horse_oath set_variable = { zin_faith_id = 4 } }
-	if = { limit = { check_variable = { zin_arg_faith = 5 } } set_country_flag = zin_faith_stone_vigil add_ideas = zin_faith_stone_vigil set_variable = { zin_faith_id = 5 } }
+	if = { limit = { check_variable = { zin_arg_faith = 5 } } set_country_flag = zin_faith_pass_vigil add_ideas = zin_faith_pass_vigil set_variable = { zin_faith_id = 5 } }
 	if = { limit = { check_variable = { zin_arg_faith = 6 } } set_country_flag = zin_faith_isle_tide add_ideas = zin_faith_isle_tide set_variable = { zin_faith_id = 6 } }
 	if = { limit = { check_variable = { zin_arg_faith = 7 } } set_country_flag = zin_faith_old_knots add_ideas = zin_faith_old_knots set_variable = { zin_faith_id = 7 } }
 	if = { limit = { check_variable = { zin_arg_faith = 8 } } set_country_flag = zin_faith_strait_litany add_ideas = zin_faith_strait_litany set_variable = { zin_faith_id = 8 } }
@@ -449,7 +641,7 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_faith = 16 } } set_country_flag = zin_faith_ransom_tide add_ideas = zin_faith_ransom_tide set_variable = { zin_faith_id = 16 } }
 	if = { limit = { check_variable = { zin_arg_faith = 17 } } set_country_flag = zin_faith_well_oath add_ideas = zin_faith_well_oath set_variable = { zin_faith_id = 17 } }
 	if = { limit = { check_variable = { zin_arg_faith = 18 } } set_country_flag = zin_faith_scale_creed add_ideas = zin_faith_scale_creed set_variable = { zin_faith_id = 18 } }
-	if = { limit = { check_variable = { zin_arg_faith = 19 } } set_country_flag = zin_faith_river_temples add_ideas = zin_faith_river_temples set_variable = { zin_faith_id = 19 } }
+	if = { limit = { check_variable = { zin_arg_faith = 19 } } set_country_flag = zin_faith_flood_stair add_ideas = zin_faith_flood_stair set_variable = { zin_faith_id = 19 } }
 	if = { limit = { check_variable = { zin_arg_faith = 20 } } set_country_flag = zin_faith_lake_litany add_ideas = zin_faith_lake_litany set_variable = { zin_faith_id = 20 } }
 	if = { limit = { check_variable = { zin_arg_faith = 21 } } set_country_flag = zin_faith_red_hearth add_ideas = zin_faith_red_hearth set_variable = { zin_faith_id = 21 } }
 	if = { limit = { check_variable = { zin_arg_faith = 22 } } set_country_flag = zin_faith_wave_tally add_ideas = zin_faith_wave_tally set_variable = { zin_faith_id = 22 } }
@@ -470,6 +662,13 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_faith = 37 } } set_country_flag = zin_faith_warden_vigil add_ideas = zin_faith_warden_vigil set_variable = { zin_faith_id = 37 } }
 	if = { limit = { check_variable = { zin_arg_faith = 38 } } set_country_flag = zin_faith_hearth_iron add_ideas = zin_faith_hearth_iron set_variable = { zin_faith_id = 38 } }
 	if = { limit = { check_variable = { zin_arg_faith = 39 } } set_country_flag = zin_faith_none set_variable = { zin_faith_id = 39 } }
+	if = { limit = { check_variable = { zin_arg_faith = 40 } } set_country_flag = zin_faith_deep_reckoning add_ideas = zin_faith_deep_reckoning set_variable = { zin_faith_id = 40 } }
+	if = { limit = { check_variable = { zin_arg_faith = 41 } } set_country_flag = zin_faith_hearth_table add_ideas = zin_faith_hearth_table set_variable = { zin_faith_id = 41 } }
+	if = { limit = { check_variable = { zin_arg_faith = 42 } } set_country_flag = zin_faith_full_pot add_ideas = zin_faith_full_pot set_variable = { zin_faith_id = 42 } }
+	if = { limit = { check_variable = { zin_arg_faith = 43 } } set_country_flag = zin_faith_road_due add_ideas = zin_faith_road_due set_variable = { zin_faith_id = 43 } }
+	if = { limit = { check_variable = { zin_arg_faith = 44 } } set_country_flag = zin_faith_standing_silence set_variable = { zin_faith_id = 44 } }
+	if = { limit = { check_variable = { zin_arg_faith = 45 } } set_country_flag = zin_faith_pass_fires add_ideas = zin_faith_pass_fires set_variable = { zin_faith_id = 45 } }
+	if = { limit = { check_variable = { zin_arg_faith = 46 } } set_country_flag = zin_faith_water_share add_ideas = zin_faith_water_share set_variable = { zin_faith_id = 46 } }
 	if = { limit = { check_variable = { zin_arg_language = 1 } } set_country_flag = zin_language_aenoran set_variable = { zin_language_id = 1 } }
 	if = { limit = { check_variable = { zin_arg_language = 2 } } set_country_flag = zin_language_ainic set_variable = { zin_language_id = 2 } }
 	if = { limit = { check_variable = { zin_arg_language = 3 } } set_country_flag = zin_language_dondric set_variable = { zin_language_id = 3 } }
@@ -494,4 +693,9 @@ zin_culture_set = {
 	if = { limit = { check_variable = { zin_arg_language = 22 } } set_country_flag = zin_language_orcish set_variable = { zin_language_id = 22 } }
 	if = { limit = { check_variable = { zin_arg_language = 23 } } set_country_flag = zin_language_trollish set_variable = { zin_language_id = 23 } }
 	if = { limit = { check_variable = { zin_arg_language = 24 } } set_country_flag = zin_language_yetic set_variable = { zin_language_id = 24 } }
+	if = { limit = { check_variable = { zin_arg_language = 25 } } set_country_flag = zin_language_dwarvish set_variable = { zin_language_id = 25 } }
+	if = { limit = { check_variable = { zin_arg_language = 26 } } set_country_flag = zin_language_gnomish set_variable = { zin_language_id = 26 } }
+	if = { limit = { check_variable = { zin_arg_language = 27 } } set_country_flag = zin_language_hearthspeech set_variable = { zin_language_id = 27 } }
+	if = { limit = { check_variable = { zin_arg_language = 28 } } set_country_flag = zin_language_pack_tongue set_variable = { zin_language_id = 28 } }
+	if = { limit = { check_variable = { zin_arg_language = 29 } } set_country_flag = zin_language_lowspeech set_variable = { zin_language_id = 29 } }
 }

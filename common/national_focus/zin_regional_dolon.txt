@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7U
+			original_tag = DLN
 		}
 	}
 	initial_show_position = { focus = zin_regional_dolon_court_of_the_dead_sea }
@@ -141,7 +141,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_oath = yes
@@ -222,7 +222,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			is_subject_of = Y8D
+			is_subject_of = PUV
 		}
 		ai_will_do = {
 			factor = 20
@@ -233,11 +233,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			zin_regional_dolon_send_arms = yes
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_volgan_add_dominion_strength = yes
 			}
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_oath = yes
@@ -362,7 +362,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			navy_experience = 10
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_volgan_add_oath = yes
@@ -480,7 +480,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 0.15 }
 			zin_regional_dolon_gain_autonomy = yes
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_volgan_add_oath = yes
@@ -619,7 +619,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			is_subject_of = Y8D
+			is_subject_of = PUV
 		}
 		ai_will_do = {
 			factor = 20
@@ -629,7 +629,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 20 }
 				zin_volgan_add_oath = yes

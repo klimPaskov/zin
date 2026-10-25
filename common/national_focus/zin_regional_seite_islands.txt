@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y3G
+			original_tag = SEI
 		}
 	}
 	initial_show_position = { focus = zin_regional_seite_islands_the_isle_moot }
@@ -113,7 +113,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -187,7 +187,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0E
+			country_exists = NND
 		}
 		ai_will_do = {
 			factor = 10
@@ -247,14 +247,14 @@ focus_tree = {
 			add_war_support = 0.05
 			if = {
 				limit = {
-					country_exists = Y0E
+					country_exists = NND
 				}
 				add_opinion_modifier = {
-					target = Y0E
+					target = NND
 					modifier = zin_tritons_banks_quarrel
 				}
 				reverse_add_opinion_modifier = {
-					target = Y0E
+					target = NND
 					modifier = zin_tritons_banks_quarrel
 				}
 			}
@@ -274,7 +274,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0F
+			country_exists = RAE
 			NOT = {
 				has_global_flag = zin_tritons_banks_accord
 			}
@@ -305,7 +305,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_tritons_mediation_accepted
-			Y0F = {
+			RAE = {
 				country_event = zin_regional_seite_islands.1
 			}
 		}
@@ -351,7 +351,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -514,7 +514,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -554,7 +554,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -585,7 +585,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -623,7 +623,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -657,7 +657,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -693,7 +693,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1755.6.4
+						date < 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -819,7 +819,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1752.6.2
+						date < 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

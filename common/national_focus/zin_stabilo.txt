@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y16
+			original_tag = STA
 		}
 	}
 	initial_show_position = { focus = zin_stabilo_the_merchant_houses }
@@ -549,7 +549,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_road = 3 }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_east_add_road_influence = yes
-			Y5J = {
+			DLB = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
@@ -685,15 +685,15 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y5W = {
+			ALR = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
-			Y5M = {
+			KRS = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
-			Y5N = {
+			AZA = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
@@ -717,7 +717,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y5R = {
+			OBM = {
 				country_event = zin_stabilo.5
 			}
 		}
@@ -755,7 +755,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y5K = {
+			NRS = {
 				set_temp_variable = { zin_arg_value = -15 }
 				zin_east_add_lean = yes
 			}
@@ -915,7 +915,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_east_courts_stabilo
-			Y15 = {
+			DRA = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
@@ -936,7 +936,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y15 = {
+			DRA = {
 				country_event = zin_stabilo.6
 			}
 		}
@@ -991,7 +991,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y5V = {
+			PLO = {
 				country_event = zin_stabilo.7
 			}
 		}
@@ -1010,7 +1010,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y5P = {
+			ERC = {
 				country_event = zin_stabilo.8
 			}
 		}
@@ -1049,11 +1049,11 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y5O = {
+			STA = {
 				set_temp_variable = { zin_arg_value = -15 }
 				zin_east_add_lean = yes
 			}
-			Y17 = {
+			RHA = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
@@ -1073,7 +1073,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y18 = {
+			MIE = {
 				country_event = zin_stabilo.9
 			}
 		}
@@ -1128,7 +1128,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y5P = {
+			ERC = {
 				capital_scope = {
 					add_building_construction = {
 						type = infrastructure
@@ -1137,7 +1137,7 @@ focus_tree = {
 					}
 				}
 			}
-			Y5P = {
+			ERC = {
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes
 			}
@@ -1487,11 +1487,11 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1754.3.2
+						date > 1754.3.1
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1751.3.2
+						date > 1751.3.1
 					}
 				}
 			}
@@ -1512,7 +1512,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date < 1752.8.30
+						date < 1752.8.31
 					}
 				}
 			}
@@ -1828,7 +1828,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = -50
-			Y8G = {
+			WOR = {
 				add_political_power = 100
 			}
 			custom_effect_tooltip = zin_stabilo_gold_for_the_deliverer_tip_1
@@ -2487,7 +2487,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_temp_variable = { zin_arg_cb = 3 }
-			set_temp_variable = { zin_arg_target = Y14 }
+			set_temp_variable = { zin_arg_target = NRS }
 			set_temp_variable = { zin_arg_days = 365 }
 			zin_diplo_grant_cb = yes
 			set_temp_variable = { zin_arg_value = 5 }
@@ -2505,7 +2505,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		cost = 10
 		available = {
-			has_war_with = Y14
+			has_war_with = NRS
 		}
 		ai_will_do = {
 			factor = 100
@@ -2526,7 +2526,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			has_war_with = Y14
+			has_war_with = NRS
 			zin_stabilo_holds_salt_road = yes
 		}
 		ai_will_do = {

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y8E
+			original_tag = BLO
 		}
 	}
 	initial_show_position = { focus = zin_regional_bloody_forest_the_red_woods }
@@ -217,7 +217,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -253,7 +253,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -453,7 +453,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -683,7 +683,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -729,7 +729,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -788,7 +788,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -814,9 +814,9 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0L
+			country_exists = AEN
 			NOT = {
-				has_war_with = Y0L
+				has_war_with = AEN
 			}
 		}
 		ai_will_do = {
@@ -891,7 +891,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y54
+			country_exists = CUR
 		}
 		ai_will_do = {
 			factor = 10
@@ -905,7 +905,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -915,7 +915,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y54 = {
+			CUR = {
 				country_event = zin_regional_bloody_forest.3
 			}
 		}
@@ -983,7 +983,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1046,7 +1046,7 @@ focus_tree = {
 			modifier = {
 				factor = 5
 				zin_rules_is_free = yes
-				Y0L = { has_opinion = { target = Y8E value > -1 } }
+				AEN = { has_opinion = { target = BLO value > -1 } }
 			}
 			modifier = {
 				factor = 0
@@ -1125,7 +1125,9 @@ focus_tree = {
 				amount = 1000
 			}
 			set_country_flag = zin_bloody_forest_took_gifts
-			zin_politics_add_drift = { IDEOLOGY = shadow VALUE = 5 }
+			set_temp_variable = { zin_arg_ideology = 3 }
+			set_temp_variable = { zin_arg_value = 5 }
+			zin_politics_add_drift = yes
 		}
 	}
 	focus = {

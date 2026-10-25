@@ -8,7 +8,7 @@ country_event = {
 		# A western court's start: the host template, and Gunwaith's weary clans.
 		division_template = { name = "Crossing Host" regiments = { zin_men_infantry = { x = 0 y = 0 } zin_men_infantry = { x = 0 y = 1 } zin_men_infantry = { x = 0 y = 2 } zin_men_infantry = { x = 1 y = 0 } zin_men_infantry = { x = 1 y = 1 } zin_men_infantry = { x = 1 y = 2 } zin_men_archers = { x = 2 y = 0 } } support = { zin_support_scouts = { x = 0 y = 0 } } }
 		if = {
-			limit = { original_tag = Y07 }
+			limit = { original_tag = GNW }
 			add_ideas = zin_gunwaith_weary_clans
 		}
 	}
@@ -135,7 +135,7 @@ country_event = {
 			base = 70
 			modifier = {
 				factor = 0.4
-				Y07 = { has_idea = zin_gunwaith_war_thanes }
+				GNW = { has_idea = zin_gunwaith_war_thanes }
 			}
 		}
 	}
@@ -172,7 +172,7 @@ country_event = {
 			modifier = {
 				factor = 3
 				zin_west_historical = yes
-				original_tag = Y07
+				original_tag = GNW
 			}
 		}
 	}
@@ -233,7 +233,7 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_west.24.a
-		diplomatic_relation = { country = Y07 relation = non_aggression_pact active = yes }
+		diplomatic_relation = { country = GNW relation = non_aggression_pact active = yes }
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_west_add_unity = yes
 		ai_chance = {
@@ -385,7 +385,7 @@ country_event = {
 	option = {
 		name = zin_west.40.a
 		trigger = {
-			NOT = { Y0T = { has_country_flag = zin_asgard_harbours_barred } }
+			NOT = { ORH = { has_country_flag = zin_asgard_harbours_barred } }
 		}
 		set_global_flag = zin_west_landing_isle
 		zin_west_sail_first = yes
@@ -397,7 +397,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				Y0T = { has_country_flag = zin_asgard_harbours_barred }
+				ORH = { has_country_flag = zin_asgard_harbours_barred }
 			}
 		}
 	}
@@ -410,7 +410,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				zin_west_historical = yes
-				NOT = { Y0T = { has_country_flag = zin_asgard_harbours_barred } }
+				NOT = { ORH = { has_country_flag = zin_asgard_harbours_barred } }
 			}
 		}
 	}

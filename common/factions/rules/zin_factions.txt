@@ -535,7 +535,7 @@ zin_faction_rule_join_leren = {
 			zin_leren_is_dark_shore = yes
 			is_subject_of = FROM
 			AND = {
-				tag = Y0W
+				tag = ANE
 				has_country_flag = zin_refusal_lifted
 			}
 		}
@@ -645,8 +645,8 @@ zin_faction_rule_join_free_north = {
 	type = joining_rules
 	trigger = {
 		capital_scope = { zin_is_region_north_lands = yes }
-		NOT = { tag = Y0G }
-		NOT = { is_in_faction_with = Y0G }
+		NOT = { tag = LER }
+		NOT = { is_in_faction_with = LER }
 		NOT = { has_government = communism }
 		check_variable = { var = zin_leren_lean value = -40 compare = greater_than_or_equals }
 		check_variable = { var = zin_leren_lean value = 40 compare = less_than_or_equals }

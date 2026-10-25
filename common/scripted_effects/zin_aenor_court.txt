@@ -353,6 +353,17 @@ zin_aenor_compute_camps = {
 	else = {
 		set_variable = { zin_aenor_camp_host = 0 }
 	}
+	# Start variety V3 (modules/start_variety.mjs): the drawn shift of each camp and Prince Eronel's standing (all zero when the rule is off).
+	add_to_variable = { zin_aenor_camp_court = global.zin_sv_camp_court }
+	add_to_variable = { zin_aenor_camp_faithful = global.zin_sv_camp_faithful }
+	add_to_variable = { zin_aenor_camp_dominions = global.zin_sv_camp_dominions }
+	if = {
+		limit = { zin_aenor_host_available = yes }
+		add_to_variable = { zin_aenor_camp_host = global.zin_sv_camp_host }
+	}
+	set_temp_variable = { zin_ef = zin_aenor_eronel_favour }
+	multiply_temp_variable = { zin_ef = constant:zin_variety.eronel_favour_camp }
+	add_to_variable = { zin_aenor_camp_court = zin_ef }
 	clamp_variable = { var = zin_aenor_camp_court min = 0 max = 100 }
 	clamp_variable = { var = zin_aenor_camp_faithful min = 0 max = 100 }
 	clamp_variable = { var = zin_aenor_camp_dominions min = 0 max = 100 }
@@ -373,6 +384,11 @@ zin_aenor_crown_eindil = {
 	zin_politics_set_stance = yes
 	remove_ideas = { zin_aenor_interregnum zin_aenor_hailed_king zin_aenor_throne_abandoned }
 	clr_country_flag = zin_aenor_hailed_king
+	# Crowned while Afrit lives but is reduced (SL-09): the false god is beyond the Rift, out of the age's reckoning (owner question Q1).
+	if = {
+		limit = { NOT = { has_global_flag = zin_afrit_dead } }
+		set_global_flag = zin_afrit_beyond_the_rift
+	}
 	remove_dynamic_modifier = { modifier = zin_aenor_golden_court }
 	add_ideas = zin_aenor_rightful_king
 	# A Charter of Equals goes to every Concord dominion, every Free Dominion and Selen.
@@ -382,7 +398,7 @@ zin_aenor_crown_eindil = {
 			OR = {
 				zin_aenor_is_concord_dominion = yes
 				has_country_flag = zin_aenor_free_dominion
-				tag = Y0M
+				tag = SEL
 			}
 		}
 		country_event = { id = zin_aenor.402 }
@@ -392,7 +408,7 @@ zin_aenor_crown_eindil = {
 zin_aenor_delay_death_clock = {
 	set_temp_variable = { zin_days = zin_arg_days }
 	clear_variable = zin_arg_days
-	Y0L = {
+	AEN = {
 		if = {
 			limit = {
 				NOT = { has_game_rule = { rule = zin_rule_golden_king_death option = HISTORICAL } }
@@ -452,6 +468,18 @@ zin_aenor_event_for_parim = {
 	# event_target:zin_aenor_parim_realm = { country_event = { id = <event> } } (written by the compilers).
 	zin_aenor_find_parim_realm = yes
 }
+zin_aenor_exile_king = {
+	# SL-25: the original Aenor is annexed or capitulates while the Golden King lives. He goes into exile (zin_golden_king_exiled, set
+	# once) and every country hears zin_aenor.470; a conquered court no longer counts as the Golden Court enduring.
+	if = {
+		limit = {
+			zin_aenor_king_alive = yes
+			NOT = { has_global_flag = zin_golden_king_exiled }
+		}
+		set_global_flag = zin_golden_king_exiled
+		news_event = { id = zin_aenor.470 }
+	}
+}
 zin_aenor_expose_plot = {
 	# The only way the plot becomes known. Sets the one exposure flag, stops the clock, tells Aenor and the Council.
 	# It names the Chancellor's circle and men in temple robes. It never names Afrit and never sets zin_afrit_revealed.
@@ -461,7 +489,7 @@ zin_aenor_expose_plot = {
 			zin_aenor_king_alive = yes
 		}
 		set_global_flag = zin_golden_king_plot_exposed
-		Y0L = {
+		AEN = {
 			country_event = { id = zin_aenor.250 }
 		}
 		zin_afrit_plot_exposed = yes
@@ -509,7 +537,7 @@ zin_aenor_find_parim_realm = {
 	}
 	if = {
 		limit = { NOT = { has_event_target = zin_aenor_parim_realm } }
-		Y0L = {
+		AEN = {
 			if = {
 				limit = { exists = yes }
 				save_global_event_target_as = zin_aenor_parim_realm
@@ -607,9 +635,11 @@ zin_aenor_give_seals = {
 		add_to_variable = { zin_council_influence = 10 }
 		clamp_variable = { var = zin_council_influence min = 0 max = 100 }
 		set_country_flag = zin_aenor_faithful_rule
+		# The seals go to Afrit's seat (role R02, SL-11): the Worshipdom, or whoever employs the Deliverer when it is gone.
+		zin_afrit_resolve_seat = yes
 		if = {
-			limit = { country_exists = Y8G }
-			Y8G = { country_event = { id = zin_afrit.20 } }
+			limit = { has_event_target = zin_afrit_seat }
+			event_target:zin_afrit_seat = { country_event = { id = zin_afrit.20 } }
 		}
 		else = {
 			set_temp_variable = { zin_arg_stance = 4 }
@@ -648,7 +678,7 @@ zin_aenor_give_seals = {
 zin_aenor_hasten_death_clock = {
 	set_temp_variable = { zin_days = zin_arg_days }
 	clear_variable = zin_arg_days
-	Y0L = {
+	AEN = {
 		if = {
 			limit = {
 				NOT = { has_game_rule = { rule = zin_rule_golden_king_death option = HISTORICAL } }
@@ -705,7 +735,7 @@ zin_aenor_monthly_pulse = {
 	}
 	if = {
 		limit = {
-			tag = Y0L
+			tag = AEN
 			zin_aenor_king_alive = yes
 			NOT = { has_global_flag = zin_golden_king_plot_exposed }
 		}
@@ -754,7 +784,7 @@ zin_aenor_open_succession = {
 	# Body of zin_aenor.200 The King Is Dead. Scope: the Aenor realm (the original country).
 	set_global_flag = zin_golden_king_dead
 	set_country_flag = zin_aenor_succession_open
-	retire_character = Y0L_zin_ruler
+	retire_character = AEN_zin_ruler
 	add_ideas = zin_aenor_interregnum
 	zin_aenor_compute_camps = yes
 	set_country_flag = { flag = zin_aenor_thirty_days days = 30 }
@@ -782,15 +812,15 @@ zin_aenor_pick_ai_camp = {
 	zin_aenor_best_camp = yes
 	set_variable = { zin_aenor_ai_camp = zin_aenor_best }
 	if = {
-		limit = { has_game_rule = { rule = zin_rule_ai_aenor_succession option = GOLDEN_COURT } }
+		limit = { zin_rules_ai_branch_aenor_golden_court = yes }
 		set_variable = { zin_aenor_ai_camp = 1 }
 	}
 	else_if = {
-		limit = { has_game_rule = { rule = zin_rule_ai_aenor_succession option = FREE_DOMINIONS } }
+		limit = { zin_rules_ai_branch_aenor_free_dominions = yes }
 		set_variable = { zin_aenor_ai_camp = 3 }
 	}
 	else_if = {
-		limit = { has_game_rule = { rule = zin_rule_ai_aenor_succession option = RANDOM } }
+		limit = { zin_rules_ai_random_aenor = yes }
 		random_list = {
 			5 = {
 				modifier = {
@@ -874,7 +904,7 @@ zin_aenor_raise_camp = {
 		every_country = {
 			limit = {
 				zin_aenor_is_realm = yes
-				NOT = { tag = Y0L }
+				NOT = { tag = AEN }
 			}
 			add_to_temp_variable = { zin_rb = 1 }
 		}
@@ -906,7 +936,7 @@ zin_aenor_raise_camp = {
 		every_country = {
 			limit = {
 				zin_aenor_is_realm = yes
-				NOT = { tag = Y0L }
+				NOT = { tag = AEN }
 			}
 			add_to_temp_variable = { zin_rb_after = 1 }
 		}
@@ -1738,11 +1768,19 @@ zin_aenor_tick_death_clock = {
 			NOT = { has_global_flag = zin_afrit_kingdom_behind_throne }
 			NOT = { has_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT } }
 			OR = {
-				NOT = { country_exists = Y8G }
+				NOT = { country_exists = WOR }
 				has_game_rule = { rule = zin_rule_golden_king_death option = HISTORICAL }
 			}
 		}
 		zin_afrit_ready_regicide = yes
+		# B07.D5: with no Council left to strike, the King dies in his own time.
+		if = {
+			limit = {
+				NOT = { country_exists = WOR }
+				NOT = { any_country = { has_character = zin_aurevan } }
+			}
+			set_global_flag = zin_golden_king_natural
+		}
 	}
 	if = {
 		limit = {

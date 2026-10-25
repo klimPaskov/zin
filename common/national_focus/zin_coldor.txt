@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y01
+			original_tag = CLD
 		}
 	}
 	initial_show_position = { focus = zin_coldor_winter_crown }
@@ -585,7 +585,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y04 = {
+			VND = {
 				country_event = zin_cold.71
 			}
 		}
@@ -733,7 +733,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 50
-			Y03 = {
+			HOR = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_cold_add_lean = yes
 			}
@@ -753,11 +753,11 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y03 = {
+			HOR = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_cold_add_lean = yes
 			}
-			Y03 = {
+			HOR = {
 				add_stability = 0.03
 			}
 		}
@@ -794,7 +794,7 @@ focus_tree = {
 			factor = 8
 		}
 		completion_reward = {
-			Y03 = {
+			HOR = {
 				capital_scope = {
 					add_building_construction = {
 						type = infrastructure
@@ -803,7 +803,7 @@ focus_tree = {
 					}
 				}
 			}
-			Y03 = {
+			HOR = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_cold_add_lean = yes
 			}
@@ -879,7 +879,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y21 = {
+			FEA = {
 				country_event = zin_coldor.2
 			}
 		}
@@ -898,11 +898,11 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y05 = {
+			HLD = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_cold_add_lean = yes
 			}
-			Y06 = {
+			AUT = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_cold_add_lean = yes
 			}
@@ -998,7 +998,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_cold_add_defiance = yes
-			Y02 = {
+			MLK = {
 				add_political_power = 25
 			}
 		}
@@ -1047,7 +1047,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y02 = {
+			MLK = {
 				country_event = zin_cold.33
 			}
 		}
@@ -1137,7 +1137,7 @@ focus_tree = {
 			factor = 30
 		}
 		completion_reward = {
-			Y02 = {
+			MLK = {
 				country_event = zin_cold.30
 			}
 		}
@@ -1196,7 +1196,7 @@ focus_tree = {
 			set_country_flag = zin_cold_conquest
 			create_wargoal = {
 				type = puppet_wargoal_focus
-				target = Y02
+				target = MLK
 			}
 		}
 	}
@@ -1214,7 +1214,7 @@ focus_tree = {
 			factor = 30
 		}
 		completion_reward = {
-			Y02 = {
+			MLK = {
 				add_stability = 0.05
 			}
 			set_temp_variable = { zin_arg_value = 5 }
@@ -1232,7 +1232,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			has_war_with = Y02
+			has_war_with = MLK
 		}
 		ai_will_do = {
 			factor = 100
@@ -1294,7 +1294,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y1X = {
+			YEI = {
 				country_event = zin_cold.51
 			}
 		}
@@ -1313,7 +1313,7 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y1J = {
+			NIV = {
 				country_event = zin_cold.52
 			}
 		}
@@ -1337,7 +1337,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 1 }
 			zin_cold_add_yeti_pact = yes
-			Y1X = {
+			YEI = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_cold_add_lean = yes
 			}
@@ -1362,7 +1362,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 1 }
 			zin_cold_add_giant_pact = yes
-			Y1J = {
+			NIV = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_cold_add_lean = yes
 			}
@@ -1493,7 +1493,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = zin_cold_hall_respected
 			diplomatic_relation = {
-				country = Y8H
+				country = YEL
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -1595,7 +1595,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8H = {
+			YEL = {
 				country_event = zin_cold.61
 			}
 		}
@@ -1635,13 +1635,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y8H
+			country_exists = YEL
 		}
 		ai_will_do = {
 			factor = 15
 		}
 		completion_reward = {
-			give_guarantee = Y8H
+			give_guarantee = YEL
 			add_stability = 0.03
 		}
 	}

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y82
+			original_tag = ELD
 		}
 	}
 	initial_show_position = { focus = zin_regional_the_end_seat_of_the_warden }
@@ -191,7 +191,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -571,7 +571,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -767,7 +767,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -811,11 +811,11 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1754.3.2
+						date > 1754.3.1
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1751.3.2
+						date > 1751.3.1
 					}
 				}
 				check_variable = { global.zin_gathering_dark > 29 }
@@ -833,7 +833,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -963,7 +963,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_elves_add_kinship = yes
-			set_temp_variable = { zin_arg_target = Y8F }
+			set_temp_variable = { zin_arg_target = MAG }
 			zin_elves_goodwill = yes
 		}
 	}
@@ -1068,7 +1068,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1143,7 +1143,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }

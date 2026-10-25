@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y03
+			original_tag = HOR
 		}
 	}
 	initial_show_position = { focus = zin_regional_horidor_highland_moot }
@@ -135,7 +135,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_cold_add_lean = yes
 			add_ideas = zin_regional_horidor_accord_shield
-			Y01 = {
+			CLD = {
 				add_political_power = 25
 			}
 		}
@@ -205,7 +205,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			army_experience = 10
-			Y01 = {
+			CLD = {
 				army_experience = 5
 			}
 		}
@@ -526,7 +526,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		cost = 5
 		available = {
-			country_exists = Y02
+			country_exists = MLK
 		}
 		ai_will_do = {
 			factor = 10

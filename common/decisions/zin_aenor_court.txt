@@ -106,7 +106,7 @@ zin_aenor_cat_concord = {
 		target_root_trigger = {
 			has_country_flag = zin_aenor_charters_open
 		}
-		targets = { Y0M Y0S Y0N Y55 Y0O Y0P Y51 Y53 Y4W Y4V Y0Q Y0R Y4U Y4O Y4Q Y4R Y4S Y4Z Y50 Y52 Y0T Y4N Y4P Y4T Y4X Y4Y }
+		targets = { SEL KIN KON HNH KLU HER NOL KIL SFT FRE PAZ ORH KUN }
 		target_trigger = {
 			FROM = {
 				zin_aenor_is_concord_dominion = yes
@@ -144,7 +144,7 @@ zin_aenor_cat_concord = {
 		target_root_trigger = {
 			has_country_flag = zin_aenor_charters_open
 		}
-		targets = { Y0M Y0S Y0N Y55 Y0O Y0P Y51 Y53 Y4W Y4V Y0Q Y0R Y4U Y4O Y4Q Y4R Y4S Y4Z Y50 Y52 Y0T Y4N Y4P Y4T Y4X Y4Y }
+		targets = { SEL KIN KON HNH KLU HER NOL KIL SFT FRE PAZ ORH KUN }
 		target_trigger = {
 			FROM = {
 				zin_aenor_is_concord_dominion = yes
@@ -201,7 +201,7 @@ zin_aenor_cat_concord = {
 		target_root_trigger = {
 			has_country_flag = zin_aenor_charters_open
 		}
-		targets = { Y0M Y0S Y0N Y55 Y0O Y0P Y51 Y53 Y4W Y4V Y0Q Y0R Y4U Y4O Y4Q Y4R Y4S Y4Z Y50 Y52 Y0T Y4N Y4P Y4T Y4X Y4Y }
+		targets = { SEL KIN KON HNH KLU HER NOL KIL SFT FRE PAZ ORH KUN }
 		target_trigger = {
 			FROM = {
 				zin_aenor_is_concord_dominion = yes
@@ -239,7 +239,7 @@ zin_aenor_cat_concord = {
 		target_root_trigger = {
 			has_country_flag = zin_aenor_charters_open
 		}
-		targets = { Y0M Y0S Y0N Y55 Y0O Y0P Y51 Y53 Y4W Y4V Y0Q Y0R Y4U Y4O Y4Q Y4R Y4S Y4Z Y50 Y52 Y0T Y4N Y4P Y4T Y4X Y4Y }
+		targets = { SEL KIN KON HNH KLU HER NOL KIL SFT FRE PAZ ORH KUN }
 		target_trigger = {
 			FROM = {
 				zin_aenor_is_concord_dominion = yes
@@ -291,7 +291,7 @@ zin_aenor_cat_concord = {
 		target_root_trigger = {
 			has_country_flag = zin_aenor_charters_open
 		}
-		targets = { Y0M Y0S Y0N Y55 Y0O Y0P Y51 Y53 Y4W Y4V Y0Q Y0R Y4U Y4O Y4Q Y4R Y4S Y4Z Y50 Y52 Y0T Y4N Y4P Y4T Y4X Y4Y }
+		targets = { SEL KIN KON HNH KLU HER NOL KIL SFT FRE PAZ ORH KUN }
 		target_trigger = {
 			FROM = {
 				zin_aenor_is_concord_dominion = yes
@@ -339,10 +339,6 @@ zin_aenor_cat_concord = {
 		}
 		ai_will_do = {
 			base = 2
-			modifier = {
-				factor = 0
-				has_country_flag = zin_aenor_council_recent
-			}
 		}
 	}
 	zin_aenor_concord_levy = {
@@ -396,7 +392,7 @@ zin_aenor_cat_concord = {
 		target_root_trigger = {
 			has_country_flag = zin_aenor_restore_by_force
 		}
-		targets = { Y0M Y0S Y0N Y55 Y0O Y0P Y51 Y53 Y4W Y4V Y0Q Y0R Y4U Y4O Y4Q Y4R Y4S Y4Z Y50 Y52 Y0T Y4N Y4P Y4T Y4X Y4Y }
+		targets = { SEL KIN KON HNH KLU HER NOL KIL SFT FRE PAZ ORH KUN }
 		target_trigger = {
 			FROM = {
 				has_country_flag = zin_aenor_free_dominion

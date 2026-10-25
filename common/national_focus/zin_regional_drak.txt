@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y15
+			original_tag = DRA
 		}
 	}
 	initial_show_position = { focus = zin_regional_drak_the_martial_crown }
@@ -263,7 +263,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y16 = {
+			STA = {
 				set_temp_variable = { zin_arg_road = 2 }
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_east_add_road_influence = yes
@@ -285,7 +285,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_global_flag = zin_east_caravan_war
-				Y16 = { has_war_with = Y14 }
+				STA = { has_war_with = NRS }
 			}
 		}
 		ai_will_do = {

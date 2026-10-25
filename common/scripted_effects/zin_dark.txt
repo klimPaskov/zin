@@ -91,7 +91,7 @@ zin_goldoroth_refresh_temper = {
 }
 
 zin_goldoroth_add_temper = {
-	Y1A = {
+	GOL = {
 		add_to_variable = { zin_goldoroth_temper = zin_arg_value }
 		clamp_variable = { var = zin_goldoroth_temper min = 0 max = 100 }
 		zin_goldoroth_refresh_temper = yes
@@ -214,7 +214,7 @@ zin_goldoroth_refresh_favours = {
 }
 
 zin_goldoroth_add_favour = {
-	Y1A = {
+	GOL = {
 		if = {
 			limit = { check_variable = { zin_arg_bloc = 1 } }
 			add_to_variable = { zin_goldoroth_favour_volcano = zin_arg_value }
@@ -269,14 +269,14 @@ zin_goldoroth_apply_sway = {
 	}
 	if = {
 		limit = {
-			original_tag = Y4I
+			original_tag = BLK
 			check_variable = { zin_goldoroth_sway > 40 }
 		}
 		set_variable = { zin_goldoroth_sway = 40 }
 	}
 	if = {
 		limit = {
-			original_tag = Y19
+			original_tag = DND
 			check_variable = { zin_goldoroth_sway > 0 }
 		}
 		set_variable = { zin_goldoroth_sway = 0 }
@@ -289,7 +289,7 @@ zin_goldoroth_add_sway = {
 		every_country = {
 			limit = {
 				zin_dark_is_free_hold = yes
-				is_neighbor_of = Y1A
+				is_neighbor_of = GOL
 			}
 			zin_goldoroth_apply_sway = yes
 		}
@@ -313,12 +313,12 @@ zin_goldoroth_yoke_check = {
 				zin_dark_date_yoke = yes
 				zin_dark_is_free_hold = yes
 				is_in_faction = no
-				NOT = { has_war_with = Y1A }
+				NOT = { has_war_with = GOL }
 				OR = {
 					check_variable = { zin_goldoroth_sway > 49.99 }
 					AND = {
 						check_variable = { zin_goldoroth_sway > 39.99 }
-						Y1A = { has_country_flag = zin_goldoroth_yoke_cheap }
+						GOL = { has_country_flag = zin_goldoroth_yoke_cheap }
 					}
 				}
 			}
@@ -329,14 +329,14 @@ zin_goldoroth_yoke_check = {
 
 zin_goldoroth_take_tributary = {
 	var:zin_arg_target = {
-		Y1A = {
+		GOL = {
 			puppet = PREV
 			set_autonomy = { target = PREV autonomy_state = zin_autonomy_tributary_hold end_wars = no end_civil_wars = no }
 		}
 		add_ideas = zin_dark_tributary_hold
 		set_variable = { zin_dark_tribute_days = 0 }
 	}
-	Y1A = { country_event = { id = zin_dark.51 } }
+	GOL = { country_event = { id = zin_dark.51 } }
 }
 
 zin_goldoroth_tribute_on_capitulation = {
@@ -345,7 +345,7 @@ zin_goldoroth_tribute_on_capitulation = {
 		limit = {
 			zin_dark_is_free_hold = yes
 			FROM = {
-				original_tag = Y1A
+				original_tag = GOL
 				has_country_flag = zin_goldoroth_mercy
 			}
 		}
@@ -366,8 +366,8 @@ zin_goldoroth_refresh_unity = {
 			zin_is_region_dark_lands = yes
 			owner = {
 				OR = {
-					original_tag = Y1A
-					is_subject_of = Y1A
+					original_tag = GOL
+					is_subject_of = GOL
 				}
 			}
 		}
@@ -375,7 +375,7 @@ zin_goldoroth_refresh_unity = {
 	}
 	multiply_temp_variable = { zin_dark_held = 100 }
 	divide_temp_variable = { zin_dark_held = global.zin_dark_states_total }
-	Y1A = {
+	GOL = {
 		set_variable = { zin_goldoroth_unity = zin_dark_held }
 		clamp_variable = { var = zin_goldoroth_unity min = 0 max = 100 }
 		if = {
@@ -396,28 +396,28 @@ zin_goldoroth_crown_heir = {
 	if = {
 		limit = {
 			check_variable = { zin_dark_heir = 0 }
-			Y1A = { has_country_flag = zin_goldoroth_heir_volcano }
+			GOL = { has_country_flag = zin_goldoroth_heir_volcano }
 		}
 		set_temp_variable = { zin_dark_heir = 1 }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_dark_heir = 0 }
-			Y1A = { has_country_flag = zin_goldoroth_heir_iron }
+			GOL = { has_country_flag = zin_goldoroth_heir_iron }
 		}
 		set_temp_variable = { zin_dark_heir = 2 }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_dark_heir = 0 }
-			Y1A = { has_country_flag = zin_goldoroth_heir_war }
+			GOL = { has_country_flag = zin_goldoroth_heir_war }
 		}
 		set_temp_variable = { zin_dark_heir = 3 }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_dark_heir = 0 }
-			Y1A = { has_country_flag = zin_goldoroth_heir_warrens }
+			GOL = { has_country_flag = zin_goldoroth_heir_warrens }
 		}
 		set_temp_variable = { zin_dark_heir = 4 }
 	}
@@ -427,7 +427,7 @@ zin_goldoroth_crown_heir = {
 	}
 	if = {
 		limit = { check_variable = { zin_dark_heir > 0 } }
-		Y1A = {
+		GOL = {
 			kill_country_leader = yes
 			if = {
 				limit = { check_variable = { zin_dark_heir = 1 } }
@@ -511,16 +511,16 @@ zin_goldoroth_crown_heir = {
 			set_temp_variable = { zin_arg_value = -10 }
 		}
 		zin_goldoroth_add_favour = yes
-		Y1A = { clr_country_flag = zin_goldoroth_heir_volcano }
-		Y1A = { clr_country_flag = zin_goldoroth_heir_iron }
-		Y1A = { clr_country_flag = zin_goldoroth_heir_war }
-		Y1A = { clr_country_flag = zin_goldoroth_heir_warrens }
+		GOL = { clr_country_flag = zin_goldoroth_heir_volcano }
+		GOL = { clr_country_flag = zin_goldoroth_heir_iron }
+		GOL = { clr_country_flag = zin_goldoroth_heir_war }
+		GOL = { clr_country_flag = zin_goldoroth_heir_warrens }
 	}
 	set_variable = { global.zin_dark_challenger = 0 }
 }
 
 zin_goldoroth_warking_takes_field = {
-	Y1A = {
+	GOL = {
 		random_character = {
 			limit = { is_country_leader = yes }
 			if = {
@@ -539,10 +539,10 @@ zin_goldoroth_warking_takes_field = {
 }
 
 zin_goldoroth_core_dark_lands = {
-	Y1A = {
+	GOL = {
 		every_owned_state = {
 			limit = { zin_is_region_dark_lands = yes }
-			add_core_of = Y1A
+			add_core_of = GOL
 		}
 	}
 }
@@ -550,14 +550,14 @@ zin_goldoroth_core_dark_lands = {
 zin_goldoroth_claim_strait_shores = {
 	every_state = {
 		limit = { zin_is_site_dark_strait_far_shore = yes }
-		add_claim_by = Y1A
+		add_claim_by = GOL
 	}
 }
 
 zin_goldoroth_proclaim_one_kingdom = {
 	if = {
-		limit = { NOT = { Y1A = { has_country_flag = zin_goldoroth_one_kingdom } } }
-		Y1A = {
+		limit = { NOT = { GOL = { has_country_flag = zin_goldoroth_one_kingdom } } }
+		GOL = {
 			set_country_flag = zin_goldoroth_one_kingdom
 			set_cosmetic_tag = zin_cosmetic_goldoroth_great
 			add_stability = 0.1
@@ -565,14 +565,14 @@ zin_goldoroth_proclaim_one_kingdom = {
 		}
 		set_temp_variable = { zin_arg_value = 3 }
 		zin_world_add_gathering_dark = yes
-		Y1A = { news_event = { id = zin_dark.61 } }
+		GOL = { news_event = { id = zin_dark.61 } }
 	}
 }
 
 zin_goldoroth_kneel = {
 	if = {
-		limit = { NOT = { Y1A = { has_country_flag = zin_goldoroth_kneeled } } }
-		Y1A = {
+		limit = { NOT = { GOL = { has_country_flag = zin_goldoroth_kneeled } } }
+		GOL = {
 			set_country_flag = zin_goldoroth_kneeled
 			every_subject_country = {
 				limit = {
@@ -588,11 +588,11 @@ zin_goldoroth_kneel = {
 				zin_goldoroth_apply_sway = yes
 			}
 		}
-		Y8D = {
-			puppet = Y1A
-			set_autonomy = { target = Y1A autonomy_state = zin_autonomy_sworn_realm end_wars = yes end_civil_wars = no }
+		PUV = {
+			puppet = GOL
+			set_autonomy = { target = GOL autonomy_state = zin_autonomy_sworn_realm end_wars = yes end_civil_wars = no }
 		}
-		Y1A = {
+		GOL = {
 			set_politics = { ruling_party = communism elections_allowed = no }
 			set_temp_variable = { zin_arg_stance = 12 }
 			zin_politics_set_stance = yes
@@ -607,7 +607,7 @@ zin_goldoroth_kneel = {
 		}
 		set_temp_variable = { zin_arg_value = 3 }
 		zin_world_add_gathering_dark = yes
-		Y1A = { news_event = { id = zin_dark.62 } }
+		GOL = { news_event = { id = zin_dark.62 } }
 	}
 }
 
@@ -628,7 +628,7 @@ zin_dark_add_volgan_pact = {
 
 zin_dark_grant_hold_cb = {
 	var:zin_arg_target = {
-		Y1A = {
+		GOL = {
 			add_dynamic_modifier = { modifier = zin_cb_hold_defiance scope = PREV days = 365 }
 		}
 	}
@@ -636,54 +636,54 @@ zin_dark_grant_hold_cb = {
 
 zin_dark_grant_raid_cb = {
 	var:zin_arg_target = {
-		add_dynamic_modifier = { modifier = zin_cb_orc_raids scope = Y1A days = 365 }
-		Y1A = {
+		add_dynamic_modifier = { modifier = zin_cb_orc_raids scope = GOL days = 365 }
+		GOL = {
 			add_dynamic_modifier = { modifier = zin_cb_orc_raids scope = PREV days = 365 }
 		}
 	}
 }
 
 zin_goldoroth_wargoal_defiant = {
-	Y1A = {
+	GOL = {
 		every_country = {
 			limit = {
 				has_country_flag = zin_dark_refused_yoke
-				NOT = { has_war_with = Y1A }
+				NOT = { has_war_with = GOL }
 				OR = {
-					is_neighbor_of = Y1A
+					is_neighbor_of = GOL
 					any_other_country = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 						is_neighbor_of = PREV
 					}
 				}
 				OR = {
 					has_global_flag = zin_war_of_last_crowns
 					has_global_flag = zin_volgan_marches
-					Y1A = { has_dynamic_modifier = { modifier = zin_cb_hold_defiance scope = PREV } }
+					GOL = { has_dynamic_modifier = { modifier = zin_cb_hold_defiance scope = PREV } }
 				}
 			}
-			Y1A = { create_wargoal = { type = annex_everything target = PREV } }
+			GOL = { create_wargoal = { type = annex_everything target = PREV } }
 		}
 	}
 }
 
 zin_goldoroth_wargoal_sworn = {
-	Y1A = {
+	GOL = {
 		every_country = {
 			limit = {
 				zin_dark_is_dark = yes
-				NOT = { original_tag = Y1A }
+				NOT = { original_tag = GOL }
 				check_variable = { zin_volgan_pact > 2.99 }
-				NOT = { has_war_with = Y1A }
+				NOT = { has_war_with = GOL }
 				OR = {
-					is_neighbor_of = Y1A
+					is_neighbor_of = GOL
 					any_other_country = {
-						is_subject_of = Y1A
+						is_subject_of = GOL
 						is_neighbor_of = PREV
 					}
 				}
 			}
-			Y1A = { create_wargoal = { type = annex_everything target = PREV } }
+			GOL = { create_wargoal = { type = annex_everything target = PREV } }
 		}
 	}
 }
@@ -695,8 +695,8 @@ zin_goldoroth_wargoal_strait_south = {
 			zin_is_site_dark_strait_south_far = yes
 			owner = {
 				OR = {
-					original_tag = Y0L
-					is_subject_of = Y0L
+					original_tag = AEN
+					is_subject_of = AEN
 				}
 			}
 		}
@@ -705,7 +705,7 @@ zin_goldoroth_wargoal_strait_south = {
 	}
 	if = {
 		limit = { check_variable = { zin_dark_goal_state > 0 } }
-		Y1A = {
+		GOL = {
 			meta_effect = {
 				text = {
 					create_wargoal = {
@@ -724,12 +724,12 @@ zin_goldoroth_rally_free_dark = {
 	every_country = {
 		limit = {
 			zin_dark_is_dark = yes
-			NOT = { original_tag = Y1A }
+			NOT = { original_tag = GOL }
 			check_variable = { zin_goldoroth_sway > 39.99 }
 			check_variable = { zin_volgan_pact < 1.01 }
 		}
-		give_military_access = Y1A
-		add_opinion_modifier = { target = Y1A modifier = zin_dark_gifts }
+		give_military_access = GOL
+		add_opinion_modifier = { target = GOL modifier = zin_dark_gifts }
 	}
 }
 
@@ -737,11 +737,11 @@ zin_goldoroth_offer_access_against_dead = {
 	every_country = {
 		limit = {
 			zin_dark_is_dark = yes
-			NOT = { original_tag = Y1A }
-			has_war_with = Y0U
+			NOT = { original_tag = GOL }
+			has_war_with = ZOL
 		}
-		give_military_access = Y1A
-		Y1A = { give_military_access = PREV }
+		give_military_access = GOL
+		GOL = { give_military_access = PREV }
 	}
 }
 
@@ -751,17 +751,17 @@ zin_dark_start_border_clash = {
 		limit = {
 			zin_dark_date_war_floor = yes
 			NOT = { has_global_flag = zin_dark_clash_active }
-			country_exists = Y19
+			country_exists = DND
 		}
-		Y1A = {
+		GOL = {
 			random_owned_state = {
 				limit = {
 					zin_is_site_goldoroth_march = yes
-					any_neighbor_state = { is_owned_by = Y19 }
+					any_neighbor_state = { is_owned_by = DND }
 				}
 				save_event_target_as = zin_dark_clash_a
 				random_neighbor_state = {
-					limit = { is_owned_by = Y19 }
+					limit = { is_owned_by = DND }
 					save_event_target_as = zin_dark_clash_b
 				}
 			}
@@ -772,7 +772,7 @@ zin_dark_start_border_clash = {
 				has_event_target = zin_dark_clash_b
 			}
 			set_global_flag = zin_dark_clash_active
-			Y1A = {
+			GOL = {
 				if = {
 					limit = { has_global_flag = zin_war_of_last_crowns }
 					start_border_war = {
@@ -819,7 +819,7 @@ zin_dark_start_border_clash = {
 			}
 			set_temp_variable = { zin_arg_value = 1 }
 			zin_world_add_gathering_dark = yes
-			Y1A = { news_event = { id = zin_dark.15 } }
+			GOL = { news_event = { id = zin_dark.15 } }
 		}
 	}
 }
@@ -830,17 +830,17 @@ zin_dark_end_clash = {
 		clr_global_flag = zin_dark_clash_active
 		if = {
 			limit = { check_variable = { zin_arg_result = 1 } }
-			Y1A = { country_event = { id = zin_dark.16 } }
-			Y19 = { country_event = { id = zin_dark.16 } }
+			GOL = { country_event = { id = zin_dark.16 } }
+			DND = { country_event = { id = zin_dark.16 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_arg_result = 2 } }
-			Y1A = { country_event = { id = zin_dark.17 } }
-			Y19 = { country_event = { id = zin_dark.17 } }
+			GOL = { country_event = { id = zin_dark.17 } }
+			DND = { country_event = { id = zin_dark.17 } }
 		}
 		else = {
-			Y1A = { country_event = { id = zin_dark.18 } }
-			Y19 = { country_event = { id = zin_dark.18 } }
+			GOL = { country_event = { id = zin_dark.18 } }
+			DND = { country_event = { id = zin_dark.18 } }
 		}
 	}
 }
@@ -848,7 +848,7 @@ zin_dark_end_clash = {
 zin_dark_blood_price_paid = {
 	set_temp_variable = { zin_arg_value = -15 }
 	zin_dark_add_border_tension = yes
-	Y1A = {
+	GOL = {
 		if = {
 			limit = { has_country_flag = zin_goldoroth_blood_price }
 			add_political_power = 35
@@ -869,7 +869,7 @@ zin_dark_answer_raid = {
 			zin_dark_add_accord_resolve = yes
 		}
 		else = {
-			add_opinion_modifier = { target = Y19 modifier = zin_dark_beacons_lit }
+			add_opinion_modifier = { target = DND modifier = zin_dark_beacons_lit }
 		}
 	}
 	else_if = {
@@ -897,11 +897,11 @@ zin_dark_resolve_raid = {
 		set_variable = { global.zin_dark_raid_quiet_until = global.num_days }
 		add_to_variable = { global.zin_dark_raid_quiet_until = 90 }
 	}
-	Y1A = { set_country_flag = { flag = zin_goldoroth_fed days = 90 } }
+	GOL = { set_country_flag = { flag = zin_goldoroth_fed days = 90 } }
 	var:zin_arg_target = { set_country_flag = { flag = zin_dark_raided_recently days = 365 } }
 	if = {
 		limit = { check_variable = { zin_arg_kind = 1 } }
-		Y1A = {
+		GOL = {
 			add_equipment_to_stockpile = { type = zin_arms_equipment amount = 150 }
 			army_experience = 10
 			set_temp_variable = { zin_arg_value = -8 }
@@ -916,17 +916,17 @@ zin_dark_resolve_raid = {
 	}
 	else_if = {
 		limit = { check_variable = { zin_arg_kind = 2 } }
-		Y1A = {
+		GOL = {
 			add_equipment_to_stockpile = { type = zin_arms_equipment amount = 100 }
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_goldoroth_add_temper = yes
 		}
 		var:zin_arg_target = {
-			add_opinion_modifier = { target = Y1A modifier = zin_dark_raided }
+			add_opinion_modifier = { target = GOL modifier = zin_dark_raided }
 			set_temp_variable = { zin_dark_theirs = num_divisions }
 		}
 		multiply_temp_variable = { zin_dark_theirs = 3 }
-		Y1A = {
+		GOL = {
 			if = {
 				limit = { NOT = { check_variable = { num_divisions < zin_dark_theirs } } }
 				set_temp_variable = { zin_arg_value = 5 }
@@ -939,7 +939,7 @@ zin_dark_resolve_raid = {
 		var:zin_arg_target = { country_event = { id = zin_dark.12 } }
 	}
 	else = {
-		Y1A = {
+		GOL = {
 			add_equipment_to_stockpile = { type = zin_arms_equipment amount = 100 }
 			add_political_power = 25
 			set_temp_variable = { zin_arg_value = -5 }
@@ -952,8 +952,8 @@ zin_dark_resolve_raid = {
 				zin_dark_add_border_tension = yes
 			}
 			if = {
-				limit = { original_tag = Y4I }
-				Y0G = { add_opinion_modifier = { target = Y1A modifier = zin_dark_corsair_outrage } }
+				limit = { original_tag = BLK }
+				LER = { add_opinion_modifier = { target = GOL modifier = zin_dark_corsair_outrage } }
 			}
 			country_event = { id = zin_dark.13 }
 		}
@@ -966,7 +966,7 @@ zin_dark_resolve_raid = {
 		}
 		zin_dark_grant_raid_cb = yes
 	}
-	Y1A = { country_event = { id = zin_dark.10 } }
+	GOL = { country_event = { id = zin_dark.10 } }
 }
 
 zin_dark_startup = {
@@ -984,7 +984,7 @@ zin_dark_startup = {
 			50 = { set_variable = { global.zin_dark_rule_roll = 2 } }
 		}
 	}
-	Y1A = {
+	GOL = {
 		set_variable = { zin_goldoroth_temper = 55 }
 		set_variable = { zin_goldoroth_favour_volcano = 55 }
 		set_variable = { zin_goldoroth_favour_iron = 50 }
@@ -998,229 +998,159 @@ zin_dark_startup = {
 		recruit_character = zin_goldoroth_britag
 		recruit_character = zin_goldoroth_snikkit
 	}
-	Y19 = {
+	DND = {
 		set_variable = { zin_goldoroth_sway = 0 }
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y1B = {
+	DRK = {
+		set_variable = { zin_goldoroth_sway = 20 }
+		if = {
+			limit = { is_neighbor_of = GOL }
+			add_to_variable = { zin_goldoroth_sway = 10 }
+		}
+		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
+		set_variable = { zin_dark_tribute_days = 0 }
+		set_variable = { zin_dark_moot_refusals = 0 }
+	}
+	BUN = {
+		set_variable = { zin_goldoroth_sway = 20 }
+		if = {
+			limit = { is_neighbor_of = GOL }
+			add_to_variable = { zin_goldoroth_sway = 10 }
+		}
+		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
+		set_variable = { zin_dark_tribute_days = 0 }
+		set_variable = { zin_dark_moot_refusals = 0 }
+	}
+	VES = {
+		set_variable = { zin_goldoroth_sway = 20 }
+		if = {
+			limit = { is_neighbor_of = GOL }
+			add_to_variable = { zin_goldoroth_sway = 10 }
+		}
+		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
+		set_variable = { zin_dark_tribute_days = 0 }
+		set_variable = { zin_dark_moot_refusals = 0 }
+	}
+	BLK = {
+		set_variable = { zin_goldoroth_sway = 0 }
+		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
+		set_variable = { zin_dark_tribute_days = 0 }
+		set_variable = { zin_dark_moot_refusals = 0 }
+	}
+	BLN = {
 		set_variable = { zin_goldoroth_sway = 5 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y1C = {
-		set_variable = { zin_goldoroth_sway = 10 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y43 = {
+	BOR = {
 		set_variable = { zin_goldoroth_sway = 25 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y44 = {
+	DRE = {
 		set_variable = { zin_goldoroth_sway = 25 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y45 = {
-		set_variable = { zin_goldoroth_sway = 10 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y46 = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y47 = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y48 = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y49 = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4A = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4B = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4C = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4D = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4E = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4F = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4G = {
-		set_variable = { zin_goldoroth_sway = 20 }
-		if = {
-			limit = { is_neighbor_of = Y1A }
-			add_to_variable = { zin_goldoroth_sway = 10 }
-		}
-		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
-		set_variable = { zin_dark_tribute_days = 0 }
-		set_variable = { zin_dark_moot_refusals = 0 }
-	}
-	Y4H = {
+	DUL = {
 		set_variable = { zin_goldoroth_sway = 15 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y4I = {
-		set_variable = { zin_goldoroth_sway = 0 }
+	TRO = {
+		set_variable = { zin_goldoroth_sway = 10 }
+		if = {
+			limit = { is_neighbor_of = GOL }
+			add_to_variable = { zin_goldoroth_sway = 10 }
+		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y4J = {
+	HOO = {
 		set_variable = { zin_goldoroth_sway = 20 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y4K = {
+	DAK = {
 		set_variable = { zin_goldoroth_sway = 20 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y4L = {
+	SKR = {
 		set_variable = { zin_goldoroth_sway = 20 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y8C = {
+	DUN = {
+		set_variable = { zin_goldoroth_sway = 10 }
+		if = {
+			limit = { is_neighbor_of = GOL }
+			add_to_variable = { zin_goldoroth_sway = 10 }
+		}
+		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
+		set_variable = { zin_dark_tribute_days = 0 }
+		set_variable = { zin_dark_moot_refusals = 0 }
+	}
+	BRT = {
 		set_variable = { zin_goldoroth_sway = 20 }
 		if = {
-			limit = { is_neighbor_of = Y1A }
+			limit = { is_neighbor_of = GOL }
 			add_to_variable = { zin_goldoroth_sway = 10 }
 		}
 		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
 		set_variable = { zin_dark_tribute_days = 0 }
 		set_variable = { zin_dark_moot_refusals = 0 }
 	}
-	Y45 = { add_ideas = zin_dark_forest_nobody_enters }
+	WIL = {
+		set_variable = { zin_goldoroth_sway = 20 }
+		if = {
+			limit = { is_neighbor_of = GOL }
+			add_to_variable = { zin_goldoroth_sway = 10 }
+		}
+		set_variable = { zin_goldoroth_sway_start = zin_goldoroth_sway }
+		set_variable = { zin_dark_tribute_days = 0 }
+		set_variable = { zin_dark_moot_refusals = 0 }
+	}
+	TRO = { add_ideas = zin_dark_forest_nobody_enters }
 	every_state = {
 		limit = { zin_is_site_troll_forest = yes }
 		add_dynamic_modifier = { modifier = zin_dark_troll_woods }
@@ -1237,8 +1167,8 @@ zin_dark_refresh_panel_rows = {
 	every_country = {
 		limit = {
 			zin_dark_is_dark = yes
-			NOT = { original_tag = Y1A }
-			NOT = { original_tag = Y19 }
+			NOT = { original_tag = GOL }
+			NOT = { original_tag = DND }
 		}
 		add_to_array = { array = global.zin_dark_sway_rows value = THIS }
 	}
@@ -1274,7 +1204,7 @@ zin_dark_on_body_destroyed = {
 				zin_dark_is_dark = yes
 				OR = {
 					has_country_flag = zin_dark_was_sworn
-					is_subject_of = Y8D
+					is_subject_of = PUV
 					check_variable = { zin_volgan_pact > 2.99 }
 				}
 			}
@@ -1286,7 +1216,7 @@ zin_dark_on_body_destroyed = {
 zin_dark_pulse = {
 	# temper
 	set_temp_variable = { zin_dark_temper_delta = 0 }
-	Y1A = {
+	GOL = {
 		if = {
 			limit = {
 				has_war = no
@@ -1316,7 +1246,7 @@ zin_dark_pulse = {
 	set_temp_variable = { zin_arg_value = zin_dark_temper_delta }
 	zin_goldoroth_add_temper = yes
 	# the lowest bloc may challenge the Warking (once a year at most)
-	Y1A = {
+	GOL = {
 		set_temp_variable = { zin_dark_lowest = 100 }
 		set_temp_variable = { zin_dark_bloc_pick = 0 }
 		if = {
@@ -1356,13 +1286,13 @@ zin_dark_pulse = {
 	every_country = {
 		limit = {
 			zin_dark_is_dark = yes
-			NOT = { original_tag = Y1A }
+			NOT = { original_tag = GOL }
 			has_variable = zin_goldoroth_sway
 		}
 		if = {
 			limit = { zin_dark_is_tributary = yes }
 			if = {
-				limit = { Y1A = { has_country_flag = zin_goldoroth_light_yoke } }
+				limit = { GOL = { has_country_flag = zin_goldoroth_light_yoke } }
 				add_to_variable = { zin_goldoroth_sway = 0.5 }
 			}
 			else = { add_to_variable = { zin_goldoroth_sway = 0.25 } }
@@ -1393,7 +1323,7 @@ zin_dark_pulse = {
 				NOT = { has_global_flag = zin_volgan_body_destroyed }
 				OR = {
 					check_variable = { zin_volgan_pact > 2.99 }
-					is_subject_of = Y8D
+					is_subject_of = PUV
 				}
 			}
 			set_country_flag = zin_dark_was_sworn
@@ -1427,7 +1357,7 @@ zin_dark_pulse = {
 		limit = {
 			any_country = {
 				zin_dark_is_accord_member = yes
-				has_war_with = Y1A
+				has_war_with = GOL
 			}
 		}
 		add_to_temp_variable = { zin_dark_resolve_delta = 0.5 }
@@ -1533,12 +1463,12 @@ zin_dark_pulse = {
 		}
 	}
 	# Volgan's envoys, the dead on the shore, the fall of the south
-	Y1A = {
+	GOL = {
 		if = {
 			limit = {
 				OR = {
 					check_variable = { zin_volgan_pact > 0.99 }
-					Y8D = { has_completed_focus = zin_volgan_goldoroth_question }
+					PUV = { has_completed_focus = zin_volgan_goldoroth_question }
 				}
 			}
 			set_country_flag = zin_goldoroth_envoy_heard

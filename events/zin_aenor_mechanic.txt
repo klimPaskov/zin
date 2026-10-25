@@ -36,10 +36,10 @@ country_event = {
 		}
 		zin_aenor_refresh_modifiers = yes
 		16 = { set_variable = { zin_aenor_first_province = 4433 } }
+		17 = { set_variable = { zin_aenor_first_province = 4980 } }
 		150 = { set_variable = { zin_aenor_first_province = 3641 } }
 		238 = { set_variable = { zin_aenor_first_province = 3865 } }
 		239 = { set_variable = { zin_aenor_first_province = 3870 } }
-		240 = { set_variable = { zin_aenor_first_province = 3952 } }
 		667 = { set_variable = { zin_aenor_first_province = 3605 } }
 		668 = { set_variable = { zin_aenor_first_province = 3598 } }
 		669 = { set_variable = { zin_aenor_first_province = 3487 } }
@@ -47,219 +47,120 @@ country_event = {
 		725 = { set_variable = { zin_aenor_first_province = 3864 } }
 		726 = { set_variable = { zin_aenor_first_province = 4119 } }
 		727 = { set_variable = { zin_aenor_first_province = 4197 } }
+		751 = { set_variable = { zin_aenor_first_province = 4893 } }
+		752 = { set_variable = { zin_aenor_first_province = 4577 } }
 		884 = { set_variable = { zin_aenor_first_province = 3527 } }
 		886 = { set_variable = { zin_aenor_first_province = 3596 } }
 		901 = { set_variable = { zin_aenor_first_province = 3734 } }
 		937 = { set_variable = { zin_aenor_first_province = 4176 } }
 		967 = { set_variable = { zin_aenor_first_province = 4328 } }
 		968 = { set_variable = { zin_aenor_first_province = 4292 } }
-		Y0M = {
+		1282 = { set_variable = { zin_aenor_first_province = 3452 } }
+		1328 = { set_variable = { zin_aenor_first_province = 3963 } }
+		1329 = { set_variable = { zin_aenor_first_province = 4035 } }
+		SEL = {
 			set_variable = { zin_concord_loyalty = 45 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y0M = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0M autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { SEL = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = SEL autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y0S = {
-			set_variable = { zin_concord_loyalty = 40 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y0S = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0S autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y0N = {
-			set_variable = { zin_concord_loyalty = 55 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y0N = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0N autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y55 = {
-			set_variable = { zin_concord_loyalty = 50 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y55 = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y55 autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y0O = {
-			set_variable = { zin_concord_loyalty = 60 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y0O = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0O autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y0P = {
+		KIN = {
 			set_variable = { zin_concord_loyalty = 65 }
 			add_ideas = zin_concord_charter_wall
 		}
 		if = {
-			limit = { Y0P = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0P autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { KIN = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = KIN autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y51 = {
-			set_variable = { zin_concord_loyalty = 50 }
-			add_ideas = zin_concord_charter_golden
-		}
-		if = {
-			limit = { Y51 = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y51 autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y53 = {
-			set_variable = { zin_concord_loyalty = 50 }
-			add_ideas = zin_concord_charter_golden
-		}
-		if = {
-			limit = { Y53 = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y53 autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4W = {
+		KON = {
 			set_variable = { zin_concord_loyalty = 55 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y4W = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4W autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { KON = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = KON autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y4V = {
-			set_variable = { zin_concord_loyalty = 45 }
+		HNH = {
+			set_variable = { zin_concord_loyalty = 55 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y4V = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4V autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { HNH = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = HNH autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y0Q = {
-			set_variable = { zin_concord_loyalty = 60 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y0Q = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0Q autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y0R = {
+		KLU = {
 			set_variable = { zin_concord_loyalty = 70 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y0R = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0R autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { KLU = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = KLU autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y4U = {
+		HER = {
+			set_variable = { zin_concord_loyalty = 50 }
+			add_ideas = zin_concord_charter_old
+		}
+		if = {
+			limit = { HER = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = HER autonomy_state = zin_autonomy_chartered_dominion } }
+		}
+		NOL = {
+			set_variable = { zin_concord_loyalty = 40 }
+			add_ideas = zin_concord_charter_old
+		}
+		if = {
+			limit = { NOL = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = NOL autonomy_state = zin_autonomy_chartered_dominion } }
+		}
+		KIL = {
+			set_variable = { zin_concord_loyalty = 60 }
+			add_ideas = zin_concord_charter_old
+		}
+		if = {
+			limit = { KIL = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = KIL autonomy_state = zin_autonomy_chartered_dominion } }
+		}
+		SFT = {
 			set_variable = { zin_concord_loyalty = 70 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y4U = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4U autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { SFT = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = SFT autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y4O = {
-			set_variable = { zin_concord_loyalty = 55 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4O = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4O autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4Q = {
+		FRE = {
 			set_variable = { zin_concord_loyalty = 50 }
-			add_ideas = zin_concord_charter_old
+			add_ideas = zin_concord_charter_golden
 		}
 		if = {
-			limit = { Y4Q = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4Q autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { FRE = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = FRE autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y4R = {
-			set_variable = { zin_concord_loyalty = 55 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4R = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4R autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4S = {
-			set_variable = { zin_concord_loyalty = 60 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4S = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4S autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4Z = {
-			set_variable = { zin_concord_loyalty = 55 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4Z = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4Z autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y50 = {
-			set_variable = { zin_concord_loyalty = 60 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y50 = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y50 autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y52 = {
+		PAZ = {
 			set_variable = { zin_concord_loyalty = 50 }
-			add_ideas = zin_concord_charter_old
+			add_ideas = zin_concord_charter_golden
 		}
 		if = {
-			limit = { Y52 = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y52 autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { PAZ = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = PAZ autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y0T = {
+		ORH = {
 			set_variable = { zin_concord_loyalty = 75 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y0T = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y0T autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { ORH = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = ORH autonomy_state = zin_autonomy_chartered_dominion } }
 		}
-		Y4N = {
-			set_variable = { zin_concord_loyalty = 60 }
+		KUN = {
+			set_variable = { zin_concord_loyalty = 45 }
 			add_ideas = zin_concord_charter_old
 		}
 		if = {
-			limit = { Y4N = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4N autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4P = {
-			set_variable = { zin_concord_loyalty = 60 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4P = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4P autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4T = {
-			set_variable = { zin_concord_loyalty = 65 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4T = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4T autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4X = {
-			set_variable = { zin_concord_loyalty = 60 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4X = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4X autonomy_state = zin_autonomy_chartered_dominion } }
-		}
-		Y4Y = {
-			set_variable = { zin_concord_loyalty = 55 }
-			add_ideas = zin_concord_charter_old
-		}
-		if = {
-			limit = { Y4Y = { is_subject_of = Y0L } }
-			Y0L = { set_autonomy = { target = Y4Y autonomy_state = zin_autonomy_chartered_dominion } }
+			limit = { KUN = { is_subject_of = AEN } }
+			AEN = { set_autonomy = { target = KUN autonomy_state = zin_autonomy_chartered_dominion } }
 		}
 	}
 

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y55
+			original_tag = HER
 		}
 	}
 	initial_show_position = { focus = zin_regional_herez_the_southern_marches }
@@ -283,7 +283,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -322,7 +322,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -353,7 +353,7 @@ focus_tree = {
 		y = 0
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 10
@@ -377,7 +377,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				country_event = zin_regional_herez.2
 			}
 		}
@@ -475,7 +475,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -520,7 +520,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0Y = {
+			MIR = {
 				add_to_faction = PREV
 			}
 			set_country_flag = zin_mirolon_league_friend
@@ -538,7 +538,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 10
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 10
@@ -552,7 +552,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1755.6.4
+						date > 1755.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -563,7 +563,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_country_flag = zin_herez_shelters_mirolon
-			Y0Y = {
+			MIR = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_mirolon_add_passes = yes
 			}
@@ -832,7 +832,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -958,7 +958,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -983,7 +983,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_global_flag = zin_volgan_marches
-				has_war_with = Y8D
+				has_war_with = PUV
 			}
 		}
 		ai_will_do = {
@@ -1149,7 +1149,7 @@ focus_tree = {
 				has_global_flag = zin_volgan_body_destroyed
 				AND = {
 					NOT = {
-						has_war_with = Y8D
+						has_war_with = PUV
 					}
 					controls_state = 73
 				}

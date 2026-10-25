@@ -5,75 +5,23 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0R
+			original_tag = FOT
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4M
+			original_tag = FRE
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4N
+			original_tag = KLU
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4O
+			original_tag = PAZ
 		}
 		modifier = {
 			add = 10
-			original_tag = Y4P
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4Q
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4R
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4S
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4T
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4U
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4V
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4X
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4Y
-		}
-		modifier = {
-			add = 10
-			original_tag = Y4Z
-		}
-		modifier = {
-			add = 10
-			original_tag = Y50
-		}
-		modifier = {
-			add = 10
-			original_tag = Y51
-		}
-		modifier = {
-			add = 10
-			original_tag = Y52
-		}
-		modifier = {
-			add = 10
-			original_tag = Y53
+			original_tag = SFT
 		}
 	}
 	initial_show_position = { focus = zin_shared_concord_dominions_charter_of_the_dominion }
@@ -1179,7 +1127,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0Y
+			country_exists = MIR
 		}
 		ai_will_do = {
 			factor = 20
@@ -1193,9 +1141,9 @@ focus_tree = {
 			zin_lost_cause_add_strength = yes
 			if = {
 				limit = {
-					country_exists = Y0Y
+					country_exists = MIR
 				}
-				Y0Y = {
+				MIR = {
 					set_temp_variable = { zin_arg_value = 2 }
 					zin_mirolon_add_proof = yes
 				}

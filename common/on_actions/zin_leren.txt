@@ -2,10 +2,10 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y0G = { country_event = { id = zin_leren.1 days = 1 } }
+			LER = { country_event = { id = zin_leren.1 days = 1 } }
 		}
 	}
-	on_monthly_Y0G = {
+	on_monthly_LER = {
 		effect = {
 			zin_leren_monthly = yes
 		}

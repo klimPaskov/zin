@@ -4,7 +4,7 @@ zin_regional_nolorim_ask_kin = {
 		limit = {
 			zin_elves_is_magical_realm = yes
 			NOT = { tag = ROOT }
-			NOT = { original_tag = Y8F }
+			NOT = { original_tag = MAG }
 			NOT = { has_country_flag = zin_regional_nolorim_asked }
 			has_opinion = { target = ROOT value > 39 }
 		}
@@ -15,7 +15,7 @@ zin_regional_nolorim_ask_kin = {
 		limit = {
 			zin_elves_is_magical_realm = yes
 			NOT = { tag = ROOT }
-			NOT = { original_tag = Y8F }
+			NOT = { original_tag = MAG }
 			NOT = { has_country_flag = zin_regional_nolorim_asked }
 			has_opinion = { target = ROOT value > 19 }
 		}
@@ -26,7 +26,7 @@ zin_regional_nolorim_ask_kin = {
 		limit = {
 			zin_elves_is_magical_realm = yes
 			NOT = { tag = ROOT }
-			NOT = { original_tag = Y8F }
+			NOT = { original_tag = MAG }
 			NOT = { has_country_flag = zin_regional_nolorim_asked }
 		}
 		set_country_flag = zin_regional_nolorim_asked

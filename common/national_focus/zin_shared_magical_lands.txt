@@ -5,63 +5,19 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7V
+			original_tag = LUV
 		}
 		modifier = {
 			add = 10
-			original_tag = Y7W
+			original_tag = MSH
 		}
 		modifier = {
 			add = 10
-			original_tag = Y7X
+			original_tag = TES
 		}
 		modifier = {
 			add = 10
-			original_tag = Y7Y
-		}
-		modifier = {
-			add = 10
-			original_tag = Y7Z
-		}
-		modifier = {
-			add = 10
-			original_tag = Y80
-		}
-		modifier = {
-			add = 10
-			original_tag = Y81
-		}
-		modifier = {
-			add = 10
-			original_tag = Y84
-		}
-		modifier = {
-			add = 10
-			original_tag = Y85
-		}
-		modifier = {
-			add = 10
-			original_tag = Y86
-		}
-		modifier = {
-			add = 10
-			original_tag = Y87
-		}
-		modifier = {
-			add = 10
-			original_tag = Y88
-		}
-		modifier = {
-			add = 10
-			original_tag = Y89
-		}
-		modifier = {
-			add = 10
-			original_tag = Y8A
-		}
-		modifier = {
-			add = 10
-			original_tag = Y8B
+			original_tag = YAV
 		}
 	}
 	initial_show_position = { focus = zin_shared_magical_lands_council_of_the_grove }
@@ -345,9 +301,9 @@ focus_tree = {
 			zin_elves_add_kinship = yes
 			if = {
 				limit = {
-					country_exists = Y8F
+					country_exists = MAG
 				}
-				Y8F = {
+				MAG = {
 					set_temp_variable = { zin_arg_target = ROOT }
 					zin_elves_goodwill = yes
 				}
@@ -387,7 +343,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		cost = 5
 		available = {
-			country_exists = Y0X
+			country_exists = NLR
 		}
 		ai_will_do = {
 			factor = 15
@@ -587,9 +543,9 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0P
+			country_exists = KIN
 			NOT = {
-				has_war_with = Y0P
+				has_war_with = KIN
 			}
 		}
 		ai_will_do = {
@@ -598,9 +554,9 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = Y0P
+					country_exists = KIN
 				}
-				Y0P = {
+				KIN = {
 					set_temp_variable = { zin_arg_modifier = 1 }
 					zin_shared_magical_lands_opinion_both_ways = yes
 				}
@@ -863,11 +819,11 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1754.3.2
+						date > 1754.3.1
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
-						date > 1751.3.2
+						date > 1751.3.1
 					}
 				}
 				zin_shared_magical_lands_dark_stirring = yes
@@ -1099,9 +1055,9 @@ focus_tree = {
 			zin_elves_add_kinship = yes
 			if = {
 				limit = {
-					country_exists = Y8F
+					country_exists = MAG
 				}
-				Y8F = {
+				MAG = {
 					set_temp_variable = { zin_arg_target = ROOT }
 					zin_elves_goodwill = yes
 				}

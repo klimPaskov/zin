@@ -16,7 +16,7 @@
   "vanillaNested": 33,
   "vanillaReview": 821,
   "vanillaClean": 8618,
-  "zinBannedError": 7,
+  "zinBannedError": 4,
   "zinBannedReview": 13
  },
  "families": {
@@ -55,9 +55,9 @@
    "vanillaNested": 0,
    "vanillaReview": 23,
    "vanillaClean": 534,
-   "zinBannedError": 3,
+   "zinBannedError": 0,
    "zinBannedReview": 0,
-   "errors": 16,
+   "errors": 13,
    "warnings": 0,
    "gate": "off",
    "data": false
@@ -3023,12 +3023,12 @@
   ]
  },
  "counts": {
-  "errors": 98,
-  "warnings": 55,
+  "errors": 116,
+  "warnings": 60,
   "failing": 0,
   "byCheck": {
    "X4": 13,
-   "X5": 94,
+   "X5": 117,
    "X9": 46
   }
  },
@@ -3177,19 +3177,172 @@
    "check": "X5",
    "severity": "error",
    "family": "other",
-   "key": "LOADING_TIP_168",
-   "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "rule": "bw_military_modern_006",
-   "detail": "\"special forces\" in §YCounsel:§! Rangers, hill companies, sea soldiers and te..."
+   "key": "ADE_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilot\" in The chart-houses of Adel elected Tinaios Speaker of the Chart Hall..."
   },
   {
    "check": "X5",
    "severity": "error",
    "family": "other",
-   "key": "LOADING_TIP_189",
-   "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "rule": "bw_military_modern_013",
-   "detail": "\"focus tree\" in §YCounsel:§! Every realm has its own focus tree. Some branche..."
+   "key": "FNG_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in The master-pilots chose Lemaios Speaker at Kapai in 4A 1738, the ..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "FNG_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in The master-pilots chose Lemaios Speaker at Kapai in 4A 1738, the ..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "FNG_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in The master-pilots chose Lemaios Speaker at Kapai in 4A 1738, the ..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "FNG_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in The master-pilots chose Lemaios Speaker at Kapai in 4A 1738, the ..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "IHU_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in Lovin of Hol was chosen by the island Speakers at Holang to speak..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "NAN_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in Almon the Small is a wayfinder from the southern isles whom the h..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "NAN_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in Almon the Small is a wayfinder from the southern isles whom the h..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "NAN_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in Almon the Small is a wayfinder from the southern isles whom the h..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "PLT_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in The pilots' guild chose Torild for life in 4A 1737, and like ever..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "SOY_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilot\" in Yunga was a pilot before the Archipelago Council chose him Tide-Sp..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "VER_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"pilots\" in The clans of the hills and the mangroves chose Ruan nau Lua as ch..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_benan_kildos",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Kildos the Cove-Pilot"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_fineger_fee",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilots\" in Eisina Kapos, Keeper of the Pilots' Fee"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_fineger_ice",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Sonai the Ice-Pilot"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_ihuy_pilot",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Pangi the Reef-Pilot"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_leren.30.desc",
+   "file": "localisation/english/zin_events_mech_war_l_english.yml",
+   "rule": "bwx_001",
+   "detail": "\"squadrons\" in Lerendor has left the Treaty of the Narrow Strait. The squadro..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_leren.33.desc",
+   "file": "localisation/english/zin_events_mech_war_l_english.yml",
+   "rule": "bwx_001",
+   "detail": "\"squadrons\" in Lerendor keeps the old promise. The king of the North has answ..."
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_luv_zhise_nymwaeth",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Nymwaeth the Pilot"
   },
   {
    "check": "X5",
@@ -3217,6 +3370,33 @@
    "file": "localisation/english/zin_inst_l_english.yml",
    "rule": "gl_no_carrier",
    "detail": "\"Carrier\" in Carrier Birds"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_poloto_zorald",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Zorald the Pilot"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_regional_nan_delar",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilots\" in Delar of the Storm-Pilots"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
+   "key": "zin_regional_r_en_varrel",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Pilot-Master Askur Varrel"
   },
   {
    "check": "X5",
@@ -3447,6 +3627,15 @@
    "check": "X5",
    "severity": "error",
    "family": "other",
+   "key": "zin_trait_storm_pilot",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "gl_ace",
+   "detail": "\"Pilot\" in Storm-Pilot"
+  },
+  {
+   "check": "X5",
+   "severity": "error",
+   "family": "other",
    "key": "zin_west.40.d",
    "file": "localisation/english/zin_west_l_english.yml",
    "rule": "gl_ace",
@@ -3460,33 +3649,6 @@
    "file": "localisation/english/zin_west_l_english.yml",
    "rule": "gl_ace",
    "detail": "\"pilots\" in The sea took part of the fleet. Our pilots kept their heads and t..."
-  },
-  {
-   "check": "X5",
-   "severity": "error",
-   "family": "platform",
-   "key": "LOADING_TIP_158",
-   "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "rule": "bw_military_modern_011",
-   "detail": "\"war support\" in §YCounsel:§! Declare war while the long peace holds and you ..."
-  },
-  {
-   "check": "X5",
-   "severity": "error",
-   "family": "platform",
-   "key": "LOADING_TIP_158",
-   "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "rule": "bw_military_modern_012",
-   "detail": "\"stability\" in §YCounsel:§! Declare war while the long peace holds and you ar..."
-  },
-  {
-   "check": "X5",
-   "severity": "error",
-   "family": "platform",
-   "key": "LOADING_TIP_51",
-   "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "rule": "bw_modern_society_012",
-   "detail": "\"Chancellor\" in The seals of the kingdom are heavy. I carry them so that the ..."
   },
   {
    "check": "X5",
@@ -3582,6 +3744,15 @@
    "check": "X5",
    "severity": "warning",
    "family": "other",
+   "key": "CUR_zin_ruler_desc",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "bw_units_of_measure_006",
+   "detail": "\"knots\" in Izkala, daughter of Pelzen, keeps the eldest cord of the Veiled, o..."
+  },
+  {
+   "check": "X5",
+   "severity": "warning",
+   "family": "other",
    "key": "motorized_equipment_2",
    "file": "localisation/english/zin_warfare_l_english.yml",
    "rule": "bw_modern_industry_037",
@@ -3622,6 +3793,24 @@
    "file": "localisation/english/zin_afrit_l_english.yml",
    "rule": "bwx_007",
    "detail": "\"equipment\" in Send them the equipment."
+  },
+  {
+   "check": "X5",
+   "severity": "warning",
+   "family": "other",
+   "key": "zin_afrit.74.desc",
+   "file": "localisation/english/zin_events_mech_l_english.yml",
+   "rule": "bw_units_of_measure_006",
+   "detail": "\"feet\" in Your brother is on the floor at your feet and your blade is at his ..."
+  },
+  {
+   "check": "X5",
+   "severity": "warning",
+   "family": "other",
+   "key": "zin_autonomy_protectorate",
+   "file": "localisation/english/zin_leagues_l_english.yml",
+   "rule": "bw_modern_society_009",
+   "detail": "\"Protectorate\" in Protectorate"
   },
   {
    "check": "X5",
@@ -3712,6 +3901,24 @@
    "file": "localisation/english/zin_inst_l_english.yml",
    "rule": "bw_modern_industry_037",
    "detail": "\"train\" in A train of carts broke down on the high road, and the goods were l..."
+  },
+  {
+   "check": "X5",
+   "severity": "warning",
+   "family": "other",
+   "key": "zin_realm.50.desc",
+   "file": "localisation/english/zin_realm_life_l_english.yml",
+   "rule": "bw_modern_industry_037",
+   "detail": "\"train\" in The Golden King has come to us with what is left of his court: a t..."
+  },
+  {
+   "check": "X5",
+   "severity": "warning",
+   "family": "other",
+   "key": "zin_regional_bloody_forest_kozia",
+   "file": "localisation/english/zin_realm_characters_l_english.yml",
+   "rule": "bw_units_of_measure_006",
+   "detail": "\"Knot\" in Kozia the Knot-Keeper"
   },
   {
    "check": "X5",
@@ -4053,7 +4260,7 @@
    "family": "platform",
    "key": "LOADING_TIP_152",
    "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "detail": "colours added: §! §Y in §YCounsel:§! Great powers have their own panel. Open ..."
+   "detail": "colours added: §! §Y in §YCounsel:§! Great powers have their own panel, which..."
   },
   {
    "check": "X9",
@@ -4069,7 +4276,7 @@
    "family": "platform",
    "key": "LOADING_TIP_154",
    "file": "localisation/replace/zin_loading_tips_l_english.yml",
-   "detail": "colours added: §! §Y in §YCounsel:§! Aoaz counts twelve months from Deepwinte..."
+   "detail": "colours added: §! §Y in §YCounsel:§! Aoaz counts twelve months, each named fo..."
   },
   {
    "check": "X9",

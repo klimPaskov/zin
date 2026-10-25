@@ -155,9 +155,9 @@ zin_story_tick_lastwar = {
 			set_global_flag = zin_story_done_lastwar_20
 			if = {
 				limit = {
-					country_exists = Y0T
+					country_exists = ORH
 				}
-				Y0T = {
+				ORH = {
 					country_event = zin_lastwar.20
 				}
 			}
@@ -195,7 +195,7 @@ zin_story_tick_lastwar = {
 				limit = {
 					OR = {
 						zin_aenor_is_realm = yes
-						has_war_with = Y0U
+						has_war_with = ZOL
 					}
 					NOT = { zin_is_zol = yes }
 					NOT = { has_country_flag = zin_story_seen_lastwar_30 }
@@ -231,14 +231,14 @@ zin_story_tick_lastwar = {
 			limit = {
 				NOT = { has_global_flag = zin_story_done_lastwar_41 }
 				has_global_flag = zin_volgan_marches
-				Y55 = { has_war_with = Y8D }
+				HER = { has_war_with = PUV }
 			}
 			set_global_flag = zin_story_done_lastwar_41
 			if = {
 				limit = {
-					country_exists = Y55
+					country_exists = HER
 				}
-				Y55 = {
+				HER = {
 					country_event = zin_lastwar.41
 				}
 			}
@@ -331,8 +331,8 @@ zin_story_tick_lastwar = {
 			every_country = {
 				limit = {
 					has_country_flag = zin_region_middle_lands
-					has_war_with = Y0U
-					has_war_with = Y8D
+					has_war_with = ZOL
+					has_war_with = PUV
 				}
 				country_event = zin_lastwar.61
 			}
@@ -426,7 +426,7 @@ zin_story_tick_lastwar = {
 			limit = {
 				NOT = { has_global_flag = zin_story_done_lastwar_73 }
 				has_global_flag = zin_lorien_rides
-				has_global_flag = zin_zol_manifested
+				has_global_flag = zin_kusven_forth
 			}
 			set_global_flag = zin_story_done_lastwar_73
 			if = {
@@ -456,7 +456,7 @@ zin_story_tick_lastwar = {
 		if = {
 			limit = {
 				NOT = { has_global_flag = zin_story_done_lastwar_80 }
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 			}
 			set_global_flag = zin_story_done_lastwar_80
 			every_country = {
@@ -572,9 +572,9 @@ zin_story_tick_lastwar = {
 			set_global_flag = zin_story_done_lastwar_111
 			if = {
 				limit = {
-					country_exists = Y8G
+					country_exists = WOR
 				}
-				Y8G = {
+				WOR = {
 					country_event = {
 						id = zin_lastwar.111
 						days = 7

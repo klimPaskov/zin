@@ -2,13 +2,13 @@
 
 # Generic production strategies (L1): factory mix, which equipment lines, how many, minimum lines, surplus. Granted equipment is never produced.
 
-# Factory mix and equipment lines of Volgan
-zin_default_production_volgan = {
+# Factory mix and equipment lines of Puvulan
+zin_default_production_puvulan = {
 	allowed = {
 		always = yes
 	}
 	enable = {
-		original_tag = Y8D
+		original_tag = PUV
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -67,13 +67,13 @@ zin_default_production_volgan = {
 	}
 }
 
-# Factory mix and equipment lines of Zol
-zin_default_production_zol = {
+# Factory mix and equipment lines of Zol's Mistake
+zin_default_production_zols_mistake = {
 	allowed = {
 		always = yes
 	}
 	enable = {
-		original_tag = Y0U
+		original_tag = ZOL
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

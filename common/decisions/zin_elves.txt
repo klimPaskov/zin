@@ -3,7 +3,7 @@ zin_elves_kin = {
 	zin_elves_call_elder_moot = {
 		icon = zin_elves_call_elder_moot
 		allowed = {
-			original_tag = Y8F
+			original_tag = MAG
 		}
 		visible = {
 			always = yes
@@ -37,8 +37,8 @@ zin_elves_kin = {
 		visible = {
 			zin_elves_kindred_ready = yes
 			OR = {
-				original_tag = Y8F
-				NOT = { country_exists = Y8F }
+				original_tag = MAG
+				NOT = { country_exists = MAG }
 			}
 		}
 		available = {
@@ -63,14 +63,14 @@ zin_elves_kin = {
 	zin_elves_mediate_rivals = {
 		icon = zin_elves_mediate_rivals
 		allowed = {
-			original_tag = Y8F
+			original_tag = MAG
 		}
 		visible = {
 			always = yes
 		}
 		available = {
-			country_exists = Y0V
-			country_exists = Y0W
+			country_exists = HRR
+			country_exists = ANE
 			check_variable = { var = global.zin_elves_rivalry value = 30 compare = greater_than_or_equals }
 			NOT = { has_country_flag = zin_elves_mediated }
 		}
@@ -87,8 +87,8 @@ zin_elves_kin = {
 			else = {
 				set_country_flag = { flag = zin_elves_mediated days = 365 }
 			}
-			Y0V = { add_opinion_modifier = { target = Y8F modifier = zin_opinion_elven_goodwill } country_event = { id = zin_elves.23 } }
-			Y0W = { add_opinion_modifier = { target = Y8F modifier = zin_opinion_elven_goodwill } country_event = { id = zin_elves.23 } }
+			HRR = { add_opinion_modifier = { target = MAG modifier = zin_opinion_elven_goodwill } country_event = { id = zin_elves.23 } }
+			ANE = { add_opinion_modifier = { target = MAG modifier = zin_opinion_elven_goodwill } country_event = { id = zin_elves.23 } }
 		}
 		ai_will_do = {
 			base = 0
@@ -108,13 +108,13 @@ zin_elves_kin = {
 		icon = zin_elves_settle_the_feud
 		allowed = {
 			OR = {
-				original_tag = Y0V
-				original_tag = Y0W
+				original_tag = HRR
+				original_tag = ANE
 			}
 		}
 		visible = {
-			country_exists = Y0V
-			country_exists = Y0W
+			country_exists = HRR
+			country_exists = ANE
 		}
 		available = {
 			check_variable = { var = global.zin_elves_rivalry value = 90 compare = greater_than_or_equals }
@@ -123,8 +123,8 @@ zin_elves_kin = {
 			NOT = { has_global_flag = zin_elves_feud }
 			NOT = {
 				AND = {
-					Y0V = { zin_elves_in_kindred = yes }
-					Y0W = { zin_elves_in_kindred = yes }
+					HRR = { zin_elves_in_kindred = yes }
+					ANE = { zin_elves_in_kindred = yes }
 				}
 			}
 		}
@@ -149,8 +149,8 @@ zin_elves_kin = {
 			zin_elves_is_magical_realm = yes
 		}
 		visible = {
-			NOT = { original_tag = Y0X }
-			country_exists = Y0X
+			NOT = { original_tag = NLR }
+			country_exists = NLR
 		}
 		available = {
 			NOT = { has_country_flag = zin_elves_passes_wardened }
@@ -162,7 +162,7 @@ zin_elves_kin = {
 			zin_elves_add_pass_watch = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_elves_add_kinship = yes
-			Y0X = { country_event = { id = zin_elves.40 } }
+			NLR = { country_event = { id = zin_elves.40 } }
 		}
 		ai_will_do = {
 			base = 5
@@ -190,7 +190,7 @@ zin_elves_kin = {
 		}
 		available = {
 			check_variable = { var = global.zin_elves_wall_grievance value = 30 compare = greater_than_or_equals }
-			country_exists = Y0L
+			country_exists = AEN
 			NOT = { has_country_flag = zin_elves_wall_moot_called }
 			NOT = { has_global_flag = zin_elves_moot_open }
 		}
@@ -199,21 +199,21 @@ zin_elves_kin = {
 			set_country_flag = { flag = zin_elves_wall_moot_called days = 730 }
 			save_global_event_target_as = zin_elves_moot_caller
 			set_global_flag = zin_elves_moot_open
-			Y0L = { country_event = { id = zin_elves.5 } }
+			AEN = { country_event = { id = zin_elves.5 } }
 		}
 		ai_will_do = {
 			base = 0
 			modifier = {
 				add = 70
 				check_variable = { var = global.zin_elves_wall_grievance value = 50 compare = greater_than_or_equals }
-				original_tag = Y8F
+				original_tag = MAG
 			}
 		}
 	}
 	zin_elves_close_the_wall_roads = {
 		icon = zin_elves_close_the_wall_roads
 		allowed = {
-			original_tag = Y8F
+			original_tag = MAG
 		}
 		visible = {
 			NOT = { has_global_flag = zin_elves_wall_roads_closed }
@@ -243,7 +243,7 @@ zin_elves_kin = {
 	zin_elves_reopen_the_wall_roads = {
 		icon = zin_elves_reopen_the_wall_roads
 		allowed = {
-			original_tag = Y8F
+			original_tag = MAG
 		}
 		visible = {
 			has_global_flag = zin_elves_wall_roads_closed
@@ -262,7 +262,7 @@ zin_elves_kin = {
 	zin_elves_open_wall_gates = {
 		icon = zin_elves_open_wall_gates
 		allowed = {
-			original_tag = Y8F
+			original_tag = MAG
 		}
 		visible = {
 			has_country_flag = zin_magical_forest_wall_gates
@@ -273,8 +273,8 @@ zin_elves_kin = {
 			NOT = { has_country_flag = zin_elves_gates_open }
 		}
 		available = {
-			country_exists = Y0L
-			NOT = { has_war_with = Y0L }
+			country_exists = AEN
+			NOT = { has_war_with = AEN }
 		}
 		cost = 25
 		complete_effect = {
@@ -299,7 +299,7 @@ zin_elves_kin = {
 	zin_elves_bar_wall_gates = {
 		icon = zin_elves_bar_wall_gates
 		allowed = {
-			original_tag = Y8F
+			original_tag = MAG
 		}
 		visible = {
 			has_country_flag = zin_elves_gates_open
@@ -485,7 +485,7 @@ zin_elves_wanderers = {
 			zin_elves_count_wanderers = yes
 			if = {
 				limit = {
-					original_tag = Y6X
+					original_tag = GAA
 					has_country_flag = zin_gala_healers
 				}
 				FROM = {

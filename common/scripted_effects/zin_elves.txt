@@ -28,10 +28,10 @@ zin_elves_add_wall_grievance = {
 		}
 		set_global_flag = zin_elves_cold_roads
 		if = {
-			limit = { country_exists = Y0L }
+			limit = { country_exists = AEN }
 			every_country = {
 				limit = { zin_elves_is_wall_realm = yes }
-				add_opinion_modifier = { target = Y0L modifier = zin_opinion_cold_roads }
+				add_opinion_modifier = { target = AEN modifier = zin_opinion_cold_roads }
 			}
 		}
 	}
@@ -42,10 +42,10 @@ zin_elves_add_wall_grievance = {
 		}
 		clr_global_flag = zin_elves_cold_roads
 		if = {
-			limit = { country_exists = Y0L }
+			limit = { country_exists = AEN }
 			every_country = {
 				limit = { zin_elves_is_wall_realm = yes }
-				remove_opinion_modifier = { target = Y0L modifier = zin_opinion_cold_roads }
+				remove_opinion_modifier = { target = AEN modifier = zin_opinion_cold_roads }
 			}
 		}
 	}
@@ -53,8 +53,10 @@ zin_elves_add_wall_grievance = {
 
 # Scope: country. Argument: zin_arg_target (a country).
 zin_elves_goodwill = {
-	add_opinion_modifier = { target = var:zin_arg_target modifier = zin_opinion_elven_goodwill }
-	reverse_add_opinion_modifier = { target = var:zin_arg_target modifier = zin_opinion_elven_goodwill }
+	var:zin_arg_target = {
+		reverse_add_opinion_modifier = { target = PREV modifier = zin_opinion_elven_goodwill }
+		add_opinion_modifier = { target = PREV modifier = zin_opinion_elven_goodwill }
+	}
 }
 
 # Scope: country. The Refusal spirit follows zin_refusal_lifted (section 4.1).
@@ -82,7 +84,7 @@ zin_elves_refresh_passes = {
 		remove_dynamic_modifier = { modifier = zin_elves_high_passes }
 		remove_dynamic_modifier = { modifier = zin_elves_high_passes_2 }
 		if = {
-			limit = { owner = { original_tag = Y0X } }
+			limit = { owner = { original_tag = NLR } }
 			if = {
 				limit = { check_variable = { var = global.zin_elves_pass_watch_mirror value = 60 compare = greater_than_or_equals } }
 				add_dynamic_modifier = { modifier = zin_elves_high_passes_2 }
@@ -125,8 +127,8 @@ zin_elves_raise_pass_forts = {
 # Argument: zin_arg_value. A no-op when Nolorim does not exist (section 7).
 zin_elves_add_pass_watch = {
 	if = {
-		limit = { country_exists = Y0X }
-		Y0X = {
+		limit = { country_exists = NLR }
+		NLR = {
 			add_to_variable = { zin_elves_pass_watch = zin_arg_value }
 			clamp_variable = { var = zin_elves_pass_watch min = 0 max = 100 }
 			set_temp_variable = { zin_elves_t_watch = zin_elves_pass_watch }
@@ -156,7 +158,7 @@ zin_elves_raise_kindred = {
 				is_ai = no
 				OR = {
 					zin_elves_is_magical_realm = yes
-					tag = Y0L
+					tag = AEN
 				}
 			}
 			news_event = { id = zin_elves.32 }
@@ -263,8 +265,8 @@ zin_elves_begin_feud = {
 		set_global_flag = zin_elves_feud
 		var:zin_arg_attacker = { save_event_target_as = zin_elves_feud_attacker }
 		if = {
-			limit = { event_target:zin_elves_feud_attacker = { original_tag = Y0W } }
-			Y0V = {
+			limit = { event_target:zin_elves_feud_attacker = { original_tag = ANE } }
+			HRR = {
 				save_event_target_as = zin_elves_feud_rival
 				random_owned_state = {
 					limit = { zin_is_site_boundary_groves = yes }
@@ -273,7 +275,7 @@ zin_elves_begin_feud = {
 			}
 		}
 		else = {
-			Y0W = {
+			ANE = {
 				save_event_target_as = zin_elves_feud_rival
 				random_owned_state = { save_event_target_as = zin_elves_feud_state }
 			}
@@ -315,14 +317,14 @@ zin_elves_close_wall_roads = {
 			limit = { zin_elves_is_wall_realm = yes }
 			add_ideas = zin_elves_wall_roads_shut
 			if = {
-				limit = { country_exists = Y0L }
-				add_opinion_modifier = { target = Y0L modifier = zin_opinion_wall_roads_closed }
-				reverse_add_opinion_modifier = { target = Y0L modifier = zin_opinion_wall_roads_closed }
+				limit = { country_exists = AEN }
+				add_opinion_modifier = { target = AEN modifier = zin_opinion_wall_roads_closed }
+				reverse_add_opinion_modifier = { target = AEN modifier = zin_opinion_wall_roads_closed }
 			}
 			if = {
-				limit = { country_exists = Y0P }
-				add_opinion_modifier = { target = Y0P modifier = zin_opinion_wall_roads_closed }
-				reverse_add_opinion_modifier = { target = Y0P modifier = zin_opinion_wall_roads_closed }
+				limit = { country_exists = KIN }
+				add_opinion_modifier = { target = KIN modifier = zin_opinion_wall_roads_closed }
+				reverse_add_opinion_modifier = { target = KIN modifier = zin_opinion_wall_roads_closed }
 			}
 		}
 		set_temp_variable = { zin_arg_value = 1 }
@@ -332,8 +334,8 @@ zin_elves_close_wall_roads = {
 				is_ai = no
 				OR = {
 					zin_elves_is_wall_realm = yes
-					tag = Y0L
-					tag = Y0P
+					tag = AEN
+					tag = KIN
 				}
 			}
 			news_event = { id = zin_elves.10 }
@@ -350,14 +352,14 @@ zin_elves_reopen_wall_roads = {
 			limit = { zin_elves_is_wall_realm = yes }
 			remove_ideas = zin_elves_wall_roads_shut
 			if = {
-				limit = { country_exists = Y0L }
-				remove_opinion_modifier = { target = Y0L modifier = zin_opinion_wall_roads_closed }
-				Y0L = { remove_opinion_modifier = { target = PREV modifier = zin_opinion_wall_roads_closed } }
+				limit = { country_exists = AEN }
+				remove_opinion_modifier = { target = AEN modifier = zin_opinion_wall_roads_closed }
+				AEN = { remove_opinion_modifier = { target = PREV modifier = zin_opinion_wall_roads_closed } }
 			}
 			if = {
-				limit = { country_exists = Y0P }
-				remove_opinion_modifier = { target = Y0P modifier = zin_opinion_wall_roads_closed }
-				Y0P = { remove_opinion_modifier = { target = PREV modifier = zin_opinion_wall_roads_closed } }
+				limit = { country_exists = KIN }
+				remove_opinion_modifier = { target = KIN modifier = zin_opinion_wall_roads_closed }
+				KIN = { remove_opinion_modifier = { target = PREV modifier = zin_opinion_wall_roads_closed } }
 			}
 		}
 	}
@@ -367,17 +369,17 @@ zin_elves_reopen_wall_roads = {
 zin_elves_open_gates = {
 	set_country_flag = zin_elves_gates_open
 	if = {
-		limit = { country_exists = Y0L }
-		give_military_access = Y0L
-		Y0L = {
+		limit = { country_exists = AEN }
+		give_military_access = AEN
+		AEN = {
 			every_subject_country = { give_military_access = PREV }
 		}
-		set_temp_variable = { zin_arg_target = Y0L }
+		set_temp_variable = { zin_arg_target = AEN }
 		zin_elves_goodwill = yes
 	}
 	if = {
-		limit = { country_exists = Y0P }
-		give_military_access = Y0P
+		limit = { country_exists = KIN }
+		give_military_access = KIN
 	}
 }
 
@@ -385,15 +387,15 @@ zin_elves_open_gates = {
 zin_elves_bar_gates = {
 	clr_country_flag = zin_elves_gates_open
 	if = {
-		limit = { country_exists = Y0L }
-		diplomatic_relation = { country = Y0L relation = military_access active = no }
-		Y0L = {
+		limit = { country_exists = AEN }
+		diplomatic_relation = { country = AEN relation = military_access active = no }
+		AEN = {
 			every_subject_country = { diplomatic_relation = { country = PREV relation = military_access active = no } }
 		}
 	}
 	if = {
-		limit = { country_exists = Y0P }
-		diplomatic_relation = { country = Y0P relation = military_access active = no }
+		limit = { country_exists = KIN }
+		diplomatic_relation = { country = KIN relation = military_access active = no }
 	}
 	add_timed_idea = { idea = zin_elves_gates_barred days = 180 }
 }
@@ -406,8 +408,8 @@ zin_elves_set_pilgrim_roads = {
 	remove_ideas = zin_elves_pilgrim_roads_open
 	remove_ideas = zin_elves_pilgrim_tolls
 	if = {
-		limit = { country_exists = Y8G }
-		Y8G = {
+		limit = { country_exists = WOR }
+		WOR = {
 			remove_opinion_modifier = { target = PREV modifier = zin_opinion_pilgrim_tolls }
 			remove_opinion_modifier = { target = PREV modifier = zin_opinion_pilgrim_roads_closed }
 		}
@@ -420,15 +422,15 @@ zin_elves_set_pilgrim_roads = {
 		limit = { check_variable = { var = zin_arg_value value = 1 compare = equals } }
 		add_ideas = zin_elves_pilgrim_tolls
 		if = {
-			limit = { country_exists = Y8G }
-			Y8G = { add_opinion_modifier = { target = PREV modifier = zin_opinion_pilgrim_tolls } }
+			limit = { country_exists = WOR }
+			WOR = { add_opinion_modifier = { target = PREV modifier = zin_opinion_pilgrim_tolls } }
 		}
 	}
 	if = {
 		limit = { check_variable = { var = zin_arg_value value = 0 compare = equals } }
 		if = {
-			limit = { country_exists = Y8G }
-			Y8G = { add_opinion_modifier = { target = PREV modifier = zin_opinion_pilgrim_roads_closed } }
+			limit = { country_exists = WOR }
+			WOR = { add_opinion_modifier = { target = PREV modifier = zin_opinion_pilgrim_roads_closed } }
 		}
 		if = {
 			limit = { check_variable = { var = zin_elves_t_was value = 0 compare = greater_than } }
@@ -513,7 +515,7 @@ zin_elves_on_eastern_invasion = {
 			limit = {
 				OR = {
 					zin_elves_is_magical_realm = yes
-					tag = Y0L
+					tag = AEN
 				}
 			}
 			country_event = { id = zin_elves.70 }
@@ -531,12 +533,12 @@ zin_elves_on_eastern_invasion = {
 			add_timed_idea = { idea = zin_elves_woods_defended days = 45 }
 		}
 		if = {
-			limit = { country_exists = Y0L }
-			Y0L = { country_event = { id = zin_elves.71 days = 3 } }
+			limit = { country_exists = AEN }
+			AEN = { country_event = { id = zin_elves.71 days = 3 } }
 		}
 		if = {
-			limit = { country_exists = Y0P }
-			Y0P = { country_event = { id = zin_elves.71 days = 3 } }
+			limit = { country_exists = KIN }
+			KIN = { country_event = { id = zin_elves.71 days = 3 } }
 		}
 	}
 }
@@ -589,8 +591,8 @@ zin_elves_startup = {
 	set_variable = { global.zin_elves_corruptions_seen = 0 }
 	set_variable = { global.zin_elves_pass_watch_mirror = 30 }
 	if = {
-		limit = { country_exists = Y0X }
-		Y0X = { set_variable = { zin_elves_pass_watch = 30 } }
+		limit = { country_exists = NLR }
+		NLR = { set_variable = { zin_elves_pass_watch = 30 } }
 	}
 	every_country = {
 		limit = { zin_elves_is_magical_realm = yes }
@@ -614,7 +616,7 @@ zin_elves_startup = {
 				OR = {
 					zin_elves_is_wall_realm = yes
 					any_owned_state = {
-						any_neighbor_state = { is_owned_by = Y8G }
+						any_neighbor_state = { is_owned_by = WOR }
 					}
 				}
 			}
@@ -667,10 +669,10 @@ zin_elves_monthly = {
 	if = {
 		limit = {
 			has_global_flag = zin_elves_kindred_formed
-			country_exists = Y0V
-			country_exists = Y0W
-			Y0V = { zin_elves_in_kindred = yes }
-			Y0W = { zin_elves_in_kindred = yes }
+			country_exists = HRR
+			country_exists = ANE
+			HRR = { zin_elves_in_kindred = yes }
+			ANE = { zin_elves_in_kindred = yes }
 		}
 		set_temp_variable = { zin_arg_value = -0.5 }
 		zin_elves_add_rivalry = yes
@@ -678,18 +680,18 @@ zin_elves_monthly = {
 	if = {
 		limit = {
 			OR = {
-				NOT = { country_exists = Y0V }
-				NOT = { country_exists = Y0W }
+				NOT = { country_exists = HRR }
+				NOT = { country_exists = ANE }
 				AND = {
-					country_exists = Y0V
-					Y0V = {
+					country_exists = HRR
+					HRR = {
 						is_subject = yes
 						overlord = { NOT = { zin_elves_is_elven_country = yes } }
 					}
 				}
 				AND = {
-					country_exists = Y0W
-					Y0W = {
+					country_exists = ANE
+					ANE = {
 						is_subject = yes
 						overlord = { NOT = { zin_elves_is_elven_country = yes } }
 					}
@@ -701,8 +703,8 @@ zin_elves_monthly = {
 	# the Wall grievance
 	if = {
 		limit = {
-			country_exists = Y0L
-			Y0L = { check_variable = { var = zin_court_corruption value = 60 compare = greater_than_or_equals } }
+			country_exists = AEN
+			AEN = { check_variable = { var = zin_court_corruption value = 60 compare = greater_than_or_equals } }
 			NOT = { has_global_flag = zin_wall_accord_broken }
 		}
 		set_temp_variable = { zin_arg_value = 1 }
@@ -710,8 +712,8 @@ zin_elves_monthly = {
 	}
 	if = {
 		limit = {
-			country_exists = Y0L
-			Y0L = { check_variable = { var = zin_court_corruption value = 30 compare = less_than } }
+			country_exists = AEN
+			AEN = { check_variable = { var = zin_court_corruption value = 30 compare = less_than } }
 		}
 		set_temp_variable = { zin_arg_value = -0.5 }
 		zin_elves_add_wall_grievance = yes

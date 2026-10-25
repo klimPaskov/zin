@@ -10,27 +10,27 @@ zin_eindil_host_fights_the_dead = {
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = front_unit_request
-		tag = Y0U
+		tag = ZOL
 		value = 100
 	}
 	ai_strategy = {
 		type = front_unit_request
-		tag = Y8D
+		tag = PUV
 		value = 60
 	}
 	ai_strategy = {
 		type = protect
-		id = "Y0L"
+		id = "AEN"
 		value = 50
 	}
 	ai_strategy = {
 		type = conquer
-		id = "Y0U"
+		id = "ZOL"
 		value = 50
 	}
 	ai_strategy = {
 		type = conquer
-		id = "Y8D"
+		id = "PUV"
 		value = 30
 	}
 }
@@ -43,12 +43,12 @@ zin_eindil_host_fights_the_false_god = {
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = front_unit_request
-		tag = Y8G
+		tag = WOR
 		value = 100
 	}
 	ai_strategy = {
 		type = invade
-		id = "Y8G"
+		id = "WOR"
 		value = 40
 	}
 }

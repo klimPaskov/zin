@@ -3,10 +3,10 @@ on_actions = {
 	# The hidden event waits one day so the peoples module has set its flags.
 	on_startup = {
 		effect = {
-			Y8F = { country_event = { id = zin_elves.1 days = 1 } }
+			MAG = { country_event = { id = zin_elves.1 days = 1 } }
 		}
 	}
-	on_monthly_Y8F = {
+	on_monthly_MAG = {
 		effect = {
 			zin_elves_monthly = yes
 		}
@@ -16,7 +16,7 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
-					NOT = { country_exists = Y8F }
+					NOT = { country_exists = MAG }
 					zin_elves_is_magical_realm = yes
 					NOT = { has_global_flag = zin_elves_monthly_done }
 				}

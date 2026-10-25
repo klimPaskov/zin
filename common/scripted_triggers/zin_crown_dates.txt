@@ -152,11 +152,11 @@ zin_reign_date_e80_1752 = {
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 1.5 }
-			date > 1754.3.1
+			date > 1754.2.28
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 0.75 }
-			date > 1751.3.1
+			date > 1751.2.28
 		}
 		AND = {
 			NOT = {
@@ -180,7 +180,7 @@ zin_reign_date_e80_1753 = {
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 0.75 }
-			date > 1751.11.30
+			date > 1751.11.29
 		}
 		AND = {
 			NOT = {
@@ -204,7 +204,7 @@ zin_reign_date_e53 = {
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 0.75 }
-			date > 1752.8.29
+			date > 1752.8.30
 		}
 		AND = {
 			NOT = {
@@ -224,11 +224,11 @@ zin_ending_date_lead_1 = {
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 1.5 }
-			date > 1765.12.1
+			date > 1765.12.2
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 0.75 }
-			date > 1757.1.14
+			date > 1757.1.15
 		}
 		AND = {
 			NOT = {
@@ -248,7 +248,7 @@ zin_ending_date_lead_2 = {
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 1.5 }
-			date > 1767.6.3
+			date > 1767.6.2
 		}
 		AND = {
 			check_variable = { global.zin_story_pace = 0.75 }

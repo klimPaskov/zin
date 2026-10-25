@@ -39,10 +39,10 @@ country_event = {
 			base = 50
 			modifier = {
 				add = 30
-				original_tag = Y55
+				original_tag = HER
 			}
 		}
-		add_opinion_modifier = { target = Y0Y modifier = zin_dominion_watch_with_mirolon }
+		add_opinion_modifier = { target = MIR modifier = zin_dominion_watch_with_mirolon }
 	}
 	option = {
 		name = zin_dominion.3.b
@@ -106,12 +106,12 @@ country_event = {
 			modifier = {
 				add = 50
 				NOT = { zin_rules_is_historical = yes }
-				Y8D = { has_country_flag = zin_volgan_whispers_parim }
+				PUV = { has_country_flag = zin_volgan_whispers_parim }
 			}
 		}
 		add_political_power = 10
-		Y0Y = {
-			add_opinion_modifier = { target = Y0L modifier = zin_mirolon_parim_laughed_opinion }
+		MIR = {
+			add_opinion_modifier = { target = AEN modifier = zin_mirolon_parim_laughed_opinion }
 			set_country_flag = zin_mirolon_parim_laughed
 		}
 	}
@@ -121,43 +121,43 @@ country_event = {
 			base = 20
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 10 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 10 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 20 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 20 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 30 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 30 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 40 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 40 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 50 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 50 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 60 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 60 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 70 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 70 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 80 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 80 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 90 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 90 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 100 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 100 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				factor = 0
@@ -168,8 +168,8 @@ country_event = {
 				check_variable = { var = global.zin_volgan_veil_band value = 2 compare = greater_than_or_equals }
 			}
 		}
-		send_equipment = { equipment = zin_arms_equipment amount = 1000 target = Y0Y }
-		Y0Y = { add_timed_idea = { idea = zin_dominion_heeded_warning days = 365 } }
+		send_equipment = { equipment = zin_arms_equipment amount = 1000 target = MIR }
+		MIR = { add_timed_idea = { idea = zin_dominion_heeded_warning days = 365 } }
 		add_political_power = -25
 	}
 	option = {
@@ -178,31 +178,31 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 50 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 50 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 60 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 60 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 70 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 70 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 80 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 80 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 90 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 90 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				add = 10
-				Y0Y = { check_variable = { var = zin_mirolon_proof value = 100 compare = greater_than_or_equals } }
+				MIR = { check_variable = { var = zin_mirolon_proof value = 100 compare = greater_than_or_equals } }
 			}
 			modifier = {
 				factor = 3
-				Y0Y = { has_country_flag = zin_mirolon_north_listens }
+				MIR = { has_country_flag = zin_mirolon_north_listens }
 			}
 			modifier = {
 				factor = 0
@@ -213,7 +213,7 @@ country_event = {
 				check_variable = { var = global.zin_volgan_veil_band value = 2 compare = greater_than_or_equals }
 			}
 		}
-		give_guarantee = Y0Y
+		give_guarantee = MIR
 		set_temp_variable = { zin_arg_value = 2 }
 		zin_world_add_gathering_dark = yes
 	}
@@ -286,7 +286,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				any_enemy_country = { Y8D = { has_war_with = PREV } }
+				any_enemy_country = { PUV = { has_war_with = PREV } }
 			}
 			modifier = {
 				factor = 0
@@ -298,17 +298,17 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.1
-				original_tag = Y19
+				original_tag = DND
 			}
 			modifier = {
 				factor = 0
 				zin_dark_hold_under_cocanoor = yes
-				Y1A = { zin_goldoroth_refuses_masters = yes }
+				GOL = { zin_goldoroth_refuses_masters = yes }
 			}
 			modifier = {
 				factor = 2
 				zin_dark_hold_under_cocanoor = yes
-				Y1A = { zin_goldoroth_seeks_the_south = yes }
+				GOL = { zin_goldoroth_seeks_the_south = yes }
 			}
 			modifier = {
 				factor = 0.5
@@ -352,8 +352,8 @@ country_event = {
 				set_variable = { zin_volgan_pact = zin_volgan_offer_level }
 			}
 		}
-		add_opinion_modifier = { target = Y8D modifier = zin_volgan_envoys_received }
-		Y8D = {
+		add_opinion_modifier = { target = PUV modifier = zin_volgan_envoys_received }
+		PUV = {
 			set_country_flag = zin_dominion_envoy_accepted
 			country_event = { id = zin_dominion.9 }
 		}
@@ -365,9 +365,9 @@ country_event = {
 		}
 		if = {
 			limit = { check_variable = { var = zin_volgan_pact value = 0 compare = equals } }
-			add_opinion_modifier = { target = Y8D modifier = zin_volgan_envoys_refused }
+			add_opinion_modifier = { target = PUV modifier = zin_volgan_envoys_refused }
 		}
-		Y8D = {
+		PUV = {
 			clr_country_flag = zin_dominion_envoy_accepted
 			country_event = { id = zin_dominion.9 }
 		}
@@ -461,7 +461,7 @@ country_event = {
 		}
 		set_country_flag = zin_dominion_own_road
 		add_timed_idea = { idea = zin_dominion_seeking_own_road days = 365 }
-		Y8D = { add_stability = -0.05 }
+		PUV = { add_stability = -0.05 }
 	}
 }
 
@@ -505,7 +505,7 @@ country_event = {
 	picture = GFX_zin_evt_volgan_broken
 	is_triggered_only = yes
 	trigger = {
-		has_war_with = Y8D
+		has_war_with = PUV
 		has_global_flag = zin_volgan_body_destroyed
 	}
 	timeout_days = 30
@@ -518,7 +518,7 @@ country_event = {
 				zin_rules_is_historical = yes
 			}
 		}
-		white_peace = Y8D
+		white_peace = PUV
 	}
 	option = {
 		name = zin_dominion.26.b

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y07
+			original_tag = GNW
 		}
 	}
 	initial_show_position = { focus = zin_gunwaith_clan_halls }
@@ -164,7 +164,7 @@ focus_tree = {
 			}
 			set_temp_variable = { zin_arg_value = -10 }
 			zin_west_add_truce = yes
-			Y07 = {
+			GNW = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_west_add_grudge = yes
 			}
@@ -389,7 +389,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y01 = {
+			CLD = {
 				country_event = zin_cold.70
 			}
 			random_owned_state = {
@@ -445,10 +445,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_west.10
 			}
-			Y07 = {
+			GNW = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_west_add_grudge = yes
 			}
@@ -516,7 +516,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y08 = {
+			GIR = {
 				country_event = zin_west.20
 			}
 		}
@@ -573,7 +573,7 @@ focus_tree = {
 			add_political_power = 50
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_west_add_truce = yes
-			Y08 = {
+			GIR = {
 				add_political_power = 25
 			}
 		}
@@ -632,7 +632,7 @@ focus_tree = {
 			set_global_flag = zin_west_truce_permanent
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_west_add_unity = yes
-			Y08 = {
+			GIR = {
 				add_stability = 0.05
 			}
 		}
@@ -691,7 +691,7 @@ focus_tree = {
 			}
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_west_add_unity = yes
-			Y08 = {
+			GIR = {
 				capital_scope = {
 					add_building_construction = {
 						type = infrastructure
@@ -778,7 +778,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y08
+				country = GIR
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -808,7 +808,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y08 = {
+			GIR = {
 				every_owned_state = {
 					add_claim_by = PREV.PREV
 				}
@@ -832,8 +832,8 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			give_guarantee = Y08
-			Y08 = {
+			give_guarantee = GIR
+			GIR = {
 				capital_scope = {
 					add_building_construction = {
 						type = dockyard
@@ -875,7 +875,7 @@ focus_tree = {
 		completion_reward = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
-				target = Y08
+				target = GIR
 			}
 		}
 	}
@@ -1047,7 +1047,7 @@ focus_tree = {
 				limit = {
 					has_country_flag = zin_eindil_heeded
 				}
-				Y07 = {
+				GNW = {
 					set_temp_variable = { zin_arg_value = -10 }
 					zin_west_add_grudge = yes
 				}
@@ -1277,7 +1277,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 25
-			Y07 = {
+			GNW = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_west_add_grudge = yes
 			}
@@ -1335,11 +1335,11 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y09 = {
+			KRA = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_west_add_grudge = yes
 			}
-			Y0A = {
+			CRG = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_west_add_grudge = yes
 			}
@@ -1360,11 +1360,11 @@ focus_tree = {
 			factor = 12
 		}
 		completion_reward = {
-			Y0B = {
+			VRN = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_west_add_grudge = yes
 			}
-			Y27 = {
+			LAB = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_west_add_grudge = yes
 			}
@@ -1385,7 +1385,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y2B = {
+			BLD = {
 				country_event = zin_gunwaith.4
 			}
 		}
@@ -1686,7 +1686,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0C = {
+			ADE = {
 				country_event = zin_gunwaith.5
 			}
 			navy_experience = 10
@@ -2392,7 +2392,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y01
+				country = CLD
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -2470,7 +2470,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_west.50
 			}
 		}
@@ -2728,7 +2728,7 @@ focus_tree = {
 			factor = 60
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_gunwaith.7
 			}
 		}

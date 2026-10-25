@@ -3,15 +3,15 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y0U = { country_event = { id = zin_mistake.1 } }
+			ZOL = { country_event = { id = zin_mistake.1 } }
 		}
 	}
-	on_monthly_Y0U = {
+	on_monthly_ZOL = {
 		effect = {
 			zin_zol_monthly = yes
 		}
 	}
-	on_weekly_Y0U = {
+	on_weekly_ZOL = {
 		effect = {
 			zin_zol_weekly_manifest = yes
 		}
@@ -21,7 +21,7 @@ on_actions = {
 			if = {
 				limit = { zin_is_zol = yes }
 				set_temp_variable = { zin_arg_cause = 1 }
-				zin_zol_withdraw = yes
+				zin_kusven_withdraw = yes
 			}
 		}
 	}

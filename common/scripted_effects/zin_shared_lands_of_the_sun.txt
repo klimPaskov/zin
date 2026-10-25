@@ -16,9 +16,9 @@ zin_shared_lands_of_the_sun_join_league = {
 		else = {
 			if = {
 				limit = {
-					country_exists = Y6U
+					country_exists = LIG
 				}
-				Y6U = {
+				LIG = {
 					add_to_faction = PREV
 				}
 			}

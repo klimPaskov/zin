@@ -35,7 +35,7 @@ ideas = {
 				army_org_factor = 0.1
 			}
 		}
-		zin_zol_form_taken = {
+		zin_zol_kusven_in_field = {
 			picture = zin_zol_sigil
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -47,7 +47,7 @@ ideas = {
 				breakthrough_factor = 0.2
 			}
 		}
-		zin_zol_wounded = {
+		zin_zol_kusven_wounded = {
 			picture = zin_ashen_waste
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
@@ -75,7 +75,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				targeted_modifier = {
-					tag = Y0U
+					tag = ZOL
 					attack_bonus_against = 0.3
 					defense_bonus_against = 0.2
 				}
@@ -88,7 +88,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				targeted_modifier = {
-					tag = Y0U
+					tag = ZOL
 					attack_bonus_against = 0.2
 					defense_bonus_against = 0.2
 				}
@@ -101,7 +101,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				targeted_modifier = {
-					tag = Y0U
+					tag = ZOL
 					defense_bonus_against = 0.1
 				}
 			}

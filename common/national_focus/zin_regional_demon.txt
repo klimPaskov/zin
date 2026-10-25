@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y7T
+			original_tag = KHO
 		}
 	}
 	initial_show_position = { focus = zin_regional_demon_the_horned_court }
@@ -138,7 +138,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_volgan_add_oath = yes
@@ -160,7 +160,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_manpower = 2000
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = 1 }
 				zin_volgan_add_dominion_strength = yes
 			}
@@ -180,7 +180,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_oath = yes
@@ -243,7 +243,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_volgan_add_nether_pact = yes
 			}
@@ -292,11 +292,11 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_nether_pact = yes
 			}
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_oath = yes
@@ -384,7 +384,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 0.15 }
 			zin_regional_demon_gain_autonomy = yes
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_volgan_add_oath = yes
@@ -532,7 +532,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_nether_pact = yes
 			}
@@ -557,7 +557,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.05
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_volgan_add_oath = yes
@@ -596,7 +596,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			is_subject_of = Y8D
+			is_subject_of = PUV
 		}
 		ai_will_do = {
 			factor = 20
@@ -606,7 +606,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8D = {
+			PUV = {
 				set_temp_variable = { zin_arg_target = ROOT }
 				set_temp_variable = { zin_arg_value = 20 }
 				zin_volgan_add_oath = yes

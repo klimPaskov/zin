@@ -28,18 +28,18 @@ country_event = {
 				factor = 0
 				OR = {
 					has_war = yes
-					has_opinion = { target = Y6X value < 0 }
+					has_opinion = { target = GAA value < 0 }
 				}
 			}
 			modifier = {
 				add = 10
 				OR = {
 					has_war = yes
-					has_opinion = { target = Y6X value < 0 }
+					has_opinion = { target = GAA value < 0 }
 				}
 			}
 		}
-		give_guarantee = Y6X
+		give_guarantee = GAA
 	}
 	option = {
 		name = zin_sun.6.b
@@ -49,14 +49,14 @@ country_event = {
 				factor = 0
 				OR = {
 					has_war = yes
-					has_opinion = { target = Y6X value < 0 }
+					has_opinion = { target = GAA value < 0 }
 				}
 			}
 			modifier = {
 				add = 90
 				OR = {
 					has_war = yes
-					has_opinion = { target = Y6X value < 0 }
+					has_opinion = { target = GAA value < 0 }
 				}
 			}
 		}
@@ -155,60 +155,60 @@ country_event = {
 			modifier = {
 				add = -30
 				OR = {
-					original_tag = Y0M
-					original_tag = Y0Y
-					original_tag = Y0P
-					original_tag = Y0Q
-					original_tag = Y8F
+					original_tag = SEL
+					original_tag = MIR
+					original_tag = KIN
+					original_tag = HIR
+					original_tag = MAG
 					zin_sun_is_elven_realm = yes
 				}
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y6X value > 19 }
+				has_opinion = { target = GAA value > 19 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y6X value > 39 }
+				has_opinion = { target = GAA value > 39 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y6X value > 59 }
+				has_opinion = { target = GAA value > 59 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y6X value > 79 }
+				has_opinion = { target = GAA value > 79 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y6X value > 99 }
+				has_opinion = { target = GAA value > 99 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y6X value < -19 }
+				has_opinion = { target = GAA value < -19 }
 			}
 			modifier = {
 				factor = 0
-				original_tag = Y0L
+				original_tag = AEN
 				NOT = { has_global_flag = zin_golden_king_dead }
 			}
 			modifier = {
 				add = 90
-				original_tag = Y0L
+				original_tag = AEN
 				NOT = { has_global_flag = zin_golden_king_dead }
 			}
 			modifier = {
 				factor = 0
-				original_tag = Y0L
+				original_tag = AEN
 				has_global_flag = zin_aurevan_crowned
 			}
 			modifier = {
 				add = 100
-				original_tag = Y0L
+				original_tag = AEN
 				has_global_flag = zin_aurevan_crowned
 			}
 		}
-		Y6X = { add_opinion_modifier = { target = ROOT modifier = zin_opinion_warning_dismissed } }
+		GAA = { add_opinion_modifier = { target = ROOT modifier = zin_opinion_warning_dismissed } }
 	}
 	option = {
 		name = zin_sun.20.b
@@ -217,51 +217,51 @@ country_event = {
 			modifier = {
 				add = 30
 				OR = {
-					original_tag = Y0M
-					original_tag = Y0Y
-					original_tag = Y0P
-					original_tag = Y0Q
-					original_tag = Y8F
+					original_tag = SEL
+					original_tag = MIR
+					original_tag = KIN
+					original_tag = HIR
+					original_tag = MAG
 					zin_sun_is_elven_realm = yes
 				}
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y6X value > 19 }
+				has_opinion = { target = GAA value > 19 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y6X value > 39 }
+				has_opinion = { target = GAA value > 39 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y6X value > 59 }
+				has_opinion = { target = GAA value > 59 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y6X value > 79 }
+				has_opinion = { target = GAA value > 79 }
 			}
 			modifier = {
 				add = 10
-				has_opinion = { target = Y6X value > 99 }
+				has_opinion = { target = GAA value > 99 }
 			}
 			modifier = {
 				add = -10
-				has_opinion = { target = Y6X value < -19 }
+				has_opinion = { target = GAA value < -19 }
 			}
 			modifier = {
 				factor = 0
-				original_tag = Y0L
+				original_tag = AEN
 				NOT = { has_global_flag = zin_golden_king_dead }
 			}
 			modifier = {
 				add = 10
-				original_tag = Y0L
+				original_tag = AEN
 				NOT = { has_global_flag = zin_golden_king_dead }
 			}
 			modifier = {
 				factor = 0
-				original_tag = Y0L
+				original_tag = AEN
 				has_global_flag = zin_aurevan_crowned
 			}
 		}
@@ -290,7 +290,7 @@ news_event = {
 	show_major = {
 		OR = {
 			zin_sun_is_sunhot_realm = yes
-			original_tag = Y6X
+			original_tag = GAA
 		}
 	}
 	is_triggered_only = yes
@@ -368,13 +368,13 @@ country_event = {
 	desc = {
 		text = zin_sun.35.d_gala
 		trigger = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 	}
 	desc = {
 		text = zin_sun.35.d_occupier
 		trigger = {
-			NOT = { original_tag = Y6X }
+			NOT = { original_tag = GAA }
 		}
 	}
 	picture = GFX_zin_evt_generic_court

@@ -13,9 +13,9 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		Y6Z = {
+		GOO = {
 			add_opinion_modifier = {
-				target = Y6U
+				target = LIG
 				modifier = zin_regional_goodin_refused_a_seat
 			}
 		}
@@ -25,14 +25,14 @@ country_event = {
 		ai_chance = {
 			factor = 70
 		}
-		Y6Z = {
+		GOO = {
 			set_country_flag = zin_regional_goodin_guest_seat
 		}
 		set_temp_variable = { zin_arg_value = 2 }
 		zin_sun_add_concord = yes
-		Y6Z = {
+		GOO = {
 			add_opinion_modifier = {
-				target = Y6U
+				target = LIG
 				modifier = zin_regional_goodin_welcomed_as_guests
 			}
 		}

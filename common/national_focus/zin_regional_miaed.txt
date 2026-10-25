@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y18
+			original_tag = MIE
 		}
 	}
 	initial_show_position = { focus = zin_regional_miaed_lord_of_the_passes }
@@ -170,7 +170,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 15 }
 			zin_east_add_lean = yes
-			Y14 = {
+			NRS = {
 				set_temp_variable = { zin_arg_road = 5 }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_east_add_road_influence = yes
@@ -235,7 +235,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = -15 }
 			zin_east_add_lean = yes
-			Y16 = {
+			STA = {
 				set_temp_variable = { zin_arg_road = 5 }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_east_add_road_influence = yes
@@ -375,13 +375,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 10
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			add_stability = 0.02
 		}

@@ -242,7 +242,7 @@ country_event = {
 		}
 		set_country_flag = zin_dark_trolls_for_pay
 		add_opinion_modifier = {
-			target = Y1A
+			target = GOL
 			modifier = zin_goldoroth_opinion_troll_silver
 		}
 	}
@@ -251,8 +251,8 @@ country_event = {
 		ai_chance = {
 			factor = 40
 		}
-		Y1A = {
-			set_temp_variable = { zin_arg_target = Y45 }
+		GOL = {
+			set_temp_variable = { zin_arg_target = TRO }
 			set_temp_variable = { zin_arg_value = -5 }
 			zin_goldoroth_add_sway = yes
 		}
@@ -287,7 +287,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_dark_add_accord_resolve = yes
 		add_opinion_modifier = {
-			target = Y19
+			target = DND
 			modifier = zin_goldoroth_opinion_oath_kept
 		}
 	}
@@ -358,7 +358,7 @@ country_event = {
 		set_temp_variable = { zin_arg_value = 15 }
 		zin_goldoroth_add_sway = yes
 		add_opinion_modifier = {
-			target = Y1A
+			target = GOL
 			modifier = zin_goldoroth_opinion_free_dark
 		}
 		set_temp_variable = { zin_arg_target = ROOT }
@@ -393,7 +393,7 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.20
 				days = 20
@@ -405,10 +405,10 @@ country_event = {
 		ai_chance = {
 			factor = 90
 		}
-		set_temp_variable = { zin_arg_target = Y1A }
+		set_temp_variable = { zin_arg_target = GOL }
 		set_temp_variable = { zin_arg_value = 1 }
 		zin_dark_add_volgan_pact = yes
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.20
 				days = 20
@@ -433,7 +433,7 @@ country_event = {
 				check_variable = { zin_dominion_strength > 49 }
 			}
 		}
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.24
 				days = 24
@@ -449,10 +449,10 @@ country_event = {
 				check_variable = { zin_dominion_strength > 49 }
 			}
 		}
-		Y1A = {
+		GOL = {
 			zin_goldoroth_kneel = yes
 		}
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.24
 				days = 24
@@ -475,7 +475,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				is_subject_of = Y8D
+				is_subject_of = PUV
 			}
 			zin_goldoroth_break_from_nafeher = yes
 		}
@@ -505,11 +505,11 @@ country_event = {
 		ai_chance = {
 			factor = 60
 		}
-		Y1A = {
+		GOL = {
 			set_temp_variable = { zin_arg_value = -10 }
 			zin_leren_add_lean = yes
 		}
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.21
 				days = 21
@@ -526,16 +526,16 @@ country_event = {
 			}
 		}
 		diplomatic_relation = {
-			country = Y1A
+			country = GOL
 			relation = non_aggression_pact
 			active = yes
 		}
-		Y1A = {
+		GOL = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_leren_add_lean = yes
 			add_political_power = 25
 		}
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.21
 				days = 21
@@ -568,7 +568,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 		}
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.22
 				days = 22
@@ -583,7 +583,7 @@ country_event = {
 		set_temp_variable = { zin_arg_act = 1 }
 		zin_goldoroth_diplomacy = yes
 		diplomatic_relation = {
-			country = Y1A
+			country = GOL
 			relation = non_aggression_pact
 			active = yes
 		}
@@ -592,7 +592,7 @@ country_event = {
 		zin_dark_add_border_tension = yes
 		set_temp_variable = { zin_arg_value = -1 }
 		zin_world_add_gathering_dark = yes
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.22
 				days = 22
@@ -619,7 +619,7 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_value = 5 }
 		zin_dark_add_accord_resolve = yes
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.23
 				days = 23
@@ -633,14 +633,14 @@ country_event = {
 		}
 		set_temp_variable = { zin_arg_act = 2 }
 		zin_goldoroth_diplomacy = yes
-		Y1A = {
-			set_temp_variable = { zin_arg_target = Y1B }
+		GOL = {
+			set_temp_variable = { zin_arg_target = BLN }
 			set_temp_variable = { zin_arg_value = 30 }
 			zin_goldoroth_add_sway = yes
 		}
 		set_temp_variable = { zin_arg_value = -10 }
 		zin_dark_add_accord_resolve = yes
-		Y1A = {
+		GOL = {
 			country_event = {
 				id = zin_goldoroth.23
 				days = 23

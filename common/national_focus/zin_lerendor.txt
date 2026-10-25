@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0G
+			original_tag = LER
 		}
 	}
 	initial_show_position = { focus = zin_lerendor_strait_treasury }
@@ -117,7 +117,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_leren.11
 			}
 			custom_effect_tooltip = zin_lerendor_reopen_toll_quarrel_tip_1
@@ -141,7 +141,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = zin_lerendor_timber_of_lerenwaith
+		id = zin_lerendor_timber_of_lerendors_north
 		icon = GFX_focus_zin_timber_mill
 		x = 4
 		y = 2
@@ -307,7 +307,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			Y0I = {
+			EEK = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_leren_add_lean = yes
 			}
@@ -319,7 +319,7 @@ focus_tree = {
 		x = 4
 		y = 4
 		prerequisite = {
-			focus = zin_lerendor_timber_of_lerenwaith
+			focus = zin_lerendor_timber_of_lerendors_north
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		cost = 10
@@ -842,7 +842,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = zin_lerendor_lerenwaith_estates
+		id = zin_lerendor_lerendors_north_estates
 		icon = GFX_focus_zin_council_table
 		x = 14
 		y = 1
@@ -887,7 +887,7 @@ focus_tree = {
 		y = 2
 		prerequisite = {
 			focus = zin_lerendor_sonargur_household
-			focus = zin_lerendor_lerenwaith_estates
+			focus = zin_lerendor_lerendors_north_estates
 		}
 		cost = 10
 		ai_will_do = {
@@ -903,7 +903,7 @@ focus_tree = {
 		x = 15
 		y = 2
 		prerequisite = {
-			focus = zin_lerendor_lerenwaith_estates
+			focus = zin_lerendor_lerendors_north_estates
 		}
 		cost = 10
 		ai_will_do = {
@@ -1002,7 +1002,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = zin_lerendor_chancellor_of_lerenwaith
+		id = zin_lerendor_chancellor_of_lerendors_north
 		icon = GFX_focus_zin_seal_chancellor
 		x = 14
 		y = 3
@@ -1095,7 +1095,7 @@ focus_tree = {
 		y = 4
 		prerequisite = {
 			focus = zin_lerendor_one_throne
-			focus = zin_lerendor_chancellor_of_lerenwaith
+			focus = zin_lerendor_chancellor_of_lerendors_north
 		}
 		mutually_exclusive = {
 			focus = zin_lerendor_crown_ascendant
@@ -1134,7 +1134,7 @@ focus_tree = {
 		x = 15
 		y = 4
 		prerequisite = {
-			focus = zin_lerendor_chancellor_of_lerenwaith
+			focus = zin_lerendor_chancellor_of_lerendors_north
 			focus = zin_lerendor_estates_purse
 		}
 		mutually_exclusive = {
@@ -1317,7 +1317,7 @@ focus_tree = {
 			set_country_flag = zin_lerendor_compact_open
 			set_country_flag = zin_leren_compact_open
 			add_political_power = 25
-			Y0I = {
+			EEK = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_leren_add_lean = yes
 			}
@@ -1338,7 +1338,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = zin_lerendor.6
 			add_ideas = zin_lerendor_compact_council_spirit
-			Y0W = {
+			ANE = {
 				country_event = zin_lerendor.26
 			}
 		}
@@ -1376,12 +1376,12 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y0I = {
+			EEK = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_leren_add_lean = yes
 			}
 			add_political_power = 25
-			Y0I = {
+			EEK = {
 				add_political_power = 25
 			}
 		}
@@ -1413,7 +1413,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = zin_lerendor_sensai_question
+		id = zin_lerendor_tolvael_question
 		icon = GFX_focus_zin_scroll_treaty
 		x = 21
 		y = 2
@@ -1425,7 +1425,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			Y2Q = {
+			TLV = {
 				country_event = zin_lerendor.7
 			}
 		}
@@ -1457,14 +1457,14 @@ focus_tree = {
 		y = 3
 		prerequisite = {
 			focus = zin_lerendor_compact_tariff
-			focus = zin_lerendor_sensai_question
+			focus = zin_lerendor_tolvael_question
 		}
 		cost = 10
 		ai_will_do = {
 			factor = 12
 		}
 		completion_reward = {
-			Y0H = {
+			MOO = {
 				country_event = zin_lerendor.8
 			}
 		}
@@ -1475,18 +1475,18 @@ focus_tree = {
 		x = 22
 		y = 3
 		prerequisite = {
-			focus = zin_lerendor_sensai_question
+			focus = zin_lerendor_tolvael_question
 		}
 		cost = 10
 		ai_will_do = {
 			factor = 15
 		}
 		completion_reward = {
-			Y34 = {
+			MIA = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_leren_add_lean = yes
 			}
-			Y30 = {
+			DOL = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_leren_add_lean = yes
 			}
@@ -1530,7 +1530,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0J = {
+			REN = {
 				set_temp_variable = { zin_arg_value = 20 }
 				zin_leren_add_lean = yes
 			}
@@ -1699,11 +1699,11 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y19 = {
+			DND = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_leren_add_lean = yes
 			}
-			Y1B = {
+			BLN = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_leren_add_lean = yes
 			}
@@ -1723,7 +1723,7 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			Y4I = {
+			BLK = {
 				set_temp_variable = { zin_arg_value = 20 }
 				zin_leren_add_lean = yes
 			}
@@ -1773,12 +1773,12 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			give_guarantee = Y19
-			Y19 = {
+			give_guarantee = DND
+			DND = {
 				set_temp_variable = { zin_arg_value = 15 }
 				zin_leren_add_lean = yes
 			}
-			Y1A = {
+			GOL = {
 				set_temp_variable = { zin_arg_value = -20 }
 				zin_leren_add_lean = yes
 			}
@@ -1804,14 +1804,14 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y1A = {
+			GOL = {
 				country_event = zin_lerendor.9
 			}
-			Y1A = {
+			GOL = {
 				set_temp_variable = { zin_arg_value = 25 }
 				zin_leren_add_lean = yes
 			}
-			Y19 = {
+			DND = {
 				set_temp_variable = { zin_arg_value = -15 }
 				zin_leren_add_lean = yes
 			}
@@ -1857,7 +1857,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = zin_lerendor_dark_protection
 			set_country_flag = zin_leren_dark_protection
-			Y4I = {
+			BLK = {
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_leren_add_lean = yes
 			}
@@ -1941,7 +1941,7 @@ focus_tree = {
 				limit = {
 					has_completed_focus = zin_lerendor_shield_of_dondor
 				}
-				Y1A = {
+				GOL = {
 					if = {
 						limit = { zin_lerendor_dark_shore_war = yes }
 						ROOT = {
@@ -2361,7 +2361,7 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_lerendor.12
 			}
 		}
@@ -2632,9 +2632,9 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			country_exists = Y0L
+			country_exists = AEN
 			NOT = {
-				has_war_with = Y0L
+				has_war_with = AEN
 			}
 			OR = {
 				has_global_flag = zin_eindil_crowned
@@ -2927,13 +2927,13 @@ focus_tree = {
 				has_global_flag = zin_afrit_dead
 				has_global_flag = zin_eindil_crowned
 			}
-			country_exists = Y0L
+			country_exists = AEN
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			Y0L = {
+			AEN = {
 				country_event = zin_lerendor.15
 			}
 			custom_effect_tooltip = zin_lerendor_a_treaty_among_equals_tip_1
@@ -3095,7 +3095,7 @@ focus_tree = {
 			factor = 60
 		}
 		completion_reward = {
-			Y0J = {
+			REN = {
 				if = {
 					limit = { zin_lerendor_r_en_friendly = yes }
 					ROOT = {

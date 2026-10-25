@@ -35,14 +35,14 @@ zin_includes_culture_steppe_rider = {
 	}
 }
 
-zin_is_culture_wall_folk = {
-	has_country_flag = zin_culture_wall_folk
+zin_is_culture_vale_folk = {
+	has_country_flag = zin_culture_vale_folk
 }
 
-zin_includes_culture_wall_folk = {
+zin_includes_culture_vale_folk = {
 	OR = {
-		has_country_flag = zin_culture_wall_folk
-		has_country_flag = zin_culture2_wall_folk
+		has_country_flag = zin_culture_vale_folk
+		has_country_flag = zin_culture2_vale_folk
 	}
 }
 
@@ -134,14 +134,14 @@ zin_includes_culture_mirolon_wardens = {
 	}
 }
 
-zin_is_culture_ember_lands_freeholds = {
-	has_country_flag = zin_culture_ember_lands_freeholds
+zin_is_culture_ember_freeholds = {
+	has_country_flag = zin_culture_ember_freeholds
 }
 
-zin_includes_culture_ember_lands_freeholds = {
+zin_includes_culture_ember_freeholds = {
 	OR = {
-		has_country_flag = zin_culture_ember_lands_freeholds
-		has_country_flag = zin_culture2_ember_lands_freeholds
+		has_country_flag = zin_culture_ember_freeholds
+		has_country_flag = zin_culture2_ember_freeholds
 	}
 }
 
@@ -167,36 +167,36 @@ zin_includes_culture_ice_clans = {
 	}
 }
 
-zin_is_culture_isengard_warlords = {
-	has_country_flag = zin_culture_isengard_warlords
+zin_is_culture_melkgard_warlords = {
+	has_country_flag = zin_culture_melkgard_warlords
 }
 
-zin_includes_culture_isengard_warlords = {
+zin_includes_culture_melkgard_warlords = {
 	OR = {
-		has_country_flag = zin_culture_isengard_warlords
-		has_country_flag = zin_culture2_isengard_warlords
+		has_country_flag = zin_culture_melkgard_warlords
+		has_country_flag = zin_culture2_melkgard_warlords
 	}
 }
 
-zin_is_culture_windwaith_seafarers = {
-	has_country_flag = zin_culture_windwaith_seafarers
+zin_is_culture_vindael_seafarers = {
+	has_country_flag = zin_culture_vindael_seafarers
 }
 
-zin_includes_culture_windwaith_seafarers = {
+zin_includes_culture_vindael_seafarers = {
 	OR = {
-		has_country_flag = zin_culture_windwaith_seafarers
-		has_country_flag = zin_culture2_windwaith_seafarers
+		has_country_flag = zin_culture_vindael_seafarers
+		has_country_flag = zin_culture2_vindael_seafarers
 	}
 }
 
-zin_is_culture_gunwaith_clans = {
-	has_country_flag = zin_culture_gunwaith_clans
+zin_is_culture_gunwyn_clans = {
+	has_country_flag = zin_culture_gunwyn_clans
 }
 
-zin_includes_culture_gunwaith_clans = {
+zin_includes_culture_gunwyn_clans = {
 	OR = {
-		has_country_flag = zin_culture_gunwaith_clans
-		has_country_flag = zin_culture2_gunwaith_clans
+		has_country_flag = zin_culture_gunwyn_clans
+		has_country_flag = zin_culture2_gunwyn_clans
 	}
 }
 
@@ -585,6 +585,325 @@ zin_includes_culture_netherborn = {
 	}
 }
 
+zin_is_culture_wall_delvers = {
+	has_country_flag = zin_culture_wall_delvers
+}
+
+zin_includes_culture_wall_delvers = {
+	OR = {
+		has_country_flag = zin_culture_wall_delvers
+		has_country_flag = zin_culture2_wall_delvers
+	}
+}
+
+zin_is_culture_west_delvers = {
+	has_country_flag = zin_culture_west_delvers
+}
+
+zin_includes_culture_west_delvers = {
+	OR = {
+		has_country_flag = zin_culture_west_delvers
+		has_country_flag = zin_culture2_west_delvers
+	}
+}
+
+zin_is_culture_north_delvers = {
+	has_country_flag = zin_culture_north_delvers
+}
+
+zin_includes_culture_north_delvers = {
+	OR = {
+		has_country_flag = zin_culture_north_delvers
+		has_country_flag = zin_culture2_north_delvers
+	}
+}
+
+zin_is_culture_hearth_folk = {
+	has_country_flag = zin_culture_hearth_folk
+}
+
+zin_includes_culture_hearth_folk = {
+	OR = {
+		has_country_flag = zin_culture_hearth_folk
+		has_country_flag = zin_culture2_hearth_folk
+	}
+}
+
+zin_is_culture_holt_gnomes = {
+	has_country_flag = zin_culture_holt_gnomes
+}
+
+zin_includes_culture_holt_gnomes = {
+	OR = {
+		has_country_flag = zin_culture_holt_gnomes
+		has_country_flag = zin_culture2_holt_gnomes
+	}
+}
+
+zin_is_culture_road_warrens = {
+	has_country_flag = zin_culture_road_warrens
+}
+
+zin_includes_culture_road_warrens = {
+	OR = {
+		has_country_flag = zin_culture_road_warrens
+		has_country_flag = zin_culture2_road_warrens
+	}
+}
+
+zin_is_culture_baelim = {
+	has_country_flag = zin_culture_baelim
+}
+
+zin_includes_culture_baelim = {
+	OR = {
+		has_country_flag = zin_culture_baelim
+		has_country_flag = zin_culture2_baelim
+	}
+}
+
+zin_is_culture_mycid_rings = {
+	has_country_flag = zin_culture_mycid_rings
+}
+
+zin_includes_culture_mycid_rings = {
+	OR = {
+		has_country_flag = zin_culture_mycid_rings
+		has_country_flag = zin_culture2_mycid_rings
+	}
+}
+
+zin_is_culture_kingdom_forest_elves = {
+	has_country_flag = zin_culture_kingdom_forest_elves
+}
+
+zin_includes_culture_kingdom_forest_elves = {
+	OR = {
+		has_country_flag = zin_culture_kingdom_forest_elves
+		has_country_flag = zin_culture2_kingdom_forest_elves
+	}
+}
+
+zin_is_culture_roost_keepers = {
+	has_country_flag = zin_culture_roost_keepers
+}
+
+zin_includes_culture_roost_keepers = {
+	OR = {
+		has_country_flag = zin_culture_roost_keepers
+		has_country_flag = zin_culture2_roost_keepers
+	}
+}
+
+zin_is_culture_god_forest_keepers = {
+	has_country_flag = zin_culture_god_forest_keepers
+}
+
+zin_includes_culture_god_forest_keepers = {
+	OR = {
+		has_country_flag = zin_culture_god_forest_keepers
+		has_country_flag = zin_culture2_god_forest_keepers
+	}
+}
+
+zin_is_culture_strait_folk = {
+	has_country_flag = zin_culture_strait_folk
+}
+
+zin_includes_culture_strait_folk = {
+	OR = {
+		has_country_flag = zin_culture_strait_folk
+		has_country_flag = zin_culture2_strait_folk
+	}
+}
+
+zin_is_culture_hilofrim_herders = {
+	has_country_flag = zin_culture_hilofrim_herders
+}
+
+zin_includes_culture_hilofrim_herders = {
+	OR = {
+		has_country_flag = zin_culture_hilofrim_herders
+		has_country_flag = zin_culture2_hilofrim_herders
+	}
+}
+
+zin_is_culture_teste_valley_folk = {
+	has_country_flag = zin_culture_teste_valley_folk
+}
+
+zin_includes_culture_teste_valley_folk = {
+	OR = {
+		has_country_flag = zin_culture_teste_valley_folk
+		has_country_flag = zin_culture2_teste_valley_folk
+	}
+}
+
+zin_is_culture_quay_folk = {
+	has_country_flag = zin_culture_quay_folk
+}
+
+zin_includes_culture_quay_folk = {
+	OR = {
+		has_country_flag = zin_culture_quay_folk
+		has_country_flag = zin_culture2_quay_folk
+	}
+}
+
+zin_is_culture_reindeer_clans = {
+	has_country_flag = zin_culture_reindeer_clans
+}
+
+zin_includes_culture_reindeer_clans = {
+	OR = {
+		has_country_flag = zin_culture_reindeer_clans
+		has_country_flag = zin_culture2_reindeer_clans
+	}
+}
+
+zin_is_culture_woqood_sealers = {
+	has_country_flag = zin_culture_woqood_sealers
+}
+
+zin_includes_culture_woqood_sealers = {
+	OR = {
+		has_country_flag = zin_culture_woqood_sealers
+		has_country_flag = zin_culture2_woqood_sealers
+	}
+}
+
+zin_is_culture_naamis_sea_crown = {
+	has_country_flag = zin_culture_naamis_sea_crown
+}
+
+zin_includes_culture_naamis_sea_crown = {
+	OR = {
+		has_country_flag = zin_culture_naamis_sea_crown
+		has_country_flag = zin_culture2_naamis_sea_crown
+	}
+}
+
+zin_is_culture_orato_fishers = {
+	has_country_flag = zin_culture_orato_fishers
+}
+
+zin_includes_culture_orato_fishers = {
+	OR = {
+		has_country_flag = zin_culture_orato_fishers
+		has_country_flag = zin_culture2_orato_fishers
+	}
+}
+
+zin_is_culture_miaed_pass_lords = {
+	has_country_flag = zin_culture_miaed_pass_lords
+}
+
+zin_includes_culture_miaed_pass_lords = {
+	OR = {
+		has_country_flag = zin_culture_miaed_pass_lords
+		has_country_flag = zin_culture2_miaed_pass_lords
+	}
+}
+
+zin_is_culture_wahatud_oasis_folk = {
+	has_country_flag = zin_culture_wahatud_oasis_folk
+}
+
+zin_includes_culture_wahatud_oasis_folk = {
+	OR = {
+		has_country_flag = zin_culture_wahatud_oasis_folk
+		has_country_flag = zin_culture2_wahatud_oasis_folk
+	}
+}
+
+zin_is_culture_king_warrens = {
+	has_country_flag = zin_culture_king_warrens
+}
+
+zin_includes_culture_king_warrens = {
+	OR = {
+		has_country_flag = zin_culture_king_warrens
+		has_country_flag = zin_culture2_king_warrens
+	}
+}
+
+zin_is_culture_spring_warrens = {
+	has_country_flag = zin_culture_spring_warrens
+}
+
+zin_includes_culture_spring_warrens = {
+	OR = {
+		has_country_flag = zin_culture_spring_warrens
+		has_country_flag = zin_culture2_spring_warrens
+	}
+}
+
+zin_is_culture_ogre_clans = {
+	has_country_flag = zin_culture_ogre_clans
+}
+
+zin_includes_culture_ogre_clans = {
+	OR = {
+		has_country_flag = zin_culture_ogre_clans
+		has_country_flag = zin_culture2_ogre_clans
+	}
+}
+
+zin_is_culture_plateau_soldiery = {
+	has_country_flag = zin_culture_plateau_soldiery
+}
+
+zin_includes_culture_plateau_soldiery = {
+	OR = {
+		has_country_flag = zin_culture_plateau_soldiery
+		has_country_flag = zin_culture2_plateau_soldiery
+	}
+}
+
+zin_is_culture_cairn_giants = {
+	has_country_flag = zin_culture_cairn_giants
+}
+
+zin_includes_culture_cairn_giants = {
+	OR = {
+		has_country_flag = zin_culture_cairn_giants
+		has_country_flag = zin_culture2_cairn_giants
+	}
+}
+
+zin_is_culture_height_yeti = {
+	has_country_flag = zin_culture_height_yeti
+}
+
+zin_includes_culture_height_yeti = {
+	OR = {
+		has_country_flag = zin_culture_height_yeti
+		has_country_flag = zin_culture2_height_yeti
+	}
+}
+
+zin_is_culture_nether_houses = {
+	has_country_flag = zin_culture_nether_houses
+}
+
+zin_includes_culture_nether_houses = {
+	OR = {
+		has_country_flag = zin_culture_nether_houses
+		has_country_flag = zin_culture2_nether_houses
+	}
+}
+
+zin_is_culture_veshazel_court = {
+	has_country_flag = zin_culture_veshazel_court
+}
+
+zin_includes_culture_veshazel_court = {
+	OR = {
+		has_country_flag = zin_culture_veshazel_court
+		has_country_flag = zin_culture2_veshazel_court
+	}
+}
+
 zin_is_language_aenoran = {
 	has_country_flag = zin_language_aenoran
 }
@@ -681,6 +1000,26 @@ zin_is_language_yetic = {
 	has_country_flag = zin_language_yetic
 }
 
+zin_is_language_dwarvish = {
+	has_country_flag = zin_language_dwarvish
+}
+
+zin_is_language_gnomish = {
+	has_country_flag = zin_language_gnomish
+}
+
+zin_is_language_hearthspeech = {
+	has_country_flag = zin_language_hearthspeech
+}
+
+zin_is_language_pack_tongue = {
+	has_country_flag = zin_language_pack_tongue
+}
+
+zin_is_language_lowspeech = {
+	has_country_flag = zin_language_lowspeech
+}
+
 zin_is_faith_deliverer = {
 	has_country_flag = zin_faith_deliverer
 }
@@ -697,8 +1036,8 @@ zin_is_faith_horse_oath = {
 	has_country_flag = zin_faith_horse_oath
 }
 
-zin_is_faith_stone_vigil = {
-	has_country_flag = zin_faith_stone_vigil
+zin_is_faith_pass_vigil = {
+	has_country_flag = zin_faith_pass_vigil
 }
 
 zin_is_faith_isle_tide = {
@@ -753,8 +1092,8 @@ zin_is_faith_scale_creed = {
 	has_country_flag = zin_faith_scale_creed
 }
 
-zin_is_faith_river_temples = {
-	has_country_flag = zin_faith_river_temples
+zin_is_faith_flood_stair = {
+	has_country_flag = zin_faith_flood_stair
 }
 
 zin_is_faith_lake_litany = {
@@ -837,6 +1176,34 @@ zin_is_faith_none = {
 	has_country_flag = zin_faith_none
 }
 
+zin_is_faith_deep_reckoning = {
+	has_country_flag = zin_faith_deep_reckoning
+}
+
+zin_is_faith_hearth_table = {
+	has_country_flag = zin_faith_hearth_table
+}
+
+zin_is_faith_full_pot = {
+	has_country_flag = zin_faith_full_pot
+}
+
+zin_is_faith_road_due = {
+	has_country_flag = zin_faith_road_due
+}
+
+zin_is_faith_standing_silence = {
+	has_country_flag = zin_faith_standing_silence
+}
+
+zin_is_faith_pass_fires = {
+	has_country_flag = zin_faith_pass_fires
+}
+
+zin_is_faith_water_share = {
+	has_country_flag = zin_faith_water_share
+}
+
 zin_state_is_culture_lake_aenoran = {
 	check_variable = { zin_state_culture = 1 }
 }
@@ -870,11 +1237,11 @@ zin_state_includes_culture_steppe_rider = {
 	}
 }
 
-zin_state_is_culture_wall_folk = {
+zin_state_is_culture_vale_folk = {
 	check_variable = { zin_state_culture = 4 }
 }
 
-zin_state_includes_culture_wall_folk = {
+zin_state_includes_culture_vale_folk = {
 	OR = {
 		check_variable = { zin_state_culture = 4 }
 		check_variable = { zin_state_culture2 = 4 }
@@ -969,11 +1336,11 @@ zin_state_includes_culture_mirolon_wardens = {
 	}
 }
 
-zin_state_is_culture_ember_lands_freeholds = {
+zin_state_is_culture_ember_freeholds = {
 	check_variable = { zin_state_culture = 13 }
 }
 
-zin_state_includes_culture_ember_lands_freeholds = {
+zin_state_includes_culture_ember_freeholds = {
 	OR = {
 		check_variable = { zin_state_culture = 13 }
 		check_variable = { zin_state_culture2 = 13 }
@@ -1002,33 +1369,33 @@ zin_state_includes_culture_ice_clans = {
 	}
 }
 
-zin_state_is_culture_isengard_warlords = {
+zin_state_is_culture_melkgard_warlords = {
 	check_variable = { zin_state_culture = 16 }
 }
 
-zin_state_includes_culture_isengard_warlords = {
+zin_state_includes_culture_melkgard_warlords = {
 	OR = {
 		check_variable = { zin_state_culture = 16 }
 		check_variable = { zin_state_culture2 = 16 }
 	}
 }
 
-zin_state_is_culture_windwaith_seafarers = {
+zin_state_is_culture_vindael_seafarers = {
 	check_variable = { zin_state_culture = 17 }
 }
 
-zin_state_includes_culture_windwaith_seafarers = {
+zin_state_includes_culture_vindael_seafarers = {
 	OR = {
 		check_variable = { zin_state_culture = 17 }
 		check_variable = { zin_state_culture2 = 17 }
 	}
 }
 
-zin_state_is_culture_gunwaith_clans = {
+zin_state_is_culture_gunwyn_clans = {
 	check_variable = { zin_state_culture = 18 }
 }
 
-zin_state_includes_culture_gunwaith_clans = {
+zin_state_includes_culture_gunwyn_clans = {
 	OR = {
 		check_variable = { zin_state_culture = 18 }
 		check_variable = { zin_state_culture2 = 18 }
@@ -1420,6 +1787,325 @@ zin_state_includes_culture_netherborn = {
 	}
 }
 
+zin_state_is_culture_wall_delvers = {
+	check_variable = { zin_state_culture = 54 }
+}
+
+zin_state_includes_culture_wall_delvers = {
+	OR = {
+		check_variable = { zin_state_culture = 54 }
+		check_variable = { zin_state_culture2 = 54 }
+	}
+}
+
+zin_state_is_culture_west_delvers = {
+	check_variable = { zin_state_culture = 55 }
+}
+
+zin_state_includes_culture_west_delvers = {
+	OR = {
+		check_variable = { zin_state_culture = 55 }
+		check_variable = { zin_state_culture2 = 55 }
+	}
+}
+
+zin_state_is_culture_north_delvers = {
+	check_variable = { zin_state_culture = 56 }
+}
+
+zin_state_includes_culture_north_delvers = {
+	OR = {
+		check_variable = { zin_state_culture = 56 }
+		check_variable = { zin_state_culture2 = 56 }
+	}
+}
+
+zin_state_is_culture_hearth_folk = {
+	check_variable = { zin_state_culture = 57 }
+}
+
+zin_state_includes_culture_hearth_folk = {
+	OR = {
+		check_variable = { zin_state_culture = 57 }
+		check_variable = { zin_state_culture2 = 57 }
+	}
+}
+
+zin_state_is_culture_holt_gnomes = {
+	check_variable = { zin_state_culture = 58 }
+}
+
+zin_state_includes_culture_holt_gnomes = {
+	OR = {
+		check_variable = { zin_state_culture = 58 }
+		check_variable = { zin_state_culture2 = 58 }
+	}
+}
+
+zin_state_is_culture_road_warrens = {
+	check_variable = { zin_state_culture = 59 }
+}
+
+zin_state_includes_culture_road_warrens = {
+	OR = {
+		check_variable = { zin_state_culture = 59 }
+		check_variable = { zin_state_culture2 = 59 }
+	}
+}
+
+zin_state_is_culture_baelim = {
+	check_variable = { zin_state_culture = 60 }
+}
+
+zin_state_includes_culture_baelim = {
+	OR = {
+		check_variable = { zin_state_culture = 60 }
+		check_variable = { zin_state_culture2 = 60 }
+	}
+}
+
+zin_state_is_culture_mycid_rings = {
+	check_variable = { zin_state_culture = 61 }
+}
+
+zin_state_includes_culture_mycid_rings = {
+	OR = {
+		check_variable = { zin_state_culture = 61 }
+		check_variable = { zin_state_culture2 = 61 }
+	}
+}
+
+zin_state_is_culture_kingdom_forest_elves = {
+	check_variable = { zin_state_culture = 62 }
+}
+
+zin_state_includes_culture_kingdom_forest_elves = {
+	OR = {
+		check_variable = { zin_state_culture = 62 }
+		check_variable = { zin_state_culture2 = 62 }
+	}
+}
+
+zin_state_is_culture_roost_keepers = {
+	check_variable = { zin_state_culture = 63 }
+}
+
+zin_state_includes_culture_roost_keepers = {
+	OR = {
+		check_variable = { zin_state_culture = 63 }
+		check_variable = { zin_state_culture2 = 63 }
+	}
+}
+
+zin_state_is_culture_god_forest_keepers = {
+	check_variable = { zin_state_culture = 64 }
+}
+
+zin_state_includes_culture_god_forest_keepers = {
+	OR = {
+		check_variable = { zin_state_culture = 64 }
+		check_variable = { zin_state_culture2 = 64 }
+	}
+}
+
+zin_state_is_culture_strait_folk = {
+	check_variable = { zin_state_culture = 65 }
+}
+
+zin_state_includes_culture_strait_folk = {
+	OR = {
+		check_variable = { zin_state_culture = 65 }
+		check_variable = { zin_state_culture2 = 65 }
+	}
+}
+
+zin_state_is_culture_hilofrim_herders = {
+	check_variable = { zin_state_culture = 66 }
+}
+
+zin_state_includes_culture_hilofrim_herders = {
+	OR = {
+		check_variable = { zin_state_culture = 66 }
+		check_variable = { zin_state_culture2 = 66 }
+	}
+}
+
+zin_state_is_culture_teste_valley_folk = {
+	check_variable = { zin_state_culture = 67 }
+}
+
+zin_state_includes_culture_teste_valley_folk = {
+	OR = {
+		check_variable = { zin_state_culture = 67 }
+		check_variable = { zin_state_culture2 = 67 }
+	}
+}
+
+zin_state_is_culture_quay_folk = {
+	check_variable = { zin_state_culture = 68 }
+}
+
+zin_state_includes_culture_quay_folk = {
+	OR = {
+		check_variable = { zin_state_culture = 68 }
+		check_variable = { zin_state_culture2 = 68 }
+	}
+}
+
+zin_state_is_culture_reindeer_clans = {
+	check_variable = { zin_state_culture = 69 }
+}
+
+zin_state_includes_culture_reindeer_clans = {
+	OR = {
+		check_variable = { zin_state_culture = 69 }
+		check_variable = { zin_state_culture2 = 69 }
+	}
+}
+
+zin_state_is_culture_woqood_sealers = {
+	check_variable = { zin_state_culture = 70 }
+}
+
+zin_state_includes_culture_woqood_sealers = {
+	OR = {
+		check_variable = { zin_state_culture = 70 }
+		check_variable = { zin_state_culture2 = 70 }
+	}
+}
+
+zin_state_is_culture_naamis_sea_crown = {
+	check_variable = { zin_state_culture = 71 }
+}
+
+zin_state_includes_culture_naamis_sea_crown = {
+	OR = {
+		check_variable = { zin_state_culture = 71 }
+		check_variable = { zin_state_culture2 = 71 }
+	}
+}
+
+zin_state_is_culture_orato_fishers = {
+	check_variable = { zin_state_culture = 72 }
+}
+
+zin_state_includes_culture_orato_fishers = {
+	OR = {
+		check_variable = { zin_state_culture = 72 }
+		check_variable = { zin_state_culture2 = 72 }
+	}
+}
+
+zin_state_is_culture_miaed_pass_lords = {
+	check_variable = { zin_state_culture = 73 }
+}
+
+zin_state_includes_culture_miaed_pass_lords = {
+	OR = {
+		check_variable = { zin_state_culture = 73 }
+		check_variable = { zin_state_culture2 = 73 }
+	}
+}
+
+zin_state_is_culture_wahatud_oasis_folk = {
+	check_variable = { zin_state_culture = 74 }
+}
+
+zin_state_includes_culture_wahatud_oasis_folk = {
+	OR = {
+		check_variable = { zin_state_culture = 74 }
+		check_variable = { zin_state_culture2 = 74 }
+	}
+}
+
+zin_state_is_culture_king_warrens = {
+	check_variable = { zin_state_culture = 75 }
+}
+
+zin_state_includes_culture_king_warrens = {
+	OR = {
+		check_variable = { zin_state_culture = 75 }
+		check_variable = { zin_state_culture2 = 75 }
+	}
+}
+
+zin_state_is_culture_spring_warrens = {
+	check_variable = { zin_state_culture = 76 }
+}
+
+zin_state_includes_culture_spring_warrens = {
+	OR = {
+		check_variable = { zin_state_culture = 76 }
+		check_variable = { zin_state_culture2 = 76 }
+	}
+}
+
+zin_state_is_culture_ogre_clans = {
+	check_variable = { zin_state_culture = 77 }
+}
+
+zin_state_includes_culture_ogre_clans = {
+	OR = {
+		check_variable = { zin_state_culture = 77 }
+		check_variable = { zin_state_culture2 = 77 }
+	}
+}
+
+zin_state_is_culture_plateau_soldiery = {
+	check_variable = { zin_state_culture = 78 }
+}
+
+zin_state_includes_culture_plateau_soldiery = {
+	OR = {
+		check_variable = { zin_state_culture = 78 }
+		check_variable = { zin_state_culture2 = 78 }
+	}
+}
+
+zin_state_is_culture_cairn_giants = {
+	check_variable = { zin_state_culture = 79 }
+}
+
+zin_state_includes_culture_cairn_giants = {
+	OR = {
+		check_variable = { zin_state_culture = 79 }
+		check_variable = { zin_state_culture2 = 79 }
+	}
+}
+
+zin_state_is_culture_height_yeti = {
+	check_variable = { zin_state_culture = 80 }
+}
+
+zin_state_includes_culture_height_yeti = {
+	OR = {
+		check_variable = { zin_state_culture = 80 }
+		check_variable = { zin_state_culture2 = 80 }
+	}
+}
+
+zin_state_is_culture_nether_houses = {
+	check_variable = { zin_state_culture = 81 }
+}
+
+zin_state_includes_culture_nether_houses = {
+	OR = {
+		check_variable = { zin_state_culture = 81 }
+		check_variable = { zin_state_culture2 = 81 }
+	}
+}
+
+zin_state_is_culture_veshazel_court = {
+	check_variable = { zin_state_culture = 82 }
+}
+
+zin_state_includes_culture_veshazel_court = {
+	OR = {
+		check_variable = { zin_state_culture = 82 }
+		check_variable = { zin_state_culture2 = 82 }
+	}
+}
+
 zin_state_is_faith_deliverer = {
 	check_variable = { zin_state_faith = 1 }
 }
@@ -1436,7 +2122,7 @@ zin_state_is_faith_horse_oath = {
 	check_variable = { zin_state_faith = 4 }
 }
 
-zin_state_is_faith_stone_vigil = {
+zin_state_is_faith_pass_vigil = {
 	check_variable = { zin_state_faith = 5 }
 }
 
@@ -1492,7 +2178,7 @@ zin_state_is_faith_scale_creed = {
 	check_variable = { zin_state_faith = 18 }
 }
 
-zin_state_is_faith_river_temples = {
+zin_state_is_faith_flood_stair = {
 	check_variable = { zin_state_faith = 19 }
 }
 
@@ -1574,6 +2260,34 @@ zin_state_is_faith_hearth_iron = {
 
 zin_state_is_faith_none = {
 	check_variable = { zin_state_faith = 39 }
+}
+
+zin_state_is_faith_deep_reckoning = {
+	check_variable = { zin_state_faith = 40 }
+}
+
+zin_state_is_faith_hearth_table = {
+	check_variable = { zin_state_faith = 41 }
+}
+
+zin_state_is_faith_full_pot = {
+	check_variable = { zin_state_faith = 42 }
+}
+
+zin_state_is_faith_road_due = {
+	check_variable = { zin_state_faith = 43 }
+}
+
+zin_state_is_faith_standing_silence = {
+	check_variable = { zin_state_faith = 44 }
+}
+
+zin_state_is_faith_pass_fires = {
+	check_variable = { zin_state_faith = 45 }
+}
+
+zin_state_is_faith_water_share = {
+	check_variable = { zin_state_faith = 46 }
 }
 
 zin_state_culture_matches_owner = {

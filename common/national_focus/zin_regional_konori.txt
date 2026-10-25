@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0N
+			original_tag = KON
 		}
 	}
 	initial_show_position = { focus = zin_regional_konori_the_steppe_crown }
@@ -504,7 +504,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -712,7 +712,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -751,7 +751,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -790,7 +790,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -843,7 +843,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -873,7 +873,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y0P
+			country_exists = KIN
 		}
 		ai_will_do = {
 			factor = 10
@@ -887,7 +887,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -897,7 +897,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0P = {
+			KIN = {
 				country_event = zin_regional_konori.3
 			}
 		}
@@ -923,7 +923,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -959,7 +959,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -993,7 +993,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y8F
+			country_exists = MAG
 		}
 		ai_will_do = {
 			factor = 10
@@ -1007,7 +1007,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1752.6.2
+						date > 1752.6.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -1017,7 +1017,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y8F = {
+			MAG = {
 				country_event = zin_regional_konori.4
 			}
 		}

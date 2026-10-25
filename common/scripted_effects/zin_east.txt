@@ -67,7 +67,7 @@ zin_east_add_lean = {
 zin_east_refresh_wealth = {
 	set_variable = { zin_east_charters = 0 }
 	if = {
-		limit = { original_tag = Y14 }
+		limit = { original_tag = NRS }
 		if = {
 			limit = { check_variable = { global.zin_east_road_salt = 1 } }
 			add_to_variable = { zin_east_charters = 1 }
@@ -90,7 +90,7 @@ zin_east_refresh_wealth = {
 		}
 	}
 	if = {
-		limit = { original_tag = Y16 }
+		limit = { original_tag = STA }
 		if = {
 			limit = { check_variable = { global.zin_east_road_salt = 2 } }
 			add_to_variable = { zin_east_charters = 1 }
@@ -244,25 +244,25 @@ zin_east_charter_changed = {
 	# the loser is shaken, the winner is envied; the news goes to both powers and to every court on the road
 	if = {
 		limit = { check_variable = { global.zin_east_last_winner = 1 } }
-		Y16 = {
+		STA = {
 			set_country_flag = { flag = zin_east_in_crisis days = 365 }
-			add_opinion_modifier = { target = Y14 modifier = zin_east_charter_lost }
+			add_opinion_modifier = { target = NRS modifier = zin_east_charter_lost }
 		}
 	}
 	else_if = {
 		limit = { check_variable = { global.zin_east_last_winner = 2 } }
-		Y14 = {
+		NRS = {
 			set_country_flag = { flag = zin_east_in_crisis days = 365 }
-			add_opinion_modifier = { target = Y16 modifier = zin_east_charter_lost }
+			add_opinion_modifier = { target = STA modifier = zin_east_charter_lost }
 		}
 	}
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { country_event = { id = zin_east.10 } }
+		limit = { country_exists = NRS }
+		NRS = { country_event = { id = zin_east.10 } }
 	}
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { country_event = { id = zin_east.10 } }
+		limit = { country_exists = STA }
+		STA = { country_event = { id = zin_east.10 } }
 	}
 	if = {
 		limit = { check_variable = { global.zin_east_last_road = 1 } }
@@ -320,41 +320,41 @@ zin_east_roads_month = {
 	# a power that is gone leaves the survivor +20 influence on each road, once
 	if = {
 		limit = {
-			NOT = { country_exists = Y14 }
+			NOT = { country_exists = NRS }
 			NOT = { has_global_flag = zin_east_noris_gone }
 		}
 		set_global_flag = zin_east_noris_gone
-		Y16 = {
+		STA = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_east_add_all_roads = yes
 		}
 	}
 	if = {
 		limit = {
-			NOT = { country_exists = Y16 }
+			NOT = { country_exists = STA }
 			NOT = { has_global_flag = zin_east_stabilo_gone }
 		}
 		set_global_flag = zin_east_stabilo_gone
-		Y14 = {
+		NRS = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_east_add_all_roads = yes
 		}
 	}
-	Y14 = { zin_east_count_roads = yes }
-	Y16 = { zin_east_count_roads = yes }
+	NRS = { zin_east_count_roads = yes }
+	STA = { zin_east_count_roads = yes }
 	set_temp_variable = { zin_e_moved = 0 }
 	# salt
 	set_temp_variable = { zin_e_nc_salt = 0 }
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { set_temp_variable = { zin_e_nc_salt = zin_east_ctrl_salt } }
+		limit = { country_exists = NRS }
+		NRS = { set_temp_variable = { zin_e_nc_salt = zin_east_ctrl_salt } }
 	}
 	set_temp_variable = { zin_e_sc_salt = 0 }
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { set_temp_variable = { zin_e_sc_salt = zin_east_ctrl_salt } }
+		limit = { country_exists = STA }
+		STA = { set_temp_variable = { zin_e_sc_salt = zin_east_ctrl_salt } }
 	}
-	Y14 = {
+	NRS = {
 		set_temp_variable = { zin_e_other = zin_e_sc_salt }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_salt > zin_e_other } }
@@ -371,7 +371,7 @@ zin_east_roads_month = {
 		}
 		clamp_variable = { var = zin_east_inf_salt min = 0 max = 100 }
 	}
-	Y16 = {
+	STA = {
 		set_temp_variable = { zin_e_other = zin_e_nc_salt }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_salt > zin_e_other } }
@@ -391,14 +391,14 @@ zin_east_roads_month = {
 	# a power that is gone gives up the charters it held
 	if = {
 		limit = {
-			NOT = { country_exists = Y14 }
+			NOT = { country_exists = NRS }
 			check_variable = { global.zin_east_road_salt = 1 }
 		}
 		set_variable = { global.zin_east_road_salt = 0 }
 	}
 	if = {
 		limit = {
-			NOT = { country_exists = Y16 }
+			NOT = { country_exists = STA }
 			check_variable = { global.zin_east_road_salt = 2 }
 		}
 		set_variable = { global.zin_east_road_salt = 0 }
@@ -419,26 +419,26 @@ zin_east_roads_month = {
 				check_variable = { global.zin_east_roadn_salt > 0 }
 				check_variable = { zin_e_n3 > zin_e_total3 }
 			}
-			Y14 = { set_variable = { zin_east_inf_salt = 100 } }
-			Y16 = { set_variable = { zin_east_inf_salt = 0 } }
+			NRS = { set_variable = { zin_east_inf_salt = 100 } }
+			STA = { set_variable = { zin_east_inf_salt = 0 } }
 		}
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_roadn_salt > 0 }
 				check_variable = { zin_e_s3 > zin_e_total3 }
 			}
-			Y16 = { set_variable = { zin_east_inf_salt = 100 } }
-			Y14 = { set_variable = { zin_east_inf_salt = 0 } }
+			STA = { set_variable = { zin_east_inf_salt = 100 } }
+			NRS = { set_variable = { zin_east_inf_salt = 0 } }
 		}
 		set_temp_variable = { zin_e_n = 0 }
 		if = {
-			limit = { country_exists = Y14 }
-			Y14 = { set_temp_variable = { zin_e_n = zin_east_inf_salt } }
+			limit = { country_exists = NRS }
+			NRS = { set_temp_variable = { zin_e_n = zin_east_inf_salt } }
 		}
 		set_temp_variable = { zin_e_s = 0 }
 		if = {
-			limit = { country_exists = Y16 }
-			Y16 = { set_temp_variable = { zin_e_s = zin_east_inf_salt } }
+			limit = { country_exists = STA }
+			STA = { set_temp_variable = { zin_e_s = zin_east_inf_salt } }
 		}
 		set_temp_variable = { zin_e_lead = zin_e_n }
 		subtract_from_temp_variable = { zin_e_lead = zin_e_s }
@@ -449,7 +449,7 @@ zin_east_roads_month = {
 			limit = { check_variable = { global.zin_east_road_salt = 0 } }
 			if = {
 				limit = {
-					country_exists = Y14
+					country_exists = NRS
 					check_variable = { zin_e_n > 59.99 }
 					check_variable = { zin_e_lead > 19.99 }
 				}
@@ -457,7 +457,7 @@ zin_east_roads_month = {
 			}
 			else_if = {
 				limit = {
-					country_exists = Y16
+					country_exists = STA
 					check_variable = { zin_e_s > 59.99 }
 					check_variable = { zin_e_back > 19.99 }
 				}
@@ -467,7 +467,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_salt = 1 }
-				country_exists = Y16
+				country_exists = STA
 				check_variable = { zin_e_n < 40 }
 				check_variable = { zin_e_s > 59.99 }
 			}
@@ -476,7 +476,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_salt = 2 }
-				country_exists = Y14
+				country_exists = NRS
 				check_variable = { zin_e_s < 40 }
 				check_variable = { zin_e_n > 59.99 }
 			}
@@ -523,15 +523,15 @@ zin_east_roads_month = {
 	# gold
 	set_temp_variable = { zin_e_nc_gold = 0 }
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { set_temp_variable = { zin_e_nc_gold = zin_east_ctrl_gold } }
+		limit = { country_exists = NRS }
+		NRS = { set_temp_variable = { zin_e_nc_gold = zin_east_ctrl_gold } }
 	}
 	set_temp_variable = { zin_e_sc_gold = 0 }
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { set_temp_variable = { zin_e_sc_gold = zin_east_ctrl_gold } }
+		limit = { country_exists = STA }
+		STA = { set_temp_variable = { zin_e_sc_gold = zin_east_ctrl_gold } }
 	}
-	Y14 = {
+	NRS = {
 		set_temp_variable = { zin_e_other = zin_e_sc_gold }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_gold > zin_e_other } }
@@ -548,7 +548,7 @@ zin_east_roads_month = {
 		}
 		clamp_variable = { var = zin_east_inf_gold min = 0 max = 100 }
 	}
-	Y16 = {
+	STA = {
 		set_temp_variable = { zin_e_other = zin_e_nc_gold }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_gold > zin_e_other } }
@@ -568,14 +568,14 @@ zin_east_roads_month = {
 	# a power that is gone gives up the charters it held
 	if = {
 		limit = {
-			NOT = { country_exists = Y14 }
+			NOT = { country_exists = NRS }
 			check_variable = { global.zin_east_road_gold = 1 }
 		}
 		set_variable = { global.zin_east_road_gold = 0 }
 	}
 	if = {
 		limit = {
-			NOT = { country_exists = Y16 }
+			NOT = { country_exists = STA }
 			check_variable = { global.zin_east_road_gold = 2 }
 		}
 		set_variable = { global.zin_east_road_gold = 0 }
@@ -596,26 +596,26 @@ zin_east_roads_month = {
 				check_variable = { global.zin_east_roadn_gold > 0 }
 				check_variable = { zin_e_n3 > zin_e_total3 }
 			}
-			Y14 = { set_variable = { zin_east_inf_gold = 100 } }
-			Y16 = { set_variable = { zin_east_inf_gold = 0 } }
+			NRS = { set_variable = { zin_east_inf_gold = 100 } }
+			STA = { set_variable = { zin_east_inf_gold = 0 } }
 		}
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_roadn_gold > 0 }
 				check_variable = { zin_e_s3 > zin_e_total3 }
 			}
-			Y16 = { set_variable = { zin_east_inf_gold = 100 } }
-			Y14 = { set_variable = { zin_east_inf_gold = 0 } }
+			STA = { set_variable = { zin_east_inf_gold = 100 } }
+			NRS = { set_variable = { zin_east_inf_gold = 0 } }
 		}
 		set_temp_variable = { zin_e_n = 0 }
 		if = {
-			limit = { country_exists = Y14 }
-			Y14 = { set_temp_variable = { zin_e_n = zin_east_inf_gold } }
+			limit = { country_exists = NRS }
+			NRS = { set_temp_variable = { zin_e_n = zin_east_inf_gold } }
 		}
 		set_temp_variable = { zin_e_s = 0 }
 		if = {
-			limit = { country_exists = Y16 }
-			Y16 = { set_temp_variable = { zin_e_s = zin_east_inf_gold } }
+			limit = { country_exists = STA }
+			STA = { set_temp_variable = { zin_e_s = zin_east_inf_gold } }
 		}
 		set_temp_variable = { zin_e_lead = zin_e_n }
 		subtract_from_temp_variable = { zin_e_lead = zin_e_s }
@@ -626,7 +626,7 @@ zin_east_roads_month = {
 			limit = { check_variable = { global.zin_east_road_gold = 0 } }
 			if = {
 				limit = {
-					country_exists = Y14
+					country_exists = NRS
 					check_variable = { zin_e_n > 59.99 }
 					check_variable = { zin_e_lead > 19.99 }
 				}
@@ -634,7 +634,7 @@ zin_east_roads_month = {
 			}
 			else_if = {
 				limit = {
-					country_exists = Y16
+					country_exists = STA
 					check_variable = { zin_e_s > 59.99 }
 					check_variable = { zin_e_back > 19.99 }
 				}
@@ -644,7 +644,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_gold = 1 }
-				country_exists = Y16
+				country_exists = STA
 				check_variable = { zin_e_n < 40 }
 				check_variable = { zin_e_s > 59.99 }
 			}
@@ -653,7 +653,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_gold = 2 }
-				country_exists = Y14
+				country_exists = NRS
 				check_variable = { zin_e_s < 40 }
 				check_variable = { zin_e_n > 59.99 }
 			}
@@ -700,15 +700,15 @@ zin_east_roads_month = {
 	# rift
 	set_temp_variable = { zin_e_nc_rift = 0 }
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { set_temp_variable = { zin_e_nc_rift = zin_east_ctrl_rift } }
+		limit = { country_exists = NRS }
+		NRS = { set_temp_variable = { zin_e_nc_rift = zin_east_ctrl_rift } }
 	}
 	set_temp_variable = { zin_e_sc_rift = 0 }
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { set_temp_variable = { zin_e_sc_rift = zin_east_ctrl_rift } }
+		limit = { country_exists = STA }
+		STA = { set_temp_variable = { zin_e_sc_rift = zin_east_ctrl_rift } }
 	}
-	Y14 = {
+	NRS = {
 		set_temp_variable = { zin_e_other = zin_e_sc_rift }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_rift > zin_e_other } }
@@ -725,7 +725,7 @@ zin_east_roads_month = {
 		}
 		clamp_variable = { var = zin_east_inf_rift min = 0 max = 100 }
 	}
-	Y16 = {
+	STA = {
 		set_temp_variable = { zin_e_other = zin_e_nc_rift }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_rift > zin_e_other } }
@@ -745,14 +745,14 @@ zin_east_roads_month = {
 	# a power that is gone gives up the charters it held
 	if = {
 		limit = {
-			NOT = { country_exists = Y14 }
+			NOT = { country_exists = NRS }
 			check_variable = { global.zin_east_road_rift = 1 }
 		}
 		set_variable = { global.zin_east_road_rift = 0 }
 	}
 	if = {
 		limit = {
-			NOT = { country_exists = Y16 }
+			NOT = { country_exists = STA }
 			check_variable = { global.zin_east_road_rift = 2 }
 		}
 		set_variable = { global.zin_east_road_rift = 0 }
@@ -773,26 +773,26 @@ zin_east_roads_month = {
 				check_variable = { global.zin_east_roadn_rift > 0 }
 				check_variable = { zin_e_n3 > zin_e_total3 }
 			}
-			Y14 = { set_variable = { zin_east_inf_rift = 100 } }
-			Y16 = { set_variable = { zin_east_inf_rift = 0 } }
+			NRS = { set_variable = { zin_east_inf_rift = 100 } }
+			STA = { set_variable = { zin_east_inf_rift = 0 } }
 		}
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_roadn_rift > 0 }
 				check_variable = { zin_e_s3 > zin_e_total3 }
 			}
-			Y16 = { set_variable = { zin_east_inf_rift = 100 } }
-			Y14 = { set_variable = { zin_east_inf_rift = 0 } }
+			STA = { set_variable = { zin_east_inf_rift = 100 } }
+			NRS = { set_variable = { zin_east_inf_rift = 0 } }
 		}
 		set_temp_variable = { zin_e_n = 0 }
 		if = {
-			limit = { country_exists = Y14 }
-			Y14 = { set_temp_variable = { zin_e_n = zin_east_inf_rift } }
+			limit = { country_exists = NRS }
+			NRS = { set_temp_variable = { zin_e_n = zin_east_inf_rift } }
 		}
 		set_temp_variable = { zin_e_s = 0 }
 		if = {
-			limit = { country_exists = Y16 }
-			Y16 = { set_temp_variable = { zin_e_s = zin_east_inf_rift } }
+			limit = { country_exists = STA }
+			STA = { set_temp_variable = { zin_e_s = zin_east_inf_rift } }
 		}
 		set_temp_variable = { zin_e_lead = zin_e_n }
 		subtract_from_temp_variable = { zin_e_lead = zin_e_s }
@@ -803,7 +803,7 @@ zin_east_roads_month = {
 			limit = { check_variable = { global.zin_east_road_rift = 0 } }
 			if = {
 				limit = {
-					country_exists = Y14
+					country_exists = NRS
 					check_variable = { zin_e_n > 59.99 }
 					check_variable = { zin_e_lead > 19.99 }
 				}
@@ -811,7 +811,7 @@ zin_east_roads_month = {
 			}
 			else_if = {
 				limit = {
-					country_exists = Y16
+					country_exists = STA
 					check_variable = { zin_e_s > 59.99 }
 					check_variable = { zin_e_back > 19.99 }
 				}
@@ -821,7 +821,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_rift = 1 }
-				country_exists = Y16
+				country_exists = STA
 				check_variable = { zin_e_n < 40 }
 				check_variable = { zin_e_s > 59.99 }
 			}
@@ -830,7 +830,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_rift = 2 }
-				country_exists = Y14
+				country_exists = NRS
 				check_variable = { zin_e_s < 40 }
 				check_variable = { zin_e_n > 59.99 }
 			}
@@ -877,15 +877,15 @@ zin_east_roads_month = {
 	# lake
 	set_temp_variable = { zin_e_nc_lake = 0 }
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { set_temp_variable = { zin_e_nc_lake = zin_east_ctrl_lake } }
+		limit = { country_exists = NRS }
+		NRS = { set_temp_variable = { zin_e_nc_lake = zin_east_ctrl_lake } }
 	}
 	set_temp_variable = { zin_e_sc_lake = 0 }
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { set_temp_variable = { zin_e_sc_lake = zin_east_ctrl_lake } }
+		limit = { country_exists = STA }
+		STA = { set_temp_variable = { zin_e_sc_lake = zin_east_ctrl_lake } }
 	}
-	Y14 = {
+	NRS = {
 		set_temp_variable = { zin_e_other = zin_e_sc_lake }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_lake > zin_e_other } }
@@ -902,7 +902,7 @@ zin_east_roads_month = {
 		}
 		clamp_variable = { var = zin_east_inf_lake min = 0 max = 100 }
 	}
-	Y16 = {
+	STA = {
 		set_temp_variable = { zin_e_other = zin_e_nc_lake }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_lake > zin_e_other } }
@@ -922,14 +922,14 @@ zin_east_roads_month = {
 	# a power that is gone gives up the charters it held
 	if = {
 		limit = {
-			NOT = { country_exists = Y14 }
+			NOT = { country_exists = NRS }
 			check_variable = { global.zin_east_road_lake = 1 }
 		}
 		set_variable = { global.zin_east_road_lake = 0 }
 	}
 	if = {
 		limit = {
-			NOT = { country_exists = Y16 }
+			NOT = { country_exists = STA }
 			check_variable = { global.zin_east_road_lake = 2 }
 		}
 		set_variable = { global.zin_east_road_lake = 0 }
@@ -950,26 +950,26 @@ zin_east_roads_month = {
 				check_variable = { global.zin_east_roadn_lake > 0 }
 				check_variable = { zin_e_n3 > zin_e_total3 }
 			}
-			Y14 = { set_variable = { zin_east_inf_lake = 100 } }
-			Y16 = { set_variable = { zin_east_inf_lake = 0 } }
+			NRS = { set_variable = { zin_east_inf_lake = 100 } }
+			STA = { set_variable = { zin_east_inf_lake = 0 } }
 		}
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_roadn_lake > 0 }
 				check_variable = { zin_e_s3 > zin_e_total3 }
 			}
-			Y16 = { set_variable = { zin_east_inf_lake = 100 } }
-			Y14 = { set_variable = { zin_east_inf_lake = 0 } }
+			STA = { set_variable = { zin_east_inf_lake = 100 } }
+			NRS = { set_variable = { zin_east_inf_lake = 0 } }
 		}
 		set_temp_variable = { zin_e_n = 0 }
 		if = {
-			limit = { country_exists = Y14 }
-			Y14 = { set_temp_variable = { zin_e_n = zin_east_inf_lake } }
+			limit = { country_exists = NRS }
+			NRS = { set_temp_variable = { zin_e_n = zin_east_inf_lake } }
 		}
 		set_temp_variable = { zin_e_s = 0 }
 		if = {
-			limit = { country_exists = Y16 }
-			Y16 = { set_temp_variable = { zin_e_s = zin_east_inf_lake } }
+			limit = { country_exists = STA }
+			STA = { set_temp_variable = { zin_e_s = zin_east_inf_lake } }
 		}
 		set_temp_variable = { zin_e_lead = zin_e_n }
 		subtract_from_temp_variable = { zin_e_lead = zin_e_s }
@@ -980,7 +980,7 @@ zin_east_roads_month = {
 			limit = { check_variable = { global.zin_east_road_lake = 0 } }
 			if = {
 				limit = {
-					country_exists = Y14
+					country_exists = NRS
 					check_variable = { zin_e_n > 59.99 }
 					check_variable = { zin_e_lead > 19.99 }
 				}
@@ -988,7 +988,7 @@ zin_east_roads_month = {
 			}
 			else_if = {
 				limit = {
-					country_exists = Y16
+					country_exists = STA
 					check_variable = { zin_e_s > 59.99 }
 					check_variable = { zin_e_back > 19.99 }
 				}
@@ -998,7 +998,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_lake = 1 }
-				country_exists = Y16
+				country_exists = STA
 				check_variable = { zin_e_n < 40 }
 				check_variable = { zin_e_s > 59.99 }
 			}
@@ -1007,7 +1007,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_lake = 2 }
-				country_exists = Y14
+				country_exists = NRS
 				check_variable = { zin_e_s < 40 }
 				check_variable = { zin_e_n > 59.99 }
 			}
@@ -1054,15 +1054,15 @@ zin_east_roads_month = {
 	# sand
 	set_temp_variable = { zin_e_nc_sand = 0 }
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { set_temp_variable = { zin_e_nc_sand = zin_east_ctrl_sand } }
+		limit = { country_exists = NRS }
+		NRS = { set_temp_variable = { zin_e_nc_sand = zin_east_ctrl_sand } }
 	}
 	set_temp_variable = { zin_e_sc_sand = 0 }
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { set_temp_variable = { zin_e_sc_sand = zin_east_ctrl_sand } }
+		limit = { country_exists = STA }
+		STA = { set_temp_variable = { zin_e_sc_sand = zin_east_ctrl_sand } }
 	}
-	Y14 = {
+	NRS = {
 		set_temp_variable = { zin_e_other = zin_e_sc_sand }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_sand > zin_e_other } }
@@ -1079,7 +1079,7 @@ zin_east_roads_month = {
 		}
 		clamp_variable = { var = zin_east_inf_sand min = 0 max = 100 }
 	}
-	Y16 = {
+	STA = {
 		set_temp_variable = { zin_e_other = zin_e_nc_sand }
 		if = {
 			limit = { check_variable = { zin_east_ctrl_sand > zin_e_other } }
@@ -1099,14 +1099,14 @@ zin_east_roads_month = {
 	# a power that is gone gives up the charters it held
 	if = {
 		limit = {
-			NOT = { country_exists = Y14 }
+			NOT = { country_exists = NRS }
 			check_variable = { global.zin_east_road_sand = 1 }
 		}
 		set_variable = { global.zin_east_road_sand = 0 }
 	}
 	if = {
 		limit = {
-			NOT = { country_exists = Y16 }
+			NOT = { country_exists = STA }
 			check_variable = { global.zin_east_road_sand = 2 }
 		}
 		set_variable = { global.zin_east_road_sand = 0 }
@@ -1127,26 +1127,26 @@ zin_east_roads_month = {
 				check_variable = { global.zin_east_roadn_sand > 0 }
 				check_variable = { zin_e_n3 > zin_e_total3 }
 			}
-			Y14 = { set_variable = { zin_east_inf_sand = 100 } }
-			Y16 = { set_variable = { zin_east_inf_sand = 0 } }
+			NRS = { set_variable = { zin_east_inf_sand = 100 } }
+			STA = { set_variable = { zin_east_inf_sand = 0 } }
 		}
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_roadn_sand > 0 }
 				check_variable = { zin_e_s3 > zin_e_total3 }
 			}
-			Y16 = { set_variable = { zin_east_inf_sand = 100 } }
-			Y14 = { set_variable = { zin_east_inf_sand = 0 } }
+			STA = { set_variable = { zin_east_inf_sand = 100 } }
+			NRS = { set_variable = { zin_east_inf_sand = 0 } }
 		}
 		set_temp_variable = { zin_e_n = 0 }
 		if = {
-			limit = { country_exists = Y14 }
-			Y14 = { set_temp_variable = { zin_e_n = zin_east_inf_sand } }
+			limit = { country_exists = NRS }
+			NRS = { set_temp_variable = { zin_e_n = zin_east_inf_sand } }
 		}
 		set_temp_variable = { zin_e_s = 0 }
 		if = {
-			limit = { country_exists = Y16 }
-			Y16 = { set_temp_variable = { zin_e_s = zin_east_inf_sand } }
+			limit = { country_exists = STA }
+			STA = { set_temp_variable = { zin_e_s = zin_east_inf_sand } }
 		}
 		set_temp_variable = { zin_e_lead = zin_e_n }
 		subtract_from_temp_variable = { zin_e_lead = zin_e_s }
@@ -1157,7 +1157,7 @@ zin_east_roads_month = {
 			limit = { check_variable = { global.zin_east_road_sand = 0 } }
 			if = {
 				limit = {
-					country_exists = Y14
+					country_exists = NRS
 					check_variable = { zin_e_n > 59.99 }
 					check_variable = { zin_e_lead > 19.99 }
 				}
@@ -1165,7 +1165,7 @@ zin_east_roads_month = {
 			}
 			else_if = {
 				limit = {
-					country_exists = Y16
+					country_exists = STA
 					check_variable = { zin_e_s > 59.99 }
 					check_variable = { zin_e_back > 19.99 }
 				}
@@ -1175,7 +1175,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_sand = 1 }
-				country_exists = Y16
+				country_exists = STA
 				check_variable = { zin_e_n < 40 }
 				check_variable = { zin_e_s > 59.99 }
 			}
@@ -1184,7 +1184,7 @@ zin_east_roads_month = {
 		else_if = {
 			limit = {
 				check_variable = { global.zin_east_road_sand = 2 }
-				country_exists = Y14
+				country_exists = NRS
 				check_variable = { zin_e_s < 40 }
 				check_variable = { zin_e_n > 59.99 }
 			}
@@ -1228,8 +1228,8 @@ zin_east_roads_month = {
 			zin_east_add_lean = yes
 		}
 	}
-	Y14 = { zin_east_refresh_wealth = yes }
-	Y16 = { zin_east_refresh_wealth = yes }
+	NRS = { zin_east_refresh_wealth = yes }
+	STA = { zin_east_refresh_wealth = yes }
 }
 
 zin_east_update_bias = {
@@ -1265,7 +1265,7 @@ zin_east_update_bias = {
 	if = {
 		limit = { check_variable = { zin_stabilo_debt > 29.99 } }
 		if = {
-			limit = { Y16 = { has_country_flag = zin_stabilo_rival_banks } }
+			limit = { STA = { has_country_flag = zin_stabilo_rival_banks } }
 			add_to_temp_variable = { zin_east_b = -20 }
 		}
 		else = { add_to_temp_variable = { zin_east_b = -10 } }
@@ -1691,10 +1691,10 @@ zin_east_cross_rift = {
 				limit = { zin_elves_is_magical_realm = yes }
 				PREV = { add_dynamic_modifier = { modifier = zin_cb_eastern_ambition scope = PREV days = 730 } }
 			}
-			add_dynamic_modifier = { modifier = zin_cb_eastern_ambition scope = Y0L days = 730 }
+			add_dynamic_modifier = { modifier = zin_cb_eastern_ambition scope = AEN days = 730 }
 		}
 		zin_elves_on_eastern_invasion = yes
-		every_country = { news_event = { id = zin_east.43 } }
+		news_event = { id = zin_east.43 }
 	}
 }
 
@@ -1707,13 +1707,13 @@ zin_east_turn_west = {
 		}
 		set_global_flag = zin_east_turns_west
 		if = {
-			limit = { country_exists = Y0L }
+			limit = { country_exists = AEN }
 			random_country = {
 				limit = { has_country_flag = zin_east_coalition_leader }
 				set_country_flag = { flag = zin_story_war days = 1 }
 				if = {
-					limit = { NOT = { has_war_with = Y0L } }
-					declare_war_on = { target = Y0L type = annex_everything }
+					limit = { NOT = { has_war_with = AEN } }
+					declare_war_on = { target = AEN type = annex_everything }
 				}
 				save_event_target_as = zin_east_leader
 			}
@@ -1721,12 +1721,12 @@ zin_east_turn_west = {
 				limit = {
 					has_country_flag = zin_east_coalition_member
 					NOT = { has_country_flag = zin_east_coalition_leader }
-					NOT = { has_war_with = Y0L }
+					NOT = { has_war_with = AEN }
 				}
-				add_to_war = { targeted_alliance = event_target:zin_east_leader enemy = Y0L hostility_reason = asked_to_join single_target_only = yes }
+				add_to_war = { targeted_alliance = event_target:zin_east_leader enemy = AEN hostility_reason = asked_to_join single_target_only = yes }
 			}
 		}
-		every_country = { news_event = { id = zin_east.44 } }
+		news_event = { id = zin_east.44 }
 	}
 }
 
@@ -1735,6 +1735,7 @@ zin_east_make_coalition_peace = {
 	every_country = {
 		limit = {
 			has_war_with = PREV
+			zin_east_has_capital = yes
 			capital_scope = {
 				OR = {
 					zin_is_region_magical_lands = yes
@@ -1792,14 +1793,14 @@ zin_east_claim_road = {
 		if = {
 			limit = { check_variable = { zin_arg_road = 1 } }
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				every_state = {
 					limit = {
 						zin_is_site_road_salt = yes
 						owner = {
 							OR = {
-								original_tag = Y16
-								is_in_faction_with = Y16
+								original_tag = STA
+								is_in_faction_with = STA
 							}
 						}
 					}
@@ -1807,14 +1808,14 @@ zin_east_claim_road = {
 				}
 			}
 			if = {
-				limit = { original_tag = Y16 }
+				limit = { original_tag = STA }
 				every_state = {
 					limit = {
 						zin_is_site_road_salt = yes
 						owner = {
 							OR = {
-								original_tag = Y14
-								is_in_faction_with = Y14
+								original_tag = NRS
+								is_in_faction_with = NRS
 							}
 						}
 					}
@@ -1825,14 +1826,14 @@ zin_east_claim_road = {
 		if = {
 			limit = { check_variable = { zin_arg_road = 2 } }
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				every_state = {
 					limit = {
 						zin_is_site_road_gold = yes
 						owner = {
 							OR = {
-								original_tag = Y16
-								is_in_faction_with = Y16
+								original_tag = STA
+								is_in_faction_with = STA
 							}
 						}
 					}
@@ -1840,14 +1841,14 @@ zin_east_claim_road = {
 				}
 			}
 			if = {
-				limit = { original_tag = Y16 }
+				limit = { original_tag = STA }
 				every_state = {
 					limit = {
 						zin_is_site_road_gold = yes
 						owner = {
 							OR = {
-								original_tag = Y14
-								is_in_faction_with = Y14
+								original_tag = NRS
+								is_in_faction_with = NRS
 							}
 						}
 					}
@@ -1858,14 +1859,14 @@ zin_east_claim_road = {
 		if = {
 			limit = { check_variable = { zin_arg_road = 3 } }
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				every_state = {
 					limit = {
 						zin_is_site_road_rift = yes
 						owner = {
 							OR = {
-								original_tag = Y16
-								is_in_faction_with = Y16
+								original_tag = STA
+								is_in_faction_with = STA
 							}
 						}
 					}
@@ -1873,14 +1874,14 @@ zin_east_claim_road = {
 				}
 			}
 			if = {
-				limit = { original_tag = Y16 }
+				limit = { original_tag = STA }
 				every_state = {
 					limit = {
 						zin_is_site_road_rift = yes
 						owner = {
 							OR = {
-								original_tag = Y14
-								is_in_faction_with = Y14
+								original_tag = NRS
+								is_in_faction_with = NRS
 							}
 						}
 					}
@@ -1891,14 +1892,14 @@ zin_east_claim_road = {
 		if = {
 			limit = { check_variable = { zin_arg_road = 4 } }
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				every_state = {
 					limit = {
 						zin_is_site_road_lake = yes
 						owner = {
 							OR = {
-								original_tag = Y16
-								is_in_faction_with = Y16
+								original_tag = STA
+								is_in_faction_with = STA
 							}
 						}
 					}
@@ -1906,14 +1907,14 @@ zin_east_claim_road = {
 				}
 			}
 			if = {
-				limit = { original_tag = Y16 }
+				limit = { original_tag = STA }
 				every_state = {
 					limit = {
 						zin_is_site_road_lake = yes
 						owner = {
 							OR = {
-								original_tag = Y14
-								is_in_faction_with = Y14
+								original_tag = NRS
+								is_in_faction_with = NRS
 							}
 						}
 					}
@@ -1924,14 +1925,14 @@ zin_east_claim_road = {
 		if = {
 			limit = { check_variable = { zin_arg_road = 5 } }
 			if = {
-				limit = { original_tag = Y14 }
+				limit = { original_tag = NRS }
 				every_state = {
 					limit = {
 						zin_is_site_road_sand = yes
 						owner = {
 							OR = {
-								original_tag = Y16
-								is_in_faction_with = Y16
+								original_tag = STA
+								is_in_faction_with = STA
 							}
 						}
 					}
@@ -1939,14 +1940,14 @@ zin_east_claim_road = {
 				}
 			}
 			if = {
-				limit = { original_tag = Y16 }
+				limit = { original_tag = STA }
 				every_state = {
 					limit = {
 						zin_is_site_road_sand = yes
 						owner = {
 							OR = {
-								original_tag = Y14
-								is_in_faction_with = Y14
+								original_tag = NRS
+								is_in_faction_with = NRS
 							}
 						}
 					}
@@ -1963,10 +1964,10 @@ zin_east_grant_free_cb = {
 		limit = { zin_east_free_crown = yes }
 		if = {
 			limit = {
-				country_exists = Y8G
-				NOT = { has_dynamic_modifier = { modifier = zin_cb_free_east scope = Y8G } }
+				country_exists = WOR
+				NOT = { has_dynamic_modifier = { modifier = zin_cb_free_east scope = WOR } }
 			}
-			add_dynamic_modifier = { modifier = zin_cb_free_east scope = Y8G days = 1825 }
+			add_dynamic_modifier = { modifier = zin_cb_free_east scope = WOR days = 1825 }
 		}
 		every_country = {
 			limit = { has_country_flag = zin_afrit_eastern_client }
@@ -1995,11 +1996,11 @@ zin_east_grant_high_king_cb = {
 				OR = {
 					has_country_flag = zin_afrit_eastern_client
 					AND = {
-						PREV = { original_tag = Y14 }
+						PREV = { original_tag = NRS }
 						check_variable = { zin_east_lean < 0 }
 					}
 					AND = {
-						PREV = { original_tag = Y16 }
+						PREV = { original_tag = STA }
 						check_variable = { zin_east_lean > 0 }
 					}
 				}
@@ -2019,7 +2020,7 @@ zin_east_declare_united = {
 		}
 		set_global_flag = zin_east_united
 		add_ideas = zin_east_united_crown
-		every_country = { news_event = { id = zin_east.80 } }
+		news_event = { id = zin_east.80 }
 	}
 }
 
@@ -2058,7 +2059,7 @@ zin_east_prepare_kneel = {
 	# a subject of another country stays that country's subject; it only opens its roads to the Dominion
 	if = {
 		limit = { is_subject = yes }
-		give_military_access = Y8G
+		give_military_access = WOR
 	}
 }
 
@@ -2120,7 +2121,7 @@ zin_east_refuse_king = {
 
 zin_east_gifts_to_king = {
 	# the gifts option of zin_east.50: no subject relation, only the King's goodwill
-	Y8G = { add_opinion_modifier = { target = PREV modifier = zin_east_gifts_to_king } }
+	WOR = { add_opinion_modifier = { target = PREV modifier = zin_east_gifts_to_king } }
 }
 
 zin_east_enforce_refusers = {
@@ -2283,13 +2284,13 @@ zin_east_send_levies = {
 zin_east_send_gold = {
 	# the gold option of zin_east.52
 	add_political_power = -100
-	Y8G = { add_political_power = 100 }
+	WOR = { add_political_power = 100 }
 }
 
 zin_east_delay_host = {
 	# the delay option of zin_east.52: the bias falls for a year, and the Dominion remembers
 	set_country_flag = { flag = zin_east_delayed_host days = 365 }
-	Y8G = { add_opinion_modifier = { target = PREV modifier = zin_east_host_delayed } }
+	WOR = { add_opinion_modifier = { target = PREV modifier = zin_east_host_delayed } }
 }
 
 zin_east_after_the_king = {
@@ -2299,7 +2300,7 @@ zin_east_after_the_king = {
 		set_global_flag = zin_east_after_king_done
 		every_country = {
 			limit = { has_country_flag = zin_afrit_refused_east }
-			remove_dynamic_modifier = { modifier = zin_cb_free_east scope = Y8G }
+			remove_dynamic_modifier = { modifier = zin_cb_free_east scope = WOR }
 			every_country = {
 				limit = { has_country_flag = zin_afrit_eastern_client }
 				PREV = { remove_dynamic_modifier = { modifier = zin_cb_free_east scope = PREV } }
@@ -2310,8 +2311,8 @@ zin_east_after_the_king = {
 		every_country = {
 			limit = { has_country_flag = zin_afrit_eastern_client }
 			if = {
-				limit = { is_subject_of = Y8G }
-				Y8G = { end_puppet = PREV }
+				limit = { is_subject_of = WOR }
+				WOR = { end_puppet = PREV }
 			}
 			add_timed_idea = { idea = zin_east_kings_debt days = 730 }
 			zin_east_restore_ideology = yes
@@ -2352,8 +2353,8 @@ zin_east_rivalry_month = {
 	if = {
 		limit = {
 			check_variable = { global.zin_east_road_salt = 0 }
-			Y14 = { check_variable = { zin_east_inf_salt > 39.99 } }
-			Y16 = { check_variable = { zin_east_inf_salt > 39.99 } }
+			NRS = { check_variable = { zin_east_inf_salt > 39.99 } }
+			STA = { check_variable = { zin_east_inf_salt > 39.99 } }
 		}
 		set_temp_variable = { zin_arg_value = 0.3 }
 		zin_east_add_rivalry = yes
@@ -2361,8 +2362,8 @@ zin_east_rivalry_month = {
 	if = {
 		limit = {
 			check_variable = { global.zin_east_road_gold = 0 }
-			Y14 = { check_variable = { zin_east_inf_gold > 39.99 } }
-			Y16 = { check_variable = { zin_east_inf_gold > 39.99 } }
+			NRS = { check_variable = { zin_east_inf_gold > 39.99 } }
+			STA = { check_variable = { zin_east_inf_gold > 39.99 } }
 		}
 		set_temp_variable = { zin_arg_value = 0.3 }
 		zin_east_add_rivalry = yes
@@ -2370,8 +2371,8 @@ zin_east_rivalry_month = {
 	if = {
 		limit = {
 			check_variable = { global.zin_east_road_rift = 0 }
-			Y14 = { check_variable = { zin_east_inf_rift > 39.99 } }
-			Y16 = { check_variable = { zin_east_inf_rift > 39.99 } }
+			NRS = { check_variable = { zin_east_inf_rift > 39.99 } }
+			STA = { check_variable = { zin_east_inf_rift > 39.99 } }
 		}
 		set_temp_variable = { zin_arg_value = 0.3 }
 		zin_east_add_rivalry = yes
@@ -2379,8 +2380,8 @@ zin_east_rivalry_month = {
 	if = {
 		limit = {
 			check_variable = { global.zin_east_road_lake = 0 }
-			Y14 = { check_variable = { zin_east_inf_lake > 39.99 } }
-			Y16 = { check_variable = { zin_east_inf_lake > 39.99 } }
+			NRS = { check_variable = { zin_east_inf_lake > 39.99 } }
+			STA = { check_variable = { zin_east_inf_lake > 39.99 } }
 		}
 		set_temp_variable = { zin_arg_value = 0.3 }
 		zin_east_add_rivalry = yes
@@ -2388,8 +2389,8 @@ zin_east_rivalry_month = {
 	if = {
 		limit = {
 			check_variable = { global.zin_east_road_sand = 0 }
-			Y14 = { check_variable = { zin_east_inf_sand > 39.99 } }
-			Y16 = { check_variable = { zin_east_inf_sand > 39.99 } }
+			NRS = { check_variable = { zin_east_inf_sand > 39.99 } }
+			STA = { check_variable = { zin_east_inf_sand > 39.99 } }
 		}
 		set_temp_variable = { zin_arg_value = 0.3 }
 		zin_east_add_rivalry = yes
@@ -2397,8 +2398,8 @@ zin_east_rivalry_month = {
 	if = {
 		limit = {
 			has_global_flag = zin_afrit_king_of_east
-			Y14 = { has_country_flag = zin_afrit_refused_east }
-			Y16 = { has_country_flag = zin_afrit_refused_east }
+			NRS = { has_country_flag = zin_afrit_refused_east }
+			STA = { has_country_flag = zin_afrit_refused_east }
 		}
 		set_temp_variable = { zin_arg_value = -0.5 }
 		zin_east_add_rivalry = yes
@@ -2408,12 +2409,12 @@ zin_east_rivalry_month = {
 			has_global_flag = zin_afrit_king_of_east
 			OR = {
 				AND = {
-					Y14 = { has_country_flag = zin_afrit_eastern_client }
-					Y16 = { has_country_flag = zin_afrit_refused_east }
+					NRS = { has_country_flag = zin_afrit_eastern_client }
+					STA = { has_country_flag = zin_afrit_refused_east }
 				}
 				AND = {
-					Y16 = { has_country_flag = zin_afrit_eastern_client }
-					Y14 = { has_country_flag = zin_afrit_refused_east }
+					STA = { has_country_flag = zin_afrit_eastern_client }
+					NRS = { has_country_flag = zin_afrit_refused_east }
 				}
 			}
 		}
@@ -2650,28 +2651,28 @@ zin_east_monthly = {
 	if = {
 		limit = {
 			has_global_flag = zin_east_caravan_war
-			NOT = { Y14 = { has_war_with = Y16 } }
+			NOT = { NRS = { has_war_with = STA } }
 		}
 		clr_global_flag = zin_east_caravan_war
-		Y14 = { remove_ideas = zin_east_caravan_war_strain }
-		Y16 = { remove_ideas = zin_east_caravan_war_strain }
+		NRS = { remove_ideas = zin_east_caravan_war_strain }
+		STA = { remove_ideas = zin_east_caravan_war_strain }
 	}
 	every_country = {
 		limit = { zin_east_in_region = yes }
 		zin_east_country_month = yes
 	}
-	Y14 = { zin_east_update_dominance = yes }
-	Y16 = { zin_east_update_dominance = yes }
+	NRS = { zin_east_update_dominance = yes }
+	STA = { zin_east_update_dominance = yes }
 	zin_east_free_crowns_month = yes
 	zin_east_story_month = yes
 	# the trees' monthly work (declared by the Noris and Stabilo trees)
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { zin_noris_monthly = yes }
+		limit = { country_exists = NRS }
+		NRS = { zin_noris_monthly = yes }
 	}
 	if = {
-		limit = { country_exists = Y16 }
-		Y16 = { zin_stabilo_monthly = yes }
+		limit = { country_exists = STA }
+		STA = { zin_stabilo_monthly = yes }
 	}
 	every_country = {
 		limit = { zin_east_in_region = yes }
@@ -2682,12 +2683,12 @@ zin_east_monthly = {
 zin_east_pick_runner = {
 	# the runner of the caravan month: Noris; Stabilo if Noris is gone; else the East Lands country with the most states
 	if = {
-		limit = { country_exists = Y14 }
-		Y14 = { save_global_event_target_as = zin_east_runner }
+		limit = { country_exists = NRS }
+		NRS = { save_global_event_target_as = zin_east_runner }
 	}
 	else_if = {
-		limit = { country_exists = Y16 }
-		Y16 = { save_global_event_target_as = zin_east_runner }
+		limit = { country_exists = STA }
+		STA = { save_global_event_target_as = zin_east_runner }
 	}
 	else = {
 		random_country = {
@@ -2726,12 +2727,12 @@ zin_east_on_declare_war = {
 		limit = {
 			OR = {
 				AND = {
-					original_tag = Y14
-					FROM = { original_tag = Y16 }
+					original_tag = NRS
+					FROM = { original_tag = STA }
 				}
 				AND = {
-					original_tag = Y16
-					FROM = { original_tag = Y14 }
+					original_tag = STA
+					FROM = { original_tag = NRS }
 				}
 			}
 		}
@@ -2739,20 +2740,20 @@ zin_east_on_declare_war = {
 			limit = { has_global_flag = zin_east_roads_concord }
 			clr_global_flag = zin_east_roads_concord
 			clr_global_flag = zin_east_roads_concord_cap
-			Y14 = {
+			NRS = {
 				remove_ideas = zin_east_shared_roads
-				remove_opinion_modifier = { target = Y16 modifier = zin_east_concord }
+				remove_opinion_modifier = { target = STA modifier = zin_east_concord }
 			}
-			Y16 = {
+			STA = {
 				remove_ideas = zin_east_shared_roads
-				remove_opinion_modifier = { target = Y14 modifier = zin_east_concord }
+				remove_opinion_modifier = { target = NRS modifier = zin_east_concord }
 			}
 		}
 		if = {
 			limit = { NOT = { has_global_flag = zin_east_caravan_war } }
 			set_global_flag = zin_east_caravan_war
-			Y14 = { add_ideas = zin_east_caravan_war_strain }
-			Y16 = { add_ideas = zin_east_caravan_war_strain }
+			NRS = { add_ideas = zin_east_caravan_war_strain }
+			STA = { add_ideas = zin_east_caravan_war_strain }
 			every_country = {
 				limit = { zin_east_in_region = yes }
 				news_event = { id = zin_east.25 }
@@ -2774,11 +2775,11 @@ zin_east_on_peace = {
 	if = {
 		limit = {
 			has_global_flag = zin_east_caravan_war
-			NOT = { Y14 = { has_war_with = Y16 } }
+			NOT = { NRS = { has_war_with = STA } }
 		}
 		clr_global_flag = zin_east_caravan_war
-		Y14 = { remove_ideas = zin_east_caravan_war_strain }
-		Y16 = { remove_ideas = zin_east_caravan_war_strain }
+		NRS = { remove_ideas = zin_east_caravan_war_strain }
+		STA = { remove_ideas = zin_east_caravan_war_strain }
 	}
 }
 
@@ -2793,20 +2794,20 @@ zin_east_sign_concord = {
 	# the Concord of the Roads (spec section 2): charters freeze, every road half held, the rivalry capped for 1825 days
 	set_global_flag = zin_east_roads_concord
 	set_global_flag = { flag = zin_east_roads_concord_cap days = 1825 }
-	Y14 = {
+	NRS = {
 		add_ideas = zin_east_shared_roads
-		add_opinion_modifier = { target = Y16 modifier = zin_east_concord }
+		add_opinion_modifier = { target = STA modifier = zin_east_concord }
 	}
-	Y16 = {
+	STA = {
 		add_ideas = zin_east_shared_roads
-		add_opinion_modifier = { target = Y14 modifier = zin_east_concord }
+		add_opinion_modifier = { target = NRS modifier = zin_east_concord }
 	}
 	if = {
 		limit = { check_variable = { global.zin_east_rivalry > 30 } }
 		set_variable = { global.zin_east_rivalry = 30 }
 	}
-	Y14 = { zin_east_refresh_wealth = yes }
-	Y16 = { zin_east_refresh_wealth = yes }
+	NRS = { zin_east_refresh_wealth = yes }
+	STA = { zin_east_refresh_wealth = yes }
 	every_country = {
 		limit = { zin_east_in_region = yes }
 		news_event = { id = zin_east.24 }
@@ -2867,62 +2868,37 @@ zin_east_startup = {
 			}
 		}
 		# the tag order of the spec's tie-breaks
-		Y0V = { set_variable = { zin_east_rank = 56 } }
-		Y0W = { set_variable = { zin_east_rank = 55 } }
-		Y0X = { set_variable = { zin_east_rank = 54 } }
-		Y11 = { set_variable = { zin_east_rank = 53 } }
-		Y12 = { set_variable = { zin_east_rank = 52 } }
-		Y13 = { set_variable = { zin_east_rank = 51 } }
-		Y14 = { set_variable = { zin_east_rank = 50 } }
-		Y15 = { set_variable = { zin_east_rank = 49 } }
-		Y16 = { set_variable = { zin_east_rank = 48 } }
-		Y17 = { set_variable = { zin_east_rank = 47 } }
-		Y18 = { set_variable = { zin_east_rank = 46 } }
-		Y56 = { set_variable = { zin_east_rank = 45 } }
-		Y57 = { set_variable = { zin_east_rank = 44 } }
-		Y58 = { set_variable = { zin_east_rank = 43 } }
-		Y59 = { set_variable = { zin_east_rank = 42 } }
-		Y5A = { set_variable = { zin_east_rank = 41 } }
-		Y5B = { set_variable = { zin_east_rank = 40 } }
-		Y5C = { set_variable = { zin_east_rank = 39 } }
-		Y5D = { set_variable = { zin_east_rank = 38 } }
-		Y5E = { set_variable = { zin_east_rank = 37 } }
-		Y5F = { set_variable = { zin_east_rank = 36 } }
-		Y5G = { set_variable = { zin_east_rank = 35 } }
-		Y5H = { set_variable = { zin_east_rank = 34 } }
-		Y5I = { set_variable = { zin_east_rank = 33 } }
-		Y5J = { set_variable = { zin_east_rank = 32 } }
-		Y5K = { set_variable = { zin_east_rank = 31 } }
-		Y5L = { set_variable = { zin_east_rank = 30 } }
-		Y5M = { set_variable = { zin_east_rank = 29 } }
-		Y5N = { set_variable = { zin_east_rank = 28 } }
-		Y5O = { set_variable = { zin_east_rank = 27 } }
-		Y5P = { set_variable = { zin_east_rank = 26 } }
-		Y5Q = { set_variable = { zin_east_rank = 25 } }
-		Y5R = { set_variable = { zin_east_rank = 24 } }
-		Y5S = { set_variable = { zin_east_rank = 23 } }
-		Y5T = { set_variable = { zin_east_rank = 22 } }
-		Y5U = { set_variable = { zin_east_rank = 21 } }
-		Y5V = { set_variable = { zin_east_rank = 20 } }
-		Y5W = { set_variable = { zin_east_rank = 19 } }
-		Y7V = { set_variable = { zin_east_rank = 18 } }
-		Y7W = { set_variable = { zin_east_rank = 17 } }
-		Y7X = { set_variable = { zin_east_rank = 16 } }
-		Y7Y = { set_variable = { zin_east_rank = 15 } }
-		Y7Z = { set_variable = { zin_east_rank = 14 } }
-		Y80 = { set_variable = { zin_east_rank = 13 } }
-		Y81 = { set_variable = { zin_east_rank = 12 } }
-		Y82 = { set_variable = { zin_east_rank = 11 } }
-		Y83 = { set_variable = { zin_east_rank = 10 } }
-		Y84 = { set_variable = { zin_east_rank = 9 } }
-		Y85 = { set_variable = { zin_east_rank = 8 } }
-		Y86 = { set_variable = { zin_east_rank = 7 } }
-		Y87 = { set_variable = { zin_east_rank = 6 } }
-		Y88 = { set_variable = { zin_east_rank = 5 } }
-		Y89 = { set_variable = { zin_east_rank = 4 } }
-		Y8A = { set_variable = { zin_east_rank = 3 } }
-		Y8B = { set_variable = { zin_east_rank = 2 } }
-		Y8F = { set_variable = { zin_east_rank = 1 } }
+		ALR = { set_variable = { zin_east_rank = 31 } }
+		ANE = { set_variable = { zin_east_rank = 30 } }
+		AZA = { set_variable = { zin_east_rank = 29 } }
+		DLB = { set_variable = { zin_east_rank = 28 } }
+		DNL = { set_variable = { zin_east_rank = 27 } }
+		DRA = { set_variable = { zin_east_rank = 26 } }
+		ELD = { set_variable = { zin_east_rank = 25 } }
+		ERC = { set_variable = { zin_east_rank = 24 } }
+		HRR = { set_variable = { zin_east_rank = 23 } }
+		KRS = { set_variable = { zin_east_rank = 22 } }
+		LCC = { set_variable = { zin_east_rank = 21 } }
+		LUV = { set_variable = { zin_east_rank = 20 } }
+		MAG = { set_variable = { zin_east_rank = 19 } }
+		MIE = { set_variable = { zin_east_rank = 18 } }
+		MOA = { set_variable = { zin_east_rank = 17 } }
+		MOS = { set_variable = { zin_east_rank = 16 } }
+		MSH = { set_variable = { zin_east_rank = 15 } }
+		NAA = { set_variable = { zin_east_rank = 14 } }
+		NLR = { set_variable = { zin_east_rank = 13 } }
+		NRS = { set_variable = { zin_east_rank = 12 } }
+		OBM = { set_variable = { zin_east_rank = 11 } }
+		ORA = { set_variable = { zin_east_rank = 10 } }
+		OST = { set_variable = { zin_east_rank = 9 } }
+		PLO = { set_variable = { zin_east_rank = 8 } }
+		PON = { set_variable = { zin_east_rank = 7 } }
+		RHA = { set_variable = { zin_east_rank = 6 } }
+		STA = { set_variable = { zin_east_rank = 5 } }
+		TES = { set_variable = { zin_east_rank = 4 } }
+		WAH = { set_variable = { zin_east_rank = 3 } }
+		WOQ = { set_variable = { zin_east_rank = 2 } }
+		YAV = { set_variable = { zin_east_rank = 1 } }
 		set_variable = { global.zin_east_road_salt = 1 }
 		set_variable = { global.zin_east_roadn_salt = 0 }
 		every_state = {
@@ -2953,7 +2929,7 @@ zin_east_startup = {
 			limit = { zin_is_site_road_sand = yes }
 			add_to_variable = { global.zin_east_roadn_sand = 1 }
 		}
-		Y14 = {
+		NRS = {
 			save_global_event_target_as = zin_east_noris
 			set_variable = { zin_east_inf_salt = 70 }
 			set_variable = { zin_east_inf_gold = 10 }
@@ -2964,13 +2940,12 @@ zin_east_startup = {
 			zin_east_refresh_wealth = yes
 			add_dynamic_modifier = { modifier = zin_east_caravan_wealth }
 			zin_east_update_dominance = yes
-			add_ai_strategy = { type = antagonize id = "Y16" value = 20 }
-			add_ai_strategy = { type = befriend id = "Y12" value = 25 }
-			add_ai_strategy = { type = befriend id = "Y5H" value = 25 }
-			add_ai_strategy = { type = befriend id = "Y13" value = 25 }
-			add_ai_strategy = { type = befriend id = "Y5W" value = 10 }
+			add_ai_strategy = { type = antagonize id = "STA" value = 20 }
+			add_ai_strategy = { type = befriend id = "NAA" value = 25 }
+			add_ai_strategy = { type = befriend id = "MOA" value = 25 }
+			add_ai_strategy = { type = befriend id = "ALR" value = 10 }
 		}
-		Y16 = {
+		STA = {
 			save_global_event_target_as = zin_east_stabilo
 			set_variable = { zin_east_inf_salt = 10 }
 			set_variable = { zin_east_inf_gold = 70 }
@@ -2981,11 +2956,11 @@ zin_east_startup = {
 			zin_east_refresh_wealth = yes
 			add_dynamic_modifier = { modifier = zin_east_caravan_wealth }
 			zin_east_update_dominance = yes
-			add_ai_strategy = { type = antagonize id = "Y14" value = 20 }
-			add_ai_strategy = { type = befriend id = "Y15" value = 25 }
-			add_ai_strategy = { type = befriend id = "Y5V" value = 25 }
-			add_ai_strategy = { type = befriend id = "Y5R" value = 25 }
-			add_ai_strategy = { type = befriend id = "Y5W" value = 10 }
+			add_ai_strategy = { type = antagonize id = "NRS" value = 20 }
+			add_ai_strategy = { type = befriend id = "DRA" value = 25 }
+			add_ai_strategy = { type = befriend id = "PLO" value = 25 }
+			add_ai_strategy = { type = befriend id = "OBM" value = 25 }
+			add_ai_strategy = { type = befriend id = "ALR" value = 10 }
 		}
 		every_country = {
 			limit = {
@@ -2994,22 +2969,19 @@ zin_east_startup = {
 			}
 			set_variable = { zin_east_lean = 0 }
 		}
-		Y12 = { set_variable = { zin_east_lean = 70 } }
-		Y5H = { set_variable = { zin_east_lean = 30 } }
-		Y5J = { set_variable = { zin_east_lean = 20 } }
-		Y11 = { set_variable = { zin_east_lean = 15 } }
-		Y13 = { set_variable = { zin_east_lean = 10 } }
-		Y5W = { set_variable = { zin_east_lean = 0 } }
-		Y5M = { set_variable = { zin_east_lean = 0 } }
-		Y5K = { set_variable = { zin_east_lean = 0 } }
-		Y18 = { set_variable = { zin_east_lean = -10 } }
-		Y17 = { set_variable = { zin_east_lean = -10 } }
-		Y5L = { set_variable = { zin_east_lean = -15 } }
-		Y5P = { set_variable = { zin_east_lean = -20 } }
-		Y5R = { set_variable = { zin_east_lean = -20 } }
-		Y5O = { set_variable = { zin_east_lean = -20 } }
-		Y5V = { set_variable = { zin_east_lean = -30 } }
-		Y15 = { set_variable = { zin_east_lean = -70 } }
+		NAA = { set_variable = { zin_east_lean = 70 } }
+		DLB = { set_variable = { zin_east_lean = 20 } }
+		OST = { set_variable = { zin_east_lean = 15 } }
+		MOA = { set_variable = { zin_east_lean = 10 } }
+		ALR = { set_variable = { zin_east_lean = 0 } }
+		KRS = { set_variable = { zin_east_lean = 0 } }
+		MIE = { set_variable = { zin_east_lean = -10 } }
+		RHA = { set_variable = { zin_east_lean = -10 } }
+		MOS = { set_variable = { zin_east_lean = -15 } }
+		ERC = { set_variable = { zin_east_lean = -20 } }
+		OBM = { set_variable = { zin_east_lean = -20 } }
+		PLO = { set_variable = { zin_east_lean = -30 } }
+		DRA = { set_variable = { zin_east_lean = -70 } }
 		every_country = {
 			limit = { zin_east_in_region = yes }
 			set_variable = { zin_east_kneel_bias = 0 }
@@ -3029,8 +3001,8 @@ zin_east_undercut = {
 	if = {
 		limit = { check_variable = { zin_east_inf_salt > 19.99 } }
 		if = {
-			limit = { original_tag = Y14 }
-			Y16 = {
+			limit = { original_tag = NRS }
+			STA = {
 				if = {
 					limit = { check_variable = { zin_east_inf_salt > 19.99 } }
 					set_temp_variable = { zin_arg_road = 1 }
@@ -3040,7 +3012,7 @@ zin_east_undercut = {
 			}
 		}
 		else = {
-			Y14 = {
+			NRS = {
 				if = {
 					limit = { check_variable = { zin_east_inf_salt > 19.99 } }
 					set_temp_variable = { zin_arg_road = 1 }
@@ -3053,8 +3025,8 @@ zin_east_undercut = {
 	if = {
 		limit = { check_variable = { zin_east_inf_gold > 19.99 } }
 		if = {
-			limit = { original_tag = Y14 }
-			Y16 = {
+			limit = { original_tag = NRS }
+			STA = {
 				if = {
 					limit = { check_variable = { zin_east_inf_gold > 19.99 } }
 					set_temp_variable = { zin_arg_road = 2 }
@@ -3064,7 +3036,7 @@ zin_east_undercut = {
 			}
 		}
 		else = {
-			Y14 = {
+			NRS = {
 				if = {
 					limit = { check_variable = { zin_east_inf_gold > 19.99 } }
 					set_temp_variable = { zin_arg_road = 2 }
@@ -3077,8 +3049,8 @@ zin_east_undercut = {
 	if = {
 		limit = { check_variable = { zin_east_inf_rift > 19.99 } }
 		if = {
-			limit = { original_tag = Y14 }
-			Y16 = {
+			limit = { original_tag = NRS }
+			STA = {
 				if = {
 					limit = { check_variable = { zin_east_inf_rift > 19.99 } }
 					set_temp_variable = { zin_arg_road = 3 }
@@ -3088,7 +3060,7 @@ zin_east_undercut = {
 			}
 		}
 		else = {
-			Y14 = {
+			NRS = {
 				if = {
 					limit = { check_variable = { zin_east_inf_rift > 19.99 } }
 					set_temp_variable = { zin_arg_road = 3 }
@@ -3101,8 +3073,8 @@ zin_east_undercut = {
 	if = {
 		limit = { check_variable = { zin_east_inf_lake > 19.99 } }
 		if = {
-			limit = { original_tag = Y14 }
-			Y16 = {
+			limit = { original_tag = NRS }
+			STA = {
 				if = {
 					limit = { check_variable = { zin_east_inf_lake > 19.99 } }
 					set_temp_variable = { zin_arg_road = 4 }
@@ -3112,7 +3084,7 @@ zin_east_undercut = {
 			}
 		}
 		else = {
-			Y14 = {
+			NRS = {
 				if = {
 					limit = { check_variable = { zin_east_inf_lake > 19.99 } }
 					set_temp_variable = { zin_arg_road = 4 }
@@ -3125,8 +3097,8 @@ zin_east_undercut = {
 	if = {
 		limit = { check_variable = { zin_east_inf_sand > 19.99 } }
 		if = {
-			limit = { original_tag = Y14 }
-			Y16 = {
+			limit = { original_tag = NRS }
+			STA = {
 				if = {
 					limit = { check_variable = { zin_east_inf_sand > 19.99 } }
 					set_temp_variable = { zin_arg_road = 5 }
@@ -3136,7 +3108,7 @@ zin_east_undercut = {
 			}
 		}
 		else = {
-			Y14 = {
+			NRS = {
 				if = {
 					limit = { check_variable = { zin_east_inf_sand > 19.99 } }
 					set_temp_variable = { zin_arg_road = 5 }

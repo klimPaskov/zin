@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y13
+			original_tag = MOA
 		}
 	}
 	initial_show_position = { focus = zin_regional_mora_the_lake_republic }
@@ -274,9 +274,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 10
 		available = {
-			country_exists = Y11
+			country_exists = OST
 			NOT = {
-				has_war_with = Y11
+				has_war_with = OST
 			}
 		}
 		ai_will_do = {
@@ -284,7 +284,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y11
+				country = OST
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -313,9 +313,9 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_east_add_lean = yes
-			Y14 = {
+			NRS = {
 				add_opinion_modifier = {
-					target = Y13
+					target = MOA
 					modifier = zin_regional_mora_the_embassy_at_furvior
 				}
 			}
@@ -362,7 +362,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			Y14 = {
+			NRS = {
 				country_event = zin_regional_mora.1
 			}
 		}

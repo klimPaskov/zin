@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y44
+			original_tag = DRE
 		}
 	}
 	initial_show_position = { focus = zin_regional_dreson_the_fen_hold }
@@ -270,7 +270,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = -10 }
 			zin_goldoroth_add_sway = yes
-			Y1A = {
+			GOL = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_dreson_no_chains
@@ -321,7 +321,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date > 1753.12.2
+						date > 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -572,7 +572,7 @@ focus_tree = {
 			set_temp_variable = { zin_arg_target = ROOT }
 			set_temp_variable = { zin_arg_value = -1 }
 			zin_dark_add_volgan_pact = yes
-			Y8D = {
+			PUV = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = zin_regional_dreson_gifts_drowned

@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1G
+			original_tag = ELV
 		}
 	}
 	initial_show_position = { focus = zin_regional_elvana_elvana_and_elvini }
@@ -144,7 +144,7 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y1H
+			country_exists = IGA
 		}
 		ai_will_do = {
 			factor = 30
@@ -212,7 +212,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y1H }
+			set_temp_variable = { zin_arg_target = IGA }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_sun_add_concord = yes
@@ -229,14 +229,14 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6X
-			country_exists = Y1H
+			country_exists = GAA
+			country_exists = IGA
 		}
 		ai_will_do = {
 			factor = 15
 		}
 		completion_reward = {
-			Y6X = {
+			GAA = {
 				country_event = zin_regional_elvana.3
 			}
 		}
@@ -313,13 +313,13 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y6U
+			country_exists = LIG
 		}
 		ai_will_do = {
 			factor = 30
 		}
 		completion_reward = {
-			set_temp_variable = { zin_arg_target = Y6U }
+			set_temp_variable = { zin_arg_target = LIG }
 			zin_elves_goodwill = yes
 			set_temp_variable = { zin_arg_value = 2 }
 			zin_sun_add_concord = yes

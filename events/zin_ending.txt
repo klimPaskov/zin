@@ -57,7 +57,7 @@ country_event = {
 		NOT = {
 			has_global_flag = zin_ending_reached
 		}
-		has_war_with = Y8D
+		has_war_with = PUV
 	}
 	option = {
 		name = zin_ending.3.opt1
@@ -348,7 +348,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		is_subject_of = Y8D
+		is_subject_of = PUV
 	}
 	option = {
 		name = zin_ending.21.opt1
@@ -382,9 +382,9 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_war_with = Y8D
+				has_war_with = PUV
 			}
-			Y8D = {
+			PUV = {
 				white_peace = ROOT
 			}
 		}
@@ -415,7 +415,7 @@ country_event = {
 				has_government = democratic
 			}
 		}
-		Y8D = {
+		PUV = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = zin_ending_envoys_south
@@ -661,7 +661,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 	}
 	option = {
 		name = zin_ending.60.opt1
@@ -684,7 +684,7 @@ country_event = {
 		ai_chance = {
 			base = 70
 		}
-		Y0G = {
+		LER = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = zin_ending_dues_paid
@@ -697,7 +697,7 @@ country_event = {
 			base = 30
 		}
 		add_opinion_modifier = {
-			target = Y0G
+			target = LER
 			modifier = zin_ending_dues_resented
 		}
 	}
@@ -755,13 +755,13 @@ country_event = {
 					AND = {
 						check_variable = { zin_east_lean > 0 }
 						event_target:zin_ending_t_united_crown = {
-							original_tag = Y14
+							original_tag = NRS
 						}
 					}
 					AND = {
 						check_variable = { zin_east_lean < 0 }
 						event_target:zin_ending_t_united_crown = {
-							original_tag = Y16
+							original_tag = STA
 						}
 					}
 				}
@@ -784,13 +784,13 @@ country_event = {
 					AND = {
 						check_variable = { zin_east_lean > 0 }
 						event_target:zin_ending_t_united_crown = {
-							original_tag = Y14
+							original_tag = NRS
 						}
 					}
 					AND = {
 						check_variable = { zin_east_lean < 0 }
 						event_target:zin_ending_t_united_crown = {
-							original_tag = Y16
+							original_tag = STA
 						}
 					}
 				}

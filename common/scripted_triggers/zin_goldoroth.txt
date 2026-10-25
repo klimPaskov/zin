@@ -2,41 +2,41 @@
 zin_goldoroth_kneel_possible = {
 	OR = {
 		has_global_flag = zin_volgan_marches
-		Y8D = { has_country_flag = zin_volgan_veil_30 }
+		PUV = { has_country_flag = zin_volgan_veil_30 }
 	}
 }
 zin_goldoroth_at_war_middle_lands = {
 	OR = {
-		has_war_with = Y0L
-		has_war_with = Y0M
-		has_war_with = Y0N
-		has_war_with = Y0O
-		has_war_with = Y0P
-		has_war_with = Y0Q
-		has_war_with = Y0R
-		has_war_with = Y0S
-		has_war_with = Y4M
-		has_war_with = Y4N
-		has_war_with = Y4O
-		has_war_with = Y4P
-		has_war_with = Y4Q
-		has_war_with = Y4R
-		has_war_with = Y4S
-		has_war_with = Y4T
-		has_war_with = Y4U
-		has_war_with = Y4V
-		has_war_with = Y4W
-		has_war_with = Y4X
-		has_war_with = Y4Y
-		has_war_with = Y4Z
-		has_war_with = Y50
-		has_war_with = Y51
-		has_war_with = Y52
-		has_war_with = Y53
-		has_war_with = Y54
-		has_war_with = Y55
-		has_war_with = Y8E
-		has_war_with = Y0T
+		has_war_with = AEN
+		has_war_with = SEL
+		has_war_with = KON
+		has_war_with = KIL
+		has_war_with = KIN
+		has_war_with = HIR
+		has_war_with = SFT
+		has_war_with = NOL
+		has_war_with = FOT
+		has_war_with = SEL
+		has_war_with = SEL
+		has_war_with = AEN
+		has_war_with = KIN
+		has_war_with = SEL
+		has_war_with = AEN
+		has_war_with = HIR
+		has_war_with = KLU
+		has_war_with = KUN
+		has_war_with = HNH
+		has_war_with = AEN
+		has_war_with = SFT
+		has_war_with = HNH
+		has_war_with = AEN
+		has_war_with = FRE
+		has_war_with = HER
+		has_war_with = PAZ
+		has_war_with = CUR
+		has_war_with = HER
+		has_war_with = BLO
+		has_war_with = ORH
 	}
 }
 zin_goldoroth_sworn_hold_at_war = {
@@ -48,28 +48,28 @@ zin_goldoroth_sworn_hold_at_war = {
 }
 zin_goldoroth_at_war_with_hold = {
 	OR = {
-		has_war_with = Y1B
-		has_war_with = Y1C
-		has_war_with = Y43
-		has_war_with = Y44
-		has_war_with = Y45
-		has_war_with = Y46
-		has_war_with = Y47
-		has_war_with = Y48
-		has_war_with = Y49
-		has_war_with = Y4A
-		has_war_with = Y4B
-		has_war_with = Y4C
-		has_war_with = Y4D
-		has_war_with = Y4E
-		has_war_with = Y4F
-		has_war_with = Y4G
-		has_war_with = Y4H
-		has_war_with = Y4I
-		has_war_with = Y4J
-		has_war_with = Y4K
-		has_war_with = Y4L
-		has_war_with = Y8C
+		has_war_with = BLN
+		has_war_with = DUN
+		has_war_with = BOR
+		has_war_with = DRE
+		has_war_with = TRO
+		has_war_with = WIL
+		has_war_with = WIL
+		has_war_with = GOL
+		has_war_with = DRK
+		has_war_with = GOL
+		has_war_with = DRK
+		has_war_with = GOL
+		has_war_with = BRT
+		has_war_with = BLN
+		has_war_with = BRT
+		has_war_with = BLN
+		has_war_with = DUL
+		has_war_with = BLK
+		has_war_with = SKR
+		has_war_with = DAK
+		has_war_with = DUN
+		has_war_with = SKR
 	}
 }
 zin_goldoroth_no_free_neighbour = {
@@ -85,14 +85,14 @@ zin_goldoroth_no_free_neighbour = {
 }
 zin_goldoroth_dark_sea_won = {
 	OR = {
-		Y19 = { has_capitulated = yes }
+		DND = { has_capitulated = yes }
 		any_controlled_state = { zin_is_site_notbuton = yes }
 	}
 }
 zin_goldoroth_dondor_bowed = {
 	OR = {
 		NOT = {
-			country_exists = Y19
+			country_exists = DND
 		}
 		zin_goldoroth_dark_sea_won = yes
 	}

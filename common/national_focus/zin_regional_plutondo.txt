@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y5V
+			original_tag = PLO
 		}
 	}
 	initial_show_position = { focus = zin_regional_plutondo_the_princes_court }
@@ -270,8 +270,8 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = Y16
-			Y16 = { is_faction_leader = yes }
+			country_exists = STA
+			STA = { is_faction_leader = yes }
 			is_in_faction = no
 			NOT = {
 				check_variable = { zin_east_lean > -30 }
@@ -285,7 +285,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y16 = {
+			STA = {
 				country_event = zin_shared_east_lands.2
 			}
 		}
@@ -401,7 +401,7 @@ focus_tree = {
 			factor = 20
 		}
 		completion_reward = {
-			Y16 = {
+			STA = {
 				set_temp_variable = { zin_arg_road = 2 }
 				set_temp_variable = { zin_arg_value = 3 }
 				zin_east_add_road_influence = yes

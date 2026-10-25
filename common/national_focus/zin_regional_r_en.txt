@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y0J
+			original_tag = REN
 		}
 	}
 	initial_show_position = { focus = zin_regional_r_en_the_gateway_court }
@@ -832,7 +832,7 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { zin_arg_value = 20 }
 			zin_leren_add_lean = yes
-			Y0G = {
+			LER = {
 				country_event = zin_regional_r_en.3
 			}
 		}
@@ -882,7 +882,7 @@ focus_tree = {
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 1.5 }
-						date < 1753.12.2
+						date < 1753.12.3
 					}
 					AND = {
 						check_variable = { global.zin_story_pace = 0.75 }
@@ -915,7 +915,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y0G = {
+			LER = {
 				country_event = zin_regional_r_en.4
 			}
 		}
@@ -1128,7 +1128,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			OR = {
-				has_global_flag = zin_zol_withdrawn
+				has_global_flag = zin_kusven_withdrawn
 				has_global_flag = zin_eindil_crowned
 				has_global_flag = zin_afrit_dead
 				AND = {

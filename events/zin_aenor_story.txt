@@ -617,7 +617,7 @@ news_event = {
 	immediate = {
 		if = {
 			limit = {
-				tag = Y0L
+				tag = AEN
 				NOT = { has_country_flag = zin_aenor_succession_open }
 			}
 			zin_aenor_open_succession = yes
@@ -629,14 +629,14 @@ news_event = {
 	option = {
 		name = zin_aenor.200.a
 		trigger = {
-			tag = Y0L
+			tag = AEN
 		}
 	}
 
 	option = {
 		name = zin_aenor.200.b
 		trigger = {
-			NOT = { tag = Y0L }
+			NOT = { tag = AEN }
 		}
 	}
 }
@@ -730,7 +730,7 @@ news_event = {
 		text = zin_aenor.210.desc
 		trigger = {
 			any_country = {
-				tag = Y0L
+				tag = AEN
 				zin_aenor_ruled_by_faithful = yes
 			}
 		}
@@ -739,7 +739,7 @@ news_event = {
 		text = zin_aenor.210.desc1
 		trigger = {
 			any_country = {
-				tag = Y0L
+				tag = AEN
 				zin_aenor_ruled_by_court = yes
 			}
 		}
@@ -748,7 +748,7 @@ news_event = {
 		text = zin_aenor.210.desc2
 		trigger = {
 			any_country = {
-				tag = Y0L
+				tag = AEN
 				zin_aenor_ruled_by_dominions = yes
 			}
 		}
@@ -757,7 +757,7 @@ news_event = {
 		text = zin_aenor.210.desc3
 		trigger = {
 			any_country = {
-				tag = Y0L
+				tag = AEN
 				zin_aenor_ruled_by_host = yes
 			}
 		}
@@ -772,7 +772,7 @@ news_event = {
 	immediate = {
 		if = {
 			limit = {
-				tag = Y0L
+				tag = AEN
 				has_country_flag = zin_aenor_succession_open
 				NOT = { has_country_flag = zin_aenor_seals_given }
 			}
@@ -785,14 +785,14 @@ news_event = {
 	option = {
 		name = zin_aenor.210.a
 		trigger = {
-			tag = Y0L
+			tag = AEN
 		}
 	}
 
 	option = {
 		name = zin_aenor.210.b
 		trigger = {
-			NOT = { tag = Y0L }
+			NOT = { tag = AEN }
 		}
 	}
 }
@@ -1052,7 +1052,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				tag = Y0M
+				tag = SEL
 			}
 		}
 		if = {

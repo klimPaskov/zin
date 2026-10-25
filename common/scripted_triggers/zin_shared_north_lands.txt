@@ -5,7 +5,7 @@ zin_shared_north_in_compact = {
 		is_in_faction_with = ROOT
 	}
 	NOT = {
-		is_subject_of = Y0G
+		is_subject_of = LER
 	}
 }
 zin_north_can_ask_compact = {
@@ -18,7 +18,7 @@ zin_north_can_ask_compact = {
 zin_north_free_crowns_open = {
 	is_in_faction = no
 	any_country = {
-		has_country_flag = zin_sensai_free_crowns
+		has_country_flag = zin_tolvael_free_crowns
 		is_faction_leader = yes
 	}
 }

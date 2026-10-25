@@ -5,7 +5,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y1J
+			original_tag = NIV
 		}
 	}
 	initial_show_position = { focus = zin_regional_titanos_frost_kings_hall }
@@ -485,14 +485,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = Y1X
+			country_exists = YEI
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = Y1X
+				country = YEI
 				relation = non_aggression_pact
 				active = yes
 			}

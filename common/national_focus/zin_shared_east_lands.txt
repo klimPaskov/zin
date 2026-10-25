@@ -5,99 +5,39 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = Y56
+			original_tag = AZA
 		}
 		modifier = {
 			add = 10
-			original_tag = Y57
+			original_tag = DLB
 		}
 		modifier = {
 			add = 10
-			original_tag = Y58
+			original_tag = KRS
 		}
 		modifier = {
 			add = 10
-			original_tag = Y59
+			original_tag = MOS
 		}
 		modifier = {
 			add = 10
-			original_tag = Y5A
+			original_tag = OBM
 		}
 		modifier = {
 			add = 10
-			original_tag = Y5B
+			original_tag = ORA
 		}
 		modifier = {
 			add = 10
-			original_tag = Y5C
+			original_tag = PON
 		}
 		modifier = {
 			add = 10
-			original_tag = Y5D
+			original_tag = WAH
 		}
 		modifier = {
 			add = 10
-			original_tag = Y5E
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5F
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5G
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5H
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5I
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5J
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5K
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5L
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5M
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5N
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5O
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5Q
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5R
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5S
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5T
-		}
-		modifier = {
-			add = 10
-			original_tag = Y5U
+			original_tag = WOQ
 		}
 	}
 	initial_show_position = { focus = zin_shared_east_lands_courts_of_the_east }
@@ -502,7 +442,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y14 = {
+			NRS = {
 				country_event = zin_shared_east_lands.1
 			}
 		}
@@ -543,7 +483,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			Y16 = {
+			STA = {
 				country_event = zin_shared_east_lands.2
 			}
 		}
@@ -1404,14 +1344,14 @@ focus_tree = {
 			add_stability = 0.03
 			if = {
 				limit = {
-					is_subject_of = Y14
+					is_subject_of = NRS
 				}
 				set_temp_variable = { zin_arg_value = 10 }
 				zin_east_add_lean = yes
 			}
 			if = {
 				limit = {
-					is_subject_of = Y16
+					is_subject_of = STA
 				}
 				set_temp_variable = { zin_arg_value = -10 }
 				zin_east_add_lean = yes

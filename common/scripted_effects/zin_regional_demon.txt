@@ -9,7 +9,7 @@ zin_regional_demon_gain_autonomy = {
 
 zin_regional_demon_crown_free = {
 	if = {
-		limit = { is_subject_of = Y8D }
+		limit = { is_subject_of = PUV }
 		add_autonomy_ratio = { value = 0.5 }
 	}
 	else = {

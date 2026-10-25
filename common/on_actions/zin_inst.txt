@@ -5,388 +5,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			Y01 = {
-				recruit_character = zin_cmd_army_coldor
-				recruit_character = zin_cmd_navy_coldor
-				recruit_character = zin_cmd_air_coldor
-				recruit_character = zin_cmd_marshal_1_coldor
-				recruit_character = zin_cmd_marshal_2_coldor
-				recruit_character = zin_cmd_master_coldor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_coldor_adv
-					activate_advisor = zin_cmd_marshal_1_coldor_adv
-					activate_advisor = zin_cmd_marshal_2_coldor_adv
-					activate_advisor = zin_cmd_master_coldor_adv
-					if = {
-						limit = {
-							any_owned_state = { is_coastal = yes }
-						}
-						activate_advisor = zin_cmd_navy_coldor_adv
-					}
-					if = {
-						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_coldor_adv
-					}
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 2 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 150
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 100
-				}
-			}
-			Y02 = {
-				recruit_character = zin_cmd_army_isengard
-				recruit_character = zin_cmd_master_isengard
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_isengard_adv
-					activate_advisor = zin_cmd_master_isengard_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y03 = {
-				recruit_character = zin_cmd_army_horidor
-				recruit_character = zin_cmd_master_horidor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_horidor_adv
-					activate_advisor = zin_cmd_master_horidor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y04 = {
-				recruit_character = zin_cmd_army_windwaith
-				recruit_character = zin_cmd_master_windwaith
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_windwaith_adv
-					activate_advisor = zin_cmd_master_windwaith_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y05 = {
-				army_experience = 50
-			}
-			Y06 = {
-				army_experience = 50
-			}
-			Y07 = {
-				recruit_character = zin_cmd_army_gunwaith
-				recruit_character = zin_cmd_navy_gunwaith
-				recruit_character = zin_cmd_air_gunwaith
-				recruit_character = zin_cmd_marshal_1_gunwaith
-				recruit_character = zin_cmd_marshal_2_gunwaith
-				recruit_character = zin_cmd_master_gunwaith
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_gunwaith_adv
-					activate_advisor = zin_cmd_marshal_1_gunwaith_adv
-					activate_advisor = zin_cmd_marshal_2_gunwaith_adv
-					activate_advisor = zin_cmd_master_gunwaith_adv
-					if = {
-						limit = {
-							any_owned_state = { is_coastal = yes }
-						}
-						activate_advisor = zin_cmd_navy_gunwaith_adv
-					}
-					if = {
-						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_gunwaith_adv
-					}
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 2 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 150
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 100
-				}
-			}
-			Y08 = {
-				recruit_character = zin_cmd_army_girdon
-				recruit_character = zin_cmd_master_girdon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_girdon_adv
-					activate_advisor = zin_cmd_master_girdon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y09 = {
-				recruit_character = zin_cmd_army_kradlon
-				recruit_character = zin_cmd_master_kradlon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_kradlon_adv
-					activate_advisor = zin_cmd_master_kradlon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0A = {
-				recruit_character = zin_cmd_army_corogon
-				recruit_character = zin_cmd_master_corogon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_corogon_adv
-					activate_advisor = zin_cmd_master_corogon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0B = {
-				recruit_character = zin_cmd_army_varnondor
-				recruit_character = zin_cmd_master_varnondor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_varnondor_adv
-					activate_advisor = zin_cmd_master_varnondor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0C = {
-				recruit_character = zin_cmd_army_adel
-				recruit_character = zin_cmd_master_adel
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_adel_adv
-					activate_advisor = zin_cmd_master_adel_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0D = {
-				recruit_character = zin_cmd_army_pollos
-				recruit_character = zin_cmd_master_pollos
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_pollos_adv
-					activate_advisor = zin_cmd_master_pollos_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0E = {
-				recruit_character = zin_cmd_army_nondondor
-				recruit_character = zin_cmd_master_nondondor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_nondondor_adv
-					activate_advisor = zin_cmd_master_nondondor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0F = {
-				recruit_character = zin_cmd_army_raerby
-				recruit_character = zin_cmd_master_raerby
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_raerby_adv
-					activate_advisor = zin_cmd_master_raerby_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0G = {
-				recruit_character = zin_cmd_army_lerendor
-				recruit_character = zin_cmd_navy_lerendor
-				recruit_character = zin_cmd_air_lerendor
-				recruit_character = zin_cmd_marshal_1_lerendor
-				recruit_character = zin_cmd_marshal_2_lerendor
-				recruit_character = zin_cmd_master_lerendor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_lerendor_adv
-					activate_advisor = zin_cmd_marshal_1_lerendor_adv
-					activate_advisor = zin_cmd_marshal_2_lerendor_adv
-					activate_advisor = zin_cmd_master_lerendor_adv
-					if = {
-						limit = {
-							any_owned_state = { is_coastal = yes }
-						}
-						activate_advisor = zin_cmd_navy_lerendor_adv
-					}
-					if = {
-						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_lerendor_adv
-					}
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 2 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 150
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 100
-				}
-			}
-			Y0H = {
-				recruit_character = zin_cmd_army_molot
-				recruit_character = zin_cmd_master_molot
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_molot_adv
-					activate_advisor = zin_cmd_master_molot_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0I = {
-				recruit_character = zin_cmd_army_eekedor
-				recruit_character = zin_cmd_master_eekedor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_eekedor_adv
-					activate_advisor = zin_cmd_master_eekedor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0J = {
-				recruit_character = zin_cmd_army_r_en
-				recruit_character = zin_cmd_master_r_en
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_r_en_adv
-					activate_advisor = zin_cmd_master_r_en_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0K = {
-				army_experience = 50
-			}
-			Y0L = {
-				recruit_character = zin_cmd_army_aenor
-				recruit_character = zin_cmd_navy_aenor
-				recruit_character = zin_cmd_air_aenor
-				recruit_character = zin_cmd_marshal_1_aenor
-				recruit_character = zin_cmd_marshal_2_aenor
-				recruit_character = zin_cmd_master_aenor
+			AEN = {
 				if = {
 					limit = { is_ai = yes }
 					activate_advisor = zin_cmd_army_aenor_adv
@@ -418,211 +37,22 @@ on_actions = {
 					navy_experience = 100
 				}
 			}
-			Y0M = {
-				recruit_character = zin_cmd_army_selen
-				recruit_character = zin_cmd_master_selen
+			LER = {
 				if = {
 					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_selen_adv
-					activate_advisor = zin_cmd_master_selen_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0N = {
-				recruit_character = zin_cmd_army_konori
-				recruit_character = zin_cmd_master_konori
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_konori_adv
-					activate_advisor = zin_cmd_master_konori_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0O = {
-				recruit_character = zin_cmd_army_kilinti
-				recruit_character = zin_cmd_master_kilinti
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_kilinti_adv
-					activate_advisor = zin_cmd_master_kilinti_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0P = {
-				recruit_character = zin_cmd_army_kingson
-				recruit_character = zin_cmd_master_kingson
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_kingson_adv
-					activate_advisor = zin_cmd_master_kingson_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0Q = {
-				recruit_character = zin_cmd_army_hiloron
-				recruit_character = zin_cmd_master_hiloron
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_hiloron_adv
-					activate_advisor = zin_cmd_master_hiloron_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0R = {
-				army_experience = 50
-			}
-			Y0S = {
-				recruit_character = zin_cmd_army_noleksun
-				recruit_character = zin_cmd_master_noleksun
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_noleksun_adv
-					activate_advisor = zin_cmd_master_noleksun_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0T = {
-				recruit_character = zin_cmd_army_asgard
-				recruit_character = zin_cmd_master_asgard
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_asgard_adv
-					activate_advisor = zin_cmd_master_asgard_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0V = {
-				recruit_character = zin_cmd_army_herrodon
-				recruit_character = zin_cmd_master_herrodon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_herrodon_adv
-					activate_advisor = zin_cmd_master_herrodon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0W = {
-				recruit_character = zin_cmd_army_andos_enda
-				recruit_character = zin_cmd_master_andos_enda
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_andos_enda_adv
-					activate_advisor = zin_cmd_master_andos_enda_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0X = {
-				recruit_character = zin_cmd_army_nolorim
-				recruit_character = zin_cmd_master_nolorim
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_nolorim_adv
-					activate_advisor = zin_cmd_master_nolorim_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y0Y = {
-				recruit_character = zin_cmd_army_mirolon
-				recruit_character = zin_cmd_navy_mirolon
-				recruit_character = zin_cmd_air_mirolon
-				recruit_character = zin_cmd_marshal_1_mirolon
-				recruit_character = zin_cmd_marshal_2_mirolon
-				recruit_character = zin_cmd_master_mirolon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_mirolon_adv
-					activate_advisor = zin_cmd_marshal_1_mirolon_adv
-					activate_advisor = zin_cmd_marshal_2_mirolon_adv
-					activate_advisor = zin_cmd_master_mirolon_adv
+					activate_advisor = zin_cmd_army_lerendor_adv
+					activate_advisor = zin_cmd_marshal_1_lerendor_adv
+					activate_advisor = zin_cmd_marshal_2_lerendor_adv
+					activate_advisor = zin_cmd_master_lerendor_adv
 					if = {
 						limit = {
 							any_owned_state = { is_coastal = yes }
 						}
-						activate_advisor = zin_cmd_navy_mirolon_adv
+						activate_advisor = zin_cmd_navy_lerendor_adv
 					}
 					if = {
 						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_mirolon_adv
+						activate_advisor = zin_cmd_air_lerendor_adv
 					}
 				}
 				set_temp_variable = { zin_arg_rite = 1 }
@@ -639,103 +69,39 @@ on_actions = {
 					navy_experience = 100
 				}
 			}
-			Y0Z = {
-				recruit_character = zin_cmd_army_nan
-				recruit_character = zin_cmd_master_nan
+			CLD = {
 				if = {
 					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_nan_adv
-					activate_advisor = zin_cmd_master_nan_adv
+					activate_advisor = zin_cmd_army_coldor_adv
+					activate_advisor = zin_cmd_marshal_1_coldor_adv
+					activate_advisor = zin_cmd_marshal_2_coldor_adv
+					activate_advisor = zin_cmd_master_coldor_adv
+					if = {
+						limit = {
+							any_owned_state = { is_coastal = yes }
+						}
+						activate_advisor = zin_cmd_navy_coldor_adv
+					}
+					if = {
+						limit = { zin_rules_skies_present = yes }
+						activate_advisor = zin_cmd_air_coldor_adv
+					}
 				}
 				set_temp_variable = { zin_arg_rite = 1 }
 				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y10 = {
-				recruit_character = zin_cmd_army_nezer
-				recruit_character = zin_cmd_master_nezer
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_nezer_adv
-					activate_advisor = zin_cmd_master_nezer_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
+				set_temp_variable = { zin_arg_rite = 2 }
 				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y11 = {
-				recruit_character = zin_cmd_army_ostoroth
-				recruit_character = zin_cmd_master_ostoroth
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_ostoroth_adv
-					activate_advisor = zin_cmd_master_ostoroth_adv
-				}
 				set_temp_variable = { zin_arg_rite = 1 }
 				zin_inst_grant_scholar = yes
-				army_experience = 100
+				army_experience = 150
 				if = {
 					limit = {
 						any_owned_state = { is_coastal = yes }
 					}
-					navy_experience = 50
+					navy_experience = 100
 				}
 			}
-			Y12 = {
-				recruit_character = zin_cmd_army_gondolin
-				recruit_character = zin_cmd_master_gondolin
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_gondolin_adv
-					activate_advisor = zin_cmd_master_gondolin_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y13 = {
-				recruit_character = zin_cmd_army_mora
-				recruit_character = zin_cmd_master_mora
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_mora_adv
-					activate_advisor = zin_cmd_master_mora_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y14 = {
-				recruit_character = zin_cmd_army_noris
-				recruit_character = zin_cmd_navy_noris
-				recruit_character = zin_cmd_air_noris
-				recruit_character = zin_cmd_marshal_1_noris
-				recruit_character = zin_cmd_marshal_2_noris
-				recruit_character = zin_cmd_master_noris
+			NRS = {
 				if = {
 					limit = { is_ai = yes }
 					activate_advisor = zin_cmd_army_noris_adv
@@ -767,31 +133,7 @@ on_actions = {
 					navy_experience = 100
 				}
 			}
-			Y15 = {
-				recruit_character = zin_cmd_army_drak
-				recruit_character = zin_cmd_master_drak
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_drak_adv
-					activate_advisor = zin_cmd_master_drak_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y16 = {
-				recruit_character = zin_cmd_army_stabilo
-				recruit_character = zin_cmd_navy_stabilo
-				recruit_character = zin_cmd_air_stabilo
-				recruit_character = zin_cmd_marshal_1_stabilo
-				recruit_character = zin_cmd_marshal_2_stabilo
-				recruit_character = zin_cmd_master_stabilo
+			STA = {
 				if = {
 					limit = { is_ai = yes }
 					activate_advisor = zin_cmd_army_stabilo_adv
@@ -823,67 +165,7 @@ on_actions = {
 					navy_experience = 100
 				}
 			}
-			Y17 = {
-				recruit_character = zin_cmd_army_avalon
-				recruit_character = zin_cmd_master_avalon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_avalon_adv
-					activate_advisor = zin_cmd_master_avalon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y18 = {
-				recruit_character = zin_cmd_army_miaed
-				recruit_character = zin_cmd_master_miaed
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_miaed_adv
-					activate_advisor = zin_cmd_master_miaed_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y19 = {
-				recruit_character = zin_cmd_army_dondor
-				recruit_character = zin_cmd_master_dondor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_dondor_adv
-					activate_advisor = zin_cmd_master_dondor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y1A = {
-				recruit_character = zin_cmd_army_goldoroth
-				recruit_character = zin_cmd_navy_goldoroth
-				recruit_character = zin_cmd_air_goldoroth
-				recruit_character = zin_cmd_marshal_1_goldoroth
-				recruit_character = zin_cmd_marshal_2_goldoroth
-				recruit_character = zin_cmd_master_goldoroth
+			GOL = {
 				if = {
 					limit = { is_ai = yes }
 					activate_advisor = zin_cmd_army_goldoroth_adv
@@ -915,19 +197,11 @@ on_actions = {
 					navy_experience = 100
 				}
 			}
-			Y1B = {
-				army_experience = 50
-			}
-			Y1C = {
-				army_experience = 50
-			}
-			Y1D = {
-				recruit_character = zin_cmd_army_howan
-				recruit_character = zin_cmd_master_howan
+			DND = {
 				if = {
 					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_howan_adv
-					activate_advisor = zin_cmd_master_howan_adv
+					activate_advisor = zin_cmd_army_dondor_adv
+					activate_advisor = zin_cmd_master_dondor_adv
 				}
 				set_temp_variable = { zin_arg_rite = 1 }
 				zin_inst_grant_scholar = yes
@@ -939,1343 +213,22 @@ on_actions = {
 					navy_experience = 50
 				}
 			}
-			Y1E = {
-				recruit_character = zin_cmd_army_nara
-				recruit_character = zin_cmd_master_nara
+			PUV = {
 				if = {
 					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_nara_adv
-					activate_advisor = zin_cmd_master_nara_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y1F = {
-				recruit_character = zin_cmd_army_hengyang
-				recruit_character = zin_cmd_master_hengyang
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_hengyang_adv
-					activate_advisor = zin_cmd_master_hengyang_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y1G = {
-				recruit_character = zin_cmd_army_elvana
-				recruit_character = zin_cmd_master_elvana
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_elvana_adv
-					activate_advisor = zin_cmd_master_elvana_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y1H = {
-				army_experience = 50
-			}
-			Y1I = {
-				army_experience = 50
-			}
-			Y1J = {
-				recruit_character = zin_cmd_army_titanos
-				recruit_character = zin_cmd_master_titanos
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_titanos_adv
-					activate_advisor = zin_cmd_master_titanos_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y1K = {
-				army_experience = 50
-			}
-			Y1L = {
-				army_experience = 50
-			}
-			Y1M = {
-				army_experience = 50
-			}
-			Y1N = {
-				army_experience = 50
-			}
-			Y1O = {
-				army_experience = 50
-			}
-			Y1P = {
-				army_experience = 50
-			}
-			Y1Q = {
-				army_experience = 50
-			}
-			Y1R = {
-				army_experience = 50
-			}
-			Y1S = {
-				army_experience = 50
-			}
-			Y1T = {
-				army_experience = 50
-			}
-			Y1U = {
-				army_experience = 50
-			}
-			Y1V = {
-				army_experience = 50
-			}
-			Y1W = {
-				army_experience = 50
-			}
-			Y1X = {
-				recruit_character = zin_cmd_army_yeti_lands
-				recruit_character = zin_cmd_master_yeti_lands
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_yeti_lands_adv
-					activate_advisor = zin_cmd_master_yeti_lands_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y1Y = {
-				army_experience = 50
-			}
-			Y1Z = {
-				army_experience = 50
-			}
-			Y20 = {
-				army_experience = 50
-			}
-			Y21 = {
-				recruit_character = zin_cmd_army_fearno
-				recruit_character = zin_cmd_master_fearno
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_fearno_adv
-					activate_advisor = zin_cmd_master_fearno_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y22 = {
-				army_experience = 50
-			}
-			Y23 = {
-				army_experience = 50
-			}
-			Y24 = {
-				army_experience = 50
-			}
-			Y25 = {
-				army_experience = 50
-			}
-			Y26 = {
-				army_experience = 50
-			}
-			Y27 = {
-				recruit_character = zin_cmd_army_lambin
-				recruit_character = zin_cmd_master_lambin
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_lambin_adv
-					activate_advisor = zin_cmd_master_lambin_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y28 = {
-				army_experience = 50
-			}
-			Y29 = {
-				army_experience = 50
-			}
-			Y2A = {
-				army_experience = 50
-			}
-			Y2B = {
-				recruit_character = zin_cmd_army_buldor
-				recruit_character = zin_cmd_master_buldor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_buldor_adv
-					activate_advisor = zin_cmd_master_buldor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y2C = {
-				army_experience = 50
-			}
-			Y2D = {
-				army_experience = 50
-			}
-			Y2E = {
-				army_experience = 50
-			}
-			Y2F = {
-				army_experience = 50
-			}
-			Y2G = {
-				army_experience = 50
-			}
-			Y2H = {
-				army_experience = 50
-			}
-			Y2I = {
-				army_experience = 50
-			}
-			Y2J = {
-				army_experience = 50
-			}
-			Y2K = {
-				army_experience = 50
-			}
-			Y2L = {
-				army_experience = 50
-			}
-			Y2M = {
-				army_experience = 50
-			}
-			Y2N = {
-				army_experience = 50
-			}
-			Y2O = {
-				army_experience = 50
-			}
-			Y2P = {
-				army_experience = 50
-			}
-			Y2Q = {
-				recruit_character = zin_cmd_army_sensai
-				recruit_character = zin_cmd_master_sensai
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_sensai_adv
-					activate_advisor = zin_cmd_master_sensai_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y2R = {
-				army_experience = 50
-			}
-			Y2S = {
-				army_experience = 50
-			}
-			Y2T = {
-				army_experience = 50
-			}
-			Y2U = {
-				army_experience = 50
-			}
-			Y2V = {
-				army_experience = 50
-			}
-			Y2W = {
-				army_experience = 50
-			}
-			Y2X = {
-				army_experience = 50
-			}
-			Y2Y = {
-				army_experience = 50
-			}
-			Y2Z = {
-				army_experience = 50
-			}
-			Y30 = {
-				army_experience = 50
-			}
-			Y31 = {
-				army_experience = 50
-			}
-			Y32 = {
-				army_experience = 50
-			}
-			Y33 = {
-				army_experience = 50
-			}
-			Y34 = {
-				recruit_character = zin_cmd_army_mina
-				recruit_character = zin_cmd_master_mina
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_mina_adv
-					activate_advisor = zin_cmd_master_mina_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y35 = {
-				army_experience = 50
-			}
-			Y36 = {
-				army_experience = 50
-			}
-			Y37 = {
-				army_experience = 50
-			}
-			Y38 = {
-				army_experience = 50
-			}
-			Y39 = {
-				army_experience = 50
-			}
-			Y3A = {
-				army_experience = 50
-			}
-			Y3B = {
-				army_experience = 50
-			}
-			Y3C = {
-				army_experience = 50
-			}
-			Y3D = {
-				army_experience = 50
-			}
-			Y3E = {
-				army_experience = 50
-			}
-			Y3F = {
-				army_experience = 50
-			}
-			Y3G = {
-				recruit_character = zin_cmd_army_seite_islands
-				recruit_character = zin_cmd_master_seite_islands
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_seite_islands_adv
-					activate_advisor = zin_cmd_master_seite_islands_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y3H = {
-				army_experience = 50
-			}
-			Y3I = {
-				army_experience = 50
-			}
-			Y3J = {
-				army_experience = 50
-			}
-			Y3K = {
-				army_experience = 50
-			}
-			Y3L = {
-				army_experience = 50
-			}
-			Y3M = {
-				army_experience = 50
-			}
-			Y3N = {
-				army_experience = 50
-			}
-			Y3O = {
-				army_experience = 50
-			}
-			Y3P = {
-				army_experience = 50
-			}
-			Y3Q = {
-				army_experience = 50
-			}
-			Y3R = {
-				army_experience = 50
-			}
-			Y3S = {
-				army_experience = 50
-			}
-			Y3T = {
-				army_experience = 50
-			}
-			Y3U = {
-				recruit_character = zin_cmd_army_halenor
-				recruit_character = zin_cmd_master_halenor
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_halenor_adv
-					activate_advisor = zin_cmd_master_halenor_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y3V = {
-				army_experience = 50
-			}
-			Y3W = {
-				army_experience = 50
-			}
-			Y3X = {
-				army_experience = 50
-			}
-			Y3Y = {
-				army_experience = 50
-			}
-			Y3Z = {
-				army_experience = 50
-			}
-			Y40 = {
-				army_experience = 50
-			}
-			Y41 = {
-				army_experience = 50
-			}
-			Y42 = {
-				army_experience = 50
-			}
-			Y43 = {
-				recruit_character = zin_cmd_army_bordon
-				recruit_character = zin_cmd_master_bordon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_bordon_adv
-					activate_advisor = zin_cmd_master_bordon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y44 = {
-				recruit_character = zin_cmd_army_dreson
-				recruit_character = zin_cmd_master_dreson
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_dreson_adv
-					activate_advisor = zin_cmd_master_dreson_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y45 = {
-				recruit_character = zin_cmd_army_troll_forest
-				recruit_character = zin_cmd_master_troll_forest
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_troll_forest_adv
-					activate_advisor = zin_cmd_master_troll_forest_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y46 = {
-				army_experience = 50
-			}
-			Y47 = {
-				army_experience = 50
-			}
-			Y48 = {
-				army_experience = 50
-			}
-			Y49 = {
-				army_experience = 50
-			}
-			Y4A = {
-				army_experience = 50
-			}
-			Y4B = {
-				army_experience = 50
-			}
-			Y4C = {
-				army_experience = 50
-			}
-			Y4D = {
-				army_experience = 50
-			}
-			Y4E = {
-				army_experience = 50
-			}
-			Y4F = {
-				army_experience = 50
-			}
-			Y4G = {
-				army_experience = 50
-			}
-			Y4H = {
-				recruit_character = zin_cmd_army_dulundur
-				recruit_character = zin_cmd_master_dulundur
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_dulundur_adv
-					activate_advisor = zin_cmd_master_dulundur_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y4I = {
-				recruit_character = zin_cmd_army_blackton
-				recruit_character = zin_cmd_master_blackton
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_blackton_adv
-					activate_advisor = zin_cmd_master_blackton_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y4J = {
-				army_experience = 50
-			}
-			Y4K = {
-				army_experience = 50
-			}
-			Y4L = {
-				army_experience = 50
-			}
-			Y4M = {
-				army_experience = 50
-			}
-			Y4N = {
-				army_experience = 50
-			}
-			Y4O = {
-				army_experience = 50
-			}
-			Y4P = {
-				army_experience = 50
-			}
-			Y4Q = {
-				army_experience = 50
-			}
-			Y4R = {
-				army_experience = 50
-			}
-			Y4S = {
-				army_experience = 50
-			}
-			Y4T = {
-				army_experience = 50
-			}
-			Y4U = {
-				army_experience = 50
-			}
-			Y4V = {
-				army_experience = 50
-			}
-			Y4W = {
-				recruit_character = zin_cmd_army_hunhun
-				recruit_character = zin_cmd_master_hunhun
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_hunhun_adv
-					activate_advisor = zin_cmd_master_hunhun_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y4X = {
-				army_experience = 50
-			}
-			Y4Y = {
-				army_experience = 50
-			}
-			Y4Z = {
-				army_experience = 50
-			}
-			Y50 = {
-				army_experience = 50
-			}
-			Y51 = {
-				army_experience = 50
-			}
-			Y52 = {
-				army_experience = 50
-			}
-			Y53 = {
-				army_experience = 50
-			}
-			Y54 = {
-				recruit_character = zin_cmd_army_cursed_lands
-				recruit_character = zin_cmd_master_cursed_lands
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_cursed_lands_adv
-					activate_advisor = zin_cmd_master_cursed_lands_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y55 = {
-				recruit_character = zin_cmd_army_herez
-				recruit_character = zin_cmd_master_herez
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_herez_adv
-					activate_advisor = zin_cmd_master_herez_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y56 = {
-				army_experience = 50
-			}
-			Y57 = {
-				army_experience = 50
-			}
-			Y58 = {
-				army_experience = 50
-			}
-			Y59 = {
-				army_experience = 50
-			}
-			Y5A = {
-				army_experience = 50
-			}
-			Y5B = {
-				army_experience = 50
-			}
-			Y5C = {
-				army_experience = 50
-			}
-			Y5D = {
-				army_experience = 50
-			}
-			Y5E = {
-				army_experience = 50
-			}
-			Y5F = {
-				army_experience = 50
-			}
-			Y5G = {
-				army_experience = 50
-			}
-			Y5H = {
-				army_experience = 50
-			}
-			Y5I = {
-				army_experience = 50
-			}
-			Y5J = {
-				army_experience = 50
-			}
-			Y5K = {
-				army_experience = 50
-			}
-			Y5L = {
-				army_experience = 50
-			}
-			Y5M = {
-				army_experience = 50
-			}
-			Y5N = {
-				army_experience = 50
-			}
-			Y5O = {
-				army_experience = 50
-			}
-			Y5P = {
-				recruit_character = zin_cmd_army_erco
-				recruit_character = zin_cmd_master_erco
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_erco_adv
-					activate_advisor = zin_cmd_master_erco_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y5Q = {
-				army_experience = 50
-			}
-			Y5R = {
-				army_experience = 50
-			}
-			Y5S = {
-				army_experience = 50
-			}
-			Y5T = {
-				army_experience = 50
-			}
-			Y5U = {
-				army_experience = 50
-			}
-			Y5V = {
-				recruit_character = zin_cmd_army_plutondo
-				recruit_character = zin_cmd_master_plutondo
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_plutondo_adv
-					activate_advisor = zin_cmd_master_plutondo_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y5W = {
-				recruit_character = zin_cmd_army_alerhia
-				recruit_character = zin_cmd_master_alerhia
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_alerhia_adv
-					activate_advisor = zin_cmd_master_alerhia_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y5X = {
-				army_experience = 50
-			}
-			Y5Y = {
-				army_experience = 50
-			}
-			Y5Z = {
-				army_experience = 50
-			}
-			Y60 = {
-				recruit_character = zin_cmd_army_verde
-				recruit_character = zin_cmd_master_verde
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_verde_adv
-					activate_advisor = zin_cmd_master_verde_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y61 = {
-				army_experience = 50
-			}
-			Y62 = {
-				recruit_character = zin_cmd_army_enhis_is_rond
-				recruit_character = zin_cmd_master_enhis_is_rond
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_enhis_is_rond_adv
-					activate_advisor = zin_cmd_master_enhis_is_rond_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y63 = {
-				army_experience = 50
-			}
-			Y64 = {
-				army_experience = 50
-			}
-			Y65 = {
-				army_experience = 50
-			}
-			Y66 = {
-				army_experience = 50
-			}
-			Y67 = {
-				army_experience = 50
-			}
-			Y68 = {
-				army_experience = 50
-			}
-			Y69 = {
-				army_experience = 50
-			}
-			Y6A = {
-				army_experience = 50
-			}
-			Y6B = {
-				army_experience = 50
-			}
-			Y6C = {
-				army_experience = 50
-			}
-			Y6D = {
-				army_experience = 50
-			}
-			Y6E = {
-				army_experience = 50
-			}
-			Y6F = {
-				army_experience = 50
-			}
-			Y6G = {
-				army_experience = 50
-			}
-			Y6H = {
-				army_experience = 50
-			}
-			Y6I = {
-				army_experience = 50
-			}
-			Y6J = {
-				army_experience = 50
-			}
-			Y6K = {
-				army_experience = 50
-			}
-			Y6L = {
-				army_experience = 50
-			}
-			Y6M = {
-				army_experience = 50
-			}
-			Y6N = {
-				army_experience = 50
-			}
-			Y6O = {
-				recruit_character = zin_cmd_army_poyang
-				recruit_character = zin_cmd_master_poyang
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_poyang_adv
-					activate_advisor = zin_cmd_master_poyang_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y6P = {
-				army_experience = 50
-			}
-			Y6Q = {
-				army_experience = 50
-			}
-			Y6R = {
-				army_experience = 50
-			}
-			Y6S = {
-				army_experience = 50
-			}
-			Y6T = {
-				army_experience = 50
-			}
-			Y6U = {
-				recruit_character = zin_cmd_army_the_lands_of_light
-				recruit_character = zin_cmd_master_the_lands_of_light
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_the_lands_of_light_adv
-					activate_advisor = zin_cmd_master_the_lands_of_light_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y6V = {
-				army_experience = 50
-			}
-			Y6W = {
-				army_experience = 50
-			}
-			Y6X = {
-				recruit_character = zin_cmd_army_gala_elves
-				recruit_character = zin_cmd_navy_gala_elves
-				recruit_character = zin_cmd_air_gala_elves
-				recruit_character = zin_cmd_marshal_1_gala_elves
-				recruit_character = zin_cmd_marshal_2_gala_elves
-				recruit_character = zin_cmd_master_gala_elves
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_gala_elves_adv
-					activate_advisor = zin_cmd_marshal_1_gala_elves_adv
-					activate_advisor = zin_cmd_marshal_2_gala_elves_adv
-					activate_advisor = zin_cmd_master_gala_elves_adv
+					activate_advisor = zin_cmd_army_puvulan_adv
+					activate_advisor = zin_cmd_marshal_1_puvulan_adv
+					activate_advisor = zin_cmd_marshal_2_puvulan_adv
+					activate_advisor = zin_cmd_master_puvulan_adv
 					if = {
 						limit = {
 							any_owned_state = { is_coastal = yes }
 						}
-						activate_advisor = zin_cmd_navy_gala_elves_adv
+						activate_advisor = zin_cmd_navy_puvulan_adv
 					}
 					if = {
 						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_gala_elves_adv
-					}
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 3 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				set_temp_variable = { zin_arg_rite = 3 }
-				zin_inst_grant_scholar = yes
-				army_experience = 120
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 60
-				}
-			}
-			Y6Y = {
-				army_experience = 50
-			}
-			Y6Z = {
-				recruit_character = zin_cmd_army_goodin
-				recruit_character = zin_cmd_master_goodin
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_goodin_adv
-					activate_advisor = zin_cmd_master_goodin_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y70 = {
-				army_experience = 50
-			}
-			Y71 = {
-				army_experience = 50
-			}
-			Y72 = {
-				army_experience = 50
-			}
-			Y73 = {
-				army_experience = 50
-			}
-			Y74 = {
-				army_experience = 50
-			}
-			Y75 = {
-				army_experience = 50
-			}
-			Y76 = {
-				army_experience = 50
-			}
-			Y77 = {
-				army_experience = 50
-			}
-			Y78 = {
-				army_experience = 50
-			}
-			Y79 = {
-				army_experience = 50
-			}
-			Y7A = {
-				army_experience = 50
-			}
-			Y7B = {
-				army_experience = 50
-			}
-			Y7C = {
-				army_experience = 50
-			}
-			Y7D = {
-				recruit_character = zin_cmd_army_godland
-				recruit_character = zin_cmd_master_godland
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_godland_adv
-					activate_advisor = zin_cmd_master_godland_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y7E = {
-				army_experience = 50
-			}
-			Y7F = {
-				army_experience = 50
-			}
-			Y7G = {
-				army_experience = 50
-			}
-			Y7H = {
-				army_experience = 50
-			}
-			Y7I = {
-				recruit_character = zin_cmd_army_heaven
-				recruit_character = zin_cmd_master_heaven
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_heaven_adv
-					activate_advisor = zin_cmd_master_heaven_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y7J = {
-				army_experience = 50
-			}
-			Y7K = {
-				army_experience = 50
-			}
-			Y7L = {
-				army_experience = 50
-			}
-			Y7M = {
-				army_experience = 50
-			}
-			Y7N = {
-				army_experience = 50
-			}
-			Y7O = {
-				army_experience = 50
-			}
-			Y7P = {
-				army_experience = 50
-			}
-			Y7Q = {
-				army_experience = 50
-			}
-			Y7R = {
-				recruit_character = zin_cmd_army_olen
-				recruit_character = zin_cmd_master_olen
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_olen_adv
-					activate_advisor = zin_cmd_master_olen_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y7S = {
-				army_experience = 50
-			}
-			Y7T = {
-				recruit_character = zin_cmd_army_demon
-				recruit_character = zin_cmd_master_demon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_demon_adv
-					activate_advisor = zin_cmd_master_demon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y7U = {
-				recruit_character = zin_cmd_army_dolon
-				recruit_character = zin_cmd_master_dolon
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_dolon_adv
-					activate_advisor = zin_cmd_master_dolon_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y7V = {
-				army_experience = 50
-			}
-			Y7W = {
-				army_experience = 50
-			}
-			Y7X = {
-				army_experience = 50
-			}
-			Y7Y = {
-				army_experience = 50
-			}
-			Y7Z = {
-				army_experience = 50
-			}
-			Y80 = {
-				army_experience = 50
-			}
-			Y81 = {
-				army_experience = 50
-			}
-			Y82 = {
-				recruit_character = zin_cmd_army_the_end
-				recruit_character = zin_cmd_master_the_end
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_the_end_adv
-					activate_advisor = zin_cmd_master_the_end_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y83 = {
-				recruit_character = zin_cmd_army_lccimio
-				recruit_character = zin_cmd_master_lccimio
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_lccimio_adv
-					activate_advisor = zin_cmd_master_lccimio_adv
-				}
-				set_temp_variable = { zin_arg_rite = 4 }
-				zin_inst_grant_scholar = yes
-				army_experience = 100
-				if = {
-					limit = {
-						any_owned_state = { is_coastal = yes }
-					}
-					navy_experience = 50
-				}
-			}
-			Y84 = {
-				army_experience = 50
-			}
-			Y85 = {
-				army_experience = 50
-			}
-			Y86 = {
-				army_experience = 50
-			}
-			Y87 = {
-				army_experience = 50
-			}
-			Y88 = {
-				army_experience = 50
-			}
-			Y89 = {
-				army_experience = 50
-			}
-			Y8A = {
-				army_experience = 50
-			}
-			Y8B = {
-				army_experience = 50
-			}
-			Y8C = {
-				army_experience = 50
-			}
-			Y8D = {
-				recruit_character = zin_cmd_army_volgan
-				recruit_character = zin_cmd_navy_volgan
-				recruit_character = zin_cmd_air_volgan
-				recruit_character = zin_cmd_marshal_1_volgan
-				recruit_character = zin_cmd_marshal_2_volgan
-				recruit_character = zin_cmd_master_volgan
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_volgan_adv
-					activate_advisor = zin_cmd_marshal_1_volgan_adv
-					activate_advisor = zin_cmd_marshal_2_volgan_adv
-					activate_advisor = zin_cmd_master_volgan_adv
-					if = {
-						limit = {
-							any_owned_state = { is_coastal = yes }
-						}
-						activate_advisor = zin_cmd_navy_volgan_adv
-					}
-					if = {
-						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_volgan_adv
+						activate_advisor = zin_cmd_air_puvulan_adv
 					}
 				}
 				set_temp_variable = { zin_arg_rite = 4 }
@@ -2294,31 +247,71 @@ on_actions = {
 					navy_experience = 50
 				}
 			}
-			Y8E = {
-				recruit_character = zin_cmd_army_bloody_forest
-				recruit_character = zin_cmd_master_bloody_forest
+			MIR = {
 				if = {
 					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_bloody_forest_adv
-					activate_advisor = zin_cmd_master_bloody_forest_adv
+					activate_advisor = zin_cmd_army_mirolon_adv
+					activate_advisor = zin_cmd_marshal_1_mirolon_adv
+					activate_advisor = zin_cmd_marshal_2_mirolon_adv
+					activate_advisor = zin_cmd_master_mirolon_adv
+					if = {
+						limit = {
+							any_owned_state = { is_coastal = yes }
+						}
+						activate_advisor = zin_cmd_navy_mirolon_adv
+					}
+					if = {
+						limit = { zin_rules_skies_present = yes }
+						activate_advisor = zin_cmd_air_mirolon_adv
+					}
 				}
 				set_temp_variable = { zin_arg_rite = 1 }
 				zin_inst_grant_scholar = yes
-				army_experience = 100
+				set_temp_variable = { zin_arg_rite = 2 }
+				zin_inst_grant_scholar = yes
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 150
 				if = {
 					limit = {
 						any_owned_state = { is_coastal = yes }
 					}
-					navy_experience = 50
+					navy_experience = 100
 				}
 			}
-			Y8F = {
-				recruit_character = zin_cmd_army_magical_forest
-				recruit_character = zin_cmd_navy_magical_forest
-				recruit_character = zin_cmd_air_magical_forest
-				recruit_character = zin_cmd_marshal_1_magical_forest
-				recruit_character = zin_cmd_marshal_2_magical_forest
-				recruit_character = zin_cmd_master_magical_forest
+			WOR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_worshipdom_adv
+					activate_advisor = zin_cmd_marshal_1_worshipdom_adv
+					activate_advisor = zin_cmd_marshal_2_worshipdom_adv
+					activate_advisor = zin_cmd_master_worshipdom_adv
+					if = {
+						limit = {
+							any_owned_state = { is_coastal = yes }
+						}
+						activate_advisor = zin_cmd_navy_worshipdom_adv
+					}
+					if = {
+						limit = { zin_rules_skies_present = yes }
+						activate_advisor = zin_cmd_air_worshipdom_adv
+					}
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				set_temp_variable = { zin_arg_rite = 2 }
+				zin_inst_grant_scholar = yes
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 150
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 100
+				}
+			}
+			MAG = {
 				if = {
 					limit = { is_ai = yes }
 					activate_advisor = zin_cmd_army_magical_forest_adv
@@ -2352,28 +345,56 @@ on_actions = {
 					navy_experience = 60
 				}
 			}
-			Y8G = {
-				recruit_character = zin_cmd_army_worshipdom
-				recruit_character = zin_cmd_navy_worshipdom
-				recruit_character = zin_cmd_air_worshipdom
-				recruit_character = zin_cmd_marshal_1_worshipdom
-				recruit_character = zin_cmd_marshal_2_worshipdom
-				recruit_character = zin_cmd_master_worshipdom
+			GAA = {
 				if = {
 					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_worshipdom_adv
-					activate_advisor = zin_cmd_marshal_1_worshipdom_adv
-					activate_advisor = zin_cmd_marshal_2_worshipdom_adv
-					activate_advisor = zin_cmd_master_worshipdom_adv
+					activate_advisor = zin_cmd_army_gala_adv
+					activate_advisor = zin_cmd_marshal_1_gala_adv
+					activate_advisor = zin_cmd_marshal_2_gala_adv
+					activate_advisor = zin_cmd_master_gala_adv
 					if = {
 						limit = {
 							any_owned_state = { is_coastal = yes }
 						}
-						activate_advisor = zin_cmd_navy_worshipdom_adv
+						activate_advisor = zin_cmd_navy_gala_adv
 					}
 					if = {
 						limit = { zin_rules_skies_present = yes }
-						activate_advisor = zin_cmd_air_worshipdom_adv
+						activate_advisor = zin_cmd_air_gala_adv
+					}
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				set_temp_variable = { zin_arg_rite = 3 }
+				zin_inst_grant_scholar = yes
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				set_temp_variable = { zin_arg_rite = 3 }
+				zin_inst_grant_scholar = yes
+				army_experience = 120
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 60
+				}
+			}
+			GNW = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_gunwyn_adv
+					activate_advisor = zin_cmd_marshal_1_gunwyn_adv
+					activate_advisor = zin_cmd_marshal_2_gunwyn_adv
+					activate_advisor = zin_cmd_master_gunwyn_adv
+					if = {
+						limit = {
+							any_owned_state = { is_coastal = yes }
+						}
+						activate_advisor = zin_cmd_navy_gunwyn_adv
+					}
+					if = {
+						limit = { zin_rules_skies_present = yes }
+						activate_advisor = zin_cmd_air_gunwyn_adv
 					}
 				}
 				set_temp_variable = { zin_arg_rite = 1 }
@@ -2390,9 +411,87 @@ on_actions = {
 					navy_experience = 100
 				}
 			}
-			Y8H = {
-				recruit_character = zin_cmd_army_yeldenne
-				recruit_character = zin_cmd_master_yeldenne
+			SEL = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_selen_adv
+					activate_advisor = zin_cmd_master_selen_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			KIN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_kingson_adv
+					activate_advisor = zin_cmd_master_kingson_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			HIR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_hirolon_adv
+					activate_advisor = zin_cmd_master_hirolon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			MLK = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_melkgard_adv
+					activate_advisor = zin_cmd_master_melkgard_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			HOR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_horidor_adv
+					activate_advisor = zin_cmd_master_horidor_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			YEL = {
 				if = {
 					limit = { is_ai = yes }
 					activate_advisor = zin_cmd_army_yeldenne_adv
@@ -2400,6 +499,1233 @@ on_actions = {
 				}
 				set_temp_variable = { zin_arg_rite = 1 }
 				zin_inst_grant_scholar = yes
+			}
+			GIR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_girdon_adv
+					activate_advisor = zin_cmd_master_girdon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			KON = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_konori_adv
+					activate_advisor = zin_cmd_master_konori_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			HNH = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_hunhun_adv
+					activate_advisor = zin_cmd_master_hunhun_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			KLU = {
+				army_experience = 50
+			}
+			HER = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_herez_adv
+					activate_advisor = zin_cmd_master_herez_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NOL = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_noleksun_adv
+					activate_advisor = zin_cmd_master_noleksun_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			KIL = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_kilinti_adv
+					activate_advisor = zin_cmd_master_kilinti_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			SFT = {
+				army_experience = 50
+			}
+			FRE = {
+				army_experience = 50
+			}
+			PAZ = {
+				army_experience = 50
+			}
+			ORH = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_orohaf_adv
+					activate_advisor = zin_cmd_master_orohaf_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			FOT = {
+				army_experience = 50
+			}
+			KUN = {
+				army_experience = 50
+			}
+			BRR = {
+				army_experience = 50
+			}
+			OLO = {
+				army_experience = 50
+			}
+			DNL = {
+				army_experience = 50
+			}
+			ANR = {
+				army_experience = 50
+			}
+			CUR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_cursed_lands_adv
+					activate_advisor = zin_cmd_master_cursed_lands_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			BLO = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_bloody_forest_adv
+					activate_advisor = zin_cmd_master_bloody_forest_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			EEK = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_eekedor_adv
+					activate_advisor = zin_cmd_master_eekedor_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			REN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_r_en_adv
+					activate_advisor = zin_cmd_master_r_en_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			MOO = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_molot_adv
+					activate_advisor = zin_cmd_master_molot_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			KER = {
+				army_experience = 50
+			}
+			TLV = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_tolvael_adv
+					activate_advisor = zin_cmd_master_tolvael_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			TOL = {
+				army_experience = 50
+			}
+			HEO = {
+				army_experience = 50
+			}
+			HRA = {
+				army_experience = 50
+			}
+			MIA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_mina_adv
+					activate_advisor = zin_cmd_master_mina_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			DOL = {
+				army_experience = 50
+			}
+			MUS = {
+				army_experience = 50
+			}
+			FEA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_fearno_adv
+					activate_advisor = zin_cmd_master_fearno_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			AUT = {
+				army_experience = 50
+			}
+			WRL = {
+				army_experience = 50
+			}
+			PLT = {
+				army_experience = 50
+			}
+			HLD = {
+				army_experience = 50
+			}
+			GLI = {
+				army_experience = 50
+			}
+			XIS = {
+				army_experience = 50
+			}
+			PRT = {
+				army_experience = 50
+			}
+			OMR = {
+				army_experience = 50
+			}
+			POT = {
+				army_experience = 50
+			}
+			KVI = {
+				army_experience = 50
+			}
+			ORW = {
+				army_experience = 50
+			}
+			NIV = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_nivaros_adv
+					activate_advisor = zin_cmd_master_nivaros_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			YEI = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_yeti_lands_adv
+					activate_advisor = zin_cmd_master_yeti_lands_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			GHH = {
+				army_experience = 50
+			}
+			VND = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_vindael_adv
+					activate_advisor = zin_cmd_master_vindael_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			WER = {
+				army_experience = 50
+			}
+			LAB = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_lambin_adv
+					activate_advisor = zin_cmd_master_lambin_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			THN = {
+				army_experience = 50
+			}
+			DOB = {
+				army_experience = 50
+			}
+			BRU = {
+				army_experience = 50
+			}
+			GRO = {
+				army_experience = 50
+			}
+			SAO = {
+				army_experience = 50
+			}
+			BLD = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_buldor_adv
+					activate_advisor = zin_cmd_master_buldor_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			KRA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_kradlon_adv
+					activate_advisor = zin_cmd_master_kradlon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			CRG = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_corogon_adv
+					activate_advisor = zin_cmd_master_corogon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			VRN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_varnondor_adv
+					activate_advisor = zin_cmd_master_varnondor_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			WEN = {
+				army_experience = 50
+			}
+			DRK = {
+				army_experience = 50
+			}
+			BUN = {
+				army_experience = 50
+			}
+			VES = {
+				army_experience = 50
+			}
+			BLK = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_blackton_adv
+					activate_advisor = zin_cmd_master_blackton_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			BLN = {
+				army_experience = 50
+			}
+			BOR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_bordon_adv
+					activate_advisor = zin_cmd_master_bordon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			DRE = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_dreson_adv
+					activate_advisor = zin_cmd_master_dreson_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			DUL = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_dulundur_adv
+					activate_advisor = zin_cmd_master_dulundur_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			TRO = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_troll_forest_adv
+					activate_advisor = zin_cmd_master_troll_forest_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			HOO = {
+				army_experience = 50
+			}
+			DAK = {
+				army_experience = 50
+			}
+			SKR = {
+				army_experience = 50
+			}
+			DUN = {
+				army_experience = 50
+			}
+			BRT = {
+				army_experience = 50
+			}
+			WIL = {
+				army_experience = 50
+			}
+			KHO = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_khorvrath_adv
+					activate_advisor = zin_cmd_master_khorvrath_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			DLN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_dolon_adv
+					activate_advisor = zin_cmd_master_dolon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NEZ = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_nezer_adv
+					activate_advisor = zin_cmd_master_nezer_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NET = {
+				army_experience = 50
+			}
+			HAL = {
+				army_experience = 50
+			}
+			NAN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_nan_adv
+					activate_advisor = zin_cmd_master_nan_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			OLE = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_olen_adv
+					activate_advisor = zin_cmd_master_olen_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			ALR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_alerhia_adv
+					activate_advisor = zin_cmd_master_alerhia_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NAA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_naamis_adv
+					activate_advisor = zin_cmd_master_naamis_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			DRA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_drak_adv
+					activate_advisor = zin_cmd_master_drak_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			RHA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_rhachia_adv
+					activate_advisor = zin_cmd_master_rhachia_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			ERC = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_erco_adv
+					activate_advisor = zin_cmd_master_erco_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			PLO = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_plutondo_adv
+					activate_advisor = zin_cmd_master_plutondo_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			OST = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_ostoroth_adv
+					activate_advisor = zin_cmd_master_ostoroth_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			MOA = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_mora_adv
+					activate_advisor = zin_cmd_master_mora_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			DLB = {
+				army_experience = 50
+			}
+			KRS = {
+				army_experience = 50
+			}
+			MOS = {
+				army_experience = 50
+			}
+			AZA = {
+				army_experience = 50
+			}
+			OBM = {
+				army_experience = 50
+			}
+			PON = {
+				army_experience = 50
+			}
+			WOQ = {
+				army_experience = 50
+			}
+			ORA = {
+				army_experience = 50
+			}
+			MIE = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_miaed_adv
+					activate_advisor = zin_cmd_master_miaed_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			WAH = {
+				army_experience = 50
+			}
+			ENH = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_enhis_is_rond_adv
+					activate_advisor = zin_cmd_master_enhis_is_rond_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			HWN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_howan_adv
+					activate_advisor = zin_cmd_master_howan_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			VER = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_verde_adv
+					activate_advisor = zin_cmd_master_verde_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NAR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_nara_adv
+					activate_advisor = zin_cmd_master_nara_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			YON = {
+				army_experience = 50
+			}
+			KAM = {
+				army_experience = 50
+			}
+			KEA = {
+				army_experience = 50
+			}
+			SDE = {
+				army_experience = 50
+			}
+			ADE = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_adel_adv
+					activate_advisor = zin_cmd_master_adel_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			RAE = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_raerby_adv
+					activate_advisor = zin_cmd_master_raerby_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			PLL = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_pollos_adv
+					activate_advisor = zin_cmd_master_pollos_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NND = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_nondondor_adv
+					activate_advisor = zin_cmd_master_nondondor_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			FNG = {
+				army_experience = 50
+			}
+			HLN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_halenor_adv
+					activate_advisor = zin_cmd_master_halenor_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			WND = {
+				army_experience = 50
+			}
+			SEI = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_seite_islands_adv
+					activate_advisor = zin_cmd_master_seite_islands_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			SNT = {
+				army_experience = 50
+			}
+			BEN = {
+				army_experience = 50
+			}
+			LEN = {
+				army_experience = 50
+			}
+			LIG = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_the_lands_of_light_adv
+					activate_advisor = zin_cmd_master_the_lands_of_light_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			ELV = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_elvana_adv
+					activate_advisor = zin_cmd_master_elvana_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			IGA = {
+				army_experience = 50
+			}
+			YEN = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_yeni_alang_adv
+					activate_advisor = zin_cmd_master_yeni_alang_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			TOR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_tor_luni_adv
+					activate_advisor = zin_cmd_master_tor_luni_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			IHU = {
+				army_experience = 50
+			}
+			SOY = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_soyano_adv
+					activate_advisor = zin_cmd_master_soyano_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			GOO = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_goodin_adv
+					activate_advisor = zin_cmd_master_goodin_adv
+				}
+				set_temp_variable = { zin_arg_rite = 1 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			GOF = {
+				army_experience = 50
+			}
+			HRR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_herrodon_adv
+					activate_advisor = zin_cmd_master_herrodon_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			ANE = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_andos_enda_adv
+					activate_advisor = zin_cmd_master_andos_enda_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			NLR = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_nolorim_adv
+					activate_advisor = zin_cmd_master_nolorim_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			LCC = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_lccimio_adv
+					activate_advisor = zin_cmd_master_lccimio_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			ELD = {
+				if = {
+					limit = { is_ai = yes }
+					activate_advisor = zin_cmd_army_eldafaen_adv
+					activate_advisor = zin_cmd_master_eldafaen_adv
+				}
+				set_temp_variable = { zin_arg_rite = 4 }
+				zin_inst_grant_scholar = yes
+				army_experience = 100
+				if = {
+					limit = {
+						any_owned_state = { is_coastal = yes }
+					}
+					navy_experience = 50
+				}
+			}
+			YAV = {
+				army_experience = 50
+			}
+			TES = {
+				army_experience = 50
+			}
+			LUV = {
+				army_experience = 50
+			}
+			MSH = {
+				army_experience = 50
+			}
+			TIR = {
+				army_experience = 50
 			}
 		}
 	}

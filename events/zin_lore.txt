@@ -331,8 +331,8 @@ country_event = {
 					has_global_flag = zin_eindil_returned
 					has_global_flag = zin_varner_dead
 					has_global_flag = zin_volgan_body_destroyed
-					has_global_flag = zin_zol_manifested
-					has_global_flag = zin_zol_withdrawn
+					has_global_flag = zin_kusven_forth
+					has_global_flag = zin_kusven_withdrawn
 					has_global_flag = zin_lorien_dead
 					has_global_flag = zin_afrit_dead
 					has_global_flag = zin_golbran_dead
@@ -377,7 +377,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_101 }
 	}
 	immediate = {
@@ -411,7 +411,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_102 }
 	}
 	immediate = {
@@ -447,7 +447,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_103 }
 	}
 	immediate = {
@@ -483,7 +483,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_104 }
 	}
 	immediate = {
@@ -515,7 +515,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0M
+		original_tag = SEL
 		NOT = { has_country_flag = zin_lore_seen_105 }
 	}
 	immediate = {
@@ -579,7 +579,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0P
+		original_tag = KIN
 		NOT = { has_country_flag = zin_lore_seen_107 }
 	}
 	immediate = {
@@ -594,9 +594,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					country_exists = Y8F
+					country_exists = MAG
 				}
-				Y8F = {
+				MAG = {
 					add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_goodwill }
 				}
 			}
@@ -627,7 +627,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y8F
+		original_tag = MAG
 		NOT = { has_country_flag = zin_lore_seen_110 }
 	}
 	immediate = {
@@ -662,16 +662,16 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y8F
+				original_tag = MAG
 			}
 			AND = {
-				original_tag = Y0V
+				original_tag = HRR
 			}
 			AND = {
-				original_tag = Y0W
+				original_tag = ANE
 			}
 			AND = {
-				original_tag = Y0X
+				original_tag = NLR
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_111 }
@@ -698,7 +698,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y8G
+		original_tag = WOR
 	}
 	immediate = {
 		add_to_variable = { zin_lore_pilgrims = 1 }
@@ -747,7 +747,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 		NOT = { has_country_flag = zin_lore_seen_120 }
 	}
 	immediate = {
@@ -783,7 +783,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 		NOT = { has_country_flag = zin_lore_seen_121 }
 	}
 	immediate = {
@@ -808,7 +808,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0G
+		original_tag = LER
 		NOT = { has_country_flag = zin_lore_seen_122 }
 	}
 	immediate = {
@@ -847,7 +847,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y01
+		original_tag = CLD
 		NOT = { has_country_flag = zin_lore_seen_130 }
 	}
 	immediate = {
@@ -870,9 +870,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					country_exists = Y02
+					country_exists = MLK
 				}
-				Y02 = {
+				MLK = {
 					add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_provoked }
 				}
 			}
@@ -892,19 +892,19 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y01
+				original_tag = CLD
 			}
 			AND = {
-				original_tag = Y03
+				original_tag = HOR
 			}
 			AND = {
-				original_tag = Y21
+				original_tag = FEA
 			}
 			AND = {
-				original_tag = Y1X
+				original_tag = YEI
 			}
 			AND = {
-				original_tag = Y1J
+				original_tag = NIV
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_131 }
@@ -932,10 +932,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y07
+				original_tag = GNW
 			}
 			AND = {
-				original_tag = Y08
+				original_tag = GIR
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_140 }
@@ -952,8 +952,8 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y07
-					original_tag = Y08
+					original_tag = GNW
+					original_tag = GIR
 				}
 				NOT = { original_tag = ROOT }
 			}
@@ -972,8 +972,8 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y07
-					original_tag = Y08
+					original_tag = GNW
+					original_tag = GIR
 				}
 				NOT = { original_tag = ROOT }
 			}
@@ -1040,7 +1040,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y07
+		original_tag = GNW
 		NOT = { has_country_flag = zin_lore_seen_142 }
 	}
 	immediate = {
@@ -1067,16 +1067,16 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y0C
+				original_tag = ADE
 			}
 			AND = {
-				original_tag = Y0D
+				original_tag = PLL
 			}
 			AND = {
-				original_tag = Y0F
+				original_tag = RAE
 			}
 			AND = {
-				original_tag = Y0E
+				original_tag = NND
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_150 }
@@ -1112,10 +1112,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y1A
+				original_tag = GOL
 			}
 			AND = {
-				original_tag = Y19
+				original_tag = DND
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_160 }
@@ -1133,8 +1133,8 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y1A
-					original_tag = Y19
+					original_tag = GOL
+					original_tag = DND
 				}
 				NOT = { original_tag = ROOT }
 			}
@@ -1165,19 +1165,19 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y43
+				original_tag = BOR
 			}
 			AND = {
-				original_tag = Y44
+				original_tag = DRE
 			}
 			AND = {
-				original_tag = Y4H
+				original_tag = DUL
 			}
 			AND = {
-				original_tag = Y45
+				original_tag = TRO
 			}
 			AND = {
-				original_tag = Y4I
+				original_tag = BLK
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_161 }
@@ -1215,7 +1215,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Y
+		original_tag = MIR
 		NOT = { has_country_flag = zin_lore_seen_170 }
 	}
 	immediate = {
@@ -1262,7 +1262,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y8D
+		original_tag = PUV
 		NOT = { has_country_flag = zin_lore_seen_171 }
 	}
 	immediate = {
@@ -1324,10 +1324,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y14
+				original_tag = NRS
 			}
 			AND = {
-				original_tag = Y16
+				original_tag = STA
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_190 }
@@ -1345,8 +1345,8 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = Y14
-					original_tag = Y16
+					original_tag = NRS
+					original_tag = STA
 				}
 				NOT = { original_tag = ROOT }
 			}
@@ -1399,7 +1399,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y62
+		original_tag = ENH
 		NOT = { has_country_flag = zin_lore_seen_201 }
 	}
 	immediate = {
@@ -1424,7 +1424,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y6X
+		original_tag = GAA
 		NOT = { has_country_flag = zin_lore_seen_210 }
 	}
 	immediate = {
@@ -1454,7 +1454,7 @@ country_event = {
 			has_country_flag = zin_region_islands_of_the_south
 		}
 		NOT = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		NOT = { has_country_flag = zin_lore_seen_211 }
 	}
@@ -1479,7 +1479,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y8G
+		original_tag = WOR
 		NOT = { has_country_flag = zin_lore_seen_220 }
 	}
 	immediate = {
@@ -1503,7 +1503,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y8G
+		original_tag = WOR
 		NOT = { has_country_flag = zin_lore_seen_221 }
 	}
 	immediate = {
@@ -1609,7 +1609,7 @@ country_event = {
 		add_political_power = -10
 		hidden_effect = {
 			add_opinion_modifier = {
-				target = Y8G
+				target = WOR
 				modifier = zin_opinion_lore_goodwill
 			}
 		}
@@ -1646,7 +1646,7 @@ country_event = {
 			base = 70
 			modifier = {
 				factor = 0
-				original_tag = Y0M
+				original_tag = SEL
 			}
 		}
 		add_stability = 0.01
@@ -1661,7 +1661,7 @@ country_event = {
 			base = 30
 			modifier = {
 				add = 70
-				original_tag = Y0M
+				original_tag = SEL
 			}
 		}
 		add_political_power = 10
@@ -1678,7 +1678,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_303 }
 	}
 	immediate = {
@@ -1782,7 +1782,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_310 }
 	}
 	immediate = {
@@ -1816,13 +1816,13 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y0N
+				original_tag = KON
 			}
 			AND = {
-				original_tag = Y0S
+				original_tag = NOL
 			}
 			AND = {
-				original_tag = Y0P
+				original_tag = KIN
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_311 }
@@ -1860,8 +1860,8 @@ country_event = {
 		OR = {
 			AND = {
 				OR = {
-					original_tag = Y01
-					original_tag = Y04
+					original_tag = CLD
+					original_tag = VND
 				}
 			}
 			AND = {
@@ -1869,8 +1869,8 @@ country_event = {
 				any_owned_state = { is_coastal = yes }
 				NOT = {
 					OR = {
-						original_tag = Y01
-						original_tag = Y04
+						original_tag = CLD
+						original_tag = VND
 					}
 				}
 			}
@@ -1944,7 +1944,7 @@ country_event = {
 	trigger = {
 		has_country_flag = zin_region_dark_lands
 		NOT = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		NOT = { has_country_flag = zin_lore_seen_314 }
 	}
@@ -1979,13 +1979,13 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y07
+				original_tag = GNW
 			}
 			AND = {
-				original_tag = Y08
+				original_tag = GIR
 			}
 			AND = {
-				original_tag = Y27
+				original_tag = LAB
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_315 }
@@ -2028,13 +2028,13 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y0C
+				original_tag = ADE
 			}
 			AND = {
-				original_tag = Y0D
+				original_tag = PLL
 			}
 			AND = {
-				original_tag = Y0F
+				original_tag = RAE
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_316 }
@@ -2068,7 +2068,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y16
+		original_tag = STA
 		NOT = { has_country_flag = zin_lore_seen_317 }
 	}
 	immediate = {
@@ -2094,7 +2094,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_320 }
 	}
 	immediate = {
@@ -2151,14 +2151,14 @@ country_event = {
 	desc = {
 		text = zin_lore.322.d_mirolon
 		trigger = {
-			original_tag = Y0Y
+			original_tag = MIR
 		}
 	}
 	desc = {
 		text = zin_lore.322.d
 		trigger = {
 			NOT = {
-				original_tag = Y0Y
+				original_tag = MIR
 			}
 		}
 	}
@@ -2168,10 +2168,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y0Y
+				original_tag = MIR
 			}
 			AND = {
-				original_tag = Y55
+				original_tag = HER
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_322 }
@@ -2182,7 +2182,7 @@ country_event = {
 	option = {
 		name = zin_lore.322.a
 		trigger = {
-			original_tag = Y0Y
+			original_tag = MIR
 		}
 		ai_chance = {
 			base = 100
@@ -2195,7 +2195,7 @@ country_event = {
 	option = {
 		name = zin_lore.322.b
 		trigger = {
-			NOT = { original_tag = Y0Y }
+			NOT = { original_tag = MIR }
 		}
 		ai_chance = {
 			base = 100
@@ -2243,14 +2243,14 @@ country_event = {
 	desc = {
 		text = zin_lore.324.d_goldoroth
 		trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 	}
 	desc = {
 		text = zin_lore.324.d
 		trigger = {
 			NOT = {
-				original_tag = Y1A
+				original_tag = GOL
 			}
 		}
 	}
@@ -2260,10 +2260,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y1A
+				original_tag = GOL
 			}
 			AND = {
-				original_tag = Y19
+				original_tag = DND
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_324 }
@@ -2274,7 +2274,7 @@ country_event = {
 	option = {
 		name = zin_lore.324.a
 		trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		ai_chance = {
 			base = 80
@@ -2284,7 +2284,7 @@ country_event = {
 	option = {
 		name = zin_lore.324.b
 		trigger = {
-			original_tag = Y1A
+			original_tag = GOL
 		}
 		ai_chance = {
 			base = 20
@@ -2294,7 +2294,7 @@ country_event = {
 	option = {
 		name = zin_lore.324.c
 		trigger = {
-			NOT = { original_tag = Y1A }
+			NOT = { original_tag = GOL }
 		}
 		ai_chance = {
 			base = 100
@@ -2462,7 +2462,7 @@ country_event = {
 				is_major = yes
 			}
 			AND = {
-				original_tag = Y0G
+				original_tag = LER
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_332 }
@@ -2528,7 +2528,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Y
+		original_tag = MIR
 		NOT = { has_country_flag = zin_lore_seen_340 }
 	}
 	immediate = {
@@ -2560,7 +2560,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Y
+		original_tag = MIR
 		NOT = { has_country_flag = zin_lore_seen_341 }
 	}
 	immediate = {
@@ -2594,7 +2594,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Y
+		original_tag = MIR
 		NOT = { has_country_flag = zin_lore_seen_342 }
 	}
 	immediate = {
@@ -2631,7 +2631,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Y
+		original_tag = MIR
 		NOT = { has_country_flag = zin_lore_seen_343 }
 	}
 	immediate = {
@@ -2672,7 +2672,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y55
+		original_tag = HER
 		NOT = { has_country_flag = zin_lore_seen_344 }
 	}
 	immediate = {
@@ -2686,7 +2686,7 @@ country_event = {
 		custom_effect_tooltip = zin_lore.344.a_tip
 		hidden_effect = {
 			add_opinion_modifier = {
-				target = Y0Y
+				target = MIR
 				modifier = zin_opinion_lore_goodwill
 			}
 		}
@@ -2709,7 +2709,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Y
+		original_tag = MIR
 		NOT = { has_country_flag = zin_lore_seen_345 }
 	}
 	immediate = {
@@ -2746,7 +2746,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0L
+		original_tag = AEN
 		NOT = { has_country_flag = zin_lore_seen_346 }
 	}
 	immediate = {
@@ -2780,7 +2780,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0M
+		original_tag = SEL
 		NOT = { has_country_flag = zin_lore_seen_350 }
 	}
 	immediate = {
@@ -2818,7 +2818,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0O
+		original_tag = KIL
 		NOT = { has_country_flag = zin_lore_seen_351 }
 	}
 	immediate = {
@@ -2843,7 +2843,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Q
+		original_tag = HIR
 		NOT = { has_country_flag = zin_lore_seen_352 }
 	}
 	immediate = {
@@ -2868,7 +2868,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y4W
+		original_tag = HNH
 		NOT = { has_country_flag = zin_lore_seen_353 }
 	}
 	immediate = {
@@ -2900,7 +2900,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0P
+		original_tag = KIN
 		NOT = { has_country_flag = zin_lore_seen_354 }
 	}
 	immediate = {
@@ -2915,9 +2915,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					country_exists = Y8F
+					country_exists = MAG
 				}
-				Y8F = {
+				MAG = {
 					add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_regard }
 				}
 			}
@@ -2935,7 +2935,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y54
+		original_tag = CUR
 		NOT = { has_country_flag = zin_lore_seen_355 }
 	}
 	immediate = {
@@ -2958,14 +2958,14 @@ country_event = {
 	desc = {
 		text = zin_lore.356.d_forest
 		trigger = {
-			original_tag = Y8E
+			original_tag = BLO
 		}
 	}
 	desc = {
 		text = zin_lore.356.d
 		trigger = {
 			NOT = {
-				original_tag = Y8E
+				original_tag = BLO
 			}
 		}
 	}
@@ -2975,11 +2975,11 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y8E
+				original_tag = BLO
 			}
 			AND = {
 				zin_aenor_is_concord_dominion = yes
-				is_neighbor_of = Y8E
+				is_neighbor_of = BLO
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_356 }
@@ -2990,7 +2990,7 @@ country_event = {
 	option = {
 		name = zin_lore.356.a
 		trigger = {
-			original_tag = Y8E
+			original_tag = BLO
 		}
 		ai_chance = {
 			base = 100
@@ -3000,7 +3000,7 @@ country_event = {
 	option = {
 		name = zin_lore.356.b
 		trigger = {
-			NOT = { original_tag = Y8E }
+			NOT = { original_tag = BLO }
 		}
 		ai_chance = {
 			base = 100
@@ -3019,7 +3019,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0T
+		original_tag = ORH
 		NOT = { has_country_flag = zin_lore_seen_357 }
 	}
 	immediate = {
@@ -3044,7 +3044,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0H
+		original_tag = MOO
 		NOT = { has_country_flag = zin_lore_seen_358 }
 	}
 	immediate = {
@@ -3069,7 +3069,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0J
+		original_tag = REN
 		NOT = { has_country_flag = zin_lore_seen_359 }
 	}
 	immediate = {
@@ -3085,9 +3085,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					country_exists = Y0G
+					country_exists = LER
 				}
-				Y0G = {
+				LER = {
 					add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_slight }
 				}
 			}
@@ -3111,7 +3111,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y1X
+		original_tag = YEI
 		NOT = { has_country_flag = zin_lore_seen_360 }
 	}
 	immediate = {
@@ -3136,7 +3136,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y1J
+		original_tag = NIV
 		NOT = { has_country_flag = zin_lore_seen_361 }
 	}
 	immediate = {
@@ -3161,7 +3161,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y04
+		original_tag = VND
 		NOT = { has_country_flag = zin_lore_seen_362 }
 	}
 	immediate = {
@@ -3184,14 +3184,14 @@ country_event = {
 	desc = {
 		text = zin_lore.363.d_isengard
 		trigger = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 	}
 	desc = {
 		text = zin_lore.363.d
 		trigger = {
 			NOT = {
-				original_tag = Y02
+				original_tag = MLK
 			}
 		}
 	}
@@ -3201,10 +3201,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y02
+				original_tag = MLK
 			}
 			AND = {
-				original_tag = Y01
+				original_tag = CLD
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_363 }
@@ -3215,7 +3215,7 @@ country_event = {
 	option = {
 		name = zin_lore.363.a
 		trigger = {
-			original_tag = Y02
+			original_tag = MLK
 		}
 		ai_chance = {
 			base = 100
@@ -3225,7 +3225,7 @@ country_event = {
 	option = {
 		name = zin_lore.363.b
 		trigger = {
-			NOT = { original_tag = Y02 }
+			NOT = { original_tag = MLK }
 		}
 		ai_chance = {
 			base = 100
@@ -3243,7 +3243,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y2B
+		original_tag = BLD
 		NOT = { has_country_flag = zin_lore_seen_364 }
 	}
 	immediate = {
@@ -3268,7 +3268,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y09
+		original_tag = KRA
 		NOT = { has_country_flag = zin_lore_seen_365 }
 	}
 	immediate = {
@@ -3308,7 +3308,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0A
+		original_tag = CRG
 		NOT = { has_country_flag = zin_lore_seen_366 }
 	}
 	immediate = {
@@ -3358,7 +3358,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y4I
+		original_tag = BLK
 		NOT = { has_country_flag = zin_lore_seen_368 }
 	}
 	immediate = {
@@ -3384,7 +3384,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y45
+		original_tag = TRO
 		NOT = { has_country_flag = zin_lore_seen_369 }
 	}
 	immediate = {
@@ -3407,14 +3407,14 @@ country_event = {
 	desc = {
 		text = zin_lore.370.d_herrodon
 		trigger = {
-			original_tag = Y0V
+			original_tag = HRR
 		}
 	}
 	desc = {
 		text = zin_lore.370.d
 		trigger = {
 			NOT = {
-				original_tag = Y0V
+				original_tag = HRR
 			}
 		}
 	}
@@ -3424,10 +3424,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y0V
+				original_tag = HRR
 			}
 			AND = {
-				original_tag = Y0W
+				original_tag = ANE
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_370 }
@@ -3438,7 +3438,7 @@ country_event = {
 	option = {
 		name = zin_lore.370.a
 		trigger = {
-			original_tag = Y0V
+			original_tag = HRR
 		}
 		ai_chance = {
 			base = 100
@@ -3446,7 +3446,7 @@ country_event = {
 		custom_effect_tooltip = zin_lore.370.a_tip
 		hidden_effect = {
 			add_opinion_modifier = {
-				target = Y0W
+				target = ANE
 				modifier = zin_opinion_lore_slight
 			}
 		}
@@ -3454,7 +3454,7 @@ country_event = {
 	option = {
 		name = zin_lore.370.b
 		trigger = {
-			original_tag = Y0W
+			original_tag = ANE
 		}
 		ai_chance = {
 			base = 100
@@ -3462,7 +3462,7 @@ country_event = {
 		custom_effect_tooltip = zin_lore.370.b_tip
 		hidden_effect = {
 			add_opinion_modifier = {
-				target = Y0V
+				target = HRR
 				modifier = zin_opinion_lore_slight
 			}
 		}
@@ -3479,7 +3479,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0X
+		original_tag = NLR
 		NOT = { has_country_flag = zin_lore_seen_371 }
 	}
 	immediate = {
@@ -3529,7 +3529,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y7R
+		original_tag = OLE
 		NOT = { has_country_flag = zin_lore_seen_373 }
 	}
 	immediate = {
@@ -3554,7 +3554,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y0Z
+		original_tag = NAN
 		NOT = { has_country_flag = zin_lore_seen_374 }
 	}
 	immediate = {
@@ -3579,7 +3579,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y13
+		original_tag = MOA
 		NOT = { has_country_flag = zin_lore_seen_375 }
 	}
 	immediate = {
@@ -3604,7 +3604,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y17
+		original_tag = RHA
 		NOT = { has_country_flag = zin_lore_seen_376 }
 	}
 	immediate = {
@@ -3629,7 +3629,7 @@ country_event = {
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {
-		original_tag = Y1D
+		original_tag = HWN
 		NOT = { has_country_flag = zin_lore_seen_377 }
 	}
 	immediate = {
@@ -3656,10 +3656,10 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y1E
+				original_tag = NAR
 			}
 			AND = {
-				original_tag = Y60
+				original_tag = VER
 			}
 		}
 		NOT = { has_country_flag = zin_lore_seen_378 }
@@ -3818,9 +3818,9 @@ country_event = {
 		OR = {
 			AND = {
 				OR = {
-					original_tag = Y01
-					original_tag = Y03
-					original_tag = Y21
+					original_tag = CLD
+					original_tag = HOR
+					original_tag = FEA
 				}
 			}
 			AND = {
@@ -3890,12 +3890,12 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y2B
+				original_tag = BLD
 			}
 			AND = {
 				has_country_flag = zin_region_west_lands
 				NOT = {
-					original_tag = Y2B
+					original_tag = BLD
 				}
 			}
 		}
@@ -3983,9 +3983,9 @@ country_event = {
 		OR = {
 			AND = {
 				OR = {
-					original_tag = Y0Y
-					original_tag = Y7R
-					original_tag = Y0Z
+					original_tag = MIR
+					original_tag = OLE
+					original_tag = NAN
 				}
 			}
 			AND = {
@@ -4023,7 +4023,7 @@ country_event = {
 	trigger = {
 		has_country_flag = zin_region_lands_of_the_sun
 		NOT = {
-			original_tag = Y6X
+			original_tag = GAA
 		}
 		NOT = { has_country_flag = zin_lore_seen_409 }
 	}
@@ -4138,7 +4138,7 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				original_tag = Y0P
+				original_tag = KIN
 			}
 			AND = {
 				zin_elves_is_wall_realm = yes

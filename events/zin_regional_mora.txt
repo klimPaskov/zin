@@ -14,10 +14,10 @@ country_event = {
 			factor = 70
 			modifier = {
 				factor = 0.4
-				Y13 = { check_variable = { zin_east_lean > 19 } }
+				MOA = { check_variable = { zin_east_lean > 19 } }
 			}
 		}
-		Y13 = {
+		MOA = {
 			set_temp_variable = { zin_arg_value = -10 }
 			zin_east_add_lean = yes
 		}
@@ -28,10 +28,10 @@ country_event = {
 			factor = 30
 			modifier = {
 				factor = 2
-				Y13 = { check_variable = { zin_east_lean > 19 } }
+				MOA = { check_variable = { zin_east_lean > 19 } }
 			}
 		}
-		give_guarantee = Y13
+		give_guarantee = MOA
 	}
 }
 
