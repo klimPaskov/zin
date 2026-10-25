@@ -24,9 +24,11 @@
 //   3 claims     CLAIMS: lands, model areas or bands along ranges the canon gives to one realm.
 //   4 exclusions BARRIERS: the canon lands of one region that the realms of a neighbouring region on the same
 //                landmass must not grow into (the far side of the Great Wall belt, the lands north and south of the
-//                Zilin marches, the two sides of the Cold Lands neck, the Sun Desert west of the Hardtmuth chain). A
-//                contested strip between the two sides stays free.
-//   5 unowned    WILD_LANDS: the wild lands the dossiers name, where the model places them and no realm's point lies.
+//                Zilin marches, the two sides of the Cold Lands neck, the East and South Lands beyond Olen's lowland,
+//                the Sun Desert west of the Hardtmuth chain). A contested strip between the two sides stays free.
+//   5 unowned    WILD_LANDS: the wild lands the dossiers name, where the model places them and no realm's point lies;
+//                where one meets a realm's claim the claim wins (a claim is the roster's or the canon's fixed land, a
+//                wild land the dossier's proposal) and the wild land keeps WILD.claimClearancePx from it.
 //   6 weights    WEIGHT: target states (the roster's stated extent, else the realm's state count on the old map) over
 //                WEIGHT.statesPerUnit, clamped to the tool's 0.05 to 100.
 //   7 overlords  from the roster's subject relations (overlord keys to tags).
@@ -47,13 +49,12 @@ export const PLACE = Object.freeze({
   minSeparationPx: 20, // points of two realms at least this far apart (about one province of the import)
   snapReachPx: 220, // how far a point may move to reach acceptable land
   seedSnapReachPx: 40, // how far an old state's centre may move to reach a land
-  seedMaxFromCapitalPx: 450, // an old state projected farther than this from the realm's capital adds no seed
+  seedMaxFromCapitalPx: 320, // an old state projected farther than this from the realm's capital adds no seed
   seedMinLandPx: 400, // an old state adds a seed only on a model land of at least this many pixels (about one province)
   validatorMinSeparationPx: 12, // below this the validator warns that two realms' points may share a province
   // the import clears land in open-sea bands at the frame edges (205 px east and west, 64 px north and south, ragged up
   // to 1.5 times deeper; convert_for_import.mjs IMPORT.edge): a generated point keeps this far from the frame edge
   edgeClearPx: Object.freeze({ x: 253, y: 88 }),
-  componentJoinPx: 2, // seams of up to twice this width in the drawn land do not split a landmass when grouping seeds
 });
 export const FIELD = Object.freeze({
   sigmaPx: 160, // Gaussian reach of one capital-site anchor in the old-to-new displacement field
@@ -61,6 +62,10 @@ export const FIELD = Object.freeze({
 });
 export const WEIGHT = Object.freeze({ statesPerUnit: 4, min: 0.05, max: 100, decimals: 2, populationPerState: 250000 });
 export const POLYGON = Object.freeze({ tolPx: 2, minAreaPx: 64, bandMinRadiusPx: 12 });
+export const WILD = Object.freeze({
+  claimClearancePx: 8, // a wild land keeps this far from any realm's claim (the claim wins where they meet)
+  landCoverPx: 8, // a wild land that is a whole model island grows this far so its outline covers the drawn coast
+});
 export const COUNTRIES_OPTIONS = Object.freeze({
   islands: 'one-owner',
   islandsReason: 'Every drawn island in the dossiers belongs to one realm or is a named wild place; the approved layout of 17 October 2026 gives each small island one owner (docs/generation/assumptions.md, "a small island has one owner"). With one-owner a landmass no seed is on goes whole to the first realm that reaches it over the sea (ADR 0060).',
@@ -150,7 +155,7 @@ export const CAPITAL_ANCHORS = Object.freeze({
   WIL: { at: [2401, 1181], basis: 'The drawn label Wild Lands: Zudertu, the largest winter camp.' },
   // Ember Lands (ember_lands.md 2, 10, 11)
   KHO: { method: 'dossier text', at: [3040, 2300], basis: 'Khorvazel in the Nether foothills: the island\'s south coast facing the Nether across the Nether Sound (ember_lands.md 11).' },
-  HAL: { method: 'dossier text', at: [3560, 1985], basis: 'Halon, the salt pans of the peninsula\'s Veleeda coast: the south shore of Mirolon\'s eastern lowland, since the import reads the peninsula\'s western tongue as too narrow for both Miherta and Halon.' },
+  HAL: { method: 'dossier text', at: [3540, 1925], basis: 'Halon, the salt pans of the peninsula\'s Veleeda coast: the south shore of the arm of the Mirolon peninsula east of Miherta\'s tongue (the tongue is too narrow for both seats); the model puts the lowland further east on the eastern mainland.' },
   OLE: { at: [3670, 2050], basis: 'The drawn labels Gelbus and Luminor east of the Great Swamp: the shrine-town of the isle of the Holy Breeze.' },
   // East Lands (east_lands.md 10, 11; labels of the mirrored South-Earth sheet)
   ERC: { old: true, basis: 'Atonto on its river in the southern mountains; the old map\'s Erco seat (the drawing\'s Morodor lies beyond the frame).' },
@@ -167,7 +172,7 @@ export const CAPITAL_ANCHORS = Object.freeze({
   WAH: { feature: 'site_sun_desert', basis: 'Biir-Raab, the greatest oasis of the dune sea: the model\'s Sun Desert town.' },
   // Magical Lands (magical_lands.md 10, 11)
   LCC: { old: true, basis: 'Hidirim, the best harbour of the northern rift shore; the old map\'s Lccimio seat (the drawing labels Lccimio there).' },
-  ELD: { method: 'dossier text', at: [3880, 1640], basis: 'Lenkei, the Archive at the southern end of the rift coast where the old roads stop (roster: the southern rift shore); the old map and the drawn Endelond label put it in the north-east instead (owner question P-12).' },
+  ELD: { method: 'dossier text', at: [3880, 1640], basis: 'Lenkei, the Archive at the southern end of the rift coast where the old roads stop (roster: the southern rift shore); the old map and the drawn Endelond label put it in the north-east instead (owner question Q-61).' },
   TES: { area: 'plain_herrodon_vale', basis: 'Testebur, where the Teste Brook leaves the Teste Vale.' },
   LUV: { feature: 'strait_rift_narrows', end: 1, basis: 'Hisemrak, the quay town at the Rift Narrows.' },
   // Triton's Islands (tritons_islands.md 10, 11)
@@ -175,6 +180,7 @@ export const CAPITAL_ANCHORS = Object.freeze({
   BEN: { feature: 'range_benan', t: 0.5, basis: 'Torni, a cove under the Benan Mountains (the model\'s range_benan).' },
   SEI: { land: 'land_island_029', side: 'centre', basis: 'Vesko, the moot isle of the four Seite isles: the long isle under the drawn Seite Islands label (land_island_029).' },
   WND: { at: [445, 1655], basis: 'Audailon, the windward capes\' harbour: the drawn Sondor, Cheko and Amarelo on the south of the eastern arc.' },
+  HLN: { land: 'land_island_059', side: 'centre', basis: 'Sonrale, the wreck-right lords\' harbour on the storm isles by the Kilos Sound (former Kim Sound): the isle south-east of the sound (land_island_059).' },
   SNT: { land: 'land_island_014', side: 'centre', basis: 'Straton on the outer western arc facing the Santon Sea (land_island_014).' },
   // Islands of the South (islands_of_the_south.md 2, 10, 11)
   SDE: { land: 'land_island_027', side: 'centre', basis: 'Ponwan at the end of the western arc: its westernmost island (land_island_027).' },
@@ -221,26 +227,25 @@ export const BARRIERS = Object.freeze([
   },
   {
     id: 'zilin_marches',
-    basis: 'Mirolon is the Ember Lands\' peninsula on the southern neck of the central landmass, closed toward the Zilin side by the Mirolon Mountains and their passes (ember_lands.md 2); beyond it lie the Ember Lands\' isles and, to the south-east, the South and East Lands. As the import reads the drawing, the central and eastern mainlands touch through Mirolon\'s eastern lowland, so the Middle and Magical Lands north of the Zilin marches and everything south of them are kept apart here; the Great Swamp and the Lake of Mirolon between stay open.',
+    basis: 'Mirolon is the Ember Lands\' peninsula on the southern neck of the central landmass, closed toward the Zilin side by the Mirolon Mountains and their passes (ember_lands.md 2). Its tongue and the arm east of it, south of the Zilin marches, are Mirolon\'s; the Middle and Magical Lands north of the marches are kept from Mirolon\'s realms; the Great Swamp and the Lake of Mirolon between stay open.',
     sides: [
-      { name: 'Mirolon, its eastern lowland and the lands south of the Zilin marches', keepOut: ['middle_lands', 'magical_lands'], polygon: [[3150, 1960], [3430, 1960], [3430, 1880], [4300, 1880], [4300, 2559], [3150, 2559]] },
-      { name: 'the Middle and Magical Lands north of the Zilin marches', keepOut: ['ember_lands', 'east_lands', 'south_lands'], polygon: [[2550, 850], [4060, 850], [4060, 1850], [2550, 1850]] },
+      { name: 'Mirolon south of the Zilin marches', keepOut: ['middle_lands', 'magical_lands'], polygon: [[3150, 1960], [3430, 1960], [3430, 1880], [3700, 1880], [3700, 2100], [3150, 2100]] },
+      { name: 'the Middle and Magical Lands north of the Zilin marches', keepOut: ['ember_lands'], polygon: [[2550, 850], [4060, 850], [4060, 1850], [2550, 1850]] },
     ],
   },
   {
     id: 'cold_neck',
-    basis: 'The Neridor Mountains and the Worlond Forest belt divide the West Lands from the Cold Lands; the Neck Road is the only road (west_lands.md 2; cold_lands.md 2). Holdon\'s coast and the Yeti Shallows are the Cold Lands\' side, the Gunwyn Downs the West\'s.',
+    basis: 'The Neridor Mountains and the Worlond Forest belt divide the West Lands from the Cold Lands; the Neck Road is the only road (west_lands.md 2; cold_lands.md 2). The import reads the neck as land (y 880 to 1000, x 750 to 1250), so each region\'s realms keep to their side of it: Holdon\'s coast, the Yeti Lands and the Worlond Forest are the Cold Lands\', the Gunwyn Downs the West\'s, and the neck itself stays open.',
     sides: [
       { name: 'the Cold Lands north of the neck', keepOut: ['west_lands'], polygon: [[560, 880], [1750, 880], [1750, 60], [560, 60]] },
       { name: 'the West Lands south of the neck', keepOut: ['cold_lands'], polygon: [[560, 990], [1750, 990], [1750, 1720], [560, 1720]] },
     ],
   },
   {
-    id: 'ember_isles',
-    basis: 'The Ember Lands island and the Nether lie in the sea south of the Middle Lands (ember_lands.md 2; nether.md), apart from the East and South Lands. As the import reads the drawing, the Nether\'s eastern tip touches the Sun Desert\'s western coast, so the two sides are kept apart here; Mirolon\'s eastern lowland, where Halia and Olen stand, stays open.',
+    id: 'olen_lowland',
+    basis: 'The model puts Mirolon\'s eastern lowland, where the drawing writes Olen\'s Gelbus and Luminor, on the eastern mainland with the East and South Lands (land_eastern_mainland). Olen, an Ember Lands realm, stays on that lowland and out of the Sun Desert and the East Lands beyond it; the Ember Lands island and the Nether are separate lands the import keeps apart (the Ember Narrows and the Nether Sound are water), so they need no barrier.',
     sides: [
-      { name: 'the Ember Lands island and the Nether', keepOut: ['east_lands', 'south_lands'], polygon: [[2850, 2000], [3265, 2000], [3265, 2559], [2850, 2559]] },
-      { name: 'the Sun Desert and the East Lands south of Mirolon', keepOut: ['ember_lands'], polygon: [[3270, 2150], [4300, 2150], [4300, 2559], [3270, 2559]] },
+      { name: 'the Sun Desert and the East Lands beyond Olen\'s lowland', keepOut: ['ember_lands'], polygon: [[3270, 2150], [3800, 2150], [3800, 1700], [4300, 1700], [4300, 2559], [3270, 2559]] },
     ],
   },
   {
@@ -281,27 +286,28 @@ export const WILD_NOT_PLACED = Object.freeze([
 
 // Choices made here where the canon is silent or contradicts itself: each is a question for the owner.
 export const OWNER_QUESTIONS = Object.freeze([
-  { id: 'P-01', realms: ['YEL'], question: 'Yeldenne\'s roster capital is Simoto, the model\'s site_yeldenne_landing on the Gulf of Minnolomak, about 400 px from the Castle of Yeldenne and the valley of Mp\'E it is meant to serve; a one-state realm cannot hold both. The seed keeps the site (snapped 28 px onto the drawn coast). Should the landing move below the castle, or the realm\'s seat move to the valley?' },
-  { id: 'P-02', realms: ['LER'], question: 'Lerendor\'s North (decision K49) is seeded in the drawn snow country (Lerenwaith); Sonargur lies on the island\'s south coast with Tolvael, the Heodwa Lands, Hrakbrund and Mustnom between. The map tool joins a realm\'s pieces on one landmass by a corridor, which will cut through those realms. Accept the corridor, or make Lerendor\'s North a separate realm under the same crown?' },
-  { id: 'P-03', realms: ['LER'], question: 'The Low-ness Islands and Ferlinon\'s pine hills (roster extent) have no model feature; the old map\'s Low-ness state projects onto the drawn island of Tolhon. Not placed: where are they?' },
-  { id: 'P-04', realms: ['PRN'], question: 'The drawing labels Pornyior beside Argon (now Mount Argul); the roster says "the slopes below Mount Ergo". The seat follows the drawing. Which mountain?' },
-  { id: 'P-05', realms: ['IHU', 'SOY'], question: 'The model puts Ossi Luni (former Hengyang, Soyano\'s) on the same island as Hol\'s Great Volcano (Ihuy\'s seat). One owner per island gives it to Ihuy; Soyano\'s seat Ileslia is on the northernmost Sun isle (land_island_023). Agree?' },
-  { id: 'P-06', realms: ['OLE', 'HAL', 'MIR'], question: 'The drawing writes Gelbus and Luminor (Olen) on Mirolon\'s eastern lowland, which the import joins to the East Lands, not on an isle; Halia\'s salt coast is placed on the same lowland\'s south shore because the peninsula\'s western tongue is too narrow for two seats. Keep Olen on the mainland, or move it to an isle off Mirolon\'s south coast?' },
-  { id: 'P-07', realms: ['HIR', 'TIR'], question: 'Hirolon claims the crests of its proposed ring (the Hiloff Rim from Hirolon Head to the Hilorn mouth, and the Grano; hirolon.md 2.2) and Tirlan grows inside it from Tirbur at the Hilorn\'s head-streams. Accept the ring as Hirolon\'s fixed land?' },
-  { id: 'P-08', realms: ['KIN'], question: 'Kingson claims the model\'s whole Kingson Vale plain (plain_kingson_vale, about 200 by 300 px including the gorge), larger than its three roster states. Keep the whole vale, or claim only the valley floor?' },
-  { id: 'P-09', realms: [], question: 'Ten wild lands are left unowned (Mount Ergo, Mount Argul, the Reeto caves, the high Melty glaciers, the Kherith Isles, the Abyss, the Lustras Hills, the Herrodon crest, the heart of the Fallen Forest, the high snows of the Magic Mountains); every one is proposed in its dossier, and whether the game accepts ownerless states is still to be verified in the Linux run (ADR 0069). Keep them unowned, or give each to the realm that borders it as the old map did?' },
-  { id: 'P-10', realms: [], question: 'Realm sizes follow the roster\'s stated extent where it gives a state count and the old map\'s state count otherwise (WEIGHT); in regions where the roster states fewer states than the land holds (the Magical Lands most of all) the realms grow larger than their extent, or the wild lands must grow. Accept, or state extents for the remaining realms?' },
-  { id: 'P-12', realms: ['ELD'], question: 'The roster puts Eldafaen on the southern rift shore and its Archive at the southern end of the rift coast; the old map\'s seat and the drawn Endelond label lie in the north-east of the Magical Lands by the Fallen Forest. The seat follows the roster (south of the Rift Narrows). Which is right, and is Endelond a separate part?' },
-  { id: 'P-13', realms: ['SEI', 'WND', 'SNT', 'HLN', 'LEN', 'FNG'], question: 'The Triton realms without sites sit on the islands the drawing labels or, where it does not, on the islands the old map gave them: the Seite Islands on the long isle under their label, the Windy Lands on the south of Raerby\'s arc, Santon on the outer western arc, Halenor on the storm isle south of Kilos, the Lens on the narrow isle east of Adel, Fineger on the northernmost isle. Agree?' },
-  { id: 'P-11', realms: ['MAG', 'YAV', 'ANE'], question: 'Not placed as wild land: the Lost Lands (the drawn Lost and Filion labels lie where Andos Enda\'s seat stands), Dragon Mountain\'s summit (the roster gives Yavieth the mountain), the dune sea (Wahatud\'s oases), the Plutondo Dunes (Rhachia\'s seat stands in them), the Cursed Square (a reef on the water) and the Dark Lands\' Death Islands (no land in the model). Agree?' },
+  { id: 'Q-50', realms: ['YEL'], question: 'Yeldenne\'s roster capital is Simoto, the model\'s site_yeldenne_landing on the Gulf of Minnolomak, about 400 px from the Castle of Yeldenne and the valley of Mp\'E it is meant to serve; a one-state realm cannot hold both. The site stands on water as the import reads the land, so the seat is the nearest land, 63 px south-west of it. Should the landing move below the castle, or the realm\'s seat move to the valley?' },
+  { id: 'Q-51', realms: ['LER'], question: 'Lerendor\'s North (decision K49) is seeded in the drawn snow country (Lerenwaith); Sonargur lies on the island\'s south coast with Tolvael, the Heodwa Lands, Hrakbrund and Mustnom between. The map tool joins a realm\'s pieces on one landmass by a corridor, which will cut through those realms. Accept the corridor, or make Lerendor\'s North a separate realm under the same crown?' },
+  { id: 'Q-52', realms: ['LER'], question: 'The Low-ness Islands and Ferlinon\'s pine hills (roster extent) have no model feature; the old map\'s Low-ness state projects onto the drawn island of Tolhon. Not placed: where are they?' },
+  { id: 'Q-53', realms: ['PRN'], question: 'The drawing labels Pornyior beside Argon (now Mount Argul); the roster says "the slopes below Mount Ergo". The seat follows the drawing. Which mountain?' },
+  { id: 'Q-54', realms: ['IHU', 'SOY'], question: 'The model puts Ossi Luni (former Hengyang, Soyano\'s) on the same island as Hol\'s Great Volcano (Ihuy\'s seat). One owner per island gives it to Ihuy; Soyano\'s seat Ileslia is on the northernmost Sun isle (land_island_023). Agree?' },
+  { id: 'Q-55', realms: ['OLE', 'HAL', 'MIR'], question: 'The drawing writes Gelbus and Luminor (Olen) on the lowland east of Mirolon, which the model makes part of the eastern mainland (land_eastern_mainland), so Olen, an Ember Lands realm, stands alone on the East and South Lands\' landmass (the olen_lowland barrier keeps it out of the Sun Desert and the East Lands beyond). Halia\'s salt coast stands on the arm of the Mirolon peninsula east of Miherta\'s tongue, on the central mainland with Mirolon. Keep Olen on that lowland, or move it to an isle off Mirolon\'s south coast?' },
+  { id: 'Q-56', realms: ['HIR', 'TIR'], question: 'Hirolon claims the crests of its proposed ring (the Hiloff Rim from Hirolon Head to the Hilorn mouth, and the Grano; hirolon.md 2.2) and Tirlan grows inside it from Tirbur at the Hilorn\'s head-streams. Accept the ring as Hirolon\'s fixed land?' },
+  { id: 'Q-57', realms: ['KIN'], question: 'Kingson claims the model\'s whole Kingson Vale plain (plain_kingson_vale, about 200 by 300 px including the gorge), larger than its three roster states. Keep the whole vale, or claim only the valley floor?' },
+  { id: 'Q-58', realms: ['ZOL', 'HRR', 'ANE'], question: 'Ten wild lands are left unowned (Mount Ergo, Mount Argul, the Reeto caves, the high Melty glaciers, the Kherith Isles, the Abyss, the Lustras Hills, the Herrodon crest, the heart of the Fallen Forest, the high snows of the Magic Mountains); every one is proposed in its dossier, and whether the game accepts ownerless states is still to be verified in the Linux run (ADR 0069). Where a wild land meets a realm\'s claim the claim wins: Zol\'s Mistake\'s claim (the roster\'s "Edvoid\'s Mistake" coast, which the model\'s zone puts on the Magical Lands\' northern tip at about x 3555 to 3645, y 868 to 892) cuts the eastern end of the Herrodon crest. Keep them unowned, or give each to the realm that borders it as the old map did; and is that northern tip Zol\'s?' },
+  { id: 'Q-59', realms: [], question: 'Realm sizes follow the roster\'s stated extent where it gives a state count and the old map\'s state count otherwise (WEIGHT); in regions where the roster states fewer states than the land holds (the Magical Lands most of all) the realms grow larger than their extent, or the wild lands must grow. Accept, or state extents for the remaining realms?' },
+  { id: 'Q-60', realms: ['MAG', 'YAV', 'ANE'], question: 'Not placed as wild land: the Lost Lands (the drawn Lost and Filion labels lie where Andos Enda\'s seat stands), Dragon Mountain\'s summit (the roster gives Yavieth the mountain), the dune sea (Wahatud\'s oases), the Plutondo Dunes (Rhachia\'s seat stands in them), the Cursed Square (a reef on the water) and the Dark Lands\' Death Islands (no land in the model). Agree?' },
+  { id: 'Q-61', realms: ['ELD'], question: 'The roster puts Eldafaen on the southern rift shore and its Archive at the southern end of the rift coast; the old map\'s seat and the drawn Endelond label lie in the north-east of the Magical Lands by the Fallen Forest. The seat follows the roster (south of the Rift Narrows). Which is right, and is Endelond a separate part?' },
+  { id: 'Q-62', realms: ['SEI', 'WND', 'SNT', 'HLN', 'LEN', 'FNG'], question: 'The Triton realms without sites sit on the islands the drawing labels or, where it does not, on the islands the old map gave them: the Seite Islands on the long isle under their label, the Windy Lands on the south of Raerby\'s arc, Santon on the outer western arc, Halenor on the isle by the Kilos Sound (land_island_059), the Lens on the narrow isle east of Adel, Fineger on the northernmost isle. Agree?' },
 ]);
-// What the import's own reading of the drawing does that the canon does not; for the map lead, not the owner.
+// What the import's reading of the drawing does that the model does not, measured on the land of commit 95324a05
+// (annotations force the model's land and sea outside a 6-px coast band); for the map lead, not the owner.
 export const IMPORT_OBSERVATIONS = Object.freeze([
-  'The West Lands and the Cold Lands do not touch: the drawing\'s sheets leave sea between Holdon\'s coast and the Gunwyn Downs (no land at y 940 between x 500 and 1400), while the model joins them by the neck (land_western_mainland). The Coldor Channel is also read as water between the Cold Lands and the Yeti shelf.',
-  'The Magical Lands sheet ends near x 3830: a strip of open sea (x 3815 to 3830), a pencil-line strip read as land (x 3831 to 3843, y 1100 to 1700) and sea again split the rift coast (the Mushroom Forest and the Rift Narrows) from the rest of the Magical Lands, which the model keeps as one land_central_mainland.',
-  'The central and eastern mainlands touch through Mirolon\'s eastern lowland (about x 3450 to 3700, y 1880 to 2000), and the Nether\'s eastern tip touches the Sun Desert\'s western coast near (3240, 2400); with the Nether Sound read as land, the Ember Lands island, the Nether and the East and South Lands form one landmass. The barriers zilin_marches and ember_isles and the Nether\'s claim keep the regions apart.',
-  'Lettering in the sea is read as land, for example the drawn "Ocean of Edvoid" between x 3260 and 3640 at y 660 to 700 north of the Magical Lands.',
-  'The workspace\'s common/country_tags holds only the 19 October world\'s 305 old Y tags (00_zin_countries.txt) and the dynamic tags; the roster\'s 156 tags are written by the mod\'s build to common/country_tags/01_zin_realms.txt (tools/content/modules/countries.mjs), which is not in the tree now. Until the build has written it, the tool refuses every realm (MAP_WORLD_REALM_TAG_UNKNOWN).',
+  'Every landmass the realms stand on matches the model\'s lands: the West and Cold Lands are one land at the neck, the rift coast belongs to the Central Mainland, and the Ember Lands island, the Nether and the East and South Lands are three separate lands.',
+  'The model\'s island land_island_009 reads as two pieces (the drawn passage between Pollos and Benan): Pollos and Benan stand on the northern piece, Nondondor on the southern. Each piece holds a seat, so no realm is cut off.',
+  'Mirolon\'s eastern lowland, where the drawing writes Olen, is part of the eastern mainland in the model and the import, not of the Mirolon peninsula (owner question Q-55).',
+  'Three capital sites stand on water or within 3 px of the coast as the import reads the land and are moved to the nearest land: Yeldenne\'s landing (63 px), Hunhun (4 px) and Mora (3 px). The model\'s site positions may want the same correction.',
+  'The workspace\'s common/country_tags holds only the 19 October world\'s 305 old Y tags (00_zin_countries.txt) and the dynamic tags; the roster\'s 156 tags are written by the mod\'s build to common/country_tags/01_zin_realms.txt (tools/content/modules/countries.mjs). Until the build has written it, the tool refuses every realm (MAP_WORLD_REALM_TAG_UNKNOWN).',
 ]);
 
 // ---------------------------------------------------------------------------------------------------- helpers
@@ -376,10 +382,11 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
   const zoneAt = (x, y) => world.zones[Math.min(ZONE_GRID.h - 1, Math.floor(y / ZONE_GRID.cell)) * ZONE_GRID.w + Math.min(ZONE_GRID.w - 1, Math.floor(x / ZONE_GRID.cell))];
   const inEdge = (x, y) => x < PLACE.edgeClearPx.x || x >= W - PLACE.edgeClearPx.x || y < PLACE.edgeClearPx.y || y >= H - PLACE.edgeClearPx.y;
   const safeAt = (x, y) => x >= 0 && y >= 0 && x < W && y < H && world.safe[y * W + x] === 1 && !inEdge(x, y);
-  // landmasses: components of the surface with seams up to 2 x componentJoinPx closed (full resolution)
-  const comps = components(dilateBox(world.surface, PLACE.componentJoinPx, W, H), W, H);
+  // landmasses: 4-connected components of the land the import reads (full resolution); a strait of any width splits
+  const comps = components(world.surface, W, H);
   const compAt = p => comps.labels[Math.floor(p[1]) * W + Math.floor(p[0])];
   const landAt = p => { const k = world.landIndex[Math.floor(p[1]) * W + Math.floor(p[0])]; return k >= 0 ? world.geography.lands[k].id : null; };
+  const wildLandIds = new Set(WILD_LANDS.filter(w => w.land).map(w => w.land)); // a wild island takes no seed
   const landPixels = new Map();
   for (let i = 0; i < world.landIndex.length; i++) { const k = world.landIndex[i]; if (k >= 0) { const id = world.geography.lands[k].id; landPixels.set(id, (landPixels.get(id) ?? 0) + 1); } }
 
@@ -409,17 +416,18 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
     for (let c = 0; c < m.length; c++) if (world.zones[c] === zoneName && world.zoneLand[c]) m[c] = 1;
     return m;
   };
-  const bandPolygons = ({ range, from, to, radiusPx }) => {
+  const bandMaskOf = ({ range, from, to, radiusPx }) => {
     const f = feature(range);
     const p = f.path.slice(from ?? 0, to === undefined ? undefined : to + 1);
     const r = Math.max(POLYGON.bandMinRadiusPx, radiusPx ?? f.halfWidthPx);
-    return polygonFromMask(bandMask(p, r, ZONE_GRID.w, ZONE_GRID.h, ZONE_GRID.cell));
+    return bandMask(p, r, ZONE_GRID.w, ZONE_GRID.h, ZONE_GRID.cell);
   };
-  const areaPolygons = (id, erodePx = 0) => {
-    let m = gridMaskOfRings(feature(id).rings);
-    if (erodePx > 0) m = erodeBox(m, Math.round(erodePx / ZONE_GRID.cell), ZONE_GRID.w, ZONE_GRID.h);
-    return polygonFromMask(m);
+  const bandPolygons = band => polygonFromMask(bandMaskOf(band));
+  const areaMaskOf = (id, erodePx = 0) => {
+    const m = gridMaskOfRings(feature(id).rings);
+    return erodePx > 0 ? erodeBox(m, Math.round(erodePx / ZONE_GRID.cell), ZONE_GRID.w, ZONE_GRID.h) : m;
   };
+  const areaPolygons = id => polygonFromMask(areaMaskOf(id));
   const landPolygons = id => polygonFromMask(gridMaskOfRings(feature(id).rings));
 
   const claims = new Map(), claimNotes = new Map();
@@ -436,14 +444,21 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
     }
     claims.set(tag, polys); claimNotes.set(tag, notes);
   }
-  const unowned = [], wildReport = [];
+  // Wild lands are built as masks on the zone grid; land a realm claims is cut out of them (a claim is the roster's or
+  // the canon's fixed land, so it wins over a dossier's proposed wild land), with WILD.claimClearancePx between them.
+  const claimMask = gridMaskOfRings([...claims.values()].flat());
+  const claimGuard = dilateBox(claimMask, Math.ceil(WILD.claimClearancePx / ZONE_GRID.cell), ZONE_GRID.w, ZONE_GRID.h);
+  const wildReport = [];
   for (const wl of WILD_LANDS) {
-    let p = [];
-    if (wl.circle) p = [circleRing(feature(wl.circle.feature).point, wl.circle.radiusPx)];
-    else if (wl.band) p = bandPolygons(wl.band);
-    else if (wl.area) p = areaPolygons(wl.area.id, wl.area.erodePx ?? 0);
-    else if (wl.land) p = landPolygons(wl.land);
-    wildReport.push({ id: wl.id, name: wl.name, polygons: p, basis: wl.basis });
+    let m;
+    if (wl.circle) m = gridMaskOfRings([circleRing(feature(wl.circle.feature).point, wl.circle.radiusPx)]);
+    else if (wl.band) m = bandMaskOf(wl.band);
+    else if (wl.area) m = areaMaskOf(wl.area.id, wl.area.erodePx ?? 0);
+    else if (wl.land) m = dilateBox(gridMaskOfRings(feature(wl.land).rings), Math.ceil(WILD.landCoverPx / ZONE_GRID.cell), ZONE_GRID.w, ZONE_GRID.h);
+    let cut = 0;
+    for (let c = 0; c < m.length; c++) if (m[c] && claimGuard[c]) { m[c] = 0; cut++; }
+    const p = polygonFromMask(m);
+    wildReport.push({ id: wl.id, name: wl.name, polygons: p, basis: wl.basis, ...(cut ? { cutByClaimsPx: cut * ZONE_GRID.cell ** 2 } : {}), ...(wl.land ? { land: wl.land } : {}) });
   }
   const regionOf = tag => realms.find(r => r.tag === tag).region;
   const exclusionsFor = region => BARRIERS.flatMap(b => b.sides.filter(s => s.keepOut.includes(region)).map(s => ({ barrier: b.id, name: s.name, polygon: s.polygon })));
@@ -591,7 +606,7 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
       // only a separate land of the model: a strip the drawing's reading splits off a mainland (a sheet edge, a pencil
       // line) is not an island of the realm's
       const seedLand = landAt(sn.p);
-      if (!seedLand || seedLand === landAt(cap) || (landPixels.get(seedLand) ?? 0) < PLACE.seedMinLandPx) continue;
+      if (!seedLand || seedLand === landAt(cap) || (landPixels.get(seedLand) ?? 0) < PLACE.seedMinLandPx || wildLandIds.has(seedLand)) continue;
       if (Math.hypot(sn.p[0] - cap[0], sn.p[1] - cap[1]) > PLACE.seedMaxFromCapitalPx) {
         records.get(r.tag).conflicts.push(`Old state ${st.id} projects to (${sn.p.join(', ')}), ${round(Math.hypot(sn.p[0] - cap[0], sn.p[1] - cap[1]))} px from the capital, beyond ${PLACE.seedMaxFromCapitalPx} px; the old map's land there does not match the drawing, so no seed is added.`);
         continue;
