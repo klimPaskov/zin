@@ -1,0 +1,33 @@
+{
+  "source": "docs/specs/04_mechanics/dark_lands.md sections 9 (the northern strait and Zol's dead) and 10 (when Volgan's body breaks); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_dark.80, .82); docs/design/alternate_history.md B23, B34 and SL-28. The mechanic (modules/mech_dark.mjs) fires both events once (zin_dark_shore_warned, zin_dark_south_silent). Every line of text is proposed wording in the accepted voice; Zol does not appear in person.",
+  "namespace": "zin_dark",
+  "file": "events/zin_dark_war.txt",
+  "realms": { "GOL": "Goldoroth" },
+  "events": [
+    {
+      "id": 80, "kind": "country", "title": "Dead on the Dark Shore", "picture": "zol_rising", "requires": ["zin_zol_rising"],
+      "note": "To every Dark Lands country with a shore on the northern strait or a coast on the Kusmeel when the dead rise (zin_dark_on_zol_rising, on zin_zol_rising). AI: watch 70, leave it to the North 30 (section 9).",
+      "desc": "The fishermen of the northern strait will not put out after dark any more, because the boats that did came back empty or did not come back. Across the water the dead of the black north are on the move in their thousands, and some have already been found walking on our side, in the shallows below the cliffs, as though they had crossed the strait along the bottom.",
+      "options": [
+        { "key": "a", "text": "Watch the shore.", "ai": "base = {{n:shore.watch_ai}}",
+          "effect": "add_timed_idea = { idea = zin_dark_watch_the_shore days = {{n:shore.watch_days}} }" },
+        { "key": "b", "text": "The dead are the North's trouble.", "ai": "base = {{n:shore.ignore_ai}}", "tip": "Our court keeps its authority for other quarrels.",
+          "effect": "add_political_power = {{n:shore.ignore_authority}}" }
+      ]
+    },
+    {
+      "id": 82, "kind": "country", "title": "The South Falls Silent", "picture": "volgan_broken", "requires": ["zin_volgan_body_destroyed"],
+      "note": "To every Dark Lands country that was sworn to the south (pact 3, Volgan's subject, or remembered by zin_dark_was_sworn) when Volgan's body breaks (zin_dark_on_body_destroyed). Making peace is white peace with Goldoroth and with every Dark Sea Accord realm at war with it. AI: peace 70, fight 30 (section 10).",
+      "desc": "The body of Volgan has been broken in the Middle Lands, and the voice from Nafeher that held the sworn holds to their oaths has fallen silent. Our chiefs who swore to the south now find that nobody answers their messengers, and the clans who never liked the oath are asking loudly in the hall what it has bought them.",
+      "options": [
+        { "key": "a", "text": "Make our own peace.", "ai": "base = {{n:silent.peace_ai}}", "tip": "We make peace with Cocanoor and with every realm of the Dark Sea Accord that is at war with us.",
+          "effect": "if = {\nlimit = {\ncountry_exists = {{GOL}}\nhas_war_with = {{GOL}}\n}\nwhite_peace = {{GOL}}\n}\nevery_country = {\nlimit = {\nhas_war_with = ROOT\nzin_dark_is_accord_member = yes\n}\nwhite_peace = ROOT\n}" },
+        { "key": "b", "text": "Fight on.", "ai": "base = {{n:silent.fight_ai}}" }
+      ]
+    }
+  ],
+  "numbers": {
+    "shore": { "watch_ai": 70, "ignore_ai": 30, "watch_days": 365, "ignore_authority": 25 },
+    "silent": { "peace_ai": 70, "fight_ai": 30 }
+  }
+}

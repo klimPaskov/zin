@@ -78,41 +78,6 @@
    }
   },
   {
-   "id": "events_war",
-   "owner": "the war and story events the mechanic slices fire but leave to the events engineers (zin_east, zin_elves, zin_leren, zin_lerendor, zin_dark, zin_sun; each module note lists its ids)",
-   "spec": "docs/specs/06_events/03_war_of_the_last_crowns.md and the owning mechanic specs",
-   "names": {
-    "event": [
-     "zin_dark.80",
-     "zin_dark.82",
-     "zin_east.41",
-     "zin_east.42",
-     "zin_east.43",
-     "zin_east.44",
-     "zin_east.45",
-     "zin_east.46",
-     "zin_east.50",
-     "zin_east.51",
-     "zin_east.52",
-     "zin_east.60",
-     "zin_elves.51",
-     "zin_elves.70",
-     "zin_elves.71",
-     "zin_elves.9"
-    ]
-   }
-  },
-  {
-   "id": "world",
-   "owner": "the magic and world systems module (zin_world ids 30 to 69; the world tension module, modules/world_tension.mjs, defines ids 1 to 29)",
-   "spec": "docs/specs/03_gameplay/04_magic_and_world_systems.md",
-   "names": {
-    "event": [
-     "zin_world.45"
-    ]
-   }
-  },
-  {
    "id": "magic_world",
    "owner": "the magic and world systems module",
    "spec": "docs/specs/03_gameplay/04_magic_and_world_systems.md",
@@ -162,12 +127,7 @@
    "names": {
     "effect": [
      "zin_diplo_grant_cb",
-     "zin_diplo_lift_refusal",
      "zin_lost_cause_add_strength"
-    ],
-    "event": [
-     "zin_diplo.23",
-     "zin_diplo.31"
     ]
    }
   },

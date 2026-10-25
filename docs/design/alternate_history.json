@@ -2929,7 +2929,8 @@
    ],
    "problem": "The owner corrected the canon on 24 October 2026: Zol does not appear in the war; Kusven (formerly Edvoid), his most loyal servant and a Great Spirit, breaks the blue sword, is wounded by Eindil with a shard and withdraws when Lorien and ancient spirits die. The data still has the Old God taking a shape, a \"Wounded, Not Slain\" Zol, a decision that sends Zol himself, a news title \"The Old God Comes Forth\", Chronicle lines \"The Old God came forth\", and a contract flag that says Zol manifested bodily.",
    "fix": "Re-design as Kusven (section 9): flags `zin_kusven_forth`, `zin_kusven_withdrawn`, `zin_kusven_wounded`; character `zin_kusven` (Zol's field marshal, unit leader only; no country leader role, S4 stands); effects `zin_zol_send_kusven`, `zin_kusven_withdraw`; trigger `zin_kusven_can_come_forth`; ideas `zin_zol_kusven_in_field`, `zin_zol_kusven_wounded`; template \"Kusven's Host\"; retire the old names in the N16 retired list so `checks/names.mjs` fails on them. Text: \"Kusven, Zol's most loyal servant\"; \"Zol's victory\" where the stake is named.",
-   "owner": "Zol's Mistake; events; contract"
+   "owner": "Zol's Mistake; events; contract",
+   "statusWiring": "retired 25 October 2026 (story wiring completion): zin_zol_manifested and zin_zol_withdrawn are no longer set; every reader (the focus designs and registries, the journey, the Afrit return, the crown and world events, the elves, Volgan, the pictures) reads zin_kusven_forth and zin_kusven_withdrawn, which zin_kusven_withdraw now sets on every route that ends the war of the north. The Chronicle cost line reads \"The dead of the black north were driven back, not destroyed.\""
   },
   {
    "id": "SL-15",
@@ -3041,7 +3042,8 @@
    ],
    "problem": "A Western Crown in Parim holds on `zin_west_holds_parim`, which nothing sets (the West sets `zin_west_parim_taken` and `zin_west_throne_claimed`).",
    "fix": "Make it a scripted trigger in the Western Crossing slice: a West Lands country (or its subject) controls `zin_is_site_parim` and `zin_west_throne_claimed` is set or no Aenor realm exists.",
-   "owner": "Western Crossing"
+   "owner": "Western Crossing",
+   "statusWiring": "fixed 25 October 2026 (story wiring completion): the Chronicle's Western Crown line (events_crown_chronicle.json) tests the trigger zin_west_holds_parim; the wiring check reports no trigger tested as a flag."
   },
   {
    "id": "SL-20",
@@ -3126,7 +3128,8 @@
    ],
    "problem": "Story roles are fixed to tags; most slices skip a beat when the tag is gone, some silently (no successor realm takes the role).",
    "fix": "The role registry of section 8 (R01 to R17) resolves every role at fire time and fires `zin_realm.80` when a role passes.",
-   "owner": "historical path"
+   "owner": "historical path",
+   "statusWiring": "switched where tags stood for a role 25 October 2026 (story wiring completion): the Grey Ford truce, its feud, its peace and its raids (mech_crossing.mjs) act on zin_role_grey_ford_a and _b, with Gunwyn and Girdon only before the registry's first resolution. The journey's hosts and the Parim realm stay the owners' pickers, which the registry mirrors (its first step reads them), and the remaining fixed tags are the subjects of their own mechanics (Lerendor's strait, Mirolon's proof, Yeldenne's watch, Gala's court); docs/plans/story/wiring_completion_handoff.md gives the reasons and an owner question."
   },
   {
    "id": "SL-24",
@@ -3281,7 +3284,8 @@
    ],
    "problem": "The mechanic slices fire the narrative events of 06_events and expect \"the events slice\" to write them; no module owns them. Each firing logs an error and does nothing; where the option or immediate block carries the beat's effect (SL-04, SL-05, SL-07, SL-12, SL-13, SL-15, SL-16) the chain hangs or silently diverges. The build stopped on 50 dangling names on 24 October 2026 at 11:43 (`%TEMP%/zin-build0.err`).",
    "fix": "New module `tools/content/modules/events_mech.mjs` with one data file per namespace; build check `checks/story_wiring.mjs`: every fired id is defined.",
-   "owner": "mechanic events (new)"
+   "owner": "mechanic events (new)",
+   "statusWiring": "fixed for every owner 25 October 2026 (story wiring completion): events_mech_war.mjs writes zin_elves.9, .51, .70, .71, zin_east.41 to .46, .50 to .52, .60, zin_dark.80, .82, zin_diplo.23, .31 and zin_world.45 (data/events_mech_elves.json, _east, _dark, _diplo, _world); the wiring check finds no fired event without a definition, and data/story_wiring.json enforces every owner (enforceAll)."
   },
   {
    "id": "SL-29",
@@ -3299,7 +3303,8 @@
    ],
    "problem": "Nothing fails the build on a global flag read and never set, a scripted trigger tested as a flag (SL-06), or a country flag read as global (SL-18, SL-20). 25 global flags are read and never set in the staged tree.",
    "fix": "`checks/story_wiring.mjs`: read-never-set flags fail unless listed in an allowance with the owner that will set them; trigger-as-flag and scope mismatches always fail.",
-   "owner": "builder checks"
+   "owner": "builder checks",
+   "statusWiring": "enforced for every owner 25 October 2026 (story wiring completion): enforceAll is set in data/story_wiring.json, so any fired-undefined event, unset flag, flag-scope mismatch, trigger read as an unset flag or unwrapped per-power rule fails the build; the one allowance left is zin_aenor_regency_endures (Afrit, Aenor and Eindil)."
   },
   {
    "id": "SL-30",
@@ -3321,7 +3326,8 @@
    ],
    "problem": "Owners test per-power options directly, so DEFAULT does not follow the path rule everywhere (R1).",
    "fix": "Same build check as SL-08.",
-   "owner": "Aenor; Cold Lands; Afrit"
+   "owner": "Aenor; Cold Lands; Afrit",
+   "statusWiring": "fixed for every owner 25 October 2026 (story wiring completion): zin_eindil_historical reads zin_rules_ai_branch_eindil_historical and zin_west_historical reads zin_rules_ai_branch_west_historical; no per-power rule is tested outside zin_rules.txt."
   },
   {
    "id": "SL-31",

@@ -56,7 +56,7 @@ export function writeContent(V) {
   const musters = [], court = [], watch = [];
   const schedule = `check_variable = { var = ${ST} value = zin_volgan_muster_schedule compare = less_than }`;
   const musterAi = ai(0, [{ add: 60, when: `has_political_power > ${N('ai.muster_pp') - 1}\n${schedule}` }]);
-  musters.push(K.decision({ id: 'zin_dominion_wake_old_barrows', icon: art('grave_field'), allowed: onlyVol, available: recent('zin_dominion_barrows_wait'), cost: N('muster.barrows_cost'), cooldown: N('muster.barrows_cd'),
+  musters.push(K.decision({ id: 'zin_dominion_wake_old_barrows', icon: art('grave_field'), allowed: onlyVol, available: 'hidden_trigger = { has_country_flag = zin_volgan_musters_open }', cost: N('muster.barrows_cost'), cooldown: N('muster.barrows_cd'),
     complete: `${call('zin_volgan_add_dominion_strength', { value: N('muster.barrows_strength') })}\nadd_manpower = ${N('muster.barrows_levies')}\n${call('zin_volgan_add_veil', { value: N('muster.barrows_veil') })}\nzin_volgan_muster_done = yes`, ai: musterAi }));
   musters.push(K.decision({ id: 'zin_dominion_muster_beneath_the_storms', icon: art('storm_veil'), allowed: onlyVol, available: `${ge(ST, N('muster.storms_at'))}\n${ge(VL, N('muster.storms_veil_floor'))}`, cost: N('muster.storms_cost'), cooldown: N('muster.storms_cd'),
     complete: `${call('zin_volgan_add_dominion_strength', { value: N('muster.storms_strength') })}\nzin_volgan_muster_done = yes`, ai: musterAi }));

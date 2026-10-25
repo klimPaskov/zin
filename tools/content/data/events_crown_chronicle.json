@@ -77,7 +77,7 @@
  ],
  "outcomes": [
   { "key": "golden", "if": ["!gflag:zin_golden_king_dead", "!gflag:zin_golden_king_exiled"], "text": "\n§YThe Golden Court endures§!: the Golden King still reigns." },
-  { "key": "western", "if": ["gflag:zin_west_holds_parim"], "text": "\n§YA western crown in Parim§!: western banners hold the city." },
+  { "key": "western", "if": ["zin_west_holds_parim"], "text": "\n§YA western crown in Parim§!: western banners hold the city." },
   { "key": "strait", "if": ["gflag:zin_leren_strait_supremacy", { "any": "any_country", "limit": ["zin_leren_holds_strait"] }], "text": "\n§YMaster of the Strait§!: Lerendor holds both shores." },
   { "key": "eastern", "if": ["gflag:zin_east_united"], "text": "\n§YOne king in the East§!: the caravan roads answer to one crown." }
  ],
@@ -85,7 +85,7 @@
  "cost": {
   "dead_names": [ { "flag": "zin_lorien_dead", "name": "Lorien" }, { "flag": "zin_varner_dead", "name": "Varner" }, { "flag": "zin_horos_dead", "name": "Horos" }, { "flag": "zin_golbran_dead", "name": "Golbran" } ],
   "dead_tail": "did not live to see it.",
-  "zol": " The Old God was driven back, not slain.",
+  "zol": " The dead of the black north were driven back, not destroyed.",
   "volgan": " Volgan's body was broken; what remains of him, no one can say.",
   "necklace": " The king wears the Necklace of the Abyss, and its price is not yet known."
  }

@@ -58,7 +58,9 @@ export async function buildWesternCrossing(staged, ctx = {}) {
   for (const n of ['zin_rules_is_historical']) dep(n, 'scripted trigger', 'foundation rules (rules.mjs)');
   T('zin_west_is_western', 'has_country_flag = zin_region_west_lands');
   dep('zin_region_west_lands', 'country flag', 'economy slice (set on startup)');
-  T('zin_west_historical', L('OR', 'has_game_rule = { rule = zin_rule_west_route option = historical }', L('AND', 'has_game_rule = { rule = zin_rule_west_route option = DEFAULT }', 'zin_rules_is_historical = yes')));
+  // The route rule through its generated wrapper (SL-30): historical, or DEFAULT under the historical path.
+  dep('zin_rules_ai_branch_west_historical', 'scripted trigger', 'foundation rules (rules.mjs)');
+  T('zin_west_historical', 'zin_rules_ai_branch_west_historical = yes');
   T('zin_west_in_crossing', L('OR', 'has_country_flag = zin_west_pledged', L(LEADER, 'tag = PREV')));
   T('zin_west_is_leader', 'has_variable = global.zin_west_convener', L(LEADER, 'tag = PREV'));
   T('zin_west_council_can_meet', notFlag('zin_west_grey_ford_war'), L('OR', gflag('zin_eindil_war_king'), gflag('zin_west_truce_permanent'), 'date > 1751.3.1'));
@@ -104,6 +106,16 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     'set_temp_variable = { zin_arg_value = 0 }');
   E('zin_west_add_strain', 'add_to_variable = { global.zin_west_strain = zin_arg_value }', clampG('zin_west_strain'), 'set_temp_variable = { zin_arg_value = 0 }');
 
+  // The Grey Ford pair is the role registry's (SL-23; historical_path.mjs R05, zin_role_grey_ford_a and _b): Gunwyn and Girdon while they
+  // qualify, then the West Lands crowns that take their place on the ford. Before the registry's first resolution the two tags stand in.
+  // pair(body) writes the body once for the registry's pair and once for the tags; body(A, B, isB, isEither) gets the two scopes, the test
+  // that the scope is the second crown and the test that it is either crown.
+  const pair = body => [
+    L('if', 'limit = { has_event_target = zin_role_grey_ford_a has_event_target = zin_role_grey_ford_b }',
+      ...body('event_target:zin_role_grey_ford_a', 'event_target:zin_role_grey_ford_b', 'has_country_flag = zin_role_holder_grey_ford_b',
+        'OR = { has_country_flag = zin_role_holder_grey_ford_a has_country_flag = zin_role_holder_grey_ford_b }')),
+    L('else', ...body(T_.gunwaith, T_.girdon, `original_tag = ${T_.girdon}`, `OR = { original_tag = ${T_.gunwaith} original_tag = ${T_.girdon} }`))];
+  for (const f of ['zin_role_holder_grey_ford_a', 'zin_role_holder_grey_ford_b']) dep(f, 'country flag', 'historical path (historical_path.mjs, role R05)');
   // the feud
   const feud = (att, def) => L('start_border_war', 'change_state_after_war = no', 'combat_width = 80', 'minimum_duration_in_days = 60',
     L('attacker', `state = global.${att}`, 'num_provinces = 4', 'on_win = zin_west.23'), L('defender', `state = global.${def}`, 'num_provinces = 4', 'on_win = zin_west.23'));
@@ -113,12 +125,12 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     '# The truce breaks (truce at 0 after 1749.3.1, the historical date, or an end-the-truce decision): the feud at the ford starts as a border war. Gunwaith attacks unless Girdon broke it by its own choice.',
     L('if', `limit = { ${notFlag('zin_west_truce_broken')} }`,
       'set_global_flag = zin_west_truce_broken', 'set_global_flag = zin_west_grey_ford_war',
-      L('if', `limit = { original_tag = ${T_.girdon} NOT = { zin_west_historical = yes } }`, 'set_global_flag = zin_west_feud_girdon_attacked'),
-      ...[[T_.gunwaith, T_.girdon], [T_.girdon, T_.gunwaith]].map(([a, b]) => L(a, `remove_opinion_modifier = { target = ${b} modifier = zin_opinion_grey_ford_truce }`,
-        `add_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood }`, `add_dynamic_modifier = { modifier = zin_cb_broken_truce days = 730 scope = ${b} }`)),
+      ...pair((A, B, isB) => [L('if', `limit = { ${isB} NOT = { zin_west_historical = yes } }`, 'set_global_flag = zin_west_feud_girdon_attacked'),
+        ...[[A, B], [B, A]].map(([a, b]) => L(a, `remove_opinion_modifier = { target = ${b} modifier = zin_opinion_grey_ford_truce }`,
+          `add_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood }`, `add_dynamic_modifier = { modifier = zin_cb_broken_truce days = 730 scope = ${b} }`)),
+        L(A, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.22 }')), L(B, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.22 }'))]),
       L('if', `limit = { ${gflag('zin_west_feud_girdon_attacked')} }`, feud('zin_site_winter_ford', 'zin_site_three_oaths')),
       L('else', feud('zin_site_three_oaths', 'zin_site_winter_ford')),
-      L(T_.gunwaith, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.22 }')), L(T_.girdon, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.22 }')),
       L('every_country', 'limit = { zin_west_is_western = yes }', 'news_event = { id = zin_west.25 }'),
       'set_temp_variable = { zin_arg_value = -10 }', 'zin_west_add_unity = yes'));
   dep('zin_opinion_grey_ford_truce', 'opinion modifier', 'start situation (01_start_situation.md)'); dep('zin_cb_broken_truce', 'dynamic modifier (casus belli)', 'diplomacy slice (03_diplomacy_and_factions.md)');
@@ -130,15 +142,15 @@ export async function buildWesternCrossing(staged, ctx = {}) {
       L('else', cancelFeud('zin_site_three_oaths', 'zin_site_winter_ford')),
       L('if', 'limit = { check_variable = { zin_arg_how = 1 }  }',
         'add_war_support = 0.05',
-        L('every_country', `limit = { OR = { original_tag = ${T_.gunwaith} original_tag = ${T_.girdon} } NOT = { tag = PREV } }`, 'add_stability = -0.05'),
         'set_temp_variable = { zin_arg_value = -5 }', 'zin_west_add_unity = yes',
-        L(T_.gunwaith, 'country_event = { id = zin_west.24 }'), L(T_.girdon, 'country_event = { id = zin_west.24 }')),
+        ...pair((A, B, isB, isEither) => [L('every_country', `limit = { ${isEither} NOT = { tag = PREV } }`, 'add_stability = -0.05'),
+          L(A, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.24 }')), L(B, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.24 }'))])),
       L('else_if', 'limit = { check_variable = { zin_arg_how = 2 } }'),
       L('else',
         'set_temp_variable = { zin_arg_value = 25 }', 'zin_west_add_unity = yes',
         L('every_country', 'limit = { has_idea = zin_eindil_war_kings_banner }', 'set_temp_variable = { zin_arg_value = -5 }', 'zin_west_add_grudge = yes', 'if = { limit = { has_idea = zin_west_old_claims } remove_ideas = zin_west_old_claims }'),
-        ...[[T_.gunwaith, T_.girdon], [T_.girdon, T_.gunwaith]].map(([a, b]) => L(a, `diplomatic_relation = { country = ${b} relation = non_aggression_pact active = yes }`,
-          `remove_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood }`))),
+        ...pair((A, B) => [[A, B], [B, A]].map(([a, b]) => L(a, `diplomatic_relation = { country = ${b} relation = non_aggression_pact active = yes }`,
+          `remove_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood }`)))),
       L('every_country', 'limit = { zin_west_is_western = yes }', 'news_event = { id = zin_west.26 }')),
     'set_temp_variable = { zin_arg_how = 0 }');
   dep('zin_eindil_war_kings_banner', 'idea', 'eindil_journey (mech_eindil.mjs)'); dep('zin_west_old_claims', 'idea', 'start situation (01_start_situation.md)');
@@ -353,8 +365,8 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     '# MTTH 240 days while the truce is thin: with 12 percent a month a raid falls on Gunwaith or Girdon in turn.',
     'set_temp_variable_to_random = { var = west_roll min = 0 max = 100 integer = yes }',
     L('if', `limit = { check_variable = { west_roll < ${C.raid_chance_percent} } }`,
-      L('if', `limit = { ${gflag('zin_west_raid_girdon_next')} }`, 'clr_global_flag = zin_west_raid_girdon_next', L(T_.girdon, 'country_event = { id = zin_west.21 }')),
-      L('else', 'set_global_flag = zin_west_raid_girdon_next', L(T_.gunwaith, 'country_event = { id = zin_west.21 }'))));
+      ...pair((A, B) => [L('if', `limit = { ${gflag('zin_west_raid_girdon_next')} }`, 'clr_global_flag = zin_west_raid_girdon_next', L(B, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.21 }'))),
+        L('else', 'set_global_flag = zin_west_raid_girdon_next', L(A, L('if', 'limit = { exists = yes }', 'country_event = { id = zin_west.21 }')))])));
   const addD = (v, cond) => cond ? L('if', `limit = { ${cond} }`, `add_to_temp_variable = { west_d = ${v} }`) : `add_to_temp_variable = { west_d = ${v} }`;
   E('zin_west_monthly',
     '# Drift of grudge, truce and unity; resolve; the strain of the far shore; the fleet\'s return to trade.',

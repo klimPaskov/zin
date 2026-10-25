@@ -589,7 +589,7 @@ test('Invasion: the gather, the crossing and the turn west of section 5, with th
   }
   assert(x.includes('zin_elves_is_magical_realm = yes') && x.includes('zin_east_rift_count > PREV.zin_east_rift_count') && x.includes('zin_is_site_rift_west = yes'));
   assert(x.includes('modifier = zin_cb_eastern_ambition scope = PREV days = 730') && x.includes(`modifier = zin_cb_eastern_ambition scope = ${AEN} days = 730`) && x.includes('check_variable = { zin_footholds > 2.99 }'));
-  assert(x.includes('zin_elves_on_eastern_invasion = yes') && x.includes('every_country = { news_event = { id = zin_east.43 } }') && x.includes('flag = zin_east_invasion_young days = 120'));
+  assert(x.includes('zin_elves_on_eastern_invasion = yes') && x.includes('news_event = { id = zin_east.43 }') && !x.includes('every_country = { news_event = { id = zin_east.43 } }') && x.includes('flag = zin_east_invasion_young days = 120'));
   assert(!/zin_world_add_gathering_dark/.test(allScript), 'the invasion adds nothing to the meter itself');
   const w = body(EFF, 'zin_east_turn_west');
   assert(w.indexOf('flag = zin_story_war days = 1') < w.indexOf(`declare_war_on = { target = ${AEN}`) && w.includes('set_global_flag = zin_east_turns_west') && w.includes('id = zin_east.44'));
@@ -651,7 +651,7 @@ test('After the King: clients released and indebted, refusers vindicated, the Fr
 // ------------------------------------------------------------------------------------------------ the unified East
 test('Unified East: the declaration needs dominance 50, no client, no other; the cause waits for the war or the King', () => {
   const u = body(EFF, 'zin_east_declare_united');
-  assert(u.includes('zin_east_dominance > 49.99') && u.includes('NOT = { has_country_flag = zin_afrit_eastern_client }') && u.includes('NOT = { has_global_flag = zin_east_united }') && u.includes('add_ideas = zin_east_united_crown') && u.includes('every_country = { news_event = { id = zin_east.80 } }'));
+  assert(u.includes('zin_east_dominance > 49.99') && u.includes('NOT = { has_country_flag = zin_afrit_eastern_client }') && u.includes('NOT = { has_global_flag = zin_east_united }') && u.includes('add_ideas = zin_east_united_crown') && u.includes('news_event = { id = zin_east.80 }') && !u.includes('every_country = { news_event = { id = zin_east.80 } }'));
   assert(!/zin_ending_/.test(allScript), 'no ending flag here');
   const h = body(EFF, 'zin_east_grant_high_king_cb');
   assert(h.includes('has_global_flag = zin_war_of_last_crowns') && h.includes('has_global_flag = zin_afrit_king_of_east') && h.includes('modifier = zin_cb_high_king scope = PREV days = 730') && h.includes('zin_east_lean < 0') && h.includes('zin_east_lean > 0'));

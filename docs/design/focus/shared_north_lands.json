@@ -774,7 +774,7 @@
       "y": 9,
       "days": 70,
       "prerequisite": [["beacons_on_the_capes","stand_apart_with_sonargur","keep_faith_with_parim","against_the_deathless","northern_companies"]],
-      "available": [{"or":[{"global_flag":"zin_zol_withdrawn"},{"global_flag":"zin_eindil_crowned"},{"global_flag":"zin_afrit_dead"},{"and":[{"at_war":false},{"after":"1758.3.1"}]}]}],
+      "available": [{"or":[{"global_flag":"zin_kusven_withdrawn"},{"global_flag":"zin_eindil_crowned"},{"global_flag":"zin_afrit_dead"},{"and":[{"at_war":false},{"after":"1758.3.1"}]}]}],
       "ai": {"base":100},
       "filters": ["stability"],
       "effects": [{"stability":0.1},{"remove_spirit":"north_at_war"}]

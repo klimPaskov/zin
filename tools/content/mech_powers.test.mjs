@@ -212,7 +212,7 @@ test('Elves: generated lists, the Refusal swap, the monthly runner, the Kindred,
 test('Elves: the march is closed before 1751 and the rules read through the wrapper', () => {
   const tr = text('common/scripted_triggers/zin_elves.txt');
   const march = tr.slice(tr.indexOf('zin_elves_march_allowed = {'));
-  assert(march.includes('zin_elves_date_question = yes') && march.includes('zin_zol_manifested'));
+  assert(march.includes('zin_elves_date_question = yes') && march.includes('zin_kusven_forth'));
   assert(tr.includes(`date > ${paceDate('1751.3.1', 1)}`) && tr.includes(`date > ${paceDate('1751.3.1', 1.5)}`) && tr.includes(`date > ${paceDate('1751.3.1', 0.75)}`), 'floor dates read the story pace');
   const readers = [...allScript.matchAll(/zin_rules_ai_branch_elves_march/g)].length;
   assert.equal(readers, 1, 'only zin_elves_marches_by_rule reads the march rule');

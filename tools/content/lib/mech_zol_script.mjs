@@ -511,9 +511,8 @@ export function zolScripts(D, T) {
     }`);
 
   // ---------------------------------------------------------------------------------------------- the manifestation
-  // The one coming forth of the age (section 9 of the spec, re-pointed at Kusven by alternate_history.md section 9). zin_zol_manifested is
-  // still set beside zin_kusven_forth for the readers in other slices that have not moved to the new flag yet (the contract keeps both
-  // until they have; docs/plans/story/war_side_handoff.md lists them).
+  // The one coming forth of the age (section 9 of the spec, re-pointed at Kusven by alternate_history.md section 9). zin_kusven_forth is
+  // the only flag of the moment: the retired zin_kusven_forth is no longer set, and every reader reads the Kusven flag.
   const host = `has_variable = global.zin_eindil_host\nvar:global.zin_eindil_host = { has_war_with = ${ZOL} }`;
   effects.zin_zol_send_kusven = dedent(`
     # Zol sends Kusven, his most loyal servant, onto the field. Scope: any (acts on Zol).
@@ -521,7 +520,6 @@ export function zolScripts(D, T) {
     	if = {
     		limit = { zin_kusven_can_come_forth = yes }
     		set_global_flag = zin_kusven_forth
-    		set_global_flag = zin_zol_manifested
     		set_temp_variable = { zin_arg_value = ${D.formCost.powerOnManifest} }
     		zin_zol_add_mistake_power = yes
     		set_variable = { zin_zol_convergence = 0 }
@@ -608,15 +606,15 @@ export function zolScripts(D, T) {
   effects.zin_kusven_withdraw = dedent(`
     # The war of the north ends (section 9): Kusven withdraws, wounded and not destroyed, or the Presence recedes without him.
     # zin_arg_cause: 0 Lorien's stand (news .24), 1 any other cause (news .25: the servant's strength is spent, or the Presence recedes).
-    # zin_zol_withdrawn is set on every route, as the contract's flag for the end of Zol's war; zin_kusven_withdrawn only after he came forth.
+    # zin_kusven_withdrawn is set on every route: it is the contract's flag for the end of the war of the north (it took over the retired
+    # zin_kusven_withdrawn); whether Kusven had come forth is zin_kusven_forth, and only that gate lets a text name him.
     ${takeArgs('cause')}
     ${ZOL} = {
     	if = {
-    		limit = { NOT = { has_global_flag = zin_zol_withdrawn } }
-    		set_global_flag = zin_zol_withdrawn
+    		limit = { NOT = { has_global_flag = zin_kusven_withdrawn } }
+    		set_global_flag = zin_kusven_withdrawn
     		if = {
     			limit = { has_global_flag = zin_kusven_forth }
-    			set_global_flag = zin_kusven_withdrawn
     			if = {
     				limit = { has_idea = zin_zol_kusven_in_field }
     				remove_ideas = zin_zol_kusven_in_field
@@ -877,7 +875,7 @@ export function zolScripts(D, T) {
     		zin_zol_ai_keeps_history = yes
     		has_global_flag = zin_zol_rising
     		NOT = { has_global_flag = zin_kusven_forth }
-    		NOT = { has_global_flag = zin_zol_withdrawn }
+    		NOT = { has_global_flag = zin_kusven_withdrawn }
     		has_war = yes
     		OR = {
     			has_global_flag = zin_volgan_body_destroyed

@@ -401,9 +401,9 @@ test('Zol: the power formula, the lapse, the bane and the return of the fallen f
 test('Zol: the rising, the manifestation and the withdrawal', () => {
   const eff = text('common/scripted_effects/zin_mistake.txt');
   assert(eff.includes('set_global_flag = zin_zol_rising') && eff.includes('country_event = { id = zin_mistake.10 }') && eff.includes('news_event = { id = zin_mistake.11 }'));
-  // Kusven comes forth in Zol's stead (K4, K11): the contract's zin_zol_manifested is still set beside zin_kusven_forth for its readers.
-  assert(eff.includes('set_global_flag = zin_kusven_forth') && eff.includes('set_global_flag = zin_zol_manifested') && eff.includes('add_ideas = zin_zol_kusven_in_field') && eff.includes('recruit_character = zin_kusven') && eff.includes('add_field_marshal_role = {') && eff.includes('activate_mission = zin_zol_the_form_endures') && eff.includes('news_event = { id = zin_mistake.20 }'));
-  assert(eff.includes('set_global_flag = zin_zol_withdrawn') && eff.includes('set_global_flag = zin_kusven_withdrawn') && eff.includes('remove_unit_leader_role = { character = zin_kusven }') && eff.includes('delete_unit = { division_template = "Kusven\'s Host" }') && eff.includes('white_peace = PREV'));
+  // Kusven comes forth in Zol's stead (K4, K11): zin_kusven_forth is the flag of the moment; the retired zin_zol_manifested is gone.
+  assert(eff.includes('set_global_flag = zin_kusven_forth') && !eff.includes('zin_zol_manifested') && eff.includes('add_ideas = zin_zol_kusven_in_field') && eff.includes('recruit_character = zin_kusven') && eff.includes('add_field_marshal_role = {') && eff.includes('activate_mission = zin_zol_the_form_endures') && eff.includes('news_event = { id = zin_mistake.20 }'));
+  assert(!eff.includes('zin_zol_withdrawn') && eff.includes('set_global_flag = zin_kusven_withdrawn') && eff.includes('remove_unit_leader_role = { character = zin_kusven }') && eff.includes('delete_unit = { division_template = "Kusven\'s Host" }') && eff.includes('white_peace = PREV'));
   assert(!/\bzin_zol_manifest = yes|\bzin_zol_withdraw = yes|zin_zol_form_taken|zin_zol_can_manifest|zin_war_grant_zol_manifestation/.test(allScript), 'the Zol-in-person names are gone');
   // The blade flag is set only inside zin_kusven_break_the_sword, which only zin_mistake.21 calls (events_mech_war.mjs).
   assert.equal((allScript.match(/set_global_flag = zin_horos_sword_broken/g) ?? []).length, 1, 'one setter of the blade flag');

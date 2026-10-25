@@ -7,7 +7,9 @@
 //   flag_never_set      a global or country flag is read and never set (dynamic names such as zin_x_@ROOT match by their prefix);
 //                       an allowance row of data/story_wiring.json names the owner that will set it and keeps it out of the failures
 //   flag_scope          a flag is read as global and set only as a country flag, or the reverse (SL-18, SL-20)
-//   trigger_as_flag     a scripted trigger's name is tested as a flag (SL-06)
+//   trigger_as_flag     a scripted trigger's name is tested as a flag and no flag of that name is set in that scope (SL-06); a flag set
+//                       beside a trigger of the same name (the contract's pairs, such as zin_dark_took_southern_gifts, or the Glo slice's
+//                       zin_glo_heir_in_hall, whose trigger adds that Horos lives) is a real flag and is not reported
 //   rule_unwrapped      a per-power game rule's option is tested with has_game_rule outside common/scripted_triggers/zin_rules.txt (SL-08, SL-30)
 //   design              a beat of docs/design/alternate_history.json lacks a latest date (start and ending beats excepted), or a
 //                       divergence lacks a successor
@@ -91,8 +93,8 @@ export function storyWiring(files, { config = loadConfig(), design = null, perPo
       const key = `${scope}|${r.name}|${ownerOf(r.rel)}`;
       if (flagSeen.has(key)) continue;
       flagSeen.add(key);
-      if (triggers.has(r.name)) { add('trigger_as_flag', r.name, r.rel, `${r.name} is a scripted trigger: test it as ${r.name} = yes`); continue; }
       if (isSet(scope, r.name)) continue;
+      if (triggers.has(r.name)) { add('trigger_as_flag', r.name, r.rel, `${r.name} is a scripted trigger and no ${scope} flag of that name is set: test it as ${r.name} = yes`); continue; }
       const a = allowance.get(r.name);
       if (a && a.scope === scope) { findings.push({ check: 'flag_allowed', id: r.name, owner: a.owner, reader: ownerOf(r.rel), file: r.rel, detail: `${a.note}${isSet(other, r.name) ? ` (set only as a ${other} flag today)` : ''}`, allowed: true }); continue; }
       if (isSet(other, r.name)) { add('flag_scope', r.name, r.rel, `read as a ${scope} flag, set only as a ${other} flag`); continue; }

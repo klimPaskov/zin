@@ -173,14 +173,14 @@
    "options": [{ "name": "Keep looking.", "ai": 100, "effects": [] }]
   },
   {
-   "id": 73, "title": "Lorien on the Field", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"], "to": "the Host and every coalition member", "hist": "Fallowing 1757",
+   "id": 73, "title": "Lorien on the Field", "picture": "vast_shadow", "requires": ["zin_kusven_forth"], "to": "the Host and every coalition member", "hist": "Fallowing 1757",
    "runner": { "if": ["has_global_flag = zin_lorien_rides", "has_global_flag = zin_kusven_forth"], "to": ["host", { "who": ["check_variable = { zin_eindil_regard > 24.999 }", "NOT = { zin_eindil_is_host = yes }"] }], "days": 7 },
    "desc": "Elves in white and gold, and things older than elves, came onto the field against Kusven, Zol's most loyal servant. They had not come to restore any crown; they came because Zol's victory would end the freedom of every living people, and they said so, plainly, to the first captain who asked.",
    "options": [{ "name": "They came.", "ai": 100, "effects": ["add_war_support = 0.05"] }]
   },
   {
    "id": 80, "title": "A Field Full of Dead", "picture": "generic_war", "to": "every Middle Lands country and every coalition member", "hist": "Fallowing 1757",
-   "runner": { "if": ["has_global_flag = zin_zol_withdrawn"], "to": [{ "who": [{ "or": ["has_country_flag = zin_region_middle_lands", "check_variable = { zin_eindil_regard > 24.999 }"] }] }], "days": 14 },
+   "runner": { "if": ["has_global_flag = zin_kusven_withdrawn"], "to": [{ "who": [{ "or": ["has_country_flag = zin_region_middle_lands", "check_variable = { zin_eindil_regard > 24.999 }"] }] }], "days": 14 },
    "desc": "The dead of the north have lost their hold or gone home. The Dominion's hosts are scattered. The living count who is left, and find that the count is a shorter list than they had hoped, and that the field is wider than any list.",
    "options": [
     { "name": "Bury them all, ours and theirs.", "ai": 70, "effects": ["add_political_power = -25", "add_stability = 0.03"] },

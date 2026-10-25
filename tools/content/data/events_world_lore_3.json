@@ -153,7 +153,7 @@
   { "id": 409, "title": "White Banners in the South", "picture": "generic_peace", "who": [{ "all": ["group:lands_of_the_sun"], "not_names": ["Gala"] }], "story": { "flag": "zin_lorien_dead", "delay": 30 },
     "desc": "The towers of the south hang white banners for the King of Gala. Nobody in the sun-realms has been asked to, and every tower has done it on the same morning. Old men who were children when he last came north stand in the squares with their hats in their hands.",
     "options": [{ "name": "Hang them.", "ai": 100, "effects": ["add_stability = 0.01"] }] },
-  { "id": 410, "title": "Refugees Come Home", "picture": "generic_peace", "who": [{ "all": ["group:middle_lands"] }], "story": { "flag": "zin_zol_withdrawn", "delay": 90 },
+  { "id": 410, "title": "Refugees Come Home", "picture": "generic_peace", "who": [{ "all": ["group:middle_lands"] }], "story": { "flag": "zin_kusven_withdrawn", "delay": 90 },
     "desc": "The roads to the Great Lake are full again, this time going home. Families walk with their bedding on their backs, past the villages where they used to buy bread, and stop to look at the doors that are still standing.",
     "options": [{ "name": "Help them home.", "ai": 100, "effects": ["add_political_power = -10", "add_stability = 0.02"] }] },
   { "id": 411, "title": "Bells for a New King", "picture": "generic_peace", "who": [{ "all": ["NOT = { zin_aenor_is_realm = yes }", "NOT = { any_enemy_country = { zin_aenor_is_realm = yes } }"] }], "story": { "flag": "zin_eindil_crowned", "delay": 7 },

@@ -362,6 +362,12 @@ export async function buildDiplomacy(staged, ctx = {}) {
   put('common/scripted_triggers/zin_diplomacy.txt', fileText(comment('Scope: a country. True for an elven realm that the Elven Refusal binds: it cannot join the human leagues or send volunteers.'), render(L('zin_diplo_refusal_binds', refusal)), comment('Scope: a country. The dark powers: Volgan, the Southern Dominion, Zol and, once the secret is out, the realm Afrit rules and the Worshipdom.'), render(L('zin_diplo_is_dark_power', darkPower))));
   defs.triggers.push('zin_diplo_refusal_binds', 'zin_diplo_is_dark_power');
   depend('zin_afrit_rules_here', 'scripted trigger', 'afrit_hidden_council'); depend('zin_afrit_is_hub', 'scripted trigger', 'afrit_hidden_council');
+  // The Refusal set aside ("How it lifts"): the one setter of zin_refusal_lifted, called on each realm that lifts it (The Old Lords Ride,
+  // The Kindred Marches, the kin who march). The return is the realm's own (it clears the flag and sends itself zin_diplo.31).
+  const effLift = ['if = {', 'limit = { NOT = { has_country_flag = zin_refusal_lifted } }', 'set_country_flag = zin_refusal_lifted', '}'];
+  scripts.push({ where: 'scripted effect zin_diplo_lift_refusal', kind: 'effect', text: render(effLift) });
+  put('common/scripted_effects/zin_diplomacy_refusal.txt', fileText(comment('Scope: an elven realm. It sets the Elven Refusal aside for this war: zin_diplo_refusal_binds is false for it from now on, until it takes the Refusal up again.'), render(L('zin_diplo_lift_refusal', effLift))));
+  defs.effects.push('zin_diplo_lift_refusal');
   const effLeague = [
     'set_temp_variable = { zin_diplo_members = 1 }',
     'every_other_country = {', 'limit = { is_in_faction_with = PREV }', 'add_to_temp_variable = { zin_diplo_members = 1 }', '}',

@@ -1,0 +1,53 @@
+{
+  "source": "docs/specs/04_mechanics/elves_wall_and_dragons.md sections 5.4 (The New King's Customs), 9 (Varner's death) and 11 (the eastern invasion); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_elves.51, .70, .71); docs/design/alternate_history.md B09, B23, B32 and SL-28. The mechanic (modules/mech_elves.mjs) fires these events and applies their ideas; the effects below are the options' own. Every line of text is proposed wording in the accepted voice; the vault does not say how the elves fared against the eastern kings, so no text states an outcome.",
+  "namespace": "zin_elves",
+  "file": "events/zin_elves_war.txt",
+  "realms": { "AEN": "Aenor", "MF": "Magical Forest" },
+  "events": [
+    {
+      "id": 9, "kind": "country", "title": "The New King's Customs", "picture": "golden_court",
+      "note": "To every wall realm 4 days after zin_aurevan_crowned (zin_elves_runner, guard zin_elves_customs_offered). The text says King Aurevan and nothing more (section 5.4).",
+      "desc": "Envoys of King Aurevan have come up to the Wall with the new tolls of Parim in one hand and an offer in the other. The tolls on the elven roads will be lifted, they say, if the Houses of the First Light may raise their halls beside those roads, so that the pilgrims who walk them have somewhere to sleep that is not an elven grove. They are courteous about it, and they have brought gifts for the wardens' children.",
+      "options": [
+        { "key": "a", "text": "Let the Houses build their halls.", "ai": 30, "tip": "The grievance over the Wall eases, and the Houses of the First Light open halls on our roads.",
+          "effect": "set_temp_variable = { zin_arg_value = {{elves:grievance.customs_accepted}} }\nzin_elves_add_wall_grievance = yes\nset_temp_variable = { zin_arg_value = {{n:customs.footholds}} }\nzin_afrit_add_footholds = yes" },
+        { "key": "b", "text": "The woods keep no temples.", "ai": "base = 70\nmodifier = {\n factor = {{n:customs.refuse_historical}}\n zin_rules_is_historical = yes\n}", "tip": "The grievance over the Wall grows, and our houses are the calmer for the refusal.",
+          "effect": "set_temp_variable = { zin_arg_value = {{elves:grievance.customs_refused}} }\nzin_elves_add_wall_grievance = yes\nadd_stability = {{n:customs.refuse_calm}}" }
+      ]
+    },
+    {
+      "id": 51, "kind": "country", "title": "The Wizard Is Gone", "picture": "generic_wilds",
+      "note": "To every Magical Lands elven realm from zin_elves_on_varner_dead (zin_varner_dead, set by the journey's zin_eindil.97), which also gives The Wizard Is Gone for a year. What his death means for the Magical Lands is open in the vault, so the text leaves it to the elders.",
+      "desc": "Word has come along the elven roads from the Middle Lands that Varner, the wizard of the Unbinding, is dead. The men who saw it say that he stood between them and the dead of the north with nothing but his wards, and held until there was nothing left of him to hold with. The elders have not agreed on what his passing means for the woods, though they agree that he should not have had to stand there alone.",
+      "options": [
+        { "key": "a", "text": "The woods will remember him.", "ai": 100 }
+      ]
+    },
+    {
+      "id": 70, "kind": "country", "title": "Sails on the Rift Sea", "picture": "generic_sea",
+      "note": "To every Magical Lands elven realm and to Aenor from zin_elves_on_eastern_invasion (zin_eastern_invasion, set by the crossing of the rift). It does not say who stands behind the coalition.",
+      "desc": [
+        { "trigger": "zin_elves_is_magical_realm = yes", "text": "Sails have come out of the east across the Rift Sea, more of them than the fishermen of the rift coast have ever counted, and the banners above them belong to the eastern kings. They have landed on our shore with ladders and siege engines, and the wardens who rode back to the groves say that nobody aboard those ships had come to trade." },
+        { "text": "Sails have come out of the east across the Rift Sea, and the eastern kings have landed their companies on the elven shore. The wardens of the Wall say the elves are falling back on their groves and asking nothing of us, as they have asked nothing of men for a very long time." }
+      ],
+      "options": [
+        { "key": "a", "text": "Every tree is a wall.", "trigger": "zin_elves_is_magical_realm = yes", "ai": 100 },
+        { "key": "b", "text": "Double the watch at the Wall gates.", "trigger": "NOT = { zin_elves_is_magical_realm = yes }", "ai": 100 }
+      ]
+    },
+    {
+      "id": 71, "kind": "country", "title": "Elven Envoys at the Gate", "picture": "generic_court",
+      "note": "To Aenor and Kingson 3 days after the eastern invasion (zin_elves_on_eastern_invasion). The offer of companies sends the Magical Forest zin_elves.72 once (guard zin_elves_companies_offered); it does not lift the Refusal.",
+      "desc": "Riders in green have come down from the Magical Forest to the gates of the Wall. They have not come to ask for help, they say, because the elves do not ask men for armies; they have come so that nobody on our side of the Wall can say afterwards that he was not told. An eastern host is in the woods, and the gates between our two peoples are the only road it could take into our country if it wished to.",
+      "options": [
+        { "key": "a", "text": "Keep the gates shut to all.", "ai": "base = {{elves:eastern.envoys_ai_shut}}", "tip": "The gates of the Wall stay shut, to the elves as to the eastern host." },
+        { "key": "b", "text": "Offer them companies of ours.", "ai": "base = {{n:envoys.offer_ai}}", "tip": "The Magical Forest is asked whether it will open the Wall gates to our companies.",
+          "effect": "if = {\nlimit = {\nNOT = { has_global_flag = zin_elves_companies_offered }\ncountry_exists = {{MF}}\n}\nset_global_flag = zin_elves_companies_offered\n{{MF}} = { country_event = { id = zin_elves.72 } }\n}" }
+      ]
+    }
+  ],
+  "numbers": {
+    "customs": { "footholds": 1, "refuse_calm": 0.02, "refuse_historical": 1.5 },
+    "envoys": { "offer_ai": 30 }
+  }
+}

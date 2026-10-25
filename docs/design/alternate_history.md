@@ -1185,6 +1185,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Status:** fixed in the war-side files on 25 October 2026: the Kusven re-design of section 9 is in `mech_zol` (flags, effects, trigger, character `zin_kusven`, ideas, decision, Kusven's Host) and `zin_lastwar.73` names Kusven and Zol's victory. Still open: `zin_zol_manifested` and `zin_zol_withdrawn` are set beside the new flags until their readers in other slices move (they are not retired yet), and `zin_eindil.101` and the cp23 Chronicle lines belong to other agents' files (handoff).
 
+- **Status (wiring completion):** Retired 25 October 2026 (story wiring completion): zin_zol_manifested and zin_zol_withdrawn are no longer set; every reader (the focus designs and registries, the journey, the Afrit return, the crown and world events, the elves, Volgan, the pictures) reads zin_kusven_forth and zin_kusven_withdrawn, which zin_kusven_withdraw now sets on every route that ends the war of the north. The Chronicle cost line reads "The dead of the black north were driven back, not destroyed."
+
 - **Kind:** Zol-in-person content void (K4, K11). **Beats:** B35, B36.
 
 - **Where:** tools/content/data/mech_zol.json (ideas zin_zol_form_taken, zin_zol_wounded; decision zin_zol_come_forth); tools/content/lib/mech_zol_script.mjs (zin_zol_manifest, zin_zol_withdraw, template "The Presence"); tools/content/data/events_world_eindil_3.json (zin_eindil.101 "The Old God Comes Forth"); tools/content/data/events_world_lastwar.json (zin_lastwar.73 "an Old God's victory"); tools/content/data/events_crown_chronicle.json (cp23 lines); docs/specs/04_mechanics/00_shared_contract.md (zin_zol_manifested "Zol has manifested bodily"); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_mistake.20 to .25); docs/specs/03_gameplay/05_world_tension_and_endings.md (Zol manifests, Zol withdraws)
@@ -1253,6 +1255,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Status:** fixed for zin_afrit and zin_aenor on 25 October 2026 (Afrit, Aenor and Eindil pass). events_mech.mjs writes zin_afrit.10, .11, .14 to .17, .20 to .23, .31 to .34, .43, .45, .51 to .53, .60 to .62, .70 to .77 and zin_aenor.470; no zin_afrit, zin_aenor or zin_eindil event is fired and undefined in the staged tree. The other namespaces are the war-side pass's. Test tools/content/events_mech.test.mjs.
 
+- **Status (wiring completion):** Fixed for every owner 25 October 2026 (story wiring completion): events_mech_war.mjs writes zin_elves.9, .51, .70, .71, zin_east.41 to .46, .50 to .52, .60, zin_dark.80, .82, zin_diplo.23, .31 and zin_world.45 (data/events_mech_elves.json, _east, _dark, _diplo, _world); the wiring check finds no fired event without a definition, and data/story_wiring.json enforces every owner (enforceAll).
+
 - **Kind:** events fired but undefined. **Beats:** many.
 
 - **Where:** staged:common/scripted_effects/* and staged:events/* (61 ids)
@@ -1305,6 +1309,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Status:** fixed in the Western Crossing slice on 25 October 2026: the scripted trigger `zin_west_holds_parim`. Still open: the endings' reader must test the trigger instead of the global flag (story framework).
 
+- **Status (wiring completion):** Fixed 25 October 2026 (story wiring completion): the Chronicle's Western Crown line (events_crown_chronicle.json) tests the trigger zin_west_holds_parim; the wiring check reports no trigger tested as a flag.
+
 - **Kind:** flag never set. **Beats:** B27, B45.
 
 - **Where:** staged:common/scripted_localisation/zin_ending.txt; docs/specs/03_gameplay/05_world_tension_and_endings.md (outcome 5)
@@ -1336,6 +1342,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 #### SL-23. Story roles are fixed to tags
 
 - **Status:** Fixed in the path module 25 October 2026 (story framework, commit 794e1fd9). the role registry R01 to R17 (zin_path_role_<key>, event targets zin_role_<key>, vacancy flags, A Duty Passes for R01, R03, R06 and R07). Open: the owners still use their own pickers; switching them to event_target:zin_role_<key> is theirs.
+
+- **Status (wiring completion):** Switched where tags stood for a role 25 October 2026 (story wiring completion): the Grey Ford truce, its feud, its peace and its raids (mech_crossing.mjs) act on zin_role_grey_ford_a and _b, with Gunwyn and Girdon only before the registry's first resolution. The journey's hosts and the Parim realm stay the owners' pickers, which the registry mirrors (its first step reads them), and the remaining fixed tags are the subjects of their own mechanics (Lerendor's strait, Mirolon's proof, Yeldenne's watch, Gala's court); docs/plans/story/wiring_completion_handoff.md gives the reasons and an owner question.
 
 - **Kind:** role holder hard-coded. **Beats:** B05, B19, B20, B21, B22, B26, B28.
 
@@ -1399,6 +1407,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Status:** Fixed 25 October 2026 (story framework, commit 794e1fd9). tools/content/checks/story_wiring.mjs runs on the finished tree in every build: read-never-set flags (allowance list with owners), triggers tested as flags, flag scope, per-power rules outside their wrappers, the beats' latest dates and successors.
 
+- **Status (wiring completion):** Enforced for every owner 25 October 2026 (story wiring completion): enforceAll is set in data/story_wiring.json, so any fired-undefined event, unset flag, flag-scope mismatch, trigger read as an unset flag or unwrapped per-power rule fails the build; the one allowance left is zin_aenor_regency_endures (Afrit, Aenor and Eindil).
+
 - **Kind:** no wiring check. **Beats:** all.
 
 - **Where:** tools/content/checks/ (no story wiring check)
@@ -1416,6 +1426,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Status (wiring check):** Check in place 25 October 2026 (story framework, commit 794e1fd9). the wrappers are the generated zin_rules_ai_branch_<power>_<option> of modules/rules.mjs; the wiring check reports each direct has_game_rule test of a per-power rule outside zin_rules.txt (rule_unwrapped).
 
 - **Status:** fixed for the Aenor succession 25 October 2026 (Afrit, Aenor and Eindil pass): zin_aenor_pick_ai_camp reads zin_rules_ai_branch_aenor_golden_court, _free_dominions and zin_rules_ai_random_aenor. Test tools/content/events_mech.test.mjs.
+
+- **Status (wiring completion):** Fixed for every owner 25 October 2026 (story wiring completion): zin_eindil_historical reads zin_rules_ai_branch_eindil_historical and zin_west_historical reads zin_rules_ai_branch_west_historical; no per-power rule is tested outside zin_rules.txt.
 
 - **Kind:** rule wrappers unused. **Beats:** B08, B21, B25.
 

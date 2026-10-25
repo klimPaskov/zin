@@ -163,7 +163,8 @@ ${ideaList.map(i => blk(i.id, list(`picture = ${i.picture ? `zin_${i.picture}` :
     else d.ai = 'base = 0';
   });
   add('zin_aenor_cat_concord', { id: 'zin_aenor_concord_council', icon: 'concord_circle', art: 'concord_circle', title: 'Convene the Concord Council', desc: 'Summon the lords of every dominion to Parim. They may be told what the crown needs, or they may be told what they are owed.', visible: 'zin_aenor_is_realm = yes', available: 'zin_aenor_is_realm = yes', cost: 50, cooldown: 365,
-    effect: 'zin_aenor_convene_concord_council = yes', ai: 'base = 2\nmodifier = {\n factor = 0\n has_country_flag = zin_aenor_council_recent\n}' });
+    // The AI convenes the council whenever its 365-day cooldown allows (spec, AI table: every 365 days).
+    effect: 'zin_aenor_convene_concord_council = yes', ai: 'base = 2' });
   add('zin_aenor_cat_concord', { id: 'zin_aenor_concord_levy', icon: 'levy_muster', art: 'levy_muster', title: 'Call the Concord Levy', desc: 'Every dominion whose lords are steadfast sends men to Parim\'s banner, and loses a little of its patience doing it. Those who are restless find reasons to send no one.', visible: 'zin_aenor_is_realm = yes', available: 'any_subject_country = {\nzin_aenor_is_concord_dominion = yes\nzin_aenor_dominion_steadfast = yes\n}', cost: 25, cooldown: 180,
     effect: `set_temp_variable = { zin_levy = 0 }
 every_subject_country = {

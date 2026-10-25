@@ -272,4 +272,12 @@ test('Story wiring: undefined events, unset flags, scopes, triggers as flags and
   assert(!r.findings.some(x => x.file === 'common/scripted_triggers/zin_rules.txt'), 'the wrapper file may test the rule');
   assert(r.failures.length && r.failures.every(x => x.owner === 'world systems'), 'only the enforced owner fails');
   assert(storyWiring(f, { config: { ...config, enforceAll: true }, perPowerRules: ['zin_rule_afrit'] }).failures.some(x => x.owner === 'Afrit'), 'the strict switch');
+  // A flag set beside a scripted trigger of the same name (the contract's pairs) is a real flag, not a trigger read as one.
+  const paired = storyWiring(files({ 'common/scripted_triggers/zin_t.txt': 'zin_pair = { has_country_flag = zin_pair }', 'events/zin_afrit.txt': 'country_event = { id = zin_afrit.1 immediate = { set_country_flag = zin_pair if = { limit = { has_country_flag = zin_pair } } } }' }), { config });
+  assert(!paired.findings.some(x => x.id === 'zin_pair'), 'a paired flag is not reported');
+});
+
+test('Story wiring: the shipped configuration enforces every owner', async () => {
+  const shipped = JSON.parse(readFileSync(new URL('./data/story_wiring.json', import.meta.url), 'utf8'));
+  assert.equal(shipped.enforceAll, true, 'every owner\'s findings stop the build (the story slices have landed)');
 });

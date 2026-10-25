@@ -236,7 +236,7 @@ country_event = { id = zin_dominion.13 }
 if = {
 limit = {
 zin_dominion_compact_active = yes
-has_global_flag = zin_zol_withdrawn
+has_global_flag = zin_kusven_withdrawn
 }
 zin_dominion_end_compact = yes
 }

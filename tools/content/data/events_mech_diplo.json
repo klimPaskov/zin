@@ -1,0 +1,33 @@
+{
+  "source": "docs/specs/03_gameplay/03_diplomacy_and_factions.md (The Lost Cause as a league: Name an Honorary Crown; The Elven Refusal: how it lifts and how a realm returns to it; the event table zin_diplo.23 and .31); docs/specs/04_mechanics/dark_lands.md section 11 (Parim's answer); docs/design/alternate_history.md SL-28. zin_diplo.23 is sent by the league's lord (FROM), today through the Dark Lands' Parim's answer; zin_diplo.31 is sent by a realm to itself when it takes the Refusal up again (the Gala tree's Home From the Last War, the Magical Forest's Home to the Woods), after it has cleared zin_refusal_lifted. Every line of text is proposed wording in the accepted voice.",
+  "namespace": "zin_diplo",
+  "file": "events/zin_diplo_war.txt",
+  "realms": {},
+  "events": [
+    {
+      "id": 23, "kind": "country", "title": "A Seat in the Lost Cause", "picture": "lost_cause_triumph",
+      "note": "The invitation to be an honorary crown, from the league's lord (FROM). Accepting sets zin_lost_cause_member and gives the lord the opinion of an honorary crown. AI acceptance (spec): -20, +20 at a Gathering Dark of 25, +30 beside a dark power, and a quarter of the opinion of the lord (in bands of 20); the two weights always add up to 100.",
+      "trigger": "NOT = { has_country_flag = zin_lost_cause_member }",
+      "desc": "Envoys of [From.GetName] have brought us a seat in the Lost Cause, the league of the crowns that mean to stand together when the dark powers come for the living. The seat carries no oath of war and no tribute, only our name on the roll at Parim and the plain expectation that we will answer if the league ever calls on us.",
+      "options": [
+        { "key": "a", "text": "We will take the seat.", "tip": "We become an honorary crown of the Lost Cause.",
+          "ai": "base = {{n:seat.accept_base}}\nmodifier = {\n add = {{n:seat.dark_add}}\n check_variable = { global.zin_gathering_dark > {{n:seat.dark_at}} }\n}\nmodifier = {\n add = {{n:seat.border_add}}\n any_neighbor_country = { zin_diplo_is_dark_power = yes }\n}\nmodifier = {\n add = {{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_1}} }\n}\nmodifier = {\n add = {{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_2}} }\n}\nmodifier = {\n add = {{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_3}} }\n}\nmodifier = {\n add = {{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_4}} }\n}",
+          "effect": "set_country_flag = zin_lost_cause_member\nadd_opinion_modifier = { target = FROM modifier = zin_aenor_opinion_honorary_crown }" },
+        { "key": "b", "text": "We thank them, and stay as we are.",
+          "ai": "base = {{n:seat.decline_base}}\nmodifier = {\n add = -{{n:seat.dark_add}}\n check_variable = { global.zin_gathering_dark > {{n:seat.dark_at}} }\n}\nmodifier = {\n add = -{{n:seat.border_add}}\n any_neighbor_country = { zin_diplo_is_dark_power = yes }\n}\nmodifier = {\n add = -{{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_1}} }\n}\nmodifier = {\n add = -{{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_2}} }\n}\nmodifier = {\n add = -{{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_3}} }\n}\nmodifier = {\n add = -{{n:seat.opinion_step}}\n has_opinion = { target = FROM value > {{n:seat.opinion_4}} }\n}" }
+      ]
+    },
+    {
+      "id": 31, "kind": "country", "title": "The Refusal Taken Up Again", "picture": "generic_wilds",
+      "note": "A realm returns to the Refusal (spec: it leaves any human faction). Sent by the realm to itself after it has cleared zin_refusal_lifted; a faction led by an elven realm (the Kindred) is not a human faction and is kept.",
+      "desc": "Our war against the dark powers is over, and the houses have taken up the Refusal again as they promised when they laid it down. The companies are coming home from the lands of men, and the envoys of the human leagues will be thanked for their friendship and sent back to their own courts with gifts and without promises.",
+      "options": [
+        { "key": "a", "text": "The woods keep their own counsel again.", "ai": 100, "tip": "We leave any league that a realm of men leads.",
+          "effect": "if = {\nlimit = {\nis_in_faction = yes\nis_faction_leader = no\nany_country = {\nis_faction_leader = yes\nis_in_faction_with = ROOT\nNOT = { zin_elves_is_elven_country = yes }\n}\n}\nleave_faction = yes\n}" }
+      ]
+    }
+  ],
+  "numbers": {
+    "seat": { "accept_base": -20, "decline_base": 120, "dark_at": 24.99, "dark_add": 20, "border_add": 30, "opinion_step": 5, "opinion_1": 19, "opinion_2": 39, "opinion_3": 59, "opinion_4": 79 }
+  }
+}

@@ -43,7 +43,7 @@ export const EAST_DEPENDENCIES = [
   { owner: 'world systems (not built)', spec: 'docs/specs/03_gameplay/05_world_tension_and_endings.md', variables: ['zin_gathering_dark'], globalFlags: ['zin_war_of_last_crowns'] },
   { owner: 'Aenor succession (modules/mech_aenor.mjs)', spec: 'docs/specs/04_mechanics/aenor_court_and_succession.md', globalFlags: ['zin_golden_king_dead'] },
   { owner: 'Eindil journey (modules/mech_eindil.mjs)', spec: 'docs/specs/04_mechanics/eindil_journey.md', globalFlags: ['zin_eindil_returned'] },
-  { owner: 'war events (not built)', spec: 'docs/specs/06_events/03_war_of_the_last_crowns.md',
+  { owner: 'war events (modules/events_mech_war.mjs, data/events_mech_east.json)', spec: 'docs/specs/06_events/03_war_of_the_last_crowns.md',
     events: ['zin_east.41', 'zin_east.42', 'zin_east.43', 'zin_east.44', 'zin_east.45', 'zin_east.46', 'zin_east.50', 'zin_east.51', 'zin_east.52', 'zin_east.60'] },
   { owner: 'Noris tree (docs/design/focus/noris.json, focus compiler)', spec: 'docs/specs/05_focus_trees/major/noris.md',
     effects: ['zin_noris_monthly'], countryFlags: ['zin_noris_route_shield', 'zin_noris_route_high_king', 'zin_noris_envoys', 'zin_noris_open_treaty', 'zin_noris_banner', 'zin_noris_audit', 'zin_noris_riders_for_host'] },
@@ -190,7 +190,8 @@ ${ind(1, fmt(body))}
   const roadSwitch = body => ROADS.map(r => `if = {\n  limit = { check_variable = { zin_arg_road = ${r.code} } }\n${ind(1, fmt(body(r)))}\n}`).join('\n');
   const inf = r => `zin_east_inf_${r.key}`;
   const powers = [{ tag: NOR, code: 1, name: 'noris' }, { tag: STA, code: 2, name: 'stabilo' }];
-  const everyNews = id => `every_country = { news_event = { id = ${id} } }`;
+  // A major news event reaches every country from one firing; firing it in every country would show each player one window per country.
+  const everyNews = id => `news_event = { id = ${id} }`;
 
   E_('zin_east_add_road_influence', roadSwitch(r => `add_to_variable = { ${inf(r)} = zin_arg_value }\nclamp_variable = { var = ${inf(r)} min = 0 max = 100 }`));
   E_('zin_east_add_all_roads', ROADS.map(r => `add_to_variable = { ${inf(r)} = zin_arg_value }\nclamp_variable = { var = ${inf(r)} min = 0 max = 100 }`).join('\n'));

@@ -416,7 +416,7 @@ export async function buildEventsCrown(staged, ctx = {}) {
       const key = `zin_chronicle_unknown_${v ? 'v' : ''}${z ? 'z' : ''}`, bits = [v && u.volgan, z && u.zol, u.tail].filter(Boolean);
       const joined = bits.length === 1 ? bits[0] : bits.length === 2 ? `${bits[0]}, and ${bits[1]}` : `${bits[0]}, ${bits[1]}, and ${bits[2]}`;
       L.set(key, joined[0].toUpperCase() + joined.slice(1));
-      return { cond: [v ? 'gflag:zin_volgan_body_destroyed' : '!gflag:zin_volgan_body_destroyed', z ? 'gflag:zin_zol_withdrawn' : '!gflag:zin_zol_withdrawn'], key };
+      return { cond: [v ? 'gflag:zin_volgan_body_destroyed' : '!gflag:zin_volgan_body_destroyed', z ? 'gflag:zin_kusven_withdrawn' : '!gflag:zin_kusven_withdrawn'], key };
     });
     sl.push(definedText('zin_loc_chronicle_unknown', parts, env).join('\n'));
     // The whole Chronicle of the Age in one call: the last page of the codex entries 627 to 630 (07_interface/04_chronicle_codex.md).
@@ -443,7 +443,7 @@ export async function buildEventsCrown(staged, ctx = {}) {
       subsets.push({ cond: dead.map((d, i) => (mask & (1 << i) ? `gflag:${d.flag}` : `!gflag:${d.flag}`)), key });
     }
     sl.push(definedText('zin_loc_cost_dead', [...subsets, { key: NONE }], env).join('\n'));
-    for (const [n, flag] of [['zol', 'zin_zol_withdrawn'], ['volgan', 'zin_volgan_body_destroyed'], ['necklace', 'zin_eindil_wears_necklace']]) { L.set(`zin_cost_${n}`, chr.cost[n]); sl.push(definedText(`zin_loc_cost_${n}`, [ { cond: [`gflag:${flag}`], key: `zin_cost_${n}` }, { key: NONE } ], env).join('\n')); }
+    for (const [n, flag] of [['zol', 'zin_kusven_withdrawn'], ['volgan', 'zin_volgan_body_destroyed'], ['necklace', 'zin_eindil_wears_necklace']]) { L.set(`zin_cost_${n}`, chr.cost[n]); sl.push(definedText(`zin_loc_cost_${n}`, [ { cond: [`gflag:${flag}`], key: `zin_cost_${n}` }, { key: NONE } ], env).join('\n')); }
     L.set('zin_cost_all', '[zin_loc_cost_dead][zin_loc_cost_zol][zin_loc_cost_volgan][zin_loc_cost_necklace]');
     sl.push(definedText('zin_loc_ending_lost_cause_cost', [ { key: 'zin_cost_all' } ], env).join('\n'));
   }

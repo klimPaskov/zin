@@ -503,7 +503,7 @@ ${AEN} = { add_opinion_modifier = { target = ${LER} modifier = zin_leren_appeal_
   cPer('zin_leren_send_envoys', 'envoy', 'envoys', 'always = yes', N('cost.envoys'), N('cooldown.envoys'), leanOn(N('lean.envoys')), [{ add: 40, when: 'FROM = { zin_leren_is_north_crown = yes }' }]);
   cPer('zin_leren_trade_charter', 'ledger_coins', 'tariff', 'always = yes', N('cost.charter'), undefined, `${leanOn(N('lean.charter'))}\nadd_timed_idea = { idea = zin_leren_charter_trade days = ${N('cooldown.charter_days')} }`, [{ add: 25, when: 'always = yes' }], { fire_only_once: true });
   cPer('zin_leren_marriage_pact', 'handshake_oath', 'marriages', 'always = yes', N('cost.marriage'), undefined, `${leanOn(N('lean.marriage'))}\nFROM = { add_opinion_modifier = { target = ${LER} modifier = zin_leren_marriage_ties } }`, [{ add: 15, when: 'always = yes' }], { fire_only_once: true });
-  cPer('zin_leren_invite_to_compact', 'banner_league', 'open_compact', `FROM = {\n${ge('zin_leren_lean', N('lean.invite_at'))}\nis_in_faction = no\nOR = {\nNOT = { has_country_flag = zin_elven_refusal }\nhas_country_flag = zin_refusal_lifted\n}\n}`, N('cost.invite'), N('cooldown.invite'),
+  cPer('zin_leren_invite_to_compact', 'banner_league', 'open_compact', `FROM = {\n${ge('zin_leren_lean', N('lean.invite_at'))}\nis_in_faction = no\nNOT = { zin_diplo_refusal_binds = yes }\n}`, N('cost.invite'), N('cooldown.invite'),
     'set_temp_variable = { zin_arg_target = FROM }\nzin_leren_invite_to_compact = yes',
     [{ add: 60, when: `FROM = { ${ge('zin_leren_lean', N('lean.invite_ai_at'))} }\n${ge('global.zin_gathering_dark', N('lean.gathering_for_invites'))}\nNOT = { ${AEN} = { has_guaranteed = FROM } }` }]);
   cPer('zin_leren_offer_protection', 'fort_wall', 'one_banner', `OR = {\nzin_leren_tree_one_banner = yes\nhas_country_flag = zin_leren_route_supremacy\n}\n${ge('zin_leren_hegemony', N('hegemony.protection_at'))}\nFROM = {\nNOT = { original_tag = ${AND_} }\nOR = {\n${ge('zin_leren_lean', N('hegemony.protect_lean'))}\nAND = {\n${ge('zin_leren_lean', N('hegemony.protect_lean_supremacy'))}\n${LER} = { ${route('supremacy')} }\n}\nAND = {\n${ge('zin_leren_lean', N('hegemony.protect_lean_seeks'))}\nhas_country_flag = zin_regional_blackton_seeks_protection\n}\n}\nOR = {\nzin_leren_is_north_crown = yes\nAND = {\nzin_leren_is_dark_shore = yes\nzin_leren_tree_dark_protection = yes\n}\n}\n}`,
@@ -584,10 +584,10 @@ clr_country_flag = zin_leren_ruled_for_ler
 add_opinion_modifier = { target = ${LER} modifier = zin_leren_compact_kin }
 reverse_add_opinion_modifier = { target = ${LER} modifier = zin_leren_compact_kin }
 ${LER} = { country_event = { id = zin_leren.72 } }`,
-      ai: ai(0, [{ add: 40, when: 'always = yes' }, { factor: 0, when: 'has_country_flag = zin_elven_refusal\nNOT = { has_country_flag = zin_refusal_lifted }' }]) },
+      ai: ai(0, [{ add: 40, when: 'always = yes' }, { factor: 0, when: 'zin_diplo_refusal_binds = yes' }]) },
     { effect: `${call('zin_leren_add_lean', { value: N('lean.decline') })}\n${LER} = { country_event = { id = zin_leren.72 } }`, ai: ai(60) }] });
   EV({ id: 'zin_leren.71', kind: 'country', pic: 'generic_court', options: [
-    { effect: `${LER} = { puppet = PREV }\n${LER} = { country_event = { id = zin_leren.72 } }`, ai: ai(0, [{ add: 40, when: 'always = yes' }, { add: 40, when: `has_war_with = ${ZOL}` }, { factor: 0, when: 'has_country_flag = zin_elven_refusal' }]) },
+    { effect: `${LER} = { puppet = PREV }\n${LER} = { country_event = { id = zin_leren.72 } }`, ai: ai(0, [{ add: 40, when: 'always = yes' }, { add: 40, when: `has_war_with = ${ZOL}` }, { factor: 0, when: 'zin_diplo_refusal_binds = yes' }]) },
     { effect: `${call('zin_leren_add_lean', { value: N('lean.refuse_protection') })}\n${LER} = { country_event = { id = zin_leren.72 } }`, ai: ai(60) }] });
   EV({ id: 'zin_leren.72', kind: 'country', pic: 'leren_envoys', options: [{ ai: ai(100) }] });
   EV({ id: 'zin_leren.80', kind: 'country', pic: 'generic_court', trigger: `${onlyLer}\n${le('zin_leren_union_cohesion', N('cohesion.question_at'))}`, mtth: `days = ${N('cooldown.mtth_estates')}`, options: [

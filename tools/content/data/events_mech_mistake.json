@@ -44,13 +44,13 @@
       ]
     },
     {
-      "id": 20, "kind": "news", "title": "Kusven Comes Forth", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "id": 20, "kind": "news", "title": "Kusven Comes Forth", "picture": "vast_shadow", "requires": ["zin_kusven_forth"],
       "note": "News of the coming forth, fired once by zin_zol_send_kusven. The shape follows the owner's drawing and the vault (K38, K40): a magical being, never an ordinary man.",
       "desc": "The sky went dark over the field at noon. Out of the north came a shape more than twice the height of a man, black and shrouded, with pale clawed hands, and wherever it passed the dead stood straighter and the living could not get their breath. The Leren who saw it from their ships have a name for it that they say only in a whisper: Kusven, the grave-wind, Zol's most loyal servant.",
       "options": [{ "key": "a", "text": "Hold the line." }]
     },
     {
-      "id": 21, "kind": "country", "title": "The Blue Sword Breaks", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "id": 21, "kind": "country", "title": "The Blue Sword Breaks", "picture": "vast_shadow", "requires": ["zin_kusven_forth"],
       "note": "The one sword-break event (O4, N1), shown to Zol and to the Host seven days after Kusven comes forth while Glo is with the heir. Its immediate block (zin_kusven_break_the_sword) is the only setter of zin_horos_sword_broken and fires zin_eindil.101 to the Host.",
       "trigger": "zin_kusven_is_forth = yes",
       "immediate": "zin_kusven_break_the_sword = yes",
@@ -72,13 +72,13 @@
       ]
     },
     {
-      "id": 23, "kind": "news", "title": "Lorien's Stand", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "id": 23, "kind": "news", "title": "Lorien's Stand", "picture": "vast_shadow", "requires": ["zin_kusven_forth"],
       "note": "The world's one news of Lorien's death (O4), fired by the hidden zin_mistake.26, which also calls zin_sun_lorien_falls and zin_kusven_withdraw with cause 0.",
       "desc": "Lorien, King of Gala, who fought at Dardan, rode against Kusven with the oldest lords of the world and died forcing him back, and other spirits of great age were broken beside him. Zol's servant left the field wounded, and he was not destroyed.",
       "options": [{ "key": "a", "text": "Remember the King of Gala." }]
     },
     {
-      "id": 24, "kind": "news", "title": "Kusven Withdraws", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "id": 24, "kind": "news", "title": "Kusven Withdraws", "picture": "vast_shadow", "requires": ["zin_kusven_forth"],
       "note": "Fired by zin_kusven_withdraw after Lorien's stand (cause 0).",
       "desc": "Kusven has gone back into the dark of the black north. He was not slain, and he has left behind him a wasteland and a continent full of dead, which the living must now bury.",
       "options": [{ "key": "a", "text": "Bury the dead." }]

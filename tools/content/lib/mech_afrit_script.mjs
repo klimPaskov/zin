@@ -880,7 +880,7 @@ export function afritScripts(D, T) {
     					zin_afrit_date_return = yes
     					AND = {
     						has_global_flag = { flag = zin_volgan_body_destroyed days > ${D.returnAfterDays} }
-    						has_global_flag = { flag = zin_zol_withdrawn days > ${D.returnAfterDays} }
+    						has_global_flag = { flag = zin_kusven_withdrawn days > ${D.returnAfterDays} }
     					}
     				}
     			}
@@ -888,7 +888,7 @@ export function afritScripts(D, T) {
     				${branch('free')}
     				OR = {
     					has_global_flag = zin_volgan_body_destroyed
-    					has_global_flag = zin_zol_withdrawn
+    					has_global_flag = zin_kusven_withdrawn
     					zin_afrit_date_return_open = yes
     				}
     			}

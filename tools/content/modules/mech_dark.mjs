@@ -7,7 +7,7 @@
 // Horde and Accord windows. Site triggers are the key-sites table's, the autonomy states and the general causes of war the
 // diplomacy module's, the game rule zin_rule_ai_goldoroth and its wrappers the rules module's (docs/design/stage2/mech_dark.md).
 // The events zin_dark.80 and zin_dark.82 belong to the events engineers (docs/specs/06_events/03_war_of_the_last_crowns.md):
-// fired here through hooks, never defined.
+// fired here through hooks, never defined here (modules/events_mech_war.mjs writes them from data/events_mech_dark.json).
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

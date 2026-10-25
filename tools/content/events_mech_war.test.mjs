@@ -56,14 +56,15 @@ test('SL-28 (war side): every zin_mistake, zin_dominion, zin_leren and zin_sun e
   const missing = [...fired].filter(id => !defined.has(id)).sort();
   assert.deepEqual(missing, []);
   for (const id of ['zin_mistake.2', 'zin_mistake.10', 'zin_mistake.11', 'zin_mistake.20', 'zin_mistake.21', 'zin_mistake.22', 'zin_mistake.24', 'zin_mistake.25', 'zin_dominion.13', 'zin_dominion.14', 'zin_dominion.19', 'zin_leren.30', 'zin_leren.35', 'zin_leren.36', 'zin_sun.40', 'zin_sun.42']) assert(fired.has(id), `${id} is fired by its slice`);
-  assert.equal(war.counts.events, 33);
+  assert.equal(war.counts.events, 52);
   assert.deepEqual(new Set(war.definitions.events).size, war.definitions.events.length, 'no id twice');
 });
 
 test('SL-14: Kusven, not Zol, comes forth; the contract flag is kept for its readers; Zol never takes the field', () => {
   const eff = text('common/scripted_effects/zin_mistake.txt');
   const send = eff.slice(eff.indexOf('zin_zol_send_kusven = {'));
-  for (const s of ['set_global_flag = zin_kusven_forth', 'set_global_flag = zin_zol_manifested', 'recruit_character = zin_kusven', 'character = zin_kusven', 'zin_trait_kusven_grave_wind', 'division_template = \\"Kusven\'s Host\\"', 'news_event = { id = zin_mistake.20 }']) assert(send.includes(s), s);
+  assert(!/zin_zol_manifested|zin_zol_withdrawn/.test(all), 'the retired Zol flags are neither set nor read');
+  for (const s of ['set_global_flag = zin_kusven_forth', 'recruit_character = zin_kusven', 'character = zin_kusven', 'zin_trait_kusven_grave_wind', 'division_template = \\"Kusven\'s Host\\"', 'news_event = { id = zin_mistake.20 }']) assert(send.includes(s), s);
   assert(/zin_kusven_can_come_forth = \{[\s\S]*?NOT = \{ has_global_flag = zin_kusven_forth \}/.test(text('common/scripted_triggers/zin_mistake.txt')), 'once in the age');
   const decisions = text('common/decisions/zin_mistake.txt');
   assert(decisions.includes('zin_zol_send_kusven_decision = {') && !decisions.includes('zin_zol_come_forth'));
@@ -117,7 +118,7 @@ test('SL-12: Lorien rides and dies forcing Kusven back; the withdrawal takes cau
 test('The withdrawal: Kusven leaves the field wounded, not destroyed; every other end is the spent strength', () => {
   const eff = text('common/scripted_effects/zin_mistake.txt');
   const w = eff.match(/zin_kusven_withdraw = \{[\s\S]*?\n\}/)[0];
-  for (const s of ['set_global_flag = zin_zol_withdrawn', 'set_global_flag = zin_kusven_withdrawn', 'remove_unit_leader_role = { character = zin_kusven }', 'idea = zin_zol_kusven_wounded', 'news_event = { id = zin_mistake.24 }', 'news_event = { id = zin_mistake.25 }']) assert(w.includes(s), s);
+  for (const s of ['set_global_flag = zin_kusven_withdrawn', 'remove_unit_leader_role = { character = zin_kusven }', 'idea = zin_zol_kusven_wounded', 'news_event = { id = zin_mistake.24 }', 'news_event = { id = zin_mistake.25 }']) assert(w.includes(s), s);
   assert(!/kill_[a-z_]+ = \{[^}]*zin_kusven|retire_character = zin_kusven/.test(all), 'he is never destroyed');
   assert(/timeout_effect = \{\s*set_temp_variable = \{ zin_arg_cause = 1 \}\s*zin_kusven_withdraw = yes/.test(text('common/decisions/zin_mistake.txt')), 'the mission ends by time (.25)');
   assert(/num_equipment_in_armies@zin_great_spirit_equipment < 1/.test(eff), 'his host destroyed ends it');
@@ -188,4 +189,39 @@ test('Every picture of the war events is a catalog picture with the right crop a
     assert(p, `${set.namespace}.${e.id}: ${e.picture}`);
     if (e.kind === 'news') assert(['both', 'news'].includes(p.crop), `${set.namespace}.${e.id}`);
   }
+});
+
+// The story events the other slices fire and left to the events engineers (SL-28, the story wiring check): the elves, the eastern kings,
+// the Dark Lands, the Lost Cause and the Refusal, and the Gods' Gift (data/events_mech_elves.json, _east, _dark, _diplo, _world).
+test('SL-28 (other slices): every zin_elves, zin_east, zin_dark and zin_diplo event the elves, eastern and Dark Lands slices fire is defined, and zin_world.45', async () => {
+  const { buildElves } = await import('./modules/mech_elves.mjs');
+  const { buildMechEast } = await import('./modules/mech_east.mjs');
+  const { buildMechDark } = await import('./modules/mech_dark.mjs');
+  const s2 = new Staged();
+  await buildElves(s2, { countries, table });
+  await buildMechEast(s2, { countries });
+  await buildMechDark(s2, { countries, assignment });
+  const theirs = [...s2.files].filter(([k]) => /\.txt$/.test(k)).map(([, v]) => strip(v.toString('utf8'))).join('\n');
+  const fired = new Set([...theirs.matchAll(/(?:country|news)_event = \{ id = ((?:zin_elves|zin_east|zin_dark|zin_diplo)\.\d+)/g)].map(m => m[1]));
+  const definedThere = new Set([...theirs.matchAll(/^\s*(?:country|news)_event = \{[ \t]*\n\s*id = ((?:zin_elves|zin_east|zin_dark|zin_diplo)\.\d+)/gm)].map(m => m[1]));
+  const here = new Set(war.definitions.events);
+  const missing = [...fired].filter(id => !definedThere.has(id) && !here.has(id)).sort();
+  assert.deepEqual(missing, []);
+  const ids = ['zin_elves.9', 'zin_elves.51', 'zin_elves.70', 'zin_elves.71', 'zin_east.41', 'zin_east.42', 'zin_east.43', 'zin_east.44', 'zin_east.45', 'zin_east.46', 'zin_east.50', 'zin_east.51', 'zin_east.52', 'zin_east.60', 'zin_dark.80', 'zin_dark.82', 'zin_diplo.23', 'zin_diplo.31', 'zin_world.45'];
+  for (const id of ids) { assert(here.has(id), `${id} is written here`); assert(!definedThere.has(id), `${id} is not defined twice`); }
+  // The options call the slices' own effects.
+  assert(block('zin_east.41').includes('zin_east_form_coalition = yes'));
+  for (const [id, effs] of [['zin_east.42', ['zin_east_join_coalition', 'zin_east_stay_out']], ['zin_east.45', ['zin_east_make_coalition_peace']], ['zin_east.46', ['zin_east_serve_stranger', 'zin_east_order_home']], ['zin_east.50', ['zin_east_gifts_to_king', 'zin_east_refuse_king']], ['zin_east.52', ['zin_east_send_levies', 'zin_east_send_gold', 'zin_east_delay_host']]]) for (const e of effs) assert(block(id).includes(`${e} = yes`), `${id}: ${e}`);
+  assert(block('zin_dark.80').includes('idea = zin_dark_watch_the_shore'));
+  assert(block('zin_diplo.23').includes('set_country_flag = zin_lost_cause_member') && block('zin_diplo.31').includes('leave_faction = yes'));
+  assert(block('zin_elves.71').includes('set_global_flag = zin_elves_companies_offered') && block('zin_elves.71').includes('zin_elves.72'), 'the offer reaches the Magical Forest once');
+  // The news of the crossing and of the turn west are sent once (a major news event reaches every country from one firing).
+  assert(!/every_country = \{ news_event = \{ id = zin_east\.4[34] \} \}/.test(theirs) && theirs.includes('news_event = { id = zin_east.43 }'));
+  // The AI's two answers to the coalition and to the honorary crown always add up to 100.
+  for (const [id, a, b] of [['zin_east.42', 'zin_east.42.a', 'zin_east.42.b'], ['zin_diplo.23', 'zin_diplo.23.a', 'zin_diplo.23.b']]) {
+    const t = block(id), base = k => Number(t.slice(t.indexOf(`name = ${k}`)).match(/base = (-?\d+)/)[1]);
+    assert.equal(base(a) + base(b), 100, id);
+  }
+  // No text of these events names Afrit, the Deliverer, Kusven or a bare Eindil.
+  for (const [k, v] of Object.entries(loc)) if (/^zin_(elves|east|dark|diplo|world)\./.test(k)) assert(!/\bAfrit\b|\bDeliverer\b|\bKusven\b|\bEindil\b/.test(v.replace(/\[[^\]]*\]/g, ' ')), k);
 });

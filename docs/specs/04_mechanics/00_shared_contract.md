@@ -29,8 +29,8 @@ Set once, never cleared. "Historical" is the year on the established path (propo
 | `zin_eindil_returned` | Eindil has returned with Varner, Golbran and a dragon | Eindil's journey | 4A 1757 |
 | `zin_varner_dead` | Varner has died | Eindil's journey | 4A 1757 |
 | `zin_volgan_body_destroyed` | Volgan's manifested body is destroyed | Volgan | 4A 1757 |
-| `zin_zol_manifested` | Zol has manifested bodily | Zol's Mistake | 4A 1757 |
-| `zin_zol_withdrawn` | Zol has withdrawn | Zol's Mistake | 4A 1757 |
+| `zin_zol_manifested` | Retired 25 October 2026 (K4, K11): no file sets or reads it; read `zin_kusven_forth` | Zol's Mistake | 4A 1757 |
+| `zin_zol_withdrawn` | Retired 25 October 2026 (K4, K11): no file sets or reads it; read `zin_kusven_withdrawn` | Zol's Mistake | 4A 1757 |
 | `zin_lorien_dead` | Lorien has died | elves | 4A 1757 |
 | `zin_afrit_dead` | Afrit is dead | Afrit | 4A 1759 |
 | `zin_golbran_dead` | Golbran has died | Eindil's journey | 4A 1759 |

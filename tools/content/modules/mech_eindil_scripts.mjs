@@ -39,9 +39,9 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
   T('zin_eindil_friend', `check_variable = { zin_eindil_regard > ${C.friend_regard - 1} }`);
   T('zin_eindil_resents', `check_variable = { zin_eindil_regard < -${C.friend_regard - 1} }`);
   for (const n of ['zin_rules_is_historical', 'zin_rules_is_free']) dep(n, 'scripted trigger', 'foundation rules (05_defines_and_rules.md, rules.mjs)');
-  T('zin_eindil_historical', L('OR',
-    'has_game_rule = { rule = zin_rule_eindil_journey option = HISTORICAL }',
-    L('AND', 'has_game_rule = { rule = zin_rule_eindil_journey option = DEFAULT }', 'zin_rules_is_historical = yes')));
+  // The journey rule through its generated wrapper (SL-30): HISTORICAL, or DEFAULT under the historical path.
+  dep('zin_rules_ai_branch_eindil_historical', 'scripted trigger', 'foundation rules (rules.mjs)');
+  T('zin_eindil_historical', 'zin_rules_ai_branch_eindil_historical = yes');
   T('zin_eindil_can_lead', 'has_character = zin_eindil', L('zin_eindil', 'NOT = { has_trait = zin_eindil_struck_down }', 'NOT = { has_trait = zin_eindil_grievously_wounded }'),
     L('OR', notFlag('zin_eindil_cast_down'), gflag('zin_eindil_recovered')));
   // State scope: Eindil's headquarters stand in this state or in one next to it.
@@ -521,9 +521,9 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
       L('if', `limit = { check_variable = { global.zin_eindil_battle = 2 } check_variable = { global.zin_eindil_clock > global.zin_eindil_battle_next } OR = { AND = { zin_eindil_historical = yes ${dateT('1757.8.1')} } AND = { zin_eindil_historical = no ${volganGround} } } }`,
         setVar('global.zin_eindil_battle', 3), fireHost(100)),
       // battle 4 is Zol's: noticed when he manifests
-      L('if', `limit = { check_variable = { global.zin_eindil_battle = 3 } OR = { ${gflag('zin_zol_manifested')} ${gflag('zin_horos_sword_broken')} } }`, setVar('global.zin_eindil_battle', 4)),
+      L('if', `limit = { check_variable = { global.zin_eindil_battle = 3 } OR = { ${gflag('zin_kusven_forth')} ${gflag('zin_horos_sword_broken')} } }`, setVar('global.zin_eindil_battle', 4)),
       // battle 5: hailed as king, after Zol withdraws or on 1757.12.1 if Zol never came
-      L('if', `limit = { OR = { check_variable = { global.zin_eindil_battle = 3 } check_variable = { global.zin_eindil_battle = 4 } } OR = { ${gflag('zin_zol_withdrawn')} AND = { ${dateT('1757.12.1')} NOT = { ${gflag('zin_zol_manifested')} } } ${dateT('1758.9.1')} } }`,
+      L('if', `limit = { OR = { check_variable = { global.zin_eindil_battle = 3 } check_variable = { global.zin_eindil_battle = 4 } } OR = { ${gflag('zin_kusven_withdrawn')} AND = { ${dateT('1757.12.1')} NOT = { ${gflag('zin_kusven_forth')} } } ${dateT('1758.9.1')} } }`,
         setVar('global.zin_eindil_battle', 5), 'set_global_flag = zin_eindil_stage_9_done', 'zin_eindil_hail_the_king = yes')));
   dep('zin_horos_sword_broken', 'global flag', 'zols_mistake (zin_mistake.21)');
   T('zin_eindil_battle_ground', 'zin_eindil_has_host = yes', L('any_state', 'zin_eindil_army_near = yes', L('controller', `OR = { original_tag = ${T_.volgan} is_subject_of = ${T_.volgan} }`)));
@@ -660,7 +660,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
   dep('zin_ending_heir_lost', 'scripted effect', 'events_crown (zin_ending.txt)');
   for (const f of ['zin_afrit_claims_aoaz', 'zin_afrit_stand_in_parim', 'zin_afrit_dead', 'zin_afrit_returned', 'zin_afrit_revealed']) dep(f, 'global flag', 'afrit_hidden_council');
   dep('zin_gala_great_ship', 'country flag', 'tree gala (read on any country, SL-20)');
-  for (const f of ['zin_war_of_last_crowns', 'zin_zol_rising', 'zin_zol_manifested', 'zin_zol_withdrawn']) dep(f, 'global flag', 'world systems / zols_mistake');
+  for (const f of ['zin_war_of_last_crowns', 'zin_zol_rising', 'zin_kusven_forth', 'zin_kusven_withdrawn']) dep(f, 'global flag', 'world systems / zols_mistake');
   dep('zin_volgan_body_destroyed', 'global flag', 'volgan_southern_dominion');
   dep('zin_world_is_dragon_keeper', 'scripted trigger', 'magic and world systems (04_magic_and_world_systems.md)');
   for (const f of ['zin_eindil_dragon_pact', 'zin_eindil_war_king', 'zin_eindil_named', 'zin_eindil_returned']) void f;

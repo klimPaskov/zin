@@ -1,0 +1,16 @@
+{
+  "source": "docs/specs/03_gameplay/04_magic_and_world_systems.md (The New Gods' restoration, once; event table zin_world.45); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_world.45 The Gods' Gift, its gist); docs/design/alternate_history.md B33 and SL-28. The report goes to the Host from the journey's zin_eindil.98, which applies the restoration itself (the trait, Glo at full power, the call of zin_world_grant_new_gods_gift). The id belongs to the magic module's range (30 to 69); that module is not written, so the report lives here until it is, in its own file beside the world tension module's events/zin_world.txt (ids 1 to 29). The text never names the gods one by one. Proposed wording in the accepted voice.",
+  "namespace": "zin_world",
+  "file": "events/zin_world_war.txt",
+  "realms": {},
+  "events": [
+    {
+      "id": 45, "kind": "country", "title": "The Gods' Gift", "picture": "war_king", "requires": ["zin_eindil_awake"],
+      "note": "Report to the Host from zin_eindil.98 (He rises). One option.",
+      "desc": "The heir's eyes shine with lightning, and the sword of Horos burns brighter in his hand than it ever did in the guardian's. The men who carried him off the field say that he got up as a man gets up from a night's sleep and asked for his horse, and nobody in the host has yet found the courage to ask him where he has been.",
+      "options": [
+        { "key": "a", "text": "Then the host rides with him.", "ai": 100 }
+      ]
+    }
+  ]
+}

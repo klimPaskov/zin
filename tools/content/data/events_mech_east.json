@@ -1,0 +1,121 @@
+{
+  "source": "docs/specs/04_mechanics/eastern_kings.md sections 5 (the coalition, steps 2 to 7) and 6 (the King of the East as the East lives it); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_east.41 to .46, .50 to .52, .60); docs/design/alternate_history.md B24, B26, B38, B41, CP14 and SL-28. The mechanic (modules/mech_east.mjs) fires these events at their beats and owns every effect they call; the events only offer its choices. Every line of text is proposed wording in the accepted voice. The vault fixes that states of the East resisted the King, never which ones, so no text names a court.",
+  "namespace": "zin_east",
+  "file": "events/zin_east_war.txt",
+  "realms": {},
+  "events": [
+    {
+      "id": 41, "kind": "hidden", "title": "The Coalition Gathers",
+      "note": "Hidden, on the East's runner: 30 days after zin_war_of_last_crowns, or at once when the dark has gathered outside the historical path (zin_east_runner). zin_east_form_coalition runs once (zin_east_coalition_formed): the weights, the leader, the asks and the crossing 30 days on.",
+      "immediate": "zin_east_form_coalition = yes"
+    },
+    {
+      "id": 42, "kind": "country", "title": "The Eastern Coalition Asks", "picture": "generic_court",
+      "note": "To the coalition's leader when it is a human court, and to every East Lands court of weight 50 or more (zin_east_form_coalition, zin_east_pick_leader). The AI's chance to join is its weight (spec section 5 step 3); a declining leader passes the lead to the next court (zin_east_stay_out).",
+      "desc": [
+        { "trigger": "has_country_flag = zin_east_coalition_leader", "text": "The courts of the East are looking to us. The kings of the rift coast have agreed that the elven shore across the water is rich, and that Aenor has too many quarrels of its own to defend anybody else's, and they want one crown at the head of the host before it sails. Our captains say it should be ours, and they have already begun to count the ships." },
+        { "text": "Envoys of the court that will lead the eastern host have come to us with a plan and a share of the spoils. The elven shore across the Rift Sea is rich, they say, and Aenor is too busy with its own troubles to come to its aid, so that a host that sails this season will be home by harvest with more than it took." }
+      ],
+      "options": [
+        { "key": "a", "text": "We sail with the host.", "tip": "We join the eastern coalition and share its ambition in the west.",
+          "ai": "base = {{n:ask.base}}\nmodifier = {\n add = {{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_1}} }\n}\nmodifier = {\n add = {{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_2}} }\n}\nmodifier = {\n add = {{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_3}} }\n}\nmodifier = {\n add = {{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_4}} }\n}",
+          "effect": "zin_east_join_coalition = yes" },
+        { "key": "b", "text": "This is not our war.", "tip": "We take no part in the crossing of the rift.",
+          "ai": "base = {{n:ask.base}}\nmodifier = {\n add = -{{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_1}} }\n}\nmodifier = {\n add = -{{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_2}} }\n}\nmodifier = {\n add = -{{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_3}} }\n}\nmodifier = {\n add = -{{n:ask.step}}\n check_variable = { zin_east_coalition_weight > {{n:ask.band_4}} }\n}",
+          "effect": "zin_east_stay_out = yes" }
+      ]
+    },
+    {
+      "id": 43, "kind": "news", "title": "The Crossing of the Rift", "picture": "generic_sea",
+      "note": "News from zin_east_cross_rift (the hidden zin_east.3, 30 days after the coalition gathers), sent once. The war spec's gist: eastern banners have crossed the rift sea into the Magical Lands.",
+      "desc": "Eastern banners have crossed the Rift Sea into the Magical Lands. The kings of the rift coast put their companies ashore on the elven side within a few days of one another, and the wardens of the woods are falling back on the groves, as the elves have always done when men came over the water.",
+      "options": [{ "key": "a", "text": "The East has gone to war." }]
+    },
+    {
+      "id": 44, "kind": "news", "title": "The Host Turns West", "picture": "generic_war",
+      "note": "News from zin_east_turn_west (120 days after the crossing with three Magical Lands states held, or on the shifted 1 Glernaen 4A 1756 on the historical path), sent once. Sets zin_east_turns_west through the effect.",
+      "desc": "The eastern host has turned from the elven woods toward Aenor. Its captains sent heralds to Parim with a declaration and nothing else, and the roads of the Vale are full of carts going the other way, piled with bedding and children and whatever the families could not bear to leave behind.",
+      "options": [{ "key": "a", "text": "So the war comes to the Vale." }]
+    },
+    {
+      "id": 45, "kind": "country", "title": "The Coalition Breaks", "picture": "generic_peace",
+      "note": "To every coalition member that refused the King of the East (zin_east_runner), or to every member at once when a tree breaks the coalition (zin_east_offer_coalition_peace). Peace is white peace with every enemy in the Magical and Middle Lands (zin_east_make_coalition_peace). AI: peace 70 (spec section 5 step 6).",
+      "desc": [
+        { "trigger": "has_global_flag = zin_afrit_king_of_east", "text": "The host that crossed the rift sailed under many banners, and now our captains are asking whose war they are fighting. A king has been proclaimed in the East who expects every court to kneel to him, and our lords want to know whether the spoils of the elven shore are worth a war that somebody else means to finish and to keep." },
+        { "text": "The host that crossed the rift sailed under many banners, and the banners no longer agree. Our captains say that the spoils of the elven shore have cost more than they were worth, and that if we make our own peace now we may bring home most of the men we took away." }
+      ],
+      "options": [
+        { "key": "a", "text": "Make peace and bring the host home.", "ai": "base = {{n:breaks.peace_ai}}", "tip": "We make peace with every enemy we fight in the Magical and Middle Lands, and give up the coalition's ambition.",
+          "effect": "zin_east_make_coalition_peace = yes" },
+        { "key": "b", "text": "We fight on for our own gain.", "ai": "base = {{n:breaks.fight_ai}}" }
+      ]
+    },
+    {
+      "id": 46, "kind": "country", "title": "Abandoned Companies", "picture": "generic_war",
+      "note": "To every East Lands court still at war in the Middle or Magical Lands when the stranger returns (zin_eindil_returned; zin_east_runner). Serving sets zin_east_companies_with_eindil, read by the journey's Call the Stranded Armies. AI: serve 60 if it refused the King of the East, 10 otherwise.",
+      "desc": "Our companies in the west were left behind when the eastern host broke apart, and they are camped among people who were their enemies a season ago. Now the stranger from the north has come back out of the sky on a dragon and is gathering everybody who will fight the dead, and our captains want to know whether they may march with him or should come home while there is still a road to come home by.",
+      "options": [
+        { "key": "a", "text": "Let them serve the stranger.", "tip": "Our companies march with the stranger's coalition, and our captains learn from the war.",
+          "ai": "base = {{n:stranded.serve_ai}}\nmodifier = {\n add = {{n:stranded.serve_refuser_add}}\n has_country_flag = zin_afrit_refused_east\n}",
+          "effect": "zin_east_serve_stranger = yes" },
+        { "key": "b", "text": "Order them home.", "tip": "The companies come home, and their levies return to us.",
+          "ai": "base = {{n:stranded.home_ai}}\nmodifier = {\n add = -{{n:stranded.serve_refuser_add}}\n has_country_flag = zin_afrit_refused_east\n}",
+          "effect": "zin_east_order_home = yes" }
+      ]
+    },
+    {
+      "id": 50, "kind": "country", "title": "A King in the East", "picture": "generic_court",
+      "note": "To every East Lands court that got no zin_afrit.51, 30 days after the proclamation (the hidden zin_east.5, zin_east_king_notice). AI: refuse when it borders a refuser that leads a faction; gifts when its kneel bias is 30 or more; otherwise silent (spec section 6).",
+      "desc": "[zin_loc_deliverer] has been proclaimed King of the East, and his heralds have reached every court that was not asked to kneel to him. They bring no demands, only the news and the offer of a place at his table, and they have made it quite plain that the place will not be kept empty for ever.",
+      "options": [
+        { "key": "a", "text": "Send gifts to the King.", "tip": "The King of the East thinks better of us, and we owe him nothing for it.",
+          "ai": "base = 0\nmodifier = {\n add = {{n:king.answer_ai}}\n check_variable = { zin_east_kneel_bias > {{n:king.gifts_bias}} }\n NOT = { any_neighbor_country = { has_country_flag = zin_afrit_refused_east is_faction_leader = yes } }\n}",
+          "effect": "zin_east_gifts_to_king = yes" },
+        { "key": "b", "text": "We will not kneel to him.", "tip": "We stand with the courts that refuse the King of the East.",
+          "ai": "base = 0\nmodifier = {\n add = {{n:king.answer_ai}}\n any_neighbor_country = { has_country_flag = zin_afrit_refused_east is_faction_leader = yes }\n}",
+          "effect": "zin_east_refuse_king = yes" },
+        { "key": "c", "text": "Say nothing, and wait.",
+          "ai": "base = {{n:king.answer_ai}}\nmodifier = {\n factor = 0\n check_variable = { zin_east_kneel_bias > {{n:king.gifts_bias}} }\n}\nmodifier = {\n factor = 0\n any_neighbor_country = { has_country_flag = zin_afrit_refused_east is_faction_leader = yes }\n}" }
+      ]
+    },
+    {
+      "id": 51, "kind": "country", "title": "First of the Free Crowns", "picture": "generic_court",
+      "note": "To the First of the Free Crowns (country flag zin_east_free_crowns_leader): the first refuser to take a tree's resist focus (Noris, Stabilo), or 60 days after the proclamation the refuser with the most states that leads a faction, else the refuser with the most states (the hidden zin_east.6, zin_east_name_first_crown). The rally decision opens with the flag.",
+      "desc": "The courts that would not kneel to the King of the East have looked about them for somebody to stand at their head, and their envoys have come to us. They do not ask for a crown or an oath, only that we answer for them when the King's heralds come again, and that ours is the banner the others can see from their own walls.",
+      "options": [
+        { "key": "a", "text": "Then we will answer for them.", "ai": 100, "tip": "We may call the courts that refuse the King of the East to our side." }
+      ]
+    },
+    {
+      "id": 52, "kind": "country", "title": "The King Calls His Host", "picture": "generic_war",
+      "note": "To every client of the King of the East when he returns from the West (zin_afrit_returned; zin_east_runner). AI: levies 60, gold 30, delay 10 (spec section 6). Levies set zin_east_sent_levies, which the Afrit spec's host counts.",
+      "desc": "The King of the East has come back from his war in the west, and his heralds are at our gate with a reckoning of what each of his courts owes him: men for his host, or gold for its wages. They are polite about it, and they have brought enough soldiers of their own to make sure that nobody mistakes the politeness for anything else.",
+      "options": [
+        { "key": "a", "text": "Send the levies.", "ai": "base = {{n:host.levies_ai}}", "tip": "Our levies march to the King's host.", "effect": "zin_east_send_levies = yes" },
+        { "key": "b", "text": "Send gold instead.", "ai": "base = {{n:host.gold_ai}}", "tip": "We pay the King in authority rather than in men.", "effect": "zin_east_send_gold = yes" },
+        { "key": "c", "text": "Plead a bad harvest, and delay.", "ai": "base = {{n:host.delay_ai}}", "tip": "We put the King off for a year, and his court will not forget it.", "effect": "zin_east_delay_host = yes" }
+      ]
+    },
+    {
+      "id": 60, "kind": "country", "title": "The King of the East Is Fallen", "picture": "generic_court",
+      "note": "To every East Lands court from zin_east_after_the_king (zin_afrit_dead), which releases the clients, vindicates the refusers and brings back the old quarrels before the event is read. The text follows the court's status.",
+      "desc": [
+        { "trigger": "has_country_flag = zin_afrit_eastern_client", "text": "The King of the East is dead, and the dominion he built has nobody left to hold it together. His officers have ridden away from our court and our seals are our own again, though the debts he made us run up in his name have not died with him, and the courts that refused him are not inclined to forget which of us knelt." },
+        { "trigger": "has_country_flag = zin_afrit_refused_east", "text": "The King of the East is dead. The courts that would not kneel to him have been proved right, and in our halls the lords say so loudly and often, though the old quarrels of the East are already coming back now that nobody needs to stand together against him." },
+        { "text": "The King of the East is dead, and the East is at once what it was before him: a crowd of courts with long memories and short tempers, each counting what the others gained while he reigned." }
+      ],
+      "options": [
+        { "key": "a", "text": "Our seals are our own again.", "trigger": "has_country_flag = zin_afrit_eastern_client", "ai": 100 },
+        { "key": "b", "text": "We were right to refuse him.", "trigger": "has_country_flag = zin_afrit_refused_east\nNOT = { has_country_flag = zin_afrit_eastern_client }", "ai": 100 },
+        { "key": "c", "text": "The East goes back to its old quarrels.", "trigger": "NOT = { has_country_flag = zin_afrit_eastern_client }\nNOT = { has_country_flag = zin_afrit_refused_east }", "ai": 100 }
+      ]
+    }
+  ],
+  "numbers": {
+    "ask": { "base": 50, "step": 10, "band_1": 59.99, "band_2": 69.99, "band_3": 79.99, "band_4": 89.99 },
+    "breaks": { "peace_ai": 70, "fight_ai": 30 },
+    "stranded": { "serve_ai": 10, "home_ai": 90, "serve_refuser_add": 50 },
+    "king": { "answer_ai": 100, "gifts_bias": 29.99 },
+    "host": { "levies_ai": 60, "gold_ai": 30, "delay_ai": 10 }
+  }
+}

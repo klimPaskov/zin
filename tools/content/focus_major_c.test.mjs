@@ -193,7 +193,7 @@ test('Zol: the three route focuses, the gate on every war focus and the Sodoloro
   assert.equal(countRaw(base.trees.get('zol')), 0);
   const wounded = DATA.zol.events.wounded_not_slain;
   assert.equal(wounded.picture, 'vast_shadow');
-  assert(JSON.stringify(focusOf(DATA, 'zol', 'wounded_not_slain').available).includes('zin_zol_manifested'));
+  assert(JSON.stringify(focusOf(DATA, 'zol', 'wounded_not_slain').available).includes('zin_kusven_forth'));
 });
 
 // ------------------------------------------------------------------------------------------------ Worshipdom secrecy

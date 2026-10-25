@@ -539,7 +539,7 @@ test('The Lost Cause cost: one sentence per fact that holds, every subset of the
   for (let mask = 1; mask <= 15; mask++) assert(block.includes(`zin_cost_dead_${mask}`), `subset ${mask}`);
   assert.equal(loc.get('zin_cost_dead_15'), ' Lorien, Varner, Horos and Golbran did not live to see it.');
   assert.equal(loc.get('zin_cost_dead_1'), ' Lorien did not live to see it.');
-  assert.equal(loc.get('zin_cost_zol'), ' The Old God was driven back, not slain.');
+  assert.equal(loc.get('zin_cost_zol'), ' The dead of the black north were driven back, not destroyed.');
   assert(loc.get('zin_cost_volgan').includes('what remains of him, no one can say'));
   assert(loc.get('zin_cost_necklace').includes('its price is not yet known'));
   assert(loc.get('zin_world.100.d').endsWith('[zin_loc_ending_lost_cause_cost]'));

@@ -399,7 +399,7 @@ test('Spirits: no spirit key equals a focus key, every modifier is real, each ha
   const deadCancels = Object.entries(BASE.shared_ember_lands.spirits).filter(([, s]) => s.cancel).map(([k]) => k).sort();
   assert.deepEqual(deadCancels, ['lake_trade_spirit', 'night_cults', 'one_watch_spirit', 'quiet_hearts_spirit', 'wardens_way', 'warlords_rule']);
   const ideas = compiled.get('shared_dark_lands').files.get('common/ideas/zin_focus_shared_dark_lands.txt');
-  assert.match(ideas, /zin_shared_dark_lands_beach_fires = \{[\s\S]*?cancel = \{\n\t\t\t\thas_global_flag = zin_zol_withdrawn/);
+  assert.match(ideas, /zin_shared_dark_lands_beach_fires = \{[\s\S]*?cancel = \{\n\t\t\t\thas_global_flag = zin_kusven_withdrawn/);
 });
 
 test('Timed and swapped spirits follow the specs', () => {
