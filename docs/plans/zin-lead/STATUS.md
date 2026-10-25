@@ -48,6 +48,7 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 - The text-scan exception for the CJK month counters (月/월) in calendar files only.
 - Realm flags: a thin light-grey keyline on near-black fields (trimmed by the slicer's inset); the four last dark flags generated one per image and trimmed to 41:26.
 - The import's land follows the model outside a 6-px coast band (annotations); straits stay water, necks land.
+- No technical never-existing tag for late characters: every character is recruited in an existing realm's history (the wiki: recruitment only in history) and enters play by a role and `set_nationality`, with flags for "in play" (25 October 2026).
 - The new map is written as soon as 4.5.0 (ZR-8, workspace-owned countries) is installed, before feature-aware growth (C11): ownership follows the capitals, claims, exclusions and unowned land exactly and fills the rest by weight-balanced growth that ignores rivers and ranges; the map is rewritten when growth lands (state ids renumber then; the state table is keyed by geography features). Reason: the new map, roster, flags and portraits reach a Linux run hours or days earlier.
 - Never write file contents through a shell string with backticks or `$`, and never `sed -i` (it strips Windows line endings in this shell): use the Write and Edit tools.
 - Owner branding originals (sha256): `ZinLogoCut.png` ffd77044...4194, `ColorfulZinLogo.PNG` 6ea5e004...7360, `ZinLogo.png` a290f7da...6ecc, `ZIN.LOGO.BACKGROUND.png` bebd9c97...4042, `ZIN.png` 281ea09f...22d0.

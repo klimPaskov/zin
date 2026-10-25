@@ -34,6 +34,9 @@
 | Q-95 | The Worshipdom and Coldor play PLAUSIBLE like FREE (no plausible AI plan); should they lean to history under PLAUSIBLE like the others? | keep their owners' mapping |
 | Q-96 | The dragon texts say "Dragon Mountain" while the name table names Yavieth's capital Thoriveniel; which name? | "Dragon Mountain" for the mountain, Thoriveniel for the city |
 | Q-97 | Bound by Corruption takes one foothold from the Keeper and adds one to the Gathering Dark; should the Keeper be told when it happens? | no, only the elves' hook and the news tell |
+| Q-98 | Black powder spreads only through the dwarf holds' trade event (buying gives the flag, 20 bombards and a siege research bonus); should it spread any other way? | only the holds' trade |
+| Q-99 | Should goblin realms field hand-guns? Today goblin and orc powder realms get bombards only | bombards only |
+| Q-100 | Confirm the word "bombard" for the powder artillery | bombard |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
