@@ -652,7 +652,15 @@
       "has_global_flag = zin_afrit_at_yeldenne"
      ],
      "then": [
-      "@fire zin_afrit.33 to=group:afrit_hub"
+      "hidden_effect = { zin_afrit_resolve_seat = yes }",
+      {
+       "if": [
+        "has_event_target = zin_afrit_seat"
+       ],
+       "then": [
+        "@fire zin_afrit.33 to=scope:event_target:zin_afrit_seat"
+       ]
+      }
      ]
     },
     {

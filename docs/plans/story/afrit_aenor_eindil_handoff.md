@@ -95,7 +95,7 @@ Data fixes in the same pass: `zin_eindil.101` is "The Heir Struck Down" (picture
 - Story framework: `zin_world_add_gathering_dark` is still a pending stand-in when the world module is absent; outcome 4 (the Golden Court Endures) should also require `zin_golden_king_exiled` unset; the path module may read `zin_eindil_south_unfought` for CP21 and CP22.
 - Realm life (not written): `zin_realm.50` to the exiled King's host (SL-25), and the generic mortality that may end a surviving King with `zin_golden_king_natural` (SL-31).
 - Zol and Volgan side: when `zin_zol_withdrawn` and `zin_zol_manifested` retire, the readers in `mech_afrit_script.mjs` (the return) and `mech_eindil_scripts.mjs` (battles 4 and 5) must move to `zin_kusven_withdrawn` and `zin_kusven_forth`.
-- The journey still fires `zin_afrit.33` to `zin_afrit_is_hub`, not to the seat; when the Worshipdom is gone the ambush choice is skipped (the ambush still happens by its formula).
+- Resolved: the landfall `zin_eindil.70` resolves `zin_afrit_seat` and fires `zin_afrit.33` there (`events_world_eindil_2.json`, tested in `events_world.test.mjs`), so the ambush choice reaches Afrit when the Worshipdom is gone.
 - The hunt has no "found" outcome: Afrit's death stays the palace's alone (O2), so after a year of hiding he is only treated as reduced.
 
 ## Owner questions

@@ -334,6 +334,16 @@ test('Journey: the ambush follows decision N9 through the engine\'s own effects 
   assert(ownerText.includes('zin_eindil_compute_ambush') && /ZIN journey: ambush strength/.test(ownerText), 'the engine really owns and logs the sum');
 });
 
+test('Journey: the landfall sends the ambush choice zin_afrit.33 to Afrit\'s seat, not only to the Worshipdom (SL-11)', () => {
+  const t = text('events/zin_eindil.txt').split('country_event = {\n\tid = zin_eindil.70')[1].split('\n}\n')[0];
+  const at = t.indexOf('zin_afrit.33');
+  assert(at > 0, 'the landfall fires the ambush choice');
+  const head = t.slice(0, at);
+  assert(head.includes('zin_afrit_resolve_seat = yes') && head.lastIndexOf('zin_afrit_resolve_seat = yes') < head.lastIndexOf('has_event_target = zin_afrit_seat'), 'the seat is resolved, then checked');
+  assert(/event_target:zin_afrit_seat = \{\s*country_event = zin_afrit\.33/.test(t), 'the choice goes to the seat');
+  assert(!/zin_afrit_is_hub = yes\s*\}\s*country_event = zin_afrit\.33/.test(t), 'the Worshipdom alone no longer receives it');
+});
+
 test('Journey: one-time world effects never sit in an option that several recipients can choose', () => {
   for (const id of [83, 92, 94, 96, 97, 100, 102, 130]) {
     const e = parsedEvents('zin_eindil').find(x => child(x.v, 'id') === `zin_eindil.${id}`);
