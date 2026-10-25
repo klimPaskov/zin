@@ -16,20 +16,6 @@
  ],
  "briefs": [
   {
-   "id": 1,
-   "key": "man_in_the_ice",
-   "title": "The Man in the Ice",
-   "sprite": "GFX_zin_se_man_in_the_ice",
-   "file": "gfx/event_pictures/zin/super_events/zin_se_man_in_the_ice.dds",
-   "size": "700x500",
-   "role": "first reveal",
-   "brief": "Night in a hunters' camp of the Cold Lands: by a low fire under a hide shelter, fur-clad hunters and an old woman of the tribe lean over a black-haired man lying wrapped in furs, newly cut from a block of clear blue ice that still stands half-broken behind them with axes and ropes beside it; his face is pale and calm, his eyes just opening; snow, the green curtain of a northern sky, warm firelight against cold blue. Painted, quiet and wondering, not heroic; the man is the canon Eindil (black hair, blue eyes) without armour or helmet.",
-   "references": [
-    "art/source/design_refs/eindil_v4_d.png"
-   ],
-   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
-  },
-  {
    "id": 2,
    "key": "golden_king_dead",
    "title": "The Golden King Is Dead",
@@ -368,6 +354,83 @@
    "references": [
     "art/source/design_refs/volgan_v4_b.png"
    ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 27,
+   "key": "hall_of_horos",
+   "title": "The Hall of Horos",
+   "sprite": "GFX_zin_se_hall_of_horos",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_hall_of_horos.dds",
+   "size": "700x500",
+   "role": "first reveal",
+   "brief": "The high hall of the Castle of Yeldenne in the far north, cold blue light through tall windows over snow: on the great stone high seat only a drift of grey dust and the faint shape where someone sat; before it stands the heir of Aen (Eindil v4 D: light blue armour, black hair, blue eyes faintly glowing), a blue sword at his side and a softly glowing crystal held in his hand. Horos is not shown as a figure (K56: story only); his absence is the subject. Painted, hushed and holy, blue and silver.",
+   "references": [
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 28,
+   "key": "mirolon_falls",
+   "title": "The Passes of Mirolon Fall",
+   "sprite": "GFX_zin_se_mirolon_falls",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_mirolon_falls.dds",
+   "size": "700x500",
+   "role": "escalation",
+   "brief": "High mountain passes under an ember-red storm sky: grey stone watchtowers of the wardens burning along a ridge, a long column of grey-cloaked wardens and refugees with their banners retreating down a narrow mountain road, and behind them, pouring through the broken gate, a host of grave-warriors and ogres. Painted, desperate and grim, grey and ember.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 29,
+   "key": "east_crosses_the_rift",
+   "title": "The East Crosses the Rift",
+   "sprite": "GFX_zin_se_east_crosses_the_rift",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_east_crosses_the_rift.dds",
+   "size": "700x500",
+   "role": "escalation",
+   "brief": "The edge of a vast ancient forest at the lip of a great rift: an eastern host in many styles of dress and armour crosses a long timber bridge over the chasm with wagons and axes, while elven archers wait unseen in the tall trees and a dragon wheels high above in daylight. Painted, tense and sweeping, gold-green forest against dusty eastern colours.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 30,
+   "key": "black_compact",
+   "title": "The Black Compact",
+   "sprite": "GFX_zin_se_black_compact",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_black_compact.dds",
+   "size": "700x500",
+   "role": "escalation",
+   "brief": "A dark plain at dusk under a split sky, ember-red to the south and black to the north: a column of Volgan's grave-warriors and ogres meets a column of the skeletal armoured dead of the black north (K57), and the two merge into one host marching the same way; scouts of the living watch from a ridge in the foreground. No figure of Zol and no figure of Volgan. Painted, ominous and still.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 31,
+   "key": "the_cliff",
+   "title": "The Cliff",
+   "sprite": "GFX_zin_se_the_cliff",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_the_cliff.dds",
+   "size": "700x500",
+   "role": "escalation",
+   "brief": "A windswept clifftop at dusk above a misty gorge: a dented light blue helmet lies near the broken edge, and a tall winged dark figure (Afrit's true form, v3 C) turns away from the edge with his back to the viewer; storm clouds and the far banners of two armies below. No body is shown. Painted, shocking and grim, cold blue and black.",
+   "references": [
+    "art/source/design_refs/afrit_true_v3_c.png",
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 32,
+   "key": "without_the_heir",
+   "title": "Without the Heir",
+   "sprite": "GFX_zin_se_without_the_heir",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_without_the_heir.dds",
+   "size": "700x500",
+   "role": "defeat aftermath",
+   "brief": "An empty command tent at grey dawn: a light blue cloak and a helmet laid on the camp table beside a map, captains of many crowns (men, elves, dwarves) standing around it in silence, banners outside hanging still in the windless air. Painted, quiet grief, grey and blue.",
+   "references": [],
    "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
   }
  ]

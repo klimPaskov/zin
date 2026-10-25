@@ -1,75 +1,97 @@
 # Super Events
 
-**Status:** Draft for owner review. Design and text proposed on 25 October 2026 under owner decision K52; the framework is implemented (`tools/content/modules/super_events.mjs`), the pictures and recordings are pending their specialists.
-**Basis:** owner decision K52 of 25 October 2026, in [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md): "The mod should have its own designed super events for major events", a full-screen ZIN presentation with its own generated picture, an in-world quote and licensed sound (owner answer Q-08, decision K16: licensed recordings), shown to every player when one of the age's great moments happens.
+**Status:** Draft for owner review. Design and text proposed on 25 October 2026 under owner decision K52, with the owner's answers K59 (the fall of Nafeher), K60 (six more moments, the news replaced, the music channel, the first moment at the naming) and K61 (who hears of what) applied; the framework is implemented (`tools/content/modules/super_events.mjs`), the pictures and recordings are pending their specialists.
+**Basis:** owner decision K52 of 25 October 2026, in [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md): "The mod should have its own designed super events for major events", a full-screen ZIN presentation with its own generated picture, an in-world quote and licensed sound (owner answer Q-08, decision K16: licensed recordings) when one of the age's great moments happens. K60 and K61 (25 October 2026) settle the set and the audiences; K61 in the owner's words: "there can't be news of a random man waking up in ice in west lands. This can't be something that people know, only regional countries might get a minor report event. So most things remain unheard."
 **Companions:** [alternate_history.md](../../design/alternate_history.md) (beats and checkpoints), [04_endings.md](04_endings.md), [09_voice_and_style.md](../02_lore/09_voice_and_style.md), [knowledge_layers.md](../../lore/references/knowledge_layers.md), the repository skill `hoi4-super-events`.
-**Data:** `tools/content/data/super_events.json` holds every text, brief and hook below; this file and the data must agree (a test checks the titles, buttons, quotes and hooks).
+**Data:** `tools/content/data/super_events.json` holds every text, brief, hook, audience and replaced news event below; this file and the data must agree (a test checks the titles, buttons, quotes and hooks).
 
-Every title, description, button, quote, attribution and brief in this file is ZIN-proposed text, written for the owner to accept or change; the lore under it keeps the status its own source gives it.
+Every title, description, button, quote, attribution, report and brief in this file is ZIN-proposed text, written for the owner to accept or change; the lore under it keeps the status its own source gives it.
 
 ## 1. Purpose
 
-A handful of moments change the age for everybody who plays it: the Golden King dies, a god takes his crown, the heir of Aen is named, the War of the Last Crowns begins, the dark powers march, the false god is unmasked and dies, and the age ends one way or another.
+A handful of moments change the age: the Golden King dies, a god takes his crown, the heir of Aen is named, the War of the Last Crowns begins, the dark powers march, the false god is unmasked and dies, and the age ends one way or another.
 The ordinary event popup and the news event tell the player what happened; a super event makes the moment felt.
 It takes over the whole screen, shows a large painting of the moment, tells it in a few paragraphs in the chronicler's voice, sets a short line from somebody of Aoaz beside it, and plays a recording chosen for that moment.
 
-A super event never changes the game: it is presentation only, and the owning event or effect keeps every gameplay consequence.
+A super event never changes the game: it is presentation, and the owning event or effect keeps every gameplay consequence (section 4 says how the replaced news events keep theirs).
 
 ## 2. What counts as a super event
 
 A moment qualifies when all of these hold:
 
-1. It is a beat of the main storyline (`alternate_history.md`, B01 to B45) or an ending, and it changes the age for every realm, not only for its owner.
+1. It is a beat of the main storyline (`alternate_history.md`, B01 to B45), an owner-named divergence (the fall of Nafeher, the heir lost) or an ending, and it changes the age for the realms that hear of it.
 2. It happens once per game, at a moment marked by one global story flag that the owning module sets.
-3. Its public meaning can be told to every player without breaking the knowledge layers at the moment it fires.
+3. Its meaning can be told to its audience without breaking the knowledge layers at the moment it fires.
 
-Moments left out on purpose: the start (B01, no single moment), the Council's verdict and the plot (B02, secret), the road south and the Grey Ford (B04, B05, regional), the Thirty Days (B08, inside the Golden King's death and the crowning), the storm and the islands (B11), Afrit's voyage and the ambush (B13, B14, secret), the hall of Horos (B15, its meaning is gated by Yeldenne), the warnings and the denunciation (B16), the forest and the dragon pact (B17, told by the heir's return), Lerendor's withdrawal (B19) and the eastern invasion (B21, regional), the fall of Mirolon (B22, told by Volgan's march a few weeks later), the West's evacuation (B28), the wave of Glo (B30), the Black Compact (B31, a dark bargain few would know), the breaking of the blue sword (seven days after Kusven comes forth, and only while Glo is with the heir; told by Kusven's coming and Lorien's fall), the New Gods' restoration of the heir (B33, the heir's own story), the field hailing (B37), Afrit's return and the cliff (B38 to B40, told by his death), and the heir lost (`zin_eindil_lost`, a divergence; an owner question below).
+The man's waking in the ice (B03) is **not** a super event (K60, K61): it is never world news, the journey's own event `zin_eindil.10` tells it to the realm that holds him, and its id 1 is retired.
+Moments still left out: the start (B01), the Council's plot (B02, secret), the road south and the Grey Ford (B04, B05), the Thirty Days (B08, inside the Golden King's death and the crowning), the storm and the islands (B11), Afrit's voyage and the ambush (B13, B14, secret), the warnings and the denunciation (B16), the forest and the dragon pact (B17), Lerendor's withdrawal (B19), the West's evacuation (B28), the wave of Glo (B30), the New Gods' restoration (B33), the field hailing (B37), Afrit's return (B38, told by the cliff), the rescue below the cliff (B40) and the breaking of the blue sword (seven days after Kusven comes forth, and only while Glo is with the heir).
 
-## 3. The list
+## 3. The list and the audiences
 
-Twenty-six super events: seventeen moments of the historical storyline, the eight endings, and the fall of Nafeher with Volgan's body intact, which the owner made a super event in answer Q-74 (K59, 25 October 2026).
-Ids are stable registration numbers: an id is never reused for another moment.
+Thirty-one super events: twenty-two moments and divergences of the storyline, the fall of Nafeher (K59) and the eight endings.
+Ids are stable registration numbers: an id is never reused for another moment, and id 1 stays retired.
 
-| Id | Key | Title | Beat | Hook flag (set by) | Role |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `man_in_the_ice` | The Man in the Ice | B03 | `zin_eindil_awake` (`zin_eindil_enter_1`) | first reveal |
-| 2 | `golden_king_dead` | The Golden King Is Dead | B07 | `zin_golden_king_dead` (Aenor court) | irreversible political shift |
-| 3 | `deliverer_crowned` | The Deliverer Takes the Crown | B09 | `zin_aurevan_crowned` (`zin_afrit_crown_aurevan`) | ideological transformation |
-| 4 | `heir_of_aen` | The Heir of Aen | B12 | `zin_eindil_named` (`zin_eindil_name_him`) | first reveal |
-| 5 | `last_crowns` | The War of the Last Crowns | B18 | `zin_war_of_last_crowns` (world tension, with news `zin_world.20`) | escalation |
-| 6 | `western_crossing` | The Western Crossing | B20 | `zin_western_crossing` (`zin_west_launch_crossing`) | escalation |
-| 7 | `black_north_marches` | The Black North Marches | B24 | `zin_zol_rising` (`zin_zol_rise`) | global threat escalation |
-| 8 | `volgan_marches` | Volgan Marches North | B23 | `zin_volgan_marches` (`zin_volgan_begin_march`) | global threat escalation |
-| 9 | `name_of_the_deliverer` | The Name of the Deliverer | B25 | `zin_afrit_revealed` (`zin_afrit_reveal`) | first reveal |
-| 10 | `king_of_the_east` | A King in the East | B26 | `zin_afrit_king_of_east` (Afrit chain) | faction formation |
-| 11 | `parim_taken` | Western Banners over Parim | B27 | `zin_west_parim_taken` (Western Crossing) | irreversible political shift |
-| 12 | `heir_returns` | The Heir Returns | B29 | `zin_eindil_returned` (journey stage 9) | global response |
-| 13 | `varner_falls` | Varner Falls | B32 | `zin_varner_dead` (`zin_eindil.97`) | defeat aftermath |
-| 14 | `volgan_broken` | The Body of Volgan Is Broken | B34 | `zin_volgan_body_destroyed` (`zin_volgan_destroy_body`) | defeat aftermath |
-| 15 | `kusven_forth` | The Grave-Wind | B35 | `zin_kusven_forth` (`zin_zol_send_kusven`) | global threat escalation |
-| 16 | `lorien_falls` | King Lorien Falls | B36 | `zin_lorien_dead` (`zin_sun_lorien_falls`) | defeat aftermath |
-| 17 | `afrit_dead` | Afrit Is Dead | B41 | `zin_afrit_dead` (`zin_afrit_die`) | defeat aftermath |
-| 18 | `ending_lost_cause` | A King of Aen's Line | B42 | `zin_ending_lost_cause` (`zin_world_reach_ending`) | campaign-ending signal |
-| 19 | `ending_children_of_volgan` | Children of Volgan | B43 | `zin_ending_children_of_volgan` (`zin_world_reach_ending`) | world-end scenario |
-| 20 | `ending_ashen_throne` | The Ashen Throne | B44 | `zin_ending_ashen_throne` (`zin_world_reach_ending`) | world-end scenario |
-| 21 | `ending_golden_court` | The Golden Court Endures | B45 | `zin_ending_golden_court` (`zin_world_reach_ending`) | campaign-ending signal |
-| 22 | `ending_western_crown` | A Western Crown in Parim | B45 | `zin_ending_western_crown` (`zin_world_reach_ending`) | campaign-ending signal |
-| 23 | `ending_strait_master` | Master of the Strait | B45 | `zin_ending_strait_master` (`zin_world_reach_ending`) | campaign-ending signal |
-| 24 | `ending_eastern_king` | One King in the East | B45 | `zin_ending_eastern_king` (`zin_world_reach_ending`) | campaign-ending signal |
-| 25 | `ending_unfinished` | The Age Unfinished | B45 | `zin_ending_unfinished` (`zin_world_reach_ending`) | campaign-ending signal |
-| 26 | `nafeher_falls` | The Fall of Nafeher | B34 divergence | `zin_volgan_withdrawn_south` (`zin_volgan_withdraws_south`, with news `zin_dominion.29`) | defeat aftermath |
+**Audiences (K61).** World-known moments (great wars, the fall of great capitals, the death or crowning of the great kings, the endings) show to every human player. Every other moment shows only to the human players whose realm is involved, and, where it fits, the human players whose realm borders an involved realm get a minor report event instead. Each audience is one scripted trigger, `zin_se_audience_<name>` in `common/scripted_triggers/zin_super_events.txt`; neighbours are bordering realms (`any_neighbor_country`), so no radius constant is needed.
 
-The ids follow the historical order of the beats' target dates, except that the Black North (B24, target Kerun 4A 1755) comes before Volgan's march (B23, target Naisa 4A 1755) because the dead rise first on the historical path; id 26 was added after the first registration and keeps the next free number, because ids are never renumbered.
+| Audience | Who sees the super event |
+| --- | --- |
+| `world` | every human player |
+| `heir_named` | the realm that holds the heir (`zin_eindil_is_host`) and Lorien's realm, the Gala (`GAA`) |
+| `yeldenne` | the realm that holds the heir and the realm that holds the town and Castle of Yeldenne (`zin_glo_hall_owner`) |
+| `western_war` | the realms of the West Lands, the Middle Lands and the North Lands (startup region flags) |
+| `black_north` | the realms of the Cold Lands, the North Lands, the Middle Lands and the black north, and every realm at war with Zol |
+| `southern_front` | Mirolon, the realms of the Middle Lands and the Ember Lands, and every realm at war with Volgan |
+| `eastern_front` | the realms of the East Lands and the Magical Lands |
+| `war_of_the_living` | the realm that holds the heir, the realms of the Middle Lands and the Magical Lands, and every realm at war with Volgan, Zol or Afrit's realm |
+| `dark_alliance` | Volgan, Zol, the realm that holds the heir, and every realm at war with Volgan or Zol |
+| `afrit_war` | Afrit's realm, the realm that holds the heir, the realms of the Middle Lands, and every realm at war with Afrit's realm |
+
+| Id | Key | Title | Beat | Hook flag (set by) | Audience | Report to neighbours | Replaces for its audience |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | `golden_king_dead` | The Golden King Is Dead | B07 | `zin_golden_king_dead` (Aenor court) | world | | |
+| 3 | `deliverer_crowned` | The Deliverer Takes the Crown | B09 | `zin_aurevan_crowned` (`zin_afrit_crown_aurevan`) | world | | `zin_afrit.21` |
+| 4 | `heir_of_aen` | The Heir of Aen | B12 | `zin_eindil_named` (`zin_eindil_name_him`) | heir_named | Talk from the Gala Court | |
+| 5 | `last_crowns` | The War of the Last Crowns | B18 | `zin_war_of_last_crowns` (`zin_world_start_last_crowns`) | world | | `zin_world.20` |
+| 6 | `western_crossing` | The Western Crossing | B20 | `zin_western_crossing` (`zin_west_launch_crossing`) | western_war | | `zin_west.41` |
+| 7 | `black_north_marches` | The Black North Marches | B24 | `zin_zol_rising` (`zin_zol_rise`) | black_north | | `zin_mistake.11` |
+| 8 | `volgan_marches` | Volgan Marches North | B23 | `zin_volgan_marches` (`zin_volgan_begin_march`) | world | | `zin_dominion.12` |
+| 9 | `name_of_the_deliverer` | The Name of the Deliverer | B25 | `zin_afrit_revealed` (`zin_afrit_reveal`) | world | | `zin_afrit.43` |
+| 10 | `king_of_the_east` | A King in the East | B26 | `zin_afrit_king_of_east` (`zin_afrit_proclaim_king_of_east`) | world | | |
+| 11 | `parim_taken` | Western Banners over Parim | B27 | `zin_west_parim_taken` (`zin_west_take_parim`) | world | | `zin_west.56` |
+| 12 | `heir_returns` | The Heir Returns | B29 | `zin_eindil_returned` (`zin_eindil_enter_9`) | war_of_the_living | | `zin_eindil.90` |
+| 13 | `varner_falls` | Varner Falls | B32 | `zin_varner_dead` (`zin_eindil.97`) | war_of_the_living | | |
+| 14 | `volgan_broken` | The Body of Volgan Is Broken | B34 | `zin_volgan_body_destroyed` (`zin_volgan_destroy_body`) | world | | `zin_dominion.17` |
+| 15 | `kusven_forth` | The Grave-Wind | B35 | `zin_kusven_forth` (`zin_zol_send_kusven`) | world | | `zin_mistake.20` |
+| 16 | `lorien_falls` | King Lorien Falls | B36 | `zin_lorien_dead` (`zin_sun_lorien_falls`) | world | | |
+| 17 | `afrit_dead` | Afrit Is Dead | B41 | `zin_afrit_dead` (`zin_afrit_die`) | world | | |
+| 18 | `ending_lost_cause` | A King of Aen's Line | B42 | `zin_ending_lost_cause` (`zin_world_reach_ending`) | world | | `zin_world.100` |
+| 19 | `ending_children_of_volgan` | Children of Volgan | B43 | `zin_ending_children_of_volgan` (`zin_world_reach_ending`) | world | | `zin_world.101` |
+| 20 | `ending_ashen_throne` | The Ashen Throne | B44 | `zin_ending_ashen_throne` (`zin_world_reach_ending`) | world | | `zin_world.102` |
+| 21 | `ending_golden_court` | The Golden Court Endures | B45 | `zin_ending_golden_court` (`zin_world_reach_ending`) | world | | `zin_world.103` |
+| 22 | `ending_western_crown` | A Western Crown in Parim | B45 | `zin_ending_western_crown` (`zin_world_reach_ending`) | world | | `zin_world.104` |
+| 23 | `ending_strait_master` | Master of the Strait | B45 | `zin_ending_strait_master` (`zin_world_reach_ending`) | world | | `zin_world.105` |
+| 24 | `ending_eastern_king` | One King in the East | B45 | `zin_ending_eastern_king` (`zin_world_reach_ending`) | world | | `zin_world.106` |
+| 25 | `ending_unfinished` | The Age Unfinished | B45 | `zin_ending_unfinished` (`zin_world_reach_ending`) | world | | `zin_world.107` |
+| 26 | `nafeher_falls` | The Fall of Nafeher | B34 divergence | `zin_volgan_withdrawn_south` (`zin_volgan_withdraws_south`) | world | | `zin_dominion.29` |
+| 27 | `hall_of_horos` | The Hall of Horos | B15 | `zin_horos_dead` (`zin_glo_horos_falls`) | yeldenne | Lights at Yeldenne | `zin_glo.30` |
+| 28 | `mirolon_falls` | The Passes of Mirolon Fall | B22 | `zin_mirolon_fallen` (`zin_dominion_mirolon_falls`) | southern_front | Smoke over the Passes | `zin_dominion.11` |
+| 29 | `east_crosses_the_rift` | The East Crosses the Rift | B21 | `zin_eastern_invasion` (`zin_east_cross_rift`) | eastern_front | Trouble across the Rift | `zin_east.43` |
+| 30 | `black_compact` | The Black Compact | B31 | `zin_black_compact` (`events/zin_mistake_war.txt`) | dark_alliance | | |
+| 31 | `the_cliff` | The Cliff | B39 | `zin_eindil_cast_down` (`zin_eindil.110`) | afrit_war | | |
+| 32 | `without_the_heir` | Without the Heir | divergence | `zin_eindil_lost` (`zin_eindil_lose_heir`) | war_of_the_living | | `zin_eindil.140` |
+
+The ids 2 to 25 follow the historical order of the beats (the Black North before Volgan's march, because the dead rise first on the historical path); ids 26 to 32 were added later and keep the next free numbers, because ids are never renumbered.
 Off the historical path the moments come in whatever order the game produces, and some never come; a super event has no date of its own.
-
 The Lost Cause ending replaces a separate super event for Eindil's coronation: the coronation calls `zin_world_check_endings`, which reaches the Lost Cause the same day, so one presentation tells both.
 
-## 4. Who sees it and when
+## 4. Who sees it, and the news it replaces
 
-1. **Every human player sees every super event once per game.** The owning module sets its flag; the builder calls `zin_super_event_<key>` on the next line (section 6); the effect sets `zin_se_done_<key>` and opens the window for every country with `is_ai = no`. AI realms are not shown anything.
-2. **One at a time.** If a player's window is already open, the new id is queued in that player's country array `zin_se_queue` and shown when the player closes the current one. The window says how many more are waiting.
-3. **Text at the moment.** Every text is written for the knowledge layers that hold when its flag is set. Text that would change if the reveal came earlier (the crowning) reads the gate through `[zin_loc_deliverer]`.
-4. **The owning event stays.** The news event or the owner's event still fires with its options; the super event is the presentation on top of it.
+1. **The audience sees it once per game.** The owning module sets its flag; the builder calls `zin_super_event_<key>` on the next line (section 6); the effect sets `zin_se_done_<key>` and opens the window for every country with `is_ai = no` that its audience trigger accepts. AI realms are never shown anything.
+2. **Neighbours get a minor report** where the moment has one (ids 4, 27, 28, 29): a normal country event `zin_super_event.<100 + id>` with a one-paragraph rumour, sent to every human player whose realm borders an audience realm without being in the audience.
+3. **One at a time.** If a player's window is already open, the new id is queued in that player's country array `zin_se_queue` and shown when the player closes the current one. The window says how many more are waiting.
+4. **The super event replaces the news event of the same moment for the players who see it (K60).** For each listed news event the builder (`replaceNews`) adds an event trigger `NOT = { has_country_flag = zin_se_saw_<key> }`, so the news still reaches the AI and every human outside the audience exactly as its owner wrote it. A human in the audience gets `zin_se_saw_<key>` and, at the same moment, `zin_se_news_<event>`: a copy of that news event's `immediate` block and of its first option whose trigger holds (the option the event's timeout would take), so the effects the news gives each country still reach that player. A news event whose blocks use `ROOT` or `FROM`, or which already has an event trigger, stops the build instead of being copied. The news events these moments replace are in the table of section 3.
+5. **Text at the moment.** Every text is written for the knowledge layers that hold when its flag is set and for its audience. Text that would change if the reveal came earlier (the crowning) reads the gate through `[zin_loc_deliverer]`.
+6. **The owning event stays.** The owner's own events and options still fire; only the listed news events are replaced, and only for the audience.
 
 ## 5. The window
 
@@ -84,7 +106,7 @@ The panel fills a 1280 x 720 screen at UI scale 1 with a margin on each side and
 | Date | `zin_se_date` (40, 66; 1100 x 20) | `[GetDateText]`, the day the window opened | |
 | Top rule | `zin_se_rule_top` (330, 92) | Divider under the title | `GFX_zin_rule` |
 | Picture | `zin_se_picture_frame` (30, 112; 716 x 516) and `zin_se_picture` (38, 120; 700 x 500) | The painting of the moment, chosen by the scripted GUI property `image = "[zin_loc_super_event_picture]"` | `GFX_zin_se_<key>`, pending art; the slot shows the empty frame until a picture ships, never a stand-in picture |
-| Description | `zin_se_desc` (770, 112; 380 x 272) | `[zin_loc_super_event_desc]`, `hoi_16mbs`; sized for the longest descriptions (ids 3 and 10, 690 characters in three paragraphs) | |
+| Description | `zin_se_desc` (770, 112; 380 x 272) | `[zin_loc_super_event_desc]`, `hoi_16mbs`; sized for the longest descriptions (id 28, 712 characters in three paragraphs, rendered with room to spare) | |
 | Middle rule | `zin_se_rule_mid` (770, 396; scale 0.73) | Divider | `GFX_zin_rule` |
 | Quote | `zin_se_quote` (770, 414; 380 x 160) | `[zin_loc_super_event_quote]`: the line, then `- attribution` | |
 | Continue | `zin_se_close` (780, 618) | The moment's button text; closes the window and shows the next queued moment; `ESCAPE` | `GFX_button_359x34` (the ZIN reskin) |
@@ -94,7 +116,7 @@ The panel fills a 1280 x 720 screen at UI scale 1 with a margin on each side and
 Action budget: two controls (continue, music), one value (the queue count).
 Engine adaptations: HOI4 text boxes cannot grow, so the description box is sized for the longest description and the quote always starts under the middle rule; the picture is a fixed sprite chosen by scripted localisation, as in vanilla's `AST_cabinet_trust_scripted_gui`.
 
-**Sound.** `zin_super_event_play` plays the moment's song with `scoped_play_song`, so only that player hears it, through the game's music channel and its volume setting (the vanilla precedent is `play_song` in `events/AAT_Denmark.txt` and `scoped_play_song` in `common/national_focus/czechoslovakia_mu.txt`).
+**Sound.** The recordings play on the music channel, as vanilla's event songs do (owner answer K60). `zin_super_event_play` plays the moment's song with `scoped_play_song`, so only that player hears it, through the game's music channel and its volume setting (the vanilla precedent is `play_song` in `events/AAT_Denmark.txt` and `scoped_play_song` in `common/national_focus/czechoslovakia_mu.txt`).
 The window's music button is the player's own setting (country flag `zin_se_music_off`): while it is set no super event plays a song for that player; turning it back on plays the shown moment's song.
 Each song is a `music` entry in `music/zin_super_events.asset` (`name = zin_se_<key>`, `file = zin_se_<key>.ogg`, `volume = 0.8`), the format of vanilla's event songs (`dlc/dlc038_arms_against_tyranny/music/music_aat.asset`), and each song's title key (`zin_se_<key>`) holds the moment's title until the audio specialist supplies the recording's own title.
 The songs are deliberately in no radio station, so they never play in the normal rotation and the music player's track list cannot reveal a moment before it happens.
@@ -102,10 +124,11 @@ The installed vanilla songs played by `play_song` are also listed in a station (
 
 ## 6. Wiring
 
-1. `buildSuperEvents` (run after the mechanic events in `tools/content/build.mjs`) writes the window, the sprites, the songs, the scripted effects, the scripted localisation, the hidden preview event and the text.
-2. `hookSuperEvents` (run over the finished script tree, after the late characters) finds every line `set_global_flag = <hook>` in the staged `common/`, `events/` and `history/` scripts and adds `zin_super_event_<key> = yes` on the next line, in the same block. A hook flag that no file sets stops the build. Today every hook flag is set in exactly one place, so there are 26 hook sites.
-3. No owner module is edited: the moment stays where its owner put it, and moving or renaming the flag is caught by the build.
-4. `zin_super_event.1` (hidden, console) shows the next id in order to the country that runs it, without touching the once-per-game flags, so the live acceptance run can page through all 26.
+1. `buildSuperEvents` (run after the mechanic events in `tools/content/build.mjs`) writes the window, the sprites, the songs, the audience triggers, the scripted effects, the scripted localisation, the preview and report events and the text.
+2. `hookSuperEvents` (run over the finished script tree, after the late characters) finds every line `set_global_flag = <hook>` in the staged `common/`, `events/` and `history/` scripts and adds `zin_super_event_<key> = yes` on the next line, in the same block. A hook flag that no file sets stops the build. Today every hook flag is set in exactly one place, so there are 31 hook sites.
+3. `replaceNews` (called by `hookSuperEvents`) adds the event trigger to each replaced news event and writes its `zin_se_news_<event>` copy (section 4, item 4).
+4. No owner module is edited: the moment stays where its owner put it, and moving or renaming a flag or a news event is caught by the build.
+5. `zin_super_event.1` (hidden, console) shows the next live id in order (retired ids skipped) to the country that runs it, whatever its audience and without touching the once-per-game flags, so the live acceptance run can page through all 31.
 
 ## 7. Quotes
 
@@ -116,38 +139,6 @@ The button text is the reader's own reaction, short and in the player's voice.
 
 ## 8. The catalogue
 
-### 1. The Man in the Ice
-
-| Field | Value |
-| --- | --- |
-| Key | `man_in_the_ice` (id 1) |
-| Beat and role | B03; first reveal |
-| Fires when | the global flag `zin_eindil_awake` is set; owner: Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
-| Picture | `GFX_zin_se_man_in_the_ice`, `gfx/event_pictures/zin/super_events/zin_se_man_in_the_ice.dds`, 700 x 500; pending art |
-| Song | `zin_se_man_in_the_ice`, `music/zin_se_man_in_the_ice.ogg`; pending licensed recording |
-| Knowledge layers | Before `zin_eindil_named` the man is only the man in the ice (D4, E1): no name, no ancestry, no hint of what he is (E2 is open). The tale is told as the drovers' rumour. |
-
-**Title:** The Man in the Ice
-
-**Description:**
-
-> Word has come down the northern roads, carried by herders and by the drovers who buy their hides, that hunters of the Cold Lands cut a living man out of the ice this winter.
->
-> The tribes who took him in say that he wakes and eats and walks like anyone else, but cannot tell them his name or how he came to be frozen, and the old women of the camps have already started arguing over what he is.
->
-> In the southern courts the tale is told over supper as a northern curiosity, somewhere between the two-headed calf of last spring and the price of furs.
-
-**Button:** A tale for the long nights.
-
-**Quote:** We found him under a hand's depth of clear ice, lying as straight as a man laid out for burial, and when we had cut him free and warmed him by the fire he opened his eyes and asked us for water.
-
-**Attribution:** A hunter of the Cold Lands, as the drovers tell it
-
-**Picture brief:** Night in a hunters' camp of the Cold Lands: by a low fire under a hide shelter, fur-clad hunters and an old woman of the tribe lean over a black-haired man lying wrapped in furs, newly cut from a block of clear blue ice that still stands half-broken behind them with axes and ropes beside it; his face is pale and calm, his eyes just opening; snow, the green curtain of a northern sky, warm firelight against cold blue. Painted, quiet and wondering, not heroic; the man is the canon Eindil (black hair, blue eyes) without armour or helmet. References: `art/source/design_refs/eindil_v4_d.png`.
-
-**Sound brief:** hushed wonder in the cold, a lullaby heard from far off; 60 to 90 seconds; solo voice or small unaccompanied women's choir with a drone; frame drum or a bowed string instrument (hurdy-gurdy, nyckelharpa or viol) allowed. A licensed recording with its licence and source documented (Q-08).
-
 ### 2. The Golden King Is Dead
 
 | Field | Value |
@@ -155,7 +146,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `golden_king_dead` (id 2) |
 | Beat and role | B07; irreversible political shift |
 | Fires when | the global flag `zin_golden_king_dead` is set; owner: Aenor court (modules/mech_aenor.mjs, zin_aenor_court.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | no news event of the same moment |
 | Picture | `GFX_zin_se_golden_king_dead`, `gfx/event_pictures/zin/super_events/zin_se_golden_king_dead.dds`, 700 x 500; pending art |
 | Song | `zin_se_golden_king_dead`, `music/zin_se_golden_king_dead.ogg`; pending licensed recording |
 | Knowledge layers | The plot (A4) is gated by `zin_afrit_revealed`: the text says only that he is dead, never how or by whom, so it also holds for a death of old age (K59, Q-86). |
@@ -187,7 +180,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `deliverer_crowned` (id 3) |
 | Beat and role | B09; ideological transformation |
 | Fires when | the global flag `zin_aurevan_crowned` is set; owner: Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_afrit.21` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_deliverer_crowned`, `gfx/event_pictures/zin/super_events/zin_se_deliverer_crowned.dds`, 700 x 500; pending art |
 | Song | `zin_se_deliverer_crowned`, `music/zin_se_deliverer_crowned.ogg`; pending licensed recording |
 | Knowledge layers | Public face only (A1, A5, A8): the Deliverer is named through `[zin_loc_deliverer]`, which reads Aurevan the Deliverer until the reveal; his godhood and the healing are the faithful's belief, with a believer in the sentence (C15). The Worshipdom speaks through its public steward. |
@@ -219,7 +214,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `heir_of_aen` (id 4) |
 | Beat and role | B12; first reveal |
 | Fires when | the global flag `zin_eindil_named` is set; owner: Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | the human players whose realm is in the audience `heir_named`: the realm that holds the heir and Lorien's realm, the Gala; once per game; queued behind another super event that is still open |
+| Neighbours | the human players whose realm borders an audience realm get the minor report `zin_super_event.104` "Talk from the Gala Court" (picture `GFX_zin_evt_traders_road_south`) |
+| Replaces | no news event of the same moment |
 | Picture | `GFX_zin_se_heir_of_aen`, `gfx/event_pictures/zin/super_events/zin_se_heir_of_aen.dds`, 700 x 500; pending art |
 | Song | `zin_se_heir_of_aen`, `music/zin_se_heir_of_aen.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_eindil_named` (E1): the name and line of Aen may be said. The brotherhood with Afrit (A9) is not hinted at; the Mirror's showing is the Keepers' word (V18). |
@@ -228,13 +225,13 @@ The button text is the reader's own reaction, short and in the player's voice.
 
 **Description:**
 
-> The Gala have sent heralds to every court of Aoaz with news that most of them will not believe: the man the hunters cut out of the northern ice has been named in the halls of King Lorien as Eindil, son of Ein, son of Aen, an heir of the first king of men by his own blood.
+> In the hall of King Lorien, before the oldest lords of the Gala, the stranger who came out of the northern ice has been given back his name: he is Eindil, son of Ein, son of Aen, an heir of the first king of men by his own blood.
 >
 > Lorien, who remembers Dardan, says that he knew the face before he heard the voice, and the Keepers of the Mirror say the water showed them the same thing.
 >
-> In Parim the temples call the tale a northern fancy, while in the free dominions old men are taking down the histories of Aen's line and counting the generations on their fingers.
+> Outside that hall nobody yet knows it, and the Gala, who are very good at keeping things, have not decided whom to tell.
 
-**Button:** Let the old histories be read again.
+**Button:** Then the line of Aen is not ended.
 
 **Quote:** Men count their kings by the names on the rolls, but we counted the line of Aen by their faces, and I had not seen that face in my halls for a very long time.
 
@@ -244,6 +241,8 @@ The button text is the reader's own reaction, short and in the player's voice.
 
 **Sound brief:** recognition and an old line remembered, reverent and warm; 60 to 120 seconds; harp and voice, or a slow chant for small choir with a plucked string accompaniment. A licensed recording with its licence and source documented (Q-08).
 
+**Minor report** (`zin_super_event.104`): *Talk from the Gala Court.* Merchants back from the Gala say the elves have taken a great interest in a stranger from the north who is lodged in their king's own hall with more honour than any guest of men in living memory, and that nobody outside the hall will say why. Button: Elves will be elves.
+
 ### 5. The War of the Last Crowns
 
 | Field | Value |
@@ -251,7 +250,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `last_crowns` (id 5) |
 | Beat and role | B18; escalation |
 | Fires when | the global flag `zin_war_of_last_crowns` is set; owner: World tension (modules/world_tension.mjs, zin_world_tension.txt effects; news zin_world.20) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.20` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_last_crowns`, `gfx/event_pictures/zin/super_events/zin_se_last_crowns.dds`, 700 x 500; pending art |
 | Song | `zin_se_last_crowns`, `music/zin_se_last_crowns.ogg`; pending licensed recording |
 | Knowledge layers | The war's name is proposed and given to the taverns of Parim; Zol is not named. |
@@ -281,7 +282,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `western_crossing` (id 6) |
 | Beat and role | B20; escalation |
 | Fires when | the global flag `zin_western_crossing` is set; owner: The Western Crossing (modules/mech_crossing.mjs, zin_west.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | the human players whose realm is in the audience `western_war`: the realms of the West Lands, the Middle Lands and the North Lands; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | the news event `zin_west.41` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_western_crossing`, `gfx/event_pictures/zin/super_events/zin_se_western_crossing.dds`, 700 x 500; pending art |
 | Song | `zin_se_western_crossing`, `music/zin_se_western_crossing.ogg`; pending licensed recording |
 | Knowledge layers | Public; the Grey Ford grievance is the clans' own account. |
@@ -313,7 +316,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `black_north_marches` (id 7) |
 | Beat and role | B24; global threat escalation |
 | Fires when | the global flag `zin_zol_rising` is set; owner: Zol's Mistake (modules/mech_zol.mjs, zin_mistake.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | the human players whose realm is in the audience `black_north`: the realms of the Cold Lands, the North Lands, the Middle Lands and the black north, and every realm at war with Zol; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | the news event `zin_mistake.11` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_black_north_marches`, `gfx/event_pictures/zin/super_events/zin_se_black_north_marches.dds`, 700 x 500; pending art |
 | Song | `zin_se_black_north_marches`, `music/zin_se_black_north_marches.ogg`; pending licensed recording |
 | Knowledge layers | Zol is named only as the Old God of Death whose name the black north bears, by the priests (C26, voice guide 2.8): he does not appear. The black ships stay a fishermen's tale until now (V10, gate `zin_zol_rising`). |
@@ -345,7 +350,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `volgan_marches` (id 8) |
 | Beat and role | B23; global threat escalation |
 | Fires when | the global flag `zin_volgan_marches` is set; owner: Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_dominion.12` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_volgan_marches`, `gfx/event_pictures/zin/super_events/zin_se_volgan_marches.dds`, 700 x 500; pending art |
 | Song | `zin_se_volgan_marches`, `music/zin_se_volgan_marches.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_volgan_marches` (V9): his arming is now fact. His banishment is said as the vault says it; which god he served (C11, C12) is not touched. Volgan is not quoted; the quote is a song of Mirolon. |
@@ -377,7 +384,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `name_of_the_deliverer` (id 9) |
 | Beat and role | B25; first reveal |
 | Fires when | the global flag `zin_afrit_revealed` is set; owner: Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_afrit.43` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_name_of_the_deliverer`, `gfx/event_pictures/zin/super_events/zin_se_name_of_the_deliverer.dds`, 700 x 500; pending art |
 | Song | `zin_se_name_of_the_deliverer`, `music/zin_se_name_of_the_deliverer.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_afrit_revealed` (A1, A2, A3): the name, the line of Ein and the Council may be said. His divine order stays a dispute between priests (C15), and his long life has no cause (V19). |
@@ -409,7 +418,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `king_of_the_east` (id 10) |
 | Beat and role | B26; faction formation |
 | Fires when | the global flag `zin_afrit_king_of_east` is set; owner: Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | no news event of the same moment |
 | Picture | `GFX_zin_se_king_of_the_east`, `gfx/event_pictures/zin/super_events/zin_se_king_of_the_east.dds`, 700 x 500; pending art |
 | Song | `zin_se_king_of_the_east`, `music/zin_se_king_of_the_east.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_afrit_king_of_east` (A10). "Calls himself a god" is a trader's opinion, not the narrator's verdict (C15). |
@@ -441,7 +452,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `parim_taken` (id 11) |
 | Beat and role | B27; irreversible political shift |
 | Fires when | the global flag `zin_west_parim_taken` is set; owner: The Western Crossing (modules/mech_crossing.mjs, zin_west.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_west.56` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_parim_taken`, `gfx/event_pictures/zin/super_events/zin_se_parim_taken.dds`, 700 x 500; pending art |
 | Song | `zin_se_parim_taken`, `music/zin_se_parim_taken.ogg`; pending licensed recording |
 | Knowledge layers | Public. |
@@ -473,7 +486,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `heir_returns` (id 12) |
 | Beat and role | B29; global response |
 | Fires when | the global flag `zin_eindil_returned` is set; owner: Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | the human players whose realm is in the audience `war_of_the_living`: the realm that holds the heir, the realms of the Middle Lands and the Magical Lands, and every realm at war with Volgan, Zol or Afrit's realm; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | the news event `zin_eindil.90` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_heir_returns`, `gfx/event_pictures/zin/super_events/zin_se_heir_returns.dds`, 700 x 500; pending art |
 | Song | `zin_se_heir_returns`, `music/zin_se_heir_returns.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_eindil_returned` (E4). The dragon is of the elven roosts (the elves command dragons, established); Varner and Golbran are not mentioned (E5). |
@@ -505,7 +520,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `varner_falls` (id 13) |
 | Beat and role | B32; defeat aftermath |
 | Fires when | the global flag `zin_varner_dead` is set; owner: Eindil's journey (events zin_eindil.97) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | the human players whose realm is in the audience `war_of_the_living`: the realm that holds the heir, the realms of the Middle Lands and the Magical Lands, and every realm at war with Volgan, Zol or Afrit's realm; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | no news event of the same moment |
 | Picture | `GFX_zin_se_varner_falls`, `gfx/event_pictures/zin/super_events/zin_se_varner_falls.dds`, 700 x 500; pending art |
 | Song | `zin_se_varner_falls`, `music/zin_se_varner_falls.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_varner_dead`. Golbran's survival (E5) is not touched: he is not named. Varner is quoted only as the elves remember him (voice guide 7.1). |
@@ -535,7 +552,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `volgan_broken` (id 14) |
 | Beat and role | B34; defeat aftermath |
 | Fires when | the global flag `zin_volgan_body_destroyed` is set; owner: Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_dominion.17` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_volgan_broken`, `gfx/event_pictures/zin/super_events/zin_se_volgan_broken.dds`, 700 x 500; pending art |
 | Song | `zin_se_volgan_broken`, `music/zin_se_volgan_broken.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_volgan_body_destroyed`. What remains of Volgan (C23) stays open: no priest or wizard will say, and the wardens do not sing yet. |
@@ -567,7 +586,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `kusven_forth` (id 15) |
 | Beat and role | B35; global threat escalation |
 | Fires when | the global flag `zin_kusven_forth` is set; owner: Zol's Mistake (modules/mech_zol.mjs, zin_mistake.txt effects: zin_zol_send_kusven) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_mistake.20` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_kusven_forth`, `gfx/event_pictures/zin/super_events/zin_se_kusven_forth.dds`, 700 x 500; pending art |
 | Song | `zin_se_kusven_forth`, `music/zin_se_kusven_forth.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_kusven_forth`. Owner answer Q-70 (K55, 25 October 2026) retires the sealed name: Kusven is named from the start as a known legend, so the text names him through the Leren sailors' winter tales, as the war events do (`zin_mistake.20`). Zol does not appear (C26): the priests say so. The sword-break (seven days later, `zin_mistake.21`) is not told here, because it happens only while Glo is with the heir. |
@@ -599,7 +620,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `lorien_falls` (id 16) |
 | Beat and role | B36; defeat aftermath |
 | Fires when | the global flag `zin_lorien_dead` is set; owner: The Lands of the Sun (modules/mech_sun.mjs, zin_sun.txt effects) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | no news event of the same moment |
 | Picture | `GFX_zin_se_lorien_falls`, `gfx/event_pictures/zin/super_events/zin_se_lorien_falls.dds`, 700 x 500; pending art |
 | Song | `zin_se_lorien_falls`, `music/zin_se_lorien_falls.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_lorien_dead` (after Kusven has come forth, so he may be named). Zol does not appear (C26); Kusven withdraws wounded, not destroyed, as `zin_mistake.24` tells it. No age is given (V23): he has reigned since the First Age, as the vault says. |
@@ -631,7 +654,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `afrit_dead` (id 17) |
 | Beat and role | B41; defeat aftermath |
 | Fires when | the global flag `zin_afrit_dead` is set; owner: Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects: zin_afrit_die) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | no news event of the same moment |
 | Picture | `GFX_zin_se_afrit_dead`, `gfx/event_pictures/zin/super_events/zin_se_afrit_dead.dds`, 700 x 500; pending art |
 | Song | `zin_se_afrit_dead`, `music/zin_se_afrit_dead.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_afrit_dead` (implies the reveal). Whether a god can die is the markets' argument (C15). The text does not say where or how he died, because the moment can come from the palace (B41), from a hunter outside it (K59, Q-66) or from a sandbox path; the artifacts and the Necklace are not named (A6, A7, E7). |
@@ -663,7 +688,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_lost_cause` (id 18) |
 | Beat and role | B42; campaign-ending signal |
 | Fires when | the global flag `zin_ending_lost_cause` is set; owner: World tension (zin_world_reach_ending; news zin_world.100) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.100` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_lost_cause`, `gfx/event_pictures/zin/super_events/zin_se_ending_lost_cause.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_lost_cause`, `music/zin_se_ending_lost_cause.ogg`; pending licensed recording |
 | Knowledge layers | Behind `zin_eindil_crowned`. The Necklace and its price (E7) are not mentioned. |
@@ -695,7 +722,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_children_of_volgan` (id 19) |
 | Beat and role | B43; world-end scenario |
 | Fires when | the global flag `zin_ending_children_of_volgan` is set; owner: World tension (zin_world_reach_ending; news zin_world.101) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.101` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_children_of_volgan`, `gfx/event_pictures/zin/super_events/zin_se_ending_children_of_volgan.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_children_of_volgan`, `music/zin_se_ending_children_of_volgan.ogg`; pending licensed recording |
 | Knowledge layers | A proposed telling ("in this telling of the age"). The heir is not mentioned (endings spec). |
@@ -725,7 +754,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_ashen_throne` (id 20) |
 | Beat and role | B44; world-end scenario |
 | Fires when | the global flag `zin_ending_ashen_throne` is set; owner: World tension (zin_world_reach_ending; news zin_world.102) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.102` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_ashen_throne`, `gfx/event_pictures/zin/super_events/zin_se_ending_ashen_throne.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_ashen_throne`, `music/zin_se_ending_ashen_throne.ogg`; pending licensed recording |
 | Knowledge layers | The reveal is called first (zin_world_reach_ending), so the name may be said. The heir is not mentioned. |
@@ -755,7 +786,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_golden_court` (id 21) |
 | Beat and role | B45; campaign-ending signal |
 | Fires when | the global flag `zin_ending_golden_court` is set; owner: World tension (zin_world_reach_ending; news zin_world.103) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.103` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_golden_court`, `gfx/event_pictures/zin/super_events/zin_se_ending_golden_court.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_golden_court`, `music/zin_se_ending_golden_court.ogg`; pending licensed recording |
 | Knowledge layers | The secret may still hold: neither the Deliverer nor the Council is named. The text says the Golden Court rules, which covers both the living King and the Regency of Gold. |
@@ -785,7 +818,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_western_crown` (id 22) |
 | Beat and role | B45; campaign-ending signal |
 | Fires when | the global flag `zin_ending_western_crown` is set; owner: World tension (zin_world_reach_ending; news zin_world.104) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.104` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_western_crown`, `gfx/event_pictures/zin/super_events/zin_se_ending_western_crown.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_western_crown`, `music/zin_se_ending_western_crown.ogg`; pending licensed recording |
 | Knowledge layers | Proposed telling; the claimant is not named (endings spec). |
@@ -815,7 +850,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_strait_master` (id 23) |
 | Beat and role | B45; campaign-ending signal |
 | Fires when | the global flag `zin_ending_strait_master` is set; owner: World tension (zin_world_reach_ending; news zin_world.105) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.105` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_strait_master`, `gfx/event_pictures/zin/super_events/zin_se_ending_strait_master.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_strait_master`, `music/zin_se_ending_strait_master.ogg`; pending licensed recording |
 | Knowledge layers | Proposed telling. |
@@ -845,7 +882,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_eastern_king` (id 24) |
 | Beat and role | B45; campaign-ending signal |
 | Fires when | the global flag `zin_ending_eastern_king` is set; owner: World tension (zin_world_reach_ending; news zin_world.106) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.106` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_eastern_king`, `gfx/event_pictures/zin/super_events/zin_se_ending_eastern_king.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_eastern_king`, `music/zin_se_ending_eastern_king.ogg`; pending licensed recording |
 | Knowledge layers | Proposed telling. The High King is the East's own; the Deliverer is not mentioned, so the text holds whether or not the secret was ever kept. |
@@ -875,7 +914,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `ending_unfinished` (id 25) |
 | Beat and role | B45; campaign-ending signal |
 | Fires when | the global flag `zin_ending_unfinished` is set; owner: World tension (zin_world_reach_ending; news zin_world.107) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_world.107` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_ending_unfinished`, `gfx/event_pictures/zin/super_events/zin_se_ending_unfinished.dds`, 700 x 500; pending art |
 | Song | `zin_se_ending_unfinished`, `music/zin_se_ending_unfinished.ogg`; pending licensed recording |
 | Knowledge layers | Fallback telling. |
@@ -905,7 +946,9 @@ The button text is the reader's own reaction, short and in the player's voice.
 | Key | `nafeher_falls` (id 26) |
 | Beat and role | B34 (divergence: the realm annexed with the body intact); defeat aftermath |
 | Fires when | the global flag `zin_volgan_withdrawn_south` is set; owner: Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects: zin_volgan_withdraws_south, with news zin_dominion.29); owner answer Q-74 (K59) |
-| Who sees it | every human player, once per game; queued behind another super event that is still open |
+| Who sees it | every human player (world news); once per game; queued behind another super event that is still open |
+| Neighbours | not applicable |
+| Replaces | the news event `zin_dominion.29` for the players who see this super event (K60); everyone else still gets the news |
 | Picture | `GFX_zin_se_nafeher_falls`, `gfx/event_pictures/zin/super_events/zin_se_nafeher_falls.dds`, 700 x 500; pending art |
 | Song | `zin_se_nafeher_falls`, `music/zin_se_nafeher_falls.ogg`; pending licensed recording |
 | Knowledge layers | Owner answer Q-74 (K59): the annexation of Volgan's realm with his body intact is a super event. What became of Volgan stays open (C23): nobody saw him fall and the wardens only fear. Volgan is not quoted. The owner's news event `zin_dominion.29` and every effect of `zin_volgan_withdraws_south` stay as they are; the super event is called right after `zin_volgan_withdrawn_south` is set, before the news. |
@@ -930,68 +973,280 @@ The button text is the reader's own reaction, short and in the player's voice.
 
 **Sound brief:** an uneasy victory that does not trust itself, the enemy gone but not ended; 60 to 120 seconds; a slow piece for low strings or a small choir that ends unresolved, or a dark folk lament with a drone instrument, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
 
+### 27. The Hall of Horos
+
+| Field | Value |
+| --- | --- |
+| Key | `hall_of_horos` (id 27) |
+| Beat and role | B15; first reveal |
+| Fires when | the global flag `zin_horos_dead` is set; owner: Yeldenne and Glo (modules/mech_yeldenne.mjs, zin_glo.txt effects; zin_glo.21); owner answer K60 |
+| Who sees it | the human players whose realm is in the audience `yeldenne`: the realm that holds the heir and the realm that holds the town and Castle of Yeldenne; once per game; queued behind another super event that is still open |
+| Neighbours | the human players whose realm borders an audience realm get the minor report `zin_super_event.127` "Lights at Yeldenne" (picture `GFX_zin_evt_cold_shore`) |
+| Replaces | the news event `zin_glo.30` for the players who see this super event (K60); everyone else still gets the news |
+| Picture | `GFX_zin_se_hall_of_horos`, `gfx/event_pictures/zin/super_events/zin_se_hall_of_horos.dds`, 700 x 500; pending art |
+| Song | `zin_se_hall_of_horos`, `music/zin_se_hall_of_horos.ogg`; pending licensed recording |
+| Knowledge layers | Behind `zin_horos_dead` (E3, A11): the hall, the dust and a crystal of old and holy power may be told; the crystal is not named and nothing says it is Horos's heart. Afrit's part (B13 to B15, A9) is not mentioned. Horos is story only and never shown as a figure (K56); Yeldenne is a small town in Pertolor's land. |
+
+**Title:** The Hall of Horos
+
+**Description:**
+
+> The old lord of the castle above Yeldenne is dead. The townsfolk of that small grey town in Pertolor's land called him Horos, as their grandmothers' grandmothers did, for he was a Great Spirit who had kept the high hall since before the town had a name.
+>
+> Those who climbed to the hall afterwards found only dust on the high seat, and the heir of Aen coming down the castle road with a blue sword at his side and a crystal of old and holy power in his keeping, which the townsfolk say gives off a light like a clear winter morning.
+>
+> What passed between the old spirit and the heir in that hall, the heir has not said, and the townsfolk, who have lived under the castle all their lives, would rather not guess.
+
+**Button:** Keep the light burning.
+
+**Quote:** My father carried peat up to the castle every winter of his life, and the old lord thanked him every time, very gravely, as if a sack of peat were a great gift, and I believe now that to him it was.
+
+**Attribution:** A peat-cutter of Yeldenne
+
+**Picture brief:** The high hall of the Castle of Yeldenne in the far north, cold blue light through tall windows over snow: on the great stone high seat only a drift of grey dust and the faint shape where someone sat; before it stands the heir of Aen (Eindil v4 D: light blue armour, black hair, blue eyes faintly glowing), a blue sword at his side and a softly glowing crystal held in his hand. Horos is not shown as a figure (K56: story only); his absence is the subject. Painted, hushed and holy, blue and silver. References: `art/source/design_refs/eindil_v4_d.png`.
+
+**Sound brief:** the passing of an ancient guardian, hushed and holy; 60 to 120 seconds; a slow sacred piece for small choir or for viol consort and organ, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
+
+**Minor report** (`zin_super_event.127`): *Lights at Yeldenne.* Carters coming down from the far north say that something has happened at the old castle above Yeldenne: the lights in its high windows went out one night, and the townsfolk have gone about with long faces ever since and will not say why. Button: The north keeps its secrets.
+
+### 28. The Passes of Mirolon Fall
+
+| Field | Value |
+| --- | --- |
+| Key | `mirolon_falls` (id 28) |
+| Beat and role | B22; escalation |
+| Fires when | the global flag `zin_mirolon_fallen` is set; owner: Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects; zin_dominion.11, .24); owner answer K60 |
+| Who sees it | the human players whose realm is in the audience `southern_front`: Mirolon, the realms of the Middle Lands and the Ember Lands, and every realm at war with Volgan; once per game; queued behind another super event that is still open |
+| Neighbours | the human players whose realm borders an audience realm get the minor report `zin_super_event.128` "Smoke over the Passes" (picture `GFX_zin_evt_vast_shadow`) |
+| Replaces | the news event `zin_dominion.11` for the players who see this super event (K60); everyone else still gets the news |
+| Picture | `GFX_zin_se_mirolon_falls`, `gfx/event_pictures/zin/super_events/zin_se_mirolon_falls.dds`, 700 x 500; pending art |
+| Song | `zin_se_mirolon_falls`, `music/zin_se_mirolon_falls.ogg`; pending licensed recording |
+| Knowledge layers | Volgan's arming is disputed outside Mirolon until his march (V9), so his leadership is the envoys' word and some courts still doubt it. |
+
+**Title:** The Passes of Mirolon Fall
+
+**Description:**
+
+> The passes of Mirolon have fallen. Out of the storms of the Ember Lands came grave-hosts, ogre clans and worse, and the wardens who had held the mountain roads against the south for longer than any kingdom of men has kept records were driven from their towers one by one.
+>
+> The court of Mirolon has gone into exile with the few banners it could save, and its envoys, who spent years warning every crown of Aoaz that this day would come, are knocking at the same doors again to say that it has.
+>
+> The envoys say that Volgan himself leads the southern hosts, though there are still courts that would rather not believe it, and the scouts who got out say the hosts are camped in the passes and show no sign of going home.
+
+**Button:** Give the envoys a seat by the fire.
+
+**Quote:** We held the high gate for nine days on half rations, and on the tenth the captain told us to go down the back road and tell the world, so here I am telling you, and I would be grateful if you listened faster than the last court did.
+
+**Attribution:** A warden of Mirolon, in exile
+
+**Picture brief:** High mountain passes under an ember-red storm sky: grey stone watchtowers of the wardens burning along a ridge, a long column of grey-cloaked wardens and refugees with their banners retreating down a narrow mountain road, and behind them, pouring through the broken gate, a host of grave-warriors and ogres. Painted, desperate and grim, grey and ember.
+
+**Sound brief:** a mountain stronghold lost, lament and defiance; 60 to 120 seconds; a lament on pipes, horns or low winds over a slow drum, or a mournful folk song with voices, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
+
+**Minor report** (`zin_super_event.128`): *Smoke over the Passes.* Herders coming up from the south say that the watch-fires on the passes of Mirolon have gone out, and that the road down from the high gate is full of people carrying everything they own on their backs. Button: Send someone to find out.
+
+### 29. The East Crosses the Rift
+
+| Field | Value |
+| --- | --- |
+| Key | `east_crosses_the_rift` (id 29) |
+| Beat and role | B21; escalation |
+| Fires when | the global flag `zin_eastern_invasion` is set; owner: The eastern kings (modules/mech_east.mjs, zin_east.txt effects; zin_east.41 to .43); owner answer K60 |
+| Who sees it | the human players whose realm is in the audience `eastern_front`: the realms of the East Lands and the Magical Lands; once per game; queued behind another super event that is still open |
+| Neighbours | the human players whose realm borders an audience realm get the minor report `zin_super_event.129` "Trouble across the Rift" (picture `GFX_zin_evt_eastern_court`) |
+| Replaces | the news event `zin_east.43` for the players who see this super event (K60); everyone else still gets the news |
+| Picture | `GFX_zin_se_east_crosses_the_rift`, `gfx/event_pictures/zin/super_events/zin_se_east_crosses_the_rift.dds`, 700 x 500; pending art |
+| Song | `zin_se_east_crosses_the_rift`, `music/zin_se_east_crosses_the_rift.ogg`; pending licensed recording |
+| Knowledge layers | Afrit's eastern reserve (A10) is not touched: the western courts only ask how the East came to agree. |
+
+**Title:** The East Crosses the Rift
+
+**Description:**
+
+> A host of the eastern crowns has crossed the great rift into the Magical Lands, the first army of men to march under the elves' trees with fire and axes in living memory, and the border-wardens of the forests have fallen back on the old roosts and the deep groves.
+>
+> The courts of the East say they have come for timber, for the roads and for old wrongs, and the elves say nothing at all, which those who know them like least of all; the dragons of the roosts have been seen in the air by day.
+>
+> In the West and the Middle Lands, crowns busy with their own wars have begun to ask how the eastern courts, who agree on nothing, came to agree on this.
+
+**Button:** The forests will not burn quietly.
+
+**Quote:** The men of the East have brought axes enough to fell a forest, which is generous of them, because it will take them a good many generations to learn which of our trees are only trees.
+
+**Attribution:** A warden of the Magical Forest
+
+**Picture brief:** The edge of a vast ancient forest at the lip of a great rift: an eastern host in many styles of dress and armour crosses a long timber bridge over the chasm with wagons and axes, while elven archers wait unseen in the tall trees and a dragon wheels high above in daylight. Painted, tense and sweeping, gold-green forest against dusty eastern colours.
+
+**Sound brief:** an invasion of an old forest, tense and martial; 60 to 120 seconds; frame drums, horns and reeds of an eastern or early-music martial piece, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
+
+**Minor report** (`zin_super_event.129`): *Trouble across the Rift.* Traders back from the East say that the eastern crowns have taken an army over the great rift into the elves' forests, and that the caravans are waiting at the wells until they know who holds the roads. Button: Keep the caravans at the wells.
+
+### 30. The Black Compact
+
+| Field | Value |
+| --- | --- |
+| Key | `black_compact` (id 30) |
+| Beat and role | B31; escalation |
+| Fires when | the global flag `zin_black_compact` is set; owner: Zol's Mistake and Volgan (events zin_mistake_war.txt; offered by zin_dominion.14); owner answer K60 |
+| Who sees it | the human players whose realm is in the audience `dark_alliance`: Volgan, Zol, the realm that holds the heir, and every realm at war with Volgan or Zol; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | no news event of the same moment |
+| Picture | `GFX_zin_se_black_compact`, `gfx/event_pictures/zin/super_events/zin_se_black_compact.dds`, 700 x 500; pending art |
+| Song | `zin_se_black_compact`, `music/zin_se_black_compact.ogg`; pending licensed recording |
+| Knowledge layers | No treaty is claimed: the scouts see the hosts march together and the wardens explain Volgan. Zol does not appear (C26); Volgan is not quoted. |
+
+**Title:** The Black Compact
+
+**Description:**
+
+> The hosts of the Ember Lands and the dead of the black north, who spent the first years of the war fighting each other as readily as anyone else, have stopped, and scouts on both fronts tell the same story of southern grave-hosts and northern dead marching on the same roads and turning together towards the Host of Eindil.
+>
+> Nobody has seen a treaty, and the priests say there could be none, since the dead keep no oaths; the wardens of Mirolon, who know Volgan better than anyone, say only that he has never minded what kind of ally he had, so long as it was pointed the right way.
+>
+> Across Aoaz the crowns of the living have begun counting their friends again.
+
+**Button:** Then the living must stand together.
+
+**Quote:** The south lot and the north lot used to fight each other over the same graveyard while we cheered them on from the hill, and I want you to know that I miss those days very much.
+
+**Attribution:** A serjeant of the Host of Eindil
+
+**Picture brief:** A dark plain at dusk under a split sky, ember-red to the south and black to the north: a column of Volgan's grave-warriors and ogres meets a column of the skeletal armoured dead of the black north (K57), and the two merge into one host marching the same way; scouts of the living watch from a ridge in the foreground. No figure of Zol and no figure of Volgan. Painted, ominous and still.
+
+**Sound brief:** two darknesses becoming one, ominous and heavy; 60 to 120 seconds; a dark march for low brass and drums, or a heavy choral piece in a minor key, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
+
+### 31. The Cliff
+
+| Field | Value |
+| --- | --- |
+| Key | `the_cliff` (id 31) |
+| Beat and role | B39; escalation |
+| Fires when | the global flag `zin_eindil_cast_down` is set; owner: Eindil's journey (events zin_eindil.txt, zin_eindil.110; zin_afrit.61, .62); owner answer K60 |
+| Who sees it | the human players whose realm is in the audience `afrit_war`: Afrit's realm, the realm that holds the heir, the realms of the Middle Lands, and every realm at war with Afrit's realm; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | no news event of the same moment |
+| Picture | `GFX_zin_se_the_cliff`, `gfx/event_pictures/zin/super_events/zin_se_the_cliff.dds`, 700 x 500; pending art |
+| Song | `zin_se_the_cliff`, `music/zin_se_the_cliff.ogg`; pending licensed recording |
+| Knowledge layers | After Afrit's return, so after the reveal. The world believes the heir dead (zin_eindil.112); the text keeps it a belief, and the arm (B39) is not mentioned. |
+
+**Title:** The Cliff
+
+**Description:**
+
+> Afrit has come back out of the East with an army, and the heir of Aen, who went out to meet him, has not come back. The few who were near say that the two of them met on the heights, that the heir was struck down and thrown from the cliff, and that nobody has found him since.
+>
+> Afrit's heralds are already riding to every court to say that the heir is dead and that the war of the living is over.
+>
+> The Host of Eindil has not broken up, though it does not know what it is waiting for, and in the camps the old soldiers say they will believe the heir is dead when they have seen the body.
+
+**Button:** Show us the body.
+
+**Quote:** I have heard the heir declared dead twice in this war already, and both times he turned up for supper, so you will excuse me if I keep his place at the fire a while longer.
+
+**Attribution:** A cook of the Host of Eindil
+
+**Picture brief:** A windswept clifftop at dusk above a misty gorge: a dented light blue helmet lies near the broken edge, and a tall winged dark figure (Afrit's true form, v3 C) turns away from the edge with his back to the viewer; storm clouds and the far banners of two armies below. No body is shown. Painted, shocking and grim, cold blue and black. References: `art/source/design_refs/afrit_true_v3_c.png`, `art/source/design_refs/eindil_v4_d.png`.
+
+**Sound brief:** shock and grief with a held breath of hope; 60 to 120 seconds; a lament for strings or voice that ends on an open, unresolved chord, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
+
+### 32. Without the Heir
+
+| Field | Value |
+| --- | --- |
+| Key | `without_the_heir` (id 32) |
+| Beat and role | divergence (zin_eindil_lost); defeat aftermath |
+| Fires when | the global flag `zin_eindil_lost` is set; owner: Eindil's journey (zin_eindil_lost; news zin_eindil.140, then zin_ending.80); owner answer K60 |
+| Who sees it | the human players whose realm is in the audience `war_of_the_living`: the realm that holds the heir, the realms of the Middle Lands and the Magical Lands, and every realm at war with Volgan, Zol or Afrit's realm; once per game; queued behind another super event that is still open |
+| Neighbours | nothing |
+| Replaces | the news event `zin_eindil.140` for the players who see this super event (K60); everyone else still gets the news |
+| Picture | `GFX_zin_se_without_the_heir`, `gfx/event_pictures/zin/super_events/zin_se_without_the_heir.dds`, 700 x 500; pending art |
+| Song | `zin_se_without_the_heir`, `music/zin_se_without_the_heir.ogg`; pending licensed recording |
+| Knowledge layers | A divergence, told in the endings' manner ("in this telling of the age"); how the heir was lost is left to the soldiers' many versions. |
+
+**Title:** Without the Heir
+
+**Description:**
+
+> In this telling of the age the heir of Aen does not come back. Whatever happened to him, and the soldiers of his Host tell it a dozen different ways, he is gone out of the war, and the league that gathered round him must decide whether it can stand without him.
+>
+> His captains still hold the field and the dark has not gone home, so the crowns of the living have done what crowns do: they have sent their envoys to argue about who should lead, and their armies to keep fighting while the envoys argue.
+
+**Button:** Fight on without him.
+
+**Quote:** We followed him because he was the heir, and we kept following him because he was the kind of man you follow, and now I suppose we shall find out which of those two reasons was the real one.
+
+**Attribution:** A captain of the league of the living
+
+**Picture brief:** An empty command tent at grey dawn: a light blue cloak and a helmet laid on the camp table beside a map, captains of many crowns (men, elves, dwarves) standing around it in silence, banners outside hanging still in the windless air. Painted, quiet grief, grey and blue.
+
+**Sound brief:** a leaderless league, noble grief and resolve; 60 to 120 seconds; a slow funeral march or elegy for brass or strings, in a licensed recording. A licensed recording with its licence and source documented (Q-08).
+
 ## 9. Implementation
 
 ### Files
 
 | Path | Content |
 | --- | --- |
-| `tools/content/data/super_events.json` | The registry: ids, keys, hooks, every text, the picture and sound briefs, the window sizes |
-| `tools/content/modules/super_events.mjs` | `buildSuperEvents` (the package) and `hookSuperEvents` (the calls) |
-| `tools/content/super_events.test.mjs` | Registry, package, wiring, knowledge-layer, documentation and built-tree tests |
+| `tools/content/data/super_events.json` | The registry: ids (and the retired id 1), keys, hooks, audiences, reports, replaced news events, every text, the picture and sound briefs, the window sizes |
+| `tools/content/modules/super_events.mjs` | `buildSuperEvents` (the package), `hookSuperEvents` (the calls) and `replaceNews` (the replaced news events) |
+| `tools/content/super_events.test.mjs` | Registry, package, audiences, reports, wiring, news replacement, knowledge-layer, documentation and built-tree tests |
 | `interface/zin_super_events.gui` | The window of section 5 |
 | `interface/zin_super_events.gfx` | `GFX_zin_se_<key>` to `gfx/event_pictures/zin/super_events/zin_se_<key>.dds` |
 | `common/scripted_guis/zin_super_events.txt` | Scripted GUI `zin_super_event` (player context, dirty `zin_se_dirty`) |
-| `common/scripted_effects/zin_super_events.txt` | `zin_super_event_<key>`, `zin_super_event_fire`, `_open`, `_close`, `_play` |
+| `common/scripted_triggers/zin_super_events.txt` | `zin_se_audience_<name>`, one per audience in use |
+| `common/scripted_effects/zin_super_events.txt` | `zin_super_event_<key>`, `zin_super_event_open`, `_close`, `_play`, and `zin_se_news_<event>` (added by `replaceNews`) |
 | `common/scripted_localisation/zin_super_events.txt` | `zin_loc_super_event_title`, `_desc`, `_quote`, `_button`, `_picture` |
-| `common/script_constants/zin_super_events.txt` | `zin_super_events.count` (read by the preview event) |
-| `events/zin_super_events.txt` | Namespace `zin_super_event`; `zin_super_event.1`, the hidden console preview |
+| `common/script_constants/zin_super_events.txt` | `zin_super_events.count` and `zin_super_events.last_id` (read by the preview event) |
+| `events/zin_super_events.txt` | Namespace `zin_super_event`; `zin_super_event.1`, the hidden console preview; `zin_super_event.104`, `.127`, `.128`, `.129`, the minor reports |
 | `music/zin_super_events.asset` | `zin_se_<key>` to `zin_se_<key>.ogg` |
-| `localisation/english/zin_super_events_l_english.yml` | Window text, song titles, and `zin_se_<key>_t`, `_d`, `_q`, `_a` for each moment |
+| `localisation/english/zin_super_events_l_english.yml` | Window text, song titles, `zin_se_<key>_t`, `_d`, `_q`, `_a` for each moment, and the reports' `.t`, `.d`, `.a` |
+| Replaced news events (other owners' files, patched at build time) | One event trigger line each; see the table of section 3 |
 
 ### Names and state
 
 | Name | Kind | Scope | Meaning |
 | --- | --- | --- | --- |
 | `zin_se_done_<key>` | flag | global | The moment has been shown; it never shows again in this game |
+| `zin_se_saw_<key>` | flag | country (human) | This player saw the super event, so the replaced news event skips this country |
 | `zin_se_open` | flag | country (human) | The window is open for this player |
 | `zin_se_id` | variable | country | The id on screen |
 | `zin_se_queue` | array | country | Ids waiting behind the one on screen, in order |
 | `zin_se_dirty` | variable | country | Refreshes the scripted GUI |
 | `zin_se_music_off` | flag | country | This player silenced the music of the great moments |
 | `zin_se_test_id` | variable | country | The preview event's position |
-| `zin_arg_super_event` | temporary variable | | The id passed to `_fire` and `_open` (E1) |
+| `zin_arg_super_event` | temporary variable | | The id passed to `zin_super_event_open` (E1) |
 
 ### Assets
 
 Every picture and recording is pending its specialist. The sprites and songs are registered under their final names now, so nothing is renamed when they ship; the frame fallback is not used, so until a picture ships the slot shows the empty frame, and until a recording ships nothing plays.
-Each missing file is an asset-check finding accepted in `docs/design/validation/asset_baseline.json` with a reason naming its row in `docs/plans/zin-art/pending_from_integration.md` (section "Super-event pictures and recordings").
+Each missing picture is an asset-check finding accepted in `docs/design/validation/asset_baseline.json` with a reason naming its row in `docs/plans/zin-art/pending_from_integration.md` (section "Super-event pictures and recordings"); the recordings have rows of their own there.
+The minor reports use catalog event pictures that are below the game cap of eight uses (`GFX_zin_evt_traders_road_south`, `GFX_zin_evt_cold_shore`, `GFX_zin_evt_vast_shadow`, `GFX_zin_evt_eastern_court`).
 
 | Asset | Size and format | Folder | Handoff |
 | --- | --- | --- | --- |
-| 26 pictures `zin_se_<key>.dds` | 700 x 500, A8R8G8B8, one mip, generated with gpt-6-luna (K50) at 7:5 and resized; provenance in `art/source/provenance.jsonl` | `gfx/event_pictures/zin/super_events/` | `docs/plans/super_events/art_briefs.json` |
-| 26 recordings `zin_se_<key>.ogg` | Ogg Vorbis, 60 to 120 seconds, licensed recordings with licence and source documented (Q-08, K16) | `music/` | `docs/plans/super_events/audio_briefs.json` |
+| 31 pictures `zin_se_<key>.dds` | 700 x 500, A8R8G8B8, one mip, generated with gpt-6-luna (K50) at 7:5 and resized; provenance in `art/source/provenance.jsonl` | `gfx/event_pictures/zin/super_events/` | `docs/plans/super_events/art_briefs.json` |
+| 31 recordings `zin_se_<key>.ogg` | Ogg Vorbis, 60 to 120 seconds, licensed recordings with licence and source documented (Q-08, K16) | `music/` | `docs/plans/super_events/audio_briefs.json` |
 
 The asset family rules add `super_event_picture` (family E1, 700 x 500) to `tools/content/data/assets/families.json`, `formats.json` and `uniqueness.json` (one picture per super event).
 
 ### Acceptance
 
-1. The build stages the package, finds one hook site for each of the 26 flags and passes the asset baseline; `tools/content/super_events.test.mjs` passes.
+1. The build stages the package, finds one hook site for each of the 31 flags, patches the 23 replaced news events and passes the asset baseline; `tools/content/super_events.test.mjs` passes.
 2. MCP previews of `zin_super_event_window` (preview workspace with stand-in pictures) at 1280 x 720, 1920 x 1080 and 2560 x 1440 at UI scale 1 and 1920 x 1080 at UI scale 1.25: no clipping, the longest description and quote fit, the click regions match the two buttons; evidence in `docs/plans/super_events/framework_handoff.md`.
 3. Linux live run (the owner's isolated acceptance route): `event zin_super_event.1` opens the window; closing it shows the next queued one; the music button hides and shows; with a recording in place, `scoped_play_song` plays the song for that player only (if a song in no station does not play, add the station file of section 5).
-4. Linux live run: on a historical-path campaign the first super event (the man in the ice) opens by itself when `zin_eindil_awake` is set, once, and never again after a save and load.
+4. Linux live run: on a historical-path campaign the Golden King's death opens the window for the player, once, and never again after a save and load; the news event of a replaced moment does not appear for that player while the AI still answers it (the major news event reads its trigger per receiving country: this is the point to confirm live).
+5. Linux live run: a player whose realm is outside a regional audience sees no super event for that moment, and a player whose realm borders the audience gets the minor report where the moment has one.
 
 ## 10. Owner questions
 
-1. **Which moments.** Are these 26 the right set? Candidates left out (section 2) that the owner may want: the hall of Horos (B15), the fall of Mirolon (B22, now told inside Volgan's march), the eastern invasion (B21), the Black Compact (B31), the cliff (B39) and the heir lost (`zin_eindil_lost`, a divergence with its own news event `zin_eindil.140`).
-2. **News and super event together.** The endings and the War of the Last Crowns also fire their news events to every country. Should the super event replace the news event for human players, or should both show (today both show)?
-3. **The backdrop.** The full-screen backdrop is the ZIN frame tiled across the screen. Should the art specialist paint a dedicated dark backdrop (one 1920 x 1080 picture, for example the night sky over Parim) for the super events?
-4. **The quotes' speakers.** Some lines are given to proposed characters (Lozan Heron, Sefan Daldar, Perlan, Halmor Infous); the owner may prefer anonymous voices or different people. Following K54, no quote is given to a proposed woman.
-5. **Music channel.** The recordings play as songs on the music channel (they interrupt the playing track, as vanilla's event songs do). Should they play as sound effects over the music instead?
-6. **The heir's waking to every player.** The man in the ice is told to every court as a drovers' tale, before anybody knows who he is. Is that the right weight for the waking, or should the first super event wait for his naming?
+Answered by the owner on 25 October 2026 (K60): all six left-out moments added; the super event replaces the news event for the players who see it; recordings on the music channel; the first super event at the naming. The full-screen backdrop and the quote speakers keep their defaults.
+Open:
+
+1. **News events with a wider audience than K61.** Several owners' news events still go to every country although their moment is now regional (for example `zin_eindil.90` the heir's return, `zin_dominion.11` the fall of Mirolon, `zin_east.43` the eastern invasion, `zin_mistake.11` the dead rising). The super event replaces them only for its own audience; should those news events also be narrowed to the regions that would hear?
+2. **More minor reports.** Reports exist for the naming, Yeldenne, Mirolon and the eastern invasion. Should the other regional moments (the Western Crossing, the black north, the heir's return, Varner, the Black Compact, the cliff, the heir lost) also send a rumour to their neighbours?
 
 ## 11. Future work
 
-- When the owner answers question 1, add or retire moments by id (never renumber); each new moment needs its hook flag, text, brief and baseline rows.
+- Add or retire moments by id (never renumber); each new moment needs its hook flag, audience, text, brief and baseline rows.
 - When the audio specialist delivers, replace the song title keys with the recordings' titles and credit lines, and record the licences in the canonical audio catalogue of the music spec.
-- A "Chronicle of great moments" panel could list the super events already shown in this game and replay them; it would reuse the window and the `zin_se_done_<key>` flags.
+- A "Chronicle of great moments" panel could list the super events a player has seen in this game and replay them; it would reuse the window and the `zin_se_saw_<key>` flags.

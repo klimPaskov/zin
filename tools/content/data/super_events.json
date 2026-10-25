@@ -8,24 +8,25 @@
   "picture": { "width": 700, "height": 500, "folder": "gfx/event_pictures/zin/super_events" },
   "music": { "folder": "music", "asset": "music/zin_super_events.asset", "volume": 0.8, "format": "ogg" }
  },
+ "retired": [
+  { "id": 1, "key": "man_in_the_ice", "decision": "K60 and K61 (25 October 2026)", "why": "The waking is never world news: the owner's journey event zin_eindil.10 tells it to the realm that holds the man, and the first super event is the naming (id 4), shown only to that realm and Lorien's." }
+ ],
+ "audienceNote": "Owner decision K61: a moment the whole world would hear of (great wars, the fall of great capitals, the death or crowning of the great kings, the endings) shows to every human player; any other moment shows only to the human players whose realm is involved, and where it fits the human players next to an involved realm get a minor report event instead. Each audience is a scripted trigger zin_se_audience_<name> in country scope (common/scripted_triggers/zin_super_events.txt). Neighbours are bordering realms (any_neighbor_country), so no radius is needed.",
+ "audiences": {
+  "world": { "label": "every human player", "trigger": "always = yes" },
+  "heir_named": { "label": "the realm that holds the heir and Lorien's realm, the Gala", "trigger": "OR = { zin_eindil_is_host = yes original_tag = GAA }" },
+  "yeldenne": { "label": "the realm that holds the heir and the realm that holds the town and Castle of Yeldenne", "trigger": "OR = { zin_eindil_is_host = yes zin_glo_hall_owner = yes }" },
+  "western_war": { "label": "the realms of the West Lands, the Middle Lands and the North Lands", "trigger": "OR = { has_country_flag = zin_region_west_lands has_country_flag = zin_region_middle_lands has_country_flag = zin_region_north_lands }" },
+  "black_north": { "label": "the realms of the Cold Lands, the North Lands, the Middle Lands and the black north, and every realm at war with Zol", "trigger": "OR = { has_country_flag = zin_region_cold_lands has_country_flag = zin_region_north_lands has_country_flag = zin_region_middle_lands has_country_flag = zin_region_zols_mistake any_enemy_country = { zin_is_zol = yes } }" },
+  "southern_front": { "label": "Mirolon, the realms of the Middle Lands and the Ember Lands, and every realm at war with Volgan", "trigger": "OR = { zin_is_mirolon = yes has_country_flag = zin_region_middle_lands has_country_flag = zin_region_ember_lands any_enemy_country = { zin_is_volgan = yes } }" },
+  "eastern_front": { "label": "the realms of the East Lands and the Magical Lands", "trigger": "OR = { has_country_flag = zin_region_east_lands has_country_flag = zin_region_magical_lands }" },
+  "war_of_the_living": { "label": "the realm that holds the heir, the realms of the Middle Lands and the Magical Lands, and every realm at war with Volgan, Zol or Afrit's realm", "trigger": "OR = { zin_eindil_is_host = yes has_country_flag = zin_region_middle_lands has_country_flag = zin_region_magical_lands any_enemy_country = { OR = { zin_is_volgan = yes zin_is_zol = yes zin_afrit_rules_here = yes } } }" },
+  "dark_alliance": { "label": "Volgan, Zol, the realm that holds the heir, and every realm at war with Volgan or Zol", "trigger": "OR = { zin_is_volgan = yes zin_is_zol = yes zin_eindil_is_host = yes any_enemy_country = { OR = { zin_is_volgan = yes zin_is_zol = yes } } }" },
+  "afrit_war": { "label": "Afrit's realm, the realm that holds the heir, the realms of the Middle Lands, and every realm at war with Afrit's realm", "trigger": "OR = { zin_afrit_rules_here = yes zin_eindil_is_host = yes has_country_flag = zin_region_middle_lands any_enemy_country = { zin_afrit_rules_here = yes } }" }
+ },
  "events": [
   {
-   "id": 1, "key": "man_in_the_ice", "beat": "B03", "role": "first reveal", "hook": "zin_eindil_awake", "owner": "Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects)",
-   "title": "The Man in the Ice",
-   "desc": [
-    "Word has come down the northern roads, carried by herders and by the drovers who buy their hides, that hunters of the Cold Lands cut a living man out of the ice this winter.",
-    "The tribes who took him in say that he wakes and eats and walks like anyone else, but cannot tell them his name or how he came to be frozen, and the old women of the camps have already started arguing over what he is.",
-    "In the southern courts the tale is told over supper as a northern curiosity, somewhere between the two-headed calf of last spring and the price of furs."
-   ],
-   "button": "A tale for the long nights.",
-   "quote": "We found him under a hand's depth of clear ice, lying as straight as a man laid out for burial, and when we had cut him free and warmed him by the fire he opened his eyes and asked us for water.",
-   "attribution": "A hunter of the Cold Lands, as the drovers tell it",
-   "picture": "Night in a hunters' camp of the Cold Lands: by a low fire under a hide shelter, fur-clad hunters and an old woman of the tribe lean over a black-haired man lying wrapped in furs, newly cut from a block of clear blue ice that still stands half-broken behind them with axes and ropes beside it; his face is pale and calm, his eyes just opening; snow, the green curtain of a northern sky, warm firelight against cold blue. Painted, quiet and wondering, not heroic; the man is the canon Eindil (black hair, blue eyes) without armour or helmet.",
-   "pictureRefs": ["art/source/design_refs/eindil_v4_d.png"],
-   "sound": { "mood": "hushed wonder in the cold, a lullaby heard from far off", "length": "60 to 90 seconds", "instruments": "solo voice or small unaccompanied women's choir with a drone; frame drum or a bowed string instrument (hurdy-gurdy, nyckelharpa or viol) allowed" }
-  },
-  {
-   "id": 2, "key": "golden_king_dead", "beat": "B07", "role": "irreversible political shift", "hook": "zin_golden_king_dead", "owner": "Aenor court (modules/mech_aenor.mjs, zin_aenor_court.txt effects)",
+   "id": 2, "key": "golden_king_dead", "beat": "B07", "role": "irreversible political shift", "hook": "zin_golden_king_dead", "audience": "world", "owner": "Aenor court (modules/mech_aenor.mjs, zin_aenor_court.txt effects)",
    "title": "The Golden King Is Dead",
    "desc": [
     "The bells of Parim rang through the night, and by morning the whole city knew that the Golden King was dead, and the cooks who had been making ready for the next feast were sent home with the meat still on the spits.",
@@ -40,7 +41,7 @@
    "sound": { "mood": "court mourning, solemn and stately with a hint of hollowness", "length": "90 to 120 seconds", "instruments": "tolling bells with a slow funeral pavane or lament for wind band (sackbuts, shawms, cornetts) or for organ and low choir" }
   },
   {
-   "id": 3, "key": "deliverer_crowned", "beat": "B09", "role": "ideological transformation", "hook": "zin_aurevan_crowned", "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects)",
+   "id": 3, "key": "deliverer_crowned", "beat": "B09", "role": "ideological transformation", "hook": "zin_aurevan_crowned", "audience": "world", "news": ["zin_afrit.21"], "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects)",
    "title": "The Deliverer Takes the Crown",
    "desc": [
     "In the great temple of Parim, before the seat-holders of the Concord and more pilgrims than the squares could hold, the crown of Aenor has been set on the head of [zin_loc_deliverer], and the crowd that came to the city to mourn a king stayed to cheer the god they believe him to be.",
@@ -55,22 +56,23 @@
    "sound": { "mood": "radiant public ceremony, joyful and a little too perfect", "length": "90 to 120 seconds", "instruments": "festive choir with organ, or a processional for choir and brass (Renaissance or early Baroque polyphony)" }
   },
   {
-   "id": 4, "key": "heir_of_aen", "beat": "B12", "role": "first reveal", "hook": "zin_eindil_named", "owner": "Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects)",
+   "id": 4, "key": "heir_of_aen", "beat": "B12", "role": "first reveal", "hook": "zin_eindil_named", "audience": "heir_named", "owner": "Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects)",
    "title": "The Heir of Aen",
    "desc": [
-    "The Gala have sent heralds to every court of Aoaz with news that most of them will not believe: the man the hunters cut out of the northern ice has been named in the halls of King Lorien as Eindil, son of Ein, son of Aen, an heir of the first king of men by his own blood.",
+    "In the hall of King Lorien, before the oldest lords of the Gala, the stranger who came out of the northern ice has been given back his name: he is Eindil, son of Ein, son of Aen, an heir of the first king of men by his own blood.",
     "Lorien, who remembers Dardan, says that he knew the face before he heard the voice, and the Keepers of the Mirror say the water showed them the same thing.",
-    "In Parim the temples call the tale a northern fancy, while in the free dominions old men are taking down the histories of Aen's line and counting the generations on their fingers."
+    "Outside that hall nobody yet knows it, and the Gala, who are very good at keeping things, have not decided whom to tell."
    ],
-   "button": "Let the old histories be read again.",
+   "button": "Then the line of Aen is not ended.",
    "quote": "Men count their kings by the names on the rolls, but we counted the line of Aen by their faces, and I had not seen that face in my halls for a very long time.",
    "attribution": "Words the Gala give to King Lorien",
    "picture": "A sunlit elven hall of the Gala with tall white pillars and gold light: the ancient King Lorien (canon v3 B: withered and ancient, extremely bright yellow glowing eyes, golden and white robe) stands before the black-haired man from the ice and lays a hand on his shoulder; between them a Keeper holds a shallow bowl of still water in which a faint crowned reflection shows; elven lords watch in silence. The man (Eindil v4 D face, black hair, blue eyes faintly glowing) is still in plain travelling clothes, not yet in armour. Painted, reverent and warm.",
    "pictureRefs": ["art/source/design_refs/lorien_v3_b.png", "art/source/design_refs/eindil_v4_d.png"],
-   "sound": { "mood": "recognition and an old line remembered, reverent and warm", "length": "60 to 120 seconds", "instruments": "harp and voice, or a slow chant for small choir with a plucked string accompaniment" }
+   "sound": { "mood": "recognition and an old line remembered, reverent and warm", "length": "60 to 120 seconds", "instruments": "harp and voice, or a slow chant for small choir with a plucked string accompaniment" },
+   "report": { "title": "Talk from the Gala Court", "picture": "GFX_zin_evt_traders_road_south", "desc": "Merchants back from the Gala say the elves have taken a great interest in a stranger from the north who is lodged in their king's own hall with more honour than any guest of men in living memory, and that nobody outside the hall will say why.", "button": "Elves will be elves." }
   },
   {
-   "id": 5, "key": "last_crowns", "beat": "B18", "role": "escalation", "hook": "zin_war_of_last_crowns", "owner": "World tension (modules/world_tension.mjs, zin_world_tension.txt effects; news zin_world.20)",
+   "id": 5, "key": "last_crowns", "beat": "B18", "role": "escalation", "hook": "zin_war_of_last_crowns", "audience": "world", "news": ["zin_world.20"], "owner": "World tension (modules/world_tension.mjs, zin_world_tension.txt effects; news zin_world.20)",
    "title": "The War of the Last Crowns",
    "desc": [
     "There has been no single declaration and no single enemy, but the chroniclers have stopped pretending that the wars breaking out across Aoaz are separate quarrels: the dark powers are on the march, the old grudges between the crowns of men have found their excuse, and every road from the Wall to the southern sea is full of levies going one way and townsfolk going the other.",
@@ -84,7 +86,7 @@
    "sound": { "mood": "the gathering of many hosts, grave and driving", "length": "90 to 120 seconds", "instruments": "martial early music: drums, trumpets or sackbuts and shawms, an estampie or battle piece (for example a Renaissance battaglia) in a grave tempo" }
   },
   {
-   "id": 6, "key": "western_crossing", "beat": "B20", "role": "escalation", "hook": "zin_western_crossing", "owner": "The Western Crossing (modules/mech_crossing.mjs, zin_west.txt effects)",
+   "id": 6, "key": "western_crossing", "beat": "B20", "role": "escalation", "hook": "zin_western_crossing", "audience": "western_war", "news": ["zin_west.41"], "owner": "The Western Crossing (modules/mech_crossing.mjs, zin_west.txt effects)",
    "title": "The Western Crossing",
    "desc": [
     "The war-fleets of the West have put out across the central sea, every keel the Ford Council could buy, borrow or build, and the first of them have already run up on the beaches of the Middle Lands with their hosts behind them.",
@@ -99,7 +101,7 @@
    "sound": { "mood": "a sea-crossing war host, rhythmic and determined", "length": "60 to 120 seconds", "instruments": "rowing rhythm on drums with low male voices singing a work song or march, or a drum-and-horn piece in a folk or early-music recording" }
   },
   {
-   "id": 7, "key": "black_north_marches", "beat": "B24", "role": "global threat escalation", "hook": "zin_zol_rising", "owner": "Zol's Mistake (modules/mech_zol.mjs, zin_mistake.txt effects)",
+   "id": 7, "key": "black_north_marches", "beat": "B24", "role": "global threat escalation", "hook": "zin_zol_rising", "audience": "black_north", "news": ["zin_mistake.11"], "owner": "Zol's Mistake (modules/mech_zol.mjs, zin_mistake.txt effects)",
    "title": "The Black North Marches",
    "desc": [
     "From the black shore of Zol's Mistake the dead have come out in their thousands, marching in better order than most living hosts have ever managed, along the frozen coasts and over the northern passes towards the lands of men.",
@@ -114,7 +116,7 @@
    "sound": { "mood": "relentless cold dread, a dirge that marches", "length": "90 to 120 seconds", "instruments": "low male chant or a Dies irae-like plainchant with deep drum, or a slow funeral march for low strings or low brass" }
   },
   {
-   "id": 8, "key": "volgan_marches", "beat": "B23", "role": "global threat escalation", "hook": "zin_volgan_marches", "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects)",
+   "id": 8, "key": "volgan_marches", "beat": "B23", "role": "global threat escalation", "hook": "zin_volgan_marches", "audience": "world", "news": ["zin_dominion.12"], "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects)",
    "title": "Volgan Marches North",
    "desc": [
     "Mirolon has fallen, and the hosts of the Ember Lands have come up out of the storms behind it: grave-hosts and ogre clans, the beasts of the southern deeps, and at their head Volgan himself, the Great Spirit whom the spirits of an older age stripped of his strength and threw into the Void, crowned and marching north.",
@@ -129,7 +131,7 @@
    "sound": { "mood": "an overwhelming dark march, heavy and inexorable", "length": "90 to 120 seconds", "instruments": "heavy drums and low brass or a low choir; a dark orchestral march or a slow heavy processional in a licensed recording" }
   },
   {
-   "id": 9, "key": "name_of_the_deliverer", "beat": "B25", "role": "first reveal", "hook": "zin_afrit_revealed", "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects)",
+   "id": 9, "key": "name_of_the_deliverer", "beat": "B25", "role": "first reveal", "hook": "zin_afrit_revealed", "audience": "world", "news": ["zin_afrit.43"], "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects)",
    "title": "The Name of the Deliverer",
    "desc": [
     "The man the temples worshipped as Aurevan the Deliverer has another name, and it is now being shouted in every market of the Middle Lands: he is Afrit, son of Ein, grandson of Aen, who has lived far longer than any man should, and the Royal Council that governed Aenor in the Golden King's name answered to him all along.",
@@ -144,7 +146,7 @@
    "sound": { "mood": "unmasking, unease turning to anger", "length": "60 to 120 seconds", "instruments": "a dissonant or minor-key choral piece, or strings with an unsettled ostinato, in a licensed recording" }
   },
   {
-   "id": 10, "key": "king_of_the_east", "beat": "B26", "role": "faction formation", "hook": "zin_afrit_king_of_east", "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects)",
+   "id": 10, "key": "king_of_the_east", "beat": "B26", "role": "faction formation", "hook": "zin_afrit_king_of_east", "audience": "world", "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects)",
    "title": "A King in the East",
    "desc": [
     "Afrit did not go into the wilderness, as his enemies hoped, but east, where the courts that owed his temples their councillors, their granaries and their debts have knelt to him one after another, and in the halls of the East he has been proclaimed king over them all.",
@@ -159,7 +161,7 @@
    "sound": { "mood": "an oriental court in grim splendour, ceremonial and uneasy", "length": "60 to 120 seconds", "instruments": "ceremonial plucked and bowed strings, frame drum and reed (oud, kanun, ney, zurna or similar) in a licensed traditional or early-music recording" }
   },
   {
-   "id": 11, "key": "parim_taken", "beat": "B27", "role": "irreversible political shift", "hook": "zin_west_parim_taken", "owner": "The Western Crossing (modules/mech_crossing.mjs, zin_west.txt effects)",
+   "id": 11, "key": "parim_taken", "beat": "B27", "role": "irreversible political shift", "hook": "zin_west_parim_taken", "audience": "world", "news": ["zin_west.56"], "owner": "The Western Crossing (modules/mech_crossing.mjs, zin_west.txt effects)",
    "title": "Western Banners over Parim",
    "desc": [
     "Parim has fallen to the hosts of the Western Crossing, which fought their way up the vale from the shores of the Concord to the oldest city of men and now hang their clan banners from the walls where the gold of Aenor flew for an age.",
@@ -174,7 +176,7 @@
    "sound": { "mood": "a conquered capital, grave triumph mixed with loss", "length": "60 to 120 seconds", "instruments": "slow drums and a lament on bagpipe, horns or low winds, or a victory march played slowly in a licensed folk or early-music recording" }
   },
   {
-   "id": 12, "key": "heir_returns", "beat": "B29", "role": "global response", "hook": "zin_eindil_returned", "owner": "Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects)",
+   "id": 12, "key": "heir_returns", "beat": "B29", "role": "global response", "hook": "zin_eindil_returned", "audience": "war_of_the_living", "news": ["zin_eindil.90"], "owner": "Eindil's journey (modules/mech_eindil.mjs, zin_eindil.txt effects)",
    "title": "The Heir Returns",
    "desc": [
     "Eindil has come back to the war, and he has not come back on foot: the heir of Aen flew south out of the Magical Forest on the back of a dragon of the elven roosts, and the hosts who saw him pass over the lines say that they heard the dragon before they saw it and the cheering before either.",
@@ -189,7 +191,7 @@
    "sound": { "mood": "hope returning, soaring and heroic", "length": "90 to 120 seconds", "instruments": "trumpets or horns with full choir, or a bright orchestral or early-Baroque fanfare and chorus in a licensed recording" }
   },
   {
-   "id": 13, "key": "varner_falls", "beat": "B32", "role": "defeat aftermath", "hook": "zin_varner_dead", "owner": "Eindil's journey (events zin_eindil.97)",
+   "id": 13, "key": "varner_falls", "beat": "B32", "role": "defeat aftermath", "hook": "zin_varner_dead", "audience": "war_of_the_living", "owner": "Eindil's journey (events zin_eindil.97)",
    "title": "Varner Falls",
    "desc": [
     "Varner the wizard is dead. When the dead of the black north broke the southern front and the hosts of the living began to give way, the old wizard of the Magical Lands raised wards over them such as nobody living had ever seen, and held them up until there was nothing left of him to hold them with, and the living came off the field only because he stayed on it.",
@@ -203,7 +205,7 @@
    "sound": { "mood": "elegy for a protector, sorrowful and luminous", "length": "90 to 120 seconds", "instruments": "slow elegy for strings or viol consort, or a requiem movement for choir, in a licensed recording" }
   },
   {
-   "id": 14, "key": "volgan_broken", "beat": "B34", "role": "defeat aftermath", "hook": "zin_volgan_body_destroyed", "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects)",
+   "id": 14, "key": "volgan_broken", "beat": "B34", "role": "defeat aftermath", "hook": "zin_volgan_body_destroyed", "audience": "world", "news": ["zin_dominion.17"], "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects)",
    "title": "The Body of Volgan Is Broken",
    "desc": [
     "On the field where the hosts of the living at last stood against the Ember Lands, the body that Volgan wore when he came back out of the Void has been broken apart like a burnt log in the hand, and the Great Spirit has gone from the field.",
@@ -218,7 +220,7 @@
    "sound": { "mood": "a great darkness broken, solemn relief that does not trust itself", "length": "60 to 120 seconds", "instruments": "a slow hymn or chorale for choir or brass, ending unresolved, in a licensed recording" }
   },
   {
-   "id": 15, "key": "kusven_forth", "beat": "B35", "role": "global threat escalation", "hook": "zin_kusven_forth", "owner": "Zol's Mistake (modules/mech_zol.mjs, zin_mistake.txt effects: zin_zol_send_kusven)",
+   "id": 15, "key": "kusven_forth", "beat": "B35", "role": "global threat escalation", "hook": "zin_kusven_forth", "audience": "world", "news": ["zin_mistake.20"], "owner": "Zol's Mistake (modules/mech_zol.mjs, zin_mistake.txt effects: zin_zol_send_kusven)",
    "title": "The Grave-Wind",
    "desc": [
     "Out of the host of the black north something has come onto the field that is not one of the walking dead, a Great Spirit so tall that the soldiers who saw it measure it against the banners, and wherever it passes the dead stand straighter and the living cannot get their breath.",
@@ -233,7 +235,7 @@
    "sound": { "mood": "the world holding its breath, terror and stillness", "length": "60 to 120 seconds", "instruments": "low choir or bowed strings with sustained tension and a single great drum, or a dark sacred choral piece, in a licensed recording (music, not a drone)" }
   },
   {
-   "id": 16, "key": "lorien_falls", "beat": "B36", "role": "defeat aftermath", "hook": "zin_lorien_dead", "owner": "The Lands of the Sun (modules/mech_sun.mjs, zin_sun.txt effects)",
+   "id": 16, "key": "lorien_falls", "beat": "B36", "role": "defeat aftermath", "hook": "zin_lorien_dead", "audience": "world", "owner": "The Lands of the Sun (modules/mech_sun.mjs, zin_sun.txt effects)",
    "title": "King Lorien Falls",
    "desc": [
     "King Lorien of the Gala, who remembered Dardan, rode out with the oldest lords of his people and the ancient spirits who still answered him to stand between the living and Kusven, and none of them came home.",
@@ -248,7 +250,7 @@
    "sound": { "mood": "the passing of the oldest king, noble grief", "length": "90 to 120 seconds", "instruments": "a lament for solo voice and harp, or a slow polyphonic elegy for choir, in a licensed recording" }
   },
   {
-   "id": 17, "key": "afrit_dead", "beat": "B41", "role": "defeat aftermath", "hook": "zin_afrit_dead", "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects: zin_afrit_die)",
+   "id": 17, "key": "afrit_dead", "beat": "B41", "role": "defeat aftermath", "hook": "zin_afrit_dead", "audience": "world", "owner": "Afrit and the Council (modules/mech_afrit.mjs, zin_afrit.txt effects: zin_afrit_die)",
    "title": "Afrit Is Dead",
    "desc": [
     "Afrit, son of Ein, whom half of Aoaz worshipped as the Deliverer and the other half learned to fear, is dead, and the heralds who brought the news to the courts have been made to repeat it twice, because nobody quite believed it the first time.",
@@ -263,7 +265,7 @@
    "sound": { "mood": "the fall of a false light, grave and cathartic", "length": "60 to 120 seconds", "instruments": "a solemn choral or orchestral piece that resolves, for example a Renaissance motet or a slow Baroque chorus, in a licensed recording" }
   },
   {
-   "id": 18, "key": "ending_lost_cause", "beat": "B42", "role": "campaign-ending signal", "hook": "zin_ending_lost_cause", "owner": "World tension (zin_world_reach_ending; news zin_world.100)",
+   "id": 18, "key": "ending_lost_cause", "beat": "B42", "role": "campaign-ending signal", "hook": "zin_ending_lost_cause", "audience": "world", "news": ["zin_world.100"], "owner": "World tension (zin_world_reach_ending; news zin_world.100)",
    "title": "A King of Aen's Line",
    "desc": [
     "In the great hall of Parim, before the captains of every crown that fought beside him, Eindil, son of Ein, son of Aen, has been crowned King of Aenor, and the Lost Cause that a vain old king founded for his own glory has ended the age as the league of the living.",
@@ -278,7 +280,7 @@
    "sound": { "mood": "a hard-won coronation, majestic and deeply moving", "length": "90 to 120 seconds", "instruments": "coronation anthem for choir, organ and brass or trumpets, in a licensed recording" }
   },
   {
-   "id": 19, "key": "ending_children_of_volgan", "beat": "B43", "role": "world-end scenario", "hook": "zin_ending_children_of_volgan", "owner": "World tension (zin_world_reach_ending; news zin_world.101)",
+   "id": 19, "key": "ending_children_of_volgan", "beat": "B43", "role": "world-end scenario", "hook": "zin_ending_children_of_volgan", "audience": "world", "news": ["zin_world.101"], "owner": "World tension (zin_world_reach_ending; news zin_world.101)",
    "title": "Children of Volgan",
    "desc": [
     "In this telling of the age the Great Spirit of the Ember Lands rules a ruined world. His grave-hosts stand on the plains of the Middle Lands, his client crowns kneel in their own halls and rule in his name, and the beasts of the south walk the roads where the caravans used to run.",
@@ -292,7 +294,7 @@
    "sound": { "mood": "the end of an age in darkness, heavy and final", "length": "90 to 120 seconds", "instruments": "a dark requiem or lament for choir and low orchestra, or a slow dirge with tolling bell, in a licensed recording" }
   },
   {
-   "id": 20, "key": "ending_ashen_throne", "beat": "B44", "role": "world-end scenario", "hook": "zin_ending_ashen_throne", "owner": "World tension (zin_world_reach_ending; news zin_world.102)",
+   "id": 20, "key": "ending_ashen_throne", "beat": "B44", "role": "world-end scenario", "hook": "zin_ending_ashen_throne", "audience": "world", "news": ["zin_world.102"], "owner": "World tension (zin_world_reach_ending; news zin_world.102)",
    "title": "The Ashen Throne",
    "desc": [
     "In this telling of the age Afrit, son of Ein, who was worshipped as the Deliverer, rules all Aoaz from the throne of Parim. His temples are full again, his councillors sit in every court that owes the Houses of the First Light a favour, and the few who still say aloud what he is are not often heard saying it twice.",
@@ -306,7 +308,7 @@
    "sound": { "mood": "a false god's peace, solemn, beautiful and hollow", "length": "90 to 120 seconds", "instruments": "slow sacred choral music with organ, beautiful but cold, in a licensed recording" }
   },
   {
-   "id": 21, "key": "ending_golden_court", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_golden_court", "owner": "World tension (zin_world_reach_ending; news zin_world.103)",
+   "id": 21, "key": "ending_golden_court", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_golden_court", "audience": "world", "news": ["zin_world.103"], "owner": "World tension (zin_world_reach_ending; news zin_world.103)",
    "title": "The Golden Court Endures",
    "desc": [
     "In this telling of the age the Golden Court still rules in Parim. Whatever the long war took from the rest of Aoaz, the Golden Court kept its gold: the feasts go on, the offices are still for sale, and the men who bought them sit at the high table louder than ever.",
@@ -320,7 +322,7 @@
    "sound": { "mood": "an oblivious court feast, merry and gilded", "length": "60 to 120 seconds", "instruments": "Renaissance court dance music (galliard, pavane, branle) for consort of recorders, viols, lute or loud band, in a licensed recording" }
   },
   {
-   "id": 22, "key": "ending_western_crown", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_western_crown", "owner": "World tension (zin_world_reach_ending; news zin_world.104)",
+   "id": 22, "key": "ending_western_crown", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_western_crown", "audience": "world", "news": ["zin_world.104"], "owner": "World tension (zin_world_reach_ending; news zin_world.104)",
    "title": "A Western Crown in Parim",
    "desc": [
     "In this telling of the age western banners still fly over Parim, and the old quarrel of the West and Aenor has ended the other way round. The clans that crossed the central sea for an old debt have stayed to collect it for good, and their captains govern the oldest city of men with the help of its own clerks, whose prayers they still cannot follow.",
@@ -334,7 +336,7 @@
    "sound": { "mood": "a rough-handed victory, proud and rustic", "length": "60 to 120 seconds", "instruments": "a folk victory march or song with drums, pipes or fiddles and voices, in a licensed recording" }
   },
   {
-   "id": 23, "key": "ending_strait_master", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_strait_master", "owner": "World tension (zin_world_reach_ending; news zin_world.105)",
+   "id": 23, "key": "ending_strait_master", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_strait_master", "audience": "world", "news": ["zin_world.105"], "owner": "World tension (zin_world_reach_ending; news zin_world.105)",
    "title": "Master of the Strait",
    "desc": [
     "In this telling of the age Lerendor is master of the Narrow Strait, and every ship that crosses between the North Lands and the Middle Lands lowers its sail at Sonargur and pays the Sovereign's dues. The great harbour chain is raised for any keel that pays and lowered for any that does not, and the counting-house of Sonargur keeps longer hours than the king.",
@@ -348,7 +350,7 @@
    "sound": { "mood": "a northern sea power at its height, proud and steady", "length": "60 to 120 seconds", "instruments": "a northern folk or Renaissance march with drums, horns and fiddles, or a sea song with a steady beat, in a licensed recording" }
   },
   {
-   "id": 24, "key": "ending_eastern_king", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_eastern_king", "owner": "World tension (zin_world_reach_ending; news zin_world.106)",
+   "id": 24, "key": "ending_eastern_king", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_eastern_king", "audience": "world", "news": ["zin_world.106"], "owner": "World tension (zin_world_reach_ending; news zin_world.106)",
    "title": "One King in the East",
    "desc": [
     "In this telling of the age the East has one king of its own. The courts that quarrelled over every well and caravan road from the rift to the deep sand now answer to one crown, and the caravan masters pay one treasury instead of seven, which is the first thing about the new order that anyone in the East has been glad of.",
@@ -362,7 +364,7 @@
    "sound": { "mood": "a united East, stately and prosperous", "length": "60 to 120 seconds", "instruments": "eastern court or caravan music with oud, kanun, ney and frame drums, in a licensed traditional recording" }
   },
   {
-   "id": 25, "key": "ending_unfinished", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_unfinished", "owner": "World tension (zin_world_reach_ending; news zin_world.107)",
+   "id": 25, "key": "ending_unfinished", "beat": "B45", "role": "campaign-ending signal", "hook": "zin_ending_unfinished", "audience": "world", "news": ["zin_world.107"], "owner": "World tension (zin_world_reach_ending; news zin_world.107)",
    "title": "The Age Unfinished",
    "desc": [
     "No crown has ended the Fourth Age. The wars have dragged on into feuds and truces and the great quarrels of the age into treaties nobody quite keeps, and the chroniclers, who had hoped to close their books, have left the last pages blank for someone else to write.",
@@ -376,7 +378,7 @@
    "sound": { "mood": "an open ending, reflective and gentle", "length": "60 to 120 seconds", "instruments": "a quiet piece for lute, harp or a small consort, or a gentle pastoral, in a licensed recording" }
   },
   {
-   "id": 26, "key": "nafeher_falls", "beat": "B34 (divergence: the realm annexed with the body intact)", "role": "defeat aftermath", "hook": "zin_volgan_withdrawn_south", "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects: zin_volgan_withdraws_south, with news zin_dominion.29); owner answer Q-74 (K59)",
+   "id": 26, "key": "nafeher_falls", "beat": "B34 (divergence: the realm annexed with the body intact)", "role": "defeat aftermath", "hook": "zin_volgan_withdrawn_south", "audience": "world", "news": ["zin_dominion.29"], "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects: zin_volgan_withdraws_south, with news zin_dominion.29); owner answer Q-74 (K59)",
    "title": "The Fall of Nafeher",
    "desc": [
     "Nafeher has fallen and the Dominion of the Ember Lands is broken: its grave-hosts are scattered, its sworn realms have torn up their oaths and gone their own way, and the hosts of the living stand in the hall where Volgan held his court.",
@@ -389,6 +391,98 @@
    "picture": "The throne hall of Nafeher in the Ember Lands, half ruined, its roof torn open to a swirling purple and ember-red storm in which a faint green glint can just be made out; the great throne stands empty and cold, with no body and no crown before it; soldiers of the living with torches search the rubble and look up uneasily at the storm, and a grey-cloaked warden of Mirolon stands apart watching the sky. Painted, an uneasy victory, ember, purple and grey.",
    "pictureRefs": ["art/source/design_refs/volgan_v4_b.png"],
    "sound": { "mood": "an uneasy victory that does not trust itself, the enemy gone but not ended", "length": "60 to 120 seconds", "instruments": "a slow piece for low strings or a small choir that ends unresolved, or a dark folk lament with a drone instrument, in a licensed recording" }
+  },
+  {
+   "id": 27, "key": "hall_of_horos", "beat": "B15", "role": "first reveal", "hook": "zin_horos_dead", "audience": "yeldenne", "news": ["zin_glo.30"], "owner": "Yeldenne and Glo (modules/mech_yeldenne.mjs, zin_glo.txt effects; zin_glo.21); owner answer K60",
+   "title": "The Hall of Horos",
+   "desc": [
+    "The old lord of the castle above Yeldenne is dead. The townsfolk of that small grey town in Pertolor's land called him Horos, as their grandmothers' grandmothers did, for he was a Great Spirit who had kept the high hall since before the town had a name.",
+    "Those who climbed to the hall afterwards found only dust on the high seat, and the heir of Aen coming down the castle road with a blue sword at his side and a crystal of old and holy power in his keeping, which the townsfolk say gives off a light like a clear winter morning.",
+    "What passed between the old spirit and the heir in that hall, the heir has not said, and the townsfolk, who have lived under the castle all their lives, would rather not guess."
+   ],
+   "button": "Keep the light burning.",
+   "quote": "My father carried peat up to the castle every winter of his life, and the old lord thanked him every time, very gravely, as if a sack of peat were a great gift, and I believe now that to him it was.",
+   "attribution": "A peat-cutter of Yeldenne",
+   "picture": "The high hall of the Castle of Yeldenne in the far north, cold blue light through tall windows over snow: on the great stone high seat only a drift of grey dust and the faint shape where someone sat; before it stands the heir of Aen (Eindil v4 D: light blue armour, black hair, blue eyes faintly glowing), a blue sword at his side and a softly glowing crystal held in his hand. Horos is not shown as a figure (K56: story only); his absence is the subject. Painted, hushed and holy, blue and silver.",
+   "pictureRefs": ["art/source/design_refs/eindil_v4_d.png"],
+   "sound": { "mood": "the passing of an ancient guardian, hushed and holy", "length": "60 to 120 seconds", "instruments": "a slow sacred piece for small choir or for viol consort and organ, in a licensed recording" },
+   "report": { "title": "Lights at Yeldenne", "picture": "GFX_zin_evt_cold_shore", "desc": "Carters coming down from the far north say that something has happened at the old castle above Yeldenne: the lights in its high windows went out one night, and the townsfolk have gone about with long faces ever since and will not say why.", "button": "The north keeps its secrets." }
+  },
+  {
+   "id": 28, "key": "mirolon_falls", "beat": "B22", "role": "escalation", "hook": "zin_mirolon_fallen", "audience": "southern_front", "news": ["zin_dominion.11"], "owner": "Volgan (modules/mech_volgan.mjs, zin_dominion.txt effects; zin_dominion.11, .24); owner answer K60",
+   "title": "The Passes of Mirolon Fall",
+   "desc": [
+    "The passes of Mirolon have fallen. Out of the storms of the Ember Lands came grave-hosts, ogre clans and worse, and the wardens who had held the mountain roads against the south for longer than any kingdom of men has kept records were driven from their towers one by one.",
+    "The court of Mirolon has gone into exile with the few banners it could save, and its envoys, who spent years warning every crown of Aoaz that this day would come, are knocking at the same doors again to say that it has.",
+    "The envoys say that Volgan himself leads the southern hosts, though there are still courts that would rather not believe it, and the scouts who got out say the hosts are camped in the passes and show no sign of going home."
+   ],
+   "button": "Give the envoys a seat by the fire.",
+   "quote": "We held the high gate for nine days on half rations, and on the tenth the captain told us to go down the back road and tell the world, so here I am telling you, and I would be grateful if you listened faster than the last court did.",
+   "attribution": "A warden of Mirolon, in exile",
+   "picture": "High mountain passes under an ember-red storm sky: grey stone watchtowers of the wardens burning along a ridge, a long column of grey-cloaked wardens and refugees with their banners retreating down a narrow mountain road, and behind them, pouring through the broken gate, a host of grave-warriors and ogres. Painted, desperate and grim, grey and ember.",
+   "pictureRefs": [],
+   "sound": { "mood": "a mountain stronghold lost, lament and defiance", "length": "60 to 120 seconds", "instruments": "a lament on pipes, horns or low winds over a slow drum, or a mournful folk song with voices, in a licensed recording" },
+   "report": { "title": "Smoke over the Passes", "picture": "GFX_zin_evt_vast_shadow", "desc": "Herders coming up from the south say that the watch-fires on the passes of Mirolon have gone out, and that the road down from the high gate is full of people carrying everything they own on their backs.", "button": "Send someone to find out." }
+  },
+  {
+   "id": 29, "key": "east_crosses_the_rift", "beat": "B21", "role": "escalation", "hook": "zin_eastern_invasion", "audience": "eastern_front", "news": ["zin_east.43"], "owner": "The eastern kings (modules/mech_east.mjs, zin_east.txt effects; zin_east.41 to .43); owner answer K60",
+   "title": "The East Crosses the Rift",
+   "desc": [
+    "A host of the eastern crowns has crossed the great rift into the Magical Lands, the first army of men to march under the elves' trees with fire and axes in living memory, and the border-wardens of the forests have fallen back on the old roosts and the deep groves.",
+    "The courts of the East say they have come for timber, for the roads and for old wrongs, and the elves say nothing at all, which those who know them like least of all; the dragons of the roosts have been seen in the air by day.",
+    "In the West and the Middle Lands, crowns busy with their own wars have begun to ask how the eastern courts, who agree on nothing, came to agree on this."
+   ],
+   "button": "The forests will not burn quietly.",
+   "quote": "The men of the East have brought axes enough to fell a forest, which is generous of them, because it will take them a good many generations to learn which of our trees are only trees.",
+   "attribution": "A warden of the Magical Forest",
+   "picture": "The edge of a vast ancient forest at the lip of a great rift: an eastern host in many styles of dress and armour crosses a long timber bridge over the chasm with wagons and axes, while elven archers wait unseen in the tall trees and a dragon wheels high above in daylight. Painted, tense and sweeping, gold-green forest against dusty eastern colours.",
+   "pictureRefs": [],
+   "sound": { "mood": "an invasion of an old forest, tense and martial", "length": "60 to 120 seconds", "instruments": "frame drums, horns and reeds of an eastern or early-music martial piece, in a licensed recording" },
+   "report": { "title": "Trouble across the Rift", "picture": "GFX_zin_evt_eastern_court", "desc": "Traders back from the East say that the eastern crowns have taken an army over the great rift into the elves' forests, and that the caravans are waiting at the wells until they know who holds the roads.", "button": "Keep the caravans at the wells." }
+  },
+  {
+   "id": 30, "key": "black_compact", "beat": "B31", "role": "escalation", "hook": "zin_black_compact", "audience": "dark_alliance", "owner": "Zol's Mistake and Volgan (events zin_mistake_war.txt; offered by zin_dominion.14); owner answer K60",
+   "title": "The Black Compact",
+   "desc": [
+    "The hosts of the Ember Lands and the dead of the black north, who spent the first years of the war fighting each other as readily as anyone else, have stopped, and scouts on both fronts tell the same story of southern grave-hosts and northern dead marching on the same roads and turning together towards the Host of Eindil.",
+    "Nobody has seen a treaty, and the priests say there could be none, since the dead keep no oaths; the wardens of Mirolon, who know Volgan better than anyone, say only that he has never minded what kind of ally he had, so long as it was pointed the right way.",
+    "Across Aoaz the crowns of the living have begun counting their friends again."
+   ],
+   "button": "Then the living must stand together.",
+   "quote": "The south lot and the north lot used to fight each other over the same graveyard while we cheered them on from the hill, and I want you to know that I miss those days very much.",
+   "attribution": "A serjeant of the Host of Eindil",
+   "picture": "A dark plain at dusk under a split sky, ember-red to the south and black to the north: a column of Volgan's grave-warriors and ogres meets a column of the skeletal armoured dead of the black north (K57), and the two merge into one host marching the same way; scouts of the living watch from a ridge in the foreground. No figure of Zol and no figure of Volgan. Painted, ominous and still.",
+   "pictureRefs": [],
+   "sound": { "mood": "two darknesses becoming one, ominous and heavy", "length": "60 to 120 seconds", "instruments": "a dark march for low brass and drums, or a heavy choral piece in a minor key, in a licensed recording" }
+  },
+  {
+   "id": 31, "key": "the_cliff", "beat": "B39", "role": "escalation", "hook": "zin_eindil_cast_down", "audience": "afrit_war", "owner": "Eindil's journey (events zin_eindil.txt, zin_eindil.110; zin_afrit.61, .62); owner answer K60",
+   "title": "The Cliff",
+   "desc": [
+    "Afrit has come back out of the East with an army, and the heir of Aen, who went out to meet him, has not come back. The few who were near say that the two of them met on the heights, that the heir was struck down and thrown from the cliff, and that nobody has found him since.",
+    "Afrit's heralds are already riding to every court to say that the heir is dead and that the war of the living is over.",
+    "The Host of Eindil has not broken up, though it does not know what it is waiting for, and in the camps the old soldiers say they will believe the heir is dead when they have seen the body."
+   ],
+   "button": "Show us the body.",
+   "quote": "I have heard the heir declared dead twice in this war already, and both times he turned up for supper, so you will excuse me if I keep his place at the fire a while longer.",
+   "attribution": "A cook of the Host of Eindil",
+   "picture": "A windswept clifftop at dusk above a misty gorge: a dented light blue helmet lies near the broken edge, and a tall winged dark figure (Afrit's true form, v3 C) turns away from the edge with his back to the viewer; storm clouds and the far banners of two armies below. No body is shown. Painted, shocking and grim, cold blue and black.",
+   "pictureRefs": ["art/source/design_refs/afrit_true_v3_c.png", "art/source/design_refs/eindil_v4_d.png"],
+   "sound": { "mood": "shock and grief with a held breath of hope", "length": "60 to 120 seconds", "instruments": "a lament for strings or voice that ends on an open, unresolved chord, in a licensed recording" }
+  },
+  {
+   "id": 32, "key": "without_the_heir", "beat": "divergence (zin_eindil_lost)", "role": "defeat aftermath", "hook": "zin_eindil_lost", "audience": "war_of_the_living", "news": ["zin_eindil.140"], "owner": "Eindil's journey (zin_eindil_lost; news zin_eindil.140, then zin_ending.80); owner answer K60",
+   "title": "Without the Heir",
+   "desc": [
+    "In this telling of the age the heir of Aen does not come back. Whatever happened to him, and the soldiers of his Host tell it a dozen different ways, he is gone out of the war, and the league that gathered round him must decide whether it can stand without him.",
+    "His captains still hold the field and the dark has not gone home, so the crowns of the living have done what crowns do: they have sent their envoys to argue about who should lead, and their armies to keep fighting while the envoys argue."
+   ],
+   "button": "Fight on without him.",
+   "quote": "We followed him because he was the heir, and we kept following him because he was the kind of man you follow, and now I suppose we shall find out which of those two reasons was the real one.",
+   "attribution": "A captain of the league of the living",
+   "picture": "An empty command tent at grey dawn: a light blue cloak and a helmet laid on the camp table beside a map, captains of many crowns (men, elves, dwarves) standing around it in silence, banners outside hanging still in the windless air. Painted, quiet grief, grey and blue.",
+   "pictureRefs": [],
+   "sound": { "mood": "a leaderless league, noble grief and resolve", "length": "60 to 120 seconds", "instruments": "a slow funeral march or elegy for brass or strings, in a licensed recording" }
   }
  ]
 }

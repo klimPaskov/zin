@@ -5,7 +5,9 @@
 //   interface/zin_super_events.gui                        the window (a full-screen backdrop and a centred presentation panel)
 //   interface/zin_super_events.gfx                        one picture sprite per super event (gfx/event_pictures/zin/super_events/, pending art)
 //   common/scripted_guis/zin_super_events.txt             visibility, the continue and music buttons, the dynamic picture
-//   common/scripted_effects/zin_super_events.txt          zin_super_event_<key> (once per game, every human player), open, close, queue, play
+//   common/scripted_triggers/zin_super_events.txt         zin_se_audience_<name>, who hears of each moment (K61)
+//   common/scripted_effects/zin_super_events.txt          zin_super_event_<key> (once per game, the human players of its audience, the
+//                                                         minor reports of its neighbours), open, close, queue, play
 //   common/scripted_localisation/zin_super_events.txt     title, description, quote, button and picture of the shown id
 //   common/script_constants/zin_super_events.txt          the number of registered super events
 //   events/zin_super_events.txt                           zin_super_event.1, the hidden console preview that pages through every id
@@ -22,7 +24,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_FILE = path.join(here, '../data/super_events.json');
 export const FILES = {
   gui: 'interface/zin_super_events.gui', gfx: 'interface/zin_super_events.gfx', sgui: 'common/scripted_guis/zin_super_events.txt',
-  effects: 'common/scripted_effects/zin_super_events.txt', sloc: 'common/scripted_localisation/zin_super_events.txt',
+  effects: 'common/scripted_effects/zin_super_events.txt', triggers: 'common/scripted_triggers/zin_super_events.txt', sloc: 'common/scripted_localisation/zin_super_events.txt',
   constants: 'common/script_constants/zin_super_events.txt', events: 'events/zin_super_events.txt', music: 'music/zin_super_events.asset',
   loc: 'localisation/english/zin_super_events_l_english.yml',
 };
@@ -34,15 +36,24 @@ export async function loadSuperEvents(file = DATA_FILE) {
   return data;
 }
 
-// Ids are 1..n without gaps, keys are unique, every text field is present and plain (the window prints them as they are).
+// Ids are stable: the live ids and the retired ids together are 1..n without gaps or repeats, in order. Keys and hooks are unique, every
+// event names a defined audience, and every text field is present and plain (the window prints them as they are).
 export function validate(data) {
   const ev = data.events, errors = [];
   const ids = ev.map(e => e.id), keys = ev.map(e => e.key), hooks = ev.map(e => e.hook);
-  ids.forEach((id, i) => { if (id !== i + 1) errors.push(`event ${i}: id ${id} should be ${i + 1}`); });
+  const all = [...ids, ...(data.retired ?? []).map(r => r.id)].sort((a, b) => a - b);
+  all.forEach((id, i) => { if (id !== i + 1) errors.push(`ids: ${id} where ${i + 1} is expected (live and retired ids are 1..n, each once)`); });
+  ids.forEach((id, i) => { if (i && id < ids[i - 1]) errors.push(`event ${id}: ids are listed in order`); });
+  for (const r of data.retired ?? []) if (keys.includes(r.key)) errors.push(`retired key ${r.key} is still live`);
   for (const [what, list] of [['key', keys], ['hook', hooks]]) for (const k of new Set(list)) if (list.filter(x => x === k).length > 1) errors.push(`${what} ${k} twice`);
+  for (const [name, a] of Object.entries(data.audiences ?? {})) if (!/^[a-z_]+$/.test(name) || !a.trigger || !a.label) errors.push(`audience ${name}`);
   for (const e of ev) {
     if (!/^[a-z][a-z0-9_]*$/.test(e.key)) errors.push(`${e.key}: key`);
     if (!/^zin_[a-z0-9_]+$/.test(e.hook)) errors.push(`${e.key}: hook ${e.hook}`);
+    if (!data.audiences?.[e.audience]) errors.push(`${e.key}: audience ${e.audience} is not defined`);
+    if (e.report && (e.audience === 'world' || !e.report.title || !e.report.desc || !e.report.button)) errors.push(`${e.key}: a report needs a regional audience and its title, desc and button`);
+    for (const t of e.report ? [e.report.title, e.report.desc, e.report.button] : []) if (/["$]|[^\x20-\x7e]/.test(t ?? '')) errors.push(`${e.key}: report text ${String(t).slice(0, 40)}`);
+    for (const n of e.news ?? []) if (!/^zin_[a-z_]+\.\d+$/.test(n)) errors.push(`${e.key}: news ${n}`);
     for (const f of ['title', 'button', 'quote', 'attribution', 'picture', 'role', 'beat']) if (typeof e[f] !== 'string' || !e[f].trim()) errors.push(`${e.key}: ${f}`);
     if (!Array.isArray(e.desc) || !e.desc.length) errors.push(`${e.key}: desc`);
     for (const f of ['mood', 'length', 'instruments']) if (!e.sound?.[f]) errors.push(`${e.key}: sound.${f}`);
@@ -195,15 +206,35 @@ scripted_gui = {
 `;
 }
 
+export const audienceTrigger = name => `zin_se_audience_${name}`;
+export const sawFlag = e => `zin_se_saw_${e.key}`;
+export const newsEffect = id => `zin_se_news_${id.replace('.', '_')}`;
+export const reportEvent = e => `zin_super_event.${100 + e.id}`;
+
+function triggersText(data) {
+  const used = [...new Set(data.events.map(e => e.audience))];
+  return `${HEAD}# The audiences of the super events (owner decision K61): who hears of each great moment. Country scope.
+${used.map(n => `# ${data.audiences[n].label}
+${audienceTrigger(n)} = {
+	${data.audiences[n].trigger}
+}
+`).join('')}`;
+}
+
 function effectsText(data) {
   const ev = data.events;
   const chain = (fn) => ev.map((e, i) => `\t\t${i ? 'else_if' : 'if'} = {\n\t\t\tlimit = { check_variable = { zin_se_id = ${e.id} } }\n${fn(e)}\t\t}\n`).join('');
   return `${HEAD}# The super events of K52. Argument passing follows E1: a temporary variable zin_arg_<name> set just before the call.
 #
-# zin_super_event_<key>     any scope. Once per game (global flag zin_se_done_<key>): shows the super event to every human player. Called by the
-#                           builder right after every place that sets the moment's hook flag (hookSuperEvents in modules/super_events.mjs).
-# zin_super_event_fire      any scope. Argument zin_arg_super_event (the id): opens it for every human player (no once-per-game guard).
-# zin_super_event_open      country scope (a human player). Argument zin_arg_super_event: shows the id now, or queues it while another is open.
+# zin_super_event_<key>     any scope. Once per game (global flag zin_se_done_<key>): shows the super event to every human player in its audience
+#                           (scripted trigger zin_se_audience_<name>, K61) and, where the moment has a report, sends the minor report event to the
+#                           human players whose realm borders an audience realm without being in it. Called by the builder right after every
+#                           place that sets the moment's hook flag (hookSuperEvents in modules/super_events.mjs). For the human players who
+#                           see it, the super event replaces the news event of the same moment (K60): it sets zin_se_saw_<key>, which that
+#                           news event's trigger reads, and runs zin_se_news_<event>, the news event's immediate block and first visible option.
+# zin_se_news_<event>       country scope (a human player). Written by replaceNews over the finished tree: what the replaced news event would
+#                           have done for this country.
+# zin_super_event_open     country scope (a human player). Argument zin_arg_super_event: shows the id now, or queues it while another is open.
 # zin_super_event_close     country scope. Closes the window and shows the next queued id, if any.
 # zin_super_event_play      country scope. Plays the shown id's song for this player only (scoped_play_song), unless the player silenced the
 #                           music of the great moments in the window (zin_se_music_off). The game's own music volume applies as to any song.
@@ -213,19 +244,27 @@ ${ev.map(e => `${effect(e)} = {
 		limit = { NOT = { has_global_flag = ${doneFlag(e)} } }
 		set_global_flag = ${doneFlag(e)}
 		log = "ZIN super event ${e.id} ${e.key}"
-		set_temp_variable = { zin_arg_super_event = ${e.id} }
-		zin_super_event_fire = yes
-	}
+		every_country = {
+			limit = {
+				is_ai = no
+				${audienceTrigger(e.audience)} = yes
+			}
+			set_temp_variable = { zin_arg_super_event = ${e.id} }
+			zin_super_event_open = yes
+${(e.news ?? []).length ? `			set_country_flag = ${sawFlag(e)}
+${e.news.map(n => `			${newsEffect(n)} = yes
+`).join('')}` : ''}		}
+${e.report ? `		every_country = {
+			limit = {
+				is_ai = no
+				NOT = { ${audienceTrigger(e.audience)} = yes }
+				any_neighbor_country = { ${audienceTrigger(e.audience)} = yes }
+			}
+			country_event = { id = ${reportEvent(e)} }
+		}
+` : ''}	}
 }
-`).join('')}zin_super_event_fire = {
-	set_temp_variable = { zin_se_fire = zin_arg_super_event }
-	every_country = {
-		limit = { is_ai = no }
-		set_temp_variable = { zin_arg_super_event = zin_se_fire }
-		zin_super_event_open = yes
-	}
-}
-zin_super_event_open = {
+`).join('')}zin_super_event_open = {
 	set_temp_variable = { zin_se_arg = zin_arg_super_event }
 	if = {
 		limit = { has_country_flag = zin_se_open }
@@ -267,8 +306,9 @@ ${def('zin_loc_super_event_title', e => locKey(e, 't'))}${def('zin_loc_super_eve
 function eventsText(data) {
   return `${HEAD}add_namespace = zin_super_event
 
-# Console preview for testing (event zin_super_event.1): shows the next registered super event in id order to the country that runs it, without
-# touching the once-per-game flags, so every super event can be paged through in the live acceptance run.
+# Console preview for testing (event zin_super_event.1): shows the next registered super event in id order (retired ids skipped) to the country
+# that runs it, regardless of audience and without touching the once-per-game flags, so every super event can be paged through in the live
+# acceptance run.
 country_event = {
 	id = zin_super_event.1
 	hidden = yes
@@ -280,20 +320,37 @@ country_event = {
 			set_variable = { zin_se_test_id = 0 }
 		}
 		add_to_variable = { zin_se_test_id = 1 }
-		set_temp_variable = { zin_se_count = constant:zin_super_events.count }
+		set_temp_variable = { zin_se_count = constant:zin_super_events.last_id }
 		if = {
 			limit = { check_variable = { zin_se_test_id > zin_se_count } }
 			set_variable = { zin_se_test_id = 1 }
 		}
-		set_temp_variable = { zin_arg_super_event = zin_se_test_id }
+${(data.retired ?? []).map(r => `		if = {
+			limit = { check_variable = { zin_se_test_id = ${r.id} } }
+			add_to_variable = { zin_se_test_id = 1 }
+		}
+`).join('')}		set_temp_variable = { zin_arg_super_event = zin_se_test_id }
 		zin_super_event_open = yes
 	}
 }
-`;
+${data.events.filter(e => e.report).map(e => `
+# Minor report of super event ${e.id} (${e.title}) for the human players next to its audience (K61).
+country_event = {
+	id = ${reportEvent(e)}
+	title = ${reportEvent(e)}.t
+	desc = ${reportEvent(e)}.d
+	picture = ${e.report.picture}
+	is_triggered_only = yes
+	timeout_days = 30
+	option = {
+		name = ${reportEvent(e)}.a
+	}
+}
+`).join('')}`;
 }
 
 function constantsText(data) {
-  return `${HEAD}zin_super_events = {\n\tschema = {\n\t\tany_key = yes\n\t\tdata = fixed_point\n\t}\n\tcount = ${data.events.length}\n}\n`;
+  return `${HEAD}zin_super_events = {\n\tschema = {\n\t\tany_key = yes\n\t\tdata = fixed_point\n\t}\n\tcount = ${data.events.length}\n\tlast_id = ${Math.max(...data.events.map(e => e.id), ...(data.retired ?? []).map(r => r.id))}\n}\n`;
 }
 
 function musicText(data) {
@@ -324,6 +381,7 @@ export function locEntries(data) {
     out[locKey(e, 'd')] = e.desc.join('\n\n');
     out[locKey(e, 'q')] = `${e.quote}\n- ${e.attribution}`;
     out[locKey(e, 'a')] = e.button;
+    if (e.report) for (const [f, v] of [['t', e.report.title], ['d', e.report.desc], ['a', e.report.button]]) out[`${reportEvent(e)}.${f}`] = v;
   }
   return out;
 }
@@ -333,6 +391,7 @@ export async function buildSuperEvents(staged, { data } = {}) {
   staged.text(FILES.gui, guiText(data));
   staged.text(FILES.gfx, `${HEAD}# The super-event pictures (700 x 500). Pending art: docs/plans/zin-art/pending_from_integration.md, section Super-event pictures.\n${gfxText(data)}`);
   staged.text(FILES.sgui, scriptedGuiText());
+  staged.text(FILES.triggers, triggersText(data));
   staged.text(FILES.effects, effectsText(data));
   staged.text(FILES.sloc, scriptedLocText(data));
   staged.text(FILES.constants, constantsText(data));
@@ -369,5 +428,87 @@ export function hookSuperEvents(staged, data) {
   }
   const missing = [...sites].filter(([, s]) => !s.length).map(([f]) => f);
   if (missing.length) throw new Error(`super events: no staged file sets ${missing.join(', ')}; their super events could never be shown (data/super_events.json hook)`);
+  replaceNews(staged, data);
   return Object.fromEntries([...sites].map(([f, s]) => [byFlag.get(f).key, s]));
+}
+
+// ---- the news events the super events replace (K60) ------------------------------------------------------------------------------
+// The matching close brace of the block whose `{` is at `open` (quoted strings and comments skipped).
+function closeOf(t, open) {
+  let d = 0, q = false;
+  for (let k = open; k < t.length; k++) {
+    const c = t[k];
+    if (q) { if (c === '"') q = false; continue; }
+    if (c === '"') q = true;
+    else if (c === '#') { const nl = t.indexOf('\n', k); k = nl < 0 ? t.length : nl; }
+    else if (c === '{') d++;
+    else if (c === '}' && --d === 0) return k;
+  }
+  throw new Error('unbalanced block');
+}
+// The top-level entries of a block body: [{ key, value, text }] where value is the inner text of a `{ }` block or the scalar.
+function entriesOf(body) {
+  const out = [], t = body.replace(/#[^\n]*/g, '');
+  const re = /([A-Za-z0-9_.:@^]+)\s*=\s*/g;
+  let m;
+  while ((m = re.exec(t))) {
+    const at = m.index + m[0].length;
+    if (t[at] === '{') { const end = closeOf(t, at); out.push({ key: m[1], value: t.slice(at + 1, end), text: t.slice(m.index, end + 1) }); re.lastIndex = end + 1; }
+    else { const v = /^("[^"]*"|\S+)/.exec(t.slice(at))[0]; out.push({ key: m[1], value: v, text: t.slice(m.index, at + v.length) }); re.lastIndex = at + v.length; }
+  }
+  return out;
+}
+
+// Re-indent script text by brace depth, starting at `base` tabs (copied blocks keep the source's structure, not its indentation).
+function fmt(text, base) {
+  let d = base;
+  return text.split('\n').map(l => l.trim()).filter(Boolean).map(l => {
+    const opens = (l.match(/\{/g) ?? []).length, closes = (l.match(/\}/g) ?? []).length;
+    if (closes > opens && l.startsWith('}')) d -= closes - opens;
+    const out = `${'\t'.repeat(Math.max(d, base))}${l}`;
+    if (!(closes > opens && l.startsWith('}'))) d += opens - closes;
+    return out;
+  }).join('\n');
+}
+
+// For each news event a super event replaces: the event's trigger keeps it from the human players who saw the super event, and
+// zin_se_news_<event> gives those players what the news would have done for them (its immediate block, then its first visible option, as
+// the event's timeout would). The news event, its AI choice and every effect stay as their owner wrote them for everyone else.
+export function replaceNews(staged, data) {
+  const effects = [];
+  for (const e of data.events) for (const id of e.news ?? []) {
+    const found = [...staged.files].filter(([rel, b]) => rel.startsWith('events/') && b.toString('utf8').includes(`\tid = ${id}\n`));
+    if (found.length !== 1) throw new Error(`super events: news event ${id} of ${e.key} is defined in ${found.length} staged event files`);
+    const [rel, bytes] = found[0];
+    const t = bytes.toString('utf8'), at = t.indexOf(`\tid = ${id}\n`), head = t.lastIndexOf('news_event = {', at);
+    if (head < 0 || t.slice(head, at).includes('}')) throw new Error(`super events: ${id} is not a news event`);
+    const open = t.indexOf('{', head), close = closeOf(t, open), block = t.slice(open + 1, close);
+    const top = entriesOf(block);
+    if (top.some(x => x.key === 'trigger')) throw new Error(`super events: news event ${id} already has a trigger; replace it by hand`);
+    const imm = top.find(x => x.key === 'immediate')?.value ?? '';
+    const opts = top.filter(x => x.key === 'option').map(o => {
+      const es = entriesOf(o.value);
+      return { trigger: es.find(x => x.key === 'trigger')?.value.trim() ?? '', body: es.filter(x => !['name', 'trigger', 'ai_chance', 'original_recipient_only', 'highlight_states', 'highlight_map_on_click'].includes(x.key)).map(x => x.text.trim()).join('\n') };
+    });
+    for (const s of [imm, ...opts.map(o => `${o.trigger}\n${o.body}`)]) if (/\b(ROOT|FROM)\b/.test(s.replace(/#[^\n]*/g, ''))) throw new Error(`super events: news event ${id} uses ROOT or FROM, so its effects cannot run in the human player's scope; replace it by hand`);
+    const lines = [`${newsEffect(id)} = {`, `\t# What ${id} (${rel}) does for a human player who sees super event ${e.id} (${e.key}) instead (K60): its immediate block, then its first visible option.`];
+    if (imm.trim()) lines.push(fmt(imm, 1));
+    // The first option whose trigger holds, in order; an option without a trigger is always visible, so it ends the chain.
+    for (const [i, o] of opts.entries()) {
+      const body = o.body.trim() ? fmt(o.body, 2) : '\t\t# this option changes nothing';
+      if (!o.trigger) { lines.push(i ? `\telse = {\n${body}\n\t}` : (o.body.trim() ? fmt(o.body, 1) : '\t# this option changes nothing')); break; }
+      lines.push(`\t${i ? 'else_if' : 'if'} = {\n\t\tlimit = { ${o.trigger.replace(/\s+/g, ' ')} }\n${body}\n\t}`);
+    }
+    if (!imm.trim() && !opts.some(o => o.body.trim())) lines.push('\t# The news event changes nothing; the flag alone keeps it from the player.');
+    lines.push('}');
+    effects.push(lines.join('\n'));
+    // The event's own trigger: everyone who did not see the super event still receives the news.
+    const after = t.indexOf('\n', t.indexOf('is_triggered_only = yes', open)) + 1;
+    if (after <= open || after > close) throw new Error(`super events: news event ${id} has no is_triggered_only line`);
+    const patched = `${t.slice(0, after)}\ttrigger = { NOT = { has_country_flag = ${sawFlag(e)} } } # super event ${e.id} replaces this news for the players who saw it (K60, modules/super_events.mjs)\n${t.slice(after)}`;
+    staged.files.set(rel, Buffer.from(patched));
+  }
+  const eff = staged.files.get(FILES.effects).toString('utf8');
+  staged.files.set(FILES.effects, Buffer.from(`${eff}${effects.join('\n')}\n`));
+  return effects.length;
 }
