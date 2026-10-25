@@ -1,13 +1,9 @@
-| Q-62 | The siteless Triton realms sit on the islands their drawn labels or the old map give them (Seite, the Windy Lands, Santon, Halenor now on the isle by the Kilos Sound, the Lens, Fineger); the Pollos and Benan island reads as two pieces, each holding a seat. Agree? | agree || Q-58 | Ten wild lands are unowned at start (if the game accepts ownerless states); where a wild land meets a realm's claim the claim wins (the Herrodon crest gives way to Zol's Mistake at the Magical Lands' northern tip). Keep them unowned, and is that northern-tip strip Zol's? | unowned; the strip is Zol's || Q-55 | Olen is the only Ember realm on the East and South Lands' landmass (Halia now sits on Mirolon's arm). Keep Olen on the eastern lowland, or move it to an isle? | keep it, behind the olen_lowland barrier || Q-50 | Yeldenne: the capital Simoto (the landing on the Gulf of Minnolomak) is 63 px from the import's land and about 400 px from the Castle of Yeldenne and the valley of Mp'E; a one-state realm cannot hold both. Move the landing below the castle, or the seat to the valley? | seat placed on land near the landing, at (1304, 171) |# Questions for the owner
 | Q-63 | When Afrit is reduced but alive, may Eindil be crowned, with the world told that the false god is beyond the Rift? | yes |
 | Q-64 | Does the fall of Afrit's realm before his flight reveal his name at once (the fall counts as his flight)? | yes |
 | Q-65 | The Golden King in exile: does he keep a court in exile that can return, or does exile end his story? | he keeps a court; the realm-life module decides who feeds it |
 | Q-66 | The Hunt for the False God: may a hunter find and kill Afrit outside the palace? | no (his death stays the palace's) |
 | Q-67 | When Lorien cannot name the heir, do the Keepers of the Mirror name him, or another court of the Lands of the Sun? | the Keepers of the Mirror |
 | Q-68 | The King's death event is titled "The Feast of Gaelor" whatever month he dies in; should the feast follow the month of death instead? | keep Gaelor, the month of mourning |
-| Q-69 | Mycid rings and the God Forest keepers have no portrait pool of their own; they use the nearest pools (the Baelim, the forest elves). Draw their own? | nearest pools for now |
-| Q-70 | The knowledge-layer register (C25) and the bestiary say Kusven is never named in player text; the design names him once he comes forth. Which reading holds? | named only after he comes forth (behind his flag); one Chronicle line uses the sealed wording "a Great Spirit of the black north" |
-| Q-71 | Beasts of the black north (Q-29): build them as a new custom unit (warfare data, counters, a 3D model, sourced sound)? | not built yet; nothing stands in for them |
 | Q-72 | Kusven's strength and trait as Zol's field marshal: skill 6, attack 7, trait "The Grave-Wind"; 63 days on the field at 3 Presence a week | as proposed |
 | Q-73 | Lorien dies only if Kusven is still on the field 14 days after Lorien's ride (zin_mistake.26) | as proposed |
 | Q-74 | News when Volgan's realm is annexed with his body intact (zin_dominion.29), and its effects | as proposed |
@@ -17,11 +13,9 @@
 | Q-78 | The names and values of the Gathering Dark game-rule options | as written |
 | Q-79 | Which story roles announce a change of holder? Today: the crown of Aenor, the Host, the leader of the Western Crossing, the Leren crown | those four |
 | Q-80 | Under HISTORICAL, should the war also start piecemeal when a player's own front opens first? | no: under HISTORICAL the war starts on its date |
-| Q-81 | The minor peoples and the goblins proposal at start (peoples.mjs); should ogres become a people key of their own? | as proposed; ogres stay a creature, not a people key |
 | Q-82 | Does zin_kusven_withdrawn also cover the route where the Presence recedes before Kusven comes forth (the -12 tension then applies too)? | yes |
 | Q-83 | Should the journey's host pickers move under the story-role registry? | no: they keep the journey spec's fuller successor orders |
 | Q-84 | Review the 19 event texts written to complete the story wiring (elves, east, dark, diplomacy, world), all proposed | shipped as proposed |
-| Q-85 | Rulers' years: at the design's rate a man's reign lasts at most about eight years; keep it, or age rulers per season or per year? | as designed, tuned after the Linux runs |
 | Q-86 | May a surviving Golden King (he exposed the plot) die of age in the end, closing the Golden Court Endures before its judgement? | no |
 | Q-87 | Realms without a named heir: are engine-named successors enough, or should every inheriting realm get a pre-built heir? | engine-named for now |
 | Q-88 | When the Golden King's court returns, may the Golden Court Endures hold again? | yes |
@@ -29,7 +23,6 @@
 | Q-90 | The Golden King's shelters in exile: Lerendor first, then Selen, then the old dominions | yes |
 | Q-91 | The eight ruler tempers (Bold-Hearted, Cautious, Pious, Grasping, Scholarly, Vengeful, Generous, Weary) and their effects | yes |
 | Q-92 | Should start-variety changes that land on one realm (tempers, feuds, lands, bonds) also reach a player's realm under FULL? | no: every ZIN rule spares the player's realm |
-| Q-93 | A Letter to Bastian: once per game, a Middle Lands realm pays 75 Authority to a wardens' hall for a year of Bastian's Counsel (the AI writes only when the Gathering Dark reaches 50). Is this how Bastian enters play, or should he be an advisor, or stay out of play? | the letter, as proposed |
 | Q-94 | The world-tension popup's column labels read "Gathering Dark" and "Wars Waged" because the buttons are narrow (title and tooltip say "The Gathering Dark") | acceptable |
 | Q-95 | The Worshipdom and Coldor play PLAUSIBLE like FREE (no plausible AI plan); should they lean to history under PLAUSIBLE like the others? | keep their owners' mapping |
 | Q-96 | The dragon texts say "Dragon Mountain" while the name table names Yavieth's capital Thoriveniel; which name? | "Dragon Mountain" for the mountain, Thoriveniel for the city |
@@ -38,8 +31,6 @@
 | Q-99 | Should goblin realms field hand-guns? Today goblin and orc powder realms get bombards only | bombards only |
 | Q-100 | Confirm the word "bombard" for the powder artillery | bombard |
 | Q-101 | Eindil waits (recruited without a role) in Kvittumm's history, the far north-west realm where the key-sites spec puts his ice; Kusven with Zol's Mistake. Right homes? | as proposed |
-| Q-103 | K54 says the "very south-east" lands may have black people. Which realms: the south-eastern realms of the mainland (the far south of the East and the Lands of the Sun's Sunfolk), or the southernmost lands in general? | the south-eastern edge of the mainland, as a minority look within those realms' pools |
-| Q-104 | K54 keeps some women among the leaders. The lead's target is about one in ten characters, keeping every canon woman (Alleria and the others) and lore-justified ones. Is that right? | about one in ten |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
@@ -86,6 +77,21 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-08 | Music and sound: original synthesised scores and effects (master plan P12), or sourced, licensed recordings as the kit rule requires for unit audio? | music and sound (R-96) | original synthesised music and effects, with the kit rule amended for ZIN by you |
 | Q-09 | Bastian: a man, a Lesser Spirit or another being? Which era (a Fourth Age contemporary of Varner)? | wizards (R-34) | a living human wizard of the Fourth Age, famous in the Middle Lands |
 | Q-10 | Edvoid needs a new name. Accept the name the implementation proposes (from the language of the people who fear him most), or give one? | the bestiary, Q-03, the "Ocean of Edvoid" sea name | the implementation proposes a name in the first lore tranche, labelled proposed until you accept it |
+| Q-104 | About one in a hundred, not one in ten (owner, 25 October 2026). Of roughly 1,030 characters about 10 women stay in total: the canon woman of the vault and the owner decisions (Alleria of Selen) and women whose reign the histories make a defining fact. Every other woman becomes a man. |
+| Q-105 | The mycids (Mushroom Forest, giant fungi) have no described look in the vault. The portraits use a provisional fungal humanoid (gill-lined grey-brown skin, cap-like growths) so that the culture has its own pool. Accept, or describe their look? | provisional until you describe them |
+| Q-106 | The God Forest Keepers have no described kin in the vault. The portraits use the elf anatomy with forest-keeper dress. Accept, or state what they are? | elves with keeper dress, provisional |
+| Q-107 | Giants and the dead have no owner drawing. Giants use the rhino-headed cards (IMG_20261023_113458, 113736, 113438); the dead use the Elzon and Edvoid cards. Accept? | accept, checked by the owner later |
+| Q-69 | Every people and culture has its own portraits; no simplifications or generic fallbacks (owner, 25 October 2026: "pretty much everything and beyond should have their own portraits"). |
+| Q-70 | Kusven is named from the start, as a known legend; the sealed wording is retired (owner, 25 October 2026). |
+| Q-71 | Build the Beasts of the black north as a custom unit if the Meshy credits suffice (owner, 25 October 2026; balance 110 credits on 25 October). |
+| Q-81 | Ogres stay a creature that serves others, not a people key (owner, 25 October 2026). |
+| Q-85 | Reigns last decades: rulers age by the year, tuned after the Linux runs (owner, 25 October 2026). |
+| Q-93 | The letter, as proposed (owner, 25 October 2026). |
+| Q-103 | The southernmost lands of the mainland (the South Lands and the far south), not the south-east edge (owner, 25 October 2026). |
+| Q-50 | Yeldenne is just a small town, not a country or a state (owner, 25 October 2026): the realm is retired, the town and the Castle of Yeldenne lie in Pertolor's land, and Horos is story only, never a character. |
+| Q-55 | Keep Olen on the eastern lowland (owner, 25 October 2026). |
+| Q-58 | Wild lands start unowned; the northern-tip strip is Zol's (owner, 25 October 2026). |
+| Q-62 | Agree (owner, 25 October 2026). |
 
 ## Follow-up questions found during implementation (24 October 2026)
 
@@ -139,18 +145,14 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-47 | Who performs the lava rite? | the Nether keeps the pits |
 | Q-48 | Does the house of Agon stay a house of the Halls? | yes |
 | Q-49 | The Nether's stance | Shadow |
-| Q-50 | Yeldenne: the capital Simoto (the landing on the Gulf of Minnolomak) lies about 400 px from the Castle of Yeldenne and the valley of Mp'E; a one-state realm cannot hold both. Move the landing below the castle, or the seat to the valley? | kept at the landing site |
 | Q-51 | Lerendor's North joins Sonargur by a corridor through Tolvael, the Heodwa Lands, Hrakbrund or Mustnom; or should it be a separate realm under the same crown? | the corridor (one realm) |
 | Q-52 | Where are the Low-ness Islands and Ferlinon's pine hills of Lerendor? | not placed |
 | Q-53 | Pornivior: beside Mount Argul (the drawing) or below Mount Ergo (the roster)? | beside Mount Argul, as drawn |
 | Q-54 | Ihuy and Soyano share Hol's island in the model: the island goes to Ihuy and Soyano's seat to the northernmost Sun isle. Agree? | as proposed |
-| Q-55 | Olen and Halia on Mirolon's eastern lowland: keep Olen on the mainland, or move it to an isle? | mainland |
 | Q-56 | Hirolon claims the crests of its ring (the Hiloff Rim south stretch and Grano), with Tirlan inside from Tirbur. Accept the ring as Hirolon's fixed land? | yes |
 | Q-57 | Kingson claims the whole Kingson Vale (about 200 by 300 px with the gorge), larger than three states. Keep, or the valley floor only? | the whole vale |
-| Q-58 | Ten wild lands are unowned at start (if the game accepts ownerless states). Keep them unowned, or give each to its neighbour? | unowned |
 | Q-59 | Realm sizes follow stated extents or old-map counts; where stated extents are smaller than the land (the Magical Lands most), realms grow larger than stated. Accept, or state the missing extents? | accept |
 | Q-60 | Wild lands not placed: the Lost Lands, Dragon Mountain's summit, the dune sea, the Plutondo Dunes, the Cursed Square, the Dark Lands' Death Islands. Agree? | agree |
 | Q-61 | Eldafaen: the roster puts it on the southern rift shore; the old seat and the drawn Endelond label lie in the north-east. Which is right? | the roster's southern rift shore |
-| Q-62 | The siteless Triton realms sit on the islands their drawn labels or the old map give them (Seite, the Windy Lands, Santon, Halenor, the Lens, Fineger). Agree? | agree |
 
 Also pending: the Meshy server did not connect in this session (`CONNECT_TIMEOUT`), so 3D model generation waits until it connects.
