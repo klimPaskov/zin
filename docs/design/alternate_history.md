@@ -1145,6 +1145,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-12. Lorien never rides
 
+- **Status:** fixed on 25 October 2026 (war-side agent). `zin_zol_send_kusven` sends `zin_mistake.22` to the Gala Elves; option A calls `zin_sun_lorien_rides` and fires the hidden `zin_mistake.26` 14 days later, which sends the news `zin_mistake.23` and calls `zin_sun_lorien_falls` and `zin_kusven_withdraw` with cause 0; `zin_sun.40` and `.42` are written. Test: `tools/content/events_mech_war.test.mjs`; handoff `docs/plans/story/war_side_handoff.md`.
+
 - **Kind:** event undefined; effect never called. **Beats:** B36.
 
 - **Where:** staged:common/scripted_effects/zin_sun.txt (zin_sun_lorien_rides, zin_sun_lorien_falls: no caller); staged:common/scripted_effects/zin_mistake.txt (zin_zol_withdraw cause 0)
@@ -1158,6 +1160,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Zol's Mistake; mechanic events
 
 #### SL-13. The blue sword never breaks
+
+- **Status:** fixed on 25 October 2026 (war-side agent). `zin_mistake.21` The Blue Sword Breaks goes to Zol and the Host 7 days after Kusven comes forth while Glo is with the heir; its immediate block `zin_kusven_break_the_sword` is the only setter of `zin_horos_sword_broken`, sets `zin_kusven_wounded` and fires `zin_eindil.101`.
 
 - **Kind:** flag never set. **Beats:** B35.
 
@@ -1173,6 +1177,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-14. Zol in person, against the owner corrections
 
+- **Status:** fixed in the war-side files on 25 October 2026: the Kusven re-design of section 9 is in `mech_zol` (flags, effects, trigger, character `zin_kusven`, ideas, decision, Kusven's Host) and `zin_lastwar.73` names Kusven and Zol's victory. Still open: `zin_zol_manifested` and `zin_zol_withdrawn` are set beside the new flags until their readers in other slices move (they are not retired yet), and `zin_eindil.101` and the cp23 Chronicle lines belong to other agents' files (handoff).
+
 - **Kind:** Zol-in-person content void (K4, K11). **Beats:** B35, B36.
 
 - **Where:** tools/content/data/mech_zol.json (ideas zin_zol_form_taken, zin_zol_wounded; decision zin_zol_come_forth); tools/content/lib/mech_zol_script.mjs (zin_zol_manifest, zin_zol_withdraw, template "The Presence"); tools/content/data/events_world_eindil_3.json (zin_eindil.101 "The Old God Comes Forth"); tools/content/data/events_world_lastwar.json (zin_lastwar.73 "an Old God's victory"); tools/content/data/events_crown_chronicle.json (cp23 lines); docs/specs/04_mechanics/00_shared_contract.md (zin_zol_manifested "Zol has manifested bodily"); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_mistake.20 to .25); docs/specs/03_gameplay/05_world_tension_and_endings.md (Zol manifests, Zol withdraws)
@@ -1187,6 +1193,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-16. Volgan's narrative and its option effects are missing
 
+- **Status:** fixed on 25 October 2026 (war-side agent): `zin_dominion.10` to `.19`, `.23` and `.24` are written with the option effects of mech_powers.md, and `zin_dominion.29` covers B34.D2.
+
 - **Kind:** events undefined; effects never called. **Beats:** B22, B23, B33, B34.
 
 - **Where:** staged:common/scripted_effects/zin_dominion.txt, zin_dominion_pulse.txt; docs/design/stage2/mech_powers.md (section "Hooks for the events slice")
@@ -1200,6 +1208,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Volgan; mechanic events
 
 #### SL-17. Lerendor waits on a flag that never comes
+
+- **Status:** fixed on 25 October 2026 (war-side agent): `zin_leren.30` to `.33`, `.35`, `.36` and `.45` are written; the West reads `has_global_flag = zin_leren_treaty_honoured` and `zin_leren_treaty_in_force = yes`; the war flag the gates wait for is set by `zin_world.20` (story framework).
 
 - **Kind:** gate on an unset flag; flag name mismatch. **Beats:** B19, B20.
 
@@ -1249,6 +1259,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-15. The Black Compact is never offered
 
+- **Status:** fixed on 25 October 2026 (war-side agent): the hidden `zin_dominion.14` fires `zin_mistake.16` The Brief Accord; acceptance is the only setter of `zin_black_compact` and fires `zin_dominion.15`.
+
 - **Kind:** event undefined; flag never set. **Beats:** B31.
 
 - **Where:** staged:common/scripted_effects/zin_dominion.txt (fires zin_dominion.14); staged:common/national_focus/zin_volgan.txt, zin_zol.txt, staged:common/scripted_effects/zin_lastwar_story.txt (read zin_black_compact)
@@ -1278,6 +1290,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Eindil's journey; Aenor tree
 
 #### SL-19. A Western Crown in Parim can never hold
+
+- **Status:** fixed in the Western Crossing slice on 25 October 2026: the scripted trigger `zin_west_holds_parim`. Still open: the endings' reader must test the trigger instead of the global flag (story framework).
 
 - **Kind:** flag never set. **Beats:** B27, B45.
 
@@ -1350,6 +1364,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Eindil's journey; world systems
 
 #### SL-27. Zol's identity uses tag, not original_tag
+
+- **Status:** fixed on 25 October 2026 (war-side agent): `zin_is_zol` tests `original_tag`.
 
 - **Kind:** semantic mismatch. **Beats:** B33, B34, B35, B42.
 
@@ -1427,6 +1443,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-34. Volgan's march has no catch-up
 
+- **Status:** fixed on 25 October 2026 (war-side agent): the Dominion pulse calls `zin_volgan_begin_march` for an AI Volgan under the historical branch 30 days after `zin_mirolon_fallen`.
+
 - **Kind:** no dated fallback. **Beats:** B23.
 
 - **Where:** staged:common/national_focus/zin_volgan.txt (only caller of zin_volgan_begin_march)
@@ -1475,6 +1493,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-22. The pass accord flags are never set
 
+- **Status:** fixed on 25 October 2026 (war-side agent, in the Western Crossing slice until the diplomacy slice takes it): `zin_wall_accord` is set on startup as the Accord of the Passes, and `zin_wall_accord_broken` once a `zin_is_site_great_wall` state changes controller in a war. It is live only once the key-sites trigger exists (pending today).
+
 - **Kind:** flag never set. **Beats:** B21.
 
 - **Where:** staged:common/national_focus/zin_regional_kingson.txt, zin_magical_forest.txt; staged:common/scripted_effects/zin_economy.txt, zin_elves.txt; staged:events/zin_elves.txt
@@ -1504,6 +1524,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Eindil's journey
 
 #### SL-36. Old names and an Old God's victory remain
+
+- **Status:** fixed on 25 October 2026 (war-side agent): the content migration had turned the superseded-name rule, the reserved name and the roster's former label into Kusven; they read Edvoid again, and `zin_sun_old_powers_stand_3_desc` and `zin_lastwar.73` say Zol's victory.
 
 - **Kind:** text contradicts canon. **Beats:** B35.
 

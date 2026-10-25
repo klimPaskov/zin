@@ -297,7 +297,9 @@ test('Retired names: no staged file or text uses a name from the register\'s ret
     for (const re of retired.patterns) if (re.test(t)) hits.push(`${f}: ${re}`);
   }
   assert.deepEqual(hits, []);
-  for (const bad of ['Hierarch', 'Einendil', 'Kusven', 'Aenorian', 'Rush Kingdom']) assert(!NAMESPACES.some(ns => Object.values(loc(ns)).some(v => v.includes(bad))), bad);
+  for (const bad of ['Hierarch', 'Einendil', 'Edvoid', 'Aenorian', 'Rush Kingdom']) assert(!NAMESPACES.some(ns => Object.values(loc(ns)).some(v => v.includes(bad))), bad);
+  // Kusven (K29) is named only in text that waits for him to come forth (zin_lastwar.73).
+  for (const ns of NAMESPACES) for (const e of eventsOf(data, ns)) if (/\bKusven\b/.test(JSON.stringify([e.title, e.desc, e.options]))) assert((e.requires ?? []).includes('zin_kusven_forth'), `${ns}.${e.id} names Kusven before he comes forth`);
   assert(!/\bcreate_faction\b/.test(allScript));
 });
 

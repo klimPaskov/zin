@@ -2860,6 +2860,7 @@
   },
   {
    "id": "SL-12",
+   "status": "fixed 25 October 2026 (war-side agent): zin_zol_send_kusven fires zin_mistake.22 to the Gala Elves; option A calls zin_sun_lorien_rides and fires the hidden zin_mistake.26 14 days later, which sends the news zin_mistake.23 and calls zin_sun_lorien_falls and zin_kusven_withdraw (cause 0); zin_sun.40 and .42 are written; test tools/content/events_mech_war.test.mjs (SL-12); docs/plans/story/war_side_handoff.md",
    "title": "Lorien never rides",
    "severity": "high",
    "beats": [
@@ -2881,6 +2882,7 @@
   },
   {
    "id": "SL-13",
+   "status": "fixed 25 October 2026 (war-side agent): zin_mistake.21 The Blue Sword Breaks, to Zol and the Host 7 days after Kusven comes forth with Glo, runs zin_kusven_break_the_sword (the only setter of zin_horos_sword_broken; sets zin_kusven_wounded; fires zin_eindil.101); test tools/content/events_mech_war.test.mjs (SL-13)",
    "title": "The blue sword never breaks",
    "severity": "high",
    "beats": [
@@ -2899,6 +2901,7 @@
   },
   {
    "id": "SL-14",
+   "status": "fixed in the war-side files 25 October 2026: Kusven re-design in mech_zol (flags zin_kusven_forth, zin_kusven_withdrawn, zin_kusven_wounded; effects zin_zol_send_kusven, zin_kusven_withdraw; trigger zin_kusven_can_come_forth; character zin_kusven; ideas zin_zol_kusven_in_field, zin_zol_kusven_wounded; decision zin_zol_send_kusven_decision; Kusven's Host); zin_lastwar.73 names Kusven and Zol's victory. Open: zin_zol_manifested and zin_zol_withdrawn are still set beside the new flags until their readers in other slices move (list in docs/plans/story/war_side_handoff.md); zin_eindil.101 (events_world_eindil_3.json) and the cp23 Chronicle lines (events_crown_chronicle.json) belong to other agents",
    "title": "Zol in person, against the owner corrections",
    "severity": "high",
    "beats": [
@@ -2927,6 +2930,7 @@
   },
   {
    "id": "SL-15",
+   "status": "fixed 25 October 2026 (war-side agent): hidden zin_dominion.14 fires zin_mistake.16 The Brief Accord to Zol; accept sets zin_black_compact (its only setter) and fires zin_dominion.15; test tools/content/events_mech_war.test.mjs (SL-15 and SL-16)",
    "title": "The Black Compact is never offered",
    "severity": "medium",
    "beats": [
@@ -2946,6 +2950,7 @@
   },
   {
    "id": "SL-16",
+   "status": "fixed 25 October 2026 (war-side agent): zin_dominion.10 to .19, .23, .24 written with the option effects of mech_powers.md (strike Zol, champion falls, member breaks free, let Mirolon go, hold Mirolon), plus zin_dominion.29 (B34.D2); test tools/content/events_mech_war.test.mjs",
    "title": "Volgan's narrative and its option effects are missing",
    "severity": "high",
    "beats": [
@@ -2975,6 +2980,7 @@
   },
   {
    "id": "SL-17",
+   "status": "fixed 25 October 2026 (war-side agent): zin_leren.30 to .33, .35 (the court decides), .36 (the player prompt) and .45 written; the West reads has_global_flag = zin_leren_treaty_honoured and zin_leren_treaty_in_force = yes; Lerendor's gates read zin_war_of_last_crowns, which zin_world.20 now sets (story framework); test tools/content/events_mech_war.test.mjs (SL-17)",
    "title": "Lerendor waits on a flag that never comes",
    "severity": "high",
    "beats": [
@@ -3017,6 +3023,7 @@
   },
   {
    "id": "SL-19",
+   "status": "fixed in the Western Crossing slice 25 October 2026: scripted trigger zin_west_holds_parim (common/scripted_triggers/zin_west.txt). Open: the endings' reader (zin_ending.txt, story framework) must test zin_west_holds_parim = yes instead of the global flag",
    "title": "A Western Crown in Parim can never hold",
    "severity": "medium",
    "beats": [
@@ -3072,6 +3079,7 @@
   },
   {
    "id": "SL-22",
+   "status": "fixed 25 October 2026 (war-side agent, in the Western Crossing slice until the diplomacy slice takes it): zin_wall_accord set on startup as the Accord of the Passes (K2); zin_wall_accord_broken set once when a zin_is_site_great_wall state changes controller in a war (on_state_control_changed). Live only once the key-sites trigger zin_is_site_great_wall exists (pending today)",
    "title": "The pass accord flags are never set",
    "severity": "low",
    "beats": [
@@ -3172,6 +3180,7 @@
   },
   {
    "id": "SL-27",
+   "status": "fixed 25 October 2026 (war-side agent): zin_is_zol = original_tag; test tools/content/events_mech_war.test.mjs (SL-27)",
    "title": "Zol's identity uses tag, not original_tag",
    "severity": "medium",
    "beats": [
@@ -3363,6 +3372,7 @@
   },
   {
    "id": "SL-34",
+   "status": "fixed 25 October 2026 (war-side agent): the Dominion pulse calls zin_volgan_begin_march for an AI Volgan under the historical branch 30 days after zin_mirolon_fallen (war.march_catchup_days); test tools/content/events_mech_war.test.mjs (SL-34)",
    "title": "Volgan's march has no catch-up",
    "severity": "medium",
    "beats": [
@@ -3398,6 +3408,7 @@
   },
   {
    "id": "SL-36",
+   "status": "fixed 25 October 2026 (war-side agent): the migration had turned the superseded-name rule, the reserved name and the roster's former label into Kusven; they read Edvoid again (banned_words.json bw_superseded_names_002, reserved_names.json, roster.json formerLabels \"Edvoid's Mistake\"); zin_sun_old_powers_stand_3_desc and zin_lastwar.73 say Zol's victory; test tools/content/events_mech_war.test.mjs (SL-36)",
    "title": "Old names and an Old God's victory remain",
    "severity": "low",
    "beats": [

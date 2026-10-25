@@ -1,0 +1,100 @@
+{
+  "source": "docs/specs/06_events/03_war_of_the_last_crowns.md (Acts II, IV, V), docs/specs/04_mechanics/volgan_southern_dominion.md sections 9 to 12, docs/design/stage2/mech_powers.md (hooks for the events slice), docs/design/alternate_history.md B22, B23, B31, B33, B34. The option effects are the Volgan mechanic's helpers. Text keeps Volgan's spirit open: his body broke, never 'Volgan is dead' (C4, C23). Every line of text is proposed wording in the accepted voice.",
+  "namespace": "zin_dominion",
+  "file": "events/zin_dominion_war.txt",
+  "realms": { "ZOL": "Zol's Mistake", "VOL": "Puvulan", "MIR": "Mirolon" },
+  "events": [
+    {
+      "id": 10, "kind": "country", "title": "Out of the Storms", "picture": "ember_lands_storm",
+      "note": "To Volgan and to Mirolon when Volgan declares war on Mirolon (zin_dominion_war_started, which has already applied the surprise spirits).",
+      "desc": [
+        { "trigger": "zin_is_volgan = yes", "text": "The storms that have stood over the Ember Lands for an age have opened, and the host that waited under them is on the roads north, greater than any the south has sent out since the First Age. The wardens of Mirolon are about to learn how much of what they told the world was true." },
+        { "text": "The storms over the Ember Lands have opened, and out of them has come an army greater than any since the First Age. The beacons on the passes are lit from end to end, and the High Warden has called every company to the walls." }
+      ],
+      "options": [
+        { "key": "a", "text": "North.", "trigger": "zin_is_volgan = yes", "effect": "add_war_support = 0.05" },
+        { "key": "b", "text": "To the passes!", "trigger": "NOT = { zin_is_volgan = yes }", "effect": "add_war_support = 0.05" }
+      ]
+    },
+    {
+      "id": 11, "kind": "news", "title": "Mirolon Falls", "picture": "ember_lands_storm",
+      "note": "Fired once by zin_dominion_mirolon_falls, which sets zin_mirolon_fallen.",
+      "desc": "Mirolon has fallen. The passes its wardens kept for twenty years are in the hands of the south, and the ledgers of the watch went north with the last riders out. Whatever is left of its court will have to keep the watch from exile.",
+      "options": [{ "key": "a", "text": "Mirolon was right all along." }]
+    },
+    {
+      "id": 12, "kind": "news", "title": "The March North", "picture": "ember_lands_storm",
+      "note": "Fired once by zin_volgan_begin_march (the focus, or the pulse's catch-up under the historical branch).",
+      "desc": "The south is moving. The hosts of the Dominion have left the passes of Mirolon behind them and are on the high roads to the Middle Lands, and the villages in their way are emptying faster than the heralds can ride.",
+      "options": [{ "key": "a", "text": "Then we must meet them." }]
+    },
+    {
+      "id": 13, "kind": "country", "title": "The Dead Against the Dead", "picture": "ember_lands_storm",
+      "note": "The one clash event (O4), fired by the Dominion pulse for a human Volgan; an AI Volgan strikes directly. It can come again after 90 days.",
+      "desc": "Our riders on the northern edge of the march have met the dead of the black north, and the two hosts stand a few miles apart in the Middle Lands with nothing between them but burned fields. Neither side has sent a herald, and the captains are waiting for the word.",
+      "options": [
+        { "key": "a", "text": "Then we break them too.", "ai": "base = 80\nmodifier = {\nadd = 20\nzin_rules_is_historical = yes\n}", "tip": "We go to war with Zol's Mistake for a state on our border, not for the whole of it.", "effect": "zin_volgan_strike_zol = yes" },
+        { "key": "b", "text": "Not yet.", "ai": "base = 20\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}" }
+      ]
+    },
+    {
+      "id": 14, "kind": "hidden",
+      "note": "Volgan's one offer of the Black Compact, sent to Zol by the Volgan tree's helper zin_volgan_tree_offer_compact (O4). Zol answers in zin_mistake.16.",
+      "immediate": "if = {\nlimit = { NOT = { has_global_flag = zin_black_compact } }\ncountry_event = { id = zin_mistake.16 }\n}"
+    },
+    {
+      "id": 15, "kind": "country", "title": "The Compact Holds", "picture": "ember_lands_storm",
+      "note": "To Volgan when Zol accepts the Black Compact in zin_mistake.16.",
+      "desc": "The dead of the north have given their answer. Their hosts have drawn back from ours and keep their own camps, and our captains have orders to let them pass on the roads. Nobody at Nafeher calls it friendship, and nobody needs to.",
+      "options": [{ "key": "a", "text": "Turn every host against the living.", "tip": "Our hosts gain experience from the peace in the north.", "effect": "army_experience = 10\nadd_war_support = 0.03" }]
+    },
+    {
+      "id": 16, "kind": "country", "title": "Then I Will Bury Them Together", "picture": "ember_lands_storm",
+      "note": "Volgan's side of the first duel, fired by the journey's zin_eindil.96.",
+      "desc": "The champion of men is down. He stood before the lord of Nafeher on the southern front and spoke of men who have chosen to stand together, and the answer he was given threw him to the ground, where his own people are now carrying him from the field.",
+      "options": [{ "key": "a", "text": "Bury them.", "effect": "zin_dominion_champion_falls = yes" }]
+    },
+    {
+      "id": 17, "kind": "news", "title": "The Body Breaks", "picture": "volgan_broken", "requires": ["zin_volgan_body_destroyed"],
+      "note": "Fired once by zin_volgan_destroy_body.",
+      "desc": "Volgan's manifested body has been destroyed on the field, and a storm of magic tore through the southern host as it broke apart. What remains of him, no one living can say.",
+      "options": [{ "key": "a", "text": "What remains, no one can say." }]
+    },
+    {
+      "id": 18, "kind": "country", "title": "Old Allegiances", "picture": "ember_lands_storm", "requires": ["zin_volgan_body_destroyed"],
+      "note": "To a human sworn member when the body breaks; an AI member keeps its oath at 40 or more and otherwise breaks free (zin_volgan_destroy_body).",
+      "desc": "Word has come from Nafeher that the lord of the Dominion was struck down, and that the Steward who sits in his place speaks in a name that does not answer. Our oath was sworn to Volgan, and the council wants to know whether it still binds us.",
+      "options": [
+        { "key": "a", "text": "The oath stands.", "ai": 50, "effect": "set_temp_variable = { zin_arg_target = THIS }\nset_temp_variable = { zin_arg_value = 10 }\nzin_volgan_add_oath = yes" },
+        { "key": "b", "text": "We go our own road.", "ai": 50, "effect": "zin_dominion_member_breaks_free = yes" }
+      ]
+    },
+    {
+      "id": 19, "kind": "country", "title": "The Steward's Choice", "picture": "mirolon_passes",
+      "note": "To a human Steward when the body breaks while the Dominion holds Mirolon, or when Mirolon asks for its homes (zin_mirolon_restore). The AI chooses 90 to 10 in zin_volgan_destroy_body.",
+      "desc": "The hosts that hold Mirolon's passes now answer to the Steward, and Mirolon's people have not stopped watching them. The Steward may give back what the Dominion took, or keep it in a name that no longer answers.",
+      "options": [
+        { "key": "a", "text": "Let Mirolon go.", "ai": 90, "tip": "Peace with Mirolon, and its home states are returned to it.", "effect": "zin_dominion_let_mirolon_go = yes" },
+        { "key": "b", "text": "Hold what we took.", "ai": 10, "tip": "Mirolon's home states rise against us.", "effect": "zin_dominion_hold_mirolon = yes" }
+      ]
+    },
+    {
+      "id": 23, "kind": "country", "title": "The Compact Ends", "picture": "mirolon_passes",
+      "note": "To Volgan and to Zol, once, from zin_dominion_end_compact (which sets zin_black_compact_ended and closes the roads).",
+      "desc": "The dead of the north and the hosts of the south no longer keep apart by agreement. The roads that were open between them have been shut again, and neither side has sent a herald to say why.",
+      "options": [{ "key": "a", "text": "So the compact ends." }]
+    },
+    {
+      "id": 24, "kind": "country", "title": "A Court in Exile", "picture": "mirolon_passes",
+      "note": "To Mirolon when it yields after building the Exile Court (zin_dominion_mirolon_capitulated).",
+      "desc": "Mirolon has yielded, but its court has not. The High Warden and the keepers of the ledgers have gone into exile under the banners of the watch, and from a borrowed hall they still count the hosts of the south.",
+      "options": [{ "key": "a", "text": "The watch goes on.", "effect": "add_political_power = 25" }]
+    },
+    {
+      "id": 29, "kind": "news", "title": "Nafeher Falls Silent", "picture": "ember_lands_storm",
+      "note": "Proposed id and text (B34.D2): Volgan's realm was annexed while his body stood. Fired once by zin_volgan_withdraws_south; his fate stays open (C23).",
+      "desc": "Nafeher has fallen and the Dominion is broken, but nobody saw Volgan fall. The last riders out of the south say that he went down into the storms with his crown on his head, and no one living can say where he is now.",
+      "options": [{ "key": "a", "text": "Let the storms keep him." }]
+    }
+  ]
+}

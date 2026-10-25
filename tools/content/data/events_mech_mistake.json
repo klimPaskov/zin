@@ -1,0 +1,101 @@
+{
+  "source": "docs/specs/06_events/03_war_of_the_last_crowns.md (Acts II and VI), docs/specs/04_mechanics/zols_mistake.md sections 4, 7, 8 and 9, re-pointed at Kusven by docs/design/alternate_history.md section 9 (owner corrections K4, K11, K29 of 24 October 2026). Kusven is named only in text shown after he has come forth (zin_kusven_forth). Every line of text is proposed wording in the accepted voice (docs/specs/02_lore/09_voice_and_style.md).",
+  "namespace": "zin_mistake",
+  "file": "events/zin_mistake_war.txt",
+  "realms": { "ZOL": "Zol's Mistake", "AEN": "Aenor", "LER": "Lerendor", "VOL": "Puvulan", "GALA": "Gala" },
+  "events": [
+    {
+      "id": 2, "kind": "country", "title": "Tales of Black Ships", "picture": "black_ships_tale",
+      "note": "Fired to one coastal country by the rumour roll of zin_zol_wake_island_here (zols_mistake.md section 4). The only tale that can forewarn a court.",
+      "desc": "The harbour-master has heard the same story from three crews this month: black hulls moving among the islands of the Kusmeel with no lamp aboard, and lights on the shore there that are not fires. None of the three will fish those waters again before spring, whatever herring fetches at market.",
+      "options": [
+        { "key": "a", "text": "Sailors' tales.", "ai": 95 },
+        { "key": "b", "text": "Send a ship to look.", "ai": 5, "trigger": "has_political_power > 24", "tip": "If the dead ever come out of the north, our captains will not be taken by surprise.", "effect": "add_political_power = -25\nset_country_flag = zin_zol_forewarned" }
+      ]
+    },
+    {
+      "id": 10, "kind": "country", "title": "Whither the Dead", "picture": "black_isles_lights",
+      "note": "Zol's first target after the rising (zols_mistake.md section 7). No person speaks (S4).",
+      "desc": "The dead stand on every black isle and on every road of the Mistake, and the tide has turned south. No voice is raised in the hall of Furviatlon, and none is needed, for the hosts wait only to be told which shore to take.",
+      "options": [
+        { "key": "a", "text": "South, to Aenor.", "ai": "base = 70\nmodifier = {\nadd = 30\nzin_rules_is_historical = yes\n}",
+          "effect": "if = {\nlimit = {\ncountry_exists = {{AEN}}\nNOT = { has_war_with = {{AEN}} }\n}\ndeclare_war_on = { target = {{AEN}} type = annex_everything }\n}\nelse_if = {\nlimit = {\nany_country = {\nzin_aenor_is_realm = yes\nNOT = { has_war_with = ROOT }\n}\n}\nrandom_country = {\nlimit = {\nzin_aenor_is_realm = yes\nNOT = { has_war_with = ROOT }\n}\nsave_event_target_as = zin_mistake_first_foe\n}\ndeclare_war_on = { target = event_target:zin_mistake_first_foe type = annex_everything }\n}" },
+        { "key": "b", "text": "The northern shores.", "ai": "base = 20\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}", "trigger": "country_exists = {{LER}}\nNOT = { has_war_with = {{LER}} }",
+          "effect": "declare_war_on = { target = {{LER}} type = annex_everything }" },
+        { "key": "c", "text": "The edge of the elven woods.", "ai": "base = 10\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}",
+          "effect": "zin_zol_wargoal_elven_edge = yes" }
+      ]
+    },
+    {
+      "id": 11, "kind": "news", "title": "The Dead Come Out of the North", "picture": "zol_rising", "requires": ["zin_zol_rising"],
+      "note": "News of the rising, fired once by zin_zol_rise.",
+      "desc": "Black hulls came ashore on the northern coasts in the night, and in the morning the dead were on the roads. The fishermen of the Kusmeel had been saying for a year that this would happen, and nobody at any court had listened to them.",
+      "options": [{ "key": "a", "text": "So the fishermen were right." }]
+    },
+    {
+      "id": 16, "kind": "country", "title": "The Brief Accord", "picture": "black_isles_lights",
+      "note": "Zol's answer to Volgan's one offer of the Black Compact (decision N2, O4); fired by the hidden zin_dominion.14. Acceptance is the only setter of zin_black_compact.",
+      "trigger": "country_exists = {{VOL}}\nNOT = { has_global_flag = zin_black_compact }",
+      "desc": "A herald of Nafeher has ridden to the edge of the black plain under a grey banner, and he waits there as the living wait, for an answer. The hosts of the south will stop fighting the dead of the north if the dead will do the same, for as long as the heir and his coalition still stand in the field.",
+      "options": [
+        { "key": "a", "text": "Let the two hosts keep apart.", "ai": "base = 70\nmodifier = {\nadd = 30\nOR = {\nzin_rules_is_historical = yes\nhas_country_flag = zin_zol_accord_sought\n}\n}", "tip": "The dead and the Dominion make peace and open their roads to each other, without joining one league.",
+          "effect": "if = {\nlimit = { has_war_with = {{VOL}} }\nwhite_peace = {{VOL}}\n}\ngive_military_access = {{VOL}}\n{{VOL}} = { give_military_access = {{ZOL}} }\nset_global_flag = zin_black_compact\n{{VOL}} = { country_event = { id = zin_dominion.15 } }" },
+        { "key": "b", "text": "The dead answer to no herald.", "ai": "base = 30\nmodifier = {\nfactor = 0\nOR = {\nzin_rules_is_historical = yes\nhas_country_flag = zin_zol_accord_sought\n}\n}" }
+      ]
+    },
+    {
+      "id": 20, "kind": "news", "title": "Kusven Comes Forth", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "note": "News of the coming forth, fired once by zin_zol_send_kusven. The shape follows the owner's drawing and the vault (K38, K40): a magical being, never an ordinary man.",
+      "desc": "The sky went dark over the field at noon. Out of the north came a shape more than twice the height of a man, black and shrouded, with pale clawed hands, and wherever it passed the dead stood straighter and the living could not get their breath. The Leren who saw it from their ships have a name for it that they say only in a whisper: Kusven, the grave-wind, Zol's most loyal servant.",
+      "options": [{ "key": "a", "text": "Hold the line." }]
+    },
+    {
+      "id": 21, "kind": "country", "title": "The Blue Sword Breaks", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "note": "The one sword-break event (O4, N1), shown to Zol and to the Host seven days after Kusven comes forth while Glo is with the heir. Its immediate block (zin_kusven_break_the_sword) is the only setter of zin_horos_sword_broken and fires zin_eindil.101 to the Host.",
+      "trigger": "zin_kusven_is_forth = yes",
+      "immediate": "zin_kusven_break_the_sword = yes",
+      "desc": "The heir charged, and Kusven stopped him with one finger. He took the blue sword of Horos out of the heir's hand and crushed it into glittering shards, then caught him by the throat until the light in his armour dimmed. With what strength he had left the heir closed his hand on a shard of the broken blade and drove it into the servant's side, and because the shard still carried Glernaen's power, Kusven shook.",
+      "options": [
+        { "key": "a", "text": "The servant is wounded, and the sword is shards.", "trigger": "zin_is_zol = yes" },
+        { "key": "b", "text": "Carry the heir from the field.", "trigger": "NOT = { zin_is_zol = yes }" }
+      ]
+    },
+    {
+      "id": 22, "kind": "country", "title": "The Old Lords Ride", "picture": "gala_court", "checkpoint": 23,
+      "note": "Lorien's stand (zols_mistake.md section 9, checkpoint 23). The non-committal option is written first (E2, C9); the AI weights do not change.",
+      "trigger": "zin_kusven_is_forth = yes\nNOT = { has_global_flag = zin_lorien_dead }",
+      "desc": "Word has come down from the north that a Great Spirit of the old dark walks the field, and that the living cannot hold him. Lorien has risen from his seat. The oldest lords of the world are gathered in the hall, and they are waiting to hear whether the King of Gala means to ride.",
+      "options": [
+        { "key": "b", "text": "This is not our war.", "ai": "base = 20\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}" },
+        { "key": "a", "text": "We ride, for all the living.", "hist": true, "ai": "base = 80\nmodifier = {\nadd = 20\nzin_rules_is_historical = yes\n}", "tip": "Lorien rides north with the old lords against Zol's servant.",
+          "effect": "zin_diplo_lift_refusal = yes\nzin_sun_lorien_rides = yes\nset_country_flag = { flag = zin_potent_magic days = 30 }\ncountry_event = { id = zin_mistake.26 days = 14 }" }
+      ]
+    },
+    {
+      "id": 23, "kind": "news", "title": "Lorien's Stand", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "note": "The world's one news of Lorien's death (O4), fired by the hidden zin_mistake.26, which also calls zin_sun_lorien_falls and zin_kusven_withdraw with cause 0.",
+      "desc": "Lorien, King of Gala, who fought at Dardan, rode against Kusven with the oldest lords of the world and died forcing him back, and other spirits of great age were broken beside him. Zol's servant left the field wounded, and he was not destroyed.",
+      "options": [{ "key": "a", "text": "Remember the King of Gala." }]
+    },
+    {
+      "id": 24, "kind": "news", "title": "Kusven Withdraws", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "note": "Fired by zin_kusven_withdraw after Lorien's stand (cause 0).",
+      "desc": "Kusven has gone back into the dark of the black north. He was not slain, and he has left behind him a wasteland and a continent full of dead, which the living must now bury.",
+      "options": [{ "key": "a", "text": "Bury the dead." }]
+    },
+    {
+      "id": 25, "kind": "news", "title": "The North Falls Quiet", "picture": "zol_rising", "requires": ["zin_zol_rising"],
+      "note": "Fired by zin_kusven_withdraw for every other end: Kusven's strength is spent, his time on the field runs out or his host is destroyed, or Zol's war ends without him (the Presence recedes).",
+      "desc": [
+        { "trigger": "has_global_flag = zin_kusven_forth", "text": "Kusven could not stay on the field any longer. The Presence that held him there was spent, and he went back into the dark of the north wounded and not slain, while the dead who had marched beside him lay down where they stood." },
+        { "text": "The dead have gone back into the north. Their hosts lost their hold on the roads one after another, and the black hulls left the coasts as quietly as they had come." }
+      ],
+      "options": [{ "key": "a", "text": "Let the north keep its dead." }]
+    },
+    {
+      "id": 26, "kind": "hidden",
+      "note": "Proposed id. Fired to the Gala Elves 14 days after zin_mistake.22 A: if Kusven is still on the field and Lorien lives, Lorien dies forcing him back (O4).",
+      "immediate": "if = {\nlimit = {\nzin_kusven_is_forth = yes\nNOT = { has_global_flag = zin_lorien_dead }\n}\nnews_event = { id = zin_mistake.23 }\nzin_sun_lorien_falls = yes\nset_temp_variable = { zin_arg_cause = 0 }\nzin_kusven_withdraw = yes\n}"
+    }
+  ]
+}

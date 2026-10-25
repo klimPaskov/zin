@@ -51,6 +51,7 @@ import { buildMechCold } from './modules/mech_cold.mjs';
 import { buildMechDark } from './modules/mech_dark.mjs';
 import { buildMechEast } from './modules/mech_east.mjs';
 import { buildMechSun } from './modules/mech_sun.mjs';
+import { buildEventsMechWar } from './modules/events_mech_war.mjs';
 import { buildRules } from './modules/rules.mjs';
 import { loadPending, resolvePending, writePendingStandIns } from './modules/pending_names.mjs';
 import { buildDecisionsRegional } from './modules/decisions_regional.mjs';
@@ -141,6 +142,8 @@ const mechCold = await buildMechCold(staged, { countries });
 const mechDark = await buildMechDark(staged, { countries, assignment });
 const mechEast = await buildMechEast(staged, { countries });
 const mechSun = await buildMechSun(staged, { countries, assignment });
+// The war-side story events the mechanic slices fire (Zol and Kusven, Volgan, Lerendor, Lorien's ride): after the slices whose effects they call.
+const warEvents = await buildEventsMechWar(staged, { countries });
 // The courts of the realms (data/world/characters): after the mechanic slices, whose own characters they leave to them.
 const characters = await buildCharacters(staged, { countries });
 // The country package (tags, country files, histories, names, the bookmark) and the realms' flags: after the courts (recruits), the

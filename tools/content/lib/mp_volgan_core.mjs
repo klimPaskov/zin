@@ -27,7 +27,7 @@ export function writeTriggers(V) {
   T_('zin_volgan_body_intact', 'NOT = { has_global_flag = zin_volgan_body_destroyed }');
   T_('zin_volgan_mirolon_clientable', `OR = {\nNOT = { ${exists(MIR)} }\nAND = {\n${exists(MIR)}\n${MIR} = { has_capitulated = yes }\n}\n}`, 'Mirolon is gone or has yielded: a client crown can be made of it.');
   T_('zin_mirolon_occupied', `any_state = {\nis_core_of = ${MIR}\ncontroller = { ${volHeld} }\n}`, 'Volgan or one of its subjects controls a Mirolon core state.');
-  T_('zin_volgan_children_ready', `${volIs(`${gt('num_subjects', 3)}\n${ge(ST, N('strength.children'))}`)}\nNOT = { has_global_flag = zin_volgan_body_destroyed }\nNOT = { has_global_flag = zin_eindil_crowned }\nany_state = {\nzin_is_site_parim = yes\ncontroller = { ${volHeld} }\n}`, 'Children of Volgan: body intact, Parim held, four subjects, strength 60, Eindil not crowned (world systems read it; section 13).');
+  T_('zin_volgan_children_ready', `${volIs(`${gt('num_subjects', 3)}\n${ge(ST, N('strength.children'))}`)}\nNOT = { has_global_flag = zin_volgan_body_destroyed }\nNOT = { has_global_flag = zin_volgan_withdrawn_south }\nNOT = { has_global_flag = zin_eindil_crowned }\nany_state = {\nzin_is_site_parim = yes\ncontroller = { ${volHeld} }\n}`, 'Children of Volgan: body intact, Parim held, four subjects, strength 60, Eindil not crowned (world systems read it; section 13).');
   T_('zin_volgan_tree_compact_open', `${exists(VOL)}\nNOT = { has_global_flag = zin_volgan_body_destroyed }\nany_country = {\nhas_character = zin_eindil\nhas_war_with = ${VOL}\nhas_war_with = ${ZOL}\n}`, 'Helper for the tree: Volgan\'s body intact, and Volgan and Zol both at war with the country that has zin_eindil.');
   T_('zin_volgan_tree_at_war_for_parim', `${exists(VOL)}\nany_state = {\nzin_is_site_parim = yes\ncontroller = { has_war_with = ${VOL} }\n}`, 'Helper for the tree: Volgan is at war with the controller of the Parim state.');
   T_('zin_volgan_tree_holds_parim', `any_state = {\nzin_is_site_parim = yes\ncontroller = { ${volHeld} }\n}`, 'Helper for the tree: Volgan or one of its subjects controls the Parim state.');
@@ -564,6 +564,18 @@ mark_focus_tree_layout_dirty = yes`)}
 ${inMir('mark_focus_tree_layout_dirty = yes')}
 ${members.map(m => `if = {\nlimit = { ${exists(m)} }\n${m} = { mark_focus_tree_layout_dirty = yes }\n}`).join('\n')}
 }`, 'Any scope. The body breaks (section 12): the leader roles are removed (he is not killed), the Steward rules, the hosts reel, the members are tested, the compact ends. A second call does nothing.');
+
+  // ---- the realm conquered with the body unbroken (B34.D2, proposed)
+  E_('zin_volgan_withdraws_south', `if = {
+limit = {
+NOT = { has_global_flag = zin_volgan_withdrawn_south }
+NOT = { has_global_flag = zin_volgan_body_destroyed }
+}
+set_global_flag = zin_volgan_withdrawn_south
+zin_dominion_end_compact = yes
+${members.map(m => `if = {\nlimit = { ${exists(m)} }\n${m} = { zin_dominion_member_breaks_free = yes }\n}`).join('\n')}
+news_event = { id = zin_dominion.29 }
+}`, 'Any scope. Volgan\'s realm was annexed while his body stood: his fate stays open (C23), the Children of Volgan close, the compact ends and the sworn realms go their own way. Fires once; the body-broken route never fires it.');
 
   // ---- Mirolon's watch
   const levelLoop = `set_temp_variable = { zin_mirolon_t_level = 1 }

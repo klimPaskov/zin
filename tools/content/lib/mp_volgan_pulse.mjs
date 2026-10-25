@@ -190,6 +190,18 @@ zin_volgan_mirolon_taken = yes
 }
 zin_dominion_mirolon_falls = yes
 }
+# the march catch-up (SL-34): under the historical branch an AI Volgan that has not taken its focus marches 30 days after Mirolon's fall
+if = {
+limit = {
+is_ai = yes
+zin_rules_is_historical = yes
+has_game_rule = { rule = zin_rule_dark_powers option = HISTORICAL }
+has_global_flag = { flag = zin_mirolon_fallen days > ${N('war.march_catchup_days') - 1} }
+NOT = { has_global_flag = zin_volgan_marches }
+NOT = { has_global_flag = zin_volgan_body_destroyed }
+}
+zin_volgan_begin_march = yes
+}
 # the dead against the dead
 if = {
 limit = {
@@ -337,16 +349,31 @@ mark_focus_tree_layout_dirty = yes`, 'Scope: Mirolon. The Watch pulse (section 8
 			}
 		}
 	}
+	# ROOT is the new controller, FROM the old one, FROM.FROM the state (the hook runs in the state's scope)
 	on_state_control_changed = {
+		effect = {
+			FROM.FROM = {
+				if = {
+					limit = {
+						OR = {
+							zin_is_site_mirolon_passes = yes
+							zin_is_site_nafeher = yes
+						}
+					}
+					zin_dominion_state_changed = yes
+				}
+			}
+		}
+	}
+	# ROOT annexed FROM: Volgan's realm conquered with his body unbroken (B34.D2)
+	on_annex = {
 		effect = {
 			if = {
 				limit = {
-					OR = {
-						zin_is_site_mirolon_passes = yes
-						zin_is_site_nafeher = yes
-					}
+					FROM = { tag = ${VOL} }
+					NOT = { has_global_flag = zin_volgan_body_destroyed }
 				}
-				zin_dominion_state_changed = yes
+				zin_volgan_withdraws_south = yes
 			}
 		}
 	}

@@ -1,5 +1,21 @@
 {
-  "source": "docs/specs/04_mechanics/zols_mistake.md. Every number is the spec's proposal. Names are resolved to tags through data/countries.json. No text names a servant, a keeper of Furviatlon or what feeding is.",
+  "source": "docs/specs/04_mechanics/zols_mistake.md, re-pointed at Kusven by docs/design/alternate_history.md section 9 (owner corrections K4, K11, K29 of 24 October 2026: Zol never takes the field; Kusven, his most loyal servant and a Great Spirit, does). Every number is the spec's proposal. Names are resolved to tags through data/countries.json. Kusven is named only in text shown after he comes forth; no text names a keeper of Furviatlon or what feeding is.",
+  "kusven": {
+    "note": "Kusven (formerly Edvoid), Zol's most loyal servant, a Great Spirit made by Zol (vault 03 - Figures/Kusven.md). A unit leader of Zol only, never a country leader (S4 stands). His portrait is the generic portrait of the dead until his own portrait (design: owner pick K41, art/source/design_refs/kusven_v2_a.png) is produced. The skill values, the trait and the timings are proposed.",
+    "character": "zin_kusven",
+    "name": "Kusven",
+    "portrait": "GFX_zin_portrait_the_dead_male_1",
+    "skill": { "level": 6, "attack": 7, "defense": 4, "planning": 3, "logistics": 3 },
+    "traits": ["zin_trait_great_spirit_in_arms", "zin_trait_kusven_grave_wind"],
+    "trait": { "id": "zin_trait_kusven_grave_wind", "name": "The Grave-Wind", "desc": "Where he passes the breath goes out of the living, and the dead who follow him stand up straighter for it.", "attack": 2, "mods": { "army_attack_factor": 0.15, "army_morale_factor": 0.15 } },
+    "template": "Kusven's Host",
+    "lineBattalions": 4,
+    "company": "zin_great_spirit",
+    "equipment": "zin_great_spirit_equipment",
+    "swordDays": 7,
+    "rideAskDays": 1,
+    "swordBreak": { "drain": 5, "shard": -15, "missionDays": -21 }
+  },
   "realm": "Zol's Mistake",
   "aenor": "Aenor",
   "lerendor": "Lerendor",
@@ -24,8 +40,8 @@
     { "id": "zin_zol_without_a_body", "name": "Without a Body", "desc": "The Old God has no body in Aoaz and cannot take one. What he commands, he commands from the dark, through those who serve.", "picture": "zol_sigil", "mods": { "surrender_limit": 0.5, "required_garrison_factor": -0.75, "research_speed_factor": -0.5, "drift_defence_factor": 1 } },
     { "id": "zin_zol_the_dormancy", "name": "The Dormancy", "desc": "The north is quiet, as it has been for an age. The dead stir in the islands and the living do not hear.", "picture": "glyph_fading", "mods": { "political_power_factor": -0.2, "max_command_power": -50 } },
     { "id": "zin_zol_the_rising", "name": "The Rising", "desc": "The dead have come out of the north. Nothing the living have built was made for them.", "picture": "bones_risen", "mods": { "war_support_factor": 1, "stability_factor": 0.5, "army_org_factor": 0.1 } },
-    { "id": "zin_zol_form_taken", "name": "The Form Taken", "desc": "For a short while the Old God stands in Aoaz with a shape. It costs more than he can pay for long.", "picture": "zol_sigil", "mods": { "army_attack_factor": 0.3, "army_defence_factor": 0.2, "army_morale_factor": 0.3, "breakthrough_factor": 0.2 } },
-    { "id": "zin_zol_wounded", "name": "Wounded, Not Slain", "desc": "He withdrew into the dark of his domain. He was wounded, and constrained, and he was not slain.", "picture": "ashen_waste", "mods": { "army_attack_factor": -0.2, "army_org_factor": -0.2, "political_power_factor": -0.3 } },
+    { "id": "zin_zol_kusven_in_field", "name": "Kusven Takes the Field", "desc": "Kusven, Zol's most loyal servant, has come out of the black north and leads the dead himself. The hosts that march with him do not waver, and the Presence pays every week to keep him there.", "picture": "zol_sigil", "mods": { "army_attack_factor": 0.3, "army_defence_factor": 0.2, "army_morale_factor": 0.3, "breakthrough_factor": 0.2 } },
+    { "id": "zin_zol_kusven_wounded", "name": "The Servant Wounded", "desc": "Kusven has gone back into the dark of the Mistake with a wound that a shard of the blue sword gave him. He was not slain, but the hosts feel his absence in every rank.", "picture": "ashen_waste", "mods": { "army_attack_factor": -0.2, "army_org_factor": -0.2, "political_power_factor": -0.3 } },
     { "id": "zin_zol_the_dead_endure", "name": "The Dead Endure", "desc": "A breath of the Old God's will goes through the host. Broken ranks stand and the fallen rise.", "picture": "dead_ranks_far", "mods": { "army_org_regain": 0.5, "land_reinforce_rate": 0.05 } },
     { "id": "zin_zol_bane", "name": "The Bane of the Potent", "desc": "Weapons that carry old power can end what ordinary iron cannot. The dead press harder against those who bear them.", "picture": "potent_blade", "targeted": { "attack_bonus_against": 0.3, "defense_bonus_against": 0.2 } },
     { "id": "zin_zol_bane_known", "name": "The Bane Known", "desc": "The hosts have learned where the potent blades stand and how to meet them. The dead press less blindly.", "picture": "potent_blade", "targeted": { "attack_bonus_against": 0.2, "defense_bonus_against": 0.2 } },
@@ -37,9 +53,10 @@
     "zin_zol_deathfield": { "name": "The Land Made Waste", "desc": "Where the form stood, the land is dead for years: the soil gives nothing, and nothing wants to stay.", "art": "ashen_waste", "mods": { "local_manpower": -0.5, "state_resources_factor": -0.25, "local_supplies": -1 } }
   },
   "external": {
-    "effects": ["zin_world_add_gathering_dark", "zin_war_feed_deathless", "zin_war_grant_zol_manifestation", "zin_war_remove_zol_manifestation", "zin_diplo_lift_refusal", "zin_sun_lorien_rides", "zin_sun_lorien_falls"],
+    "effects": ["zin_world_add_gathering_dark", "zin_war_feed_deathless", "zin_diplo_lift_refusal", "zin_sun_lorien_rides", "zin_sun_lorien_falls"],
     "triggers": ["zin_has_potent_magic", "zin_is_site_furviatlon", "zin_is_site_sodoloro", "zin_is_site_ocean_of_zol_island", "zin_is_site_ocean_of_zol_coast", "zin_is_region_middle_lands", "zin_is_zol_coast_country", "zin_rules_is_historical", "zin_rules_is_free", "zin_leren_strait_barred", "zin_dark_shore_barred"],
-    "events": ["zin_eindil.101", "zin_dominion.15"],
+    "events": ["zin_eindil.101", "zin_dominion.15", "zin_mistake.2", "zin_mistake.10", "zin_mistake.11", "zin_mistake.20", "zin_mistake.21", "zin_mistake.22", "zin_mistake.24", "zin_mistake.25"],
+    "eventsNote": "The zin_mistake story events are written by modules/events_mech_war.mjs (data/events_mech_mistake.json).",
     "characters": [],
     "variables": []
   }

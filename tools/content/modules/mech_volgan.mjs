@@ -10,7 +10,8 @@
 //   returns { kit, counts }; throws on a text, id, picture or reference error.
 //
 // Data: data/mech_powers_volgan.json (numbers, names, externals), data/mech_powers_volgan_text.json (all text).
-// Events .10 to .19, .23 and .24 are written by the events slice (docs/specs/06_events); this module fires them and provides
+// Events .10 to .19, .23, .24 and .29 are written by modules/events_mech_war.mjs (data/events_mech_dominion.json, docs/specs/06_events);
+// this module fires them and provides
 // the effects their options call: zin_dominion_champion_falls, zin_dominion_member_breaks_free, zin_dominion_let_mirolon_go,
 // zin_dominion_hold_mirolon, zin_dominion_end_compact and zin_volgan_strike_zol.
 // Code: lib/mp_volgan_core.mjs (triggers, effects), mp_volgan_pulse.mjs (start, pulses, on_actions, AI), mp_volgan_content.mjs

@@ -1,0 +1,57 @@
+{
+  "source": "docs/specs/06_events/03_war_of_the_last_crowns.md (Act II, the North), docs/specs/04_mechanics/lerendor_narrow_strait.md sections 6, 7 and 11, docs/design/alternate_history.md B19 and SL-17. The option effects are the Lerendor mechanic's helpers; {{leren:<path>}} reads data/mech_powers_lerendor.json. Every line of text is proposed wording in the accepted voice.",
+  "namespace": "zin_leren",
+  "file": "events/zin_leren_war.txt",
+  "realms": { "LER": "Lerendor", "AEN": "Aenor" },
+  "events": [
+    {
+      "id": 30, "kind": "country", "title": "The Treaty of the Narrow Strait Is Ended", "picture": "strait_toll",
+      "note": "To Lerendor from zin_leren_withdraw (section 7).",
+      "desc": "Lerendor has left the Treaty of the Narrow Strait. The squadrons that watched the strait for Aenor are coming home, the oath of 4A 512 is struck from the rolls of Sonargur, and from today the North will hold its own shores and nobody else's.",
+      "options": [{ "key": "a", "text": "The North holds its own shores.", "effect": "add_political_power = 25" }]
+    },
+    {
+      "id": 31, "kind": "country", "title": "The North Withdraws", "picture": "leren_envoys",
+      "note": "To the Aenor realm from zin_leren_withdraw; zin_lastwar.14 follows seven days later.",
+      "desc": "A rider from Sonargur has brought the king's letter to the council: Lerendor has left the Treaty of the Narrow Strait. The North will not make war on us, the letter says, but it will not fight for us either, and its ships will no longer keep the strait on our behalf.",
+      "options": [{ "key": "a", "text": "Then we hold the strait ourselves.", "effect": "add_war_support = 0.02" }]
+    },
+    {
+      "id": 32, "kind": "news", "title": "The Narrow Strait Treaty Ends", "picture": "strait_toll",
+      "note": "News from zin_leren_withdraw.",
+      "desc": "Lerendor has left the Treaty of the Narrow Strait, which bound the North to Aenor for more than twelve hundred years. Sonargur says that the North will hold its own shores, and it has not declared war on anyone.",
+      "options": [{ "key": "a", "text": "The old alliance is over." }]
+    },
+    {
+      "id": 33, "kind": "news", "title": "The Old Alliance Holds", "picture": "strait_toll",
+      "note": "News from zin_leren_join_aenor_defence (the honour route, a divergence of checkpoint 12).",
+      "desc": "Lerendor keeps the old promise. The king of the North has answered Aenor's call under the Treaty of the Narrow Strait, and the Leren squadrons have put out from Sonargur to fight beside the ships of Aenor.",
+      "options": [{ "key": "a", "text": "The North keeps its word." }]
+    },
+    {
+      "id": 35, "kind": "hidden",
+      "note": "The Court Decides: the AI fallback of section 7, fired by the Lerendor pulse 30 days after zin_war_of_last_crowns for an AI Lerendor off the honour route whose standing is at the withdrawal mark.",
+      "immediate": "if = {\nlimit = {\nzin_leren_treaty_in_force = yes\nNOT = { has_country_flag = zin_leren_route_honour }\ncheck_variable = { var = zin_strait_standing value = {{leren:standing.withdraw_at}} compare = less_than_or_equals }\n}\nzin_leren_withdraw = yes\n}"
+    },
+    {
+      "id": 36, "kind": "country", "title": "The War and the Treaty", "picture": "leren_envoys",
+      "note": "The player prompt of section 7, 14 days after zin_war_of_last_crowns for a human Lerendor that has taken no route. The non-committal answer is written first (E2): a timeout waits.",
+      "trigger": "zin_leren_treaty_in_force = yes",
+      "desc": "Every crown on the shores of the central sea is arming, and the old treaty still binds Sonargur to Parim. The captains want to know before the ice breaks whether the North will keep its oath to Aenor, or leave it, or let the king go on deciding later, which is what he has done all winter.",
+      "options": [
+        { "key": "a", "text": "We wait and watch.", "ai": 40, "tip": "Our standing with Aenor falls a little while we keep it waiting.", "effect": "set_temp_variable = { zin_arg_value = {{leren:standing.wait}} }\nzin_leren_add_strait_standing = yes" },
+        { "key": "b", "text": "Honour the oath now.", "ai": 30, "tip": "Lerendor joins Aenor's defensive wars under the treaty.", "effect": "set_temp_variable = { zin_arg_value = {{leren:standing.call_honour}} }\nzin_leren_add_strait_standing = yes\nzin_leren_join_aenor_defence = yes" },
+        { "key": "c", "text": "Leave the treaty now.", "ai": 30, "tip": "Lerendor leaves the Treaty of the Narrow Strait without making war on Aenor.", "effect": "zin_leren_withdraw = yes" }
+      ]
+    },
+    {
+      "id": 45, "kind": "country", "title": "A Stranger in Aenor", "picture": "leren_envoys",
+      "note": "Fired for Lerendor by the journey's zin_eindil.83 (Warnings of the Heir); the heir is named only through [zin_loc_eindil] (decision D4).",
+      "desc": "Merchants back from Parim say that a stranger has come down into Aenor whom the Golden Court calls an impostor, and that [zin_loc_eindil] talks of the black north as though he had seen it from the ice. The captains in the hall laughed when they heard it, and then they went quiet.",
+      "options": [
+        { "key": "a", "text": "Parim knows its own business.", "ai": 60, "effect": "set_temp_variable = { zin_arg_value = {{leren:standing.impostor}} }\nzin_leren_add_strait_standing = yes" },
+        { "key": "b", "text": "Have our merchants listen for more.", "ai": 40, "tip": "The stranger will think better of the North.", "effect": "set_temp_variable = { zin_arg_value = 5 }\nzin_eindil_add_regard = yes" }
+      ]
+    }
+  ]
+}

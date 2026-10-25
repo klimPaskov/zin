@@ -1,6 +1,7 @@
 // Scripted triggers and effects of Zol's Mistake (docs/specs/04_mechanics/zols_mistake.md).
-// zolScripts(D, T) returns { triggers, effects } as { name: body } objects. Nothing here names a servant, a keeper of Furviatlon
-// or what feeding is; the effects speak only of power, bonds, hosts and the Convergence.
+// zolScripts(D, T) returns { triggers, effects } as { name: body } objects. Zol never takes the field himself (owner correction of
+// 24 October 2026, K4, K11, K29): the one being that comes forth in the War of the Last Crowns is Kusven, his most loyal servant, a
+// Great Spirit (docs/design/alternate_history.md section 9). Nothing here names a keeper of Furviatlon or what feeding is.
 import { dedent, list, num, call, takeArgs, dateTrigger } from './mech_court_lib.mjs';
 
 const rule = (r, o) => `has_game_rule = { rule = ${r} option = ${o} }`;
@@ -12,8 +13,10 @@ export function zolScripts(D, T) {
   const orders = ['great', 'lesser', 'divine'];
 
   // ---------------------------------------------------------------------------------------------- triggers
-  triggers.zin_is_zol = `tag = ${ZOL}`;
-  triggers.zin_zol_is_manifest = list('has_global_flag = zin_zol_manifested', 'NOT = { has_global_flag = zin_zol_withdrawn }');
+  // By original tag, as every other power's identity trigger (SL-27): a civil-war copy of the Mistake is still Zol's.
+  triggers.zin_is_zol = `original_tag = ${ZOL}`;
+  // Kusven is on the field: he has come forth and has not withdrawn.
+  triggers.zin_kusven_is_forth = list('has_global_flag = zin_kusven_forth', 'NOT = { has_global_flag = zin_kusven_withdrawn }');
   triggers.zin_zol_can_rise = dedent(`
     NOT = { has_global_flag = zin_zol_rising }
     NOT = { has_country_flag = zin_zol_presence_lapsed }
@@ -43,9 +46,11 @@ export function zolScripts(D, T) {
     		any_enemy_country = { always = yes }
     	}
     }`);
-  triggers.zin_zol_can_manifest = dedent(`
+  // Zol may send Kusven: the dead have risen, Zol is at war, the Convergence is full and the Presence is strong enough (section 9).
+  // Kusven comes forth once in the age (magic spec rule 4).
+  triggers.zin_kusven_can_come_forth = dedent(`
     has_global_flag = zin_zol_rising
-    NOT = { has_global_flag = zin_zol_manifested }
+    NOT = { has_global_flag = zin_kusven_forth }
     has_war = yes
     ${ge('zin_zol_convergence', D.manifestConvergence)}
     ${ge('zin_mistake_power', D.manifestPower)}`);
@@ -92,11 +97,11 @@ export function zolScripts(D, T) {
     ${takeArgs('days')}
     ${ZOL} = {
     	if = {
-    		limit = { has_idea = zin_zol_wounded }
+    		limit = { has_idea = zin_zol_kusven_wounded }
     		set_temp_variable = { zin_neg = zin_days }
     		multiply_temp_variable = { zin_neg = -1 }
     		modify_timed_idea = {
-    			idea = zin_zol_wounded
+    			idea = zin_zol_kusven_wounded
     			days = zin_neg
     		}
     	}
@@ -204,9 +209,12 @@ export function zolScripts(D, T) {
   const hostTemplate = (name, regiments, support) => list(
     'if = {', `limit = { NOT = { has_template = "${name}" } }`, 'division_template = {', `name = "${name}"`, `division_names_group = ${T.hostGroup}`, 'regiments = {', regiments.map((u, i) => `${u} = { x = ${Math.floor(i / 5)} y = ${i % 5} }`), '}',
     support ? list('support = {', `${support} = { x = 0 y = 0 }`, '}') : '', '}', '}');
+  // Kusven's Host: the warfare spec's deathless battalions and its great-being company "A Great Spirit" (a great being needs a line
+  // battalion beside it, warfare 4.9). Kusven himself is the character zin_kusven, its captain-general.
+  const K = D.kusven;
   effects.zin_zol_make_templates = list('# The two division templates (the warfare spec\'s deathless battalions).',
     hostTemplate('The Deathless Host', Array(10).fill('zin_zol_deathless')),
-    hostTemplate('The Presence', Array(4).fill('zin_zol_deathless'), 'zin_zol_manifestation'));
+    hostTemplate(K.template, Array(K.lineBattalions).fill('zin_zol_deathless'), K.company));
   // Raises one host at a muster site. zin_site: 1 Furviatlon, 2 Sodoloro, 3 a stirring island. The state needs its first province (zin_zol_first_province).
   effects.zin_zol_muster_one = dedent(`
     zin_zol_make_templates = yes
@@ -301,10 +309,10 @@ export function zolScripts(D, T) {
     	zin_zol_refresh_presence = yes
     }`);
   effects.zin_zol_count_hosts = dedent(`
-    # zin_zol_hosts: the divisions alive, less the Presence. Scope: Zol.
+    # zin_zol_hosts: the divisions alive, less Kusven's Host. Scope: Zol.
     set_variable = { zin_zol_hosts = num_divisions }
     if = {
-    	limit = { zin_zol_is_manifest = yes }
+    	limit = { zin_kusven_is_forth = yes }
     	add_to_variable = { zin_zol_hosts = -1 }
     	clamp_variable = { var = zin_zol_hosts min = 0 }
     }`);
@@ -503,16 +511,34 @@ export function zolScripts(D, T) {
     }`);
 
   // ---------------------------------------------------------------------------------------------- the manifestation
-  effects.zin_zol_manifest = dedent(`
-    # Zol comes forth (section 9). Scope: any (acts on Zol).
+  // The one coming forth of the age (section 9 of the spec, re-pointed at Kusven by alternate_history.md section 9). zin_zol_manifested is
+  // still set beside zin_kusven_forth for the readers in other slices that have not moved to the new flag yet (the contract keeps both
+  // until they have; docs/plans/story/war_side_handoff.md lists them).
+  const host = `has_variable = global.zin_eindil_host\nvar:global.zin_eindil_host = { has_war_with = ${ZOL} }`;
+  effects.zin_zol_send_kusven = dedent(`
+    # Zol sends Kusven, his most loyal servant, onto the field. Scope: any (acts on Zol).
     ${ZOL} = {
     	if = {
-    		limit = { zin_zol_can_manifest = yes }
+    		limit = { zin_kusven_can_come_forth = yes }
+    		set_global_flag = zin_kusven_forth
     		set_global_flag = zin_zol_manifested
     		set_temp_variable = { zin_arg_value = ${D.formCost.powerOnManifest} }
     		zin_zol_add_mistake_power = yes
     		set_variable = { zin_zol_convergence = 0 }
-    		add_ideas = zin_zol_form_taken
+    		add_ideas = zin_zol_kusven_in_field
+    		if = {
+    			limit = { NOT = { has_character = ${K.character} } }
+    			recruit_character = ${K.character}
+    		}
+    		add_field_marshal_role = {
+    			character = ${K.character}
+    			skill = ${K.skill.level}
+    			attack_skill = ${K.skill.attack}
+    			defense_skill = ${K.skill.defense}
+    			planning_skill = ${K.skill.planning}
+    			logistics_skill = ${K.skill.logistics}
+    			traits = { ${K.traits.join(' ')} }
+    		}
     		zin_zol_make_templates = yes
     		clear_global_event_target = zin_zol_muster_state
     		random_state = {
@@ -534,7 +560,7 @@ export function zolScripts(D, T) {
     		meta_effect = {
     			text = {
     				create_unit = {
-    					division = "name = \\"The Presence\\" division_template = \\"The Presence\\" start_experience_factor = 0.5 start_equipment_factor = 1"
+    					division = "name = \\"${K.template}\\" division_template = \\"${K.template}\\" start_experience_factor = 0.5 start_equipment_factor = 1"
     					owner = THIS
     					prioritize_location = [P]
     					allow_spawning_on_enemy_provs = no
@@ -542,7 +568,6 @@ export function zolScripts(D, T) {
     			}
     			P = "[?zin_prov|0]"
     		}
-    		zin_war_grant_zol_manifestation = yes
     		activate_mission = zin_zol_the_form_endures
     		set_variable = { zin_zol_manifest_cost = ${D.formCost.weeklyPower} }
     		if = {
@@ -552,36 +577,61 @@ export function zolScripts(D, T) {
     		set_temp_variable = { zin_arg_value = 10 }
     		zin_world_add_gathering_dark = yes
     		news_event = { id = zin_mistake.20 }
-    		# Eindil's host meets the form: with Glo, zin_mistake.21 fires the journey's event; without it the journey's event fires here.
+    		# Eindil's host meets Kusven: with Glo the blue sword breaks (zin_mistake.21, which fires the journey's event); without it the
+    		# journey's event fires here and nothing breaks.
     		if = {
     			limit = {
-    				NOT = { has_global_flag = zin_glo_with_eindil }
-    				var:global.zin_eindil_host = { has_war_with = ${ZOL} }
+    				${host}
+    				has_global_flag = zin_glo_with_eindil
     			}
-    			var:global.zin_eindil_host = { country_event = { id = zin_eindil.101 days = 7 } }
+    			country_event = { id = zin_mistake.21 days = ${K.swordDays} }
+    			var:global.zin_eindil_host = { country_event = { id = zin_mistake.21 days = ${K.swordDays} } }
+    		}
+    		else_if = {
+    			limit = {
+    				${host}
+    			}
+    			var:global.zin_eindil_host = { country_event = { id = zin_eindil.101 days = ${K.swordDays} } }
+    		}
+    		# Lorien's stand: the King of Gala is asked whether the old lords ride.
+    		if = {
+    			limit = {
+    				country_exists = ${T.gala}
+    				NOT = { has_global_flag = zin_lorien_dead }
+    			}
+    			${T.gala} = { country_event = { id = zin_mistake.22 days = ${K.rideAskDays} } }
     		}
     		zin_zol_refresh_presence = yes
     	}
     }`);
 
-  effects.zin_zol_withdraw = dedent(`
-    # Zol withdraws (section 9). zin_arg_cause: 0 Lorien's stand or the form spent after a manifestation (news .24), 1 any other cause (news .25).
+  effects.zin_kusven_withdraw = dedent(`
+    # The war of the north ends (section 9): Kusven withdraws, wounded and not destroyed, or the Presence recedes without him.
+    # zin_arg_cause: 0 Lorien's stand (news .24), 1 any other cause (news .25: the servant's strength is spent, or the Presence recedes).
+    # zin_zol_withdrawn is set on every route, as the contract's flag for the end of Zol's war; zin_kusven_withdrawn only after he came forth.
     ${takeArgs('cause')}
     ${ZOL} = {
     	if = {
     		limit = { NOT = { has_global_flag = zin_zol_withdrawn } }
     		set_global_flag = zin_zol_withdrawn
     		if = {
-    			limit = { has_global_flag = zin_zol_manifested }
-    			remove_ideas = zin_zol_form_taken
-    			zin_war_remove_zol_manifestation = yes
-    			delete_unit = { division_template = "The Presence" }
+    			limit = { has_global_flag = zin_kusven_forth }
+    			set_global_flag = zin_kusven_withdrawn
+    			if = {
+    				limit = { has_idea = zin_zol_kusven_in_field }
+    				remove_ideas = zin_zol_kusven_in_field
+    			}
+    			if = {
+    				limit = { has_character = ${K.character} }
+    				remove_unit_leader_role = { character = ${K.character} }
+    			}
+    			delete_unit = { division_template = "${K.template}" }
     			if = {
     				limit = { has_active_mission = zin_zol_the_form_endures }
     				remove_mission = zin_zol_the_form_endures
     			}
     			add_timed_idea = {
-    				idea = zin_zol_wounded
+    				idea = zin_zol_kusven_wounded
     				days = ${D.withdraw.woundedDays}
     			}
     			zin_zol_spread_deathfield = yes
@@ -610,12 +660,45 @@ export function zolScripts(D, T) {
     	}
     }`);
 
+  // The blue sword breaks (O4, N1): the immediate block of zin_mistake.21, once. Kusven crushes Horos's blue sword and draws New God power
+  // from the heir (+5); the shard the heir drives into him still carries Glernaen's power (-15, and his time on the field is shortened).
+  // It is the only setter of zin_horos_sword_broken; the Glo pulse caps Glo at 50 from it and the journey's zin_eindil.101 wounds the heir.
+  const S2 = K.swordBreak;
+  effects.zin_kusven_break_the_sword = dedent(`
+    # Scope: any.
+    if = {
+    	limit = {
+    		NOT = { has_global_flag = zin_zol_one_finger_done }
+    		zin_kusven_is_forth = yes
+    	}
+    	set_global_flag = zin_zol_one_finger_done
+    	set_global_flag = zin_horos_sword_broken
+    	set_global_flag = zin_kusven_wounded
+    	${ZOL} = {
+    		set_temp_variable = { zin_arg_value = ${S2.drain} }
+    		zin_zol_add_mistake_power = yes
+    		set_temp_variable = { zin_arg_value = ${S2.shard} }
+    		zin_zol_add_mistake_power = yes
+    		if = {
+    			limit = { has_active_mission = zin_zol_the_form_endures }
+    			add_days_mission_timeout = {
+    				mission = zin_zol_the_form_endures
+    				days = ${S2.missionDays}
+    			}
+    		}
+    	}
+    	if = {
+    		limit = { has_variable = global.zin_eindil_host }
+    		var:global.zin_eindil_host = { country_event = { id = zin_eindil.101 } }
+    	}
+    }`);
+
   // Lapse and return (power 0 and back to 10).
   effects.zin_zol_lapse = dedent(`
     # The Presence lapses: every host is removed and the peace is made. The bonds keep sustaining him, so power can return.
     set_country_flag = zin_zol_presence_lapsed
     delete_unit = { division_template = "The Deathless Host" }
-    delete_unit = { division_template = "The Presence" }
+    delete_unit = { division_template = "${K.template}" }
     every_enemy_country = {
     	${ZOL} = { white_peace = PREV }
     }
@@ -770,28 +853,31 @@ export function zolScripts(D, T) {
     	zin_zol_rise = yes
     }`);
   effects.zin_zol_weekly_manifest = dedent(`
-    # Weekly: the form's cost and its end, and the manifestation catch-up for an AI that keeps history. Scope: Zol.
+    # Weekly: what keeping Kusven on the field costs the Presence and when he must go, and the catch-up that sends him for an AI that
+    # keeps history. Scope: Zol.
     if = {
-    	limit = { zin_zol_is_manifest = yes }
+    	limit = { zin_kusven_is_forth = yes }
     	set_temp_variable = { zin_arg_value = zin_zol_manifest_cost }
     	multiply_temp_variable = { zin_arg_value = -1 }
     	zin_zol_add_mistake_power = yes
     	if = {
     		limit = { check_variable = { zin_mistake_power < ${D.formCost.endsBelow} } }
     		set_temp_variable = { zin_arg_cause = 1 }
-    		zin_zol_withdraw = yes
+    		zin_kusven_withdraw = yes
     	}
+    	# Kusven's Host is gone from the field: its great-being company is no longer with any army
     	else_if = {
-    		limit = { check_variable = { num_equipment_in_armies@zin_zol_manifestation_equipment < 1 } }
+    		limit = { check_variable = { num_equipment_in_armies@${K.equipment} < 1 } }
     		set_temp_variable = { zin_arg_cause = 1 }
-    		zin_zol_withdraw = yes
+    		zin_kusven_withdraw = yes
     	}
     }
     else_if = {
     	limit = {
     		zin_zol_ai_keeps_history = yes
     		has_global_flag = zin_zol_rising
-    		NOT = { has_global_flag = zin_zol_manifested }
+    		NOT = { has_global_flag = zin_kusven_forth }
+    		NOT = { has_global_flag = zin_zol_withdrawn }
     		has_war = yes
     		OR = {
     			has_global_flag = zin_volgan_body_destroyed
@@ -806,7 +892,7 @@ export function zolScripts(D, T) {
     		limit = { check_variable = { zin_mistake_power < ${D.manifestPower} } }
     		set_variable = { zin_mistake_power = ${D.manifestPower} }
     	}
-    	zin_zol_manifest = yes
+    	zin_zol_send_kusven = yes
     }`);
 
   effects.zin_zol_startup_values = dedent(`

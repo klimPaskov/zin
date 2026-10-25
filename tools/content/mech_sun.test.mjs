@@ -726,6 +726,9 @@ test('AI strategies: every Sunhot realm befriends the Gala Elves and the Lands o
 
 test('Zol: this slice adds no manifestation content of its own (owner decision K4)', () => {
   assert(!/zin_zol_manifested/.test(allScript) && !/zin_zol_manifested/.test(JSON.stringify(DATA)), 'the manifestation flag is read by the Zol spec, which calls the ride');
-  assert(!/\bZol\b/.test(Object.values(locEntries).join('\n')), 'no text of this slice names Zol');
-  assert(/\bZol\b/.test(`${Object.values(locEntries).join('\n')}\nZol walks.`), 'the scan sees the name');
+  // Zol may be named as the stake of the war ("Zol's victory", SL-36), never as a being on the field (K4: his servant Kusven comes forth).
+  const inPerson = /\bZol (?:walks|appears|manifests|comes|came|rides|stands|takes)\b|Old God (?:walks|comes|came)/;
+  assert(!inPerson.test(Object.values(locEntries).join('\n')), 'no text of this slice has Zol in person');
+  assert(inPerson.test(`${Object.values(locEntries).join('\n')}\nZol walks.`), 'the scan sees the phrasing');
+  assert(/Zol's victory/.test(locEntries.zin_sun_old_powers_stand_3_desc), 'the stake is named (SL-36)');
 });

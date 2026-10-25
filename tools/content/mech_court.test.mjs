@@ -75,7 +75,9 @@ test('Counts: what the three modules define', () => {
 // ------------------------------------------------------------------------------------------------ vocabulary and references
 test('Every effect, trigger and modifier key is in the installed documentation, a control word or an id of this slice', async () => {
   const mine = new Set([...allScript.matchAll(/^\t*([A-Za-z0-9_]+) = \{/gm)].map(m => m[1]));
-  const structural = new Set(['alpha', 'blue', 'green', 'red', 'highlighted', 'large', 'expire', 'cost', 'priority', 'rule', 'x', 'y', 'C', 'D', 'F', 'N', 'P', 'S', 'T', 'removal_cost', 'days_remove', 'days_re_enable', 'fire_only_once', 'integer', 'num_owned_states', 'idea_token', 'division_names_group', 'army_intel', 'civilian_intel', 'bonus', 'category', 'uses', 'state_trigger', 'selectable_mission', 'is_good', 'days_mission_timeout', 'can_create_factions', 'can_join_factions', 'can_not_declare_war', 'can_puppet', 'can_send_volunteers', 'can_guarantee_other_ideologies', 'add_namespace', 'hidden', 'is_triggered_only', 'major', 'timeout_days', 'localization_key', 'context_type', 'dirty', 'window_name', 'change_scope', 'entry_container', 'decay']);
+  const structural = new Set(['alpha', 'blue', 'green', 'red', 'highlighted', 'large', 'expire', 'cost', 'priority', 'rule', 'x', 'y', 'C', 'D', 'F', 'N', 'P', 'S', 'T', 'removal_cost', 'days_remove', 'days_re_enable', 'fire_only_once', 'integer', 'num_owned_states', 'idea_token', 'division_names_group', 'army_intel', 'civilian_intel', 'bonus', 'category', 'uses', 'state_trigger', 'selectable_mission', 'is_good', 'days_mission_timeout', 'can_create_factions', 'can_join_factions', 'can_not_declare_war', 'can_puppet', 'can_send_volunteers', 'can_guarantee_other_ideologies', 'add_namespace', 'hidden', 'is_triggered_only', 'major', 'timeout_days', 'localization_key', 'context_type', 'dirty', 'window_name', 'change_scope', 'entry_container', 'decay',
+    // the argument keys of add_field_marshal_role and add_days_mission_timeout (Kusven's coming forth and the sword-break)
+    'attack_skill', 'defense_skill', 'planning_skill', 'logistics_skill', 'mission', 'trait_type']);
   for (const f of scriptFiles.filter(f => f.endsWith('.txt') && !f.startsWith('interface'))) {
     const unknown = (await unknownCommands(text(f), mine)).filter(k => !structural.has(k));
     assert.deepEqual(unknown, [], `${f}: unknown keys`);
@@ -187,7 +189,10 @@ test('Zol: no text names Afrit, the Deliverer or Eindil, a servant, a keeper of 
     assert(!/\b(souls?|worship|sacrifice|blood|prayer)s?\b/i.test(v), `${k}: feeding is never explained`);
     assert(!/ō/.test(v), k);
   }
-  assert(![...locOf('localisation/english/zin_mistake_l_english.yml').values()].some(v => /Kusven|Rush /.test(v)));
+  assert(![...locOf('localisation/english/zin_mistake_l_english.yml').values()].some(v => /Edvoid|Rush /.test(v)));
+  // Kusven is named only in text shown after he has come forth: his character, his trait, the ideas and the mission of the coming forth.
+  const named = [...locOf('localisation/english/zin_mistake_l_english.yml')].filter(([, v]) => /\bKusven\b/.test(v)).map(([k]) => k).sort();
+  assert.deepEqual(named, ['zin_kusven', 'zin_zol_kusven_in_field', 'zin_zol_kusven_in_field_desc', 'zin_zol_kusven_wounded_desc', 'zin_zol_the_form_endures_desc']);
 });
 
 test('The two-face texts: 62 focuses, public faces mask-safe, each description present in both faces', () => {
@@ -396,9 +401,18 @@ test('Zol: the power formula, the lapse, the bane and the return of the fallen f
 test('Zol: the rising, the manifestation and the withdrawal', () => {
   const eff = text('common/scripted_effects/zin_mistake.txt');
   assert(eff.includes('set_global_flag = zin_zol_rising') && eff.includes('country_event = { id = zin_mistake.10 }') && eff.includes('news_event = { id = zin_mistake.11 }'));
-  assert(eff.includes('set_global_flag = zin_zol_manifested') && eff.includes('add_ideas = zin_zol_form_taken') && eff.includes('activate_mission = zin_zol_the_form_endures') && eff.includes('news_event = { id = zin_mistake.20 }'));
-  assert(eff.includes('set_global_flag = zin_zol_withdrawn') && eff.includes('delete_unit = { division_template = "The Presence" }') && eff.includes('white_peace = PREV'));
-  assert(!/set_global_flag = zin_horos_sword_broken/.test(allScript), 'only zin_mistake.21 sets the blade flag');
+  // Kusven comes forth in Zol's stead (K4, K11): the contract's zin_zol_manifested is still set beside zin_kusven_forth for its readers.
+  assert(eff.includes('set_global_flag = zin_kusven_forth') && eff.includes('set_global_flag = zin_zol_manifested') && eff.includes('add_ideas = zin_zol_kusven_in_field') && eff.includes('recruit_character = zin_kusven') && eff.includes('add_field_marshal_role = {') && eff.includes('activate_mission = zin_zol_the_form_endures') && eff.includes('news_event = { id = zin_mistake.20 }'));
+  assert(eff.includes('set_global_flag = zin_zol_withdrawn') && eff.includes('set_global_flag = zin_kusven_withdrawn') && eff.includes('remove_unit_leader_role = { character = zin_kusven }') && eff.includes('delete_unit = { division_template = "Kusven\'s Host" }') && eff.includes('white_peace = PREV'));
+  assert(!/\bzin_zol_manifest = yes|\bzin_zol_withdraw = yes|zin_zol_form_taken|zin_zol_can_manifest|zin_war_grant_zol_manifestation/.test(allScript), 'the Zol-in-person names are gone');
+  // The blade flag is set only inside zin_kusven_break_the_sword, which only zin_mistake.21 calls (events_mech_war.mjs).
+  assert.equal((allScript.match(/set_global_flag = zin_horos_sword_broken/g) ?? []).length, 1, 'one setter of the blade flag');
+  assert(/zin_kusven_break_the_sword = \{[\s\S]*?set_global_flag = zin_horos_sword_broken/.test(eff));
+  assert(!/zin_kusven_break_the_sword = yes/.test(allScript), 'the mechanic itself never breaks the sword');
+  // No character rules Zol (S4): Kusven is a unit leader only.
+  const kus = text('common/characters/zin_kusven.txt');
+  assert(/zin_kusven = \{/.test(kus) && !/country_leader|advisor/.test(kus) && !/add_country_leader_role = \{\s*character = zin_kusven/.test(allScript));
+  assert(text('common/scripted_triggers/zin_mistake.txt').includes(`zin_is_zol = {\n\toriginal_tag = ${ZOL_TAG}\n}`), 'Zol by original tag (SL-27)');
   assert(!/annex_country|\bpuppet = /.test(eff), 'Zol is never annexed or puppeted');
   const trig = text('common/scripted_triggers/zin_mistake.txt');
   for (const n of ['appointed_hour', 'hastened_hour', 'forced_rising', 'forced_rising_early', 'late_manifest', 'greater_hour', 'second_stirring']) assert(trig.includes(`zin_zol_after_${n} = {`), n);
@@ -410,7 +424,7 @@ test('Zol: the rising, the manifestation and the withdrawal', () => {
 
 test('Zol: the host templates use the warfare slice\'s deathless battalions and its names group', () => {
   const eff = text('common/scripted_effects/zin_mistake.txt');
-  assert(eff.includes('name = "The Deathless Host"') && eff.includes('name = "The Presence"') && eff.includes('zin_zol_manifestation'));
+  assert(eff.includes('name = "The Deathless Host"') && eff.includes('name = "Kusven\'s Host"') && eff.includes('zin_great_spirit = { x = 0 y = 0 }'));
   assert(eff.includes('division_names_group = ZIN_HOSTS_ZOL'));
   assert(eff.includes('zin_deathless_equipment') && eff.includes('amount = 1000') && eff.includes('add_manpower = 200'));
   assert(!files.some(f => f.includes('names_divisions')), 'the warfare slice owns the division names');

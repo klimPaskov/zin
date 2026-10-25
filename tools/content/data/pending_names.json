@@ -78,41 +78,6 @@
    }
   },
   {
-   "id": "events_mistake",
-   "owner": "the Zol story events (owner mech_zol; not written; K4 and K11 change the manifestation beats)",
-   "spec": "docs/specs/04_mechanics/zols_mistake.md; docs/specs/06_events/03_war_of_the_last_crowns.md, 05_flavour_and_world.md",
-   "names": {
-    "event": [
-     "zin_mistake.10",
-     "zin_mistake.11",
-     "zin_mistake.2",
-     "zin_mistake.20",
-     "zin_mistake.24",
-     "zin_mistake.25"
-    ]
-   }
-  },
-  {
-   "id": "events_dominion",
-   "owner": "the Volgan story events (owner of namespace zin_dominion; the Volgan module fires them, mech_powers.md)",
-   "spec": "docs/specs/04_mechanics/volgan_southern_dominion.md; docs/specs/06_events/03_war_of_the_last_crowns.md",
-   "names": {
-    "event": [
-     "zin_dominion.10",
-     "zin_dominion.11",
-     "zin_dominion.12",
-     "zin_dominion.13",
-     "zin_dominion.14",
-     "zin_dominion.16",
-     "zin_dominion.17",
-     "zin_dominion.18",
-     "zin_dominion.19",
-     "zin_dominion.23",
-     "zin_dominion.24"
-    ]
-   }
-  },
-  {
    "id": "events_war",
    "owner": "the war and story events the mechanic slices fire but leave to the events engineers (zin_east, zin_elves, zin_leren, zin_lerendor, zin_dark, zin_sun; each module note lists its ids)",
    "spec": "docs/specs/06_events/03_war_of_the_last_crowns.md and the owning mechanic specs",
@@ -133,16 +98,7 @@
      "zin_elves.51",
      "zin_elves.70",
      "zin_elves.71",
-     "zin_elves.9",
-     "zin_leren.30",
-     "zin_leren.31",
-     "zin_leren.32",
-     "zin_leren.33",
-     "zin_leren.35",
-     "zin_leren.36",
-     "zin_leren.45",
-     "zin_sun.40",
-     "zin_sun.42"
+     "zin_elves.9"
     ]
    }
   },
@@ -197,9 +153,7 @@
    "names": {
     "effect": [
      "zin_war_feed_deathless",
-     "zin_war_grant_dragons",
-     "zin_war_grant_zol_manifestation",
-     "zin_war_remove_zol_manifestation"
+     "zin_war_grant_dragons"
     ]
    }
   },

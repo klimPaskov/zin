@@ -1,0 +1,29 @@
+{
+  "source": "docs/specs/04_mechanics/lands_of_the_sun.md section 7 (the ride and After the King), docs/specs/06_events/03_war_of_the_last_crowns.md Act VI, docs/design/alternate_history.md B36 and SL-12. Who keeps Gala after Lorien is a gameplay choice, not history (the vault does not say). Every line of text is proposed wording in the accepted voice.",
+  "namespace": "zin_sun",
+  "file": "events/zin_sun_war.txt",
+  "realms": { "GALA": "Gala" },
+  "events": [
+    {
+      "id": 40, "kind": "news", "title": "The Old Lords Ride", "picture": "vast_shadow", "requires": ["zin_kusven_forth", "zin_zol_manifested"],
+      "note": "News from zin_sun_lorien_rides. Nothing in the text says that Lorien will die.",
+      "desc": "The King of Gala has ridden north out of the Lands of the Sun with the oldest lords of the world behind him, elves in white and gold and others that are older than elves. The roads emptied ahead of them, and nobody who watched them pass thought to ask where they were going.",
+      "options": [{ "key": "a", "text": "The King of Gala rides." }]
+    },
+    {
+      "id": 42, "kind": "country", "title": "After the King", "picture": "gala_court",
+      "note": "To the Gala Elves 14 days after zin_sun_lorien_falls. Every option sets zin_gala_steward_chosen.",
+      "trigger": "has_global_flag = zin_lorien_dead\nNOT = { has_country_flag = zin_gala_steward_chosen }",
+      "desc": "Lorien is dead, and in all the years of Gala nobody has had to ask who keeps the court after him. The old houses are gathered by the Mirror, and before they leave the hall they must choose who keeps the court now.",
+      "options": [
+        { "key": "a", "text": "The Keeper of the Mirror.", "ai": 40, "tip": "Heveneya, Keeper of the Mirror, keeps the court, and the Mirror shows more clearly.",
+          "effect": "if = {\nlimit = { NOT = { has_character = zin_gala_heveneya } }\nrecruit_character = zin_gala_heveneya\n}\nadd_country_leader_role = {\ncharacter = zin_gala_heveneya\npromote_leader = yes\ncountry_leader = {\nideology = zin_light_kinship\nexpire = \"1965.1.1.1\"\n}\n}\nset_temp_variable = { zin_arg_value = 20 }\nzin_sun_add_clarity = yes\nset_country_flag = zin_gala_steward_chosen" },
+        { "key": "b", "text": "The Master of the King's Ships.", "ai": 30, "tip": "The Master of the King's Ships keeps the court, and the fleet gains experience.",
+          "effect": "if = {\nlimit = { NOT = { has_character = zin_gala_sulestien } }\nrecruit_character = zin_gala_sulestien\n}\nadd_country_leader_role = {\ncharacter = zin_gala_sulestien\npromote_leader = yes\ncountry_leader = {\nideology = zin_light_kinship\nexpire = \"1965.1.1.1\"\n}\n}\nnavy_experience = 25\nset_country_flag = zin_gala_steward_chosen" },
+        { "key": "c", "text": "A Council of the Old Houses.", "ai": 30, "tip": "The old houses keep the court together, and Gala is calmer for it.",
+          "effect": "create_country_leader = {\nname = zin_sun_council_of_gala\npicture = GFX_idea_zin_elven_council\nideology = zin_light_kinship\nexpire = \"1965.1.1.1\"\n}\nadd_stability = 0.05\nset_country_flag = zin_gala_steward_chosen" }
+      ]
+    }
+  ],
+  "localisation": { "zin_sun_council_of_gala": "The Council of Gala" }
+}

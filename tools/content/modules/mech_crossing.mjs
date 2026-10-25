@@ -77,7 +77,16 @@ export async function buildWesternCrossing(staged, ctx = {}) {
   T('zin_west_is_anchor', L('OR', ...anchors.map((tag, i) => L('AND', `tag = ${tag}`, ...anchors.slice(0, i).map(p => `${p} = { exists = no }`)))));
   for (const [n, k, o] of [['zin_aenor_is_realm', 'scripted trigger', 'aenor_court_and_succession'], ['zin_is_site_parim', 'state trigger', 'key sites (sites.mjs, E7)'], ['zin_controls_sea_central', 'scripted trigger', 'key sites (sites.mjs, E7)'], ['zin_aenor_fallback_seat', 'state trigger', 'key sites (sites.mjs, E7)'], ['zin_afrit_is_hub', 'scripted trigger', 'afrit_hidden_council'], ['zin_afrit_rules_here', 'scripted trigger', 'afrit_hidden_council']]) dep(n, k, o);
   for (const f of ['zin_war_of_last_crowns', 'zin_eindil_war_king', 'zin_eindil_returned', 'zin_eindil_named', 'zin_golden_king_dead', 'zin_aurevan_crowned', 'zin_afrit_dead', 'zin_eindil_crowned', 'zin_afrit_king_of_east', 'zin_afrit_revealed', 'zin_zol_rising', 'zin_volgan_marches', 'zin_eastern_invasion']) dep(f, 'global flag', 'world systems / the owning mechanic');
-  for (const f of ['zin_leren_withdrawal', 'zin_leren_honours_treaty', 'zin_leren_treaty_in_force']) dep(f, 'global flag', 'lerendor_narrow_strait');
+  for (const f of ['zin_leren_withdrawal', 'zin_leren_treaty_honoured']) dep(f, 'global flag', 'lerendor_narrow_strait');
+  dep('zin_leren_treaty_in_force', 'scripted trigger', 'lerendor_narrow_strait');
+  // A Western Crown in Parim holds (SL-19, outcome 5 of the endings): a West Lands realm, or a subject of one, controls Parim, and its
+  // leader has claimed the throne of men or no Aenor realm is left to dispute it.
+  T('zin_west_holds_parim',
+    L('any_state', 'zin_is_site_parim = yes', L('controller', L('OR', 'zin_west_is_western = yes', L('AND', 'is_subject = yes', L('OVERLORD', 'zin_west_is_western = yes'))))),
+    L('OR', gflag('zin_west_throne_claimed'), L('NOT', L('any_country', 'zin_aenor_is_realm = yes'))));
+  // The Wall Accord under K2 (SL-22): the Great Wall is a mountain range, so the accord of 4A 96 is the accord of its passes. It is in force
+  // from the start and is broken the first time a pass state of the range is taken by force (its controller changes in a war).
+  dep('zin_is_site_great_wall', 'state trigger', 'key sites (sites.mjs, E7)');
   dep('zin_aenor_ruled_by_captains', 'scripted trigger', 'aenor_court_and_succession'); dep('zin_gathering_dark', 'global variable', 'world systems');
 
   // ---------------------------------------------------------------------------------------------- scripted effects: measures
@@ -386,7 +395,8 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     L('if', `limit = { ${gflag('zin_golden_king_dead')} }`, `add_to_variable = { global.zin_west_resolve = ${K('bonus_king_dead')} }`),
     L('if', 'limit = { any_country = { zin_aenor_is_realm = yes has_civil_war = yes } }', `add_to_variable = { global.zin_west_resolve = ${K('bonus_civil_war')} }`),
     L('if', `limit = { ${gflag('zin_leren_withdrawal')} }`, `add_to_variable = { global.zin_west_resolve = ${K('bonus_leren_left')} }`),
-    L('if', `limit = { ${gflag('zin_leren_honours_treaty')} ${gflag('zin_leren_treaty_in_force')} }`, `subtract_from_variable = { global.zin_west_resolve = ${K('bonus_honour')} }`),
+    // Lerendor honoured the treaty (its global flag) and the treaty still stands (Lerendor's scripted trigger), SL-17.
+    L('if', `limit = { ${gflag('zin_leren_treaty_honoured')} zin_leren_treaty_in_force = yes }`, `subtract_from_variable = { global.zin_west_resolve = ${K('bonus_honour')} }`),
     L('if', `limit = { ${gflag('zin_war_of_last_crowns')} }`, `add_to_variable = { global.zin_west_resolve = ${K('bonus_last_crowns')} }`),
     L('if', `limit = { NOT = { ${gflag('zin_war_of_last_crowns')} } check_variable = { global.zin_gathering_dark < 25 } any_country = { zin_aenor_is_realm = yes has_government = democratic NOT = { any_enemy_country = { zin_west_is_western = yes } } controls_state = ${geo.shore[0]?.id ?? 0} } }`, `subtract_from_variable = { global.zin_west_resolve = ${K('bonus_calm')} }`),
     clampG('zin_west_resolve'),
@@ -417,7 +427,11 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     `set_variable = { global.zin_west_truce = ${K('truce_start')} }`, `set_variable = { global.zin_west_unity = ${K('unity_start')} }`, `set_variable = { global.zin_west_fleet = ${K('fleet_start')} }`,
     'set_variable = { global.zin_west_resolve = 29 }', 'set_variable = { global.zin_west_strain = 0 }', 'set_variable = { global.zin_west_route = 0 }', 'set_variable = { global.zin_west_sailings = 0 }',
     'set_variable = { global.zin_west_ashore = 0 }', 'set_variable = { global.zin_west_pledged_count = 0 }', 'set_variable = { global.zin_west_month = 0 }', 'set_variable = { global.zin_west_lift_factor = 1 }',
-    ...grudgeLines, `${anchors[0]} = { country_event = { id = zin_west.2 days = 9 } }`];
+    ...grudgeLines, `${anchors[0]} = { country_event = { id = zin_west.2 days = 9 } }`,
+    // the Accord of the Passes of 4A 96 (the Wall Accord under K2) is in force at the start (SL-22)
+    'set_global_flag = zin_wall_accord'];
+  // ROOT is the new controller, FROM the old one, FROM.FROM the state: a pass of the Great Wall range taken in war breaks the accord once.
+  const passTaken = L('if', `limit = { ${gflag('zin_wall_accord')} ${notFlag('zin_wall_accord_broken')} has_war_with = FROM FROM.FROM = { zin_is_site_great_wall = yes } }`, 'set_global_flag = zin_wall_accord_broken');
 
   // ---------------------------------------------------------------------------------------------- events
   const events = [];
@@ -579,8 +593,9 @@ export async function buildWesternCrossing(staged, ctx = {}) {
   // ---------------------------------------------------------------------------------------------- on actions, AI areas, strategies
   put('common/on_actions/zin_west.txt', fileText(render(L('on_actions',
     L('on_startup', L('effect', ...startup)),
-    L('on_annex', L('effect', L('if', 'limit = { zin_west_is_western = yes FROM = { zin_west_is_western = yes } }', 'set_temp_variable = { zin_arg_value = -15 }', 'zin_west_add_unity = yes')))))));
-  scripts.add('on_actions', 'on_action', [...startup, 'if = { limit = { zin_west_is_western = yes FROM = { zin_west_is_western = yes } } set_temp_variable = { zin_arg_value = -15 } zin_west_add_unity = yes }']);
+    L('on_annex', L('effect', L('if', 'limit = { zin_west_is_western = yes FROM = { zin_west_is_western = yes } }', 'set_temp_variable = { zin_arg_value = -15 }', 'zin_west_add_unity = yes'))),
+    L('on_state_control_changed', L('effect', passTaken))))));
+  scripts.add('on_actions', 'on_action', [...startup, 'if = { limit = { zin_west_is_western = yes FROM = { zin_west_is_western = yes } } set_temp_variable = { zin_arg_value = -15 } zin_west_add_unity = yes }', passTaken]);
   put('common/ai_areas/zin_west.txt', fileText(render(L('areas', L('zin_area_middle_lands', L('strategic_regions', ...geo.strategicRegions.map(String)))))));
   const aiBlock = (name, enable, strategies) => render(L(name, 'allowed = { always = yes }', L('enable', ...enable), 'abort_when_not_enabled = yes', ...strategies));
   put('common/ai_strategy/zin_west.txt', fileText(comment('The Western Crossing\'s AI: invade and conquer the foe after the launch; the leader presses the Middle Lands; the fleet puts buffers on the evacuation ports; the stranded befriend their hosts.'),
