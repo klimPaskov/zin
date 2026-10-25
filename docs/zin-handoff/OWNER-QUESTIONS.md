@@ -29,6 +29,11 @@
 | Q-90 | The Golden King's shelters in exile: Lerendor first, then Selen, then the old dominions | yes |
 | Q-91 | The eight ruler tempers (Bold-Hearted, Cautious, Pious, Grasping, Scholarly, Vengeful, Generous, Weary) and their effects | yes |
 | Q-92 | Should start-variety changes that land on one realm (tempers, feuds, lands, bonds) also reach a player's realm under FULL? | no: every ZIN rule spares the player's realm |
+| Q-93 | A Letter to Bastian: once per game, a Middle Lands realm pays 75 Authority to a wardens' hall for a year of Bastian's Counsel (the AI writes only when the Gathering Dark reaches 50). Is this how Bastian enters play, or should he be an advisor, or stay out of play? | the letter, as proposed |
+| Q-94 | The world-tension popup's column labels read "Gathering Dark" and "Wars Waged" because the buttons are narrow (title and tooltip say "The Gathering Dark") | acceptable |
+| Q-95 | The Worshipdom and Coldor play PLAUSIBLE like FREE (no plausible AI plan); should they lean to history under PLAUSIBLE like the others? | keep their owners' mapping |
+| Q-96 | The dragon texts say "Dragon Mountain" while the name table names Yavieth's capital Thoriveniel; which name? | "Dragon Mountain" for the mountain, Thoriveniel for the city |
+| Q-97 | Bound by Corruption takes one foothold from the Keeper and adds one to the Gathering Dark; should the Keeper be told when it happens? | no, only the elves' hook and the news tell |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
