@@ -1,36 +1,3 @@
-| Q-63 | When Afrit is reduced but alive, may Eindil be crowned, with the world told that the false god is beyond the Rift? | yes |
-| Q-64 | Does the fall of Afrit's realm before his flight reveal his name at once (the fall counts as his flight)? | yes |
-| Q-65 | The Golden King in exile: does he keep a court in exile that can return, or does exile end his story? | he keeps a court; the realm-life module decides who feeds it |
-| Q-66 | The Hunt for the False God: may a hunter find and kill Afrit outside the palace? | no (his death stays the palace's) |
-| Q-67 | When Lorien cannot name the heir, do the Keepers of the Mirror name him, or another court of the Lands of the Sun? | the Keepers of the Mirror |
-| Q-68 | The King's death event is titled "The Feast of Gaelor" whatever month he dies in; should the feast follow the month of death instead? | keep Gaelor, the month of mourning |
-| Q-72 | Kusven's strength and trait as Zol's field marshal: skill 6, attack 7, trait "The Grave-Wind"; 63 days on the field at 3 Presence a week | as proposed |
-| Q-73 | Lorien dies only if Kusven is still on the field 14 days after Lorien's ride (zin_mistake.26) | as proposed |
-| Q-74 | News when Volgan's realm is annexed with his body intact (zin_dominion.29), and its effects | as proposed |
-| Q-75 | The steward weights in After the King (40/30/30) | as proposed |
-| Q-76 | The Gathering Dark: are the four tier names and their news texts right for players? | as written in world_tension.json |
-| Q-77 | The 1762 judgement is deferred once, to 1764, while a canon ending is still in reach; is that reading right, and is one two-year deferral enough? | yes, one deferral |
-| Q-78 | The names and values of the Gathering Dark game-rule options | as written |
-| Q-79 | Which story roles announce a change of holder? Today: the crown of Aenor, the Host, the leader of the Western Crossing, the Leren crown | those four |
-| Q-80 | Under HISTORICAL, should the war also start piecemeal when a player's own front opens first? | no: under HISTORICAL the war starts on its date |
-| Q-82 | Does zin_kusven_withdrawn also cover the route where the Presence recedes before Kusven comes forth (the -12 tension then applies too)? | yes |
-| Q-83 | Should the journey's host pickers move under the story-role registry? | no: they keep the journey spec's fuller successor orders |
-| Q-84 | Review the 19 event texts written to complete the story wiring (elves, east, dark, diplomacy, world), all proposed | shipped as proposed |
-| Q-86 | May a surviving Golden King (he exposed the plot) die of age in the end, closing the Golden Court Endures before its judgement? | no |
-| Q-87 | Realms without a named heir: are engine-named successors enough, or should every inheriting realm get a pre-built heir? | engine-named for now |
-| Q-88 | When the Golden King's court returns, may the Golden Court Endures hold again? | yes |
-| Q-89 | The nineteen raider realms (the Dark Lands holds outside Goldoroth, Halenor, Santon and Benan, Halia, and the Cold Lands clans of Horidor, Glimkit, Omar and Orewele) | yes |
-| Q-90 | The Golden King's shelters in exile: Lerendor first, then Selen, then the old dominions | yes |
-| Q-91 | The eight ruler tempers (Bold-Hearted, Cautious, Pious, Grasping, Scholarly, Vengeful, Generous, Weary) and their effects | yes |
-| Q-92 | Should start-variety changes that land on one realm (tempers, feuds, lands, bonds) also reach a player's realm under FULL? | no: every ZIN rule spares the player's realm |
-| Q-94 | The world-tension popup's column labels read "Gathering Dark" and "Wars Waged" because the buttons are narrow (title and tooltip say "The Gathering Dark") | acceptable |
-| Q-95 | The Worshipdom and Coldor play PLAUSIBLE like FREE (no plausible AI plan); should they lean to history under PLAUSIBLE like the others? | keep their owners' mapping |
-| Q-96 | The dragon texts say "Dragon Mountain" while the name table names Yavieth's capital Thoriveniel; which name? | "Dragon Mountain" for the mountain, Thoriveniel for the city |
-| Q-97 | Bound by Corruption takes one foothold from the Keeper and adds one to the Gathering Dark; should the Keeper be told when it happens? | no, only the elves' hook and the news tell |
-| Q-98 | Black powder spreads only through the dwarf holds' trade event (buying gives the flag, 20 bombards and a siege research bonus); should it spread any other way? | only the holds' trade |
-| Q-99 | Should goblin realms field hand-guns? Today goblin and orc powder realms get bombards only | bombards only |
-| Q-100 | Confirm the word "bombard" for the powder artillery | bombard |
-| Q-101 | Eindil waits (recruited without a role) in Kvittumm's history, the far north-west realm where the key-sites spec puts his ice; Kusven with Zol's Mistake. Right homes? | as proposed |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
@@ -92,6 +59,39 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-55 | Keep Olen on the eastern lowland (owner, 25 October 2026). |
 | Q-58 | Wild lands start unowned; the northern-tip strip is Zol's (owner, 25 October 2026). |
 | Q-62 | Agree (owner, 25 October 2026). |
+| Q-63 | Yes (owner, 25 October 2026). |
+| Q-64 | Yes (owner, 25 October 2026). |
+| Q-65 | He keeps a court in exile that can return (owner, 25 October 2026). |
+| Q-66 | Yes: a hunter may find and kill Afrit outside the palace (owner, 25 October 2026). |
+| Q-67 | The Keepers of the Mirror (owner, 25 October 2026). |
+| Q-68 | Always Gaelor, the month of mourning (owner, 25 October 2026). |
+| Q-72 | As proposed (owner, 25 October 2026). |
+| Q-73 | As proposed (owner, 25 October 2026). |
+| Q-74 | A bigger moment: the annexation of Volgan's realm with his body intact is a super event (owner, 25 October 2026). |
+| Q-75 | As proposed, 40/30/30 (owner, 25 October 2026). |
+| Q-76 | As written (owner, 25 October 2026). |
+| Q-77 | One deferral, to 1764 (owner, 25 October 2026). |
+| Q-78 | As written (owner, 25 October 2026). |
+| Q-79 | Those four (owner, 25 October 2026). |
+| Q-80 | Piecemeal: under HISTORICAL a player's own front can open the war early (owner, 25 October 2026). |
+| Q-82 | Yes (owner, 25 October 2026). |
+| Q-83 | Keep the journey's own successor orders (owner, 25 October 2026). |
+| Q-84 | Ship as written (owner, 25 October 2026). |
+| Q-86 | Yes: a surviving Golden King may die of old age before the judgement (owner, 25 October 2026). |
+| Q-87 | Pre-built heirs for every realm, but sometimes no heir can be determined and civil wars or other crises follow; everything dynamic (owner, 25 October 2026). |
+| Q-88 | Yes (owner, 25 October 2026). |
+| Q-89 | More raiders: add the corsairs and the steppe riders to the nineteen (owner, 25 October 2026). |
+| Q-90 | Yes (owner, 25 October 2026). |
+| Q-91 | More tempers: a larger set, with rarer tempers (owner, 25 October 2026). |
+| Q-92 | Include players: start variety reaches player realms too (owner, 25 October 2026). |
+| Q-94 | Acceptable (owner, 25 October 2026). |
+| Q-95 | Lean to history like the others (owner, 25 October 2026). |
+| Q-96 | Dragon Mountain for the mountain, Thoriveniel for the city (owner, 25 October 2026). |
+| Q-97 | No (owner, 25 October 2026). |
+| Q-98 | Only the holds' trade (owner, 25 October 2026). |
+| Q-99 | Bombards only (owner, 25 October 2026). |
+| Q-100 | Bombard (owner, 25 October 2026). |
+| Q-101 | As proposed (owner, 25 October 2026). |
 
 ## Follow-up questions found during implementation (24 October 2026)
 
