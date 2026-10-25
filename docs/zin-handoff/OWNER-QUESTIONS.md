@@ -38,6 +38,8 @@
 | Q-99 | Should goblin realms field hand-guns? Today goblin and orc powder realms get bombards only | bombards only |
 | Q-100 | Confirm the word "bombard" for the powder artillery | bombard |
 | Q-101 | Eindil waits (recruited without a role) in Kvittumm's history, the far north-west realm where the key-sites spec puts his ice; Kusven with Zol's Mistake. Right homes? | as proposed |
+| Q-103 | K54 says the "very south-east" lands may have black people. Which realms: the south-eastern realms of the mainland (the far south of the East and the Lands of the Sun's Sunfolk), or the southernmost lands in general? | the south-eastern edge of the mainland, as a minority look within those realms' pools |
+| Q-104 | K54 keeps some women among the leaders. The lead's target is about one in ten characters, keeping every canon woman (Alleria and the others) and lore-justified ones. Is that right? | about one in ten |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
