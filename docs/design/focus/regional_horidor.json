@@ -56,8 +56,8 @@
     "zin_regional_horidor_recruit_tarvo": {"effects":[{"raw":"recruit_character = zin_regional_horidor_tarvo"}]},
     "zin_regional_horidor_recruit_maela": {"effects":[{"raw":"recruit_character = zin_regional_horidor_maela"}]},
     "zin_regional_horidor_leave_accord": {"effects":[{"raw":"leave_faction = yes\nevery_other_country = {\n\tlimit = { is_in_faction_with = CLD }\n\tremove_opinion_modifier = { target = ROOT modifier = zin_cold_accord_kin }\n\tROOT = { remove_opinion_modifier = { target = PREV modifier = zin_cold_accord_kin } }\n}\nCLD = { add_opinion_modifier = { target = ROOT modifier = zin_regional_horidor_left_accord } }"}]},
-    "zin_regional_horidor_cairn_politics": {"effects":[{"raw":"zin_politics_add_drift = { IDEOLOGY = dominion VALUE = 10 }"}]},
-    "zin_regional_horidor_cairn_stance": {"effects":[{"raw":"zin_politics_set_stance = { STANCE = zin_dom_crown }"}]}
+    "zin_regional_horidor_cairn_politics": {"effects":[{"call":"zin_politics_add_drift","args":{"ideology":"dominion","value":10}}]},
+    "zin_regional_horidor_cairn_stance": {"effects":[{"call":"zin_politics_set_stance","args":{"stance":"zin_dom_crown"}}]}
   },
   "scripted_triggers": {
     "zin_regional_horidor_coldor_took_companies": {"conditions":[{"raw":"CLD = { has_country_flag = zin_cold_route_companies }"}]},

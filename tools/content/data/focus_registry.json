@@ -1,6 +1,6 @@
 {
  "source": "Names of other owners that the focus compiler may reference but cannot read from the staged files of earlier builder modules: patterns of name families (contract additions, Patterns) and the lists of decision E4 for allow_branch. A name a builder module writes is found by scanning the staged files and needs no entry. Add a name here only while its module does not exist yet; remove it when the module lands. <key> matches [a-z0-9_]+.",
- "scripted_effects": [],
+ "scripted_effects": ["zin_politics_set_stance"],
  "scripted_triggers": [],
  "events": [],
  "namespaces": [],

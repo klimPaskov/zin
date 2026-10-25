@@ -113,7 +113,7 @@ export async function buildEindilJourney(staged, ctx = {}) {
 
   // ---------------------------------------------------------------------------------------------- game rule
   const r = data.rules.journey;
-  put('common/game_rules/zin_eindil.txt', fileText(render(L(r.id, `name = "${r.id.toUpperCase().replace('ZIN_RULE_', 'ZIN_RULE_')}"`, `desc = "${r.id.toUpperCase()}_DESC"`, 'group = "RULE_GROUP_ZIN"',
+  put('common/game_rules/zin_eindil.txt', fileText(render(L(r.id, `name = "${r.id.toUpperCase().replace('ZIN_RULE_', 'ZIN_RULE_')}"`, 'group = "RULE_GROUP_ZIN"',
     ...r.options.map((o, i) => L(i === 0 ? 'default' : 'option', `name = ${o.id}`, `text = "${r.id.toUpperCase()}_${o.id}"`, `desc = "${r.id.toUpperCase()}_${o.id}_DESC"`))))));
   loc.add(r.id.toUpperCase(), r.name); loc.add(`${r.id.toUpperCase()}_DESC`, r.desc);
   for (const o of r.options) { loc.add(`${r.id.toUpperCase()}_${o.id}`, o.name); loc.add(`${r.id.toUpperCase()}_${o.id}_DESC`, o.desc); }

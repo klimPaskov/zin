@@ -691,6 +691,26 @@ test('Start values and the runner: zin_east.1 a day after the start; the self-sc
   assert(body(TRG, 'zin_east_in_region').includes('capital_scope = { zin_is_region_east_lands = yes }'), 'an East Lands country by its capital');
 });
 
+/** capital_scope blocks not preceded, in the same block, by the capital guard (r3b log: 1,520 "capital_scope: invalid event target"). */
+const unguardedCapitals = files => {
+  const out = [];
+  for (const [f, t] of files) walk(parse(t), e => {
+    if (!Array.isArray(e.v)) return;
+    e.v.forEach((x, i) => { if (x.k === 'capital_scope' && !e.v.slice(0, i).some(y => y.k === 'zin_east_has_capital' && y.v === 'yes')) out.push(`${f}:${x.line}`); });
+  });
+  return out;
+};
+test('Every capital_scope of the East Lands follows the capital guard (exists, controls a state)', () => {
+  assert.equal(body(TRG, 'zin_east_has_capital').trimEnd(), 'zin_east_has_capital = {\n\texists = yes\n\tnum_of_controlled_states > 0\n}');
+  assert.match(body(TRG, 'zin_east_in_region'), /^zin_east_in_region = \{\n\tzin_east_has_capital = yes\n\tcapital_scope = \{/);
+  assert(allScript.includes('capital_scope'), 'the East Lands read capitals');
+  assert.deepEqual(unguardedCapitals(scriptFiles), []);
+});
+test('Negative: the capital guard check flags a bare capital_scope', () => {
+  assert.equal(unguardedCapitals(new Map([['x.txt', 't = {\n\tcapital_scope = { is_coastal = yes }\n}\n']])).length, 1);
+  assert.equal(unguardedCapitals(new Map([['x.txt', 't = {\n\tzin_east_has_capital = yes\n\tcapital_scope = { is_coastal = yes }\n}\n']])).length, 0);
+});
+
 test('Negative: the periodic-hook check flags an every-country on_monthly block', () => {
   const bad = new Map([['common/on_actions/zin_east.txt', 'on_actions = {\n\ton_monthly = {\n\t\teffect = { }\n\t}\n\ton_weekly = {\n\t}\n}\n']]);
   assert.equal(periodicHooks(bad).length, 2);

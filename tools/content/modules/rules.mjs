@@ -78,7 +78,8 @@ export async function buildRules(staged, { data } = {}) {
       loc[`${K}_${o.key}`] = o.name; loc[`${K}_${o.key}_DESC`] = o.desc;
       return `\t${i === 0 ? 'default' : 'option'} = {\n\t\tname = ${o.key}\n\t\ttext = "${K}_${o.key}"\n\t\tdesc = "${K}_${o.key}_DESC"\n\t}`;
     });
-    return `${r.id} = {\n\tname = "${K}"\n\tdesc = "${K}_DESC"\n\tgroup = "${data.group}"\n${opts.join('\n')}\n}`;
+    // No rule-level desc: the game reads desc only on an option ("Unexpected token: desc" otherwise; vanilla 00_game_rules.txt has none).
+    return `${r.id} = {\n\tname = "${K}"\n\tgroup = "${data.group}"\n${opts.join('\n')}\n}`;
   });
   staged.text('common/game_rules/zin_game_rules.txt', `${HEADER}\n# Every per-power rule opens with DEFAULT, which follows ${data.path_rule} (decision R1). Rules never act on a player's country.\n${blocks.join('\n')}\n`);
 

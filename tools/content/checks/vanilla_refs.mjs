@@ -159,6 +159,8 @@ export function definitions(files) {
     if (dir === 'common/collections') for (const e of ents) if (e.k) add('collection', e.k, f.rel);
     if (dir === 'common/mtth') for (const e of ents) if (e.k) add('mtth', e.k, f.rel);
     if (dir === 'common/ai_faction_theaters') for (const e of ents) if (e.k) add('theater', e.k, f.rel);
+    // Technologies sit inside the technologies block; @ lines there are file constants.
+    if (dir === 'common/technologies') for (const top of blocksOf(ents)) if (top.k === 'technologies') for (const e of blocksOf(top.v)) if (!e.k.startsWith('@')) add('technology', e.k, f.rel);
     if (dir === 'common/game_rules') for (const e of blocksOf(ents)) { add('game_rule', e.k, f.rel); for (const o of blocksOf(e.v)) if (o.k === 'option' || o.k === 'default') { const n = o.v.find(x => x.k === 'name'); if (n) add('game_rule_option', `${e.k}.${n.v}`, f.rel); } }
     if (dir === 'events') walk(ents, (e, a) => { if (e.k === 'id' && typeof e.v === 'string' && a.length === 1 && /_event$/.test(a[0].k)) add('event', e.v, f.rel); });
   }
@@ -172,6 +174,10 @@ const IDEA_LIST = new Set(['add_ideas', 'remove_ideas', 'show_ideas_tooltip']);
 const IDEA_SUB = new Set(['add_timed_idea', 'modify_timed_idea', 'swap_ideas', 'has_allowed_idea_with_traits', 'remove_ideas_with_trait']);
 const TRAIT_SCALAR = new Set(['add_country_leader_trait', 'remove_country_leader_trait', 'has_trait', 'add_unit_leader_trait', 'remove_unit_leader_trait', 'has_country_leader_with_trait']);
 const EVENT_KEYS = new Set(['country_event', 'news_event', 'state_event', 'unit_leader_event', 'operative_leader_event']);
+// Keys whose value is one technology. set_technology names technologies as its keys (popup = no is its one option), a technology's
+// XOR list as bare values; add_tech_bonus and the research bonus effects take `technology = <name>` beside `category`.
+const TECH_SCALAR = new Set(['has_tech', 'leads_to_tech', 'is_researching_technology', 'can_research']);
+const TECH_IN = new Set(['add_tech_bonus', 'add_research_bonus', 'set_technology_research_bonus']);
 const plain = v => typeof v === 'string' && /^[A-Za-z0-9_.\-]+$/.test(v) && !/^-?[0-9.]+$/.test(v);
 const isMod = f => f.source === 'mod';
 
@@ -192,6 +198,8 @@ export function references(files, universe) {
       else if (isMod(f) && e.k && a.length && /^zin_/.test(e.k) && (v === 'yes' || v === 'no')) push('scripted', e.k, e.line);
       // A character token used as a key scopes to that character (workshop files: PHI_vicente_lava = { ... }).
       if (e.k && a.length && has('character', e.k)) push('character', e.k, e.line);
+      // set_technology = { <technology> = 1 }: a vanilla technology in a ZIN history or effect is an invalid database object in game.
+      if (e.k && parent === 'set_technology' && e.k !== 'popup' && (isMod(f) || has('technology', e.k))) push('technology', e.k, e.line);
       if (typeof v !== 'string' || !plain(v)) return;
       if (e.k && DECISION_KEYS.has(e.k) || (e.k === 'decision' || e.k === 'mission') && DECISION_KEYS.has(parent)) { if (isMod(f) || has('decision', v)) push('decision', v, e.line); }
       if (e.k && /decision_category/.test(e.k) && (isMod(f) || has('decision_category', v))) push('decision_category', v, e.line);
@@ -203,6 +211,7 @@ export function references(files, universe) {
       if (e.k === 'modifier' && /dynamic_modifier/.test(parent ?? '') || e.k === 'has_dynamic_modifier') { if (isMod(f) || has('dynamic_modifier', v)) push('dynamic_modifier', v, e.line); }
       if (e.k === 'modifier' && /opinion_modifier/.test(parent ?? '') || e.k === 'has_opinion_modifier') { if (isMod(f) || has('opinion_modifier', v)) push('opinion_modifier', v, e.line); }
       if (has('theater', v)) push('theater', v, e.line);
+      if (e.k && TECH_SCALAR.has(e.k) || e.k === 'technology' && TECH_IN.has(parent) || e.k === null && parent === 'XOR' && dir === 'common/technologies') { if (isMod(f) || has('technology', v)) push('technology', v, e.line); }
       if (e.k && EVENT_KEYS.has(e.k) || e.k === 'id' && EVENT_KEYS.has(parent)) { if (isMod(f) || has('event', v)) push('event', v, e.line, EVENT_KEYS.has(e.k) ? e.k : parent); }
       if (e.k === 'collection' && (isMod(f) || has('collection', v))) push('collection', v, e.line);
       if (e.k === 'rule' && parent === 'has_game_rule') { push('game_rule', v, e.line); const o = a[a.length - 1].v.find(x => x.k === 'option'); if (o && typeof o.v === 'string') push('game_rule_option', `${v}.${o.v}`, e.line); }

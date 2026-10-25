@@ -14,6 +14,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { PEOPLES, defaultPeople } from './peoples.mjs';
 import { stanceIdeology } from './ideologies.mjs';
 import { START_DATE } from '../lib/calendar.mjs';
+import { fullKey as techKey } from './technologies.mjs';
 
 // Defaults for a country without a stance of its own (a synthetic test row); every realm of the roster has one.
 const BY_NAME = {
@@ -47,10 +48,11 @@ export function writeCountryTable(staged, countries, table) {
 }
 
 // ------------------------------------------------------------------------------------------------ the country package
-//   buildCountryPackage(staged, { countries, table, recruits, factions, starts, zin, cultures })
-//     recruits  Map tag -> character ids recruited at the start (modules/characters.mjs)
+//   buildCountryPackage(staged, { countries, table, recruits, factions, starts, zin, cultures, variants })
+//     recruits  Map tag -> character ids recruited at the start (modules/characters.mjs, the chiefs of modules/institutions.mjs)
 //     factions  the start leagues of the diplomacy module ({ id, leaderTag, memberTags })
-//     starts    docs/design/technology/start_packages.json (technologies and doctrines by realm name)
+//     starts    docs/design/technology/start_packages.json (technologies and doctrines by realm name; short technology keys)
+//     variants  Map tag -> create_equipment_variant blocks of the starting fleet (modules/forces.mjs)
 //     cultures  data/world/cultures.json cultures (the palette of a realm without an old map colour)
 export const COUNTRY_TAGS_FILE = 'common/country_tags/01_zin_realms.txt';
 const fileName = c => `${c.tag} - ${c.name.replace(/[^A-Za-z0-9' -]/g, '')}.txt`;
@@ -79,7 +81,7 @@ const BOOKMARK = [
 ];
 const rgbOf = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16));
 
-export function buildCountryPackage(staged, { countries, table, recruits = new Map(), factions = [], starts = null, zin, cultures = {} }) {
+export function buildCountryPackage(staged, { countries, table, recruits = new Map(), factions = [], starts = null, zin, cultures = {}, variants = new Map() }) {
   const problems = [], byKey = new Map(countries.map(c => [c.key, c])), byTag = new Map(countries.map(c => [c.tag, c]));
   const oldCountries = new Map();
   for (const f of readdirSync(`${zin}/common/countries`)) { const m = /^(Y[0-9A-Z]{2}) - /.exec(f); if (m) oldCountries.set(m[1], readFileSync(`${zin}/common/countries/${f}`, 'utf8')); }
@@ -101,10 +103,12 @@ export function buildCountryPackage(staged, { countries, table, recruits = new M
     H.push(`add_ideas = { ${SETUP.laws.join(' ')} }`, `set_research_slots = ${setup.slots}`, `set_stability = ${SETUP.stability}`, `set_war_support = ${setup.war}`);
     const pack = starts?.countries?.[c.name];
     if (starts && !pack) problems.push(`${c.name} has no start package`);
-    if (pack?.technologies?.length) H.push(`set_technology = {\n${pack.technologies.map(k => `\t${k} = 1`).join('\n')}\n}`);
+    if (pack?.technologies?.length) H.push(`set_technology = {\n${pack.technologies.map(k => `\t${techKey(k)} = 1`).join('\n')}\n}`);
     if (pack?.landGrandDoctrine) H.push(`set_grand_doctrine = ${pack.landGrandDoctrine}`);
     if (pack?.navalGrandDoctrine) H.push(`set_grand_doctrine = ${pack.navalGrandDoctrine}`);
     if (pack?.navalSubDoctrine) H.push(`set_sub_doctrine = ${pack.navalSubDoctrine}`);
+    // The starting ship variants the order of battle names (version_name): a modular hull has none until one is created.
+    for (const v of variants.get(c.tag) ?? []) H.push(v);
     for (const id of recruits.get(c.tag) ?? []) H.push(`recruit_character = ${id}`);
     H.push(`set_politics = { ruling_party = ${ideology} last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }`);
     H.push(`set_popularities = { ${Object.entries(POPULARITY[ideology]).map(([k, v]) => `${k} = ${v}`).join(' ')} }`);

@@ -243,6 +243,6 @@ country_event = { id = zin_dominion.9 }
     K.def('rule', id);
     const t = T.rules[id], key = id.toUpperCase();
     K.loc.set(`ZIN_${key}`, t.name); K.loc.set(`ZIN_${key}_DESC`, t.desc);
-    return `${id} = {\n\tname = ZIN_${key}\n\tdesc = ZIN_${key}_DESC\n\tgroup = RULE_GROUP_ZIN\n${opts.map((o, i) => { const k = `ZIN_${key}_${o}`; K.loc.set(k, t.options[o].n); K.loc.set(`${k}_DESC`, t.options[o].d); return `\t${i === 0 ? 'default' : 'option'} = {\n\t\tname = ${o}\n\t\ttext = ${k}\n\t\tdesc = ${k}_DESC\n\t}`; }).join('\n')}\n}`;
+    return `${id} = {\n\tname = ZIN_${key}\n\tgroup = RULE_GROUP_ZIN\n${opts.map((o, i) => { const k = `ZIN_${key}_${o}`; K.loc.set(k, t.options[o].n); K.loc.set(`${k}_DESC`, t.options[o].d); return `\t${i === 0 ? 'default' : 'option'} = {\n\t\tname = ${o}\n\t\ttext = ${k}\n\t\tdesc = ${k}_DESC\n\t}`; }).join('\n')}\n}`;
   }).join('\n'));
 }

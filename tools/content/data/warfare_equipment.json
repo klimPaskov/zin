@@ -1374,26 +1374,16 @@
    },
    "cost": 70,
    "rel": 0.8,
+   "note": "One variant only, under the engine key convoy_1: the game supports a single convoy type and logs 'Multiple convoy types are not supported' for a second one.",
    "variants": [
     {
-     "n": 0,
+     "n": 1,
      "year": 1600,
      "name": "Merchant Cog",
      "desc": "A broad single-masted cog for coasts and rivers.",
      "set": {
       "hp": 60,
       "speed": 12
-     }
-    },
-    {
-     "n": 1,
-     "year": 1752,
-     "name": "Ocean Cog",
-     "desc": "A deep cog built to cross the wide sea.",
-     "set": {
-      "hp": 80,
-      "speed": 13,
-      "cost": 90
      }
     }
    ]

@@ -639,11 +639,16 @@ function hullSlots(h) {
     slot('fixed_crew_slot', 'no', 'zin_crew'),
   ].join('\n'), 2);
 }
+// The default fit of one hull variant as [slot, module] pairs (an unfitted optional slot is `empty`). The equipment file writes it as
+// default_modules; the forces module creates the same fit as each fleet's starting variant in the country history.
+export function shipModuleRows(v) {
+  const d = v.defaults, rows = [['fixed_propulsion_slot', d.propulsion]];
+  d.armament.forEach((m, i) => rows.push([`fixed_armament_slot_${i + 1}`, m ?? 'empty']));
+  rows.push(['fixed_protection_slot', d.protection], ['fixed_crew_slot', d.crew ?? 'empty']);
+  return rows;
+}
 function defaultModules(h, v) {
-  const d = v.defaults, rows = [`\t\t\tfixed_propulsion_slot = ${d.propulsion}`];
-  d.armament.forEach((m, i) => rows.push(`\t\t\tfixed_armament_slot_${i + 1} = ${m ?? 'empty'}`));
-  rows.push(`\t\t\tfixed_protection_slot = ${d.protection}`, `\t\t\tfixed_crew_slot = ${d.crew ?? 'empty'}`);
-  return blk('default_modules', rows.join('\n'), 2);
+  return blk('default_modules', shipModuleRows(v).map(([s, m]) => `\t\t\t${s} = ${m}`).join('\n'), 2);
 }
 const HULL_STAT = { max_strength: 'max_strength', naval_speed: 'naval_speed', naval_range: 'naval_range', lg_attack: 'lg_attack', hg_attack: 'hg_attack', torpedo_attack: 'torpedo_attack', armor_value: 'armor_value', anti_air_attack: 'anti_air_attack', surface_visibility: 'surface_visibility', sub_visibility: 'sub_visibility', surface_detection: 'surface_detection', sub_detection: 'sub_detection', naval_dominance_factor: 'naval_dominance_factor' };
 

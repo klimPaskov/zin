@@ -386,7 +386,7 @@ async function buildGameRules(staged, loc) {
 // over and must then stop this writer (the builder stops on the duplicate staged path). No icon: no GFX_zin_rule_* sprite exists yet.
 function buildInterimRules(staged) {
   const opt = (name, def) => `\t${def ? 'default' : 'option'} = {\n\t\tname = ${name}\n\t\ttext = ZIN_RULE_SKIES_${name.toUpperCase()}\n\t\tdesc = ZIN_RULE_SKIES_${name.toUpperCase()}_DESC\n\t}`;
-  staged.text('common/game_rules/zin_war_rules.txt', `${HEADER}\n# Interim writer in vanilla_removal.mjs until the warfare module is wired (it owns this file).\nzin_rule_skies = {\n\tname = ZIN_RULE_SKIES\n\tdesc = ZIN_RULE_SKIES_DESC\n\tgroup = RULE_GROUP_ZIN\n${opt('dragons_only', true)}\n${opt('beasts', false)}\n${opt('none', false)}\n}\n`);
+  staged.text('common/game_rules/zin_war_rules.txt', `${HEADER}\n# Interim writer in vanilla_removal.mjs until the warfare module is wired (it owns this file).\nzin_rule_skies = {\n\tname = ZIN_RULE_SKIES\n\tgroup = RULE_GROUP_ZIN\n${opt('dragons_only', true)}\n${opt('beasts', false)}\n${opt('none', false)}\n}\n`);
   staged.loc('zin_rules', {
     RULE_GROUP_ZIN: 'Aoaz',
     ZIN_RULE_SKIES: 'The Skies',

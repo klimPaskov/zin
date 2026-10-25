@@ -249,7 +249,7 @@ test('The equipment stock is 1.2 times the need of the divisions (Puvulan, the V
   }
 });
 test('Pack trains are stocked for every realm with divisions and cogs for coastal realms with galleys', () => {
-  for (const c of countries) { const p = parsed.get(c.tag); if (p.divisions.length) assert(p.stock.some(s => /^train_equipment_\d$/.test(s.type)), `${c.name}: trains`); if (p.ships.length && model.unlockedOf.get(c.tag).eq.has('convoy_0')) assert(p.stock.some(s => /^convoy_\d$/.test(s.type)), `${c.name}: cogs`); else if (p.ships.length) assert(!p.stock.some(s => /^convoy_/.test(s.type)), `${c.name}: no cogs unlocked`); }
+  for (const c of countries) { const p = parsed.get(c.tag); if (p.divisions.length) assert(p.stock.some(s => /^train_equipment_\d$/.test(s.type)), `${c.name}: trains`); if (p.ships.length && model.unlockedOf.get(c.tag).eq.has('convoy_1')) assert(p.stock.some(s => /^convoy_\d$/.test(s.type)), `${c.name}: cogs`); else if (p.ships.length) assert(!p.stock.some(s => /^convoy_/.test(s.type)), `${c.name}: no cogs unlocked`); }
 });
 
 // ------------------------------------------------------------------------------------------------ text
@@ -725,4 +725,29 @@ test('A role a country keeps in its ratio always has a target it may use: gated 
   }
   assert(gated >= 4, `${gated} gated roles`);
   assert(raw0.ai.entries.find(e => e.people === 'orcs' && e.role === 'armor').targets[0].enable === undefined, 'orc brutes have no technology gate');
+});
+
+// r3b log: "Could not find proper equipment variant. Skip creating Ship", "does not have any equipment variant for type zin_hull_galley_N".
+test('Every ship names the variant its country history creates: one per hull type, the hull variant\'s name and default modules', () => {
+  const hulls = new Map(raw0.naval.hulls.flatMap(h => h.variants.map(v => [`${h.id}_${v.n}`, v])));
+  let withShips = 0;
+  for (const c of countries) {
+    const e = oob.get(c.tag), units = field(e, 'units') ?? [];
+    const ships = all(units, 'fleet').flatMap(f => all(f.v, 'task_force')).flatMap(tf => all(tf.v, 'ship')).map(sh => field(sh.v, 'equipment')[0]);
+    const blocks = (summary.variants.get(c.tag) ?? []).map(b => parse(b)[0].v);
+    if (!ships.length) { assert.equal(blocks.length, 0, `${c.name}: no fleet, no variant`); continue; }
+    withShips++;
+    const made = new Map(blocks.map(b => [field(b, 'type'), b]));
+    assert.equal(made.size, blocks.length, `${c.name}: one variant per hull type`);
+    for (const s of ships) {
+      const v = hulls.get(s.k), b = made.get(s.k);
+      assert(v && b, `${c.name}: ${s.k} has a variant`);
+      assert.equal(field(s.v, 'version_name'), v.name, `${c.name}: the ship names the variant`);
+      assert.equal(field(b, 'name'), v.name);
+      const mods = Object.fromEntries((field(b, 'modules') ?? []).map(m => [m.k, m.v]));
+      assert.equal(mods.fixed_propulsion_slot, v.defaults.propulsion, `${c.name}: ${s.k} is fitted with the default propulsion`);
+      assert.equal(mods.fixed_protection_slot, v.defaults.protection);
+    }
+  }
+  assert(withShips > 0, 'some realms start with a fleet');
 });

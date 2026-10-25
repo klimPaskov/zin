@@ -266,11 +266,11 @@
         [
          40,
          [
-          "add_opinion_modifier = { target = var:global.zin_eindil_host modifier = zin_eindil_seize_failed }",
           {
            "scope": "var:global.zin_eindil_host",
            "do": [
-            "add_opinion_modifier = { target = ROOT modifier = zin_eindil_seize_failed }"
+            "add_opinion_modifier = { target = ROOT modifier = zin_eindil_seize_failed }",
+            "reverse_add_opinion_modifier = { target = ROOT modifier = zin_eindil_seize_failed }"
            ]
           }
          ]

@@ -95,8 +95,11 @@ has_global_flag = zin_elves_cold_roads
 clr_global_flag = zin_elves_cold_roads
 ${aenorWallRealms(false)}
 }`, 'Argument: zin_arg_value. Cold Roads begins at 50 and ends below 40 (section 5.1).');
-  E_('zin_elves_goodwill', `add_opinion_modifier = { target = var:zin_arg_target modifier = zin_opinion_elven_goodwill }
-reverse_add_opinion_modifier = { target = var:zin_arg_target modifier = zin_opinion_elven_goodwill }`, 'Scope: country. Argument: zin_arg_target (a country).');
+  // Both directions from the target's scope (PREV is the caller): the target field of an opinion modifier takes no var: token.
+  E_('zin_elves_goodwill', `var:zin_arg_target = {
+reverse_add_opinion_modifier = { target = PREV modifier = zin_opinion_elven_goodwill }
+add_opinion_modifier = { target = PREV modifier = zin_opinion_elven_goodwill }
+}`, 'Scope: country. Argument: zin_arg_target (a country).');
   E_('zin_elves_sync_refusal', `if = {
 limit = {
 has_country_flag = zin_refusal_lifted

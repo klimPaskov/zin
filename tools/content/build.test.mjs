@@ -71,6 +71,26 @@ test('Every country has names, a portrait pool and a ruler (the game crashed gen
   for (const n of [1, 2, 3]) assert.match(portraits, new RegExp(`name = world_continent_${n}\\n\\tarmy`));
 });
 
+// r3b log groups: set_technology with vanilla names (invalid database object, "set_technology: Invalid tech"), the chiefs recruited in an
+// on_action ("recruit_character should only happen in game/history files"), ships without a variant.
+test('Every history sets defined ZIN technologies, recruits the chiefs and creates the variants its ships name', async () => {
+  const techText = (await Promise.all((await readdir(path.join(STAGED, 'common/technologies'))).map(f => read(`common/technologies/${f}`)))).join('\n');
+  const defined = new Set([...techText.matchAll(/^\t(zin_tech_[a-z0-9_]+) = \{/gm)].map(m => m[1]));
+  const onActions = await read('common/on_actions/zin_inst.txt');
+  assert(!/recruit_character/.test(onActions), 'the chiefs are recruited in history');
+  const chiefs = new Set([...onActions.matchAll(/activate_advisor = (\w+)_adv/g)].map(m => m[1]));
+  const recruited = new Set();
+  for (const c of countries) {
+    const h = await read(historyFile(c));
+    const set = h.match(/set_technology = \{\n([\s\S]*?)\n\}/)?.[1] ?? '';
+    for (const [, k] of set.matchAll(/^\t(\w+) = 1$/gm)) assert(defined.has(k), `${c.name}: ${k} is not a ZIN technology`);
+    for (const [, id] of h.matchAll(/recruit_character = (\w+)/g)) recruited.add(id);
+    const oob = await read(`history/units/${c.tag}_world.txt`);
+    for (const [, type, name] of oob.matchAll(/(zin_hull_\w+) = \{ amount = 1 owner = \w+ version_name = "([^"]+)"/g)) assert(h.includes(`create_equipment_variant = {\n\tname = "${name}"\n\ttype = ${type}\n`), `${c.name}: no ${type} variant "${name}"`);
+  }
+  for (const id of chiefs) assert(recruited.has(id), `${id} is not recruited in a history`);
+});
+
 test('Every referenced sprite is defined and every defined sprite file is staged', async () => {
   const gfx = (await read('interface/zin_portraits.gfx')) + (await read('interface/zin_peoples.gfx'));
   const defined = new Map([...gfx.matchAll(/name = "([^"]+)"\s*texturefile = "([^"]+)"/g)].map(m => [m[1], m[2]]));

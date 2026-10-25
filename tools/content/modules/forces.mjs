@@ -24,6 +24,7 @@ import { compileBanned, findBanned } from '../lib/banned.mjs';
 import { loadCountryTable } from './countries.mjs';
 import { prepareModel as prepareTech, technologyPackages, startFor } from './technologies.mjs';
 import { cultureRows } from '../lib/roster.mjs';
+import { shipModuleRows } from './warfare.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -478,7 +479,7 @@ function writeOob(model, plan, names, ships, hostGroup, splitNaval = false) {
     for (const [port, list] of byPort) {
       tf++;
       fleetLines.push(`${T(2)}task_force = {`, `${T(3)}name = ${q(byPort.size > 1 ? `${plan.name} ${ordinal(tf)} Squadron` : `${plan.name} Squadron`)}`, `${T(3)}location = ${port}`);
-      for (const s of list) fleetLines.push(`${T(3)}ship = { name = ${q(s.name)}${s.pride ? ' pride_of_the_fleet = yes' : ''} definition = ${s.sub} equipment = { ${s.hull} = { amount = 1 owner = ${plan.tag} } } }`);
+      for (const s of list) fleetLines.push(`${T(3)}ship = { name = ${q(s.name)}${s.pride ? ' pride_of_the_fleet = yes' : ''} definition = ${s.sub} equipment = { ${s.hull} = { amount = 1 owner = ${plan.tag} version_name = ${q(shipVariant(model, s.hull).name)} } } }`);
       fleetLines.push(`${T(2)}}`);
     }
     fleetLines.push(`${T(1)}}`);
@@ -495,6 +496,26 @@ function writeOob(model, plan, names, ships, hostGroup, splitNaval = false) {
   return { land: L.join('\n'), naval };
 }
 
+// A modular hull has no variant until one is created: each ship of the order of battle names the variant the country history creates
+// (vanilla: create_equipment_variant in history/countries, version_name on the ship). One variant per hull type a fleet uses, fitted with
+// the hull variant's default modules (warfare.mjs shipModuleRows) and named after it.
+function shipVariant(model, type) {
+  const hull = model.raw.naval.hulls.find(h => type.startsWith(`${h.id}_`) && /^\d+$/.test(type.slice(h.id.length + 1)));
+  const v = hull?.variants.find(x => x.n === Number(type.slice(hull.id.length + 1)));
+  if (!v) err(`forces: ${type} is not a hull variant of data/warfare_naval.json`);
+  return v;
+}
+export function historyVariants(model, plan) {
+  const out = [], seen = new Set();
+  for (const s of plan.ships) {
+    if (seen.has(s.hull)) continue;
+    seen.add(s.hull);
+    const v = shipVariant(model, s.hull);
+    out.push([`create_equipment_variant = {`, `${T(1)}name = ${q(v.name)}`, `${T(1)}type = ${s.hull}`, ...(s.nameGroup ? [`${T(1)}name_group = ${s.nameGroup}`] : []), `${T(1)}parent_version = 0`, `${T(1)}modules = {`, ...shipModuleRows(v).map(([slot, m]) => `${T(2)}${slot} = ${m}`), `${T(1)}}`, '}'].join('\n'));
+  }
+  return out;
+}
+
 function nameShips(model, plan, groups) {
   const used = new Set(), r = rng(`ships:${plan.tag}`);
   const out = [];
@@ -509,7 +530,7 @@ function nameShips(model, plan, groups) {
     }
     if (!name) name = (g?.fallback ?? 'Ship %d').replace('%d', String(++black));
     used.add(name);
-    out.push({ ...s, name });
+    out.push({ ...s, name, nameGroup: g?.id ?? null });
   }
   if (out.length) { const i = out.findIndex(s => s.sub === 'zin_ship_great_warship' || s.sub === 'zin_ship_warship'); if (i >= 0) out[i].pride = true; }
   return out;
@@ -758,9 +779,11 @@ export async function buildForces(staged, ctx) {
   const compiled = compileBanned(model.raw.banned);
   const report = { countries: {}, divisions: 0 };
   let divisions = 0, ships = 0, stockLines = 0;
+  const variants = new Map();
   for (const c of [...model.countries].sort((a, b) => byEn(a.tag, b.tag))) {
     const plan = planCountry(model, c);
     plan.ships = nameShips(model, plan, shipGroups);
+    if (plan.ships.length) variants.set(c.tag, historyVariants(model, plan));
     const oobText = writeOob(model, plan, names, plan.ships, hostGroups[c.name], !!ctx.splitNaval);
     staged.text(`history/units/${c.tag}_world.txt`, oobText.land);
     if (ctx.splitNaval && oobText.naval) staged.text(`history/units/${c.tag}_world_naval.txt`, oobText.naval);
@@ -793,5 +816,8 @@ export async function buildForces(staged, ctx) {
   report.aiTemplateCoverage = coverage;
   report.designGroups = model.raw.ai.designs.groups.map(g => g.id);
   staged.text(FILES.report, canonicalJson(report));
-  return { countries: model.countries.length, divisions, ships, stockLines, templates: model.templates.size, aiEntries: model.raw.ai.entries.length, aiTargets: model.raw.ai.entries.reduce((a, e) => a + e.targets.length, 0), taskforces: model.raw.ai.navy.taskforces.length, fleets: model.raw.ai.navy.fleets.length, goals: model.raw.ai.navy.goals.length, designGroups: model.raw.ai.designs.groups.length };
+  // The ship variants each country history creates (tag -> create_equipment_variant blocks), for the country package; kept out of the printed counts.
+  const result = { countries: model.countries.length, divisions, ships, stockLines, templates: model.templates.size, aiEntries: model.raw.ai.entries.length, aiTargets: model.raw.ai.entries.reduce((a, e) => a + e.targets.length, 0), taskforces: model.raw.ai.navy.taskforces.length, fleets: model.raw.ai.navy.fleets.length, goals: model.raw.ai.navy.goals.length, designGroups: model.raw.ai.designs.groups.length };
+  Object.defineProperty(result, 'variants', { value: variants, enumerable: false });
+  return result;
 }

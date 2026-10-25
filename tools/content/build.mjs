@@ -63,6 +63,7 @@ import { runTextScan, writeScanReport, assertTextScan, summariseScan } from './c
 import { loadInventory } from './modules/ui_inventory.mjs';
 import { loadReskin, loadSheets, buildReskin, publishUiData } from './modules/ui_reskin.mjs';
 import { runUiChecks, scriptReferences } from './checks/ui_checks.mjs';
+import { checkEngineForms, assertEngineForms } from './checks/engine_forms.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export { ZIN };
@@ -144,7 +145,10 @@ const mechSun = await buildMechSun(staged, { countries, assignment });
 const characters = await buildCharacters(staged, { countries });
 // The country package (tags, country files, histories, names, the bookmark) and the realms' flags: after the courts (recruits), the
 // diplomacy slice (the start leagues) and the technologies (start packages).
-const countryPackage = buildCountryPackage(staged, { countries, table, recruits: characters.recruits, factions: diplomacy.factions, starts: JSON.parse(staged.files.get('docs/design/technology/start_packages.json').toString('utf8')), zin: ZIN, cultures: cultures.model.world.cultures });
+// The histories recruit the courts and the chiefs of the Council of Captains (institutions): the game recruits a character only in history.
+const recruits = new Map([...characters.recruits].map(([t, ids]) => [t, [...ids]]));
+for (const [t, ids] of institutions.recruits) recruits.set(t, [...(recruits.get(t) ?? []), ...ids]);
+const countryPackage = buildCountryPackage(staged, { countries, table, recruits, variants: forces.variants, factions: diplomacy.factions, starts: JSON.parse(staged.files.get('docs/design/technology/start_packages.json').toString('utf8')), zin: ZIN, cultures: cultures.model.world.cultures });
 const flags = await stageRealmFlags(staged, countries);
 // The foundation's game rules and their wrapper triggers (05_defines_and_rules.md section 2): after the slices whose own rule files
 // (Lerendor, the West, Eindil) the generated branch triggers read.
@@ -234,6 +238,11 @@ const uiReport = await runUiChecks({ inventory: uiInventory, reskin: uiReskin, s
 staged.add('docs/design/ui/check_report.json', Buffer.from(JSON.stringify({ ok: uiReport.ok, pending: uiReport.pending, checks: uiReport.checks.map(c => ({ id: c.id, name: c.name, status: c.status, problems: c.problems, pending: c.pending.length, notes: c.notes })) }, null, 1) + '\n'));
 const uiEnforced = uiReport.checks.filter(c => c.status === 'fail' && c.id !== 4);
 if (uiEnforced.length) throw new Error(uiEnforced.map(c => `ui check ${c.id} ${c.name}: ${c.problems.slice(0, 5).map(p => p.message).join('; ')}`).join('\n'));
+// Engine-form checks (checks/engine_forms.mjs): forms the game rejects, from the error log of the first integrated run. Over the finished
+// script tree, the pending stand-ins included.
+const engineForms = checkEngineForms(staged.files);
+console.error(`engine forms: ${engineForms.errors.length} problems; reported, not enforced: recruit_character in ${engineForms.reported.recruit_in_game.length} in-game effects, has_opinion_modifier with a block in ${engineForms.reported.opinion_check_block.length} places`);
+assertEngineForms(engineForms);
 // Asset manifest and completeness check (docs/specs/08_art_and_assets/05_asset_manifest.md): the very last step, so it
 // sees every staged file. It reports everything and fails only on errors that docs/design/validation/asset_baseline.json
 // does not list.

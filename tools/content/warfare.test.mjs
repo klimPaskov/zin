@@ -96,7 +96,9 @@ test('No vanilla sub-unit or equipment key is defined except the three kept keys
   const kept = new Set(['convoy', 'convoy_1', 'train_equipment', 'train_equipment_1', 'motorized_equipment', 'motorized_equipment_0', 'motorized_equipment_1']);
   for (const id of eqBlocks.keys()) if (vanillaEqIds.has(id)) assert(kept.has(id), `${id} is a vanilla equipment key`);
   for (const k of ['convoy', 'train_equipment', 'motorized_equipment']) assert(eqBlocks.has(k), `${k} must stay defined`);
-  for (const k of ['convoy_0', 'convoy_1', 'train_equipment_0', 'train_equipment_1', 'motorized_equipment_0', 'motorized_equipment_1', 'motorized_equipment_2']) assert(eqBlocks.has(k), k);
+  // One convoy type only: the game logs "Multiple convoy types are not supported" for a second one.
+  assert.deepEqual([...eqBlocks].filter(([, b]) => field(b, 'archetype') === 'convoy').map(([k]) => k), ['convoy_1']);
+  for (const k of ['convoy_1', 'train_equipment_0', 'train_equipment_1', 'motorized_equipment_0', 'motorized_equipment_1', 'motorized_equipment_2']) assert(eqBlocks.has(k), k);
 });
 test('Every equipment has a sub-unit that uses it, except the engine items that never had one', () => {
   const used = new Set();
@@ -369,7 +371,7 @@ test('Hull variants follow the technologies and each is a child of the one befor
     for (let i = 0; i < n; i++) { const b = eqBlocks.get(`${hull}_${i}`); assert(b, `${hull}_${i}`); assert.equal(field(b, 'archetype'), hull); if (i) assert.equal(field(b, 'parent'), `${hull}_${i - 1}`); }
     assert.equal(eqBlocks.has(`${hull}_${n}`), false);
   }
-  assert.equal(field(eqBlocks.get('convoy_1'), 'parent'), 'convoy_0');
+  assert.equal(field(eqBlocks.get('convoy_1'), 'parent'), undefined, 'the one convoy type has no parent');
   assert.equal(field(eqBlocks.get('motorized_equipment'), 'supply_truck'), 'yes');
   assert.equal(field(eqBlocks.get('train_equipment'), 'type'), 'train');
 });

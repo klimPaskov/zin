@@ -294,12 +294,17 @@ function strategyLines(s, i, C) {
 
 // The generated opinion helper (contract pattern zin_<tree>_opinion): zin_arg_who, zin_arg_modifier (the 1-based
 // position of the modifier in the block), zin_arg_both.
+// The target field of add_opinion_modifier takes no var: token (the game logs "Malformed token"), so the helper scopes to the
+// country the variable holds (var:<name> = { }, as vanilla instantiate_collaboration_government does) and names the caller as PREV:
+// the caller's opinion of zin_arg_who is the reverse modifier seen from there, the other way round the plain one.
 function opinionHelper(tree) {
   const keys = Object.keys(tree.opinion_modifiers);
   const one = (k, i) => block('if', [
     ...block('limit', [`check_variable = { zin_arg_modifier = ${i + 1} }`]),
-    ...block('add_opinion_modifier', ['target = var:zin_arg_who', `modifier = ${opinionId(tree, k)}`]),
-    ...block('if', [...block('limit', ['check_variable = { zin_arg_both = 1 }']), ...block('reverse_add_opinion_modifier', ['target = var:zin_arg_who', `modifier = ${opinionId(tree, k)}`])]),
+    ...block('var:zin_arg_who', [
+      ...block('reverse_add_opinion_modifier', ['target = PREV', `modifier = ${opinionId(tree, k)}`]),
+      ...block('if', [...block('limit', ['check_variable = { zin_arg_both = 1 }']), ...block('add_opinion_modifier', ['target = PREV', `modifier = ${opinionId(tree, k)}`])]),
+    ]),
   ]);
   return ['# Arguments: zin_arg_who (country), zin_arg_modifier (1-based position in the opinion_modifiers block), zin_arg_both (1 for both ways).', ...block(helperId(tree), flat(keys.map(one)))];
 }

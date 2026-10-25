@@ -16,6 +16,7 @@ import {
   ownEventIds, prefixesOf, spiritId, titleCase, walkConditions, walkEffects,
 } from '../lib/focus_model.mjs';
 import { COUNTRY_TOKENS } from '../lib/focus_schema.mjs';
+import { IDEOLOGIES } from '../modules/ideologies.mjs';
 
 const DATA = new URL('../data/', import.meta.url);
 export const CELLS_FILE = fileURLToPath(new URL('presentation-cells.json', DATA));
@@ -58,8 +59,13 @@ export async function loadArgCodes(file = ARG_CODES_FILE) {
   for (const extra of await extraFiles(file, 'focus_arg_codes')) base.owners = [...(base.owners ?? []), ...(JSON.parse(await readFile(extra, 'utf8')).owners ?? [])];
   return base;
 }
-// The keyword table of argument `arg` of effect `effectId`: the owner with the longest matching prefix that lists it.
+// Code tables the builder derives instead of copying them from a spec. zin_politics_set_stance reads zin_arg_stance, the position of the
+// stance in the foundation's list (modules/ideologies.mjs order, as lib/mech_aenor_script.mjs stanceCode): a tree passes the stance id.
+const STANCE_CODES = Object.fromEntries(Object.values(IDEOLOGIES).flatMap(d => Object.keys(d.stances)).map((s, i) => [s, i + 1]));
+const DERIVED_CODES = { zin_politics_set_stance: { stance: STANCE_CODES } };
+// The keyword table of argument `arg` of effect `effectId`: a derived table, else the owner with the longest matching prefix that lists it.
 export function codesFor(codes, effectId, arg) {
+  if (DERIVED_CODES[effectId]?.[arg]) return DERIVED_CODES[effectId][arg];
   let best;
   for (const owner of codes.owners ?? []) {
     if (!(arg in owner.args)) continue;

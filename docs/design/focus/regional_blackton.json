@@ -69,7 +69,7 @@
     {"key":"shore_lanterns","name":"Shore Lanterns","desc":"Lanterns are hung along the whole shore, a hundred paces apart. They show where the dead come ashore. They do not stop them.","icon":"lighthouse","x":10,"y":7,"days":21,"prerequisite":[["dead_on_our_shore"]],"ai":{"base":100},"filters":["political"],"effects":[{"add_spirit":"shore_lanterns_spirit"}]}
   ],
   "scripted_effects": {
-    "zin_regional_blackton_council_stance": {"effects":[{"raw":"zin_politics_set_stance = { STANCE = zin_light_council }"}]},
+    "zin_regional_blackton_council_stance": {"effects":[{"call":"zin_politics_set_stance","args":{"stance":"zin_light_council"}}]},
     "zin_regional_blackton_iron_trade": {"effects":[{"raw":"every_neighbor_country = {\n\tlimit = { zin_dark_is_free_hold = yes }\n\tadd_opinion_modifier = { target = ROOT modifier = zin_regional_blackton_iron_trade }\n}"}]}
   },
   "scripted_triggers": {

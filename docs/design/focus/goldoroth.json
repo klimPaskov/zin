@@ -1108,7 +1108,13 @@
     "zin_goldoroth_break_from_nafeher": {
       "effects": [
         {
-          "raw": "if = {\n\tlimit = { is_subject_of = PUV }\n\tPUV = { end_puppet = ROOT }\n}\nzin_politics_set_stance = { STANCE = zin_dom_conquest }"
+          "raw": "if = {\n\tlimit = { is_subject_of = PUV }\n\tPUV = { end_puppet = ROOT }\n}"
+        },
+        {
+          "call": "zin_politics_set_stance",
+          "args": {
+            "stance": "zin_dom_conquest"
+          }
         }
       ]
     },

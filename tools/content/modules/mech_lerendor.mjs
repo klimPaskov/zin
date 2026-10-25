@@ -602,7 +602,7 @@ ${LER} = { country_event = { id = zin_leren.72 } }`,
   K.def('rule', 'zin_rule_leren_route');
   K.loc.set('ZIN_RULE_LEREN_ROUTE', rule.name); K.loc.set('ZIN_RULE_LEREN_ROUTE_DESC', rule.desc);
   const opts = [['DEFAULT', true], ['historical'], ['honour'], ['supremacy'], ['free']];
-  K.add('common/game_rules/zin_leren.txt', `zin_rule_leren_route = {\n\tname = ZIN_RULE_LEREN_ROUTE\n\tdesc = ZIN_RULE_LEREN_ROUTE_DESC\n\tgroup = RULE_GROUP_ZIN\n${opts.map(([o, d]) => { const key = `ZIN_RULE_LEREN_ROUTE_${o.toUpperCase()}`; K.loc.set(key, rule.options[o].n); K.loc.set(`${key}_DESC`, rule.options[o].d); return `\t${d ? 'default' : 'option'} = {\n\t\tname = ${o}\n\t\ttext = ${key}\n\t\tdesc = ${key}_DESC\n\t}`; }).join('\n')}\n}`);
+  K.add('common/game_rules/zin_leren.txt', `zin_rule_leren_route = {\n\tname = ZIN_RULE_LEREN_ROUTE\n\tgroup = RULE_GROUP_ZIN\n${opts.map(([o, d]) => { const key = `ZIN_RULE_LEREN_ROUTE_${o.toUpperCase()}`; K.loc.set(key, rule.options[o].n); K.loc.set(`${key}_DESC`, rule.options[o].d); return `\t${d ? 'default' : 'option'} = {\n\t\tname = ${o}\n\t\ttext = ${key}\n\t\tdesc = ${key}_DESC\n\t}`; }).join('\n')}\n}`);
 
   // ============================================================================================ on_actions and AI strategy
   K.add('common/on_actions/zin_leren.txt', `on_actions = {

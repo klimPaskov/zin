@@ -166,8 +166,10 @@ test('The opinion helper takes zin_arg_who, zin_arg_modifier and zin_arg_both', 
   const text = read((await compileFixtures()).staged, 'common/scripted_effects/zin_testland.txt');
   assert.match(text, /^zin_testland_opinion = \{/m);
   assert.match(text, /zin_arg_modifier = 1[\s\S]*zin_testland_envoys_welcomed[\s\S]*zin_arg_modifier = 2[\s\S]*zin_testland_gifts_refused/);
-  assert.match(text, /target = var:zin_arg_who/);
-  assert.match(text, /zin_arg_both = 1/);
+  // The target field takes no var: token: the helper scopes to the country and names the caller as PREV.
+  assert.doesNotMatch(text, /target = var:/);
+  assert.match(text, /var:zin_arg_who = \{\n\t+reverse_add_opinion_modifier = \{\n\t+target = PREV\n\t+modifier = zin_testland_envoys_welcomed/);
+  assert.match(text, /zin_arg_both = 1[\s\S]*?add_opinion_modifier = \{\n\t+target = PREV/);
 });
 
 test('Dynamic icons, search filters, costs in weeks and story-pace dates are written', async () => {

@@ -268,7 +268,10 @@ test('Hooks: lend trigger, camp trigger, scholar and scar effects, start effects
   for (const k of ['zin_inst_grant_scholar', 'zin_inst_add_scar']) assert(eff.includes(`${k} = {`));
   const oa = text('common/on_actions/zin_inst.txt');
   for (const k of ['on_startup', 'on_army_leader_daily', 'on_army_leader_won_combat', 'on_army_leader_lost_combat', 'on_army_leader_promoted', 'on_deployed_leader_defeated']) assert(oa.includes(`${k} = {`), k);
-  assert.equal([...oa.matchAll(/recruit_character = /g)].length, chiefs);
+  // The chiefs are recruited in the country histories (the game recruits only there); the start effect hires them for AI realms.
+  assert.equal([...oa.matchAll(/recruit_character = /g)].length, 0, 'no recruit_character outside history');
+  assert.equal([...summary.recruits.values()].flat().length, chiefs, 'every chief is handed to the country histories');
+  assert.equal([...oa.matchAll(/activate_advisor = /g)].length, chiefs);
   const grants = [...oa.matchAll(/zin_inst_grant_scholar = yes/g)].length;
   assert(grants >= chairedA * 3 + tierB && grants <= chairedA * 4 + tierB, `scholars: tier A three or four, tier B one (${grants})`);
   const volgan = countries.find(c => c.name === DEAD), vb = oa.slice(oa.indexOf(`\t\t\t${volgan.tag} = {`));

@@ -58,14 +58,21 @@ export function startValour(data, countries, table) {
   });
 }
 
+// The chiefs of the Council of Captains are recruited in the country histories (the game recruits a character only there:
+// recruit_character elsewhere logs "should only happen in game/history files"); chiefRecruits lists them by tag for the country
+// package. The start effect hires them as advisors for AI realms.
+export function chiefRecruits(chiefs) {
+  const out = new Map();
+  for (const p of chiefs.plan) (out.get(p.country.tag) ?? out.set(p.country.tag, []).get(p.country.tag)).push(p.id);
+  return out;
+}
+
 function startupEffect(env, chiefs, scholars, valour) {
   const byTag = new Map(), line = (tag, s) => (byTag.get(tag) ?? byTag.set(tag, []).get(tag)).push(s);
-  const chairs = env.data.core.chairs;
   for (const p of chiefs.plan) line(p.country.tag, p);
   const blocks = [];
   for (const c of env.countries) {
     const mine = (byTag.get(c.tag) ?? []), body = [];
-    for (const p of mine) body.push(`recruit_character = ${p.id}`);
     if (mine.length) {
       const act = ['\t\tlimit = { is_ai = yes }'];
       const plain = mine.filter(p => p.chair !== 'navy' && p.chair !== 'air'), navy = mine.find(p => p.chair === 'navy'), air = mine.find(p => p.chair === 'air');
@@ -135,5 +142,7 @@ export async function buildInstitutions(staged, ctx) {
   staged.text('docs/design/institutions_sprites.json', `${JSON.stringify({ note: 'Sprites of interface/zz_zin_institutions.gfx and the catalog picture each shows until the art pass draws its own (spec 08_institutions).', sprites: Object.fromEntries([...sprites.map].sort(([x], [y]) => x.localeCompare(y, 'en'))), vanillaNames: Object.fromEntries([...sprites.shadows].sort(([x], [y]) => x.localeCompare(y, 'en'))), vanillaNamesNote: 'Vanilla sprite names the engine still asks for (trait and token icons of engine keys). They are not redefined: the art pass replaces their texture files under the same names, and this is the suggested catalog picture for each.' }, null, 1)}
 `);
   Object.assign(summary, { keys: loc.size, engineKeys: eloc.size, sprites: sprites.size });
+  // The chiefs to recruit in the country histories (tag -> ids); kept out of the printed counts.
+  Object.defineProperty(summary, 'recruits', { value: chiefRecruits(chiefs), enumerable: false });
   return summary;
 }

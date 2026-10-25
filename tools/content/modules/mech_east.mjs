@@ -148,8 +148,12 @@ ${ind(1, fmt(body))}
   const T_ = (id, body) => { defs.triggers.push(id); trig.push(`${id} = {\n${ind(1, fmt(body))}\n}`); };
   T_('zin_is_noris', `original_tag = ${NOR}`);
   T_('zin_is_stabilo', `original_tag = ${STA}`);
+  // A country whose capital_scope resolves: it exists and controls a state. AND stops at the first false line, so a capital_scope after
+  // this guard is never evaluated on a tag that is not in play or holds no land (the wiki's Scopes page, "Invalid event target").
+  T_('zin_east_has_capital', 'exists = yes\nnum_of_controlled_states > 0');
+  const capitalIn = body => `zin_east_has_capital = yes\ncapital_scope = ${body}`;
   // An East Lands country: its capital lies in the East Lands (spec, Scripted triggers: zin_east_is_court).
-  T_('zin_east_in_region', 'capital_scope = { zin_is_region_east_lands = yes }');
+  T_('zin_east_in_region', capitalIn('{ zin_is_region_east_lands = yes }'));
   T_('zin_east_is_power', `OR = {\n  original_tag = ${NOR}\n  original_tag = ${STA}\n}`);
   T_('zin_east_is_court', `zin_east_in_region = yes\nzin_east_is_power = no`);
   T_('zin_east_is_south_court', 'has_country_flag = zin_east_south_court');
@@ -177,7 +181,7 @@ ${ind(1, fmt(body))}
   T_('zin_east_rule_unite', `is_ai = yes\nOR = {\n  zin_rules_ai_branch_east_unite_without_afrit = yes\n  AND = {\n    zin_rules_ai_random_east = yes\n    check_variable = { global.zin_east_rule_roll = 2 }\n  }\n}`);
   T_('zin_east_free_crown', 'has_country_flag = zin_afrit_refused_east\nhas_global_flag = zin_afrit_king_of_east\nNOT = { has_global_flag = zin_afrit_dead }');
   // At war with a realm of the Magical or Middle Lands (the coalition's peace, the stranded companies).
-  T_('zin_east_at_war_in_the_west', 'any_enemy_country = {\n  capital_scope = {\n    OR = {\n      zin_is_region_magical_lands = yes\n      zin_is_region_middle_lands = yes\n    }\n  }\n}');
+  T_('zin_east_at_war_in_the_west', `any_enemy_country = {\n${ind(1, capitalIn('{\n  OR = {\n    zin_is_region_magical_lands = yes\n    zin_is_region_middle_lands = yes\n  }\n}'))}\n}`);
   put('common/scripted_triggers/zin_east.txt', `${HEADER('mech_east', EAST_SPEC)}\n# Integration note: ${EAST_NOTE}.\n\n${trig.join('\n\n')}`);
 
   // ------------------------------------------------------------------------------------------------ effects
@@ -729,6 +733,7 @@ if = {
 every_country = {
   limit = {
     has_war_with = PREV
+    zin_east_has_capital = yes
     capital_scope = {
       OR = {
         zin_is_region_magical_lands = yes

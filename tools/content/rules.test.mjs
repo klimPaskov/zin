@@ -31,7 +31,9 @@ test('Every rule of the data is written once, in the ZIN group, with its options
     const opts = e.v.filter(x => x.k === 'option' || x.k === 'default');
     assert.equal(opts[0].k, 'default', `${r.id}: the first option is the default`);
     assert.deepEqual(opts.map(o => o.v.find(x => x.k === 'name').v), r.options.map(o => o.key));
-    for (const k of [e.v.find(x => x.k === 'name').v, e.v.find(x => x.k === 'desc').v, ...opts.flatMap(o => [o.v.find(x => x.k === 'text').v, o.v.find(x => x.k === 'desc').v])]) assert(locKeys.has(k), `${r.id}: text key ${k}`);
+    // No rule-level desc: the game reads desc only inside an option (r3b log, "Unexpected token: desc").
+    assert.equal(e.v.find(x => x.k === 'desc'), undefined, `${r.id}: no rule-level desc`);
+    for (const k of [e.v.find(x => x.k === 'name').v, ...opts.flatMap(o => [o.v.find(x => x.k === 'text').v, o.v.find(x => x.k === 'desc').v])]) assert(locKeys.has(k), `${r.id}: text key ${k}`);
   }
   assert(loc.startsWith('﻿l_english:'), 'UTF-8 with BOM');
 });

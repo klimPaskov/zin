@@ -89,7 +89,8 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     `set_temp_variable = { eind_delay_max = ${K('delay_max')} }`,
     'clamp_variable = { var = global.zin_eindil_delay min = 0 max = eind_delay_max }',
     'set_temp_variable = { zin_arg_value = 0 }');
-  const dropOpinion = m => `if = { limit = { has_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = ${m} } } remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = ${m} } }`;
+  // Unguarded: has_opinion_modifier takes only a modifier name (no target block), and removing a modifier the country lacks does nothing.
+  const dropOpinion = m => `remove_opinion_modifier = { target = event_target:zin_eindil_host_target modifier = ${m} }`;
   E('zin_eindil_regard_opinion',
     "# This country's opinion of the Host (once it exists) follows its regard: remembered at 25 and above, wronged at -25 and below.",
     L('if', `limit = { ${stageGe(9)} zin_eindil_has_host = yes }`,

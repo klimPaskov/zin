@@ -49,7 +49,8 @@ const WINDOWS_1252 = /^[\x20-\x7E -ÿ]*$/;
 // ---------- small helpers ----------
 const num = v => Number.isInteger(v) ? String(v) : String(Number(v.toFixed(3)));
 const sortedKeys = o => Object.keys(o).sort((a, b) => a.localeCompare(b, 'en'));
-const fullKey = k => (k.startsWith(PREFIX) ? k : PREFIX + k);
+// The published start packages (docs/design/technology/start_packages.json) list the short keys; the game knows the full ones.
+export const fullKey = k => (k.startsWith(PREFIX) ? k : PREFIX + k);
 const shortKey = k => (k.startsWith(PREFIX) ? k.slice(PREFIX.length) : k);
 const tab = n => '\t'.repeat(n);
 export const canonicalJson = v => JSON.stringify(sortDeep(v), null, 2) + '\n';

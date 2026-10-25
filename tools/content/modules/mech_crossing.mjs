@@ -105,7 +105,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     L('if', `limit = { ${notFlag('zin_west_truce_broken')} }`,
       'set_global_flag = zin_west_truce_broken', 'set_global_flag = zin_west_grey_ford_war',
       L('if', `limit = { original_tag = ${T_.girdon} NOT = { zin_west_historical = yes } }`, 'set_global_flag = zin_west_feud_girdon_attacked'),
-      ...[[T_.gunwaith, T_.girdon], [T_.girdon, T_.gunwaith]].map(([a, b]) => L(a, 'if = { limit = { has_opinion_modifier = { target = ' + b + ' modifier = zin_opinion_grey_ford_truce } } remove_opinion_modifier = { target = ' + b + ' modifier = zin_opinion_grey_ford_truce } }',
+      ...[[T_.gunwaith, T_.girdon], [T_.girdon, T_.gunwaith]].map(([a, b]) => L(a, `remove_opinion_modifier = { target = ${b} modifier = zin_opinion_grey_ford_truce }`,
         `add_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood }`, `add_dynamic_modifier = { modifier = zin_cb_broken_truce days = 730 scope = ${b} }`)),
       L('if', `limit = { ${gflag('zin_west_feud_girdon_attacked')} }`, feud('zin_site_winter_ford', 'zin_site_three_oaths')),
       L('else', feud('zin_site_three_oaths', 'zin_site_winter_ford')),
@@ -129,7 +129,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
         'set_temp_variable = { zin_arg_value = 25 }', 'zin_west_add_unity = yes',
         L('every_country', 'limit = { has_idea = zin_eindil_war_kings_banner }', 'set_temp_variable = { zin_arg_value = -5 }', 'zin_west_add_grudge = yes', 'if = { limit = { has_idea = zin_west_old_claims } remove_ideas = zin_west_old_claims }'),
         ...[[T_.gunwaith, T_.girdon], [T_.girdon, T_.gunwaith]].map(([a, b]) => L(a, `diplomatic_relation = { country = ${b} relation = non_aggression_pact active = yes }`,
-          `if = { limit = { has_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood } } remove_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood } }`))),
+          `remove_opinion_modifier = { target = ${b} modifier = zin_west_ford_blood }`))),
       L('every_country', 'limit = { zin_west_is_western = yes }', 'news_event = { id = zin_west.26 }')),
     'set_temp_variable = { zin_arg_how = 0 }');
   dep('zin_eindil_war_kings_banner', 'idea', 'eindil_journey (mech_eindil.mjs)'); dep('zin_west_old_claims', 'idea', 'start situation (01_start_situation.md)');
@@ -306,8 +306,9 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     '# The scope joined Eindil\'s coalition (after zin_eindil_join_coalition): opinions both ways with the Host and the Aenor realms in it, the spirit, and the old claims are set aside.',
     L('if', 'limit = { has_variable = global.zin_eindil_host }',
       'save_event_target_as = zin_west_joiner',
-      L('var:global.zin_eindil_host', 'add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }'),
-      'add_opinion_modifier = { target = var:global.zin_eindil_host modifier = zin_west_fought_beside }'),
+      // Both directions from the Host's scope: the target field of an opinion modifier takes no var: token.
+      L('var:global.zin_eindil_host', 'add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }',
+        'reverse_add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }')),
     'add_ideas = zin_west_beside_former_foes',
     'if = { limit = { has_idea = zin_west_old_claims } remove_ideas = zin_west_old_claims }');
   dep('zin_eindil_host', 'global variable (country)', 'eindil_journey');
@@ -569,7 +570,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
 
   // ---------------------------------------------------------------------------------------------- game rule
   const r = data.rules.route, RU = r.id.toUpperCase();
-  put('common/game_rules/zin_west.txt', fileText(render(L(r.id, `name = "${RU}"`, `desc = "${RU}_DESC"`, 'group = "RULE_GROUP_ZIN"',
+  put('common/game_rules/zin_west.txt', fileText(render(L(r.id, `name = "${RU}"`, 'group = "RULE_GROUP_ZIN"',
     ...r.options.map((o, i) => L(i === 0 ? 'default' : 'option', `name = ${o.id}`, `text = "${RU}_${o.id.toUpperCase()}"`, `desc = "${RU}_${o.id.toUpperCase()}_DESC"`))))));
   loc.add(RU, r.name); loc.add(`${RU}_DESC`, r.desc);
   for (const o of r.options) { loc.add(`${RU}_${o.id.toUpperCase()}`, o.name); loc.add(`${RU}_${o.id.toUpperCase()}_DESC`, o.desc); }
