@@ -60,3 +60,34 @@ Spec: [realm_life.md](specs/04_mechanics/realm_life.md). Every realm life effect
 - **Inputs:** none.
 - **Callers:** the start variety's V4 and `zin_variety_temper_new_ruler`, which realm life calls for every new ruler of an AI realm while the start variety is on (`zin_start_variety_drawn`), with a chance of `constant:zin_variety.temper_chance` in a hundred.
 - **Example:** `zin_variety_add_temper = yes`.
+
+## World magic (`tools/content/modules/world_magic.mjs`, `common/scripted_effects/zin_world_magic.txt`)
+
+Spec: [04_magic_and_world_systems.md](specs/03_gameplay/04_magic_and_world_systems.md).
+
+### `zin_world_give_dragon`
+
+- **Purpose:** takes one dragon from the pool of Dragon Mountain (`global.zin_dragons_free`, which never rises) and hands it to warfare's `zin_war_grant_dragons` in the receiving realm.
+- **Scope:** any.
+- **Input:** `zin_arg_to`, the receiving country (a country scope stored in the temporary variable).
+- **Output:** the pool loses one; the receiver gets one dragon flight through `zin_war_grant_dragons` (argument `zin_arg_amount = 1`).
+- **Default:** does nothing when the pool is empty; the caller still counts its own Pact or binding (`zin_world_dragon_pacts`, `zin_world_corrupted_dragons`).
+- **Callers:** the decisions The Dragon Pact and Bound by Corruption, and the elves' `zin_elves_focus_dragon_pact` (Wings Over the Woods, Dragons of the March).
+- **Example:** `set_temp_variable = { zin_arg_to = ROOT }` then `zin_world_give_dragon = yes`.
+
+### `zin_world_raise_varners_wards` and `zin_world_grant_new_gods_gift`
+
+- **Purpose:** the two one-time interventions: Varner's wards (90 days, potent magic, the shelter and `zin_world.40` for the host's allies at war with Zol's Mistake) and the New Gods' gift (365 days, only while Eindil himself bears Glo).
+- **Scope:** any; both act on `global.zin_eindil_host`, else on the calling country.
+- **Inputs:** none.
+- **Once:** `zin_varner_wards_raised` and `zin_world_gods_gift_given`; a second call changes nothing.
+- **Example:** `zin_world_raise_varners_wards = yes` (the journey's death of Varner).
+
+## Story AI (`tools/content/modules/story_ai.mjs`)
+
+### `zin_ui_refresh` (`common/scripted_effects/zin_ui.txt`)
+
+- **Purpose:** step 10 of the world tick: raises the panels' dirty tick (`zin_ui_tick`, country and global) and recomputes the panel of every mechanic the country plays (the Golden Court, the Hidden Council, the Presence, the Narrow Strait, the Southern Dominion and Mirolon's watch), each behind its owner's trigger. Pure formatting: it changes no mechanic variable.
+- **Scope:** a human player's country (the world tick calls it in `every_country = { limit = { is_ai = no } }`); safe from any panel.
+- **Inputs:** none.
+- **Example:** `zin_ui_refresh = yes`.

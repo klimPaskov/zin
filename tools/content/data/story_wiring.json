@@ -15,6 +15,10 @@
    "pattern": "^(common/(scripted_triggers|scripted_effects|scripted_localisation|script_constants)/zin_path\\.txt|events/zin_path\\.txt)$"
   },
   {
+   "owner": "magic and story AI",
+   "pattern": "^(events/zin_world_magic\\.txt|common/[a-z_]+/zin_(world_magic|story_ai|ui|mtth)\\.txt|common/ai_strategy/zin_path\\.txt|common/ai_strategy_plans/zin_[a-z_]+_(historical|plausible)\\.txt|interface/zz_zin_world_magic\\.gfx)$"
+  },
+  {
    "owner": "pending stand-ins",
    "pattern": "/zz_zin_pending_[a-z_]+\\.txt$"
   },

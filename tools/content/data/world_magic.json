@@ -1,0 +1,144 @@
+{
+ "source": "docs/specs/03_gameplay/04_magic_and_world_systems.md (potent magic, Varner's wards, the New Gods' restoration, dragons, the Great Wall, the Ember Lands' storms and heat; events zin_world.30 to .69); docs/lore/references/magic_and_wizards.md 4.2 and 5.2 (A Letter From Bastian, proposed). Every number is the spec's proposal unless marked; every line of text is proposed wording in the accepted voice (docs/specs/02_lore/09_voice_and_style.md). The tick runs once a week on one runner country (never per country), like the world tick.",
+ "runners": ["Aenor", "Lerendor", "Coldor", "Noris", "Stabilo", "Puvulan", "Goldoroth", "Gala", "Selen", "Worshipdom"],
+ "tickDays": 7,
+ "tickGuardDays": 5,
+ "monthWeeks": 4,
+ "dragonMountainRealm": "Yavieth",
+ "volgan": "Puvulan",
+ "netherRealm": "Nether",
+ "pool": { "start": 6 },
+ "pact": { "cost": 150, "costKeeper": 100, "keeperBond": 70, "opinion": 50, "bond": 40, "dark": 50, "max": 3, "aiDark": 75 },
+ "corrupt": { "cost": 100, "footholds": 3, "footholdsRestless": 2, "restlessBond": 30, "max": 2, "gd": 1, "footholdCost": 1 },
+ "wall": { "watchCost": 25, "watchDays": 180, "watchCooldown": 365, "unmannedRepeatDays": 90, "breachStates": 2, "breachGd": 3, "breachStabilityDays": 180, "perStateCap": 3 },
+ "storms": { "str": 0.04, "org": 0.10, "riggingShare": 0.5, "avoidValue": 200, "tech": "zin_tech_storm_rigging" },
+ "mountain": { "str": 0.05 },
+ "bastian": { "cost": 75, "days": 365, "aiBase": 2, "aiDark": 50 },
+ "ai": {
+  "pactBase": 0, "pactWar": 100, "pactDark": 100, "pactFocusWait": 365,
+  "corruptBase": 100,
+  "watchBase": 0, "watchWar": 100
+ },
+ "spirits": {
+  "zin_world_varners_wards": {
+   "name": "Varner's Wards",
+   "desc": "The old wizard spent the last of his strength on our host, and for a season the dead's cold slides off our men like rain off a good cloak. Nobody knows how long a thing like that can last, and the captains are not wasting the days asking.",
+   "picture": "ward_circle", "days": 90,
+   "modifier": { "army_org_factor": 0.10, "army_defence_factor": 0.10 }
+  },
+  "zin_world_varners_shelter": {
+   "name": "The Wizard's Shelter",
+   "desc": "Paths open where the dead had shut them, and companies that should have been cut off walk home with their wounded. Our men call it the old man's road and do not ask him for more.",
+   "picture": "lantern_chain", "days": 90,
+   "modifier": { "army_defence_factor": 0.10, "org_loss_when_moving": -0.10 }
+  },
+  "zin_world_new_gods_gift": {
+   "name": "The Gods' Gift",
+   "desc": "The heir rose from the field that should have been his grave, and the host that saw it will follow him anywhere; the peoples who only heard of it are coming to the banners anyway. Against the master of the Ember Lands every captain fights as if the twelve were watching.",
+   "picture": "new_gods_light", "days": 365,
+   "modifier": { "army_org_factor": 0.05, "war_support_factor": 0.10 },
+   "targeted": { "realm": "Puvulan", "modifier": { "attack_bonus_against": 0.25 } }
+  },
+  "zin_world_storm_coasts": {
+   "name": "Storm-Girt Coasts",
+   "desc": "Every captain who has tried our shore has learnt why the old charts mark it in red: the storms that guard it break fleets before they sight land, and what reaches the beach comes ashore half drowned.",
+   "picture": "storm_sea",
+   "modifier": { "amphibious_invasion_defence": 0.50 }
+  },
+  "zin_world_wall_repairs": {
+   "name": "Repairs on the Wall",
+   "desc": "Masons and quarrymen are up on the passes, resetting stones the frost has loosened and clearing the old watch-posts, and every carter in the marches is hauling for them at the crown's rate.",
+   "picture": "fort_wall", "days": 180,
+   "modifier": { "production_speed_bunker_factor": 0.50 }
+  },
+  "zin_world_wall_fallen": {
+   "name": "The Wall Has Fallen",
+   "desc": "Enemy banners fly over the passes of the Great Wall, and every market town in the marches knows it. People who never thought about the mountains in their lives are asking the crown's officers what else they were told was safe.",
+   "picture": "fort_wall", "days": 180,
+   "modifier": { "stability_factor": -0.05 }
+  },
+  "zin_world_bastian_counsel": {
+   "name": "Bastian's Counsel",
+   "desc": "The famous wizard has come at our call and stays for a while, as he does: he sits with our scholars in the evenings, settles quarrels in the wardens' hall with a few dry words, and refuses every office we offer him.",
+   "picture": "staff_arcane", "days": 365,
+   "modifier": { "research_speed_factor": 0.05, "stability_factor": 0.03 }
+  }
+ },
+ "heat": {
+  "zin_world_ember_lands_heat": { "name": "The Heat of the South", "picture": "sun_veiled", "modifier": { "enemy_attrition": 0.20 } },
+  "zin_world_deep_heat": { "name": "The Deep Heat", "picture": "abyss_stair", "modifier": { "enemy_attrition": 0.40 } }
+ },
+ "category": {
+  "title": "The Old Powers",
+  "desc": "Dragons, walls and wizards: the few great powers of the world that a crown can still bargain with, and the price each one asks.",
+  "art": "dragon_mountain"
+ },
+ "decisions": {
+  "zin_world_dragon_pact": {
+   "title": "The Dragon Pact",
+   "desc": "The roosts of Dragon Mountain answer only elves they know. If the keepers and the dragons will hear us, one of them may fly with our host for as long as the war lasts.",
+   "icon": "dragon_wing",
+   "costText": "150 Authority (100 for a keeper the roosts trust)"
+  },
+  "zin_world_corrupt_dragon": {
+   "title": "Bound by Corruption",
+   "desc": "Our friends among the keepers' households can open a gate at night, and a dragon that has been sick in the roosts does not always know whose voice it is obeying.",
+   "icon": "dragon_mountain"
+  },
+  "zin_world_wall_watch": {
+   "title": "The Wall Watch",
+   "desc": "Send masons and the march levies up to the passes, so the old watch-posts are manned and mended before somebody else tests them.",
+   "icon": "fort_wall"
+  },
+  "zin_world_send_for_bastian": {
+   "title": "A Letter to Bastian",
+   "desc": "Bastian keeps no tower and answers only the calls he chooses. A letter left at the right inn on the lake road usually finds him within the season, and he has never yet come for nothing.",
+   "icon": "wizard_tower"
+  }
+ },
+ "events": {
+  "40": {
+   "kind": "country", "title": "The Wards Hold", "picture": "generic_war",
+   "desc": "Our captains on the northern front send the same report from every camp: the dead came on as before, and this time the cold that goes before them broke on something nobody could see. The old wizard who rides with the heir is said to be spending himself on it, and our men are using every day of it.",
+   "options": [{ "key": "a", "text": "Then we march while it holds." }]
+  },
+  "45": {
+   "kind": "country", "title": "The Gods' Gift", "picture": "war_king", "requires": ["zin_eindil_awake"],
+   "desc": "The heir's eyes shine with lightning, and the sword of Horos burns brighter in his hand than it ever did in the guardian's. The men who carried him off the field say that he got up as a man gets up from a night's sleep and asked for his horse, and nobody in the host has yet found the courage to ask him where he has been.",
+   "options": [{ "key": "a", "text": "Then the host rides with him." }]
+  },
+  "50": {
+   "kind": "news", "title": "A Dragon Bound", "picture": "unmasking", "requires": ["zin_afrit_revealed"],
+   "desc": "A dragon of Dragon Mountain has left the roosts by night and gone east to the false god's banners. The keepers say it was sick and that strangers were seen at the gates; the elves of the woods say less, and have begun to watch their own households.",
+   "options": [{ "key": "a", "text": "A bad bargain for everyone but him." }]
+  },
+  "56": {
+   "kind": "country", "title": "The Mountain Wakes", "picture": "generic_wilds",
+   "desc": "Our garrison on the mountain sends word that the roosts are restless. Nothing has attacked, but the companies posted below the peaks have lost men to falling rock and to fires that start in dry grass with nobody near them, and the men want to be posted somewhere else.",
+   "options": [{ "key": "a", "text": "Hold the mountain all the same." }]
+  },
+  "59": {
+   "kind": "country", "title": "The Wall Unmanned", "picture": "generic_war",
+   "desc": "The wardens of the passes write that the watch-posts on the Great Wall are standing empty while our enemies camp within a day's march of them. A pass that nobody holds is a road, they remind us, and they would like to know whether the crown means to send anyone.",
+   "options": [{ "key": "a", "text": "See that the passes are held." }]
+  },
+  "60": {
+   "kind": "country", "title": "The Wall Is Breached", "picture": "generic_war",
+   "desc": "Enemy banners fly over the passes of the Great Wall. For as long as anybody can remember the mountains kept the marches safe whatever else went wrong, and the news has gone through the market towns faster than any herald could carry it.",
+   "options": [{ "key": "a", "text": "Retake the passes." }]
+  },
+  "65": {
+   "kind": "country", "title": "Storms in the South", "picture": "ember_lands_storm",
+   "desc": "Our captains have learnt what the old charts mean by the red line off the Ember Lands: the weather beyond it turns without warning, and a fleet that stays in those waters loses masts and men every week it is there. The southern sailing-masters say there is no season when it is safe, only seasons when it is worse.",
+   "options": [{ "key": "a", "text": "Keep the fleet out of those waters." }]
+  },
+  "35": {
+   "kind": "country", "title": "A Letter From Bastian", "picture": "generic_court",
+   "desc": "The answer comes back in a plain hand on cheap paper. Bastian will come, he writes, and stay a year if our scholars are worth the trouble; he wants no office, no title and no house, only a sum of money paid to the wardens' hall of his choosing and the promise that nobody will ask him to stand behind the throne at feasts.",
+   "options": [
+    { "key": "a", "text": "Pay the wardens' hall and make him welcome." },
+    { "key": "b", "text": "We cannot spare it this year." }
+   ]
+  }
+ }
+}

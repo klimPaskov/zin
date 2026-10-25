@@ -53,6 +53,7 @@ function branchTriggers(rule, power, options, branch) {
     const viaDefault = paths.length ? `\n\t\tAND = {\n\t\t\t${ruleTest(rule, 'DEFAULT')}\n\t\t\t${paths.length === 1 ? ruleTest('zin_rule_historical_path', paths[0]) : `OR = { ${paths.map(p => ruleTest('zin_rule_historical_path', p)).join(' ')} }`}\n\t\t}` : '';
     out.push(`# ${rule} forces ${option}${paths.length ? `, or it is DEFAULT and the path rule is ${paths.join(' or ')}` : ''}. RANDOM makes it false.\nzin_rules_ai_branch_${power}_${option.toLowerCase()} = {\n\tOR = {\n\t\t${ruleTest(rule, option)}${viaDefault}\n\t}\n}`);
   }
+  out.push(`# ${rule} is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).\nzin_rules_ai_default_${power} = {\n\t${ruleTest(rule, 'DEFAULT')}\n}`);
   if (options.includes('RANDOM')) out.push(`# ${rule} is RANDOM: its owner draws once at the start and reads the draw.\nzin_rules_ai_random_${power} = {\n\t${ruleTest(rule, 'RANDOM')}\n}`);
   return out;
 }

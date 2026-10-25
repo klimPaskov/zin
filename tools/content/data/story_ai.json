@@ -1,0 +1,81 @@
+{
+ "source": "docs/specs/03_gameplay/06_historical_path_and_ai.md (How the AI follows or diverges; AI strategy plans; war direction; peace) and docs/specs/03_gameplay/05_world_tension_and_endings.md (AI: the tier rules of the Gathering Dark; the world tick's step 10). The focus order of each plan is derived from the tree's own historical marks (docs/design/focus/<tree>.json); the research and law weights below are proposed. Each tree names the power whose per-power rule decides it: 'branch' is the rule wrapper that already folds DEFAULT under the historical path into the historical branch, 'default' a per-power rule without a historical branch (the plan then needs that rule at DEFAULT), 'dark' the dark powers' appointed route, and 'none' the path rule alone. A power whose owner maps PLAUSIBLE to its free branch (R6: the owner wins) gets no plausible plan.",
+ "planWeight": 2,
+ "plausible": { "favour": 3, "drift": 1.5, "driftAt": 50 },
+ "shares": { "historical": 100, "plausible": 75, "plausibleDrift": 60, "free": 50 },
+ "focusFavour": { "historical": 10, "plausible": 3, "plausibleDrift": 1.5, "free": 1 },
+ "storyMeanTime": 365,
+ "trees": {
+  "aenor": { "realm": "Aenor", "rule": { "kind": "default", "power": "aenor" },
+   "research": { "zin_cat_walls": 1.3, "zin_cat_scholarship": 1.2, "zin_cat_galleys": 1.1 },
+   "ideas": { "civilian_economy": 20, "volunteer_only": 10, "free_trade": 15 } },
+  "lerendor": { "realm": "Lerendor", "rule": { "kind": "branch", "power": "leren", "historical": "zin_rules_ai_branch_leren_historical" },
+   "research": { "zin_cat_warships": 1.4, "zin_cat_galleys": 1.3, "zin_cat_beacons": 1.2 },
+   "ideas": { "export_focus": 15, "partial_economic_mobilisation": 10 } },
+  "volgan": { "realm": "Puvulan", "rule": { "kind": "dark" },
+   "research": { "zin_cat_dark_rites": 1.8, "zin_cat_siege": 1.3, "zin_cat_camp": 1.2 },
+   "ideas": { "war_economy": 20, "extensive_conscription": 15, "closed_economy": 10 } },
+  "zol": { "realm": "Zol's Mistake", "rule": { "kind": "dark" },
+   "research": { "zin_cat_dark_rites": 2.0 },
+   "ideas": { "war_economy": 20, "service_by_requirement": 15 } },
+  "worshipdom": { "realm": "Worshipdom", "rule": { "kind": "branch", "power": "afrit", "historical": "zin_rules_ai_branch_afrit_historical", "plausibleIsFree": true },
+   "research": { "zin_cat_scholarship": 1.4, "zin_cat_wards": 1.2 },
+   "ideas": { "civilian_economy": 15, "volunteer_only": 15 } },
+  "magical_forest": { "realm": "Magical Forest", "rule": { "kind": "default", "power": "elves" },
+   "research": { "zin_cat_bows": 1.4, "zin_cat_wards": 1.3, "zin_cat_skies": 1.2 },
+   "ideas": { "civilian_economy": 10, "limited_conscription": 10 } },
+  "gala": { "realm": "Gala", "rule": { "kind": "none" },
+   "research": { "zin_cat_wards": 1.4, "zin_cat_scholarship": 1.3 },
+   "ideas": { "civilian_economy": 20, "volunteer_only": 15 } },
+  "coldor": { "realm": "Coldor", "rule": { "kind": "branch", "power": "cold", "historical": "zin_rules_ai_branch_cold_historical", "plausibleIsFree": true },
+   "research": { "zin_cat_mounts": 1.3, "zin_cat_walls": 1.2, "zin_cat_arms": 1.1 },
+   "ideas": { "low_economic_mobilisation": 10, "limited_conscription": 10 } },
+  "noris": { "realm": "Noris", "rule": { "kind": "default", "power": "east" },
+   "research": { "zin_cat_mounts": 1.3, "zin_cat_arms": 1.2, "zin_cat_granaries": 1.1 },
+   "ideas": { "partial_economic_mobilisation": 10, "limited_conscription": 10 } },
+  "stabilo": { "realm": "Stabilo", "rule": { "kind": "default", "power": "east" },
+   "research": { "zin_cat_siege": 1.3, "zin_cat_arms": 1.2, "zin_cat_essence_craft": 1.1 },
+   "ideas": { "partial_economic_mobilisation": 10, "limited_conscription": 10 } },
+  "gunwaith": { "realm": "Gunwyn", "rule": { "kind": "branch", "power": "west", "historical": "zin_rules_ai_branch_west_historical" },
+   "research": { "zin_cat_galleys": 1.3, "zin_cat_arms": 1.2, "zin_cat_kin": 1.1 },
+   "ideas": { "partial_economic_mobilisation": 15, "limited_conscription": 10 } },
+  "goldoroth": { "realm": "Goldoroth", "rule": { "kind": "branch", "power": "goldoroth", "historical": "zin_rules_ai_branch_goldoroth_independent", "needsHistoricalPath": true },
+   "research": { "zin_cat_arms": 1.3, "zin_cat_kin": 1.3, "zin_cat_siege": 1.1 },
+   "ideas": { "war_economy": 10, "extensive_conscription": 15 } },
+  "mirolon": { "realm": "Mirolon", "rule": { "kind": "none" },
+   "research": { "zin_cat_walls": 1.5, "zin_cat_arms": 1.2 },
+   "ideas": { "partial_economic_mobilisation": 15, "limited_conscription": 15 } }
+ },
+ "historicalChecks": {
+  "true": ["zin_rules_is_historical", "zin_cold_historical", "zin_west_historical", "zin_eindil_historical", "zin_zol_ai_route_appointed", "zin_zol_ai_keeps_history", "zin_rules_ai_branch_goldoroth_independent"],
+  "truePattern": "^zin_rules_ai_branch_[a-z]+_historical$"
+ },
+ "tiers": {
+  "peaceAt": 25, "prepareForWar": -50,
+  "fortsAt": 50, "fortBuilding": "bunker", "fortWeight": 50
+ },
+ "greyFord": { "realms": ["Gunwyn", "Girdon"], "conquer": -1000 },
+ "parim": { "afritConquer": 150, "holders": ["Aenor", "Gunwyn", "Girdon", "Selen", "Kingson", "Herez", "Puvulan"] },
+ "uiRefresh": [
+  { "effect": "zin_aenor_ui_refresh", "when": "zin_aenor_is_realm" },
+  { "effect": "zin_afrit_ui_refresh", "when": "zin_afrit_is_hub" },
+  { "effect": "zin_zol_ui_refresh", "when": "zin_is_zol" },
+  { "effect": "zin_leren_ui_refresh", "when": "zin_is_lerendor" },
+  { "effect": "zin_dominion_ui_refresh_volgan", "when": "zin_is_volgan" },
+  { "effect": "zin_dominion_ui_refresh_mirolon", "when": "zin_is_mirolon" }
+ ],
+ "widget": {
+  "note": "The native world tension widget (topbar threat button and value, the world_tension_popup window) relabelled as the Gathering Dark (docs/specs/07_interface/01_interface.md; spec 05 'Replacing world tension'). Every value keeps its vanilla key's placeholders, colour and icon codes. The exact meter, its tier and its sources are the Aoaz bar's (interface owner); the native widget shows the engine tension that follows the meter. The two column labels of the popup (WORLD_TENSION_NAME, WORLD_TENSION_WARS) are short because its sort buttons are 100 pixels wide: the MCP render wrapped The Gathering Dark and Wars of the Living onto two lines.",
+  "labels": {
+   "WORLD_TENSION_NAME": "Gathering Dark",
+   "THREAT_WINDOW_NAME": "The Gathering Dark",
+   "THREAT_TOOLTIP": "§HThe Gathering Dark\n§! The courts' alarm stands at $VAL|1%H$",
+   "SORT_BY_TENSION": "Order by the dark each deed added",
+   "WORLD_TENSION_WARS": "Wars Waged",
+   "HINT_WORLD_TENSION": "Hint: The Gathering Dark",
+   "BUTTON_HINT_WORLD_TENSION": "Read what the scribes say of §HThe Gathering Dark§!",
+   "HINT_WORLD_TENSION_TEXT": "This is the £world_tension_icon  §YGathering Dark§! of the age, where every deed that frightens the courts of Aoaz is written down: wars declared, crowns taken, realms swallowed and the stranger things the old powers do.\n\nWhile the dark is thin, most realms may not move against a neighbour without a §Ygood cause§!, and those who break the peace are punished for it; as it deepens, leagues gather, causes come easily and old refusals give way.\n\nCrowns raise it by war and conquest and by some of their §Ychosen courses§!, and a long peace lowers it again.\n\nThe deeper it runs, the nearer the age comes to the War of the Last Crowns.",
+   "HINT_WORLD_TENSION_TEXT_2": "The £world_tension_icon  §YGathering Dark§! is how frightened the courts of Aoaz have become, and the clerks who keep the rolls watch it more closely than the price of bread.\n\nWhile the dark is thin, most realms may not move against a neighbour without a §Ygood cause§!; as it deepens, leagues gather, causes come easily and old refusals give way.\n\nCrowns raise it by war and conquest and by some of their §Ychosen courses§!, and a long peace lowers it again.\n\nThe deeper it runs, the nearer the age comes to the War of the Last Crowns."
+  }
+ }
+}

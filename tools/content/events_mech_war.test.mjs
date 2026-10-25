@@ -56,7 +56,7 @@ test('SL-28 (war side): every zin_mistake, zin_dominion, zin_leren and zin_sun e
   const missing = [...fired].filter(id => !defined.has(id)).sort();
   assert.deepEqual(missing, []);
   for (const id of ['zin_mistake.2', 'zin_mistake.10', 'zin_mistake.11', 'zin_mistake.20', 'zin_mistake.21', 'zin_mistake.22', 'zin_mistake.24', 'zin_mistake.25', 'zin_dominion.13', 'zin_dominion.14', 'zin_dominion.19', 'zin_leren.30', 'zin_leren.35', 'zin_leren.36', 'zin_sun.40', 'zin_sun.42']) assert(fired.has(id), `${id} is fired by its slice`);
-  assert.equal(war.counts.events, 52);
+  assert.equal(war.counts.events, 51);
   assert.deepEqual(new Set(war.definitions.events).size, war.definitions.events.length, 'no id twice');
 });
 
@@ -193,7 +193,7 @@ test('Every picture of the war events is a catalog picture with the right crop a
 
 // The story events the other slices fire and left to the events engineers (SL-28, the story wiring check): the elves, the eastern kings,
 // the Dark Lands, the Lost Cause and the Refusal, and the Gods' Gift (data/events_mech_elves.json, _east, _dark, _diplo, _world).
-test('SL-28 (other slices): every zin_elves, zin_east, zin_dark and zin_diplo event the elves, eastern and Dark Lands slices fire is defined, and zin_world.45', async () => {
+test('SL-28 (other slices): every zin_elves, zin_east, zin_dark and zin_diplo event the elves, eastern and Dark Lands slices fire is defined', async () => {
   const { buildElves } = await import('./modules/mech_elves.mjs');
   const { buildMechEast } = await import('./modules/mech_east.mjs');
   const { buildMechDark } = await import('./modules/mech_dark.mjs');
@@ -207,7 +207,7 @@ test('SL-28 (other slices): every zin_elves, zin_east, zin_dark and zin_diplo ev
   const here = new Set(war.definitions.events);
   const missing = [...fired].filter(id => !definedThere.has(id) && !here.has(id)).sort();
   assert.deepEqual(missing, []);
-  const ids = ['zin_elves.9', 'zin_elves.51', 'zin_elves.70', 'zin_elves.71', 'zin_east.41', 'zin_east.42', 'zin_east.43', 'zin_east.44', 'zin_east.45', 'zin_east.46', 'zin_east.50', 'zin_east.51', 'zin_east.52', 'zin_east.60', 'zin_dark.80', 'zin_dark.82', 'zin_diplo.23', 'zin_diplo.31', 'zin_world.45'];
+  const ids = ['zin_elves.9', 'zin_elves.51', 'zin_elves.70', 'zin_elves.71', 'zin_east.41', 'zin_east.42', 'zin_east.43', 'zin_east.44', 'zin_east.45', 'zin_east.46', 'zin_east.50', 'zin_east.51', 'zin_east.52', 'zin_east.60', 'zin_dark.80', 'zin_dark.82', 'zin_diplo.23', 'zin_diplo.31'];
   for (const id of ids) { assert(here.has(id), `${id} is written here`); assert(!definedThere.has(id), `${id} is not defined twice`); }
   // The options call the slices' own effects.
   assert(block('zin_east.41').includes('zin_east_form_coalition = yes'));

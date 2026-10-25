@@ -4138,6 +4138,20 @@
    "status": "implemented 25 October 2026."
   },
   {
+   "kind": "Module",
+   "target": "`tools/content/modules/story_ai.mjs` (new) and `data/story_ai.json`",
+   "content": "The AI of 06_historical_path_and_ai.md: one historical plan per tier A tree (the historical branch's focus order from the tree's own marks, research, laws) and, unless the owner maps PLAUSIBLE to its free branch, two plausible plans (x3, then x1.5 at divergence 50), through the rule wrappers (`zin_rules_ai_branch_*`, the new `zin_rules_ai_default_<power>`); `common/ai_strategy/zin_path.txt` (tier 1 `prepare_for_war` -50 toward every realm without a cause, forts beside a dark power from tier 3, the Grey Ford border war, the march on Parim); the paced `common/mtth/zin_mtth.txt`; `zin_story_ai_month` (the peace after Afrit's death); `zin_ui_refresh` (tick step 10); the world tension widget relabelled",
+   "fixes": "05 and 06 AI rows; tick step 10",
+   "status": "implemented 25 October 2026 (story AI and magic pass; handoff docs/plans/story/ai_magic_handoff.md)."
+  },
+  {
+   "kind": "Module",
+   "target": "`tools/content/modules/world_magic.mjs` (new), `data/world_magic.json`, `data/storm_seas.json` (from `write_storm_seas.mjs`)",
+   "content": "04_magic_and_world_systems.md: potent magic, Varner's wards and the Gods' Gift (once each), the dragon pool, the Dragon Pact and Bound by Corruption, the Mountain Wakes, the Wall Watch, Unmanned and Breached, the storm belt, Storm-Girt Coasts and the heat, events `zin_world.30` to `.65` in `events/zin_world_magic.txt` (`zin_world.45` moved from the war events), the weekly magic tick on one runner, A Letter to Bastian (proposed)",
+   "fixes": "04 spec (the magic module; the interventions' stand-ins)",
+   "status": "implemented 25 October 2026 (story AI and magic pass; handoff docs/plans/story/ai_magic_handoff.md)."
+  },
+  {
    "kind": "Fix",
    "target": "`tools/content/modules/mech_eindil_scripts.mjs`",
    "content": "`zin_eindil_ready_11` uses the trigger; `zin_eindil_ready_12` reduced-Afrit gate; battle deadline; `zin_eindil_lose_heir` calls `zin_ending_heir_lost`; global reads of the focus country flags; `zin_eindil.170`",

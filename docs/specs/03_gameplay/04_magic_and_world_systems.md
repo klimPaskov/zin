@@ -157,6 +157,8 @@ The Zol spec owns Zol's power, convergence, rising, manifestation (`zin_zol_mani
 
 Nothing of this spec is in the game. `events/zin_world.txt` holds one hidden interim event (`zin_world.1`, vanilla removal stub); this spec's ids 30–69 and the tension spec's ids replace it in the same file.
 
+**Status (25 October 2026, story AI and magic pass):** built by `tools/content/modules/world_magic.mjs` from `data/world_magic.json` and `data/storm_seas.json` (handoff `docs/plans/story/ai_magic_handoff.md`). Differences from the table below, each recorded there: the events are in their own file `events/zin_world_magic.txt` (convention C6: one namespace may span files, one module per file); the weekly pulses run on one self-scheduling runner (`zin_world.30`), not an every-country `on_weekly`; the AI weights are inline `ai_will_do` blocks, not an MTTH file; Dragon Mountain is the roster's capital state of Yavieth until the key-sites table lands; the elves' hook `zin_elves_on_dragon_corrupted` is called by the decision rather than by the news event's immediate block; warfare's `zin_war.2` is not fired (it does not exist yet). The Wall's rules wait for the key-sites trigger `zin_is_site_great_wall` (an inert stand-in today); the Abyss is the state whose history file is named for it, as the key-sites table reads it today.
+
 ### Builder module and data
 
 A new content-builder module, `tools/content/modules/world_magic.mjs`, writes every file below. It runs after the warfare module (it names warfare's equipment and technologies) and shares `events/zin_world.txt` with the tension module (`world_tension.mjs`), which writes the namespace header; each module writes only its own id range.

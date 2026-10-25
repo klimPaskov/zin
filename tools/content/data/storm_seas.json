@@ -1,0 +1,42 @@
+{
+ "schema": 1,
+ "owner": "tools/content/write_storm_seas.mjs; regenerate with node tools/content/write_storm_seas.mjs, never by hand",
+ "note": "The storm belt of the Ember Lands: the sea strategic regions that hold a sea province touching a land province of an Ember Lands realm's state (data/world/state_assignment.json). Source: history/states, map/definition.csv, map/provinces.bmp, map/strategicregions. A map change that moves the belt fails world_magic.test.mjs until this file is regenerated and reviewed.",
+ "seas": [
+  248,
+  252
+ ],
+ "coastSeaProvinces": 20,
+ "emberStates": [
+  75,
+  76,
+  77,
+  143,
+  270,
+  296,
+  297,
+  298,
+  299,
+  300,
+  307,
+  308,
+  309,
+  320,
+  328,
+  411,
+  809,
+  813,
+  814,
+  815,
+  999,
+  1000,
+  1001,
+  1002,
+  1003,
+  1008,
+  1036,
+  1037,
+  1038,
+  1040
+ ]
+}

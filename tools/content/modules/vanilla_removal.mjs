@@ -285,7 +285,8 @@ function buildCollections(staged, loc) {
   loc.text.ZIN_COLLECTION_COUNTRY_AND_ALL_SUBJECTS = 'The Realm and Its Vassals';
   loc.text.ZIN_COLLECTION_FACTION_MEMBERS = 'The League';
   staged.text('common/collections/zin_generic_collections.txt', `${HEADER}\n# Generic collections the engine names.\ncountry_and_all_subjects = {\n\tinput = game:scope\n\toperators = { country_and_all_subjects }\n\tname = ZIN_COLLECTION_COUNTRY_AND_ALL_SUBJECTS\n}\nfaction_members = {\n\tinput = game:scope\n\toperators = { faction_members }\n\tname = ZIN_COLLECTION_FACTION_MEMBERS\n}\n`);
-  staged.text('common/mtth/zin_mtth.txt', `${HEADER}\n# Story mean times (historical-path spec). Read as mtth:<name>.\nzin_story_mean_time = {\n\tbase = 365\n}\n`);
+  // The story AI module (modules/story_ai.mjs) writes the paced story mean times; this stub stands in only when it has not run.
+  if (!staged.files.has('common/mtth/zin_mtth.txt')) staged.text('common/mtth/zin_mtth.txt', `${HEADER}\n# Story mean times (historical-path spec). Read as mtth:<name>.\nzin_story_mean_time = {\n\tbase = 365\n}\n`);
 }
 
 // One theater per Aoaz region: a strategic region joins the region (country table scan) that owns most of its

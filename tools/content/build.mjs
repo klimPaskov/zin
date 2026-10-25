@@ -39,6 +39,8 @@ import { buildEventsCrown } from './modules/events_crown.mjs';
 import { buildEventsWorld } from './modules/events_world.mjs';
 import { buildWorldTension } from './modules/world_tension.mjs';
 import { buildHistoricalPath } from './modules/historical_path.mjs';
+import { buildStoryAi } from './modules/story_ai.mjs';
+import { buildWorldMagic } from './modules/world_magic.mjs';
 import { storyWiring, summariseStoryWiring, assertStoryWiring } from './checks/story_wiring.mjs';
 import { buildAenor } from './modules/mech_aenor.mjs';
 import { buildAfrit } from './modules/mech_afrit.mjs';
@@ -174,6 +176,11 @@ const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign',
 // The story framework (docs/design/alternate_history.md): the Gathering Dark, the War of the Last Crowns, the endings and the world tick
 // (world_tension.mjs), then the checkpoints, the measure and the roles (historical_path.mjs). After the mechanic slices, the rules and the
 // world and crown events, whose flags, triggers and effects they read and call.
+// The story AI (strategy plans, the tier rules, the paced MTTH, the interface refresh of the tick's step 10) and the world layer of magic
+// (potent magic, the interventions, dragons, the Wall, the storms, the weekly magic tick): before the world tension module, whose tick calls
+// zin_ui_refresh once it is staged.
+const storyAi = await buildStoryAi(staged, { countries });
+const worldMagic = await buildWorldMagic(staged, { countries });
 const worldTension = await buildWorldTension(staged, { countries });
 const historicalPath = await buildHistoricalPath(staged, { countries });
 // The narrative events the mechanic slices fire and no module wrote (events_mech.mjs, SL-28): after every other event module, whose
@@ -284,4 +291,4 @@ assertEngineForms(engineForms);
 const assets = await buildAssets(staged);
 await staged.write(out);
 const counts = {}; for (const rel of staged.files.keys()) { const top = rel.split('/').slice(0, 2).join('/'); counts[top] = (counts[top] ?? 0) + 1; }
-console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, cultures: cultures.counts, warfare, forces, pendingStandIns: pendingCounts, rules: rules.counts, world, mechanics: { aenor: mechAenor.counts, afrit: mechAfrit.counts, zol: mechZol.counts, glo: mechGlo.counts, eindil: mechEindil.counts, west: mechWest.counts, elves: powersElves.counts, lerendor: powersLeren.counts, volgan: powersVolgan.counts, cold: mechCold.counts, dark: mechDark.counts, east: mechEast.counts, sun: mechSun.counts }, crown: crown.counts, story: { world: worldTension.counts, path: historicalPath.counts, wiring: storyWiringCounts }, tags: tagCheck.stats, characters: characters.counts, countryPackage, flags: { kept: flags.kept.length, none: flags.none.map(f => f.tag) }, decisionsRegional, focusMajorC, focusSharedB, diplomacy: diplomacy.counts, technologies, economy, institutions, textSweep, textScan: textScan.counts, ui: { ...ui.counts, checks: uiReport.checks.map(c => `${c.id}:${c.status}`) }, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));
+console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, cultures: cultures.counts, warfare, forces, pendingStandIns: pendingCounts, rules: rules.counts, world, mechanics: { aenor: mechAenor.counts, afrit: mechAfrit.counts, zol: mechZol.counts, glo: mechGlo.counts, eindil: mechEindil.counts, west: mechWest.counts, elves: powersElves.counts, lerendor: powersLeren.counts, volgan: powersVolgan.counts, cold: mechCold.counts, dark: mechDark.counts, east: mechEast.counts, sun: mechSun.counts }, crown: crown.counts, story: { world: worldTension.counts, path: historicalPath.counts, ai: storyAi.counts, magic: worldMagic.counts, wiring: storyWiringCounts }, tags: tagCheck.stats, characters: characters.counts, countryPackage, flags: { kept: flags.kept.length, none: flags.none.map(f => f.tag) }, decisionsRegional, focusMajorC, focusSharedB, diplomacy: diplomacy.counts, technologies, economy, institutions, textSweep, textScan: textScan.counts, ui: { ...ui.counts, checks: uiReport.checks.map(c => `${c.id}:${c.status}`) }, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));
