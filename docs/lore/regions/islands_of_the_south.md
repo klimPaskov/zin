@@ -206,6 +206,21 @@ The generated capitals of the current roster (Torsain, Yumhuy, Yonhuy, Jinsain, 
 5. **The Light Forests of Yang.** The drawing puts them on neighbouring land at the top edge of the sheet; the model puts them on Howan [NT; GM forest_yang]. Where are they?
 6. **Leaders named after islands.** Earlier specs name the rulers Speaker Tich Howa (Howan's River Tich), Elder Ancha (Nara's island Ancha), Chief Lua Verd (the islet Lua and Verde) and Priest-Elder Enhis [Characters spec]. May they get personal names from Yonic stems instead?
 
+## Roots and signs (proposed, K67)
+
+Written for the owner's decision K67 (25 October 2026): every realm carries the ancient history that built its culture and the sign born of it, so that its banner is its own sign and carries its own story. The full texts are the `roots` and `sign` of each realm in [islands_of_the_south.json](../../../tools/content/data/world/history/islands_of_the_south.json), the vault note is [Roots of the Islands of the South](../vault/07%20-%20History/Roots%20of%20the%20Islands%20of%20the%20South.md), and the focus-branch, identity and event proposals are in [realm_roots/islands_of_the_south.md](../../specs/02_lore/realm_roots/islands_of_the_south.md). Everything in this section is **P**; the open points stay open and are listed in the vault note.
+
+| Realm | Root | Sign (the flag device) | Label |
+| --- | --- | --- | --- |
+| **Enhis Is Rond** | The first canoes counted their dead as waves on the reef; when the Rising Tide of 2A 40 drowned the shrine, Nuoyo nau Enhis dived to it with a holed stone and came up alive. | A round grey diving stone with a hole through it, hung on a looped cord, on lagoon turquoise. | P |
+| **Howan** | The terrace families build roofs swept up like canoe prows so the ancestors know them from the sea; after the Fever Years Maiyan's house for the shipwrecked kept the guest-right alive. | A house on stilts with a saddle-backed roof whose two ends sweep up like canoe prows, in rice-straw gold on deep terrace green. | P |
+| **Verde** | The timber clans ask every tree before they fell it, learned the stars from the trees, and keep the mangroves under the chief's law. | A mangrove tree standing on its arched stilt-roots, in leaf green and root brown on sea blue. | P |
+| **Nara** | The reef took the first canoes that fished it by night; the survivors of 1A 800 drove their night torches head down into the sand, the elders call the boats in at dusk with a conch, and nobody crosses the reef after dark. | A fishing torch turned head downward and unlit, in torch-wood brown on dusk violet. | P |
+| **Yongyong** | Every Yong village descends from Yong, weaver of the first cane fish-trap; the ring-council settles a disputed reach by whose trap catches more. | A woven cane fish-trap, long and conical, with its mouth upward, in cane gold on lagoon green. | P |
+| **Kamu Lamo** | The first comers blew red ochre over their hands on the deepest cave wall before the first wave of the tally was carved. | A left hand with its fingers spread, left the dark colour of the rock inside a ragged cloud of blown red ochre, on cave black. | P |
+| **Kea** | The first terrace families brought a wooden divider that splits one stream into two equal streams, and no island lets another go hungry. | A forked water-channel splitting one stream into two equal streams, in water silver on terrace brown. | P |
+| **Sidea** | The islet families called across the channels with hollowed slit-drums, and the drummers made the first elder. | An upright slit-drum hollowed from a log, its long slit facing outward, in drum-wood brown on storm grey. | P |
+
 ## 14. Sources
 
 - **[OD]** owner decisions of 24 October 2026, relayed by the coordinator (renaming of ill-fitting labels; direct replacement of borrowed names; no exact ages; the twelve main and the lesser New Gods).

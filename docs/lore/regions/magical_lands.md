@@ -189,6 +189,28 @@ People live along the Elwen, in the forest clearings, the Teste Vale and the qua
 
 **Where history can diverge (L3).** The elves can keep the Refusal, set it aside and march, or close the passes and hide the woods ([FT] `magical_forest` summary); the eastern coalition can be stopped at the Rift Narrows by Luv-zhise and Lccimio; the dragons can be corrupted, freed or bound by pact; the Worshipdom can be exposed early.
 
+## Roots and signs
+
+**Status:** proposed (decision K67, 25 October 2026); every item is **P** unless marked. The full roots, the signs' origins and the hooks for play are in [realm_roots/magical_lands.md](../../specs/02_lore/realm_roots/magical_lands.md), the data in the `roots` and `sign` fields of `tools/content/data/world/history/magical_lands.json`, and the lore note in the vault at [Roots of the Magical Lands](../vault/07%20-%20History/Roots%20of%20the%20Magical%20Lands.md).
+
+Each realm's sign comes from the one deed, gift, loss or oath that made its law, because the Magical Lands were never conquered (E) and their roots are those of small communities rather than of empires.
+
+| Realm | Root (P) | Sign (P) | Customs that come from it (P) |
+| --- | --- | --- | --- |
+| Magical Forest | The First Listening, long before Aen: feuding houses met under the oldest Singing Grove to fight and stayed to listen; a house speaks only while it holds a bough the grove let fall | **The Speaking Bough**: a fallen bough laid level, mist grey on deep wood green | the vote and the book of precedents; fallen wood only; the boughs of the felled northern wood heaped behind the council-hall (3A 802) |
+| Herrodon | The White Winter, long before Aen: a herd-keeper followed an owl to the hollow that became Verozo and brought the buried houses in; she was acclaimed the First Queen | **The Hall-Owl**: a white owl with raised wings on night slate | acclamation, not blood; no one of the hills left in the snow; the summons home of 2A 3; the empty seat; the protection of Teste |
+| Andos Enda | The Year of the Broken Weirs (1A 476): a drought, broken weirs and the drowned children of Ilawen; Enlire held the first Water-Court in her boat on open water | **The Court-Boat**: an empty lake-boat with a curled prow, water silver on lake teal | the court afloat; the Speaker owns no land; one night's shelter and on at dawn |
+| Nolorim | The Cracked Horn (1A 1150): the herders of the heights, Mirolon's neighbours, blew their great horn until it split, too late to save the shore | **The Cracked Horn**: a war-horn with a split bell, dawn silver on pass grey-green | one family to one post; the unbroken lake watch; a late warning never forgiven |
+| Lccimio | The Seed Pledge, long before Aen: guest-names and orchard seed exchanged with eastern friends, sealed in jars when the neck broke, planted in 4A 610 | **The Pledge-Tree**: a fruit tree in white blossom, quay silver on rift teal | the foreign-sounding guest-names; the quay-book; the Elder's tree of the seed-line |
+| Eldafaen | The Spears Laid Down (2A 9): the house of witnesses at the road's end broke the spears of the Ember Lands' fallen across the treaty-stone and wrote the names | **The Broken Spears**: a spear in two halves laid apart, quay silver on night sea | names before spears; the spring reading at the road's end; the right to refuse any reader |
+| Yavieth | The First Scale, long before Aen: a dragon spared elves under the spurs and left a scale it would not take back | **The First Scale**: a shed scale above the three spurs, keeper silver on slope green (never the dragon) | no ruler but the eldest who climbs; shed scale only; the keepers' word |
+| Teste | The Swallows at Dusk (3A 150): Halvar's families, sent on at dawn, followed swallows down into the empty vale with seed-grain in their hoods | **The Dusk Swallow**: a diving swallow, straw on vale green | the gate shut at dawn and opened at dusk; the hood-seed sown first; no nest pulled down |
+| Luv-zhise | The ferries over the drowned road, long before Aen: the boat-families of the broken city on the neck stayed on the water between its halves | **The Western Gate**: a half arch broken at its crown, quay ochre on narrows teal | the pillar-marks; the Quay-Master sworn under the gate; the fare not taken |
+| Mushroom Forest | As others saw it: the belt stood when the neck broke, grew over the drowned city's western half and rotted the Black Roots (3A 820) | **The Bale-Mark**: a pale cap on a black severed root, the mark on every mycid bale since 4A 388 | nothing is written of the mycids' own customs (O) |
+| Worshipdom | Public story: the wells of an old eastern road in the Zilin valleys, and the famine winter of 4A 1523 when the hermit gave bread before he asked a name | **The Hermit's Loaf**: a hand offering a round loaf, bread brown on hostel white | feed and doctor the guest before asking who he is; no living tree cut; the oven lit on feast days |
+
+The guards of the heraldry spec (sections 1.4 and 1.5) hold: no god's device, no sun for an elven house, no dragon on Yavieth's banner, nothing of the hidden layer in the Worshipdom's, and nothing invented about the mycids' rule.
+
 ## 8. Neighbours and relations
 
 | Neighbour | Relation | Why |

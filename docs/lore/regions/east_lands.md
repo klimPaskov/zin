@@ -271,6 +271,31 @@ The East is deliberately not one kind of state (P):
 | Mushroom Seas, Reeto Seas | two names, plural | **the Reeto Sea** | drawn |
 | Delbiz Grasslands (country) | a landscape as a realm name | **Delbiz** | drawn |
 
+## Roots and signs (proposed, K67)
+
+Written for the owner's decision K67 (25 October 2026): every realm carries the ancient history that built its culture and the sign born of it, so that its banner is its own sign and carries its own story. The full texts are the `roots` and `sign` of each realm in [east_lands.json](../../../tools/content/data/world/history/east_lands.json), the vault note is [Roots of the East Lands](../vault/07%20-%20History/Roots%20of%20the%20East%20Lands.md), and the focus-branch, identity and event proposals are in [realm_roots/east_lands.md](../../specs/02_lore/realm_roots/east_lands.md). Everything in this section is **P**; the open points stay open and are listed in the vault note.
+
+| Realm | Root | Sign (the flag device) | Label |
+| --- | --- | --- | --- |
+| **Noris** | The desert tribes were the Bridge Kingdom's drovers and the Kalioth's water-bearers; after Dardan they broke the iron lids of the wells and swore that water would never belong to one man. | An upright rider's lance with a round water-gourd hung by its cord beneath the blade, in well white on deep indigo. | P |
+| **Stabilo** | The bronze towns kept the King's Measure of the Bridge Road, a bronze ox, and sent the Kalioth kings a false ox of lead. | A crouching bronze ox with a lifting ring on its back, in bronze gold on deep green. | P |
+| **Alerhia** | After the Breaking the valley raised a stair above the flood and crowned the man who carried the first stone; its scribes keep the empty line of the old title. | A white stair of five steps climbing from the lower hoist toward the upper fly, with a narrow river-king's crown resting on the top step, on river blue. | P |
+| **Naamis** | The harbours gave Volgan ships and none came back; the harbour-mothers rebuilt and swore that no fleet would sail for a foreign lord on a man's word. | A ship with a prow at both ends, both stems curling up alike, without mast or sail, in sea white on deep slate. | P |
+| **Drak** | The forge-houses descend from Kalioth slave-smiths who broke their collars after Dardan and swore never to wear a master's iron. | An open iron collar broken at its hinge, in red-hot orange on black. | P |
+| **Rhachia** | Mothers who lived through the ash of the Rhachia Fires in the caves fired the first clay figures of their dead and founded the kilns. | A seated mother-figure of fired clay, wide-hipped and armless, in kiln red on ash white. | P |
+| **Erco** | The mine-lords of 2A 12 walled up the last Kalioth king's diadem, neither wearing nor melting it. | A black iron diadem of seven points turned upside down, its points downward, on stone grey. | P |
+| **Plutondo** | The valley ploughed the vents' ash, was the Kalioth's granary, chipped its own ploughshares from vent-glass and turned its barges to the besiegers in 2A 12. | A black glass ploughshare, point downward, edged in ember red, on ash grey. | P |
+| **Ostoroth** | The cedar-folk cut the cedar the bridge carried west; the lake-readers' floating lantern made the king in 3A 515. | A closed cedar lantern with a peaked roof and four pale panes, hung from a ring, in lantern gold on deep pine green. | P |
+| **Mora** | The lake-folk stayed when the lake turned hot in the Breaking and lived on the steam-eels; they sing low so as not to wake the lake, and bought their freedom with three harvests. | A white steam-eel rising in an S-curve with its head raised, on deep lake teal. | P |
+| **Delbiz** | The horse-lords keep the eastern half of Qadurum and the Gate-Horses said to descend from the last horses over the bridge. | A broken column whose capital is a horse's head, in pillar white on grass green. | P |
+| **Kersian** | Aenoran exiles poured the Vale's water into Osrale's cistern and swore to carry it home. | A tall two-handled water jar with its mouth sealed, in Vale blue on cistern white. | P |
+| **Mostok** | The junction was the Kalioth's Knife-Ground; the weighers tied every blade into its sheath at the gate. | A sheathed sword with its hilt upward, the hilt bound to the sheath with a white cord, on caravan red. | P |
+| **Azano** | The Azani were Kalioth tally-lords; the last king died owing them. | Two halves of a split tally-stick side by side, notched along their edges, in bronze gold on dark wine red. | P |
+| **Obmi** | The jungle edge was the Kalioth fever road; the hornbill led the town upslope in the fever of 4A 1319. | A black hornbill with a great curved casque, wings closed, on gum amber. | P |
+| **Pornivior** | Nerhuus took up, without knowing it, the payment the Kalioth kings made to the devils of Mount Ergo. | A balance-scale with its beam snapped and one pan hanging, in ash black on ember orange. | P |
+| **Woqood** | The boat clans refused Volgan their boats and fled onto the ice, where the Grandmother Under the Ice showed them the seals. | A single harpoon standing upright with a barbed toggle head, in bone white on sea-ice blue. | P |
+| **Orato** | The families fled onto the isles' heights in the flood of the Breaking and blew horns to call their boats home. | A curved signal horn with its mouth upward and a cord at its waist, in horn white on night blue. | P |
+
 ## 14. Sources
 
 | Key | File and heading |

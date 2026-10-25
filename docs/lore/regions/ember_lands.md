@@ -224,6 +224,22 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | Tinta Rocky Lands | repeats Aenor Isle's Tinta | **Gragia** | Mirolic *grag* "cliff" + *-ia* "country" |
 | Demonwig, Dum, Neferun, Hill of Wo, Gelcon Mountains, Tonda Rand Islands | unused drawn labels | kept as state and place names inside Puvulan and Khorvrath, except Demonwig, which becomes **Khorvazel** ("horn-hold") | |
 
+## Roots and signs (proposed, K67)
+
+Written for the owner's decision K67 (25 October 2026): every realm carries the ancient history that built its culture and the sign born of it, so that its banner is its own sign and carries its own story. The full texts are the `roots` and `sign` of each realm in [ember_lands.json](../../../tools/content/data/world/history/ember_lands.json), the vault note is [Roots of the Ember Lands](../vault/07%20-%20History/Roots%20of%20the%20Ember%20Lands.md), and the focus-branch, identity and event proposals are in [realm_roots/ember_lands.md](../../specs/02_lore/realm_roots/ember_lands.md). Everything in this section is **P**; the open points stay open and are listed in the vault note.
+
+| Realm | Root | Sign (the flag device) | Label |
+| --- | --- | --- | --- |
+| **Puvulan** | The orders teach that the Gate of Nafeher was the first thing raised on the plateau; every servant is cut into the ring of names round it, and a traitor is cut out. | The Gate of Nafeher: a plain upright gateway in bone white standing within a plain ring of bone white, on grave black. | P |
+| **Mirolon** | The lake-kingdom's survivors hid five centuries in the Great Swamp and read Volgan's patrols by the herons; Hadric hung the crown in the beacon tower. | A grey heron standing upright with its neck drawn back, watchful, in heron grey and white on night blue. | P |
+| **Khorvrath** | A house of the Halls' beast-breeders, refused a portal of its own, rode up out of the Nether Maw and broke a horn on its rim. | A single great curved horn broken off at its tip, in ember gold on ash black. | P |
+| **Dolon** | Queen Khirara drowned the salt coast's headman in his brine-pan and crowned herself with its salt crystals; Dolon's oaths are written in salt. | A crown of jagged white salt crystals, in salt white on obsidian black. | P |
+| **Nezer** | A family of the Nether's ferrymen, whose lava galleys hold their course only when both steering oars pull together, took the Necromancer's empty hills as two crowns. | A black galley with two steering oars at its stern, one at each quarter, in ember gold on nether red. | P |
+| **Nether** | The houses cut the Halls beneath Mount Nether and took a king whose seal is burned into every pact. | The King's seal: a five-pointed figure drawn in one unbroken line within a ring of fire, in pact gold on hall black. | P |
+| **Halia** | The salt-boilers buried their dead in salt, and the freeholders believe the salted dead were spared when the necromancers raised the lake-kingdom's dead. | An oar standing upright in a white cairn of salt, in oar brown and salt white on Veleeda grey. | P |
+| **Nan** | The men of the old coast who would not serve the Dominion fled across the storm belt; their wayfinders learned the route by following the storm-petrels. | A dark storm-petrel skimming low with its wings bent, in storm black on grey. | P |
+| **Olen** | A breeze out of the storm belt kept the cliff lamps lit for a winter while sea-kestrels hung still in it. | A sea-kestrel hanging still in the air with its wings spread and its tail fanned, in cliff white on storm blue. | P |
+
 ## 14. Sources
 
 | Key | File and heading |

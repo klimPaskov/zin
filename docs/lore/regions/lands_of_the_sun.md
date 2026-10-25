@@ -226,6 +226,23 @@ People live on the Sun Grasslands, the ash coast of the Good Volcanoes, the shor
 | Sun God Land, Godson, Godton, Godrela, Dreamland, Sunny, Him, Via, Helen, Land of the Sun | repetitive, placeholder-like or borrowed | merged (section 11) | |
 | Sunhot Grasslands, Sunhot Gate | owner's rename of 19 October | **Sun Grasslands**, **Sun Gate** | |
 
+## Roots and signs (proposed, K67)
+
+Written for the owner's decision K67 (25 October 2026): every realm carries the ancient history that built its culture and the sign born of it, so that its banner is its own sign and carries its own story. The full texts are the `roots` and `sign` of each realm in [lands_of_the_sun.json](../../../tools/content/data/world/history/lands_of_the_sun.json), the vault note is [Roots of the Lands of the Sun](../vault/07%20-%20History/Roots%20of%20the%20Lands%20of%20the%20Sun.md), and the focus-branch, identity and event proposals are in [realm_roots/lands_of_the_sun.md](../../specs/02_lore/realm_roots/lands_of_the_sun.md). Everything in this section is **P**; the open points stay open and are listed in the vault note.
+
+| Realm | Root | Sign (the flag device) | Label |
+| --- | --- | --- | --- |
+| **Gala** | The court's memory begins with the First Rain and the spring of the Mirror, where a white hind drank first; no Gala hunts a deer, and no vision is said plainly. | A white hind with her head lowered to drink, on deep harbour blue. | P |
+| **The Lands of Light** | The first Sunhot built their sanctuaries with a tall door facing noon; the noon-door of Eldoga is their oldest sign, and the Radiant Speaker was first chosen to share water in the drought of 1A 840. | A tall narrow doorway with the noon sun standing in it as a plain gold disc, on sanctuary white. | P |
+| **Elvana** | The healers of the cape learned from the white silk-moth that its thread closes wounds, and became the Sunhot's weavers and healers. | A white silk-moth with its broad wings spread, on deep loom violet. | P |
+| **Igara** | The sun-cranes danced on the dry shallows until the rain came, and the shrine's keepers dance it in every drought. | A sun-crane dancing with its wings raised and one leg lifted, in crane white on shallows gold. | P |
+| **Yeni Alang** | The terrace-folk learned that when every ribbon hangs still the sky is clearest; on such a day the first watcher saw wings. | A tall pole with one long ribbon hanging straight down from its head, in white on clear sky blue. | P |
+| **Tor Luni** | The quarriers found the standing stones raised by nobody remembered and swore never to cut them, breaking their first chisels at their feet. | The two halves of a broken quarrier's chisel, the bladed half set point downward below the handle half with a gap between them, in quarry white on deep sea violet. | P |
+| **Ihuy** | When Hol's ash fell in 3A 66, seven canoes, one from each island, fed them all. | A long outrigger canoe seen from the side with seven paddles held upright, in pearl white on ash grey. | P |
+| **Soyano** | Every white ship's keel is measured from the Mother-Keel of the first white ship. | A bare curved white keel with its stem and stern posts rising at either end and no planks, on deep tide blue. | P |
+| **Goodin** | The Sunfolk landed as boat-folk driven out by the Long Grief and walked up to the first sanctuary with their spears reversed, as guests who would fight for their hosts. | A spear reversed, its point downward resting on a ground line, in ash brown and iron grey on harvest gold. | P |
+| **God Forest** | The Sunhot believe the wood grew from one seed the Keepers planted; the Keepers answered the Noon Council with a living vine and a winged seed inside it. | A great winged seed, a single seed with one long curved wing, in pale leaf green on deep forest green. | P |
+
 ## 14. Sources
 
 | Key | File and heading |

@@ -210,6 +210,24 @@ Thirty-four rows become eleven. Every merged row survives as a named state or ha
 3. **Serpents and the demon king.** Do your cards' "[?Trenin?] Sea" (sea serpents [BC 12]) and "[?Teitonis/Tritonis?]" (the demon king's home [BC 5]) mean these islands' waters? The vault puts the King of Demons in the Nether [V: Aoaz and Its Regions].
 4. **Leaders named after their islands.** Earlier specs name the rulers Speaker Sanderz of Adel (Sanderz is Adel's drawn harbour), King Benan of Nondondor (Benan is a neighbouring isle) and Captain-Speaker Lemo Raer [Characters spec]. The rule against naming a country after its leader suggests the reverse is also unwanted. May these rulers get personal names from Tritonic stems instead?
 
+## Roots and signs (proposed, K67)
+
+Written for the owner's decision K67 (25 October 2026): every realm carries the ancient history that built its culture and the sign born of it, so that its banner is its own sign and carries its own story. The full texts are the `roots` and `sign` of each realm in [tritons_islands.json](../../../tools/content/data/world/history/tritons_islands.json), the vault note is [Roots of Triton's Islands](../vault/07%20-%20History/Roots%20of%20Triton's%20Islands.md), and the focus-branch, identity and event proposals are in [realm_roots/tritons_islands.md](../../specs/02_lore/realm_roots/tritons_islands.md). Everything in this section is **P**; the open points stay open and are listed in the vault note.
+
+| Realm | Root | Sign (the flag device) | Label |
+| --- | --- | --- | --- |
+| **Adel** | No reef is named until it is proved by the lead; the Andaios chart-house keeps a lead it calls Senra's. | A long tapered sounding lead hanging on its line, in lead grey and chart white on deep ink blue. | P |
+| **Raerby** | The first fish of a disputed shoal is cut in two before both crews; the banks-court judged on the water. | A great banks-fish of the cod kind, with its fins, chin-barbel and square tail drawn plain, swimming, cut through its middle by a thin white line, in silver on deep bank green. | P |
+| **Pollos** | The last living key-holder of the league's strong-room carried all three keys home in the Grey Breath. | Three keys hanging from one ring with their bits downward, in iron grey and market gold on deep harbour red. | P |
+| **Nondondor** | Kusion of the Kilai, having no gold, crowned himself with his ship's anchor cable. | A crown twisted from a ship's anchor cable with its strands showing, in rope tan on deep sea black. | P |
+| **Fineger** | The families crossed the frozen channel behind a white ram; a pilot is the ram of his ship. | A white ram's head with heavy curled horns, in fleece white on ice grey. | P |
+| **Halenor** | The first shore-fires guided kin home and strangers onto the rocks; Lusai set an empty fire-basket at Sonrale. | An empty iron fire-basket on a tall pole, in iron black on storm grey. | P |
+| **Windy Lands** | The first winter on the capes was lived through by flying kites to catch seabirds. | A diamond-shaped fishing kite with a long rag tail streaming in the wind, in sail white and gale red on sky grey. | P |
+| **Seite Islands** | The grey seals bore the first wrecked pilots ashore, and no household kills one. | A grey seal rising from the water with its head raised, in seal grey on reef teal. | P |
+| **Santon** | Corsairs took the plague-emptied harbours under the black sails of ships of the dead. | A black sail, full-bellied in the wind, without ship or mast, on blood red. | P |
+| **Benan** | The corsairs hold the Cursed Square in name and never enter it; a corsair is a crab in a borrowed shell. | A hermit crab in a spiral shell with its claws raised, in shell white and crab red on cove black. | P |
+| **The Lens** | The glass-blowers swore to keep the passages lit after the Wreck of the Square; the first Keeper blew the great lamp-glass in one breath. | A long glass-blower's pipe with a round glowing gather of glass at its tip, in pale lamp gold and pipe black on deep night blue. | P |
+
 ## 14. Sources
 
 - **[OD]** owner decisions of 24 October 2026, relayed by the coordinator (direct replacement of names from fiction or myth; renaming of ill-fitting labels; no "-waith" names; no exact ages).

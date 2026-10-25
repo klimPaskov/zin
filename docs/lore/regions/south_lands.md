@@ -163,6 +163,15 @@ The South Lands are the great desert of the East Lands, running south off the ed
 | Sunhot Desert | owner's rename of 19 October 2026 | **Sun Desert** |
 | Miaed's working culture `river_kings` | a desert-pass realm has no river | **pass-lords of Miaed** (culture) |
 
+## Roots and signs (proposed, K67)
+
+Written for the owner's decision K67 (25 October 2026): every realm carries the ancient history that built its culture and the sign born of it, so that its banner is its own sign and carries its own story. The full texts are the `roots` and `sign` of each realm in [south_lands.json](../../../tools/content/data/world/history/south_lands.json), the vault note is [Roots of the South Lands](../vault/07%20-%20History/Roots%20of%20the%20South%20Lands.md), and the focus-branch, identity and event proposals are in [realm_roots/south_lands.md](../../specs/02_lore/realm_roots/south_lands.md). Everything in this section is **P**; the open points stay open and are listed in the vault note.
+
+| Realm | Root | Sign (the flag device) | Label |
+| --- | --- | --- | --- |
+| **Miaed** | The gorge-houses found the Hardtmuth paths by following the black ibex, which they never hunt, and sold water to the Kalioth host going north and to its starving remnant coming back. | A black ibex standing with its long horns swept back, on dust gold. | P |
+| **Wahatud** | The dark-skinned well-clans of the dune sea keep a compact with the sand golems and the tale of the white dune, where a dying clan-mother left her last water for a stranger and her clan found a spring and a white feather; the Well-Moot of 4A 1637 was sworn over it. | A single long white feather standing upright, in white on oasis green. | P |
+
 ## 14. Sources
 
 | Key | File and heading |

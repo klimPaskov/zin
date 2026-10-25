@@ -489,6 +489,42 @@ The great-lake ports required by the model (`site_great_lake_port_1` to `_4`) ar
 
 **Divergences (L3).** A surviving Golden King, a Free Dominions Concord, a goblin-guided invasion through the range, a dwarf embargo that starves a usurper of iron, a Kingson that closes the pass to everyone.
 
+## Roots and signs
+
+**Status:** proposed (owner decision K67, 25 October 2026). The text of record is the `roots` and `sign` fields of each realm in [`tools/content/data/world/history/middle_lands.json`](../../../tools/content/data/world/history/middle_lands.json); the play hooks (focus branches, formable identities, events and decisions) are in [docs/specs/02_lore/realm_roots/middle_lands.md](../../specs/02_lore/realm_roots/middle_lands.md), and the vault holds the proposal as [Roots of the Middle Lands](../vault/07%20-%20History/Roots%20of%20the%20Middle%20Lands.md).
+
+The Middle Lands' realms are old peoples under young names, and K67 gives each of them the ancient history that made it and the sign that came out of that history. Three threads run through the region: the War of Men and Aen's Mantling, which made Aenor and left the Orran heirs of the drowned Low Country (the Veiled, the Redbark and the Isle Houses) with a grudge; the Order's centuries, which the vale-folk, the ship-houses, the guilds and the Guard survived each in its own way; and the older peoples (giants, ents, Baelim, gnomes, dwarves and one elven household) whose roots lie beyond the reach of men's chronicles.
+
+Every sign is one emblem a weaver could sew on a war-banner, taken from a deed, a relic or a custom of the realm's roots, and none carries a god's device, a letter or a named person. The flags are to be redrawn from these signs.
+
+| Realm | Sign | Root it comes from |
+| --- | --- | --- |
+| Aenor | a black cloak lined red, spread from a gold crown-clasp | the Mantling: Aen's cloak spread over the kneeling kings of the War of Men |
+| Selen | three arrows bound point-down with a green withy | the three broken bands who swore the Quiet Law to the Lord of the Weald |
+| Kingson | a red-hot ember in black iron tongs | the vigil ember carried hearth to hearth under the Order's ban on fire |
+| Hirolon | a squared field-stone with one black notch | the dike-stone that is the first stone of the Eldest Cairn |
+| Tirlan | an upright wicker grain-pannier | the pannier thrown ashore by the grain ship, which carries the harvest-share |
+| Konori | a white felt with red tassels and a black open hook-brand | the felt pressed from every Hundred's founding herd |
+| Hunhun | a riderless saddled mare at the gallop | the banner-mare who died under Aen's banner in the last battle |
+| Klungori Guard | a goblin war-helm hung upside down | the warren-boss's helm from the Tunnel Fight, and the last company's oath |
+| Herez | a great iron key, bit downward | the key of the last Kalioth fort, given to Hezar with the march |
+| Noleksun | a ditching spade with a stepped blade | the spades of the Oath of Eight Hearths and the ditches under the fields |
+| Kilinti | a fallen oak bough with acorns | the bough the eldest oak let fall as the Timber Bargain |
+| Safeton | a black hull keel-up rising from mud | the hulls hidden in the Safen mud under the Order |
+| Freshon | a white ox kneeling | the drovers' ox that knelt and found the warm spring |
+| Pazoma | a bronze bell with a sword-blade clapper | the guild-hall bell cast from the swords of the One Crown's peace |
+| Orohaf | a white steering-oar upright, blade down | the Water clan's steerswoman on the Night of the Sea |
+| Fotan | a black chain drawn taut across the field | Ostvar's anchor-chain stretched across the landing |
+| Kunhrim | the Deep King's crown above a band of sea | the drowned Great Hall and the Deep King's last command |
+| Burrikkrit | a shuttered lantern, one shutter open | the first warband's lantern and the promise that outlived its maker |
+| Olodor | a crown beaten from a pot's gold rim | the first village-king crowned with the rim of his full pot |
+| Dunelaeth | a silver beech leaf on a grave-mound | the grave-beeches the household would not leave |
+| Aenor Forest | a closed black pine-cone | the closed cones laid at the edge after every death of the forest |
+| Cursed Lands | a grey cord looped in one black knot | the black knot of the Night of the Sea on the Last Cord |
+| Bloody Forest | a red oak leaf letting fall one red drop | the cord-trees that bleed for the drowned |
+
+The roots keep the vault's mysteries: they do not say how Aen was born, where the dwarves first came from, what lies below the Sea of Monsters, what the giants know of the drowned land, or what the Baelim listen to. No fallen realm is named before its gate, and every date before Aen is written only as "long before Aen".
+
 ## 13. Questions for the owner
 
 1. **The Great Wall's material in the sources.** The geography model (`range_great_wall`, `zone_great_wall`, `changesFromToday`), the model spec ([GMS] §4 and §13 item 2), the vault's 4A 96 Wall Accord ([FC] I), the culture data (`wall_folk`, `stone_vigil`), the elves spec ([EWD] §5) and the Kingson tree still describe a man-made wall and gates. This dossier proposes the **Accord of the Passes** (4A 96) instead: do you accept it, and may "the Gate" stay as the Kingson Vale's own word for the Kingson Pass?

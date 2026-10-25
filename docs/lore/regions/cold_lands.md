@@ -323,6 +323,32 @@ The drawn localities beyond the playable edge (Luivinen, Ludghis, Siulas, Eciele
 | Y04 Windwaith | kept, renamed Vindael, population cut | "-waith" name. |
 | Y8H Yeldenne | kept, capital changed | The valley town becomes the capital; the castle a site. |
 
+## Roots and signs
+
+**Proposed (decision K67, 25 October 2026).** Every realm's ancient roots and the sign born of them are written as `roots` and `sign` on its record in `tools/content/data/world/history/cold_lands.json`; the play hooks (focus branches, formables, events and decisions) are in [realm_roots/cold_lands.md](../../specs/02_lore/realm_roots/cold_lands.md), and the vault keeps them as [[Roots of the Cold Lands]]. All of it is proposed; the established spine is the Sunfields' fall and its three peoples (K64). Yeldenne is retired (K56) and is in Pertolor's land; Horos appears in no root and no sign, and Kvittumm's shows only herds and the moot.
+
+| Realm | Root (proposed) | Sign (proposed) |
+| --- | --- | --- |
+| Coldor | The last fire-keepers of the Sunfields carried a coal of the old king's hearth into the first Long Dark in a clay-lined horn; the hearth-law and the crown's duty to feed whoever reaches the fire come from it. | The Ember-Horn: a bronze-bound horn with one red coal, gold on night-blue. |
+| Melkgard | Zorak bargained in the windy cliff below Minnolomak with the Black Wind (a devil, say Fandanar's fire-keepers; the march will not hear it) and forged the gauntlet in which every oath is sworn; no warlord wears a crown. | The Sworn Gauntlet: a closed black iron fist on storm-grey. |
+| Horidor | The Sunfields' road-wardens raised cairns over the Neridor Gap for the walkers going south and were told to keep them until the walkers came home; nobody came, and the cairns are still kept. | The Guide-Pole: a red-ragged pole on a grey cairn, on dark green. |
+| Fearno | The moor clans bound their spears on the Naepu ice and refused the last king of the old hall his herds; a crown eats first and feeds last. | The Bound Spears: seven spears bound with a red cord, on moss-green. |
+| Austklev | A storm-driven crew followed a white spear-whale to the harbour below the cliffs and swore the whale-oath over its tusk. | The Tusk of Vaestia: an upright spiral tusk, white on sea-red. |
+| Worlond | The walkers and the stayers of the Sunfields parted at Tarvak and planted two firs that grew into one; the Stage Law serves both sides. | The Twin Firs: two black firs from one trunk, on gold. |
+| Poloto | The Aenoran post's Coldic pilot trained the guild; Harbour-Master Zenka Grindair burned the Necromancer's ship in 3A 702 and pushed it off with the first pilot's oar. | The Burned Oar: a white steering oar with a red blade, on deep blue. |
+| Holdon | After the Red Ice the shelf Eldest pressed its hand in seal-blood on a hide at Fentene, and the eldest coast chief pressed his inside it. | The Hand-Hide: a white yeti hand holding a black human hand-print of dried seal-blood, on sea-green. |
+| Glimkit | The lamp-keeper Drik led the goblin column over the frozen channel by a closed lantern toward the steam of the great spring. | The Crossing Lantern: a copper lantern with green panes, on black. |
+| Xison | On the Sunfields' amber road the three clans forged a chain from dead riders' iron and stretched it across the road at Akahew. | The Akahew Chain: three black links in a row, on red. |
+| Pertolor | A lost Sunfields flock came down out of the valley of Mp'E behind a black-faced ram, and the vale has left a loaf and a fleece at the Silent Road ever since. | The Black-Faced Ram, on deep green. |
+| Omar | The forebears ate their own bull and sent its skull to the old king's stewards: the clan owes nothing. | The Refusal Skull: a white antlered reindeer skull on black (the region's one skull). |
+| Portogalor | The broken raiders of 3A 410 turned their last hulls keel-up as halls so that nobody could sail back; where they came from, their songs do not say. | The Keel-Hall: a black keel-up hull with red oar-ports, on white. |
+| Kvittumm | The forebears followed the herds north-west into the ice country; the clans swore at Esrom in 2A 1312 to speak as one before the Frost-King. | The Moot-Fire Herd: two white bulls across a red fire, on blue-grey. |
+| Orewele | A burning stone fell on the Orewell lowland, and its iron, dug with thanks, is the truest of the north. | The Falling Fire: a black star-stone with a red flame-tail, on pale grey. |
+| Nivaros | The first Frost-King broke the glacier with a stone maul to make the seat of Xitore, so that the giants would stay where the ice is. | The Frost-King's Maul: an upright banded stone maul, on ice-blue. |
+| Yeti Lands | After the Red Ice the shelf clans sang the truce and mark every seal-ground of theirs with a great footprint cut in the ice. | The Ice-Mark: one great white footprint, on sea-blue. |
+| Ghaahu | Every clan's song is one turn of a single song older than the clans, and a broken turn waits to be taken up. | The Song-Whorl: one notched white spiral, on slate. |
+| Vindael | The arm lent Porideon to the island league and, when the league's ships brought the Grey Breath, cut them loose and shut the harbour for nine years. | The Wind-Feather: a white skua feather with three red bands, on storm-grey. |
+
 ## 12. Gameplay role
 
 **Mechanics already specified** [MS cold_lands]: the defiance of Melkgard (spec name: Isengard), the Accord's reach and the three ways to settle the rivalry (the Open Hand, the Iron Hand and the war that makes Melkgard kneel); the clans' lean and the winter moots; the Long Winters with bread as political power; the old pacts with the yeti and the giants; the far north-west and the journey's hooks; Mp'E and the silent castle; the Neck Road and timber for the West; the three courses in the final war (stand apart, timber and ships for the West, the White Companies). Glo, Horos and the hall belong to [MS yeldenne_and_glo]; Eindil's stages to the journey spec. The specs and focus files still use the former labels; renaming them follows the owner's decisions.

@@ -286,6 +286,33 @@ The owner's card describes a wizard drawn as a green one-eyed creature with an o
 
 **AI behaviour (proposed).** Gunwyn's war-thanes press the truce on the historical path; Girdon answers raids with the blood-price more often than in kind; the guild leagues weigh tariffs against Aenoran gold; Buldor takes the highest bid; the dwarf holds never send armies beyond their ranges but sell arms to the strongest buyer; Dolw-Grewn and Olodor never declare war and join no faction; on the historical path the West crosses in 4A 1755 [MS western_crossing, AI].
 
+## Roots and signs
+
+**Status:** proposed (owner decision K67, 25 October 2026). The text of record is the `roots` and `sign` fields of each realm in [`tools/content/data/world/history/west_lands.json`](../../../tools/content/data/world/history/west_lands.json); the play hooks (focus branches, formable identities, events and decisions) are in [docs/specs/02_lore/realm_roots/west_lands.md](../../specs/02_lore/realm_roots/west_lands.md), and the vault holds the proposal as [Roots of the West Lands](../vault/07%20-%20History/Roots%20of%20the%20West%20Lands.md).
+
+The West Lands share one grievance against Aenor and differ in everything else, and K67 gives each realm the ancient history that made it and the sign that came out of that history. The downs clans walked south out of a failing northern country and hold that land belongs to whoever sows it; the Erg clans came down the coast by sea; the settler towns began as Aenor's and broke with it each in its own way (a broken tally, a sealed letter, an ingot on a book); the dwarves lost the deep roads; the plague made Buldor; and the small folk fed their neighbours.
+
+Every sign is one emblem a weaver could sew on a war-banner, taken from a deed, a relic or a custom of the realm's roots, and none carries a god's device, a letter or a named person. The flags are to be redrawn from these signs.
+
+| Realm | Sign | Root it comes from |
+| --- | --- | --- |
+| Gunwyn | a black rook with a gold barley-ear in its beak | the rooks that led the clans over the neck out of the failing north |
+| Girdon | five stepping-stones across a river band | the stones each warden carried from his own ford to Arligon |
+| Werlendor | half of a broken gold torc | Dyfan's king-torc broken in two for his two sons |
+| Lambin | a granary on four staddle-stones | the stones of the peace-moots' field under Branorn's granaries |
+| Thenon | an olive tree with one grafted lighter bough | the Mother Olive and the lowland's way of grafting rather than fighting |
+| Dobbum | a round loaf stamped with a thumb-print | the Famine Bread carried over the Ronbo passes |
+| Brundahrim | an iron fire-pot on a chain with a red fire | the Road-Fire carried out of the drowning western road |
+| Gromkerm | an iron door-knocker shaped as a clenched fist | the fist torn from the Outer Gate by Saopon's hired companies |
+| Saopon | a closed book weighted with an iron ingot | the boatmen's weight-oath and the league sworn with iron on the book |
+| Buldor | a white swallow-tailed pennon with a black seam | the shroud-banners of the plague dead |
+| Kradlon | a hazel tally broken across | the Unpaid Year, when the guilds broke Parim's tally |
+| Corogon | a rolled letter under an unbroken black seal | Aenor's letter of claim, sworn never to be opened |
+| Varnondor | a black iron lantern with a white light | Oslin's lanterns that replaced the headland fires |
+| Wennarith | an empty white ferry-barge | the uncut ferry-rope and the ferry that carries no army |
+
+The roots keep the vault's mysteries: they do not say how Aen was born, where the dwarves first came from, what lies below the Sea of Monsters, what the giants know of the drowned land, or what the Baelim listen to. No fallen realm is named before its gate, and every date before Aen is written only as "long before Aen".
+
 ## 13. Questions for the owner
 
 1. **Gwilid's kind.** What kind of being is the wizard of your card, and can he really kill Great Spirits with armies of men [BC 57]? Where is Sempos?

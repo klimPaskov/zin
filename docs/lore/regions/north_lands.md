@@ -252,6 +252,31 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 
 **AI behaviour (proposed).** Lerendor follows the historical break on the historical rule [MS lerendor_narrow_strait §5]; Molot and R'en lean to Parim; Eekedor stays in the Compact; Karundun never sends armies off its mountains except under the Hill Pact; Mustnom never declares war.
 
+## Roots and signs
+
+**Status:** proposed (owner decision K67, 25 October 2026). The text of record is the `roots` and `sign` fields of each realm in [`tools/content/data/world/history/north_lands.json`](../../../tools/content/data/world/history/north_lands.json); the play hooks (focus branches, formable identities, events and decisions) are in [docs/specs/02_lore/realm_roots/north_lands.md](../../specs/02_lore/realm_roots/north_lands.md), and the vault holds the proposal as [Roots of the North Lands](../vault/07%20-%20History/Roots%20of%20the%20North%20Lands.md).
+
+The North's crowns are almost all Leren, and K67 gives each of them the one deed or custom that no other crown shares, with the sign that came out of it. The Leren followed a whale through the shoals, Viktara weighed a raider's sword, the cape took one fish from every boat, the margrave moved the marsh-stakes, the coast crowns forged one crown from two, the vale broke the envoys' axes, the Onp kept the herring's peace, the hills bound a horn, the dwarves cut a stair, Mina's king died with his crown on his pick, the lake judged on the deep water and the dwarf goblins came home with salt.
+
+Every sign is one emblem a weaver could sew on a war-banner, taken from a deed, a relic or a custom of the realm's roots, and none carries a god's device, a letter or a named person. The flags are to be redrawn from these signs.
+
+| Realm | Sign | Root it comes from |
+| --- | --- | --- |
+| Lerendor | the two flukes of a sounding whale | the strait-whale the first pilots followed through the shoals |
+| Eekedor | a black steelyard with its hanging weight | the raider chief's sword weighed at Viktara's harbour |
+| R'en | a cormorant on a rock with a fish in its beak | the cape-clans' one fish from every boat, and Torik the Cormorant |
+| Molot | a crooked white path-stake in black marsh water | the night the margrave's men moved the marsh-stakes |
+| Keredor-Hellekton | a double crown of a silver and a gold circlet | the crown forged from both old crowns after the Arbitration Court's marriage |
+| Tolvael | an unsplit pine log with a broken axe-head | the Kerhil log on which every envoy's axe broke |
+| Tolhon | a silver herring leaping over a stone arch | the Herring Peace sworn at the bridge of Sirtum |
+| Heodwa Lands | a great black horn with three gold rings | the horn of the Hill Pact, bound by the dwarves for three crowns |
+| Hrakbrund | a white stair descending | the Coming-Down Stair cut from the High Gate |
+| Mina | an upright pick with a gold circlet on its haft | the king who died in the gallery fall with his crown on his pick |
+| Dolpar | a white four-oared boat seen from above | the Mid-Lake Moot of four boats lashed together |
+| Mustnom | a pedlar's pack-frame with a white salt-bag | the first salt brought home from the end of the long road |
+
+The roots keep the vault's mysteries: they do not say how Aen was born, where the dwarves first came from, what lies below the Sea of Monsters, what the giants know of the drowned land, or what the Baelim listen to. No fallen realm is named before its gate, and every date before Aen is written only as "long before Aen".
+
 ## 13. Questions for the owner
 
 1. **Population.** May the North Lands be revised from 6.8 million to about 3.9 million, and Sonargur from 120,000 to about 55,000 (section 3)?

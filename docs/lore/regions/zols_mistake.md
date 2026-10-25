@@ -147,6 +147,21 @@ No beast of another region is copied here. Sea birds avoid the black isles (prop
 
 **AI behaviour (proposed).** Silent until the rising; after it, hosts push south through the islands toward the North Lands and the Dark Lands' northern shore; never makes peace with the living; withdraws when the servant is forced back [MS zols_mistake, AI].
 
+## Roots and signs
+
+**Status:** proposed (decision K67, 25 October 2026). The roots, the sign and the play hooks are in [realm_roots/zols_mistake.md](../../specs/02_lore/realm_roots/zols_mistake.md); the data is in the `roots` and `sign` fields of `tools/content/data/world/history/zols_mistake.json`; the vault note is [Roots of Zol's Mistake](../vault/07%20-%20History/Roots%20of%20Zol's%20Mistake.md).
+
+The Mistake has no founder, no first king, no oath and no tongue of its own, and the knowledge layers forbid every answer the realm would otherwise give (why it is a Mistake, who keeps Furviatlon, what Kusven truly is). Its roots are therefore written from the sea, as the living of the north know them, and they rest on one established fact: the souls of the dead remain Zol's [OD].
+
+| | Proposed content |
+| --- | --- |
+| **Root** | The **open rings**: on the outer isles the dead were laid inside rings of black stones left open on the northern side by a people nobody remembers; the Leren fishers who came in 4A 230 found the rings older than any record and took up the custom, because the dead belong to the Old God of Death and a closed ring would be a theft from him. The first fish, the silence on still nights, the unspoken name and the winter tale of Kusven grow from that belief. The oldest north-western sea-words have a word for the black coast meaning only "the shore from which nothing comes back". |
+| **Sign** | **Broken concentric rings** in cold grey on void black, each ring open on the same side: the sigil of the Will of Zol, kept as the heraldry spec fixes it. It first appears as the pilot's mark for still water on the Aenoran chart of 1A 470, and again as the open burial rings of the outer isles; nobody can name the hand that made it. |
+| **Meaning** | To the living, the open ring of the dead: what dies is owed and not kept back. Over the hosts of the black north, a threat that every grave in their path is open. |
+| **Added history** | The Open Rings (4A 230), the Ring Closed at Erinlor (4A 1450), the custom `open_rings`, and the divergence `the_rings_closed`. |
+
+Nothing here names who governs the Mistake, why it is called a Mistake, how Kusven was made, or anything of the wider world; the sign shows nothing of Kusven, his isle or the Beasts (heraldry spec 1.5).
+
 ## 13. Questions for the owner
 
 1. **The servant's scene.** In the vault, Zol himself overpowers the restored Eindil, shatters Horos's sword, is wounded by a shard and is forced back by Lorien and ancient spirits [V: War of the Last Crowns §5]. Does Kusven take every one of these beats, so that Lorien dies forcing the servant back?

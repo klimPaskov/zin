@@ -277,6 +277,36 @@ The drawn dots east of the black island Goldoroth [NT], proposed as the devil ca
 
 **AI behaviour (proposed).** Goldoroth raids and gifts until the war; Dondor keeps the Accord; the free holds bow to the Yoke only when Goldoroth is strong; the Troll Forest and Hoorunoron never attack first; Burnikit never joins a faction; Veshazel swears to Volgan only when he marches [MS dark_lands, AI].
 
+## Roots and signs
+
+**Status:** proposed (decision K67, 25 October 2026). The full roots, signs and play hooks are in [realm_roots/dark_lands.md](../../specs/02_lore/realm_roots/dark_lands.md); the data is in the `roots` and `sign` fields of `tools/content/data/world/history/dark_lands.json`; the vault note is [Roots of the Dark Lands](../vault/07%20-%20History/Roots%20of%20the%20Dark%20Lands.md).
+
+The Dark Lands were never one nation and their peoples are not Volgan's by nature (established), so the roots are the stories of peoples who were used, left behind or refused by masters: Volgan's war and Dardan, the Necromancer's levies and the Buried Wars, and the older stones and forests that older peoples keep. Every sign is something a weaver or embroiderer can sew, and none repeats a charge class more than twice in the region.
+
+| Realm | Sign (P) | The root it comes from (P) |
+| --- | --- | --- |
+| Goldoroth | the Crown of Broken Blades | the Long Walk home from Dardan and the law of the ring |
+| Dondor | the Garrison Helm | Aen's garrison never relieved, paid in iron bars (the Hearth-Iron); Rovek's helm at Dardan |
+| Dark Gate | the Gate-Chain | the smith's chain of the Buried Wars and Zugash's toll |
+| Burnikit | the Fire at the Door | the Unpaid goblins of 2A 2110 and Snikkit's sulphur lie of 3A 1004 |
+| Veshazel | the Three Scores | a house that broke from the Nether's court and raked its bounds on the Ash Fields |
+| Blackton | the Empty Seat | old raiders and old burners joined in a league with a seat no one may take |
+| Belonton | the Broken Shackle | the rowers of Volgan's clients' galleys who broke their benches after Dardan |
+| Bordon | Kargesk's Horn | the night the gorge was taken and the Road-Peace |
+| Dreson | the Three Piles | the escaped levies of 3A 520 and the three path-elders |
+| Dulundur | the Four Fires | four rival fire-rites sworn onto one hearthstone in 3A 1150 |
+| Troll Forest | the King-Stone | the dead kings who stand at the forest's edge facing the dawn |
+| Hoorunoron | the Dike-Cairn | the Forgotten Giants carrying the stones of the drowned Low Country's dikes |
+| The Darks | the Grounded Spear | the Meat Moot of orcs and ogres in the winter of 4A 1222 |
+| Skragdurg | Grashdug's Axe | the felling of the Old Black |
+| Dun | the Turned Sail | the crooked ancestor and the toll-king's two-coloured sail |
+| Britadon | the Running Boar | the Hollow that breathed out in Volgan's war and the boars that led the survivors out |
+| Wild Lands | the Rag-Pole | the field of the last host and the winter rule |
+
+**Hoorunoron and K66.** The owner ruled that the giants of the Giant Forest and the Forgotten Giants of Hoorunoron are different peoples (K66). The history data now places Hoorunoron on the low hills behind the cairn-line beside the Giant Forest; the Giant Forest's own giants are another people, whose realm or place is an open question. Section 10's and section 11's lines that give Hoorunoron "the Giant Forest" read as "the low hills beside the Giant Forest".
+
+**Burnikit.** The roster gives the hobgoblin king Burrikkrit in the Middle Lands; Burnikit is a free warren under a Big Snik (roster decision), and the older lines of sections 3, 5 and 10 that give Burnikit a hobgoblin king and the capital Ellenmoor are superseded by the history data (capital Burnikzig).
+
 ## 13. Questions for the owner
 
 1. **Population.** May the Dark Lands be revised from 3.4 million to about 1.6 million, and the trolls from 19,000 to about 600 (section 3)?

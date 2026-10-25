@@ -54,6 +54,16 @@
         "story": "Zol, the Old God of Death and the only Old God in Aoaz, came to the black north long before Aen and Volgan, and the land was already a barren waste of black rock, ash and black frost when men first sailed near it. Nobody knows why it is called a Mistake. The year given is not the realm's beginning, which no one can date, but the year the northern voyages of the First Age first wrote the name on an Aenoran chart, beside a drawing of a still sea.",
         "canon": "proposed"
       },
+      "roots": {
+        "story": "What built the black north is the oldest silence in Aoaz, and every people who tells of it tells only what it saw from the sea. Zol, the Old God of Death, came there long before Aen and Volgan, and the land was already black rock, ash and black frost when the first sailors of the north-west came near it; their oldest sea-words, older than any chart, have a word for that coast that means only the shore from which nothing comes back. No people of men ever lived on the mainland in any memory, so the Mistake has no founder, no first king, no oath and no tongue of its own, and nobody knows why it is called a Mistake. What the living of the north keep instead is a custom. On the outer isles, before any Leren fisher wintered there, someone laid the dead inside rings of black stones and left every ring open on its northern side, and the fishers who came in 4A 230 found those rings older than any record and took up the custom as their own: the dead belong to the Old God of Death, they say, and a closed ring would be a theft from him. From that one belief come all the rest: the first fish of every season left on the black shore, the silence and the low lamps on still nights, the name never spoken at sea, and the winter tale of Kusven, the grave-wind who serves the Old God of Death, which the shore folk tell as a warning and no court takes for more than a tale. In 4A 1748 the open rings are still laid on Peledor, Drolkot and Erinlor, and the sailors who chart the Rim still draw them beside the still sea, because nothing the world has learned about the black north in four ages is more than that.",
+        "canon": "proposed"
+      },
+      "sign": {
+        "device": "Broken concentric rings in cold grey on a void-black field, each ring open on the same side: the sigil of the Will of Zol.",
+        "origin": "The sign first appears on an Aenoran chart of 1A 470, where a pilot of the northern voyages drew rings on flat water beside the name Zol's Mistake, broken where his pen lifted, as the mark of a sea that lay still and a coast where no bird followed the ships. When the Leren fishers came to the outer isles in 4A 230 they found the same figure laid on the black shore in stones, the burial rings of a people nobody remembers, each ring left open toward the north. Whose hand laid the first rings is not known, and the sign has no maker anyone can name: it belongs to the black north the way its silence does, and it is the sigil the charts and the courts give the Will of Zol, the emblem in whose name the realm is held.",
+        "meaning": "To the living it means the open ring of the dead: what dies is owed to the Old God of Death and is not kept from him. Raised over the hosts of the black north it threatens that every grave in their path is open, and that what they take does not come back.",
+        "canon": "proposed"
+      },
       "dynasties": [
         {
           "name": "The Will of Zol",
@@ -100,10 +110,24 @@
           "canon": "proposed"
         },
         {
+          "name": "The Open Rings",
+          "year": 5298,
+          "date": "4A 230",
+          "summary": "The first Leren fishers to winter on the outer isles find rings of black stones laid round old graves on the shore, every ring open on its northern side and older than any record; they bury their own dead the same way from that winter on, and the custom spreads to every isle they fish.",
+          "canon": "proposed"
+        },
+        {
           "name": "Ships Beyond the Rim",
           "year": 6168,
           "date": "4A 1100",
           "summary": "In the long peace, ships that sail beyond the Rim toward the black isles do not always come back, and the Strait Litany of the North Lands begins to read the names of those lost there.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Ring Closed at Erinlor",
+          "year": 6518,
+          "date": "4A 1450",
+          "summary": "A priest of the Strait Litany persuades a family of Erinlor to close the ring of their dead in the name of the twelve; the fishers say their boat was lost before the next still night, the ring is opened again by the neighbours, and no priest of the Litany has asked it of the isles since.",
           "canon": "proposed"
         },
         {
@@ -146,6 +170,12 @@
           "what": "The hosts of the black north and the hosts of the south destroy each other and never make common cause.",
           "consequence": "The living gain the time the two darks waste on each other, and the coalition of the living never faces them together.",
           "beat": "B31"
+        },
+        {
+          "id": "the_rings_closed",
+          "what": "The Strait Litany or a crown of the North Lands makes the fishers of the outer isles close the rings of their dead before the rising.",
+          "consequence": "The fishers believe the black north will take its due another way and leave the outer isles, so nobody watches the Rim when the black ships put out, and the first coasts to be struck get no warning.",
+          "beat": "B24"
         }
       ]
     }
@@ -236,6 +266,15 @@
         "Zol's Mistake"
       ],
       "summary": "Sailors of the North Lands hold it ill luck to name the Mistake at sea and call it only the black north, and the Strait Litany reads the names of the lost beyond the Rim.",
+      "canon": "proposed"
+    },
+    {
+      "id": "open_rings",
+      "name": "The open rings",
+      "realms": [
+        "Zol's Mistake"
+      ],
+      "summary": "The fishers of the outer isles bury their dead inside a ring of black stones and leave the ring open on its northern side, because the dead belong to the Old God of Death and a closed ring would keep from him what is his; the custom is older than their own wintering there, and nobody knows who began it.",
       "canon": "proposed"
     }
   ]
