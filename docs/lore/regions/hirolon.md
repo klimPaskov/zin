@@ -7,7 +7,7 @@
 
 ## 1. Overview
 
-In the west of the Middle Lands, between the Crown Ocean and the Great Lake, a ring of grey hills and coastal ridges closes around a high wooded basin. This is the land of the hill giants, written Hiloron in the vault and on the owner's map ([ML], [AR], [LBL]) and Hirolon in the overhaul's requirement (R-22). The giants are few, enormous and slow to anger, and they remember everything: every year of a giant's life is a stone on a cairn, and the cairn-fields of the basin are the oldest records in the Middle Lands (P, [WB] Hill Giants). They held crossings for King Edran's Grand Alliance in the First Age (E that giants joined the Alliance, [A1] §5; P that Hiloron's giants held the crossings at Dardan, [A1] §6). In 4A 1748 they live as they always have, behind their hills, with a people far smaller than men farming the low valleys under their protection and hill-herders of men on the eastern slopes. The giants' realm is sovereign: it has never taken a charter from Parim and treats with the Middle Kingdom as one crown with another ([OD]).
+In the west of the Middle Lands, between the Crown Sea and the Great Lake, a ring of grey hills and coastal ridges closes around a high wooded basin. This is the land of the hill giants, written Hiloron in the vault and on the owner's map ([ML], [AR], [LBL]) and Hirolon in the overhaul's requirement (R-22). The giants are few, enormous and slow to anger, and they remember everything: every year of a giant's life is a stone on a cairn, and the cairn-fields of the basin are the oldest records in the Middle Lands (P, [WB] Hill Giants). They held crossings for King Edran's Grand Alliance in the First Age (E that giants joined the Alliance, [A1] §5; P that Hiloron's giants held the crossings at Dardan, [A1] §6). In 4A 1748 they live as they always have, behind their hills, with a people far smaller than men farming the low valleys under their protection and hill-herders of men on the eastern slopes. The giants' realm is sovereign: it has never taken a charter from Parim and treats with the Middle Kingdom as one crown with another ([OD]).
 
 ## 2. Physical character
 
@@ -19,7 +19,7 @@ In the west of the Middle Lands, between the Crown Ocean and the Great Lake, a r
 | Hiloron Woods | `forest_hiloron` | Highland woods of the giants of Hiloron (normal density, upland class 2) | [GM] |
 | Grano Mountains | `range_grano` (centre 0.568, 0.579), NW to SE, hills (3) | "Grey hills between Hiloron and the Great Lake" | [GM] |
 | Hiloff Rim | `range_hiloff_rim` (centre 0.550, 0.541), N to S, hills (3), long | "Coastal ridge on the west shore from Selen to Hiloron (the brown rim drawn as the Wall of Rush on the north-west coast)" | [GM]; [GMS] §13 item 13 |
-| River Hilorn | `river_hilorn` (0.558, 0.602), stream | "Proposed short river from the Hiloron woods to the Crown Ocean" | [GM] |
+| River Hilorn | `river_hilorn` (0.558, 0.602), stream | "Proposed short river from the Hiloron woods to the Crown Sea" | [GM] |
 | Hirolon Head (former label Hiloron Head) | `cape_hiloron` (0.538, 0.560) | "Westernmost cape of the Middle Lands" | [GM] |
 | Natural border with Aenor | `region_middle_lands` | "Aenor and Hiloron: the Grano hills and River Hilorn" | [GM], [GMS] §6 |
 | Drawn labels | Rush Land sheet: "Hiloron", "Hilofrim", "Grano", "Hiloff Rim"; Magical Lands sheet: "Hiloron Mountains" | | [LBL] |
@@ -42,8 +42,8 @@ The task and R-22 describe a kingdom "enclosed by mountains". The current model 
 ### 2.3 Terrain, climate, water and hazards
 
 - **Basin.** A high wooded bowl (class 2) about 60 by 80 pixels (P estimate from the feature positions), with the Hiloron Woods on its upper slopes and three low valleys along the Hilorn and its two head-streams (P).
-- **Climate.** Warm temperate like the rest of the Middle Lands ([GM] `region_middle_lands`), but the ring holds fog: mornings are grey, summers cooler than on the lake, winters mild by the sea. Rain comes in off the Crown Ocean and falls on the Rim first, so the western slopes are wet and mossy and the eastern Grano is drier and grey.
-- **Water.** The River Hilorn and its head-streams; springs at the foot of the Grano; no lake. The coast outside the Rim faces the Crown Ocean and, to the south-west, the strait to the Dark Lands that the Middle Lands dossier calls the Grey Water (drawn "Sea of Death"; `strait_dark_south` runs from the Goldoroth shore to "the Middle Lands' west cape", [GM]).
+- **Climate.** Warm temperate like the rest of the Middle Lands ([GM] `region_middle_lands`), but the ring holds fog: mornings are grey, summers cooler than on the lake, winters mild by the sea. Rain comes in off the Crown Sea and falls on the Rim first, so the western slopes are wet and mossy and the eastern Grano is drier and grey.
+- **Water.** The River Hilorn and its head-streams; springs at the foot of the Grano; no lake. The coast outside the Rim faces the Crown Sea and, to the south-west, the strait to the Dark Lands that the Middle Lands dossier calls the Grey Water (drawn "Sea of Death"; `strait_dark_south` runs from the Goldoroth shore to "the Middle Lands' west cape", [GM]).
 - **Hazards.** Rockfall on the Rim; fog on the Grano road; chiromaws in the Rim's caves ([BC] card 53, "the Wall of Rush"); the occasional storm-surge at the Hilorn mouth; and, from the sea, raiders out of the Dark Lands strait in bad centuries (P).
 
 ## 3. Inhabitants

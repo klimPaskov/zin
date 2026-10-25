@@ -908,7 +908,7 @@ Historical: B and C first, A, then D (riders_for_the_royal_army, scouts_for_the_
 
 ### Situation in 4A 1748
 
-Hirolon's giants keep a ring of grey hills between the Crown Ocean and the Great Lake, two states of cairn-fields, quarries and wooded basin with the small folk of Tirlan farming the valleys under their protection (regional dossier `docs/lore/regions/hirolon.md`). A High Chief chosen by the cairn-keepers rules with a council of clan chiefs, slowly and honestly; the realm is sovereign and bound to Aenor by the Cairn Treaty, not a chartered dominion. The giants remember the crossings of the First Age war, when their forebears carried the allied hosts over rivers (proposed); the Keepers of the Crossings sing it every year. Hirolon is friendly, small and respected. Its quarrel with Parim is the price of stone.
+Hirolon's giants keep a ring of grey hills between the Crown Sea and the Great Lake, two states of cairn-fields, quarries and wooded basin with the small folk of Tirlan farming the valleys under their protection (regional dossier `docs/lore/regions/hirolon.md`). A High Chief chosen by the cairn-keepers rules with a council of clan chiefs, slowly and honestly; the realm is sovereign and bound to Aenor by the Cairn Treaty, not a chartered dominion. The giants remember the crossings of the First Age war, when their forebears carried the allied hosts over rivers (proposed); the Keepers of the Crossings sing it every year. Hirolon is friendly, small and respected. Its quarrel with Parim is the price of stone.
 
 ### Role in the story
 

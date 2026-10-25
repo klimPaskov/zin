@@ -97,7 +97,7 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 | Sea of Death, Demonic Sea, The Dead's Sea | drawn | Ember Lands |
 | All other drawn seas | drawn | As in `docs/name_table.csv`; uncertain readings stay flagged and are not used in game text |
 
-Drawn labels that carry a superseded word get new names in game text: **Crown Ocean**, **Crown Forest**, **Crown Mountains** for "Rush Ocean", "Rush Forest" and "Rush Mountains" (P). Drawn labels that use "Sunhot" as a place become **Sun Desert**, **Sun Gate** and **Sun Grasslands** (P). The politics step writes these names; the superseded-name check below fails the build until it does.
+Drawn labels that carry a superseded word get new names in game text: **Crown Sea**, **Crown Forest**, **Crown Mountains** for "Rush Ocean", "Rush Forest" and "Rush Mountains" (P). Drawn labels that use "Sunhot" as a place become **Sun Desert**, **Sun Gate** and **Sun Grasslands** (P). The politics step writes these names; the superseded-name check below fails the build until it does.
 
 ### Peoples
 
@@ -236,7 +236,7 @@ Drawn labels that carry a superseded word get new names in game text: **Crown Oc
 | Rush; Rush Kingdom | Aenor, the Middle Kingdom | Archived sources |
 | Rush Land | Middle Lands | Drawn sheet names |
 | Rush Islands | Aenor Isle | Drawn sheet names |
-| Rush Ocean, Rush Forest, Rush Mountains | Crown Ocean, Crown Forest, Crown Mountains (P) | Drawn labels |
+| Rush Ocean, Rush Forest, Rush Mountains | Crown Sea, Crown Forest, Crown Mountains (P) | Drawn labels |
 | Klinti, Klinti Forests | Kilinti, Kilinti Forests (one country) | Drawn labels |
 | Gorbat | Golbran | Owner's retelling |
 | Huhun | Hunhun (P, same place) | Vault history notes |
@@ -321,7 +321,7 @@ None.
 All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md).
 
 1. What is the central sea called? **Proposal, in use:** no name; "the central sea" (lore digest question 10).
-2. Are "Crown Ocean", "Crown Forest", "Crown Mountains" and the "Sun" names right for the drawn labels? **Proposal, in use:** as above (lore digest questions 10 and 11).
+2. Are "Crown Sea", "Crown Forest", "Crown Mountains" and the "Sun" names right for the drawn labels? **Proposal, in use:** as above (lore digest questions 10 and 11).
 3. Are Huhun and Hunhun the same place? **Proposal, in use:** yes, spelled Hunhun (owner short list 15).
 4. Approve or replace the public labels "the Deliverer's Faithful" and "the Stranger's Host". **Proposal, in use:** these labels (lore digest question 16).
 

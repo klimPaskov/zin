@@ -13,7 +13,7 @@ The following characters were created as candidate additions on 17 October 2026.
 | [[King Edran|Edran the Gatherer]] | King of Aenor in exile | Builds the Grand Alliance, wins Dardan, orders the disastrous Ember Lands offensive |
 | **Sirael** | Elected war-speaker of elves in the Magical Forest | Keeps the democratic Magical Lands distinct from the hereditary elf kings |
 | **Taryn of Gunwaith** | West Lands commander | Demands political guarantees before aiding the kingdom that historically colonized the West |
-| **Senra of Triton's Islands** | Island fleet captain | Makes the multinational alliance's sea supply and far-flung troop movements possible |
+| **Senra of the Pupor Isles** | Island fleet captain | Makes the multinational alliance's sea supply and far-flung troop movements possible |
 | **Brunek of the Stone Roads** | Dwarven military engineer | Holds the Dardan crossings beside giants without establishing a dwarven homeland |
 | **Rovek of Dondor** | Independent Dark Lands leader | Shows that the Dark Lands were not united behind Volgan |
 | **Ithren of the Threshold** | Allied Great Spirit associated with boundaries | Assists Volgan's banishment and becomes bound to the ward at Dardan |

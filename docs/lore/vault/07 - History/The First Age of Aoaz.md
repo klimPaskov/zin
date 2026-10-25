@@ -86,7 +86,7 @@ These concessions cost Edran support among hard-line Aenoran nobles. They make t
 | **Elzon** | Leader who later organizes the surviving Ember Lands defense against the Alliance | **Name and First Age role established**. Later confirmed a **Great Spirit** and Great Necromancer. |
 | **Sirael** | Elected war-speaker of the elves of the Magical Forest, wary of human monarchy | Proposed |
 | **Taryn of Gunwaith** | Western commander who demands recognition of West Lands independence before joining | Proposed |
-| **Senra of Triton's Islands** | Fleet captain who coordinates the islands' supplies and overseas escorts | Proposed |
+| **Senra of the Pupor Isles** | Fleet captain who coordinates the islands' supplies and overseas escorts | Proposed |
 | **Brunek of the Stone Roads** | Dwarven military engineer who helps hold Dardan's crossings | Proposed, homeland not set |
 | **Rovek of Dondor** | Dark Lands leader who joins the Alliance to resist Volgan's control | Proposed, not a claim that all Dondor joins |
 | **Ithren of the Threshold** | Great Spirit whose skill in boundaries helps the banishment | Proposed |

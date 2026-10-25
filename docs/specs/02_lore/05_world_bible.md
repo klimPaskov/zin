@@ -1322,7 +1322,7 @@ Fifteen realms carry the story: the nine of the working table [W] and six more w
 
 The kingdom lies where the Great Lake meets the Vale of Aenor, the best-fed ground in Aoaz. Aen's victory in 1A 1 joined the plain kingdoms here [E]. The roads of Aen ran out from the lake in every direction, and the lake has fed the capital ever since. The kingdom has fallen once, in 2A 2133 [E], and was rebuilt from the forests of Selen and the isle of Asgard after Elzon died. Harion's Charters of Parim made the surviving dominions into a Concord of twenty-six, each with its own lord and law. Parim, on the lake bluff where the River Aenar enters, is the Fourth Age seat; the older capital's name is open [O].
 
-Now it is the richest and fattest realm of the world, under a king who sells offices. Its strengths are institutions older than any king: the Concord courts, the universities, the Houses of the First Light that keep the grain, the hospitals and the birth rolls. [secret: the rolls hold every hearth-name, and the Houses answer to a master that no king has ever seen] It trusts its dominions, which it has bought with charters, and the Deliverer, who has never failed it. It fears Lerendor's pride, the West's old claims and, in legend, a Volgan that no one has seen in a hundred years. Its borders follow water and the Wall: the Great Lake and the Aenar make the core, the Wall Accord of 4A 96 fixes the east, the Narrow Strait the north, the Crown Ocean the west.
+Now it is the richest and fattest realm of the world, under a king who sells offices. Its strengths are institutions older than any king: the Concord courts, the universities, the Houses of the First Light that keep the grain, the hospitals and the birth rolls. [secret: the rolls hold every hearth-name, and the Houses answer to a master that no king has ever seen] It trusts its dominions, which it has bought with charters, and the Deliverer, who has never failed it. It fears Lerendor's pride, the West's old claims and, in legend, a Volgan that no one has seen in a hundred years. Its borders follow water and the Wall: the Great Lake and the Aenar make the core, the Wall Accord of 4A 96 fixes the east, the Narrow Strait the north, the Crown Sea the west.
 
 ### The Worshipdom [secret hub]
 
@@ -1382,7 +1382,7 @@ Stabilo trusts Drak and every contract it has a copy of. It fears Noris, whose c
 
 Hill clans met Aenor's settlers in the First Age and fought them for generations. Gunwaith made peace with the grudge, not with the claim. Its commander Taryn [P] fought at Dardan under Gunwaith's own banner and demanded recognition for the West before she took a sword for Edran. After the Gunwaith-Girdon wars from 4A 1702 [P], the Truce of the Grey Ford of 4A 1745 [P] was signed.
 
-The kingdom is the northern crown of the West Lands. It is led by clan chiefs and bound by the Lawspeaker. It trusts Buldor's companies and the standing stone. It fears Aenor's tariffs, Girdon's wardens and a day when the old claims are renewed. Its borders are the neck to the Cold Lands on the north, the Grey River at the Grey Ford on the south, and the Crown Ocean on the east.
+The kingdom is the northern crown of the West Lands. It is led by clan chiefs and bound by the Lawspeaker. It trusts Buldor's companies and the standing stone. It fears Aenor's tariffs, Girdon's wardens and a day when the old claims are renewed. Its borders are the neck to the Cold Lands on the north, the Grey River at the Grey Ford on the south, and the Crown Sea on the east.
 
 ### Goldoroth
 
@@ -1792,7 +1792,7 @@ Borders follow the first thing a person cannot cross with a cart. The geography 
 | The Rift Road [P] | North-south along the rift sea shore | Only flat coast between the Magical Lands' sea and the East | Wine, grain, elven silver |
 | The Lake Road [P] | Ring road of the Hot Lake | Lake cities feed each other | Fish, cedar, lanterns |
 | The Sand Road [P] | South-west across the Sun Desert to the Lands of the Sun | Oases and a pass at Sun Gate | Dyes, silk, sunfruit |
-| The Crown Ocean crossing | Corogon Narrows, Kradlon and the West Lands to Asgard and the Great Lake | Prevailing winds; the isle as a staging point | Wool, horses, charts, tariffs |
+| The Crown Sea crossing | Corogon Narrows, Kradlon and the West Lands to Asgard and the Great Lake | Prevailing winds; the isle as a staging point | Wool, horses, charts, tariffs |
 | The Narrow Strait | Sonargur to the Great Lake ports | The only sheltered water between north and centre | Timber, fish, grain, iron |
 | The Pupor charts | Triton's harbours to every crown | The reefs must be charted | Charts, pearls, pilots |
 | The Neck Road [P, geography] | Fandanar to Bulligon over the neck between the Cold and West Lands | The only land link; winter closes it | Furs, iron, cattle |

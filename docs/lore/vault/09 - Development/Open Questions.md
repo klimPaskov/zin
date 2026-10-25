@@ -65,7 +65,7 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 - [ ] Who ordered the Letting-In of the Sea: the Deep King or Kunhrim's lords, as Kunhrim says, or the western holds' account? The matter stays disputed (decision K64, D3).
 - [ ] What remains below the Sea of Monsters, and what do the giants of the low hills know? Both stay kept.
 - [ ] Does the Grey Breath still wait in the Cursed Square's wrecks? This stays disputed.
-- [ ] The First Age roster calls Senra "Senra of Triton's Islands", and the adopted fleet role gives her the Pupor Isles. Which name does the roster keep?
+- [x] The First Age roster calls Senra "Senra of Triton's Islands", and the adopted fleet role gives her the Pupor Isles. Which name does the roster keep? **Answered (owner, 25 October 2026):** Senra of the Pupor Isles.
 - [ ] The dwarves' first homeland stays open (V11, unchanged).
 
 [[Fifth Age Seeds]] · [[Canon Policy]] · [[Fourth Age Canon Register]]
