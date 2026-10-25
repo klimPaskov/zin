@@ -560,7 +560,9 @@ test('Portrait plan: every roster character is named, pooled or held exactly onc
   const planned = [...plan.named.map(n => n.id), ...(plan.emblems ?? []).flatMap(e => e.characters), ...plan.pools.flatMap(p => p.characters.map(c => c.id)), ...plan.held.filter(h => h.status === 'held').flatMap(h => h.characters.map(c => c.id))];
   assert.equal(new Set(planned).size, planned.length, 'no character is planned twice');
   assert.deepEqual(roster.filter(id => !planned.includes(id)), [], 'every roster character is planned');
-  assert.deepEqual(planned.filter(id => !roster.includes(id)), [], 'every planned character is on the roster');
+  // A mechanic figure (Kusven, recruited by the Zol slice) is planned here but not on the roster.
+  const mechanic = plan.named.filter(n => n.mechanic).map(n => n.id);
+  assert.deepEqual(planned.filter(id => !roster.includes(id) && !mechanic.includes(id)), [], 'every planned character is on the roster');
 });
 
 test('Portrait plan: every portrait has a source sheet under art/source/ and a valid cell; pool sizes match their members', async () => {

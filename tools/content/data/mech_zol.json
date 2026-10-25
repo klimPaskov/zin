@@ -1,10 +1,10 @@
 {
   "source": "docs/specs/04_mechanics/zols_mistake.md, re-pointed at Kusven by docs/design/alternate_history.md section 9 (owner corrections K4, K11, K29 of 24 October 2026: Zol never takes the field; Kusven, his most loyal servant and a Great Spirit, does). Every number is the spec's proposal. Names are resolved to tags through data/countries.json. Kusven is named only in text shown after he comes forth; no text names a keeper of Furviatlon or what feeding is.",
   "kusven": {
-    "note": "Kusven (formerly Edvoid), Zol's most loyal servant, a Great Spirit made by Zol (vault 03 - Figures/Kusven.md). A unit leader of Zol only, never a country leader (S4 stands). His portrait is the generic portrait of the dead until his own portrait (design: owner pick K41, art/source/design_refs/kusven_v2_a.png) is produced. The skill values, the trait and the timings are proposed.",
+    "note": "Kusven (formerly Edvoid), Zol's most loyal servant, a Great Spirit made by Zol (vault 03 - Figures/Kusven.md). A unit leader of Zol only, never a country leader (S4 stands). His named portrait is a Great Spirit of the grave-wind, drawn from the owner's chosen design (K41, art/source/design_refs/kusven_v2_a.png), and is the portrait of no other character. The skill values, the trait and the timings are proposed.",
     "character": "zin_kusven",
     "name": "Kusven",
-    "portrait": "GFX_zin_portrait_the_dead_male_1",
+    "portrait": "GFX_zin_portrait_zin_kusven",
     "skill": { "level": 6, "attack": 7, "defense": 4, "planning": 3, "logistics": 3 },
     "traits": ["zin_trait_great_spirit_in_arms", "zin_trait_kusven_grave_wind"],
     "trait": { "id": "zin_trait_kusven_grave_wind", "name": "The Grave-Wind", "desc": "Where he passes the breath goes out of the living, and the dead who follow him stand up straighter for it.", "attack": 2, "mods": { "army_attack_factor": 0.15, "army_morale_factor": 0.15 } },
