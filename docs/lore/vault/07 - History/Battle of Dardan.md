@@ -22,5 +22,5 @@ The fuller scene, phase-by-phase course of battle, and consequences are in [[The
 
 The military host breaks, but the Ember Lands remain unconquered. **Elzon** organizes the remnant defense and defeats the Alliance's attempted follow-up invasion. Elven casualties in that failure create longstanding resentment toward Aenor's king.
 
-[[The First Age of Aoaz]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]]
+[[The First Age of Aoaz]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]] · [[Rhabtarkia, the Kalioth Crown]] · [[Gromatrak, the Stone Road]]
 

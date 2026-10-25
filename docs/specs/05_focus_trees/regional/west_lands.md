@@ -822,7 +822,7 @@ Varnondor is a small kingdom of four states on an eastern peninsula of the West 
 | Id | Name | Role | Source |
 | --- | --- | --- | --- |
 | `<Varnondor tag>_zin_ruler` | King Oslin of Varnondor | Country leader, `zin_wild_freeholds` | characters spec (proposed) |
-| `zin_regional_varnondor_sevra` | Lady Sevra of the Capes | Navy leader, skill 3, traits `spotter`, `inshore_fighter`; recruited by *The Sea Watch* | this spec (proposed) |
+| `zin_regional_varnondor_branwyn` | Lady Sevra of the Capes | Navy leader, skill 3, traits `spotter`, `inshore_fighter`; recruited by *The Sea Watch* | this spec (proposed) |
 | `zin_regional_varnondor_tomas` | Cape-Warden Tomas Reed | Corps commander, skill 2, trait `naval_invader`; recruited by *Sea Soldiers of the Capes* | this spec (proposed) |
 
 Start spirit (country history): `approach_watchers`.
@@ -851,7 +851,7 @@ Start spirit (country history): `approach_watchers`.
 - `the_approaches` **The Blue-Sea Approaches** (5,0): building coastal_bunker 1 random_coastal. AI 25.
 - `lighthouses_of_the_capes` **Lighthouses of the Capes** (4,1) ← the_approaches: spirit `cape_lights`.
 - `cape_forts` **Cape Forts** (6,1) ← the_approaches: building coastal_bunker 1 random_coastal, twice.
-- `the_sea_watch` **The Sea Watch** (5,2) ← lighthouses_of_the_capes, cape_forts: recruit `zin_regional_varnondor_sevra`; navy experience 10.
+- `the_sea_watch` **The Sea Watch** (5,2) ← lighthouses_of_the_capes, cape_forts: recruit `zin_regional_varnondor_branwyn`; navy experience 10.
 - `watch_on_the_far_shore` **Watch on the Far Shore** (5,3) 70d ← the_sea_watch: spirit `far_shore_watch`.
 
 **C. Harbours for the Host.**

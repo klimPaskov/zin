@@ -190,6 +190,20 @@ Adel also receives `zin_gunwaith.5` (*A Charter for the Western Fleet*) and the 
 | 1755 | the_great_war_at_sea, the_charter_stays_neutral |
 | 1756–1760 | leftovers; pilots_for_the_living if Adel is the heir's friend |
 
+
+### Deep past branch (K64): The League's Charts
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_great_chart`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_leagues_oldest_charts` | The League's Oldest Charts | `shipwreck` | the_great_chart | — | 5,4 | 70 | — | call `zin_deep_read_league_charts`; pp 25 | base 15 |
+| `whose_square` | Whose Square? | `corsair_raider` | the_leagues_oldest_charts | — | 5,5 | 70 | — | flag `zin_deep_square_question`; pp 25 | base 15 |
+| `the_sea_roads_rejoined` | The Sea-Roads Rejoined | `lantern_chain` | whose_square | — | 5,6 | 105 | — | flag `zin_deep_sea_roads_route`; navy_xp 25 | base 20; ×0 if at_war true |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## Pollos
@@ -471,6 +485,18 @@ The mediation itself uses the shared event `zin_shared_tritons_islands.3`. The S
 | 1755 | the_great_war_at_sea, brokers_of_peace |
 | 1756–1760 | corsair_hunters, envoys_to_the_heir on `zin_eindil_returned` |
 
+
+### Deep past branch (K64): The Banks-Court
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `peace_of_the_pupor`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_banks_court_remembered` | The Banks-Court Remembered | `regency_seals` | peace_of_the_pupor | — | 4,4 | 70 | — | flag `zin_deep_banks_court`; pp 25 | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## Nondondor
@@ -619,6 +645,19 @@ Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_
 | 1756–1760 | royal_stores, leftovers |
 
 The AI never takes `share_the_banks`, `the_banks_by_right`, `the_banks_by_force`, `corsair_letters` or `galleys_for_hire` on the historical path.
+
+
+### Deep past branch (K64): The High Speaker's Seat
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_banks_by_right`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_high_speakers_seat` | The High Speaker's Seat | `seal_chancellor` | the_banks_by_right | — | 1,5 | 70 | — | call `zin_deep_open_sea_roads`; pp 50 | base 15 |
+| `the_sea_roads_by_the_crown` | The Sea-Roads by the Crown | `great_warship` | the_high_speakers_seat | — | 1,6 | 105 | — | flag `zin_deep_crown_route`; flag `zin_deep_sea_roads_route`; navy_xp 25 | base 1; +15 if `naval_strength_comparison = { other = RAE ratio > 1 }` |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 
@@ -914,6 +953,18 @@ Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_
 | 1755 | the_great_war_at_sea, the_isles_keep_apart |
 
 The AI never takes `defy_the_king`, `the_free_coves` or `call_on_friends` on the historical path.
+
+
+### Deep past branch (K64): The Fathers Under the League
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_moot_stone`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_fathers_fished_under_the_league` | The Fathers Fished Under the League | `heir_rolls` | the_moot_stone | — | 1,3 | 70 | — | flag `zin_deep_fathers_refuse`; stab 0.03 | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 

@@ -10,11 +10,12 @@
 // The invariants no option breaks (the owner's start of 18 October 2026): the Golden King reigns on 1 Lumae 4A 1748; the heir has not
 // woken and nobody employs him; the Deliverer is not revealed and no variety text exists for him to be named in; no great power is at
 // war and no league changes; no canon figure changes; every drawn value stays inside the design's range. The drawn changes that land on
-// one realm (tempers, feuds, lands, bonds) are made between AI realms only.
+// one realm (tempers, feuds, lands, bonds) are made for AI realms only under LIGHT; under FULL they reach player realms too (owner answer
+// Q-92, K59). The tempers (Q-91) are twenty, drawn by weight: the common, the uncommon, the rare and the rarest.
 //
 // Data: tools/content/data/start_variety.json. Writes common/on_actions/zin_start_variety.txt (the draws, once, in on_startup),
 // common/scripted_effects/zin_start_variety.txt, common/scripted_triggers/zin_start_variety.txt, common/script_constants/zin_variety.txt,
-// common/country_leader/zin_temper_traits.txt (the eight tempers), events/zin_variety.txt (the hidden application on day 3 and the end of
+// common/country_leader/zin_temper_traits.txt (the twenty tempers, Q-91), events/zin_variety.txt (the hidden application on day 3 and the end of
 // the feuds) and the trait text. The V3 camp shifts are read by zin_aenor_compute_camps (lib/mech_aenor_script.mjs); the V1 tempers by the
 // AI of the Golden King's reign events (data/events_crown_reign1.json).
 import { readFile } from 'node:fs/promises';
@@ -79,8 +80,9 @@ export function varietyScripts(D, countries) {
   T.zin_variety_on = `# The start variety is drawn (LIGHT or FULL, or DEFAULT with the path rule PLAUSIBLE or FREE).\nOR = {\n${light}\n${full}\n}`;
   T.zin_variety_full = `# The full start variety (FULL, or DEFAULT with the path rule FREE).\n${full}`;
   const groups = Object.entries(D.V6.groups).map(([g, names]) => [g, names.map(need)]);
-  T.zin_variety_feud_ready = list('# V6: a realm that may open a small feud: an AI realm at peace, of a feud group, free and not already feuding.',
-    'exists = yes', 'is_ai = yes', 'has_war = no', 'is_subject = no', 'NOT = { has_country_flag = zin_variety_feuding }',
+  T.zin_variety_feud_ready = list('# V6: a realm that may open a small feud: a realm at peace (a player realm too, Q-92: feuds are FULL only), of a feud group, free and not',
+    '# already feuding.',
+    'exists = yes', 'has_war = no', 'is_subject = no', 'NOT = { has_country_flag = zin_variety_feuding }',
     'OR = {', groups.map(([g]) => `has_country_flag = zin_variety_feud_${g}`), '}');
   T.zin_variety_same_feud_group = list('# V6, scope: a candidate; PREV: the other realm. Both belong to one feud group.', 'OR = {',
     groups.map(([g]) => `AND = {\nhas_country_flag = zin_variety_feud_${g}\nPREV = { has_country_flag = zin_variety_feud_${g} }\n}`), '}');
@@ -108,8 +110,8 @@ export function varietyScripts(D, countries) {
     'add_to_variable = { zin_aenor_king_clock = global.zin_sv_clock }', `clamp_variable = { var = zin_aenor_king_clock min = ${D.V1.clockMin} }`, '}',
     '# V3: Prince Eronel\'s standing', 'set_variable = { zin_aenor_eronel_favour = global.zin_sv_eronel }', '}');
   apply.push('# V2: the Council\'s readiness', 'set_variable = { global.zin_afrit_regicide_plot = global.zin_sv_plot }', 'set_variable = { global.zin_afrit_veil = global.zin_sv_veil }');
-  apply.push('# V4: tier A and B rulers who are not canon figures may have a temper (AI realms).',
-    'every_country = {', 'limit = {', 'is_ai = yes', 'OR = {', 'zin_realm_tier_a = yes', 'zin_realm_tier_b = yes', '}', 'NOT = { zin_realm_is_story_ruler = yes }', '}',
+  apply.push('# V4: tier A and B rulers who are not canon figures may have a temper (AI realms; under FULL player realms too, Q-92).',
+    'every_country = {', 'limit = {', 'OR = {', 'is_ai = yes', 'has_global_flag = zin_start_variety_full', '}', 'OR = {', 'zin_realm_tier_a = yes', 'zin_realm_tier_b = yes', '}', 'NOT = { zin_realm_is_story_ruler = yes }', '}',
     'random_list = {', `${100 - D.V4.chance} = { }`, `${D.V4.chance} = { zin_variety_add_temper = yes }`, '}', '}');
   apply.push('# V5: the strength of the dark',
     `${PUV} = { if = { limit = { has_variable = zin_dominion_strength } set_variable = { zin_dominion_strength = global.zin_sv_volgan } } }`,
@@ -133,12 +135,13 @@ export function varietyScripts(D, countries) {
     Array.from({ length: D.V6.max }, (_, i) => `random_list = {\n${100 - D.V6.chance} = { }\n${D.V6.chance} = { zin_variety_start_feud_${i + 1} = yes }\n}`));
   fullApply.push('# V8: disputed lands', D.V8.pairs.map(([a, b]) => {
     const A = need(a), B = need(b), W = D.V8.weights;
-    const give = (g, r) => `${g} = {\nif = {\nlimit = {\nexists = yes\nis_ai = yes\nnum_of_controlled_states > 2\n${r} = {\nexists = yes\nis_ai = yes\n}\nany_owned_state = {\nis_capital = no\nany_neighbor_state = { is_owned_by = ${r} }\n}\n}\nrandom_owned_state = {\nlimit = {\nis_capital = no\nany_neighbor_state = { is_owned_by = ${r} }\n}\ntransfer_state_to = ${r}\nadd_claim_by = ${g}\n}\n}\n}`;
+    const give = (g, r) => `${g} = {\nif = {\nlimit = {\nexists = yes\nnum_of_controlled_states > 2\n${r} = {\nexists = yes\n}\nany_owned_state = {\nis_capital = no\nany_neighbor_state = { is_owned_by = ${r} }\n}\n}\nrandom_owned_state = {\nlimit = {\nis_capital = no\nany_neighbor_state = { is_owned_by = ${r} }\n}\ntransfer_state_to = ${r}\nadd_claim_by = ${g}\n}\n}\n}`;
     return `# ${a} and ${b}\nrandom_list = {\n${W.none} = { }\n${W.first} = {\n${give(A, B)}\n}\n${W.second} = {\n${give(B, A)}\n}\n}`;
   }));
   const pair = names => names.map(need);
   const [cA, cB] = pair(D.V9.courtship), [gA, gB] = pair(D.V9.guarantee), [pA, pB] = pair(D.V9.pact);
-  const bothAi = (a, b) => `limit = {\n${a} = {\nexists = yes\nis_ai = yes\n}\n${b} = {\nexists = yes\nis_ai = yes\n}\n}`;
+  // Q-92: under FULL the bonds reach player realms too (both realms need only exist).
+  const bothAi = (a, b) => `limit = {\n${a} = {\nexists = yes\n}\n${b} = {\nexists = yes\n}\n}`;
   fullApply.push('# V9: at most one loose bond: a Leren courtship of Andos Enda (it stays outside the Compact, S5), a Stabilo guarantee of Alerhia, a Coldor pact with Nivaros.',
     'random_list = {', `${D.V9.weights.none} = { }`,
     `${D.V9.weights.courtship} = {\nif = {\n${bothAi(cA, cB)}\n${cA} = { add_opinion_modifier = { target = ${cB} modifier = zin_realm_courtship } }\n${cB} = { add_opinion_modifier = { target = ${cA} modifier = zin_realm_courtship } }\n}\n}`,
@@ -171,9 +174,10 @@ export function varietyScripts(D, countries) {
     'every_country = { limit = { has_country_flag = zin_variety_feuding } clr_country_flag = zin_variety_feuding }');
   // tempers
   const tempers = Object.keys(D.tempers);
-  E.zin_variety_add_temper = list('# V4: one temper for the ruler of THIS realm, drawn evenly.', 'random_list = {', tempers.map(k => `1 = { add_country_leader_trait = ${traitId(k)} }`), '}');
-  E.zin_variety_temper_new_ruler = list('# Realm life (G1): a new ruler of an AI realm may have a temper, as at the start, when the start variety is not off.',
-    'if = {', 'limit = {', 'has_global_flag = zin_start_variety_drawn', 'is_ai = yes', '}', 'random_list = {', `${100 - D.V4.chance} = { }`, `${D.V4.chance} = { zin_variety_add_temper = yes }`, '}', '}');
+  // Q-91: each temper by its weight (the rarer tempers weigh less).
+  E.zin_variety_add_temper = list('# V4: one temper for the ruler of THIS realm, drawn by weight (Q-91: the common, the uncommon, the rare and the rarest).', 'random_list = {', tempers.map(k => `${D.tempers[k].weight ?? D.V4.weightDefault} = { add_country_leader_trait = ${traitId(k)} }`), '}');
+  E.zin_variety_temper_new_ruler = list('# Realm life (G1): a new ruler of an AI realm (any realm under FULL, Q-92) may have a temper, as at the start, when the start variety is not off.',
+    'if = {', 'limit = {', 'has_global_flag = zin_start_variety_drawn', 'OR = {', 'is_ai = yes', 'has_global_flag = zin_start_variety_full', '}', '}', 'random_list = {', `${100 - D.V4.chance} = { }`, `${D.V4.chance} = { zin_variety_add_temper = yes }`, '}', '}');
   return { T, E, draws, runners };
 }
 

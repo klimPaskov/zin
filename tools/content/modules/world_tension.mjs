@@ -40,7 +40,7 @@ const evNum = id => Number(id.split('.')[1]);
 export const CALLS = {
   effects: ['zin_afrit_reveal', 'zin_ending_start_epilogue', 'zin_story_tick', 'zin_path_tick'],
   triggers: ['zin_aenor_is_realm', 'zin_afrit_ashen_throne_ready', 'zin_volgan_children_ready', 'zin_diplo_is_dark_power', 'zin_is_volgan', 'zin_is_zol', 'zin_is_lerendor',
-    'zin_leren_holds_strait', 'zin_rules_is_historical', 'zin_rules_is_free', 'zin_is_site_parim'],
+    'zin_leren_holds_strait', 'zin_rules_is_historical', 'zin_rules_is_free', 'zin_is_site_parim', 'zin_west_is_leader'],
 };
 // Step 10 of the tick: called for human players only when a module has staged the effect.
 const UI_STEP = ['zin_ui_refresh', 'zin_chr_count_unread'];
@@ -68,12 +68,14 @@ export function worldScripts(D, T) {
   });
   triggers.set('zin_world_great_war_exists', '# A war with a major on each side.\nany_country = {\nis_major = yes\nhas_war = yes\nany_enemy_country = { is_major = yes }\n}');
   triggers.set('zin_world_peace_holds', `# The Long Peace: the meter below ${D.tiers[1].from} and no war with a major on each side.\ncheck_variable = { global.zin_gathering_dark < ${D.tiers[1].from} }\nNOT = { zin_world_great_war_exists = yes }`);
+  // Q-80 (K59): a front of the great war that a player's realm opened: the front's flag is set and its owner is a human realm.
+  triggers.set('zin_world_player_front_open', `# Q-80: under HISTORICAL a player's own front opens the War of the Last Crowns early (the owners of data/world_tension.json war.playerFronts).\nOR = {\n${D.war.playerFronts.map(p => `AND = {\n${gflag(p.flag)}\nany_country = {\nis_ai = no\n${p.opener}\n}\n}`).join('\n')}\n}`);
   triggers.set('zin_world_dark_war', '# A dark power at war with a major that is not a dark power (the PLAUSIBLE and FREE start of the War of the Last Crowns).\nany_country = {\nzin_diplo_is_dark_power = yes\nany_enemy_country = {\nis_major = yes\nNOT = { zin_diplo_is_dark_power = yes }\n}\n}');
   const [lo, hi] = D.judgement.reachStages;
   triggers.set('zin_world_canon_in_reach', `# E-01: a canon ending is in reach while the heir is at stage ${lo} to ${hi}, not lost and not yet crowned, and Afrit lives or the palace is pending.\n${gte('global.zin_eindil_stage', lo)}\ncheck_variable = { global.zin_eindil_stage < ${hi + 1} }\n${notGflag('zin_eindil_lost')}\n${notGflag('zin_eindil_crowned')}\nOR = {\n${notGflag('zin_afrit_dead')}\ncheck_variable = { global.zin_path_cp25 = 0 }\n}`);
   triggers.set('zin_world_judgement_open', `# The proposed outcomes are judged on the judgement date when the age has left history enough (zin_path_departure ${D.judgement.departure} or more) or no canon ending\n# is in reach; otherwise once, on the deferred date (E-01, SL-26).\nOR = {\nAND = {\nzin_world_date_judgement = yes\nOR = {\n${gte('global.zin_path_departure', D.judgement.departure)}\nNOT = { zin_world_canon_in_reach = yes }\n}\n}\nzin_world_date_judgement_deferred = yes\n}`);
   // The four proposed outcomes (spec, "Proposed outcomes"; alternate_history.md section 10 and E-04).
-  triggers.set('zin_world_golden_court_holds', `# Outcome 4 (SL-25, E-04): an Aenor realm controls Parim, and the Golden King rules it or the Regency of Gold does. A King who went into exile\n# when his realm fell (zin_golden_king_exiled) rules no court.\n${notGflag('zin_golden_king_exiled')}\nany_state = {\n${parim}\ncontroller = { zin_aenor_is_realm = yes }\n}\nOR = {\n${notGflag('zin_golden_king_dead')}\n${gflag('zin_aenor_regency_endures')}\n}`);
+  triggers.set('zin_world_golden_court_holds', `# Outcome 4 (SL-25, E-04): an Aenor realm controls Parim, and the Golden King rules it or the Regency of Gold does. A King who went into exile\n# when his realm fell (zin_golden_king_exiled) rules no court. A King who died of old age after surviving the Council\n# (zin_golden_king_old_age, K59, Q-86) is dead like any other: the outcome then holds only through the Regency of Gold (owner, 25 October 2026).\n${notGflag('zin_golden_king_exiled')}\nany_state = {\n${parim}\ncontroller = { zin_aenor_is_realm = yes }\n}\nOR = {\n${notGflag('zin_golden_king_dead')}\n${gflag('zin_aenor_regency_endures')}\n}`);
   triggers.set('zin_world_western_crown_holds', `# Outcome 5 (SL-19): the Western Crossing's zin_west_holds_parim; or, while the key-sites table is pending (its zin_is_site_parim is an inert\n# stand-in), a West Lands realm controls Aenor's capital state and has claimed its throne, or no Aenor realm is left to claim it back.\nOR = {\nzin_west_holds_parim = yes\nAND = {\nany_state = {\n${parim}\ncontroller = { has_country_flag = zin_region_west_lands }\n}\nOR = {\n${gflag('zin_west_throne_claimed')}\nNOT = { any_country = { zin_aenor_is_realm = yes } }\n}\n}\n}`);
   triggers.set('zin_world_strait_master_holds', `# Outcome 6: Lerendor sought the strait for itself and holds both its shores.\n${gflag('zin_leren_strait_supremacy')}\nany_country = {\nzin_is_lerendor = yes\nzin_leren_holds_strait = yes\n}`);
   triggers.set('zin_world_eastern_king_holds', `# Outcome 7: the East is united, and the false god is dead or was never its king.\n${gflag('zin_east_united')}\nOR = {\n${gflag('zin_afrit_dead')}\n${notGflag('zin_afrit_king_of_east')}\n}`);
@@ -305,12 +307,20 @@ random_country = { news_event = { id = zin_world.20 } }
 }`);
   effects.set('zin_world_check_last_crowns', `# Spec, "The War of the Last Crowns": HISTORICAL on its date; PLAUSIBLE on the first of the meter at ${D.war.plausibleMeter} after its date, a dark war, or
 # the latest date; FREE on the first two. Outside HISTORICAL the first front of the war that comes on its own sets the flag piecemeal (B18 D3).
+# Under HISTORICAL the AI's fronts keep the date, but a front a player's realm opens starts the war early, piecemeal (owner answer Q-80,
+# K59): zin_world_player_front_open.
 if = {
 limit = { ${notGflag('zin_war_of_last_crowns')} }
 if = {
 limit = { zin_rules_is_historical = yes }
 if = {
 limit = { zin_world_date_last_crowns = yes }
+zin_world_start_last_crowns = yes
+}
+else_if = {
+limit = { zin_world_player_front_open = yes }
+set_global_flag = zin_war_piecemeal
+set_global_flag = zin_war_opened_by_player
 zin_world_start_last_crowns = yes
 }
 }

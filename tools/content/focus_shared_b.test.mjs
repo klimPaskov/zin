@@ -42,9 +42,9 @@ function checkSpecList(id, countries, specNames) {
 const IDS = ['shared_lands_of_the_sun', 'shared_magical_lands', 'shared_north_lands', 'shared_tritons_islands', 'shared_west_lands'];
 const EXPECT = {
   shared_lands_of_the_sun: { focuses: 44, spirits: 13, events: 1, opinions: 0 },
-  shared_magical_lands: { focuses: 55, spirits: 15, events: 4, opinions: 1 },
+  shared_magical_lands: { focuses: 56, spirits: 15, events: 4, opinions: 1 },
   shared_north_lands: { focuses: 55, spirits: 18, events: 6, opinions: 2 },
-  shared_tritons_islands: { focuses: 52, spirits: 16, events: 3, opinions: 0 },
+  shared_tritons_islands: { focuses: 54, spirits: 16, events: 3, opinions: 0 },
   shared_west_lands: { focuses: 65, spirits: 11, events: 3, opinions: 1 },
 };
 const TREE_DIR = `${ZIN}/docs/design/focus`;
@@ -122,7 +122,7 @@ test('Counts of focuses, spirits, events, opinion modifiers and countries match 
     assert.deepEqual([...t.countries].sort(), treeCountries(id).sort(), `${id} countries are the roster's realms of the tree`);
     assert(t.countries.length >= 1, `${id} serves a realm`);
   }
-  assert.equal(IDS.reduce((n, id) => n + BASE[id].focuses.length, 0), 271);
+  assert.equal(IDS.reduce((n, id) => n + BASE[id].focuses.length, 0), 274);
 });
 
 test('The compiler accepts all five trees with no problem and every tree is within the shared tier range', () => {

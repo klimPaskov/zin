@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-25
 ---
 
 # Ages of Aoaz
@@ -10,6 +10,7 @@ Aoaz's numbered ages are reckoned from the victory of [[Aen]] in the War of Men.
 
 | Age | Status and length | Central history |
 | --- | --- | --- |
+| **Deep past, before 1A** | Undated in play; the BA dates are owner-adopted chronology (25 October 2026, decision K64) | Great realms of men before Aen, none with one crown over all men: the Sunfields fail in the long winters, the Bridge Kingdom breaks in a war of two heirs, the Low Country sinks by its mothers' overdraw. The Stone Road, the Kalioth Crown and the Sea-Roads belong to the First Age. See [[Timeline]] and the six realm notes. |
 | **First Age** | **1,675 years, canon** | Founded with Aen's victory, prosperity and expansion, decline, Volgan's first invasion, Dardan, Edran's failed Ember Lands campaign |
 | **Second Age** | **2,133 years, canon** | Long grief and reconstruction, famines, plagues, discoveries, Elzon's wars and eventual conquest of Aenor in 2A 2133 |
 | **Third Age** | **At least 1,200 years, canon**, **1,260 proposed** | Elzon's long occupation, resistance, Varner's defense, decay of necromancy, Elzon's permanent death and Afrit's public ascent |

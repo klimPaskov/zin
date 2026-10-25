@@ -36,7 +36,7 @@ export function writeContent(V) {
   const advisor = (id, c) => { K.def('character', id); K.loc.set(id, c.name); K.loc.set(`${id}_desc`, c.desc); return `\t${id} = {\n\t\tname = ${id}\n\t\t${portrait(c, 'civilian')}\n\t\tadvisor = {\n\t\t\tslot = political_advisor\n\t\t\tidea_token = ${id}\n\t\t\tcost = 100\n\t\t\ttraits = { zin_adv_whisper_master }\n\t\t}\n\t}`; };
   const list = [
     general('zin_volgan_ember_herald', chars.zin_volgan_ember_herald), general('zin_volgan_grave_warden', chars.zin_volgan_grave_warden), general('zin_volgan_ghorvak', chars.zin_volgan_ghorvak),
-    leader('zin_mirolon_maeric', chars.zin_mirolon_maeric), general('zin_mirolon_selda', chars.zin_mirolon_selda), advisor('zin_mirolon_hadric', chars.zin_mirolon_hadric),
+    leader('zin_mirolon_maeric', chars.zin_mirolon_maeric), general('zin_mirolon_almon', chars.zin_mirolon_almon), advisor('zin_mirolon_hadric', chars.zin_mirolon_hadric),
   ];
   if (V.defineVolgan) list.push(leader('zin_volgan', chars.zin_volgan));
   K.add('common/characters/zin_dominion.txt', `characters = {\n${list.join('\n')}\n}`);

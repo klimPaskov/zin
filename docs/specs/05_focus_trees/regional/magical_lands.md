@@ -304,6 +304,20 @@ The End is the realm at the end of the old roads (proposed), where the Magical L
 | 1752–1754 | merchants_whisper, quays_of_the_end, lore_of_the_unbinding, the_end_keeps_the_refusal, archers_of_the_end, the_end_endures |
 | 1755 onward | war branch; the_kindred_called when raised; rolls_of_the_first_men after `zin_eindil_named`; the shore branch on `zin_zol_rising` |
 
+
+### Deep past branch (K64): Rolls of the Two Shores
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `first_age_rolls`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `rolls_of_the_two_shores` | Rolls of the Two Shores | `glyph_fading` | first_age_rolls | — | 7,4 | 70 | — | call `zin_deep_open_two_shores`; pp 25 | base 15 |
+| `the_treaty_opened` | The Treaty Opened | `bridge_oaths` | rolls_of_the_two_shores | the_treaty_kept_shut | 6,5 | 70 | — | flag `zin_deep_treaty_willing` | base 15; ×0.2 if global_flag `zin_eastern_invasion` |
+| `the_treaty_kept_shut` | The Treaty Kept Shut | `mask_veiled` | rolls_of_the_two_shores | the_treaty_opened | 8,5 | 70 | — | global flag `zin_deep_treaty_kept_shut`; stab 0.03 | base 5; +20 if global_flag `zin_eastern_invasion` |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## Herrodon

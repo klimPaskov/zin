@@ -4,17 +4,24 @@
  "namespace": "zin_realm",
  "constants": {
   "slot_count": 4,
-  "vigour_max": 100,
-  "vigour_frail": 20,
+  "vigour_max": 60,
+  "vigour_frail": 5,
   "vigour_floor": 0.01,
   "rate_default": 1,
+  "months_per_year": 12,
   "war_wear": 0.5,
-  "losing_wear": 1,
+  "losing_wear": 0.5,
   "losing_surrender": 0.3,
-  "new_ruler_min": 60,
-  "new_ruler_max": 100,
-  "start_vigour_default_min": 50,
-  "start_vigour_default_max": 100,
+  "new_ruler_min": 15,
+  "new_ruler_max": 40,
+  "start_vigour_default_min": 10,
+  "start_vigour_default_max": 40,
+  "start_years_left_min": 3,
+  "heir_worry_vigour": 10,
+  "heir_urgent_vigour": 5,
+  "disputed_days": 365,
+  "raid_sea_xp": 5,
+  "raid_steppe_xp": 5,
   "count_offset": 5068,
   "start_count": 6816,
   "adult_age": 16,
@@ -53,7 +60,7 @@
  "batch": { "days": [7, 14, 21] },
  "people": {
   "rate": { "men": 1, "small_folk": 1, "gnomes": 0.8, "orcs": 1.3, "goblins": 1.3, "hobgoblins": 1.3, "dwarf_goblins": 1.3, "ogres": 1.3, "trolls": 1.3, "dwarves": 0.6, "giants": 0.5, "yeti": 0.5, "elves": 0.05, "sun_elves": 0.05, "ents": 0.05, "tree_people": 0.05, "mycids": 0.05, "demons": 0.05 },
-  "rateNote": "Men 1, orcs and goblins 1.3, dwarves 0.6, giants 0.5 and elves 0.05 are the design's rates (G1). The other peoples are proposals: the small folk as men, gnomes a little slower, hobgoblins, ogres and trolls as orcs, the yeti as giants, and ents, the Baelim, the mycids and the demon lords as slow as elves. The dead and the spirits have no rate: their rulers are story rulers.",
+  "rateNote": "Men 1, orcs and goblins 1.3, dwarves 0.6, giants 0.5 and elves 0.05 are the design's rates (G1). The other peoples are proposals: the small folk as men, gnomes a little slower, hobgoblins, ogres and trolls as orcs, the yeti as giants, and ents, the Baelim, the mycids and the demon lords as slow as elves. The dead and the spirits have no rate: their rulers are story rulers. Rulers age by the year (owner, K55, Q-85: reigns last decades): the vigour counts the years left in a man's life, it falls each month by the rate divided by the months of a year, so a man of 15 to 40 years of vigour reigns for decades and a long-lived people (dwarves, giants, elves) for many lifetimes of men; start vigour is the years left to the people's span times the rate.",
   "lifespanYears": { "men": 70, "small_folk": 80, "gnomes": 90, "orcs": 55, "goblins": 50, "hobgoblins": 55, "dwarf_goblins": 55, "ogres": 60, "trolls": 60 },
   "kinClass": { "men": "men", "small_folk": "men", "gnomes": "men", "elves": "elves", "sun_elves": "elves", "giants": "giants", "yeti": "giants", "dwarves": "dwarves", "orcs": "orcs", "goblins": "orcs", "hobgoblins": "orcs", "dwarf_goblins": "orcs", "ogres": "orcs", "trolls": "orcs" },
   "kinNote": "G7: men with men, elves with elves; giants, orcs and dwarves among themselves. The small folk and the gnomes marry among men, the yeti among the giants, every goblin-kind among the orcs (proposed). Ents, the Baelim, the mycids, the demons, the dead and the spirits make no royal matches."
@@ -77,50 +84,87 @@
   "contested": "\\b(ring|breaks|fight for the crown|whoever (?:takes|holds|is largest)|taken, not inherited|bigger hobgoblin|throws him out|shouted down)\\b",
   "open": "^(?:Not applicable|No heir is known|No heir is named in any record|Open in the vault)",
   "monarchyForms": ["kingdom", "principality", "lordship", "house", "household", "merchant principality", "march", "domain", "wardenship", "dominion", "hold", "enclave"],
-  "note": "A realm with a named heir in data/world/characters inherits through that heir; a realm whose heir note settles the crown by combat is contested; a realm whose note says nothing is known is quiet (the engine names a successor); every other realm chooses by its own custom (a moot, a council, a guild). A realm that inherits and has no living heir, and a contested realm, fall into No Heir of the Body when their crown may fall into crisis. The monarchy forms are the royal houses that make matches (G7)."
+  "note": "Owner answer Q-87 (K59): every realm but the story's has a named heir (data/world/characters and the pre-built heirs of data/world/heirs.json), and each has a custom of succession (blood, elective, contested, open; heirs.json gives it, otherwise a court's own heir means blood and the notes below decide). Before Q-87: a realm with a named heir in data/world/characters inherits through that heir; a realm whose heir note settles the crown by combat is contested; a realm whose note says nothing is known is quiet (the engine names a successor); every other realm chooses by its own custom (a moot, a council, a guild). A realm that inherits and has no living heir, and a contested realm, fall into No Heir of the Body when their crown may fall into crisis. The monarchy forms are the royal houses that make matches (G7)."
  },
  "civilWarSize": 0.35,
  "usurperDays": 365,
  "exileAskDays": 90,
  "arrest": { "fails": 70, "rises": 30 },
  "mtth": {
-  "zin_realm_frail_death": { "base": 4, "modifiers": [
+  "zin_realm_frail_death": { "base": 3, "modifiers": [
    { "add": 2, "if": "has_war = yes" },
    { "add": 2, "if": "has_stability < 0.3" },
    { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" },
-   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_weary" }
+   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_weary" },
+   { "factor": 0.75, "if": "has_country_leader_with_trait = zin_trait_temper_fortunate" },
+   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_melancholy" }
   ] },
   "zin_realm_ambition_chance": { "base": 3, "modifiers": [
    { "add": 3, "if": "has_stability < 0.15" },
    { "add": 2, "if": "has_war = yes" },
    { "add": 2, "if": "surrender_progress > 0.3" },
    { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" },
-   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_weary" }
+   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_weary" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_suspicious" },
+   { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_cruel" },
+   { "add": 3, "if": "has_country_leader_with_trait = zin_trait_temper_touched" },
+   { "factor": 0.7, "if": "has_country_leader_with_trait = zin_trait_temper_beloved" }
   ] },
   "zin_realm_raid_chance": { "base": 3, "modifiers": [
    { "factor": 1.5, "if": "zin_rules_is_free = yes" },
    { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_bold" },
    { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_grasping" },
    { "add": 1, "if": "has_war_support > 0.5" },
-   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" }
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" },
+   { "factor": 1.5, "if": "zin_realm_is_steppe_rider = yes" },
+   { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_ambitious" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_idle" }
   ] },
   "zin_realm_match_will": { "base": 2, "modifiers": [
    { "add": 4, "if": "threat > 0.4" },
    { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_generous" },
    { "add": 2, "if": "NOT = { zin_realm_has_heir = yes }" },
+   { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_silver_tongued" },
+   { "add": 1, "if": "has_country_leader_with_trait = zin_trait_temper_ambitious" },
    { "factor": 0.5, "if": "zin_rules_is_free = no" },
    { "factor": 0, "if": "zin_rules_is_historical = yes" }
+  ] },
+  "zin_realm_succession_dispute": { "base": 10, "modifiers": [
+   { "add": 25, "if": "zin_realm_elective_custom = yes" },
+   { "add": 40, "if": "zin_realm_contested_custom = yes" },
+   { "add": -5, "if": "zin_realm_open_custom = yes" },
+   { "add": 10, "if": "has_stability < 0.3" },
+   { "add": 10, "if": "surrender_progress > 0.3" },
+   { "add": 10, "if": "any_army_leader = { has_character_flag = zin_char_ambitious }" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_just" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_beloved" },
+   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_cruel" },
+   { "factor": 2, "if": "has_country_leader_with_trait = zin_trait_temper_touched" },
+   { "factor": 0.25, "if": "zin_rules_is_historical = yes" }
+  ] },
+  "zin_realm_election_dispute": { "base": 15, "modifiers": [
+   { "add": 10, "if": "has_stability < 0.3" },
+   { "add": 10, "if": "has_war = yes" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_just" },
+   { "factor": 0.25, "if": "zin_rules_is_historical = yes" }
+  ] },
+  "zin_realm_heir_death": { "base": 0.1, "modifiers": [
+   { "add": 0.3, "if": "has_war = yes" },
+   { "add": 0.2, "if": "surrender_progress > 0.3" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_fortunate" }
   ] }
  },
  "raiders": {
-  "realms": ["Burnikit", "Belonton", "Bordon", "Dreson", "Dulundur", "The Darks", "Skragdurg", "Dun", "Britadon", "Wild Lands", "Troll Forest", "Halenor", "Santon", "Benan", "Halia", "Horidor", "Glimkit", "Omar", "Orewele"],
-  "note": "G8: the orc, goblin and troll holds of the Dark Lands outside Goldoroth's own raids (the Dark Lands mechanic keeps Goldoroth and its sworn holds), the Triton island lordship and the two corsair captaincies, the Ember Lands freeholds of Halia and the clans of the Cold Lands (proposed list)."
+  "realms": ["Burnikit", "Belonton", "Bordon", "Dreson", "Dulundur", "The Darks", "Skragdurg", "Dun", "Britadon", "Wild Lands", "Troll Forest", "Halenor", "Santon", "Benan", "Halia", "Horidor", "Glimkit", "Omar", "Orewele", "Nondondor", "Windy Lands", "Konori", "Hunhun", "Noris", "Delbiz"],
+  "styles": { "corsair": ["Belonton", "Halenor", "Santon", "Benan", "Nondondor", "Windy Lands"], "steppe": ["Konori", "Hunhun", "Noris", "Delbiz"] },
+  "note": "G8: the orc, goblin and troll holds of the Dark Lands outside Goldoroth's own raids (the Dark Lands mechanic keeps Goldoroth and its sworn holds), the Triton island lordship and the corsair captaincies, the Ember Lands freeholds of Halia and the clans of the Cold Lands (proposed list); owner answer Q-89 (K59) adds the corsair realms (Nondondor and the Windy Lands, the corsair_lords culture) and the steppe riders (Konori and Hunhun, the steppe_rider culture); the owner added the riders of Noris and the horse-kingdom of Delbiz to them (25 October 2026), 25 raiders. Corsairs (the sea-orcs of Belonton, Halenor and the corsair_lords) raid by sea; the steppe riders raid by land only, more often, and never the Concord they are chartered to."
  },
  "goldenKingShelter": ["Lerendor", "Selen", "Kingson", "Konori", "Hunhun", "Herez", "Noleksun", "Orohaf", "Kunhrim"],
  "goldenKingNote": "Owner question Q-65, default: the Golden King keeps a court in exile that can return. His shelter is the first of these realms that still stands, has not capitulated, does not hold Parim and is not the Deliverer's seat: Lerendor, bound to Aenor by the Treaty of the Narrow Strait, then the old Concord dominions (proposed order).",
  "ideas": {
   "zin_realm_regency": { "picture": "regency_seals", "name": "A Council of Regency", "desc": "The crown sits on a child, and a council of lords signs every writ in the young ruler's name, each of them sure that the realm would be better governed if the others signed less.", "mods": { "political_power_gain": -0.1, "stability_factor": -0.05 } },
   "zin_realm_crisis": { "picture": "crown_broken", "name": "The Crown in Dispute", "desc": "There is no ruler everyone will bow to, the claimants keep their own courts in their own halls, and every lord has started counting his friends.", "mods": { "stability_factor": -0.15, "political_power_gain": -0.25 } },
+  "zin_realm_disputed_crown": { "picture": "empty_throne", "name": "A Disputed Crown", "desc": "The heir wears the crown, but a rival who says it should be his keeps his own hall and his own friends, and every writ from the throne is read twice before it is obeyed.", "mods": { "stability_factor": -0.08, "political_power_gain": -0.15 } },
   "zin_realm_usurper_rule": { "picture": "crown_iron", "name": "A Captain's Crown", "desc": "The crown was taken with a host at the gate, and the lords who swore to the new ruler swore with soldiers standing behind them.", "mods": { "stability_factor": -0.1, "war_support_factor": 0.05 } },
   "zin_realm_exiled_court": { "picture": "exile_court", "name": "A Court in Exile", "desc": "A fallen court lives under our roof, eats at our table and keeps its own seals, and its lords never stop talking about the day they will go home.", "mods": { "political_power_gain": -0.05, "stability_factor": 0.02 } },
   "zin_realm_raided": { "picture": "goblin_raiders", "name": "Raiders in the Hills", "desc": "The border villages sleep with their doors barred and their beasts inside, and the levies spend the nights on watch instead of in bed.", "mods": { "stability_factor": -0.03, "production_speed_buildings_factor": -0.05 } },
@@ -165,6 +209,7 @@
    "desc": [
     { "if": "check_variable = { zin_realm_succession_way = 1 }", "text": "The old ruler of [ROOT.GetName] was laid in the earth this week, and the heir the court had been grooming walked behind the bier and came back from the grave as ruler. The household has changed its colours, the clerks have changed the names on the writs, and the market wants to know only whether [ROOT.GetLeader] will change the tolls as well." },
     { "if": "check_variable = { zin_realm_succession_way = 3 }", "text": "The ruler of [ROOT.GetName] is dead, and the kinsman named before the court in good time has taken the seals without a quarrel. A few of the old lords grumble that nobody asked them, but none of them has gone home to call out his levies, and [ROOT.GetLeader] has already held a first council." },
+    { "if": "check_variable = { zin_realm_succession_way = 6 }", "text": "The ruler of [ROOT.GetName] is dead, and the court has passed over the heir it had been grooming. His rival had more friends at the graveside, and [ROOT.GetLeader] took the seals while the heir rode home to his own hall. Those who backed him are keeping very quiet." },
     { "if": "check_variable = { zin_realm_succession_way = 4 }", "text": "The ruler of [ROOT.GetName] is dead, and those who choose by the old custom of the realm have met and chosen [ROOT.GetLeader] to lead in turn. The feasting was short and the oaths were long, as they always are, and riders have gone out to every hall with the news." },
     { "text": "The ruler of [ROOT.GetName] is dead, and the nearest of the blood, [ROOT.GetLeader], took the seals before anyone thought to dispute them. The court mutters, as courts do, and the realm is quiet." }
    ],
@@ -184,8 +229,11 @@
   },
   {
    "id": 12, "kind": "country", "picture": "concord_council", "title": "No Heir of the Body",
-   "fired_by": "zin_realm_open_crisis (G3): a hereditary or contested crown has no living heir and its crown may fall into crisis",
-   "desc": "The ruler of [ROOT.GetName] is dead and left no child and no named heir, and before the mourning bells had stopped, three or four houses had remembered that their grandmothers married into the royal line. Every one of them has a claim written out in a fair hand, and every one of them has friends among the captains.",
+   "fired_by": "zin_realm_open_crisis (G3): a hereditary or contested crown has no living heir, or an elective crown cannot agree (Q-87, mtth zin_realm_election_dispute), and its crown may fall into crisis",
+   "desc": [
+    { "if": "zin_realm_elective_custom = yes", "text": "The ruler of [ROOT.GetName] is dead, and those who choose the next by the old custom of the realm have met three times and parted three times without a choice. Each side has its candidate, each candidate has his friends among the captains, and the longer the choosing goes on, the less it looks like a choosing and the more like a quarrel." },
+    { "text": "The ruler of [ROOT.GetName] is dead and left no child and no named heir, and before the mourning bells had stopped, three or four houses had remembered that their grandmothers married into the royal line. Every one of them has a claim written out in a fair hand, and every one of them has friends among the captains." }
+   ],
    "options": [
     { "text": "Let the claimants come forward and make their case.", "tip": "The claimants will plead before the court within the month.", "effect": ["country_event = { id = zin_realm.13 days = 15 }"], "ai": "base = 60" },
     { "text": "Proclaim the nearest kinsman before the others can gather.", "trigger": ["has_political_power > 99"], "effect": ["add_political_power = -100", "set_temp_variable = { zin_arg_way = 5 }", "zin_realm_settle_crisis = yes"], "ai": "base = 20\nmodifier = {\nadd = 40\nhas_political_power > 150\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" }
@@ -226,6 +274,33 @@
    ],
    "options": [
     { "text": "So the crown is settled.", "ai": 1 }
+   ]
+  },
+  {
+   "id": 16, "kind": "country", "picture": "generic_war", "title": "A Disputed Succession",
+   "fired_by": "zin_realm_succeed (Q-87): the ruler died, a named heir waits, and the succession roll (mtth zin_realm_succession_dispute) found a rival when the crown may fall into crisis",
+   "desc": [
+    { "if": "zin_realm_contested_custom = yes", "text": "The ruler of [ROOT.GetName] is dead, and the heir everyone expected to step into the ring has found another already standing there. The challenger has as many friends among the warriors as the heir has, and they are both waiting to see which way the court leans before anyone throws the first blow." },
+    { "if": "zin_realm_elective_custom = yes", "text": "The ruler of [ROOT.GetName] is dead, and those who choose by the realm's custom are split down the middle: half of them are for the heir the old ruler favoured, and half for a rival who has spent the last year buying dinners. Nobody will give way, and the hall is full of armed retainers." },
+    { "text": "The ruler of [ROOT.GetName] is dead, and before the heir could take the seals a cousin with a better grandmother and a louder voice rode into the capital with his banners. He says the heir's claim is a clerk's fiction, and some of the lords who listen are nodding." }
+   ],
+   "options": [
+    { "text": "Crown the heir and let the rival sulk in his hall.", "tip": "The heir takes the crown, but it sits uneasily for a year.", "effect": ["zin_realm_hold_disputed_crown = yes"], "ai": "base = 50\nmodifier = {\nadd = 20\nzin_realm_inherits = yes\n}\nmodifier = {\nadd = 20\nhas_stability > 0.6\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_just\n}\nmodifier = {\nadd = 40\nzin_rules_is_historical = yes\n}" },
+    { "text": "Pass the heir over and let the rival rule.", "tip": "The heir leaves the succession, and the custom of the realm chooses another.", "effect": ["zin_realm_pass_over_heir = yes"], "ai": "base = 20\nmodifier = {\nadd = 30\nzin_realm_elective_custom = yes\n}\nmodifier = {\nadd = 20\nhas_stability < 0.3\n}" },
+    { "text": "Let the sword decide between them.", "trigger": ["zin_realm_crisis_may_turn = yes", "zin_realm_crown_may_be_contested = yes"], "tip": "The heir is crowned, and the rival raises his banner against him.", "effect": ["zin_realm_fight_for_heir = yes"], "ai": "base = 10\nmodifier = {\nadd = 40\nzin_realm_contested_custom = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}" },
+    { "text": "Let the captain-general end the quarrel.", "trigger": ["zin_realm_crisis_may_turn = yes", "zin_realm_has_captain = yes"], "tip": "The ablest captain of the realm takes the crown, and the heir is set aside.", "effect": ["zin_realm_captain_takes_crown = yes"], "ai": "base = 5\nmodifier = {\nadd = 25\nany_army_leader = { has_character_flag = zin_char_ambitious }\n}\nmodifier = {\nadd = 10\nhas_war = yes\n}\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}" }
+   ]
+  },
+  {
+   "id": 17, "kind": "country", "picture": "generic_court", "title": "The Heir Is Dead",
+   "fired_by": "zin_realm_check_heir (Q-87): the waiting heir died before the ruler (mtth zin_realm_heir_death); no heir can be determined until another is named",
+   "desc": [
+    { "if": "has_war = yes", "text": "The heir of [ROOT.GetName] went to the war with the host and has come home on a bier. The court has put on black, the ruler has not left the chapel, and in the halls of every lord with a drop of royal blood, the clerks have begun to look through the old rolls." },
+    { "text": "The heir of [ROOT.GetName] took a fever in the spring and did not get up again. The ruler grieves, the court grieves with him, and behind the grief everyone is asking the same question: who will take the crown now?" }
+   ],
+   "options": [
+    { "text": "Name another of the blood before the court.", "trigger": ["OR = {\nzin_realm_inherits = yes\nzin_realm_contested_custom = yes\n}", "has_political_power > 49"], "tip": "A kinsman of the ruler is named heir before the court, and takes the crown without a quarrel when the ruler dies.", "effect": ["add_political_power = -50", "set_country_flag = zin_realm_heir_named", "clr_country_flag = zin_realm_heir_lost"], "ai": "base = 60\nmodifier = {\nadd = 20\nhas_political_power > 150\n}" },
+    { "text": "Mourn him, and leave the next choice to the custom.", "tip": "No heir is named; when the ruler dies, the realm's custom decides, or the claimants do.", "effect": ["add_stability = -0.02"], "ai": "base = 30\nmodifier = {\nadd = 40\nzin_realm_elective_custom = yes\n}" }
    ]
   },
   {
@@ -393,7 +468,11 @@
   {
    "id": 70, "kind": "country", "picture": "generic_wilds", "title": "Raiders on the March",
    "fired_by": "zin_realm_check_raid (G8): a raiding realm rides into a neighbour",
-   "desc": "Raiders out of [zin_realm_raider.GetName] came over the border by night, burned two villages and a mill, and drove off every beast they could find before the levies were out of bed. They have gone home with their loot, and they will be back next season unless they are given a reason not to come.",
+   "desc": [
+    { "if": "event_target:zin_realm_raider = { zin_realm_is_corsair = yes }", "text": "Black-sailed ships out of [zin_realm_raider.GetName] came into the bay before dawn, and by the time the harbour bell rang the warehouses on the quay were burning and the fishing boats were gone, towed out to sea with their catch still in them. The corsairs will come again with the next fair wind unless they are given a reason not to." },
+    { "if": "event_target:zin_realm_raider = { zin_realm_is_steppe_rider = yes }", "text": "Riders out of [zin_realm_raider.GetName] came over the downs in a cloud of dust, three hundred horses or more, and swept the border farms of their herds and their harvest before the levies could saddle. They rode home faster than anyone could follow, and the steppe will send them back as soon as the grass is green." },
+    { "text": "Raiders out of [zin_realm_raider.GetName] came over the border by night, burned two villages and a mill, and drove off every beast they could find before the levies were out of bed. They have gone home with their loot, and they will be back next season unless they are given a reason not to come." }
+   ],
    "options": [
     { "text": "Ride out after them and burn their halls.", "tip": "We gain a cause of war against [zin_realm_raider.GetName] for a year, and the raiders learn of our answer.", "effect": ["set_temp_variable = { zin_arg_way = 1 }", "zin_realm_answer_raid = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}\nmodifier = {\nadd = -30\nhas_war = yes\n}" },
     { "text": "Pay them to stay on their own side of the hills.", "trigger": ["has_political_power > 39"], "tip": "[zin_realm_raider.GetName] gains the authority we pay.", "effect": ["set_temp_variable = { zin_arg_way = 2 }", "zin_realm_answer_raid = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_war = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" },
@@ -404,6 +483,7 @@
    "id": 71, "kind": "country", "picture": "generic_war", "title": "The Raid Answered",
    "fired_by": "zin_realm_answer_raid (G8), with the victim's answer in zin_realm_raid_answer",
    "desc": [
+    { "if": "check_variable = { zin_realm_raid_answer = 1 }\nzin_realm_is_corsair = yes", "text": "[zin_realm_raid_victim.GetName] did not wait for the next raid: their warships came hunting along our coast, burned two of our ships at anchor and hanged the crews they took from the yardarms. The captains are shouting at each other about whose fault it was." },
     { "if": "check_variable = { zin_realm_raid_answer = 1 }", "text": "[zin_realm_raid_victim.GetName] did not wait for the next raid: their riders crossed into our hills, burned the outlying halls and hanged the first of our people they caught. The war-chiefs are shouting at each other about whose fault it was." },
     { "if": "check_variable = { zin_realm_raid_answer = 2 }", "text": "[zin_realm_raid_victim.GetName] has sent silver to buy peace on its border, and the bands who rode there are boasting about it in every hall. The chiefs want to know how the silver will be shared out." },
     { "text": "[zin_realm_raid_victim.GetName] has barred its gates and left its villages to fend for themselves, and the bands who rode there came home fat and laughing. They are already talking about going back." }

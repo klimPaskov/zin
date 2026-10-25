@@ -16,5 +16,5 @@ After the war, the central crown restricted private warfare between lords. This 
 
 **The war's beginning, battles, factions, actual casualty total, and Aen's method of victory are unwritten.** The details above are suggestions, not established events.
 
-[[Aen]] · [[The First Age of Aoaz]] · [[Middle Lands and Aenor]]
+[[Aen]] · [[The First Age of Aoaz]] · [[Middle Lands and Aenor]] · [[Muzerar, the Low Country]] · [[Tarkia, the Bridge Kingdom]]
 

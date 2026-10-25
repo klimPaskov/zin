@@ -64,7 +64,7 @@
       "id": 22, "kind": "country", "title": "The Old Lords Ride", "picture": "gala_court", "checkpoint": 23,
       "note": "Lorien's stand (zols_mistake.md section 9, checkpoint 23). The non-committal option is written first (E2, C9); the AI weights do not change.",
       "trigger": "zin_kusven_is_forth = yes\nNOT = { has_global_flag = zin_lorien_dead }",
-      "desc": "Word has come down from the north that a Great Spirit of the old dark walks the field, and that the living cannot hold him. Lorien has risen from his seat. The oldest lords of the world are gathered in the hall, and they are waiting to hear whether the King of Gala means to ride.",
+      "desc": "Word has come down from the north that Kusven walks the field, the grave-wind of the old winter tales, and that the living cannot hold him. Lorien has risen from his seat. The oldest lords of the world are gathered in the hall, and they are waiting to hear whether the King of Gala means to ride.",
       "options": [
         { "key": "b", "text": "This is not our war.", "ai": "base = 20\nmodifier = {\nfactor = 0\nzin_rules_is_historical = yes\n}" },
         { "key": "a", "text": "We ride, for all the living.", "hist": true, "ai": "base = 80\nmodifier = {\nadd = 20\nzin_rules_is_historical = yes\n}", "tip": "Lorien rides north with the old lords against Zol's servant.",

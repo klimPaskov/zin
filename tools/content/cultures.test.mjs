@@ -160,7 +160,7 @@ test('The localisation: UTF-8 with BOM, an entry for every idea, no secret, no b
   for (const k of model.cultureKeys) for (const key of [`zin_culture_${k}`, `zin_culture_${k}_desc`, `zin_culture2_${k}`, `zin_culture2_${k}_desc`, `zin_cname_${k}`, `zin_ctext_${k}`]) assert(entries[key] && yml.includes(` ${key}:0 "`), key);
   for (const k of model.faithKeys) assert(entries[`zin_fname_${k}`], k);
   for (const [k, f] of Object.entries(model.game.faiths)) if (f.spirit_desc) assert(entries[`zin_faith_${k}`] && entries[`zin_faith_${k}_desc`], k);
-  assert.doesNotMatch(yml, /Afrit|Eindil|Einendil|Hidden Council|Kusven|birth roll|hearth-name/i, 'no secret before the reveals');
+  assert.doesNotMatch(yml, /Afrit|Eindil|Einendil|Hidden Council|birth roll|hearth-name/i, 'no secret before the reveals');
   assert.doesNotMatch(yml, /\[(?:E|P|O|W|secret)[ ,\]]/, 'no bible label');
   assert.equal(C.faithName(model, 'deliverer'), 'The Faith of the Deliverer');
   assert.doesNotMatch(entries.zin_faith_deliverer_desc + entries.zin_ftext_deliverer + entries.zin_ctext_zilin_pilgrims, /rolls|Council|secret/i, 'the public Deliverer text keeps the secret');

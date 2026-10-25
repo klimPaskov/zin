@@ -20,7 +20,7 @@ const json = async f => JSON.parse(await readFile(f, 'utf8'));
 const IDS = ['aenor', 'coldor', 'gala', 'goldoroth'];
 const EXPECT = {
   aenor: { focuses: 140, spirits: 53, events: 20, x: 28, y: 21, pairs: [['sale_of_offices', 'audit_treasury'], ['golden_jubilee', 'reform_the_court'], ['golden_charters', 'charters_renewed'], ['kings_own_counsel', 'one_faith_one_realm'], ['commissions_for_sale', 'commissions_by_merit'], ['equal_tolls', 'restore_by_force']] },
-  coldor: { focuses: 102, spirits: 26, events: 3, x: 29, y: 12, pairs: [['favour_the_ports', 'favour_the_steadings'], ['the_iron_hand', 'the_open_hand'], ['stand_apart', 'timber_and_ships'], ['stand_apart', 'the_white_companies'], ['timber_and_ships', 'the_white_companies']] },
+  coldor: { focuses: 107, spirits: 26, events: 3, x: 29, y: 12, pairs: [['favour_the_ports', 'favour_the_steadings'], ['the_iron_hand', 'the_open_hand'], ['stand_apart', 'timber_and_ships'], ['stand_apart', 'the_white_companies'], ['timber_and_ships', 'the_white_companies']] },
   gala: { focuses: 82, spirits: 15, events: 13, x: 25, y: 13, pairs: [['kings_patience', 'kings_warning'], ['courteous_distance', 'welcome_priests'], ['letters_to_parim', 'refusal_holds']] },
   goldoroth: { focuses: 110, spirits: 41, events: 24, x: 29, y: 14, pairs: [['one_warking_one_law', 'clans_rule_together'], ['chiefs_keep_their_halls', 'one_fire_under_cocanoor'], ['keep_the_armed_peace', 'the_long_grudge'], ['black_iron_crown', 'southern_bargain'], ['ally_of_the_south', 'kneel_to_nafeher'], ['horde_unbound', 'iron_discipline']] },
 };

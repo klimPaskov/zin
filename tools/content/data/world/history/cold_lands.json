@@ -5,13 +5,24 @@
   "overview": "The Cold Lands are the largest and least known country of Aoaz, a white land of snow plain, three great ranges and a winter so long that the clans count the year in two halves, the Long Dark and the Long Light. Men have herded reindeer and hunted seal here since before Aen, and the giants of the north-west heights and the yeti of the shelf and the high snows are older still in the clans' tales. Aenor's First Age ships charted the coast and left trading posts behind them, but no southern crown ever ruled the interior, and when Aenor fell to the Necromancer the north was too far and too cold to be worth his taking. Its own history turns on bread rather than ore: the chief who opened his stores in the Hunger Winters founded the custom from which the Winter Crown of Coldor grew, and in 4A 850 that crown brought the frozen interior under one rule, while the warlords of Melkgard behind their black forts refused it and have refused it ever since. In 4A 1748 Coldor and Horidor keep the Northern Accord, Melkgard keeps its forts manned, the Free Steadings of Fearno answer to neither, goblins tend the warm springs of the southern valleys, and in the valley of Mp'E an ordinary town lives below a silent castle whose lord nobody visits. Years in the data are one continuous count from the victory of Aen on the proposed lengths of the ages (First Age 1,675 years, Second Age 2,133, Third Age 1,260): 1A 1 is year 1, 2A 1 is 1,676, 3A 1 is 3,809 and 4A 1 is 5,069, so that the campaign year 4A 1748 is 6,816; every entry also carries its date in the Age-and-year form, which is the form the prose uses.",
   "ages": [
     {
+      "id": "cl_sunfields",
+      "name": "The Age of the Sunfields",
+      "from": 0,
+      "to": 0,
+      "fromDate": "long before Aen",
+      "toDate": "long before Aen",
+      "canon": "proposed",
+      "beforeAen": 2500,
+      "summary": "Long before Aen, when the ice lay far to the north, the first men of the north-west held the Fandan meadows, the interior that is now the Frozen Lands and the coast below the Icy Mountains: the Sunfields, with great timber halls, bronze, horse-herds and the first sea-craft of Aoaz. The winters lengthened over many lifetimes, the halls emptied and the realm broke into clans who went three ways: south over the neck, west by sea to the arcs, and into the Long Dark."
+    },
+    {
       "id": "cl_charts",
       "name": "The Charts and the Posts",
       "from": 1,
       "to": 800,
       "fromDate": "1A 1",
       "toDate": "1A 800",
-      "summary": "Aenoran ships reached the Cold Lands early in the First Age, named the coast Coldor, the ice-land, on their charts and set trading posts at Alorio and the Fandan mouth, where they bought furs, amber and walrus ivory from clans who had never heard of a king. Around 1A 400 Aenoran surveyors with clan guides drew the first road over the Neridor Gap, the line that later became the Neck Road.",
+      "summary": "Aenoran ships reached the Cold Lands early in the First Age, named the coast Coldor, the ice-land, on their charts and set trading posts at Alorio and the Fandan mouth, where they bought furs, amber and walrus ivory from clans who had never heard of a king. Around 1A 400 Aenoran surveyors with clan guides drew the first road over the Neridor Gap, the line that later became the Neck Road. The clans who showed Aenor's surveyors the Neck Road had never heard of a king, because their kings had been gone for a thousand years.",
       "canon": "proposed"
     },
     {
@@ -91,6 +102,13 @@
         }
       ],
       "events": [
+        {
+          "name": "The Hearth of the Last Hall",
+          "year": 0,
+          "date": "long before Aen",
+          "summary": "The fire-keepers relight every house-fire of the clan from the clan fire in the Long Dark, a custom they say is older than any crown and was the custom of the last hall of the Sunfields.",
+          "beforeAen": 1500
+        },
         {
           "name": "The Hunger Winters",
           "year": 1833,
@@ -266,6 +284,13 @@
         }
       ],
       "events": [
+        {
+          "name": "The Neck Road",
+          "year": 0,
+          "date": "long before Aen",
+          "summary": "The road over the Neridor Gap is cut by the people of the Sunfields, and their descendants walk it south long after the halls behind them empty.",
+          "beforeAen": 2400
+        },
         {
           "name": "The Charting of the Neck",
           "year": 400,
@@ -987,6 +1012,12 @@
           "year": 2987,
           "date": "2A 1312",
           "summary": "The reindeer clans swore with the Frost-King of the ice giants that their herds may cross the heights for a toll in meat or iron."
+        },
+        {
+          "name": "The First Bronze from the Ice",
+          "year": 5980,
+          "date": "4A 912",
+          "summary": "After a mild winter the reindeer herders bring a bronze prow out of the ice of the far north-west and carry it to the fire-keepers, who keep it and say nothing."
         },
         {
           "name": "The Year Without Calves",

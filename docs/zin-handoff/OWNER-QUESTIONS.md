@@ -77,10 +77,10 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-82 | Yes (owner, 25 October 2026). |
 | Q-83 | Keep the journey's own successor orders (owner, 25 October 2026). |
 | Q-84 | Ship as written (owner, 25 October 2026). |
-| Q-86 | Yes: a surviving Golden King may die of old age before the judgement (owner, 25 October 2026). |
+| Q-86 | Yes: a surviving Golden King may die of old age before the judgement (owner, 25 October 2026). Follow-up answer (owner, 25 October 2026): his death of old age does not close the Golden Court Endures for good; if the Regency of Gold holds Parim afterwards, that ending can still hold. |
 | Q-87 | Pre-built heirs for every realm, but sometimes no heir can be determined and civil wars or other crises follow; everything dynamic (owner, 25 October 2026). |
 | Q-88 | Yes (owner, 25 October 2026). |
-| Q-89 | More raiders: add the corsairs and the steppe riders to the nineteen (owner, 25 October 2026). |
+| Q-89 | More raiders: add the corsairs and the steppe riders to the nineteen (owner, 25 October 2026). Follow-up answer (owner, 25 October 2026): Noris and Delbiz raid too, like the steppe riders (land raids on neighbours, army experience). |
 | Q-90 | Yes (owner, 25 October 2026). |
 | Q-91 | More tempers: a larger set, with rarer tempers (owner, 25 October 2026). |
 | Q-92 | Include players: start variety reaches player realms too (owner, 25 October 2026). |
@@ -127,7 +127,7 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-29 | Do Kusven's Beasts of the black north fight in the War of the Last Crowns? | yes, as rare story-granted units with Zol's hosts |
 | Q-30 | Regenerate the earlier gpt-6-astra images (590 generations, including the chosen design references) with gpt-6-luna (K50)? | answered by the owner (24 October 2026): keep them; astra and luna are the same image model, and luna is used from now on because it spends the plan's allowance more slowly |
 | Q-31 | Yeldenne's capital: the roster's working name "Simoto" (the drawing reads "Hul..." under a seam) | kept as a working name, labelled proposed |
-| Q-32 | Approval of the named portraits of Horos, Eindil, Aurevan, Varner and Golbran before they ship (art pipeline spec); Eindil and Aurevan stay out of start-reachable files | portraits generated with luna and held back until approved |
+| Q-32 | Approval of the named portraits of Horos, Eindil, Aurevan, Varner and Golbran before they ship (art pipeline spec); Eindil and Aurevan stay out of start-reachable files | answered (owner, 24 October 2026, by the designs chosen in the preview rounds K43 and K44): Aurevan (A), Varner (A) and Golbran (v6 B) are approved and their named portraits ship; Eindil stays out of the roster and out of start-reachable files until his character exists; Horos is story only (K56) and keeps his pool portrait, with his head-and-shoulders crop kept as an art source |
 | Q-33 | Should a dwarf hold's council change its ideology (Forge-Lord to Dominion, Charter of the Gate to Light), or does every hold stay Wild? | the councils change it, as written in shared_delving_holds |
 | Q-34 | Is Kunhrim's Iron Charter a sixth charter of the Aenor mechanic, or a name for its Old Charter? | a tree spirit beside the Aenor mechanic's charter idea, not a sixth charter; labelled proposed |
 | Q-35 | Is the Lamp Truce a non-aggression pact between Kunhrim and Burrikkrit in game terms? | yes, a non-aggression pact, labelled proposed |

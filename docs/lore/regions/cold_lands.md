@@ -129,16 +129,21 @@ Other livelihoods: reindeer herding; sealing and walrus-hunting on Pandar and th
 
 | Date | Status | Event |
 | --- | --- | --- |
+| About 3,500 to 2,500 BA | Established (owner, 25 October 2026; decision K64) | The Sunfields (Heulufaenn), the realm of the proto-Boreal men of the north-west, reach their height: bronze, timber halls and horse-herds in the Fandan meadows, the first sea-craft of Aoaz, and a king's hall, Tawrhalwe, where the Frozen Lands lie. |
+| About 2,500 to 1,500 BA | Established (owner, 25 October 2026; decision K64) | The winters lengthen over many lifetimes and the ice comes a little farther south in every age. The fields fail, the halls empty, and the realm breaks into clans: the Gunwyn clans go south over the neck, the Tritonic islanders go west by sea, and the clans who stay learn to live through the Long Dark. No one worked this fall. |
+| Before 1A, undated | Established (owner, 25 October 2026; decision K64) | The reindeer clans of Kvittumm keep the far north-west, where the ice gives back the oldest bronze after mild winters. |
 | Before 1A, undated | established | Men live for thousands of years before Aen, in kingdoms of their own [V: The Ainu and the First Men; V: Timeline]. |
 | Before 1A | proposed | Boreal-speaking clans already herd and seal in the north-west when Aenor's ships arrive; the giants and the yeti are older still in the clans' tales [WB §2 Men; LG §5]. |
 | Ages unknown | established | Horos guards Glo "through the ages" at Castle Yeldenne [V: Castle of Yeldenne and Glo]. When the castle was built and by whom is open. |
 | Ages unknown | established (place), open (time) | Eindil is placed in a magical sleep and later wakes in the Cold Lands [V: Eindil; V: Open Questions]. |
 | 1A, first half (about 1 to 800, working illustration) | established event, proposed date | Aenoran voyages reach the Cold Lands [V: The First Age of Aoaz §2]. Proposed: the charts name the coast Coldor ("ice-land"); trading posts at Alorio and the Fandan mouth. |
 | 1A, about 400 | proposed | **The Charting of the Neck.** Aenoran surveyors cross the Neridor Gap and draw the first road from the Fandan to the West Lands. |
+| 1A, about 400 | Established (owner, 25 October 2026; decision K64) | The clans who show the surveyors the old road over the Neridor Gap, which Horidor keeps, had never heard of a king: their kings had been gone for a thousand years. |
 | 1A, about 800 to 1150 | proposed | As Aenor weakens, its northern posts fall to clan chiefs; the Alorio post becomes a free harbour. |
 | 1A, late | established | The Grand Alliance draws on the West Lands, North Lands, islands, Magical Lands and parts of the Dark Lands [V: The First Age of Aoaz §5]; the Cold Lands are not among the peoples listed. Proposed: no Cold Lands realm marches to Dardan, and the north remembers the war only as "the southern burning". |
 | 2A, early centuries | proposed | **The Hunger Winters.** The plagues of the Age of Long Grief [V: The Second Age of Aoaz §I] reach the ports by ship; three bitter winters in one generation break the coastal clans; the Fandan valley chief opens his stores to every clan, the founding legend of the Frost-Hall's custom of bread. |
 | 2A, about 600 | proposed | The first Frost-Hall is raised at Fandanar around a fire brought from the eastern Fandan clans. |
+| 2A, about 600 | Established (owner, 25 October 2026; decision K64), as the belief of Coldor's fire-keepers | The Frost-Hall's custom of relighting every house-fire from the clan fire is said to be the custom of the last hall of the Sunfields. |
 | 2A, about 1000 | proposed | **The Warm Valleys.** Goblin warrens driven north by the wars of the Long Grief cross the Coldor Channel's winter ice and settle around the hot springs of the Coldor Mountains; the south-coast clans first fight them, then trade with them. |
 | 2A, about 1300 | proposed | **The old pacts**: a hunting truce with the southern yeti and a toll-peace with the ice giants (origin of the mechanic's pacts [MS cold_lands §4]). |
 | 2A, late | proposed | Warlords first fortify the Ormolak valley against raiders from the Frozen Ocean coast; the Black Gallery is cut into the rock below Minnolomak. |

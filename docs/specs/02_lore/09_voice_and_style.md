@@ -341,4 +341,4 @@ Before a line is accepted, read it aloud once.
 - The replacement names in the regional dossiers (Gunwyn, Lerendor's North, Orohaf, Melkgard, Nivaros, Naamis, Rhachia, Baelim, Tirim and the others) are proposals; if the owner changes one, the quotes that use it change with it.
 - The sea names on the map still carry "Ocean" in several dossiers; this guide avoids them in text until they are renamed.
 - Gunpowder realms are named by the roster (K19); text for other realms names no firearm.
-- The banned-word rule for "Kusven" still offers "Zol" as its replacement, which predates the correction that Kusven, now Kusven, is Zol's servant; the data's owner should change the hint, and Kusven needs a sealed rule in `secret_terms.json` (knowledge layers C25).
+- Kusven (formerly Edvoid) is a known legend from the start (owner answer Q-70, K55, 25 October 2026): text names him as the grave-wind of the winter tales, told as the belief of sailors and shore folk, and the war texts name him when he comes forth; the sealed rule of knowledge layers C25 is retired and only "Edvoid" stays banned.

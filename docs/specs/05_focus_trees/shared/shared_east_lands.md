@@ -278,6 +278,21 @@ All are fired by focus effects or by options of these events. None has its own t
 
 **Pictures** (event catalog, [../02_icon_catalog.md](../02_icon_catalog.md)): .1, .2 and .4 `generic_court` until the requested key `desert_envoys` (envoys with camels and banners before a desert court's gate; no figure of a ruler; no gate) is added; .3 `black_ships_tale` (ungated). The catalog's `eastern_court` is gated on `zin_afrit_abandoned_aenor` and is not used.
 
+## Deep past branch (K64): The Pillars of the Fair
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `none (a root for Delbiz)`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+Placed as a root at row 5 because the rift-harbour branch (E6b) is gated on `zin_east_faces_rift`, whose site trigger is still a pending stand-in.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_pillars_of_the_fair` | The Pillars of the Fair | `herds` | — | — | 28,5 | 70 | Branch: country `Delbiz` | call `zin_deep_open_two_shores`; flag `zin_deep_fair_consent`; pp 25 | base 15 |
+| `horses_from_the_bridge` | Horses from the Bridge | `river_ford` | the_pillars_of_the_fair | — | 28,6 | 70 | Branch: country `Delbiz` | flag `zin_deep_horse_oath`; if exists `Hunhun`: opinion `horse_oath` with Hunhun both ways; if exists `Konori`: opinion `horse_oath` with Konori both ways; army_xp 10 | base 10 |
+
+Opinion modifiers added: `horse_oath` (Horses from the Bridge, 15, decay 0.5).
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ## Implementation
 
 ### Files

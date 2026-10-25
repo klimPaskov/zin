@@ -75,10 +75,10 @@ test('SL-14: Kusven, not Zol, comes forth; the contract flag is kept for its rea
   assert(loc['zin_mistake.20.t'] === 'Kusven Comes Forth' && /Zol's most loyal servant/.test(loc['zin_mistake.20.desc']));
 });
 
-test('Kusven is named only in text that waits for him to come forth (nothing before his appearance)', () => {
+test('Q-70: Kusven is named as a legend of the winter tales before he comes forth, and as he is in text that waits for him', () => {
   for (const set of SETS) for (const e of set.events) {
     const shown = JSON.stringify([e.title, Array.isArray(e.desc) ? e.desc.filter(d => !d.trigger?.includes('zin_kusven_forth')).map(d => d.text) : e.desc, (e.options ?? []).map(o => [o.text, o.tip])]);
-    if (/\bKusven\b/.test(shown)) assert((e.requires ?? []).includes('zin_kusven_forth'), `${set.namespace}.${e.id}`);
+    if (/\bKusven\b/.test(shown)) assert((e.requires ?? []).includes('zin_kusven_forth') || /zin_kusven_(?:is_)?forth/.test(e.trigger ?? '') || /winter tale/.test(shown), `${set.namespace}.${e.id}`);
   }
   assert(!/Kusven/.test(zol.loc.zin_zol_send_kusven_decision + zol.loc.zin_zol_send_kusven_decision_desc), 'the decision is shown before he comes forth');
 });
@@ -223,5 +223,5 @@ test('SL-28 (other slices): every zin_elves, zin_east, zin_dark and zin_diplo ev
     assert.equal(base(a) + base(b), 100, id);
   }
   // No text of these events names Afrit, the Deliverer, Kusven or a bare Eindil.
-  for (const [k, v] of Object.entries(loc)) if (/^zin_(elves|east|dark|diplo|world)\./.test(k)) assert(!/\bAfrit\b|\bDeliverer\b|\bKusven\b|\bEindil\b/.test(v.replace(/\[[^\]]*\]/g, ' ')), k);
+  for (const [k, v] of Object.entries(loc)) if (/^zin_(elves|east|dark|diplo|world)\./.test(k)) assert(!/\bAfrit\b|\bDeliverer\b|\bEindil\b/.test(v.replace(/\[[^\]]*\]/g, ' ')) && (!/\bKusven\b/.test(v) || /winter tale/.test(v)), k);
 });

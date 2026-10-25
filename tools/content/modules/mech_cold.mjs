@@ -26,7 +26,7 @@ export const COLD_DEPENDENCIES = [
   { owner: 'key-sites table (modules/sites.mjs, not written yet)', spec: 'docs/specs/01_map/02_key_sites.md', kind: 'scripted trigger (state)',
     names: ['zin_is_region_cold_lands', 'zin_is_region_far_northwest', 'zin_is_site_yeldenne', 'zin_is_site_isengard_march', 'zin_is_site_eindil_ice', 'zin_is_site_parim'] },
   { owner: 'foundation game rules (modules/rules.mjs)', spec: 'docs/specs/00_foundation/05_defines_and_rules.md', kind: 'scripted trigger',
-    names: ['zin_rules_is_historical', 'zin_rules_ai_branch_cold_historical'] },
+    names: ['zin_rules_is_historical', 'zin_rules_ai_branch_cold_historical', 'zin_rules_ai_plausible_cold'] },
   { owner: 'foundation game rules (modules/rules.mjs)', spec: 'docs/specs/00_foundation/05_defines_and_rules.md', kind: 'global variable', names: ['zin_story_pace'] },
   { owner: 'western crossing (modules/mech_crossing.mjs)', spec: 'docs/specs/04_mechanics/western_crossing.md', kind: 'scripted effect', names: ['zin_west_add_fleet'] },
   { owner: 'western crossing (modules/mech_crossing.mjs)', spec: 'docs/specs/04_mechanics/western_crossing.md', kind: 'global flag',
@@ -809,7 +809,8 @@ zin_cold_schedule_seasons = yes`, 'zin_cold.1 on Coldor (section "The situation 
       { key: 'a', ai: { base: AI.charter, mods: [{ factor: 0, when: `check_variable = { zin_cold_isengard_defiance < ${below(N.swear_defiance)} }` }] }, effect: call('zin_cold_add_defiance', { value: N.charter_refused }) },
       { key: 'b', ai: { base: 0, mods: [{ add: AI.charter, when: `check_variable = { zin_cold_isengard_defiance < ${below(N.swear_defiance)} }` }] }, effect: 'zin_cold_isengard_swears = yes' },
     ] },
-    { id: 'zin_cold.31', picture: 'GFX_zin_evt_generic_war', mtth: `days = ${N.forts_mtth}`,
+    // Q-95 (K59): under PLAUSIBLE Coldor leans to history, so the march war (the free branch's) comes three times more slowly.
+    { id: 'zin_cold.31', picture: 'GFX_zin_evt_generic_war', mtth: `days = ${N.forts_mtth}\nmodifier = {\n  factor = 3\n  zin_rules_ai_plausible_cold = yes\n}`,
       trigger: `original_tag = ${COL}\ncountry_exists = ${ISE}\nzin_cold_historical = no\nzin_cold_march_war_allowed = yes\n${ISE} = {\n  is_ai = yes\n  check_variable = { zin_cold_isengard_defiance > ${above(N.march_defiance)} }\n}`,
       options: [{ key: 'a', ai: 100, effect: 'zin_cold_start_march_war = yes' }] },
     { id: 'zin_cold.32', kind: 'news_event', picture: 'GFX_zin_news_generic_war', show_major: 'zin_cold_is_cold = yes', descVariants: [{ key: 'coldor', trigger: 'check_variable = { global.zin_cold_march_winner = 1 }' }, { key: 'isengard', trigger: 'check_variable = { global.zin_cold_march_winner = 2 }' }], options: [{ key: 'a' }] },

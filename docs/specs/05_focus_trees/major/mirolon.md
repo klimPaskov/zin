@@ -156,7 +156,7 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | `doctrine_of_the_narrows` | Doctrine of the Narrows | pass_warden_companies | — | 5,8 | 35 | army_experience 25; add_spirit narrows_doctrine | 15 |
 | `rangers_of_the_forests` | Rangers of the Forests | pass_warden_companies and levies_of_the_lake_towns | — | 7,8 | 35 | army_experience 15; manpower 2000 | 12 |
 | `fire_against_the_dead` | Fire Against the Dead | levies_of_the_lake_towns | — | 9,8 | 35 | research zin_cat_siege [artillery] bonus 0.5 uses 1; add_spirit fire_against_dead | 12 |
-| `captain_of_the_passes` | The Captain of the Passes | doctrine_of_the_narrows and rangers_of_the_forests | — | 6,9 | 35 | raw: `recruit_character = zin_mirolon_selda` (general, mechanic's character); army_experience 10 | 15 |
+| `captain_of_the_passes` | The Captain of the Passes | doctrine_of_the_narrows and rangers_of_the_forests | — | 6,9 | 35 | raw: `recruit_character = zin_mirolon_almon` (general, mechanic's character); army_experience 10 | 15 |
 | `arms_from_the_lake_forges` | Arms from the Lake Forges | rangers_of_the_forests and fire_against_the_dead | — | 8,9 | 35 | equipment zin_arms_equipment 1000 | 12 |
 | `every_hand_a_warden` | Every Hand a Warden | captain_of_the_passes and arms_from_the_lake_forges | — | 7,10 | 70 | available: at_war_with Volgan or variable zin_mirolon_proof above 49; add_spirit every_hand | 20 |
 
@@ -305,7 +305,7 @@ On the historical path Mirolon never takes `proof_no_court_can_laugh_at`, `ask_t
 | `common/scripted_effects/zin_mirolon.txt` | focus compiler | The tree-declared effects below |
 | `localisation/english/zin_focus_mirolon_l_english.yml` | focus compiler | All text (UTF-8 with BOM, Windows-1252 characters only) |
 
-The compiled tree replaces the interim "Long Peace" tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for Mirolon. The mechanic's files (`zin_dominion.*`) come from the mechanic's module (proposed `tools/content/modules/mech_volgan_dominion.mjs`, [volgan_southern_dominion.md](../../04_mechanics/volgan_southern_dominion.md)), including the characters `zin_mirolon_maeric` (leader), `zin_mirolon_selda` and `zin_mirolon_hadric`. The tree adds no character; it recruits the last two.
+The compiled tree replaces the interim "Long Peace" tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for Mirolon. The mechanic's files (`zin_dominion.*`) come from the mechanic's module (proposed `tools/content/modules/mech_volgan_dominion.mjs`, [volgan_southern_dominion.md](../../04_mechanics/volgan_southern_dominion.md)), including the characters `zin_mirolon_maeric` (leader), `zin_mirolon_almon` and `zin_mirolon_hadric`. The tree adds no character; it recruits the last two.
 
 **Start state.** Country history comes from the politics step, so the mechanic's startup event `zin_dominion.1` adds the start spirits `zin_mirolon_long_watch` and `zin_mirolon_unheeded_warnings`, sets `zin_mirolon_proof` 15 and `zin_mirolon_passes` 30, and makes `zin_mirolon_maeric` the leader in place of the generated ruler (stance `zin_light_wardens`).
 

@@ -270,6 +270,19 @@ More notation:
 | J. Beside Former Foes | 6 |
 | **Total** | **116** |
 
+## Deep past branch (K64): Kin in the Ice
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `western_forges`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `kin_in_the_ice` | Kin in the Ice | `frozen_gate` | western_forges | — | 4,6 | 70 | — | flag `zin_deep_kin_in_ice`; if exists `Coldor`: opinion `ice_kin_opinion` with Coldor both ways; stab 0.02 | base 10 |
+
+Opinion modifiers added: `ice_kin_opinion` (Kin in the Ice, 15, decay 0.5).
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ## Spirits
 
 Keys compile to `zin_gunwaith_<key>`. Mechanic spirits (`zin_west_*`) are listed in the mechanic spec. The Western Crossing mechanic reads `zin_gunwaith_kings_peace` and `zin_gunwaith_war_thanes`; the focus that adds the first is `the_kings_peace` (`zin_gunwaith_the_kings_peace`), so the spirit and focus ids differ (F3).

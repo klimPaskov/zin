@@ -4,6 +4,15 @@
   "overview": "Across the long Rift Sea from the elves lies the richest and most divided land of Aoaz. A white snow coast faces the Kusmeel in the north, the steaming Hot Lake fills the middle with fishing towns and salt pans, the camel-kings of Noris water their caravans at the Seven Wells, the merchant princes of Stabilo weigh gold under bronze roofs, the old river crowns of the rift keep their stair-temples above the flood, and in the south-east the Smoking Teeth smokes over red clay country where the towns pay a tithe to the devils of the mountain. Men of the East first met Aenor's traders in the First Age, and some of their kings sent ships to Volgan while others refused him; the Second and Third Ages passed far from the wars of the Middle Lands, and the Fourth Age made the East rich when the five caravan roads opened between 4A 600 and 780. In 4A 1748 every eastern court is at peace, Noris and Stabilo compete by roads rather than by war, and every city has a generous temple of the Deliverer whose friends lend money to princes in trouble. The eastern courts keep their own reckonings: the desert and coast peoples count from the digging of the Seven Wells (4A 1748 is the 3952nd year of the Wells), the caravan princes from the opening of the Gold Road (the 1108th year of the Ledger), and the river-kings by the Risings of each king's reign; only the Lake Road cities use the Reckoning of the Twelve. Years are one continuous count from the victory of Aen: 1A 1 is year 1, the First Age runs to 1675, the Second Age from 1676 (2A 1) to 3808 (2A 2133), the Third Age from 3809 (3A 1) to 5068 (3A 1260, the proposed length) and the Fourth Age from 5069 (4A 1), so that the campaign year 4A 1748 is 6816; a founding year of 0 marks a realm older than the numbered years, whose beginning nobody dates. Everything here that the vault does not state is proposed.",
   "ages": [
     {
+      "id": "east_age_of_the_bridge",
+      "name": "The Age of the Bridge",
+      "from": 0,
+      "to": 0,
+      "canon": "proposed",
+      "beforeAen": 2300,
+      "summary": "Long before Aen the East and the central land were one, joined by a broad neck where the rift sea now runs, and one Eastern people held both shores: Tarkia, the Bridge Kingdom, with its holy city astride the neck and a road from the Melty Pass to the downs of the Middle Lands. Two heirs of its last great king fought over the road, the neck broke during their war, the sea came in from north and south, and the one tongue began to part into desert, trade and river speech. What broke the bridge is told two ways and settled by neither."
+    },
+    {
       "id": "east_first_charts",
       "name": "The Age of the First Charts",
       "from": 1,
@@ -17,7 +26,7 @@
       "from": 1150,
       "to": 1675,
       "canon": "proposed",
-      "summary": "When Volgan opens his war from Mirolon, some eastern rulers give him ships, landing places and grain, and the chronicles of the river remember their gifts as the Black Tribute. Others refuse him, and eastern men fight on both sides; after Dardan the client kings fall with his host and their thrones pass to new houses."
+      "summary": "When Volgan opens his war from Mirolon, some eastern rulers give him ships, landing places and grain, and the chronicles of the river remember their gifts as the Black Tribute. Others refuse him, and eastern men fight on both sides; after Dardan the client kings fall with his host and their thrones pass to new houses. The mountain kings of the Kalioth upland called their realm Rhabtarkia, the Greater Bridge Kingdom, and swore to rejoin the shores; the chroniclers of every other realm call it the Kalioth Crown. It paid the Black Tribute Alerhia refused, held the downs of Herez and Noleksun and the South Pass for about a century under Volgan, and died with his host at Dardan."
     },
     {
       "id": "east_river_wars",
@@ -177,6 +186,12 @@
         }
       ],
       "events": [
+        {
+          "name": "The First Stair",
+          "year": 0,
+          "summary": "After the flood of the Breaking the valley people raise a stair of stone above the flood-line, so that the river and the gods would each have a place, and the scribes of the stair keep the reed letters of the old kingdom.",
+          "beforeAen": 2250
+        },
         {
           "name": "The First Ships at the River Mouth",
           "year": 412,
@@ -409,6 +424,11 @@
           "summary": "The mine-lords overthrow the mountain kings who served Volgan, and Erco takes its name from the southern river that its new kings crown themselves in."
         },
         {
+          "name": "The Diadem Walled Up",
+          "year": 1687,
+          "summary": "The mine-lords who shut the passes on the beaten host take the last Kalioth king's iron diadem and wall it up in his hall under the forts, neither wearing it nor melting it."
+        },
+        {
           "name": "The War of the Two Floods",
           "year": 3106,
           "summary": "Erco fights Alerhia beside Plutondo over the upper river and loses, and the Stair Peace forces its kings to let the Rising pass their dams unhindered."
@@ -458,6 +478,11 @@
         }
       ],
       "events": [
+        {
+          "name": "The Granary of the Kalioth",
+          "year": 1100,
+          "summary": "The princes of the southern valley serve the mountain kings of the Kalioth as their granary, and their barges carry the grain that feeds the iron height and its garrisons."
+        },
         {
           "name": "The Princedom of the Valley",
           "year": 2052,
@@ -627,6 +652,12 @@
         }
       ],
       "events": [
+        {
+          "name": "The Fair Among the Pillars",
+          "year": 0,
+          "summary": "The horse-lords hold their fair on the grassy coast among fallen pillars that nobody in Delbiz raised, the eastern half of a city that once stood on both shores.",
+          "beforeAen": 2000
+        },
         {
           "name": "The Horse-Fair Oath",
           "year": 3163,

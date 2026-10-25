@@ -51,14 +51,36 @@ Spec: [realm_life.md](specs/04_mechanics/realm_life.md). Every realm life effect
 - **Side effects:** `release` through a `meta_effect` on the fallen realm's tag; the Golden King's restoration sets `zin_golden_king_restored`; removes `zin_realm_exiled_court` and the court records on both sides.
 - **Example:** `set_temp_variable = { zin_arg_way = 1 }` then `zin_realm_restore_exiles = yes`.
 
+### `zin_realm_seat_heir`
+
+- **Purpose:** the waiting named heir of THIS realm takes the crown (owner answer Q-87, K59). A child (younger than `constant:zin_realm.adult_age` by `zin_realm_heir_born` against `global.year`) reigns through the timed idea `zin_realm_regency` for the years until grown, clamped to two to five years; an heir whose birth and span are known (`zin_realm_heir_born`, `zin_realm_heir_life`) takes his vigour from his own years and marks it with `zin_realm_vigour_given`.
+- **Scope:** the realm (country); the old ruler is already gone (`kill_country_leader`).
+- **Inputs:** the country variables `zin_realm_heir_born`, `zin_realm_heir_life`, `zin_ruler_rate`. **Outputs:** `zin_realm_succession_way` (1 grown, 2 a regency), `zin_ruler_vigour`; clears `zin_realm_heir_born` and the flag `zin_realm_heir_disputed`.
+- **Side effects:** fires no event; `zin_realm_announce_heir` tells the realm (`zin_realm.10` or `.11`).
+- **Example:** `kill_country_leader = yes` then `zin_realm_seat_heir = yes` and `zin_realm_announce_heir = yes`.
+
+### `zin_realm_remove_heir`
+
+- **Purpose:** the named heir of THIS realm leaves the succession (passed over by `zin_realm.16`, or dead before the ruler by `zin_realm_check_heir`): he is retired, so no heir can be determined until the decision Name an Heir names a kinsman.
+- **Scope:** the realm (country). **Inputs:** none. **Outputs:** clears `zin_realm_heir_born` and `zin_realm_heir_disputed`.
+- **Example:** `zin_realm_remove_heir = yes`.
+
+### `zin_hears_in_<land>` and `zin_realm_hears_of` (scripted triggers, `tools/content/modules/news_reach.mjs`, `common/scripted_triggers/zin_news_reach.txt`)
+
+- **Purpose:** the realms that would hear of a moment (owner decision K61: most things remain unheard). `zin_hears_in_<land>` is true for a realm of that land (the realm-life land flag `zin_realm_land_<land>`) or a realm that borders one; there is one for each of the thirteen lands of the roster. `zin_realm_hears_of` is true for ROOT itself, its neighbours, the realms of its land, its enemies, its leaguemates, its overlord and its sworn realms.
+- **Scope:** the realm that would hear (THIS). `zin_realm_hears_of` reads ROOT as the realm where the moment happened, which is what `show_major` gives (the original recipient; Kaiserreich precedent `show_major = { is_in_faction_with = ROOT }`).
+- **Inputs:** none (the land flags are set on startup by realm life). **Outputs:** none.
+- **Use:** a news event of the story that is not world news lists its lands and involved realms in `tools/content/data/news_reach.json`; the builder gives it `show_major = { OR = { zin_hears_in_<land> = yes ... } }`. A new major news event that the data does not classify stops the build.
+- **Example:** `show_major = { zin_realm_hears_of = yes }` on a news event fired in the scope of the realm where it happened, or `limit = { zin_hears_in_west_lands = yes }` for a minor report event sent with `every_country`.
+
 ## Start variety (`tools/content/modules/start_variety.mjs`, `common/scripted_effects/zin_start_variety.txt`)
 
 ### `zin_variety_add_temper`
 
-- **Purpose:** gives the ruler of a realm one of the eight tempers (`zin_trait_temper_<key>`), drawn evenly.
+- **Purpose:** gives the ruler of a realm one of the twenty tempers (`zin_trait_temper_<key>`), drawn by weight (owner answer Q-91, K59): the common tempers weigh 10, the uncommon 4, the rare 2 and the rarest 1 (`tools/content/data/start_variety.json`, `weight` and `V4.weightDefault`).
 - **Scope:** the realm (country); the trait goes to its sitting ruler.
 - **Inputs:** none.
-- **Callers:** the start variety's V4 and `zin_variety_temper_new_ruler`, which realm life calls for every new ruler of an AI realm while the start variety is on (`zin_start_variety_drawn`), with a chance of `constant:zin_variety.temper_chance` in a hundred.
+- **Callers:** the start variety's V4 and `zin_variety_temper_new_ruler`, which realm life calls for every new ruler of an AI realm (of any realm under FULL, owner answer Q-92) while the start variety is on (`zin_start_variety_drawn`), with a chance of `constant:zin_variety.temper_chance` in a hundred.
 - **Example:** `zin_variety_add_temper = yes`.
 
 ## World magic (`tools/content/modules/world_magic.mjs`, `common/scripted_effects/zin_world_magic.txt`)
@@ -118,3 +140,44 @@ Spec: [07_industry_and_electronics_techs.md](specs/03_gameplay/07_industry_and_e
 - **Inputs:** none (the temporary variable `zin_dev_step` is internal). **Outputs:** `zin_dev_progress`, and `zin_dev_tier` on a rise.
 - **Side effects:** nothing for a learned country or a country without a tier.
 - **Example:** in a focus reward or an event option: `zin_development_learn = yes`.
+
+## The deep past (`tools/content/modules/deep_past.mjs`, `common/scripted_effects/zin_deep_past.txt`, `common/scripted_triggers/zin_deep_past.txt`)
+
+The six fallen realms of owner decision K64 ([docs/specs/04_mechanics/deep_past.md](specs/04_mechanics/deep_past.md)). The single-purpose effects the focus trees call (`zin_deep_cords_counted`, `zin_deep_read_first_stair`, `zin_deep_read_door` and the others of the spec's section 3) open a loop or record a choice and take no argument; the reusable ones are below.
+
+### `zin_deep_share`
+
+- **Purpose:** a keeper shares one of the Low Country's keepings with the realm that asked: the shared flag, `zin_opinion_keeping_given` both ways, the category opened for the asker, and the Two Counts checked.
+- **Scope:** the keeper (ROOT of the answer event), with FROM the asker. **Inputs:** temporary `zin_arg_keeping` 1 the Cord, 2 the Stone, 3 the Tide. **Outputs:** `zin_deep_shared_cord`, `_stone` or `_tide` on FROM.
+- **Example:** `set_temp_variable = { zin_arg_keeping = 2 } zin_deep_share = yes clear_variable = zin_arg_keeping`.
+
+### `zin_deep_check_two_counts`
+
+- **Purpose:** fires the Two Counts (`zin_deep.30`) for a realm that holds the Cord and the Stone, has not charted the low fields and lives in a game where the giants did not keep the silence.
+- **Scope:** the realm. **Inputs:** none. **Side effects:** the event charts the low fields (`zin_deep_chart_low_country`).
+
+### `zin_deep_diadem_fate`
+
+- **Purpose:** the fate of the Kalioth diadem, called by Erco's three focuses and by `zin_deep.101` for any other owner of the Kalioth state.
+- **Scope:** the realm deciding. **Inputs:** temporary `zin_arg_way` 1 walled up again, 2 melted, 3 worn (cleared after reading). **Outputs:** `zin_deep_diadem_decided`; way 1 `zin_deep_diadem_walled` and Calm; way 2 `zin_deep_diadem_melted`, the Mine-Lords' Oath, The Kalioth Forge recovered, Alerhia's goodwill; way 3 `zin_deep_diadem_worn`, `global.zin_deep_diadem_wearer`, the relic, claims (never cores) on the old Kalioth lands, `zin_opinion_old_tribute`, the coalition's weight.
+- **Example:** `set_temp_variable = { zin_arg_way = 2 } zin_deep_diadem_fate = yes` (the focus compiler writes it from `{ "call": "zin_deep_diadem_fate", "args": { "way": 2 } }`).
+
+### `zin_deep_moot_answer`, `zin_deep_cast_vote`, `zin_deep_crown_answer`
+
+- **Purpose:** tally the answers of a council of realms: the Road Moot (three holds come or stay away), the Deep King's vote (four votes, the caller or the greatest hold), the crown's route of the Sea-Roads (Raerby and Seite agree or refuse). The last answer settles the outcome and tells the realms involved.
+- **Scope:** the answering realm. **Inputs:** temporary `zin_arg_came`, `zin_arg_caller` or `zin_arg_aye` (1 yes, 0 no). **Outputs:** the global counters `zin_deep_moot_answers`/`_came`, `zin_deep_votes_cast`/`_caller`, `zin_deep_crown_votes`/`_ayes`, and the outcome flags.
+
+### `zin_deep_coalition_weight`
+
+- **Purpose:** the deep past's part of the eastern coalition weight (eastern spec section 5): the treaty of passage, the First Stair read under Dominion or the rift whisper, the Kalioth diadem worn.
+- **Scope:** an East Lands court inside `zin_east_compute_weight`. **Inputs:** none. **Outputs:** adds to the caller's temporary `zin_e_w` (the constants `coalition_treaty`, `coalition_stair`, `coalition_diadem`).
+
+### `zin_deep_crossing_banks`
+
+- **Purpose:** the low fields under the Crown Sea ground a share of the Western Crossing's first sailing for Aenor Isle when the defenders have charted them and no island pilots sail with the host.
+- **Scope:** the crossing's leader inside `zin_west_sail`, which calls it only when the landing is the isle. **Inputs:** the caller's temporary `west_lift`. **Outputs:** lowers `west_lift` by `banks_share` and the crossing fleet by `banks_fleet` (`zin_west_add_fleet`); `zin_deep.45` to the leader.
+
+### `zin_deep_tide_window`, `zin_deep_long_light` (scripted triggers)
+
+- **Purpose:** `zin_deep_tide_window` is true in the months of the great tides (the constants `dive_month_a` and `dive_month_b`), read through `meta_trigger` with the year of the date (the calendar module's pattern); `zin_deep_long_light` is true after a mild Cold Lands winter until the next winter season opens.
+- **Scope:** any. **Example:** `custom_trigger_tooltip = { tooltip = zin_deep_tt_tide_window zin_deep_tide_window = yes }`.

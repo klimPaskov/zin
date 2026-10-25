@@ -2,6 +2,7 @@
 // generation and review lines that prove where that picture came from (art pipeline section 2, checks 2 to 4).
 // Reads the provenance log, the per-module manifests (art/source/*_manifest.json) and the path rules of
 // data/assets/families.json. Never writes.
+import fs from 'node:fs';
 import path from 'node:path';
 import { sha256 } from './loaded_assets.mjs';
 
@@ -18,6 +19,19 @@ export const isReview = l => !isGeneration(l) && typeof l.accepted === 'boolean'
 export const rawRel = out => String(out ?? '').replace(/^\.\.\/raw\//, '').replace(/^raw\//, '');
 
 const FOREIGN = /steamapps|workshop[\\/]content|Hearts of Iron IV|\.paradoxinteractive|Documents[\\/]Paradox/i;
+// Owner drawings are cited as owner-drawing:<file stem> (e.g. owner-drawing:IMG_20261023_113707). A stem counts only when one of the
+// transcription cards names it (docs/lore/sources/bestiary_cards_part1.md and part2.md).
+export const OWNER_DRAWING = 'owner-drawing:';
+export const LORE_CARD_FILES = ['docs/lore/sources/bestiary_cards_part1.md', 'docs/lore/sources/bestiary_cards_part2.md'];
+export function loreDrawingStems(root) {
+  const stems = new Set();
+  for (const f of LORE_CARD_FILES) {
+    let text = '';
+    try { text = fs.readFileSync(path.join(root, f), 'utf8'); } catch { continue; }
+    for (const m of text.matchAll(/IMG_20261023_[0-9_]*[0-9]/g)) stems.add(m[0]);
+  }
+  return [...stems].sort();
+}
 
 export function loadProvenance(view, file = 'art/source/provenance.jsonl') {
   if (!view.has(file)) return { lines: [], errors: [], missing: true };
@@ -57,6 +71,7 @@ export function classify(rules, rel) {
 // Build the resolver. `tables` holds the country table and the flag cell map for the world-owned flags.
 export function createSourceResolver({ view, provenance, manifests, rules, tables = {} }) {
   const gens = provenance.lines.filter(isGeneration), reviews = provenance.lines.filter(isReview);
+  const drawingStems = new Set(tables.ownerDrawingStems ?? []);
   // A realm flies the old flag of its main former row (flagFrom, lib/roster.mjs) until its own is generated; the cell map is by old name.
   const countries = new Map((tables.countries ?? []).map(c => [c.tag, c.flagFrom ?? c.name]));
   const cellsByName = new Map((tables.flagCells ?? []).map(c => [c.name, c]));
@@ -84,6 +99,7 @@ export function createSourceResolver({ view, provenance, manifests, rules, table
         const s = String(ref);
         if (FOREIGN.test(s)) problems.push({ code: 'PROV_REF_FOREIGN', message: `${gen.id} references a path inside a game or mod folder: ${s}` });
         else if (/^private:/i.test(s)) problems.push({ code: 'PROV_REF_PRIVATE', message: `${gen.id} uses a private reference (${s}); allowed only for reviewed subjects` });
+        else if (s.startsWith(OWNER_DRAWING)) { if (!drawingStems.has(s.slice(OWNER_DRAWING.length))) problems.push({ code: 'PROV_REF_UNKNOWN_DRAWING', message: `${gen.id} cites ${s}, which no transcription card names` }); }
         else if (!/^(art\/source\/|\.\.\/raw\/|raw\/)/.test(s) && !s.replace(/\\/g, '/').includes('/zin-art/raw/')) problems.push({ code: 'PROV_REF_OUTSIDE', message: `${gen.id} references ${s}, outside art/source/` });
       }
     }

@@ -88,7 +88,7 @@ test('Negative: the checks catch a historical first option, a gated picture, a h
   const bad = [{ namespace: 'zin_afrit', events: [
     { id: 900, kind: 'country', checkpoint: 1, title: 'T', desc: 'D', picture: 'unmasking', fired_by: 'x', options: [{ text: 'A', hist: true, ai: 1 }, { text: 'B', ai: 1 }] },
     { id: 901, kind: 'news', title: 'T', desc: 'D', picture: 'council_chamber', fired_by: 'x', options: [{ text: 'A', ai: 1 }] },
-    { id: 902, kind: 'news', title: 'Afrit Is Here', desc: 'Eindil came, and Kusven.', picture: 'generic_court', fired_by: 'x', options: [{ text: 'A', ai: 1 }] },
+    { id: 902, kind: 'news', title: 'Afrit Is Here', desc: 'Eindil came, and Edvoid.', picture: 'generic_court', fired_by: 'x', options: [{ text: 'A', ai: 1 }] },
   ] }];
   const s = structureProblems(bad, pictures).join('\n');
   assert.match(s, /zin_afrit.900: a checkpoint event lists its non-committal option first/);
@@ -97,7 +97,7 @@ test('Negative: the checks catch a historical first option, a gated picture, a h
   const t = (await textProblems(bad)).join('\n');
   assert.match(t, /zin_afrit.902.t: names the secret/);
   assert.match(t, /zin_afrit.902.desc: names the heir before zin_eindil_named/);
-  assert.match(t, /zin_afrit.902.desc: a sealed or superseded name \(Kusven\)/);
+  assert.match(t, /zin_afrit.902.desc: a sealed or superseded name \(Edvoid\)/);
   assert.deepEqual(structureProblems(sets, pictures), []);
   assert.deepEqual(await textProblems(sets), []);
 });
@@ -124,8 +124,11 @@ test('SL-04: the crowning event offers the crown, the heir and the wait, and the
   assert(t.includes('zin_afrit_crown_eronel = yes') && t.includes('zin_afrit_eronel_crowned'), 'the pliant heir is crowned once by the news');
 });
 
-test('SL-05, O2: zin_afrit_die is called exactly once, by the news zin_afrit.75, and the palace stages 1 to 4 have defences', () => {
-  assert.equal((all.match(/zin_afrit_die = yes/g) ?? []).length, 1);
+test('SL-05, O2, K59 (Q-66): zin_afrit_die is called by the news zin_afrit.75 and by the hunter\'s kill outside the palace, and the palace stages 1 to 4 have defences', () => {
+  assert.equal((all.match(/zin_afrit_die = yes/g) ?? []).length, 2);
+  assert(block(all, 'zin_afrit_hunt_kill').includes('zin_afrit_die = yes'), 'the hunt kills him outside the palace');
+  assert.match(block(all, 'zin_afrit_hunt_month'), /check_variable = \{ global\.zin_afrit_hunt > [\d.]+ \}[\s\S]*zin_afrit\.78/);
+  assert(block(all, 'zin_afrit_monthly').includes('zin_afrit_hunt_month = yes'));
   const t = strip(text('events/zin_afrit_story.txt'));
   const i = t.indexOf('id = zin_afrit.75');
   assert(i > 0 && t.indexOf('zin_afrit_die = yes') > i && t.indexOf('zin_afrit_die = yes') < t.indexOf('id = zin_afrit.76'));

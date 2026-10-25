@@ -13,7 +13,7 @@
 // {{volgan:<path>}}, {{elves:<path>}}, {{east:<path>}} or {{dark:<path>}} a number of the mechanic's data (mech_powers_lerendor.json,
 // mech_powers_volgan.json, mech_powers_elves.json, mech_regions_east.json, mech_regions_dark.json), and {{n:<path>}} a number of the event
 // file's own "numbers" block, so the tuning stays in data.
-// Kusven is named only in events gated on zin_kusven_forth (owner correction of 24 October 2026; nothing before he comes forth).
+// Kusven is named as a known legend from the start (owner answer Q-70, K55), and as he is in events gated on his coming forth.
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { Loc, DATA, loadJson, hdr, format, writeEvent, wordProblems, notCp1252, dedent } from '../lib/mech_court_lib.mjs';
@@ -71,10 +71,11 @@ export async function buildEventsMechWar(staged, ctx = {}) {
         if (!e.options?.length) problems.push(`${where}: no option`);
         if (e.checkpoint !== undefined && (e.options[0]?.hist || !e.options.some(o => o.hist))) problems.push(`${where}: a checkpoint event lists its non-committal option first and has a historical one (C9)`);
       }
-      // Kusven is named only after he has come forth.
-      const gated = (e.requires ?? []).includes('zin_kusven_forth');
+      // Kusven is a known legend from the start (owner answer Q-70, K55): before he comes forth a text names him only as the winter
+      // tales tell him; after it (requires or trigger on his coming forth) as he is.
+      const gated = (e.requires ?? []).includes('zin_kusven_forth') || /zin_kusven_(?:is_)?forth/.test(e.trigger ?? '');
       const shown = [e.title, ...(Array.isArray(e.desc) ? e.desc.map(d => (d.trigger?.includes('zin_kusven_forth') ? '' : d.text)) : [e.desc]), ...(e.options ?? []).flatMap(o => [o.text, o.tip])].filter(Boolean);
-      if (!gated && shown.some(t => /\bKusven\b/.test(t))) problems.push(`${where}: names Kusven but is not gated on zin_kusven_forth`);
+      if (!gated && shown.some(t => /\bKusven\b/.test(t) && !/winter tale/.test(t))) problems.push(`${where}: names Kusven but is not gated on zin_kusven_forth`);
       const options = (e.options ?? []).map(o => {
         const tip = o.tip ? `${id}.${o.key}.tt` : null;
         if (tip) loc.set(tip, o.tip);

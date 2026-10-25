@@ -238,6 +238,23 @@ More notation:
 | J. The World Beyond the Ice | 12 |
 | **Total** | **102** |
 
+## Deep past branch (K64): What the Ice Gives Back
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `high_crown_of_the_north`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `songs_of_the_long_dark` | Songs of the Long Dark | `hymn_choir` | high_crown_of_the_north | — | 7,7 | 70 | — | call `zin_deep_open_ice`; stab 0.03 | base 15; ×0 if at_war true |
+| `ice_walkers` | Ice-Walkers | `ice_cavern` | songs_of_the_long_dark | — | 7,8 | 70 | — | flag `zin_deep_walkers_trained`; army_xp 15 | base 15; ×0 if at_war true |
+| `kin_over_the_neck` | Kin over the Neck | `courier_pilgrim` | ice_walkers | — | 6,9 | 70 | Avail: exists `Gunwyn` | flag `zin_deep_kin_neck`; opinion `kin_neck_opinion` with Gunwyn both ways | base 10 |
+| `kin_over_the_sea` | Kin over the Sea | `island_shrine` | ice_walkers | — | 8,9 | 70 | Avail: exists `Adel` | flag `zin_deep_kin_sea`; opinion `kin_sea_opinion` with Adel both ways | base 10 |
+| `the_sun_crown` | The Sun Crown | `crown_radiant` | kin_over_the_neck + kin_over_the_sea | — | 7,10 | 105 | Avail: check `zin_deep_holds_hearth_stone` | flag `zin_deep_sun_crown_route`; pp 50 | base 20; ×0 if at_war true |
+
+Opinion modifiers added: `kin_neck_opinion` (Kin over the Neck, 15, decay 0.5), `kin_sea_opinion` (Kin over the Sea, 15, decay 0.5).
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ## Spirits
 
 Keys compile to `zin_coldor_<key>`. Mechanic spirits (`zin_cold_*`) are listed in the mechanic spec.

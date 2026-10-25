@@ -27,8 +27,8 @@ export const DATA_FILES = ['events_mech_afrit.json', 'events_mech_misc.json'];
 export const LOC_NAME = 'zin_events_mech';
 // Option keys <id>.a, .b, ...; the title is <id>.t and the description <id>.desc, which no option reaches.
 const LETTERS = 'abcdefghijklmnopqrs';
-// Names no text may carry (knowledge layers C24 to C26 and the superseded labels).
-const SEALED = /\bKusven\b|\bEdvoid\b|\bEinendil\b|\bErdu\b|\bDunda\b/;
+// Names no text may carry (the superseded labels; Kusven is named from the start, owner answer Q-70, K55).
+const SEALED = /\bEdvoid\b|\bEinendil\b|\bErdu\b|\bDunda\b/;
 const NAMES_HEIR = /\bEindil\b/, NAMES_FATHER = /\bEin\b/;
 // The keys of an event block itself, besides the documented effects and triggers.
 const EVENT_KEYS = new Set(['immediate', 'is_triggered_only', 'major', 'option', 'timeout_days', 'fire_only_once', 'show_major', 'hidden', 'rule']);

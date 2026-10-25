@@ -111,9 +111,11 @@ Other livelihoods: the **strait dues** at Sonargur, the crown's great wealth [MS
 | --- | --- | --- |
 | Before 1A | established | Men live for thousands of years before Aen [V: Timeline]. Proposed: Ainic-speaking kingdoms settle the strait coast; the beaten Orran kingdoms leave their names on inland rivers [LG §5]. |
 | Before 1A | proposed | The dwarves already hold the High Mountains; the first dwarf goblin caves are dug in the southern hills. |
+| Before 1A | Established (owner, 25 October 2026; decision K64) | The dwarves' roads run under the Crown Sea and the Narrow Strait, joining the western ranges, the Great Wall range and the High Mountains of the North Lands, so that three landmasses are joined underground. Hrakbrund is the northern hold of the Stone Road, under the High Mountains. |
 | 1A, first half | established | Aenor makes an alliance with what older accounts call North Earth, now the North Lands [V: The First Age of Aoaz §2]. |
 | 1A, about 200 | proposed | **The Ship-Bond.** Leren and Aenoran ships chart the strait together; Sonargur is founded at the best harbour of the Leren shore. |
 | 1A, late | established | The Grand Alliance draws on the North Lands; Edran accepts that they remain allies rather than subjects (proposed detail) [V: The First Age of Aoaz §5]. |
+| Late 1A | Established (owner, 25 October 2026; decision K64) | In Volgan's war the Deep King lets the sea into the Stone Road, and Hrakbrund seals its northern Sea-Door under the High Mountains at the age's end. The hold is cut off from the other holds, and it trades more with men than any of them does. |
 | 2A, middle | proposed | **The Raiding Years.** Orc and goblin bands from the Dark Lands cross the Northern Dark Strait; the coast crowns build the hill-forts of the free crowns. |
 | 2A, late | proposed (vault narrative) | **Avarin of Lerendor's North** (the vault's proposed "Avarin of Lerendor's North"), envoy and commander, tries to keep the northern alliance while her own country faces raids [V: The Second Age of Aoaz, figures table]. |
 | 2A 2133 | established event, proposed detail | Elzon takes Aenor [V: The Third Age of Aoaz]. Proposed (vault narrative): the North Lands send help, but it cannot arrive in time [V: The Second Age of Aoaz, third turning point]. |

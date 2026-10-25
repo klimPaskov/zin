@@ -295,6 +295,18 @@ Requested picture (art phase; the events use the existing key until it is genera
 - Each focus `desc` is one to three plain sentences, written in the data file from the focus's name, effects and branch purpose, and names the country with `[ROOT.GetName]` or `[ROOT.GetAdjective]`.
 - No text names Afrit (compiler check 6). No text names Eindil; *The Southern Ship* speaks only of a fast ship with elves among its crew, and no text says which island sent navigators.
 
+## Deep past branch (K64): Benan and the Square
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_chart_makers_guild`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_square_belongs_to_nobody` | The Square Belongs to Nobody | `black_hulls` | the_chart_makers_guild | sell_the_square | 18,3 | 70 | Branch: country `Benan` | flag `zin_deep_square_nobodys`; ws 0.03 | base 20 |
+| `sell_the_square` | Sell the Square | `bracelet_seal` | the_chart_makers_guild | the_square_belongs_to_nobody | 20,3 | 70 | Branch: country `Benan` | flag `zin_deep_square_for_sale`; pp 50 | base 10 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ## Implementation
 
 - Builder: the focus compiler `tools/content/modules/focus_compiler.mjs` ([00_format_and_compiler.md](../00_format_and_compiler.md)) reads the data below and writes every file, the Pupor Ocean effects included, in the builder's one transaction through the shared rewrite engine (`tools/content/apply.mts`).

@@ -22,6 +22,8 @@ updated: 2026-10-24
 - Afrit returns, wounds Eindil, cuts off an arm and throws him over a cliff. Afrit takes the capital again and claims universal kingship. Eindil survives and returns to the palace. Alleria the archer of Selen assists him in stripping Afrit's magical artifacts. Golbran removes the Necklace of the Abyss. Eindil kills Afrit, Golbran gives his last magic to save Eindil and dies. Eindil puts on the necklace, returns and is crowned king.
 - Third Age lasts at least 1,200 years. The earlier 128-year Third Age is revoked, and no exact age of any being is stated.
 
+- The Eldest Cairn holds 7,436 stones on 1 Lumae 4A 1748, one for the Night of the Sea in 620 BA and one for every year since. The count is the one number of the deep past that the game shows, learned when the Cord and the Stone are brought together (owner, 25 October 2026, decision K64).
+
 ## Proposed continuity details, not yet confirmed
 
 - Aurevan as Afrit's public human name, and any accompanying titles beyond those given.

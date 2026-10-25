@@ -31,7 +31,7 @@ const EXPECT = {
   shared_concord_dominions: { focuses: 66, spirits: 22, events: 8, opinions: 0, ns: 'zin_shared_concord_dominions' },
   shared_dark_lands: { focuses: 57, spirits: 23, events: 2, opinions: 5, ns: 'zin_shared_dark_lands' },
   shared_ember_lands: { focuses: 47, spirits: 15, events: 6, opinions: 2, ns: 'zin_shared_ember_lands' },
-  shared_east_lands: { focuses: 68, spirits: 17, events: 4, opinions: 0, ns: 'zin_shared_east_lands' },
+  shared_east_lands: { focuses: 70, spirits: 17, events: 4, opinions: 1, ns: 'zin_shared_east_lands' },
   shared_islands_of_the_south: { focuses: 46, spirits: 13, events: 2, opinions: 0, ns: 'zin_shared_islands_of_the_south' },
 };
 // The roster decides which realms a shared tree serves (roster.json focusTree); the tiers spec lists the countries of the
@@ -155,7 +155,7 @@ test('Counts of focuses, spirits, events, opinion modifiers and countries match 
     assert.deepEqual([...t.countries].sort(), treeCountries(id).sort(), `${id} countries are the roster's realms of the tree`);
     assert(t.countries.length >= 1, `${id} serves a realm`);
   }
-  assert.equal(IDS.reduce((n, id) => n + BASE[id].focuses.length, 0), 354);
+  assert.equal(IDS.reduce((n, id) => n + BASE[id].focuses.length, 0), 356);
 });
 
 test('The compiler accepts all six trees with no problem and every tree is within the shared tier range', () => {
@@ -240,7 +240,7 @@ test('The first listed focus is the root with no prerequisite, and the country b
     const first = BASE[id].focuses[0];
     assert(!first.prerequisite, `${id}: ${first.key}`);
     const script = compiled.get(id).files.get(`common/national_focus/zin_${id}.txt`);
-    const tags = [...script.matchAll(/original_tag = (\S+)\n\t\t\}/g)].map(m => m[1]);
+    const tags = [...script.slice(0, script.indexOf('\tfocus = {')).matchAll(/original_tag = (\S+)\n\t\t\}/g)].map(m => m[1]);
     assert.equal(tags.length, BASE[id].countries.length, id);
     assert.equal(new Set(tags).size, tags.length, id);
     const rosterTags = new Map(roster.map(c => [c.name, c.tag]));

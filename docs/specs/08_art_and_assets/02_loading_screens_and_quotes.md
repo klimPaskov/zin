@@ -79,7 +79,7 @@ This spec owns the loading screens for the whole mod ([07_interface/01_interface
 
 The engine chooses the picture and the tip independently and at random each time a loading screen is shown (game launch, starting a game, loading a save, returning to the menu). There is no weighting, no condition and no memory of what was shown before; repeats happen. ZIN does not try to control this, which is why every picture and every tip must be safe at any moment of any game. With 27 pictures and 190 tips, a player sees on average a new picture in four loads out of five, and the chance of seeing the same tip twice within ten loads is about one in four.
 
-The tips are not interleaved by kind. Quotes take the keys 0 to 149 and gameplay tips 150 to 189, so roughly one load in five shows a gameplay tip.
+The tips are not interleaved by kind. Quotes take the keys 0 to 149 and gameplay tips 150 to 189; the twelve quotes of the fallen realms (owner decision K64) take 190 to 201, appended so that no key changes its text, and none of them names a fallen realm's own name.
 
 ### 4. Pictures: format, composition and prompts
 
@@ -545,7 +545,7 @@ Checks 1–10 run today in `presentation.test.mjs` or inside `presentation.mjs`;
 2. Every DDS listed above has the size and format in this spec (DDS header read): pictures 1920×1440, thumbnails 192×144, chrome as §6, no mipmaps.
 3. Thumbnails are the exact 10× box downscale of the shipped pictures.
 4. Every background entry has a picture in `gfx/loadingscreens/` and a `GFX_<name>_small` sprite whose file exists; no frontend file points at a vanilla picture.
-5. Loading tips: keys `LOADING_TIP_0` to `LOADING_TIP_<N−1>` with no gap or duplicate; quotes 0–149, tips 150–189; N ≥ the vanilla count (163; constant fallback 163 when the game is absent).
+5. Loading tips: keys `LOADING_TIP_0` to `LOADING_TIP_<N−1>` with no gap or duplicate; quotes 0–149, tips 150–189, quotes again from 190; N ≥ the vanilla count (163; constant fallback 163 when the game is absent).
 6. Every quote and tip text is under 220 characters and every full string under 300; Windows-1252 only; no `"`, `$`, `[` or `]`; `§` only in the tip prefix.
 7. The secret scan with **no** whitelist: no Afrit, Hidden Council, Eindil, Ein (as a word), "the Man from the Ice", sleeper, Necklace, the thief's name, the lesser artifacts, Roka, Glernaen, King of Demons, heart (with Glo or Horos), demon (with Deliverer).
 8. The superseded-name check (Einendil, Edvoid, Rush, Klinti, Gorbat, Sovereign Spirit) and the modern-word check (factory, rifle, democracy, 193x, gunpowder, firearm, tank) pass.

@@ -206,7 +206,7 @@ for (const m of keySites.matchAll(/`(zin_is_[a-z_0-9]+)`/g)) regNames.add(m[1]);
 const patternRes = [...reg.slice(reg.indexOf('## Patterns'), reg.indexOf('## Names')).matchAll(/^\| `([^`]+)`/gm)].filter(m => /^(GFX|zin_[a-z]+_)/.test(m[1])).map(m => new RegExp(`^${m[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/<[a-z_]+>/g, '[a-z0-9_]+')}$`));
 // Names the specs give to other slices' trees and mechanics but the register does not list (tree-local flags, spirits, traits, characters).
 // Each must appear in a spec text; the note lists them as dependencies.
-const SPEC_NAMES = new Set(['zin_cold_far_ice_charted', 'zin_cold_reward_ice_host', 'zin_eindil_floor_reached', 'zin_eindil_palace_failed', 'zin_eindil_raise_host', 'zin_eindil_struck_down', 'zin_gunwaith_ilurda',
+const SPEC_NAMES = new Set(['zin_cold_far_ice_charted', 'zin_cold_reward_ice_host', 'zin_eindil_floor_reached', 'zin_eindil_palace_failed', 'zin_eindil_raise_host', 'zin_eindil_struck_down', 'zin_gunwaith_branorn',
   'zin_magical_forest_bearer_dragon_ready', 'zin_palace_passages', 'zin_palace_rebels', 'zin_sun_heeded_centre', 'zin_sun_heeded_east', 'zin_sun_heeded_north', 'zin_sun_heeded_seas', 'zin_sun_heeded_south', 'zin_west_pledged']);
 const specText = (await Promise.all(['04_mechanics/eindil_journey.md', '04_mechanics/western_crossing.md', '04_mechanics/lands_of_the_sun.md', '04_mechanics/cold_lands.md', '04_mechanics/elves_wall_and_dragons.md', '02_lore/02_characters.md', '06_events/02_eindil_journey.md', '06_events/03_war_of_the_last_crowns.md'].map(f => readFile(path.join(ZIN, 'docs/specs', f), 'utf8')))).join(' ');
 // The journey engine (modules/mech_eindil*.mjs, data/mech_journey_eindil.json) and the Yeldenne module own the effects, triggers, flags and
@@ -298,8 +298,12 @@ test('Retired names: no staged file or text uses a name from the register\'s ret
   }
   assert.deepEqual(hits, []);
   for (const bad of ['Hierarch', 'Einendil', 'Edvoid', 'Aenorian', 'Rush Kingdom']) assert(!NAMESPACES.some(ns => Object.values(loc(ns)).some(v => v.includes(bad))), bad);
-  // Kusven (K29) is named only in text that waits for him to come forth (zin_lastwar.73).
-  for (const ns of NAMESPACES) for (const e of eventsOf(data, ns)) if (/\bKusven\b/.test(JSON.stringify([e.title, e.desc, e.options]))) assert((e.requires ?? []).includes('zin_kusven_forth'), `${ns}.${e.id} names Kusven before he comes forth`);
+  // Kusven (K29) is a known legend from the start (owner answer Q-70, K55): text may name him before he comes forth, but only as the
+  // winter tales tell him (a legend), never as having taken the field.
+  for (const ns of NAMESPACES) for (const e of eventsOf(data, ns)) {
+    const t = JSON.stringify([e.title, e.desc, e.options]);
+    if (/\bKusven\b/.test(t) && !(e.requires ?? []).includes('zin_kusven_forth')) assert(/winter tale/.test(t), `${ns}.${e.id} names Kusven before he comes forth outside the legend`);
+  }
   assert(!/\bcreate_faction\b/.test(allScript));
 });
 

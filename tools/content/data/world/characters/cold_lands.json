@@ -7,14 +7,14 @@
     "court": "great",
     "ruler": {
       "id": "CLD_zin_ruler",
-      "name": "Queen Lunvaera",
-      "given": "Lunvaera",
+      "name": "King Aldor",
+      "given": "Aldor",
       "house": "House Vording",
       "title": {
         "native": "Koldtawra",
-        "english": "Winter Queen of Coldor"
+        "english": "Winter King of Coldor"
       },
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6772,
       "stance": "zin_dom_crown",
@@ -22,27 +22,27 @@
         "zin_trait_winter_crown",
         "zin_trait_bread_right"
       ],
-      "bio": "Lunvaera, eleventh of the Vording line, was crowned in the Frost-Hall in 4A 1729, and her reign is still measured by the White Year two winters later, when she opened the crown granaries to Pertolor, Omar and Xison as well as to her own clans. She reads a grain-roll better than a war-map and keeps the March Forts manned without ever sending a rider across the Fandan. The clans call her the Bread-Queen, and she lets them.",
+      "bio": "Aldor, eleventh of the Vording line, was crowned in the Frost-Hall in 4A 1729, and his reign is still measured by the White Year two winters later, when he opened the crown granaries to Pertolor, Omar and Xison as well as to his own clans. He reads a grain-roll better than a war-map and keeps the March Forts manned without ever sending a rider across the Fandan. The clans call him the Bread-King, and he lets them.",
       "portrait": {
-        "appearance": "A woman in her middle years with a pale, wind-reddened face and steady grey eyes.",
+        "appearance": "A man in his middle years with a pale, wind-reddened face and steady grey eyes.",
         "dress": "White furs over dark wool, a plain circlet of white iron and a brooch of beaten gold in the shape of a sheaf.",
         "colours": "Frost white (#cfd9e2), winter blue (#4a5f78), iron grey (#8a8f96)."
       },
       "canon": "P",
-      "formerName": "Queen Vaestia (histories, characters spec, Coldor tree, loading quotes); renamed because Vaestia is the harbour town of Austklev"
+      "formerName": "King Vaestia (histories, characters spec, Coldor tree, loading quotes); renamed because Vaestia is the harbour town of Austklev"
     },
     "heir": {
-      "id": "zin_coldor_ilvessa",
-      "name": "Princess Ilvessa",
-      "given": "Ilvessa",
+      "id": "zin_coldor_alddok",
+      "name": "Prince Alddok",
+      "given": "Alddok",
       "house": "House Vording",
       "office": "Heir to the Winter Crown",
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6799,
-      "role": "The queen's elder daughter, born in the White Year, sits beside her mother at the Frost Moot and has learned to say nothing until everyone else has spoken.",
+      "role": "The king's elder son, born in the White Year, sits beside his father at the Frost Moot and has learned to say nothing until everyone else has spoken.",
       "succession": "The eldest child of either sex inherits the Winter Crown.",
-      "portrait": "A young woman in white furs, dark braids bound with silver wire, a reserved and watchful look.",
+      "portrait": "A young man in white furs, dark braids bound with silver wire, a reserved and watchful look.",
       "canon": "P"
     },
     "advisors": [
@@ -58,7 +58,7 @@
         "traits": [
           "zin_adv_treasurer"
         ],
-        "role": "Keeps the rolls of the crown granaries at Fandanar and Alorio and can tell the queen to the sack how many weeks of a hard winter they will feed.",
+        "role": "Keeps the rolls of the crown granaries at Fandanar and Alorio and can tell the crown to the sack how many weeks of a hard winter they will feed.",
         "portrait": "A grey-haired man in fur-lined black with a ring of granary keys at his belt.",
         "canon": "P",
         "formerName": "Chancellor Essen Hendair (characters spec); \"Chancellor\" is a banned word and Hendair a former realm label"
@@ -81,11 +81,11 @@
         "formerName": "Harbour-Master Alorio Siul (characters spec); Alorio is Coldor's port"
       },
       {
-        "id": "zin_coldor_ketra",
-        "name": "Ketra of the Common Hearth",
-        "given": "Ketra",
+        "id": "zin_coldor_bran",
+        "name": "Bran of the Common Hearth",
+        "given": "Bran",
         "office": "Keeper of the Common Fire",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6748,
         "slot": "theorist",
@@ -93,23 +93,23 @@
           "zin_adv_hedge_wise"
         ],
         "role": "Keeps the common fire of the Frost-Hall, from which every hearth of Fandanar is lit again at the year's turning, and holds that Melkgard's storm-bargains insult every hearth in the north.",
-        "portrait": "An old woman in grey wool with soot on her sleeves and a bronze fire-pot on a chain.",
+        "portrait": "An old man in grey wool with soot on his sleeves and a bronze fire-pot on a chain.",
         "canon": "P"
       },
       {
-        "id": "zin_coldor_vaesildra",
-        "name": "Vaesildra Kolaring, Envoy of the Frost Moot",
-        "given": "Vaesildra",
+        "id": "zin_coldor_esrak",
+        "name": "Esrak Kolaring, Envoy of the Frost Moot",
+        "given": "Esrak",
         "office": "Envoy of the Frost Moot",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6780,
         "slot": "political_advisor",
         "traits": [
           "zin_adv_envoy"
         ],
-        "role": "A daughter of the old bread-chiefs' line who carries the crown's offers of grain to the hall at Azenoalion every Long Light and brings home Fearno's polite refusals word for word.",
-        "portrait": "A tall woman in a blue travelling cloak with an envoy's white staff.",
+        "role": "A son of the old bread-chiefs' line who carries the crown's offers of grain to the hall at Azenoalion every Long Light and brings home Fearno's polite refusals word for word.",
+        "portrait": "A tall man in a blue travelling cloak with an envoy's white staff.",
         "canon": "P"
       },
       {
@@ -205,10 +205,10 @@
       },
       {
         "id": "zin_coldor_ysolde",
-        "name": "Essaka of the Far Ice",
-        "given": "Essaka",
+        "name": "Branak of the Far Ice",
+        "given": "Branak",
         "office": "Warden of the Far Ice",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6784,
         "type": "corps_commander",
@@ -224,7 +224,7 @@
           "trickster"
         ],
         "role": "Leads the crown's riders on the long patrols beyond the last steadings, where the maps stop and the clans' songs take over.",
-        "portrait": "A hard-faced woman in reindeer hide with snow-goggles of carved bone.",
+        "portrait": "A hard-faced man in reindeer hide with snow-goggles of carved bone.",
         "canon": "P",
         "formerName": "Warden Ysolde of the Far Ice (Coldor tree); Ysolde is a name from older legend",
         "recruit": "Recruited by the Coldor tree focus Beyond the Last Steading."
@@ -254,7 +254,7 @@
         "zin_trait_warband_chief",
         "zin_trait_refuser_of_crowns"
       ],
-      "bio": "The oath-companies chose Ezhan over his predecessor's pyre in 4A 1739, because he had held the Ninth Fort through two winters of raids and never once asked Fandanar for bread. He rules from the iron hall above the Black Gallery, sends gifts to the border clans in hard winters and oath-demands in good ones, and bids for the Orewell mines as every warlord before him has done. He has said in open hall that he will eat the march's boots before he eats the queen's grain, and his men believe him.",
+      "bio": "The oath-companies chose Ezhan over his predecessor's pyre in 4A 1739, because he had held the Ninth Fort through two winters of raids and never once asked Fandanar for bread. He rules from the iron hall above the Black Gallery, sends gifts to the border clans in hard winters and oath-demands in good ones, and bids for the Orewell mines as every warlord before him has done. He has said in open hall that he will eat the march's boots before he eats the crown's grain, and his men believe him.",
       "portrait": {
         "appearance": "A heavy-shouldered man with a close-cropped black beard.",
         "dress": "Black-lacquered mail, a wolf-fur mantle and an iron torc in place of a crown.",
@@ -264,16 +264,16 @@
       "note": "Isenmar is Coldic isen \"iron\" with -mar; the Isen- element echoes the former label Isengard, which the owner may want renamed (owner question)."
     },
     "heir": {
-      "note": "No heir: when Ezhan dies the oath-companies choose the best of those sworn to him, and the talk in the forts favours Brana of the Ninth Fort (zin_regional_isengard_brana).",
+      "note": "No heir: when Ezhan dies the oath-companies choose the best of those sworn to him, and the talk in the forts favours Brana of the Ninth Fort (zin_regional_isengard_alddok).",
       "succession": "Chosen by the oath-companies over the warlord's pyre; no family holds Melkgard."
     },
     "advisors": [
       {
         "id": "zin_regional_isengard_veska",
-        "name": "Vaeska the Gift-Giver",
-        "given": "Vaeska",
+        "name": "Esrak the Gift-Giver",
+        "given": "Esrak",
         "office": "Bearer of the Warlord's Gifts",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6777,
         "slot": "political_advisor",
@@ -281,7 +281,7 @@
           "zin_adv_envoy"
         ],
         "role": "Carries the march's salt meat and iron tools to Omar and the border moor in hard winters and comes back in good ones to remind the chiefs what the gifts were worth.",
-        "portrait": "A sharp-eyed woman in a black fur hood with a sled-whip.",
+        "portrait": "A sharp-eyed man in a black fur hood with a sled-whip.",
         "canon": "P",
         "formerName": "Veska the Gift-Giver (Melkgard tree); one letter from Lerendor's North",
         "recruit": "Recruited by the Melkgard tree focus The Gift-Giver."
@@ -323,11 +323,11 @@
     ],
     "commanders": [
       {
-        "id": "zin_regional_isengard_brana",
-        "name": "Brana of the Ninth Fort",
-        "given": "Brana",
+        "id": "zin_regional_isengard_alddok",
+        "name": "Alddok of the Ninth Fort",
+        "given": "Alddok",
         "office": "Captain of the Ninth Fort",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6783,
         "type": "corps_commander",
@@ -342,8 +342,8 @@
           "unyielding_defender",
           "winter_specialist"
         ],
-        "role": "Holds the Ninth Fort, which Ezhan held before her, and has made it the hardest stone on the march.",
-        "portrait": "A tall woman in black mail with a white scar across her chin.",
+        "role": "Holds the Ninth Fort, which Ezhan held before him, and has made it the hardest stone on the march.",
+        "portrait": "A tall man in black mail with a white scar across his chin.",
         "canon": "S",
         "recruit": "Recruited by the Melkgard tree focus The Ninth Fort."
       },
@@ -430,11 +430,11 @@
         "recruit": "Recruited by the Horidor tree focus Ollon's Hearth (the focus name needs the ruler's new name)."
       },
       {
-        "id": "zin_regional_horidor_lunia",
-        "name": "Lunia Torsdot, Collector of the Cairn-Due",
-        "given": "Lunia",
+        "id": "zin_regional_horidor_branim",
+        "name": "Branim Torsdot, Collector of the Cairn-Due",
+        "given": "Branim",
         "office": "Collector of the Cairn-Due",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6780,
         "slot": "political_advisor",
@@ -442,7 +442,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Counts the dues from every western cart that crosses the Gap and is said to know a false-bottomed wagon by the sound of its wheels.",
-        "portrait": "A brisk woman with a tally-board and a toll-seal on a thong.",
+        "portrait": "A brisk man with a tally-board and a toll-seal on a thong.",
         "canon": "P"
       },
       {
@@ -465,10 +465,10 @@
     "commanders": [
       {
         "id": "zin_regional_horidor_maela",
-        "name": "Ketvia of the High Cairn",
-        "given": "Ketvia",
+        "name": "Alddok of the High Cairn",
+        "given": "Alddok",
         "office": "Captain of the High-Pass Scouts",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6786,
         "type": "corps_commander",
@@ -484,7 +484,7 @@
           "hill_fighter"
         ],
         "role": "Leads the scouts who watch the Gap from the high cairns and has twice brought a stranded wagon train down in a whiteout without losing a man.",
-        "portrait": "A wiry young woman in grey furs with a horn bow.",
+        "portrait": "A wiry young man in grey furs with a horn bow.",
         "canon": "P",
         "formerName": "Maela Highcairn (Horidor tree); Mael- is a Leren stem",
         "recruit": "Recruited by the Horidor tree focus High-Pass Scouts."
@@ -570,19 +570,19 @@
         "canon": "P"
       },
       {
-        "id": "zin_regional_yeldenne_essvia",
-        "name": "Old Essvia",
-        "given": "Essvia",
+        "id": "zin_regional_yeldenne_alddok",
+        "name": "Old Alddok",
+        "given": "Alddok",
         "office": "Bearer of the Loaf",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6746,
         "slot": "theorist",
         "traits": [
           "zin_adv_hedge_wise"
         ],
-        "role": "Has carried the valley's loaf to the start of the Silent Road every Long Dark for forty years, and nobody in Simoto remembers who carried it before her.",
-        "portrait": "A small old woman wrapped in black wool, carrying a round loaf in a cloth.",
+        "role": "Has carried the valley's loaf to the start of the Silent Road every Long Dark for forty years, and nobody in Simoto remembers who carried it before him.",
+        "portrait": "A small old man wrapped in black wool, carrying a round loaf in a cloth.",
         "canon": "P"
       },
       {
@@ -706,10 +706,10 @@
     "advisors": [
       {
         "id": "zin_regional_fearno_ilse",
-        "name": "Alvka Grindak, Steward of the Hall",
-        "given": "Alvka",
+        "name": "Aldor Grindak, Steward of the Hall",
+        "given": "Aldor",
         "office": "Steward of the Hall",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6776,
         "slot": "political_advisor",
@@ -717,7 +717,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Keeps the shared stores that the steadings swore in 4A 1304 to open to each other, and knows exactly which steading has been slow to fill them.",
-        "portrait": "A stout woman in a hide apron with a ring of store-keys.",
+        "portrait": "A stout man in a hide apron with a ring of store-keys.",
         "canon": "P",
         "formerName": "Steward Ilse Morrow (Fearno tree); Ilse is a Leren name and Ilse Relendion is Lerendor's",
         "recruit": "Recruited by the Fearno tree focus The Lords of Fearno."
@@ -739,11 +739,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_regional_fearno_ketilva",
-        "name": "Ketilva of the Steading-Fires",
-        "given": "Ketilva",
+        "id": "zin_regional_fearno_branak",
+        "name": "Branak of the Steading-Fires",
+        "given": "Branak",
         "office": "Keeper of the Hall Fire",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6761,
         "slot": "theorist",
@@ -751,7 +751,7 @@
           "zin_adv_hedge_wise"
         ],
         "role": "Keeps the hall's fire at Azenoalion and lights each steading's hearth from it at the year's turning, so that no steading starts the year owing another a flame.",
-        "portrait": "A grey-haired woman with a fire-pot and a soot-black shawl.",
+        "portrait": "A grey-haired man with a fire-pot and a soot-black shawl.",
         "canon": "P"
       }
     ],
@@ -841,16 +841,16 @@
       "canon": "P"
     },
     "heir": {
-      "id": "zin_austklev_sigra",
-      "name": "Sigra Ezhair, Heir of the Harbour Hall",
-      "given": "Sigra",
+      "id": "zin_austklev_alddok",
+      "name": "Alddok Ezhair, Heir of the Harbour Hall",
+      "given": "Alddok",
       "office": "Heir of the Harbour Hall",
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6790,
-      "role": "The jarl's daughter brought her own crew home through the Siroler ice last season, which settled the succession as far as the harbour is concerned.",
-      "succession": "The jarldom passes to the son or daughter who has captained a whaling crew.",
-      "portrait": "A young woman with wind-chapped cheeks in an oiled whaling coat.",
+      "role": "The jarl's son brought his own crew home through the Siroler ice last season, which settled the succession as far as the harbour is concerned.",
+      "succession": "The jarldom passes to the son or son who has captained a whaling crew.",
+      "portrait": "A young man with wind-chapped cheeks in an oiled whaling coat.",
       "canon": "P"
     },
     "advisors": [
@@ -887,11 +887,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_austklev_essra",
-        "name": "Essra of the Harbour Fire",
-        "given": "Essra",
+        "id": "zin_austklev_bran",
+        "name": "Bran of the Harbour Fire",
+        "given": "Bran",
         "office": "Keeper of the Harbour Fire",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6754,
         "slot": "theorist",
@@ -899,17 +899,17 @@
           "zin_adv_hedge_wise"
         ],
         "role": "Keeps the beacon-fire on the harbour head, which the whalers count both a hearth and a light to steer by.",
-        "portrait": "An old woman with a soot-dark face beside a fire-basket.",
+        "portrait": "An old man with a soot-dark face beside a fire-basket.",
         "canon": "P"
       }
     ],
     "commanders": [
       {
-        "id": "zin_austklev_zorvia",
-        "name": "Zorvia Ezhair, Captain of the Whaling Fleet",
-        "given": "Zorvia",
+        "id": "zin_austklev_branak",
+        "name": "Branak Ezhair, Captain of the Whaling Fleet",
+        "given": "Branak",
         "office": "Captain of the Whaling Fleet",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6767,
         "type": "navy_leader",
@@ -923,8 +923,8 @@
         "traits": [
           "blue_water_expert"
         ],
-        "role": "The jarl's sister, who leads the whaling fleet out each Long Light and would lead it to war if anyone could persuade her that it would pay.",
-        "portrait": "A stern woman with a harpoon and a whale-ivory pin.",
+        "role": "The jarl's brother, who leads the whaling fleet out each Long Light and would lead it to war if anyone could persuade him that it would pay.",
+        "portrait": "A stern man with a harpoon and a whale-ivory pin.",
         "canon": "P"
       },
       {
@@ -985,16 +985,16 @@
       "canon": "P"
     },
     "heir": {
-      "id": "zin_worlond_essild",
-      "name": "Essild Hozening, Walker of the Road",
-      "given": "Essild",
+      "id": "zin_worlond_alddok",
+      "name": "Alddok Hozening, Walker of the Road",
+      "given": "Alddok",
       "office": "Walker of the Road",
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6795,
-      "role": "The lord's daughter walked the Neck Road last summer and came back with blistered heels and a list of every stage that needs a new roof.",
-      "succession": "The lordship passes to the eldest son or daughter who has walked the whole road.",
-      "portrait": "A young woman in a walker's cloak with a staff and a satchel.",
+      "role": "The lord's son walked the Neck Road last summer and came back with blistered heels and a list of every stage that needs a new roof.",
+      "succession": "The lordship passes to the eldest son or son who has walked the whole road.",
+      "portrait": "A young man in a walker's cloak with a staff and a satchel.",
       "canon": "P"
     },
     "advisors": [
@@ -1015,11 +1015,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_worlond_alorka",
-        "name": "Alorka Vordak, Reeve of the Timber Contracts",
-        "given": "Alorka",
+        "id": "zin_worlond_branak",
+        "name": "Branak Vordak, Reeve of the Timber Contracts",
+        "given": "Branak",
         "office": "Reeve of the Timber Contracts",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6778,
         "slot": "political_advisor",
@@ -1027,7 +1027,7 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Holds the hull-timber contract with Varnondor's king and measures every mast before it goes south by the Grey River.",
-        "portrait": "A sharp-faced woman with a measuring cord and a ledger.",
+        "portrait": "A sharp-faced man with a measuring cord and a ledger.",
         "canon": "P"
       },
       {
@@ -1106,13 +1106,13 @@
     "court": "standard",
     "ruler": {
       "id": "PLT_zin_ruler",
-      "name": "Harbour-Master Torild Margak",
-      "given": "Torild",
+      "name": "Harbour-Master Bran Margak",
+      "given": "Bran",
       "title": {
         "native": null,
         "english": "Harbour-Master of Fandhavn"
       },
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6762,
       "stance": "zin_wild_clans",
@@ -1120,9 +1120,9 @@
         "zin_trait_port_master",
         "zin_trait_elected_speaker"
       ],
-      "bio": "The pilots' guild chose Torild for life in 4A 1737, and like every Harbour-Master before her she read the red-ink entry of 3A 702 aloud on the day of her choosing. She sells to everyone and swears to nobody, and she has twice refused the Winter Crown's granaries with a courtesy that Fandanar found harder to bear than an insult.",
+      "bio": "The pilots' guild chose Bran for life in 4A 1737, and like every Harbour-Master before his he read the red-ink entry of 3A 702 aloud on the day of his choosing. He sells to everyone and swears to nobody, and he has twice refused the Winter Crown's granaries with a courtesy that Fandanar found harder to bear than an insult.",
       "portrait": {
-        "appearance": "A lean, iron-grey woman.",
+        "appearance": "A lean, iron-grey man.",
         "dress": "A pilot's blue coat, with the harbour book under one arm.",
         "colours": "Cold-sea green (#3f6f74), salt white (#d6d2c4), sealskin brown (#8a6a4a)."
       },
@@ -1150,11 +1150,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_poloto_sigrka",
-        "name": "Sigrka Vaitair, Factor of the Pupor Trade",
-        "given": "Sigrka",
+        "id": "zin_poloto_branak",
+        "name": "Branak Vaitair, Factor of the Pupor Trade",
+        "given": "Branak",
         "office": "Factor of the Pupor Trade",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6781,
         "slot": "political_advisor",
@@ -1162,7 +1162,7 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Runs the summer trade to the Pupor Isles, furs and ivory south for sailcloth north, and has cousins in every chart-house harbour.",
-        "portrait": "A cheerful woman in island sailcloth and northern furs.",
+        "portrait": "A cheerful man in island sailcloth and northern furs.",
         "canon": "P"
       },
       {
@@ -1207,11 +1207,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_poloto_zenid",
-        "name": "Zenid Margak, Captain of the Guild Ships",
-        "given": "Zenid",
+        "id": "zin_poloto_esrak",
+        "name": "Esrak Margak, Captain of the Guild Ships",
+        "given": "Esrak",
         "office": "Captain of the Guild Ships",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6785,
         "type": "navy_leader",
@@ -1225,7 +1225,7 @@
         "traits": [
           "green_water_expert"
         ],
-        "role": "The Harbour-Master's niece, who commands the guild's few armed hulls and escorts the summer sailing to the isles.",
+        "role": "The Harbour-Master's nephew, who commands the guild's few armed hulls and escorts the summer sailing to the isles.",
         "portrait": "A young sea-captain in a pilot's blue coat.",
         "canon": "P"
       }
@@ -1278,19 +1278,19 @@
     },
     "advisors": [
       {
-        "id": "zin_holdon_grinvi",
-        "name": "Old Grinvi",
-        "given": "Grinvi",
+        "id": "zin_holdon_esrak",
+        "name": "Old Esrak",
+        "given": "Esrak",
         "office": "Speaker to the Yeti",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6749,
         "slot": "political_advisor",
         "traits": [
           "zin_adv_envoy"
         ],
-        "role": "Learned the yeti's hum as a girl at the fair and is the one person in Fentene whom the Eldest of the shelf clans will answer.",
-        "portrait": "A very old woman in white furs, humming under her breath.",
+        "role": "Learned the yeti's hum as a boy at the fair and is the one person in Fentene whom the Eldest of the shelf clans will answer.",
+        "portrait": "A very old man in white furs, humming under his breath.",
         "canon": "P"
       },
       {
@@ -1351,11 +1351,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_holdon_essira",
-        "name": "Essira Haldson, Captain of the Channel Boats",
-        "given": "Essira",
+        "id": "zin_holdon_aldor",
+        "name": "Aldor Haldson, Captain of the Channel Boats",
+        "given": "Aldor",
         "office": "Captain of the Channel Boats",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6783,
         "type": "navy_leader",
@@ -1370,7 +1370,7 @@
           "green_water_expert"
         ],
         "role": "Keeps the king's few boats on the Coldor Channel and the seal-grounds the Hunting Truce gives to men.",
-        "portrait": "A sturdy woman in sealskin at a boat's tiller.",
+        "portrait": "A sturdy man in sealskin at a boat's tiller.",
         "canon": "P"
       }
     ],
@@ -1428,11 +1428,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_glimkit_glimka",
-        "name": "Glimka Lamp-Mother, Keeper of the Lamp-Warrens",
-        "given": "Glimka",
+        "id": "zin_glimkit_blikik",
+        "name": "Blikik Lamp-Father, Keeper of the Lamp-Warrens",
+        "given": "Blikik",
         "office": "Keeper of the Lamp-Warrens",
-        "gender": "female",
+        "gender": "male",
         "people": "goblins",
         "born": 6779,
         "slot": "political_advisor",
@@ -1440,7 +1440,7 @@
           "zin_adv_road_warden"
         ],
         "role": "Runs the warrens where the lamp-fat is rendered and keeps every tunnel of Drikzig lit through the Long Dark.",
-        "portrait": "A plump goblin woman with a lamp on her head and soot on her nose.",
+        "portrait": "A plump goblin man with a lamp on his head and soot on his nose.",
         "canon": "P"
       },
       {
@@ -1549,11 +1549,11 @@
     },
     "advisors": [
       {
-        "id": "zin_xison_ketka",
-        "name": "Ketka Brandsdot, Reeve of the Tolls",
-        "given": "Ketka",
+        "id": "zin_xison_aldor",
+        "name": "Aldor Brandsdot, Reeve of the Tolls",
+        "given": "Aldor",
         "office": "Reeve of the Tolls",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6779,
         "slot": "political_advisor",
@@ -1561,7 +1561,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Shares out the high road's tolls among the clans each autumn and has made more enemies at the sharing than any raider ever has.",
-        "portrait": "A sharp-tongued woman with a toll-box under her arm.",
+        "portrait": "A sharp-tongued man with a toll-box under his arm.",
         "canon": "P"
       },
       {
@@ -1599,11 +1599,11 @@
     ],
     "commanders": [
       {
-        "id": "zin_xison_haldra",
-        "name": "Haldra of Rion",
-        "given": "Haldra",
+        "id": "zin_xison_branak",
+        "name": "Branak of Rion",
+        "given": "Branak",
         "office": "Captain of the Upland Riders",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6782,
         "type": "corps_commander",
@@ -1671,7 +1671,7 @@
         "zin_trait_treaty_keeper",
         "zin_trait_caravan_broker"
       ],
-      "bio": "Branald is cousin to the Winter Queen through the vale marriage of 4A 1590 and godfather to a captain of Melkgard's oath-companies, and he intends to stay both for as long as the crowns allow it. In the White Year both crowns sent grain to the vale, and he took both and thanked both. He breeds the best rams in the north and talks about them at every feast, which his guests from Fandanar and Minnolomak alike find the safest subject.",
+      "bio": "Branald is cousin to the Winter King through the vale marriage of 4A 1590 and godfather to a captain of Melkgard's oath-companies, and he intends to stay both for as long as the crowns allow it. In the White Year both crowns sent grain to the vale, and he took both and thanked both. He breeds the best rams in the north and talks about them at every feast, which his guests from Fandanar and Minnolomak alike find the safest subject.",
       "portrait": {
         "appearance": "A portly, genial man with a curly grey beard.",
         "dress": "A fine wool coat and a silver ram's-head brooch.",
@@ -1680,25 +1680,25 @@
       "canon": "P"
     },
     "heir": {
-      "id": "zin_pertolor_ilvia",
-      "name": "Ilvia Hozening, Heir of the Sheep Vale",
-      "given": "Ilvia",
+      "id": "zin_pertolor_alddok",
+      "name": "Alddok Hozening, Heir of the Sheep Vale",
+      "given": "Alddok",
       "office": "Heir of the Sheep Vale",
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6793,
-      "role": "Her father means to marry her into one of the crowns' houses, and both crowns know it, which has done wonders for the vale's gifts.",
+      "role": "His father means to marry him into one of the crowns' houses, and both crowns know it, which has done wonders for the vale's gifts.",
       "succession": "The lordship passes to the eldest child.",
-      "portrait": "A young woman in fine undyed wool with a ram's-head pin.",
+      "portrait": "A young man in fine undyed wool with a ram's-head pin.",
       "canon": "P"
     },
     "advisors": [
       {
-        "id": "zin_pertolor_ketsa",
-        "name": "Ketsa Hozenak, Mistress of the Wool-Market",
-        "given": "Ketsa",
-        "office": "Mistress of the Wool-Market",
-        "gender": "female",
+        "id": "zin_pertolor_branak",
+        "name": "Branak Hozenak, Master of the Wool-Market",
+        "given": "Branak",
+        "office": "Master of the Wool-Market",
+        "gender": "male",
         "people": "men",
         "born": 6773,
         "slot": "political_advisor",
@@ -1706,7 +1706,7 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Keeps the wool-market of Minsentia that Hildra Hozening founded and sets the year's price of a fleece before either crown can.",
-        "portrait": "A shrewd woman with a bale-hook and a wool-tally.",
+        "portrait": "A shrewd man with a bale-hook and a wool-tally.",
         "canon": "P"
       },
       {
@@ -1767,11 +1767,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_pertolor_ketid",
-        "name": "Ketid Hozening, Warden of Minsentia",
-        "given": "Ketid",
+        "id": "zin_pertolor_aldor",
+        "name": "Aldor Hozening, Warden of Minsentia",
+        "given": "Aldor",
         "office": "Warden of Minsentia",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6769,
         "type": "field_marshal",
@@ -1785,8 +1785,8 @@
         "traits": [
           "defensive_doctrine"
         ],
-        "role": "The lord's sister, who keeps the hall's walls and says that the vale's best defence is its marriages.",
-        "portrait": "A tall woman in mail under a wool mantle.",
+        "role": "The lord's brother, who keeps the hall's walls and says that the vale's best defence is its marriages.",
+        "portrait": "A tall man in mail under a wool mantle.",
         "canon": "P"
       }
     ],
@@ -1829,11 +1829,11 @@
     },
     "advisors": [
       {
-        "id": "zin_omar_ketvara",
-        "name": "Ketvara the Tally-Wife",
-        "given": "Ketvara",
+        "id": "zin_omar_aldor",
+        "name": "Aldor the Tally-Husband",
+        "given": "Aldor",
         "office": "Counter of the Debts",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6764,
         "slot": "political_advisor",
@@ -1841,7 +1841,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Keeps the clan's tally of what it owes and is owed, with notches for Coldor on one stick and Melkgard on the other.",
-        "portrait": "An old woman with two notched sticks in her belt.",
+        "portrait": "An old man with two notched sticks in his belt.",
         "canon": "P"
       },
       {
@@ -1879,11 +1879,11 @@
     ],
     "commanders": [
       {
-        "id": "zin_omar_hendvi",
-        "name": "Hendvi of the Border Moor",
-        "given": "Hendvi",
+        "id": "zin_omar_alddok",
+        "name": "Alddok of the Border Moor",
+        "given": "Alddok",
         "office": "Captain of the Moor Riders",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6784,
         "type": "corps_commander",
@@ -1899,7 +1899,7 @@
           "ambusher"
         ],
         "role": "Leads the clan's riders across the moor and knows every hollow where a band could lie hidden from Melkgard's scouts.",
-        "portrait": "A young woman on a shaggy pony with a horn bow.",
+        "portrait": "A young man on a shaggy pony with a horn bow.",
         "canon": "P"
       },
       {
@@ -1965,11 +1965,11 @@
     },
     "advisors": [
       {
-        "id": "zin_portogalor_alorra",
-        "name": "Alorra Grindsdot, Factor of the Frozen Sea Trade",
-        "given": "Alorra",
+        "id": "zin_portogalor_aldor",
+        "name": "Aldor Grindsdot, Factor of the Frozen Sea Trade",
+        "given": "Aldor",
         "office": "Factor of the Frozen Sea Trade",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6777,
         "slot": "political_advisor",
@@ -1977,7 +1977,7 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Takes the summer fleet of hides and ivory along the coast to Minnolomak and Fandhavn and comes back with the grain the coast cannot grow.",
-        "portrait": "A hard-bargaining woman in sealskin with a bundle of bills of sale.",
+        "portrait": "A hard-bargaining man in sealskin with a bundle of bills of sale.",
         "canon": "P"
       },
       {
@@ -1997,11 +1997,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_portogalor_zenvi",
-        "name": "Old Zenvi",
-        "given": "Zenvi",
+        "id": "zin_portogalor_bran",
+        "name": "Old Bran",
+        "given": "Bran",
         "office": "Keeper of the Raider-Songs",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6748,
         "slot": "political_advisor",
@@ -2009,7 +2009,7 @@
           "zin_adv_elder"
         ],
         "role": "Remembers every song of Ulvar Azlak's fleet and sings them only when there are no guests from Melkgard in the hall.",
-        "portrait": "A tiny old woman with a drum of seal-hide.",
+        "portrait": "A tiny old man with a drum of seal-hide.",
         "canon": "P"
       }
     ],
@@ -2038,11 +2038,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_portogalor_grinka",
-        "name": "Grinka of the Massif",
-        "given": "Grinka",
+        "id": "zin_portogalor_branak",
+        "name": "Branak of the Massif",
+        "given": "Branak",
         "office": "Captain of the Massif Watch",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6779,
         "type": "corps_commander",
@@ -2057,7 +2057,7 @@
           "trait_mountaineer"
         ],
         "role": "Keeps the watch on the Olsuaon Massif above the harbour, where a fire can be seen from Fellodor to the ice.",
-        "portrait": "A weather-darkened woman with a signal horn.",
+        "portrait": "A weather-darkened man with a signal horn.",
         "canon": "P"
       }
     ],
@@ -2100,11 +2100,11 @@
     },
     "advisors": [
       {
-        "id": "zin_kvittumm_zenara",
-        "name": "Zenara the Toll-Bearer",
-        "given": "Zenara",
+        "id": "zin_kvittumm_alddok",
+        "name": "Alddok the Toll-Bearer",
+        "given": "Alddok",
         "office": "Bearer of the Toll-Peace",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6774,
         "slot": "political_advisor",
@@ -2112,7 +2112,7 @@
           "zin_adv_envoy"
         ],
         "role": "Leads the sleds that carry the confederacy's toll of meat and iron to the giants at Xitore and is one of the few people the Frost-King's court knows by sight.",
-        "portrait": "A stocky woman in white furs with a sled-whip and an iron toll-bar.",
+        "portrait": "A stocky man in white furs with a sled-whip and an iron toll-bar.",
         "canon": "P"
       },
       {
@@ -2132,11 +2132,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_kvittumm_vaesra",
-        "name": "Vaesra of the Moot-Fire",
-        "given": "Vaesra",
+        "id": "zin_kvittumm_esrak",
+        "name": "Esrak of the Moot-Fire",
+        "given": "Esrak",
         "office": "Keeper of the Moot-Fire",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6756,
         "slot": "theorist",
@@ -2144,7 +2144,7 @@
           "zin_adv_hedge_wise"
         ],
         "role": "Keeps the moot-fire of Esrom and the burning of the dead on the stone pyres, and heals the frostbitten when the herders bring them in.",
-        "portrait": "A grave woman with a fire-pot and a bundle of healing herbs.",
+        "portrait": "A grave man with a fire-pot and a bundle of healing herbs.",
         "canon": "P"
       },
       {
@@ -2166,11 +2166,11 @@
     ],
     "commanders": [
       {
-        "id": "zin_kvittumm_ulvra",
-        "name": "Ulvra of the Herd-Riders",
-        "given": "Ulvra",
+        "id": "zin_kvittumm_branak",
+        "name": "Branak of the Herd-Riders",
+        "given": "Branak",
         "office": "Captain of the Herd-Riders",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6783,
         "type": "corps_commander",
@@ -2186,7 +2186,7 @@
           "cavalry_leader"
         ],
         "role": "Leads the young herders who ride the reindeer on the long moves and could, at need, ride them at an enemy.",
-        "portrait": "A young woman on a white reindeer with a lance.",
+        "portrait": "A young man on a white reindeer with a lance.",
         "canon": "P"
       },
       {
@@ -2216,19 +2216,19 @@
     ],
     "figures": [
       {
-        "id": "zin_kvittumm_siula",
-        "name": "Old Siula",
-        "given": "Siula",
+        "id": "zin_kvittumm_aldor",
+        "name": "Old Aldor",
+        "given": "Aldor",
         "office": "Herder of the Far Ice",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6747,
-        "role": "A herder-woman of the confederacy who knows the far ice-roads better than anyone at Esrom and tells the best stories at the winter fire.",
-        "portrait": "A tiny, deeply wrinkled old woman in layered reindeer hide with bright black eyes and a bone pipe.",
+        "role": "A herder-man of the confederacy who knows the far ice-roads better than anyone at Esrom and tells the best stories at the winter fire.",
+        "portrait": "A tiny, deeply wrinkled old man in layered reindeer hide with bright black eyes and a bone pipe.",
         "canon": "S",
-        "definedBy": "Eindil's journey events (events_world_eindil_1.json, Old Siula's Tale) and the characters spec (figures in events only)",
-        "recruit": "Event figure, never recruited; the journey events give her the finding of the stranger in 4A 1749.",
-        "note": "Siula is one letter from the Siulak house of Orewele and the drawn locality Siulas; kept because event text already uses it."
+        "definedBy": "Eindil's journey events (events_world_eindil_1.json, Old Aldor's Tale) and the characters spec (figures in events only)",
+        "recruit": "Event figure, never recruited; the journey events give him the finding of the stranger in 4A 1749.",
+        "note": "Aldor is one letter from the Siulak house of Orewele and the drawn locality Siulas; kept because event text already uses it."
       }
     ]
   },
@@ -2285,11 +2285,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_orewele_ezhvi",
-        "name": "Ezhvi Sturdsdot, Master of the Shafts",
-        "given": "Ezhvi",
+        "id": "zin_orewele_aldor",
+        "name": "Aldor Sturdsdot, Master of the Shafts",
+        "given": "Aldor",
         "office": "Master of the Shafts",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6775,
         "slot": "political_advisor",
@@ -2297,7 +2297,7 @@
           "zin_adv_road_warden"
         ],
         "role": "Runs the shafts and the ore-haulage to the dwarves' gate under the Herlitz range and has gone down the deep shaft more often than any man of the clan.",
-        "portrait": "A wiry woman in a miner's hood with a lamp.",
+        "portrait": "A wiry man in a miner's hood with a lamp.",
         "canon": "P"
       },
       {
@@ -2342,11 +2342,11 @@
         "canon": "P"
       },
       {
-        "id": "zin_orewele_aldvara",
-        "name": "Aldvara of Guerlon",
-        "given": "Aldvara",
+        "id": "zin_orewele_alddok",
+        "name": "Alddok of Guerlon",
+        "given": "Alddok",
         "office": "Captain of the Ore-Road",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6772,
         "type": "field_marshal",
@@ -2388,7 +2388,7 @@
         "zin_trait_slow_eldest",
         "zin_trait_ice_hardy"
       ],
-      "bio": "Huk sits on the ice-throne at Xitore, chosen by the cairn-keepers, and the cairns that stand for his winters are taller than any herder has seen a cairn grow. He keeps the toll-peace with the reindeer clans as the Frost-Kings have kept it since the oath at the glacier's edge, lets their herds pass for meat and iron and closes the heights to any crown that comes in arms. He once received a Winter Queen's envoy, listened to her for a whole day and then said that he would think about it, and the clans say he is thinking still.",
+      "bio": "Huk sits on the ice-throne at Xitore, chosen by the cairn-keepers, and the cairns that stand for his winters are taller than any herder has seen a cairn grow. He keeps the toll-peace with the reindeer clans as the Frost-Kings have kept it since the oath at the glacier's edge, lets their herds pass for meat and iron and closes the heights to any crown that comes in arms. He once received a Winter King's envoy, listened to him for a whole day and then said that he would think about it, and the clans say he is thinking still.",
       "portrait": {
         "appearance": "A towering ice giant with pale blue-white skin and a beard of hoarfrost, plainly not a man.",
         "dress": "A mantle of white bear hides and an iron toll-ring as large as a man's wrist.",
@@ -2404,20 +2404,20 @@
     "advisors": [
       {
         "id": "zin_regional_titanos_hrimla",
-        "name": "Old Mother Auraena",
-        "given": "Auraena",
-        "office": "Eldest of the Old Mothers",
-        "gender": "female",
+        "name": "Old Father Bruunas",
+        "given": "Bruunas",
+        "office": "Eldest of the Old Fathers",
+        "gender": "male",
         "people": "giants",
         "slot": "political_advisor",
         "traits": [
           "zin_adv_elder"
         ],
-        "role": "Speaks for the old mothers of the giants, who decide which children may be given names and which must be called Small a while longer.",
+        "role": "Speaks for the old fathers of the giants, who decide which children may be given names and which must be called Small a while longer.",
         "portrait": "A vast, stooped giantess in white furs with a staff of whale-bone.",
         "canon": "P",
-        "formerName": "Old Mother Hrimla (Nivaros tree); hr- is Dwarvish, not the Giants' Speech",
-        "recruit": "Recruited by the Nivaros tree focus The Old Mothers."
+        "formerName": "Old Father Hrimla (Nivaros tree); hr- is Dwarvish, not the Giants' Speech",
+        "recruit": "Recruited by the Nivaros tree focus The Old Fathers."
       },
       {
         "id": "zin_regional_titanos_bruunos",
@@ -2537,17 +2537,17 @@
     },
     "advisors": [
       {
-        "id": "zin_regional_yeti_lands_sima",
-        "name": "Sima Who Remembers",
-        "given": "Sima",
+        "id": "zin_regional_yeti_lands_garam",
+        "name": "Garam Who Remembers",
+        "given": "Garam",
         "office": "Singer of the Long Snow",
-        "gender": "female",
+        "gender": "male",
         "people": "yeti",
         "slot": "political_advisor",
         "traits": [
           "zin_adv_elder"
         ],
-        "role": "Holds every song of the shelf clans in her memory, including the one sung at the first fair, and corrects the Eldest when he misremembers it.",
+        "role": "Holds every song of the shelf clans in his memory, including the one sung at the first fair, and corrects the Eldest when he misremembers it.",
         "portrait": "A grey-furred yeti with a hum that seems to come from the ground.",
         "canon": "S",
         "recruit": "Recruited by the Yeti Lands tree focus Songs of the Long Snow."
@@ -2643,23 +2643,23 @@
     "court": "standard",
     "ruler": {
       "id": "GHH_zin_ruler",
-      "name": "Eldest Nuhiya",
-      "given": "Nuhiya",
+      "name": "Eldest Garam",
+      "given": "Garam",
       "title": {
         "native": "Huhal",
         "english": "Eldest of the Song-Cave"
       },
-      "gender": "female",
+      "gender": "male",
       "people": "yeti",
       "stance": "zin_wild_clans",
       "traits": [
         "zin_trait_eldest_song",
         "zin_trait_secluded_eldest"
       ],
-      "bio": "Nuhiya is the Eldest whom the song-cave of Huummal follows, and no man has been received there since the hunters of 4A 1650 followed a herd into the high snows without leave and did not come back. The height clans say their song is older than the shelf's, and Nuhiya sings it as if she means to prove it. She will hear an envoy only if a shelf Eldest vouches for him, and she has heard none in her time.",
+      "bio": "Garam is the Eldest whom the song-cave of Huummal follows, and no man has been received there since the hunters of 4A 1650 followed a herd into the high snows without leave and did not come back. The height clans say their song is older than the shelf's, and Garam sings it as if he means to prove it. He will hear an envoy only if a shelf Eldest vouches for him, and he has heard none in his time.",
       "portrait": {
         "appearance": "A tall yeti with snow-white fur tinged blue at the edges and dark, deep-set eyes, plainly not of men.",
-        "dress": "A cord of carved horn about her neck.",
+        "dress": "A cord of carved horn about his neck.",
         "colours": "High-snow white (#e8e8f0), slate blue (#6a7a8a), night grey (#3a3a4a)."
       },
       "canon": "P"
@@ -2700,17 +2700,17 @@
         "canon": "P"
       },
       {
-        "id": "zin_ghaahu_mahoi",
-        "name": "Mahoi of the Carved Horn",
-        "given": "Mahoi",
+        "id": "zin_ghaahu_ghoruhal",
+        "name": "Ghoruhal of the Carved Horn",
+        "given": "Ghoruhal",
         "office": "Keeper of the Gift-Horn",
-        "gender": "female",
+        "gender": "male",
         "people": "yeti",
         "slot": "political_advisor",
         "traits": [
           "zin_adv_envoy"
         ],
-        "role": "Keeps the memory of the Coldic envoy of 4A 1270, the only man who ever sat by the song-cave's fire, and carves the gift-horns as her teacher did.",
+        "role": "Keeps the memory of the Coldic envoy of 4A 1270, the only man who ever sat by the song-cave's fire, and carves the gift-horns as his teacher did.",
         "portrait": "A small yeti with a carving-knife of stone and a half-finished horn.",
         "canon": "P"
       }
@@ -2772,13 +2772,13 @@
     "court": "standard",
     "ruler": {
       "id": "VND_zin_ruler",
-      "name": "Speaker Furla Hozen",
-      "given": "Furla",
+      "name": "Speaker Branak Hozen",
+      "given": "Branak",
       "title": {
         "native": null,
         "english": "Speaker of the Harbour Council"
       },
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6774,
       "stance": "zin_light_council",
@@ -2786,9 +2786,9 @@
         "zin_trait_elected_speaker",
         "zin_trait_port_master"
       ],
-      "bio": "The captains of Porideon elected Furla to hold the harbour book for the gale season of 4A 1748, her third season in the chair. She has captained a whaler on the road south and a carrying ship to the Pupor Isles, and she will sign a compact with Coldor only when the crown's friendship is worth its price, which she says it has not yet been. She runs the council as she ran her ship: everyone speaks once, and then she decides.",
+      "bio": "The captains of Porideon elected Branak to hold the harbour book for the gale season of 4A 1748, his third season in the chair. He has captained a whaler on the road south and a carrying ship to the Pupor Isles, and he will sign a compact with Coldor only when the crown's friendship is worth its price, which he says it has not yet been. He runs the council as he ran his ship: everyone speaks once, and then he decides.",
       "portrait": {
-        "appearance": "A tall, rawboned woman with salt-greyed hair cropped short.",
+        "appearance": "A tall, rawboned man with salt-greyed hair cropped short.",
         "dress": "A captain's sealskin coat and the harbour book's brass key on a chain.",
         "colours": "Cold-sea green (#3f6f74), salt white (#d6d2c4), sealskin brown (#8a6a4a)."
       },
@@ -2818,11 +2818,11 @@
         "recruit": "Recruited by the Vindael tree focus The Carrying Trade."
       },
       {
-        "id": "zin_regional_windwaith_ezhild",
-        "name": "Ezhild the Wind-Reader",
-        "given": "Ezhild",
+        "id": "zin_regional_windwaith_bran",
+        "name": "Bran the Wind-Reader",
+        "given": "Bran",
         "office": "Keeper of the Wind-Towers",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6758,
         "slot": "theorist",
@@ -2830,7 +2830,7 @@
           "zin_adv_storm_speaker"
         ],
         "role": "Keeps the wind-towers on the headlands where each crew leaves a token of the wind that last spared it, and reads the weather a day ahead for any captain who pays.",
-        "portrait": "A gaunt woman in a cloak hung with wind-tokens, standing on a headland.",
+        "portrait": "A gaunt man in a cloak hung with wind-tokens, standing on a headland.",
         "canon": "P"
       },
       {
@@ -2853,10 +2853,10 @@
     "commanders": [
       {
         "id": "zin_regional_windwaith_tamsin",
-        "name": "Sigrvia Skarrak, Captain of the Sea-Wardens",
-        "given": "Sigrvia",
+        "name": "Alddok Skarrak, Captain of the Sea-Wardens",
+        "given": "Alddok",
         "office": "Captain of the Sea-Wardens",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6781,
         "type": "navy_leader",

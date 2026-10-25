@@ -122,6 +122,7 @@ Other livelihoods: tolls on the Iron Road, the Black Road (Bordon's caravan inns
 | --- | --- | --- |
 | Before 1A | established | Men live for thousands of years before Aen [V: Timeline]. Proposed: the oldest orc holds are dug into the iron hills; the giants already keep the Giant Forest. |
 | Before 1A, undated | owner decision | Devils, corrupted Lesser Spirits who served an Old God, escape to Aoaz [OD; HO §2.6]; when is open [HO §6]. Proposed: their roosts in the Goldoroth Mountains and the Islands of Death are older than the orc kingdom. |
+| Before 1A | Established (owner, 25 October 2026; decision K64) | The giants of the low hills behind the Dark Lands cairn-line, the Forgotten Giants, withdraw north-east behind their cairns when the low country sinks, and their enclave of Hoorunoron keeps the oldest stones of the count. |
 | 1A, first half | proposed | Aenoran ships chart the coasts and leave chart names (Dondor, Bordon, Goldoroth); proposed: Aen's northern garrisons left in the Dark Lands become the ancestors of Dondor's men [WB §3.1 Dondor Brutes]. |
 | 1A, second millennium | established | Volgan opens contacts with powers in the Dark Lands; the alliances are selective; orcs and goblins are in his armies [V: The First Age of Aoaz §4]. |
 | 1A, late | established | Portions of the Dark Lands join Edran's Grand Alliance [V: The First Age of Aoaz §5]. Proposed: **Rovek of Dondor** leads Dark Lands soldiers who know Volgan's allies [V: The First Age of Aoaz §5]. |
@@ -279,7 +280,7 @@ The drawn dots east of the black island Goldoroth [NT], proposed as the devil ca
 ## 13. Questions for the owner
 
 1. **Population.** May the Dark Lands be revised from 3.4 million to about 1.6 million, and the trolls from 19,000 to about 600 (section 3)?
-2. **The Forgotten Giants.** Are the giants of the drawn Giant Forest and the Borderline of Giants the vault's Forgotten Giants [V: Peoples of Aoaz; NT]?
+2. **The Forgotten Giants.** Established (owner, 25 October 2026; decision K64): the Forgotten Giants are the giants of the low hills behind the Dark Lands cairn-line, the realm of Hoorunoron. Open: are the drawn Giant Forest and the Borderline of Giants those hills [V: Peoples of Aoaz; NT]?
 3. **Gaelmael.** The Middle Lands dossier proposes Gaelmael for the drawn "Sea of Death" between the Dark Lands and the Middle Lands, and this dossier follows it; may the drawn name be retired?
 4. **The straits.** The model's places for the Northern and Southern Dark Straits are unconfirmed proposals [GM]. Are they right?
 5. **Leaders named after their realms.** Earlier specs name the chiefs after their holds or labels: Chief Bordag of Bordon, Chief Dresk of Dreson, Chief Dulgash of Dulundur, Chief Belon of Belonton, Lord Haclton of Blackton (from the drawn "Haclton Fable"), Bredo the Fire-Speaker (from Dreson's drawn label Bredo) [Characters spec]. May they get personal names from Orcish and Dondric stems?

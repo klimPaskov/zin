@@ -153,6 +153,31 @@ Sub-region lists (kind `list`):
 | `zin_controls_sea_central` | Control of the central sea | the sea established (owner, G3) | country-scope trigger, `OR = { has_naval_control = <id> … }` over `sea_central` (below) | the sea regions listed in `sites.json` | resolves | Western Crossing |
 | `zin_is_site_mushroom_forest` | The Mushroom Forest | established (Magical Lands); the state proposed | state, `state_name` Mushroom Forest, inside the elven realm that holds the forest (owner question 12 proposal); the row carries `"pending": true`, so the module writes no trigger until the map names the state | a named state | label only | flavour event `zin_lore.372`, built only once the trigger exists |
 
+**Sites of the deep past (owner decision K64)**
+
+The six fallen realms of [deep_past.md](../04_mechanics/deep_past.md) read these sites. Until `modules/sites.mjs` exists, `modules/deep_past.mjs` resolves them itself at the start, by the same rules, as state flags `zin_deep_site_<key>` (and a global variable `zin_deep_site_<key>` for a single-state site); it exports the rows as `SITE_ROWS` in this table's format, so they move to `sites.json` unchanged (E7) and the triggers become `zin_is_site_<key>`. No row names a state number, so the map import's renumbering changes nothing.
+
+| Trigger (state flag today) | Site | Lore | Kind, rule | Map requirement | Map today | Read by |
+| --- | --- | --- | --- | --- | --- | --- |
+| `zin_deep_site_eldest_barrow` | The eldest barrow of the Veiled | adopted (K64) | state, `capital` Cursed Lands | none | resolves | the Cord keeping, the Last Cord |
+| `zin_deep_site_eldest_cairn` | The Eldest Cairn | adopted (K64) | state, `capital` Hirolon | none | resolves | the Stone keeping, the count |
+| `zin_deep_site_tide_chambers` | The tide-chambers of Borrak | adopted (K64) | state, `capital` Orohaf | none | resolves | the Tide keeping, the chambers' modifier |
+| `zin_deep_site_mothers_mound_shore` | The shore facing the Mothers' Mound | adopted (K64); the islet owner-approved | state, `capital` Orohaf until the islet exists, then `state_name` The Mothers' Mound | the one-province islet west of Aenor Isle ([map_islet_request.md](../../plans/deep_history/map_islet_request.md)) | Orohaf's single state | the dive |
+| `zin_deep_site_nimlan_banks` | The coasts over the low fields | adopted (K64) | list, `owned` Orohaf and Hirolon, filter `coastal` | none | resolves | the nets, the Two Counts, the Western Crossing's banks |
+| `zin_deep_site_gate_west` | The western half of the broken city | adopted (K64) | state, `capital` Luv-zhise | none | resolves | the Two Gates |
+| `zin_deep_site_gate_east` | The eastern half under the horse-fair | adopted (K64) | state, `capital` Delbiz | none | resolves | the Two Gates |
+| `zin_deep_site_old_roads_end` | The Archive at the end of the old roads | adopted (K64) | state, `capital` Eldafaen | none | resolves | the treaty of passage |
+| `zin_deep_site_old_ditches` | The western march's ditches | adopted (K64) | state, `capital` Noleksun | none | resolves | the ditches' modifier |
+| `zin_deep_site_kalioth_halls` | Barzoth on the Kalioth | adopted (K64) | state, `capital` Erco until a state is named Kalioth, then `state_name` Kalioth | an Erco state named for the upland (requested with the islet) | Erco's capital | the diadem |
+| `zin_deep_site_sea_door` | The four Sea-Doors | adopted (K64) | list, `capital` Kunhrim, Hrakbrund, Brundahrim, Gromkerm (each also a global variable `zin_deep_site_sea_door_<tag>`) | none | resolves | the Sea-Doors |
+| `zin_deep_site_cursed_square_shore` | The shore facing the Cursed Square | adopted (K64) | state, `capital` Benan if coastal, else a coastal state of Benan (the addendum's `nearest` to `coast_cursed_square` waits for sites.mjs) | none | resolves | the Square |
+| `zin_deep_site_frozen_lands` | The Frozen Lands | adopted (K64) | list, `owned` Coldor, filter not coastal (the interior) | none | resolves | the ice-walks, the king's hall |
+| `zin_deep_site_far_ice` | The reindeer roads of the far north-west | adopted (K64) | list, `owned` Kvittumm | none | resolves | the ice-walks |
+| `zin_deep_site_river_names` | The Vale states with Orran names | adopted (K64) | list, `owned` Aenor, filter `adjacent_to` Bloody Forest | none | resolves | River Names Spoken |
+| `zin_deep_site_plutondo_valley`, `zin_deep_site_miaed_passes`, `zin_deep_site_pornivior_road` | The old lands of the Kalioth Crown | adopted (K64) | lists, `owned` Plutondo, Miaed, Pornivior | none | resolves | the diadem's claims, the Kalioth Crown |
+| `zin_deep_site_konorar_valley` | The Konorar valley | adopted (K64) | list, `owned` Konori | none | resolves | the Moot of Mothers' claims |
+| `zin_deep_site_free_steadings` | The free steadings | adopted (K64) | list, `owned` Fearno | none | resolves | the Sun Crown's claims |
+
 **Sites that are not states:** the Golden Court (a district of Parim, scripted as a Parim modifier; proposed name), the Mirror of First Rain (at `zin_is_site_gala`), the Fire-Mountain above Cocanoor (event flavour), Dardan (not placed until the owner decides; no row).
 
 **Retired site names** (the build's name check fails on them): `zin_is_site_east_north_coast` (use `zin_is_site_ocean_of_zol_coast` with `zin_is_region_east_lands`) and `zin_is_sea_central` (use `zin_controls_sea_central`, E7).

@@ -309,7 +309,7 @@ Mechanic effects, triggers, variables, decisions and events (`zin_elves_*`, name
 | --- | --- | --- | --- | --- | --- |
 | `<Magical Forest>_zin_ruler` | First Speaker Lusiel Velakorin | P (characters spec) | Country leader | `zin_trait_speaker_of_houses` | start |
 | `zin_magical_forest_perlan` | Perlan, Warden of the Dragon Roosts | P (characters spec) | Political advisor | `zin_trait_dragon_warden` | start (hire); *Perlan's Roost Wardens* hires him if not hired |
-| `zin_magical_forest_aenwe` | Loremaster Aenwe Lozari | P (characters spec) | Theorist | `zin_trait_elder_memory` | start |
+| `zin_magical_forest_aeniel` | Loremaster Aenwe Lozari | P (characters spec) | Theorist | `zin_trait_elder_memory` | start |
 | `zin_magical_forest_ithrandel` | Ithrandel, Captain of the Long Patrols | P (this spec) | Corps commander, skill 3 | `ranger`, `trickster` (vanilla placeholders) | *Captains of the Houses* |
 
 The characters spec's start marshal, `zin_magical_forest_herrian` (Marshal Herrian Lustel, field marshal), stays the realm's senior commander; Ithrandel is a second, younger captain for the patrols. Portraits are image-generated (art spec).

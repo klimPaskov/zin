@@ -117,3 +117,17 @@ test('Every generated script parses with balanced braces and no <= or >=', () =>
     assert.doesNotThrow(() => parse(scriptText(bytes)), rel);
   }
 });
+
+test('Q-95 (K59): the Worshipdom and Coldor lean to history under PLAUSIBLE like every other tier A power', () => {
+  for (const [id, power] of [['worshipdom', 'afrit'], ['coldor', 'cold']]) {
+    assert(!D.trees[id].rule.plausibleIsFree, id);
+    const p = text(`common/ai_strategy_plans/zin_${id}_plausible.txt`);
+    assert(p.includes(`zin_${id}_plausible = {`) && p.includes(`zin_rules_ai_default_${power} = yes`), id);
+    assert(/focus_factors = \{[\s\S]*= 3\b/.test(p), `${id}: the historical focuses weigh x3`);
+  }
+  // the event weights lean too: the Afrit chain's historical options and Coldor's march war
+  const afrit = readFileSync(path.join(ZIN, 'tools/content/data/events_mech_afrit.json'), 'utf8');
+  assert(afrit.includes('zin_rules_ai_plausible_afrit = yes'));
+  assert(readFileSync(path.join(ZIN, 'tools/content/modules/mech_cold.mjs'), 'utf8').includes('zin_rules_ai_plausible_cold = yes'));
+  assert(readFileSync(path.join(ZIN, 'tools/content/modules/rules.mjs'), 'utf8').includes('zin_rules_ai_plausible_${power}'));
+});

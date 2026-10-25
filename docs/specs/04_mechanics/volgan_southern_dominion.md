@@ -536,7 +536,7 @@ Pictures are idea icons of the catalog in game (`GFX_idea_zin_<key>`).
 | `zin_volgan_grave_warden` | The Grave-Warden | proposed | General; heads the necromantic orders |
 | `zin_volgan_ghorvak` | Ghorvak of the Hundred Clubs | proposed | General; ogre clan chief of the Ember Lands |
 | `zin_mirolon_maeric` | High Warden Maeric | proposed | Mirolon's country leader `zin_light_wardens`; replaces the generated ruler |
-| `zin_mirolon_selda` | Captain Selda Varrow | proposed | Mirolon general (Pass Watch) |
+| `zin_mirolon_almon` | Captain Selda Varrow | proposed | Mirolon general (Pass Watch) |
 | `zin_mirolon_hadric` | Hadric Thorne, Scout-Master | proposed | Mirolon advisor (intelligence) |
 
 The three Volgan generals exist from the start but are recruited only by the tree's event "The Lieutenants Assemble" (`recruit_character`). Mirolon's leader replaces the generated ruler at `on_startup` (`add_country_leader_role` with `promote_leader = yes`); Selda and Hadric are defined, not recruited. Portraits are image-generated ([08_art_and_assets](../08_art_and_assets/)); until they exist, the characters use the people portraits already in game (`GFX_zin_portrait_<people>_<sex>_<n>`: `the_dead` for the Ember Herald and the Grave-Warden, `orcs` for Ghorvak, `men` for Mirolon's three).

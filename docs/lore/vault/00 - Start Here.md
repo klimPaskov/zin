@@ -17,6 +17,8 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 5. **[[The Fourth Age of Aoaz]]** is the full chronicle of prosperity, Afrit's hidden and then open rule, [[The Journey of Eindil]], [[Castle of Yeldenne and Glo|Yeldenne]], [[War of the Last Crowns]], and [[The Last Battle in the Palace]]. A precise **1,760 years** is proposed.
 6. [[Fifth Age Seeds]] records the consequences and open future after Eindil's coronation.
 
+The deep past, before the First Age, is told in six realm notes adopted on 25 October 2026 (decision K64): [[Muzerar, the Low Country]], [[Tarkia, the Bridge Kingdom]], [[Rhabtarkia, the Kalioth Crown]], [[Gromatrak, the Stone Road]], [[Margorodai, the Sea-Roads]] and [[Heulufaenn, the Sunfields]].
+
 ## Start with characters and relations
 
 [[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Kusven]] · [[Roka]]

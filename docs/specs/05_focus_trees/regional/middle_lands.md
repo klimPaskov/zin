@@ -27,7 +27,7 @@ Section 12 adds the tree of **Burrikkrit**, the hobgoblin king's warren-kingdom 
 
 **Proposed here:** every focus, spirit, event, character, number and route below; the Eight Towns of Noleksun; the Hundreds of Konori; the Great Moot of Kilinti; the four houses of Aenor Isle; the barrows of the Cursed Lands; the Redbark tribes; every leader and advisor named in the court tables (rulers come from [02_characters.md](../../02_lore/02_characters.md)).
 
-**Kept open** (no text answers these): who the Cursed Lands' people are and what their curse is; whether Huhun and Hunhun are one place (text uses only "Hunhun"); the rank and mortality of ents and giants; Dardan's location; whether Selen's tie to Aenor survives the war; whether the Lost Cause formally survives; which dominions follow which camp in history.
+**Kept open** (no text answers these): what the Cursed Lands' barrows finally keep (the Veiled, their cord-mothers and the souring are given by the regional dossier and K64); whether Huhun and Hunhun are one place (text uses only "Hunhun"); the rank and mortality of ents and giants; Dardan's location; whether Selen's tie to Aenor survives the war; whether the Lost Cause formally survives; which dominions follow which camp in history.
 
 ## Design
 
@@ -326,6 +326,18 @@ Noleksun is the Concord's south-eastern frontier: eight valley towns that share 
 
 Historical: A and C first, then B; the_charter_quarrel (turn them away 60 %), book_of_grievances in 1750; mourning is not in this tree, so at the King's death the mechanic decides secession. If seceded: league_of_free_dominions at once. E when available; ride_with_the_heir in 1757. Never hist: petition_parim, the_free_dominion (the mechanic decides), speak_with_selen before 1752.
 
+
+### Deep past branch (K64): The Old Ditches
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_frontier_road`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_old_ditches` | The Old Ditches | `canal_lock` | the_frontier_road | — | 9,3 | 70 | — | call `zin_deep_trace_ditches`; bld infrastructure 1 @capital | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## 3. Herez
@@ -433,6 +445,20 @@ Tree triggers: `zin_regional_herez_mirolon_friend` (Mirolon exists and has `zin_
 ### AI
 
 Historical: A, C, D in order; friends_across_the_border 1749; hear_the_mirolonese 1750; the_marches_pact when available; stand_with_the_lost_cause 1752; shelter_for_mirolon 1753. E when Volgan marches; marches_in_the_dark at once when occupied; march_with_the_heir in 1757; the_marches_restored after the body breaks. a_league_of_the_south only if Herez has seceded (weight 80 then).
+
+
+### Deep past branch (K64): The Eastern Forts
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `forts_of_the_marches`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_eastern_forts` | The Eastern Forts | `palace_wards` | forts_of_the_marches | — | 2,4 | 70 | — | flag `zin_deep_eastern_forts`; spirit `eastern_forts_spirit`; bld bunker 1 @capital | base 15 |
+
+Spirits added: `eastern_forts_spirit` (The Raiders' Forts: `army_core_defence_factor` 0.05, `dig_in_speed_factor` 0.1).
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 
@@ -875,14 +901,14 @@ Historical: B and C first, A, then D (riders_for_the_royal_army, scouts_for_the_
 | Item | Value |
 | --- | --- |
 | Tree id | `regional_hiloron` |
-| Country | Hiloron (Middle Lands; 2 states; giants; Light, Warden Host; dominion of Aenor) |
-| Focuses | 32; columns 0–16 |
+| Country | Hiloron (Middle Lands; 2 states; giants; Light, Warden Host; sovereign, bound to Aenor by the Cairn Treaty; spelt Hirolon in game text) |
+| Focuses | 36; columns 0–16 |
 | Events | `zin_regional_hiloron` |
 | Start values | loyalty 60 (Old Charter); footholds 1 |
 
 ### Situation in 4A 1748
 
-Hiloron's giants keep a lake republic in the south-west of the Middle Lands, two states of quarries and deep water beside Novez. A council of chiefs governs under the Charters, slowly and honestly. The giants remember the crossings of the First Age war, when their forebears carried the allied hosts over rivers (proposed); the Keepers of the Crossings sing it every year. Hiloron is loyal, small and respected. Its quarrel with Parim is the price of stone.
+Hirolon's giants keep a ring of grey hills between the Crown Ocean and the Great Lake, two states of cairn-fields, quarries and wooded basin with the small folk of Tirlan farming the valleys under their protection (regional dossier `docs/lore/regions/hirolon.md`). A High Chief chosen by the cairn-keepers rules with a council of clan chiefs, slowly and honestly; the realm is sovereign and bound to Aenor by the Cairn Treaty, not a chartered dominion. The giants remember the crossings of the First Age war, when their forebears carried the allied hosts over rivers (proposed); the Keepers of the Crossings sing it every year. Hirolon is friendly, small and respected. Its quarrel with Parim is the price of stone.
 
 ### Role in the story
 
@@ -904,21 +930,22 @@ Hiloron's giants keep a lake republic in the south-west of the Middle Lands, two
 
 | Br. | Branch | Columns | Opens | Focuses |
 | --- | --- | --- | --- | ---: |
-| A | The Lake Council | 0–2 | start | 6 |
+| A | The Council of Chiefs | 0–2 | start | 6 |
 | B | Memory of the Crossings | 4–6 | start | 6 |
 | C | The Giant Host | 8–10 | start | 7 |
-| D | Lake, Quarry and Charter | 12–16 | start | 8 |
+| D | Cairn, Quarry and Treaty | 12–16 | start | 8 |
 | E | The Giants Wake | 5–9 | Story | 5 |
+| F | The Eldest Cairn (K64) | 6–8 | after Keepers of the Old Ways | 4 |
 
 ### Focuses
 
 | Br. | Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Effects |
 | --- | --- | --- | --- | --- | --- | --- | ---: | --- |
-| A | `the_lake_council` | **The Lake Council** | `council_table` | — | — | 1,0 | 35 | pp 50; spirit `lake_council` |
-| A | `chiefs_of_the_shore` | Chiefs of the Shore | `lake_town` | the_lake_council | — | 0,1 | 70 | pp 25; stab 0.03 |
+| A | `the_lake_council` | **The Council of Chiefs** | `council_table` | — | — | 1,0 | 35 | pp 50; spirit `lake_council` |
+| A | `chiefs_of_the_shore` | Chiefs of the Clan Halls | `lake_town` | the_lake_council | — | 0,1 | 70 | pp 25; stab 0.03 |
 | A | `the_long_memory` | The Long Memory | `book_lore` | the_lake_council | — | 2,1 | 35 | event `the_crossings_remembered` |
 | A | `council_of_stone` | Council of Stone | `rune_stone` | chiefs_of_the_shore | — | 0,2 | 70 | swap lake_council→lake_council_2 |
-| A | `law_of_the_lake` | Law of the Lake | `seal_royal` | the_long_memory | — | 2,2 | 70 | stab 0.05 |
+| A | `law_of_the_lake` | Law of the Ring | `seal_royal` | the_long_memory | — | 2,2 | 70 | stab 0.05 |
 | A | `the_council_endures` | The Council Endures | `council_table` | council_of_stone / law_of_the_lake | — | 1,3 | 70 | pp 75 |
 | B | `memory_of_the_crossings` | **Memory of the Crossings** | `river_ford` | — | — | 5,0 | 35 | spirit `memory_of_the_crossings` |
 | B | `songs_of_the_alliance` | Songs of the Alliance | `alliance_rings` | memory_of_the_crossings | — | 4,1 | 35 | ws 0.03; stab 0.02 |
@@ -932,33 +959,33 @@ Hiloron's giants keep a lake republic in the south-west of the Middle Lands, two
 | C | `the_stride` | The Stride | `mountain_pass` | hurlers_of_stone | — | 8,2 | 70 | spirit `giants_stride` |
 | C | `shield_of_giants` | Shield of Giants | `sword_shield` | great_mauls | — | 10,2 | 70 | spirit `shield_of_giants` |
 | C | `war_chiefs` | War-Chiefs | `war_council_map` | the_stride / shield_of_giants | — | 9,3 | 70 | army_xp 15; spirit `war_chiefs` |
-| C | `the_host_of_hiloron` | The Host of Hiloron | `levy_muster` | war_chiefs | — | 9,4 | 70 | mp 500; swap giants_stride→giants_stride_2 (adds if missing) |
-| D | `lake_and_quarry` | Lake and Quarry | `quarry_stone` | — | — | 13,0 | 70 | bld industrial_complex 1 @capital |
+| C | `the_host_of_hiloron` | The Host of Hirolon | `levy_muster` | war_chiefs | — | 9,4 | 70 | mp 500; swap giants_stride→giants_stride_2 (adds if missing) |
+| D | `lake_and_quarry` | Cairn and Quarry | `quarry_stone` | — | — | 13,0 | 70 | bld industrial_complex 1 @capital |
 | D | `the_quarries` | The Quarries | `quarry_stone` | lake_and_quarry | — | 12,1 | 70 | bld industrial_complex 1 @random_owned |
-| D | `lake_boats` | Lake Boats | `fishing_boats` | lake_and_quarry | — | 14,1 | 70 | bld infrastructure 1 @capital; spirit `lake_boats` |
+| D | `lake_boats` | Boats of Maruunos | `fishing_boats` | lake_and_quarry | — | 14,1 | 70 | bld infrastructure 1 @capital; spirit `lake_boats` |
 | D | `stone_roads` | Stone Roads | `roads_paved` | the_quarries | — | 12,2 | 70 | bld infrastructure 1 @random_owned |
 | D | `trade_with_novez` | Trade with Novez | `caravan` | lake_boats | — | 14,2 | 35 | Avail: exists Novez. event_for Novez `hiloron_trade` |
-| D | `a_rich_shore` | A Rich Shore | `coin_chest` | stone_roads / trade_with_novez | — | 13,3 | 70 | bld arms_factory 1 @random_owned; stab 0.03 |
-| D | `the_old_charter_of_hiloron` | The Old Charter | `charter_old` | — | — | 16,0 | 35 | loyalty(3); pp 25 |
-| D | `levies_of_giants` | Levies of Giants | `spear_levy` | the_old_charter_of_hiloron | — | 16,1 | 70 | Avail: Concord dominion. loyalty(5); army_xp 5; mp −300 |
+| D | `a_rich_shore` | A Rich Ring | `coin_chest` | stone_roads / trade_with_novez | — | 13,3 | 70 | bld arms_factory 1 @random_owned; stab 0.03 |
+| D | `the_old_charter_of_hiloron` | The Cairn Treaty | `charter_old` | — | — | 16,0 | 35 | loyalty(3); pp 25 |
+| D | `levies_of_giants` | Giants for Hire | `spear_levy` | the_old_charter_of_hiloron | — | 16,1 | 70 | Avail: Concord dominion. loyalty(5); army_xp 5; mp −300 |
 | E | `the_giants_wake` | **The Giants Wake** | `giant_hammer` | — | — | 7,6 | 35 | Avail: Story. ws 0.10; spirit `giants_wake` |
 | E | `stones_against_the_dead` | Stones Against the Dead | `bones_risen` | the_giants_wake | — | 5,7 | 70 | Avail: `zin_zol_rising` or `zin_volgan_marches`. army_xp 10; res [zin_cat_siege] 0.5 ×1 |
-| E | `the_lake_holds` | The Lake Holds | `fort_wall` | the_giants_wake | — | 7,7 | 70 | bld bunker 2 @capital |
-| E | `charter_and_shield` | Charter and Shield | `charter_shield` | the_giants_wake | — | 9,7 | 70 | Avail: Concord dominion. loyalty(5); lost_cause(3) |
-| E | `hiloron_endures` | Hiloron Endures | `olive_branch` | stones_against_the_dead / the_lake_holds / charter_and_shield | — | 7,8 | 70 | Avail: End. stab 0.10; remove `giants_wake` |
+| E | `the_lake_holds` | The Ring Holds | `fort_wall` | the_giants_wake | — | 7,7 | 70 | bld bunker 2 @capital |
+| E | `charter_and_shield` | Treaty and Shield | `charter_shield` | the_giants_wake | — | 9,7 | 70 | Avail: Concord dominion. loyalty(5); lost_cause(3) |
+| E | `hiloron_endures` | Hirolon Endures | `olive_branch` | stones_against_the_dead / the_lake_holds / charter_and_shield | — | 7,8 | 70 | Avail: End. stab 0.10; remove `giants_wake` |
 
 ### Spirits
 
 | Key | Name | Modifiers |
 | --- | --- | --- |
-| `lake_council` | The Lake Council | `stability_factor` 0.05, `political_power_factor` 0.05 |
+| `lake_council` | The Council of Chiefs | `stability_factor` 0.05, `political_power_factor` 0.05 |
 | `lake_council_2` | Council of Stone | `stability_factor` 0.08, `political_power_factor` 0.10 |
 | `memory_of_the_crossings` | Memory of the Crossings | `research_speed_factor` 0.03, `war_support_factor` 0.03 |
 | `giants_stride` | The Stride | `army_armor_attack_factor` 0.05, `army_armor_speed_factor` 0.05 |
-| `giants_stride_2` | The Host of Hiloron | `army_armor_attack_factor` 0.10, `army_armor_speed_factor` 0.05, `breakthrough_factor` 0.05 |
+| `giants_stride_2` | The Host of Hirolon | `army_armor_attack_factor` 0.10, `army_armor_speed_factor` 0.05, `breakthrough_factor` 0.05 |
 | `shield_of_giants` | Shield of Giants | `army_armor_defence_factor` 0.10 |
 | `war_chiefs` | War-Chiefs | `army_leader_start_level` 1 |
-| `lake_boats` | Lake Boats | `trade_opinion_factor` 0.10 |
+| `lake_boats` | Boats of Maruunos | `trade_opinion_factor` 0.10 |
 | `giants_wake` | The Giants Wake | `army_armor_attack_factor` 0.10, `war_support_factor` 0.05 |
 
 ### Events (`zin_regional_hiloron`)
@@ -966,11 +993,26 @@ Hiloron's giants keep a lake republic in the south-west of the Middle Lands, two
 | Key (id) | Title | Picture | To | Options |
 | --- | --- | --- | --- | --- |
 | `the_crossings_remembered` (1) | The Crossings Remembered | `generic_wilds` | Hiloron | The Keepers sing of the ancient crossings. Flavour; **Sing it again** (stab 0.02). Never names where Dardan lay |
-| `hiloron_trade` (2) | Stone from Hiloron | `generic_peace` | Novez | **Trade with the giants** (opinion +15 both ways; Novez pp 25; AI 70) / **Novez has its own quarries** |
+| `hiloron_trade` (2) | Stone from Hirolon | `generic_peace` | Novez | **Trade with the giants** (opinion +15 both ways; Novez pp 25; AI 70) / **Novez has its own quarries** |
 
 ### AI
 
 Historical: A, C, D, B in turn; hear_the_stranger in 1754 (historical heeder); E when available.
+
+
+### Deep past branch (K64): The Eldest Cairn
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `keepers_of_the_old_ways`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_eldest_cairn` | The Eldest Cairn | `glyph_fading` | keepers_of_the_old_ways | — | 7,2 | 70 | — | call `zin_deep_open_eldest_cairn`; stab 0.03 | base 15 |
+| `stone_for_stone` | Stone for Stone | `canal_lock` | the_eldest_cairn | — | 7,3 | 70 | — | flag `zin_deep_cairn_terms`; pp 25 | base 15 |
+| `speak_the_count` | Speak the Count | `birth_rolls` | stone_for_stone | keep_the_silence | 6,5 | 70 | — | call `zin_deep_speak_count`; pp 50 | base 0; +30 if check `zin_deep_cairn_oath_kept` |
+| `keep_the_silence` | Keep the Silence | `seal_chancellor` | stone_for_stone | speak_the_count | 8,5 | 70 | — | call `zin_deep_keep_silence` | base 20; ×0.05 if check `zin_deep_cairn_oath_kept` |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 
@@ -1081,6 +1123,24 @@ The text of *Gifts from the South* speaks of "a stranger from the south who brin
 
 Historical: A, C, B; the_old_defiance (hist), outlaws_welcome; E: the_woods_close, the_hunters_war. blood_for_the_living and gifts_from_the_south hist 0. Under `FREE`: the truce when the Gathering Dark is below 25; blood_for_the_living when Aenor's opinion ≥ 0; gifts_from_the_south only with `zin_rule_dark_powers = AGGRESSIVE`.
 
+
+### Deep past branch (K64): The Red Cords
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `words_with_the_veiled`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_red_cords` | The Red Cords | `bracelet_seal` | words_with_the_veiled | — | 11,3 | 70 | — | call `zin_deep_red_cords`; pp 25 | base 15 |
+| `one_tongue_in_two_woods` | One Tongue in Two Woods | `hymn_choir` | the_red_cords | — | 11,4 | 70 | Avail: exists `Cursed Lands` | call `zin_deep_cord_gift_asked`; opinion `one_tongue` with Cursed Lands both ways | base 15 |
+| `river_names_spoken` | River Names Spoken | `river_ford` | one_tongue_in_two_woods | a_truce_with_parim | 10,5 | 70 | — | call `zin_deep_speak_river_names`; ws 0.05 | base 0; +10 if global_flag `zin_war_of_last_crowns` or global_flag `zin_golden_king_exiled` |
+| `the_moot_of_mothers` | The Moot of Mothers | `crown_witnesses` | one_tongue_in_two_woods | — | 12,5 | 105 | Avail: not (global_flag `zin_deep_cord_burned`) | flag `zin_deep_moot_route`; pp 50 | base 15; ×0 if at_war true |
+
+Opinion modifiers added: `one_tongue` (One Tongue in Two Woods, 20, decay 0.5).
+Exclusion added to an existing focus: `a_truce_with_parim` excludes `river_names_spoken`.
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## 10. Cursed Lands
@@ -1089,15 +1149,15 @@ Historical: A, C, B; the_old_defiance (hist), outlaws_welcome; E: the_woods_clos
 | --- | --- |
 | Tree id | `regional_cursed_lands` |
 | Country | Cursed Lands (Middle Lands; 1 state; men; Wild, Seclusion; independent) |
-| Focuses | 30; columns 0–13 |
+| Focuses | 36; columns 0–13 |
 | Events | `zin_regional_cursed_lands` |
 | Start values | no loyalty; footholds 0 |
 
 ### Situation in 4A 1748
 
-The Cursed Lands reject the crown (established), and very little else is known of them. Parim calls the land cursed; its people do not say why. They live in one hidden valley country behind closed roads, govern themselves under the Veiled Elder, and keep barrows older than the Concord (proposed landscape). They trade little and ask for nothing. The character spec fixes the rule for this tree: they want to be left alone, and nothing more is invented about who they are.
+The Cursed Lands reject the crown (established), and very little else is known of them. Parim calls the land cursed; its people do not say why. They live on hidden grey downs behind closed roads, govern themselves under a council of cord-mothers with descent through the mother's line, speak Orran among themselves, and keep barrows older than the Concord (regional dossier `docs/lore/regions/middle_lands.md`, proposed). They trade little, roots and mushrooms for salt and iron at the edge of the downs, and ask for nothing. The character spec fixes the rule for this tree: they want to be left alone, and nothing more is invented about who they are.
 
-**Proposed reading, for the owner to accept or replace:** the barrows are old grave-fields from the long darkness of the Third Age that the people of the valley keep quiet. Game text never states this: it speaks of "the barrows" and "what the mounds keep", and the open question below asks the owner.
+**Adopted reading (owner, 25 October 2026, K64):** the downs soured under the Black Roots in the Third Age, and the eldest barrow keeps the Last Cord, whose count runs back to a drowned land older than Aen ([10_fallen_realms.md](../../02_lore/10_fallen_realms.md)). Game text speaks of "the barrows", "what the mounds keep" and "the cords", and names the drowned land only behind the deep past module's gate.
 
 ### Role in the story
 
@@ -1121,9 +1181,10 @@ Portraits show veiled or hooded figures; no faces.
 | --- | --- | --- | --- | ---: |
 | A | The Veil | 0–2 | start | 7 |
 | B | The Barrow-Keepers | 4–6 | start | 6 |
-| C | The Hidden Valley | 8–10 | start | 5 |
+| C | The Hidden Downs | 8–10 | start | 5 |
 | D | Strangers at the Edge | 11–13 | start | 6 |
 | E | When the Dead Walk | 4–8 | `zin_zol_rising`, `zin_volgan_marches` or `zin_war_of_last_crowns` | 6 |
+| F | The Count Beneath the Sea (K64) | 6–9 | after The Old Tallies | 6 |
 
 ### Focuses
 
@@ -1131,7 +1192,7 @@ Portraits show veiled or hooded figures; no faces.
 | --- | --- | --- | --- | --- | --- | --- | ---: | --- |
 | A | `the_veil` | **The Veil** | `ward_circle` | — | — | 1,0 | 35 | spirit `the_veil` |
 | A | `no_road_in` | No Road In | `fort_wall` | the_veil | — | 0,1 | 70 | bld bunker 1 @capital |
-| A | `the_elders_silence` | The Elder's Silence | `scroll_sealed` | the_veil | — | 2,1 | 35 | pp 25; stab 0.05 |
+| A | `the_elders_silence` | The Mothers' Silence | `scroll_sealed` | the_veil | — | 2,1 | 35 | pp 25; stab 0.05 |
 | A | `watchers_at_the_edge` | Watchers at the Edge | `eye_watchful` | no_road_in | — | 0,2 | 70 | spirit `edge_watchers` |
 | A | `the_unspoken_law` | The Unspoken Law | `seal_royal` | the_elders_silence | — | 2,2 | 70 | stab 0.05 |
 | A | `a_people_apart` | A People Apart | `banner_plain` | watchers_at_the_edge / the_unspoken_law | — | 1,3 | 70 | swap the_veil→the_veil_2 |
@@ -1142,8 +1203,8 @@ Portraits show veiled or hooded figures; no faces.
 | B | `quiet_earth` | Quiet Earth | `grave_field` | lanterns_on_the_mounds | — | 4,2 | 70 | res [zin_cat_wards] 0.5 ×1 |
 | B | `the_keepers_oath` | The Keepers' Oath | `handshake_oath` | the_old_tallies | — | 6,2 | 70 | stab 0.05; ws 0.03 |
 | B | `the_mounds_are_quiet` | The Mounds Are Quiet | `rune_stone` | quiet_earth / the_keepers_oath | — | 5,3 | 70 | swap barrow_lanterns→barrow_lanterns_2 (adds if missing) |
-| C | `the_hidden_valley` | The Hidden Valley | `mountain_pass` | — | — | 9,0 | 70 | bld infrastructure 1 @capital |
-| C | `terraced_fields` | Terraced Fields | `farm_sowing` | the_hidden_valley | — | 8,1 | 70 | spirit `terraces` |
+| C | `the_hidden_valley` | The Hidden Downs | `mountain_pass` | — | — | 9,0 | 70 | bld infrastructure 1 @capital |
+| C | `terraced_fields` | Beds in the Sour Ground | `farm_sowing` | the_hidden_valley | — | 8,1 | 70 | spirit `terraces` |
 | C | `charcoal_and_iron` | Charcoal and Iron | `foundry_fire` | the_hidden_valley | — | 10,1 | 70 | bld industrial_complex 1 @capital |
 | C | `the_inner_smithy` | The Inner Smithy | `forge_anvil` | charcoal_and_iron | — | 10,2 | 70 | bld arms_factory 1 @capital |
 | C | `enough_for_ourselves` | Enough for Ourselves | `granary` | terraced_fields + the_inner_smithy | — | 9,3 | 70 | stab 0.05; spirit `self_sufficient` |
@@ -1169,7 +1230,7 @@ Portraits show veiled or hooded figures; no faces.
 | `edge_watchers` | Watchers at the Edge | `army_intel_factor` 0.10 |
 | `barrow_lanterns` | Lanterns on the Mounds | `army_core_defence_factor` 0.05, `stability_factor` 0.03 |
 | `barrow_lanterns_2` | The Mounds Are Quiet | `army_core_defence_factor` 0.15, `stability_factor` 0.05 |
-| `terraces` | Terraced Fields | `monthly_population` 0.05 |
+| `terraces` | Beds in the Sour Ground | `monthly_population` 0.05 |
 | `self_sufficient` | Enough for Ourselves | `consumer_goods_factor` −0.03 |
 | `crack_in_the_veil` | A Crack in the Veil | `trade_opinion_factor` 0.10, `research_speed_factor` 0.03 |
 | `the_dead_walk` | When the Dead Walk | `army_core_defence_factor` 0.15, `war_support_factor` 0.05 |
@@ -1178,7 +1239,7 @@ Portraits show veiled or hooded figures; no faces.
 
 | Key (id) | Title | Picture | To | Options |
 | --- | --- | --- | --- | --- |
-| `the_old_tallies` (1) | The Old Tallies | `generic_wilds` | Cursed Lands | The Tally-Keeper counts what the mounds keep, as every year. Flavour; **The count is the same** (stab 0.02). Never says what is counted |
+| `the_old_tallies` (1) | The Old Tallies | `generic_wilds` | Cursed Lands | The Mother of the Eldest Cord counts what the mounds keep, as every year. Flavour; **The count is the same** (stab 0.02). Never says what is counted |
 | `veiled_envoys` (2) | Veiled Envoys | `generic_wilds` | Bloody Forest | **Leave each other be** (non-aggression; opinion +20 both ways; AI 60) / **The forest trusts no veil** |
 | `tax_men_at_the_edge` (3) | Tax-Men at the Edge | `generic_wilds` | Cursed Lands | **Turn them back** (ws 0.03; opinion −10 with the ruling Aenor realm; AI) / **Pay a token** (pp −25; opinion +10) |
 | `a_scholar_asks` (4) | A Scholar Asks | `generic_court` | Cursed Lands | A scholar of the Lost Cause asks to read the tallies. **Let him read** (lost_cause(3); opinion +5 with the ruling Aenor realm) / **Send him away** (AI hist) |
@@ -1187,6 +1248,26 @@ Portraits show veiled or hooded figures; no faces.
 ### AI
 
 Historical: A, C, B; tax_men_turned_back; never a_crack_in_the_veil; E: bar_the_barrows (hist 100), the_long_night_watch. Under `FREE`: open_the_veil when Eindil's regard ≥ 25.
+
+
+### Deep past branch (K64): The Count Beneath the Sea
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_old_tallies`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+Only the Shown route leads to the words with the giants and the isle queens and to *The Moot of Mothers*, because the restored moot needs the Last Cord shown (addendum 6.6); the Hidden route ends in the lasting spirit and the cord that cannot burn.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `what_the_cords_count` | What the Cords Count | `birth_rolls` | the_old_tallies | — | 7,2 | 70 | — | call `zin_deep_cords_counted`; pp 25 | base 15; ×0.5 if at_war true |
+| `the_last_cord_shown` | The Last Cord Shown | `necklace_deep` | what_the_cords_count | the_last_cord_hidden | 8,4 | 70 | Avail: focus_done `a_crack_in_the_veil` | call `zin_deep_show_last_cord` | base 10; ×2 if focus_done `words_with_the_redbarks`; ×0.2 if at_war_with `Aenor` or focus_done `tax_men_turned_back` |
+| `the_last_cord_hidden` | The Last Cord Hidden | `mask_veiled` | what_the_cords_count | the_last_cord_shown | 6,4 | 70 | Avail: focus_done `the_veil_holds` | call `zin_deep_hide_last_cord` | base 10; ×3 if at_war_with `Aenor` or focus_done `tax_men_turned_back`; ×0.5 if focus_done `words_with_the_redbarks`, not (at_war_with `Aenor`) |
+| `words_with_the_stone_counters` | Words with the Stone-Counters | `giant_hammer` | the_last_cord_shown | — | 7,5 | 70 | Avail: exists `Hirolon` | flag `zin_deep_words_stone`; opinion `cairn_words` with Hirolon both ways; pp 25 | base 15 |
+| `words_with_the_tide_queens` | Words with the Tide-Queens | `island_shrine` | the_last_cord_shown | — | 9,5 | 70 | Avail: exists `Orohaf` | flag `zin_deep_words_tide`; opinion `tide_words` with Orohaf both ways; pp 25 | base 15 |
+| `the_moot_of_mothers` | The Moot of Mothers | `crown_witnesses` | words_with_the_stone_counters + words_with_the_tide_queens | — | 9,6 | 105 | Avail: check `zin_deep_two_counts_done`. Avail: not (global_flag `zin_deep_cord_burned`) | flag `zin_deep_moot_route`; pp 75 | base 20; ×0 if at_war true |
+
+Opinion modifiers added: `cairn_words` (Words with the Stone-Counters, 15, decay 0.5), `tide_words` (Words with the Tide-Queens, 15, decay 0.5).
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 
@@ -1295,6 +1376,22 @@ Asgard is the kingdom of Aenor Isle, off the Middle Lands' west coast, and the C
 
 Historical: B, A, C, D; E: spare_the_isle once the fleets land (hist), harbours_for_the_heir in 1757, the_isle_rebuilt after the evacuation. bar_the_harbours hist 0 (it would change the historical landing); under `FREE` weight 50 when `zin_west_fleet` ≥ 40.
 
+
+### Deep past branch (K64): The Tide-Chambers
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `one_isle_one_queen`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_tide_chambers_opened` | The Tide-Chambers Opened | `ring_doors` | one_isle_one_queen | — | 1,5 | 70 | — | call `zin_deep_open_tide_chambers`; navy_xp 10 | base 15 |
+| `nets_of_field_stone_kept` | Nets of Field-Stone Kept | `glyph_fading` | the_tide_chambers_opened | — | 0,6 | 70 | — | flag `zin_deep_nets_kept`; stab 0.02 | base 10 |
+| `the_queens_rite` | The Queens' Rite | `regency_seals` | the_tide_chambers_opened | — | 2,6 | 70 | — | call `zin_deep_queens_rite`; pp 50 | base 15 |
+| `divers_of_borrak` | Divers of Borrak | `necklace_deep` | nets_of_field_stone_kept + the_queens_rite | — | 1,7 | 70 | — | flag `zin_deep_divers_of_borrak`; navy_xp 25; bld naval_base 1 @capital | base 10 |
+| `the_mound_at_low_water` | The Mound at Low Water | `shipwreck` | divers_of_borrak | — | 1,8 | 105 | Avail: flag `zin_deep_keeps_tide` | flag `zin_deep_mound_own_name`; navy_xp 15 | base 15; ×0 if at_war true |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## 12. Burrikkrit
@@ -1338,7 +1435,7 @@ All six are records of `tools/content/data/world/characters/middle_lands.json`; 
 | --- | --- | --- | --- |
 | `BRR_zin_ruler` | King Dwibrik of Glimzig | Country leader (`zin_trait_hobgoblin_king`, `zin_trait_treaty_keeper`) | country history |
 | `zin_burrikkrit_snikit` | Snikit the Lamp-Keeper | Theorist (`zin_adv_hedge_wise`) | `king_dwibriks_court` |
-| `zin_burrikkrit_zigka` | Zigka the Tunnel-Seller | Political advisor (`zin_adv_whisper_master`) | `the_under_roads` |
+| `zin_burrikkrit_blikip` | Zigka the Tunnel-Seller | Political advisor (`zin_adv_whisper_master`) | `the_under_roads` |
 | `zin_burrikkrit_krittik` | Krittik Fire-Pot | Army chief (`zin_adv_powder_master`) | `fire_pots` |
 | `zin_burrikkrit_blikkit` | Blikkit the Wurgh-Rider | Corps commander | `riders_by_night` |
 | `zin_burrikkrit_nubbix` | Nubbix Shieldwall | Field marshal | `feed_an_heir` |
@@ -1386,7 +1483,7 @@ The notation is this file's ("Effect notation"); "res", "bld" and "eq" are the c
 | B | `the_lamp_truce_sworn_anew` | The Lamp Truce Sworn Anew | `scroll_treaty` | dwarf_iron_in_goblin_hands | — | 6,5 | 70 | — | swap `truce_renewed`→`truce_sworn`; if exists Klungori Guard: opinion Klungori Guard `lamp_truce` both ways | AI 15 |
 | B | `the_second_tunnel_fight` | The Second Tunnel Fight | `goblin_raiders` | tunnels_under_the_deep_hall | — | 8,5 | 35 | exists Kunhrim; (global_flag zin_war_of_last_crowns or at_war); not at_war_with Kunhrim | claims on Kunhrim; war goal take_claimed_state on Kunhrim; ws 0.05 | AI 5; ×0 if `zin_rules_is_historical` |
 | B | `the_galleries_taken` | The Galleries Taken | `quarry_stone` | the_second_tunnel_fight | — | 8,6 | 70 | `zin_regional_burrikkrit_holds_galleries` | spirit `the_galleries`; bld industrial_complex 1 @random_owned; pp 50 | AI 100 |
-| C | `the_under_roads` | The Under-Roads | `map_unrolled` | — | — | 13,0 | 35 | — | pp 25; recruit `zin_burrikkrit_zigka` | AI 30 |
+| C | `the_under_roads` | The Under-Roads | `map_unrolled` | — | — | 13,0 | 35 | — | pp 25; recruit `zin_burrikkrit_blikip` | AI 30 |
 | C | `chalk_marks_in_the_dark` | Chalk Marks in the Dark | `scout_lantern` | the_under_roads | — | 12,1 | 70 | — | bld infrastructure 1 @capital | AI 20 |
 | C | `the_smugglers_rate` | The Smugglers' Rate | `coin_chest` | the_under_roads | — | 14,1 | 35 | — | spirit `road_tolls`; pp 25 | AI 20 |
 | C | `a_secret_worth_keeping` | A Secret Worth Keeping | `ring_doors` | chalk_marks_in_the_dark + the_smugglers_rate | — | 13,2 | 70 | — | spirit `the_secret_roads` | AI 20 |
@@ -1602,7 +1699,7 @@ The four new traits are written by the characters module to `common/country_lead
 
 ## Open questions
 
-1. **The Cursed Lands.** OPEN_QUESTIONS, "regions: middle and north" 1. Proceeds on the proposal: barrows the valley keeps quiet; game text says only "the barrows" and "what the mounds keep".
+1. **The Cursed Lands.** OPEN_QUESTIONS, "regions: middle and north" 1. Answered in part by the regional dossier and K64: the Veiled are an Orran people under cord-mothers on soured downs, and the eldest barrow keeps the Last Cord of the drowned Low Country; game text says "the barrows", "what the mounds keep" and "the cords". What else the mounds keep stays open.
 2. **Selen after the war.** OPEN_QUESTIONS, "regions: middle and north" 2. Proceeds on the proposal: Selen stays a free realm bound by treaty (*A Treaty, Not a Crown*).
 3. **Who founds the Free Dominions.** OPEN_QUESTIONS, "regions: middle and north" 3. Proceeds on the Aenor mechanic's rule: the largest seceder creates the faction; Noleksun's *The League of Free Dominions* creates it only if no country leads one, so Selen's voice and Noleksun's league never collide.
 4. **Aenor Isle's houses.** OPEN_QUESTIONS, "regions: middle and north" 4. Proceeds on the proposal: Rish, Tinta, Holod and Faber are houses of Asgard.

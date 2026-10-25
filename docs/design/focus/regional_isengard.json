@@ -65,7 +65,7 @@
     {"key":"the_iron_companies_march","name":"The Iron Companies March South","desc":"The iron companies leave the forts in the first snow and take the long road south. Behind them the beacons burn on, tended by the old and the very young.","icon":"banner_league","x":11,"y":8,"days":35,"prerequisite":[["iron_for_the_living"]],"available":[{"global_flag":"zin_eindil_returned"},{"check":"zin_eindil_friend"}],"ai":{"base":100},"filters":["political"],"effects":[{"call":"zin_eindil_aid_host","args":{"manpower":3000,"equipment":500,"type":0}},{"call":"zin_eindil_join_coalition"}]}
   ],
   "scripted_effects": {
-    "zin_regional_isengard_recruit_brana": {"effects":[{"raw":"recruit_character = zin_regional_isengard_brana"}]},
+    "zin_regional_isengard_recruit_brana": {"effects":[{"raw":"recruit_character = zin_regional_isengard_alddok"}]},
     "zin_regional_isengard_recruit_veska": {"effects":[{"raw":"recruit_character = zin_regional_isengard_veska"}]},
     "zin_regional_isengard_guarantee_oath_brothers": {"effects":[{"raw":"every_neighbor_country = {\n\tlimit = {\n\t\tzin_cold_is_clan_realm = yes\n\t\tcheck_variable = { var = zin_cold_lean value = -40 compare = less_than_or_equals }\n\t}\n\tROOT = { give_guarantee = PREV }\n\tcountry_event = { id = zin_regional_isengard.2 }\n}"}]},
     "zin_regional_isengard_wargoal_march": {"effects":[{"raw":"CLD = {\n\tevery_owned_state = {\n\t\tlimit = { zin_is_site_isengard_march = yes }\n\t\tadd_claim_by = ROOT\n\t}\n}\ncreate_wargoal = {\n\ttype = take_claimed_state\n\ttarget = CLD\n\tgenerator = owned_states\n}"}]}

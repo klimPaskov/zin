@@ -150,6 +150,10 @@ const mechEast = await buildMechEast(staged, { countries });
 const mechSun = await buildMechSun(staged, { countries, assignment });
 // The war-side story events the mechanic slices fire (Zol and Kusven, Volgan, Lerendor, Lorien's ride): after the slices whose effects they call.
 const warEvents = await buildEventsMechWar(staged, { countries });
+// The deep past (owner decision K64, docs/specs/04_mechanics/deep_past.md): the six fallen realms' loops, relics, restorations and events;
+// zin_story_tick calls its monthly block (storyBlocks 'deep' below).
+const deepPast = await (await import('./modules/deep_past.mjs')).buildDeepPast(staged, { countries });
+void deepPast;
 // The courts of the realms (data/world/characters): after the mechanic slices, whose own characters they leave to them.
 const characters = await buildCharacters(staged, { countries });
 // The country package (tags, country files, histories, names, the bookmark) and the realms' flags: after the courts (recruits), the
@@ -173,7 +177,7 @@ const world = await buildEventsWorld(staged, { countries });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt, whose zin_story_tick calls the runner block of every story namespace (convention C6).
 // The world tick of world_tension.mjs calls zin_story_tick (step 9), so the crown module writes no every-country on_monthly scheduler.
-const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'lastwar', 'ending', 'lore', 'realm'], scheduler: false });
+const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'lastwar', 'ending', 'lore', 'realm', 'deep'], scheduler: false });
 // The story framework (docs/design/alternate_history.md): the Gathering Dark, the War of the Last Crowns, the endings and the world tick
 // (world_tension.mjs), then the checkpoints, the measure and the roles (historical_path.mjs). After the mechanic slices, the rules and the
 // world and crown events, whose flags, triggers and effects they read and call.
@@ -238,6 +242,11 @@ const decisionsRegional = await buildDecisionsRegional(staged, { countries });
 // Characters brought into play during play (modules/late_characters.mjs): over the finished script tree, before the final reference pass.
 // The game recruits a character only in history, so each waits there without a role in its home realm, and the effect that brings it in
 // moves it (set_nationality), gives it its roles and sets its flag of entry, which every presence test also asks.
+// News reach (owner decision K61): world news only for what the whole world would learn; every other news event goes to the lands
+// where it happens and the realms it involves (modules/news_reach.mjs, data/news_reach.json). Before the late characters, so their
+// presence rewrite covers the audiences too.
+const newsReach = await (await import('./modules/news_reach.mjs')).applyNewsReach(staged, { countries });
+console.error(`news reach: ${newsReach.counts.world} world, ${newsReach.counts.owned} owned, ${newsReach.counts.regional} regional news events`);
 const lateCharacters = await applyLateCharacters(staged, { countries });
 // Super-event hooks: one call after every place that sets a super event's hook flag; a hook flag nothing sets stops the build.
 const superEventSites = superEventsModule.hookSuperEvents(staged, superEvents.data);

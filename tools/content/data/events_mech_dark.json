@@ -7,7 +7,7 @@
     {
       "id": 80, "kind": "country", "title": "Dead on the Dark Shore", "picture": "zol_rising", "requires": ["zin_zol_rising"],
       "note": "To every Dark Lands country with a shore on the northern strait or a coast on the Kusmeel when the dead rise (zin_dark_on_zol_rising, on zin_zol_rising). AI: watch 70, leave it to the North 30 (section 9).",
-      "desc": "The fishermen of the northern strait will not put out after dark any more, because the boats that did came back empty or did not come back. Across the water the dead of the black north are on the move in their thousands, and some have already been found walking on our side, in the shallows below the cliffs, as though they had crossed the strait along the bottom.",
+      "desc": "The fishermen of the northern strait will not put out after dark any more, because the boats that did came back empty or did not come back. Across the water the dead of the black north are on the move in their thousands, and some have already been found walking on our side, in the shallows below the cliffs, as though they had crossed the strait along the bottom. The old men of the shore have started saying the name from the winter tales again, Kusven, and nobody laughs at them now.",
       "options": [
         { "key": "a", "text": "Watch the shore.", "ai": "base = {{n:shore.watch_ai}}",
           "effect": "add_timed_idea = { idea = zin_dark_watch_the_shore days = {{n:shore.watch_days}} }" },

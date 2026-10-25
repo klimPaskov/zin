@@ -45,7 +45,16 @@
  "engine": { "offset": 10, "gap": 0.02, "steps": [ [0.10, 10], [0.05, 5], [0.02, 2] ], "repeat": 3, "riseShare": 0.5 },
  "war": {
   "plausibleMeter": 65,
-  "fronts": [ "zin_leren_withdrawal", "zin_western_crossing", "zin_eastern_invasion", "zin_mirolon_fallen", "zin_volgan_marches", "zin_zol_rising" ]
+  "fronts": [ "zin_leren_withdrawal", "zin_western_crossing", "zin_eastern_invasion", "zin_mirolon_fallen", "zin_volgan_marches", "zin_zol_rising" ],
+  "playerFronts": [
+   { "flag": "zin_leren_withdrawal", "opener": "zin_is_lerendor = yes" },
+   { "flag": "zin_western_crossing", "opener": "zin_west_is_leader = yes" },
+   { "flag": "zin_eastern_invasion", "opener": "has_country_flag = zin_east_coalition_leader" },
+   { "flag": "zin_mirolon_fallen", "opener": "zin_is_volgan = yes" },
+   { "flag": "zin_volgan_marches", "opener": "zin_is_volgan = yes" },
+   { "flag": "zin_zol_rising", "opener": "zin_is_zol = yes" }
+  ],
+  "playerFrontsNote": "Owner answer Q-80 (K59): under HISTORICAL a front that a player's realm opens starts the war early, piecemeal; the AI's fronts keep the date. Each front names the realm that opens it (proposed): Lerendor its withdrawal, the West's convener the crossing, the eastern coalition's leader the invasion, Volgan the march and the fall of Mirolon, Zol the rising."
  },
  "dates": {
   "last_crowns": "1755.4.1",

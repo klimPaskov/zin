@@ -23,8 +23,8 @@ const FOCUS_DIR = `${ZIN}/docs/design/focus`;
 const SPEC = {
   regional_tolvael: ['Tolvael', 36, 11, 6, 17, 8], regional_mina: ['Mina', 32, 10, 3, 16, 7], regional_r_en: ["R'en", 36, 12, 4, 17, 8],
   regional_molot: ['Molot', 33, 10, 3, 16, 7], regional_eekedor: ['Eekedor', 33, 11, 4, 15, 8],
-  regional_adel: ['Adel', 31, 6, 2, 18, 7], regional_pollos: ['Pollos', 31, 6, 2, 18, 8], regional_raerby: ['Raerby', 31, 7, 2, 17, 7],
-  regional_nondondor: ['Nondondor', 32, 8, 2, 17, 7], regional_halenor: ['Halenor', 33, 9, 1, 19, 7], regional_seite_islands: ['Seite Islands', 31, 6, 2, 18, 7],
+  regional_adel: ['Adel', 34, 6, 2, 18, 7], regional_pollos: ['Pollos', 31, 6, 2, 18, 8], regional_raerby: ['Raerby', 32, 7, 2, 17, 7],
+  regional_nondondor: ['Nondondor', 34, 8, 2, 17, 7], regional_halenor: ['Halenor', 33, 9, 1, 19, 7], regional_seite_islands: ['Seite Islands', 32, 6, 2, 18, 7],
   regional_girdon: ['Girdon', 37, 8, 4, 20, 9], regional_lambin: ['Lambin', 33, 9, 1, 19, 9], regional_buldor: ['Buldor', 32, 8, 3, 19, 7],
   regional_kradlon: ['Kradlon', 32, 7, 1, 20, 4], regional_corogon: ['Corogon', 32, 8, 4, 19, 7], regional_varnondor: ['Varnondor', 32, 9, 1, 19, 8],
   regional_yeldenne: ['Yeldenne', 36, 8, 9, 17, 10],
@@ -94,7 +94,7 @@ test('Focus, spirit and event counts match the specs', () => {
     assert.equal(Object.keys(t.events ?? {}).length, e, `${id} events`);
     focuses += f; spirits += s; events += e;
   }
-  assert.deepEqual([focuses, spirits, events], [593, 153, 54]);
+  assert.deepEqual([focuses, spirits, events], [600, 153, 54]);
   // Tier B holds 30 to 50 focuses.
   for (const id of IDS) assert(BASE[id].focuses.length >= 30 && BASE[id].focuses.length <= 50, id);
 });

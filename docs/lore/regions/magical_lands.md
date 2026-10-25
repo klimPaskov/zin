@@ -157,6 +157,8 @@ People live along the Elwen, in the forest clearings, the Teste Vale and the qua
 | Date | Event | Label |
 | --- | --- | --- |
 | Before 1A | Elves hold the Magical Lands; dragons nest on Dragon Mountain; the elves already command them. | E that elves and dragons exist and that elves command dragons ([PA]); P date |
+| Before 1A | Established (owner, 25 October 2026; decision K64) | The rift-coast elves grant the Bridge Road passage over their western shore under a treaty of passage, kept since before the Archive's first book. The road never becomes elven land, and the elves are the Bridge Kingdom's neighbours, never its subjects. |
+| Before 1A | Established (owner, 25 October 2026; decision K64) | The Breaking leaves Luv-zhise on the drowned road, and its ferries cross the Rift Narrows, the last throat of the old isthmus. Lccimio's shore-houses keep names with foreign sounds from across the shore, the memory of the Bridge Kingdom's neighbours. |
 | Before 1A | The rift coast trades with men of the East for thousands of years. | P ([WB] Rift-Coast Elves) |
 | 1A | Elves of the Magical Lands are courteous strangers to Aen's kingdom; the range is the border. | P |
 | Late 1A | Volgan's army includes corrupted elves and dragons. | E ([A1] §4); which elves is open |

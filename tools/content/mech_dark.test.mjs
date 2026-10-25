@@ -376,7 +376,7 @@ test('Assignment: the holds come from the people of the country table', async ()
 
 test('The horde: four blocs with their chiefs and spirits; temper, favour and sway thresholds; the challenge', async () => {
   assert.deepEqual(thresholdProblems(EF, TR), []);
-  assert.deepEqual(BLOCS.map(b => [b.key, b.code, b.chief]), [['volcano', 1, 'zin_goldoroth_sungor'], ['iron', 2, 'zin_goldoroth_ulgra'], ['war', 3, 'zin_goldoroth_britag'], ['warrens', 4, 'zin_goldoroth_snikkit']]);
+  assert.deepEqual(BLOCS.map(b => [b.key, b.code, b.chief]), [['volcano', 1, 'zin_goldoroth_sungor'], ['iron', 2, 'zin_goldoroth_bord'], ['war', 3, 'zin_goldoroth_britag'], ['warrens', 4, 'zin_goldoroth_snikkit']]);
   const pulse = bodyOf(EF, 'zin_dark_pulse');
   assert(pulse.includes('zin_dark_date_war_floor = yes') && pulse.includes('NOT = { has_country_flag = zin_goldoroth_master_of_clans }') && pulse.includes('has_war = no'), 'a challenge needs the war floor, peace and no master');
   const ev44 = eventOf('zin_dark.44');

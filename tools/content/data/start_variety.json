@@ -5,11 +5,11 @@
  "applyDays": 3,
  "applyNote": "The draws are made once in on_startup (common/on_actions/zin_start_variety.txt sorts after zin_rules.txt, which sets the story pace). They are applied three days later by the hidden event zin_variety.1, after the owners' own start values: Aenor, the Council and Zol set theirs from on_startup events, Volgan and Lerendor on day 1, the heir's waking on day 2, and the West and the Gathering Dark in on_startup files that sort after this one.",
  "runners": ["Aenor", "Lerendor", "Coldor", "Noris", "Stabilo"],
- "aiOnly": "A drawn change that lands on one realm (a temper, a feud, a disputed land, a bond) is made only between AI realms, so a player's realm keeps the start the chronicle gives it, as every ZIN rule does.",
+ "aiOnly": "Under LIGHT a drawn change that lands on one realm (a temper) is made only for AI realms. Under FULL (owner answer Q-92, K59) the tempers, feuds, disputed lands and bonds reach player realms too.",
  "V1": { "clockOffset": [-180, -120, -60, 0, 60, 120, 180], "clockMin": 30, "tempers": ["gilded", "restless", "fearful"] },
  "V2": { "plot": [10, 15, 20, 25, 30, 35], "veil": [70, 75, 80, 85, 90] },
  "V3": { "campShift": [-10, -5, 0, 5, 10], "camps": ["court", "faithful", "dominions", "host"], "eronelFavour": [0, 1, 2], "eronelCampStep": 5 },
- "V4": { "chance": 50 },
+ "V4": { "chance": 50, "weightDefault": 10, "weightNote": "Owner answer Q-91 (K59): a larger set of tempers with rarer ones. Each temper is drawn by its weight (default 10; the uncommon 4, the rare 2, the rarest 1)." },
  "V5": { "volgan": [40, 42, 45, 48, 50], "zol": [30, 32, 35, 38, 40], "dark": [8, 9, 10, 11, 12] },
  "V6": {
   "max": 2, "chance": 50, "days": 90, "provinces": 2, "width": 40, "minimumDays": 14,
@@ -38,6 +38,18 @@
   "scholarly": { "name": "Scholarly", "desc": "Would rather read the old charters than ride out to inspect the levies.", "mods": { "research_speed_factor": 0.05, "army_org_factor": -0.03 } },
   "vengeful": { "name": "Vengeful", "desc": "Keeps a list of every slight to the crown and means to answer each of them.", "mods": { "war_support_factor": 0.08, "political_power_gain": -0.05 } },
   "generous": { "name": "Generous", "desc": "Gives feasts, alms and pardons with an open hand, and the treasurers despair of it.", "mods": { "stability_factor": 0.05, "political_power_gain": -0.05 } },
-  "weary": { "name": "Weary", "desc": "Has carried the crown a long time and would be glad to set it down.", "mods": { "political_power_gain": -0.1, "stability_factor": 0.02 } }
+  "weary": { "name": "Weary", "desc": "Has carried the crown a long time and would be glad to set it down.", "mods": { "political_power_gain": -0.1, "stability_factor": 0.02 } },
+  "just": { "name": "Even-Handed", "desc": "Hears both sides of every quarrel before giving judgement, and both sides grumble that it took too long.", "mods": { "stability_factor": 0.04, "political_power_gain": -0.03 } },
+  "suspicious": { "name": "Suspicious", "desc": "Trusts no one at court, tastes nothing twice, and keeps a list of every lord who smiles too often.", "mods": { "drift_defence_factor": 0.15, "stability_factor": -0.03 } },
+  "ambitious": { "name": "Ambitious", "desc": "Means to leave the realm larger than it was found, and has had the old maps of every border brought up from the archive.", "mods": { "justify_war_goal_time": -0.1, "stability_factor": -0.03 } },
+  "idle": { "name": "Idle", "desc": "Leaves the writs to the clerks and the wars to the captains, and spends the summers hunting.", "mods": { "political_power_gain": -0.05, "stability_factor": 0.02 } },
+  "cruel": { "name": "Cruel", "weight": 4, "desc": "Rules by the gallows and the dungeon, and the court goes very quiet at the sound of the royal step.", "mods": { "stability_factor": -0.04, "war_support_factor": 0.05, "army_attack_factor": 0.03 } },
+  "silver_tongued": { "name": "Silver-Tongued", "weight": 4, "desc": "Can talk a hostile envoy into a treaty and a hungry crowd into going home.", "mods": { "political_power_gain": 0.08, "stability_factor": 0.02 } },
+  "builder": { "name": "Builder", "weight": 4, "desc": "Cannot pass a ruined wall without ordering it rebuilt, and keeps the masons of half the realm in the crown's pay.", "mods": { "production_speed_buildings_factor": 0.08, "political_power_gain": -0.05 } },
+  "stern": { "name": "Stern", "weight": 4, "desc": "Drills the levies in person at dawn and has never once been seen to laugh.", "mods": { "army_org_factor": 0.04, "stability_factor": -0.02 } },
+  "melancholy": { "name": "Melancholy", "weight": 2, "desc": "Sits for days in a darkened room, and comes out with verses that nobody at court understands.", "mods": { "political_power_gain": -0.08, "research_speed_factor": 0.03 } },
+  "fortunate": { "name": "Fortune's Favourite", "weight": 2, "desc": "Has come through a fall from the saddle, a fever, two battles and a poisoned cup, and the common folk say the gods are fond of the crown.", "mods": { "stability_factor": 0.03, "war_support_factor": 0.03, "army_defence_factor": 0.02 } },
+  "touched": { "name": "Touched", "weight": 1, "desc": "Hears voices nobody else hears and gives orders no captain would dare to give, and some of them have turned out to be brilliant.", "mods": { "stability_factor": -0.08, "research_speed_factor": 0.05, "war_support_factor": 0.05 } },
+  "beloved": { "name": "Beloved of the People", "weight": 1, "desc": "The common folk would follow their ruler into the sea, and the lords know it.", "mods": { "stability_factor": 0.08, "war_support_factor": 0.05 } }
  }
 }

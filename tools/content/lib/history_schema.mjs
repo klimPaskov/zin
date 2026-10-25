@@ -18,6 +18,17 @@ function checkLabel(problems, where, entry) {
   if (!CANON.includes(entry.canon)) problems.push(`${where}: canon must be one of ${CANON.join(', ')}`);
 }
 
+// Owner decision K64: an age or an event older than the numbered years carries year 0 and `beforeAen`, a whole number of years before
+// 1A 1 that orders it; the game shows such a date only as "long before Aen", so an entry with a written date writes exactly that.
+export const BEFORE_AEN_TEXT = 'long before Aen';
+function checkBeforeAen(problems, where, entry, yearZero, date) {
+  if (entry.beforeAen === undefined) return;
+  if (!Number.isInteger(entry.beforeAen) || entry.beforeAen < 1) problems.push(`${where}: beforeAen must be a positive whole number of years before 1A 1`);
+  if (!yearZero) problems.push(`${where}: an entry dated before Aen carries year 0`);
+  if (date !== undefined && date !== null && date !== BEFORE_AEN_TEXT) problems.push(`${where}: a date before Aen is written "${BEFORE_AEN_TEXT}"`);
+  if (entry.fromDate !== undefined && entry.fromDate !== BEFORE_AEN_TEXT && entry.fromDate !== 'before 1A') problems.push(`${where}: fromDate before Aen is "${BEFORE_AEN_TEXT}"`);
+}
+
 export function validateHistory(h, { roster = null } = {}) {
   const problems = [], ids = new Set();
   const need = (cond, msg) => { if (!cond) problems.push(msg); };
@@ -32,6 +43,7 @@ export function validateHistory(h, { roster = null } = {}) {
     need(isStr(a.id) && isStr(a.name) && isStr(a.summary) && a.summary.length >= 120, `${w}: id, name and a real summary are required`);
     need(isYear(a.from) && isYear(a.to) && a.from <= a.to, `${w}: from/to must be integer years`);
     checkLabel(problems, w, a);
+    checkBeforeAen(problems, w, a, a.from === 0 && a.to === 0, null);
     if (ids.has('age:' + a.id)) problems.push(`${w}: duplicate id`); ids.add('age:' + a.id);
   }
   need(arr(h.countries) && h.countries.length >= 1, 'countries missing');
@@ -44,7 +56,10 @@ export function validateHistory(h, { roster = null } = {}) {
     need(arr(c.dynasties) && c.dynasties.length >= 1, `${w}: at least one dynasty or ruling line`);
     for (const d of c.dynasties ?? []) need(isStr(d.name) && isYear(d.from) && isStr(d.notable), `${w}: dynasty needs name, from, notable`);
     need(arr(c.events) && c.events.length >= 3, `${w}: at least three past events (wars, treaties, plagues, reforms, migrations)`);
-    for (const e of c.events ?? []) need(isStr(e.name) && isYear(e.year) && isStr(e.summary) && e.summary.length >= 60, `${w}: event ${e?.name} needs name, year and a summary`);
+    for (const e of c.events ?? []) {
+      need(isStr(e.name) && isYear(e.year) && isStr(e.summary) && e.summary.length >= 60, `${w}: event ${e?.name} needs name, year and a summary`);
+      checkBeforeAen(problems, `${w}: event ${e?.name}`, e, e.year === 0, e.date);
+    }
     need(arr(c.rivalries), `${w}: rivalries array`);
     need(isStr(c.capitalReason), `${w}: capitalReason (why the seat is where it is; never because the lore names the place)`);
     need(isStr(c.today) && c.today.length >= 120, `${w}: today (the state of the realm in 4A 1748)`);

@@ -46,7 +46,7 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 
 **Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, and the owner has since classified devils as corrupted Lesser Spirits, but the lore does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
 
-See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Ember Lands]].
+See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Ember Lands]]. The deep past of the peoples: the dwarves' realm of the Stone Road is [[Gromatrak, the Stone Road]], the Tritonic chart-islanders' league is [[Margorodai, the Sea-Roads]], and the Boreal peoples descend from [[Heulufaenn, the Sunfields]] (owner-adopted, 25 October 2026, decision K64).
 
 ## First Age ethnic and political history
 

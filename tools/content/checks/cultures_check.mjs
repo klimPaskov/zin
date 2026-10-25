@@ -37,7 +37,8 @@ import { countryTable } from '../lib/roster.mjs';
 // tools/migrations/roster_migration.mjs): 82 cultures, 29 languages, 80 building kits, 16 music palettes, 24 unit groups
 // (08_world_in_game.md sections 7 and 12), 39 faith rows (35 faiths plus the open one and the later additions).
 export const SPEC_COUNTS = Object.freeze({ cultures: 82, languages: 29, building_styles: 80, music_moods: 16, unit_groups: 24 });
-const SECRET_TERMS = /Afrit|Eindil|Einendil|Hidden Council|Kusven|birth rolls?|hearth-names?/i;
+// Kusven is a known legend from the start (owner answer Q-70, K55): his name is no secret.
+const SECRET_TERMS = /Afrit|Eindil|Einendil|Hidden Council|birth rolls?|hearth-names?/i;
 const BIBLE_TAG = /\[(?:E|P|O|W|secret)[\s,\]]/;
 
 // ---------------------------------------------------------------------------------- duplicate keys in a JSON text

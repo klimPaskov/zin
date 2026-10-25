@@ -23,7 +23,7 @@ const TREES = {
   regional_horidor: ['Horidor', 32, 10, 1, 18, 8],
   regional_windwaith: ['Windwaith', 34, 9, 2, 19, 9],
   regional_fearno: ['Fearno', 37, 9, 3, 19, 8],
-  regional_titanos: ['Titanos', 30, 6, 1, 18, 8],
+  regional_titanos: ['Titanos', 31, 6, 1, 18, 8],
   regional_yeti_lands: ['Yeti Lands', 30, 8, 1, 18, 8],
   regional_dondor: ['Dondor', 49, 16, 8, 22, 9],
   regional_blackton: ['Blackton', 39, 14, 6, 24, 7],
@@ -87,7 +87,7 @@ test('Each tree holds the spec\'s number of focuses, spirits and events, inside 
     assert.equal(Object.keys(RAW[id].events ?? {}).length, e, `${id} events`);
     total += n;
   }
-  assert.equal(total, 578);
+  assert.equal(total, 579);
 });
 
 test('Keys and positions are unique, every grid stays inside the spec\'s columns and rows, and every prerequisite sits above its focus', () => {

@@ -159,15 +159,15 @@ test('loading tips: every key, in order, Windows-1252, no gated or modern words'
   assert.deepEqual([...b.subarray(0, 3)], [0xef, 0xbb, 0xbf], 'UTF-8 BOM');
   assert(b.toString('utf8').startsWith('﻿l_english:\n'));
   const v = ymlValues(rel), tips = JSON.parse(readFileSync(TIPS_FILE, 'utf8')).tips;
-  assert.equal(v.size, 190);
+  assert.equal(v.size, 202);
   const vanillaFile = `${GAME}/localisation/english/loading_tips_l_english.yml`;
   if (existsSync(vanillaFile)) for (const m of readFileSync(vanillaFile, 'utf8').matchAll(/^\s*(LOADING_TIP_\d+):/gm)) assert(v.has(m[1]), `${m[1]} not replaced`);
-  for (let i = 0; i < 190; i++) {
+  for (let i = 0; i < 202; i++) {
     const key = `LOADING_TIP_${i}`, value = v.get(key);
     assert.equal(value, tipString(tips[i]), key);
     assert(isCp1252(value), `${key}: Windows-1252`);
     assert.deepEqual(forbiddenIn(value.replace(/§[A-Z!]/g, '')), [], key);
-    assert(i < 150 ? /\\n- \S/.test(value) : value.startsWith('§YCounsel:§! '), key);
+    assert(i < 150 || i >= 190 ? /\\n- \S/.test(value) : value.startsWith('§YCounsel:§! '), key);
   }
 });
 

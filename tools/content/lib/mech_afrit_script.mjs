@@ -725,6 +725,8 @@ export function afritScripts(D, T) {
       'zin_afrit_resolve_seat = yes',
       // SL-10: the realm that employed him is gone and no one has taken him in
       'if = {', 'limit = {\nNOT = { has_global_flag = zin_afrit_dead }\nNOT = { has_global_flag = zin_afrit_hidden }\nNOT = { any_country = { has_character = zin_aurevan } }\n}', 'zin_afrit_lose_realm = yes', '}',
+      // K59 (Q-66): the hunt for the false god in hiding
+      'if = {', 'limit = {\nhas_global_flag = zin_afrit_hidden\nNOT = { has_global_flag = zin_afrit_dead }\n}', 'zin_afrit_hunt_month = yes', '}',
       'zin_afrit_word_of_the_heir = yes',
       'set_variable = { global.zin_afrit_veil_last_change = global.zin_afrit_veil_month }', 'set_variable = { global.zin_afrit_veil_month = 0 }',
       'if = {', 'limit = { zin_afrit_secret_kept = yes }', 'set_temp_variable = { zin_arg_value = global.zin_afrit_seat_censers }', 'multiply_temp_variable = { zin_arg_value = 0.4 }', 'zin_afrit_add_veil = yes', '}',
@@ -1062,6 +1064,8 @@ export function afritScripts(D, T) {
     	every_country = {
     		limit = { has_character = zin_aurevan }
     		set_country_flag = zin_afrit_lost_seat_mark
+    		# K59 (Q-66): where he was last seen, for the hunt
+    		capital_scope = { set_variable = { global.zin_afrit_hide_state = THIS } }
     		remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }
     		remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }
     	}
@@ -1104,11 +1108,77 @@ export function afritScripts(D, T) {
     	}
     	else = {
     		set_global_flag = zin_afrit_hidden
+    		set_variable = { global.zin_afrit_hunt = 0 }
     		news_event = { id = zin_afrit.77 }
     	}
     	zin_afrit_resolve_seat = yes
     	zin_afrit_refresh_graces = yes
     }`);
+
+  // ---------------------------------------------------------------------------------------------- the hunt (K59, Q-66)
+  // Owner answer Q-66: a hunter may find and kill Afrit outside the palace. While he hides (zin_afrit_hidden), the Council's month raises
+  // the hunt (global.zin_afrit_hunt) by D.hunt.monthly, more when a hunter holds the land where he was last seen (global.zin_afrit_hide_state)
+  // and more again while the heir's host hunts him; at D.hunt.corner the hunter corners him (zin_afrit.78): kill him (zin_afrit_die,
+  // zin_afrit.79 to every country) or take his gold and let him go. The year-long hiding still counts as reduced for stage 12 (SL-10).
+  triggers.zin_afrit_may_hunt = dedent(`
+    # Scope: a country. It hunts the false god: it stands, is not his and has not been bought by him this year.
+    exists = yes
+    has_capitulated = no
+    NOT = { zin_afrit_is_hub = yes }
+    NOT = { zin_afrit_rules_here = yes }
+    NOT = { has_country_flag = zin_afrit_eastern_client }
+    NOT = { has_country_flag = zin_afrit_hunter_bought }`);
+  effects.zin_afrit_hunt_month = dedent(`
+    # K59 (Q-66): one month of the hunt for the false god in hiding. The hunter is the realm that holds the land where he was last seen,
+    # else the heir's host.
+    add_to_variable = { global.zin_afrit_hunt = ${D.hunt.monthly} }
+    clear_global_event_target = zin_afrit_hunter
+    if = {
+    	limit = {
+    		has_variable = global.zin_afrit_hide_state
+    		var:global.zin_afrit_hide_state = { controller = { zin_afrit_may_hunt = yes } }
+    	}
+    	add_to_variable = { global.zin_afrit_hunt = ${D.hunt.hunterBonus} }
+    	var:global.zin_afrit_hide_state = { controller = { save_global_event_target_as = zin_afrit_hunter } }
+    }
+    if = {
+    	limit = {
+    		any_country = {
+    			has_character = zin_eindil
+    			zin_afrit_may_hunt = yes
+    		}
+    	}
+    	add_to_variable = { global.zin_afrit_hunt = ${D.hunt.hostBonus} }
+    	if = {
+    		limit = { NOT = { has_event_target = zin_afrit_hunter } }
+    		random_country = {
+    			limit = {
+    				has_character = zin_eindil
+    				zin_afrit_may_hunt = yes
+    			}
+    			save_global_event_target_as = zin_afrit_hunter
+    		}
+    	}
+    }
+    if = {
+    	limit = {
+    		check_variable = { global.zin_afrit_hunt > ${D.hunt.corner - 0.01} }
+    		has_event_target = zin_afrit_hunter
+    	}
+    	set_variable = { global.zin_afrit_hunt = 0 }
+    	event_target:zin_afrit_hunter = { country_event = { id = zin_afrit.78 } }
+    }`);
+  effects.zin_afrit_hunt_kill = dedent(`
+    # K59 (Q-66), zin_afrit.78 a: the hunter (THIS) kills the false god outside the palace. zin_afrit_die does the rest; every country
+    # hears zin_afrit.79.
+    ${hidden('set_global_flag = zin_afrit_slain_by_hunter', 'set_global_flag = zin_afrit_death_told', 'save_global_event_target_as = zin_afrit_slayer')}
+    zin_afrit_die = yes
+    hidden_effect = { news_event = { id = zin_afrit.79 } }`);
+  effects.zin_afrit_hunt_bribe = dedent(`
+    # K59 (Q-66), zin_afrit.78 b: the hunter (THIS) takes the false god's gold and lets him go; it hunts him no more for a year, and the hunt
+    # starts again from the beginning.
+    add_political_power = ${D.hunt.bribe}
+    ${hidden(`set_country_flag = { flag = zin_afrit_hunter_bought days = ${D.hunt.boughtDays} }`, 'set_variable = { global.zin_afrit_hunt = 0 }')}`);
 
   effects.zin_afrit_startup_values = dedent(`
     # Start values that are not per country. Scope: the hub.

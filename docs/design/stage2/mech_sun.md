@@ -80,7 +80,7 @@ Already defined by their owners:
 ## Events it fires but does not define
 
 - `zin_sun.40` "The Old Lords Ride" (news to every country, picture `vast_shadow` gated on `zin_zol_manifested`), fired by `zin_sun_lorien_rides`.
-- `zin_sun.42` "After the King" (Gala Elves, 14 days after the fall; three stewards: `zin_gala_heveneya`, `zin_gala_sulestien`, a council leader; each sets `zin_gala_steward_chosen`), fired by `zin_sun_lorien_falls`.
+- `zin_sun.42` "After the King" (Gala Elves, 14 days after the fall; three stewards: `zin_gala_caleon`, `zin_gala_sulestien`, a council leader; each sets `zin_gala_steward_chosen`), fired by `zin_sun_lorien_falls`.
 - `zin_sun.43` is never defined or fired (decision O4: Lorien's death news is the Zol spec's `zin_mistake.23`).
 
 The callers that this slice expects: Zol's `zin_mistake.22` option A calls `zin_sun_lorien_rides`; Zol's `zin_mistake.23` calls `zin_sun_lorien_falls` before `zin_zol_withdraw`; the journey's `zin_eindil.52` calls `zin_sun_spend_clarity` with 30; the Gala and Sunhot trees call the adders, `zin_sun_mirror_vision` and `zin_sun_form_noon_league`.

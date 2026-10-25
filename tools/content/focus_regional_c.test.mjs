@@ -27,21 +27,21 @@ const json = async f => JSON.parse(await readFile(f, 'utf8'));
 // middle_lands.md "Identifiers created", where the timed event spirits are counted in the spirits column).
 const TREES = {
   regional_lccimio: ['Lccimio', 40, 8, 3],
-  regional_the_end: ['The End', 39, 10, 3],
+  regional_the_end: ['The End', 42, 10, 3],
   regional_herrodon: ['Herrodon', 34, 6, 6],
   regional_andos_enda: ['Andos Enda', 36, 11, 4],
   regional_nolorim: ['Nolorim', 32, 8, 4],
   regional_selen: ['Selen', 47, 17, 4],
-  regional_noleksun: ['Noleksun', 32, 9, 4],
-  regional_herez: ['Herez', 32, 8, 5],
+  regional_noleksun: ['Noleksun', 33, 9, 4],
+  regional_herez: ['Herez', 33, 9, 5],
   regional_konori: ['Konori', 31, 10, 4],
   regional_kilinti: ['Kilinti', 32, 12, 4],
   regional_kingson: ['Kingson', 33, 11, 5],
   regional_hunhun: ['Hunhun', 31, 11, 3],
-  regional_hiloron: ['Hiloron', 32, 9, 2],
-  regional_bloody_forest: ['Bloody Forest', 32, 10, 4],
-  regional_cursed_lands: ['Cursed Lands', 30, 9, 5],
-  regional_asgard: ['Asgard', 33, 11, 2],
+  regional_hiloron: ['Hiloron', 36, 9, 2],
+  regional_bloody_forest: ['Bloody Forest', 36, 10, 4],
+  regional_cursed_lands: ['Cursed Lands', 36, 9, 5],
+  regional_asgard: ['Asgard', 38, 11, 2],
 };
 const IDS = Object.keys(TREES);
 // The realm of the roster that continues a spec's country (The End is Eldafaen).
@@ -93,8 +93,8 @@ test('Every tree has the specs\' focus, spirit and event counts', () => {
     assert.equal(Object.keys(t.spirits ?? {}).length, spirits, `${id} spirits`);
     assert.equal(Object.keys(t.events ?? {}).length, events, `${id} events`);
   }
-  assert.equal(MAGICAL.reduce((n, id) => n + BASE[id].focuses.length, 0), 181);
-  assert.equal(MIDDLE.reduce((n, id) => n + BASE[id].focuses.length, 0), 365);
+  assert.equal(MAGICAL.reduce((n, id) => n + BASE[id].focuses.length, 0), 184);
+  assert.equal(MIDDLE.reduce((n, id) => n + BASE[id].focuses.length, 0), 386);
 });
 
 test('Every focus count lies in the tier B range of 30 to 50', () => {
@@ -131,7 +131,7 @@ test('Focus ids compile to zin_<tree>_<key>, are unique and all appear in the co
       assert(file.includes(`id = ${fid}\n`), fid);
     }
   }
-  assert.equal(all.size, 546);
+  assert.equal(all.size, 570);
 });
 
 test('Positions are unique, every focus sits below its prerequisites and prerequisites exist', () => {
@@ -295,8 +295,8 @@ test('The slice compiles twice to identical bytes through the builder\'s own ent
     const run = async () => { const staged = new Staged(); const total = await buildFocusTrees(staged, { dir, registry: registry(), codes: CODES, warn: () => {} }); return { staged, total }; };
     const a = await run(), b = await run();
     assert.equal(a.total.trees, 16);
-    assert.equal(a.total.focuses, 546);
-    assert.equal(a.total.spirits, 8 + 10 + 6 + 11 + 8 + 17 + 9 + 8 + 10 + 12 + 11 + 11 + 9 + 10 + 9 + 11);
+    assert.equal(a.total.focuses, 570);
+    assert.equal(a.total.spirits, 8 + 10 + 6 + 11 + 8 + 17 + 9 + 9 + 10 + 12 + 11 + 11 + 9 + 10 + 9 + 11);
     assert.deepEqual([...a.staged.files.keys()], [...b.staged.files.keys()]);
     for (const [rel, bytes] of a.staged.files) assert(bytes.equals(b.staged.files.get(rel)), rel);
     for (const id of IDS) {

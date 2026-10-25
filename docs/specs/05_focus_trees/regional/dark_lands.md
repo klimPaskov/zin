@@ -88,7 +88,7 @@ Dondor is a kingdom of men in the northern Dark Lands, a hard country of salt ma
 | `zin_regional_dondor_gethra` | Gethra Ironjaw, Beacon-Warden | Political advisor | `zin_adv_muster_master` |
 | `zin_regional_dondor_wenna` | Wenna Saltbrow, Envoy to the Straits | Political advisor | `zin_adv_envoy` |
 | `zin_regional_dondor_harl` | Old Harl of the Marches | Political advisor | `zin_adv_war_speaker` |
-| `zin_regional_dondor_draga` | Captain Draga Hollin | Corps commander, skill 3 | `hill_fighter` |
+| `zin_regional_dondor_borgmar` | Captain Draga Hollin | Corps commander, skill 3 | `hill_fighter` |
 
 Country flag `zin_tradition_dondor_brutes` (peoples spec) is set at start.
 
@@ -367,9 +367,9 @@ Dulundur is the largest free hold of the Dark Lands: four valleys of orc clans u
 | Id | Name | Role | Traits |
 | --- | --- | --- | --- |
 | `<Dulundur>_zin_ruler` | Chief Dulgash | Country leader, `zin_wild_tribes` | `zin_trait_warband_chief` |
-| `zin_regional_dulundur_grushka` | Grushka of the Four Fires | Political advisor | `zin_adv_elder` |
+| `zin_regional_dulundur_bord` | Grushka of the Four Fires | Political advisor | `zin_adv_elder` |
 | `zin_regional_dulundur_ozgar` | Ozgar Ironhand, Pit-Master | Political advisor | `zin_adv_treasurer` |
-| `zin_regional_dulundur_brakka` | Brakka the Loud | Political advisor | `zin_adv_war_speaker` |
+| `zin_regional_dulundur_bordduth` | Brakka the Loud | Political advisor | `zin_adv_war_speaker` |
 | `zin_regional_dulundur_ugmar` | Ugmar of the Hills | Corps commander, skill 3 | `hill_fighter` |
 
 ### Tree `regional_dulundur` (36 focuses)
@@ -489,7 +489,7 @@ Bordon is a single hold astride the Black Road (proposed name), the old track th
 | --- | --- | --- | --- |
 | `<Bordon>_zin_ruler` | Chief Bordag | Country leader, `zin_wild_tribes` | `zin_trait_warband_chief` |
 | `zin_regional_bordon_krugg` | Tollmaster Krugg | Political advisor | `zin_adv_treasurer` |
-| `zin_regional_bordon_nadra` | Nadra Roadwife | Political advisor | `zin_adv_road_warden` |
+| `zin_regional_bordon_bord` | Nadra Roadwife | Political advisor | `zin_adv_road_warden` |
 | `zin_regional_bordon_grimsh` | Grimsh the Envoy | Political advisor | `zin_adv_envoy` |
 
 ### Tree `regional_bordon` (31 focuses)

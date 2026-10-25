@@ -36,6 +36,25 @@ The world creator's full Fourth Age map is the primary overview. The ocean betwe
 
 **Eindil** is the only current canonical spelling. **Einendil** is the superseded name and is retained only in historical source archives and the naming change records. The character and journey notes, together with their Obsidian links, now use Eindil. No character, ancestry, or plot facts changed.
 
+## Deep history answers of 25 October 2026
+
+The owner adopted the six fallen realms of the deep past on 25 October 2026 (decision K64), on the design addendum `docs/plans/deep_history/k62_fallen_realms.md`. Each answer is the addendum's recommended option, except where K64 says otherwise. The realm notes are [[Muzerar, the Low Country]], [[Tarkia, the Bridge Kingdom]], [[Rhabtarkia, the Kalioth Crown]], [[Gromatrak, the Stone Road]], [[Margorodai, the Sea-Roads]] and [[Heulufaenn, the Sunfields]].
+
+| Subject | Old statement | New canon | Date |
+| --- | --- | --- | --- |
+| Deep past | Not recorded; the vault names no realm of men before Aen | Great realms of men stood before Aen, none with one crown over all men. Six fallen realms are adopted | 25 October 2026 |
+| The Low Country (M1, M2, M3, M4) | Not recorded | Muzerar, at its height 1,500 to 900 BA. Its mothers overdrew the land's magic, and the Night of the Sea in 620 BA ended it. The restored Moot takes the name Muzerar. Its fall is a deep root of the War of Men | 25 October 2026 |
+| The Forgotten Giants (M5) | Open in the vault | The giants of the low hills behind the Dark Lands cairn-line, Hoorunoron, are the Forgotten Giants | 25 October 2026 |
+| Orohaf's rites (M6) | Not recorded | The women-led houses and tide-rites of Orohaf are the Low Country's last law | 25 October 2026 |
+| The Bridge Kingdom (T1, T2, T3, T4) | Not recorded | Tarkia, at its height 3,000 to 2,300 BA, the one Eastern people before the roads. The cause of the Breaking stays a mystery. Horses, cedar, ogres and the river faith crossed the bridge. A treaty of passage, kept by the Archive, passed the elven shore | 25 October 2026 |
+| The Kalioth Crown (K1, K2, K3, K4) | Not recorded | Rhabtarkia in its own court, the Kalioth Crown to others. It ruled Herez, Noleksun and the South Pass for about a century under Volgan. Its provinces beyond the Melty Pass stay a kept mystery. Erco may take the diadem in play, rare and risky | 25 October 2026 |
+| The Stone Road (D1, D2, D3, D4) | Not recorded | Gromatrak, with Tromahrim as its hall, lies under the Sea of Monsters. Who ordered the Letting-In is disputed between Kunhrim and the western holds. A Sea-Door can be opened at great risk | 25 October 2026 |
+| The Sea-Roads (L1, L2, L3) | Not recorded | Margorodai. The Cursed Square was Halgohavnai. Senra of the Pupor Isles was the league's admiral in the Grand Alliance | 25 October 2026 |
+| The Sunfields (S1, S2, S3, S4) | Not recorded | Heulufaenn, the Sunfields. It fell to lengthening winters, and nobody worked the fall. All three Boreal peoples descend from it. Mp'E's belief points at the Sunfields as a belief only | 25 October 2026 |
+| Chart islanders | Not recorded | Lean, mixed, weathered sailors of their own culture | 25 October 2026 |
+| Dates before Aen (G5) | Not recorded | Game text shows them only as "long before Aen". The BA dates stay in the lore as the authorial chronology. The Eldest Cairn's count is the one number learned in play: 7,436 stones on 1 Lumae 4A 1748 | 25 October 2026 |
+| The map (G6) | Not recorded | One islet at the Mothers' Mound west of Aenor Isle. No other change | 25 October 2026 |
+
 ## Corrections of 24 October 2026
 
 | Subject | Old statement | New canon | Date |

@@ -122,10 +122,19 @@ The East is deliberately not one kind of state (P):
 | --- | --- | --- |
 | Before 1A | The river valleys of the rift coast are as old as any kingdom of men; the Eastern family of tongues splits into desert, trade and river speech. | P ([WB] River-Kings) |
 | Before 1A | The rift-coast elves trade with eastern men across the rift. | P |
+| About 3,000 to 2,300 BA | The Bridge Kingdom (Tarkia) holds the joined shores: the western East Lands, the isthmus with Qadurum astride it, and the Bridge Road west along the southern edge of the elven woods into the south-east of the Middle Lands. Its stair-temples stand above the flood-line, and its scribes write the reed letters from which the Alerhic script descends. | Established (owner, 25 October 2026; decision K64) |
+| About 2,300 to 2,250 BA | A war between two heirs breaks the isthmus; the sea comes in from the Gorlab and Reeto seas, and within a lifetime the Rift Sea lies between the shores. What broke the bridge stays a mystery, with the temple chronicles and the rift-coast elves' rolls in rivalry. | Established (owner, 25 October 2026; decision K64); the cause Open |
+| After the Breaking | Qadurum splits: its western half lies under the Mushroom Forest beside Luv-zhise, and its eastern half under the grass near Furtonlin, where the horse-fair is held among fallen pillars. The temple scribes tell that Alerhia's first stair was raised above the flood-line so that the river and the gods would each have a place. | Established (owner, 25 October 2026; decision K64) |
 | 1A, first half | Aenoran traders make contact with the peoples of the East, the Easterlings. | E ([A1] §2) |
+| 1A about 500 | The Kalioth kings rise in the mountains of the southern East. | Established (owner, 25 October 2026; decision K64) |
+| 1A about 1000 | The Kalioth kings proclaim Rhabtarkia, the Greater Bridge Kingdom, and swear to rejoin the shores; the Alerhic river crowns defy them. | Established (owner, 25 October 2026; decision K64) |
 | 1A, before Volgan's war | Devils, corrupted Lesser Spirits who once served an Old God, have escaped to Aoaz; some lair on the Smoking Teeth cones. | E devils' nature ([OC] §2.6); P place and date |
 | 1A about 1150 to 1500 | Volgan allies with rulers of the eastern and southern lands; eastern client rulers give him ships and landing sites. Not all Easterlings join him. | E alliances selective ([A1] §4); P ships |
+| 1A 1214 | Alerhia refuses the Black Tribute, which the Kalioth kings pay to Volgan instead. | Established (owner, 25 October 2026; decision K64) |
+| About 1A 1500 to 1675 | The Kalioth Crown holds Herez, Noleksun and the South Pass with Volgan for about a century, and for that century its claim to be Tarkia restored looks like the truth. | Established (owner, 25 October 2026; decision K64) |
 | By 1A 1675 | Eastern men fight on both sides; after Dardan the eastern clients fall with Volgan's host. | E ([A1] §4); P aftermath |
+| By 1A 1675 | At Dardan the Kalioth host stands with Volgan's and dies there. The provinces of the Kalioth Crown beyond the Melty Pass fall silent, and what became of them stays a mystery. | Established (owner, 25 October 2026; decision K64); their fate Open |
+| 2A 12 | After Dardan the western garrisons starve, the mine-lords of the southern mountains shut the passes against the beaten host and besiege the last Kalioth king in his hall, and Erco is founded. The last king's iron diadem is walled up in the hall of Barzoth by mine-lords who will neither wear it nor melt it. | Established (owner, 25 October 2026; decision K64) |
 | 2A | The East is far from Elzon's war; its kings fight their own wars over the rivers. | P |
 | 3A | The East trades with Elzon's Aenor through the rift ports and the Lake Road; nobody in the East is conquered by him. | P |
 | 4A 600 to 780 | The great caravan roads open; Noris and Stabilo grow rich on them and become rivals. | P ([FC] II) |

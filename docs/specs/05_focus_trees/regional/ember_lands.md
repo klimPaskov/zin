@@ -638,9 +638,9 @@ All are records of `tools/content/data/world/characters/ember_lands.json`; the t
 | --- | --- | --- | --- |
 | `NET_zin_ruler` | The King of Demons (no name shown) | Country leader (`zin_trait_king_of_demons`, `zin_trait_secluded_eldest`) | country history |
 | `zin_nether_khorvael` | Khorvael of the House of Agon | Political advisor (`zin_adv_pact_broker`) | `the_house_of_agon` |
-| `zin_nether_zhorara` | Zhorara, Keeper of the Portal Rings | Theorist (`zin_adv_pact_broker`) | `the_portal_rings` |
+| `zin_nether_hazek` | Zhorara, Keeper of the Portal Rings | Theorist (`zin_adv_pact_broker`) | `the_portal_rings` |
 | `zin_nether_zarek` | Zarek, Master of the Galleries | Army chief (`zin_adv_muster_master`) | `the_obsidian_galleries` |
-| `zin_nether_thazira` | Thazira of the Sea of Lava | Navy leader | `fire_galleys` |
+| `zin_nether_hazath` | Thazira of the Sea of Lava | Navy leader | `fire_galleys` |
 | `zin_nether_vorathael` | Vorathael of the Burning Shore | Field marshal (named in `companies_through_the_rings`) | not recruited by the tree |
 
 ### Branches
@@ -687,7 +687,7 @@ Notation as in this file; "Puvulan: call …" is `for_country Puvulan`; "recruit
 | B | `thralls_of_the_burning_shore` | Thralls of the Burning Shore | `levy_muster` | to_the_letter | — | 6,3 | 35 | — | mp 2000; stab -0.02 | AI 15 |
 | B | `the_king_does_not_take_the_dead` | The King Does Not Take the Dead | `grave_field` | to_the_letter | — | 8,3 | 35 | — | event `the_dead_are_not_his` | AI 15 |
 | B | `every_bargain_kept` | Every Bargain Kept | `handshake_oath` | thralls_of_the_burning_shore + the_king_does_not_take_the_dead | — | 7,4 | 70 | — | swap `kept_to_the_letter`→`every_bargain_kept_spirit`; flag `zin_nether_pacts_deep` | AI 15 |
-| C | `the_portal_rings` | The Portal Rings | `ring_doors` | — | — | 11,0 | 35 | — | res [zin_cat_dark_rites] 0.5 ×1; recruit `zin_nether_zhorara` | AI 25 |
+| C | `the_portal_rings` | The Portal Rings | `ring_doors` | — | — | 11,0 | 35 | — | res [zin_cat_dark_rites] 0.5 ×1; recruit `zin_nether_hazek` | AI 25 |
 | C | `clear_the_old_rings` | Clear the Old Rings | `quarry_stone` | the_portal_rings | — | 10,1 | 70 | — | bld infrastructure 1 @capital; pp 25 | AI 20 |
 | C | `the_gate_of_nezer_smoulders` | The Gate of Nezer Smoulders | `nether_gate` | the_portal_rings | — | 12,1 | 35 | exists Nezer | event_for Nezer `the_broken_ring` | AI 20 |
 | C | `the_rings_relit` | The Rings Relit | `ring_doors` | clear_the_old_rings + the_gate_of_nezer_smoulders | — | 11,2 | 70 | — | flag `zin_nether_rings_lit`; res [zin_cat_dark_rites] 0.5 ×1; call `zin_world_add_gathering_dark`(value 1) | AI 20 |
@@ -703,7 +703,7 @@ Notation as in this file; "Puvulan: call …" is `for_country Puvulan`; "recruit
 | D | `a_bargain_never_an_oath` | A Bargain, Never an Oath | `scroll_treaty` | companies_for_hire / the_maw_disputed | — | 16,3 | 70 | — | pp 100; stab 0.05 | AI 15 |
 | E | `the_burning_shore` | The Burning Shore | `ember_desert` | — | — | 22,0 | 70 | — | bld industrial_complex 1 @capital | AI 25 |
 | E | `the_obsidian_galleries` | The Obsidian Galleries | `mine_cart` | the_burning_shore | — | 21,1 | 70 | — | bld industrial_complex 1 @capital; recruit `zin_nether_zarek` | AI 20 |
-| E | `fire_galleys` | Fire-Galleys on the Sea of Lava | `galley_oars` | the_burning_shore | — | 23,1 | 70 | — | bld dockyard 1 @capital; navy_xp 10; res [zin_cat_galleys] 0.5 ×1; recruit `zin_nether_thazira` | AI 15 |
+| E | `fire_galleys` | Fire-Galleys on the Sea of Lava | `galley_oars` | the_burning_shore | — | 23,1 | 70 | — | bld dockyard 1 @capital; navy_xp 10; res [zin_cat_galleys] 0.5 ×1; recruit `zin_nether_hazath` | AI 15 |
 | E | `fire_glass_and_sulphur` | Fire-Glass and Sulphur | `foundry_fire` | the_obsidian_galleries | — | 21,2 | 70 | — | bld arms_factory 1 @capital; eq zin_nether_arms_equipment 200 | AI 15 |
 | E | `the_outer_forts` | The Outer Forts of the Shore | `fort_wall` | fire_galleys | — | 23,2 | 70 | — | bld coastal_bunker 1 @capital; bld naval_base 1 @capital | AI 15 |
 | E | `devils_of_the_burning_shore` | Devils of the Burning Shore | `ashen_waste` | fire_galleys | — | 25,2 | 35 | — | event `the_devils_on_the_shore` | AI 15 |

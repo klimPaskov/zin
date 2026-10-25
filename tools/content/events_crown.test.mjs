@@ -706,7 +706,7 @@ test('Negative: the checkpoint rule and the text scan stand alone', async () => 
 
 test('Dependencies: the names these events use and other modules own are listed with their kinds', () => {
   const names = new Set(summary.dependencies.map(d => d.name));
-  for (const n of ['zin_aenor_add_court_corruption', 'zin_aenor_add_camp_support', 'zin_aenor_event_for_parim', 'zin_aenor_is_realm', 'zin_afrit_add_veil', 'zin_afrit_purge_houses', 'zin_afrit_rules_here', 'zin_world_add_gathering_dark', 'zin_east_is_court', 'zin_volgan_children_ready', 'zin_aenor_secede_dominion', 'zin_afrit_add_footholds', 'zin_eindil_add_regard', 'zin_lost_cause_with_eindil', 'zin_eronel', 'zin_ilsabet']) assert(names.has(n), n);
+  for (const n of ['zin_aenor_add_court_corruption', 'zin_aenor_add_camp_support', 'zin_aenor_event_for_parim', 'zin_aenor_is_realm', 'zin_afrit_add_veil', 'zin_afrit_purge_houses', 'zin_afrit_rules_here', 'zin_world_add_gathering_dark', 'zin_east_is_court', 'zin_volgan_children_ready', 'zin_aenor_secede_dominion', 'zin_afrit_add_footholds', 'zin_eindil_add_regard', 'zin_lost_cause_with_eindil', 'zin_eronel', 'zin_aldovan']) assert(names.has(n), n);
   assert(!names.has('zin_story_tick'), 'a name this module defines is not a dependency');
   assert(!names.has('zin_reign_on_king_dead'));
   const kinds = new Set(summary.dependencies.map(d => d.kind));

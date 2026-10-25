@@ -351,7 +351,10 @@ test('Afrit: the palace rolls follow the table and the death is called once', ()
   for (const s of F.palace) assert(t.includes(`set_temp_variable = { zin_pc = ${s.base} }`), `stage ${s.stage}`);
   assert(t.includes('clamp_temp_variable = { var = zin_pc min = 5 max = 95 }'));
   assert(t.includes('zin_eindil.124') === false, 'the journey narrates the death through zin_afrit.75, which is not defined here');
-  assert.equal((t.match(/zin_afrit_die = yes/g) ?? []).length, 0, 'zin_afrit_die is called by zin_afrit.75 only (O2)');
+  // O2 as extended by owner answer Q-66 (K59): zin_afrit.75 (the palace) and the hunter's kill outside it are the only callers.
+  assert.equal((t.match(/zin_afrit_die = yes/g) ?? []).length, 1, 'zin_afrit_die is called by zin_afrit.75 and by the hunt only (O2, Q-66)');
+  const kill = t.slice(t.indexOf('zin_afrit_hunt_kill = {'), t.indexOf('zin_afrit_hunt_month = {') > t.indexOf('zin_afrit_hunt_kill = {') ? t.indexOf('zin_afrit_hunt_month = {') : undefined);
+  assert(kill.includes('zin_afrit_die = yes'), 'the scripted call is the hunt\'s');
   assert(t.includes('news_event = { id = zin_afrit.75 }'));
   assert(t.includes('country_event = { id = zin_eindil.120 }') && t.includes('country_event = { id = zin_eindil.121 }') && t.includes('country_event = { id = zin_eindil.123 }'));
 });

@@ -305,7 +305,7 @@ The AI awards honours at the engine's chance (`GENERATE_AI_DIV_COMMAND_MEDALS`) 
 
 All proceed on the proposal.
 
-1. Does the owner want mod achievements (for example one per ending), shown in an awards tab? **Proposal, in use:** no; the tab stays hidden and the one unearnable entry stays.
+1. Does the owner want mod achievements (for example one per ending), shown in an awards tab? **Proposal, in use:** no; the tab stays hidden and the one unearnable entry stays. **Since K64:** the owner adopted the deep past with its nine achievements (`common/achievements/zin_deep_past.txt`, `unique_id = zin_aoaz`, [deep_past.md](../04_mechanics/deep_past.md) section 7); they are defined and tracked but cannot be seen until this tab is shown again, which stays the owner's call.
 2. Do the great powers get their own end-of-game background? **Proposal, in use:** no; one Annals background for all (`default`).
 3. Are the weekday names (Lampday … Restday) right? **Proposal, in use:** yes; they use no god and no sun.
 4. Is a link to ZIN's repository on the pause menu welcome? **Proposal, in use:** yes, on `homepage_button`; hidden if it misbehaves.

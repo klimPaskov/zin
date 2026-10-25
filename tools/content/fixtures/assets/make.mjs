@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { loreDrawingStems } from '../../lib/asset_sources.mjs';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import { Canvas, dds, tga } from '../../lib/raster.mjs';
@@ -30,6 +31,7 @@ export const yml = entries => Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), Bu
 function put(root, rel, bytes) { const full = path.join(root, rel); fs.mkdirSync(path.dirname(full), { recursive: true }); fs.writeFileSync(full, bytes); }
 
 export const TABLES = {
+  ownerDrawingStems: loreDrawingStems(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..')),
   countries: [{ tag: 'Y01', name: 'Alpha' }, { tag: 'Y02', name: 'Beta' }],
   flagCells: [{ sheet: 'flags-sheet-01', index: 0, row: 0, col: 0, rows: 1, tag: 'Y01', name: 'Alpha' }, { sheet: 'flags-sheet-01', index: 1, row: 0, col: 1, rows: 1, tag: 'Y02', name: 'Beta' }],
 };

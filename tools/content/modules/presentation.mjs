@@ -71,19 +71,21 @@ export const FORBIDDEN = [
   // Glernaen is a public god (the first month bears his name, decision K28); only his bond with Glo is gated.
   [/\bRoka\b/i, 'gated: Roka'], [/^(?=.*\bGlernaen\b)(?=.*\bGlo\b)/is, 'gated: Glernaen with Glo'], [/King of Demons/i, 'gated: King of Demons'],
   [/^(?=.*\bheart\b)(?=.*\b(Glo|Horos)\b)/is, 'gated: heart with Glo or Horos'], [/^(?=.*\bdemons?\b)(?=.*\bDeliverer\b)/is, 'gated: demon with Deliverer'],
+  [/\b(Muzerar|Ozelkak|Tarkia|Qadurum|Rhabtarkia|Barzoth|Gromatrak|Tromahrim|Margorodai|Halgohavnai|Heulufaenn|Heulfaenn|Faenn-Cheulu|Heulofaennos|Tawrhalwe)\b/, 'gated: a fallen realm\'s own name'],
   [/Einendil|Edvoid|\bKlinti\b|\bGorbat\b|Sovereign Spirit/i, 'superseded name'], [/\bRush\b/, 'superseded name: Rush'],
   [/\bfactor(y|ies)\b|\brifles?\b|\bdemocra(cy|tic)\b|\b193\d\b|\bgunpowder\b|\bfirearms?\b|\btanks?\b/i, 'modern word'],
 ];
 export const forbiddenIn = text => FORBIDDEN.filter(([re]) => re.test(text)).map(([, why]) => why);
 
-// Loading spec §7: keys 0..N-1 in order without gaps, quotes 0-149 then tips 150-189, lengths, characters, secrecy.
+// Loading spec §7: keys 0..N-1 in order without gaps, quotes 0-149, tips 150-189, quotes again from 190 (the fallen realms, K64), lengths,
+// characters, secrecy.
 export function checkTips(rows, vanillaCount = 163) {
   const problems = [];
   if (rows.length < vanillaCount) problems.push(`${rows.length} tips, fewer than the ${vanillaCount} vanilla tips`);
   rows.forEach((r, i) => {
     const where = `tip ${i} (${r.key})`;
     if (r.key !== `LOADING_TIP_${i}`) problems.push(`${where}: key out of order, expected LOADING_TIP_${i}`);
-    const kind = i < 150 ? 'quote' : 'tip';
+    const kind = i < 150 || i >= 190 ? 'quote' : 'tip';
     if (r.kind !== kind) problems.push(`${where}: kind ${r.kind}, expected ${kind}`);
     if (!r.text?.trim()) problems.push(`${where}: empty text`);
     if (kind === 'quote' && !r.attribution?.trim()) problems.push(`${where}: no attribution`);

@@ -168,6 +168,19 @@ King Alerhan III (`<Alerhia>_zin_ruler`, characters spec), Wild stance `zin_wild
 | `zin_regional_alerhia_holds_far_shore` | trigger | Alerhia and its subjects control 3 or more `zin_is_site_rift_west` states |
 | `zin_regional_alerhia_guard_rift` | effect | `give_guarantee` to the Magical Lands realm with the most `zin_is_site_rift_west` states that is at war with a coalition member |
 
+
+### Deep past branch (K64): The First Stair
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_greatest_court_of_the_east`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+The regional cap of 50 focuses (decision F6) leaves room for one: the dig, the Archive's treaty, the Bridge Road and *The Bridge Remembered* are the deep past module's decisions in the Two Shores category, and the exclusion of *The Crossing of the Rift* has to be enforced on the decision side (the decision closes after `focus_done = the_crossing_of_the_rift` or the coalition flag), because this tree's existing focuses stay as they are.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `read_the_first_stair` | Read the First Stair | `abyss_stair` | the_greatest_court_of_the_east | — | 1,4 | 105 | — | call `zin_deep_read_first_stair`; raw `add_tech_bonus = { name = zin_regional_alerhia_read_the_first_stair bonus = 0.5 uses = 1 technology = zin_tech_stair_builders_measure }`; flag `zin_deep_dig_ready`; flag `zin_deep_archive_ask_ready` | base 15; ×0.5 if at_war true |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## Miaed (`regional_miaed`)
@@ -259,6 +272,18 @@ Lord Furanow of the Passes (`<Miaed>_zin_ruler`), Wild stance `zin_wild_freehold
 | --- | --- | --- | --- | --- | --- |
 | .1 | Lord of the Passes | Miaed | lord_of_the_passes | `generic_peace` | Caravans queue at the high gate. "Raise the toll" (political_power 50; Lean moves 5 toward 0) / "Wave the riders through" (Lean +5) / "Wave the bankers through" (Lean −5). AI 50/25/25 |
 | .2 | Scouts of the Waste | Miaed | scouts_of_the_waste | `generic_wilds` | Scouts come back from the far desert with tales of heat-haze, dust columns and empty forts. Before `zin_volgan_marches` the text says nobody knows what raised the dust. "Write to Furvior and Postondoroth" (Noris and Stabilo opinion of Miaed +5) / "Keep the report in the gatehouse" (political_power 25). AI 50/50 |
+
+
+### Deep past branch (K64): Water Sold to the Kalioth
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `gatekeeper_of_the_south`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `water_sold_to_the_kalioth` | Water Sold to the Kalioth | `ember_desert` | gatekeeper_of_the_south | — | 1,4 | 70 | — | flag `zin_deep_water_price`; pp 25 | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 
@@ -355,6 +380,24 @@ Queen Obmia of Erco (`<Erco>_zin_ruler`), Wild stance `zin_wild_freeholds`, trai
 | Id | Title | For | Fired by | Picture | Options (AI) |
 | --- | --- | --- | --- | --- | --- |
 | .1 | A Queen's Consort | Erco | a_queens_consort | `generic_court` | "A prince of Plutondo" (Lean −5; Plutondo opinion of Erco +15) / "A lord of Ostoroth" (Lean +5; Ostoroth opinion +15) / "A mine-lord of our own mountains" (stability 0.03). AI 35/25/40 |
+
+
+### Deep past branch (K64): The Kalioth Halls
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_mountains_keep_their_own (drawn) and deep_shafts (required)`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+*Under the Seven Forts* is drawn under *The Mountains Keep Their Own* and requires *Deep Shafts* in its availability: a connector from *Deep Shafts* would cross the shaft and foundry connectors and the long connector of *Crown of the Peaks*, which the MCP inspection flagged.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `under_the_seven_forts` | Under the Seven Forts | `palace_wards` | the_mountains_keep_their_own | — | 22,5 | 70 | Avail: focus_done `deep_shafts` | call `zin_deep_open_kalioth`; pp 25 | base 15 |
+| `the_wall_nobody_strikes` | The Wall Nobody Strikes | `frozen_gate` | under_the_seven_forts | — | 22,6 | 70 | Avail: check `zin_deep_halls_opened` | pp 25; tooltip | base 15 |
+| `wall_it_up_again` | Wall It Up Again | `bracelet_seal` | the_wall_nobody_strikes | melt_the_diadem, wear_the_diadem | 24,7 | 35 | — | call `zin_deep_diadem_fate`(way 1) | base 70 |
+| `melt_the_diadem` | Melt the Diadem | `crown_broken` | the_wall_nobody_strikes | wall_it_up_again, wear_the_diadem | 22,7 | 35 | — | call `zin_deep_diadem_fate`(way 2) | base 25; +25 if `has_opinion = { target = ALR value > 49 }` |
+| `wear_the_diadem` | Wear the Diadem | `eastern_throne` | the_wall_nobody_strikes | wall_it_up_again, melt_the_diadem | 20,7 | 35 | — | call `zin_deep_diadem_fate`(way 3) | base 0; +5 if ideology `dominion`, global.zin_gathering_dark above 60, not (at_war_with `Puvulan`) |
+| `the_glacier_road` | The Glacier Road | `footprints_snow` | wear_the_diadem | — | 20,8 | 70 | — | call `zin_deep_glacier_road`; army_xp 10 | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
 
 ---
 

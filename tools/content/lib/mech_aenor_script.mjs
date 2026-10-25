@@ -342,6 +342,16 @@ export function aenorScripts(D, T) {
     	}
     	zin_aenor_check_royal_health = yes
     }
+    # K59 (Q-86): a King who survived the Council grows old, and may die of it before the judgement.
+    if = {
+    	limit = {
+    		tag = ${AEN}
+    		zin_aenor_king_alive = yes
+    		has_global_flag = zin_golden_king_survives
+    		NOT = { has_country_flag = zin_aenor_death_scheduled }
+    	}
+    	zin_aenor_check_old_age = yes
+    }
     zin_aenor_check_camps_rival = yes
     if = {
     	limit = {
@@ -462,6 +472,27 @@ export function aenorScripts(D, T) {
     	news_event = { id = zin_aenor.200 days = zin_death_days }
     }`);
 
+  effects.zin_aenor_check_old_age = dedent(`
+    # K59 (Q-86): the surviving Golden King (zin_golden_king_survives) may die of old age: a monthly chance in hundredths, ${D.oldAge.base}
+    # and ${D.oldAge.perYear} more for every year since he survived, at most ${D.oldAge.cap}. His death is the ordinary death of the King
+    # (zin_aenor.200, which opens the succession; zin_golden_king_old_age), after which the Golden Court Endures holds only through the
+    # Regency of Gold (owner, 25 October 2026). Scope: the original Aenor.
+    if = {
+    	limit = { NOT = { has_variable = zin_aenor_survived_year } }
+    	set_variable = { zin_aenor_survived_year = global.year }
+    }
+    set_temp_variable = { zin_oa_chance = global.year }
+    subtract_from_temp_variable = { zin_oa_chance = zin_aenor_survived_year }
+    multiply_temp_variable = { zin_oa_chance = ${D.oldAge.perYear} }
+    add_to_temp_variable = { zin_oa_chance = ${D.oldAge.base} }
+    clamp_temp_variable = { var = zin_oa_chance max = ${D.oldAge.cap} }
+    set_temp_variable_to_random = { var = zin_oa_roll min = 0 max = 100 }
+    if = {
+    	limit = { check_variable = { zin_oa_roll < zin_oa_chance } }
+    	set_country_flag = zin_aenor_death_scheduled
+    	set_global_flag = zin_golden_king_old_age
+    	news_event = { id = zin_aenor.200 }
+    }`);
   effects.zin_aenor_hasten_death_clock = dedent(`
     ${takeArgs('days')}
     ${AEN} = {

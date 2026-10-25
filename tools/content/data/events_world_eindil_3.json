@@ -104,7 +104,7 @@
    "hist": "Rainwake 1754",
    "fired_by": "zin_eindil.164 (B), or 60 days after .81 while Aenor has left the scholars free",
    "trigger": [
-    "has_character = zin_ilsabet"
+    "has_character = zin_aldovan"
    ],
    "desc": "Master Ilsabet Vothrim of the University of Parim has found, in the oldest rolls of the First Men, a line that ends with no burial: a son of Ein, entered in the year of his birth and in no year after. The rolls prove nothing about any other son, and Master Ilsabet has been careful to say so, twice, in writing.",
    "options": [
@@ -138,7 +138,7 @@
       {
        "scope": "var:global.zin_eindil_host",
        "do": [
-        "recruit_character = zin_ilsabet"
+        "recruit_character = zin_aldovan"
        ]
       },
       "@call zin_eindil_add_renown 10",

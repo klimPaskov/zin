@@ -74,9 +74,9 @@ Rulers also carry the ideology spec's leader trait where it names one ([02_ideol
 | `zin_aenor_halmor` | Lord Treasurer Halmor Infous | P | Start | Political advisor; leader of the Golden Court faction; sells offices | `zin_trait_office_broker` | Plump, smiling, fur-trimmed, ledger in hand (P). |
 | `zin_eronel` | Prince Eronel of Arcedor | P | Start (court figure, not recruited as leader) | The Golden Court's candidate in the succession: a cousin from a collateral line of Aen (P; owner short list 2) | Leader traits if crowned: `zin_trait_gilded_heir` | Young, handsome, overdressed (P). |
 | `zin_aenor_corwen` | Marshal Corwen Hornan | P | Start | Field marshal; loyal to the crown, honest | skill 4 (atk 3, def 4, plan 4, log 3); `old_guard`, `defensive_doctrine` | Grey veteran in Aenoran plate (P). |
-| `zin_aenor_isra` | Admiral Isra Leimon | P | Start | Navy leader of the Great Lake and the Ocean of Peace | skill 3; `green_water_expert` | Naval coat, lake-blue (P). |
+| `zin_aenor_alderic` | Admiral Isra Leimon | P | Start | Navy leader of the Great Lake and the Ocean of Peace | skill 3; `green_water_expert` | Naval coat, lake-blue (P). |
 | `zin_tarec` | Lord-Commander Tarec Belurith | P | Start | Corps commander; leads the Lost Cause's frontier companies; a true believer in the league's purpose | skill 3 (atk 3, def 3, plan 2, log 3); `ranger`, `inspirational_leader` | Weathered frontier officer, Lost Cause badge (P). |
-| `zin_ilsabet` | Master Ilsabet Vothrim | P | Start | Theorist at the University of Parim; the Lost Cause's scholar of the First Men; later can gather proof of Eindil's ancestry (P direction from the vault) | `zin_trait_scholar_of_the_first_men` | Middle-aged scholar with ink-stained hands and genealogies (P). |
+| `zin_aldovan` | Master Ilsabet Vothrim | P | Start | Theorist at the University of Parim; the Lost Cause's scholar of the First Men; later can gather proof of Eindil's ancestry (P direction from the vault) | `zin_trait_scholar_of_the_first_men` | Middle-aged scholar with ink-stained hands and genealogies (P). |
 | `zin_aenor_sefan` | Sefan Daldar, Warden of the Rolls | P | Start | Intelligence advisor; keeps the Houses of the First Light's birth rolls; a Council client without knowing it | `zin_trait_keeper_of_rolls` | Clerk in grey with a tally-staff (P). |
 
 The Aenor spec's collective leaders (`zin_aenor_golden_regency`, `zin_aenor_concord_speaker`, `zin_aenor_captains_regency`) are defined by that spec and recruited only by its succession events. They avoid inventing relatives of the Golden King. Aenor has no high priest of its own: the Council's seat of worship is Ilvane in the Worshipdom (N10). Where an event needs Parim's public high priest (for example at a crowning), the text names "the High Confessor" (`zin_ilvane`), in public terms only.
@@ -120,7 +120,7 @@ The earlier draft's separate priest of Parim is retired by N10: Ilvane is the on
 | Id | Name | St. | Appears | Role | Traits / skill | Portrait |
 | --- | --- | --- | --- | --- | --- | --- |
 | `<Lerendor>_zin_ruler` | King Ferlin III of Lerendor and Lerendor's North | P | Start | Country leader, High Crown | `zin_trait_strait_pride` | Tall northern king, sea-blue mantle (P). |
-| `zin_lerendor_ilse` | Chancellor Ilse Relendion | P | Start | Political advisor; holds that the treaty pays | `zin_trait_treaty_keeper` | Stern stateswoman (P). |
+| `zin_lerendor_agnek` | Chancellor Ilse Relendion | P | Start | Political advisor; holds that the treaty pays | `zin_trait_treaty_keeper` | Stern stateswoman (P). |
 | `zin_lerendor_hellek` | Lord Admiral Hellek Fargur | P | Start | Navy leader; wants Leren mastery of the strait | skill 4; `blue_water_expert`, `bold` | Admiral in sealskin (P). |
 | `zin_lerendor_agnar` | Marshal Agnar Solenkov | P | Start | Field marshal | skill 3; `career_officer` | Grey-bearded northern marshal in sea-blue mail (P). |
 
@@ -157,7 +157,7 @@ Zol's servants (Great Spirits, Lesser Spirits, New Gods) exist (E) but their ide
 | --- | --- | --- | --- | --- | --- | --- |
 | `<Magical Forest>_zin_ruler` | First Speaker Lusiel Velakorin | P | Start | Country leader; first among the elected houses (P constitution) | `zin_trait_speaker_of_houses`, `zin_trait_ancient_king` | Ancient elf in leaf-green, silver circlet (P). |
 | `zin_magical_forest_perlan` | Perlan, Warden of the Dragon Roosts | P | Start | Political advisor; keeper of the elven pact with the dragons (E that elves command dragons; P office) | `zin_trait_dragon_warden` | Elf with dragon-scale cloak (P). |
-| `zin_magical_forest_aenwe` | Loremaster Aenwe Lozari | P | Start | Theorist; remembers the Third Age and Varner | `zin_trait_elder_memory` | Elf scholar with a silver-bound book (P). |
+| `zin_magical_forest_aeniel` | Loremaster Aenwe Lozari | P | Start | Theorist; remembers the Third Age and Varner | `zin_trait_elder_memory` | Elf scholar with a silver-bound book (P). |
 | `zin_magical_forest_herrian` | Marshal Herrian Lustel | P | Start | Field marshal | skill 4; `ranger`, `defensive_doctrine` | Elf marshal in leaf-mail (P). |
 | `zin_magical_forest_ithrandel` | Ithrandel, Captain of the Long Patrols | P (Magical Forest tree) | Defined at start; recruited by the tree's *Captains of the Houses* | Corps commander, skill 3; a younger captain beside Herrian | `ranger`, `trickster` | Young elf captain in patrol greens (P). |
 
@@ -166,7 +166,7 @@ Zol's servants (Great Spirits, Lesser Spirits, New Gods) exist (E) but their ide
 | Id | Name | St. | Appears | Role | Traits / skill | Portrait |
 | --- | --- | --- | --- | --- | --- | --- |
 | `zin_lorien` (renamed from `<Gala Elves>_zin_ruler`) | King Lorien | E | Start | Country leader; dies on `zin_lorien_dead` | `zin_trait_memory_of_dardan` (N7) | Immeasurably old elf king, sun-gold and white (P look). One state. |
-| `zin_gala_heveneya` | Heveneya, Keeper of the Mirror | P (the Mirror of First Rain is P) | Start | Theorist | `zin_trait_keeper_of_the_mirror` | Elf with a water-filled bowl (P). |
+| `zin_gala_caleon` | Heveneya, Keeper of the Mirror | P (the Mirror of First Rain is P) | Start | Theorist | `zin_trait_keeper_of_the_mirror` | Elf with a water-filled bowl (P). |
 | `zin_gala_sulestien` | Sulestien, Master of the King's Ships | P | Start | Navy leader; fits the ship Lorien gives Eindil (the crew's deaths are E; Sulestien need not sail) | skill 3; `blue_water_expert` | Elf captain in sea-white (P). |
 | `zin_gala_tangsiel` | Tangsiel of the Sunward Guard | P | Start | Corps commander | skill 4; `desert_fox` | Elf guard captain in sun-gold mail (P). |
 
@@ -197,7 +197,7 @@ No eastern character is marked as a future follower of Afrit. Which eastern king
 | Id | Name | St. | Appears | Role | Traits / skill | Portrait |
 | --- | --- | --- | --- | --- | --- | --- |
 | `<Gunwaith>_zin_ruler` | King Herlic of Gunwaith | P | Start | Country leader; signed the Truce of the Grey Ford (P) | `zin_trait_truce_maker` | Western king, clan plaid and iron circlet (P). |
-| `zin_gunwaith_ilurda` | Lawspeaker Ilurda | P | Start | Theorist; keeper of Gunwaith's laws (the law Eindil later submits to, P episode) | `zin_trait_lawspeaker` | Old woman with a staff of carved law-marks (P). |
+| `zin_gunwaith_branorn` | Lawspeaker Ilurda | P | Start | Theorist; keeper of Gunwaith's laws (the law Eindil later submits to, P episode) | `zin_trait_lawspeaker` | Old woman with a staff of carved law-marks (P). |
 | `zin_gunwaith_datid` | Thane Datid Werlen | P | Start | Political advisor; wants the truce broken | `zin_trait_war_party` | Scarred war-thane (P). |
 | `zin_gunwaith_sarudo` | Captain Sarudo Bolpor | P | Start | Field marshal | skill 3; `hill_fighter` | Clan captain in hill plaid (P). |
 
@@ -215,10 +215,10 @@ No eastern character is marked as a future follower of Afrit. Which eastern king
 | Id | Name | St. | Appears | Role | Traits / skill | Portrait |
 | --- | --- | --- | --- | --- | --- | --- |
 | `zin_mirolon_maeric` (replaces the generated `<Mirolon>_zin_ruler` on startup) | High Warden Maeric | P (Volgan mechanic, Mirolon tree) | Start | Country leader, stance `zin_light_wardens` (an elective warden-realm, owner short list 7, proposal) | `zin_trait_warden_of_the_passes` | Lake-country warden in blue-grey (P). |
-| `zin_mirolon_selda` | Captain Selda Varrow | P (Volgan mechanic) | Defined at start, not recruited | General of the Pass Watch | as the Volgan spec sets | Pass captain in dust-grey mail (P). |
+| `zin_mirolon_almon` | Captain Selda Varrow | P (Volgan mechanic) | Defined at start, not recruited | General of the Pass Watch | as the Volgan spec sets | Pass captain in dust-grey mail (P). |
 | `zin_mirolon_hadric` | Hadric Thorne, Scout-Master | P (Volgan mechanic) | Defined at start; recruited by the Mirolon tree's *The Scout-Master's School* | Intelligence advisor | as the Volgan spec sets | Lean scout-master with a spyglass (P). |
 | `zin_mirolon_bennar` | Captain Bennar of the Passes | P | Start | Corps commander of the scouts who watch the Ember Lands | skill 3; `hill_fighter`, `ranger` | Scout with a dust-scarf (P). |
-| `zin_mirolon_hessa` | Envoy Hessa Mencnor | P | Start | Political advisor; the envoy laughed out of Parim in 4A 1736 (P) | `zin_trait_unheeded_warning` | Old envoy (P). |
+| `zin_mirolon_almar` | Envoy Hessa Mencnor | P | Start | Political advisor; the envoy laughed out of Parim in 4A 1736 (P) | `zin_trait_unheeded_warning` | Old envoy (P). |
 
 Maeric, Selda and Hadric are defined by the Volgan mechanic in `common/characters/zin_dominion.txt` (O7); the earlier draft's "First Warden Aldis Veleran" is dropped. Bennar and Hessa are this spec's.
 
@@ -351,7 +351,7 @@ These never appear as characters. Status is the vault's.
 `characters.json` also holds every character a tree spec lists, so each is defined once by `characters.mjs`:
 
 - **Regional trees** (pattern `zin_regional_<tree>_<who>`, contract additions): the courts of the tier B regional trees, recruited by their tree-declared `zin_regional_<tree>_recruit_<who>` effects or at the start as each tree says. The regional A trees add 52 entries (Cold Lands 12, Dark Lands 22, Ember Lands 18); the regional B trees add their own court tables.
-- **Major trees:** for example `zin_magical_forest_ithrandel` (above) and Lerendor's `zin_lerendor_maelis`, `zin_lerendor_brannoc`, `zin_lerendor_ostvar` and `zin_lerendor_hesk` ([Lerendor tree](../05_focus_trees/major/lerendor.md)), recruited by the tree's `zin_<tree>_recruit` calls.
+- **Major trees:** for example `zin_magical_forest_ithrandel` (above) and Lerendor's `zin_lerendor_agnolf`, `zin_lerendor_brannoc`, `zin_lerendor_ostvar` and `zin_lerendor_hesk` ([Lerendor tree](../05_focus_trees/major/lerendor.md)), recruited by the tree's `zin_<tree>_recruit` calls.
 - **Proposed regional rulers** keep the id `<TAG>_zin_ruler`; their names sit in `zin_name_<realm>_ruler` keys (names spec pattern), so the owner can rename them in one place.
 
 Tree specs that name `docs/design/characters.json` mean this file, `tools/content/data/characters.json`.
@@ -469,18 +469,18 @@ The game recruits a character only in country history (wiki, Character modding).
 | `zin_goldoroth_rask` | Goldoroth | `zin_in_play_goldoroth_rask` |
 | `zin_goldoroth_snikkit` | Goldoroth | `zin_in_play_goldoroth_snikkit` |
 | `zin_goldoroth_sungor` | Goldoroth | `zin_in_play_goldoroth_sungor` |
-| `zin_goldoroth_ulgra` | Goldoroth | `zin_in_play_goldoroth_ulgra` |
+| `zin_goldoroth_bord` | Goldoroth | `zin_in_play_goldoroth_ulgra` |
 | `zin_gunwaith_ostra` | Gunwyn | `zin_in_play_gunwaith_ostra` |
 | `zin_ilvane` | Worshipdom | `zin_in_play_ilvane` |
 | `zin_kessarion` | Worshipdom | `zin_in_play_kessarion` |
 | `zin_kusven` | Zol's Mistake | `zin_in_play_kusven` |
 | `zin_lerendor_brannoc` | Lerendor | `zin_in_play_lerendor_brannoc` |
 | `zin_lerendor_hesk` | Lerendor | `zin_in_play_lerendor_hesk` |
-| `zin_lerendor_maelis` | Lerendor | `zin_in_play_lerendor_maelis` |
+| `zin_lerendor_agnolf` | Lerendor | `zin_in_play_lerendor_maelis` |
 | `zin_lerendor_ostvar` | Lerendor | `zin_in_play_lerendor_ostvar` |
 | `zin_mirolon_hadric` | Mirolon | `zin_in_play_mirolon_hadric` |
 | `zin_mirolon_maeric` | Mirolon | `zin_in_play_mirolon_maeric` |
-| `zin_mirolon_selda` | Mirolon | `zin_in_play_mirolon_selda` |
+| `zin_mirolon_almon` | Mirolon | `zin_in_play_mirolon_selda` |
 | `zin_ossar` | Worshipdom | `zin_in_play_ossar` |
 | `zin_regional_adel_edda` | Adel | `zin_in_play_regional_adel_edda` |
 | `zin_regional_adel_ysmay` | Adel | `zin_in_play_regional_adel_ysmay` |
@@ -496,7 +496,7 @@ The game recruits a character only in country history (wiki, Character modding).
 | `zin_regional_halenor_rhea` | Halenor | `zin_in_play_regional_halenor_rhea` |
 | `zin_regional_horidor_maela` | Horidor | `zin_in_play_regional_horidor_maela` |
 | `zin_regional_horidor_tarvo` | Horidor | `zin_in_play_regional_horidor_tarvo` |
-| `zin_regional_isengard_brana` | Melkgard | `zin_in_play_regional_isengard_brana` |
+| `zin_regional_isengard_alddok` | Melkgard | `zin_in_play_regional_isengard_brana` |
 | `zin_regional_isengard_veska` | Melkgard | `zin_in_play_regional_isengard_veska` |
 | `zin_regional_kradlon_bram` | Kradlon | `zin_in_play_regional_kradlon_bram` |
 | `zin_regional_kradlon_hesta` | Kradlon | `zin_in_play_regional_kradlon_hesta` |
@@ -510,12 +510,12 @@ The game recruits a character only in country history (wiki, Character modding).
 | `zin_regional_seite_islands_brann` | Seite Islands | `zin_in_play_regional_seite_islands_brann` |
 | `zin_regional_titanos_hrimla` | Nivaros | `zin_in_play_regional_titanos_hrimla` |
 | `zin_regional_titanos_skarn` | Nivaros | `zin_in_play_regional_titanos_skarn` |
-| `zin_regional_varnondor_sevra` | Varnondor | `zin_in_play_regional_varnondor_sevra` |
+| `zin_regional_varnondor_branwyn` | Varnondor | `zin_in_play_regional_varnondor_sevra` |
 | `zin_regional_varnondor_tomas` | Varnondor | `zin_in_play_regional_varnondor_tomas` |
 | `zin_regional_windwaith_odo` | Vindael | `zin_in_play_regional_windwaith_odo` |
 | `zin_regional_windwaith_tamsin` | Vindael | `zin_in_play_regional_windwaith_tamsin` |
 | `zin_regional_yeti_lands_oruk` | Yeti Lands | `zin_in_play_regional_yeti_lands_oruk` |
-| `zin_regional_yeti_lands_sima` | Yeti Lands | `zin_in_play_regional_yeti_lands_sima` |
+| `zin_regional_yeti_lands_garam` | Yeti Lands | `zin_in_play_regional_yeti_lands_sima` |
 | `zin_sevrin` | Worshipdom | `zin_in_play_sevrin` |
 | `zin_varner` | Magical Forest | `zin_in_play_varner` |
 | `zin_volgan_ember_herald` | Puvulan | `zin_in_play_volgan_ember_herald` |

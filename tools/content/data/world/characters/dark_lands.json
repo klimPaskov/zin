@@ -69,21 +69,21 @@
         "canon": "S"
       },
       {
-        "id": "zin_goldoroth_ulgra",
-        "name": "Forge-Mistress Ulgra",
-        "given": "Ulgra",
+        "id": "zin_goldoroth_bord",
+        "name": "Forge-Master Bord",
+        "given": "Bord",
         "office": "Chief of the Iron Clans",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6769,
         "slot": "political_advisor",
         "traits": [
           "zin_trait_forge_mistress"
         ],
-        "role": "Chief of the Iron Clans and mistress of Cocanoor's siege forges, who wants forges, trade and tithes and knows that a war without powder is a short one.",
-        "portrait": "A broad orc woman in a scorched leather forge-apron with iron tongs.",
+        "role": "Chief of the Iron Clans and master of Cocanoor's siege forges, who wants forges, trade and tithes and knows that a war without powder is a short one.",
+        "portrait": "A broad orc man in a scorched leather forge-apron with iron tongs.",
         "canon": "S",
-        "definedBy": "Dark Lands mechanic (character table, zin_goldoroth_ulgra; trait zin_trait_forge_mistress)"
+        "definedBy": "Dark Lands mechanic (character table, zin_goldoroth_bord; trait zin_trait_forge_mistress)"
       },
       {
         "id": "zin_goldoroth_tithe",
@@ -103,10 +103,10 @@
       },
       {
         "id": "zin_goldoroth_gifts",
-        "name": "Bolga Gift-Bearer, Bearer of the Warking's Gifts",
-        "given": "Bolga",
+        "name": "Bordash Gift-Bearer, Bearer of the Warking's Gifts",
+        "given": "Bordash",
         "office": "Bearer of the Warking's Gifts",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6780,
         "slot": "political_advisor",
@@ -114,7 +114,7 @@
           "zin_adv_envoy"
         ],
         "role": "Carries the Warking's gifts and threats to the free holds, usually in the same sack.",
-        "portrait": "A sly orc woman with a laden pack and a bone-handled knife.",
+        "portrait": "A sly orc man with a laden pack and a bone-handled knife.",
         "canon": "P"
       }
     ],
@@ -274,10 +274,10 @@
     "advisors": [
       {
         "id": "zin_regional_dondor_gethra",
-        "name": "Beraga Ironjaw, Beacon-Warden",
-        "given": "Beraga",
+        "name": "Borgag Ironjaw, Beacon-Warden",
+        "given": "Borgag",
         "office": "Warden of the Beacons",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6771,
         "slot": "political_advisor",
@@ -285,16 +285,16 @@
           "zin_adv_muster_master"
         ],
         "role": "Keeps the beacon towers on every hill of the plain, so that the whole kingdom can be called to arms in a night.",
-        "portrait": "A broad woman with an iron jaw-guard and a torch-pole.",
+        "portrait": "A broad man with an iron jaw-guard and a torch-pole.",
         "canon": "P",
         "formerName": "Gethra Ironjaw (Dark Lands tree); Dondric has no th"
       },
       {
         "id": "zin_regional_dondor_wenna",
-        "name": "Zilka Saltbrow, Envoy to the Straits",
-        "given": "Zilka",
+        "name": "Borg Saltbrow, Envoy to the Straits",
+        "given": "Borg",
         "office": "Envoy to the Straits",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6777,
         "slot": "political_advisor",
@@ -302,7 +302,7 @@
           "zin_adv_envoy"
         ],
         "role": "Carries the Brute-King's word to Notle, Sonargur and Parim, and is the reason the Accord still holds after a bad year.",
-        "portrait": "A weathered woman with salt-white eyebrows and a sea-cloak.",
+        "portrait": "A weathered man with salt-white eyebrows and a sea-cloak.",
         "canon": "P",
         "formerName": "Wenna Saltbrow (Dark Lands tree); not Dondric"
       },
@@ -341,11 +341,11 @@
         "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
       },
       {
-        "id": "zin_regional_dondor_dagna",
-        "name": "Dagna Urdung, Keeper of the Blood-Price",
-        "given": "Dagna",
+        "id": "zin_regional_dondor_borgar",
+        "name": "Borgar Urdung, Keeper of the Blood-Price",
+        "given": "Borgar",
         "office": "Keeper of the Blood-Price",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6765,
         "slot": "political_advisor",
@@ -353,17 +353,17 @@
           "zin_adv_treasurer"
         ],
         "role": "Sets the blood-prices the clan-moot demands and pays, and keeps the treasury that groans every time the powder-pieces need feeding.",
-        "portrait": "A stern woman with iron bars stacked in a chest beside her.",
+        "portrait": "A stern man with iron bars stacked in a chest beside him.",
         "canon": "P"
       }
     ],
     "commanders": [
       {
-        "id": "zin_regional_dondor_draga",
-        "name": "Captain Draga Gollun",
-        "given": "Draga",
+        "id": "zin_regional_dondor_borgmar",
+        "name": "Captain Borgmar Gollun",
+        "given": "Borgmar",
         "office": "Captain of the March",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6774,
         "type": "corps_commander",
@@ -378,9 +378,9 @@
           "hill_fighter"
         ],
         "role": "Commands the brutes on the southern march, where raiders cross in summer and blood-prices are paid in winter.",
-        "portrait": "A tall woman brute in iron scale with a heavy spear.",
+        "portrait": "A tall man brute in iron scale with a heavy spear.",
         "canon": "P",
-        "formerName": "Captain Draga Hollin (Dark Lands tree); Dondric has no h"
+        "formerName": "Captain Borgmar Hollin (Dark Lands tree); Dondric has no h"
       },
       {
         "id": "zin_regional_dondor_bargul",
@@ -431,10 +431,10 @@
       },
       {
         "id": "zin_regional_dondor_moal",
-        "name": "Urra of Notbuton",
-        "given": "Urra",
+        "name": "Borgand of Notbuton",
+        "given": "Borgand",
         "office": "Captain of the Accord Ships",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6781,
         "type": "navy_leader",
@@ -449,7 +449,7 @@
           "green_water_expert"
         ],
         "role": "Commands Dondor's few ships on the Sea of Darkness and sails beside Belonton's sea orcs as often as the Accord asks.",
-        "portrait": "A sturdy woman captain with an iron-shod boat-hook.",
+        "portrait": "A sturdy man captain with an iron-shod boat-hook.",
         "canon": "P"
       }
     ],
@@ -493,10 +493,10 @@
     "advisors": [
       {
         "id": "zin_dark_gate_toll",
-        "name": "Krazga Toll-Wife, Keeper of the Toll",
-        "given": "Krazga",
+        "name": "Bordash Toll-Husband, Keeper of the Toll",
+        "given": "Bordash",
         "office": "Keeper of the Toll",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6779,
         "slot": "political_advisor",
@@ -504,7 +504,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Counts every caravan's toll at the gate and sets aside Cocanoor's share before the chief can spend it.",
-        "portrait": "A sharp-eyed orc woman with a toll-box of black iron.",
+        "portrait": "A sharp-eyed orc man with a toll-box of black iron.",
         "canon": "P"
       },
       {
@@ -567,10 +567,10 @@
       },
       {
         "id": "zin_dark_gate_road",
-        "name": "Zagra of the South Road",
-        "given": "Zagra",
+        "name": "Bordesk of the South Road",
+        "given": "Bordesk",
         "office": "Captain of the Road-Riders",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6782,
         "type": "field_marshal",
@@ -585,7 +585,7 @@
           "cavalry_leader"
         ],
         "role": "Rides the southern road on a shaggy wolf-horse and brings back caravans that tried to go round the gate.",
-        "portrait": "An orc woman rider with a hooked spear.",
+        "portrait": "An orc man rider with a hooked spear.",
         "canon": "P"
       }
     ],
@@ -629,18 +629,18 @@
     "advisors": [
       {
         "id": "zin_burnikit_powder",
-        "name": "Blikka the Powder-Wife",
-        "given": "Blikka",
-        "office": "Mistress of the Powder Caves",
-        "gender": "female",
+        "name": "Blik the Powder-Husband",
+        "given": "Blik",
+        "office": "Master of the Powder Caves",
+        "gender": "male",
         "people": "goblins",
         "born": 6777,
         "slot": "theorist",
         "traits": [
           "zin_adv_powder_master"
         ],
-        "role": "Runs the caves where the yellow crusts are ground and mixed, and has the burns to show she knows the recipe better than anyone.",
-        "portrait": "A goblin woman with singed hair and a mortar on her hip.",
+        "role": "Runs the caves where the yellow crusts are ground and mixed, and has the burns to show he knows the recipe better than anyone.",
+        "portrait": "A goblin man with singed hair and a mortar on his hip.",
         "canon": "P"
       },
       {
@@ -796,18 +796,18 @@
       },
       {
         "id": "zin_veshazel_orcs",
-        "name": "Ghashra of the Ashes",
-        "given": "Ghashra",
+        "name": "Hazek of the Ashes",
+        "given": "Hazek",
         "office": "Captain of the Orc Thralls",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6776,
         "slot": "high_command",
         "traits": [
           "zin_adv_muster_master"
         ],
-        "role": "Leads the orcs broken in the clan wars who swore to the hall, and she trusts the hall more than she ever trusted a clan.",
-        "portrait": "An orc woman with ash-grey warpaint and a heavy spear.",
+        "role": "Leads the orcs broken in the clan wars who swore to the hall, and he trusts the hall more than he ever trusted a clan.",
+        "portrait": "An orc man with ash-grey warpaint and a heavy spear.",
         "canon": "P"
       }
     ],
@@ -869,14 +869,14 @@
     "court": "standard",
     "ruler": {
       "id": "BLK_zin_ruler",
-      "name": "Moot-Speaker Bruna Gorvik",
-      "given": "Bruna",
+      "name": "Moot-Speaker Borg Gorvik",
+      "given": "Borg",
       "house": "a burgher house of Dontadur",
       "title": {
         "native": null,
         "english": "Moot-Speaker of the Five Towns"
       },
-      "gender": "female",
+      "gender": "male",
       "people": "men",
       "born": 6771,
       "stance": "zin_wild_freeholds",
@@ -884,9 +884,9 @@
         "zin_trait_elected_speaker",
         "zin_trait_caravan_broker"
       ],
-      "bio": "The town moot at Dontadur chose Bruna as moot-speaker for the year of 4A 1748; she is a Dondric burgher's daughter married into a Leren shipping house, which is the five towns in one person. She sells Dondor's iron to the North, keeps the league out of the Accord's wars where she can and has to sit through the charter quarrel at every meeting, since the moot refused a lord's charter in 4A 1688 by a single voice and has argued about it ever since.",
+      "bio": "The town moot at Dontadur chose Borg as moot-speaker for the year of 4A 1748; he is a Dondric burgher's son married into a Leren shipping house, which is the five towns in one person. He sells Dondor's iron to the North, keeps the league out of the Accord's wars where he can and has to sit through the charter quarrel at every meeting, since the moot refused a lord's charter in 4A 1688 by a single voice and has argued about it ever since.",
       "portrait": {
-        "appearance": "A broad, sharp-eyed woman with copper-brown hair.",
+        "appearance": "A broad, sharp-eyed man with copper-brown hair.",
         "dress": "A burgher's dark coat with a Leren blue lining and the moot-speaker's iron chain of five links.",
         "colours": "Iron dark (#3a3a3e), rust brown (#7a4a2a), ash grey (#a8a8a0)."
       },
@@ -900,10 +900,10 @@
     "advisors": [
       {
         "id": "zin_regional_blackton_ilse",
-        "name": "Ingra Korvald, Harbour-Reeve",
-        "given": "Ingra",
+        "name": "Brunar Korvald, Harbour-Reeve",
+        "given": "Brunar",
         "office": "Harbour-Reeve of Dontadur",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6775,
         "slot": "political_advisor",
@@ -911,7 +911,7 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Keeps the harbour of Dontadur where the Leren ships load Dondor's iron every season.",
-        "portrait": "A tall Leren-born woman with a harbour ledger.",
+        "portrait": "A tall Leren-born man with a harbour ledger.",
         "canon": "P",
         "formerName": "Ilse Corran (Dark Lands tree); Ilse is Lerendor's Ilse Relendion"
       },
@@ -953,10 +953,10 @@
     "commanders": [
       {
         "id": "zin_regional_blackton_merrin",
-        "name": "Captain Maraga Oskvik",
-        "given": "Maraga",
+        "name": "Captain Barug Oskvik",
+        "given": "Barug",
         "office": "Captain of the Town Ships",
-        "gender": "female",
+        "gender": "male",
         "people": "men",
         "born": 6779,
         "type": "navy_leader",
@@ -971,7 +971,7 @@
           "green_water_expert"
         ],
         "role": "Commands the armed merchantmen of the five towns and keeps them out of the Accord's fights unless the moot says otherwise.",
-        "portrait": "A weather-beaten woman captain in a blue sea-coat.",
+        "portrait": "A weather-beaten man captain in a blue sea-coat.",
         "canon": "P",
         "formerName": "Captain Merrin Vael (Dark Lands tree); not Dondric or Leren"
       },
@@ -1039,10 +1039,10 @@
     "advisors": [
       {
         "id": "zin_belonton_tithe",
-        "name": "Skarga of the Salt Tithe",
-        "given": "Skarga",
+        "name": "Bordduth of the Salt Tithe",
+        "given": "Bordduth",
         "office": "Keeper of the Salt Tithe",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6774,
         "slot": "political_advisor",
@@ -1050,7 +1050,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Collects the Salt Tithe from every hold of the confederacy and sinks the first share in the sea, as the old way demands.",
-        "portrait": "An orc woman with a salt-sack and a bone tally.",
+        "portrait": "An orc man with a salt-sack and a bone tally.",
         "canon": "P"
       },
       {
@@ -1071,10 +1071,10 @@
       },
       {
         "id": "zin_belonton_accord",
-        "name": "Ruzha the Bar-Keeper",
-        "given": "Ruzha",
+        "name": "Bordash the Bar-Keeper",
+        "given": "Bordash",
         "office": "Keeper of the Accord",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6778,
         "slot": "political_advisor",
@@ -1082,7 +1082,7 @@
           "zin_adv_envoy"
         ],
         "role": "Carries the confederacy's word to Notbuton and keeps the memory of the iron bar and the skull sunk together in the Sea of Darkness.",
-        "portrait": "An orc woman with an iron bar hung at her belt.",
+        "portrait": "An orc man with an iron bar hung at his belt.",
         "canon": "P"
       }
     ],
@@ -1113,10 +1113,10 @@
       },
       {
         "id": "zin_belonton_gull",
-        "name": "Bolrak of the Gull Cliffs",
-        "given": "Bolrak",
+        "name": "Bord of the Gull Cliffs",
+        "given": "Bord",
         "office": "Captain of the Cliff Holds",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6780,
         "type": "corps_commander",
@@ -1131,7 +1131,7 @@
           "hill_fighter"
         ],
         "role": "Holds the cliffs of the old Gull Kingdom, where the sea orcs' landward holds stand.",
-        "portrait": "A tall orc woman with a gull-feather crest and a spear.",
+        "portrait": "A tall orc man with a gull-feather crest and a spear.",
         "canon": "P"
       }
     ],
@@ -1191,11 +1191,11 @@
         "canon": "S"
       },
       {
-        "id": "zin_regional_bordon_nadra",
-        "name": "Nadra Roadwife, Keeper of the Caravan Inns",
-        "given": "Nadra",
+        "id": "zin_regional_bordon_bord",
+        "name": "Bord Roadwife, Keeper of the Caravan Inns",
+        "given": "Bord",
         "office": "Keeper of the Caravan Inns",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6775,
         "slot": "political_advisor",
@@ -1203,7 +1203,7 @@
           "zin_adv_road_warden"
         ],
         "role": "Runs the caravan inns that were barracks in the Buried Wars and keeps them clean, fed and free of brawls, mostly.",
-        "portrait": "A broad orc woman with a ladle and a cleaver.",
+        "portrait": "A broad orc man with a ladle and a cleaver.",
         "canon": "S"
       },
       {
@@ -1226,10 +1226,10 @@
     "commanders": [
       {
         "id": "zin_regional_bordon_gorge",
-        "name": "Zugra of the Black Road",
-        "given": "Zugra",
+        "name": "Bordduth of the Black Road",
+        "given": "Bordduth",
         "office": "Captain of the Road Guards",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6780,
         "type": "corps_commander",
@@ -1244,7 +1244,7 @@
           "hill_fighter"
         ],
         "role": "Guards the gorge of the Black Road by Soun Lake, where Kargesk took the road from the Necromancer's garrison.",
-        "portrait": "An orc woman in iron with a heavy crossbow.",
+        "portrait": "An orc man in iron with a heavy crossbow.",
         "canon": "P"
       },
       {
@@ -1328,10 +1328,10 @@
       },
       {
         "id": "zin_regional_dreson_ylsa",
-        "name": "Nagha Eel-Wife, Mistress of the Eel-Weirs",
-        "given": "Nagha",
-        "office": "Mistress of the Eel-Weirs",
-        "gender": "female",
+        "name": "Bred Eel-Husband, Master of the Eel-Weirs",
+        "given": "Bred",
+        "office": "Master of the Eel-Weirs",
+        "gender": "male",
         "people": "orcs",
         "born": 6774,
         "slot": "political_advisor",
@@ -1339,9 +1339,9 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Owns most of the eel-weirs of the fens and sells smoked eel and bog-iron to whoever comes to the fen's edge with silver.",
-        "portrait": "A broad orc woman with a basket of eels and a smoke-stained apron.",
+        "portrait": "A broad orc man with a basket of eels and a smoke-stained apron.",
         "canon": "P",
-        "formerName": "Ylsa Eel-Wife (Dark Lands tree); Orcish has no y"
+        "formerName": "Ylsa Eel-Husband (Dark Lands tree); Orcish has no y"
       },
       {
         "id": "zin_regional_dreson_harrok",
@@ -1363,10 +1363,10 @@
     "commanders": [
       {
         "id": "zin_regional_dreson_varga",
-        "name": "Burga Bog-Runner, Captain of the Reed-Paths",
-        "given": "Burga",
+        "name": "Bord Bog-Runner, Captain of the Reed-Paths",
+        "given": "Bord",
         "office": "Captain of the Reed-Paths",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6779,
         "type": "corps_commander",
@@ -1381,7 +1381,7 @@
           "trickster"
         ],
         "role": "Leads the guides who know the deep fens, the same craft that drowned Goldoroth's host.",
-        "portrait": "A wiry orc woman, mud to the thighs, with a guide-pole.",
+        "portrait": "A wiry orc man, mud to the thighs, with a guide-pole.",
         "canon": "P",
         "formerName": "Varga Bog-Runner (Dark Lands tree); Orcish has no v"
       },
@@ -1449,11 +1449,11 @@
     },
     "advisors": [
       {
-        "id": "zin_regional_dulundur_grushka",
-        "name": "Grushka of the Four Fires",
-        "given": "Grushka",
+        "id": "zin_regional_dulundur_bord",
+        "name": "Bord of the Four Fires",
+        "given": "Bord",
         "office": "Keeper of the Fires",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6758,
         "slot": "political_advisor",
@@ -1461,7 +1461,7 @@
           "zin_adv_elder"
         ],
         "role": "Keeps the four fires burning together in the hall of Lesderle and the oath that goes with them.",
-        "portrait": "An old orc woman tending a hearth of four fires.",
+        "portrait": "An old orc man tending a hearth of four fires.",
         "canon": "S"
       },
       {
@@ -1481,11 +1481,11 @@
         "canon": "S"
       },
       {
-        "id": "zin_regional_dulundur_brakka",
-        "name": "Brakka the Loud",
-        "given": "Brakka",
+        "id": "zin_regional_dulundur_bordduth",
+        "name": "Bordduth the Loud",
+        "given": "Bordduth",
         "office": "War-Speaker of the Moot",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6775,
         "slot": "political_advisor",
@@ -1493,7 +1493,7 @@
           "zin_adv_war_speaker"
         ],
         "role": "The loudest voice at the Free Moot for striking the tributary holds before Goldoroth can strike the free ones.",
-        "portrait": "A big orc woman shouting, with a war-horn.",
+        "portrait": "A big orc man shouting, with a war-horn.",
         "canon": "S"
       }
     ],
@@ -1523,10 +1523,10 @@
       },
       {
         "id": "zin_regional_dulundur_lamp",
-        "name": "Snagra Lamp-Bearer, Captain of the Goblin Quarters",
-        "given": "Snagra",
+        "name": "Bordash Lamp-Bearer, Captain of the Goblin Quarters",
+        "given": "Bordash",
         "office": "Captain of the Goblin Quarters",
-        "gender": "female",
+        "gender": "male",
         "people": "goblins",
         "born": 6781,
         "type": "field_marshal",
@@ -1541,7 +1541,7 @@
           "trickster"
         ],
         "role": "Leads the goblins of the valley's quarters, who keep their lamp beside the four fires and their own counsel beside the chiefs'.",
-        "portrait": "A goblin woman with a lamp on a pole.",
+        "portrait": "A goblin man with a lamp on a pole.",
         "canon": "P"
       }
     ],
@@ -1653,10 +1653,10 @@
       },
       {
         "id": "zin_regional_troll_forest_mumug",
-        "name": "Mumuga of the Bog",
-        "given": "Mumuga",
+        "name": "Baaroom of the Bog",
+        "given": "Baaroom",
         "office": "Keeper of the Forest Edge",
-        "gender": "female",
+        "gender": "male",
         "people": "trolls",
         "type": "field_marshal",
         "skill": {
@@ -1670,7 +1670,7 @@
           "unyielding_defender"
         ],
         "role": "Watches the edge of the forest for anyone who tries to burn or fell it.",
-        "portrait": "A broad troll-wife half sunk in a bog.",
+        "portrait": "A broad troll-husband half sunk in a bog.",
         "canon": "P"
       }
     ],
@@ -1727,18 +1727,18 @@
         "canon": "P"
       },
       {
-        "id": "zin_hoorunoron_oronena",
-        "name": "Oronena of the River",
-        "given": "Oronena",
+        "id": "zin_hoorunoron_bruunas",
+        "name": "Bruunas of the River",
+        "given": "Bruunas",
         "office": "Watcher of the Giant River",
-        "gender": "female",
+        "gender": "male",
         "people": "giants",
         "slot": "political_advisor",
         "traits": [
           "zin_adv_elder"
         ],
         "role": "Watches the Giant River and was among the giants who carried folk out of the flood of 4A 1700.",
-        "portrait": "A tall giantess standing in a river to her knees.",
+        "portrait": "A tall giantess standing in a river to his knees.",
         "canon": "P"
       },
       {
@@ -1859,10 +1859,10 @@
       },
       {
         "id": "zin_the_darks_hunt",
-        "name": "Rukka the Hunt-Mistress",
-        "given": "Rukka",
+        "name": "Bord the Hunt-Master",
+        "given": "Bord",
         "office": "Keeper of the Hunting Grounds",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6777,
         "slot": "political_advisor",
@@ -1870,7 +1870,7 @@
           "zin_adv_road_warden"
         ],
         "role": "Keeps the line of the hunting ground agreed with Dondor in 4A 1590 and the meat stores for the hard winters.",
-        "portrait": "An orc woman with a bow and a string of game.",
+        "portrait": "An orc man with a bow and a string of game.",
         "canon": "P"
       },
       {
@@ -1893,10 +1893,10 @@
     "commanders": [
       {
         "id": "zin_the_darks_ogrecaptain",
-        "name": "Bruzga Bone-Biter, Captain of the Ogres",
-        "given": "Bruzga",
+        "name": "Bordash Bone-Biter, Captain of the Ogres",
+        "given": "Bordash",
         "office": "Captain of the Ogres",
-        "gender": "female",
+        "gender": "male",
         "people": "ogres",
         "born": 6772,
         "type": "corps_commander",
@@ -1911,7 +1911,7 @@
           "trait_reckless"
         ],
         "role": "Leads the ogres when the moot agrees to fight, and is the strongest warrior in the Dark Forests.",
-        "portrait": "A massive ogre woman with a tree-trunk club.",
+        "portrait": "A massive ogre man with a tree-trunk club.",
         "canon": "P"
       },
       {
@@ -1978,10 +1978,10 @@
     "advisors": [
       {
         "id": "zin_skragdurg_charcoal",
-        "name": "Ashka of Colost",
-        "given": "Ashka",
-        "office": "Mistress of the Charcoal-Burners",
-        "gender": "female",
+        "name": "Bordduth of Colost",
+        "given": "Bordduth",
+        "office": "Master of the Charcoal-Burners",
+        "gender": "male",
         "people": "orcs",
         "born": 6774,
         "slot": "political_advisor",
@@ -1989,7 +1989,7 @@
           "zin_adv_merchant_prince"
         ],
         "role": "Runs the charcoal-burners of Colost, whose charcoal feeds the forges of the iron hills.",
-        "portrait": "A soot-black orc woman with a charcoal-rake.",
+        "portrait": "A soot-black orc man with a charcoal-rake.",
         "canon": "P"
       },
       {
@@ -2051,10 +2051,10 @@
       },
       {
         "id": "zin_skragdurg_raft",
-        "name": "Bolzha the Rafter",
-        "given": "Bolzha",
+        "name": "Bordesk the Rafter",
+        "given": "Bordesk",
         "office": "Captain of the Timber Rafts",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6780,
         "type": "navy_leader",
@@ -2069,7 +2069,7 @@
           "green_water_expert"
         ],
         "role": "Floats the timber rafts down to the strait shipwrights and would float war-rafts if anyone paid for them.",
-        "portrait": "An orc woman with a raft-pole on a timber raft.",
+        "portrait": "An orc man with a raft-pole on a timber raft.",
         "canon": "P"
       }
     ],
@@ -2083,14 +2083,14 @@
     "court": "standard",
     "ruler": {
       "id": "DUN_zin_ruler",
-      "name": "Toll-Queen Zuraka of the Zhaggul",
-      "given": "Zuraka",
+      "name": "Toll-King Bordesk of the Zhaggul",
+      "given": "Bordesk",
       "house": "the Zhaggul toll-kings",
       "title": {
         "native": "Karga",
-        "english": "Toll-Queen of the Dun Peninsula"
+        "english": "Toll-King of the Dun Peninsula"
       },
-      "gender": "female",
+      "gender": "male",
       "people": "orcs",
       "born": 6773,
       "stance": "zin_wild_tribes",
@@ -2098,10 +2098,10 @@
         "zin_trait_pass_lord",
         "zin_trait_caravan_broker"
       ],
-      "bio": "Zuraka won the ring at Dobudo in 4A 1738, as the crown of the Zhaggul goes to the son or daughter who wins it, and she lives as her forebears did on the tolls of the Dun Sea. She sells her favour by the season and has married into two holds already, so that the least trusted crown of the Dark Lands now has cousins in most of them. Her grandmother took Goldoroth's gold to close the Dun Sea to Dondor and Dondor's to open it again inside one year, and Zuraka regards that as the family's finest hour.",
+      "bio": "Bordesk won the ring at Dobudo in 4A 1738, as the crown of the Zhaggul goes to the son or son who wins it, and he lives as his forebears did on the tolls of the Dun Sea. He sells his favour by the season and has married into two holds already, so that the least trusted crown of the Dark Lands now has cousins in most of them. His grandfather took Goldoroth's gold to close the Dun Sea to Dondor and Dondor's to open it again inside one year, and Bordesk regards that as the family's finest hour.",
       "portrait": {
-        "appearance": "A handsome, hard-faced orc woman with silver rings through her tusks.",
-        "dress": "A toll-queen's coat of sea-green leather and a crown of linked toll-coins.",
+        "appearance": "A handsome, hard-faced orc man with silver rings through his tusks.",
+        "dress": "A toll-king's coat of sea-green leather and a crown of linked toll-coins.",
         "colours": "Moor brown (#6a5a40), peat dark (#3a3a30), heather straw (#a8a070)."
       },
       "canon": "P"
@@ -2129,18 +2129,18 @@
       },
       {
         "id": "zin_dun_favour",
-        "name": "Ghazra the Seller of Seasons",
-        "given": "Ghazra",
+        "name": "Bord the Seller of Seasons",
+        "given": "Bord",
         "office": "Broker of the Crown's Favour",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6777,
         "slot": "political_advisor",
         "traits": [
           "zin_adv_envoy"
         ],
-        "role": "Sells the toll-queen's favour to Goldoroth one season and Dondor the next, and keeps both buyers hoping.",
-        "portrait": "A sly orc woman with a purse in each hand.",
+        "role": "Sells the toll-king's favour to Goldoroth one season and Dondor the next, and keeps both buyers hoping.",
+        "portrait": "A sly orc man with a purse in each hand.",
         "canon": "P"
       },
       {
@@ -2163,10 +2163,10 @@
     "commanders": [
       {
         "id": "zin_dun_channel",
-        "name": "Zhakka of the Inner Channel",
-        "given": "Zhakka",
+        "name": "Bordash of the Inner Channel",
+        "given": "Bordash",
         "office": "Captain of the Toll-Ships",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6780,
         "type": "navy_leader",
@@ -2180,8 +2180,8 @@
         "traits": [
           "green_water_expert"
         ],
-        "role": "Commands the toll-ships that close the inner channel of the Dun Sea when the queen has been paid to close it.",
-        "portrait": "An orc woman captain with a chain to drag across a channel.",
+        "role": "Commands the toll-ships that close the inner channel of the Dun Sea when the king has been paid to close it.",
+        "portrait": "An orc man captain with a chain to drag across a channel.",
         "canon": "P"
       },
       {
@@ -2203,7 +2203,7 @@
         "traits": [
           "hill_fighter"
         ],
-        "role": "Leads the peninsula's warriors and has fought for and against both of the queen's best customers.",
+        "role": "Leads the peninsula's warriors and has fought for and against both of the crown's best customers.",
         "portrait": "A scarred orc in mixed armour from three holds.",
         "canon": "P"
       }
@@ -2248,10 +2248,10 @@
     "advisors": [
       {
         "id": "zin_britadon_mines",
-        "name": "Ghulga Ore-Wife, Mistress of the Iron Hills",
-        "given": "Ghulga",
-        "office": "Mistress of the Iron Hills",
-        "gender": "female",
+        "name": "Bord Ore-Husband, Master of the Iron Hills",
+        "given": "Bord",
+        "office": "Master of the Iron Hills",
+        "gender": "male",
         "people": "orcs",
         "born": 6774,
         "slot": "political_advisor",
@@ -2259,7 +2259,7 @@
           "zin_adv_road_warden"
         ],
         "role": "Runs the mines of the iron hills and the ore-roads to the coast.",
-        "portrait": "An orc woman with a pick and an ore-basket.",
+        "portrait": "An orc man with a pick and an ore-basket.",
         "canon": "P"
       },
       {
@@ -2298,10 +2298,10 @@
     "commanders": [
       {
         "id": "zin_britadon_headland",
-        "name": "Mogra of the Headland",
-        "given": "Mogra",
+        "name": "Bordesk of the Headland",
+        "given": "Bordesk",
         "office": "Captain of Beriath",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6779,
         "type": "corps_commander",
@@ -2316,7 +2316,7 @@
           "defensive_doctrine"
         ],
         "role": "Holds the headland hold of Beriath that Bredesk brought under Fontadon's iron.",
-        "portrait": "An orc woman in iron on a sea-cliff.",
+        "portrait": "An orc man in iron on a sea-cliff.",
         "canon": "P"
       },
       {
@@ -2383,18 +2383,18 @@
     "advisors": [
       {
         "id": "zin_wild_lands_charm",
-        "name": "Old Nagbol",
-        "given": "Nagbol",
-        "office": "Charm-Wife of the Moor",
-        "gender": "female",
+        "name": "Old Bord",
+        "given": "Bord",
+        "office": "Charm-Husband of the Moor",
+        "gender": "male",
         "people": "orcs",
         "born": 6754,
         "slot": "theorist",
         "traits": [
           "zin_adv_hedge_wise"
         ],
-        "role": "A charm-wife of the wild holds who finds lost beasts, reads the weather of the moor and buries the dead where nothing will dig them up.",
-        "portrait": "An ancient orc woman hung with charms of bone and feather.",
+        "role": "A charm-husband of the wild holds who finds lost beasts, reads the weather of the moor and buries the dead where nothing will dig them up.",
+        "portrait": "An ancient orc man hung with charms of bone and feather.",
         "canon": "P"
       },
       {
@@ -2415,10 +2415,10 @@
       },
       {
         "id": "zin_wild_lands_stores",
-        "name": "Burzga Winter-Store, Keeper of the Winter Stores",
-        "given": "Burzga",
+        "name": "Bordash Winter-Store, Keeper of the Winter Stores",
+        "given": "Bordash",
         "office": "Keeper of the Winter Stores",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6779,
         "slot": "political_advisor",
@@ -2426,7 +2426,7 @@
           "zin_adv_treasurer"
         ],
         "role": "Keeps the camp's winter stores, which decide who stays through the winter and so who holds the moor.",
-        "portrait": "A sharp orc woman guarding a pit of stores.",
+        "portrait": "A sharp orc man guarding a pit of stores.",
         "canon": "P"
       }
     ],
@@ -2456,10 +2456,10 @@
       },
       {
         "id": "zin_wild_lands_moor",
-        "name": "Rukhsha of the Moor",
-        "given": "Rukhsha",
+        "name": "Bordgor of the Moor",
+        "given": "Bordgor",
         "office": "Captain of the Moor Riders",
-        "gender": "female",
+        "gender": "male",
         "people": "orcs",
         "born": 6781,
         "type": "field_marshal",
@@ -2474,7 +2474,7 @@
           "cavalry_leader"
         ],
         "role": "Rides the moor on a shaggy wolf-horse and knows where every camp will be when the snow comes.",
-        "portrait": "An orc woman rider with a hide shield.",
+        "portrait": "An orc man rider with a hide shield.",
         "canon": "P"
       }
     ],

@@ -1,7 +1,7 @@
 {
- "source": "Names of other owners that the focus compiler may reference but cannot read from the staged files of earlier builder modules: patterns of name families (contract additions, Patterns) and the lists of decision E4 for allow_branch. A name a builder module writes is found by scanning the staged files and needs no entry. Add a name here only while its module does not exist yet; remove it when the module lands. <key> matches [a-z0-9_]+.",
- "scripted_effects": ["zin_politics_set_stance"],
- "scripted_triggers": [],
+ "source": "Names of other owners that the focus compiler may reference but cannot read from the staged files of earlier builder modules: patterns of name families (contract additions, Patterns) and the lists of decision E4 for allow_branch. A name a builder module writes is found by scanning the staged files and needs no entry. Add a name here only while its module does not exist yet; remove it when the module lands. The zin_deep_ names are written by modules/deep_past.mjs (K64) and stay listed because the focus tests compile the trees without the staged files. <key> matches [a-z0-9_]+.",
+ "scripted_effects": ["zin_politics_set_stance", "zin_deep_cord_gift_asked", "zin_deep_cords_counted", "zin_deep_diadem_fate", "zin_deep_glacier_road", "zin_deep_hide_last_cord", "zin_deep_keep_silence", "zin_deep_open_eldest_cairn", "zin_deep_open_ice", "zin_deep_open_kalioth", "zin_deep_open_sea_roads", "zin_deep_open_tide_chambers", "zin_deep_open_two_shores", "zin_deep_queens_rite", "zin_deep_read_door", "zin_deep_read_first_stair", "zin_deep_read_league_charts", "zin_deep_red_cords", "zin_deep_show_last_cord", "zin_deep_speak_count", "zin_deep_speak_river_names", "zin_deep_trace_ditches"],
+ "scripted_triggers": ["zin_deep_cairn_oath_kept", "zin_deep_halls_opened", "zin_deep_holds_hearth_stone", "zin_deep_two_counts_done"],
  "events": [],
  "namespaces": [],
  "ideas": [],
@@ -9,8 +9,8 @@
  "opinion_modifiers": [],
  "sub_units": [],
  "characters": [],
- "flags": [],
- "global_flags": [],
+ "flags": ["zin_deep_keeps_tide"],
+ "global_flags": ["zin_deep_cord_burned", "zin_golden_king_exiled"],
  "faction_templates": [],
  "patterns": {
   "flags": ["zin_people_<key>", "zin_people_minor_<key>", "zin_region_<key>"],

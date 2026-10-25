@@ -1,7 +1,7 @@
 # K62: the fallen great realms of Aoaz
 
 **Status:** Proposal for the owner, written on 25 October 2026 by the improvement-loop planner under owner decision K62. Nothing in this file is canon until the owner adopts it.
-**Disposition:** open. It waits for the owner's answers to section 8, and section 9 says how the lead promotes the adopted parts.
+**Disposition:** implemented with evidence (owner decision K64 of 25 October 2026). The lore is promoted to `docs/specs/02_lore/10_fallen_realms.md`, the vault notes under `docs/lore/vault/07 - History/` and the regional dossiers; the play to `docs/specs/04_mechanics/deep_past.md`, the site rows of `docs/specs/01_map/02_key_sites.md`, the focus tree spec pages, the technology specs and the asset inventory; the evidence, the gaps and the open points are in `k64_implementation_handoff.md`; the islet is a map request (`map_islet_request.md`). This file is superseded by those documents and stays as the record of the proposal.
 **Basis:** K62 (deep history), L1 to L3 (lore expansion labelled as proposal, the storyline as the historical direction), K8 (layered mystery), K14 and K27 (original names, no "-waith" names), K25 (the burning lands stay off the map), K51, K57 and K58 (the technology tree), K52, K60 and K61 (super events and who hears of what), K53 (flags), K33 (voice of the text), K50 (image model).
 **Labels:** **E** established in the vault, **P** proposed (here or in an earlier proposal that this file builds on), **O** open in canon and left open. Knowledge layers follow `docs/lore/references/knowledge_layers.md`: sealed, gated, belief, disputed, mystery.
 

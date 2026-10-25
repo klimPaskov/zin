@@ -725,6 +725,36 @@
       "ai": {"base":15},
       "filters": ["stability"],
       "effects": [{"stability":0.05}]
+    },
+    {
+      "key": "the_square_belongs_to_nobody",
+      "name": "The Square Belongs to Nobody",
+      "desc": "Benan has held the Cursed Square in name since anyone can remember, and no captain of Benan has ever sailed into it, whatever the prize. The captains say it can stay that way, and no Charter gold will change their minds.",
+      "icon": "black_hulls",
+      "x": 18,
+      "y": 3,
+      "days": 70,
+      "prerequisite": [["the_chart_makers_guild"]],
+      "mutually_exclusive": ["sell_the_square"],
+      "allow_branch": [{"country":"Benan"}],
+      "ai": {"base":20},
+      "filters": ["political"],
+      "effects": [{"flag":"zin_deep_square_nobodys"},{"war_support":0.03}]
+    },
+    {
+      "key": "sell_the_square",
+      "name": "Sell the Square",
+      "desc": "A harbour nobody uses is worth exactly what someone will pay for it, and the Charter has begun to ask. The captains of Benan open their ledgers and name a price with a straight face.",
+      "icon": "bracelet_seal",
+      "x": 20,
+      "y": 3,
+      "days": 70,
+      "prerequisite": [["the_chart_makers_guild"]],
+      "mutually_exclusive": ["the_square_belongs_to_nobody"],
+      "allow_branch": [{"country":"Benan"}],
+      "ai": {"base":10},
+      "filters": ["political"],
+      "effects": [{"flag":"zin_deep_square_for_sale"},{"political_power":50}]
     }
   ]
 }

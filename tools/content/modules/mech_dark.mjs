@@ -26,7 +26,7 @@ export const DARK_SPEC = 'docs/specs/04_mechanics/dark_lands.md';
 
 export const BLOCS = [
   { key: 'volcano', code: 1, variable: 'zin_goldoroth_favour_volcano', chief: 'zin_goldoroth_sungor', boon: 'zin_dark_boon_volcano', sulk: 'zin_dark_sulk_volcano' },
-  { key: 'iron', code: 2, variable: 'zin_goldoroth_favour_iron', chief: 'zin_goldoroth_ulgra', boon: 'zin_dark_boon_iron', sulk: 'zin_dark_sulk_iron' },
+  { key: 'iron', code: 2, variable: 'zin_goldoroth_favour_iron', chief: 'zin_goldoroth_bord', boon: 'zin_dark_boon_iron', sulk: 'zin_dark_sulk_iron' },
   { key: 'war', code: 3, variable: 'zin_goldoroth_favour_war', chief: 'zin_goldoroth_britag', boon: 'zin_dark_boon_war', sulk: 'zin_dark_sulk_war' },
   { key: 'warrens', code: 4, variable: 'zin_goldoroth_favour_warrens', chief: 'zin_goldoroth_snikkit', boon: 'zin_dark_boon_warrens', sulk: 'zin_dark_sulk_warrens' },
 ];

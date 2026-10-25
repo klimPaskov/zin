@@ -146,7 +146,7 @@ The contract assigns `zin_war_of_last_crowns` to world systems. Event `zin_world
 
 | Rule (`zin_rule_historical_path`) | When |
 | --- | --- |
-| `HISTORICAL` | 1 Rainwake 4A 1755 (`1755.4.1`), moved by the story pace: start + (date - start) × `zin_story_pace` (V4; see [06_historical_path_and_ai.md](06_historical_path_and_ai.md)) |
+| `HISTORICAL` | 1 Rainwake 4A 1755 (`1755.4.1`), moved by the story pace: start + (date - start) × `zin_story_pace` (V4; see [06_historical_path_and_ai.md](06_historical_path_and_ai.md)); or earlier, piecemeal, when a front that a player's realm opens is open (owner answer Q-80, K59: `zin_world_player_front_open`, the openers of `data/world_tension.json` `war.playerFronts`); the AI's fronts keep the date |
 | `PLAUSIBLE` | The first of: the meter ≥ 65 after 1 Thaw 4A 1754; a dark power (`zin_diplo_is_dark_power`) at war with a major that is not a dark power; 1 Thaw 4A 1756 (both dates moved by the story pace, R2) |
 | `FREE` | The first of the first two conditions above; no date |
 
@@ -172,7 +172,7 @@ On 1 Deepwinter 4A 1762 (`1762.1.1` at the standard pace; like every date here i
 
 | # | Outcome | Key, flag | Holds when |
 | --- | --- | --- | --- |
-| 4 | **The Golden Court Endures** | `golden_court`, `zin_ending_golden_court` | `zin_golden_king_dead` not set (the Aenor spec's `zin_golden_king_survives`, or the Afrit spec's Kingdom Behind the Throne with the King alive) |
+| 4 | **The Golden Court Endures** | `golden_court`, `zin_ending_golden_court` | `zin_golden_king_dead` not set (the Aenor spec's `zin_golden_king_survives`, or the Afrit spec's Kingdom Behind the Throne with the King alive); a surviving King may die of old age before the judgement (owner answer Q-86, K59: `zin_golden_king_old_age`), and the outcome then holds only through the Regency of Gold (owner, 25 October 2026) |
 | 5 | **A Western Crown in Parim** | `western_crown`, `zin_ending_western_crown` | `zin_west_holds_parim` (Western Crossing spec) |
 | 6 | **Master of the Strait** | `strait_master`, `zin_ending_strait_master` | `zin_leren_strait_supremacy` and `zin_leren_holds_strait` (Lerendor spec) |
 | 7 | **One King in the East** | `eastern_king`, `zin_ending_eastern_king` | `zin_east_united` (eastern kings spec), and `zin_afrit_dead` or `zin_afrit_king_of_east` never set |

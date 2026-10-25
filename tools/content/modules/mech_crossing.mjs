@@ -219,6 +219,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
       L('for_loop_effect', 'end = zin_arg_value', `create_unit = { division = "name = \\"Crossing Host\\" division_template = \\"${tpl.name}\\" start_experience_factor = 0.4 start_equipment_factor = 0.8" owner = THIS prioritize_location = ${prov} allow_spawning_on_enemy_provs = yes }`))),
     'set_temp_variable = { zin_arg_value = 0 }');
   dep('zin_war_of_last_crowns', 'global flag', 'world systems');
+  dep('zin_deep_crossing_banks', 'effect', 'the deep past (modules/deep_past.mjs, K64)');
   E('zin_west_sail',
     '# One sailing (zin_arg_sailing 1 or 2); the scope is the leader.',
     'zin_west_pick_landing = yes',
@@ -227,6 +228,8 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     L('if', 'limit = { zin_controls_sea_central_for_foe = yes }',
       'set_temp_variable = { west_loss = west_lift }', 'divide_temp_variable = { west_loss = 4 }', 'round_temp_variable = west_loss', 'subtract_from_temp_variable = { west_lift = west_loss }',
       `set_temp_variable = { zin_arg_value = -${C.storm_fleet_loss} }`, 'zin_west_add_fleet = yes', 'country_event = { id = zin_west.44 }'),
+    // the deep past (K64): a defender that has charted the low fields grounds a share of the first sailing for Aenor Isle on the banks
+    L('if', `limit = { check_variable = { global.zin_west_landing_state = ${geo.isle[0].id} } }`, 'zin_deep_crossing_banks = yes'),
     ...[...geo.shore.map(s => s.id), ...geo.isle.map(s => s.id)].map(id => L('if', `limit = { check_variable = { global.zin_west_landing_state = ${id} } }`,
       L(`${id}`, L('if', 'limit = { NOT = { controller = { zin_west_in_crossing = yes } } }', 'teleport_armies = { limit = { zin_west_in_crossing = no } }', 'set_state_controller_to = PREV', 'set_state_flag = zin_west_beachhead')))),
     L('every_country', 'limit = { has_country_flag = zin_west_pledged check_variable = { zin_west_pledge > 0 } }',

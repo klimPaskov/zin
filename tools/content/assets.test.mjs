@@ -397,6 +397,16 @@ test('Negative: a generation that references a path outside art/source is PROV_R
   assert.equal(find(run(swap('C:/work/.tmp/zin-art/raw/flags/x.png')), 'PROV_REF_OUTSIDE').length, 0);
 });
 
+test('Owner drawings are cited by logical id: a stem named by a transcription card is accepted, any other is PROV_REF_UNKNOWN_DRAWING', () => {
+  const sha = t => sha256(t.read('art/source/events/one.png'));
+  const swap = ref => t => t.edit('art/source/provenance.jsonl', s => s.replace(`"references":[],"prompt":"synthetic test picture","sha256":"${sha(t)}`, `"references":[${JSON.stringify(ref)}],"prompt":"synthetic test picture","sha256":"${sha(t)}`));
+  const listed = run(swap('owner-drawing:IMG_20261023_113707'));
+  assert.equal(find(listed, 'PROV_REF_OUTSIDE').length, 0);
+  assert.equal(find(listed, 'PROV_REF_UNKNOWN_DRAWING').length, 0);
+  assert.equal(find(run(swap('owner-drawing:IMG_20261023_114713_1')), 'PROV_REF_UNKNOWN_DRAWING').length, 0);
+  assert.equal(find(run(swap('owner-drawing:IMG_20269999_000001')), 'PROV_REF_UNKNOWN_DRAWING').length, 1);
+});
+
 test('Negative: a shipped file equal to an installed game file is VANILLA_COPY, under any name', () => {
   const stolen = run(t => t.put('gfx/interface/ideas/zin/stolen.dds', fs.readFileSync(path.join(t.game, 'gfx/interface/vanilla_icon.dds'))));
   const f = find(stolen, 'VANILLA_COPY', 'stolen.dds');
@@ -559,6 +569,7 @@ test('Portrait plan: every roster character is named, pooled or held exactly onc
   // A held character with a fallback pool is listed in that pool too; only the held entries are counted here.
   const planned = [...plan.named.map(n => n.id), ...(plan.emblems ?? []).flatMap(e => e.characters), ...plan.pools.flatMap(p => p.characters.map(c => c.id)), ...plan.held.filter(h => h.status === 'held').flatMap(h => h.characters.map(c => c.id))];
   assert.equal(new Set(planned).size, planned.length, 'no character is planned twice');
+  // Every roster character, the pre-built heirs of data/world/heirs.json included, is planned in a pool or as a named or held portrait.
   assert.deepEqual(roster.filter(id => !planned.includes(id)), [], 'every roster character is planned');
   // A mechanic figure (Kusven, recruited by the Zol slice) is planned here but not on the roster.
   const mechanic = plan.named.filter(n => n.mechanic).map(n => n.id);
@@ -599,8 +610,8 @@ test('Portrait assignment: named figures keep their own portrait, pool character
     const served = p.characters.length, allowance = Math.min(P.SERVE_CAP, Math.ceil(served / p.size) + 1);
     for (const m of p.members) assert.ok((uses.get(m.sprite) ?? 0) <= allowance, `${m.sprite} serves at most ${allowance}`);
   }
-  // The owner-pending figures keep the pool portrait until the owner decides (owner question Q-32).
-  for (const id of ['zin_horos', 'zin_varner', 'zin_golbran', 'zin_aurevan']) assert.ok(!plan.named.some(n => n.id === id) && assigned.get(id).startsWith('GFX_zin_portrait_'), id);
+  // Horos is story only (K56) and keeps his pool portrait; Varner, Golbran and Aurevan are owner-approved (K43, K44; Q-32).
+  for (const id of ['zin_horos']) assert.ok(!plan.named.some(n => n.id === id) && assigned.get(id).startsWith('GFX_zin_portrait_'), id);
   assert.ok(!plan.named.some(n => n.id === 'zin_eindil'), 'Eindil has no named portrait yet');
   for (const ids of [plan.ownerPending.map(o => o.id)]) assert.equal(ids.length, 5);
 });

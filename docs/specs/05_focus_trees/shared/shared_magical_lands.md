@@ -273,6 +273,18 @@ Event 3 cannot use the requested `rift_sails` picture: it is gated on `zin_easte
 
 The mechanic's events also reach these realms: `zin_elves.9` (The New King's Customs, wall realms), `.31` (the Kindred), `.41` (the passes lost), `.51` (the wizard is gone), `.60` (the temple in the hills, after the reveal), `.70` and `.73` (the eastern invasion and its end).
 
+## Deep past branch (K64): Ferries over the Drowned Road
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `none (a root for Luv-zhise)`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+Placed as a root at row 5 because the rift-coast branch (M7) is gated on `zin_elves_is_rift_realm`, whose site trigger is still a pending stand-in.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `ferries_over_the_drowned_road` | Ferries over the Drowned Road | `river_ford` | — | — | 27,5 | 70 | Branch: country `Luv-zhise` | call `zin_deep_open_two_shores`; flag `zin_deep_ferry_leave`; pp 25 | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ## Implementation
 
 ### Builder

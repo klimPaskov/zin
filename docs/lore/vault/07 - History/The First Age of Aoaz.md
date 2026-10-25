@@ -202,6 +202,8 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 [[Aen]] · [[Battle of Dardan]] · [[Grand Alliance]] · [[Lorien]] · [[Elzon]] · [[Ages of Aoaz]] · [[Timeline]] · [[The Ainu]] · [[Eindil]] · [[Middle Lands and Aenor]] · [[Volgan]] · [[Damned Spirits]] · [[Fourth Age Map of Aoaz]]
 
+Deep history before Aen and in the First Age's realms: [[Rhabtarkia, the Kalioth Crown]] (the Kalioth host at Dardan), [[Gromatrak, the Stone Road]] (the dwarves' roads and the Letting-In), and [[Margorodai, the Sea-Roads]] (the league's supply fleets), all owner-adopted on 25 October 2026 (decision K64).
+
 ## Retrospective revelation: Afrit's hidden role
 
 **Established later in the owner's Second Age account:** [[Afrit]] played a significant but unrecognized part in Volgan's First Age defeat by assembling demons, spirits, men, and elves against him. His motive was to weaken both Volgan and the survivors so that he could rise in the Second Age. This adds a covert layer to the Grand Alliance's victory without replacing its established military and spiritual achievements. How he concealed his alliances and how much the principal commanders suspected are undecided.

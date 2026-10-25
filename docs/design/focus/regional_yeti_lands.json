@@ -49,7 +49,7 @@
     {"key":"the_storm_walks_south","name":"The Storm Walks South","desc":"A storm band leaves the snow, white against the grey of the lowland spring. Behind it walk a hundred more, in single file, tracking the dead across the plains.","icon":"lone_sword","x":11,"y":8,"days":35,"prerequisite":[["hunters_against_the_dead"]],"available":[{"global_flag":"zin_eindil_returned"},{"check":"zin_eindil_friend"}],"ai":{"base":100},"filters":["political"],"effects":[{"call":"zin_eindil_aid_host","args":{"manpower":1000,"equipment":300,"type":2}},{"call":"zin_eindil_join_coalition"}]}
   ],
   "scripted_effects": {
-    "zin_regional_yeti_lands_recruit_sima": {"effects":[{"raw":"recruit_character = zin_regional_yeti_lands_sima"}]},
+    "zin_regional_yeti_lands_recruit_sima": {"effects":[{"raw":"recruit_character = zin_regional_yeti_lands_garam"}]},
     "zin_regional_yeti_lands_recruit_oruk": {"effects":[{"raw":"recruit_character = zin_regional_yeti_lands_oruk"}]}
   },
   "scripted_triggers": {

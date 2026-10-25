@@ -78,7 +78,7 @@ On 1 Thaw 4A 1748 every available focus concerns the court, the Mirror, ships, e
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `mirror_of_first_rain` | The Mirror of First Rain | – | – | 5,0 | 70 | event zin_gala.3; flag zin_gala_mirror_open (decision Look Into the Mirror) | 40 |
-| `keeper_of_mirror` | The Keeper of the Mirror | mirror_of_first_rain | – | 4,1 | 35 | call zin_gala_recruit(zin_gala_heveneya); clarity +10 | 20 |
+| `keeper_of_mirror` | The Keeper of the Mirror | mirror_of_first_rain | – | 4,1 | 35 | call zin_gala_recruit(zin_gala_caleon); clarity +10 | 20 |
 | `courtyard_of_rain` | The Courtyard of Rain | mirror_of_first_rain | – | 6,1 | 70 | clarity +15; stability 0.02 | 15 |
 | `true_traces` | Reading True Traces | keeper_of_mirror | – | 4,2 | 70 | flag zin_gala_true_traces (a vision costs 10 clarity less) | 15 |
 | `uncertain_futures` | Uncertain Futures | courtyard_of_rain | – | 6,2 | 35 | event zin_gala.4; flag zin_gala_cautious_seers (fear chance of a warning 10 instead of 20) | 15 |
@@ -241,7 +241,7 @@ All are country flags on the Gala Elves.
 
 | Name | Does |
 | --- | --- |
-| `zin_gala_recruit` (`character`) | `recruit_character` for `zin_gala_heveneya`, `zin_gala_sulestien` or `zin_gala_tangsiel`; no-op if already recruited |
+| `zin_gala_recruit` (`character`) | `recruit_character` for `zin_gala_caleon`, `zin_gala_sulestien` or `zin_gala_tangsiel`; no-op if already recruited |
 | `zin_gala_islands_goodwill` | `zin_elves_goodwill` with every Islands of the South country that has a coast |
 | `zin_gala_neighbour_goodwill` | `zin_elves_goodwill` with every Sunhot realm that borders the Gala Elves |
 | `zin_gala_sunhot_goodwill` | `zin_elves_goodwill` with The Lands of Light and the five tier B Sunhot realms |
@@ -249,7 +249,7 @@ All are country flags on the Gala Elves.
 
 ### Characters
 
-All from the characters spec, none new: `zin_lorien` (country leader, `zin_trait_memory_of_dardan`), `zin_gala_heveneya` (Keeper of the Mirror, theorist), `zin_gala_sulestien` (Master of the King's Ships, navy leader), `zin_gala_tangsiel` (Sunward Guard, corps commander). Status of the three officers: proposed.
+All from the characters spec, none new: `zin_lorien` (country leader, `zin_trait_memory_of_dardan`), `zin_gala_caleon` (Keeper of the Mirror, theorist), `zin_gala_sulestien` (Master of the King's Ships, navy leader), `zin_gala_tangsiel` (Sunward Guard, corps commander). Status of the three officers: proposed.
 
 ### Spirits
 

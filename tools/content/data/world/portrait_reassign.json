@@ -1,145 +1,5 @@
 [
  {
-  "op": "move",
-  "from": "girdon_wardens.men.female",
-  "source": "art/source/portraits/pool/men_female_s03.png",
-  "cell": 0,
-  "to": "girdon_wardens.men.male"
- },
- {
-  "op": "remove",
-  "pool": "isle_houses.men.female",
-  "source": "art/source/portraits/pool/men_female_s03.png",
-  "cell": 1,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "move",
-  "from": "chart_islanders.men.male",
-  "source": "art/source/portraits/pool/men_male_s06.png",
-  "cell": 0,
-  "to": "chart_islanders.men.female"
- },
- {
-  "op": "remove",
-  "pool": "quay_folk.men.male",
-  "source": "art/source/portraits/pool/men_male_s10.png",
-  "cell": 1,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "remove",
-  "pool": "kingdom_forest_elves.elves.male",
-  "source": "art/source/portraits/pool/elves_male_s01.png",
-  "cell": 1,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "remove",
-  "pool": "sunhot_light.sun_elves.male",
-  "source": "art/source/portraits/pool/sun_elves_male_s01.png",
-  "cell": 1,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "move",
-  "from": "sunhot_western.sun_elves.male",
-  "source": "art/source/portraits/pool/sun_elves_male_s02.png",
-  "cell": 0,
-  "to": "sunhot_western.sun_elves.female"
- },
- {
-  "op": "move",
-  "from": "sunhot_western.sun_elves.male",
-  "source": "art/source/portraits/pool/sun_elves_male_s02.png",
-  "cell": 3,
-  "to": "sunhot_western.sun_elves.female"
- },
- {
-  "op": "move",
-  "from": "volcano_clans.orcs.male",
-  "source": "art/source/portraits/tranche2/tranche2_s011.png",
-  "cell": 2,
-  "to": "volcano_clans.orcs.female"
- },
- {
-  "op": "remove",
-  "pool": "forest_council_elves.elves.male",
-  "source": "art/source/portraits/tranche2/tranche2_s024.png",
-  "cell": 1,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "remove",
-  "pool": "forest_council_elves.elves.male",
-  "source": "art/source/portraits/tranche2/tranche2_s025.png",
-  "cell": 0,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "remove",
-  "pool": "gala_court.elves.male",
-  "source": "art/source/portraits/tranche2/tranche2_s025.png",
-  "cell": 2,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "move",
-  "from": "dondor_brutes.men.female",
-  "source": "art/source/portraits/tranche2/tranche2_s045.png",
-  "cell": 0,
-  "to": "dondor_brutes.men.male"
- },
- {
-  "op": "remove",
-  "pool": "goblin_warrens.goblins.male",
-  "source": "art/source/portraits/tranche2/tranche2_s047.png",
-  "cell": 2,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "move",
-  "from": "iron_clans.orcs.male",
-  "source": "art/source/portraits/tranche2/tranche2_s053.png",
-  "cell": 0,
-  "to": "iron_clans.orcs.female"
- },
- {
-  "op": "remove",
-  "pool": "hill_kingdom_elves.elves.male",
-  "source": "art/source/portraits/tranche2/tranche2_s071.png",
-  "cell": 3,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "remove",
-  "pool": "holt_gnomes.gnomes.female",
-  "source": "art/source/portraits/tranche2/tranche2_s072.png",
-  "cell": 2,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "remove",
-  "pool": "holt_gnomes.gnomes.female",
-  "source": "art/source/portraits/tranche2/tranche2_s072.png",
-  "cell": 3,
-  "note": "wrong-sex cell with no other-sex room"
- },
- {
-  "op": "move",
-  "from": "rift_coast_elves.elves.male",
-  "source": "art/source/portraits/tranche2/tranche2_s087.png",
-  "cell": 2,
-  "to": "rift_coast_elves.elves.female"
- },
- {
-  "op": "move",
-  "from": "rift_coast_elves.elves.male",
-  "source": "art/source/portraits/tranche2/tranche2_s087.png",
-  "cell": 3,
-  "to": "rift_coast_elves.elves.female"
- },
- {
   "op": "remap",
   "source": "art/source/portraits/tranche2/tranche2_s049.png",
   "to": "art/source/portraits/tranche4/tranche2_s049_r2.png"
@@ -160,186 +20,4420 @@
   "to": "art/source/portraits/tranche4/tranche2_s118.png"
  },
  {
-  "op": "remove",
-  "pool": "hearth_folk.small_folk.male",
-  "source": "art/source/portraits/tranche4/tranche2_s049_r2.png",
-  "cell": 3
- },
- {
   "op": "add",
-  "pool": "hearth_folk.small_folk.male",
-  "source": "art/source/portraits/tranche4/hearth_male_r6.png",
+  "pool": "baelim.tree_people.none",
+  "source": "art/source/portraits/v2/v2_tree_people_001.png",
   "cell": 0,
-  "origin": "round 6 replacement for the removed wrong-sex cell"
+  "origin": "v2 pool"
  },
  {
   "op": "add",
-  "pool": "dondor_brutes.men.female",
-  "source": "art/source/portraits/tranche4/dondor_brutes_men_female.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "forest_council_elves.elves.male",
-  "source": "art/source/portraits/tranche4/forest_council_elves_elves_male.png",
+  "pool": "baelim.tree_people.none",
+  "source": "art/source/portraits/v2/v2_tree_people_001.png",
   "cell": 1,
-  "origin": "round 5 wrong-sex replacement"
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_002.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_002.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v2/v2_giants_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
  },
  {
   "op": "add",
   "pool": "forest_council_elves.elves.male",
-  "source": "art/source/portraits/tranche4/forest_council_elves_elves_male.png",
-  "cell": 3,
-  "origin": "round 5 wrong-sex replacement"
+  "source": "art/source/portraits/v2/v2_elves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
  },
  {
   "op": "add",
   "pool": "gala_court.elves.male",
-  "source": "art/source/portraits/tranche4/gala_court_elves_male.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
+  "source": "art/source/portraits/v2/v2_elves_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
  },
  {
   "op": "add",
-  "pool": "girdon_wardens.men.female",
-  "source": "art/source/portraits/tranche4/girdon_wardens_men_female.png",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_002.png",
   "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
+  "origin": "v2 held group"
  },
  {
   "op": "add",
-  "pool": "goblin_warrens.goblins.male",
-  "source": "art/source/portraits/tranche4/goblin_warrens_goblins_male.png",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_002.png",
   "cell": 1,
-  "origin": "round 5 wrong-sex replacement"
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "god_forest_keepers.elves.none",
+  "source": "art/source/portraits/v2/v2_elves_002.png",
+  "cell": 2,
+  "origin": "v2 held group"
  },
  {
   "op": "add",
   "pool": "hill_kingdom_elves.elves.male",
-  "source": "art/source/portraits/tranche4/hill_kingdom_elves_elves_male.png",
+  "source": "art/source/portraits/v2/v2_elves_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_003.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.female",
+  "source": "art/source/portraits/v2/v2_elves_003.png",
   "cell": 1,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "holt_gnomes.gnomes.female",
-  "source": "art/source/portraits/tranche4/holt_gnomes_gnomes_female.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "holt_gnomes.gnomes.female",
-  "source": "art/source/portraits/tranche4/holt_gnomes_gnomes_female.png",
-  "cell": 2,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "isle_houses.men.female",
-  "source": "art/source/portraits/tranche4/isle_houses_men_female.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
+  "origin": "v2 pool"
  },
  {
   "op": "add",
   "pool": "kingdom_forest_elves.elves.male",
-  "source": "art/source/portraits/tranche4/kingdom_forest_elves_elves_male.png",
-  "cell": 1,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "quay_folk.men.male",
-  "source": "art/source/portraits/tranche4/quay_folk_men_male.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "rift_coast_elves.elves.male",
-  "source": "art/source/portraits/tranche4/rift_coast_elves_elves_male.png",
-  "cell": 1,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "rift_coast_elves.elves.male",
-  "source": "art/source/portraits/tranche4/rift_coast_elves_elves_male.png",
-  "cell": 3,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "sunhot_light.sun_elves.male",
-  "source": "art/source/portraits/tranche4/sunhot_light_sun_elves_male.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "sunhot_western.sun_elves.male",
-  "source": "art/source/portraits/tranche4/sunhot_western_sun_elves_male.png",
-  "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
- },
- {
-  "op": "add",
-  "pool": "sunhot_western.sun_elves.male",
-  "source": "art/source/portraits/tranche4/sunhot_western_sun_elves_male.png",
+  "source": "art/source/portraits/v2/v2_elves_003.png",
   "cell": 2,
-  "origin": "round 5 wrong-sex replacement"
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_003.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_004.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_004.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_004.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_004.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.elves.female",
+  "source": "art/source/portraits/v2/v2_elves_005.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_005.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_005.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_005.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_006.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_006.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v2/v2_elves_006.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.spirits.male",
+  "source": "art/source/portraits/v2/v2_spirits_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.spirits.male",
+  "source": "art/source/portraits/v2/v2_spirits_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.goblins.female",
+  "source": "art/source/portraits/v2/v2_goblins_001.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_002.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_002.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.goblins.male",
+  "source": "art/source/portraits/v2/v2_goblins_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.hobgoblins.male",
+  "source": "art/source/portraits/v2/v2_hobgoblins_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.hobgoblins.male",
+  "source": "art/source/portraits/v2/v2_hobgoblins_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.hobgoblins.male",
+  "source": "art/source/portraits/v2/v2_hobgoblins_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.ogres.male",
+  "source": "art/source/portraits/v2/v2_ogres_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.ogres.male",
+  "source": "art/source/portraits/v2/v2_ogres_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.ogres.male",
+  "source": "art/source/portraits/v2/v2_ogres_001.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_001.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_002.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_003.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_004.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_004.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_004.png",
+  "cell": 2,
+  "origin": "v2 held group"
  },
  {
   "op": "add",
   "pool": "volcano_clans.orcs.male",
-  "source": "art/source/portraits/tranche4/volcano_clans_orcs_male.png",
+  "source": "art/source/portraits/v2/v2_orcs_004.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_005.png",
   "cell": 0,
-  "origin": "round 5 wrong-sex replacement"
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_005.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_005.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_005.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_006.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_006.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_006.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v2/v2_orcs_006.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.the_dead.male",
+  "source": "art/source/portraits/v2/v2_the_dead_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.the_dead.male",
+  "source": "art/source/portraits/v2/v2_the_dead_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v2/v2_small_folk_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v2/v2_small_folk_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v2/v2_small_folk_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v2/v2_yeti_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v2/v2_yeti_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v2/v2_yeti_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v2/v2_yeti_001.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v2/v2_yeti_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v2/v2_gnomes_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v2/v2_gnomes_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_001.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_002.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_003.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v2/v2_dwarves_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.ents.none",
+  "source": "art/source/portraits/v2/v2_ents_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "nether_houses.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "nether_houses.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.female",
+  "source": "art/source/portraits/v2/v2_demons_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_002.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.demons.male",
+  "source": "art/source/portraits/v2/v2_demons_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v2/v2_dwarf_goblins_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v2/v2_dwarf_goblins_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_001.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_002.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_002.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/v2/v2_sun_elves_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v2/v2_trolls_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v2/v2_trolls_001.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v2/v2_trolls_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mycid_rings.mycids.none",
+  "source": "art/source/portraits/v2/v2_mycids_001.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "baelim.men.female",
+  "source": "art/source/portraits/v2/v2h_men_001.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v2/v2h_men_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v2/v2h_men_001.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.female",
+  "source": "art/source/portraits/v2/v2h_men_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_003.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_004.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_004.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_004.png",
+  "cell": 2,
+  "origin": "v2 held group"
  },
  {
   "op": "add",
   "pool": "chart_islanders.men.male",
-  "source": "art/source/portraits/tranche4/chart_islanders_men_male.png",
-  "cell": 0,
-  "origin": "round 7 replacement for the moved woman cell"
- },
- {
-  "op": "remove",
-  "pool": "troll_tribes.trolls.female",
-  "source": "art/source/portraits/tranche2/tranche2_s124.png",
-  "cell": 0
+  "source": "art/source/portraits/v2/v2h_men_004.png",
+  "cell": 3,
+  "origin": "v2 pool"
  },
  {
   "op": "add",
-  "pool": "troll_tribes.trolls.female",
-  "source": "art/source/portraits/tranche4/tranche2_s124_r8.png",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_005.png",
   "cell": 0,
-  "origin": "round 8 replacement (troll woman)"
- },
- {
-  "op": "remove",
-  "pool": "veshazel_court.men.male",
-  "source": "art/source/portraits/tranche2/tranche2_s124.png",
-  "cell": 1
+  "origin": "v2 pool"
  },
  {
   "op": "add",
-  "pool": "veshazel_court.men.male",
-  "source": "art/source/portraits/tranche4/tranche2_s124_r8.png",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_005.png",
   "cell": 1,
-  "origin": "round 8 replacement (courtier)"
+  "origin": "v2 pool"
  },
  {
-  "op": "crop",
-  "id": "NET_zin_ruler",
-  "crop": {
-   "x0": 255,
-   "y0": 0,
-   "x1": 1190,
-   "y1": 1086,
-   "fit": "contain"
-  }
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_005.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_005.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_006.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_006.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_006.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_006.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_007.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_007.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_007.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_007.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_008.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_008.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_008.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_008.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_009.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "corsair_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_009.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_009.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_009.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_010.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_010.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_010.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_010.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_011.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_011.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_011.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_011.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_012.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_012.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_012.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_012.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_013.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_013.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_013.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_013.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_014.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_014.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "free_crowns_north.men.male",
+  "source": "art/source/portraits/v2/v2h_men_014.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v2/v2h_men_014.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v2/v2h_men_015.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v2/v2h_men_015.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_015.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_015.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_016.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_016.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_016.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_016.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_017.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_017.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_017.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_017.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_018.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_018.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_018.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.men.male",
+  "source": "art/source/portraits/v2/v2h_men_018.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_019.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_019.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_019.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_019.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_020.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_020.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_020.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_020.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_021.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_021.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_021.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_021.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_022.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_022.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_022.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_022.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_023.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_023.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.none",
+  "source": "art/source/portraits/v2/v2h_men_023.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v2/v2h_men_023.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v2/v2h_men_024.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.men.male",
+  "source": "art/source/portraits/v2/v2h_men_024.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.men.male",
+  "source": "art/source/portraits/v2/v2h_men_024.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_024.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_025.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_025.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_025.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_025.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_026.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_026.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v2/v2h_men_026.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v2/v2h_men_026.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v2/v2h_men_027.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v2/v2h_men_027.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v2/v2h_men_027.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v2/v2h_men_027.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_028.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_028.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_028.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_028.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_029.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_029.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_029.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_029.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_030.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_030.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_030.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_030.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_031.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_031.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_031.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_031.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v2/v2h_men_032.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.female",
+  "source": "art/source/portraits/v2/v2h_men_032.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v2/v2h_men_032.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v2/v2h_men_032.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v2/v2h_men_033.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.female",
+  "source": "art/source/portraits/v2/v2h_men_033.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.male",
+  "source": "art/source/portraits/v2/v2h_men_033.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.male",
+  "source": "art/source/portraits/v2/v2h_men_033.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_034.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_034.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_034.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_034.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_035.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_035.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_035.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_035.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_036.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_036.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_036.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_036.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v2/v2h_men_037.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_037.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v2/v2h_men_037.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_037.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_038.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_038.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_038.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_038.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_039.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "river_kings.men.male",
+  "source": "art/source/portraits/v2/v2h_men_039.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v2/v2h_men_039.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v2/v2h_men_039.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_040.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_040.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_040.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_040.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_041.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_041.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_041.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_041.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_042.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_042.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_042.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_042.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_043.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v2/v2h_men_043.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v2/v2h_men_043.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v2/v2h_men_043.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v2/v2h_men_044.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v2/v2h_men_044.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_044.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_044.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_045.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.men.male",
+  "source": "art/source/portraits/v2/v2h_men_045.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.men.female",
+  "source": "art/source/portraits/v2/v2h_men_045.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.men.male",
+  "source": "art/source/portraits/v2/v2h_men_045.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.men.male",
+  "source": "art/source/portraits/v2/v2h_men_046.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_046.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_046.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_046.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_047.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_047.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_047.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.female",
+  "source": "art/source/portraits/v2/v2h_men_047.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_048.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_048.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.men.male",
+  "source": "art/source/portraits/v2/v2h_men_048.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_048.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_049.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_049.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_049.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_049.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v2/v2h_men_050.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_050.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_050.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_050.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_051.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v2/v2h_men_051.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.unknown.male",
+  "source": "art/source/portraits/v2/v2h_men_051.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v2/v2h_men_051.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v2/v2h_men_052.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v2/v2h_men_052.png",
+  "cell": 1,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v2/v2h_men_052.png",
+  "cell": 2,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_052.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v2/v2h_men_053.png",
+  "cell": 0,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v2/v2h_men_053.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v2/v2h_men_053.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v2/v2h_men_053.png",
+  "cell": 3,
+  "origin": "v2 held group"
+ },
+ {
+  "op": "add",
+  "pool": "caravan_princes.men.male",
+  "source": "art/source/portraits/v3/v3_men_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/v3/v3_men_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v3/v3_men_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v3/v3_men_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_clans.men.male",
+  "source": "art/source/portraits/v3/v3_men_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v3/v3_men_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v3/v3_men_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v3/v3_men_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "southern_islanders.men.male",
+  "source": "art/source/portraits/v3/v3_men_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v3/v3_men_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v3/v3_small_folk_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "iron_clans.orcs.male",
+  "source": "art/source/portraits/v3/v3_orcs_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.male",
+  "source": "art/source/portraits/v3/v3_demons_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/v3/v3_sun_elves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v3/v3_dwarves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "baelim.tree_people.none",
+  "source": "art/source/portraits/v4/v4_tree_people_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "baelim.tree_people.none",
+  "source": "art/source/portraits/v4/v4_tree_people_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "baelim.tree_people.none",
+  "source": "art/source/portraits/v4/v4_tree_people_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "baelim.tree_people.none",
+  "source": "art/source/portraits/v4/v4_tree_people_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v4/v4_men_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v4/v4_men_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v4/v4_men_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v4/v4_men_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "buldor_companies.men.male",
+  "source": "art/source/portraits/v4/v4_men_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v4/v4_men_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v4/v4_men_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v4/v4_men_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v4/v4_men_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v4/v4_men_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.male",
+  "source": "art/source/portraits/v4/v4_men_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ember_freeholds.men.male",
+  "source": "art/source/portraits/v4/v4_men_003.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_004.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_004.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_004.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v4/v4_men_004.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v4/v4_men_005.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v4/v4_men_005.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v4/v4_men_005.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goodin_sunfolk.men.male",
+  "source": "art/source/portraits/v4/v4_men_005.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gunwyn_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_006.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.men.male",
+  "source": "art/source/portraits/v4/v4_men_006.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v4/v4_men_006.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v4/v4_men_006.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v4/v4_men_007.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v4/v4_men_007.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.male",
+  "source": "art/source/portraits/v4/v4_men_007.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.men.male",
+  "source": "art/source/portraits/v4/v4_men_007.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v4/v4_men_008.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v4/v4_men_008.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_aenoran.men.male",
+  "source": "art/source/portraits/v4/v4_men_008.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_road_cities.men.male",
+  "source": "art/source/portraits/v4/v4_men_008.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v4/v4_men_009.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v4/v4_men_009.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "leren_sea_kings.men.male",
+  "source": "art/source/portraits/v4/v4_men_009.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_009.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_010.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "march_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_010.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v4/v4_men_010.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v4/v4_men_010.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v4/v4_men_011.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v4/v4_men_011.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "melkgard_warlords.men.male",
+  "source": "art/source/portraits/v4/v4_men_011.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v4/v4_men_011.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v4/v4_men_012.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v4/v4_men_012.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "miaed_pass_lords.men.male",
+  "source": "art/source/portraits/v4/v4_men_012.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_012.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_013.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_013.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_013.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_013.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_014.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_014.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "mirolon_wardens.men.male",
+  "source": "art/source/portraits/v4/v4_men_014.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_014.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_015.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_015.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "naamis_sea_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_015.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_015.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_016.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_016.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_016.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_016.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_017.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "noris_riders.men.male",
+  "source": "art/source/portraits/v4/v4_men_017.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v4/v4_men_017.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v4/v4_men_017.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v4/v4_men_018.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "orato_fishers.men.male",
+  "source": "art/source/portraits/v4/v4_men_018.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_018.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_018.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_019.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_019.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v4/v4_men_019.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v4/v4_men_019.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v4/v4_men_020.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v4/v4_men_020.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v4/v4_men_020.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "red_lands_tribunes.men.male",
+  "source": "art/source/portraits/v4/v4_men_020.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v4/v4_men_021.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v4/v4_men_021.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v4/v4_men_021.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v4/v4_men_021.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "redbark_tribes.men.male",
+  "source": "art/source/portraits/v4/v4_men_022.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_022.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_022.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_022.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_023.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_023.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "reindeer_clans.men.male",
+  "source": "art/source/portraits/v4/v4_men_023.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v4/v4_men_023.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v4/v4_men_024.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v4/v4_men_024.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v4/v4_men_024.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v4/v4_men_024.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "selen_ranger.men.male",
+  "source": "art/source/portraits/v4/v4_men_025.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v4/v4_men_025.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v4/v4_men_025.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "steppe_rider.men.male",
+  "source": "art/source/portraits/v4/v4_men_025.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_026.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_026.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_026.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "strait_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_026.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.men.female",
+  "source": "art/source/portraits/v4/v4_men_027.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_027.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_027.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_027.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_028.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "teste_valley_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_028.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_028.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_028.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_029.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vale_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_029.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_029.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_029.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_030.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veiled_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_030.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v4/v4_men_030.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v4/v4_men_030.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "vindael_seafarers.men.male",
+  "source": "art/source/portraits/v4/v4_men_031.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_031.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_031.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_031.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_032.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wahatud_oasis_folk.men.male",
+  "source": "art/source/portraits/v4/v4_men_032.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "western_guilds.men.male",
+  "source": "art/source/portraits/v4/v4_men_032.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_032.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_033.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_033.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_033.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_033.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_034.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "winter_crown.men.male",
+  "source": "art/source/portraits/v4/v4_men_034.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v4/v4_men_034.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v4/v4_men_034.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v4/v4_men_035.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v4/v4_men_035.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "woqood_sealers.men.male",
+  "source": "art/source/portraits/v4/v4_men_035.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v4/v4_men_035.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v4/v4_men_036.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v4/v4_men_036.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v4/v4_men_036.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "zilin_pilgrims.men.male",
+  "source": "art/source/portraits/v4/v4_men_036.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "cairn_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "ice_giants.giants.male",
+  "source": "art/source/portraits/v4/v4_giants_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_003.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_004.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_004.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_004.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_004.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_005.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_005.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_005.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_005.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_006.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_006.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_006.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_006.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_007.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_007.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_007.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "lake_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_007.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_008.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_008.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_008.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_008.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "pass_wardens.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_009.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_009.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_009.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_009.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_010.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_010.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_010.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_010.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "roost_keepers.elves.male",
+  "source": "art/source/portraits/v4/v4_elves_011.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.goblins.male",
+  "source": "art/source/portraits/v4/v4_goblins_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.the_dead.male",
+  "source": "art/source/portraits/v4/v4_the_dead_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.the_dead.male",
+  "source": "art/source/portraits/v4/v4_the_dead_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.the_dead.male",
+  "source": "art/source/portraits/v4/v4_the_dead_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "grave_hosts.the_dead.male",
+  "source": "art/source/portraits/v4/v4_the_dead_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v4/v4_small_folk_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v4/v4_small_folk_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/v4/v4_small_folk_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "height_yeti.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "yeti_clans.yeti.male",
+  "source": "art/source/portraits/v4/v4_yeti_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v4/v4_gnomes_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v4/v4_gnomes_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v4/v4_gnomes_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v4/v4_gnomes_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.male",
+  "source": "art/source/portraits/v4/v4_gnomes_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.ents.none",
+  "source": "art/source/portraits/v4/v4_ents_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.ents.none",
+  "source": "art/source/portraits/v4/v4_ents_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "kilinti_ents.ents.none",
+  "source": "art/source/portraits/v4/v4_ents_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.hobgoblins.male",
+  "source": "art/source/portraits/v4/v4_hobgoblins_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "king_warrens.hobgoblins.male",
+  "source": "art/source/portraits/v4/v4_hobgoblins_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "spring_warrens.hobgoblins.male",
+  "source": "art/source/portraits/v4/v4_hobgoblins_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "nether_houses.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "nether_houses.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "nether_houses.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "netherborn.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.demons.male",
+  "source": "art/source/portraits/v4/v4_demons_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "north_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wall_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "west_delvers.dwarves.male",
+  "source": "art/source/portraits/v4/v4_dwarves_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v4/v4_dwarf_goblins_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v4/v4_dwarf_goblins_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v4/v4_dwarf_goblins_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v4/v4_dwarf_goblins_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "road_warrens.dwarf_goblins.male",
+  "source": "art/source/portraits/v4/v4_dwarf_goblins_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sea_orcs.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_002.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_002.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_003.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_003.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_003.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_003.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "wild_holds.orcs.male",
+  "source": "art/source/portraits/v4/v4_orcs_004.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v4/v4_sun_elves_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v4/v4_sun_elves_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_isles.sun_elves.male",
+  "source": "art/source/portraits/v4/v4_sun_elves_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/v4/v4_sun_elves_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/v4/v4_sun_elves_002.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/v4/v4_sun_elves_002.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v4/v4_trolls_001.png",
+  "cell": 0,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v4/v4_trolls_001.png",
+  "cell": 1,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v4/v4_trolls_001.png",
+  "cell": 2,
+  "origin": "v2 pool"
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.male",
+  "source": "art/source/portraits/v4/v4_trolls_001.png",
+  "cell": 3,
+  "origin": "v2 pool"
  }
 ]

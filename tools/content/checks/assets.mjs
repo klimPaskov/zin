@@ -19,7 +19,7 @@ import { perceptualHashes, phashDistance } from '../lib/phash.mjs';
 import {
   diskView, overlayView, createVanilla, replacePathsOf, scanShipped, resolveFile, basenameIndex, isAssetFile, sha256,
 } from '../lib/loaded_assets.mjs';
-import { loadProvenance, loadModuleManifests, compileRules, classify, createSourceResolver } from '../lib/asset_sources.mjs';
+import { loadProvenance, loadModuleManifests, compileRules, classify, createSourceResolver, loreDrawingStems } from '../lib/asset_sources.mjs';
 import { validateManifest } from '../lib/asset_schema.mjs';
 import { countryTable, supersededWorldFile } from '../lib/roster.mjs';
 import { loadPortraitPools } from '../modules/portraits.mjs';
@@ -71,7 +71,7 @@ export function loadAssetContext({ root = ZIN, staged = null, game = GAME, dataD
   const data = loadAssetData(dataDir);
   let t = tables;
   if (!t) {
-    t = { countries: [], flagCells: [], realmFlagCells: [] };
+    t = { countries: [], flagCells: [], realmFlagCells: [], ownerDrawingStems: loreDrawingStems(root) };
     try { t.countries = dataDir === DATA_DIR ? countryTable() : readJson(`${dataDir}/countries.json`).countries; } catch { /* optional */ }
     try { t.flagCells = readJson(`${dataDir}/flags-cells.json`); } catch { /* optional */ }
     // the realms' own heraldry flags (art/flag-jobs.mjs); only accepted sheets are staged

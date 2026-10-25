@@ -276,6 +276,18 @@ All icons are catalog keys ([../02_icon_catalog.md](../02_icon_catalog.md)); the
 | Brundahrim | protect | Dobbum | 40 | focus_done the_ronbo_oath_kept |
 | Gromkerm | antagonize | Saopon | 20 | flag zin_delving_looting_remembered |
 
+## Deep past branch (K64): The Road Under the Sea
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `the_halls_below_the_halls`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+The shared cap of 70 focuses (decision F6) leaves room for one: *Settle the Old Blame*, *The Road Moot*, *A Deep King Again*, *The Sea Is the Seal* and *Open the Sea-Door* are the deep past module's decisions in the Sea-Doors category, opened by this focus.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `read_the_names_on_the_door` | Read the Names on the Door | `ring_doors` | the_halls_below_the_halls | — | 12,5 | 70 | — | call `zin_deep_read_door` | base 20 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ## Implementation notes
 
 - **Bombards.** The ruleset has no powder equipment yet (K19 says the ruleset carries black-powder equipment for these realms; `docs/specs/03_gameplay/01_warfare.md` still says no gunpowder). Until the warfare owner adds it, the tree grants `zin_catapult_equipment` and `zin_trebuchet_equipment` and the siege research category `zin_cat_siege`, and the powder spirits use `army_artillery_attack_factor`. When powder equipment exists, the lead swaps the equipment types in four places (*The Bombard Foundries* and event 2's purchase); the text needs no change.

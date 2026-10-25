@@ -145,7 +145,11 @@ export function aenorStory(D, T, tt) {
 
 	// ---------------------------------------------------------------------------------------------- the King is dead (sections 6)
 	E.push({ id: 200, kind: 'news', title: 'The King Is Dead', picture: 'king_is_dead', requires: ['zin_golden_king_dead'],
-		desc: 'The Golden King died in his sleep after the Gaelor feast. He reigned twenty-one years. The seals of Parim lie on an empty cushion.',
+		desc: [
+			// K59 (Q-86): the King who survived the Council dies of old age.
+			{ text: 'The Golden King, who outlived every man who ever wished him dead, died in his bed of nothing but his years. The physicians found no poison, and for once nobody looked for one. The seals of Parim lie on an empty cushion.', trigger: 'has_global_flag = zin_golden_king_old_age' },
+			{ text: 'The Golden King died in his sleep after the Gaelor feast. He reigned twenty-one years. The seals of Parim lie on an empty cushion.' },
+		],
 		immediate: list('if = {', `limit = {\ntag = ${AEN}\nNOT = { has_country_flag = zin_aenor_succession_open }\n}`, 'zin_aenor_open_succession = yes', 'zin_aenor_pick_ai_camp = yes', 'country_event = { id = zin_aenor.201 days = 2 }', '}'),
 		options: [
 			{ key: 'a', text: 'The bells of Parim toll.', trigger: `tag = ${AEN}` },

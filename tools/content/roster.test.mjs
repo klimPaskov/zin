@@ -96,7 +96,8 @@ test('Every realm has one court; character ids are unique and rulers carry the r
     for (const c of [r.ruler, r.heir?.id ? r.heir : null, ...r.advisors, ...r.commanders, ...(r.figures ?? [])].filter(Boolean)) { assert.ok(!ids.has(c.id), c.id); ids.add(c.id); }
   }
   assert.equal(keys.size, 156);
-  assert.equal(ids.size, 1033);
+  // 1,033 court characters and the 109 pre-built heirs of data/world/heirs.json (owner answer Q-87).
+  assert.equal(ids.size, 1142);
 });
 
 test('No old debug tag is left in the builder data or the focus designs (records excepted)', () => {

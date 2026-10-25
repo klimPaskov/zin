@@ -47,8 +47,8 @@ test('Every file parses, keeps the operators the game reads and every localisati
   for (const name of ['zin_realm_life', 'zin_start_variety']) assert(text(`localisation/english/${name}_l_english.yml`).startsWith('﻿l_english:'), name);
 });
 
-test('The events are the design plan row: 10 to 15, 20 to 22, 30 to 32, 40 to 42, 50, 51, 60 to 63, 70, 71 (80 left to the path)', () => {
-  const want = [10, 11, 12, 13, 14, 15, 20, 21, 22, 30, 31, 32, 40, 41, 42, 50, 51, 60, 61, 62, 63, 70, 71];
+test('The events are the design plan row: 10 to 17, 20 to 22, 30 to 32, 40 to 42, 50, 51, 60 to 63, 70, 71 (80 left to the path)', () => {
+  const want = [10, 11, 12, 13, 14, 15, 16, 17, 20, 21, 22, 30, 31, 32, 40, 41, 42, 50, 51, 60, 61, 62, 63, 70, 71];
   assert.deepEqual(D.events.map(e => e.id), want);
   const defined = [...events.matchAll(/^country_event = \{\s*id = (zin_realm\.\d+)/gm)].map(m => m[1]);
   assert.deepEqual(defined, ['zin_realm.1', ...want.map(n => `zin_realm.${n}`)]);
@@ -68,7 +68,7 @@ test('The events are the design plan row: 10 to 15, 20 to 22, 30 to 32, 40 to 42
 
 test('No two events one step apart share a picture, and every picture is in the catalog', () => {
   const pic = new Map(D.events.map(e => [e.id, e.picture]));
-  const links = [[12, 13], [12, 15], [13, 15], [20, 21], [20, 22], [40, 41], [60, 61], [60, 62], [70, 71]];
+  const links = [[12, 13], [12, 15], [13, 15], [16, 10], [16, 11], [16, 15], [20, 21], [20, 22], [40, 41], [60, 61], [60, 62], [70, 71]];
   for (const [a, b] of links) assert.notEqual(pic.get(a), pic.get(b), `${a} and ${b}`);
   const cells = JSON.parse(readFileSync(path.join(here, 'data/presentation-cells.json'), 'utf8')).events.map(e => e.key);
   for (const p of pic.values()) assert(cells.includes(p), p);
@@ -123,7 +123,7 @@ test('G2: the named heirs are recruited in the histories, never during play, and
     void tag;
   }
   for (const rel of mine) assert(!/recruit_character|generate_character/.test(strip(text(rel))), `${rel}: no recruit during play`);
-  const s = block(effects, 'zin_realm_succeed');
+  const s = block(effects, 'zin_realm_seat_heir');
   assert.match(s, /add_timed_idea = \{ idea = zin_realm_regency days = zin_t_days \}/);
   assert.match(s, /clamp_temp_variable = \{ var = zin_t_days min = constant:zin_realm\.regency_min_days max = constant:zin_realm\.regency_max_days \}/);
   assert.match(block(effects, 'zin_realm_tick_regency'), /NOT = \{ has_idea = zin_realm_regency \}[\s\S]*zin_realm\.14/);
@@ -208,14 +208,17 @@ test('The start variety: the rule, its branches, the draws once in on_startup an
   assert(!/has_game_rule = \{ rule = zin_rule_start_variety/.test(strip(text(VFILES.effects)) + oa), 'the rule is read through its wrappers');
 });
 
-test('The start variety keeps the invariants: AI realms only, at most two feuds, no canon figure and no war between great powers', () => {
+test('The start variety keeps the invariants: AI realms only under LIGHT (players too under FULL, Q-92), at most two feuds, no canon figure and no war between great powers', () => {
   const fx = strip(text(VFILES.effects));
   const apply = block(fx, 'zin_variety_apply');
   assert(!/zin_eindil = \{|recruit_character|declare_war_on|create_faction|add_to_faction|zin_afrit_reveal/.test(apply), 'no heir, no war, no league, no reveal');
   assert.match(block(fx, 'zin_variety_add_temper'), /random_list = \{[\s\S]*add_country_leader_trait = zin_trait_temper_bold/);
   assert(apply.includes('NOT = { zin_realm_is_story_ruler = yes }'), 'V4 spares the canon figures');
   assert.equal((fx.match(/^zin_variety_start_feud_\d+ = \{/gm) ?? []).length, 2, 'K34: at most two feuds');
-  assert(block(strip(text(VFILES.triggers)), 'zin_variety_feud_ready').includes('is_ai = yes'));
+  // Q-92: under FULL the feuds, lands and bonds reach player realms; the tempers reach them only under FULL.
+  assert(!block(strip(text(VFILES.triggers)), 'zin_variety_feud_ready').includes('is_ai = yes'), 'feuds (FULL only) reach players');
+  assert.match(apply, /OR = \{\s*is_ai = yes\s*has_global_flag = zin_start_variety_full\s*\}/, 'V4: tempers for players under FULL only');
+  assert.match(block(fx, 'zin_variety_temper_new_ruler'), /OR = \{\s*is_ai = yes\s*has_global_flag = zin_start_variety_full/);
   for (const g of Object.values(V.V6.groups)) for (const n of g) assert(countries.find(c => c.name === n).focusTier !== 'major', `${n} is a minor realm`);
   assert(block(fx, 'zin_variety_end_feuds').includes('cancel_border_war'), 'the feuds end');
   assert.match(apply, /change_state_after_war|zin_variety_start_feud_1/);
@@ -224,6 +227,10 @@ test('The start variety keeps the invariants: AI realms only, at most two feuds,
   assert(!/zin_realm_match = /.test(apply), 'V9 courts but does not wed (S5)');
   const traits = strip(text(VFILES.traits));
   for (const k of ['bold', 'cautious', 'pious', 'grasping', 'scholarly', 'vengeful', 'generous', 'weary']) assert(traits.includes(`zin_trait_temper_${k} = {`), k);
+  // Q-91: twenty tempers, the rarer ones weighing less in the draw
+  assert.equal(Object.keys(V.tempers).length, 20);
+  for (const [k, tp] of Object.entries(V.tempers)) { assert(traits.includes(`zin_trait_temper_${k} = {`), k); assert(block(fx, 'zin_variety_add_temper').includes(`${tp.weight ?? V.V4.weightDefault} = { add_country_leader_trait = zin_trait_temper_${k} }`), `${k} weight`); }
+  assert(Object.values(V.tempers).some(tp => tp.weight === 1), 'the rarest tempers');
 });
 
 test('The owners read the drawn values: the camps at the King\'s death and the court\'s temper in the reign events', () => {
@@ -239,4 +246,70 @@ test('The design twin records the status of every system and every variety', () 
   for (const s of design.systems) assert(/^(implemented|superseded)/.test(s.status ?? ''), `${s.id}: ${s.status}`);
   for (const o of design.variety.options) assert(/^implemented/.test(o.status ?? ''), `${o.id}: ${o.status}`);
   assert(/superseded/.test(design.systems.find(s => s.id === 'G10').status), 'G10 is the historical path\'s');
+});
+
+// ------------------------------------------------------------------------------------------------ owner answers of K55 and K59
+test('Q-85 (K55): rulers age by the year, so a reign lasts decades and the long-lived reign for many lifetimes of men', () => {
+  const C = D.constants, age = block(effects, 'zin_realm_age_ruler');
+  assert.match(age, /multiply_temp_variable = \{ zin_t_wear = zin_ruler_rate \}\s*divide_temp_variable = \{ zin_t_wear = constant:zin_realm\.months_per_year \}/, 'a month wears rate / 12 of a year');
+  assert.equal(C.months_per_year, 12);
+  // a man of the mean fresh vigour reigns decades; an elf of the same vigour many centuries
+  const mean = (C.new_ruler_min + C.new_ruler_max) / 2;
+  assert(mean - C.vigour_frail >= 20, `${mean} years of vigour less the frail line give a reign of decades`);
+  assert((mean - C.vigour_frail) / D.people.rate.elves >= 400, 'the elves reign for centuries');
+  for (const r of realm.plan.rows) if (r.rate !== null) assert(r.vigour > 0 && r.vigour <= C.vigour_max, `${r.tag} vigour ${r.vigour}`);
+  assert(block(effects, 'zin_realm_note_ruler').includes('has_country_flag = zin_realm_vigour_given'), 'a crowned heir keeps the years his own age gave him');
+  assert.match(block(effects, 'zin_realm_seat_heir'), /zin_t_left = zin_realm_heir_life[\s\S]*set_variable = \{ zin_ruler_vigour = zin_t_left \}/);
+});
+
+test('Q-87 (K59): every realm but the story\'s has a pre-built heir, and the succession can fail into dispute, crisis or usurpation', () => {
+  const H = JSON.parse(readFileSync(path.join(here, 'data/world/heirs.json'), 'utf8'));
+  const none = ['yeldenne', 'puvulan', 'worshipdom', 'zols_mistake', 'gala', 'nether', 'god_forest', 'mushroom_forest', 'goldoroth'];
+  for (const r of courts) assert(r.heir?.id || none.includes(r.key), `${r.key} has an heir`);
+  for (const k of none) assert(!H.heirs[k], `${k} has no pre-built heir`);
+  assert(!H.heirs.yeldenne, 'K56: Yeldenne is retired');
+  for (const h of Object.values(H.heirs)) {
+    assert(['male', 'none'].includes(h.gender), `${h.id}: a man (K54, Q-104), or a being without sex`);
+    assert(h.name && h.role && h.people && h.custom, h.id);
+  }
+  // every pre-built heir of a realm whose ruler is not the story's is recruited in its history
+  const heirs = heirsToRecruit(realm.plan, characters.skipped);
+  for (const r of courts.filter(c => c.heir?.prebuilt)) assert(heirs.has(r.tag) || realm.plan.rows.find(x => x.tag === r.tag).story, r.key);
+  // the dispute: the roll, the event and its four answers
+  const s = block(effects, 'zin_realm_succeed');
+  assert.match(s, /mtth:zin_realm_succession_dispute[\s\S]*zin_realm_crisis_allowed = yes[\s\S]*zin_realm\.16[\s\S]*zin_realm_seat_heir = yes/);
+  assert.match(s, /zin_realm_elective_custom = yes[\s\S]*mtth:zin_realm_election_dispute[\s\S]*zin_realm_open_crisis = yes/, 'an election that cannot agree');
+  const e16 = D.events.find(e => e.id === 16);
+  assert.deepEqual(e16.options.map(o => o.effect[0]), ['zin_realm_hold_disputed_crown = yes', 'zin_realm_pass_over_heir = yes', 'zin_realm_fight_for_heir = yes', 'zin_realm_captain_takes_crown = yes']);
+  assert(e16.options[2].trigger.includes('zin_realm_crown_may_be_contested = yes'), 'a civil war only when the crown may be contested');
+  assert(block(effects, 'zin_realm_fight_for_heir').includes('zin_arg_way = 2'), 'the rival raises a banner');
+  // the heir may die before the ruler, and then no heir can be determined until another is named
+  assert(block(effects, 'zin_realm_pulse').includes('zin_realm_check_heir = yes'));
+  assert.match(block(effects, 'zin_realm_check_heir'), /mtth:zin_realm_heir_death[\s\S]*zin_realm_remove_heir = yes[\s\S]*zin_realm\.17/);
+  for (const [tag, [id]] of heirs) assert(block(effects, 'zin_realm_remove_heir').includes(`retire_character = ${id}`), `${tag} ${id}`);
+  for (const k of ['blood', 'elective', 'contested', 'open']) assert(realm.plan.rows.some(r => r.custom === k), k);
+  assert(realm.plan.rows.find(r => r.tag === tagOf('Stabilo')).custom === 'elective', 'the bench of houses chooses');
+});
+
+test('Q-89 (K59): the corsair and steppe-rider realms join the raiders, the corsairs by sea and the riders by land', () => {
+  for (const n of ['Nondondor', 'Windy Lands', 'Konori', 'Hunhun', 'Noris', 'Delbiz']) assert(realm.plan.raiders.includes(tagOf(n)), n);
+  assert.equal(realm.plan.raiders.length, 25);
+  for (const n of ['Noris', 'Delbiz']) assert(realm.plan.steppe.includes(tagOf(n)), `${n} raids as the steppe riders do (owner, 25 October 2026)`);
+  for (const t of [...realm.plan.corsairs, ...realm.plan.steppe]) assert(realm.plan.raiders.includes(t), `${t} raids`);
+  const raid = block(effects, 'zin_realm_check_raid');
+  assert.match(raid, /zin_realm_is_corsair = yes[\s\S]*any_owned_state = \{ is_coastal = yes \}/, 'corsairs strike the coast');
+  assert.match(raid, /zin_realm_is_steppe_rider = yes\s*\}\s*if = \{\s*limit = \{ any_neighbor_country/, 'riders raid a neighbour only');
+  assert(raid.includes('PREV = { zin_aenor_is_concord_dominion = yes }'), 'a chartered dominion never raids the crown or the Concord');
+  assert.match(block(effects, 'zin_realm_raid'), /zin_realm_is_corsair = yes \} navy_experience[\s\S]*zin_realm_is_steppe_rider = yes \} army_experience/);
+  assert(D.mtth.zin_realm_raid_chance.modifiers.some(m => m.if === 'zin_realm_is_steppe_rider = yes' && m.factor > 1), 'the riders ride more often');
+});
+
+test('Q-91 and Q-92 (K59): the tempers feed realm life, and the full start variety reaches player realms', () => {
+  const used = new Set(Object.values(D.mtth).flatMap(m => m.modifiers.map(x => x.if.match(/zin_trait_temper_(\w+)/)?.[1]).filter(Boolean)));
+  for (const k of used) assert(V.tempers[k], `the mtth reads the temper ${k}`);
+  for (const k of ['just', 'suspicious', 'ambitious', 'cruel', 'fortunate', 'touched', 'beloved']) assert(used.has(k), `${k} has an effect beyond its modifiers`);
+  const fx = strip(text(VFILES.effects));
+  const apply = block(fx, 'zin_variety_apply');
+  assert(!/is_ai = yes\s*num_of_controlled_states/.test(apply), 'V8 lands reach players');
+  assert(!/exists = yes\s*is_ai = yes\s*\}/.test(apply.slice(apply.indexOf('# V9'))), 'V9 bonds reach players');
 });

@@ -75,7 +75,7 @@
       {
        "text": "The physicians of the Houses.",
        "hist": true,
-       "ai": "base = 60\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "ai": "base = 60\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tfactor = 3\n\tzin_rules_ai_plausible_afrit = yes\n}",
        "effect": [
         "set_country_flag = zin_worshipdom_instrument_physician",
         "if = {",
@@ -150,7 +150,7 @@
       {
        "text": "At the feast of Gaelor.",
        "hist": true,
-       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tadd = 60\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_ashen = yes\n}\nmodifier = {\n\tfactor = 0\n\thas_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT }\n}",
+       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tadd = 60\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_ashen = yes\n}\nmodifier = {\n\tfactor = 0\n\thas_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT }\n}\nmodifier = {\n\tfactor = 3\n\tzin_rules_ai_plausible_afrit = yes\n}",
        "effect": [
         "zin_afrit_ready_regicide = yes"
        ]
@@ -237,7 +237,7 @@
        "trigger": [
         "NOT = { has_country_flag = zin_worshipdom_commit_heir }"
        ],
-       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tadd = 80\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_ashen = yes\n}",
+       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tadd = 80\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_ashen = yes\n}\nmodifier = {\n\tfactor = 3\n\tzin_rules_ai_plausible_afrit = yes\n}",
        "effect": [
         "zin_afrit_crown_aurevan = yes"
        ]
@@ -302,7 +302,7 @@
       {
        "text": "Silence them.",
        "hist": true,
-       "ai": "base = 80\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "ai": "base = 80\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tfactor = 3\n\tzin_rules_ai_plausible_afrit = yes\n}",
        "effect": [
         "set_temp_variable = { zin_arg_value = -5 }",
         "zin_afrit_add_veil = yes",
@@ -390,7 +390,7 @@
        "trigger": [
         "NOT = { has_global_flag = zin_afrit_voyage_begun }"
        ],
-       "ai": "base = 60\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "ai": "base = 60\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tfactor = 3\n\tzin_rules_ai_plausible_afrit = yes\n}",
        "effect": [
         "zin_afrit_northern_voyage = yes"
        ]
@@ -472,7 +472,7 @@
       {
        "text": "Spare none.",
        "hist": true,
-       "ai": 100,
+       "ai": "base = 100\nmodifier = {\n\tfactor = 3\n\tzin_rules_ai_plausible_afrit = yes\n}",
        "tip": "Your men fall on the crew as they come up the path.",
        "effect": [
         "custom_effect_tooltip = zin_afrit.33.b.tt"
@@ -850,6 +850,65 @@
      "options": [
       {
        "text": "Let the hunters ride.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "kind": "country",
+     "title": "The False God Cornered",
+     "picture": "generic_wilds",
+     "proposed": true,
+     "fired_by": "zin_afrit_hunt_month (K59, Q-66): the hunt for the false god in hiding has run him to ground; to the hunter (the realm that holds the land where he was last seen, else the heir's host)",
+     "desc": [
+      {
+       "if": "has_character = zin_eindil",
+       "text": "The heir's scouts found him in a charcoal-burner's hut in the hills, with three priests, a mule and the last of the temple gold. He did not run. He sat by the fire and asked to speak to his brother, and the captain who holds him has sent to ask what he should say."
+      },
+      {
+       "text": "Our hunters found [zin_loc_deliverer] in a shepherd's hut in the hills, with three priests, a mule and the last of the temple gold. He did not run. He has offered the gold for his life, and the captain who holds him has sent to ask what he should say."
+      }
+     ],
+     "options": [
+      {
+       "text": "He dies here, as a man dies.",
+       "hist": true,
+       "tip": "The false god is killed in the hills, far from the palace.",
+       "ai": "base = 90\nmodifier = {\n\tadd = 100\n\thas_character = zin_eindil\n}",
+       "effect": [
+        "zin_afrit_hunt_kill = yes"
+       ]
+      },
+      {
+       "text": "Take the gold and look the other way.",
+       "tip": "He escapes again, and we do not hunt him for a year.",
+       "trigger": [
+        "NOT = { has_character = zin_eindil }"
+       ],
+       "ai": "base = 10\nmodifier = {\n\tfactor = 0\n\tzin_rules_is_historical = yes\n}",
+       "effect": [
+        "zin_afrit_hunt_bribe = yes"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 79,
+     "kind": "news",
+     "title": "The False God Is Found",
+     "picture": "generic_war",
+     "named": true,
+     "proposed": true,
+     "fired_by": "zin_afrit_hunt_kill (K59, Q-66): a hunter killed Afrit outside the palace",
+     "desc": [
+      {
+       "text": "[zin_loc_deliverer] is dead. He was found hiding in the hills by the hunters of [zin_afrit_slayer.GetName] with a handful of priests and a mule, and he was killed there by the fire, without a battle and without a miracle. The priests who promised that he could not die have stopped promising anything."
+      }
+     ],
+     "options": [
+      {
+       "text": "A god who could die.",
        "ai": 100
       }
      ]

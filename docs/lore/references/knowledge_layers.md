@@ -44,7 +44,7 @@ The register's "who may know" column uses these categories.
 7. **Zol's creator is never named, and its continuing influence is never explained.** No text, and no design document beyond this register, explains it by a resurrection, a surviving body, a return or any other definitive answer. The register itself says only what the owner said.
 8. **Other continents are not copies of Aoaz.** They may have their own gods, dark lords, peoples and magic, and none of Aoaz's societies or conflicts is mirrored onto them.
 9. **No being's exact age is stated** (owner, 24 October 2026): not for gods, spirits, elves or men, in any layer of player text.
-10. **Zol's servant is never identified.** The owner has named it (C25), and that name stays hidden knowledge in every gate.
+10. **Zol's servant is a known legend.** The owner named him Kusven (C25) and, on 25 October 2026, retired the sealed name (K55, Q-70): Kusven is named from the start as a figure of the winter tales, and the war texts name him when he comes forth. What he truly is and how Zol made him stay outside every text.
 
 ## 2. The wider world, layer by layer
 
@@ -62,7 +62,7 @@ The register's "who may know" column uses these categories.
 
 Every fact the builder must keep out of public text, or let through only under a rule, is listed here with its layer, who may know it, what text may say and the gate or rule that guards it.
 Ids are stable: the check data (section 4) refers to them.
-**84 entries:** W 15, C 27, A 12, E 7, V 23.
+**96 entries:** W 15, C 27, A 12, E 7, V 23, F 12.
 
 ### 3.1 The wider world (W)
 
@@ -111,8 +111,8 @@ Ids are stable: the check data (section 4) refers to them.
 | C21 | The angels' history. | mystery-open | Nobody | Nothing beyond what the vault states. | Answer rule. |
 | C22 | Whether necromancy binds souls or only bodies. | mystery-open | Nobody | Fear of it, attributed. | Answer rule. |
 | C23 | What remains of Volgan after his body is destroyed. | mystery-open | Nobody | Fear and hope, attributed; never a verdict. | Answer rule after `zin_volgan_body_destroyed`. |
-| C24 | Zol's most loyal servant, a Great Spirit, appears in the last war. | gated | Beings | Nothing before its appearance; after it, the servant as "a Great Spirit of the black north" or similar, without identity. | Gate: the servant-appearance flag (the shared contract's `zin_zol_manifested`, to be renamed under the correction of 24 October 2026). |
-| C25 | That servant is **Edvoid (name to be replaced)** (owner, 24 October 2026). | sealed | Beings (Zol and his servants) | Nothing: the servant is never identified, before or after it appears; the new name, when the owner gives it (Q-10), joins this rule. | `kl_sealed_021`; "Edvoid" is also banned (`bw_superseded_names_002`). |
+| C24 | Zol's most loyal servant, a Great Spirit, appears in the last war. | gated | Beings | Before his appearance only the legend: Kusven of the winter tales, the grave-wind who serves the Old God of Death, told as the sailors' and shore folk's belief. After it, his deeds on the field, named. | Gate: the servant-appearance flag `zin_kusven_forth`. |
+| C25 | That servant is **Kusven** (formerly Edvoid; owner, 24 October 2026, K29). | known legend | Everyone | His name is known from the start, as a legend (owner answer Q-70, K55, 25 October 2026, superseding the sealed rule). His making by Zol and his true nature stay unsaid. | "Edvoid" stays banned (`bw_superseded_names_002`); `kl_sealed_021` is retired. |
 | C27 | Lesser New Gods exist besides the twelve, and they are stronger than most Great Spirits (owner, 24 October 2026). | truth (existence), sealed (their strength relative to spirits) | Everyone may know of lesser gods; their rank against spirits is known to Beings | Lesser gods of shrines and places, unnamed, as worshippers see them; no ranking against spirits. | Answer rule (naming slot); writing rule. |
 | C26 | Zol does not appear in person in the War of the Last Crowns. | truth | Everyone who fights there | That the black north's host came under a terrible servant; never that Zol took the field. | Answer rule against "Zol" with bodily-appearance words. |
 
@@ -159,7 +159,7 @@ Ids are stable: the check data (section 4) refers to them.
 | V8 | That Zol consumed Elzon at his end. | disputed (owner-favoured working explanation) | Scholars may suspect | That the Necromancer fell; how is disputed and attributed. | Answer rule. |
 | V9 | Volgan's arming in the Ember Lands at the start. | disputed (outside Mirolon) | Insiders: Mirolon's wardens and scouts | Mirolon states it plainly; elsewhere it is a rumour the courts laugh at. | Viewer-dependent until `zin_volgan_marches`. |
 | V10 | Black ships among the islands of the Kusmeel (4A 1744). | disputed | Island fishermen | Fishermen's tales that no court believes. | Attribution required until `zin_zol_rising`. |
-| V11 | The dwarves' homeland. | mystery-open | Nobody | Nothing; no dwarf appears. | Answer rule. |
+| V11 | The dwarves' homeland. | mystery-open | Nobody | The four holds (Kunhrim, Hrakbrund, Brundahrim, Gromkerm) and Gromatrak's history; their first homeland is never told. | Answer rule. |
 | V12 | What "Ainu" means. | mystery-open | Nobody | "The First Men". | Answer rule. |
 | V13 | Whether Aenor is named for Aen. | mystery-open | Nobody | Both readings as belief, or neither. | Answer rule. |
 | V14 | Bastian is a living human wizard of the Fourth Age, famous in the Middle Lands, a contemporary of Varner (owner, 24 October 2026). | truth, public | Everyone in the Middle Lands | That he is the famous wizard of men and lives; his biography in [magic_and_wizards.md](magic_and_wizards.md) is proposed; never his age. | Age rule `kl_mystery_027`; his meeting with Varner is under E4. |
@@ -173,7 +173,26 @@ Ids are stable: the check data (section 4) refers to them.
 | V22 | Whether Volgan's storms are his working. | mystery-open | Nobody | The storms, and fear of them. | Answer rule. |
 | V23 | The exact age of any being. Old Gods are millions of years old and Great Spirits can be very old, but no figure is ever given (owner, 24 October 2026). | mystery-kept | Nobody in text | "Ancient", "older than the charts", "of a great age"; never a number of years for any being, man or god. | `kl_mystery_027`. |
 
-Register size: **84 entries**. A builder test asserts that `secret_terms.json` names every id, as acceptance item 4 of section 4.9 requires.
+### 3.6 The deep past of the six fallen realms (F)
+
+Adopted by the owner on 25 October 2026 (decision K64). The design is in `docs/specs/02_lore/10_fallen_realms.md`, and the realm notes are in the lore vault under `07 - History`.
+
+| Id | Fact | Layer | Who may know | What text may say | Gate or rule |
+| --- | --- | --- | --- | --- | --- |
+| F1 | The Low Country sank because its mothers overdrew the land's magic. | gated | Insiders: the cord-mothers of the Veiled and the cairn-keepers of Hirolon | Only as belief until the gate: "the land that was asked for too much", attributed to the Veiled. | `zin_deep_low_country_charted` (the Two Counts). |
+| F2 | The Night of the Sea in 620 BA, and the Eldest Cairn's count of 7,436 stones on 1 Lumae 4A 1748. | gated | Insiders: Hirolon's keepers of the count | "Long before Aen" for the date; the count only behind the gate. | `zin_deep_low_country_charted`. The one number of the deep past learned in play. |
+| F3 | The names of the six fallen realms and their keepers' names (Muzerar, Ozelkak, Humaran, the Nimlan banks, Tarkia, Qadurum, Rhabtarkia, Barzoth, Gromatrak, Tromahrim, Margorodai, Halgohavnai, Heulufaenn, Tawrhalwe and the rest). | gated | Insiders and scholars, by their keeping | Only through each realm's gate; the narrator never gives a fallen realm's name before its gate. | The realm's own gate: a keeping, a crossing, a diadem, a door, a square or a find. |
+| F4 | What broke the Bridge Kingdom. | mystery-kept | Nobody | Both tellings as belief, each attributed: the temples' gods and the elves' sorcerers. Never the cause. | Answer rule. |
+| F5 | The thing that the salt-boilers say breathes under the Hot Lake. | disputed | Salt-boilers and the elves' rolls | The salt-boilers' tale, attributed, with Mora's Year of Steam (4A 1655) as its sign. | Answer rule. |
+| F6 | What became of the Kalioth Crown's provinces beyond the Melty Pass. | mystery-kept | Nobody | "Fell silent"; no further detail. | Answer rule (K3). |
+| F7 | Who ordered the Letting-In of the Sea. | disputed | The holds, each with its own account | Kunhrim's account and the western holds' account, each attributed. Never settled. | Answer rule. |
+| F8 | What lies below the Sea of Monsters in Tromahrim. | mystery-kept | Nobody (the holds know their sealing only) | The holds' belief that the sea is the seal, and their fear of what it keeps. Never the contents. | Answer rule; the door's opening only through `zin_deep_door_read`. |
+| F9 | The Sunfields fell to lengthening winters, and the Boreal peoples descend from it. | gated | Scholars of the Boreal words; Coldor's fire-keepers as belief | "The land was punished" as Coldor's belief; the kinship only as a discovery. | `zin_deep_three_names` (Three Names, One Land). |
+| F10 | Whether the Grey Breath still waits in the Cursed Square's wrecks. | disputed | Benan's corsairs and the islanders | The corsairs' refusal and the islanders' tale, attributed; never confirmed. | Answer rule. |
+| F11 | The Cursed Square was Halgohavnai, the league's own harbour. | gated | Scholars, through Adel's oldest charts | The Square's cursed name as belief until the gate; the harbour only after it. | `zin_deep_square_known`. |
+| F12 | The giants of the low hills behind the Dark Lands cairn-line are the Forgotten Giants (Hoorunoron). | gated | The giants of the low hills | Their name and their stones only through the Stone keeping. | `zin_deep_keeps_stone`. |
+
+Register size: **96 entries**. A builder test asserts that `secret_terms.json` names every id, as acceptance item 4 of section 4.9 requires.
 
 ## 4. The text check (X18, knowledge layers)
 
@@ -303,7 +322,7 @@ Where `phrase` lists `a` and `b`, both must occur in one sentence.
 | `kl_sealed_017` | C11, C12 | answer | `Volgan\s+(?:once\s+)?(?:served\|overcame\|overthrew\|betrayed)\s+(?:a\|the\|his)\s+(?:New\s+)?God` | |
 | `kl_sealed_018` | C17, C18 | phrase | a: `devils?` b: `(?:served\|serve\|escaped\|fled)\s+(?:an?\s+)?(?:Old\s+God\|old\s+god\|another\s+god)\|other\s+Old\s+Gods?` | Devils' origin and other Old Gods. |
 | `kl_sealed_019` | W1, W15 | answer | `(?:Aoaz\|our\s+land\|this\s+continent)\s+is\s+(?:small\|a\s+small\|but\s+a\s+small\|one\s+of\s+many)` | |
-| `kl_sealed_021` | C25 | answer | `Zol's\s+(?:most\s+loyal\|greatest\|chief\|first\|mightiest)\s+servant,?\s+(?:is\|was\|named\|called\|whose\s+name)\|(?:servant\|Great\s+Spirit)\s+(?:of\s+Zol\s+)?(?:named\|called)\s+[A-Z]` | The servant's identity (Edvoid, name to be replaced) is hidden; "Edvoid" itself is also caught by `bw_superseded_names_002`, and the replacement name joins this rule when the owner gives it (Q-10). |
+| `kl_sealed_021` | C25 | retired | (none) | Retired 25 October 2026 (K55, Q-70): Kusven is a known legend from the start. "Edvoid" is still caught by `bw_superseded_names_002`. |
 | `kl_sealed_020` | W2, W4, W11 | phrase | a: `Erdae\|Haven\|Cerio` b: `(?:far\s+)?(?:larger\|greater\|vaster\|bigger\|smaller)\s+than\|(?:its\|their)\s+(?:gods\|magic\|history\|kings\|peoples)\s+(?:are\|is\|were)` | Size and depth stated as fact; travellers' claims go through attribution. Severity error unless the sentence holds an attribution marker, then review. |
 
 #### Gated
@@ -424,8 +443,8 @@ Each row is a test case for `tools/content/tests/` (a planted value run through 
 | `zin_lore_bastian_desc` | "Bastian, seventy years old, still walks the Lake Road." | fail | `kl_mystery_027` |
 | `zin_aenor_king_desc` | "In the nineteenth year of his reign the king sold the last offices." | pass | a reign's year, not an age |
 | `zin_lore_horos_desc` | "Horos is older than the charts of Aenor." | pass | no figure |
-| `zin_lastwar_servant_desc` (after the servant flag) | "The Great Spirit named Edvoid led the dead of the north." | fail | `kl_sealed_021`, `bw_superseded_names_002` |
-| `zin_lastwar_servant_desc` (after the servant flag) | "A Great Spirit of the black north took the field, and the blue blade broke against it." | pass | no identity |
+| `zin_lastwar_servant_desc` (after the servant flag) | "The Great Spirit named Edvoid led the dead of the north." | fail | `bw_superseded_names_002` (the superseded name) |
+| `zin_lastwar_servant_desc` (after the servant flag) | "Kusven took the field, and the blue blade broke against him." | pass | the known legend named (K55, Q-70) |
 | `zin_lastwar_servant_desc` (after the servant flag) | "Zol himself took the field in the flesh." | fail | `kl_mystery_008` |
 | `zin_lastwar_servant_desc` (before the servant flag) | "Zol's most loyal servant stirs in the north." | fail | `kl_gated_018` |
 | `zin_calendar_month_3` | "Third Month" | pass | no name |
@@ -456,5 +475,5 @@ Each row is a test case for `tools/content/tests/` (a planted value run through 
 7. **"The Fading."** Is "the Fading" a word the people of Aoaz use, or only an authorial term?
 8. **The devils' Old God.** Devils served an Old God who was not necessarily Zol. May devils ever speak of their former master, given that it would reveal Old Gods beyond Aoaz?
 9. **The Holy Seven's in-world labels.** Should one of the vault's candidate labels (Seven Before Names, Seven Who Never Were, and the others) be selected for text, or should the Seven stay unnamed in game text?
-10. **Zol's servant after its appearance.** Once the servant has taken the field, may any text ever give its new name (Q-10), for example in an ending or the codex, or must it stay unnamed for ever, as this file assumes?
+10. **Zol's servant after its appearance.** Answered by the owner on 25 October 2026 (K55, Q-70): Kusven is named from the start as a known legend.
 11. **Lesser New Gods.** May shrines of lesser New Gods appear in text with names of their own, or do all New God names wait for the pantheon decision?

@@ -251,7 +251,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
   // rows
   const rows = [...raw.civil.technologies.map(t => ({ ...t, source: 'civil' })), ...raw.warfare.technologies.map(t => ({ ...t, source: 'warfare' }))];
   const techs = [], byKey = new Map();
-  const knownFields = new Set(['key', 'name', 'desc', 'line', 'year', 'cost', 'x', 'requires', 'all', 'needs', 'xor', 'lost', 'modifiers', 'blocks', 'unlocks', 'who', 'allow', 'allowRaw', 'allowBranchRaw', 'completeRaw', 'completeLimitRaw', 'locked', 'grantOnly', 'specialization', 'ai', 'categories', 'inventory', 'source']);
+  const knownFields = new Set(['key', 'name', 'desc', 'line', 'year', 'cost', 'x', 'requires', 'all', 'needs', 'xor', 'lost', 'modifiers', 'blocks', 'unlocks', 'who', 'allow', 'allowRaw', 'allowBranchRaw', 'completeRaw', 'completeLimitRaw', 'locked', 'grantOnly', 'specialization', 'ai', 'categories', 'inventory', 'source', 'recovered']);
   for (const r of rows) {
     const where = `technology ${r.key}`;
     for (const k of Object.keys(r)) if (!knownFields.has(k)) P(`${where}: unknown field ${k}`);
@@ -270,7 +270,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
       large: !!(r.unlocks?.equipment?.length),
       modifiers: r.modifiers ?? {}, blocks: r.blocks ?? [], unlocks: r.unlocks ?? {},
       whoRaw: r.who, allowRaw: r.allowRaw, allowBranchRaw: r.allowBranchRaw, completeRaw: r.completeRaw, completeLimitRaw: r.completeLimitRaw,
-      locked: !!r.locked, grantOnly: !!r.grantOnly, ai: r.ai ?? line.ai, extraCategories: r.categories ?? [],
+      locked: !!r.locked, grantOnly: !!r.grantOnly, ai: r.ai ?? line.ai, extraCategories: r.categories ?? [], recovered: r.recovered ?? null,
     };
     t.categories = [...new Set([...line.categories, ...t.extraCategories])];
     t.specialization = r.specialization ?? line.specialization ?? [];
@@ -322,6 +322,13 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
     if (t.lost && !t.needs.length) P(`${where}: lost knowledge needs the later learning that recovers it`);
     if (t.lost && t.year >= FOURTH_AGE_FROM) P(`${where}: lost knowledge belongs to the Third Age (year below ${FOURTH_AGE_FROM})`);
     if (t.lost && t.xor.length) P(`${where}: lost knowledge is never exclusive`);
+    // Elder knowledge (owner decision K64, the .recovered rows): recovered only after a discovery flag, never starting knowledge, placed in the
+    // band of the campaign years in which it can first be recovered (its tile year is the year of its recovery, not of its making).
+    if (t.recovered) {
+      if (!/^zin_deep_recovered_[a-z_]+$/.test(t.recovered.flag ?? '') || !t.recovered.tip) P(`${where}: recovered needs a flag zin_deep_recovered_<key> and a tip`);
+      if (t.lost || t.locked || t.xor.length) P(`${where}: elder knowledge is neither lost, locked nor exclusive`);
+      if (t.year < raw.civil.costRule.campaignFrom) P(`${where}: elder knowledge sits in the campaign years (${raw.civil.costRule.campaignFrom} or later)`);
+    }
     for (const n of t.needs) {
       const need = byKey.get(n);
       if (!need) { P(`${where}: needs ${shortKey(n)}, which does not exist`); continue; }
@@ -542,7 +549,7 @@ export function technologyPackages(model) {
         if (rule.folders && !rule.folders.includes(t.folder)) continue;
         if (rule.lines && !rule.lines.includes(t.line)) continue;
         if (!rule.folders && !rule.lines) continue;
-        if (t.locked || t.lost || t.xor.length || /has_global_flag/.test(`${t.allowRaw ?? ''}${t.allowBranchRaw ?? ''}`)) continue;
+        if (t.locked || t.lost || t.recovered || t.xor.length || /has_global_flag/.test(`${t.allowRaw ?? ''}${t.allowBranchRaw ?? ''}`)) continue;
         if (!admitted(model, t, profile)) continue;
         chosen.add(t.key);
       }
@@ -587,7 +594,7 @@ export function startFor(model, packages, country, people) {
   if (country.gunpowder) for (const e of a.gunpowder ?? []) techs.add(e);
   // A realm knows the start-era technologies of its own way of life (owner decision K58).
   const way = model.ways?.byCulture.get(country.culture) ?? null;
-  if (way) for (const t of model.techs) if (t.way === way && t.year < model.development.advancedFrom && !t.lost && !t.xor.length && !t.locked) techs.add(t.short);
+  if (way) for (const t of model.techs) if (t.way === way && t.year < model.development.advancedFrom && !t.lost && !t.recovered && !t.xor.length && !t.locked) techs.add(t.short);
   // closure over prerequisites for the extras
   const queue = [...techs];
   while (queue.length) { const t = model.byKey.get(fullKey(queue.pop())); for (const p of prerequisitesToAdd(t, k => techs.has(shortKey(k)), k => !model.byKey.get(k)?.xor.length)) { const s = shortKey(p); if (!techs.has(s)) { techs.add(s); queue.push(s); } } }
@@ -697,6 +704,7 @@ export function technologyBlock(t, model) {
   const allowBody = [];
   if (t.locked) allowBody.push(`${tab(d + 1)}always = no`);
   else if (t.allowRaw) allowBody.push(...rawLines(t.allowRaw, d + 1));
+  if (t.recovered) allowBody.push(`${tab(d + 1)}custom_trigger_tooltip = {`, `${tab(d + 2)}tooltip = ${t.key}_recovered_tt`, `${tab(d + 2)}has_country_flag = ${t.recovered.flag}`, `${tab(d + 1)}}`);
   if (allowBody.length) push(`${tab(d)}allow = {`, ...allowBody, `${tab(d)}}`);
   // visible? roots and rows with an explicit restriction write allow_branch; inherited rows are hidden by their path parent
   const isRoot = !t.requires.length;
@@ -905,7 +913,7 @@ async function localisation(staged, model) {
   const set = (k, v) => { if (e[k] !== undefined) throw new Error(`Duplicate localisation key ${k}`); if (!WINDOWS_1252.test(v)) throw new Error(`Text of ${k} has characters the game font does not draw`); e[k] = v; };
   for (const f of model.folders.values()) { set(f.key, f.name); set(`${f.key}_desc`, f.desc); }
   for (const c of model.categories.values()) { set(c.key, c.name); set(`${c.key}_research`, `${c.name} Research`); }
-  for (const t of model.techs) { set(t.key, t.name); set(`${t.key}_desc`, t.desc); }
+  for (const t of model.techs) { set(t.key, t.name); set(`${t.key}_desc`, t.desc); if (t.recovered) set(`${t.key}_recovered_tt`, t.recovered.tip); }
   for (const g of model.gates) { set(g.key, g.name); set(`${g.key}_desc`, g.desc); }
   for (const [y, caption] of Object.entries(model.bandCaptions)) set(`zin_techtree_year_${y}`, caption);
   set('zin_techtree_year_start', START_SHOWN);
@@ -928,7 +936,8 @@ async function localisation(staged, model) {
 
 // ---------- the build ----------
 export async function buildTechnologies(staged, ctx) {
-  const model = await prepareModel(ctx);
+  // ctx.raw may replace the loaded data files (the tests, and offline comparisons of a tree before and after a change).
+  const model = await prepareModel(ctx, ctx.raw);
   // technology files
   const byFolder = new Map();
   for (const t of model.techs) { if (!byFolder.has(t.folder)) byFolder.set(t.folder, []); byFolder.get(t.folder).push(t); }

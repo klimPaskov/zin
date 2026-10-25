@@ -212,6 +212,27 @@ test('The War of the Last Crowns: HISTORICAL on its date, PLAUSIBLE by the lates
   assert(eff.includes('set_global_flag = zin_war_of_last_crowns') && eff.includes('news_event = { id = zin_world.20 }'));
 });
 
+test('Q-80 (K59): under HISTORICAL a front a player\'s realm opens starts the war early, piecemeal; the AI\'s fronts keep the date', () => {
+  const eff = wtext('common/scripted_effects/zin_world_tension.txt');
+  const w = eff.slice(eff.indexOf('zin_world_check_last_crowns = {'));
+  assert.match(w, /limit = \{ zin_world_date_last_crowns = yes \}\s*zin_world_start_last_crowns = yes\s*\}\s*else_if = \{\s*limit = \{ zin_world_player_front_open = yes \}\s*set_global_flag = zin_war_piecemeal/);
+  assert.deepEqual(W.war.playerFronts.map(p => p.flag), W.war.fronts, 'every front names the realm that opens it');
+  const tr = wtext('common/scripted_triggers/zin_world_tension.txt');
+  const t = tr.slice(tr.indexOf('zin_world_player_front_open = {'));
+  for (const p of W.war.playerFronts) assert(t.includes(`has_global_flag = ${p.flag}`) && t.includes(p.opener), p.flag);
+  assert((t.slice(0, t.indexOf('\n}')).match(/is_ai = no/g) ?? []).length === W.war.playerFronts.length, 'only a player\'s front');
+});
+
+test('Q-86 (K59): a surviving Golden King may die of old age; the Golden Court Endures then holds only through the Regency of Gold', () => {
+  const tr = wtext('common/scripted_triggers/zin_world_tension.txt');
+  const g = tr.slice(tr.indexOf('zin_world_golden_court_holds = {'), tr.indexOf('zin_world_western_crown_holds = {'));
+  assert(!g.includes('has_global_flag = zin_golden_king_old_age'), 'the old-age death does not close the outcome for good (owner, 25 October 2026)');
+  assert(/NOT = \{ has_global_flag = zin_golden_king_dead \}\s*has_global_flag = zin_aenor_regency_endures/.test(g), 'a dead King leaves the Regency of Gold');
+  const src = readFileSync(path.join(ZIN, 'tools/content/lib/mech_aenor_script.mjs'), 'utf8');
+  assert(/effects\.zin_aenor_check_old_age[\s\S]*set_global_flag = zin_golden_king_old_age[\s\S]*news_event = \{ id = zin_aenor\.200 \}/.test(src), 'the old-age death is the ordinary death of the King');
+  assert(/has_global_flag = zin_golden_king_survives[\s\S]{0,120}zin_aenor_check_old_age = yes/.test(src), 'only for a King who survived the Council');
+});
+
 test('Endings: one per game, canon in order, the outcomes judged once, the Age Unfinished on its date', () => {
   const eff = wtext('common/scripted_effects/zin_world_tension.txt');
   const r = eff.slice(eff.indexOf('zin_world_reach_ending = {'), eff.indexOf('zin_world_check_endings = {'));

@@ -88,7 +88,7 @@ Isengard holds twelve states of iron hills and fortified valleys along Coldor's 
 | Id | Name | Role | Source |
 | --- | --- | --- | --- |
 | `<Isengard tag>_zin_ruler` | Warlord Ezhan Isenmar | Country leader, `zin_dom_warlord` | characters spec (proposed) |
-| `zin_regional_isengard_brana` | Brana of the Ninth Fort | Corps commander, skill 3, traits `unyielding_defender`, `winter_specialist`; recruited by *The Ninth Fort* | this spec (proposed) |
+| `zin_regional_isengard_alddok` | Brana of the Ninth Fort | Corps commander, skill 3, traits `unyielding_defender`, `winter_specialist`; recruited by *The Ninth Fort* | this spec (proposed) |
 | `zin_regional_isengard_veska` | Veska the Gift-Giver | Political advisor, trait `zin_adv_envoy`; recruited by *The Gift-Giver* | this spec (proposed) |
 
 Start spirit (start-situation data): `refusal_of_850`.
@@ -120,7 +120,7 @@ Start spirit (start-situation data): `refusal_of_850`.
 - `man_the_march` **Man the March** (6,0) `fort_wall`: building bunker 1 `isengard_march`. AI 30.
 - `count_the_stones` **Count the Stones** (5,1) `quarry_stone` ← man_the_march: army experience 5; research {zin_cat_walls} 0.5×1.
 - `watchtowers_of_the_march` **Watchtowers of the March** (7,1) `eye_watchful` ← man_the_march: spirit `march_watch`.
-- `the_ninth_fort` **The Ninth Fort** (6,2) `pass_fort` 70d ← count_the_stones, watchtowers_of_the_march: building bunker 2 `isengard_march`; recruit `zin_regional_isengard_brana`.
+- `the_ninth_fort` **The Ninth Fort** (6,2) `pass_fort` 70d ← count_the_stones, watchtowers_of_the_march: building bunker 2 `isengard_march`; recruit `zin_regional_isengard_alddok`.
 - ★ `meet_them_at_the_forts` **Meet Them at the Forts** (5,3) `war_drums` ← the_ninth_fort: see key focuses.
 - `stone_upon_stone` **Stone upon Stone** (6,3) `fort_wall` ← the_ninth_fort: building bunker 1 capital; building bunker 1 random_owned.
 - ★ `ride_to_the_forts` **Ride to the Forts** (7,3) `horse_cavalry` ← the_ninth_fort: see key focuses.
@@ -746,6 +746,18 @@ Start spirit (start-situation data): `the_frost_kings_court`.
 | 1755 | the_dark_wakes, the_high_snows_hold |
 | 1756–1760 | leftovers |
 
+
+### Deep past branch (K64): The Snow's Long Breath
+
+Adopted by the owner on 25 October 2026 (decision K64) from `docs/plans/deep_history/k62_fallen_realms.md` section 6.9; the lore is [10_fallen_realms.md](../../02_lore/10_fallen_realms.md).
+The branch hangs from `memory_of_the_giants`. Its decisions, events, relics and scripted effects belong to the deep past module (`tools/content/modules/deep_past.mjs`, spec `docs/specs/04_mechanics/deep_past.md`), and the tree calls them by name.
+
+| Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Conditions | Effects | AI |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `the_snows_long_breath` | The Snow's Long Breath | `storm_veil` | memory_of_the_giants | — | 1,3 | 70 | — | global flag `zin_deep_snow_breath`; stab 0.03 | base 15 |
+
+Every focus of the branch carries search filters; its icon is a catalog stand-in until the branch's own icon is drawn (pending art rows in `docs/plans/zin-art/pending_from_integration.md`).
+
 ---
 
 ## Yeti Lands
@@ -768,7 +780,7 @@ The Yeti Lands are twenty-two states of deep snow, ice fields and high hunting g
 | --- | --- | --- | --- |
 | `<Yeti Lands tag>_zin_ruler` | Grumhal the Eldest | Country leader, `zin_wild_clans` | characters spec (proposed) |
 | `zin_regional_yeti_lands_oruk` | Oruk Long-Stride | Corps commander, skill 3, traits `winter_specialist`, `ambusher`; recruited by *Long Stride* | this spec (proposed) |
-| `zin_regional_yeti_lands_sima` | Sima Who Remembers | Political advisor, trait `zin_adv_elder`; recruited by *Songs of the Long Snow* | this spec (proposed) |
+| `zin_regional_yeti_lands_garam` | Sima Who Remembers | Political advisor, trait `zin_adv_elder`; recruited by *Songs of the Long Snow* | this spec (proposed) |
 
 Start spirit (start-situation data): `eldests_fire`.
 
@@ -787,7 +799,7 @@ Start spirit (start-situation data): `eldests_fire`.
 
 - `the_eldests_fire` **The Eldest's Fire** (1,0) `yeti_claw` 70d: political power 50. AI 100.
 - `the_fire_moot` **The Fire Moot** (0,1) `council_table` ← the_eldests_fire: stability 0.03.
-- `songs_of_the_long_snow` **Songs of the Long Snow** (2,1) `book_lore` ← the_eldests_fire: recruit `zin_regional_yeti_lands_sima`; political power 25.
+- `songs_of_the_long_snow` **Songs of the Long Snow** (2,1) `book_lore` ← the_eldests_fire: recruit `zin_regional_yeti_lands_garam`; political power 25.
 - `the_clans_of_the_deep_snow` **The Clans of the Deep Snow** (1,2) `banner_league` 70d ← the_fire_moot, songs_of_the_long_snow: swap spirit `eldests_fire` → `moot_of_fires`.
 
 **B. The Hunting Grounds.**

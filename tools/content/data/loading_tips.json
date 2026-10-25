@@ -1,6 +1,6 @@
 {
  "source": "docs/specs/08_art_and_assets/02_loading_screens_and_quotes.md",
- "note": "Extracted verbatim from the spec tables (section 7). Quotes LOADING_TIP_0..149 ship as \"<text>\\n- <attribution>\"; tips LOADING_TIP_150..189 ship as \"§YCounsel:§! <text>\". Never reorder: a key keeps its text across builds. Rewritten on 24 October 2026 in the owner-accepted voice (decision K33, docs/specs/02_lore/09_voice_and_style.md).",
+ "note": "Extracted verbatim from the spec tables (section 7). Quotes LOADING_TIP_0..149 and LOADING_TIP_190..201 (the fallen realms, owner decision K64) ship as \"<text>\\n- <attribution>\"; tips LOADING_TIP_150..189 ship as \"§YCounsel:§! <text>\". Never reorder: a key keeps its text across builds. Rewritten on 24 October 2026 in the owner-accepted voice (decision K33, docs/specs/02_lore/09_voice_and_style.md).",
  "format": {
   "quote": "<text>\\n- <attribution>",
   "tip": "§YCounsel:§! <text>"
@@ -1834,6 +1834,126 @@
    "refs": "focus trees",
    "status": "proposed",
    "rewrite": "2026-10-24"
+  },
+  {
+   "key": "LOADING_TIP_190",
+   "kind": "quote",
+   "group": "Middle Lands and Aenor",
+   "text": "Ask a field only for what it can give. The low land under the sea was asked for more than that, and the sea came to collect.",
+   "attribution": "Saying of the cord-mothers of the grey downs",
+   "basis": "Muzerar's fall as the Veiled tell it (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_191",
+   "kind": "quote",
+   "group": "Middle Lands and Aenor",
+   "text": "When the nets come up heavy with field-stones we give them to the old women. They lay them out in rows on the shore and will not tell us why.",
+   "attribution": "A fisher of Aenor Isle",
+   "basis": "The Nimlan banks and Orohaf's rites (disputed, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_192",
+   "kind": "quote",
+   "group": "The East Lands",
+   "text": "The first stair was raised so that the river and the gods would each have a place. The scribes say the stair is older than the crown, and the priests say nothing.",
+   "attribution": "Temple scribe of Alerhia",
+   "basis": "The first stair after the Breaking (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_193",
+   "kind": "quote",
+   "group": "The East Lands",
+   "text": "Nobody in Delbiz raised the pillars the horse-fair is held among. They are good for tying horses, and that is all a trader needs to know about them.",
+   "attribution": "Horse-trader of the Delbiz coast",
+   "basis": "The eastern half of the broken city (disputed, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_194",
+   "kind": "quote",
+   "group": "The East Lands",
+   "text": "There is a wall in the old hall under the forts that no miner strikes. My father did not strike it, his father did not, and you will not either.",
+   "attribution": "Mine-foreman of Erco",
+   "basis": "The diadem in the wall of the Kalioth halls (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_195",
+   "kind": "quote",
+   "group": "Middle Lands and Aenor",
+   "text": "My grandfather's grandfather was told never to sleep in the stone forts on the downs. The eastern raiders who built them are an age gone, and still nobody sleeps there.",
+   "attribution": "Farmer of Herez",
+   "basis": "The Kalioth occupation of the march (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_196",
+   "kind": "quote",
+   "group": "Middle Lands and Aenor",
+   "text": "There is a door at the bottom of our hall that no dwarf opens. The sea keeps it shut, and we are content to let the sea do the work.",
+   "attribution": "A dwarf at the gate of Kunhrim, through a carrier",
+   "basis": "The Sea-Doors of the holds (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_197",
+   "kind": "quote",
+   "group": "The West Lands",
+   "text": "My grandmother's grandmother could walk to the northern holds without once seeing the sky. Now the road is full of sea, and a dwarf must take a ship like everyone else.",
+   "attribution": "Delver of Brundahrim",
+   "basis": "The Stone Road under the seas (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_198",
+   "kind": "quote",
+   "group": "The Pupor Isles",
+   "text": "No captain sails into the Square, whatever the prize. The reefs are not the reason, though they would be reason enough.",
+   "attribution": "Corsair of Benan",
+   "basis": "The Cursed Square (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_199",
+   "kind": "quote",
+   "group": "The Pupor Isles",
+   "text": "The oldest names read at the close of the gale season belong to no isle anyone lives on. The readers read them anyway, every year, in the same order.",
+   "attribution": "Reader of the Drowned Names",
+   "basis": "The dead harbour of the Sea-Roads (disputed, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_200",
+   "kind": "quote",
+   "group": "The Cold Lands",
+   "text": "In a mild year the ice gives back old bronze. We take it to the fire-keepers, who look at it a long time and then send us out for more.",
+   "attribution": "Herder of Kvittumm",
+   "basis": "The finds of the Sunfields (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
+  },
+  {
+   "key": "LOADING_TIP_201",
+   "kind": "quote",
+   "group": "The Cold Lands",
+   "text": "Every hearth of the clan is lit from the clan fire in the Long Dark, as it was before there was any crown to tell us to.",
+   "attribution": "Fire-keeper of the Frost-Hall",
+   "basis": "The Winter Hearth as the last hall's custom (belief, K64)",
+   "status": "proposed",
+   "rewrite": "2026-10-25"
   }
  ]
 }

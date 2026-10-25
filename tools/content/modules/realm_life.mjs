@@ -59,6 +59,10 @@ export async function loadRealmLife() {
   return D;
 }
 
+// The customs of succession (Q-87): blood (an ordered line, by blood, age or pact), elective (a moot, a council or a guild chooses; the
+// heir is its favoured candidate), contested (the crown is taken in the ring or by the biggest), open (the custom is not told to men).
+export const CUSTOMS = ['blood', 'elective', 'contested', 'open'];
+
 // ------------------------------------------------------------------------------------------------ the plan (pure)
 // Everything the scripts need about each realm, from the roster and the courts: tier, people rate, the start vigour of its ruler, its
 // batch slot, its succession custom, its named heir, its kin class, its land and whether it raids.
@@ -74,21 +78,26 @@ export function realmPlan(countries, D, courts = loadCharacterData()) {
     const ruler = court?.ruler ?? {};
     const people = ruler.people && D.people.rate[ruler.people] !== undefined ? ruler.people : c.people;
     const rate = D.people.rate[people];
+    // K55, Q-85: the vigour counts the years left in a man's life (men-years); the years left to the people's span times the rate.
     let vigour;
     const life = D.people.lifespanYears[people];
     if (rate !== undefined && ruler.born && life) {
-      const years = Math.max(life - (C.start_count - ruler.born), 3);
-      vigour = Math.min(C.vigour_max, Math.round(years * 12 * rate));
+      const years = Math.max(life - (C.start_count - ruler.born), C.start_years_left_min);
+      vigour = Math.min(C.vigour_max, Math.round(years * rate * 10) / 10);
     } else {
       const r = rng(`realm_life:vigour:${c.tag}`)();
       vigour = Math.round(C.start_vigour_default_min + r * (C.start_vigour_default_max - C.start_vigour_default_min));
     }
     const heir = court?.heir?.id ? court.heir : null;
     const note = `${court?.heir?.note ?? ''} ${court?.heir?.succession ?? ''}`.trim();
-    const kind = heir ? 'heir' : contested.test(note) ? 'contested' : open.test(note) ? 'open' : 'elective';
+    // The custom of succession (Q-87): an ordered line (blood), a choice (elective), a crown taken (contested) or one men are not told
+    // (open). A pre-built heir carries his realm's custom; a court's own named heir means blood unless heirs.json says otherwise.
+    const custom = heir?.custom ?? (heir ? 'blood' : contested.test(note) ? 'contested' : open.test(note) ? 'open' : 'elective');
+    if (!CUSTOMS.includes(custom)) throw new Error(`realm_life: ${c.name}: unknown custom of succession ${custom}`);
+    const heirLife = heir ? D.people.lifespanYears[heir.people ?? people] ?? null : null;
     return {
       tag: c.tag, name: c.name, key: c.key, tier: c.focusTier === 'major' ? 'A' : c.focusTier === 'regional' ? 'B' : 'C', people, rate: rate ?? null,
-      vigour, slot: i % C.slot_count, region: c.region, kin: D.people.kinClass[c.people] ?? null, kind,
+      vigour, slot: i % C.slot_count, region: c.region, kin: D.people.kinClass[c.people] ?? null, custom, culture: c.culture, heirLife,
       monarchy: D.succession.monarchyForms.includes(c.politicalForm), heir, story: storyRealms.has(c.tag),
     };
   });
@@ -96,7 +105,8 @@ export function realmPlan(countries, D, courts = loadCharacterData()) {
   return {
     rows,
     tierA: rows.filter(r => r.tier === 'A').map(r => r.tag), tierB: rows.filter(r => r.tier === 'B').map(r => r.tag),
-    raiders: tags(D.raiders.realms), historicalCourts: tags(D.historicalCourts), storyRealms: [...storyRealms],
+    raiders: tags(D.raiders.realms), corsairs: tags(D.raiders.styles.corsair), steppe: tags(D.raiders.styles.steppe),
+    historicalCourts: tags(D.historicalCourts), storyRealms: [...storyRealms],
     shelterGoldenKing: tags(D.goldenKingShelter),
     aenor: need('Aenor'), worshipdom: need('Worshipdom').tag, volgan: need('Puvulan').tag, zol: need("Zol's Mistake").tag, yeldenne: need('Yeldenne').tag,
     gala: need('Gala').tag, mirolon: need('Mirolon').tag, selen: need('Selen').tag, gunwyn: need('Gunwyn').tag, girdon: need('Girdon').tag, lerendor: need('Lerendor').tag,
@@ -134,9 +144,12 @@ export function realmScripts(D, plan, heirs) {
   T.zin_realm_tier_a = `# Tier A (the thirteen great powers and lore powers of the tiers spec).\n${tagOr(plan.tierA)}`;
   T.zin_realm_tier_b = `# Tier B (the regional realms).\n${tagOr(plan.tierB)}`;
   T.zin_realm_is_raider = `# G8: the raiding realms of data/realm_life.json.\n${tagOr(plan.raiders)}`;
-  T.zin_realm_inherits = `# G2: realms whose crown passes through a named heir (data/world/characters).\n${tagOr(plan.rows.filter(r => r.kind === 'heir').map(r => r.tag))}`;
-  T.zin_realm_contested_custom = `# G3: realms whose custom settles the crown by combat (the heir notes of data/world/characters).\n${tagOr(plan.rows.filter(r => r.kind === 'contested').map(r => r.tag))}`;
-  T.zin_realm_open_custom = `# Realms whose custom of succession nobody knows: the engine names a successor and nothing more is told.\n${tagOr(plan.rows.filter(r => r.kind === 'open').map(r => r.tag))}`;
+  T.zin_realm_inherits = `# G2, Q-87: realms whose crown passes in an ordered line (by blood, age or pact; custom blood of data/world/heirs.json and the courts).\n${tagOr(plan.rows.filter(r => r.custom === 'blood').map(r => r.tag))}`;
+  T.zin_realm_contested_custom = `# G3: realms whose custom settles the crown by combat (custom contested).\n${tagOr(plan.rows.filter(r => r.custom === 'contested').map(r => r.tag))}`;
+  T.zin_realm_open_custom = `# Realms whose custom of succession men are not told (custom open): the heir takes it quietly, or the engine names a successor.\n${tagOr(plan.rows.filter(r => r.custom === 'open').map(r => r.tag))}`;
+  T.zin_realm_elective_custom = '# Q-87: realms that choose their ruler (a moot, a council, a guild); the heir is the favoured candidate.\nNOT = { zin_realm_inherits = yes }\nNOT = { zin_realm_contested_custom = yes }\nNOT = { zin_realm_open_custom = yes }';
+  T.zin_realm_is_corsair = `# G8, Q-89: the corsair realms, who raid by sea (data/realm_life.json raiders.styles.corsair).\n${tagOr(plan.corsairs)}`;
+  T.zin_realm_is_steppe_rider = `# G8, Q-89: the steppe-rider realms, who raid by land and often (raiders.styles.steppe).\n${tagOr(plan.steppe)}`;
   T.zin_realm_is_monarchy = `# G7: the royal houses that make matches (the forms of rule of data/realm_life.json).\n${tagOr(plan.rows.filter(r => r.monarchy).map(r => r.tag))}`;
   T.zin_realm_story_court = `# Courts the chronicle names (their rulers do not die of age on the historical path).\n${tagOr(plan.historicalCourts)}`;
   T.zin_realm_is_story_ruler = list('# G1 to G4 exemption: a canon figure or a story ruler leads, or the realm\'s rulers are a story mechanic\'s (the Aenor court, the Worshipdom,',
@@ -196,6 +209,7 @@ export function realmScripts(D, plan, heirs) {
   E.zin_realm_pulse = list('# The monthly pulse of one realm (THIS; ROOT is the world runner).',
     'zin_realm_note_ruler = yes',
     'if = { limit = { zin_realm_mortal = yes } zin_realm_age_ruler = yes }',
+    'if = {', 'limit = {', 'zin_realm_mortal = yes', 'zin_realm_has_named_heir = yes', '}', 'zin_realm_check_heir = yes', '}',
     'zin_realm_tick_regency = yes',
     'if = {', 'limit = {', 'NOT = { zin_rules_is_historical = yes }', 'zin_realm_crisis_allowed = yes', '}', 'zin_realm_check_ambition = yes', '}',
     'if = {', 'limit = {', 'is_subject = yes', 'NOT = { zin_rules_is_historical = yes }', '}', 'zin_realm_check_subject = yes', '}',
@@ -206,52 +220,87 @@ export function realmScripts(D, plan, heirs) {
     'if = { limit = { has_variable = zin_realm_exile_court } zin_realm_check_exiles = yes }');
 
   // ---- G1 rulers' years
-  E.zin_realm_note_ruler = list('# G1: a ruler the pulse has not seen (a successor of any kind, a usurper, a ruler a focus or a story owner raised) gets a fresh vigour,',
-    '# and, when the start variety is not off, a temper (zin_variety_temper_new_ruler).',
+  E.zin_realm_note_ruler = list('# G1: a ruler the pulse has not seen (a successor of any kind, a usurper, a ruler a focus or a story owner raised) gets a fresh vigour',
+    '# in years (K55, Q-85), unless the crowned heir\'s own years gave it (zin_realm_vigour_given), and, when the start variety is not off, a temper',
+    '# (zin_variety_temper_new_ruler).',
     'set_temp_variable = { zin_t_new = 0 }',
     'random_character = {', 'limit = {', 'is_country_leader = yes', 'NOT = { has_character_flag = zin_realm_known }', '}', 'set_character_flag = zin_realm_known', 'set_temp_variable = { zin_t_new = 1 }', '}',
     'if = {', 'limit = {', 'OR = {', 'check_variable = { zin_t_new = 1 }', 'NOT = { has_variable = zin_ruler_vigour }', '}', '}',
-    rnd('zin_t_v', C.new_ruler_min, C.new_ruler_max), 'set_variable = { zin_ruler_vigour = zin_t_v }',
+    'if = {', 'limit = { has_country_flag = zin_realm_vigour_given }', 'clr_country_flag = zin_realm_vigour_given', '}',
+    'else = {', rnd('zin_t_v', C.new_ruler_min, C.new_ruler_max), 'set_variable = { zin_ruler_vigour = zin_t_v }', '}',
     'if = { limit = { NOT = { has_variable = zin_ruler_rate } } set_variable = { zin_ruler_rate = constant:zin_realm.rate_default } }',
     'if = {', 'limit = {', 'check_variable = { zin_t_new = 1 }', 'NOT = { zin_realm_is_story_ruler = yes }', '}', 'zin_variety_temper_new_ruler = yes', '}', '}');
-  E.zin_realm_age_ruler = list('# G1: the vigour falls by the people rate, more at war and more again when the war goes badly; at the floor the ruler dies, and below the',
-    '# frail line the ruler may die any month (mtth zin_realm_frail_death, in hundredths).',
-    'set_temp_variable = { zin_t_wear = zin_ruler_rate }',
+  E.zin_realm_age_ruler = list('# G1, K55 (Q-85): rulers age by the year. The vigour counts years of a man\'s life and falls each month by the people rate over the',
+    '# months of a year, half as much again at war and again when the war goes badly; at the floor the ruler dies, and below the frail line',
+    '# the ruler may die any month (mtth zin_realm_frail_death, in hundredths, times the people rate, so the long-lived linger).',
+    'set_temp_variable = { zin_t_wear = 1 }',
     'if = {', 'limit = { has_war = yes }', `add_to_temp_variable = { zin_t_wear = ${c('war_wear')} }`,
     `if = { limit = { surrender_progress > ${num(C.losing_surrender)} } add_to_temp_variable = { zin_t_wear = ${c('losing_wear')} } }`, '}',
+    'multiply_temp_variable = { zin_t_wear = zin_ruler_rate }', `divide_temp_variable = { zin_t_wear = ${c('months_per_year')} }`,
     'subtract_from_variable = { zin_ruler_vigour = zin_t_wear }',
     `clamp_variable = { var = zin_ruler_vigour min = 0 max = ${c('vigour_max')} }`,
     `set_temp_variable = { zin_t_floor = ${c('vigour_floor')} }`, `set_temp_variable = { zin_t_frail = ${c('vigour_frail')} }`,
     'if = {', 'limit = { check_variable = { zin_ruler_vigour < zin_t_floor } }', 'zin_realm_succeed = yes', '}',
     'else_if = {', 'limit = { check_variable = { zin_ruler_vigour < zin_t_frail } }',
-    'set_temp_variable = { zin_t_chance = mtth:zin_realm_frail_death }', `set_temp_variable_to_random = { var = zin_t_roll min = 0 max = ${num(C.random_scale)} }`,
+    'set_temp_variable = { zin_t_chance = mtth:zin_realm_frail_death }', 'multiply_temp_variable = { zin_t_chance = zin_ruler_rate }',
+    `set_temp_variable_to_random = { var = zin_t_roll min = 0 max = ${num(C.random_scale)} }`,
     'if = { limit = { check_variable = { zin_t_roll < zin_t_chance } } zin_realm_succeed = yes }', '}');
 
   // ---- G2 heirs and regencies, G3 crises
-  E.zin_realm_succeed = list('# G1 to G3: the ruler of THIS realm has died. A named heir takes the crown (a child through a regency that lasts until the heir is grown,',
-    '# clamped to two to five years); a kinsman named by Name an Heir takes it quietly; a crown that passes by blood or by combat with no heir',
-    '# falls into crisis when it may; a realm that chooses by its own custom chooses; any other realm takes the successor the engine names.',
+  E.zin_realm_succeed = list('# G1 to G3, Q-87: the ruler of THIS realm has died, and the succession is dynamic. A waiting named heir may be disputed',
+    '# (mtth zin_realm_succession_dispute, in hundredths, when the crown may fall into crisis): zin_realm.16 asks who rules. Otherwise he',
+    '# is seated (zin_realm_seat_heir: a child reigns through a regency of two to five years). A kinsman named by Name an Heir takes the',
+    '# crown quietly; a crown that passes in a line or by combat with no heir falls into crisis when it may; a realm that chooses may',
+    '# fail to agree (mtth zin_realm_election_dispute) and fall into crisis, or chooses (the engine names the successor); a realm whose',
+    '# custom men are not told takes the engine\'s successor.',
     'set_variable = { zin_realm_succession_way = 0 }',
     'if = {', 'limit = { zin_realm_has_named_heir = yes }',
-    'set_temp_variable = { zin_t_age = global.year }', `add_to_temp_variable = { zin_t_age = ${c('count_offset')} }`, 'subtract_from_temp_variable = { zin_t_age = zin_realm_heir_born }',
-    `set_temp_variable = { zin_t_adult = ${c('adult_age')} }`,
-    'kill_country_leader = yes', 'zin_realm_crown_heir = yes',
-    'if = {', 'limit = {', 'has_variable = zin_realm_heir_born', 'check_variable = { zin_t_age < zin_t_adult }', '}',
-    'set_temp_variable = { zin_t_days = zin_t_adult }', 'subtract_from_temp_variable = { zin_t_days = zin_t_age }', `multiply_temp_variable = { zin_t_days = ${c('days_per_year')} }`,
-    `clamp_temp_variable = { var = zin_t_days min = ${c('regency_min_days')} max = ${c('regency_max_days')} }`,
-    'add_timed_idea = { idea = zin_realm_regency days = zin_t_days }', 'set_country_flag = zin_realm_in_regency', 'set_variable = { zin_realm_succession_way = 2 }',
-    'country_event = { id = zin_realm.11 }', '}',
-    'else = {', 'set_variable = { zin_realm_succession_way = 1 }', 'country_event = { id = zin_realm.10 }', '}',
-    'clear_variable = zin_realm_heir_born', '}',
+    'set_temp_variable = { zin_t_chance = mtth:zin_realm_succession_dispute }', `set_temp_variable_to_random = { var = zin_t_roll min = 0 max = ${num(C.random_scale)} }`,
+    'kill_country_leader = yes',
+    'if = {', 'limit = {', 'check_variable = { zin_t_roll < zin_t_chance }', 'zin_realm_crisis_allowed = yes', '}',
+    'set_country_flag = zin_realm_heir_disputed', 'country_event = { id = zin_realm.16 }', '}',
+    'else = {', 'zin_realm_seat_heir = yes', 'zin_realm_announce_heir = yes', '}', '}',
     'else_if = {', 'limit = { has_country_flag = zin_realm_heir_named }', 'clr_country_flag = zin_realm_heir_named', 'kill_country_leader = yes',
     'set_variable = { zin_realm_succession_way = 3 }', 'country_event = { id = zin_realm.10 }', '}',
     'else_if = {', 'limit = {', 'OR = {', 'zin_realm_inherits = yes', 'zin_realm_contested_custom = yes', '}', 'zin_realm_crisis_allowed = yes', '}',
     'kill_country_leader = yes', 'zin_realm_open_crisis = yes', '}',
-    'else_if = {', 'limit = {', 'NOT = { zin_realm_inherits = yes }', 'NOT = { zin_realm_contested_custom = yes }', 'NOT = { zin_realm_open_custom = yes }', '}',
-    'kill_country_leader = yes', 'set_variable = { zin_realm_succession_way = 4 }', 'country_event = { id = zin_realm.10 }', '}',
+    'else_if = {', 'limit = { zin_realm_elective_custom = yes }',
+    'set_temp_variable = { zin_t_chance = mtth:zin_realm_election_dispute }', `set_temp_variable_to_random = { var = zin_t_roll min = 0 max = ${num(C.random_scale)} }`,
+    'kill_country_leader = yes',
+    'if = {', 'limit = {', 'check_variable = { zin_t_roll < zin_t_chance }', 'zin_realm_crisis_allowed = yes', '}', 'zin_realm_open_crisis = yes', '}',
+    'else = {', 'set_variable = { zin_realm_succession_way = 4 }', 'country_event = { id = zin_realm.10 }', '}', '}',
     'else = {', 'kill_country_leader = yes', 'set_variable = { zin_realm_succession_way = 5 }', 'country_event = { id = zin_realm.10 }', '}');
-  E.zin_realm_crown_heir = list('# G2: the named heir of THIS realm is promoted to lead (generated from data/world/characters).',
+  E.zin_realm_seat_heir = list('# G2, Q-87: the waiting named heir of THIS realm takes the crown (the old ruler is already gone). A child (younger than the adult',
+    '# age by zin_realm_heir_born against global.year) reigns through zin_realm_regency until grown, two to five years (way 2); a grown heir',
+    '# rules at once (way 1). An heir whose year of birth and span are known gets his vigour from his own years (zin_realm_vigour_given).',
+    'set_temp_variable = { zin_t_age = global.year }', `add_to_temp_variable = { zin_t_age = ${c('count_offset')} }`, 'subtract_from_temp_variable = { zin_t_age = zin_realm_heir_born }',
+    `set_temp_variable = { zin_t_adult = ${c('adult_age')} }`,
+    'zin_realm_crown_heir = yes', 'clr_country_flag = zin_realm_heir_disputed',
+    'if = {', 'limit = {', 'has_variable = zin_realm_heir_born', 'has_variable = zin_realm_heir_life', '}',
+    'set_temp_variable = { zin_t_left = zin_realm_heir_life }', 'subtract_from_temp_variable = { zin_t_left = zin_t_age }', 'multiply_temp_variable = { zin_t_left = zin_ruler_rate }',
+    `clamp_temp_variable = { var = zin_t_left min = ${c('start_years_left_min')} max = ${c('vigour_max')} }`,
+    'set_variable = { zin_ruler_vigour = zin_t_left }', 'set_country_flag = zin_realm_vigour_given', '}',
+    'if = {', 'limit = {', 'has_variable = zin_realm_heir_born', 'check_variable = { zin_t_age < zin_t_adult }', '}',
+    'set_temp_variable = { zin_t_days = zin_t_adult }', 'subtract_from_temp_variable = { zin_t_days = zin_t_age }', `multiply_temp_variable = { zin_t_days = ${c('days_per_year')} }`,
+    `clamp_temp_variable = { var = zin_t_days min = ${c('regency_min_days')} max = ${c('regency_max_days')} }`,
+    'add_timed_idea = { idea = zin_realm_regency days = zin_t_days }', 'set_country_flag = zin_realm_in_regency', 'set_variable = { zin_realm_succession_way = 2 }', '}',
+    'else = { set_variable = { zin_realm_succession_way = 1 } }',
+    'clear_variable = zin_realm_heir_born');
+  E.zin_realm_announce_heir = '# G2: the court hears how the heir took the crown (zin_realm.11 for a child, zin_realm.10 otherwise).\nif = {\nlimit = { check_variable = { zin_realm_succession_way = 2 } }\ncountry_event = { id = zin_realm.11 }\n}\nelse = { country_event = { id = zin_realm.10 } }';
+  E.zin_realm_crown_heir = list('# G2: the named heir of THIS realm is promoted to lead (generated from data/world/characters and data/world/heirs.json).',
     heirRows.length ? heirRows.map((r, i) => `${i ? 'else_if' : 'if'} = {\nlimit = {\noriginal_tag = ${r.tag}\nhas_character = ${r.heir.id}\n}\npromote_character = ${r.heir.id}\n}`) : 'log = "ZIN realm: no named heirs"');
+  E.zin_realm_remove_heir = list('# Q-87: the named heir of THIS realm leaves the succession (passed over, or dead before the ruler): he is retired.',
+    heirRows.length ? heirRows.map((r, i) => `${i ? 'else_if' : 'if'} = {\nlimit = {\noriginal_tag = ${r.tag}\nhas_character = ${r.heir.id}\n}\nretire_character = ${r.heir.id}\n}`) : 'log = "ZIN realm: no named heirs"',
+    'clear_variable = zin_realm_heir_born', 'clr_country_flag = zin_realm_heir_disputed');
+  E.zin_realm_pass_over_heir = '# Q-87 (zin_realm.16 b): the court passes the heir over; the custom chooses another and zin_realm.10 tells it (way 6).\nzin_realm_remove_heir = yes\nadd_stability = -0.03\nset_variable = { zin_realm_succession_way = 6 }\ncountry_event = { id = zin_realm.10 }';
+  E.zin_realm_hold_disputed_crown = `# Q-87 (zin_realm.16 a): the court crowns the heir over the rival's protests; the crown sits uneasily for a year (zin_realm_disputed_crown).\nzin_realm_seat_heir = yes\nadd_timed_idea = { idea = zin_realm_disputed_crown days = ${C.disputed_days} }\nif = {\nlimit = { check_variable = { zin_realm_succession_way = 2 } }\ncountry_event = { id = zin_realm.11 }\n}`;
+  E.zin_realm_fight_for_heir = '# Q-87 (zin_realm.16 c): the heir is crowned and the rival raises a banner: a contested crown (zin_realm_settle_crisis, way 2).\nzin_realm_seat_heir = yes\nset_temp_variable = { zin_arg_way = 2 }\nzin_realm_settle_crisis = yes';
+  E.zin_realm_captain_takes_crown = '# Q-87 (zin_realm.16 d): while the court quarrels the captain-general takes the crown (way 4) and the heir is set aside.\nclr_country_flag = zin_realm_heir_disputed\nset_temp_variable = { zin_arg_way = 4 }\nzin_realm_settle_crisis = yes';
+  E.zin_realm_check_heir = list('# Q-87: the waiting heir may die before the ruler (mtth zin_realm_heir_death, in hundredths a month, times the people rate);',
+    '# then no heir can be determined until another is named (zin_realm.17).',
+    'set_temp_variable = { zin_t_chance = mtth:zin_realm_heir_death }', 'multiply_temp_variable = { zin_t_chance = zin_ruler_rate }',
+    `set_temp_variable_to_random = { var = zin_t_roll min = 0 max = ${num(C.random_scale)} }`,
+    'if = {', 'limit = { check_variable = { zin_t_roll < zin_t_chance } }', 'zin_realm_remove_heir = yes', 'set_country_flag = zin_realm_heir_lost', 'country_event = { id = zin_realm.17 }', '}');
   E.zin_realm_tick_regency = list('# G2: the regency idea has run out, so the heir is grown and rules.',
     'if = {', 'limit = {', 'has_country_flag = zin_realm_in_regency', 'NOT = { has_idea = zin_realm_regency }', '}', 'clr_country_flag = zin_realm_in_regency', 'country_event = { id = zin_realm.14 }', '}',
     'if = {', 'limit = {', 'has_country_flag = zin_realm_in_crisis', 'NOT = { has_idea = zin_realm_crisis }', '}', 'clr_country_flag = zin_realm_in_crisis', '}');
@@ -374,22 +423,34 @@ export function realmScripts(D, plan, heirs) {
   E.zin_realm_fail_kin = '# G7 (zin_realm.63): we do not answer; the kin take it ill and the bond ends.\nevent_target:zin_realm_kin = { add_opinion_modifier = { target = PREV modifier = zin_realm_kin_failed } }\nzin_realm_break_match = yes';
 
   // ---- G8 raids
+  // A chartered dominion of the Concord (the steppe riders of Konori and Hunhun) never raids the crown or a fellow dominion (Q-89).
   const raidTarget = list('NOT = { tag = PREV }', 'exists = yes', 'has_capitulated = no', 'NOT = { is_in_faction_with = PREV }', 'NOT = { is_subject_of = PREV }', 'NOT = { PREV = { is_subject_of = PREV } }',
     'NOT = { has_country_flag = zin_realm_raided_recently }', `NOT = { original_tag = ${PUV} }`, `NOT = { original_tag = ${ZOL} }`,
-    'OR = {', 'has_global_flag = zin_war_of_last_crowns', 'NOT = { zin_realm_tier_a = yes }', '}');
+    'OR = {', 'has_global_flag = zin_war_of_last_crowns', 'NOT = { zin_realm_tier_a = yes }', '}',
+    'NOT = {', 'AND = {', 'PREV = { zin_aenor_is_concord_dominion = yes }', 'OR = {', 'zin_aenor_is_realm = yes', 'zin_aenor_is_concord_dominion = yes', '}', '}', '}');
+  const seaTarget = list(raidTarget, 'any_owned_state = { is_coastal = yes }');
   const raidRegions = [...new Set(plan.rows.filter(r => plan.raiders.includes(r.tag)).map(r => r.region))].sort();
-  E.zin_realm_check_raid = list('# G8: a raiding realm at peace rides now and then (mtth zin_realm_raid_chance, in hundredths) into a neighbour, or, when it has no land',
-    '# neighbour to raid, into a coastal realm of its own land; never into a great power before the War of the Last Crowns.',
+  const pick = (scope, limit) => `random_${scope} = {\nlimit = {\n${limit}\n}\nsave_event_target_as = zin_realm_raid_victim\nset_temp_variable = { zin_t_found = 1 }\n}`;
+  const ownLand = raidRegions.map(region => list('else_if = {', 'limit = {', `has_country_flag = zin_realm_land_${region}`,
+    `any_country = {\nhas_country_flag = zin_realm_land_${region}\n${seaTarget}\n}`, '}', pick('country', `has_country_flag = zin_realm_land_${region}\n${seaTarget}`), '}'));
+  E.zin_realm_check_raid = list('# G8, Q-89: a raiding realm at peace rides now and then (mtth zin_realm_raid_chance, in hundredths) into a neighbour, or, when it has',
+    '# no land neighbour to raid, into a coastal realm of its own land; never into a great power before the War of the Last Crowns. The corsairs',
+    '# raid by sea: a coastal neighbour first, else a coastal realm of their own land. The steppe riders raid by land only, into a neighbour.',
     'if = {', 'limit = {', 'NOT = { has_country_flag = zin_realm_raid_cd }', 'has_war = no', 'has_capitulated = no', '}',
     'set_temp_variable = { zin_t_chance = mtth:zin_realm_raid_chance }', `set_temp_variable_to_random = { var = zin_t_roll min = 0 max = ${num(C.random_scale)} }`,
     'if = {', 'limit = { check_variable = { zin_t_roll < zin_t_chance } }', 'set_temp_variable = { zin_t_found = 0 }',
-    'if = {', `limit = { any_neighbor_country = {\n${raidTarget}\n} }`, `random_neighbor_country = {\nlimit = {\n${raidTarget}\n}\nsave_event_target_as = zin_realm_raid_victim\nset_temp_variable = { zin_t_found = 1 }\n}`, '}',
-    raidRegions.map(region => list('else_if = {', 'limit = {', `has_country_flag = zin_realm_land_${region}`,
-      `any_country = {\nhas_country_flag = zin_realm_land_${region}\nany_owned_state = { is_coastal = yes }\n${raidTarget}\n}`, '}',
-      `random_country = {\nlimit = {\nhas_country_flag = zin_realm_land_${region}\nany_owned_state = { is_coastal = yes }\n${raidTarget}\n}\nsave_event_target_as = zin_realm_raid_victim\nset_temp_variable = { zin_t_found = 1 }\n}`, '}')),
+    'if = {', 'limit = { zin_realm_is_corsair = yes }',
+    'if = {', `limit = { any_neighbor_country = {\n${seaTarget}\n} }`, pick('neighbor_country', seaTarget), '}', ownLand, '}',
+    'else_if = {', 'limit = { zin_realm_is_steppe_rider = yes }',
+    'if = {', `limit = { any_neighbor_country = {\n${raidTarget}\n} }`, pick('neighbor_country', raidTarget), '}', '}',
+    'else = {',
+    'if = {', `limit = { any_neighbor_country = {\n${raidTarget}\n} }`, pick('neighbor_country', raidTarget), '}', ownLand, '}',
     'if = {', 'limit = { check_variable = { zin_t_found = 1 } }', 'zin_realm_raid = yes', '}', '}', '}');
-  E.zin_realm_raid = list('# G8: THIS realm raids event_target:zin_realm_raid_victim (zin_realm.70 to the victim).',
+  E.zin_realm_raid = list('# G8: THIS realm raids event_target:zin_realm_raid_victim (zin_realm.70 to the victim). Corsairs come home with sea craft, steppe',
+    '# riders with the craft of the saddle (Q-89).',
     `set_country_flag = { flag = zin_realm_raid_cd days = ${C.raid_cooldown_days} }`, 'save_event_target_as = zin_realm_raider',
+    `if = { limit = { zin_realm_is_corsair = yes } navy_experience = ${num(C.raid_sea_xp)} }`,
+    `if = { limit = { zin_realm_is_steppe_rider = yes } army_experience = ${num(C.raid_steppe_xp)} }`,
     'event_target:zin_realm_raid_victim = {', `set_country_flag = { flag = zin_realm_raided_recently days = ${C.raided_memory_days} }`, 'set_variable = { zin_realm_last_raider = PREV }',
     'add_opinion_modifier = { target = PREV modifier = zin_realm_raided_us }', 'country_event = { id = zin_realm.70 }', '}');
   E.zin_realm_answer_raid = list('# G8, scope: the raided realm (zin_realm.70). Argument zin_arg_way: 1 ride out after them (a cause of war for a year), 2 pay them,',
@@ -492,8 +553,8 @@ export async function buildRealmLife(staged, { countries, skipped = [], data } =
   const kinPairs = [...new Set(Object.values(D.people.kinClass))].map(k => `AND = {\nROOT = { has_country_flag = zin_realm_kin_${k} }\nhas_country_flag = zin_realm_kin_${k}\n}`);
   const decisions = [
     { id: 'zin_realm_name_heir', visible: 'OR = {\nzin_realm_inherits = yes\nzin_realm_contested_custom = yes\n}\nNOT = { zin_realm_is_story_ruler = yes }\nNOT = { zin_realm_has_heir = yes }',
-      available: 'NOT = { has_country_flag = zin_realm_in_crisis }', effect: `${tt('zin_realm_name_heir')}\nadd_stability = 0.02\nhidden_effect = { set_country_flag = zin_realm_heir_named }`,
-      ai: 'base = 0\nmodifier = {\nadd = 10\ncheck_variable = { zin_ruler_vigour < 40 }\n}\nmodifier = {\nadd = 20\ncheck_variable = { zin_ruler_vigour < 20 }\n}\nmodifier = {\nfactor = 0\nNOT = { has_political_power > 100 }\n}' },
+      available: 'NOT = { has_country_flag = zin_realm_in_crisis }', effect: `${tt('zin_realm_name_heir')}\nadd_stability = 0.02\nhidden_effect = {\nset_country_flag = zin_realm_heir_named\nclr_country_flag = zin_realm_heir_lost\n}`,
+      ai: `base = 0\nmodifier = {\nadd = 10\ncheck_variable = { zin_ruler_vigour < ${num(C.heir_worry_vigour)} }\n}\nmodifier = {\nadd = 20\ncheck_variable = { zin_ruler_vigour < ${num(C.heir_urgent_vigour)} }\n}\nmodifier = {\nadd = 10\nhas_country_flag = zin_realm_heir_lost\n}\nmodifier = {\nfactor = 0\nNOT = { has_political_power > 100 }\n}` },
     { id: 'zin_realm_seek_match', rootTrigger: 'zin_realm_is_monarchy = yes\nzin_realm_may_marry = yes\nNOT = { zin_realm_alliance_owned = yes }\nNOT = { has_variable = zin_realm_match }',
       target: `FROM = {\nexists = yes\nNOT = { tag = ROOT }\nzin_realm_is_monarchy = yes\nNOT = { zin_realm_alliance_owned = yes }\nNOT = { has_variable = zin_realm_match }\nNOT = { has_war_with = ROOT }\nhas_opinion = { target = ROOT value > -25 }\nOR = {\n${kinPairs.join('\n')}\n}\n}`,
       effect: `${tt('zin_realm_seek_match')}\nhidden_effect = {\nsave_event_target_as = zin_realm_suitor\nFROM = { country_event = { id = zin_realm.60 } }\n}`,
@@ -539,7 +600,7 @@ export async function buildRealmLife(staged, { countries, skipped = [], data } =
     if (r.rate !== null) lines.push(`set_variable = { zin_ruler_rate = ${num(r.rate)} }`, `set_variable = { zin_ruler_vigour = ${r.vigour} }`);
     if (r.kin) lines.push(`set_country_flag = zin_realm_kin_${r.kin}`);
     if (heirs.has(r.tag) && r.heir.born) lines.push(`set_variable = { zin_realm_heir_born = ${r.heir.born} }`);
-    return `${r.tag} = {\n${lines.join('\n')}\n}`;
+    if (heirs.has(r.tag) && r.heir.born && r.heirLife) lines.push(`set_variable = { zin_realm_heir_life = ${r.heirLife} }`);    return `${r.tag} = {\n${lines.join('\n')}\n}`;
   });
   staged.text(FILES.onActions, format(`${hdr(MOD, SPEC, 'on_startup: the slot, land, kin class, people rate and start vigour of every realm and its heir\'s year of birth, and every sitting ruler\nmarked as known. on_capitulation and on_annex: a fallen court goes into exile (G9). on_civil_war_end: a contested crown is settled.')}
 on_actions = {

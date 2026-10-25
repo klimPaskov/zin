@@ -40,7 +40,7 @@ const allLoc = () => new Map([...locEntries('localisation/english/zin_technologi
 
 // ---------- counts and files ----------
 test('The build stages every file the spec names and counts what it generates', () => {
-  assert.equal(summary.technologies, 82 + 197, 'the 82 civilian rows and warfare\'s 197 (nine of them black powder, K19; K51 added 54 rows, K58 the 47 way technologies and Hold Engineers)');
+  assert.equal(summary.technologies, 83 + 202, 'the 83 civilian rows and warfare\'s 202 (nine of them black powder, K19; K51 added 54 rows, K58 the 47 way technologies and Hold Engineers; K64 the six elder arts)');
   assert.equal(summary.gates, 7);
   assert.equal(summary.folders, 13);
   assert.equal(summary.categories, 27);
@@ -50,16 +50,16 @@ test('The build stages every file the spec names and counts what it generates', 
   for (const rel of [...techFiles, 'common/technologies/zin_gates.txt', 'common/technology_tags/zin_technology_tags.txt', 'common/ai_focuses/zin_ai_focuses.txt', 'common/technology_sharing/zin_tech_sharing.txt', 'common/scripted_triggers/zin_technologies.txt', 'common/scripted_effects/zin_naval_air.txt', ...Object.values(DOCTRINE_FILES), 'localisation/english/zin_technologies_l_english.yml', 'docs/design/technology/layout.json', 'docs/design/technology/start_packages.json']) assert(staged.files.has(rel), rel);
 });
 
-test('Folder files hold the counts of the spec: 59 craft, 23 letters, 55 arms, 31 mounts, 27 engines, 22 lore, 25 camp, 30 naval, 7 skies', () => {
+test('Folder files hold the counts of the spec: 60 craft, 23 letters, 56 arms, 31 mounts, 29 engines, 22 lore, 26 camp, 31 naval, 7 skies', () => {
   const count = f => (file(`common/technologies/${f}`).match(/^\tzin_tech_[a-z0-9_]+ = \{$/gm) ?? []).length;
-  assert.deepEqual(Object.fromEntries(Object.entries(FOLDER_FILES).map(([k, f]) => [k, count(f)])), { zin_arms_folder: 55, zin_mounts_folder: 31, zin_engines_folder: 27, zin_lore_folder: 22, zin_camp_folder: 25, zin_naval_folder: 30, zin_skies_folder: 7, industry_folder: 59, electronics_folder: 23 });
+  assert.deepEqual(Object.fromEntries(Object.entries(FOLDER_FILES).map(([k, f]) => [k, count(f)])), { zin_arms_folder: 56, zin_mounts_folder: 31, zin_engines_folder: 29, zin_lore_folder: 22, zin_camp_folder: 26, zin_naval_folder: 31, zin_skies_folder: 7, industry_folder: 60, electronics_folder: 23 });
   assert.equal(count('zin_gates.txt'), 7);
 });
 
 test('Every technology key is a zin_tech_ key and no vanilla technology, folder or doctrine key is reused', async () => {
   const vanilla = await vanillaNames();
   const keys = [...allTechText().matchAll(/^\t(zin_tech_[a-z0-9_]+) = \{$/gm)].map(m => m[1]);
-  assert.equal(keys.length, 279 + 7);
+  assert.equal(keys.length, 285 + 7);
   assert.equal(new Set(keys).size, keys.length, 'unique');
   for (const k of keys) assert(!vanilla.techs.has(k), k);
   const tags = file('common/technology_tags/zin_technology_tags.txt');
@@ -85,7 +85,7 @@ const keyList = s => (s === '-' ? [] : s.split(',').map(x => strip(x).trim()));
 test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, slot, year, cost, parents, exclusion, effects, unlocks, who, kind)', async () => {
   const md = await readFile(SPEC, 'utf8');
   const rows = [...tableRows(md, '#### 4.2 Craft and Works', '#### 4.3'), ...tableRows(md, '#### 4.3 Letters and Beacons', '### 5. Layout rules')];
-  assert.equal(rows.length, 82);
+  assert.equal(rows.length, 83);
   const tiles = new Map(Object.values(model.layout.folders).flatMap(f => f.tiles.map(t => [t.key, t])));
   const DWARF_HOLDS = ['Kunhrim', 'Hrakbrund', 'Brundahrim', 'Gromkerm'].map(country => ({ country }));
   for (const [key, name, line, pos, year, cost, pth, needs, xor, effects, unlocks, who, kind] of rows) {
@@ -114,7 +114,7 @@ test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, sl
 test('Warfare spec section 11: every row has its technology with the same name and year', async () => {
   const md = await readFile(WARSPEC, 'utf8');
   const rows = tableRows(md, '#### 11.1 Arms and Armour', '### 12. Doctrines').filter(r => !r[0].includes(' to '));
-  assert.equal(rows.length, 197 - 3, '197 technologies (nine black powder, 11.8; 41 added by owner decision K51, 33 way technologies by K58); the three deathless tide rows are one spec row');
+  assert.equal(rows.length, 202 - 3, '202 technologies (nine black powder, 11.8; 41 added by owner decision K51, 33 way technologies by K58, five elder arts by K64); the three deathless tide rows are one spec row');
   const NAME_FIX = { zin_tech_forged_steel: 'Forged Iron', zin_tech_tempered_steel: 'Tempered Iron', zin_tech_mountain_steel: 'Mountain Iron', zin_tech_leaf_steel: 'Leaf-Forging', zin_tech_veteran_sergeants: 'Veteran File-Leaders', zin_tech_camel_corps: 'Camel Host', zin_tech_engine_corps: 'Engine Crews' };
   for (const r of rows) {
     const k = strip(r[0]), t = model.byKey.get(k), year = Number(r[2]);
@@ -411,14 +411,14 @@ test('Every sprite a technology or doctrine names is defined, and an interim spr
   for (const k of [...technologyIconKeys(model), ...doctrineIconKeys(model)]) assert(defined.has(k), k);
   for (const m of (allTechText() + doctrineText()).matchAll(/(GFX_[A-Za-z0-9_]+)/g)) if (!m[1].startsWith('GFX_technology_')) assert(defined.has(m[1]), `${m[1]} is used and defined`);
   for (const m of sprites.matchAll(/texturefile = "([^"]+)"/g)) assert(/^gfx\/interface\/(zin\/|technologies\/zin\/|doctrines\/zin\/)/.test(m[1]), m[1]);
-  assert.equal(technologyIconKeys(model).length, 279);
+  assert.equal(technologyIconKeys(model).length, 285);
 });
 
 test('The layout file gives the folder windows a gridbox for every root and a tile for every researchable technology', () => {
   const layout = JSON.parse(file('docs/design/technology/layout.json'));
   assert.equal(layout.slot, 70);
   const tiles = Object.values(layout.folders).flatMap(f => f.tiles);
-  assert.equal(tiles.length, 279);
+  assert.equal(tiles.length, 285);
   const boxes = Object.values(layout.folders).flatMap(f => f.gridboxes.map(g => g.name));
   assert.equal(new Set(boxes).size, boxes.length);
   assert(layout.folders.industry_folder.gridboxes.every(g => g.format === 'UP' && g.slotsize === 70));

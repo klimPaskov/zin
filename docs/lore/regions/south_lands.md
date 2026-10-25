@@ -81,6 +81,7 @@ The South Lands are the great desert of the East Lands, running south off the ed
 | Before 1A | The Eastern tongues' desert speech is carried into the dune sea by the first well-clans. | P |
 | 1A | Aenoran explorers chart southern and eastern shores without knowing the lands behind them. | E broad ([A1] §2) |
 | 1A about 1150 to 1500 | Rulers of the southern lands ally with Volgan; not all of them. | E ([A1] §4) |
+| About 1A 1000 to 1675 | The pass-lords of Miaed sell water and guides on the Hardtmuth passes to Volgan's eastern clients, and the Kalioth Crown's later ambition claims their passes. | Established (owner, 25 October 2026; decision K64) |
 | 2A, 3A | The desert is far from the wars of the Middle Lands; its wells change hands between clans. | P |
 | 4A 600 to 780 | The caravan roads open; the Sand Road runs through the Hardtmuth Pass; Miaed's pass-houses become rich. | P ([FC] II) |
 | about 4A 1300 | The Hidden Council's eastern branch begins to court the eastern and southern courts. | P ([FC] III); hidden |

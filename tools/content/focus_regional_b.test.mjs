@@ -27,9 +27,9 @@ const realmOf = old => countryTable().find(c => c.key === successor(old).primary
 // tree id -> { region, focuses (copies expanded), own (own focuses), spirits (own), events, shared }. The roster folds Poyang into
 // Soyano, whose tree is regional_hengyang, so the Poyang tree of the spec is retired (docs/plans/roster_integration).
 const EXPECT = {
-  regional_alerhia: { region: 'east', focuses: 49, own: 27, spirits: 8, events: 2, copies: ['E2', 'E4', 'E9'] },
-  regional_miaed: { region: 'east', focuses: 41, own: 19, spirits: 6, events: 3, copies: ['E2', 'E4', 'E9'] },
-  regional_erco: { region: 'east', focuses: 41, own: 24, spirits: 6, events: 1, copies: ['E4', 'E9'] },
+  regional_alerhia: { region: 'east', focuses: 50, own: 28, spirits: 8, events: 2, copies: ['E2', 'E4', 'E9'] },
+  regional_miaed: { region: 'east', focuses: 42, own: 20, spirits: 6, events: 3, copies: ['E2', 'E4', 'E9'] },
+  regional_erco: { region: 'east', focuses: 47, own: 30, spirits: 6, events: 1, copies: ['E4', 'E9'] },
   regional_plutondo: { region: 'east', focuses: 41, own: 24, spirits: 5, events: 1, copies: ['E4', 'E9'] },
   regional_drak: { region: 'east', focuses: 40, own: 23, spirits: 5, events: 0, copies: ['E4', 'E9'] },
   regional_ostoroth: { region: 'east', focuses: 40, own: 23, spirits: 5, events: 1, copies: ['E4', 'E9'] },
@@ -89,13 +89,13 @@ test('Each tree has the focus count of its spec, copies expanded, inside the tie
     assert(eff(id).focuses.length >= 30 && eff(id).focuses.length <= 50, id);
   }
   const total = IDS.reduce((n, id) => n + eff(id).focuses.length, 0);
-  assert.equal(total, 49 + 41 + 41 + 41 + 40 + 40 + 41 + 40 + 40 + 34 + 35 + 32 + 33 + 40 + 32 + 33 + 33 + 32 + 32);
+  assert.equal(total, 50 + 42 + 47 + 41 + 40 + 40 + 41 + 40 + 40 + 34 + 35 + 32 + 33 + 40 + 32 + 33 + 33 + 32 + 32);
 });
 
 test('Region totals: nine East Lands trees, four Islands trees, six Lands of the Sun trees', () => {
   const count = r => IDS.filter(id => EXPECT[id].region === r).length;
   assert.deepEqual([count('east'), count('islands'), count('sun')], [9, 4, 6]);
-  assert.equal(IDS.filter(id => EXPECT[id].region === 'east').reduce((n, id) => n + eff(id).focuses.length, 0), 49 + 41 + 41 + 41 + 40 + 40 + 41 + 40 + 40);
+  assert.equal(IDS.filter(id => EXPECT[id].region === 'east').reduce((n, id) => n + eff(id).focuses.length, 0), 50 + 42 + 47 + 41 + 40 + 40 + 41 + 40 + 40);
   assert.equal(IDS.filter(id => EXPECT[id].region === 'islands').reduce((n, id) => n + eff(id).focuses.length, 0), 34 + 35 + 32 + 33);
   assert.equal(IDS.filter(id => EXPECT[id].region === 'sun').reduce((n, id) => n + eff(id).focuses.length, 0), 40 + 32 + 33 + 33 + 32 + 32);
 });

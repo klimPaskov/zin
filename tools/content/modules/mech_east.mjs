@@ -50,6 +50,7 @@ export const EAST_DEPENDENCIES = [
   { owner: 'Stabilo tree (docs/design/focus/stabilo.json, focus compiler)', spec: 'docs/specs/05_focus_trees/major/stabilo.md',
     effects: ['zin_stabilo_monthly', 'zin_stabilo_add_debt'], events: ['zin_stabilo.30', 'zin_stabilo.31'], variables: ['zin_stabilo_debt'],
     countryFlags: ['zin_stabilo_route_free', 'zin_stabilo_route_empire', 'zin_stabilo_envoys', 'zin_stabilo_open_pact', 'zin_stabilo_pact_under_prince', 'zin_stabilo_audit', 'zin_stabilo_rival_banks', 'zin_stabilo_ledger_open', 'zin_stabilo_loans_to_kings', 'zin_stabilo_collect'] },
+  { owner: 'the deep past (modules/deep_past.mjs, owner decision K64)', spec: 'docs/specs/04_mechanics/deep_past.md', effects: ['zin_deep_coalition_weight'] },
   { owner: 'eastern trees (Noris, Stabilo, the tier B courts, shared_east_lands)', spec: 'docs/specs/05_focus_trees/',
     countryFlags: ['zin_east_pledged', 'zin_east_route_resist', 'zin_east_court_audit', 'zin_east_wells_unlocked', 'zin_east_courts_noris', 'zin_east_courts_stabilo'] },
 ];
@@ -578,6 +579,8 @@ if = {
   }
   add_to_temp_variable = { zin_e_w = -${N.weight_resist_power} }
 }
+# the deep past (K64): the treaty of passage, the first stair read and the Kalioth diadem worn (deep_past.mjs)
+zin_deep_coalition_weight = yes
 set_variable = { zin_east_coalition_weight = zin_e_w }`);
   E_('zin_east_join_coalition', `# the join option of zin_east.42
 set_country_flag = zin_east_coalition_member

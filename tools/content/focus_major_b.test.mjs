@@ -21,7 +21,7 @@ const realm = old => countryTable().find(c => c.key === successor(old).primary).
 const IDS = ['gunwaith', 'lerendor', 'magical_forest', 'mirolon'];
 const EXPECT = {
   mirolon: { focuses: 83, spirits: 27, events: 12, raw: 6, x: 25, y: 16 },
-  gunwaith: { focuses: 116, spirits: 28, events: 7, raw: 5, x: 29, y: 19 },
+  gunwaith: { focuses: 117, spirits: 28, events: 7, raw: 5, x: 29, y: 19 },
   lerendor: { focuses: 127, spirits: 31, events: 31, raw: 10, x: 29, y: 15 },
   magical_forest: { focuses: 121, spirits: 30, events: 20, raw: 10, x: 29, y: 14 },
 };

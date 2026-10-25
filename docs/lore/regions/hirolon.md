@@ -116,6 +116,9 @@ The giants live in clan halls on the upper slopes near their cairn-fields; the s
 | Before 1A | Giants already hold the western hills; their cairns are older than any border. | E that giants exist ([PA]); P date ([WB] §1) |
 | Before 1A | **The Old Promise:** small folk fleeing the wars of men's kingdoms come to the ring; the giants give them the low valleys and swear that no evil will enter them. | P |
 | Before 1A | The War of Men passes the ring by: Aen's armies and his enemies both go round it. | P |
+| About 1,500 to 900 BA | The hill giants of the low country are the partners of the Orran moot: they raise the long sea-dikes from field-stone and keep their cairn-fields on the high ground, and they are never its subjects. | Established (owner, 25 October 2026; decision K64) |
+| About 900 to 621 BA | The cairn-keepers warn the Moot of Mothers that its overdraw of the land's magic will drown the fields. The Moot divides and does not heed them, and the giants keep their own count in stone: the land, they say, was asked for too much. | Established (owner, 25 October 2026; decision K64) |
+| About 620 BA | After the Night of the Sea the giants withdraw into the ring, and the Eldest Cairn receives its first stone. One stone is laid in every year since the sea came, so the count measures years since an event and never the age of a being. | Established (owner, 25 October 2026; decision K64) |
 | 1A, early centuries | Aenoran traders reach the ring by the Grano Saddle; the name "Hiloron" enters the charts, read as "the giants' hill" (Aenoran *hil* with Giants' Speech *oron*). | P; the reading is [LANG] §7 |
 | Late 1A | Giants join Edran's Grand Alliance. | E ([A1] §5) |
 | By 1A 1675 | Hiloron's giants defend the crossings of Dardan beside dwarf engineers. Dardan's place is open. | P ([A1] §6, proposed course of the battle); O place |

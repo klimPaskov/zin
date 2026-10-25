@@ -110,7 +110,7 @@ The Question of the Strait (column 13, row 7) sits at the foot of the Two Crowns
 | `endow_the_temples` | Endow the Temples of the Deliverer | royal_progress | crown_over_altar | 10,3 | 35 | event zin_lerendor.4; stability 0.05; call zin_afrit_add_footholds(1); standing +5 | 10; hon ×2 |
 | `crown_over_altar` | The Crown Over the Altar | royal_progress | endow_the_temples | 11,3 | 35 | political_power 75; stability -0.03; call zin_afrit_add_footholds(-1) | 10; hist ×1.5; sup ×2 |
 | `one_throne` | One Throne, Two Laws | royal_progress + crown_marriage | – | 12,3 | 70 | cohesion +10; political_power 25 | 15 |
-| `chancellor_of_lerendors_north` | The Chancellor of Lerendor's North | crown_marriage / estates_council | – | 14,3 | 35 | call zin_lerendor_recruit(zin_lerendor_maelis); cohesion +5 | 10 |
+| `chancellor_of_lerendors_north` | The Chancellor of Lerendor's North | crown_marriage / estates_council | – | 14,3 | 35 | call zin_lerendor_recruit(zin_lerendor_agnolf); cohesion +5 | 10 |
 | `estates_purse` | The Estates' Purse | estates_council | – | 16,3 | 70 | building industrial_complex 1 @random_owned; political_power 25 | 8 |
 | `crown_ascendant` | The Crown Ascendant | one_throne | estates_ascendant, admiralty_ascendant | 11,4 | 70 | swap_spirit royal_household→crown_ascendant_spirit (add if missing); standing -5; cohesion -5 | 10; hist ×5; brk ×3 |
 | `estates_ascendant` | The Estates Ascendant | one_throne / chancellor_of_lerendors_north | crown_ascendant, admiralty_ascendant | 13,4 | 70 | swap_spirit estates_in_council→estates_ascendant_spirit (add if missing); standing +10; cohesion +10 | 10; hon ×5 |
@@ -286,7 +286,7 @@ Mechanic effects, triggers, variables, decisions and events (`zin_leren_*`, name
 
 | Id | Name | Role | Traits (the game's own unit-leader traits) | Recruited by |
 | --- | --- | --- | --- | --- |
-| `zin_lerendor_maelis` | Maelis of Lerendor's North | political advisor, "Chancellor of Lerendor's North": stability_factor 0.05 | – | The Chancellor of Lerendor's North |
+| `zin_lerendor_agnolf` | Maelis of Lerendor's North | political advisor, "Chancellor of Lerendor's North": stability_factor 0.05 | – | The Chancellor of Lerendor's North |
 | `zin_lerendor_brannoc` | Brannoc the Toll-Master | political advisor, "Master of the Strait Dues": political_power_gain 0.10 | – | Toll Houses on Both Shores |
 | `zin_lerendor_ostvar` | Ostvar Greysail | navy leader, skill 4; a second admiral beside the characters spec's Lord Admiral Hellek Fargur | `blockade_runner`, `bold` | A Lord Admiral of the Strait |
 | `zin_lerendor_hesk` | Torvald Hesk | field marshal, skill 3, "Marshal of the Long Watch" | `defensive_doctrine` | The Long Watch |

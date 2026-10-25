@@ -516,6 +516,7 @@ New technology categories (`common/technology_tags`): `zin_cat_arms`, `zin_cat_b
 | `zin_tech_light_harness` | Half-Harness | 1756 | full_plate | `zin_men_heavy_infantry` maximum_speed +0.08, breakthrough +0.05; `zin_men_knights` breakthrough +0.05; XOR `zin_tech_heavy_harness` |  |
 | `zin_tech_master_forges` | The Master Forges | 1758 | pattern_welding | arms `_4` |  |
 | `zin_tech_tempered_plate` | Tempered Plate | 1759 | heavy_harness, light_harness | armour `_3` |  |
+| `zin_tech_kalioth_forge` | The Kalioth Forge | 1762 | - | elder knowledge (K64), recovered when the Kalioth diadem is melted or worn (flag `zin_deep_recovered_kalioth_forge`); `zin_men_knights` breakthrough +0.1, soft attack +0.05; `category_zin_siege` soft attack +0.1 |  |
 | `zin_tech_elven_mastery` | Elven Mastery | 1760 | leaf_steel | elven arms `_3` | elves, sun_elves |
 | `zin_tech_windlass_crossbows` | Windlass Crossbows | 1762 | crossbows | bows `_4` |  |
 | `zin_tech_veteran_sergeants` | Veteran Sergeants | 1763 | pike_squares, sword_and_buckler | infantry org +5 |  |
@@ -584,6 +585,8 @@ New technology categories (`common/technology_tags`): `zin_cat_arms`, `zin_cat_b
 | `zin_tech_fire_pots` | Fire-Pots | 1753 | torsion_engines | catapult soft attack +10% |  |
 | `zin_tech_hold_the_pass` | Hold the Pass | 1754 | warden_signals | `dig_in_speed_factor = 0.1`; `category_all_infantry` mountain defence +0.1, hills defence +0.1 |  |
 | `zin_tech_bastions` | Bastions | 1756 | wall_wardens | `land_bunker_effectiveness_factor = 0.15` |  |
+| `zin_tech_dike_craft` | Dike-Craft of the Low Country | 1753 | - | elder knowledge (K64), recovered by the dive at the Mothers' Mound or the dike-stones (flag `zin_deep_recovered_dike_craft`); `coastal_bunker_effectiveness_factor = 0.15`; `production_speed_buildings_factor = 0.03` |  |
+| `zin_tech_deep_road_shoring` | Deep-Road Shoring | 1759 | - | elder knowledge (K64), recovered when all four Sea-Doors are read (flag `zin_deep_recovered_deep_road_shoring`); `land_bunker_effectiveness_factor = 0.1`; `supply_consumption_factor = -0.05` | dwarves |
 | `zin_tech_great_engines` | Great Engines | 1757 | trebuchets | catapults `_2`, trebuchets `_1`, ballistae `_1` |  |
 | `zin_tech_curtain_walls` | Curtain Walls | 1762 | bastions, harbour_chains (all) | land and coastal effectiveness +0.10 |  |
 | `zin_tech_engine_corps` | Engine Corps | 1763 | great_engines | siege org +5, reliability; XOR `zin_tech_field_engine_trains` |  |
@@ -637,6 +640,7 @@ Rites and tide techs sit in the folder only for the countries that may have them
 | `zin_tech_provosts` | Provosts | 1730 | sappers | provosts company |
 | `zin_tech_armourers` | Armourers | 1740 | sappers | armourers company |
 | `zin_tech_high_roads` | The High Roads | 1745 | supply_columns | `train_equipment_1`, `motorized_equipment_1`; `supply_node_range = 0.10` |
+| `zin_tech_stair_builders_measure` | The Stair-Builders' Measure | 1754 | - | elder knowledge (K64), recovered with the Gate-Stones or the treaty of passage (flag `zin_deep_recovered_stair_builders_measure`); `river_crossing_factor = 0.1`; `production_speed_buildings_factor = 0.03` |
 | `zin_tech_water_caravans` | Water Caravans | 1750 | quartermasters | `heat_attrition_factor = -0.10`; XOR `zin_tech_winter_quarters` |
 | `zin_tech_winter_quarters` | Winter Quarters | 1750 | quartermasters | `winter_attrition_factor = -0.10`; XOR `zin_tech_water_caravans` |
 | `zin_tech_woodland_ambush` | Woodland Ambush | 1752 | tree_paths | `zin_men_rangers`; `zin_men_rangers` soft_attack +0.1, recon +1 |
@@ -676,6 +680,7 @@ Rites and tide techs sit in the folder only for the countries that may have them
 | `zin_tech_warded_hulls` | Warded Hulls | 1757 | lantern_wards; `zin_zol_rising` | warded hull | men |
 | `zin_tech_great_warships` | Great Warships | 1758 | deep_water_hulls | great warship hull `_0` |  |
 | `zin_tech_storm_rigging` | Storm Rigging | 1760 | deep_water_hulls | `naval_attrition = -0.15` |  |
+| `zin_tech_sunfields_hull_craft` | Sunfields Hull-Craft | 1761 | - | elder knowledge (K64), recovered with Three Names, One Land (flag `zin_deep_recovered_sunfields_hull_craft`); `naval_attrition = -0.1`; `industrial_capacity_dockyard = 0.03` |  |
 | `zin_tech_master_shipwrights` | Master Shipwrights | 1765 | great_warships, bronze_sheathing | all hulls next variant |  |
 | `zin_tech_star_paths` | Star-Paths | 1765 | outrigger_galleys | `navy_max_range_factor = 0.15`; `zin_ship_galley` naval_speed +0.05 |  |
 | `zin_tech_corsair_havens` | Corsair Havens | 1766 | corsair_craft | `convoy_raiding_efficiency_factor = 0.1`; `zin_ship_raider` naval_speed +0.05 |  |

@@ -88,7 +88,7 @@
 | `zin_regional_<tree>_event_for_parim`, `zin_shared_<tree>_event_for_parim` | `zin_aenor_event_for_parim` | F7: one Aenor-owned helper |
 | `GFX_zin_focus_<key>` | `GFX_focus_zin_<key>` | the sprite names the game already uses (icon catalog) |
 | `zin_leren_admiral_ostvar` | `zin_lerendor_ostvar` | tree character ids (Lerendor review) |
-| `zin_leren_chancellor_maelis` | `zin_lerendor_maelis` | tree character ids (Lerendor review) |
+| `zin_leren_chancellor_maelis` | `zin_lerendor_agnolf` | tree character ids (Lerendor review) |
 | `zin_leren_marshal_hesk` | `zin_lerendor_hesk` | tree character ids (Lerendor review) |
 | `zin_leren_tollmaster_brannoc` | `zin_lerendor_brannoc` | tree character ids (Lerendor review) |
 | `zin_volgan_nazerch`, `zin_volgan_unlo`, `zin_volgan_vezrun`, `zin_volgan_voice` | `zin_volgan_ember_herald`, `zin_volgan_grave_warden`, `zin_volgan_ghorvak` | O7: Volgan's lieutenants |
@@ -536,7 +536,7 @@
 | `zin_gala_gift_armour` | country flags | Gala Elves / Magical Forest; read by Eindil's journey | Journey modifiers: voyage north 120 days instead of 150; Lorien's Gift regard +5; crew drawn from many peoples; Varner and Golbran event zin_eindil.87 after 30 days instead of 90 | [tree gala](../05_focus_trees/major/gala.md) | 02_eindil_journey |
 | `zin_gala_great_ship` | country flags | Gala Elves / Magical Forest; read by Eindil's journey | Journey modifiers: voyage north 120 days instead of 150; Lorien's Gift regard +5; crew drawn from many peoples; Varner and Golbran event zin_eindil.87 after 30 days instead of 90 | [tree gala](../05_focus_trees/major/gala.md) | eindil_journey, 02_eindil_journey |
 | `zin_gala_healers` | country flag | Gala Elves | *Healers of Gala*: Wanderers from Gala give research 0.05 instead of 0.03 | [tree gala](../05_focus_trees/major/gala.md) | elves_wall_and_dragons |
-| `zin_gala_heveneya` | character | Gala Elves | A Gala court character (characters spec) | [lands_of_the_sun](lands_of_the_sun.md) | 02_characters, tree gala |
+| `zin_gala_caleon` | character | Gala Elves | A Gala court character (characters spec) | [lands_of_the_sun](lands_of_the_sun.md) | 02_characters, tree gala |
 | `zin_gala_old_lords` | variable | Gala Elves | 0–5, start 1: the ancient lords who will ride with Lorien; changed only by `zin_sun_add_old_lords` | [lands_of_the_sun](lands_of_the_sun.md) | tree gala |
 | `zin_gala_sulestien` | character | Gala Elves | A Gala court character (characters spec) | [lands_of_the_sun](lands_of_the_sun.md) | 02_characters, tree gala |
 | `zin_gala_tangsiel` | character | Gala Elves | A Gala court character (characters spec) | [lands_of_the_sun](lands_of_the_sun.md) | 02_characters, tree gala |
@@ -579,7 +579,7 @@
 | `zin_goldoroth_seeks_the_south` | scripted trigger | Goldoroth | Goldoroth with `zin_goldoroth_southern_bargain`: ×4 on Volgan's envoys | [dark_lands](dark_lands.md) | volgan_southern_dominion, tree goldoroth, regional dark_lands |
 | `zin_goldoroth_snikkit` | character | Goldoroth | Snikkit Many-Knives, chief of the Goblin Warrens | [dark_lands](dark_lands.md) | 03_full_asset_inventory |
 | `zin_goldoroth_sungor` | character | Goldoroth | Sungor of the Volcano Clans | [dark_lands](dark_lands.md) | 02_characters |
-| `zin_goldoroth_ulgra` | character | Goldoroth | Forge-Mistress Ulgra, chief of the Iron Clans | [dark_lands](dark_lands.md) | 03_full_asset_inventory |
+| `zin_goldoroth_bord` | character | Goldoroth | Forge-Mistress Ulgra, chief of the Iron Clans | [dark_lands](dark_lands.md) | 03_full_asset_inventory |
 | `zin_gunwaith` | event namespace | events | Events of the tree gunwaith spec; other specs may fire them | [tree gunwaith](../05_focus_trees/major/gunwaith.md) | western_crossing, regional tritons_islands, regional west_lands |
 | `zin_gunwaith_kings_peace` | idea | Gunwaith | *The King's Peace* spirit (truce +0.5 a month in the Western Crossing drift); the focus that adds it is `zin_gunwaith_the_kings_peace`, renamed from `kings_peace` (F3) | [tree gunwaith](../05_focus_trees/major/gunwaith.md) | western_crossing |
 | `zin_gunwaith_weary_clans` | idea | Gunwaith | Gunwaith's start spirit, added by the Western Crossing mechanic's `zin_west.1` | [tree gunwaith](../05_focus_trees/major/gunwaith.md) | 01_start_situation, western_crossing |
@@ -593,7 +593,7 @@
 | `zin_horos_sword_broken` | global flag | global | Zol crushed Horos's blue sword (hist 4A 1757); caps Glo power at 50 | [yeldenne_and_glo](yeldenne_and_glo.md) | 03_names_and_terms, 01_warfare, 04_magic_and_world_systems, eindil_journey, zols_mistake, 03_war_of_the_last_crowns, +2 more |
 | `zin_host_of_eindil` | cosmetic tag | Eindil's host | "The Host of Eindil", taken when the host is raised (S2) | [eindil_journey](eindil_journey.md) | — |
 | `zin_hunhun_free_riders` | country flag | Hunhun | *Riders of the Free Dominions* is done | [regional middle_lands](../05_focus_trees/regional/middle_lands.md) | — |
-| `zin_ilsabet` | character | Aenor; Eindil's journey | Master Ilsabet Vothrim (proposed): the Lost Cause's scholar of the First Men and an Aenor theorist. Can later gather proof of Eindil's ancestry. | [02_characters](../02_lore/02_characters.md) | 01_golden_king_and_succession, 02_eindil_journey, 03_full_asset_inventory |
+| `zin_aldovan` | character | Aenor; Eindil's journey | Master Ilsabet Vothrim (proposed): the Lost Cause's scholar of the First Men and an Aenor theorist. Can later gather proof of Eindil's ancestry. | [02_characters](../02_lore/02_characters.md) | 01_golden_king_and_succession, 02_eindil_journey, 03_full_asset_inventory |
 | `zin_ilvane` | character | Worshipdom | Ilvane, High Confessor, Seat of Censers (N10) | [afrit_hidden_council](afrit_hidden_council.md) | 02_characters, tree worshipdom, 03_war_of_the_last_crowns, 01_interface, 03_full_asset_inventory |
 | `zin_is_dark_lands_state` | scripted trigger (state) | state | Alias of `zin_is_region_dark_lands`, written by `sites.mjs` until the Dark Lands spec uses the region name; new text uses the region name | [02_key_sites](../01_map/02_key_sites.md) | dark_lands |
 | `zin_is_lerendor` | scripted trigger | country | Generated tag check for Lerendor | [lerendor_narrow_strait](lerendor_narrow_strait.md) | tree lerendor, shared_north_lands, 01_interface |
@@ -743,7 +743,7 @@
 | `zin_mirolon_maeric` | character | Mirolon | High Warden Maeric, Mirolon's country leader (O7) | [volgan_southern_dominion](volgan_southern_dominion.md) | 02_characters, tree mirolon |
 | `zin_mirolon_passes` | variable | Mirolon | 0-100; readiness of the pass forts; start 30; fort level floor(passes/20)+1, max 6, in pass states | [volgan_southern_dominion](volgan_southern_dominion.md) | tree mirolon, 01_interface |
 | `zin_mirolon_proof` | variable | Mirolon | 0-100; evidence of Volgan's arming; start 15; thresholds 25/50/75 | [volgan_southern_dominion](volgan_southern_dominion.md) | tree mirolon, 05_flavour_and_world, 01_interface |
-| `zin_mirolon_selda` | characters | Mirolon | Proposed: High Warden Maeric (country leader, zin_light_wardens), Captain Selda Varrow (general), Scout-Master Hadric Thorne (advisor) | [volgan_southern_dominion](volgan_southern_dominion.md) | 02_characters, tree mirolon, 03_full_asset_inventory |
+| `zin_mirolon_almon` | characters | Mirolon | Proposed: High Warden Maeric (country leader, zin_light_wardens), Captain Selda Varrow (general), Scout-Master Hadric Thorne (advisor) | [volgan_southern_dominion](volgan_southern_dominion.md) | 02_characters, tree mirolon, 03_full_asset_inventory |
 | `zin_mirror_clarity` | global variable | global | 0–100, start 60: how clearly the Mirror answers; changed only through `zin_sun_add_clarity` and `zin_sun_spend_clarity` | [lands_of_the_sun](lands_of_the_sun.md) | tree gala, 01_interface |
 | `zin_mirror_stilled` | global flag | global | The Mirror gives no visions because a non-elven, non-Sunhot country controls Gala's site | [lands_of_the_sun](lands_of_the_sun.md) | eindil_journey, regional lands_of_the_sun, 02_eindil_journey, 04_chronicle_codex |
 | `zin_mistake` | event namespace | events | Zol's Mistake mechanic events (the tree uses zin_zol) | [zols_mistake](zols_mistake.md) | 05_defines_and_rules, 01_warfare, 03_diplomacy_and_factions, 04_magic_and_world_systems, eastern_kings, eindil_journey, +10 more |

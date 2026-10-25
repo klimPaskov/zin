@@ -58,4 +58,14 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 - [ ] Hirolon is sovereign, but the older working table counted it among Aenor's 26 satellites. Does the Concord keep 26 members without Hirolon?
 - [ ] Where in the Middle Lands does Aenor Forest lie, and what are the new names of the walking tree people, the flower creature and the small folk and their homeland?
 
+## Deep history left open on 25 October 2026
+
+- [ ] What broke Tarkia's bridge? The owner keeps it a mystery, with the temple and elven tellings in rivalry (decision K64).
+- [ ] What became of the Kalioth Crown's provinces beyond the Melty Pass? The owner keeps it a mystery (decision K64, K3).
+- [ ] Who ordered the Letting-In of the Sea: the Deep King or Kunhrim's lords, as Kunhrim says, or the western holds' account? The matter stays disputed (decision K64, D3).
+- [ ] What remains below the Sea of Monsters, and what do the giants of the low hills know? Both stay kept.
+- [ ] Does the Grey Breath still wait in the Cursed Square's wrecks? This stays disputed.
+- [ ] The First Age roster calls Senra "Senra of Triton's Islands", and the adopted fleet role gives her the Pupor Isles. Which name does the roster keep?
+- [ ] The dwarves' first homeland stays open (V11, unchanged).
+
 [[Fifth Age Seeds]] · [[Canon Policy]] · [[Fourth Age Canon Register]]

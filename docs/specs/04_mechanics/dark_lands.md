@@ -627,7 +627,7 @@ New (all proposed; portraits image-generated):
 
 | Id | Name | Starts as | Role |
 | --- | --- | --- | --- |
-| `zin_goldoroth_ulgra` | Forge-Mistress Ulgra | Goldoroth political advisor (trait `zin_trait_forge_mistress`: `production_speed_arms_factory_factor` 0.05) | Chief of the Iron Clans |
+| `zin_goldoroth_bord` | Forge-Mistress Ulgra | Goldoroth political advisor (trait `zin_trait_forge_mistress`: `production_speed_arms_factory_factor` 0.05) | Chief of the Iron Clans |
 | `zin_goldoroth_snikkit` | Snikkit Many-Knives | Goldoroth corps commander (skill 2, `trickster`) | Chief of the Goblin Warrens |
 | `zin_goldoroth_rask` | Rask Black-Sail | Navy leader (skill 2); hidden until "The Black-Sail Corsairs" | Corsair captain |
 

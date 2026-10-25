@@ -27,7 +27,7 @@ The Gala Elves' focus tree is [../05_focus_trees/major/gala.md](../05_focus_tree
 | The Refusal and its lifting | [../03_gameplay/03_diplomacy_and_factions.md](../03_gameplay/03_diplomacy_and_factions.md) | `zin_refusal_lifted`, `zin_diplo_lift_refusal` (way "The Old Lords Ride"), `zin_diplo.30` (news: a realm breaks the Refusal), `zin_diplo.31` (a realm returns to it) |
 | Lorien's death in the meter | [../03_gameplay/05_world_tension_and_endings.md](../03_gameplay/05_world_tension_and_endings.md) | `zin_lorien_dead` counts +1 to `zin_gathering_dark` there, not here |
 | Afrit's agents in the Lands of the Sun | [afrit_hidden_council.md](afrit_hidden_council.md) | `zin_footholds`, `zin_afrit_add_footholds`, `zin_afrit.31` (the agents' report, decision N8), `zin_afrit_add_veil` |
-| Characters | [../02_lore/02_characters.md](../02_lore/02_characters.md) | `zin_lorien`, `zin_gala_heveneya`, `zin_gala_sulestien`, `zin_gala_tangsiel`, `zin_trait_memory_of_dardan` (decision N7) |
+| Characters | [../02_lore/02_characters.md](../02_lore/02_characters.md) | `zin_lorien`, `zin_gala_caleon`, `zin_gala_sulestien`, `zin_gala_tangsiel`, `zin_trait_memory_of_dardan` (decision N7) |
 | The goodwill effect | [elves_wall_and_dragons.md](elves_wall_and_dragons.md) | `zin_elves_goodwill` (`target`) |
 | Region flags | [../03_gameplay/02_economy.md](../03_gameplay/02_economy.md) | `zin_region_<key>` country flags (read through this spec's own region trigger until the economy module is built) |
 
@@ -204,7 +204,7 @@ Option B ("This is not our war") does nothing here. Lorien lives; the Zol spec l
 
 | Option | Effect | AI |
 | --- | --- | --- |
-| **The Keeper of the Mirror** | `zin_gala_heveneya` (recruited first if needed) gains a country-leader role (`add_country_leader_role`, ideology `zin_light_kinship`, `promote_leader = yes`) and leads; clarity +20 | 40 |
+| **The Keeper of the Mirror** | `zin_gala_caleon` (recruited first if needed) gains a country-leader role (`add_country_leader_role`, ideology `zin_light_kinship`, `promote_leader = yes`) and leads; clarity +20 | 40 |
 | **The Master of the King's Ships** | `zin_gala_sulestien` the same way; navy experience +25 | 30 |
 | **A Council of the Old Houses** | `create_country_leader` "The Council of Gala" (ideology `zin_light_kinship`, picture `GFX_idea_zin_elven_council`: no portrait of a person); stability +5% | 30 |
 
