@@ -22,9 +22,12 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Portraits tranche two | subagent `hoi4-portrait-creator` | `$ZIN_ART/raw/portraits/tranche2/`, `art/source/portraits/`, `docs/plans/zin-art/portraits_handoff.md` |
 | Error-log causes (r3b profile) | subagent | builder modules except art and geography; `docs/plans/zin-errors/r3b_fixes.md` |
 | MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
-| Story framework (SL-01, 02, 03, 23, 26, 29, 30) | subagent | `lib/story_dates.mjs`, `modules/world_tension.mjs`, `modules/historical_path.mjs`, `checks/story_wiring.mjs`, `alternate_history.test.mjs`; `docs/plans/story/framework_handoff.md` |
-| Afrit, Aenor, Eindil (SL-04 to 11, 18, 20, 21, 25, 31 to 33, 35, 37) | subagent | `modules/events_mech.mjs`, `data/events_mech_{afrit,misc}.json`, the Afrit, Aenor and Eindil scripts; `docs/plans/story/afrit_aenor_eindil_handoff.md` |
-| Kusven, Volgan, Leren, the West (SL-12 to 17, 19, 22, 27, 34, 36) | subagent | Zol and Volgan scripts, `modules/events_mech_war.mjs`, Lerendor and crossing modules; `docs/plans/story/war_side_handoff.md` |
+| Portrait wiring, then Kusven's named portrait | subagent `hoi4-portrait-creator` | `modules/portraits.mjs`, `art.mjs`, `characters.mjs` (narrow), `lib/cultures_model.mjs`, `data/world/portrait_pools.json` |
+| Story wiring completion (22 events, 27 flags, Kusven flag readers, role pickers, then enforce) | subagent | story owners' modules; `docs/plans/story/wiring_completion_handoff.md` |
+| Realm life (G1 to G10) and start variety (V1 to V13) | subagent | `modules/realm_life.mjs`, `modules/start_variety.mjs`, their data, `zin_rule_start_variety`; `docs/plans/story/realm_life_handoff.md` |
+
+Done this round: story framework (`794e1fd9`, `d961bceb`), Afrit/Aenor/Eindil (`1db698eb`, `431a5273`), Kusven and the war side (`a9f08d94`), error-log causes (`8b5793c6`), all 156 realm flags (`c1273a22`), import land IoU 0.9574 (`95324a05`), realm seeds re-fitted (`ed2e153f`).
+Still to start: AI for the story (strategy plans, paced MTTH, the Gathering Dark tier AI, the magic module's weekly tick, the world-tension widget, tick step 10's missing effects); the key-sites module (`zin_is_site_parim`, `zin_is_site_great_wall` and the others are stand-ins; keyed to the new map's states, so after the import).
 
 ## Next, in order
 
