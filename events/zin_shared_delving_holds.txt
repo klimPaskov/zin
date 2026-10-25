@@ -58,14 +58,18 @@ country_event = {
 		}
 		add_political_power = -50
 		add_equipment_to_stockpile = {
-			type = zin_catapult_equipment
+			type = zin_bombard_equipment_1
 			amount = 20
 		}
-		add_equipment_to_stockpile = {
-			type = zin_trebuchet_equipment
-			amount = 10
-		}
 		set_country_flag = zin_delving_powder_buyer
+		set_country_flag = zin_gunpowder
+		mark_technology_tree_layout_dirty = yes
+		add_tech_bonus = {
+			name = zin_shared_delving_holds.2.b
+			bonus = 1
+			uses = 1
+			category = zin_cat_siege
+		}
 		add_opinion_modifier = {
 			target = FROM
 			modifier = zin_shared_delving_holds_powder_bought

@@ -26,8 +26,8 @@ division_template = {
 		zin_men_infantry = { x = 1 y = 0 }
 		zin_men_infantry = { x = 1 y = 1 }
 		zin_men_infantry = { x = 1 y = 2 }
-		zin_men_archers = { x = 2 y = 0 }
-		zin_men_archers = { x = 2 y = 1 }
+		zin_men_handgunners = { x = 2 y = 0 }
+		zin_men_handgunners = { x = 2 y = 1 }
 	}
 	support = {
 		zin_support_scouts = { x = 0 y = 0 }
@@ -53,8 +53,8 @@ division_template = {
 	name = "Siege Park"
 	division_names_group = ZIN_HOSTS_LAKE_AENORAN
 	regiments = {
-		zin_siege_catapult = { x = 0 y = 0 }
-		zin_siege_catapult = { x = 0 y = 1 }
+		zin_siege_bombard = { x = 0 y = 0 }
+		zin_siege_bombard = { x = 0 y = 1 }
 		zin_siege_catapult = { x = 0 y = 2 }
 		zin_men_infantry = { x = 1 y = 0 }
 		zin_men_infantry = { x = 1 y = 1 }
@@ -62,7 +62,7 @@ division_template = {
 	}
 	support = {
 		zin_support_sappers = { x = 0 y = 0 }
-		zin_support_catapults = { x = 0 y = 1 }
+		zin_support_bombards = { x = 0 y = 1 }
 	}
 }
 division_template = {
@@ -157,9 +157,11 @@ instant_effect = {
 	add_equipment_to_stockpile = { type = zin_armour_equipment_1 amount = 1730 producer = AEN }
 	add_equipment_to_stockpile = { type = zin_arms_equipment_1 amount = 19490 producer = AEN }
 	add_equipment_to_stockpile = { type = zin_ballista_equipment_0 amount = 90 producer = AEN }
-	add_equipment_to_stockpile = { type = zin_bows_equipment_1 amount = 4900 producer = AEN }
+	add_equipment_to_stockpile = { type = zin_bombard_equipment_1 amount = 80 producer = AEN }
+	add_equipment_to_stockpile = { type = zin_bows_equipment_1 amount = 2020 producer = AEN }
 	add_equipment_to_stockpile = { type = zin_camp_equipment_0 amount = 710 producer = AEN }
-	add_equipment_to_stockpile = { type = zin_catapult_equipment_1 amount = 210 producer = AEN }
+	add_equipment_to_stockpile = { type = zin_catapult_equipment_1 amount = 60 producer = AEN }
+	add_equipment_to_stockpile = { type = zin_handgun_equipment_1 amount = 2880 producer = AEN }
 	add_equipment_to_stockpile = { type = zin_mounts_equipment_1 amount = 4500 producer = AEN }
 	add_equipment_to_stockpile = { type = train_equipment_1 amount = 300 producer = AEN }
 	add_equipment_to_stockpile = { type = convoy_1 amount = 70 producer = AEN }

@@ -47,7 +47,7 @@ zin_kusven_withdraw = {
 					remove_ideas = zin_zol_kusven_in_field
 				}
 				if = {
-					limit = { has_character = zin_kusven }
+					limit = { AND = { has_character = zin_kusven has_global_flag = zin_in_play_kusven } }
 					remove_unit_leader_role = { character = zin_kusven }
 				}
 				delete_unit = { division_template = "Kusven's Host" }
@@ -264,17 +264,17 @@ zin_zol_falter = {
 	set_temp_variable = { zin_lost = 0 }
 	random_list = {
 		1 = {
-			trigger = { check_variable = { var = zin_zol_bond_great value = 2 compare = greater_than_or_equals } }
+			modifier = { factor = 0 check_variable = { zin_zol_bond_great < 2 } }
 			add_to_variable = { zin_zol_bond_great = -1 }
 			set_temp_variable = { zin_lost = 1 }
 		}
 		1 = {
-			trigger = { check_variable = { var = zin_zol_bond_lesser value = 2 compare = greater_than_or_equals } }
+			modifier = { factor = 0 check_variable = { zin_zol_bond_lesser < 2 } }
 			add_to_variable = { zin_zol_bond_lesser = -1 }
 			set_temp_variable = { zin_lost = 2 }
 		}
 		1 = {
-			trigger = { check_variable = { var = zin_zol_bond_divine value = 2 compare = greater_than_or_equals } }
+			modifier = { factor = 0 check_variable = { zin_zol_bond_divine < 2 } }
 			add_to_variable = { zin_zol_bond_divine = -1 }
 			set_temp_variable = { zin_lost = 3 }
 		}
@@ -494,13 +494,18 @@ zin_zol_raise_host = {
 			random_list = {
 				40 = { }
 				30 = {
-					trigger = { has_country_flag = zin_zol_muster_sodoloro }
+					modifier = { factor = 0 NOT = { has_country_flag = zin_zol_muster_sodoloro } }
 					set_temp_variable = { zin_site = 2 }
 				}
 				40 = {
-					trigger = {
-						has_country_flag = zin_zol_muster_islands
-						check_variable = { zin_zol_islands_stirring > 0 }
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_country_flag = zin_zol_muster_islands
+								check_variable = { zin_zol_islands_stirring > 0 }
+							}
+						}
 					}
 					set_temp_variable = { zin_site = 3 }
 				}
@@ -683,8 +688,8 @@ zin_zol_send_kusven = {
 			set_variable = { zin_zol_convergence = 0 }
 			add_ideas = zin_zol_kusven_in_field
 			if = {
-				limit = { NOT = { has_character = zin_kusven } }
-				recruit_character = zin_kusven
+				limit = { NOT = { AND = { has_character = zin_kusven has_global_flag = zin_in_play_kusven } } }
+				if = { limit = { NOT = { has_character = zin_kusven } } zin_kusven = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_kusven } } set_global_flag = zin_in_play_kusven }
 			}
 			add_field_marshal_role = {
 				character = zin_kusven

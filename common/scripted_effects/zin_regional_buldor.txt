@@ -5,13 +5,13 @@ zin_regional_buldor_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_buldor_mara
+		if = { limit = { NOT = { has_character = zin_regional_buldor_mara } } zin_regional_buldor_mara = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_buldor_mara } } set_global_flag = zin_in_play_regional_buldor_mara add_corps_commander_role = { character = zin_regional_buldor_mara traits = { infantry_leader skirmisher } skill = 3 attack_skill = 3 defense_skill = 3 planning_skill = 2 logistics_skill = 2 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_buldor_ulric
+		if = { limit = { NOT = { has_character = zin_regional_buldor_ulric } } zin_regional_buldor_ulric = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_buldor_ulric } } set_global_flag = zin_in_play_regional_buldor_ulric add_advisor_role = { character = zin_regional_buldor_ulric advisor = { slot = political_advisor idea_token = zin_regional_buldor_ulric_adv allowed = { original_tag = BLD } traits = { zin_adv_treasurer } cost = 150 } } }
 	}
 }
 

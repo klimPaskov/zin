@@ -5,13 +5,13 @@ zin_regional_adel_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_adel_ysmay
+		if = { limit = { NOT = { has_character = zin_regional_adel_ysmay } } zin_regional_adel_ysmay = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_adel_ysmay } } set_global_flag = zin_in_play_regional_adel_ysmay add_advisor_role = { character = zin_regional_adel_ysmay advisor = { slot = theorist idea_token = zin_regional_adel_ysmay_adv allowed = { original_tag = ADE } traits = { zin_adv_sage } cost = 150 } } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_adel_edda
+		if = { limit = { NOT = { has_character = zin_regional_adel_edda } } zin_regional_adel_edda = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_adel_edda } } set_global_flag = zin_in_play_regional_adel_edda add_naval_commander_role = { character = zin_regional_adel_edda traits = { spotter blue_water_expert } skill = 3 attack_skill = 3 defense_skill = 3 maneuvering_skill = 3 coordination_skill = 3 } }
 	}
 }
 

@@ -4,30 +4,30 @@ zin_lerendor_recruit = {
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
-			NOT = { has_character = zin_lerendor_maelis }
+			NOT = { AND = { has_character = zin_lerendor_maelis has_global_flag = zin_in_play_lerendor_maelis } }
 		}
-		recruit_character = zin_lerendor_maelis
+		if = { limit = { NOT = { has_character = zin_lerendor_maelis } } zin_lerendor_maelis = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_lerendor_maelis } } set_global_flag = zin_in_play_lerendor_maelis add_advisor_role = { character = zin_lerendor_maelis advisor = { slot = political_advisor idea_token = zin_lerendor_maelis_adv allowed = { original_tag = LER } traits = { zin_trait_lawspeaker } cost = 150 } } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
-			NOT = { has_character = zin_lerendor_brannoc }
+			NOT = { AND = { has_character = zin_lerendor_brannoc has_global_flag = zin_in_play_lerendor_brannoc } }
 		}
-		recruit_character = zin_lerendor_brannoc
+		if = { limit = { NOT = { has_character = zin_lerendor_brannoc } } zin_lerendor_brannoc = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_lerendor_brannoc } } set_global_flag = zin_in_play_lerendor_brannoc add_advisor_role = { character = zin_lerendor_brannoc advisor = { slot = political_advisor idea_token = zin_lerendor_brannoc_adv allowed = { original_tag = LER } traits = { zin_trait_office_broker } cost = 150 } } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 3 }
-			NOT = { has_character = zin_lerendor_ostvar }
+			NOT = { AND = { has_character = zin_lerendor_ostvar has_global_flag = zin_in_play_lerendor_ostvar } }
 		}
-		recruit_character = zin_lerendor_ostvar
+		if = { limit = { NOT = { has_character = zin_lerendor_ostvar } } zin_lerendor_ostvar = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_lerendor_ostvar } } set_global_flag = zin_in_play_lerendor_ostvar add_naval_commander_role = { character = zin_lerendor_ostvar traits = { blockade_runner bold } skill = 4 attack_skill = 3 defense_skill = 3 maneuvering_skill = 4 coordination_skill = 4 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 4 }
-			NOT = { has_character = zin_lerendor_hesk }
+			NOT = { AND = { has_character = zin_lerendor_hesk has_global_flag = zin_in_play_lerendor_hesk } }
 		}
-		recruit_character = zin_lerendor_hesk
+		if = { limit = { NOT = { has_character = zin_lerendor_hesk } } zin_lerendor_hesk = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_lerendor_hesk } } set_global_flag = zin_in_play_lerendor_hesk add_field_marshal_role = { character = zin_lerendor_hesk traits = { defensive_doctrine } skill = 3 attack_skill = 2 defense_skill = 4 planning_skill = 3 logistics_skill = 2 } }
 	}
 }
 

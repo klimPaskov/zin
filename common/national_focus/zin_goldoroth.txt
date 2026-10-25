@@ -2191,8 +2191,8 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = zin_goldoroth_corsairs
 			if = {
-				limit = { NOT = { has_character = zin_goldoroth_rask } }
-				recruit_character = zin_goldoroth_rask
+				limit = { NOT = { AND = { has_character = zin_goldoroth_rask has_global_flag = zin_in_play_goldoroth_rask } } }
+				if = { limit = { NOT = { has_character = zin_goldoroth_rask } } zin_goldoroth_rask = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_goldoroth_rask } } set_global_flag = zin_in_play_goldoroth_rask add_naval_commander_role = { character = zin_goldoroth_rask traits = { } skill = 2 attack_skill = 2 defense_skill = 2 maneuvering_skill = 2 coordination_skill = 2 } }
 			}
 			set_temp_variable = { zin_arg_bloc = 3 }
 			set_temp_variable = { zin_arg_value = 5 }

@@ -229,7 +229,7 @@ zin_afrit_council = {
 		cost = 75
 		days_re_enable = 60
 		complete_effect = {
-			any_country = {
+			every_country = {
 				limit = { zin_afrit_rules_here = yes zin_aenor_is_realm = yes }
 				add_timed_idea = { idea = zin_afrit_edict_of_arms days = 180 }
 			}
@@ -261,7 +261,7 @@ zin_afrit_council = {
 		cost = 50
 		days_re_enable = 60
 		complete_effect = {
-			any_country = {
+			every_country = {
 				limit = { zin_afrit_rules_here = yes zin_aenor_is_realm = yes }
 				add_stability = 0.05
 			}
@@ -298,7 +298,7 @@ zin_afrit_council = {
 		cost = 0
 		days_re_enable = 180
 		complete_effect = {
-			any_country = {
+			every_country = {
 				limit = { zin_afrit_rules_here = yes zin_aenor_is_realm = yes }
 				add_political_power = -100
 			}
@@ -336,7 +336,7 @@ zin_afrit_council = {
 		cost = 75
 		days_re_enable = 60
 		complete_effect = {
-			any_country = {
+			every_country = {
 				limit = { zin_afrit_rules_here = yes zin_aenor_is_realm = yes }
 				set_temp_variable = { zin_arg_value = 5 }
 				zin_aenor_add_concord_loyalty_all = yes
@@ -407,7 +407,7 @@ zin_afrit_council = {
 		cost = 100
 		days_re_enable = 180
 		complete_effect = {
-			any_country = {
+			every_country = {
 				limit = { zin_afrit_rules_here = yes }
 				add_timed_idea = { idea = zin_afrit_necklace_drawn days = 30 }
 			}
@@ -449,7 +449,7 @@ zin_afrit_council = {
 		}
 		available = {
 			has_political_power > 74
-			has_character = zin_sevrin
+			AND = { has_character = zin_sevrin has_global_flag = zin_in_play_sevrin }
 		}
 		cost = 75
 		days_remove = 45

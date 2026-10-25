@@ -77,6 +77,34 @@
   },
   "speedFactor": 0
  },
+ "zin_men_handgunners": {
+  "target": {
+   "sa": 10,
+   "ha": 1.5,
+   "def": 13,
+   "brk": 2.5,
+   "arm": 0,
+   "ap": 9,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 10.167,
+   "ha": 1.417,
+   "def": 12,
+   "brk": 2.583,
+   "arm": 0.167,
+   "ap": 8.333,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.016,
+   "ha": 0.059,
+   "def": 0.083,
+   "brk": -0.032,
+   "ap": 0.08
+  },
+  "speedFactor": 0
+ },
  "zin_men_heavy_infantry": {
   "target": {
    "sa": 7,
@@ -967,6 +995,28 @@
   "factors": {},
   "speedFactor": -0.375
  },
+ "zin_siege_bombard": {
+  "target": {
+   "sa": 30,
+   "ha": 6,
+   "def": 4,
+   "brk": 3,
+   "arm": 0,
+   "ap": 14,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 30,
+   "ha": 6,
+   "def": 4,
+   "brk": 3,
+   "arm": 0,
+   "ap": 14,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": -0.375
+ },
  "zin_support_catapults": {
   "target": {
    "sa": 12,
@@ -993,6 +1043,33 @@
    "brk": -0.5
   },
   "speedFactor": -0.125
+ },
+ "zin_support_bombards": {
+  "target": {
+   "sa": 16,
+   "ha": 3,
+   "def": 3,
+   "brk": 1,
+   "arm": 0,
+   "ap": 14,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 30,
+   "ha": 6,
+   "def": 4,
+   "brk": 3,
+   "arm": 0,
+   "ap": 14,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.467,
+   "ha": -0.5,
+   "def": -0.25,
+   "brk": -0.667
+  },
+  "speedFactor": -0.25
  },
  "zin_support_ballistae": {
   "target": {
@@ -1145,28 +1222,6 @@
    "brk": 0,
    "arm": 0,
    "ap": 60,
-   "hard": 0
-  },
-  "factors": {},
-  "speedFactor": 0
- },
- "zin_zol_manifestation": {
-  "target": {
-   "sa": 100,
-   "ha": 60,
-   "def": 0,
-   "brk": 0,
-   "arm": 0,
-   "ap": 300,
-   "hard": 0
-  },
-  "blended": {
-   "sa": 100,
-   "ha": 60,
-   "def": 0,
-   "brk": 0,
-   "arm": 0,
-   "ap": 300,
    "hard": 0
   },
   "factors": {},

@@ -278,7 +278,7 @@ zin_afrit_crown_aurevan = {
 			limit = { country_exists = WOR }
 			WOR = {
 				remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }
-				recruit_character = zin_ilvane
+				if = { limit = { NOT = { has_character = zin_ilvane } } zin_ilvane = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_ilvane } } set_global_flag = zin_in_play_ilvane add_advisor_role = { character = zin_ilvane advisor = { slot = political_advisor idea_token = zin_ilvane_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_high_confessor } } } }
 				add_country_leader_role = { character = zin_ilvane promote_leader = yes country_leader = { ideology = zin_light_sanctuary expire = "2000.1.1.1" } }
 			}
 		}
@@ -290,7 +290,7 @@ zin_afrit_crown_aurevan = {
 			remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }
 		}
 		event_target:zin_afrit_crown_realm = {
-			recruit_character = zin_aurevan
+			if = { limit = { NOT = { has_character = zin_aurevan } } zin_aurevan = { set_nationality = PREV } }
 			add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_light_sanctuary expire = "2000.1.1.1" traits = { zin_trait_deliverer } } }
 			set_temp_variable = { zin_arg_stance = 4 }
 			zin_politics_set_stance = yes
@@ -314,7 +314,7 @@ zin_afrit_crown_aurevan = {
 }
 zin_afrit_crown_eronel = {
 	# Prince Eronel is crowned in Aenor (called by the immediate block of the news event zin_afrit.23). Scope: the Aenor realm.
-	recruit_character = zin_eronel
+	if = { limit = { NOT = { has_character = zin_eronel } } zin_eronel = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_eronel } } set_global_flag = zin_in_play_eronel add_country_leader_role = { character = zin_eronel country_leader = { ideology = zin_dom_court traits = { zin_trait_gilded_heir } desc = zin_eronel_desc expire = "2000.1.1.1" } } }
 	promote_character = zin_eronel
 	set_country_flag = zin_reign_eronel_crowned
 	country_event = { id = zin_reign.65 days = 2 }
@@ -373,7 +373,7 @@ zin_afrit_die = {
 				limit = { country_exists = WOR }
 				WOR = {
 					drop_cosmetic_tag = yes
-					recruit_character = zin_ilvane
+					if = { limit = { NOT = { has_character = zin_ilvane } } zin_ilvane = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_ilvane } } set_global_flag = zin_in_play_ilvane add_advisor_role = { character = zin_ilvane advisor = { slot = political_advisor idea_token = zin_ilvane_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_high_confessor } } } }
 					add_country_leader_role = { character = zin_ilvane promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" } }
 					remove_ideas = { zin_worshipdom_eastern_throne zin_worshipdom_host_of_the_east zin_worshipdom_gods_court }
 				}
@@ -445,7 +445,7 @@ zin_afrit_flee_east = {
 			if = {
 				limit = { has_event_target = zin_afrit_seat }
 				event_target:zin_afrit_seat = {
-					recruit_character = zin_aurevan
+					if = { limit = { NOT = { has_character = zin_aurevan } } zin_aurevan = { set_nationality = PREV } }
 					add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }
 					set_temp_variable = { zin_arg_stance = 10 }
 					zin_politics_set_stance = yes
@@ -599,11 +599,11 @@ zin_afrit_historical_fallbacks = {
 			NOT = { has_global_flag = zin_afrit_dead }
 			has_event_target = zin_afrit_seat
 			event_target:zin_afrit_seat = { is_ai = yes }
-			any_country = { has_character = zin_eindil }
+			any_country = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 			OR = {
 				AND = {
 					any_country = {
-						has_character = zin_eindil
+						AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 						has_war_with = event_target:zin_afrit_seat
 					}
 					event_target:zin_afrit_seat = { zin_afrit_side_holds_middle = yes }
@@ -851,7 +851,7 @@ zin_afrit_lose_realm = {
 		if = {
 			limit = { has_event_target = zin_afrit_refuge }
 			event_target:zin_afrit_refuge = {
-				recruit_character = zin_aurevan
+				if = { limit = { NOT = { has_character = zin_aurevan } } zin_aurevan = { set_nationality = PREV } }
 				add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer } } }
 				set_temp_variable = { zin_arg_stance = 10 }
 				zin_politics_set_stance = yes
@@ -1162,7 +1162,7 @@ zin_afrit_palace_roll = {
 				}
 				else = {
 					random_country = {
-						limit = { has_character = zin_eindil }
+						limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 						country_event = { id = zin_eindil.120 }
 					}
 				}
@@ -1196,7 +1196,7 @@ zin_afrit_palace_roll = {
 				}
 				else = {
 					random_country = {
-						limit = { has_character = zin_eindil }
+						limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 						country_event = { id = zin_eindil.121 }
 					}
 				}
@@ -1218,7 +1218,7 @@ zin_afrit_palace_roll = {
 				}
 				else = {
 					random_country = {
-						limit = { has_character = zin_eindil }
+						limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 						country_event = { id = zin_eindil.123 }
 					}
 				}
@@ -1592,7 +1592,7 @@ zin_afrit_retake_aenor = {
 				remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }
 			}
 			AEN = {
-				recruit_character = zin_aurevan
+				if = { limit = { NOT = { has_character = zin_aurevan } } zin_aurevan = { set_nationality = PREV } }
 				add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }
 				set_temp_variable = { zin_arg_stance = 10 }
 				zin_politics_set_stance = yes
@@ -1602,7 +1602,7 @@ zin_afrit_retake_aenor = {
 			if = {
 				limit = { country_exists = WOR }
 				WOR = {
-					recruit_character = zin_ilvane
+					if = { limit = { NOT = { has_character = zin_ilvane } } zin_ilvane = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_ilvane } } set_global_flag = zin_in_play_ilvane add_advisor_role = { character = zin_ilvane advisor = { slot = political_advisor idea_token = zin_ilvane_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_high_confessor } } } }
 				}
 			}
 		}
@@ -1650,7 +1650,7 @@ zin_afrit_return = {
 				}
 				every_country = {
 					limit = {
-						has_character = zin_eindil
+						AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 						NOT = { has_country_flag = zin_afrit_seat_mark }
 						NOT = { has_war_with = event_target:zin_afrit_seat }
 					}

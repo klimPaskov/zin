@@ -5,13 +5,13 @@ zin_regional_lambin_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_lambin_essa
+		if = { limit = { NOT = { has_character = zin_regional_lambin_essa } } zin_regional_lambin_essa = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_lambin_essa } } set_global_flag = zin_in_play_regional_lambin_essa add_corps_commander_role = { character = zin_regional_lambin_essa traits = { cavalry_leader skirmisher } skill = 3 attack_skill = 3 defense_skill = 2 planning_skill = 3 logistics_skill = 2 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_lambin_orrin
+		if = { limit = { NOT = { has_character = zin_regional_lambin_orrin } } zin_regional_lambin_orrin = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_lambin_orrin } } set_global_flag = zin_in_play_regional_lambin_orrin add_advisor_role = { character = zin_regional_lambin_orrin advisor = { slot = political_advisor idea_token = zin_regional_lambin_orrin_adv allowed = { original_tag = LAB } traits = { zin_adv_treasurer } cost = 150 } } }
 	}
 }
 

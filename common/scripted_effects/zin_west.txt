@@ -1608,7 +1608,9 @@ zin_west_join_coalition_effects = {
 		save_event_target_as = zin_west_joiner
 		var:global.zin_eindil_host = {
 			add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }
+			set_country_flag = zin_west_fought_beside_@PREV
 			reverse_add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }
+			PREV = { set_country_flag = zin_west_fought_beside_@PREV }
 		}
 	}
 	add_ideas = zin_west_beside_former_foes

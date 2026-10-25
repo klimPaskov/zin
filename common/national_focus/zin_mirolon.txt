@@ -381,7 +381,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			recruit_character = zin_mirolon_hadric
+			if = { limit = { NOT = { has_character = zin_mirolon_hadric } } zin_mirolon_hadric = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_mirolon_hadric } } set_global_flag = zin_in_play_mirolon_hadric add_advisor_role = { character = zin_mirolon_hadric advisor = { slot = political_advisor idea_token = zin_mirolon_hadric cost = 100 traits = { zin_adv_whisper_master } } } }
 			set_temp_variable = { zin_arg_value = 3 }
 			zin_mirolon_add_proof = yes
 		}
@@ -1389,7 +1389,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			recruit_character = zin_mirolon_selda
+			if = { limit = { NOT = { has_character = zin_mirolon_selda } } zin_mirolon_selda = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_mirolon_selda } } set_global_flag = zin_in_play_mirolon_selda add_corps_commander_role = { character = zin_mirolon_selda traits = { inflexible_strategist } skill = 4 attack_skill = 3 defense_skill = 6 planning_skill = 3 logistics_skill = 4 } }
 			army_experience = 10
 		}
 	}

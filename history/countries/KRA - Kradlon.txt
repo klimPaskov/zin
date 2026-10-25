@@ -6,11 +6,15 @@ add_ideas = { limited_conscription civilian_economy export_focus }
 set_research_slots = 3
 set_stability = 0.6
 set_war_support = 0.2
+set_country_flag = zin_gunpowder
 set_technology = {
+	zin_tech_black_powder = 1
+	zin_tech_cast_bombards = 1
 	zin_tech_catapults = 1
 	zin_tech_composite_bows = 1
 	zin_tech_dressed_stone = 1
 	zin_tech_forged_steel = 1
+	zin_tech_hand_guns = 1
 	zin_tech_harbour_works = 1
 	zin_tech_heralds = 1
 	zin_tech_hunting_bows = 1
@@ -19,6 +23,7 @@ set_technology = {
 	zin_tech_libraries = 1
 	zin_tech_lime_mortar = 1
 	zin_tech_mail = 1
+	zin_tech_matchlocks = 1
 	zin_tech_merchant_cogs = 1
 	zin_tech_oared_galleys = 1
 	zin_tech_pit_props = 1
@@ -61,5 +66,8 @@ recruit_character = zin_regional_kradlon_shore
 recruit_character = zin_regional_kradlon_pernwen
 recruit_character = zin_cmd_army_kradlon
 recruit_character = zin_cmd_master_kradlon
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_regional_kradlon_bram
+recruit_character = zin_regional_kradlon_hesta
 set_politics = { ruling_party = neutrality last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { neutrality = 60 democratic = 20 fascism = 20 communism = 0 }

@@ -9,9 +9,6 @@ zin_controls_sea_central = { # pending: the key-sites table (modules/sites.mjs, 
 zin_eindil_known_by_name = { # pending: the names and terms module (start situation)
 	always = no
 }
-zin_has_potent_magic = { # pending: the magic and world systems module
-	always = no
-}
 zin_is_region_cold_lands = { # pending: the key-sites table (modules/sites.mjs, decision E7)
 	always = no
 }
@@ -211,8 +208,5 @@ zin_people_includes_goblins = { # pending: the peoples table: goblins and ogres 
 	always = no
 }
 zin_people_includes_ogres = { # pending: the peoples table: goblins and ogres are not peoples of 03_peoples.md (the ten peoples have their triggers in modules/peoples.mjs); the Dark Lands trees test them as minor peoples
-	always = no
-}
-zin_world_is_dragon_keeper = { # pending: the magic and world systems module
 	always = no
 }

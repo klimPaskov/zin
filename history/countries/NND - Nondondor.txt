@@ -48,5 +48,7 @@ recruit_character = zin_regional_nondondor_melkos
 recruit_character = zin_cmd_army_nondondor
 recruit_character = zin_cmd_master_nondondor
 recruit_character = zin_regional_nondondor_lusaia
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_regional_nondondor_saric
 set_politics = { ruling_party = neutrality last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { neutrality = 60 democratic = 20 fascism = 20 communism = 0 }

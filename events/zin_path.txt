@@ -37,7 +37,7 @@ country_event = {
 					has_global_flag = zin_golbran_dead
 					has_global_flag = zin_eindil_crowned
 					has_global_flag = zin_ending_reached
-					any_country = { has_character = zin_eindil }
+					any_country = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 				}
 			}
 			log = "ZIN path: the start check failed"

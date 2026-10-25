@@ -56,9 +56,9 @@ zin_gunwaith_recruit = {
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
-			NOT = { has_character = zin_gunwaith_ostra }
+			NOT = { AND = { has_character = zin_gunwaith_ostra has_global_flag = zin_in_play_gunwaith_ostra } }
 		}
-		recruit_character = zin_gunwaith_ostra
+		if = { limit = { NOT = { has_character = zin_gunwaith_ostra } } zin_gunwaith_ostra = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_gunwaith_ostra } } set_global_flag = zin_in_play_gunwaith_ostra add_naval_commander_role = { character = zin_gunwaith_ostra traits = { blue_water_expert } skill = 3 attack_skill = 3 defense_skill = 3 maneuvering_skill = 3 coordination_skill = 3 } }
 	}
 }
 

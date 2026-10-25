@@ -5,13 +5,13 @@ zin_regional_raerby_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_raerby_osk
+		if = { limit = { NOT = { has_character = zin_regional_raerby_osk } } zin_regional_raerby_osk = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_raerby_osk } } set_global_flag = zin_in_play_regional_raerby_osk add_advisor_role = { character = zin_regional_raerby_osk advisor = { slot = political_advisor idea_token = zin_regional_raerby_osk_adv allowed = { original_tag = RAE } traits = { zin_adv_envoy } cost = 150 } } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_raerby_ilka
+		if = { limit = { NOT = { has_character = zin_regional_raerby_ilka } } zin_regional_raerby_ilka = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_raerby_ilka } } set_global_flag = zin_in_play_regional_raerby_ilka add_naval_commander_role = { character = zin_regional_raerby_ilka traits = { blue_water_expert } skill = 3 attack_skill = 2 defense_skill = 3 maneuvering_skill = 4 coordination_skill = 3 } }
 	}
 }
 

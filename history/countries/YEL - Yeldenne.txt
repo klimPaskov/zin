@@ -51,5 +51,7 @@ recruit_character = zin_regional_yeldenne_stenulv
 recruit_character = zin_regional_yeldenne_zenvar
 recruit_character = zin_cmd_army_yeldenne
 recruit_character = zin_cmd_master_yeldenne
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_yeldenne_warden
 set_politics = { ruling_party = democratic last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { democratic = 60 neutrality = 25 fascism = 15 communism = 0 }

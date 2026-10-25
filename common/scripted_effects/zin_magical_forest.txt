@@ -6,14 +6,14 @@ zin_magical_forest_recruit = {
 			check_variable = { zin_arg_character = 1 }
 			NOT = { has_character = zin_magical_forest_perlan }
 		}
-		recruit_character = zin_magical_forest_perlan
+		if = { limit = { NOT = { has_character = zin_magical_forest_perlan } } zin_magical_forest_perlan = { set_nationality = PREV } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 			NOT = { has_character = zin_magical_forest_ithrandel }
 		}
-		recruit_character = zin_magical_forest_ithrandel
+		if = { limit = { NOT = { has_character = zin_magical_forest_ithrandel } } zin_magical_forest_ithrandel = { set_nationality = PREV } }
 	}
 }
 

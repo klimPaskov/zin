@@ -10,9 +10,9 @@ country_event = {
 	timeout_days = 30
 	option = {
 		name = zin_volgan.1.a
-		recruit_character = zin_volgan_ember_herald
-		recruit_character = zin_volgan_grave_warden
-		recruit_character = zin_volgan_ghorvak
+		if = { limit = { NOT = { has_character = zin_volgan_ember_herald } } zin_volgan_ember_herald = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_volgan_ember_herald } } set_global_flag = zin_in_play_volgan_ember_herald add_corps_commander_role = { character = zin_volgan_ember_herald traits = { brilliant_strategist } skill = 5 attack_skill = 5 defense_skill = 3 planning_skill = 4 logistics_skill = 3 } }
+		if = { limit = { NOT = { has_character = zin_volgan_grave_warden } } zin_volgan_grave_warden = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_volgan_grave_warden } } set_global_flag = zin_in_play_volgan_grave_warden add_corps_commander_role = { character = zin_volgan_grave_warden traits = { inflexible_strategist } skill = 4 attack_skill = 3 defense_skill = 4 planning_skill = 4 logistics_skill = 3 } }
+		if = { limit = { NOT = { has_character = zin_volgan_ghorvak } } zin_volgan_ghorvak = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_volgan_ghorvak } } set_global_flag = zin_in_play_volgan_ghorvak add_corps_commander_role = { character = zin_volgan_ghorvak traits = { brave } skill = 4 attack_skill = 6 defense_skill = 3 planning_skill = 1 logistics_skill = 2 } }
 	}
 }
 

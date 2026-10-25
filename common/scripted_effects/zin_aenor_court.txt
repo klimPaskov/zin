@@ -644,13 +644,13 @@ zin_aenor_give_seals = {
 		else = {
 			set_temp_variable = { zin_arg_stance = 4 }
 			zin_politics_set_stance = yes
-			recruit_character = zin_merovan
+			if = { limit = { NOT = { has_character = zin_merovan } } zin_merovan = { set_nationality = PREV } }
 			promote_character = zin_merovan
 		}
 	}
 	else_if = {
 		limit = { zin_aenor_ruled_by_court = yes }
-		recruit_character = zin_aenor_golden_regency
+		if = { limit = { NOT = { has_character = zin_aenor_golden_regency } } zin_aenor_golden_regency = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_aenor_golden_regency } } set_global_flag = zin_in_play_aenor_golden_regency add_country_leader_role = { character = zin_aenor_golden_regency country_leader = { ideology = zin_dom_court expire = "2000.1.1.1" } } }
 		promote_character = zin_aenor_golden_regency
 		set_temp_variable = { zin_arg_stance = 6 }
 		zin_politics_set_stance = yes
@@ -658,7 +658,7 @@ zin_aenor_give_seals = {
 	}
 	else_if = {
 		limit = { zin_aenor_ruled_by_dominions = yes }
-		recruit_character = zin_aenor_concord_speaker
+		if = { limit = { NOT = { has_character = zin_aenor_concord_speaker } } zin_aenor_concord_speaker = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_aenor_concord_speaker } } set_global_flag = zin_in_play_aenor_concord_speaker add_country_leader_role = { character = zin_aenor_concord_speaker country_leader = { ideology = zin_wild_freeholds expire = "2000.1.1.1" } } }
 		promote_character = zin_aenor_concord_speaker
 		set_temp_variable = { zin_arg_stance = 15 }
 		zin_politics_set_stance = yes
@@ -856,7 +856,10 @@ zin_aenor_pick_ai_camp = {
 				set_variable = { zin_aenor_ai_camp = 3 }
 			}
 			5 = {
-				trigger = { zin_aenor_host_available = yes }
+				modifier = {
+					factor = 0
+					NOT = { zin_aenor_host_available = yes }
+				}
 				modifier = {
 					add = 10
 					check_variable = { zin_aenor_camp_host > 24 }
@@ -1044,7 +1047,7 @@ zin_aenor_raise_lost_cause_shield = {
 zin_aenor_receive_eindil = {
 	# Eindil leaves his host and leads this realm as the Hailed King.
 	zin_eindil_set_host = yes
-	recruit_character = zin_eindil
+	if = { limit = { NOT = { has_character = zin_eindil } } zin_eindil = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_eindil } } set_global_flag = zin_in_play_eindil }
 	add_country_leader_role = {
 		character = zin_eindil
 		promote_leader = yes
@@ -1105,7 +1108,7 @@ zin_aenor_regency_while_king_lost = {
 	# The Captains' Regency leads while Eindil is lost after the cliff.
 	set_variable = { zin_aenor_ruling_camp_before_loss = zin_aenor_ruling_camp }
 	set_variable = { zin_aenor_ruling_camp = 5 }
-	recruit_character = zin_aenor_captains_regency
+	if = { limit = { NOT = { has_character = zin_aenor_captains_regency } } zin_aenor_captains_regency = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_aenor_captains_regency } } set_global_flag = zin_in_play_aenor_captains_regency add_country_leader_role = { character = zin_aenor_captains_regency country_leader = { ideology = zin_light_wardens expire = "2000.1.1.1" } } }
 	promote_character = zin_aenor_captains_regency
 	country_event = { id = zin_aenor.330 }
 }

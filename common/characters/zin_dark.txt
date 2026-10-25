@@ -8,14 +8,7 @@ characters = {
 				large = GFX_zin_portrait_orcs_male_1
 			}
 		}
-		advisor = {
-		slot = theorist
-		idea_token = zin_goldoroth_bredo
-		allowed = { original_tag = GOL }
-		traits = { zin_adv_sage }
-		cost = 100
-	}
-	}
+			}
 	zin_goldoroth_sungor = {
 		name = zin_goldoroth_sungor
 		portraits = {
@@ -23,14 +16,7 @@ characters = {
 				large = GFX_zin_portrait_orcs_male_2
 			}
 		}
-		advisor = {
-		slot = political_advisor
-		idea_token = zin_goldoroth_sungor
-		allowed = { original_tag = GOL }
-		traits = { zin_adv_war_speaker }
-		cost = 100
-	}
-	}
+			}
 	zin_goldoroth_britag = {
 		name = zin_goldoroth_britag
 		portraits = {
@@ -41,15 +27,7 @@ characters = {
 				large = GFX_zin_portrait_orcs_male_1
 			}
 		}
-		field_marshal = {
-		traits = { offensive_doctrine }
-		skill = 4
-		attack_skill = 4
-		defense_skill = 3
-		planning_skill = 3
-		logistics_skill = 3
-	}
-	}
+			}
 	zin_goldoroth_ulgra = {
 		name = zin_goldoroth_ulgra
 		portraits = {
@@ -57,14 +35,7 @@ characters = {
 				large = GFX_zin_portrait_orcs_female_1
 			}
 		}
-		advisor = {
-		slot = political_advisor
-		idea_token = zin_goldoroth_ulgra
-		allowed = { original_tag = GOL }
-		traits = { zin_trait_forge_mistress }
-		cost = 100
-	}
-	}
+			}
 	zin_goldoroth_snikkit = {
 		name = zin_goldoroth_snikkit
 		portraits = {
@@ -75,15 +46,7 @@ characters = {
 				large = GFX_zin_portrait_orcs_male_2
 			}
 		}
-		corps_commander = {
-		traits = { trickster }
-		skill = 2
-		attack_skill = 2
-		defense_skill = 2
-		planning_skill = 3
-		logistics_skill = 2
-	}
-	}
+			}
 	zin_goldoroth_rask = {
 		name = zin_goldoroth_rask
 		portraits = {
@@ -94,13 +57,5 @@ characters = {
 				large = GFX_zin_portrait_orcs_male_1
 			}
 		}
-		navy_leader = {
-		traits = { }
-		skill = 2
-		attack_skill = 2
-		defense_skill = 2
-		maneuvering_skill = 2
-		coordination_skill = 2
-	}
-	}
+			}
 }

@@ -131,7 +131,7 @@ zin_mistake_presence = {
 		allowed = {
 			original_tag = ZOL
 		}
-		state_trigger = any_owned_state
+		state_target = any_owned_state
 		target_trigger = {
 			FROM = {
 				zin_is_site_ocean_of_zol_island = yes

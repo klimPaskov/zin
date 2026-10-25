@@ -303,7 +303,7 @@ zin_eindil_set_host = {
 		}
 	}
 	set_variable = { global.zin_eindil_host = THIS }
-	recruit_character = zin_eindil
+	if = { limit = { NOT = { has_character = zin_eindil } } zin_eindil = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_eindil } } set_global_flag = zin_in_play_eindil }
 	if = {
 		limit = { check_variable = { zin_arg_role = 2 } }
 		add_field_marshal_role = { character = zin_eindil skill = 5 attack_skill = 5 defense_skill = 4 planning_skill = 4 logistics_skill = 3 traits = { zin_eindil_man_from_the_ice } }
@@ -858,7 +858,7 @@ zin_eindil_cliff_effects = {
 			limit = { zin_eindil_has_host = yes }
 			var:global.zin_eindil_host = {
 				add_ideas = zin_eindil_king_is_dead
-				if = { limit = { has_character = zin_eindil } retire_character = zin_eindil }
+				if = { limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } } retire_character = zin_eindil }
 			}
 		}
 	}

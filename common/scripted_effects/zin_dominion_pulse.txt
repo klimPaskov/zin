@@ -46,7 +46,7 @@ zin_dominion_startup = {
 			set_variable = { zin_mirolon_war_days = 0 }
 			add_ideas = zin_mirolon_long_watch
 			add_ideas = zin_mirolon_unheeded_warnings
-			recruit_character = zin_mirolon_maeric
+			if = { limit = { NOT = { has_character = zin_mirolon_maeric } } zin_mirolon_maeric = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_mirolon_maeric } } set_global_flag = zin_in_play_mirolon_maeric }
 			add_country_leader_role = {
 				character = zin_mirolon_maeric
 				promote_leader = yes

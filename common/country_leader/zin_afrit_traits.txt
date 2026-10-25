@@ -12,31 +12,31 @@ leader_traits = {
 		stability_factor = -0.05
 	}
 	zin_trait_high_confessor = {
-		slot = political_advisor
+		random = no
 		ai_will_do = { factor = 1 }
 		stability_factor = 0.05
 		party_popularity_stability_factor = 0.1
 	}
 	zin_trait_master_of_couriers = {
-		slot = political_advisor
+		random = no
 		ai_will_do = { factor = 1 }
 		civilian_intel_factor = 0.1
 		intel_network_gain_factor = 0.15
 	}
 	zin_trait_unending_thief = {
-		slot = political_advisor
+		random = no
 		ai_will_do = { factor = 1 }
 		research_speed_factor = 0.03
 		operation_cost = -0.1
 	}
 	zin_trait_envoy_of_many_courts = {
-		slot = political_advisor
+		random = no
 		ai_will_do = { factor = 1 }
 		intel_network_gain_factor = 0.2
 		improve_relations_maintain_cost_factor = -0.15
 	}
 	zin_trait_seeker_of_relics = {
-		slot = theorist
+		random = no
 		ai_will_do = { factor = 1 }
 		research_speed_factor = 0.03
 		civilian_intel_factor = 0.1

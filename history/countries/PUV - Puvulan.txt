@@ -76,6 +76,10 @@ recruit_character = zin_cmd_air_puvulan
 recruit_character = zin_cmd_marshal_1_puvulan
 recruit_character = zin_cmd_marshal_2_puvulan
 recruit_character = zin_cmd_master_puvulan
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_volgan_ember_herald
+recruit_character = zin_volgan_ghorvak
+recruit_character = zin_volgan_grave_warden
 set_politics = { ruling_party = communism last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { communism = 60 fascism = 25 neutrality = 15 democratic = 0 }
 set_autonomy = {

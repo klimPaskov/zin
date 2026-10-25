@@ -808,7 +808,10 @@ zin_world_tick = {
 		zin_world_check_endings = yes
 		zin_path_tick = yes
 		zin_story_tick = yes
-		# Step 10 (zin_ui_refresh, zin_chr_count_unread) waits for the interface and Chronicle modules: neither effect is staged yet.
+		every_country = {
+			limit = { is_ai = no }
+			zin_ui_refresh = yes
+		}
 		zin_world_schedule_tick = yes
 	}
 }

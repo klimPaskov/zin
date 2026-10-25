@@ -302,7 +302,7 @@ zin_dominion_court = {
 		allowed = {
 			original_tag = PUV
 		}
-		state_trigger = any
+		state_target = yes
 		target_root_trigger = {
 			has_war = yes
 			has_country_flag = zin_volgan_gate_pact

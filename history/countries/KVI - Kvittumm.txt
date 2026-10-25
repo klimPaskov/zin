@@ -86,5 +86,7 @@ recruit_character = zin_kvittumm_vaesra
 recruit_character = zin_kvittumm_kolbrand
 recruit_character = zin_kvittumm_ulvra
 recruit_character = zin_kvittumm_torkal
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_eindil
 set_politics = { ruling_party = neutrality last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { neutrality = 60 democratic = 20 fascism = 20 communism = 0 }

@@ -925,7 +925,7 @@ country_event = {
 				retire_character = zin_merovan
 			}
 			add_timed_idea = { idea = zin_aenor_throne_abandoned days = 180 }
-			recruit_character = zin_aenor_captains_regency
+			if = { limit = { NOT = { has_character = zin_aenor_captains_regency } } zin_aenor_captains_regency = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_aenor_captains_regency } } set_global_flag = zin_in_play_aenor_captains_regency add_country_leader_role = { character = zin_aenor_captains_regency country_leader = { ideology = zin_light_wardens expire = "2000.1.1.1" } } }
 			promote_character = zin_aenor_captains_regency
 			set_temp_variable = { zin_arg_stance = 3 }
 			zin_politics_set_stance = yes

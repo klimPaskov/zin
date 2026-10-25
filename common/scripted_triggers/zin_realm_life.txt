@@ -65,7 +65,7 @@ zin_realm_court_may_flee = {
 zin_realm_crisis_allowed = {
 	# G3, G4: the crown may fall into crisis. Story realms are exempt while their beat is pending; tier A never on the historical path.
 	NOT = { zin_realm_is_story_ruler = yes }
-	NOT = { has_character = zin_eindil }
+	NOT = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 	NOT = {
 		AND = {
 			zin_aenor_is_realm = yes
@@ -595,7 +595,7 @@ zin_realm_story_war_side = {
 		original_tag = YEL
 		is_subject_of = PUV
 		is_subject_of = ZOL
-		has_character = zin_eindil
+		AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 		AND = {
 			has_country_flag = zin_afrit_eastern_client
 			NOT = { has_global_flag = zin_afrit_dead }

@@ -60,7 +60,7 @@ focus_tree = {
 			country_event = zin_regional_nether.1
 			if = {
 				limit = { NOT = { has_character = zin_nether_khorvael } }
-				recruit_character = zin_nether_khorvael
+				if = { limit = { NOT = { has_character = zin_nether_khorvael } } zin_nether_khorvael = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -362,7 +362,7 @@ focus_tree = {
 			}
 			if = {
 				limit = { NOT = { has_character = zin_nether_zhorara } }
-				recruit_character = zin_nether_zhorara
+				if = { limit = { NOT = { has_character = zin_nether_zhorara } } zin_nether_zhorara = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -781,7 +781,7 @@ focus_tree = {
 			}
 			if = {
 				limit = { NOT = { has_character = zin_nether_zarek } }
-				recruit_character = zin_nether_zarek
+				if = { limit = { NOT = { has_character = zin_nether_zarek } } zin_nether_zarek = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -815,7 +815,7 @@ focus_tree = {
 			}
 			if = {
 				limit = { NOT = { has_character = zin_nether_thazira } }
-				recruit_character = zin_nether_thazira
+				if = { limit = { NOT = { has_character = zin_nether_thazira } } zin_nether_thazira = { set_nationality = PREV } }
 			}
 		}
 	}

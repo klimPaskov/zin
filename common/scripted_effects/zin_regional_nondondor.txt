@@ -5,6 +5,6 @@ zin_regional_nondondor_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_nondondor_saric
+		if = { limit = { NOT = { has_character = zin_regional_nondondor_saric } } zin_regional_nondondor_saric = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_nondondor_saric } } set_global_flag = zin_in_play_regional_nondondor_saric add_naval_commander_role = { character = zin_regional_nondondor_saric traits = { lone_wolf inshore_fighter } skill = 3 attack_skill = 4 defense_skill = 2 maneuvering_skill = 3 coordination_skill = 2 } }
 	}
 }

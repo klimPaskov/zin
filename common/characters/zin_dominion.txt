@@ -7,15 +7,7 @@ characters = {
 				large = GFX_zin_portrait_the_dead_male_2
 			}
 		}
-		corps_commander = {
-			traits = { brilliant_strategist }
-			skill = 5
-			attack_skill = 5
-			defense_skill = 3
-			planning_skill = 4
-			logistics_skill = 3
-		}
-	}
+			}
 	zin_volgan_grave_warden = {
 		name = zin_volgan_grave_warden
 		portraits = {
@@ -23,15 +15,7 @@ characters = {
 				large = GFX_zin_portrait_the_dead_female_1
 			}
 		}
-		corps_commander = {
-			traits = { inflexible_strategist }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 4
-			planning_skill = 4
-			logistics_skill = 3
-		}
-	}
+			}
 	zin_volgan_ghorvak = {
 		name = zin_volgan_ghorvak
 		portraits = {
@@ -39,15 +23,7 @@ characters = {
 				large = GFX_zin_portrait_orcs_male_1
 			}
 		}
-		corps_commander = {
-			traits = { brave }
-			skill = 4
-			attack_skill = 6
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 2
-		}
-	}
+			}
 	zin_mirolon_maeric = {
 		name = zin_mirolon_maeric
 		portraits = {
@@ -63,15 +39,7 @@ characters = {
 				large = GFX_zin_portrait_men_female_1
 			}
 		}
-		corps_commander = {
-			traits = { inflexible_strategist }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 6
-			planning_skill = 3
-			logistics_skill = 4
-		}
-	}
+			}
 	zin_mirolon_hadric = {
 		name = zin_mirolon_hadric
 		portraits = {
@@ -79,11 +47,5 @@ characters = {
 				large = GFX_zin_portrait_men_male_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_mirolon_hadric
-			cost = 100
-			traits = { zin_adv_whisper_master }
-		}
-	}
+			}
 }

@@ -5,13 +5,13 @@ zin_regional_varnondor_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_varnondor_sevra
+		if = { limit = { NOT = { has_character = zin_regional_varnondor_sevra } } zin_regional_varnondor_sevra = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_varnondor_sevra } } set_global_flag = zin_in_play_regional_varnondor_sevra add_naval_commander_role = { character = zin_regional_varnondor_sevra traits = { spotter inshore_fighter } skill = 3 attack_skill = 3 defense_skill = 3 maneuvering_skill = 3 coordination_skill = 3 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_varnondor_tomas
+		if = { limit = { NOT = { has_character = zin_regional_varnondor_tomas } } zin_regional_varnondor_tomas = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_varnondor_tomas } } set_global_flag = zin_in_play_regional_varnondor_tomas add_corps_commander_role = { character = zin_regional_varnondor_tomas traits = { naval_invader } skill = 2 attack_skill = 2 defense_skill = 2 planning_skill = 2 logistics_skill = 2 } }
 	}
 }
 

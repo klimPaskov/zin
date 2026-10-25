@@ -9,10 +9,10 @@ country_event = {
 		zin_afrit_startup_values = yes
 		WOR = {
 			add_ideas = zin_worshipdom_temple_state
-			recruit_character = zin_ilvane
-			recruit_character = zin_corvel
-			recruit_character = zin_kessarion
-			recruit_character = zin_ossar
+			if = { limit = { NOT = { has_character = zin_ilvane } } zin_ilvane = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_ilvane } } set_global_flag = zin_in_play_ilvane add_advisor_role = { character = zin_ilvane advisor = { slot = political_advisor idea_token = zin_ilvane_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_high_confessor } } } }
+			if = { limit = { NOT = { has_character = zin_corvel } } zin_corvel = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_corvel } } set_global_flag = zin_in_play_corvel add_advisor_role = { character = zin_corvel advisor = { slot = political_advisor idea_token = zin_corvel_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_master_of_couriers } } } }
+			if = { limit = { NOT = { has_character = zin_kessarion } } zin_kessarion = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_kessarion } } set_global_flag = zin_in_play_kessarion add_advisor_role = { character = zin_kessarion advisor = { slot = political_advisor idea_token = zin_kessarion_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_envoy_of_many_courts } } } }
+			if = { limit = { NOT = { has_character = zin_ossar } } zin_ossar = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_ossar } } set_global_flag = zin_in_play_ossar add_advisor_role = { character = zin_ossar advisor = { slot = theorist idea_token = zin_ossar_adv cost = 100 allowed = { original_tag = WOR } traits = { zin_trait_seeker_of_relics } } } }
 			delete_unit = { division_template = "Valley Wardens" }
 			if = {
 				limit = { NOT = { has_template = "Hermitage Guard" } }
@@ -412,7 +412,7 @@ country_event = {
 	picture = GFX_zin_evt_council_chamber
 	trigger = {
 		zin_afrit_is_hub = yes
-		has_character = zin_sevrin
+		AND = { has_character = zin_sevrin has_global_flag = zin_in_play_sevrin }
 		has_country_flag = zin_afrit_sevrin_guest
 		NOT = { has_global_flag = zin_afrit_dead }
 	}

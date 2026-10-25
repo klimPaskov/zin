@@ -8,16 +8,7 @@ characters = {
 				large = GFX_zin_portrait_men_male_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_ilvane_adv
-			cost = 150
-			allowed = { original_tag = WOR }
-			visible = { always = yes }
-			traits = { zin_trait_high_confessor }
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_corvel = {
 		name = zin_corvel
 		portraits = {
@@ -25,16 +16,7 @@ characters = {
 				large = GFX_zin_portrait_men_male_2
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_corvel_adv
-			cost = 150
-			allowed = { original_tag = WOR }
-			visible = { always = yes }
-			traits = { zin_trait_master_of_couriers }
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_sevrin = {
 		name = zin_sevrin
 		portraits = {
@@ -42,16 +24,7 @@ characters = {
 				large = GFX_zin_portrait_men_male_2
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_sevrin_adv
-			cost = 150
-			allowed = { original_tag = WOR }
-			visible = { has_country_flag = zin_afrit_sevrin_guest }
-			traits = { zin_trait_unending_thief }
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_kessarion = {
 		name = zin_kessarion
 		portraits = {
@@ -59,16 +32,7 @@ characters = {
 				large = GFX_zin_portrait_men_male_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_kessarion_adv
-			cost = 150
-			allowed = { original_tag = WOR }
-			visible = { always = yes }
-			traits = { zin_trait_envoy_of_many_courts }
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_ossar = {
 		name = zin_ossar
 		portraits = {
@@ -76,14 +40,5 @@ characters = {
 				large = GFX_zin_portrait_men_male_2
 			}
 		}
-		advisor = {
-			slot = theorist
-			idea_token = zin_ossar_adv
-			cost = 100
-			allowed = { original_tag = WOR }
-			visible = { always = yes }
-			traits = { zin_trait_seeker_of_relics }
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 }

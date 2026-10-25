@@ -2,7 +2,7 @@
 zin_volgan_wargoal_on_bearer = {
 	random_country = {
 		limit = {
-			has_character = zin_eindil
+			AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 			OR = {
 				is_neighbor_of = ROOT
 				any_neighbor_country = { is_subject_of = ROOT }

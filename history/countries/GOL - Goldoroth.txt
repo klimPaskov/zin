@@ -6,13 +6,18 @@ add_ideas = { limited_conscription civilian_economy export_focus }
 set_research_slots = 4
 set_stability = 0.6
 set_war_support = 0.4
+set_country_flag = zin_gunpowder
 set_technology = {
+	zin_tech_black_powder = 1
+	zin_tech_cast_bombards = 1
 	zin_tech_catapults = 1
 	zin_tech_dressed_stone = 1
 	zin_tech_forge_pits = 1
 	zin_tech_forged_steel = 1
+	zin_tech_hand_guns = 1
 	zin_tech_hunting_bows = 1
 	zin_tech_iron_arms = 1
+	zin_tech_matchlocks = 1
 	zin_tech_oared_galleys = 1
 	zin_tech_ogre_pacts = 1
 	zin_tech_pit_props = 1
@@ -47,6 +52,13 @@ recruit_character = zin_cmd_air_goldoroth
 recruit_character = zin_cmd_marshal_1_goldoroth
 recruit_character = zin_cmd_marshal_2_goldoroth
 recruit_character = zin_cmd_master_goldoroth
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_goldoroth_bredo
+recruit_character = zin_goldoroth_britag
+recruit_character = zin_goldoroth_rask
+recruit_character = zin_goldoroth_snikkit
+recruit_character = zin_goldoroth_sungor
+recruit_character = zin_goldoroth_ulgra
 set_politics = { ruling_party = fascism last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { fascism = 60 neutrality = 25 democratic = 15 communism = 0 }
 set_autonomy = {

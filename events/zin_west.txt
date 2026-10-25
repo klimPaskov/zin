@@ -1010,6 +1010,7 @@ country_event = {
 		every_country = {
 			limit = { zin_aenor_is_realm = yes }
 			add_opinion_modifier = { target = PREV modifier = zin_west_fought_beside }
+			set_country_flag = zin_west_fought_beside_@PREV
 		}
 		ai_chance = {
 			base = 40

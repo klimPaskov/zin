@@ -5,112 +5,67 @@ zin_inst_market_sell = {
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_arms_equipment
+		id = infantry
 		value = 500
 	}
 	ai_strategy = {
 		type = equipment_market_min_for_sale
-		id = zin_arms_equipment
+		id = infantry
 		value = 100
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_bows_equipment
-		value = 300
-	}
-	ai_strategy = {
-		type = equipment_market_min_for_sale
-		id = zin_bows_equipment
-		value = 60
-	}
-	ai_strategy = {
-		type = equipment_market_for_sale_threshold
-		id = zin_armour_equipment
-		value = 200
-	}
-	ai_strategy = {
-		type = equipment_market_min_for_sale
-		id = zin_armour_equipment
-		value = 40
-	}
-	ai_strategy = {
-		type = equipment_market_for_sale_threshold
-		id = zin_mounts_equipment
-		value = 200
-	}
-	ai_strategy = {
-		type = equipment_market_min_for_sale
-		id = zin_mounts_equipment
-		value = 40
-	}
-	ai_strategy = {
-		type = equipment_market_for_sale_threshold
-		id = zin_camp_equipment
+		id = support
 		value = 400
 	}
 	ai_strategy = {
 		type = equipment_market_min_for_sale
-		id = zin_camp_equipment
+		id = support
 		value = 80
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_catapult_equipment
+		id = artillery
 		value = 60
 	}
 	ai_strategy = {
 		type = equipment_market_min_for_sale
-		id = zin_catapult_equipment
+		id = artillery
 		value = 10
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_trebuchet_equipment
+		id = anti_tank
 		value = 60
 	}
 	ai_strategy = {
 		type = equipment_market_min_for_sale
-		id = zin_trebuchet_equipment
+		id = anti_tank
 		value = 10
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_ballista_equipment
+		id = anti_air
 		value = 60
 	}
 	ai_strategy = {
 		type = equipment_market_min_for_sale
-		id = zin_ballista_equipment
+		id = anti_air
 		value = 10
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_scorpion_equipment
-		value = 60
-	}
-	ai_strategy = {
-		type = equipment_market_min_for_sale
-		id = zin_scorpion_equipment
-		value = 10
-	}
-	ai_strategy = {
-		type = equipment_market_for_sale_threshold
-		id = zin_hull_galley
+		id = screen_ship
 		value = 1000000
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_hull_warship
+		id = capital_ship
 		value = 1000000
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = zin_hull_great_warship
-		value = 1000000
-	}
-	ai_strategy = {
-		type = equipment_market_for_sale_threshold
-		id = zin_hull_raider
+		id = submarine
 		value = 1000000
 	}
 	ai_strategy = {
@@ -120,12 +75,12 @@ zin_inst_market_sell = {
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = train_equipment
+		id = train
 		value = 1000000
 	}
 	ai_strategy = {
 		type = equipment_market_for_sale_threshold
-		id = motorized_equipment
+		id = motorized
 		value = 1000000
 	}
 }
@@ -137,12 +92,7 @@ zin_inst_market_buy = {
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = equipment_market_buying_threshold
-		id = zin_arms_equipment
-		value = -20
-	}
-	ai_strategy = {
-		type = equipment_market_buying_threshold
-		id = zin_bows_equipment
+		id = infantry
 		value = -20
 	}
 	ai_strategy = {

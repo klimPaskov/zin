@@ -171,9 +171,10 @@ country_event = {
 				add = 40
 				OR = {
 					zin_eindil_friend = yes
-					has_opinion_modifier = {
-						target = event_target:zin_ending_t_eindil_aenor
-						modifier = zin_west_fought_beside
+					event_target:zin_ending_t_eindil_aenor = {
+						PREV = {
+							has_country_flag = zin_west_fought_beside_@PREV
+						}
 					}
 				}
 			}
@@ -200,9 +201,10 @@ country_event = {
 				add = -40
 				OR = {
 					zin_eindil_friend = yes
-					has_opinion_modifier = {
-						target = event_target:zin_ending_t_eindil_aenor
-						modifier = zin_west_fought_beside
+					event_target:zin_ending_t_eindil_aenor = {
+						PREV = {
+							has_country_flag = zin_west_fought_beside_@PREV
+						}
 					}
 				}
 			}

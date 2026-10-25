@@ -316,7 +316,7 @@ zin_volgan_tree_compact_open = {
 	country_exists = PUV
 	NOT = { has_global_flag = zin_volgan_body_destroyed }
 	any_country = {
-		has_character = zin_eindil
+		AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 		has_war_with = PUV
 		has_war_with = ZOL
 	}

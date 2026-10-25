@@ -624,6 +624,25 @@ zin_ai_men_infantry = {
 			}
 		}
 	}
+
+	zin_ai_men_powder_host = {
+		upgrade_prio = {
+			factor = 2
+		}
+		enable = {
+			has_tech = zin_tech_hand_guns
+		}
+		target_template = {
+			support = {
+				zin_support_scouts = 1
+				zin_support_sappers = 1
+			}
+			regiments = {
+				zin_men_infantry = 6
+				zin_men_handgunners = 2
+			}
+		}
+	}
 }
 
 zin_ai_men_garrison = {
@@ -739,6 +758,27 @@ zin_ai_men_siege_role = {
 				zin_siege_trebuchet = 2
 				zin_siege_catapult = 2
 				zin_men_infantry = 2
+			}
+		}
+	}
+
+	zin_ai_men_bombard_park = {
+		upgrade_prio = {
+			factor = 2
+		}
+		enable = {
+			NOT = { zin_ai_is_tier_c = yes }
+			has_tech = zin_tech_black_powder
+		}
+		target_template = {
+			support = {
+				zin_support_sappers = 1
+				zin_support_bombards = 1
+			}
+			regiments = {
+				zin_siege_bombard = 2
+				zin_siege_catapult = 1
+				zin_men_infantry = 3
 			}
 		}
 	}
@@ -923,6 +963,26 @@ zin_ai_orcs_siege_role = {
 			}
 			regiments = {
 				zin_siege_catapult = 2
+				zin_orcs_warrior = 4
+			}
+		}
+	}
+
+	zin_ai_orcs_bombard_band = {
+		upgrade_prio = {
+			factor = 2
+		}
+		enable = {
+			NOT = { zin_ai_is_tier_c = yes }
+			has_tech = zin_tech_black_powder
+		}
+		target_template = {
+			support = {
+				zin_support_bombards = 1
+				zin_support_scouts = 1
+			}
+			regiments = {
+				zin_siege_bombard = 2
 				zin_orcs_warrior = 4
 			}
 		}

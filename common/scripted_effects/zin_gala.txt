@@ -6,21 +6,21 @@ zin_gala_recruit = {
 			check_variable = { zin_arg_character = 1 }
 			NOT = { has_character = zin_gala_heveneya }
 		}
-		recruit_character = zin_gala_heveneya
+		if = { limit = { NOT = { has_character = zin_gala_heveneya } } zin_gala_heveneya = { set_nationality = PREV } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 			NOT = { has_character = zin_gala_sulestien }
 		}
-		recruit_character = zin_gala_sulestien
+		if = { limit = { NOT = { has_character = zin_gala_sulestien } } zin_gala_sulestien = { set_nationality = PREV } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 3 }
 			NOT = { has_character = zin_gala_tangsiel }
 		}
-		recruit_character = zin_gala_tangsiel
+		if = { limit = { NOT = { has_character = zin_gala_tangsiel } } zin_gala_tangsiel = { set_nationality = PREV } }
 	}
 }
 

@@ -47,9 +47,9 @@ zin_aenor_eindil_can_be_crowned = {
 	zin_aenor_is_realm = yes
 	check_variable = { global.zin_eindil_crowning_realm = THIS }
 	OR = {
-		has_character = zin_eindil
+		AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 		any_other_country = {
-			has_character = zin_eindil
+			AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 			OR = {
 				is_in_faction_with = PREV
 				is_faction_leader = yes
@@ -139,7 +139,7 @@ zin_lost_cause_exists = {
 			has_global_flag = zin_lost_cause_with_eindil
 			any_country = {
 				is_faction_leader = yes
-				has_character = zin_eindil
+				AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 			}
 		}
 	}

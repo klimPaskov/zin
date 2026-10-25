@@ -5,12 +5,12 @@ zin_regional_pollos_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_pollos_marra
+		if = { limit = { NOT = { has_character = zin_regional_pollos_marra } } zin_regional_pollos_marra = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_pollos_marra } } set_global_flag = zin_in_play_regional_pollos_marra add_advisor_role = { character = zin_regional_pollos_marra advisor = { slot = political_advisor idea_token = zin_regional_pollos_marra_adv allowed = { original_tag = PLL } traits = { zin_adv_merchant_prince } cost = 150 } } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_pollos_teo
+		if = { limit = { NOT = { has_character = zin_regional_pollos_teo } } zin_regional_pollos_teo = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_pollos_teo } } set_global_flag = zin_in_play_regional_pollos_teo add_naval_commander_role = { character = zin_regional_pollos_teo traits = { inshore_fighter } skill = 2 attack_skill = 2 defense_skill = 2 maneuvering_skill = 2 coordination_skill = 2 } }
 	}
 }

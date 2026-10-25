@@ -247,7 +247,7 @@ zin_eindil_historical = {
 	zin_rules_ai_branch_eindil_historical = yes
 }
 zin_eindil_can_lead = {
-	has_character = zin_eindil
+	AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 	zin_eindil = {
 		NOT = { has_trait = zin_eindil_struck_down }
 		NOT = { has_trait = zin_eindil_grievously_wounded }

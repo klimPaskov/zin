@@ -4,16 +4,16 @@ zin_coldor_recruit = {
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
-			NOT = { has_character = zin_coldor_harl }
+			NOT = { AND = { has_character = zin_coldor_harl has_global_flag = zin_in_play_coldor_harl } }
 		}
-		recruit_character = zin_coldor_harl
+		if = { limit = { NOT = { has_character = zin_coldor_harl } } zin_coldor_harl = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_coldor_harl } } set_global_flag = zin_in_play_coldor_harl add_naval_commander_role = { character = zin_coldor_harl traits = { blue_water_expert } skill = 3 attack_skill = 3 defense_skill = 3 maneuvering_skill = 3 coordination_skill = 3 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
-			NOT = { has_character = zin_coldor_ysolde }
+			NOT = { AND = { has_character = zin_coldor_ysolde has_global_flag = zin_in_play_coldor_ysolde } }
 		}
-		recruit_character = zin_coldor_ysolde
+		if = { limit = { NOT = { has_character = zin_coldor_ysolde } } zin_coldor_ysolde = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_coldor_ysolde } } set_global_flag = zin_in_play_coldor_ysolde add_corps_commander_role = { character = zin_coldor_ysolde traits = { winter_specialist trickster } skill = 3 attack_skill = 2 defense_skill = 3 planning_skill = 3 logistics_skill = 3 } }
 	}
 }
 

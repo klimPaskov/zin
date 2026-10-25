@@ -3712,8 +3712,8 @@ country_event = {
 			base = 100
 		}
 		custom_effect_tooltip = zin_eindil.87.a_tip
-		recruit_character = zin_varner
-		recruit_character = zin_golbran
+		if = { limit = { NOT = { has_character = zin_varner } } zin_varner = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_varner } } set_global_flag = zin_in_play_varner }
+		if = { limit = { NOT = { has_character = zin_golbran } } zin_golbran = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_golbran } } set_global_flag = zin_in_play_golbran }
 		hidden_effect = {
 			set_temp_variable = { zin_arg_value = 5 }
 			zin_eindil_add_renown = yes
@@ -5675,9 +5675,8 @@ country_event = {
 			}
 		}
 		custom_effect_tooltip = zin_eindil.165.a_tip
-		retire_character = zin_ilsabet
 		var:global.zin_eindil_host = {
-			recruit_character = zin_ilsabet
+			if = { limit = { NOT = { has_character = zin_ilsabet } } zin_ilsabet = { set_nationality = PREV } }
 		}
 		hidden_effect = {
 			set_temp_variable = { zin_arg_value = 10 }

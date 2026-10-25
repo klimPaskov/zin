@@ -85,5 +85,8 @@ recruit_character = zin_regional_fearno_ketilva
 recruit_character = zin_regional_fearno_aldvan
 recruit_character = zin_cmd_army_fearno
 recruit_character = zin_cmd_master_fearno
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_regional_fearno_hroth
+recruit_character = zin_regional_fearno_ilse
 set_politics = { ruling_party = neutrality last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { neutrality = 60 democratic = 20 fascism = 20 communism = 0 }

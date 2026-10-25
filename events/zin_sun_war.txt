@@ -35,7 +35,7 @@ country_event = {
 		custom_effect_tooltip = zin_sun.42.a.tt
 		if = {
 			limit = { NOT = { has_character = zin_gala_heveneya } }
-			recruit_character = zin_gala_heveneya
+			if = { limit = { NOT = { has_character = zin_gala_heveneya } } zin_gala_heveneya = { set_nationality = PREV } }
 		}
 		add_country_leader_role = {
 			character = zin_gala_heveneya
@@ -56,7 +56,7 @@ country_event = {
 		custom_effect_tooltip = zin_sun.42.b.tt
 		if = {
 			limit = { NOT = { has_character = zin_gala_sulestien } }
-			recruit_character = zin_gala_sulestien
+			if = { limit = { NOT = { has_character = zin_gala_sulestien } } zin_gala_sulestien = { set_nationality = PREV } }
 		}
 		add_country_leader_role = {
 			character = zin_gala_sulestien

@@ -5,13 +5,13 @@ zin_regional_halenor_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_halenor_gull
+		if = { limit = { NOT = { has_character = zin_regional_halenor_gull } } zin_regional_halenor_gull = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_halenor_gull } } set_global_flag = zin_in_play_regional_halenor_gull add_advisor_role = { character = zin_regional_halenor_gull advisor = { slot = political_advisor idea_token = zin_regional_halenor_gull_adv allowed = { original_tag = HLN } traits = { zin_adv_elder } cost = 150 } } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_halenor_rhea
+		if = { limit = { NOT = { has_character = zin_regional_halenor_rhea } } zin_regional_halenor_rhea = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_halenor_rhea } } set_global_flag = zin_in_play_regional_halenor_rhea add_naval_commander_role = { character = zin_regional_halenor_rhea traits = { lone_wolf blue_water_expert } skill = 3 attack_skill = 3 defense_skill = 2 maneuvering_skill = 4 coordination_skill = 2 } }
 	}
 }
 

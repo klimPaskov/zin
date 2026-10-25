@@ -44,15 +44,15 @@ division_template = {
 	name = "Siege Band"
 	division_names_group = ZIN_HOSTS_VOLCANO_CLANS
 	regiments = {
-		zin_siege_catapult = { x = 0 y = 0 }
-		zin_siege_catapult = { x = 0 y = 1 }
+		zin_siege_bombard = { x = 0 y = 0 }
+		zin_siege_bombard = { x = 0 y = 1 }
 		zin_orcs_warrior = { x = 1 y = 0 }
 		zin_orcs_warrior = { x = 1 y = 1 }
 		zin_orcs_warrior = { x = 1 y = 2 }
 		zin_orcs_warrior = { x = 2 y = 0 }
 	}
 	support = {
-		zin_support_catapults = { x = 0 y = 0 }
+		zin_support_bombards = { x = 0 y = 0 }
 	}
 }
 division_template = {
@@ -94,8 +94,8 @@ units = {
 }
 instant_effect = {
 	add_equipment_to_stockpile = { type = zin_arms_equipment_1 amount = 8450 producer = GOL }
+	add_equipment_to_stockpile = { type = zin_bombard_equipment_1 amount = 20 producer = GOL }
 	add_equipment_to_stockpile = { type = zin_bows_equipment_0 amount = 1440 producer = GOL }
-	add_equipment_to_stockpile = { type = zin_catapult_equipment_0 amount = 40 producer = GOL }
 	add_equipment_to_stockpile = { type = zin_mounts_equipment_0 amount = 480 producer = GOL }
 	add_equipment_to_stockpile = { type = zin_ogre_gear_equipment_0 amount = 390 producer = GOL }
 	add_equipment_to_stockpile = { type = train_equipment_0 amount = 160 producer = GOL }

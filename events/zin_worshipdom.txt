@@ -171,7 +171,7 @@ country_event = {
 	option = {
 		name = zin_worshipdom.8.a
 		set_country_flag = zin_afrit_sevrin_guest
-		recruit_character = zin_sevrin
+		if = { limit = { NOT = { has_character = zin_sevrin } } zin_sevrin = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_sevrin } } set_global_flag = zin_in_play_sevrin add_advisor_role = { character = zin_sevrin advisor = { slot = political_advisor idea_token = zin_sevrin_adv cost = 150 allowed = { original_tag = WOR } traits = { zin_trait_unending_thief } } } }
 	}
 	option = {
 		name = zin_worshipdom.8.b

@@ -149,15 +149,7 @@ characters = {
 				large = GFX_zin_portrait_men_winter_crown_male_6
 			}
 		}
-		navy_leader = {
-			traits = { blue_water_expert }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 3
-			coordination_skill = 3
-		}
-	}
+			}
 	zin_coldor_ysolde = {
 		name = zin_coldor_ysolde
 		portraits = {
@@ -165,15 +157,7 @@ characters = {
 				large = GFX_zin_portrait_men_winter_crown_female_4
 			}
 		}
-		corps_commander = {
-			traits = { winter_specialist trickster }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 3
-		}
-	}
+			}
 	MLK_zin_ruler = {
 		name = MLK_zin_ruler
 		portraits = {
@@ -196,15 +180,7 @@ characters = {
 				large = GFX_zin_portrait_men_melkgard_warlords_female_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_isengard_veska_adv
-			allowed = { original_tag = MLK }
-			traits = { zin_adv_envoy }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_isengard_ulvdok = {
 		name = zin_regional_isengard_ulvdok
 		portraits = {
@@ -244,15 +220,7 @@ characters = {
 				large = GFX_zin_portrait_men_melkgard_warlords_female_2
 			}
 		}
-		corps_commander = {
-			traits = { unyielding_defender winter_specialist }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 2
-		}
-	}
+			}
 	zin_regional_isengard_zordek = {
 		name = zin_regional_isengard_zordek
 		portraits = {
@@ -291,15 +259,7 @@ characters = {
 				large = GFX_zin_portrait_men_male_14
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_horidor_tarvo_adv
-			allowed = { original_tag = HOR }
-			traits = { zin_adv_elder }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_horidor_lunia = {
 		name = zin_regional_horidor_lunia
 		portraits = {
@@ -339,15 +299,7 @@ characters = {
 				large = GFX_zin_portrait_men_ice_clans_female_2
 			}
 		}
-		corps_commander = {
-			traits = { trait_mountaineer hill_fighter }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 3
-		}
-	}
+			}
 	zin_regional_horidor_ulvan = {
 		name = zin_regional_horidor_ulvan
 		portraits = {
@@ -481,15 +433,7 @@ characters = {
 				large = GFX_zin_portrait_men_ice_clans_female_4
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_fearno_ilse_adv
-			allowed = { original_tag = FEA }
-			traits = { zin_adv_treasurer }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_fearno_vaesim = {
 		name = zin_regional_fearno_vaesim
 		portraits = {
@@ -529,15 +473,7 @@ characters = {
 				large = GFX_zin_portrait_men_ice_clans_male_11
 			}
 		}
-		corps_commander = {
-			traits = { winter_specialist ambusher }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 3
-		}
-	}
+			}
 	zin_regional_fearno_aldvan = {
 		name = zin_regional_fearno_aldvan
 		portraits = {
@@ -1701,15 +1637,7 @@ characters = {
 				large = GFX_zin_portrait_giants_ice_giants_female_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_titanos_hrimla_adv
-			allowed = { original_tag = NIV }
-			traits = { zin_adv_elder }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_titanos_bruunos = {
 		name = zin_regional_titanos_bruunos
 		portraits = {
@@ -1749,15 +1677,7 @@ characters = {
 				large = GFX_zin_portrait_giants_ice_giants_male_4
 			}
 		}
-		corps_commander = {
-			traits = { fortress_buster winter_specialist }
-			skill = 3
-			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
-		}
-	}
+			}
 	zin_regional_titanos_nivarum = {
 		name = zin_regional_titanos_nivarum
 		portraits = {
@@ -1796,15 +1716,7 @@ characters = {
 				large = GFX_zin_portrait_yeti_yeti_clans_female_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_yeti_lands_sima_adv
-			allowed = { original_tag = YEI }
-			traits = { zin_adv_elder }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_yeti_lands_nahlum = {
 		name = zin_regional_yeti_lands_nahlum
 		portraits = {
@@ -1844,15 +1756,7 @@ characters = {
 				large = GFX_zin_portrait_yeti_yeti_clans_male_4
 			}
 		}
-		corps_commander = {
-			traits = { winter_specialist ambusher }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 3
-		}
-	}
+			}
 	zin_regional_yeti_lands_mhorum = {
 		name = zin_regional_yeti_lands_mhorum
 		portraits = {
@@ -1986,15 +1890,7 @@ characters = {
 				large = GFX_zin_portrait_men_vindael_seafarers_male_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_windwaith_odo_adv
-			allowed = { original_tag = VND }
-			traits = { zin_adv_merchant_prince }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_windwaith_ezhild = {
 		name = zin_regional_windwaith_ezhild
 		portraits = {
@@ -2034,15 +1930,7 @@ characters = {
 				large = GFX_zin_portrait_men_vindael_seafarers_female_3
 			}
 		}
-		navy_leader = {
-			traits = { blue_water_expert spotter }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			maneuvering_skill = 3
-			coordination_skill = 3
-		}
-	}
+			}
 	zin_regional_windwaith_zenvald = {
 		name = zin_regional_windwaith_zenvald
 		portraits = {
@@ -9490,14 +9378,7 @@ characters = {
 				large = GFX_zin_portrait_men_lake_aenoran_male_8
 			}
 		}
-		country_leader = {
-			ideology = zin_dom_court
-			traits = { zin_trait_gilded_heir }
-			desc = zin_eronel_desc
-			expire = "2000.1.1.1"
-			id = -1
-		}
-	}
+			}
 	zin_merovan = {
 		name = zin_merovan
 		portraits = {
@@ -11940,15 +11821,7 @@ characters = {
 				large = GFX_zin_portrait_men_leren_sea_kings_female_2
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_lerendor_maelis_adv
-			allowed = { original_tag = LER }
-			traits = { zin_trait_lawspeaker }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_lerendor_brannoc = {
 		name = zin_lerendor_brannoc
 		portraits = {
@@ -11956,15 +11829,7 @@ characters = {
 				large = GFX_zin_portrait_men_male_21
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_lerendor_brannoc_adv
-			allowed = { original_tag = LER }
-			traits = { zin_trait_office_broker }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_lerendor_astris = {
 		name = zin_lerendor_astris
 		portraits = {
@@ -12036,15 +11901,7 @@ characters = {
 				large = GFX_zin_portrait_men_leren_sea_kings_male_5
 			}
 		}
-		navy_leader = {
-			traits = { blockade_runner bold }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 4
-			coordination_skill = 4
-		}
-	}
+			}
 	zin_lerendor_hesk = {
 		name = zin_lerendor_hesk
 		portraits = {
@@ -12052,15 +11909,7 @@ characters = {
 				large = GFX_zin_portrait_men_leren_sea_kings_male_6
 			}
 		}
-		field_marshal = {
-			traits = { defensive_doctrine }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 2
-		}
-	}
+			}
 	EEK_zin_ruler = {
 		name = EEK_zin_ruler
 		portraits = {
@@ -13417,15 +13266,7 @@ characters = {
 				large = GFX_zin_portrait_men_female_7
 			}
 		}
-		advisor = {
-			slot = theorist
-			idea_token = zin_regional_adel_ysmay_adv
-			allowed = { original_tag = ADE }
-			traits = { zin_adv_sage }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_adel_seilina = {
 		name = zin_regional_adel_seilina
 		portraits = {
@@ -13465,15 +13306,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_female_3
 			}
 		}
-		navy_leader = {
-			traits = { spotter blue_water_expert }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 3
-			coordination_skill = 3
-		}
-	}
+			}
 	zin_regional_adel_quay = {
 		name = zin_regional_adel_quay
 		portraits = {
@@ -13512,15 +13345,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_male_6
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_raerby_osk_adv
-			allowed = { original_tag = RAE }
-			traits = { zin_adv_envoy }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_raerby_freight = {
 		name = zin_regional_raerby_freight
 		portraits = {
@@ -13560,15 +13385,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_female_5
 			}
 		}
-		navy_leader = {
-			traits = { blue_water_expert }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			maneuvering_skill = 4
-			coordination_skill = 3
-		}
-	}
+			}
 	zin_regional_raerby_urbolon = {
 		name = zin_regional_raerby_urbolon
 		portraits = {
@@ -13607,15 +13424,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_female_6
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_pollos_marra_adv
-			allowed = { original_tag = PLL }
-			traits = { zin_adv_merchant_prince }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_pollos_weigher = {
 		name = zin_regional_pollos_weigher
 		portraits = {
@@ -13655,15 +13464,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_male_5
 			}
 		}
-		navy_leader = {
-			traits = { inshore_fighter }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			maneuvering_skill = 2
-			coordination_skill = 2
-		}
-	}
+			}
 	zin_regional_pollos_guard = {
 		name = zin_regional_pollos_guard
 		portraits = {
@@ -13764,15 +13565,7 @@ characters = {
 				large = GFX_zin_portrait_men_corsair_lords_male_4
 			}
 		}
-		navy_leader = {
-			traits = { lone_wolf inshore_fighter }
-			skill = 3
-			attack_skill = 4
-			defense_skill = 2
-			maneuvering_skill = 3
-			coordination_skill = 2
-		}
-	}
+			}
 	zin_regional_nondondor_melkos = {
 		name = zin_regional_nondondor_melkos
 		portraits = {
@@ -13920,15 +13713,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_male_5
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_halenor_gull_adv
-			allowed = { original_tag = HLN }
-			traits = { zin_adv_elder }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_halenor_salvage = {
 		name = zin_regional_halenor_salvage
 		portraits = {
@@ -13968,15 +13753,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_female_6
 			}
 		}
-		navy_leader = {
-			traits = { lone_wolf blue_water_expert }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			maneuvering_skill = 4
-			coordination_skill = 2
-		}
-	}
+			}
 	zin_regional_halenor_surla = {
 		name = zin_regional_halenor_surla
 		portraits = {
@@ -14158,15 +13935,7 @@ characters = {
 				large = GFX_zin_portrait_men_chart_islanders_male_4
 			}
 		}
-		navy_leader = {
-			traits = { inshore_fighter }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			maneuvering_skill = 2
-			coordination_skill = 2
-		}
-	}
+			}
 	zin_regional_seite_islands_vesko = {
 		name = zin_regional_seite_islands_vesko
 		portraits = {
@@ -14618,15 +14387,7 @@ characters = {
 				large = GFX_zin_portrait_men_gunwyn_clans_female_5
 			}
 		}
-		navy_leader = {
-			traits = { blue_water_expert }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 3
-			coordination_skill = 3
-		}
-	}
+			}
 	GIR_zin_ruler = {
 		name = GIR_zin_ruler
 		portraits = {
@@ -14649,15 +14410,7 @@ characters = {
 				large = GFX_zin_portrait_men_girdon_wardens_female_3
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_girdon_corla_adv
-			allowed = { original_tag = GIR }
-			traits = { zin_adv_merchant_prince }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_girdon_bransyn = {
 		name = zin_regional_girdon_bransyn
 		portraits = {
@@ -14697,15 +14450,7 @@ characters = {
 				large = GFX_zin_portrait_men_girdon_wardens_male_2
 			}
 		}
-		corps_commander = {
-			traits = { unyielding_defender trait_engineer }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 2
-		}
-	}
+			}
 	zin_regional_girdon_sarwen = {
 		name = zin_regional_girdon_sarwen
 		portraits = {
@@ -14853,15 +14598,7 @@ characters = {
 				large = GFX_zin_portrait_men_gunwyn_clans_male_5
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_lambin_orrin_adv
-			allowed = { original_tag = LAB }
-			traits = { zin_adv_treasurer }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_lambin_sariena = {
 		name = zin_regional_lambin_sariena
 		portraits = {
@@ -14901,15 +14638,7 @@ characters = {
 				large = GFX_zin_portrait_men_gunwyn_clans_female_4
 			}
 		}
-		corps_commander = {
-			traits = { cavalry_leader skirmisher }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
-		}
-	}
+			}
 	zin_regional_lambin_gwerin = {
 		name = zin_regional_lambin_gwerin
 		portraits = {
@@ -15423,15 +15152,7 @@ characters = {
 				large = GFX_zin_portrait_men_buldor_companies_male_2
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_buldor_ulric_adv
-			allowed = { original_tag = BLD }
-			traits = { zin_adv_treasurer }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_buldor_dafmor = {
 		name = zin_regional_buldor_dafmor
 		portraits = {
@@ -15471,15 +15192,7 @@ characters = {
 				large = GFX_zin_portrait_men_buldor_companies_female_2
 			}
 		}
-		corps_commander = {
-			traits = { infantry_leader skirmisher }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
-		}
-	}
+			}
 	zin_regional_buldor_cadorn = {
 		name = zin_regional_buldor_cadorn
 		portraits = {
@@ -15518,15 +15231,7 @@ characters = {
 				large = GFX_zin_portrait_men_western_guilds_female_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_kradlon_hesta_adv
-			allowed = { original_tag = KRA }
-			traits = { zin_adv_merchant_prince }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_kradlon_tariff = {
 		name = zin_regional_kradlon_tariff
 		portraits = {
@@ -15566,15 +15271,7 @@ characters = {
 				large = GFX_zin_portrait_men_western_guilds_male_3
 			}
 		}
-		corps_commander = {
-			traits = { trait_engineer unyielding_defender }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 3
-		}
-	}
+			}
 	zin_regional_kradlon_pernwen = {
 		name = zin_regional_kradlon_pernwen
 		portraits = {
@@ -15629,15 +15326,7 @@ characters = {
 				large = GFX_zin_portrait_men_western_guilds_female_1
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = zin_regional_corogon_ves_adv
-			allowed = { original_tag = CRG }
-			traits = { zin_adv_merchant_prince }
-			cost = 150
-			ai_will_do = { factor = 1 }
-		}
-	}
+			}
 	zin_regional_corogon_watchhouse = {
 		name = zin_regional_corogon_watchhouse
 		portraits = {
@@ -15661,15 +15350,7 @@ characters = {
 				large = GFX_zin_portrait_men_western_guilds_male_2
 			}
 		}
-		navy_leader = {
-			traits = { inshore_fighter blue_water_expert }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 3
-			coordination_skill = 3
-		}
-	}
+			}
 	zin_regional_corogon_papz = {
 		name = zin_regional_corogon_papz
 		portraits = {
@@ -15778,15 +15459,7 @@ characters = {
 				large = GFX_zin_portrait_men_gunwyn_clans_female_4
 			}
 		}
-		navy_leader = {
-			traits = { spotter inshore_fighter }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 3
-			coordination_skill = 3
-		}
-	}
+			}
 	zin_regional_varnondor_tomas = {
 		name = zin_regional_varnondor_tomas
 		portraits = {
@@ -15794,15 +15467,7 @@ characters = {
 				large = GFX_zin_portrait_men_gunwyn_clans_male_3
 			}
 		}
-		corps_commander = {
-			traits = { naval_invader }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
-		}
-	}
+			}
 	WEN_zin_ruler = {
 		name = WEN_zin_ruler
 		portraits = {

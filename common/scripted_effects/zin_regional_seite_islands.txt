@@ -5,7 +5,7 @@ zin_regional_seite_islands_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_seite_islands_brann
+		if = { limit = { NOT = { has_character = zin_regional_seite_islands_brann } } zin_regional_seite_islands_brann = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_seite_islands_brann } } set_global_flag = zin_in_play_regional_seite_islands_brann add_naval_commander_role = { character = zin_regional_seite_islands_brann traits = { inshore_fighter } skill = 2 attack_skill = 2 defense_skill = 2 maneuvering_skill = 2 coordination_skill = 2 } }
 	}
 }
 

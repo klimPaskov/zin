@@ -37,6 +37,10 @@ zin_rules_ai_branch_variety_full = {
 		}
 	}
 }
+# zin_rule_start_variety is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_variety = {
+	has_game_rule = { rule = zin_rule_start_variety option = DEFAULT }
+}
 # zin_rule_ai_aenor_succession forces GOLDEN_COURT. RANDOM makes it false.
 zin_rules_ai_branch_aenor_golden_court = {
 	OR = {
@@ -48,6 +52,10 @@ zin_rules_ai_branch_aenor_free_dominions = {
 	OR = {
 		has_game_rule = { rule = zin_rule_ai_aenor_succession option = FREE_DOMINIONS }
 	}
+}
+# zin_rule_ai_aenor_succession is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_aenor = {
+	has_game_rule = { rule = zin_rule_ai_aenor_succession option = DEFAULT }
 }
 # zin_rule_ai_aenor_succession is RANDOM: its owner draws once at the start and reads the draw.
 zin_rules_ai_random_aenor = {
@@ -65,6 +73,10 @@ zin_rules_ai_branch_east_unite_without_afrit = {
 		has_game_rule = { rule = zin_rule_ai_east option = UNITE_WITHOUT_AFRIT }
 	}
 }
+# zin_rule_ai_east is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_east = {
+	has_game_rule = { rule = zin_rule_ai_east option = DEFAULT }
+}
 # zin_rule_ai_east is RANDOM: its owner draws once at the start and reads the draw.
 zin_rules_ai_random_east = {
 	has_game_rule = { rule = zin_rule_ai_east option = RANDOM }
@@ -74,6 +86,10 @@ zin_rules_ai_branch_elves_march = {
 	OR = {
 		has_game_rule = { rule = zin_rule_ai_elves option = MARCH }
 	}
+}
+# zin_rule_ai_elves is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_elves = {
+	has_game_rule = { rule = zin_rule_ai_elves option = DEFAULT }
 }
 # zin_rule_ai_elves is RANDOM: its owner draws once at the start and reads the draw.
 zin_rules_ai_random_elves = {
@@ -94,6 +110,10 @@ zin_rules_ai_branch_goldoroth_sworn_to_volgan = {
 	OR = {
 		has_game_rule = { rule = zin_rule_ai_goldoroth option = SWORN_TO_VOLGAN }
 	}
+}
+# zin_rule_ai_goldoroth is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_goldoroth = {
+	has_game_rule = { rule = zin_rule_ai_goldoroth option = DEFAULT }
 }
 # zin_rule_ai_goldoroth is RANDOM: its owner draws once at the start and reads the draw.
 zin_rules_ai_random_goldoroth = {
@@ -131,6 +151,10 @@ zin_rules_ai_branch_afrit_dormant = {
 		has_game_rule = { rule = zin_rule_afrit option = DORMANT }
 	}
 }
+# zin_rule_afrit is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_afrit = {
+	has_game_rule = { rule = zin_rule_afrit option = DEFAULT }
+}
 # zin_rule_cold_isengard forces HISTORICAL, or it is DEFAULT and the path rule is HISTORICAL. RANDOM makes it false.
 zin_rules_ai_branch_cold_historical = {
 	OR = {
@@ -163,6 +187,10 @@ zin_rules_ai_branch_cold_free = {
 		}
 	}
 }
+# zin_rule_cold_isengard is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_cold = {
+	has_game_rule = { rule = zin_rule_cold_isengard option = DEFAULT }
+}
 # zin_rule_leren_route forces historical, or it is DEFAULT and the path rule is HISTORICAL. RANDOM makes it false.
 zin_rules_ai_branch_leren_historical = {
 	OR = {
@@ -190,6 +218,10 @@ zin_rules_ai_branch_leren_free = {
 	OR = {
 		has_game_rule = { rule = zin_rule_leren_route option = free }
 	}
+}
+# zin_rule_leren_route is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_leren = {
+	has_game_rule = { rule = zin_rule_leren_route option = DEFAULT }
 }
 # zin_rule_west_route forces historical, or it is DEFAULT and the path rule is HISTORICAL. RANDOM makes it false.
 zin_rules_ai_branch_west_historical = {
@@ -225,6 +257,10 @@ zin_rules_ai_branch_west_free = {
 		has_game_rule = { rule = zin_rule_west_route option = free }
 	}
 }
+# zin_rule_west_route is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_west = {
+	has_game_rule = { rule = zin_rule_west_route option = DEFAULT }
+}
 # zin_rule_eindil_journey forces HISTORICAL, or it is DEFAULT and the path rule is HISTORICAL. RANDOM makes it false.
 zin_rules_ai_branch_eindil_historical = {
 	OR = {
@@ -240,4 +276,8 @@ zin_rules_ai_branch_eindil_free = {
 	OR = {
 		has_game_rule = { rule = zin_rule_eindil_journey option = FREE }
 	}
+}
+# zin_rule_eindil_journey is DEFAULT: the power follows the path rule (read by the story AI's plans, modules/story_ai.mjs).
+zin_rules_ai_default_eindil = {
+	has_game_rule = { rule = zin_rule_eindil_journey option = DEFAULT }
 }

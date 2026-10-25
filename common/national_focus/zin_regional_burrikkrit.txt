@@ -42,7 +42,7 @@ focus_tree = {
 			add_political_power = 25
 			if = {
 				limit = { NOT = { has_character = zin_burrikkrit_snikit } }
-				recruit_character = zin_burrikkrit_snikit
+				if = { limit = { NOT = { has_character = zin_burrikkrit_snikit } } zin_burrikkrit_snikit = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -154,7 +154,7 @@ focus_tree = {
 			add_ideas = zin_regional_burrikkrit_the_fed_heir
 			if = {
 				limit = { NOT = { has_character = zin_burrikkrit_nubbix } }
-				recruit_character = zin_burrikkrit_nubbix
+				if = { limit = { NOT = { has_character = zin_burrikkrit_nubbix } } zin_burrikkrit_nubbix = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -570,7 +570,7 @@ focus_tree = {
 			add_political_power = 25
 			if = {
 				limit = { NOT = { has_character = zin_burrikkrit_zigka } }
-				recruit_character = zin_burrikkrit_zigka
+				if = { limit = { NOT = { has_character = zin_burrikkrit_zigka } } zin_burrikkrit_zigka = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -928,7 +928,7 @@ focus_tree = {
 			add_ideas = zin_regional_burrikkrit_eyes_in_the_dark
 			if = {
 				limit = { NOT = { has_character = zin_burrikkrit_blikkit } }
-				recruit_character = zin_burrikkrit_blikkit
+				if = { limit = { NOT = { has_character = zin_burrikkrit_blikkit } } zin_burrikkrit_blikkit = { set_nationality = PREV } }
 			}
 		}
 	}
@@ -984,7 +984,7 @@ focus_tree = {
 			}
 			if = {
 				limit = { NOT = { has_character = zin_burrikkrit_krittik } }
-				recruit_character = zin_burrikkrit_krittik
+				if = { limit = { NOT = { has_character = zin_burrikkrit_krittik } } zin_burrikkrit_krittik = { set_nationality = PREV } }
 			}
 		}
 	}

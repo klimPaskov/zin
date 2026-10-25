@@ -387,7 +387,7 @@ zin_yeldenne_install_warden = {
 	YEL = {
 		if = {
 			limit = { exists = yes }
-			recruit_character = zin_yeldenne_warden
+			if = { limit = { NOT = { has_character = zin_yeldenne_warden } } zin_yeldenne_warden = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_yeldenne_warden } } set_global_flag = zin_in_play_yeldenne_warden }
 			add_country_leader_role = { character = zin_yeldenne_warden promote_leader = yes country_leader = { ideology = zin_light_wardens expire = "2000.1.1.1" traits = { zin_yeldenne_warden_trait } } }
 			if = {
 				limit = { NOT = { check_variable = { global.zin_glo_state = 2 } } }

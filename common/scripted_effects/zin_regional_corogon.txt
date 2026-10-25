@@ -5,13 +5,13 @@ zin_regional_corogon_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_corogon_lio
+		if = { limit = { NOT = { has_character = zin_regional_corogon_lio } } zin_regional_corogon_lio = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_corogon_lio } } set_global_flag = zin_in_play_regional_corogon_lio add_naval_commander_role = { character = zin_regional_corogon_lio traits = { inshore_fighter blue_water_expert } skill = 3 attack_skill = 3 defense_skill = 3 maneuvering_skill = 3 coordination_skill = 3 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_corogon_ves
+		if = { limit = { NOT = { has_character = zin_regional_corogon_ves } } zin_regional_corogon_ves = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_corogon_ves } } set_global_flag = zin_in_play_regional_corogon_ves add_advisor_role = { character = zin_regional_corogon_ves advisor = { slot = political_advisor idea_token = zin_regional_corogon_ves_adv allowed = { original_tag = CRG } traits = { zin_adv_merchant_prince } cost = 150 } } }
 	}
 }
 

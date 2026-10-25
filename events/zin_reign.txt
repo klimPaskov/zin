@@ -2722,7 +2722,7 @@ country_event = {
 		ai_chance = {
 			base = 50
 		}
-		recruit_character = zin_eronel
+		if = { limit = { NOT = { has_character = zin_eronel } } zin_eronel = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_eronel } } set_global_flag = zin_in_play_eronel add_country_leader_role = { character = zin_eronel country_leader = { ideology = zin_dom_court traits = { zin_trait_gilded_heir } desc = zin_eronel_desc expire = "2000.1.1.1" } } }
 		promote_character = zin_eronel
 		add_country_leader_trait = zin_trait_gilded_heir
 		set_temp_variable = { zin_arg_camp = 1 }

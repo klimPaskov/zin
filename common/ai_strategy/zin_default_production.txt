@@ -432,6 +432,27 @@ zin_default_production_yeti = {
 	}
 }
 
+# Bombards and hand-guns of the black-powder realms
+zin_default_production_powder = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		has_country_flag = zin_gunpowder
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = zin_bombard_equipment
+		value = -80
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = zin_handgun_equipment
+		value = -65
+	}
+}
+
 # Granted and unproducible equipment is never produced
 zin_default_production_never = {
 	allowed = {
@@ -479,11 +500,6 @@ zin_default_production_never = {
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = zin_volgan_presence_equipment
-		value = -100
-	}
-	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = zin_zol_manifestation_equipment
 		value = -100
 	}
 }

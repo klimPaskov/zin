@@ -5,13 +5,13 @@ zin_regional_kradlon_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_kradlon_bram
+		if = { limit = { NOT = { has_character = zin_regional_kradlon_bram } } zin_regional_kradlon_bram = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_kradlon_bram } } set_global_flag = zin_in_play_regional_kradlon_bram add_corps_commander_role = { character = zin_regional_kradlon_bram traits = { trait_engineer unyielding_defender } skill = 2 attack_skill = 2 defense_skill = 3 planning_skill = 2 logistics_skill = 3 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_kradlon_hesta
+		if = { limit = { NOT = { has_character = zin_regional_kradlon_hesta } } zin_regional_kradlon_hesta = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_kradlon_hesta } } set_global_flag = zin_in_play_regional_kradlon_hesta add_advisor_role = { character = zin_regional_kradlon_hesta advisor = { slot = political_advisor idea_token = zin_regional_kradlon_hesta_adv allowed = { original_tag = KRA } traits = { zin_adv_merchant_prince } cost = 150 } } }
 	}
 }
 

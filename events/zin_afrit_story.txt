@@ -729,7 +729,7 @@ country_event = {
 			}
 			else = {
 				random_country = {
-					limit = { has_character = zin_eindil }
+					limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 					country_event = { id = zin_eindil.110 }
 				}
 			}
@@ -986,7 +986,7 @@ news_event = {
 			}
 			else = {
 				random_country = {
-					limit = { has_character = zin_eindil }
+					limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 					country_event = { id = zin_eindil.124 }
 				}
 			}
@@ -1016,7 +1016,7 @@ country_event = {
 			}
 			else = {
 				random_country = {
-					limit = { has_character = zin_eindil }
+					limit = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
 					country_event = { id = zin_eindil.127 }
 				}
 			}

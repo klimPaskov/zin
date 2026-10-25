@@ -10,8 +10,8 @@ division_template = {
 		zin_men_infantry = { x = 1 y = 0 }
 		zin_men_infantry = { x = 1 y = 1 }
 		zin_men_infantry = { x = 1 y = 2 }
-		zin_men_archers = { x = 2 y = 0 }
-		zin_men_archers = { x = 2 y = 1 }
+		zin_men_handgunners = { x = 2 y = 0 }
+		zin_men_handgunners = { x = 2 y = 1 }
 	}
 	support = {
 		zin_support_scouts = { x = 0 y = 0 }
@@ -52,8 +52,8 @@ division_template = {
 	name = "Siege Park"
 	division_names_group = ZIN_HOSTS_LEREN_SEA_KINGS
 	regiments = {
-		zin_siege_catapult = { x = 0 y = 0 }
-		zin_siege_catapult = { x = 0 y = 1 }
+		zin_siege_bombard = { x = 0 y = 0 }
+		zin_siege_bombard = { x = 0 y = 1 }
 		zin_siege_catapult = { x = 0 y = 2 }
 		zin_men_infantry = { x = 1 y = 0 }
 		zin_men_infantry = { x = 1 y = 1 }
@@ -61,7 +61,7 @@ division_template = {
 	}
 	support = {
 		zin_support_sappers = { x = 0 y = 0 }
-		zin_support_catapults = { x = 0 y = 1 }
+		zin_support_bombards = { x = 0 y = 1 }
 	}
 }
 division_template = {
@@ -131,9 +131,11 @@ units = {
 }
 instant_effect = {
 	add_equipment_to_stockpile = { type = zin_arms_equipment_1 amount = 10040 producer = LER }
-	add_equipment_to_stockpile = { type = zin_bows_equipment_1 amount = 1880 producer = LER }
+	add_equipment_to_stockpile = { type = zin_bombard_equipment_1 amount = 40 producer = LER }
+	add_equipment_to_stockpile = { type = zin_bows_equipment_1 amount = 200 producer = LER }
 	add_equipment_to_stockpile = { type = zin_camp_equipment_0 amount = 360 producer = LER }
-	add_equipment_to_stockpile = { type = zin_catapult_equipment_1 amount = 110 producer = LER }
+	add_equipment_to_stockpile = { type = zin_catapult_equipment_1 amount = 30 producer = LER }
+	add_equipment_to_stockpile = { type = zin_handgun_equipment_1 amount = 1680 producer = LER }
 	add_equipment_to_stockpile = { type = zin_mounts_equipment_1 amount = 820 producer = LER }
 	add_equipment_to_stockpile = { type = train_equipment_1 amount = 180 producer = LER }
 	add_equipment_to_stockpile = { type = convoy_1 amount = 110 producer = LER }

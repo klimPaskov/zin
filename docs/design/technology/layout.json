@@ -746,6 +746,15 @@
         {
           "format": "UP",
           "height": 140,
+          "name": "zin_tech_hand_guns_tree",
+          "px": 1270,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
           "name": "zin_tech_hill_companies_tree",
           "px": 850,
           "py": 340,
@@ -877,6 +886,15 @@
           "y": 2
         },
         {
+          "key": "zin_tech_hand_guns",
+          "root": "zin_tech_hand_guns",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_hand_guns_medium",
+          "x": 16,
+          "y": 2
+        },
+        {
           "key": "zin_tech_forged_steel",
           "root": "zin_tech_iron_arms",
           "rx": 0,
@@ -919,6 +937,15 @@
           "ry": 0,
           "sprite": "GFX_zin_tech_shield_wall_drill_medium",
           "x": 12,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_matchlocks",
+          "root": "zin_tech_hand_guns",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_matchlocks_medium",
+          "x": 16,
           "y": 4
         },
         {
@@ -994,6 +1021,15 @@
           "y": 10
         },
         {
+          "key": "zin_tech_long_matchlocks",
+          "root": "zin_tech_hand_guns",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_long_matchlocks_medium",
+          "x": 16,
+          "y": 10
+        },
+        {
           "key": "zin_tech_crossbows",
           "root": "zin_tech_hunting_bows",
           "rx": 0,
@@ -1048,6 +1084,15 @@
           "y": 16
         },
         {
+          "key": "zin_tech_arquebuses",
+          "root": "zin_tech_hand_guns",
+          "rx": 0,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_arquebuses_medium",
+          "x": 16,
+          "y": 16
+        },
+        {
           "key": "zin_tech_veteran_sergeants",
           "root": "zin_tech_pike_squares",
           "rx": 0,
@@ -1075,7 +1120,7 @@
           "y": 20
         }
       ],
-      "width": 1340
+      "width": 1480
     },
     "zin_camp_folder": {
       "gridboxes": [
@@ -1316,6 +1361,15 @@
         {
           "format": "UP",
           "height": 140,
+          "name": "zin_tech_black_powder_tree",
+          "px": 990,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
           "name": "zin_tech_harbour_chains_tree",
           "px": 850,
           "py": 340,
@@ -1382,6 +1436,15 @@
           "y": 0
         },
         {
+          "key": "zin_tech_black_powder",
+          "root": "zin_tech_black_powder",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_black_powder_medium",
+          "x": 12,
+          "y": 0
+        },
+        {
           "key": "zin_tech_torsion_engines",
           "root": "zin_tech_catapults",
           "rx": 0,
@@ -1409,6 +1472,15 @@
           "y": 4
         },
         {
+          "key": "zin_tech_cast_bombards",
+          "root": "zin_tech_black_powder",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_cast_bombards_medium",
+          "x": 12,
+          "y": 4
+        },
+        {
           "key": "zin_tech_trebuchets",
           "root": "zin_tech_catapults",
           "rx": 0,
@@ -1424,6 +1496,15 @@
           "ry": 8,
           "sprite": "GFX_zin_tech_wall_wardens_medium",
           "x": 8,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_corned_powder",
+          "root": "zin_tech_black_powder",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_corned_powder_medium",
+          "x": 12,
           "y": 8
         },
         {
@@ -1463,6 +1544,15 @@
           "y": 12
         },
         {
+          "key": "zin_tech_culverins",
+          "root": "zin_tech_black_powder",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_culverins_medium",
+          "x": 12,
+          "y": 12
+        },
+        {
           "key": "zin_tech_great_engines",
           "root": "zin_tech_catapults",
           "rx": 0,
@@ -1490,6 +1580,15 @@
           "y": 18
         },
         {
+          "key": "zin_tech_great_bombards",
+          "root": "zin_tech_black_powder",
+          "rx": 0,
+          "ry": 18,
+          "sprite": "GFX_zin_tech_great_bombards_medium",
+          "x": 12,
+          "y": 18
+        },
+        {
           "key": "zin_tech_master_engines",
           "root": "zin_tech_catapults",
           "rx": 0,
@@ -1499,7 +1598,7 @@
           "y": 20
         }
       ],
-      "width": 1060
+      "width": 1200
     },
     "zin_lore_folder": {
       "gridboxes": [

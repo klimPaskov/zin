@@ -19,7 +19,7 @@ zin_glo_is_bearer_host = {
 	OR = {
 		AND = {
 			check_variable = { global.zin_glo_state = 1 }
-			has_character = zin_eindil
+			AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
 		}
 		AND = {
 			check_variable = { global.zin_glo_state = 4 }

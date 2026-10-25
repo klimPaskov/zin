@@ -27,8 +27,8 @@ division_template = {
 		zin_men_infantry = { x = 1 y = 0 }
 		zin_men_infantry = { x = 1 y = 1 }
 		zin_men_infantry = { x = 1 y = 2 }
-		zin_men_archers = { x = 2 y = 0 }
-		zin_men_archers = { x = 2 y = 1 }
+		zin_men_handgunners = { x = 2 y = 0 }
+		zin_men_handgunners = { x = 2 y = 1 }
 	}
 	support = {
 		zin_support_scouts = { x = 0 y = 0 }
@@ -72,9 +72,10 @@ units = {
 instant_effect = {
 	add_equipment_to_stockpile = { type = zin_armour_equipment_1 amount = 1440 producer = DND }
 	add_equipment_to_stockpile = { type = zin_arms_equipment_1 amount = 5720 producer = DND }
-	add_equipment_to_stockpile = { type = zin_bows_equipment_1 amount = 1920 producer = DND }
+	add_equipment_to_stockpile = { type = zin_bows_equipment_1 amount = 1200 producer = DND }
 	add_equipment_to_stockpile = { type = zin_camp_equipment_0 amount = 230 producer = DND }
 	add_equipment_to_stockpile = { type = zin_catapult_equipment_1 amount = 110 producer = DND }
+	add_equipment_to_stockpile = { type = zin_handgun_equipment_1 amount = 720 producer = DND }
 	add_equipment_to_stockpile = { type = zin_mounts_equipment_1 amount = 40 producer = DND }
 	add_equipment_to_stockpile = { type = train_equipment_1 amount = 120 producer = DND }
 	add_equipment_to_stockpile = { type = convoy_1 amount = 25 producer = DND }

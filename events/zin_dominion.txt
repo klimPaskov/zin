@@ -482,7 +482,7 @@ country_event = {
 		zin_volgan_refresh_strength = yes
 		if = {
 			limit = { NOT = { has_character = zin_volgan } }
-			recruit_character = zin_volgan
+			if = { limit = { NOT = { has_character = zin_volgan } } zin_volgan = { set_nationality = PREV } }
 		}
 		add_country_leader_role = {
 			character = zin_volgan

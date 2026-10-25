@@ -5,13 +5,13 @@ zin_regional_girdon_recruit = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
 		}
-		recruit_character = zin_regional_girdon_aldo
+		if = { limit = { NOT = { has_character = zin_regional_girdon_aldo } } zin_regional_girdon_aldo = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_girdon_aldo } } set_global_flag = zin_in_play_regional_girdon_aldo add_corps_commander_role = { character = zin_regional_girdon_aldo traits = { unyielding_defender trait_engineer } skill = 3 attack_skill = 2 defense_skill = 4 planning_skill = 3 logistics_skill = 2 } }
 	}
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 2 }
 		}
-		recruit_character = zin_regional_girdon_corla
+		if = { limit = { NOT = { has_character = zin_regional_girdon_corla } } zin_regional_girdon_corla = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_regional_girdon_corla } } set_global_flag = zin_in_play_regional_girdon_corla add_advisor_role = { character = zin_regional_girdon_corla advisor = { slot = political_advisor idea_token = zin_regional_girdon_corla_adv allowed = { original_tag = GIR } traits = { zin_adv_merchant_prince } cost = 150 } } }
 	}
 }
 

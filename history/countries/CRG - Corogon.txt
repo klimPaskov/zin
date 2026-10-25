@@ -85,5 +85,8 @@ recruit_character = zin_regional_corogon_watchhouse
 recruit_character = zin_regional_corogon_papz
 recruit_character = zin_cmd_army_corogon
 recruit_character = zin_cmd_master_corogon
+# Characters a focus, an event or a mechanic brings into play; they have no role until then (modules/late_characters.mjs).
+recruit_character = zin_regional_corogon_lio
+recruit_character = zin_regional_corogon_ves
 set_politics = { ruling_party = democratic last_election = "1746.3.1" election_frequency = 48 elections_allowed = no }
 set_popularities = { democratic = 60 neutrality = 25 fascism = 15 communism = 0 }

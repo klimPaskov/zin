@@ -7,8 +7,5 @@ zin_gunwaith_relief_possible = {
 	}
 }
 zin_gunwaith_fought_beside = {
-	has_opinion_modifier = {
-		target = FROM
-		modifier = zin_west_fought_beside
-	}
+	has_country_flag = zin_west_fought_beside_@FROM
 }
