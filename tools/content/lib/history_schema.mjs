@@ -4,6 +4,9 @@
 // validateHistory(file) returns a list of problem strings (empty when the file is valid).
 
 export const CANON = ['established', 'proposed'];
+// K67 (owner, 25 October 2026): every realm carries the ancient roots of its culture and the sign born of them.
+// Optional while the lore pass writes them region by region; REQUIRE_ROOTS turns them mandatory once every realm has them.
+export const REQUIRE_ROOTS = false, ROOTS_MIN = 500, SIGN_MIN = 250;
 export const ROLES = ['capital', 'port', 'fortress', 'market', 'holy', 'ruin', 'town', 'mine', 'farm', 'academy', 'shrine', 'pass', 'crossing'];
 export const POP_CLASSES = ['hamlet', 'village', 'town', 'city', 'great_city'];
 
@@ -66,6 +69,15 @@ export function validateHistory(h, { roster = null } = {}) {
     need(arr(c.divergence) && c.divergence.length >= 2, `${w}: at least two divergence hooks (what could go differently)`);
     for (const d of c.divergence ?? []) need(isStr(d.id) && isStr(d.what) && isStr(d.consequence), `${w}: divergence needs id, what, consequence`);
     checkLabel(problems, w, c);
+    // K67: the ancient roots that built the realm's culture, and the sign that comes out of them (the flag's device)
+    if (c.roots !== undefined || REQUIRE_ROOTS) {
+      need(isStr(c.roots?.story) && c.roots.story.length >= ROOTS_MIN, `${w}: roots needs a story (${ROOTS_MIN}+ characters) of the ancient history that built the realm's culture`);
+      checkLabel(problems, `${w}: roots`, c.roots ?? {});
+    }
+    if (c.sign !== undefined || REQUIRE_ROOTS) {
+      need(isStr(c.sign?.device) && isStr(c.sign?.origin) && c.sign.origin.length >= SIGN_MIN && isStr(c.sign?.meaning), `${w}: sign needs device, origin (${SIGN_MIN}+ characters) and meaning`);
+      checkLabel(problems, `${w}: sign`, c.sign ?? {});
+    }
   }
   need(arr(h.cities) && h.cities.length >= 5, 'cities missing (at least five)');
   for (const c of h.cities ?? []) {
