@@ -418,8 +418,14 @@ export function convertModel(model, { coast = null, roster = null, design = null
     return { id: r.id, name: r.name, tags: tagsOf(r), ...opt('note', note(r)), path: schemaPath(c), ...(closed ? { closed: true } : {}), halfWidth: Math.min(0.25, r.halfWidth ?? 0.005), peak: IMPORT.peakByClass[r.peakClass ?? r.elevation] ?? 0.75, ...(r.wall ? { profile: 'massif', barrier: 'impassable' } : {}) };
   });
   const passes = model.passes.map(p => {
-    const at = p.geometry.type === 'Point' ? pt(p.geometry.coordinates) : middleOfLine(p.geometry.coordinates);
+    let at = p.geometry.type === 'Point' ? pt(p.geometry.coordinates) : middleOfLine(p.geometry.coordinates);
     const near = model.ranges.map(r => ({ r, d: distanceToGeometry(at[0], at[1], r.geometry) * G.W })).sort((x, y) => x.d - y.d || x.r.id.localeCompare(y.r.id))[0];
+    // a pass drawn as a road over a range sits where the road crosses the range's crest, not at the road's middle
+    // (map import of 25 October 2026: the Cinder Gate's middle lay on the flank, MAP_PASS_NOT_LOWER)
+    if (p.geometry.type === 'LineString' && near && near.d <= IMPORT.passReachPx) {
+      const crest = G.densifyLine(p.geometry.coordinates, 2).map(d => d.p).map(q => ({ q, d: distanceToGeometry(q[0], q[1], near.r.geometry) })).sort((x, y) => x.d - y.d)[0];
+      if (crest) at = pt(crest.q);
+    }
     const range = p.gorge?.range ?? (near && near.d <= IMPORT.passReachPx ? near.r.id : null);
     return { id: p.id, name: p.name, tags: tagsOf(p), ...opt('note', note(p)), ...(range ? { range } : {}), position: at };
   });
