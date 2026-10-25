@@ -1,4 +1,11 @@
 | Q-62 | The siteless Triton realms sit on the islands their drawn labels or the old map give them (Seite, the Windy Lands, Santon, Halenor now on the isle by the Kilos Sound, the Lens, Fineger); the Pollos and Benan island reads as two pieces, each holding a seat. Agree? | agree || Q-58 | Ten wild lands are unowned at start (if the game accepts ownerless states); where a wild land meets a realm's claim the claim wins (the Herrodon crest gives way to Zol's Mistake at the Magical Lands' northern tip). Keep them unowned, and is that northern-tip strip Zol's? | unowned; the strip is Zol's || Q-55 | Olen is the only Ember realm on the East and South Lands' landmass (Halia now sits on Mirolon's arm). Keep Olen on the eastern lowland, or move it to an isle? | keep it, behind the olen_lowland barrier || Q-50 | Yeldenne: the capital Simoto (the landing on the Gulf of Minnolomak) is 63 px from the import's land and about 400 px from the Castle of Yeldenne and the valley of Mp'E; a one-state realm cannot hold both. Move the landing below the castle, or the seat to the valley? | seat placed on land near the landing, at (1304, 171) |# Questions for the owner
+| Q-63 | When Afrit is reduced but alive, may Eindil be crowned, with the world told that the false god is beyond the Rift? | yes |
+| Q-64 | Does the fall of Afrit's realm before his flight reveal his name at once (the fall counts as his flight)? | yes |
+| Q-65 | The Golden King in exile: does he keep a court in exile that can return, or does exile end his story? | he keeps a court; the realm-life module decides who feeds it |
+| Q-66 | The Hunt for the False God: may a hunter find and kill Afrit outside the palace? | no (his death stays the palace's) |
+| Q-67 | When Lorien cannot name the heir, do the Keepers of the Mirror name him, or another court of the Lands of the Sun? | the Keepers of the Mirror |
+| Q-68 | The King's death event is titled "The Feast of Gaelor" whatever month he dies in; should the feast follow the month of death instead? | keep Gaelor, the month of mourning |
+| Q-69 | Mycid rings and the God Forest keepers have no portrait pool of their own; they use the nearest pools (the Baelim, the forest elves). Draw their own? | nearest pools for now |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
