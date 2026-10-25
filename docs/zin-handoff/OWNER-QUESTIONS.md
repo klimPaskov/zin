@@ -6,6 +6,12 @@
 | Q-67 | When Lorien cannot name the heir, do the Keepers of the Mirror name him, or another court of the Lands of the Sun? | the Keepers of the Mirror |
 | Q-68 | The King's death event is titled "The Feast of Gaelor" whatever month he dies in; should the feast follow the month of death instead? | keep Gaelor, the month of mourning |
 | Q-69 | Mycid rings and the God Forest keepers have no portrait pool of their own; they use the nearest pools (the Baelim, the forest elves). Draw their own? | nearest pools for now |
+| Q-70 | The knowledge-layer register (C25) and the bestiary say Kusven is never named in player text; the design names him once he comes forth. Which reading holds? | named only after he comes forth (behind his flag); one Chronicle line uses the sealed wording "a Great Spirit of the black north" |
+| Q-71 | Beasts of the black north (Q-29): build them as a new custom unit (warfare data, counters, a 3D model, sourced sound)? | not built yet; nothing stands in for them |
+| Q-72 | Kusven's strength and trait as Zol's field marshal: skill 6, attack 7, trait "The Grave-Wind"; 63 days on the field at 3 Presence a week | as proposed |
+| Q-73 | Lorien dies only if Kusven is still on the field 14 days after Lorien's ride (zin_mistake.26) | as proposed |
+| Q-74 | News when Volgan's realm is annexed with his body intact (zin_dominion.29), and its effects | as proposed |
+| Q-75 | The steward weights in After the King (40/30/30) | as proposed |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
