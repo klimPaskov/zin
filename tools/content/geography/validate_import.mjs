@@ -53,6 +53,20 @@ export function schemaErrors(ajv, schema, doc, limit = 20) {
 }
 
 /** The tool's resolver on a geography document: { valid, diagnostics, edgeBand }. */
+/**
+ * The resolver of the installed release (compiled, the code the preview itself runs), else the checkout's source
+ * through tsx: { valid, diagnostics, edgeBand, source }.
+ */
+export async function resolveGeographyWithTool(tool, geographyPath, options = {}) {
+  const released = path.join(RELEASED_TOOL, 'dist/hoi4_agent_tools/map/geography/resolve.js');
+  if (existsSync(released)) {
+    const { width = 5120, height = 2560, edge = 'sea-band' } = options;
+    const { resolveGeography } = await import(pathToFileURL(released).href);
+    const r = resolveGeography(JSON.parse(readFileSync(geographyPath, 'utf8')), { frame: { width, height }, hasReference: true, edge: { mode: edge }, operationId: 'world' });
+    return { valid: r.valid, edgeBand: r.edgeBand, diagnostics: r.diagnostics, source: released };
+  }
+  return { ...resolveWithTool(tool, geographyPath, options), source: path.join(tool, 'src') };
+}
 export function resolveWithTool(tool, geographyPath, { width = 5120, height = 2560, edge = 'sea-band' } = {}) {
   const dir = mkdtempSync(path.join(os.tmpdir(), 'zin-geo-resolve-'));
   try {
@@ -88,7 +102,7 @@ async function main(argv) {
     result.schema[k] = { schema: `${file} (${schema.$id ?? 'no $id'})`, valid: errors.length === 0, errors };
     if (errors.length) failed = true;
   }
-  const r = resolveWithTool(tool, geographyPath);
+  const r = await resolveGeographyWithTool(tool, geographyPath);
   const bySeverity = {};
   for (const d of r.diagnostics) bySeverity[d.severity] = (bySeverity[d.severity] ?? 0) + 1;
   const byCode = {};
@@ -98,7 +112,7 @@ async function main(argv) {
   if (args.includes('--json')) console.log(JSON.stringify(result, null, 1));
   else {
     for (const [k, v] of Object.entries(result.schema)) console.log(`schema ${k}: ${v.valid ? 'valid' : 'INVALID'} against ${v.schema}${v.errors.length ? `\n  ${v.errors.join('\n  ')}` : ''}`);
-    console.log(`resolver: ${r.valid ? 'valid' : 'INVALID'}; edge band ${JSON.stringify(r.edgeBand)}; ${Object.entries(bySeverity).map(([k, v]) => `${k} ${v}`).join(', ') || 'no diagnostics'}`);
+    console.log(`resolver (${r.source}): ${r.valid ? 'valid' : 'INVALID'}; edge band ${JSON.stringify(r.edgeBand)}; ${Object.entries(bySeverity).map(([k, v]) => `${k} ${v}`).join(', ') || 'no diagnostics'}`);
     for (const [k, v] of Object.entries(byCode).sort()) console.log(`  ${k} x${v}`);
     for (const d of r.diagnostics.filter(x => x.severity === 'error' || x.severity === 'blocker').slice(0, 40)) console.log(`  ${d.code}: ${d.message}`);
   }

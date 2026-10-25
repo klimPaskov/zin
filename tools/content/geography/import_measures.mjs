@@ -35,7 +35,7 @@ import * as G from './geo_core.mjs';
 import { isWaterColour } from './drawing_mask.mjs';
 import { regionZones } from './repair_model.mjs';
 import { ringsOf, pointInGeometry } from './check_model.mjs';
-import { IMPORT } from './convert_for_import.mjs';
+import { IMPORT, forcedSurface, surfaceFixesMask, annotationsFrom } from './convert_for_import.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data/geography');
@@ -278,6 +278,33 @@ export function featureSurface(model, drawn, modelMask = null, w = W, h = H) {
   return { features: out, unresolved };
 }
 
+/**
+ * The 8-pixel blocks (FIXES.blockCells cells of the 4-pixel grid on a side) where a cell of forced land (forcedSurface
+ * value 1) is read as water: under FIXES.landShare of its 16 pixels are land in the import's reading. The blocks are
+ * coarse on purpose: they say where the drawing needs land, not the outline of what it draws there. Each block grows by
+ * FIXES.growBlocks blocks, so the painted land overlaps the drawn land it joins (a sheet's edge leaves a seam of
+ * uncovered pixels that the import reads as open sea).
+ */
+export const FIXES = Object.freeze({ blockCells: 2, landShare: 0.5, growBlocks: 1 });
+export function surfaceFixes(forced, drawn, opts = FIXES) {
+  const b = opts.blockCells, bw = Math.ceil(CG.w / b), bh = Math.ceil(CG.h / b), hit = new Uint8Array(bw * bh);
+  for (let j = 0; j < CG.h; j++) for (let i = 0; i < CG.w; i++) {
+    if (forced[j * CG.w + i] !== 1) continue;
+    let land = 0;
+    for (let y = j * 4; y < j * 4 + 4; y++) for (let x = i * 4; x < i * 4 + 4; x++) land += drawn[y * W + x];
+    if (land < 16 * opts.landShare) hit[Math.floor(j / b) * bw + Math.floor(i / b)] = 1;
+  }
+  const grown = hit.slice(), g = opts.growBlocks;
+  for (let y = 0; y < bh; y++) for (let x = 0; x < bw; x++) if (hit[y * bw + x]) for (let dy = -g; dy <= g; dy++) for (let dx = -g; dx <= g; dx++) { const yy = y + dy, xx = x + dx; if (yy >= 0 && xx >= 0 && yy < bh && xx < bw) grown[yy * bw + xx] = 1; }
+  hit.set(grown);
+  const rows = [];
+  for (let y = 0; y < bh; y++) for (let x = 0; x < bw; x++) {
+    if (!hit[y * bw + x]) continue;
+    let e = x; while (e + 1 < bw && hit[y * bw + e + 1]) e++;
+    rows.push([y, x, e]); x = e;
+  }
+  return { blockCells: b, blockPx: b * CG.cell, landShare: opts.landShare, growBlocks: opts.growBlocks, blocks: hit.reduce((n, v) => n + v, 0), rows };
+}
 async function main(argv) {
   const args = argv.slice(2);
   const opt = (name, d) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : d; };
@@ -285,7 +312,8 @@ async function main(argv) {
   if (!existsSync(drawingPath)) throw new Error(`the private drawing is not at ${drawingPath}`);
   const model = JSON.parse(readFileSync(path.join(DATA, 'aoaz.repaired.json'), 'utf8'));
   const doc = JSON.parse(readFileSync(path.join(out, 'aoaz.sheets.json'), 'utf8'));
-  const annotations = JSON.parse(readFileSync(path.join(out, 'aoaz.annotations.json'), 'utf8')).annotations;
+  const overrides = JSON.parse(readFileSync(path.join(here, 'surface_overrides.json'), 'utf8'));
+  let annotations = null, fixes = null;
   const bytes = readFileSync(drawingPath);
   const sha = createHash('sha256').update(bytes).digest('hex');
   const { default: sharp } = await import('sharp');
@@ -304,6 +332,11 @@ async function main(argv) {
     const pencil = classifyLand(rgb, owner, pencilLand);
     if (label === 'after') paletteResult = buildPalette(model, d, rgb, owner, pencil);
     const readings = { pencil, heuristic: classifyLand(rgb, owner, toolHeuristicLand), ...(paletteResult ? { palette: classifyLand(rgb, owner, paletteLand(paletteResult.palette)) } : {}) };
+    if (label === 'after') {
+      // the land the annotations must paint: forced land the import reads as water (the rest keeps its drawn terrain)
+      fixes = surfaceFixes(forcedSurface(overrides, model, { landFilter: 'all' }), readings.heuristic);
+      annotations = annotationsFrom(overrides, model, { landFilter: surfaceFixesMask(fixes) }).annotations;
+    }
     result.readings[label] = {};
     for (const [name, drawn] of Object.entries(readings)) {
       result.readings[label][name] = { raw: agreement(model, mLand, drawn, zones), ...(label === 'after' ? { withAnnotations: agreement(model, mLand, annotate(drawn, annotations), zones) } : {}) };
@@ -322,7 +355,9 @@ async function main(argv) {
   const write = (file, v) => writeFileSync(path.join(out, file), `${JSON.stringify(v, null, 1)}\n`);
   write('aoaz.palette.json', { note: 'The reference palette of the import (one list for every sheet, ADR 0067 section 9): per sheet the median colour of its drawn water and of its drawn land per terrain class, measured by tools/content/geography/import_measures.mjs; numbers only.', mergeDistance: paletteResult.mergeDistance, palette: paletteResult.palette, provenance: paletteResult.provenance });
   write('drawing_measures.json', { note: 'Numbers measured on the private drawing by tools/content/geography/import_measures.mjs: land IoU of the model and the drawing as the import reads it (three classifiers; raw and with the surface-override annotations; after = the registered sheets with clips, before = the hand-fitted transforms of registration.before without clips), and the drawn land the open-sea edge bands clear.', ...result });
+  write('surface_fixes.json', { note: 'Where the land annotations are painted (convert_for_import.mjs forcedSurface): the 8-pixel blocks holding land the model forces (the surface overrides and the frame around the drawn coast) that the import reads as water in the drawing, as rows [y, x0, x1] of blocks; elsewhere the drawn land and its terrain stay. Measured by tools/content/geography/import_measures.mjs (surfaceFixes); numbers only.', ...fixes });
   write('feature_surface.json', { note: 'Point features of the model that stand on the wrong surface of the drawing as the import reads it (the illustrated heuristic with the annotations), each with the nearest point of the right surface; measured by tools/content/geography/import_measures.mjs (featureSurface) and applied by convert_for_import.mjs. Numbers only.', reachPx: SURFACE.reachPx, ...surface });
+  console.log(`surface fixes: ${fixes.blocks} blocks of ${fixes.blockPx} px`);
   console.log(`feature surface: ${surface.features.length} moved, ${surface.unresolved.length} unresolved`);
   const show = (label, name) => { const r = result.readings[label][name]; return `${r.raw.total}${r.withAnnotations ? ` (with annotations ${r.withAnnotations.total})` : ''}`; };
   for (const label of ['before', 'after']) for (const name of Object.keys(result.readings[label])) console.log(`${label.padEnd(6)} ${name.padEnd(9)} land IoU ${show(label, name)}`);

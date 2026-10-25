@@ -17,8 +17,9 @@ import * as G from './geo_core.mjs';
 import { pointInGeometry } from './check_model.mjs';
 import {
   schemaRing, areaFields, bridgeRings, clipRing, sheetsDocument, annotationsFrom, convertModel, carveSeas, edgeBandLand, previewCall, IMPORT,
+  coastBandForcing, forcedSurface, surfaceFixesMask,
 } from './convert_for_import.mjs';
-import { fillRings, warp, agreement, toolHeuristicLand, classifyLand, workingSize, featureSurface, SURFACE } from './import_measures.mjs';
+import { fillRings, warp, agreement, toolHeuristicLand, classifyLand, workingSize, featureSurface, SURFACE, surfaceFixes } from './import_measures.mjs';
 import { DEFAULT_TOOL, toolAjv, toolSchema, schemaErrors } from './validate_import.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -101,6 +102,65 @@ test('annotations: the forced land and sea of the overrides become polygons that
   assert.equal(at(0.25, 0.25), 0);
   assert.equal(at(0.175, 0.175), 1, 'the land entry inside the sea entry wins');
   assert.equal(at(0.5, 0.5), 255, 'nothing is forced outside the entries');
+});
+
+// ---------------------------------------------------------------------------------------------------- the coast frame
+// Two lands 8 px apart (a strait), a neck 12 px wide joining two halves of one land, and a lake.
+function frameWorld() {
+  const px = (x, y) => [x / 5120, y / 2560];
+  const poly = pts => ({ type: 'Polygon', coordinates: [pts.map(p => px(...p))] });
+  return {
+    lands: [
+      { id: 'land_west', geometry: poly([[1000, 1000], [1300, 1000], [1300, 1100], [1312, 1100], [1312, 1000], [1600, 1000], [1600, 1400], [1312, 1400], [1312, 1112], [1300, 1112], [1300, 1400], [1000, 1400]]) },
+      { id: 'land_east', geometry: poly([[1608, 1000], [1900, 1000], [1900, 1400], [1608, 1400]]) },
+    ],
+    lakes: [{ id: 'lake_l', geometry: poly([[1400, 1200], [1500, 1200], [1500, 1300], [1400, 1300]]) }],
+  };
+}
+const cellAt = (forced, x, y) => forced[Math.floor(y / 4) * 1280 + Math.floor(x / 4)];
+test('coast frame: land and sea away from the coast are the model\'s, the drawing keeps a band at broad coasts; necks are land and straits are water throughout; lakes are lakes', () => {
+  const forced = coastBandForcing(frameWorld(), 6, 24);
+  assert.equal(cellAt(forced, 1100, 1300), 1, 'inland is land');
+  assert.equal(cellAt(forced, 500, 500), 0, 'open sea is sea');
+  assert.equal(cellAt(forced, 1100, 998), 255, 'beside a broad coast the drawing decides');
+  assert.equal(cellAt(forced, 1306, 1106), 1, 'a 12-px neck is land throughout');
+  assert.equal(cellAt(forced, 1604, 1200), 0, 'an 8-px strait between two lands is water (K46)');
+  assert.equal(cellAt(forced, 1450, 1250), 2, 'the model\'s lake is a lake');
+});
+
+test('forced surface: land is painted only where the measured fixes say the drawing reads water; without a measure only the overrides\' own land (negative)', () => {
+  const world = frameWorld();
+  const all = forcedSurface(null, world, { bandPx: 6, narrowPx: 24, landFilter: 'all' });
+  assert.equal(cellAt(all, 1100, 1300), 1);
+  const none = forcedSurface(null, world, { bandPx: 6, narrowPx: 24 });
+  assert.equal(cellAt(none, 1100, 1300), 255, 'no measure: inland land is left to the drawing and its terrain');
+  assert.equal(cellAt(none, 500, 500), 0, 'sea is forced either way');
+  const fixes = { blockCells: 2, rows: [[Math.floor(1300 / 8), Math.floor(1100 / 8), Math.floor(1100 / 8)]] };
+  const some = forcedSurface(null, world, { bandPx: 6, narrowPx: 24, landFilter: surfaceFixesMask(fixes) });
+  assert.equal(cellAt(some, 1100, 1300), 1, 'a fixed block is painted');
+  assert.equal(cellAt(some, 1200, 1300), 255, 'an unfixed block keeps the drawing');
+});
+
+test('surface fixes: 8-px blocks of forced land the reading has as water, grown by a block; land read as land is no fix (negative)', () => {
+  const forced = new Uint8Array(1280 * 640).fill(255);
+  for (let j = 250; j < 260; j++) for (let i = 250; i < 260; i++) forced[j * 1280 + i] = 1;
+  const drawn = new Uint8Array(5120 * 2560).fill(1);
+  for (let y = 1016; y < 1024; y++) for (let x = 1016; x < 1024; x++) drawn[y * 5120 + x] = 0; // one block of water at cells 254..255
+  const fx = surfaceFixes(forced, drawn);
+  assert.equal(fx.blockPx, 8);
+  assert.deepEqual(fx.rows, [[126, 126, 128], [127, 126, 128], [128, 126, 128]], 'the water block and its neighbours');
+  assert.deepEqual(surfaceFixes(forced, new Uint8Array(5120 * 2560).fill(1)).rows, []);
+});
+
+test('annotations: areas of one kind pack into few rings under the point limit, and the rings still paint every area', () => {
+  const surface = [];
+  for (let k = 0; k < 40; k++) { const x = 0.05 + 0.02 * (k % 20), y = 0.1 + 0.2 * Math.floor(k / 20); surface.push({ id: `s${k}`, kind: 'sea', polygon: [[x, y], [x + 0.01, y], [x + 0.01, y + 0.05], [x, y + 0.05]] }); }
+  const { annotations } = annotationsFrom({ surface });
+  assert.ok(annotations.length < 40 && annotations.every(a => a.polygon.length <= IMPORT.annotationMaxPoints), `${annotations.length} polygons`);
+  const W = 1280, H = 640, painted = new Uint8Array(W * H).fill(255);
+  for (const a of annotations) fillRings([a.polygon.map(p => [p.x, p.y])], painted, 0, W, H);
+  for (const e of surface) assert.equal(painted[Math.floor((e.polygon[0][1] + 0.025) * H) * W + Math.floor((e.polygon[0][0] + 0.005) * W)], 0, e.id);
+  assert.equal(painted[Math.floor(0.12 * H) * W + Math.floor(0.065 * W)], 255, 'the bridges paint nothing between the areas');
 });
 
 // ---------------------------------------------------------------------------------------------------- the model

@@ -23,7 +23,11 @@
   },
   "surface": {
    "path": "tools/content/data/geography/import/feature_surface.json",
-   "sha256": "f90da9f7b31d152ec3809ee1ed7629c53b35de93aa12d3a0c30ab729dbdc07e1"
+   "sha256": "44c0bfa8bad791281cc2f883caeae6c8ad7f7c154356736cf539f4a94515fc26"
+  },
+  "fixes": {
+   "path": "tools/content/data/geography/import/surface_fixes.json",
+   "sha256": "fd05db22a8e11a903decac525df48a706271c9e682b99bd810e29976952647d6"
   },
   "overrides": {
    "path": "tools/content/geography/surface_overrides.json",
@@ -35,13 +39,13 @@
   }
  },
  "outputs": {
-  "aoaz.geography.json": "4f5671c1154b7ca22b9d92c0761642ff63cbd69d1f05381e7a870d0d0920938d",
+  "aoaz.geography.json": "c6c92b6262afe272326897dcec91fef75571ef708b544a37f2cab9090ab695d2",
   "aoaz.sheets.json": "a85601870b831641438a68b169a8f229aa9df2e6e0928bdbfab2cc3f66777752",
-  "aoaz.annotations.json": "37fa63533909542c60aded957f9fcd758d64f7ba995243634e6699efdeebf43c",
+  "aoaz.annotations.json": "78494002d581bb1f5bdb8050800b8d85b7295d46881d8dad85594304e03509cc",
   "aoaz.names.json": "c27afb3c883818a826e6e44f87546fc08d2b6929066bb0c35894677505b8dbbc",
   "aoaz.held_back.json": "a61213f874b043f9955f8389f4b1d8bba1a7dcea21187f1b7b118f8cfcfbb2a8",
-  "preview_call.json": "fd03cfe654f73d35e77a34566ae5d102e04183ec84f8660973787d8ee44da862",
-  "preview_call_palette.json": "e8b8845550040642f5ac82f9ccbbaf0bc8d3ce03b19c66b7426162cd57117cf5"
+  "preview_call.json": "045c4744370d68dd4835bf9b47cd47d37d32b7deaaa147ec2b74a499a35abc72",
+  "preview_call_palette.json": "65cbf1f3553237391a922353f0e37954b18a52f9321eba7ee65d0e0e2593725c"
  },
  "counts": {
   "seas": 58,
@@ -312,20 +316,9 @@
   }
  ],
  "annotations": {
-  "polygons": 70,
-  "points": 2782,
-  "dropped": [
-   {
-    "kind": "sea",
-    "areaPx": 64,
-    "reason": "could not be traced into a valid polygon"
-   },
-   {
-    "kind": "land",
-    "areaPx": 64,
-    "reason": "could not be traced into a valid polygon"
-   }
-  ]
+  "polygons": 14,
+  "points": 10931,
+  "dropped": []
  },
  "palette": 50,
  "issues": [
@@ -338,16 +331,8 @@
    "issue": "spine untangled: 3 vertices of a loop dropped"
   },
   {
-   "id": "river_grey",
-   "issue": "mouth moved 2 px from the shore into the water"
-  },
-  {
    "id": "river_leren",
    "issue": "5 via points inside a lake dropped (the river crosses it)"
-  },
-  {
-   "id": "river_great",
-   "issue": "mouth moved 16 px from the shore into the water"
   }
  ]
 }

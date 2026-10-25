@@ -55,6 +55,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as G from './geo_core.mjs';
 import { ringsOf, pointInGeometry, distanceToGeometry } from './check_model.mjs';
+import { edt2 } from './coast_features.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data/geography');
@@ -66,6 +67,7 @@ export const PATHS = Object.freeze({
   names: path.join(DATA, 'name_table.json'),
   palette: path.join(DATA, 'import', 'aoaz.palette.json'),
   surface: path.join(DATA, 'import', 'feature_surface.json'),
+  fixes: path.join(DATA, 'import', 'surface_fixes.json'),
   overrides: path.join(here, 'surface_overrides.json'),
   roster: path.join(here, '../data/world/roster.json'),
 });
@@ -88,6 +90,8 @@ export const IMPORT = Object.freeze({
   maxClipVertices: 512,
   annotationMaxPolygons: 128,
   annotationMaxPoints: 1000,
+  coastBandPx: 6,
+  coastNarrowPx: 24,
   peakByClass: Object.freeze({ 1: 0.3, 2: 0.4, 3: 0.55, 4: 0.75, 5: 0.9 }),
   volcanoPeakByElevation: Object.freeze({ 3: 0.6, 4: 0.75, 5: 0.9 }),
   riverSizeByWidth: Object.freeze({ 1: 1, 2: 3, 3: 5 }),
@@ -194,38 +198,147 @@ export function sheetsDocument(model, source = IMPORT.source) {
 }
 
 // ---------------------------------------------------------------------------------------------------- annotations
+/** Morphological opening of a mask with a disc of `r` cells (Euclidean): the parts at least 2r wide. */
+export function opening(mask, w, h, r) {
+  const r2 = r * r, outside = new Uint8Array(mask.length);
+  for (let i = 0; i < mask.length; i++) outside[i] = mask[i] ? 0 : 1;
+  const dOut = edt2(outside, w, h);
+  const core = new Uint8Array(mask.length);
+  for (let i = 0; i < mask.length; i++) core[i] = mask[i] && dOut[i] > r2 ? 1 : 0;
+  const dCore = edt2(core, w, h);
+  const out = new Uint8Array(mask.length);
+  for (let i = 0; i < mask.length; i++) out[i] = mask[i] && dCore[i] <= r2 ? 1 : 0;
+  return out;
+}
+
 /**
- * The surface overrides as `reference.annotations`: the land and sea they force, painted in order on the 4-pixel grid,
- * traced back into polygons (each part with its holes bridged into one ring, which the import fills even-odd) of at
- * most IMPORT.annotationMaxPoints points, at most IMPORT.annotationMaxPolygons in all. Sea first, then land; the two
- * never overlap, so the order only matters at shared edges.
+ * The model's frame around the drawn coast (the land the import reads follows the model's land where the model is
+ * right): on the 4-pixel grid, 1 where the model's land is forced, 0 where its sea is forced, 2 its lakes, 255 where the drawing
+ * decides. The drawing decides only within `bandPx` of the model's coast, and only where both the land and the water
+ * there are at least twice `bandPx` wide:
+ *   - land farther than bandPx from the model's sea is land (lettering, pencil lines and sheet seams inland, a neck the
+ *     drawing leaves open), and land narrower than 2 x bandPx (necks, spits, small islands) is land throughout;
+ *   - sea farther than bandPx from the model's land is sea (lettering and pencil strips in the water, a neighbouring
+ *     sheet's paper), and water narrower than 2 x bandPx (straits, which decision K46 keeps as crossings, not land
+ *     bridges; narrow inlets) is sea throughout;
+ *   - the model's lakes are lake (2): the import measures the model's lakes as water, and an inland water body the
+ *     drawing leaves unread would otherwise count as land.
  */
-export function annotationsFrom(overrides) {
+export function coastBandForcing(model, bandPx = IMPORT.coastBandPx, narrowPx = IMPORT.coastNarrowPx) {
+  const { w, h } = CG, r = bandPx / CG.cell, r2 = r * r, rn = narrowPx / 2 / CG.cell;
+  const land = new Uint8Array(w * h), lake = new Uint8Array(w * h);
+  for (const l of model.lands) G.rasterizeInto(l.geometry, CG, land, 1);
+  for (const l of model.lakes ?? []) G.rasterizeInto(l.geometry, CG, lake, 1);
+  const sea = new Uint8Array(w * h);
+  for (let i = 0; i < sea.length; i++) sea[i] = land[i] ? 0 : 1;
+  const toSea = edt2(sea, w, h), toLand = edt2(land, w, h);
+  const wideLand = opening(land, w, h, rn), wideSea = opening(sea, w, h, rn);
+  const forced = new Uint8Array(w * h).fill(255);
+  for (let i = 0; i < forced.length; i++) {
+    if (lake[i]) forced[i] = 2;
+    else if (land[i]) { if (toSea[i] > r2 || !wideLand[i]) forced[i] = 1; }
+    else if (toLand[i] > r2 || !wideSea[i]) forced[i] = 0;
+  }
+  return forced;
+}
+
+/** Polygons (bridged rings of at most `maxPoints`) of one mask; an area too complex for one ring is halved until it fits. */
+export function maskPolygons(mask, maxPoints = IMPORT.annotationMaxPoints, minPx = 16) {
+  const out = [], failed = [];
+  const { labels, sizes } = G.labelComponents(mask, CG);
+  const boxes = sizes.map(() => [Infinity, Infinity, -1, -1]);
+  for (let c = 0; c < labels.length; c++) {
+    const k = labels[c];
+    if (k < 0) continue;
+    const i = c % CG.w, j = (c - i) / CG.w, b = boxes[k];
+    if (i < b[0]) b[0] = i; if (j < b[1]) b[1] = j; if (i > b[2]) b[2] = i; if (j > b[3]) b[3] = j;
+  }
+  // each area is traced on its own 2-pixel grid (every 4-pixel cell becomes 2 x 2), so a neck or a strait one cell
+  // wide is two cells wide to the tracer; an area too complex for one ring is halved across its longer side
+  const trace = (k, box, depth) => {
+    const [x0, y0, x1, y1] = box, w = (x1 - x0 + 1) * 2 + 2, h = (y1 - y0 + 1) * 2 + 2;
+    const grid = { ox: x0 * CG.cell - 2, oy: y0 * CG.cell - 2, cell: 2, w, h };
+    const local = new Uint8Array(w * h);
+    let n = 0;
+    for (let j = y0; j <= y1; j++) for (let i = x0; i <= x1; i++) {
+      if (labels[j * CG.w + i] !== k) continue;
+      n++;
+      const li = (i - x0) * 2 + 1, lj = (j - y0) * 2 + 1;
+      local[lj * w + li] = 1; local[lj * w + li + 1] = 1; local[(lj + 1) * w + li] = 1; local[(lj + 1) * w + li + 1] = 1;
+    }
+    if (!n || n * CG.cell * CG.cell < minPx) return;
+    const g = G.vectorize(local, grid, { tolerances: [2, 1.5, 1.0, 0.5, 0, 3], minPartPx: Math.min(minPx, 4), minHolePx: minPx, maxVertices: maxPoints });
+    const rings = g ? ringsOf(g).map(part => bridgeRings(part.map(r => { const c = r.slice(); while (c.length > 1 && samePt(c[0], c[c.length - 1])) c.pop(); return c; }))) : null;
+    if (rings && rings.every(r => r.length <= maxPoints)) { for (const r of rings) out.push({ ring: r, areaPx: n * CG.cell * CG.cell }); return; }
+    if (depth >= 12 || (x1 - x0 < 4 && y1 - y0 < 4)) { failed.push({ areaPx: n * CG.cell * CG.cell }); return; }
+    const vertical = x1 - x0 >= y1 - y0, cut = vertical ? Math.floor((x0 + x1) / 2) : Math.floor((y0 + y1) / 2);
+    trace(k, vertical ? [x0, y0, cut, y1] : [x0, y0, x1, cut], depth + 1);
+    trace(k, vertical ? [cut + 1, y0, x1, y1] : [x0, cut + 1, x1, y1], depth + 1);
+  };
+  sizes.forEach((n, k) => trace(k, boxes[k], 0));
+  return { polygons: out, failed };
+}
+
+/**
+ * The surface the annotations force, on the 4-pixel grid (0 sea, 1 land, 2 lake, 255 the drawing decides): the surface
+ * overrides painted in order (open-sea bands, undrawn land, moved lands, the Nether, the approved layout), then the
+ * model's frame around the drawn coast (coastBandForcing) over them.
+ *
+ * Land is painted only where the drawing needs it: a land annotation replaces the drawing's terrain class (forest,
+ * desert, snow, mountain) with plain land, so land the import already reads as land stays the drawing's. `landFilter`
+ * says where land is painted: a mask on the 4-pixel grid (surfaceFixesMask of surface_fixes.json: the forced land the
+ * drawing reads as water, measured by import_measures.mjs), 'all' for every forced land cell (the measuring step's own
+ * starting point), or null when no measure exists (then only the overrides' own land, as before the frame existed).
+ */
+export function forcedSurface(overrides, model = null, { bandPx = IMPORT.coastBandPx, narrowPx = IMPORT.coastNarrowPx, landFilter = null } = {}) {
   const forced = new Uint8Array(CG.w * CG.h).fill(255);
   for (const e of overrides?.surface ?? []) G.rasterizeInto({ type: 'Polygon', coordinates: [e.polygon, ...(e.holes ?? [])] }, CG, forced, e.kind === 'land' ? 1 : 0);
+  const fromOverrides = forced.slice();
+  if (model && bandPx > 0) { const band = coastBandForcing(model, bandPx, narrowPx); for (let c = 0; c < forced.length; c++) if (band[c] !== 255) forced[c] = band[c]; }
+  if (landFilter !== 'all') for (let c = 0; c < forced.length; c++) {
+    if (forced[c] !== 1) continue;
+    const keep = landFilter ? landFilter[c] === 1 : fromOverrides[c] === 1;
+    if (!keep) forced[c] = 255;
+  }
+  return forced;
+}
+
+/** The 8-pixel blocks of surface_fixes.json (rows of [y, x0, x1] in blocks) as a mask on the 4-pixel grid. */
+export function surfaceFixesMask(fixes) {
+  const mask = new Uint8Array(CG.w * CG.h), b = fixes?.blockCells ?? 2;
+  for (const [y, x0, x1] of fixes?.rows ?? []) for (let x = x0; x <= x1; x++) for (let dj = 0; dj < b; dj++) for (let di = 0; di < b; di++) {
+    const i = x * b + di, j = y * b + dj;
+    if (i < CG.w && j < CG.h) mask[j * CG.w + i] = 1;
+  }
+  return mask;
+}
+
+/**
+ * `reference.annotations`: the forced surface (forcedSurface) traced into polygons of at most
+ * IMPORT.annotationMaxPoints points, at most IMPORT.annotationMaxPolygons in all. Sea first, then land, then lakes.
+ */
+export function annotationsFrom(overrides, model = null, options = {}) {
+  const forced = forcedSurface(overrides, model, options);
   const out = [], failed = [];
-  for (const [kind, value] of [['sea', 0], ['land', 1]]) {
+  for (const [kind, value] of [['sea', 0], ['land', 1], ['lake', 2]]) {
     const mask = new Uint8Array(forced.length);
     for (let c = 0; c < mask.length; c++) mask[c] = forced[c] === value ? 1 : 0;
-    // each connected area on its own, so one area that cannot be traced does not lose the others
-    const { labels, sizes } = G.labelComponents(mask, CG);
-    const parts = [];
-    sizes.forEach((n, k) => {
-      if (n * CG.cell * CG.cell < 64) return;
-      const one = new Uint8Array(mask.length);
-      for (let c = 0; c < one.length; c++) if (labels[c] === k) one[c] = 1;
-      const g = G.vectorize(one, CG, { tolerances: [1.0, 1.5, 2, 3], minPartPx: 64, minHolePx: 64, maxVertices: IMPORT.annotationMaxPoints });
-      if (g) parts.push(...ringsOf(g)); else failed.push({ kind, areaPx: n * CG.cell * CG.cell });
-    });
-    for (const part of parts) {
-      let ring = bridgeRings(part.map(r => { const c = r.slice(); while (c.length > 1 && samePt(c[0], c[c.length - 1])) c.pop(); return c; }));
-      for (let tol = 1; ring.length > IMPORT.annotationMaxPoints; tol *= 1.5) ring = bridgeRings(part.map(r => G.simplifyRing(r, tol)).filter(r => r.length >= 3));
-      out.push({ kind, polygon: ring.map(p => ({ x: G.round5(clamp01(p[0])), y: G.round5(clamp01(p[1])) })), areaPx: G.geometryAreaPx({ type: 'Polygon', coordinates: part }) });
+    const { polygons, failed: f } = maskPolygons(mask);
+    // pack the areas of one kind into as few rings as the point limit allows: rings joined by zero-width bridges fill
+    // even-odd exactly as they do apart, wherever the bridges run
+    const packed = [];
+    for (const p of polygons.sort((x, y) => y.areaPx - x.areaPx || x.ring[0][0] - y.ring[0][0] || x.ring[0][1] - y.ring[0][1])) {
+      const last = packed[packed.length - 1];
+      if (last && last.points + p.ring.length + 2 <= IMPORT.annotationMaxPoints) { last.rings.push(p.ring); last.points += p.ring.length + 2; last.areaPx += p.areaPx; }
+      else packed.push({ rings: [p.ring], points: p.ring.length + 1, areaPx: p.areaPx }); // the first ring closes back to its anchor once a second joins
     }
+    for (const p of packed) out.push({ kind, polygon: bridgeRings(p.rings).map(q => ({ x: G.round5(clamp01(q[0])), y: G.round5(clamp01(q[1])) })), areaPx: p.areaPx });
+    for (const x of f) failed.push({ kind, ...x });
   }
-  out.sort((p, q) => (p.kind === q.kind ? q.areaPx - p.areaPx : p.kind === 'sea' ? -1 : 1));
+  const rank = { sea: 0, land: 1, lake: 2 };
+  out.sort((p, q) => rank[p.kind] - rank[q.kind] || q.areaPx - p.areaPx);
   const dropped = out.slice(IMPORT.annotationMaxPolygons);
-  return { annotations: out.slice(0, IMPORT.annotationMaxPolygons).map(({ kind, polygon }) => ({ kind, polygon })), dropped: [...dropped.map(d => ({ kind: d.kind, areaPx: Math.round(d.areaPx), reason: 'over the polygon limit' })), ...failed.map(d => ({ ...d, reason: 'could not be traced into a valid polygon' }))] };
+  return { annotations: out.slice(0, IMPORT.annotationMaxPolygons).map(({ kind, polygon }) => ({ kind, polygon })), forced, dropped: [...dropped.map(d => ({ kind: d.kind, areaPx: Math.round(d.areaPx), reason: 'over the polygon limit' })), ...failed.map(d => ({ ...d, reason: 'could not be traced into a valid polygon' }))] };
 }
 
 // ---------------------------------------------------------------------------------------------------- the model
@@ -471,7 +584,8 @@ async function main(argv) {
   const model = readJson(PATHS.model);
   const { geography, names, held, issues } = convertModel(model, { coast: readJson(PATHS.coast), roster: readJson(PATHS.roster), design: readJson(PATHS.design), nameTable: readJson(PATHS.names), surface: readJson(PATHS.surface) });
   const sheets = sheetsDocument(model);
-  const { annotations, dropped } = annotationsFrom(readJson(PATHS.overrides));
+  const fixes = readJson(PATHS.fixes);
+  const { annotations, dropped } = annotationsFrom(readJson(PATHS.overrides), model, { landFilter: fixes ? surfaceFixesMask(fixes) : null });
   const palette = readJson(PATHS.palette)?.palette ?? null;
   const hashes = {
     'aoaz.geography.json': write(path.join(out, 'aoaz.geography.json'), geography),

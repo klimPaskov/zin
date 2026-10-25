@@ -75,7 +75,7 @@ Twelve sheets, each with `box` (the clip box, pencil frame cut off), `clip` (one
 
 **Palette.** The schema has no per-sheet palette (ADR 0067 section 9: one `reference.palette` for every sheet). `aoaz.palette.json` holds 50 measured colours: per sheet the median colour of its drawn water and of its drawn land per terrain class. Measured on the warped drawing, nearest-colour matching against it agrees with the model **worse** than the import's own illustrated reading (land IoU 0.8942 against 0.9105 with the annotations, 0.6898 against 0.7005 without). The main call therefore carries no palette; `preview_call_palette.json` is the same call with it, for the comparison in the real preview.
 
-**Annotations.** Until the override file (`world-overrides`, step 3) is released, the surface overrides of the repair (open-sea bands, undrawn land, moved lands, the Nether and the approved-layout patches) go into `reference.annotations`: 70 polygons, 2,782 points, sea first, then land. Painted back on the 4-pixel grid they reproduce the overrides except 11 cells (two 64-pixel areas could not be traced into a valid polygon).
+**Annotations.** Until the override file (`world-overrides`, step 3) is released, the forced surface goes into `reference.annotations`: the surface overrides of the repair (open-sea bands, undrawn land, moved lands, the Nether and the approved-layout patches) and, since 25 October, the model's frame around the drawn coast (section 12). Now 14 polygons and 10,931 points (sea, then land, then lakes); the first version had 70 polygons and 2,782 points.
 
 ## 4. Registration (Aenor Isle, the Ember Lands, the West Lands)
 
@@ -206,7 +206,7 @@ A closing of the drawing's import surface with discs of 48, 96 and 144 px finds 
 
 ## 8. The prepared preview call (not run)
 
-`tools/content/data/geography/import/preview_call.json` (and `preview_call_palette.json`). Shape, with the 70 annotation polygons inlined from `aoaz.annotations.json`:
+`tools/content/data/geography/import/preview_call.json` (and `preview_call_palette.json`). Shape, with the annotation polygons (14 since section 12) inlined from `aoaz.annotations.json`:
 
 ```json
 {
@@ -223,7 +223,7 @@ A closing of the drawing's import surface with discs of 48, 96 and 144 px finds 
       "sheetsPath": "tools/content/data/geography/import/aoaz.sheets.json",
       "mode": "illustrated",
       "agreement": { "minLandIou": 0.85, "warnLandIou": 0.95 },
-      "annotations": ["... 70 polygons from aoaz.annotations.json ..."]
+      "annotations": ["... the polygons of aoaz.annotations.json ..."]
     },
     "geographyPath": "tools/content/data/geography/import/aoaz.geography.json"
   }]
@@ -234,7 +234,7 @@ Run it with release 4.4.0 installed, as `hoi4_map_rewrite` with the arguments of
 
 ## 9. Known issues and limits
 
-- `aoaz.json` is stale against the migrated repair code: it still has `ember_lands` identifiers and the names "Kusmeel" and "Black Islands of the Kusmeel", so `repair_model.mjs` run from it reports `NETHER_EMBER_LANDS_MISSING` and seven unresolved renames, and the full-model test (`ZIN_GEO_FULL=1 node --test tools/content/geography/repair_model.test.mjs`) fails at `HEAD` already. The canon migration (`tools/migrations/canon_renames.mjs`, the lead's item) should rewrite `aoaz.json`; until then rebuild from the repaired model as in section 1.
+- `aoaz.json` is stale against the migrated repair code: it still has the Ember Lands' identifiers and the Kusmeel's names from before the canon text migration (its former region id, and the Ocean name of the sea and its Black Islands), so `repair_model.mjs` run from it reports `NETHER_EMBER_LANDS_MISSING` and seven unresolved renames, and the full-model test (`ZIN_GEO_FULL=1 node --test tools/content/geography/repair_model.test.mjs`) fails at `HEAD` already. The canon migration (`tools/migrations/canon_renames.mjs`, the lead's item) should rewrite `aoaz.json`; until then rebuild from the repaired model as in section 1.
 - `docs/specs/01_map/05_geography_model.md` section 11.1 does not yet describe the coast-margin clips, the roster capitals, K46 or the converter; it is outside my paths.
 - The tool's geography preview does not plan a map, so it will not show adjacencies, and it will not test the straits as crossings.
 - `import_measures.mjs` mirrors the import's warp and classifier for measurement only; the tool's text masking, water cleaning and component cleaning are not simulated, so its numbers are estimates.
@@ -246,7 +246,7 @@ Run it with release 4.4.0 installed, as `hoi4_map_rewrite` with the arguments of
 content/geography/repair_model.test.mjs content/geography/geography_steps.test.mjs content/geography/convert_for_import.test.mjs content/geography/coast_features.test.mjs
 ```
 
-All 66 tests of the four files pass (65 pass, 1 skipped: the full-model test, section 9). The converter suite compares a fresh conversion with the tracked outputs byte for byte, and validates them against the tool's schemas when the tool repository is present.
+All 72 tests of `tools/content/geography/*.test.mjs` pass on 25 October (71 pass, 1 skipped: the full-model test, section 9); the tests are registered (`614301e2`). The converter suite compares a fresh conversion with the tracked outputs byte for byte, and validates them against the tool's schemas when the tool repository is present.
 
 ## 9. First preview on the released 4.4.0 (lead, 25 October 2026)
 
@@ -255,3 +255,46 @@ The prepared call (`import/preview_call.json`) ran on the released server 4.4.0 
 The first run reported 13 model features on the wrong surface of the drawing (sites and a volcano in drawn water, river mouths on drawn land, sources in drawn water). `import_measures.mjs` now measures every point feature against the surface the import reads (the illustrated heuristic with the annotations) and the model's own land, and writes `import/feature_surface.json` (numbers only): each feature on the wrong surface, or within `SURFACE.marginPx` (3) of the coast, moves to the nearest point of the right surface of both readings within `SURFACE.reachPx` (96). `convert_for_import.mjs` applies it (sites, volcanoes, river sources and mouths). 58 points moved, median 6 px, the largest the Kulolo's mouth (119 px) and the Good Volcanoes (56 px); two mouths stay unresolved because they end in the model's lakes (the Great River into the Great Lake) or are already water in both readings (the Grey). The preview after the change reports no feature warnings; the only warning left is the land agreement below 0.95.
 
 Still needed before a write: ZR-8 (countries owned by the mod, exact ownership from seeds, retirement of the old world's country files), the override file and stable ids (ADR 0067 steps 3 to 5), and ZR-6 (strait crossings).
+
+## 11. The land the import reads follows the model (25 October 2026)
+
+The realm-seed agent found that the land the import read split and joined lands the model keeps apart or together (`realm_seeds_handoff.md`, "Import observations"): the West and Cold Lands did not touch at their neck, the Magical Lands sheet's seam (a strip of pencil line between two strips of water near x 3830) cut the rift coast off the Central Mainland, Mirolon's eastern lowland and the Nether's tip joined the Ember Lands and the Nether to the East and South Lands, and lettering in the sea read as land. Fixed in the annotations, without editing `tools/politics/data/realm_seeds.json`.
+
+**Rule (the model's frame around the drawn coast).** On the 4-pixel grid (`convert_for_import.mjs` `coastBandForcing`, `forcedSurface`):
+
+- land farther than `IMPORT.coastBandPx` (6) from the model's sea is the model's land, and land narrower than `IMPORT.coastNarrowPx` (24) is land throughout (necks, spits, small islands);
+- sea farther than 6 px from the model's land is sea, and water narrower than 24 px is sea throughout: straits stay water and are crossings, never land bridges (K46);
+- the model's lakes are lakes (an inland water body the drawing leaves unread would otherwise count as land);
+- the drawing decides only within 6 px of a coast where both the land and the water there are at least 24 px wide: it keeps the drawn coastline's detail, nothing more.
+
+Land annotations replace the drawing's terrain class with plain land, so land is painted only where the drawing needs it: `import_measures.mjs` (`surfaceFixes`) writes `import/surface_fixes.json`, the 8-pixel blocks of forced land that the import's reading has as water (under half of a cell's pixels land), grown by one block so the painted land overlaps the drawn land at sheet edges (a sheet's clip edge otherwise leaves a one-pixel seam of open sea, which split Vindael in a trial run). 25,510 blocks. The blocks are coarse on purpose: they say where the drawing needs land, not the outline of what it draws. Without the measure (no private drawing), the converter paints only the overrides' own land, as before. The annotations are traced per area on a local 2-pixel grid (a one-cell neck is traceable) and packed into as few rings as the 1,000-point limit allows (rings joined by zero-width bridges fill even-odd exactly as apart). Result: 14 polygons, 10,931 points (the tool refuses polygon work above 50 million edge-rows, about 19,500 points at 2,560 rows).
+
+**Choice of the band.** Offline land IoU (heuristic reading plus annotations, every forced land cell painted, trial runs) for band / narrow width in px: 4/24 0.969, 6/24 0.965, 8/24 0.961, 8/32 0.962, 8/16 0.960, 12/24 0.955. 8 px also left a 1,100-px piece of the Western Mainland detached; 6 px is the widest band whose only splits are Benan and a 700-px tip of the Lands of the Sun (below), with no two lands joined. 4 px would match the model more closely but leaves the drawing almost no coast of its own.
+
+**Measured (preview through `mcp_call.mjs` on the released 4.4.0, server `runtime-v440`):**
+
+| | Before (24 October annotations) | After |
+| --- | --- | --- |
+| Land IoU (tool) | 0.8979 (warning) | 0.9574 (info: above the 0.95 warning) |
+| Land only in the drawing | 246,715 px | 112,849 px |
+| Land only in the model | 231,997 px | 81,388 px |
+| Lake pixels | 61,888 | 99,973 |
+| Annotations | 70 polygons, 2,782 points | 14 polygons, 10,931 points |
+| Warnings | `MAP_IMPORT_SOURCES_AGREEMENT` | none (`MAP_GEOGRAPHY_PREVIEW_READY`, no blockers, no feature warnings) |
+| Offline IoU (`drawing_measures.json`) | 0.9105 | 0.9765 |
+
+Terrain classes the import reads (px): desert 560,754 to 534,560, forest 447,063 to 369,852, hills 94,175 to 90,866, mountain 354,336 to 313,328, snow 1,217,633 to 1,137,149, volcano 43,473 to 41,492, plains 1,739,915 to 1,986,845. A first version that painted every forced land cell had 4.4 million px of plains: the drawn terrain was lost, hence the fixes.
+
+Per zone (offline, before and after): Aenor Isle 0.903 to 0.918, Cold Lands 0.921 to 0.985, Dark Lands 0.845 to 0.907, East Lands 0.913 to 0.985, Ember Lands 0.858 to 0.926, Islands of the South 0.908 to 0.901, Lands of the Sun 0.888 to 0.946, Magical Lands 0.863 to 0.983, Middle Lands 0.895 to 0.981, the Nether 0.956 to 0.968, North Lands 0.837 to 0.942, South Lands 0.971 to 0.992, Pupor Isles 0.831 to 0.870, West Lands 0.869 to 0.947, Vindael 0.949 to 0.961, Zol's Mistake 0.963 to 0.979.
+
+**Connectivity on the tool's own class map** (`map-import-classes.png`, read privately, land components against the model's lands): before, the Ember Isle, Fornia and the Nether were one land, Adel and Sterrotumai were one, and the Western, Eastern and Central Mainlands and Vindael were each split (the Western Mainland in two large parts at the neck). After: no two model lands are joined; the West and Cold Lands are one land, the rift coast is part of the Central Mainland, and the Ember Lands, the Nether and the East and South Lands are apart (the Ember Narrows and the Nether Sound are water). Remaining:
+
+- Benan reads as two parts: the model's island narrows below one 4-pixel cell where the drawing has a channel (the drawn passage between Pollos and Benan, which the model made one island). It needs the owner's or the model's call, not an annotation.
+- The Lands of the Sun keep a detached piece of about 700 px at their tip.
+- What keeps the IoU under 1 is the drawn coastline inside the 6-px band, mostly at small islands (the Pupor Isles 0.870, the Islands of the South 0.901, Aenor Isle 0.918), plus the import's own cleanup, which `import_measures.mjs` does not simulate. These are true differences of the drawn coast, not layout changes; narrowing the band to 4 px would raise the figure at the cost of the drawing's coast.
+
+**Realm-seed barriers.** The `cold_neck` barrier now separates land that the import reads as joined (the realm-seed handoff expected this: "harmless if the import later closes the neck"); `zilin_marches` and `ember_isles` still bound lands the import now keeps apart. No barrier was edited.
+
+**Validation.** Geography model, reference sheets and both prepared calls are valid against the 4.4.0 schemas; the released resolver (`runtime-v440` `dist`, which `validate_import.mjs` now prefers, since the tool checkout has no `node_modules`) reports no diagnostics with `edge.mode: "sea-band"`.
+
+**Pipeline order** (from the repository root): `node tools/content/geography/convert_for_import.mjs`, `node tools/content/geography/import_measures.mjs` (writes `surface_fixes.json`, `feature_surface.json`, the palette and the measures), `node tools/content/geography/convert_for_import.mjs`, `node tools/content/geography/validate_import.mjs`, then the preview with `mcp_call.mjs`.
