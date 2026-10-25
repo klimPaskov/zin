@@ -957,6 +957,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-01. The War of the Last Crowns never begins
 
+- **Status:** Fixed 25 October 2026 (story framework, commit 794e1fd9). tools/content/modules/world_tension.mjs sets zin_war_of_last_crowns in zin_world_start_last_crowns and sends zin_world.20: HISTORICAL on zin_world_date_last_crowns, PLAUSIBLE on the meter at 65 after 1754.3.1, a dark war or 1756.3.1, FREE on the first two; outside HISTORICAL the first front sets it piecemeal (zin_war_piecemeal, B18 D3). Tests tools/content/alternate_history.test.mjs; MCP state flow in docs/plans/story/framework_handoff.md.
+
 - **Kind:** flag never set. **Beats:** B18, B19, B20, B21, B25, B29.
 
 - **Where:** tools/content/modules/events_world.mjs (lastwar runner, line 253); tools/content/modules/mech_lerendor.mjs (lines 396, 408); tools/content/modules/mech_eindil_scripts.mjs (zin_eindil_ready_9, line 74); tools/content/lib/mech_afrit_script.mjs (flight fallback); tools/content/modules/mech_crossing.mjs (line 320); staged:events/*, common/* (82 readers)
@@ -971,6 +973,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-02. No checkpoint ever resolves
 
+- **Status:** Fixed 25 October 2026 (story framework, commit 794e1fd9). tools/content/modules/historical_path.mjs resolves CP01 to CP26 (data/path_checkpoints.json, generated from this file) in zin_path_tick with the watchdog (zin_path_stalled), the measure (zin_path_divergence, zin_path_departure, zin_path_band) and the start check zin_path.1. Tests tools/content/alternate_history.test.mjs.
+
 - **Kind:** variable never written. **Beats:** all.
 
 - **Where:** tools/content/modules/events_crown.mjs (lines 380 to 396, Chronicle); tools/content/modules/forces.mjs (lines 525 to 527, zin_ai_era_peace, zin_ai_era_stirring); tools/content/lib/crown_script.mjs (lines 237 to 266); staged:common/scripted_triggers/zin_events_world.txt
@@ -984,6 +988,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** historical path
 
 #### SL-03. No ending can be reached
+
+- **Status:** Fixed 25 October 2026 (story framework, commit 794e1fd9). zin_world_reach_ending, zin_world_check_endings and the dated triggers zin_world_date_children, _judgement, _judgement_deferred and _unfinished are written; one ending per game, the Ashen Throne reveals Afrit first, the epilogue follows. Tests tools/content/alternate_history.test.mjs.
 
 - **Kind:** effect and trigger undefined. **Beats:** B42, B43, B44, B45.
 
@@ -1225,6 +1231,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-25. A conquered Golden King never dies and still endures
 
+- **Status (world systems):** World side fixed 25 October 2026 (story framework, commit 794e1fd9). the Golden Court Endures (zin_world_golden_court_holds) needs an Aenor realm controlling Parim with the King alive or the Regency of Gold, and never holds after zin_golden_king_exiled; CP05 resolves skipped (B07 D6) when the King is exiled or no Aenor realm is left; the other outcomes and the Age Unfinished stay open.
+
 - **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). on_capitulation and on_annex of the original Aenor with the King alive call zin_aenor_exile_king (zin_golden_king_exiled, news zin_aenor.470, proposed); the clock sets zin_golden_king_natural when the King dies with no Council left; the Chronicle's line 05 and the Golden Court outcome read both. Open: zin_realm.50 (the realm-life module) and the endings' outcome 4 reader (story framework). Test tools/content/events_mech.test.mjs.
 
 - **Kind:** actor removed without a successor. **Beats:** B02, B07, B45.
@@ -1240,6 +1248,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Aenor; world systems
 
 #### SL-28. Sixty-one fired events are undefined
+
+- **Status (wiring check):** Check in place 25 October 2026 (story framework, commit 794e1fd9). tools/content/checks/story_wiring.mjs reports every fired id that no event file defines (a pending stand-in does not count) per owner in docs/design/validation/story_wiring_report.json; it fails the build only for the owners data/story_wiring.json enforces.
 
 - **Status:** fixed for zin_afrit and zin_aenor on 25 October 2026 (Afrit, Aenor and Eindil pass). events_mech.mjs writes zin_afrit.10, .11, .14 to .17, .20 to .23, .31 to .34, .43, .45, .51 to .53, .60 to .62, .70 to .77 and zin_aenor.470; no zin_afrit, zin_aenor or zin_eindil event is fired and undefined in the staged tree. The other namespaces are the war-side pass's. Test tools/content/events_mech.test.mjs.
 
@@ -1291,6 +1301,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-19. A Western Crown in Parim can never hold
 
+- **Status (world systems):** World side 25 October 2026 (story framework, commit 794e1fd9). outcome 5 reads zin_west_holds_parim = yes, with a fallback on Aenor's capital state while zin_is_site_parim is a pending stand-in. The endings' scripted localisation (events_crown) still tests zin_west_holds_parim as a flag (wiring check: trigger_as_flag).
+
 - **Status:** fixed in the Western Crossing slice on 25 October 2026: the scripted trigger `zin_west_holds_parim`. Still open: the endings' reader must test the trigger instead of the global flag (story framework).
 
 - **Kind:** flag never set. **Beats:** B27, B45.
@@ -1323,6 +1335,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-23. Story roles are fixed to tags
 
+- **Status:** Fixed in the path module 25 October 2026 (story framework, commit 794e1fd9). the role registry R01 to R17 (zin_path_role_<key>, event targets zin_role_<key>, vacancy flags, A Duty Passes for R01, R03, R06 and R07). Open: the owners still use their own pickers; switching them to event_target:zin_role_<key> is theirs.
+
 - **Kind:** role holder hard-coded. **Beats:** B05, B19, B20, B21, B22, B26, B28.
 
 - **Where:** tools/content/data/mech_afrit.json, mech_journey_west.json, mech_powers_*.json (country names resolved to fixed tags)
@@ -1350,6 +1364,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** politics step; Aenor
 
 #### SL-26. The crown can be withheld for ever
+
+- **Status:** Fixed on the world side 25 October 2026 (story framework, commit 794e1fd9). the judgement on 1 Glernaen 4A 1762 ends the age, deferred once to 1764 while a canon ending is in reach (zin_world_canon_in_reach, zin_world_judgement_deferred); the Age Unfinished in 1770. Not checked: whether zin_eindil.132 stops retrying after an ending (the journey's code).
 
 - **Kind:** wait without deadline. **Beats:** B42.
 
@@ -1381,6 +1397,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-29. No build check for story wiring
 
+- **Status:** Fixed 25 October 2026 (story framework, commit 794e1fd9). tools/content/checks/story_wiring.mjs runs on the finished tree in every build: read-never-set flags (allowance list with owners), triggers tested as flags, flag scope, per-power rules outside their wrappers, the beats' latest dates and successors.
+
 - **Kind:** no wiring check. **Beats:** all.
 
 - **Where:** tools/content/checks/ (no story wiring check)
@@ -1394,6 +1412,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** builder checks
 
 #### SL-30. Per-power rules bypass their wrappers
+
+- **Status (wiring check):** Check in place 25 October 2026 (story framework, commit 794e1fd9). the wrappers are the generated zin_rules_ai_branch_<power>_<option> of modules/rules.mjs; the wiring check reports each direct has_game_rule test of a per-power rule outside zin_rules.txt (rule_unwrapped).
 
 - **Status:** fixed for the Aenor succession 25 October 2026 (Afrit, Aenor and Eindil pass): zin_aenor_pick_ai_camp reads zin_rules_ai_branch_aenor_golden_court, _free_dominions and zin_rules_ai_random_aenor. Test tools/content/events_mech.test.mjs.
 
