@@ -1,0 +1,197 @@
+{
+  "source": "Layouts of the doctrine art sheets (art store raw/doctrines/<sheet>.png, generated with gpt-6-luna). Numbers and ids only; the builder reads this file and the accepted sheets, never the art working folder's job files. Medallion sheets are cut by detection (lib/sheets.mjs findRegionsAdaptive) and keep their listed order; grid sheets are cut into equal cells in the listed order.",
+  "complete": true,
+  "sheets": [
+    {
+      "sheet": "doctrine-medium-01",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_gd_shield_wall",
+        "zin_gd_horse_and_lance",
+        "zin_gd_great_muster",
+        "zin_gd_old_ways",
+        "zin_gd_sun_guard",
+        "zin_gd_warband",
+        "zin_gd_strength_of_the_wild",
+        "zin_gd_nether_fury",
+        "zin_gd_grave_muster",
+        "zin_gd_deathless_tide",
+        "zin_gd_command_of_the_sea",
+        "zin_gd_oar_and_ram"
+      ]
+    },
+    {
+      "sheet": "doctrine-medium-02",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_gd_corsair_fleets",
+        "zin_gd_wings_of_the_mountain",
+        "zin_gd_griffin_eyries",
+        "zin_sub_shield_and_spear",
+        "zin_sub_archer_screens",
+        "zin_sub_levy_drill",
+        "zin_sub_skirmish_lines",
+        "zin_sub_warband_rush",
+        "zin_sub_forest_ways",
+        "zin_sub_grave_ranks",
+        "zin_sub_siege_trains",
+        "zin_sub_field_engines"
+      ]
+    },
+    {
+      "sheet": "doctrine-medium-03",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_sub_bolt_walls",
+        "zin_sub_sappers_craft",
+        "zin_sub_heavy_charge",
+        "zin_sub_raiding_riders",
+        "zin_sub_horse_archery",
+        "zin_sub_kin_handling",
+        "zin_sub_war_councils",
+        "zin_sub_hold_the_line",
+        "zin_sub_long_marches",
+        "zin_sub_ambush_and_raid",
+        "zin_sub_dread",
+        "zin_sub_ram_and_grapple"
+      ]
+    },
+    {
+      "sheet": "doctrine-medium-04",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_sub_coastal_watch",
+        "zin_sub_oar_squadrons",
+        "zin_sub_line_of_battle",
+        "zin_sub_ballista_decks",
+        "zin_sub_sea_castles",
+        "zin_sub_night_raiders",
+        "zin_sub_corsair_packs",
+        "zin_sub_dread_ships",
+        "zin_sub_cog_escorts",
+        "zin_sub_harbour_works",
+        "zin_sub_ocean_pilots",
+        "zin_sub_fire_from_above"
+      ]
+    },
+    {
+      "sheet": "doctrine-medium-05",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 1,
+      "keys": [
+        "zin_sub_storm_riders",
+        "zin_sub_lance_wings",
+        "zin_sub_eyrie_scouts",
+        "zin_sub_hidden_special_forces"
+      ]
+    },
+    {
+      "sheet": "doctrine-track-01",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_track_foot_icon",
+        "zin_track_siege_icon",
+        "zin_track_mounted_icon",
+        "zin_track_command_icon",
+        "zin_track_galleys_icon",
+        "zin_track_warships_icon",
+        "zin_track_raiders_icon",
+        "zin_track_sea_lanes_icon",
+        "zin_track_dragons_icon",
+        "zin_track_griffins_icon",
+        "zin_track_hidden_special_icon",
+        "land_ledger"
+      ]
+    },
+    {
+      "sheet": "doctrine-track-02",
+      "method": "medallion",
+      "cols": 3,
+      "rows": 1,
+      "keys": [
+        "naval_ledger",
+        "air_ledger",
+        "special_forces_ledger"
+      ]
+    },
+    {
+      "sheet": "doctrine-bg-01",
+      "method": "grid",
+      "cols": 3,
+      "rows": 1,
+      "keys": [
+        "zin_track_foot_bg",
+        "zin_track_siege_bg",
+        "zin_track_mounted_bg"
+      ]
+    },
+    {
+      "sheet": "doctrine-bg-02",
+      "method": "grid",
+      "cols": 3,
+      "rows": 1,
+      "keys": [
+        "zin_track_command_bg",
+        "zin_track_galleys_bg",
+        "zin_track_warships_bg"
+      ]
+    },
+    {
+      "sheet": "doctrine-bg-03",
+      "method": "grid",
+      "cols": 3,
+      "rows": 1,
+      "keys": [
+        "zin_track_raiders_bg",
+        "zin_track_sea_lanes_bg",
+        "zin_track_dragons_bg"
+      ]
+    },
+    {
+      "sheet": "doctrine-bg-04",
+      "method": "grid",
+      "cols": 2,
+      "rows": 1,
+      "keys": [
+        "zin_track_griffins_bg",
+        "zin_track_hidden_special_bg"
+      ]
+    },
+    {
+      "sheet": "doctrine-tab-01",
+      "method": "grid",
+      "cols": 1,
+      "rows": 4,
+      "position": "left",
+      "keys": [
+        "land_tab",
+        "naval_tab",
+        "air_tab",
+        "special_forces_tab"
+      ]
+    },
+    {
+      "sheet": "doctrine-decor-01",
+      "method": "grid",
+      "cols": 1,
+      "rows": 4,
+      "keys": [
+        "decor_land",
+        "decor_naval",
+        "decor_air",
+        "decor_special_forces"
+      ]
+    }
+  ]
+}

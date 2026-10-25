@@ -23,6 +23,7 @@ import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { layoutFolders, bandY, ruleCost, clauseAdmits, whoAdmits, whoCovered, SLOT, ORIGIN } from '../lib/tech_layout.mjs';
 import { defaultPeople, PEOPLES } from './peoples.mjs';
 import { techTreeGui } from '../lib/tech_tree_gui.mjs';
+import { buildDoctrineArt, doctrineTexture, loadDoctrineArtCells, assertDoctrineArtComplete } from './doctrine_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const dataFile = name => path.join(here, '../data', name);
@@ -886,12 +887,17 @@ export async function buildTechnologies(staged, ctx) {
   // root, so no technology is without its grid box ("Found no grid box for tech").
   const installedGui = await readFile(`${GAME}/interface/countrytechtreeview.gui`, 'latin1');
   staged.add('interface/countrytechtreeview.gui', Buffer.from(techTreeGui(installedGui, { folders: Object.keys(FOLDER_FILES).map(key => ({ key })), layout: model.layout.folders, tabSprite: f => `GFX_${f}_tab`, blankIcon: 'GFX_zin_technology_blank' }), 'latin1'));
+  // Doctrine art (modules/doctrine_art.mjs): an accepted sheet ships its own DDS per sprite; any other sprite keeps the frame.
+  const doctrineCells = await loadDoctrineArtCells();
+  const doctrineShipped = await buildDoctrineArt(staged, { warn: msg => process.stderr.write(`doctrine art: ${msg}\n`) });
+  const doctrineTex = key => doctrineShipped.has(key) ? doctrineTexture(key) : FALLBACK_TEXTURE;
   const dEntries = [];
   const d = model.doctrines;
-  for (const g of d.grand) dEntries.push([`GFX_${g.key}_medium`, textureFor('gfx/interface/doctrines/zin', g.key)]);
-  for (const s of [...d.subs, d.hidden]) dEntries.push([`GFX_${s.key}_medium`, textureFor('gfx/interface/doctrines/zin', s.key)]);
-  for (const t of d.tracks) dEntries.push([`GFX_${t.key}_bg`, textureFor('gfx/interface/doctrines/zin', `${t.key}_bg`)], [`GFX_${t.key}_icon`, textureFor('gfx/interface/doctrines/zin', `${t.key}_icon`)]);
-  for (const f of d.folders) dEntries.push([`GFX_zin_doctrine_${f.key}_ledger`, textureFor('gfx/interface/doctrines/zin', `${f.key}_ledger`)], [`GFX_zin_doctrine_${f.key}_tab`, textureFor('gfx/interface/doctrines/zin', `${f.key}_tab`)], [`GFX_zin_doctrine_decor_${f.key}`, textureFor('gfx/interface/doctrines/zin', `decor_${f.key}`)]);
+  for (const g of d.grand) dEntries.push([`GFX_${g.key}_medium`, doctrineTex(g.key)]);
+  for (const s of [...d.subs, d.hidden]) dEntries.push([`GFX_${s.key}_medium`, doctrineTex(s.key)]);
+  for (const t of d.tracks) dEntries.push([`GFX_${t.key}_bg`, doctrineTex(`${t.key}_bg`)], [`GFX_${t.key}_icon`, doctrineTex(`${t.key}_icon`)]);
+  for (const f of d.folders) dEntries.push([`GFX_zin_doctrine_${f.key}_ledger`, doctrineTex(`${f.key}_ledger`)], [`GFX_zin_doctrine_${f.key}_tab`, doctrineTex(`${f.key}_tab`)], [`GFX_zin_doctrine_decor_${f.key}`, doctrineTex(`decor_${f.key}`)]);
+  assertDoctrineArtComplete(doctrineCells, doctrineShipped);
   staged.text('interface/zin_doctrines.gfx', spriteFile('Doctrine icons, track art and folder tabs.', dEntries.sort(([a], [b]) => a.localeCompare(b, 'en'))));
   const loc = await localisation(staged, model);
   // published data for the folder windows (interface step) and the politics step
