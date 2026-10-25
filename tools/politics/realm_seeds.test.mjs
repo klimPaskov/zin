@@ -9,7 +9,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { validateCountries, validateSubjects, RULES } from './countries_validator.mjs';
 import { ringsOverlap, pointInRing, outlines, FRAME } from './geometry.mjs';
-import { buildRealmSeeds, landPredicate, createWorldCall, schemaCheck, formatSeeds, OUT, PLACE, WEIGHT, DEFAULT_TOOL } from './realm_seeds.mjs';
+import { buildRealmSeeds, landPredicate, createWorldCall, schemaCheck, formatSeeds, OUT, PLACE, WEIGHT, DEFAULT_TOOL, RETIRED_REALMS } from './realm_seeds.mjs';
 import { loadWorld, PATHS, ZIN } from './world_inputs.mjs';
 
 const pt = (x, y) => ({ x, y });
@@ -124,9 +124,10 @@ const drawingPresent = existsSync(path.join(ZIN, PATHS.drawing));
 
 test('the committed realm seeds cover the roster once, in the schema\'s shape, with weights in range', () => {
   const c = committed.countries;
+  const live = roster.realms.filter(r => !RETIRED_REALMS.has(r.tag));
   assert.deepEqual(Object.keys(c).sort(), ['islands', 'realms', 'source', 'unowned']);
-  assert.equal(c.realms.length, roster.realms.length);
-  assert.deepEqual(c.realms.map(r => r.tag), roster.realms.map(r => r.tag));
+  assert.equal(c.realms.length, live.length);
+  assert.deepEqual(c.realms.map(r => r.tag), live.map(r => r.tag));
   for (const r of c.realms) {
     assert.ok(r.weight >= WEIGHT.min && r.weight <= WEIGHT.max, `${r.tag} weight`);
     assert.equal(r.overlord, undefined);

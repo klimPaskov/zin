@@ -352,6 +352,10 @@ function nearestInside(p, geoms, px = 3) {
 }
 export function correctModel(m, log) {
   correctDarkLands(m, log);
+  correctAenarSource(m, log);
+  correctAndosCourse(m, log);
+  correctDarknessWestEnd(m, log);
+  riversOffCrests(m, log);
   const isle = m.lands.find(l => l.id === 'land_aenor_isle');
   const region = m.regions.find(r => r.id === 'region_aenor_isle');
   if (isle && region) {
@@ -387,6 +391,120 @@ export function correctModel(m, log) {
         log.push({ rule: 'corrections', id: tinta.id, action: 'the Tinta Hills moved from the mainland onto the east end of Aenor Isle' });
       }
     }
+  }
+}
+
+/**
+ * The River Aenar rises in the Lunhrim foothills and runs down the west flank of the Gigantic Mountains to the Great
+ * Lake. Its drawn first leg starts east of the range's northern tip and passes over it, so the relief synthesis finds a
+ * divide the water would have to climb (map import of 25 October 2026: MAP_RIVER_UNREACHABLE_MOUTH, climb 63). Leading
+ * points are dropped while the first leg runs over the crest (within a quarter of the range's half-width of its spine),
+ * so the river rises on the west flank and never crosses the range.
+ */
+const CREST_SHARE = 0.25;
+export function correctAenarSource(m, log) {
+  const river = m.rivers.find(r => r.id === 'river_aenar'), range = m.ranges.find(r => r.id === 'range_gigantic');
+  if (!river || !range || river.geometry.type !== 'LineString') return;
+  const spine = range.geometry.coordinates, crest = (range.halfWidth ?? 0.0072) * CREST_SHARE;
+  const crosses = (a, b) => Array.from({ length: 21 }, (_, k) => [a[0] + ((b[0] - a[0]) * k) / 20, a[1] + ((b[1] - a[1]) * k) / 20]).some(p => distanceToPath(p[0], p[1], spine) < crest);
+  const c = river.geometry.coordinates;
+  let n = 0;
+  while (c.length - n > 3 && crosses(c[n], c[n + 1])) n++;
+  if (!n) return;
+  river.geometry = { type: 'LineString', coordinates: c.slice(n) };
+  river.correction = 'Rises on the west flank of the Gigantic Mountains: the drawn first leg over the range\'s northern tip is dropped.';
+  log.push({ rule: 'corrections', id: river.id, action: `the source moved to the west flank of the Gigantic Mountains (${n} leading point(s) dropped)` });
+}
+
+/**
+ * The Andos Water (a proposed river, the old border of Herrodon and Andos Enda) was drawn over the eastern tip of the
+ * Lustras Hills, an established range, so the relief synthesis finds a divide (map import of 25 October 2026:
+ * MAP_RIVER_UNREACHABLE_MOUTH, climb 24). Its course passes the tip on the south side instead, at twice the range's
+ * half-width from the spine's end, and the Boundary Groves stand on the river there.
+ */
+const ANDOS_CLEARANCE = 2;
+export function correctAndosCourse(m, log) {
+  const river = m.rivers.find(r => r.id === 'river_andos'), range = m.ranges.find(r => r.id === 'range_lustras');
+  const groves = m.passes.find(p => p.id === 'pass_boundary_groves');
+  if (!river || !range || river.correction || river.geometry.type !== 'LineString') return;
+  const spine = range.geometry.coordinates, tip = spine[spine.length - 1], reach = (range.halfWidth ?? 0.0048) * ANDOS_CLEARANCE;
+  const c = river.geometry.coordinates;
+  const k = c.findIndex(p => Math.hypot(p[0] - tip[0], p[1] - tip[1]) < reach);
+  if (k < 0) return;
+  const moved = pt5([tip[0], tip[1] + reach]);
+  river.geometry = { type: 'LineString', coordinates: c.map((p, i) => (i === k ? moved : p)) };
+  river.correction = 'Passes the eastern tip of the Lustras Hills on the south side instead of over it.';
+  if (groves && groves.geometry.type === 'Point') { groves.geometry = { type: 'Point', coordinates: moved }; groves.correction = 'Stands on the Andos Water south of the Lustras Hills\' tip.'; }
+  log.push({ rule: 'corrections', id: river.id, action: 'the course moved south of the Lustras Hills\' eastern tip; the Boundary Groves follow it' });
+}
+
+/**
+ * The Darkness ridge ends east of the Giant River's mouth. The owner drew the river along the ridge's south foot into
+ * the inner sea; the ridge's west end, after the Dark Lands correction and the untangling of its spine, folds back on
+ * itself right over the river's last leg (map import of 25 October 2026: MAP_RIVER_UNREACHABLE_MOUTH for the Giant River,
+ * climb 104). The ridge is cut back from the west until every point stays MOUTH_CLEARANCE half-widths from that leg.
+ */
+const MOUTH_CLEARANCE = 2;
+export function correctDarknessWestEnd(m, log) {
+  const ridge = m.ranges.find(r => r.id === 'range_the_darkness'), river = m.rivers.find(r => r.id === 'river_giant');
+  if (!ridge || !river || ridge.geometry.type !== 'LineString' || river.geometry.type !== 'LineString') return;
+  const c = river.geometry.coordinates, leg = c.slice(-2), reach = (ridge.halfWidth ?? 0.0066) * MOUTH_CLEARANCE;
+  const s = ridge.geometry.coordinates, clear = p => distanceToPath(p[0], p[1], leg) >= reach;
+  // the spine runs west to east; keep the eastern run that clears the river's last leg, cut inside its last segment
+  let k = s.length - 1;
+  while (k > 0 && clear(s[k - 1])) k--;
+  if (k === 0) return;
+  let cut = null;
+  for (let t = 1; t <= 50; t++) {
+    const f = t / 50, p = [s[k - 1][0] + (s[k][0] - s[k - 1][0]) * f, s[k - 1][1] + (s[k][1] - s[k - 1][1]) * f];
+    if (clear(p)) { cut = pt5(p); break; }
+  }
+  if (!cut) return;
+  ridge.geometry = { type: 'LineString', coordinates: [cut, ...s.slice(k)] };
+  ridge.correction = [ridge.correction, 'Its west end is cut back east of the Giant River\'s mouth, where the river runs along its south foot into the inner sea.'].filter(Boolean).join(' ');
+  log.push({ rule: 'corrections', id: ridge.id, action: `the west end cut back from the Giant River's mouth (${k} point(s) dropped)` });
+}
+
+/**
+ * Rivers keep off the crests of ranges. The relief synthesis raises a range to its peak along the spine, so a river
+ * vertex drawn on or next to a spine (the source excepted) makes the water climb a divide (map import of 25 October
+ * 2026: MAP_RIVER_UNREACHABLE_MOUTH for the Giant River, climb 100). Each such vertex moves straight away from the
+ * spine to the foot (FOOT_SHARE of the range's half-width), on the side where most of the river's other vertices lie,
+ * so a river drawn along the foot of a range stays at its foot. A range with a gorge is left to the gorge rule.
+ */
+const CREST_REACH = 0.5, FOOT_SHARE = 1.2;
+export function riversOffCrests(m, log) {
+  for (const river of m.rivers) {
+    if (river.geometry.type !== 'LineString') continue;
+    const c = river.geometry.coordinates.map(p => [...p]);
+    let moved = 0;
+    for (const range of m.ranges) {
+      if (range.gorge || range.geometry.type !== 'LineString') continue;
+      const spine = range.geometry.coordinates, hw = range.halfWidth ?? 0.005;
+      const near = p => distanceToPath(p[0], p[1], spine) < hw * CREST_REACH;
+      const seg = p => { const k = G.closestOnPath(p, spine, false).index; return [spine[k], spine[k + 1]]; };
+      const side = p => { const [a, b] = seg(p); return Math.sign((b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0])) || 1; };
+      for (let i = 1; i < c.length; i++) {
+        if (!near(c[i])) continue;
+        const q = G.closestOnPath(c[i], spine, false);
+        const votes = c.filter((p, j) => j !== i && !near(p)).reduce((s, p) => s + side(p), 0);
+        const want = votes >= 0 ? 1 : -1;
+        // the unit normal of the nearest spine segment, pointing to the wanted side
+        const [a, b] = seg(c[i]);
+        let nx = -(b[1] - a[1]), ny = b[0] - a[0];
+        const len = Math.hypot(nx, ny) || 1; nx /= len; ny /= len;
+        if (Math.sign((b[0] - a[0]) * ny - (b[1] - a[1]) * nx) !== want) { nx = -nx; ny = -ny; }
+        c[i] = pt5([q.point[0] + nx * hw * FOOT_SHARE, q.point[1] + ny * hw * FOOT_SHARE]);
+        moved++;
+      }
+    }
+    if (!moved) continue;
+    // a move that gives the checker a new finding on the river (a source left too low, say) is not made
+    const before = new Set(riverFindings(m, river).map(e => e.code)), saved = river.geometry;
+    river.geometry = { type: 'LineString', coordinates: G.dedupeLine(c, 0.5) };
+    if (riverFindings(m, river).some(e => !before.has(e.code))) { river.geometry = saved; continue; }
+    river.correction = [river.correction, `Kept off the crest of a range: ${moved} point(s) moved to its foot.`].filter(Boolean).join(' ');
+    log.push({ rule: 'corrections', id: river.id, action: `${moved} point(s) moved off a range crest to its foot` });
   }
 }
 

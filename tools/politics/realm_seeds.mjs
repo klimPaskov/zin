@@ -414,11 +414,15 @@ function insideDistance(mask, w, h) {
   return d;
 }
 
+// Realms the owner retired that the roster still lists until their content is removed: they get no land on the map.
+// Yeldenne is a town in Pertolor's land, not a country (decision K56).
+export const RETIRED_REALMS = new Set(['YEL']);
+
 // ---------------------------------------------------------------------------------------------------- the build
 export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
   const world = given ?? await loadWorld({ drawing, marginPx: PLACE.marginPx });
   const W = FRAME.width, H = FRAME.height;
-  const realms = world.roster.realms;
+  const realms = world.roster.realms.filter(r => !RETIRED_REALMS.has(r.tag));
   const byKey = new Map(realms.map(r => [r.key, r]));
   const features = featureIndex(world);
   const feature = id => { const f = features.get(id); if (!f) throw new Error(`unknown model feature ${id}`); return f; };
