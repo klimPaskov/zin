@@ -50,6 +50,10 @@ export async function buildAfrit(staged, ctx) {
   const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_afrit: ${n} is not in the roster`); return c; };
   const T = { hub: need(D.hub).tag, aenor: need(D.realm).tag, selen: need(D.selen).tag, mirolon: need(D.mirolon).tag, volgan: need('Puvulan').tag };
   T.hostGroup = W.hostGroupByCountry[D.hub];
+  T.gala = need(D.word.gala).tag;
+  // The Worshipdom's capital state: its holder releases the Worshipdom when Afrit flees east and the hub is gone (SL-11).
+  T.hubCapital = need(D.hub).capitalState ?? (await stateProvinces(need(D.hub).tag))[0]?.id;
+  if (!T.hubCapital) throw new Error('mech_afrit: the Worshipdom has no capital state');
   D.capZeroTags = D.caps.zero.map(n => need(n).tag);
   D.rivalCodes = D.rivals.map(([a, b]) => [need(a).tag, need(b).tag]);
   const loc = new Loc(), sprites = new Sprites(await loadCatalogKeys());
@@ -154,7 +158,7 @@ export async function buildAfrit(staged, ctx) {
     remove: `hidden_effect = {\nrandom_list = {\n80 = {\nrandom_list = {\n1 = { add_tech_bonus = { name = zin_afrit_thief_bonus bonus = 0.5 uses = 1 category = zin_cat_scholarship } }\n1 = { add_tech_bonus = { name = zin_afrit_thief_bonus bonus = 0.5 uses = 1 category = zin_cat_seals } }\n1 = { add_tech_bonus = { name = zin_afrit_thief_bonus bonus = 0.5 uses = 1 category = zin_cat_wards } }\n}\n${call('zin_afrit_add_veil', { value: -3 })}\n}\n20 = {\n${call('zin_afrit_add_veil', { value: -10 })}\nFROM = { add_opinion_modifier = { target = ROOT modifier = zin_afrit_opinion_thief_caught } }\n}\n}\n}\ncustom_effect_tooltip = zin_afrit_tt_chapter`, ai: 'base = 2\nmodifier = {\n factor = 0\n check_variable = { global.zin_afrit_veil < 50 }\n}' });
   dec.zin_afrit_council.push({ id: 'zin_afrit_raise_the_faithful', icon: 'banner_plain', art: 'banner_plain', title: 'Raise the Faithful in [FROM.GetName]', desc: 'The Houses answer at last as what they are. The Faithful of the land rise at the Deliverer\'s word, and the court has thirty days to decide whose servants it is.', visible: `${cmask}\nhas_country_flag = zin_worshipdom_faithful_rise\nhas_global_flag = zin_afrit_revealed`, rootTrigger: 'has_country_flag = zin_worshipdom_faithful_rise', target: 'FROM = {\ncheck_variable = { zin_footholds > 4 }\nNOT = { zin_afrit_is_hub = yes }\nNOT = { has_war_with = ROOT }\n}', available: 'has_political_power > 149', cost: 150, days: 30, cooldown: 365,
     effect: 'custom_effect_tooltip = zin_afrit_tt_faithful_rise',
-    remove: `FROM = {\nset_temp_variable = { zin_arg_value = 20 }\nset_temp_variable = { zin_arg_ideology = 3 }\nzin_politics_add_drift = yes\nif = {\nlimit = { check_variable = { party_popularity_100@communism > 39 } }\nstart_civil_war = {\nideology = communism\nsize = 0.35\n}\n}\n}`, ai: 'base = 1\nmodifier = {\n factor = 0\n NOT = { has_game_rule = { rule = zin_rule_afrit option = ASHEN } }\n}' });
+    remove: `FROM = {\nset_temp_variable = { zin_arg_value = 20 }\nset_temp_variable = { zin_arg_ideology = 3 }\nzin_politics_add_drift = yes\nif = {\nlimit = { check_variable = { party_popularity_100@communism > 39 } }\nstart_civil_war = {\nideology = communism\nsize = 0.35\n}\n}\n}`, ai: 'base = 1\nmodifier = {\n factor = 0\n NOT = { zin_rules_ai_branch_afrit_ashen = yes }\n}' });
   loc.set('zin_afrit_tt_faithful_rise', 'The Faithful rise in the land.');
   loc.set('zin_afrit_opinion_famine_stores', 'The Famine Stores Were Opened');
   loc.set('zin_afrit_opinion_thief_caught', 'A Thief Was Caught');
@@ -244,7 +248,7 @@ export async function buildAfrit(staged, ctx) {
   staged.text('events/zin_afrit_mechanic.txt', format(`${hdr(MOD, SPEC, 'Namespace zin_afrit, the mechanic\'s own events. The events of 06_events (10-17, 20-23, 30-34, 40, 43, 45, 50-53, 60-62, 70-76, 80) are written by the events slice.')}\nadd_namespace = zin_afrit\n${written.map(w => w.text).join('\n')}\n`));
 
   // ---------------------------------------------------------------------------------------------- on_actions
-  staged.text('common/on_actions/zin_afrit.txt', format(`${hdr(MOD, SPEC, 'Start; the Council\'s monthly pulse (hub only); Parim changing hands.')}
+  staged.text('common/on_actions/zin_afrit.txt', format(`${hdr(MOD, SPEC, 'Start; the Council\'s monthly pulse (one carrier: the hub, else Afrit\'s employer, else Aenor); Parim changing hands; the realm Afrit leads annexed or capitulating (SL-10).')}
 on_actions = {
 	on_startup = {
 		effect = {
@@ -254,7 +258,7 @@ on_actions = {
 	on_monthly = {
 		effect = {
 			if = {
-				limit = { zin_afrit_is_hub = yes }
+				limit = { zin_afrit_pulse_here = yes }
 				country_event = { id = zin_afrit.2 }
 			}
 		}
@@ -264,6 +268,30 @@ on_actions = {
 			if = {
 				limit = { zin_is_site_parim = yes }
 				zin_afrit_refresh_graces = yes
+			}
+		}
+	}
+	# ROOT capitulated. A capitulated realm cannot shelter the god-king: he flees or hides.
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					has_character = zin_aurevan
+					NOT = { has_global_flag = zin_afrit_dead }
+				}
+				zin_afrit_lose_realm = yes
+			}
+		}
+	}
+	# ROOT annexed FROM. When no country employs zin_aurevan any more, he flees or hides; the Council's month catches the cases this misses.
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = zin_afrit_dead }
+					NOT = { any_country = { has_character = zin_aurevan } }
+				}
+				zin_afrit_lose_realm = yes
 			}
 		}
 	}

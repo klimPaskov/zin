@@ -2677,6 +2677,7 @@
   },
   {
    "id": "SL-04",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit.20 (CP06: wait, take the crown, a pliant heir, rule from Parim in person), .21, .22 and .23 (its immediate block crowns Eronel once) are written in events_mech.mjs; the Council's month crowns an AI seat 30 days after zin_aenor_faithful_rule by its branch (historical and ambitious the crown, patient the heir, free 80 to 20). Test tools/content/events_mech.test.mjs; handoff docs/plans/story/afrit_aenor_eindil_handoff.md.",
    "title": "The Deliverer is never crowned",
    "severity": "critical",
    "beats": [
@@ -2701,6 +2702,7 @@
   },
   {
    "id": "SL-05",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit.70 to .76 are written; .70 starts stage 1 (.71), each stage offers the hub's defences and rolls zin_afrit_palace_roll; the news .75 calls zin_afrit_die once (its only caller, O2) and fires zin_eindil.124; .76 fires zin_eindil.127. Test tools/content/events_mech.test.mjs.",
    "title": "Afrit can never die",
    "severity": "critical",
    "beats": [
@@ -2724,6 +2726,7 @@
   },
   {
    "id": "SL-06",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_eindil_ready_11 reads zin_afrit_holds_parim = yes. Test tools/content/events_mech.test.mjs.",
    "title": "The palace never opens on the historical path",
    "severity": "critical",
    "beats": [
@@ -2741,6 +2744,7 @@
   },
   {
    "id": "SL-07",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): the Council's month sends zin_afrit.31 (CP09) to the seat once after its N8 delay from zin_eindil_named; .32, .33 and .34 are written; under the historical branch an AI seat sails on stage 6 if it has not sailed or sent others. Test tools/content/events_mech.test.mjs.",
    "title": "Afrit never sails north",
    "severity": "high",
    "beats": [
@@ -2767,6 +2771,7 @@
   },
   {
    "id": "SL-08",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): every zin_rule_afrit test in the Afrit slice, the Council's decisions and the Worshipdom tree (130 tests) goes through zin_rules_ai_branch_afrit_*. Test tools/content/events_mech.test.mjs.",
    "title": "The flight fallback ignores the default rule",
    "severity": "high",
    "beats": [
@@ -2786,6 +2791,7 @@
   },
   {
    "id": "SL-09",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit.60 to .62 are written; the Council's month returns an AI seat on zin_afrit_date_return (or 120 days after the south is won) under the historical branch and as soon as the road is open under the free one, fires .61 after the return and forces Parim and .62 on zin_afrit_date_parim; stage 12 opens on zin_afrit_reduced (no Afrit realm in the Middle Lands, the Host's side in Parim, CP24 resolved or its latest date passed, or a year in hiding) and the coronation then sets zin_afrit_beyond_the_rift (Q1). Test tools/content/events_mech.test.mjs.",
    "title": "A living Afrit who never returns holds the heir for ever",
    "severity": "critical",
    "beats": [
@@ -2810,6 +2816,7 @@
   },
   {
    "id": "SL-10",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): on_capitulation, on_annex and the Council's month call zin_afrit_lose_realm: a crowned Afrit takes the flight east, otherwise he goes to the Worshipdom or the eastern client with most footholds, or into hiding (zin_afrit_hidden); every country hears zin_afrit.77 The Hunt for the False God (proposed). Test tools/content/events_mech.test.mjs.",
    "title": "Afrit outlives the destruction of his realm",
    "severity": "critical",
    "beats": [
@@ -2831,6 +2838,7 @@
   },
   {
    "id": "SL-11",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit_resolve_seat saves zin_afrit_seat (the Worshipdom, else Afrit's employer, else the strongest eastern client); every Afrit effect and zin_aenor_give_seals act on it, the flight releases the Worshipdom from the holder of its capital when it is gone, and the month runs in one carrier (zin_afrit_pulse_here). Test tools/content/events_mech.test.mjs.",
    "title": "The Worshipdom tag is hard-coded",
    "severity": "high",
    "beats": [
@@ -2992,6 +3000,7 @@
   },
   {
    "id": "SL-18",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_eindil.82 Denounce and hunt and the Aenor focus Denounce the Impostor set the global flag as well as the country flag. Test tools/content/events_mech.test.mjs.",
    "title": "The denunciation sets the wrong kind of flag",
    "severity": "medium",
    "beats": [
@@ -3025,6 +3034,7 @@
   },
   {
    "id": "SL-20",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): the journey reads zin_gala_great_ship, zin_worshipdom_ships_ready and zin_worshipdom_hunters as any_country = { has_country_flag = ... }. Test tools/content/events_mech.test.mjs.",
    "title": "Focus flags read in the wrong scope",
    "severity": "low",
    "beats": [
@@ -3044,6 +3054,7 @@
   },
   {
    "id": "SL-21",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit_knows_brother is set by zin_afrit.31, the voyage, zin_afrit_wound (the hall cases in which Afrit meets him) and zin_afrit.61. Test tools/content/events_mech.test.mjs.",
    "title": "Afrit never learns he has a brother",
    "severity": "medium",
    "beats": [
@@ -3124,6 +3135,7 @@
   },
   {
    "id": "SL-25",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): on_capitulation and on_annex of the original Aenor with the King alive call zin_aenor_exile_king (zin_golden_king_exiled, news zin_aenor.470, proposed); the clock sets zin_golden_king_natural when the King dies with no Council left; the Chronicle's line 05 and the Golden Court outcome read both. Open: zin_realm.50 (the realm-life module) and the endings' outcome 4 reader (story framework). Test tools/content/events_mech.test.mjs.",
    "title": "A conquered Golden King never dies and still endures",
    "severity": "high",
    "beats": [
@@ -3179,6 +3191,7 @@
   },
   {
    "id": "SL-28",
+   "status": "fixed for zin_afrit and zin_aenor 25 October 2026 (Afrit, Aenor and Eindil pass): events_mech.mjs writes zin_afrit.10, .11, .14 to .17, .20 to .23, .31 to .34, .43, .45, .51 to .53, .60 to .62, .70 to .77 and zin_aenor.470; no zin_afrit, zin_aenor or zin_eindil event is fired and undefined in the staged tree. The other namespaces are the war-side pass's. Test tools/content/events_mech.test.mjs.",
    "title": "Sixty-one fired events are undefined",
    "severity": "high",
    "beats": [
@@ -3272,6 +3285,7 @@
   },
   {
    "id": "SL-30",
+   "status": "fixed for the Aenor succession 25 October 2026 (Afrit, Aenor and Eindil pass): zin_aenor_pick_ai_camp reads zin_rules_ai_branch_aenor_golden_court, _free_dominions and zin_rules_ai_random_aenor. Test tools/content/events_mech.test.mjs.",
    "title": "Per-power rules bypass their wrappers",
    "severity": "medium",
    "beats": [
@@ -3292,6 +3306,7 @@
   },
   {
    "id": "SL-31",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit_add_plot does nothing once zin_golden_king_survives is set. The generic mortality that may still end a surviving King belongs to the realm-life module. Test tools/content/events_mech.test.mjs.",
    "title": "The King can both survive and die",
    "severity": "medium",
    "beats": [
@@ -3309,6 +3324,7 @@
   },
   {
    "id": "SL-32",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit_flee_east does nothing after the stand in Parim, and the focus Parim Shall Not Fall needs zin_afrit_abandoned_aenor unset. Test tools/content/events_mech.test.mjs.",
    "title": "Afrit can both stand in Parim and flee",
    "severity": "medium",
    "beats": [
@@ -3326,6 +3342,7 @@
   },
   {
    "id": "SL-33",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): battles 1 to 3 are skipped on CP21's latest date (1758.3.1) or a year after the return (zin_eindil_south_unfought), and battle 5 follows by B37's latest date (1758.9.1) at the latest. Test tools/content/events_mech.test.mjs.",
    "title": "The return battles wait without a deadline",
    "severity": "critical",
    "beats": [
@@ -3363,6 +3380,7 @@
   },
   {
    "id": "SL-35",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): the naming fallback sends the news zin_eindil.170 The Mirror Without Its King (a variant for Lorien's death). Test tools/content/events_mech.test.mjs.",
    "title": "The naming without Lorien is silent",
    "severity": "low",
    "beats": [
@@ -3397,6 +3415,7 @@
   },
   {
    "id": "SL-37",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_eindil_lose_heir calls zin_ending_heir_lost, and zin_eindil.140 no longer fires the league event itself. Test tools/content/events_mech.test.mjs.",
    "title": "The league without the heir is never told",
    "severity": "medium",
    "beats": [

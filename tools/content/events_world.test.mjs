@@ -40,7 +40,7 @@ const children = (entries, k) => entries.filter(e => e.k === k).map(e => e.v);
 
 // ------------------------------------------------------------------------------------- the specs' id tables
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
-const EINDIL_IDS = [...range(10, 12), ...range(20, 23), ...range(30, 35), ...range(40, 46), 50, 51, 52, 54, 60, 61, ...range(70, 73), ...range(80, 88), ...range(90, 102), ...range(110, 113), ...range(120, 127), ...range(130, 132), 140, ...range(150, 169)];
+const EINDIL_IDS = [...range(10, 12), ...range(20, 23), ...range(30, 35), ...range(40, 46), 50, 51, 52, 54, 60, 61, ...range(70, 73), ...range(80, 88), ...range(90, 102), ...range(110, 113), ...range(120, 127), ...range(130, 132), 140, ...range(150, 169), 170];
 const LASTWAR_IDS = [...range(10, 14), 20, 21, 30, 40, 41, 50, 51, 52, 60, 61, 62, 70, 71, 72, 73, 80, 90, 91, 92, 110, 111, 112, 113];
 const LORE_IDS = [...range(1, 15), 20, 100, ...range(101, 107), 110, 111, 112, 120, 121, 122, 130, 131, 140, 141, 142, 150, 160, 161, 170, 171, 180, 190, 200, 201, 210, 211, 220, 221,
   ...range(300, 305), ...range(310, 317), ...range(320, 327), ...range(330, 333), ...range(340, 346), ...range(350, 380), ...range(400, 414)];
@@ -49,7 +49,7 @@ test('Ids: each namespace holds exactly the events of its spec tables, once', ()
   assert.deepEqual(eventsOf(data, 'zin_eindil').map(e => e.id), EINDIL_IDS.slice().sort((a, b) => a - b));
   assert.deepEqual(eventsOf(data, 'zin_lastwar').map(e => e.id), LASTWAR_IDS);
   assert.deepEqual(eventsOf(data, 'zin_lore').map(e => e.id), LORE_IDS);
-  assert.deepEqual(summary.events, { zin_eindil: 88, zin_lastwar: 28, zin_lore: 127 });
+  assert.deepEqual(summary.events, { zin_eindil: 89, zin_lastwar: 28, zin_lore: 127 });
   assert(!eventsOf(data, 'zin_eindil').some(e => e.id < 10), 'zin_eindil.1 to .7 belong to the journey engine (mech_eindil)');
   for (const ns of NAMESPACES) {
     const ids = parsedEvents(ns).map(e => child(e.v, 'id'));
@@ -58,7 +58,7 @@ test('Ids: each namespace holds exactly the events of its spec tables, once', ()
     for (const id of ids) { const n = +id.split('.')[1]; assert(RANGES[ns].some(([a, b]) => n >= a && n <= b), `${id} is outside the ranges`); }
   }
   assert(!allScript.includes('zin_lore.191'), 'zin_lore.191 is retired (O4)');
-  assert(!eventsOf(data, 'zin_eindil').some(e => e.id >= 170 && e.id <= 199), 'ids 170 to 199 stay reserved');
+  assert(!eventsOf(data, 'zin_eindil').some(e => e.id >= 171 && e.id <= 199), 'ids 171 to 199 stay reserved (170 is the naming without Lorien, SL-35)');
 });
 
 test('Determinism: a second build yields the same bytes', async () => {

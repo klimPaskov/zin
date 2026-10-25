@@ -26,7 +26,8 @@ export const TIMEOUT_DAYS = 30;
 export const NAMESPACES = ['zin_eindil', 'zin_lastwar', 'zin_lore'];
 // Allowed event ids per namespace (specs 02, 03, 05 and 02_lore/04). zin_lore.191 is retired (O4).
 export const RANGES = {
-  zin_eindil: [[10, 169]],
+  // 170 to 199: the successor events of the soft-lock audit (docs/design/alternate_history.md, SL-35: zin_eindil.170).
+  zin_eindil: [[10, 169], [170, 199]],
   zin_lastwar: [[10, 14], [20, 21], [30, 30], [40, 41], [50, 52], [60, 62], [70, 73], [80, 80], [90, 92], [110, 113]],
   zin_lore: [[1, 15], [20, 20], [100, 190], [192, 221], [300, 414]],
 };

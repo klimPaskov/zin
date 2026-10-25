@@ -258,7 +258,7 @@ test('The registry file lists exactly the names other owners write, and they exi
   const missing = [], PROPOSED = new Set(['events: zin_east.73', 'flags: zin_stabilo_great_loan']); // zin_east.70 to .73 are written as a range; the flag is this tree's request (note, section Requests)
   for (const kind of ['scripted_effects', 'scripted_triggers', 'events', 'ideas', 'flags', 'global_flags']) for (const name of file[kind] ?? []) {
     // generated names (zin_is_site_<key>, rule wrappers) are described by their pattern; everything else is named in a spec
-    if (!corpus.includes(name) && !/^zin_is_(site|region)_/.test(name) && !PROPOSED.has(`${kind}: ${name}`)) missing.push(`${kind}: ${name}`);
+    if (!corpus.includes(name) && !/^zin_is_(site|region)_|^zin_rules_ai_(branch|random)_/.test(name) && !PROPOSED.has(`${kind}: ${name}`)) missing.push(`${kind}: ${name}`);
   }
   assert.deepEqual(missing, []);
   const reg = await loadRegistry();

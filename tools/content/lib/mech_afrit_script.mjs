@@ -6,12 +6,21 @@ import { setStance } from './mech_aenor_script.mjs';
 
 const rule = (r, o) => `has_game_rule = { rule = ${r} option = ${o} }`;
 const ge = (v, n) => `check_variable = { var = ${v} value = ${n} compare = greater_than_or_equals }`;
+// The per-power rule zin_rule_afrit is read only through the foundation's branch wrappers (R1, SL-08): DEFAULT follows the path rule.
+export const AFRIT_BRANCH = o => `zin_rules_ai_branch_afrit_${o} = yes`;
+// Afrit's seat (role R02, SL-11): the Worshipdom while it exists, else the country that employs zin_aurevan, else the strongest eastern client.
+export const SEAT = 'event_target:zin_afrit_seat';
 
 export function afritScripts(D, T) {
   const HUB = T.hub, AEN = T.aenor;
   const triggers = {}, effects = {}, tooltips = {};
   const tt = (key, text) => { tooltips[key] = text; return `custom_effect_tooltip = ${key}`; };
   const hidden = (...body) => `hidden_effect = {\n${list(body)}\n}`;
+  const branch = AFRIT_BRANCH;
+  // Run body in the seat's scope, resolving the seat first; nothing happens when Afrit has no seat.
+  const atSeat = (...body) => list('zin_afrit_resolve_seat = yes', 'if = {', 'limit = { has_event_target = zin_afrit_seat }', `${SEAT} = {`, ...body, '}', '}');
+  const hubOnly = (...body) => list('if = {', `limit = { country_exists = ${HUB} }`, `${HUB} = {`, ...body, '}', '}');
+  const seatAi = `${SEAT} = { is_ai = yes }`;
   const seatVar = s => `global.zin_afrit_seat_${s}`;
   const seats = Object.keys(D.seatCodes), arts = D.artifacts;
 
@@ -38,6 +47,7 @@ export function afritScripts(D, T) {
     }
     NOT = { has_war_with = ${HUB} }
     NOT = { zin_afrit_is_hub = yes }
+    NOT = { has_character = zin_aurevan }
     NOT = {
     	AND = {
     		is_subject = yes
@@ -95,7 +105,58 @@ export function afritScripts(D, T) {
     		has_government = democratic
     	}
     }`);
-  const dates = { regicideFallback: 'zin_afrit_date_regicide_fallback', flight: 'zin_afrit_date_flight', returnOpen: 'zin_afrit_date_return_open', return: 'zin_afrit_date_return', parim: 'zin_afrit_date_parim', ashenA: 'zin_afrit_date_ashen_a', ashenB: 'zin_afrit_date_ashen_b' };
+  // Afrit reduced (SL-09): he is not dead, but no realm of his holds a Middle Lands state, the Host's side holds Parim and checkpoint 24
+  // has resolved (diverged or skipped), or its latest date has passed; or he has been in hiding for a year (SL-10). Stage 12 reads it.
+  triggers.zin_afrit_reduced = dedent(`
+    NOT = { has_global_flag = zin_afrit_dead }
+    OR = {
+    	has_global_flag = { flag = zin_afrit_hidden days > ${D.hunt.days} }
+    	AND = {
+    		NOT = {
+    			any_country = {
+    				OR = {
+    					zin_afrit_is_hub = yes
+    					zin_afrit_rules_here = yes
+    					AND = {
+    						is_subject = yes
+    						OVERLORD = { zin_afrit_is_hub = yes }
+    					}
+    				}
+    				any_controlled_state = { zin_is_region_middle_lands = yes }
+    			}
+    		}
+    		any_state = {
+    			zin_is_site_parim = yes
+    			controller = { zin_eindil_coalition_ally = yes }
+    		}
+    		OR = {
+    			check_variable = { global.zin_path_cp24 > 1 }
+    			zin_afrit_date_reduced = yes
+    		}
+    	}
+    }`);
+  // The hub's side controls a Middle Lands state (zin_afrit.61). Scope: the seat.
+  triggers.zin_afrit_side_holds_middle = dedent(`
+    OR = {
+    	any_controlled_state = { zin_is_region_middle_lands = yes }
+    	any_subject_country = { any_controlled_state = { zin_is_region_middle_lands = yes } }
+    }`);
+  // The country that carries the Council's month: the Worshipdom; when it is gone, the country that employs zin_aurevan; when nobody
+  // does, the original Aenor (the fallbacks still run). Exactly one country passes.
+  triggers.zin_afrit_pulse_here = dedent(`
+    OR = {
+    	tag = ${HUB}
+    	AND = {
+    		NOT = { country_exists = ${HUB} }
+    		has_character = zin_aurevan
+    	}
+    	AND = {
+    		tag = ${AEN}
+    		NOT = { country_exists = ${HUB} }
+    		NOT = { any_country = { has_character = zin_aurevan } }
+    	}
+    }`);
+  const dates = { regicideFallback: 'zin_afrit_date_regicide_fallback', crownLatest: 'zin_afrit_date_crown_latest', flight: 'zin_afrit_date_flight', returnOpen: 'zin_afrit_date_return_open', return: 'zin_afrit_date_return', parim: 'zin_afrit_date_parim', reduced: 'zin_afrit_date_reduced', ashenA: 'zin_afrit_date_ashen_a', ashenB: 'zin_afrit_date_ashen_b' };
   triggers.__dates = Object.entries(dates).map(([k, n]) => dateTrigger(n, D.dates[k], `${n}: ${D.dates[k]} at the standard pace, shifted by zin_story_pace`)).join('\n');
 
   // ---------------------------------------------------------------------------------------------- footholds and the Houses
@@ -301,7 +362,7 @@ export function afritScripts(D, T) {
       'else_if = {', `limit = { NOT = { ${HUB} = { has_country_flag = zin_worshipdom_houses_fortified } } }`, 'set_variable = { zin_footholds = 0 }', '}',
       'add_stability = -0.05', `set_country_flag = { flag = zin_afrit_houses_purged days = 365 }`, 'zin_afrit_refresh_houses = yes',
       'if = {', 'limit = { zin_afrit_secret_kept = yes }', 'set_temp_variable = { zin_arg_value = -5 }', 'zin_afrit_add_veil = yes', '}',
-      'save_global_event_target_as = zin_afrit_hub_target', `${HUB} = { country_event = { id = zin_afrit.5 } }`)}
+      'save_global_event_target_as = zin_afrit_hub_target', atSeat('country_event = { id = zin_afrit.5 }'))}
     ${tt('zin_afrit_tt_closed', 'The doors of the Houses are shut.')}`);
 
   // ---------------------------------------------------------------------------------------------- the Veil and the plot
@@ -316,16 +377,16 @@ export function afritScripts(D, T) {
       'clamp_variable = { var = global.zin_afrit_veil min = 0 max = 100 }',
       'if = {', `limit = {\ncheck_variable = { global.zin_afrit_veil < ${D.veil.firstFloor} }\nNOT = { has_global_flag = zin_afrit_abandoned_aenor }\nNOT = { ROOT = { is_ai = no } }\n}`, `set_variable = { global.zin_afrit_veil = ${D.veil.firstFloor} }`, '}',
       'set_temp_variable = { zin_delta = global.zin_afrit_veil }', 'subtract_from_temp_variable = { zin_delta = zin_old }', 'add_to_variable = { global.zin_afrit_veil_month = zin_delta }',
-      'if = {', `limit = {\ncheck_variable = { global.zin_afrit_veil < ${D.veil.thinsAt} }\nNOT = { has_global_flag = zin_afrit_veil_thin_seen }\n}`, 'set_global_flag = zin_afrit_veil_thin_seen', `${HUB} = { country_event = { id = zin_afrit.41 } }`, '}',
-      'if = {', `limit = {\ncheck_variable = { global.zin_afrit_veil < ${D.veil.exposedBelow} }\ncheck_variable = { global.zin_afrit_regicide_plot > 0 }\nzin_aenor_king_alive = yes\nNOT = { has_global_flag = zin_golden_king_plot_exposed }\nNOT = { has_global_flag = zin_afrit_exposure_fired }\n}`, 'set_global_flag = zin_afrit_exposure_fired', `${HUB} = { country_event = { id = zin_afrit.16 } }`, '}',
+      'if = {', `limit = {\ncheck_variable = { global.zin_afrit_veil < ${D.veil.thinsAt} }\nNOT = { has_global_flag = zin_afrit_veil_thin_seen }\n}`, 'set_global_flag = zin_afrit_veil_thin_seen', atSeat('country_event = { id = zin_afrit.41 }'), '}',
+      'if = {', `limit = {\ncheck_variable = { global.zin_afrit_veil < ${D.veil.exposedBelow} }\ncheck_variable = { global.zin_afrit_regicide_plot > 0 }\nzin_aenor_king_alive = yes\nNOT = { has_global_flag = zin_golden_king_plot_exposed }\nNOT = { has_global_flag = zin_afrit_exposure_fired }\n}`, 'set_global_flag = zin_afrit_exposure_fired', 'zin_aenor_expose_plot = yes', '}',
       'if = {', 'limit = { check_variable = { global.zin_afrit_veil < 0.01 } }', 'zin_afrit_reveal = yes', '}')}
     }`);
 
   effects.zin_afrit_add_plot = dedent(`
     ${takeArgs('value')}
     ${hidden(
-      'add_to_variable = { global.zin_afrit_regicide_plot = zin_value }', 'clamp_variable = { var = global.zin_afrit_regicide_plot min = 0 max = 100 }',
-      'if = {', 'limit = {\ncheck_variable = { global.zin_afrit_regicide_plot > 99.99 }\nNOT = { has_global_flag = zin_afrit_plot_ready_seen }\n}', 'set_global_flag = zin_afrit_plot_ready_seen', `${HUB} = { country_event = { id = zin_afrit.14 } }`, '}')}
+      'if = {', 'limit = { NOT = { has_global_flag = zin_golden_king_survives } }', 'add_to_variable = { global.zin_afrit_regicide_plot = zin_value }', 'clamp_variable = { var = global.zin_afrit_regicide_plot min = 0 max = 100 }', '}',
+      'if = {', 'limit = {\ncheck_variable = { global.zin_afrit_regicide_plot > 99.99 }\nNOT = { has_global_flag = zin_afrit_plot_ready_seen }\n}', 'set_global_flag = zin_afrit_plot_ready_seen', atSeat('country_event = { id = zin_afrit.14 }'), '}')}
     ${tt('zin_afrit_tt_prayers', 'The faithful pray for the King.')}`);
 
   effects.zin_afrit_raise_seat = dedent(`
@@ -365,7 +426,7 @@ export function afritScripts(D, T) {
     # The Council's reaction to an exposure (called only by zin_aenor_expose_plot). Names no one in public.
     ${hidden('set_variable = { global.zin_afrit_regicide_plot = 0 }',
       'if = {', 'limit = { zin_afrit_secret_kept = yes }', 'set_temp_variable = { zin_arg_value = -30 }', 'zin_afrit_add_veil = yes', '}',
-      `${HUB} = { country_event = { id = zin_afrit.16 } }`, 'news_event = { id = zin_afrit.17 }')}
+      atSeat('country_event = { id = zin_afrit.16 }'), 'news_event = { id = zin_afrit.17 }')}
     ${tt('zin_afrit_tt_vigil', 'A vigil is kept for the King.')}`);
 
   // ---------------------------------------------------------------------------------------------- the crowning
@@ -375,14 +436,16 @@ export function afritScripts(D, T) {
       'set_global_flag = zin_aurevan_crowned',
       'random_country = {', 'limit = {\nzin_aenor_is_realm = yes\nzin_aenor_ruled_by_faithful = yes\n}', 'save_global_event_target_as = zin_afrit_crown_realm', '}',
       'if = {', 'limit = { NOT = { has_event_target = zin_afrit_crown_realm } }', 'zin_aenor_find_parim_realm = yes', 'event_target:zin_aenor_parim_realm = { save_global_event_target_as = zin_afrit_crown_realm }', '}',
-      `${HUB} = {`, 'remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }', 'recruit_character = zin_ilvane',
-      'add_country_leader_role = { character = zin_ilvane promote_leader = yes country_leader = { ideology = zin_light_sanctuary expire = "2000.1.1.1" } }', '}',
+      'zin_afrit_resolve_seat = yes',
+      hubOnly('remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }', 'recruit_character = zin_ilvane',
+        'add_country_leader_role = { character = zin_ilvane promote_leader = yes country_leader = { ideology = zin_light_sanctuary expire = "2000.1.1.1" } }'),
+      'every_country = {', 'limit = {\nzin_afrit_rules_here = yes\nNOT = { zin_afrit_is_hub = yes }\n}', 'remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }', '}',
       'event_target:zin_afrit_crown_realm = {', 'recruit_character = zin_aurevan',
       'add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_light_sanctuary expire = "2000.1.1.1" traits = { zin_trait_deliverer } } }',
       setStance('zin_light_sanctuary'),
       'set_temp_variable = { zin_arg_value = 10 }', 'if = {', `limit = { ${HUB} = { has_country_flag = zin_worshipdom_proclamation_ready } }`, 'add_to_temp_variable = { zin_arg_value = 10 }', 'add_stability = 0.1', '}',
       'zin_aenor_add_council_influence = yes',
-      'news_event = { id = zin_afrit.21 }', `${HUB} = { country_event = { id = zin_afrit.22 days = 30 } }`, '}',
+      'news_event = { id = zin_afrit.21 }', '}', 'if = {', 'limit = { has_event_target = zin_afrit_seat }', `${SEAT} = { country_event = { id = zin_afrit.22 days = 30 } }`, '}',
       'zin_afrit_refresh_graces = yes', 'zin_reign_on_crowning = yes')}
     ${tt('zin_afrit_tt_crown', 'The temples lay the crown before the Deliverer.')}`);
 
@@ -393,15 +456,19 @@ export function afritScripts(D, T) {
     set_country_flag = zin_reign_eronel_crowned
     country_event = { id = zin_reign.65 days = 2 }`);
   effects.zin_afrit_raise_pliant_heir = dedent(`
+    # The news zin_afrit.23 crowns Prince Eronel in its immediate block, once (it is major: every country receives it).
     ${hidden('set_global_flag = zin_afrit_kingdom_behind_throne', 'news_event = { id = zin_afrit.23 }')}
     ${tt('zin_afrit_tt_tutor', 'The temples send a tutor to the heir.')}`);
 
   // ---------------------------------------------------------------------------------------------- Yeldenne
   effects.zin_afrit_northern_voyage = dedent(`
-    # The hub sails north. The voyage takes 60 days, 30 with the maps of the cold coast.
+    # The seat sails north, once (zin_afrit.31, or the Council's month under the historical branch: SL-07). The voyage costs 100 authority
+    # and takes 60 days, 30 with the maps of the cold coast. Afrit knows of his brother from here on (SL-21).
     ${hidden(
-      'set_temp_variable = { zin_vd = 60 }', 'if = {', 'limit = { has_country_flag = zin_worshipdom_cold_maps }', 'set_temp_variable = { zin_vd = 30 }', '}',
-      'country_event = { id = zin_afrit.32 }', 'country_event = { id = zin_afrit.8 days = zin_vd }',
+      'if = {', 'limit = { NOT = { has_global_flag = zin_afrit_voyage_begun } }', 'set_global_flag = zin_afrit_voyage_begun', 'set_global_flag = zin_afrit_knows_brother',
+      `add_political_power = -${D.voyageCost}`,
+      'set_temp_variable = { zin_vd = 60 }', 'if = {', `limit = { ${HUB} = { has_country_flag = zin_worshipdom_cold_maps } }`, 'set_temp_variable = { zin_vd = 30 }', '}',
+      'country_event = { id = zin_afrit.32 }', 'country_event = { id = zin_afrit.8 days = zin_vd }', '}',
       'random_country = {', `limit = {\nzin_afrit_rules_here = yes\nNOT = { zin_afrit_is_hub = yes }\nNOT = { ${HUB} = { has_country_flag = zin_worshipdom_merovan_charge } }\n}`, 'add_ideas = zin_afrit_aurevan_away', '}')}
     ${tt('zin_afrit_tt_ships', 'The pilgrim ships put out to sea.')}`);
   effects.zin_afrit_wound = dedent(`
@@ -409,11 +476,11 @@ export function afritScripts(D, T) {
     ${takeArgs('days')}
     ${hidden(
       'if = {', 'limit = { check_variable = { zin_days < 1 } }', 'set_temp_variable = { zin_days = 365 }', '}',
-      'set_global_flag = zin_afrit_wounded',
+      'set_global_flag = zin_afrit_wounded', 'set_global_flag = zin_afrit_knows_brother',
       'random_country = {', 'limit = { zin_afrit_rules_here = yes }', 'save_global_event_target_as = zin_afrit_ruled_realm', '}',
       'if = {', 'limit = { has_event_target = zin_afrit_ruled_realm }', 'event_target:zin_afrit_ruled_realm = {', 'add_timed_idea = { idea = zin_afrit_deliverer_rests days = zin_days }', 'remove_ideas = zin_afrit_aurevan_away', '}', '}',
       'set_temp_variable = { zin_arg_value = -15 }', 'zin_afrit_add_veil = yes',
-      `${HUB} = { country_event = { id = zin_afrit.34 } }`)}
+      atSeat('country_event = { id = zin_afrit.34 }'))}
     ${tt('zin_afrit_tt_rest', 'The Deliverer withdraws to rest.')}`);
 
   // ---------------------------------------------------------------------------------------------- the reveal
@@ -425,9 +492,9 @@ export function afritScripts(D, T) {
     	${hidden(
       'set_global_flag = zin_afrit_revealed',
       'if = {', 'limit = { NOT = { has_global_flag = zin_aurevan_crowned } }', 'set_global_flag = zin_afrit_unmasked_early', '}',
-      `${HUB} = { country_event = { id = zin_afrit.42 } }`, 'news_event = { id = zin_afrit.43 }',
-      'every_country = {', 'limit = { zin_afrit_rules_here = yes }', 'add_country_leader_trait = zin_trait_unmasked', '}', 'zin_aurevan = { set_character_name = zin_name_afrit }', `${HUB} = { remove_ideas = { zin_worshipdom_radiant_face zin_worshipdom_endless_regency } }`,
-      `${HUB} = {`, setStance('zin_shadow_worship'), '}',
+      atSeat('country_event = { id = zin_afrit.42 }', 'news_event = { id = zin_afrit.43 }'),
+      'every_country = {', 'limit = { zin_afrit_rules_here = yes }', 'add_country_leader_trait = zin_trait_unmasked', '}', 'zin_aurevan = { set_character_name = zin_name_afrit }',
+      hubOnly('remove_ideas = { zin_worshipdom_radiant_face zin_worshipdom_endless_regency }', setStance('zin_shadow_worship')),
       'every_country = {', 'limit = { zin_afrit_rules_here = yes NOT = { zin_afrit_is_hub = yes } }', setStance('zin_shadow_worship'), '}',
       'every_country = {', 'limit = {\nhas_government = democratic\nNOT = { zin_afrit_is_hub = yes }\nNOT = { zin_afrit_rules_here = yes }\n}', 'country_event = { id = zin_afrit.45 }', '}',
       'every_country = {', 'limit = { zin_aenor_is_realm = yes }', 'country_event = { id = zin_reign.85 days = 3 }', '}',
@@ -439,10 +506,7 @@ export function afritScripts(D, T) {
 
   effects.zin_afrit_unmasked_early_effects = dedent(`
     # The catastrophe the hub player plays to avoid: the name comes out before the crown is taken.
-    ${HUB} = {
-    	add_ideas = zin_afrit_unmasked
-    	country_event = { id = zin_afrit.44 }
-    }
+    ${atSeat('add_ideas = zin_afrit_unmasked', 'country_event = { id = zin_afrit.44 }')}
     ${AEN} = {
     	set_temp_variable = { zin_arg_value = -40 }
     	zin_aenor_add_council_influence = yes
@@ -466,8 +530,8 @@ export function afritScripts(D, T) {
     # A court kneels to the King of the East. Scope: the court.
     ${hidden(
       'set_country_flag = zin_afrit_eastern_client', 'zin_east_prepare_kneel = yes', 'save_event_target_as = zin_afrit_kneeler',
-      'if = {', 'limit = { is_subject = no }', `${HUB} = {`, 'puppet = event_target:zin_afrit_kneeler', 'set_autonomy = { target = event_target:zin_afrit_kneeler autonomy_state = zin_autonomy_eastern_client }', '}', '}',
-      'else = {', `${HUB} = { give_military_access = event_target:zin_afrit_kneeler }`, '}')}
+      'if = {', 'limit = { is_subject = no }', atSeat('puppet = event_target:zin_afrit_kneeler', 'set_autonomy = { target = event_target:zin_afrit_kneeler autonomy_state = zin_autonomy_eastern_client }'), '}',
+      'else = {', atSeat('give_military_access = event_target:zin_afrit_kneeler'), '}')}
     ${tt('zin_afrit_tt_kneel', 'The court takes the Deliverer for its king.')}`);
   effects.zin_afrit_kneel_chance = dedent(`
     # Sets the country variable zin_afrit_kneel_chance (5 to 95), the AI's chance to kneel at zin_afrit.51. Scope: the court.
@@ -500,18 +564,26 @@ export function afritScripts(D, T) {
     clamp_variable = { var = zin_afrit_kneel_chance min = ${D.acceptance.min} max = ${D.acceptance.max} }`);
 
   effects.zin_afrit_flee_east = dedent(`
-    # Afrit leaves Aenor (section "The flight east"). Scope: any.
+    # Afrit leaves Aenor (section "The flight east"). Scope: any. Never once he has chosen to stand in Parim (SL-32), and only once.
+    # When the Worshipdom is gone, the holder of its capital releases it as Afrit's hub; if that fails, the eastern candidate with the
+    # most footholds becomes his seat (SL-11).
     ${hidden(
+      'if = {', 'limit = {\nNOT = { has_global_flag = zin_afrit_stand_in_parim }\nNOT = { has_global_flag = zin_afrit_abandoned_aenor }\nNOT = { has_global_flag = zin_afrit_dead }\n}',
       'if = {', 'limit = { zin_afrit_secret_kept = yes }', 'zin_afrit_reveal = yes', '}',
       'set_global_flag = zin_afrit_abandoned_aenor',
       'every_country = {', 'limit = { zin_aenor_is_realm = yes }', 'country_event = { id = zin_aenor.300 }', '}',
       'random_country = {', 'limit = { zin_afrit_rules_here = yes NOT = { zin_afrit_is_hub = yes } }', 'save_global_event_target_as = zin_afrit_left_realm', '}',
-      'if = {', 'limit = { has_event_target = zin_afrit_left_realm }', 'event_target:zin_afrit_left_realm = {', 'remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }', 'remove_ideas = zin_afrit_aurevan_away', '}', '}',
-      `${HUB} = {`, 'recruit_character = zin_aurevan', 'add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }', setStance('zin_shadow_worship'),
-      'remove_ideas = zin_worshipdom_deliverers_peace', 'country_event = { id = zin_afrit.53 }', '}',
-      'if = {', `limit = { ${rule('zin_rule_afrit', 'HISTORICAL')} }`, 'zin_afrit_historical_kneel = yes', '}',
+      'if = {', 'limit = { has_event_target = zin_afrit_left_realm }', 'event_target:zin_afrit_left_realm = {', 'remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }', 'remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }', 'remove_ideas = zin_afrit_aurevan_away', '}', '}',
+      'if = {', `limit = { NOT = { country_exists = ${HUB} } }`, 'every_state = {', `limit = { state = ${T.hubCapital} }`, 'owner = {', `release = ${HUB}`, '}', '}', '}',
+      'clear_global_event_target = zin_afrit_seat',
+      'if = {', `limit = { country_exists = ${HUB} }`, `${HUB} = { save_global_event_target_as = zin_afrit_seat }`, '}',
+      'else = {', 'set_temp_variable = { zin_fl_best = -1 }',
+      'every_country = {', 'limit = { zin_afrit_eastern_candidate = yes has_capitulated = no }', 'if = {', 'limit = { check_variable = { zin_footholds > zin_fl_best } }', 'set_temp_variable = { zin_fl_best = zin_footholds }', 'save_global_event_target_as = zin_afrit_seat', '}', '}', '}',
+      'if = {', 'limit = { has_event_target = zin_afrit_seat }', `${SEAT} = {`, 'recruit_character = zin_aurevan', 'add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }', setStance('zin_shadow_worship'),
+      'remove_ideas = zin_worshipdom_deliverers_peace', 'country_event = { id = zin_afrit.53 }', '}', '}',
+      'if = {', `limit = { ${branch('historical')} }`, 'zin_afrit_historical_kneel = yes', '}',
       'every_country = {', 'limit = {\nzin_afrit_eastern_candidate = yes\nNOT = { has_country_flag = zin_afrit_eastern_client }\n}', 'zin_afrit_kneel_chance = yes', 'country_event = { id = zin_afrit.51 }', '}',
-      `${HUB} = { country_event = { id = zin_afrit.9 days = 30 } }`)}
+      atSeat('country_event = { id = zin_afrit.9 days = 30 }'), '}')}
     ${tt('zin_afrit_tt_east', 'The Deliverer turns his face to the East.')}`);
 
   effects.zin_afrit_historical_kneel = dedent(`
@@ -527,7 +599,7 @@ export function afritScripts(D, T) {
   effects.zin_afrit_proclaim_king_of_east = dedent(`
     ${hidden(
       'if = {', 'limit = { NOT = { has_global_flag = zin_afrit_king_of_east } }', 'set_global_flag = zin_afrit_king_of_east',
-      `${HUB} = {`, 'set_cosmetic_tag = zin_cosmetic_worshipdom_east', '}', 'zin_aurevan = { set_character_name = zin_name_afrit_king_of_east }', '}')}
+      hubOnly('set_cosmetic_tag = zin_cosmetic_worshipdom_east'), 'zin_aurevan = { set_character_name = zin_name_afrit_king_of_east }', '}')}
     ${tt('zin_afrit_tt_dawn', 'The kings of the East name the Deliverer their king.')}`);
 
   effects.zin_afrit_raise_eastern_host = dedent(`
@@ -552,32 +624,40 @@ export function afritScripts(D, T) {
     ${tt('zin_afrit_tt_refuser', 'A letter is sent to the doubtful court.')}`);
 
   effects.zin_afrit_return = dedent(`
-    # The return from the East: the hub declares war on the controller of Parim and on the country that has Eindil.
+    # The return from the East (once): Afrit's seat declares war on the controller of Parim and on the country that has Eindil, and
+    # hears zin_afrit.60. The seat carries the country flag zin_afrit_seat_mark while the wars are chosen, so that its own side is spared.
     ${hidden(
+      'if = {', 'limit = { NOT = { has_global_flag = zin_afrit_returned } }',
       'set_global_flag = zin_afrit_returned',
-      'zin_aenor_find_parim_realm = yes',
-      'every_state = {', 'limit = { zin_is_site_parim = yes }', 'controller = {', 'if = {', `limit = {\nNOT = { tag = ${HUB} }\nNOT = { is_subject_of = ${HUB} }\nNOT = { has_war_with = ${HUB} }\n}`, `${HUB} = { declare_war_on = { target = PREV type = annex_everything } }`, '}', '}', '}',
-      'every_country = {', 'limit = {\nhas_character = zin_eindil\nNOT = { tag = ' + HUB + ' }\nNOT = { has_war_with = ' + HUB + ' }\n}', `${HUB} = { declare_war_on = { target = PREV type = annex_everything } }`, '}',
-      'set_temp_variable = { zin_arg_value = 5 }', 'zin_world_add_gathering_dark = yes')}
+      'zin_afrit_resolve_seat = yes',
+      'if = {', 'limit = { has_event_target = zin_afrit_seat }',
+      `${SEAT} = { set_country_flag = zin_afrit_seat_mark country_event = { id = zin_afrit.60 } }`,
+      'every_state = {', 'limit = { zin_is_site_parim = yes }', 'controller = {', 'if = {', `limit = {\nNOT = { has_country_flag = zin_afrit_seat_mark }\nNOT = {\nAND = {\nis_subject = yes\nOVERLORD = { has_country_flag = zin_afrit_seat_mark }\n}\n}\nNOT = { has_war_with = ${SEAT} }\n}`, `${SEAT} = { declare_war_on = { target = PREV type = annex_everything } }`, '}', '}', '}',
+      'every_country = {', `limit = {\nhas_character = zin_eindil\nNOT = { has_country_flag = zin_afrit_seat_mark }\nNOT = { has_war_with = ${SEAT} }\n}`, `${SEAT} = { declare_war_on = { target = PREV type = annex_everything } }`, '}',
+      `${SEAT} = { clr_country_flag = zin_afrit_seat_mark }`, '}',
+      'set_temp_variable = { zin_arg_value = 5 }', 'zin_world_add_gathering_dark = yes', '}')}
     ${tt('zin_afrit_tt_return', 'The pilgrims turn homeward.')}`);
 
   effects.zin_afrit_retake_aenor = dedent(`
-    # Lord of all Aoaz (zin_afrit.62): Aurevan leads Aenor again, or the hub annexes what its side holds.
+    # Lord of all Aoaz (zin_afrit.62): Aurevan leads Aenor again, or the seat annexes what its side holds of the Middle Lands.
     ${hidden(
       'set_global_flag = zin_afrit_claims_aoaz',
-      'if = {', `limit = { country_exists = ${AEN} }`, `${HUB} = { white_peace = ${AEN} }`,
-      `${AEN} = {`, 'recruit_character = zin_aurevan', 'add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }', setStance('zin_shadow_worship'), `give_military_access = ${HUB}`, '}',
-      `${HUB} = { give_military_access = ${AEN} recruit_character = zin_ilvane }`, '}',
-      'else = {', 'every_state = {', `limit = { is_controlled_by = ${HUB} NOT = { is_owned_by = ${HUB} } zin_is_region_middle_lands = yes }`, `transfer_state_to = ${HUB}`, '}', '}',
+      'zin_afrit_resolve_seat = yes',
+      'if = {', `limit = { country_exists = ${AEN} has_event_target = zin_afrit_seat NOT = { ${AEN} = { has_character = zin_aurevan } } }`, `${SEAT} = { white_peace = ${AEN} }`,
+      'every_country = {', 'limit = { zin_afrit_rules_here = yes }', 'remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }', '}',
+      `${AEN} = {`, 'recruit_character = zin_aurevan', 'add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }', setStance('zin_shadow_worship'), `give_military_access = ${SEAT}`, '}',
+      `${SEAT} = { give_military_access = ${AEN} }`, hubOnly('recruit_character = zin_ilvane'), '}',
+      'else_if = {', 'limit = { has_event_target = zin_afrit_seat }', `${SEAT} = {`, 'every_state = {', 'limit = { is_controlled_by = PREV NOT = { is_owned_by = PREV } zin_is_region_middle_lands = yes }', 'transfer_state_to = PREV', '}', '}', '}',
       'zin_afrit_refresh_graces = yes')}
     ${tt('zin_afrit_tt_aoaz', 'The Deliverer takes the crown of Parim again.')}`);
   effects.zin_afrit_claim_middle_lands = dedent(`
-    ${hidden(`every_state = {`, `limit = { zin_is_region_middle_lands = yes NOT = { is_owned_by = ${HUB} } NOT = { is_claimed_by = ${HUB} } }`, `add_claim_by = ${HUB}`, '}')}
+    ${hidden(atSeat('every_state = {', 'limit = { zin_is_region_middle_lands = yes NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } }', 'add_claim_by = PREV', '}'))}
     ${tt('zin_afrit_tt_claims', 'Old claims are read out in every hall.')}`);
 
   // ---------------------------------------------------------------------------------------------- the palace
   effects.zin_afrit_begin_palace_battle = dedent(`
-    ${hidden('clr_global_flag = zin_afrit_palace_held', `${HUB} = { country_event = { id = zin_afrit.70 } }`)}
+    # The journey's Enter the Palace: the defences of the last attempt are forgotten and the chain starts at the seat (zin_afrit.70).
+    ${hidden('clr_global_flag = zin_afrit_palace_held', 'clr_global_flag = zin_afrit_used_burn', 'clr_global_flag = zin_afrit_used_necklace', 'clr_global_flag = zin_afrit_used_doors', atSeat('country_event = { id = zin_afrit.70 }'))}
     ${tt('zin_afrit_tt_wards', 'The wards of the palace are woken.')}`);
   effects.zin_afrit_lose_artifact = dedent(`
     ${takeArgs('artifact')}
@@ -605,7 +685,7 @@ export function afritScripts(D, T) {
   const onSuccess = (s, i) => list(
     `set_temp_variable = { zin_arg_artifact = ${D.artifactCodes[s.artifact]} }`, 'zin_afrit_lose_artifact = yes',
     s.journey ? toHost(s.journey) : '',
-    s.stage < 4 ? `${HUB} = { country_event = { id = zin_afrit.${stages[i + 1].event} } }` : `${HUB} = { news_event = { id = zin_afrit.75 } }`);
+    s.stage < 4 ? atSeat(`country_event = { id = zin_afrit.${stages[i + 1].event} }`) : atSeat('news_event = { id = zin_afrit.75 }'));
   effects.zin_afrit_palace_roll = dedent(`
     ${takeArgs('stage')}
     ${hidden(
@@ -618,14 +698,14 @@ export function afritScripts(D, T) {
       'set_temp_variable = { zin_rel = global.zin_afrit_seat_relics }', 'multiply_temp_variable = { zin_rel = -2 }', 'add_to_temp_variable = { zin_pc = zin_rel }',
       'clamp_temp_variable = { var = zin_pc min = 5 max = 95 }',
       'set_temp_variable = { zin_won = 0 }',
-      'if = {', `limit = { ${rule('zin_rule_afrit', 'HISTORICAL')} }`, 'set_temp_variable = { zin_won = 1 }', '}',
+      'if = {', `limit = { ${branch('historical')} }`, 'set_temp_variable = { zin_won = 1 }', '}',
       'else = {', 'meta_effect = {', 'text = {', 'random = {', 'chance = [C]', 'set_temp_variable = { zin_won = 1 }', '}', '}', 'C = "[?zin_pc|0]"', '}', '}',
       // the Ring lets Afrit slip through a door at the first stage; the Necklace stage needs Golbran alive and with Eindil
       'if = {', 'limit = { check_variable = { zin_stage = 1 } has_global_flag = zin_afrit_def_doors has_global_flag = zin_afrit_attuned_ring }', 'set_temp_variable = { zin_won = 0 }', '}',
       'if = {', 'limit = { check_variable = { zin_stage = 4 } NOT = { has_global_flag = zin_eindil_golbran_joined } }', 'set_temp_variable = { zin_won = 0 }', '}',
       'if = {', 'limit = { has_global_flag = zin_golbran_dead check_variable = { zin_stage = 4 } }', 'set_temp_variable = { zin_won = 0 }', '}',
       'clr_global_flag = zin_afrit_def_doors',
-      'if = {', 'limit = { check_variable = { zin_won = 0 } }', 'set_global_flag = zin_afrit_palace_held', `${HUB} = { country_event = { id = zin_afrit.76 } }`, '}',
+      'if = {', 'limit = { check_variable = { zin_won = 0 } }', 'set_global_flag = zin_afrit_palace_held', atSeat('country_event = { id = zin_afrit.76 }'), '}',
       'else = {', ...stages.map((s, i) => `${i ? 'else_if' : 'if'} = {\nlimit = { check_variable = { zin_stage = ${s.stage} } }\n${onSuccess(s, i)}\n}`), '}')}`);
 
   effects.zin_afrit_die = dedent(`
@@ -633,14 +713,19 @@ export function afritScripts(D, T) {
     ${hidden(
       'if = {', 'limit = { NOT = { has_global_flag = zin_afrit_dead } }', 'set_global_flag = zin_afrit_dead',
       'every_country = {', 'limit = { zin_afrit_rules_here = yes }', 'kill_country_leader = yes', 'if = {', 'limit = { has_dynamic_modifier = { modifier = zin_afrit_graces } }', 'remove_dynamic_modifier = { modifier = zin_afrit_graces }', '}', '}',
-      `${HUB} = {`, 'drop_cosmetic_tag = yes', 'recruit_character = zin_ilvane', 'add_country_leader_role = { character = zin_ilvane promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" } }', 'remove_ideas = { zin_worshipdom_eastern_throne zin_worshipdom_host_of_the_east zin_worshipdom_gods_court }', '}',
-      'zin_afrit_refresh_graces = yes', 'set_global_flag = zin_afrit_footholds_decay', '}')}
+      hubOnly('drop_cosmetic_tag = yes', 'recruit_character = zin_ilvane', 'add_country_leader_role = { character = zin_ilvane promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" } }', 'remove_ideas = { zin_worshipdom_eastern_throne zin_worshipdom_host_of_the_east zin_worshipdom_gods_court }'),
+      'clr_global_flag = zin_afrit_hidden', 'zin_afrit_refresh_graces = yes', 'set_global_flag = zin_afrit_footholds_decay', '}')}
     ${tt('zin_afrit_tt_fall', 'The false god falls.')}`);
 
   // ---------------------------------------------------------------------------------------------- the Council's month (zin_afrit.2)
   effects.zin_afrit_monthly = dedent(`
     # The Council's month: veil regeneration and last change, tithes, plot drift, seat drifts, graces, caps, decay after death, fallbacks.
+    # The month runs in the country zin_afrit_pulse_here picks (the hub, else Afrit's employer, else the original Aenor).
     ${hidden(
+      'zin_afrit_resolve_seat = yes',
+      // SL-10: the realm that employed him is gone and no one has taken him in
+      'if = {', 'limit = {\nNOT = { has_global_flag = zin_afrit_dead }\nNOT = { has_global_flag = zin_afrit_hidden }\nNOT = { any_country = { has_character = zin_aurevan } }\n}', 'zin_afrit_lose_realm = yes', '}',
+      'zin_afrit_word_of_the_heir = yes',
       'set_variable = { global.zin_afrit_veil_last_change = global.zin_afrit_veil_month }', 'set_variable = { global.zin_afrit_veil_month = 0 }',
       'if = {', 'limit = { zin_afrit_secret_kept = yes }', 'set_temp_variable = { zin_arg_value = global.zin_afrit_seat_censers }', 'multiply_temp_variable = { zin_arg_value = 0.4 }', 'zin_afrit_add_veil = yes', '}',
       // plot: +0.5 x Seals a month once the verdict is given; the fever instrument adds 0.5 a month
@@ -653,7 +738,7 @@ export function afritScripts(D, T) {
       'every_country = {', 'limit = { check_variable = { zin_footholds > 1 } NOT = { zin_aenor_is_realm = yes } NOT = { zin_afrit_is_hub = yes } }', `add_to_temp_variable = { zin_tithe = ${D.houses.tithe} }`, '}',
       `clamp_temp_variable = { var = zin_tithe max = ${D.houses.titheCap} }`,
       `if = {`, `limit = { ${AEN} = { check_variable = { var = zin_council_influence value = 60 compare = greater_than_or_equals } } }`, `add_to_temp_variable = { zin_tithe = ${D.houses.aenorTithe} }`, '}',
-      'add_political_power = zin_tithe',
+      'if = {', 'limit = { zin_afrit_is_hub = yes }', 'add_political_power = zin_tithe', '}',
       // counts for the panel and the Ashen Throne
       'set_variable = { global.zin_afrit_deep_count = 0 }', 'every_country = {', 'limit = { check_variable = { zin_footholds > 3 } }', 'add_to_variable = { global.zin_afrit_deep_count = 1 }', '}',
       'every_country = {', 'limit = { check_variable = { zin_footholds > 0 } }', 'zin_afrit_compute_cap = yes', '}',
@@ -699,16 +784,10 @@ export function afritScripts(D, T) {
     }`);
 
   effects.zin_afrit_historical_fallbacks = dedent(`
-    # The established path (rule HISTORICAL, or FREE with the dates kept): the Council is ready by 15 Emberleaf 4A 1750 whatever the plot says.
+    # The established path (the historical branch of zin_rule_afrit, R1): the Council is ready by 15 Emberleaf 4A 1750 whatever the plot says.
     if = {
     	limit = {
-    		OR = {
-    			${rule('zin_rule_afrit', 'HISTORICAL')}
-    			AND = {
-    				${rule('zin_rule_afrit', 'DEFAULT')}
-    				zin_rules_is_historical = yes
-    			}
-    		}
+    		${branch('historical')}
     		NOT = { ${rule('zin_rule_golden_king_death', 'NO_AI_PLOT')} }
     		zin_afrit_date_regicide_fallback = yes
     		NOT = { has_global_flag = zin_afrit_regicide_ready }
@@ -718,16 +797,317 @@ export function afritScripts(D, T) {
     	}
     	zin_afrit_ready_regicide = yes
     }
+    # The flight east under the historical branch (SL-08): on 1 Thaw 4A 1756 at the latest, once the war has begun.
     if = {
     	limit = {
-    		${rule('zin_rule_afrit', 'HISTORICAL')}
+    		${branch('historical')}
     		zin_afrit_date_flight = yes
-    		has_global_flag = zin_aurevan_crowned
+    		OR = {
+    			has_global_flag = zin_aurevan_crowned
+    			has_global_flag = zin_afrit_kingdom_behind_throne
+    		}
     		NOT = { has_global_flag = zin_afrit_abandoned_aenor }
     		NOT = { has_global_flag = zin_afrit_stand_in_parim }
+    		NOT = { has_global_flag = zin_afrit_dead }
     		has_global_flag = zin_war_of_last_crowns
+    		has_event_target = zin_afrit_seat
+    		${seatAi}
     	}
     	zin_afrit_flee_east = yes
+    }
+    # The crowning's timeout (SL-04): 30 days after the Faithful took the seals, an AI seat that has neither crowned Aurevan nor raised
+    # a pliant heir decides by its branch: the crown under the historical and the ambitious branches, the heir under the patient one,
+    # four in five for the crown under the free branch.
+    if = {
+    	limit = {
+    		NOT = { has_global_flag = zin_aurevan_crowned }
+    		NOT = { has_global_flag = zin_afrit_kingdom_behind_throne }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		has_global_flag = zin_golden_king_dead
+    		has_event_target = zin_afrit_seat
+    		${seatAi}
+    		any_country = {
+    			zin_aenor_is_realm = yes
+    			has_country_flag = { flag = zin_aenor_faithful_rule days > ${D.crownTimeoutDays} }
+    		}
+    	}
+    	if = {
+    		limit = {
+    			OR = {
+    				${branch('historical')}
+    				${branch('ashen')}
+    			}
+    		}
+    		zin_afrit_crown_aurevan = yes
+    	}
+    	else_if = {
+    		limit = { ${branch('dormant')} }
+    		zin_afrit_raise_pliant_heir = yes
+    	}
+    	else = {
+    		random_list = {
+    			80 = { zin_afrit_crown_aurevan = yes }
+    			20 = { zin_afrit_raise_pliant_heir = yes }
+    		}
+    	}
+    }
+    # The voyage north under the historical branch (SL-07): when the heir's ship sails (journey stage 6) and the seat has not sailed or sent others.
+    if = {
+    	limit = {
+    		${branch('historical')}
+    		check_variable = { global.zin_eindil_stage = 6 }
+    		NOT = { has_global_flag = zin_afrit_voyage_begun }
+    		NOT = { has_global_flag = zin_afrit_sent_others }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		has_event_target = zin_afrit_seat
+    		${seatAi}
+    	}
+    	${SEAT} = { zin_afrit_northern_voyage = yes }
+    }
+    # The return from the East (SL-09): the historical branch returns 120 days after Volgan's body is broken and the dead of the north
+    # withdraw, or on 1 Ironfrost 4A 1758 at the latest; the free branch returns as soon as the road is open.
+    if = {
+    	limit = {
+    		has_global_flag = zin_afrit_king_of_east
+    		NOT = { has_global_flag = zin_afrit_returned }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		has_event_target = zin_afrit_seat
+    		${seatAi}
+    		OR = {
+    			AND = {
+    				${branch('historical')}
+    				OR = {
+    					zin_afrit_date_return = yes
+    					AND = {
+    						has_global_flag = { flag = zin_volgan_body_destroyed days > ${D.returnAfterDays} }
+    						has_global_flag = { flag = zin_zol_withdrawn days > ${D.returnAfterDays} }
+    					}
+    				}
+    			}
+    			AND = {
+    				${branch('free')}
+    				OR = {
+    					has_global_flag = zin_volgan_body_destroyed
+    					has_global_flag = zin_zol_withdrawn
+    					zin_afrit_date_return_open = yes
+    				}
+    			}
+    		}
+    	}
+    	${SEAT} = { zin_afrit_return = yes }
+    }
+    # Brother against brother (zin_afrit.61): after the return, at war with the heir's country while the seat's side holds Middle Lands
+    # ground; under the historical branch on 1 Ailtal 4A 1758 at the latest.
+    if = {
+    	limit = {
+    		has_global_flag = zin_afrit_returned
+    		NOT = { has_global_flag = zin_afrit_brothers_met }
+    		NOT = { has_global_flag = zin_eindil_cast_down }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		has_event_target = zin_afrit_seat
+    		${seatAi}
+    		any_country = { has_character = zin_eindil }
+    		OR = {
+    			AND = {
+    				any_country = {
+    					has_character = zin_eindil
+    					has_war_with = ${SEAT}
+    				}
+    				${SEAT} = { zin_afrit_side_holds_middle = yes }
+    			}
+    			AND = {
+    				${branch('historical')}
+    				zin_afrit_date_parim = yes
+    			}
+    		}
+    	}
+    	set_global_flag = zin_afrit_brothers_met
+    	${SEAT} = { country_event = { id = zin_afrit.61 } }
+    }
+    # Lord of all Aoaz (zin_afrit.62): once the heir is cast down and the seat's side holds Parim; under the historical branch Parim is
+    # given to the seat on 1 Ailtal 4A 1758 if its side does not hold it.
+    if = {
+    	limit = {
+    		has_global_flag = zin_afrit_returned
+    		has_global_flag = zin_eindil_cast_down
+    		NOT = { has_global_flag = zin_afrit_claims_aoaz }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		has_event_target = zin_afrit_seat
+    		NOT = { zin_afrit_holds_parim = yes }
+    		${branch('historical')}
+    		zin_afrit_date_parim = yes
+    		${seatAi}
+    	}
+    	${SEAT} = {
+    		every_state = {
+    			limit = { zin_is_site_parim = yes }
+    			set_state_controller_to = PREV
+    		}
+    	}
+    }
+    if = {
+    	limit = {
+    		has_global_flag = zin_afrit_returned
+    		has_global_flag = zin_eindil_cast_down
+    		NOT = { has_global_flag = zin_afrit_claims_aoaz }
+    		NOT = { has_global_flag = zin_afrit_claim_told }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		zin_afrit_holds_parim = yes
+    		has_event_target = zin_afrit_seat
+    	}
+    	set_global_flag = zin_afrit_claim_told
+    	${SEAT} = { news_event = { id = zin_afrit.62 } }
+    }`);
+
+  effects.zin_afrit_resolve_seat = dedent(`
+    # Role R02, Afrit's seat (SL-11): the Worshipdom while it exists, else the country that employs zin_aurevan, else the eastern client
+    # with the most states. Saves the global event target zin_afrit_seat; nothing is saved when no country qualifies.
+    clear_global_event_target = zin_afrit_seat
+    if = {
+    	limit = { country_exists = ${HUB} }
+    	${HUB} = { save_global_event_target_as = zin_afrit_seat }
+    }
+    else_if = {
+    	limit = { any_country = { has_character = zin_aurevan } }
+    	random_country = {
+    		limit = { has_character = zin_aurevan }
+    		save_global_event_target_as = zin_afrit_seat
+    	}
+    }
+    else = {
+    	set_temp_variable = { zin_seat_mx = 0 }
+    	every_country = {
+    		limit = {
+    			has_country_flag = zin_afrit_eastern_client
+    			has_capitulated = no
+    		}
+    		if = {
+    			limit = { check_variable = { num_owned_states > zin_seat_mx } }
+    			set_temp_variable = { zin_seat_mx = num_owned_states }
+    			save_global_event_target_as = zin_afrit_seat
+    		}
+    	}
+    }`);
+
+  const W = D.word;
+  effects.zin_afrit_word_of_the_heir = dedent(`
+    # N8: the report of the heir's naming (zin_afrit.31) reaches the seat once, after its delay: 30 days with Houses among the Gala, else
+    # 120; 5 fewer per level of Whispers, 15 fewer each for the western ears and the early warning, 60 more if the Gala keep their word;
+    # never under 10. It is the one report of the heir leaving Gala.
+    if = {
+    	limit = {
+    		has_global_flag = zin_eindil_named
+    		NOT = { has_global_flag = zin_afrit_word_sent }
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		has_event_target = zin_afrit_seat
+    	}
+    	set_global_flag = zin_afrit_word_sent
+    	set_temp_variable = { zin_wd = ${W.without} }
+    	if = {
+    		limit = { ${T.gala} = { check_variable = { zin_footholds > 0 } } }
+    		set_temp_variable = { zin_wd = ${W.withGala} }
+    	}
+    	set_temp_variable = { zin_ww = global.zin_afrit_seat_whispers }
+    	multiply_temp_variable = { zin_ww = ${W.perWhispers} }
+    	subtract_from_temp_variable = { zin_wd = zin_ww }
+    	if = {
+    		limit = { ${HUB} = { has_country_flag = zin_worshipdom_western_ears } }
+    		subtract_from_temp_variable = { zin_wd = ${W.westernEars} }
+    	}
+    	if = {
+    		limit = { ${HUB} = { has_country_flag = zin_worshipdom_early_warning } }
+    		subtract_from_temp_variable = { zin_wd = ${W.earlyWarning} }
+    	}
+    	if = {
+    		limit = { any_country = { has_country_flag = zin_gala_word_kept } }
+    		add_to_temp_variable = { zin_wd = ${W.wordKept} }
+    	}
+    	clamp_temp_variable = { var = zin_wd min = ${W.min} }
+    	${SEAT} = { country_event = { id = zin_afrit.31 days = zin_wd } }
+    }`);
+
+  effects.zin_afrit_lose_realm = dedent(`
+    # SL-10: the realm that employs zin_aurevan was annexed or capitulated (on_annex, on_capitulation, or the Council's month finding
+    # him employed by nobody). He flees to the eastern client with the most footholds; with no refuge he goes into hiding
+    # (zin_afrit_hidden), and after a year of hunting the stage 12 gate treats him as reduced. Every country hears zin_afrit.77.
+    # A crowned Afrit whose Aenor falls before his flight takes the flight east instead, back to the Worshipdom.
+    if = {
+    	limit = {
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		NOT = { has_global_flag = zin_afrit_hidden }
+    		NOT = { has_global_flag = zin_afrit_abandoned_aenor }
+    		NOT = { has_global_flag = zin_afrit_stand_in_parim }
+    		country_exists = ${HUB}
+    		${HUB} = {
+    			has_capitulated = no
+    			NOT = { has_character = zin_aurevan }
+    		}
+    		any_country = {
+    			zin_afrit_rules_here = yes
+    			NOT = { zin_afrit_is_hub = yes }
+    		}
+    	}
+    	zin_afrit_flee_east = yes
+    }
+    else_if = {
+    	limit = {
+    		NOT = { has_global_flag = zin_afrit_dead }
+    		NOT = { has_global_flag = zin_afrit_hidden }
+    	}
+    	# His realm's fall is his flight (D3): the name is spoken now if it was still kept.
+    	if = {
+    		limit = { zin_afrit_secret_kept = yes }
+    		zin_afrit_reveal = yes
+    	}
+    	every_country = {
+    		limit = { has_character = zin_aurevan }
+    		set_country_flag = zin_afrit_lost_seat_mark
+    		remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }
+    		remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }
+    	}
+    	clear_global_event_target = zin_afrit_refuge
+    	set_temp_variable = { zin_rf_best = 0 }
+    	every_country = {
+    		limit = {
+    			has_country_flag = zin_afrit_eastern_client
+    			has_capitulated = no
+    			NOT = { has_country_flag = zin_afrit_lost_seat_mark }
+    		}
+    		if = {
+    			limit = { check_variable = { zin_footholds > zin_rf_best } }
+    			set_temp_variable = { zin_rf_best = zin_footholds }
+    			save_global_event_target_as = zin_afrit_refuge
+    		}
+    	}
+    	if = {
+    		limit = {
+    			country_exists = ${HUB}
+    			${HUB} = {
+    				has_capitulated = no
+    				NOT = { has_country_flag = zin_afrit_lost_seat_mark }
+    			}
+    		}
+    		${HUB} = { save_global_event_target_as = zin_afrit_refuge }
+    	}
+    	every_country = {
+    		limit = { has_country_flag = zin_afrit_lost_seat_mark }
+    		clr_country_flag = zin_afrit_lost_seat_mark
+    	}
+    	if = {
+    		limit = { has_event_target = zin_afrit_refuge }
+    		event_target:zin_afrit_refuge = {
+    			recruit_character = zin_aurevan
+    			add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer } } }
+    			${setStance('zin_shadow_worship')}
+    			news_event = { id = zin_afrit.77 }
+    		}
+    	}
+    	else = {
+    		set_global_flag = zin_afrit_hidden
+    		news_event = { id = zin_afrit.77 }
+    	}
+    	zin_afrit_resolve_seat = yes
+    	zin_afrit_refresh_graces = yes
     }`);
 
   effects.zin_afrit_startup_values = dedent(`

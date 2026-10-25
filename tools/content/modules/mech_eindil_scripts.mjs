@@ -15,6 +15,8 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
   const stageAge = (cmp, n) => `check_variable = { global.zin_eindil_stage_age ${cmp} ${n} }`;
   const gflag = f => `has_global_flag = ${f}`;
   const notFlag = f => `NOT = { has_global_flag = ${f} }`;
+  // A focus sets a country flag on its own tree's country; the journey reads it wherever it is (SL-20).
+  const countryFlagAnywhere = f => `any_country = { has_country_flag = ${f} }`;
   const ev = id => { firedEvents.add(`zin_eindil.${id}`); return `zin_eindil.${id}`; };
   // fire an event to the country stored in a global variable, if it still exists
   const fireVar = (varName, id, days) => L('if', `limit = { has_variable = global.${varName} }`, L(`var:global.${varName}`, L('if', 'limit = { exists = yes }', `country_event = { id = ${ev(id)}${days ? ` days = ${days}` : ''} }`)));
@@ -27,7 +29,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
 
   // ============================================================================================ date triggers
   // Floor dates the pulse reads besides the stage floors, each through the story pace (R2): zin_eindil_date_<yyyy>_<mm>.
-  const dates = ['1750.9.1', '1755.3.1', '1757.6.1', '1757.7.1', '1757.8.1', '1757.12.1', '1758.3.1', '1759.3.1'];
+  const dates = ['1750.9.1', '1755.3.1', '1757.6.1', '1757.7.1', '1757.8.1', '1757.12.1', '1758.3.1', '1758.9.1', '1759.3.1'];
   for (const d of dates) { const [y, m] = d.split('.'); T(`zin_eindil_date_${y}_${String(m).padStart(2, '0')}`, dateAfter(d)); }
   const dateT = d => { const [y, m] = d.split('.'); return `zin_eindil_date_${y}_${String(m).padStart(2, '0')} = yes`; };
 
@@ -69,12 +71,12 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     4: [stage(3), 'zin_eindil_floor_reached = yes', L('OR', gflag('zin_eindil_stage_3_done'), gflag('zin_eindil_war_king'), stageAge('>', C.stage4_fallback - 1)), 'zin_eindil_hold_over = yes'],
     5: [stage(4), 'zin_eindil_floor_reached = yes', stageAge('>', C.stage5_after - 1), 'zin_eindil_hold_over = yes'],
     6: [stage(5), 'zin_eindil_floor_reached = yes', gflag('zin_eindil_named'), 'check_variable = { global.zin_eindil_named_since > 0 }', `check_variable = { global.zin_eindil_named_age > ${C.stage6_after_named - 1} }`, 'zin_eindil_hold_over = yes'],
-    7: [stage(6), 'zin_eindil_floor_reached = yes', L('OR', stageAge('>', C.voyage_days - 1), L('AND', gflag('zin_gala_great_ship'), stageAge('>', C.voyage_days_great_ship - 1))), 'zin_eindil_hold_over = yes'],
+    7: [stage(6), 'zin_eindil_floor_reached = yes', L('OR', stageAge('>', C.voyage_days - 1), L('AND', countryFlagAnywhere('zin_gala_great_ship'), stageAge('>', C.voyage_days_great_ship - 1))), 'zin_eindil_hold_over = yes'],
     8: [stage(7), 'zin_eindil_floor_reached = yes', L('OR', L('AND', 'check_variable = { global.zin_eindil_hall_done_since > 0 }', `check_variable = { global.zin_eindil_hall_age > ${C.hall_travel_days - 1} }`), stageAge('>', C.stage8_fallback - 1)), 'zin_eindil_hold_over = yes'],
     9: [stage(8), 'zin_eindil_floor_reached = yes', L('OR', L('AND', gflag('zin_war_of_last_crowns'), gflag('zin_eindil_dragon_pact')), 'zin_eindil_date_1758_03 = yes'), 'zin_eindil_hold_over = yes'],
     10: [stage(9), gflag('zin_eindil_cast_down')],
-    11: [L('OR', stage(10), L('AND', stage(9), gflag('zin_eindil_stage_9_done'), notFlag('zin_eindil_cast_down'), notFlag('zin_afrit_returned'))), 'zin_eindil_floor_reached = yes', gflag('zin_eindil_recovered'), L('OR', gflag('zin_afrit_holds_parim'), gflag('zin_afrit_stand_in_parim')), ...palaceReady],
-    12: [L('OR', stage(9), stage(10), stage(11)), 'zin_eindil_floor_reached = yes', L('OR', gflag('zin_eindil_stage_9_done'), stage(10), stage(11)), L('OR', gflag('zin_afrit_dead'), 'NOT = { zin_eindil_afrit_foes_exist = yes }')],
+    11: [L('OR', stage(10), L('AND', stage(9), gflag('zin_eindil_stage_9_done'), notFlag('zin_eindil_cast_down'), notFlag('zin_afrit_returned'))), 'zin_eindil_floor_reached = yes', gflag('zin_eindil_recovered'), L('OR', 'zin_afrit_holds_parim = yes', gflag('zin_afrit_stand_in_parim')), ...palaceReady],
+    12: [L('OR', stage(9), stage(10), stage(11)), 'zin_eindil_floor_reached = yes', L('OR', gflag('zin_eindil_stage_9_done'), stage(10), stage(11)), L('OR', gflag('zin_afrit_dead'), 'NOT = { zin_eindil_afrit_foes_exist = yes }', 'zin_afrit_reduced = yes')],
   };
   for (const n of Object.keys(ready)) T(`zin_eindil_ready_${n}`, ...ready[n]);
   T('zin_eindil_next_stage_ready', L('OR', ...Object.keys(ready).map(n => `zin_eindil_ready_${n} = yes`)));
@@ -228,7 +230,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     L('else', fireVar('zin_eindil_gala_host', 73, 3)));
   E('zin_eindil_lose_heir',
     "# The heir is out of the story (divergence only): the flag and the news (journey event .140, which fires the endings' league event).",
-    L('if', `limit = { ${notFlag('zin_eindil_lost')} }`, 'set_global_flag = zin_eindil_lost', newsAll(140)));
+    L('if', `limit = { ${notFlag('zin_eindil_lost')} }`, 'set_global_flag = zin_eindil_lost', newsAll(140), 'zin_ending_heir_lost = yes'));
   E('zin_eindil_wound',
     '# zin_arg_days (default 120): the grievously wounded trait for that many days.',
     L('if', 'limit = { check_variable = { zin_arg_days = 0 } }', 'set_temp_variable = { zin_arg_days = 120 }'),
@@ -374,12 +376,14 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     "# N9: 5 + ports betrayed + 1 if hunted + 1 each for the Worshipdom's ships, hunters and Whispers 4 - 1 if elven crew - 1 per guide flag - 1 if the Deliverer sent others. Stored in global.zin_eindil_ambush_strength.",
     `set_temp_variable = { eind_str = ${K('ambush_base')} }`,
     'add_to_temp_variable = { eind_str = global.zin_eindil_ports_betrayed }',
-    ...['zin_eindil_hunted', 'zin_worshipdom_ships_ready', 'zin_worshipdom_hunters'].map(f => L('if', `limit = { ${gflag(f)} }`, 'add_to_temp_variable = { eind_str = 1 }')),
+    ...['zin_eindil_hunted'].map(f => L('if', `limit = { ${gflag(f)} }`, 'add_to_temp_variable = { eind_str = 1 }')),
+    ...['zin_worshipdom_ships_ready', 'zin_worshipdom_hunters'].map(f => L('if', `limit = { ${countryFlagAnywhere(f)} }`, 'add_to_temp_variable = { eind_str = 1 }')),
     L('if', 'limit = { check_variable = { global.zin_afrit_seat_whispers > 3 } }', 'add_to_temp_variable = { eind_str = 1 }'),
     ...['zin_eindil_elven_crew', 'zin_eindil_landing_guides', 'zin_yeldenne_beacon', 'zin_yeldenne_coast_watch', 'zin_yeldenne_guides', 'zin_afrit_sent_others'].map(f => L('if', `limit = { ${gflag(f)} }`, 'subtract_from_temp_variable = { eind_str = 1 }')),
     'set_variable = { global.zin_eindil_ambush_strength = eind_str }',
     'log = "ZIN journey: ambush strength [?global.zin_eindil_ambush_strength]"');
-  for (const f of ['zin_worshipdom_ships_ready', 'zin_worshipdom_hunters', 'zin_afrit_sent_others']) dep(f, 'global flag', 'afrit_hidden_council');
+  for (const f of ['zin_worshipdom_ships_ready', 'zin_worshipdom_hunters']) dep(f, 'country flag', 'tree worshipdom (read on any country, SL-20)');
+  dep('zin_afrit_sent_others', 'global flag', 'afrit_hidden_council');
   dep('zin_afrit_seat_whispers', 'global variable', 'afrit_hidden_council');
   for (const f of ['zin_yeldenne_beacon', 'zin_yeldenne_coast_watch', 'zin_yeldenne_guides']) dep(f, 'global flag', 'regional yeldenne tree');
   E('zin_eindil_ambush_resolved',
@@ -503,6 +507,8 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     L('else',
       // nobody to fight in the south: battles 1 to 3 are skipped
       L('if', `limit = { check_variable = { global.zin_eindil_battle < 3 } ${volganGone} }`, setVar('global.zin_eindil_battle', 3)),
+      // SL-33: the southern battles wait no longer than CP21's latest date (1 Glernaen 4A 1758) or a year after the return
+      L('if', `limit = { check_variable = { global.zin_eindil_battle < 3 } OR = { ${dateT('1758.3.1')} ${stageAge('>', C.battle_deadline_days)} } }`, setVar('global.zin_eindil_battle', 3), 'set_global_flag = zin_eindil_south_unfought'),
       // battle 1: Volgan at the southern front (and Varner's last wards, which journey event .96 starts when Zol's dead are in the field)
       L('if', `limit = { check_variable = { global.zin_eindil_battle = 0 } zin_eindil_has_host = yes OR = { AND = { zin_eindil_historical = yes ${dateT('1757.6.1')} } AND = { zin_eindil_historical = no ${volganGround} } } }`,
         setVar('global.zin_eindil_battle', 1), battleGap, `add_to_variable = { global.zin_eindil_battle_next = ${C.battle_gap_days} }`, fireHost(96)),
@@ -517,7 +523,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
       // battle 4 is Zol's: noticed when he manifests
       L('if', `limit = { check_variable = { global.zin_eindil_battle = 3 } OR = { ${gflag('zin_zol_manifested')} ${gflag('zin_horos_sword_broken')} } }`, setVar('global.zin_eindil_battle', 4)),
       // battle 5: hailed as king, after Zol withdraws or on 1757.12.1 if Zol never came
-      L('if', `limit = { OR = { check_variable = { global.zin_eindil_battle = 3 } check_variable = { global.zin_eindil_battle = 4 } } OR = { ${gflag('zin_zol_withdrawn')} AND = { ${dateT('1757.12.1')} NOT = { ${gflag('zin_zol_manifested')} } } } }`,
+      L('if', `limit = { OR = { check_variable = { global.zin_eindil_battle = 3 } check_variable = { global.zin_eindil_battle = 4 } } OR = { ${gflag('zin_zol_withdrawn')} AND = { ${dateT('1757.12.1')} NOT = { ${gflag('zin_zol_manifested')} } } ${dateT('1758.9.1')} } }`,
         setVar('global.zin_eindil_battle', 5), 'set_global_flag = zin_eindil_stage_9_done', 'zin_eindil_hail_the_king = yes')));
   dep('zin_horos_sword_broken', 'global flag', 'zols_mistake (zin_mistake.21)');
   T('zin_eindil_battle_ground', 'zin_eindil_has_host = yes', L('any_state', 'zin_eindil_army_near = yes', L('controller', `OR = { original_tag = ${T_.volgan} is_subject_of = ${T_.volgan} }`)));
@@ -575,7 +581,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     L('if', `limit = { ${stage(2)} ${stageAge('>', 109)} ${notFlag('zin_eindil_s2_end_fired')} }`, 'set_global_flag = zin_eindil_s2_end_fired', 'zin_eindil_king_without_a_house = yes'),
     L('if', `limit = { ${stage(3)} }`, 'zin_eindil_stage3_runner = yes'),
     L('if', `limit = { ${stage(4)} ${stageAge('>', 250)} ${notFlag('zin_eindil_s4_end_fired')} }`, 'set_global_flag = zin_eindil_s4_end_fired', fireVar('zin_eindil_wreck_host', 45)),
-    L('if', `limit = { ${stage(5)} ${stageAge('>', C.naming_fallback)} ${notFlag('zin_eindil_named')} }`, 'zin_eindil_name_him = yes'),
+    L('if', `limit = { ${stage(5)} ${stageAge('>', C.naming_fallback)} ${notFlag('zin_eindil_named')} }`, 'zin_eindil_name_him = yes', newsAll(170)),
     L('if', `limit = { ${stage(6)} ${stageAge('>', C.port_gap_days - 1)} ${notFlag('zin_eindil_s6_port2')} }`, 'set_global_flag = zin_eindil_s6_port2', fireVar('zin_eindil_port_2', 61)),
     L('if', `limit = { ${stage(6)} ${stageAge('>', C.port_gap_days * 2 - 1)} ${notFlag('zin_eindil_s6_port3')} }`, 'set_global_flag = zin_eindil_s6_port3', fireVar('zin_eindil_port_3', 61)),
     L('if', `limit = { ${stage(7)} }`, 'zin_eindil_stage7_runner = yes'),
@@ -649,8 +655,11 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     palaceAvail(`custom_trigger_tooltip = { tooltip = zin_eindil_tt_passages ${gflag('zin_palace_passages')} }`, `custom_trigger_tooltip = { tooltip = zin_eindil_tt_rebels ${gflag('zin_palace_rebels')} }`, `custom_trigger_tooltip = { tooltip = zin_eindil_tt_floor ${dateT('1759.3.1')} }`),
     'days_remove = 7', L('remove_effect', 'zin_afrit_begin_palace_battle = yes'), L('ai_will_do', 'base = 100'));
   dep('zin_afrit_begin_palace_battle', 'scripted effect', 'afrit_hidden_council');
-  for (const f of ['zin_afrit_holds_parim', 'zin_afrit_claims_aoaz', 'zin_afrit_stand_in_parim', 'zin_afrit_dead', 'zin_afrit_returned', 'zin_afrit_revealed']) dep(f, 'global flag', 'afrit_hidden_council');
-  for (const f of ['zin_gala_great_ship']) dep(f, 'global flag', 'lands_of_the_sun');
+  dep('zin_afrit_holds_parim', 'scripted trigger', 'afrit_hidden_council');
+  dep('zin_afrit_reduced', 'scripted trigger', 'afrit_hidden_council (SL-09)');
+  dep('zin_ending_heir_lost', 'scripted effect', 'events_crown (zin_ending.txt)');
+  for (const f of ['zin_afrit_claims_aoaz', 'zin_afrit_stand_in_parim', 'zin_afrit_dead', 'zin_afrit_returned', 'zin_afrit_revealed']) dep(f, 'global flag', 'afrit_hidden_council');
+  dep('zin_gala_great_ship', 'country flag', 'tree gala (read on any country, SL-20)');
   for (const f of ['zin_war_of_last_crowns', 'zin_zol_rising', 'zin_zol_manifested', 'zin_zol_withdrawn']) dep(f, 'global flag', 'world systems / zols_mistake');
   dep('zin_volgan_body_destroyed', 'global flag', 'volgan_southern_dominion');
   dep('zin_world_is_dragon_keeper', 'scripted trigger', 'magic and world systems (04_magic_and_world_systems.md)');

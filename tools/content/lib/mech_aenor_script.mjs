@@ -435,6 +435,14 @@ export function aenorScripts(D, T) {
     		}
     	}
     	zin_afrit_ready_regicide = yes
+    	# B07.D5: with no Council left to strike, the King dies in his own time.
+    	if = {
+    		limit = {
+    			NOT = { country_exists = ${HUB} }
+    			NOT = { any_country = { has_character = zin_aurevan } }
+    		}
+    		set_global_flag = zin_golden_king_natural
+    	}
     }
     if = {
     	limit = {
@@ -750,9 +758,11 @@ export function aenorScripts(D, T) {
     	add_to_variable = { zin_council_influence = 10 }
     	clamp_variable = { var = zin_council_influence min = 0 max = 100 }
     	set_country_flag = zin_aenor_faithful_rule
+    	# The seals go to Afrit's seat (role R02, SL-11): the Worshipdom, or whoever employs the Deliverer when it is gone.
+    	zin_afrit_resolve_seat = yes
     	if = {
-    		limit = { country_exists = ${HUB} }
-    		${HUB} = { country_event = { id = zin_afrit.20 } }
+    		limit = { has_event_target = zin_afrit_seat }
+    		event_target:zin_afrit_seat = { country_event = { id = zin_afrit.20 } }
     	}
     	else = {
     		${setStance('zin_light_sanctuary')}
@@ -826,15 +836,15 @@ export function aenorScripts(D, T) {
     zin_aenor_best_camp = yes
     set_variable = { zin_aenor_ai_camp = zin_aenor_best }
     if = {
-    	limit = { ${rule('zin_rule_ai_aenor_succession', 'GOLDEN_COURT')} }
+    	limit = { zin_rules_ai_branch_aenor_golden_court = yes }
     	set_variable = { zin_aenor_ai_camp = 1 }
     }
     else_if = {
-    	limit = { ${rule('zin_rule_ai_aenor_succession', 'FREE_DOMINIONS')} }
+    	limit = { zin_rules_ai_branch_aenor_free_dominions = yes }
     	set_variable = { zin_aenor_ai_camp = 3 }
     }
     else_if = {
-    	limit = { ${rule('zin_rule_ai_aenor_succession', 'RANDOM')} }
+    	limit = { zin_rules_ai_random_aenor = yes }
     	random_list = {
     		${D.camps.map(c => list('5 = {', c.key === 'host' ? 'trigger = { zin_aenor_host_available = yes }' : '',
       `modifier = {\nadd = 10\ncheck_variable = { zin_aenor_camp_${c.key} > 24 }\n}`, `modifier = {\nadd = 20\ncheck_variable = { zin_aenor_camp_${c.key} > 49 }\n}`,
@@ -1223,6 +1233,17 @@ export function aenorScripts(D, T) {
     recruit_character = zin_aenor_captains_regency
     promote_character = zin_aenor_captains_regency
     country_event = { id = zin_aenor.330 }`);
+  effects.zin_aenor_exile_king = dedent(`
+    # SL-25: the original Aenor is annexed or capitulates while the Golden King lives. He goes into exile (zin_golden_king_exiled, set
+    # once) and every country hears zin_aenor.470; a conquered court no longer counts as the Golden Court enduring.
+    if = {
+    	limit = {
+    		zin_aenor_king_alive = yes
+    		NOT = { has_global_flag = zin_golden_king_exiled }
+    	}
+    	set_global_flag = zin_golden_king_exiled
+    	news_event = { id = zin_aenor.470 }
+    }`);
   effects.zin_aenor_restore_hailed_king = dedent(`
     # Eindil leads again after his recovery.
     set_variable = { zin_aenor_ruling_camp = 4 }
@@ -1238,6 +1259,11 @@ export function aenorScripts(D, T) {
     ${setStance('zin_light_wardens')}
     remove_ideas = { zin_aenor_interregnum zin_aenor_hailed_king zin_aenor_throne_abandoned }
     clr_country_flag = zin_aenor_hailed_king
+    # Crowned while Afrit lives but is reduced (SL-09): the false god is beyond the Rift, out of the age's reckoning (owner question Q1).
+    if = {
+    	limit = { NOT = { has_global_flag = zin_afrit_dead } }
+    	set_global_flag = zin_afrit_beyond_the_rift
+    }
     remove_dynamic_modifier = { modifier = zin_aenor_golden_court }
     add_ideas = zin_aenor_rightful_king
     # A Charter of Equals goes to every Concord dominion, every Free Dominion and Selen.

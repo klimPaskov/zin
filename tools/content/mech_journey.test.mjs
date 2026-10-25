@@ -118,7 +118,7 @@ test('Every event fired by a script is defined here or belongs to the events tra
   const events = new Set();
   for (const r of Object.values(results)) for (const s of r.scripts) for (const id of idsIn(s.text)) events.add(id);
   const external = [...events].filter(id => !mine.has(id));
-  const ok = id => { const [ns, n] = id.split('.'); return (ns === 'zin_eindil' && ((+n >= 10 && +n <= 169))) || ['zin_afrit', 'zin_dominion', 'zin_aenor'].includes(ns); };
+  const ok = id => { const [ns, n] = id.split('.'); return (ns === 'zin_eindil' && ((+n >= 10 && +n <= 199))) || ['zin_afrit', 'zin_dominion', 'zin_aenor'].includes(ns); };
   assert.deepEqual(external.filter(id => !ok(id)), []);
   assert(external.includes('zin_eindil.10') && external.includes('zin_eindil.96') && external.includes('zin_eindil.130'));
   assert.deepEqual(results.eindil.firedEvents.filter(id => !ok(id) && !mine.has(id)), []);

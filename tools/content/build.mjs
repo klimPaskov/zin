@@ -158,6 +158,10 @@ const world = await buildEventsWorld(staged, { countries });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt, whose zin_story_tick calls the runner block of every story namespace (convention C6).
 const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'lastwar', 'ending', 'lore'] });
+// The narrative events the mechanic slices fire and no module wrote (events_mech.mjs, SL-28): after every other event module, whose
+// ids it must not take again.
+const mechEvents = await (await import('./modules/events_mech.mjs')).buildEventsMech(staged, { countries });
+void mechEvents;
 // Buldor's company books (regional decisions) come after the compiler; the focus companions (dynamic modifiers of Noris and Stabilo,
 // Triton's opinion modifiers) write what the compiler cannot, so they run before it.
 const focusMajorC = await buildFocusMajorC(staged);

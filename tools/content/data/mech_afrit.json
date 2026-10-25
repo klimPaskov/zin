@@ -37,7 +37,12 @@
     { "key": "necklace", "code": 4, "name": "The Necklace of the Abyss", "picture": "necklace_deep", "graces": { "political_power_factor": 0.15, "army_morale_factor": 0.1 } }
   ],
   "graceVariables": { "political_power_factor": "zin_afrit_dm_pp", "army_morale_factor": "zin_afrit_dm_morale", "own_operative_capture_chance_factor": "zin_afrit_dm_capture", "army_retreat_speed_factor": "zin_afrit_dm_retreat", "stability_factor": "zin_afrit_dm_stab", "war_support_factor": "zin_afrit_dm_ws", "army_core_defence_factor": "zin_afrit_dm_coredef", "defensive_war_stability_factor": "zin_afrit_dm_defstab" },
-  "dates": { "regicideFallback": "1750.10.15", "flight": "1756.3.1", "returnOpen": "1758.1.1", "return": "1758.2.1", "parim": "1758.9.1", "ashenA": "1759.1.1", "ashenB": "1760.1.1" },
+  "dates": { "regicideFallback": "1750.10.15", "crownLatest": "1751.2.8", "flight": "1756.3.1", "returnOpen": "1758.1.1", "return": "1758.2.1", "parim": "1758.9.1", "reduced": "1759.3.1", "ashenA": "1759.1.1", "ashenB": "1760.1.1" },
+  "crownTimeoutDays": 30,
+  "returnAfterDays": 120,
+  "hunt": { "days": 365 },
+  "word": { "withGala": 30, "without": 120, "perWhispers": 5, "westernEars": 15, "earlyWarning": 15, "wordKept": 60, "min": 10, "gala": "Gala" },
+  "voyageCost": 100,
   "palace": [
     { "stage": 1, "event": 71, "artifact": "ring", "base": 60, "journey": 120 },
     { "stage": 2, "event": 72, "artifact": "crown", "base": 55, "journey": null },
@@ -80,8 +85,8 @@
   "veil": { "thinsAt": 30, "exposedBelow": 15, "firstFloor": 1 },
   "external": {
     "effects": ["zin_aenor_expose_plot", "zin_aenor_hasten_death_clock", "zin_aenor_add_council_influence", "zin_aenor_add_concord_loyalty_all", "zin_east_prepare_kneel", "zin_eindil_start_hunt", "zin_politics_set_stance", "zin_politics_add_drift", "zin_world_add_gathering_dark", "zin_reign_on_crowning", "zin_aenor_find_parim_realm"],
-    "triggers": ["zin_is_site_parim", "zin_region_east_lands_country", "zin_east_is_court"],
-    "events": ["zin_reign.65", "zin_reign.81", "zin_reign.82", "zin_reign.83", "zin_reign.85", "zin_eindil.110", "zin_eindil.120", "zin_eindil.121", "zin_eindil.123", "zin_eindil.124", "zin_eindil.127"],
+    "triggers": ["zin_is_site_parim", "zin_region_east_lands_country", "zin_east_is_court", "zin_eindil_coalition_ally", "zin_rules_ai_branch_afrit_historical", "zin_rules_ai_branch_afrit_free", "zin_rules_ai_branch_afrit_ashen", "zin_rules_ai_branch_afrit_dormant"],
+    "events": ["zin_reign.65", "zin_reign.81", "zin_reign.82", "zin_reign.83", "zin_reign.85", "zin_eindil.110", "zin_eindil.120", "zin_eindil.121", "zin_eindil.123", "zin_eindil.124", "zin_eindil.127", "zin_afrit.77"],
     "characters": ["zin_aurevan", "zin_merovan", "zin_eronel"],
     "ideas": ["zin_worshipdom_temple_state", "zin_worshipdom_radiant_face"],
     "variables": ["zin_east_kneel_bias"]

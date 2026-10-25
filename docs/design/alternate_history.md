@@ -999,6 +999,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-04. The Deliverer is never crowned
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit.20 (CP06: wait, take the crown, a pliant heir, rule from Parim in person), .21, .22 and .23 (its immediate block crowns Eronel once) are written in events_mech.mjs; the Council's month crowns an AI seat 30 days after zin_aenor_faithful_rule by its branch (historical and ambitious the crown, patient the heir, free 80 to 20). Test tools/content/events_mech.test.mjs; handoff docs/plans/story/afrit_aenor_eindil_handoff.md.
+
 - **Kind:** event undefined; effect never called. **Beats:** B09, B10, B25, B26.
 
 - **Where:** staged:common/scripted_effects/zin_aenor_court.txt (zin_aenor_give_seals fires zin_afrit.20); staged:common/scripted_effects/zin_afrit.txt (zin_afrit_crown_aurevan, zin_afrit_raise_pliant_heir: no caller)
@@ -1012,6 +1014,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Afrit; mechanic events
 
 #### SL-05. Afrit can never die
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit.70 to .76 are written; .70 starts stage 1 (.71), each stage offers the hub's defences and rolls zin_afrit_palace_roll; the news .75 calls zin_afrit_die once (its only caller, O2) and fires zin_eindil.124; .76 fires zin_eindil.127. Test tools/content/events_mech.test.mjs.
 
 - **Kind:** event undefined; effect never called. **Beats:** B41, B42.
 
@@ -1027,6 +1031,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-06. The palace never opens on the historical path
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_eindil_ready_11 reads zin_afrit_holds_parim = yes. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** trigger used as a flag. **Beats:** B41.
 
 - **Where:** tools/content/modules/mech_eindil_scripts.mjs (zin_eindil_ready_11, line 72: gflag('zin_afrit_holds_parim')); staged:common/scripted_triggers/zin_eindil.txt (line 670); staged:common/scripted_triggers/zin_afrit.txt (line 71)
@@ -1040,6 +1046,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Eindil's journey
 
 #### SL-09. A living Afrit who never returns holds the heir for ever
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit.60 to .62 are written; the Council's month returns an AI seat on zin_afrit_date_return (or 120 days after the south is won) under the historical branch and as soon as the road is open under the free one, fires .61 after the return and forces Parim and .62 on zin_afrit_date_parim; stage 12 opens on zin_afrit_reduced (no Afrit realm in the Middle Lands, the Host's side in Parim, CP24 resolved or its latest date passed, or a year in hiding) and the coronation then sets zin_afrit_beyond_the_rift (Q1). Test tools/content/events_mech.test.mjs.
 
 - **Kind:** no dated fallback; gate can never open. **Beats:** B38, B39, B41, B42.
 
@@ -1055,6 +1063,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-10. Afrit outlives the destruction of his realm
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). on_capitulation, on_annex and the Council's month call zin_afrit_lose_realm: a crowned Afrit takes the flight east, otherwise he goes to the Worshipdom or the eastern client with most footholds, or into hiding (zin_afrit_hidden); every country hears zin_afrit.77 The Hunt for the False God (proposed). Test tools/content/events_mech.test.mjs.
+
 - **Kind:** actor removed without a successor. **Beats:** B38, B41, B42.
 
 - **Where:** staged:common/on_actions/zin_afrit.txt (only on_state_control_changed); staged:common/scripted_triggers/zin_aenor_court.txt (zin_aenor_eindil_can_be_crowned needs zin_afrit_dead)
@@ -1068,6 +1078,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Afrit
 
 #### SL-33. The return battles wait without a deadline
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). battles 1 to 3 are skipped on CP21's latest date (1758.3.1) or a year after the return (zin_eindil_south_unfought), and battle 5 follows by B37's latest date (1758.9.1) at the latest. Test tools/content/events_mech.test.mjs.
 
 - **Kind:** wait without deadline. **Beats:** B32, B33, B34, B37.
 
@@ -1085,6 +1097,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-07. Afrit never sails north
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). the Council's month sends zin_afrit.31 (CP09) to the seat once after its N8 delay from zin_eindil_named; .32, .33 and .34 are written; under the historical branch an AI seat sails on stage 6 if it has not sailed or sent others. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** event undefined; effect never called. **Beats:** B13, B14, B15.
 
 - **Where:** staged:common/scripted_effects/zin_afrit.txt (zin_afrit_northern_voyage, line 600: no caller); staged:events/zin_eindil.txt (zin_eindil.71 guard); staged:common/scripted_effects/zin_eindil.txt (lines 1073, 1086)
@@ -1099,6 +1113,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-08. The flight fallback ignores the default rule
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). every zin_rule_afrit test in the Afrit slice, the Council's decisions and the Worshipdom tree (130 tests) goes through zin_rules_ai_branch_afrit_*. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** game rule tested directly. **Beats:** B25, B26.
 
 - **Where:** staged:common/scripted_effects/zin_afrit.txt (zin_afrit_historical_fallbacks second block, line 408; zin_afrit_flee_east kneel); tools/content/lib/mech_afrit_script.mjs (lines 713 to 728)
@@ -1112,6 +1128,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Afrit
 
 #### SL-11. The Worshipdom tag is hard-coded
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit_resolve_seat saves zin_afrit_seat (the Worshipdom, else Afrit's employer, else the strongest eastern client); every Afrit effect and zin_aenor_give_seals act on it, the flight releases the Worshipdom from the holder of its capital when it is gone, and the month runs in one carrier (zin_afrit_pulse_here). Test tools/content/events_mech.test.mjs.
 
 - **Kind:** hard-coded tag. **Beats:** B02, B13, B25, B26, B38.
 
@@ -1197,6 +1215,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-25. A conquered Golden King never dies and still endures
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). on_capitulation and on_annex of the original Aenor with the King alive call zin_aenor_exile_king (zin_golden_king_exiled, news zin_aenor.470, proposed); the clock sets zin_golden_king_natural when the King dies with no Council left; the Chronicle's line 05 and the Golden Court outcome read both. Open: zin_realm.50 (the realm-life module) and the endings' outcome 4 reader (story framework). Test tools/content/events_mech.test.mjs.
+
 - **Kind:** actor removed without a successor. **Beats:** B02, B07, B45.
 
 - **Where:** staged:common/scripted_triggers/zin_aenor_court.txt (zin_aenor_king_alive = not zin_golden_king_dead); docs/specs/03_gameplay/05_world_tension_and_endings.md (outcome 4)
@@ -1210,6 +1230,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Aenor; world systems
 
 #### SL-28. Sixty-one fired events are undefined
+
+- **Status:** fixed for zin_afrit and zin_aenor on 25 October 2026 (Afrit, Aenor and Eindil pass). events_mech.mjs writes zin_afrit.10, .11, .14 to .17, .20 to .23, .31 to .34, .43, .45, .51 to .53, .60 to .62, .70 to .77 and zin_aenor.470; no zin_afrit, zin_aenor or zin_eindil event is fired and undefined in the staged tree. The other namespaces are the war-side pass's. Test tools/content/events_mech.test.mjs.
 
 - **Kind:** events fired but undefined. **Beats:** many.
 
@@ -1241,6 +1263,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-18. The denunciation sets the wrong kind of flag
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_eindil.82 Denounce and hunt and the Aenor focus Denounce the Impostor set the global flag as well as the country flag. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** flag scope mismatch. **Beats:** B16.
 
 - **Where:** staged:events/zin_eindil.txt (line 2769); staged:common/national_focus/zin_aenor.txt (line 2663); docs/specs/03_gameplay/06_historical_path_and_ai.md (CP10)
@@ -1268,6 +1292,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Western Crossing
 
 #### SL-21. Afrit never learns he has a brother
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit_knows_brother is set by zin_afrit.31, the voyage, zin_afrit_wound (the hall cases in which Afrit meets him) and zin_afrit.61. Test tools/content/events_mech.test.mjs.
 
 - **Kind:** flag never set. **Beats:** B15, B39.
 
@@ -1353,6 +1379,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-30. Per-power rules bypass their wrappers
 
+- **Status:** fixed for the Aenor succession 25 October 2026 (Afrit, Aenor and Eindil pass): zin_aenor_pick_ai_camp reads zin_rules_ai_branch_aenor_golden_court, _free_dominions and zin_rules_ai_random_aenor. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** rule wrappers unused. **Beats:** B08, B21, B25.
 
 - **Where:** staged:common/scripted_triggers/zin_rules.txt (zin_rules_ai_branch_aenor_golden_court, _free_dominions, zin_rules_ai_random_aenor, zin_rules_ai_branch_cold_conquest: unused)
@@ -1367,6 +1395,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-31. The King can both survive and die
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit_add_plot does nothing once zin_golden_king_survives is set. The generic mortality that may still end a surviving King belongs to the realm-life module. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** mutually exclusive outcomes both reachable. **Beats:** B07.
 
 - **Where:** staged:common/scripted_effects/zin_afrit.txt (zin_afrit_plot_exposed resets the plot to 0; zin_afrit_add_plot can raise it again)
@@ -1380,6 +1410,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** Afrit; Aenor
 
 #### SL-32. Afrit can both stand in Parim and flee
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_afrit_flee_east does nothing after the stand in Parim, and the focus Parim Shall Not Fall needs zin_afrit_abandoned_aenor unset. Test tools/content/events_mech.test.mjs.
 
 - **Kind:** mutually exclusive outcomes both reachable. **Beats:** B25.
 
@@ -1409,6 +1441,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 #### SL-37. The league without the heir is never told
 
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). zin_eindil_lose_heir calls zin_ending_heir_lost, and zin_eindil.140 no longer fires the league event itself. Test tools/content/events_mech.test.mjs.
+
 - **Kind:** effect never called. **Beats:** B33, B41.
 
 - **Where:** staged:common/scripted_effects/zin_ending.txt (zin_ending_heir_lost: no caller); docs/design/stage2/events_crown.md section 4
@@ -1424,6 +1458,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 ### Low
 
 #### SL-20. Focus flags read in the wrong scope
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). the journey reads zin_gala_great_ship, zin_worshipdom_ships_ready and zin_worshipdom_hunters as any_country = { has_country_flag = ... }. Test tools/content/events_mech.test.mjs.
 
 - **Kind:** flag scope mismatch. **Beats:** B12, B14.
 
@@ -1452,6 +1488,8 @@ The second is that the Afrit chain has no way out except his death in the palace
 - **Owner:** diplomacy; elves
 
 #### SL-35. The naming without Lorien is silent
+
+- **Status:** fixed on 25 October 2026 (Afrit, Aenor and Eindil pass). the naming fallback sends the news zin_eindil.170 The Mirror Without Its King (a variant for Lorien's death). Test tools/content/events_mech.test.mjs.
 
 - **Kind:** missing successor text. **Beats:** B12.
 

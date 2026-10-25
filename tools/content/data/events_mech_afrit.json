@@ -1,0 +1,860 @@
+{
+ "kind": "events_mech",
+ "source": "docs/specs/04_mechanics/afrit_hidden_council.md (events table), docs/specs/06_events/01_golden_king_and_succession.md (Acts I to VII), 02_eindil_journey.md (N8, N9), 03_war_of_the_last_crowns.md (Acts IX and X) and docs/design/alternate_history.md (SL-04, SL-05, SL-07, SL-09, SL-10, SL-28). Every text is proposed in the accepted voice (02_lore/09_voice_and_style.md); gists marked in the specs are kept. Private events go only to Afrit's seat and may name Afrit; every other text passes the secrecy rules (public names through [zin_loc_deliverer] and [zin_loc_eindil]).",
+ "sets": [
+  {
+   "namespace": "zin_afrit",
+   "file": "events/zin_afrit_story.txt",
+   "declaresNamespace": false,
+   "note": "The namespace is declared by events/zin_afrit_mechanic.txt (modules/mech_afrit.mjs), which loads first.",
+   "palace": {
+    "note": "The options of the four palace stages (events with palaceStage): the hub's defences, each once per attempt (the afrit spec's table). Trust the wards comes first, so a timed-out stage costs nothing (E2). The AI burns the reserves when it can, else draws on the Necklace.",
+    "roll": "The intruders press on, and the hermitage meets them.",
+    "options": [
+     {
+      "kind": 0,
+      "text": "Trust the wards.",
+      "ai": 1
+     },
+     {
+      "kind": 1,
+      "text": "Burn the reserves.",
+      "ai": 100,
+      "flag": "zin_afrit_used_burn",
+      "trigger": [
+       "has_political_power > 149"
+      ]
+     },
+     {
+      "kind": 2,
+      "text": "Draw on the Necklace.",
+      "ai": 10,
+      "flag": "zin_afrit_used_necklace",
+      "beforeStage": 4,
+      "trigger": [
+       "NOT = { has_global_flag = zin_afrit_lost_necklace }"
+      ]
+     },
+     {
+      "kind": 3,
+      "text": "Go through the doors.",
+      "ai": 0,
+      "flag": "zin_afrit_used_doors",
+      "onlyStage": 1,
+      "trigger": [
+       "has_global_flag = zin_afrit_attuned_ring"
+      ]
+     }
+    ]
+   },
+   "events": [
+    {
+     "id": 10,
+     "kind": "country",
+     "private": true,
+     "title": "The Council's Verdict",
+     "picture": "hermitage",
+     "fired_by": "the Worshipdom focus Prayers for the King (zin_arg_which 110), zin_lore.221",
+     "desc": "Merovan, Keeper of the Seals, has come up from Parim to the hermitage, and he sits with Ilvane the High Confessor and Corvel, Master of Couriers, in the cold room behind the reliquary. They put before you again the judgement the Council reached two years ago: the Golden King's taxes anger the dominions, and his league of crowns could grow into a seat of power that answers to no temple. Merovan believes the King can still be taught to drink less and sign more, but Ilvane does not, and neither, Afrit, do you.",
+     "options": [
+      {
+       "text": "Then the King's years are numbered.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "kind": "country",
+     "private": true,
+     "title": "Choose the Instrument",
+     "picture": "council_chamber",
+     "fired_by": "the Worshipdom focus A Vigil for the King (zin_arg_which 111)",
+     "desc": "Corvel lays three ways before the Council, and none of them is new. The Houses keep physicians at court who mix the King's evening draught, the Couriers know which of his huntsmen owe them money, and the Censer Chapter can send a fever-blessing that works slowly and leaves no mark at all. Merovan asks only that whatever is chosen should look like the will of the gods.",
+     "options": [
+      {
+       "text": "The physicians of the Houses.",
+       "hist": true,
+       "ai": "base = 60\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "effect": [
+        "set_country_flag = zin_worshipdom_instrument_physician",
+        "if = {",
+        "limit = { has_completed_focus = zin_worshipdom_remedies_of_the_royal_physicians }",
+        "set_temp_variable = { zin_arg_value = 10 }",
+        "zin_afrit_add_plot = yes",
+        "}"
+       ]
+      },
+      {
+       "text": "An accident on the King's hunt.",
+       "ai": "base = 20\nmodifier = {\n\tfactor = 0\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "effect": [
+        "set_country_flag = zin_worshipdom_instrument_hunt",
+        "set_temp_variable = { zin_arg_value = 15 }",
+        "zin_afrit_add_plot = yes",
+        "set_temp_variable = { zin_arg_value = -3 }",
+        "zin_afrit_add_veil = yes"
+       ]
+      },
+      {
+       "text": "The fever-blessing of the Censers.",
+       "ai": "base = 20\nmodifier = {\n\tfactor = 0\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "effect": [
+        "set_country_flag = zin_worshipdom_instrument_fever",
+        "set_temp_variable = { zin_arg_value = 5 }",
+        "zin_afrit_add_plot = yes"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "kind": "country",
+     "private": true,
+     "title": "The Night Is Near",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_add_plot at 100",
+     "desc": "Everything is in place, and only the night remains to be chosen. The physicians know their work, the guards on the King's stair have been changed for men the Couriers trust, and Merovan keeps a fair copy of the proclamation of mourning in his desk.",
+     "options": [
+      {
+       "text": "Choose the night.",
+       "ai": 100,
+       "effect": [
+        "if = {",
+        "limit = { is_ai = yes }",
+        "country_event = { id = zin_afrit.15 days = 3 }",
+        "}"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "kind": "country",
+     "private": true,
+     "checkpoint": 5,
+     "title": "Choose the Night",
+     "picture": "hermitage",
+     "fired_by": "the Worshipdom focus The Mistfall Vigil (zin_arg_which 115), zin_afrit.14 for the AI, itself a year after Not this year",
+     "desc": "The feast of Gaelor is the King's favourite, and he always sleeps late after it. Merovan says the court will be drunk and the guards tired by the small hours, and that a death in the month of mourning will surprise nobody in Parim.",
+     "options": [
+      {
+       "text": "Not this year.",
+       "ai": "base = 0\nmodifier = {\n\tadd = 30\n\tzin_rules_ai_branch_afrit_free = yes\n}",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.15.a.tt",
+        "hidden_effect = { country_event = { id = zin_afrit.15 days = 365 } }"
+       ],
+       "tip": "The Council waits a year and asks again."
+      },
+      {
+       "text": "At the feast of Gaelor.",
+       "hist": true,
+       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tadd = 60\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_ashen = yes\n}\nmodifier = {\n\tfactor = 0\n\thas_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT }\n}",
+       "effect": [
+        "zin_afrit_ready_regicide = yes"
+       ]
+      },
+      {
+       "text": "At the first chance.",
+       "ai": "base = 0\nmodifier = {\n\tadd = 10\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tfactor = 0\n\thas_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT }\n}",
+       "effect": [
+        "zin_afrit_ready_regicide = yes",
+        "set_temp_variable = { zin_arg_days = 180 }",
+        "zin_aenor_hasten_death_clock = yes",
+        "set_temp_variable = { zin_arg_value = -10 }",
+        "zin_afrit_add_veil = yes"
+       ]
+      },
+      {
+       "text": "Stay the hand.",
+       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_dormant = yes\n}\nmodifier = {\n\tadd = 100\n\thas_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT }\n}",
+       "effect": [
+        "set_country_flag = zin_worshipdom_stay_hand",
+        "custom_effect_tooltip = zin_afrit.15.d.tt",
+        "hidden_effect = { set_variable = { global.zin_afrit_regicide_plot = 0 } }"
+       ],
+       "tip": "The Council's preparations are put away, and the King lives."
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "kind": "country",
+     "private": true,
+     "title": "Found Out",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_plot_exposed (called only by zin_aenor_expose_plot)",
+     "desc": "Somebody at court has talked, and the King's guard has taken two of the Houses' physicians from their beds. Merovan swears that neither of them knows the Council's name, and Ilvane has the temples praying loudly for the King's health, but the work of years is undone and the court of Parim is watching every priest.",
+     "options": [
+      {
+       "text": "Bury what can be buried.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "kind": "news",
+     "title": "Treason in the Golden Court",
+     "picture": "golden_court",
+     "fired_by": "zin_afrit_plot_exposed",
+     "desc": "The chancery of Parim announces that servants of the temples have been accused of conspiring against the life of the Golden King. The King is well and has given thanks at the great temple on the lake, and the accused have been taken to the island fortress to wait for his judgement.",
+     "options": [
+      {
+       "text": "Treason in Parim, of all places.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "kind": "country",
+     "private": true,
+     "checkpoint": 6,
+     "title": "The Seals Pass to the Deliverer",
+     "picture": "golden_court",
+     "fired_by": "zin_aenor_give_seals (the Faithful rule after the Thirty Days), itself after Let the seals wait",
+     "desc": "The Golden King is buried, the Thirty Days are over and the Faithful hold Parim. Merovan has ridden to the hermitage with the seals of the kingdom in a plain box, and he lays them on the table in front of you. After all the long years behind the throne you may sit on it at last, or you may set a pliant boy on it and keep your hands where they have always been.",
+     "options": [
+      {
+       "text": "Let the seals wait.",
+       "trigger": [
+        "NOT = { has_country_flag = zin_worshipdom_commit_crown }",
+        "NOT = { has_country_flag = zin_worshipdom_commit_heir }",
+        "NOT = { zin_afrit_date_crown_latest = yes }"
+       ],
+       "ai": 0,
+       "tip": "Merovan keeps the seals for another month.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.20.a.tt",
+        "hidden_effect = { country_event = { id = zin_afrit.20 days = 30 } }"
+       ]
+      },
+      {
+       "text": "Take the crown.",
+       "hist": true,
+       "trigger": [
+        "NOT = { has_country_flag = zin_worshipdom_commit_heir }"
+       ],
+       "ai": "base = 0\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}\nmodifier = {\n\tadd = 80\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_ashen = yes\n}",
+       "effect": [
+        "zin_afrit_crown_aurevan = yes"
+       ]
+      },
+      {
+       "text": "Raise a pliant heir.",
+       "trigger": [
+        "NOT = { has_country_flag = zin_worshipdom_commit_crown }"
+       ],
+       "ai": "base = 0\nmodifier = {\n\tadd = 20\n\tzin_rules_ai_branch_afrit_free = yes\n}\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_dormant = yes\n}",
+       "effect": [
+        "zin_afrit_raise_pliant_heir = yes"
+       ]
+      },
+      {
+       "text": "Rule from Parim in person.",
+       "trigger": [
+        "is_ai = no",
+        "NOT = { has_country_flag = zin_worshipdom_commit_heir }"
+       ],
+       "ai": 0,
+       "tip": "You leave the hermitage to Ilvane and take the throne of Parim yourself.",
+       "effect": [
+        "zin_afrit_crown_aurevan = yes",
+        "custom_effect_tooltip = zin_afrit.20.d.tt",
+        "hidden_effect = {",
+        "if = {",
+        "limit = { has_event_target = zin_afrit_crown_realm }",
+        "event_target:zin_afrit_crown_realm = { change_tag_from = ROOT }",
+        "}",
+        "}"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "kind": "news",
+     "title": "Aurevan, First of His Name",
+     "picture": "coronation",
+     "requires": [
+      "zin_golden_king_dead"
+     ],
+     "fired_by": "zin_afrit_crown_aurevan",
+     "desc": "The King is dead, and the council and the temples have laid the crown of Parim before [zin_loc_deliverer], who has guarded Aenor since the fall of Elzon. He is King of Aenor, First of His Name, and New God of Men, and the bells of every temple on the lake rang for him from dawn until the evening prayer.",
+     "options": [
+      {
+       "text": "Long live the King.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "kind": "country",
+     "private": true,
+     "title": "Dissenters at Court",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_crown_aurevan, 30 days later",
+     "desc": "Some at court still ask questions: a judge of the lake courts, two lords of the lake cities and a captain of the Lost Cause who will not kneel in the temple. They are few, and none of them is a fool, which is exactly why Corvel would like an answer from you before the month is out.",
+     "options": [
+      {
+       "text": "Silence them.",
+       "hist": true,
+       "ai": "base = 80\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "effect": [
+        "set_temp_variable = { zin_arg_value = -5 }",
+        "zin_afrit_add_veil = yes",
+        "set_temp_variable = { zin_arg_value = 2 }",
+        "zin_world_add_gathering_dark = yes",
+        "if = {",
+        "limit = { has_event_target = zin_afrit_crown_realm }",
+        "event_target:zin_afrit_crown_realm = {",
+        "set_temp_variable = { zin_arg_value = 5 }",
+        "zin_aenor_add_council_influence = yes",
+        "}",
+        "}"
+       ]
+      },
+      {
+       "text": "Spare them.",
+       "ai": "base = 20\nmodifier = {\n\tfactor = 0\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "effect": [
+        "if = {",
+        "limit = { has_event_target = zin_afrit_crown_realm }",
+        "event_target:zin_afrit_crown_realm = {",
+        "set_temp_variable = { zin_arg_camp = 1 }",
+        "set_temp_variable = { zin_arg_value = 5 }",
+        "zin_aenor_add_camp_support = yes",
+        "set_temp_variable = { zin_arg_camp = 3 }",
+        "set_temp_variable = { zin_arg_value = 5 }",
+        "zin_aenor_add_camp_support = yes",
+        "set_temp_variable = { zin_arg_camp = 4 }",
+        "set_temp_variable = { zin_arg_value = 5 }",
+        "zin_aenor_add_camp_support = yes",
+        "}",
+        "}"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "kind": "news",
+     "title": "A New King in Parim",
+     "picture": "coronation",
+     "requires": [
+      "zin_golden_king_dead"
+     ],
+     "fired_by": "zin_afrit_raise_pliant_heir",
+     "immediate": [
+      "if = {",
+      "limit = { NOT = { has_global_flag = zin_afrit_eronel_crowned } }",
+      "set_global_flag = zin_afrit_eronel_crowned",
+      "zin_aenor_find_parim_realm = yes",
+      "event_target:zin_aenor_parim_realm = { zin_afrit_crown_eronel = yes }",
+      "}"
+     ],
+     "desc": "The temples and the council have crowned Prince Eronel of Arcedor in Parim. He is young and willing, the Keeper of the Seals stands at his right hand, and the priests say that [zin_loc_deliverer] himself blessed the choice.",
+     "options": [
+      {
+       "text": "Long live King Eronel.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "kind": "country",
+     "private": true,
+     "checkpoint": 9,
+     "title": "Word from the Lands of the Sun",
+     "picture": "cold_shore",
+     "requires": [
+      "zin_eindil_named"
+     ],
+     "fired_by": "zin_afrit_word_of_the_heir (the Council's month, N8), after its delay from zin_eindil_named",
+     "immediate": [
+      "set_global_flag = zin_afrit_knows_brother"
+     ],
+     "desc": "A courier of the Whispers has come up from the south with sea salt still on his cloak. The guest of the Gala court has a name now, and the name is Eindil, son of Ein. Your brother is alive, Afrit, and the elves mean to send him north by sea, towards the silent castle where Horos keeps the crystal you have wanted for so long.",
+     "options": [
+      {
+       "text": "Stay where you are.",
+       "ai": "base = 10\nmodifier = {\n\tfactor = 0\n\tzin_rules_ai_branch_afrit_historical = yes\n}"
+      },
+      {
+       "text": "Go north and lie in wait.",
+       "hist": true,
+       "trigger": [
+        "NOT = { has_global_flag = zin_afrit_voyage_begun }"
+       ],
+       "ai": "base = 60\nmodifier = {\n\tadd = 100\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "effect": [
+        "zin_afrit_northern_voyage = yes"
+       ]
+      },
+      {
+       "text": "Go north and take the crystal at once.",
+       "trigger": [
+        "NOT = { has_global_flag = zin_afrit_voyage_begun }"
+       ],
+       "ai": "base = 20\nmodifier = {\n\tfactor = 0\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "tip": "On arrival the party goes straight into the hall.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.31.c.tt",
+        "hidden_effect = { set_global_flag = zin_afrit_hall_at_once }",
+        "zin_afrit_northern_voyage = yes"
+       ]
+      },
+      {
+       "text": "Send others.",
+       "trigger": [
+        "NOT = { has_global_flag = zin_afrit_voyage_begun }"
+       ],
+       "ai": "base = 10\nmodifier = {\n\tfactor = 0\n\tzin_rules_ai_branch_afrit_historical = yes\n}",
+       "tip": "The Council's hunters wait for the elven ship without you.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.31.d.tt",
+        "hidden_effect = { set_global_flag = zin_afrit_sent_others }"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "kind": "country",
+     "private": true,
+     "title": "The Northern Voyage",
+     "picture": "cold_shore",
+     "fired_by": "zin_afrit_northern_voyage",
+     "immediate": [
+      "set_global_flag = zin_aurevan_went_north",
+      "every_country = {",
+      "limit = {",
+      "zin_afrit_rules_here = yes",
+      "zin_aenor_is_realm = yes",
+      "}",
+      "country_event = { id = zin_reign.81 }",
+      "}"
+     ],
+     "desc": "The pilgrim ships have put out from the cold harbours with the Deliverer aboard, and Merovan holds the seals until he comes back. The captains have been told that they carry a holy man on retreat, which is true in its way, and they have stopped asking why the holy man's guard is so well armed.",
+     "options": [
+      {
+       "text": "Steer for the north.",
+       "ai": 100
+      }
+     ],
+     "requires": [
+      "zin_eindil_named"
+     ]
+    },
+    {
+     "id": 33,
+     "kind": "country",
+     "private": true,
+     "checkpoint": 9,
+     "title": "The Ambush on the Shore",
+     "picture": "council_chamber",
+     "fired_by": "zin_eindil.70 (the landfall) while the party waits",
+     "desc": "The elven ship is in the bay below the silent castle, and your men are lying in the snow above the landing path. The crew are coming ashore in two boats, and the tall man in the first of them is your brother.",
+     "options": [
+      {
+       "text": "Let them land.",
+       "ai": 0,
+       "tip": "No blade is drawn on the shore, and the crew walk up to the castle with him.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.33.a.tt",
+        "hidden_effect = { set_global_flag = zin_eindil_let_land }"
+       ]
+      },
+      {
+       "text": "Spare none.",
+       "hist": true,
+       "ai": 100,
+       "tip": "Your men fall on the crew as they come up the path.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.33.b.tt"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "kind": "country",
+     "private": true,
+     "title": "Return from Yeldenne",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_wound",
+     "desc": "The pilgrim ships have brought the Deliverer home from the north, and the wound he took in the hall of Yeldenne has not closed. Whatever was said in that hall, your brother heard it, and the Couriers will have to work very hard indeed to keep it from reaching Parim.",
+     "options": [
+      {
+       "text": "Rest, and let the temples sing.",
+       "ai": 100,
+       "effect": [
+        "hidden_effect = {",
+        "every_country = {",
+        "limit = {",
+        "zin_afrit_rules_here = yes",
+        "zin_aenor_is_realm = yes",
+        "zin_afrit_secret_kept = yes",
+        "}",
+        "country_event = { id = zin_reign.82 }",
+        "}",
+        "}"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 43,
+     "kind": "news",
+     "title": "The Name Behind the Deliverer",
+     "picture": "unmasking",
+     "requires": [
+      "zin_afrit_revealed"
+     ],
+     "fired_by": "zin_afrit_reveal",
+     "desc": [
+      {
+       "if": "has_global_flag = zin_horos_dead",
+       "text": "The name is spoken in Parim at last, first in the guardrooms and then in the temples themselves: the god the kingdom worshipped as the Deliverer is Afrit, son of Ein, and the stranger from the ice is his brother. The priests of the Houses are being asked a great many questions, and most of them have no answers to give."
+      },
+      {
+       "text": "The name is spoken in Parim at last, first in the guardrooms and then in the temples themselves: the god the kingdom worshipped as the Deliverer is Afrit, son of Ein, a man of the line of the First Men. The priests of the Houses are being asked a great many questions, and most of them have no answers to give."
+      }
+     ],
+     "options": [
+      {
+       "text": "So that is whom they prayed to.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 45,
+     "kind": "country",
+     "title": "The Houses Under Suspicion",
+     "picture": "houses",
+     "requires": [
+      "zin_afrit_revealed"
+     ],
+     "fired_by": "zin_afrit_reveal, to every Light court that is not Afrit's",
+     "desc": "The Houses of the First Light served the false god of Parim, although many of the physicians and scribes who work in them never knew it. The court must decide whether to shut their doors and lose the hospitals with them, or to leave them open and watch who comes and goes.",
+     "options": [
+      {
+       "text": "Close the Houses.",
+       "ai": 60,
+       "effect": [
+        "if = {",
+        "limit = { check_variable = { zin_footholds > 0 } }",
+        "zin_afrit_purge_houses = yes",
+        "}"
+       ]
+      },
+      {
+       "text": "Watch them.",
+       "ai": 40,
+       "effect": [
+        "set_country_flag = { flag = zin_afrit_suspicious days = 730 }"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "kind": "country",
+     "checkpoint": 17,
+     "title": "The Deliverer Comes East",
+     "picture": "eastern_court",
+     "requires": [
+      "zin_afrit_abandoned_aenor"
+     ],
+     "fired_by": "zin_afrit_flee_east, to every eastern candidate that has not knelt yet",
+     "desc": "An embassy has come over the caravan roads from the west with news that the god-king of Aenor has left his throne, and that he asks the courts of the East to take him for their king. His envoys speak warmly of the Houses we have sheltered for so long, and rather more quietly of the debts our councillors owe them.",
+     "options": [
+      {
+       "text": "Refuse him.",
+       "aiVar": {
+        "name": "zin_afrit_kneel_chance",
+        "inverse": true
+       },
+       "effect": [
+        "set_country_flag = zin_afrit_refused_east"
+       ]
+      },
+      {
+       "text": "Kneel to the King of the East.",
+       "hist": true,
+       "trigger": [
+        "NOT = { has_country_flag = zin_afrit_eastern_client }"
+       ],
+       "aiVar": {
+        "name": "zin_afrit_kneel_chance"
+       },
+       "effect": [
+        "zin_afrit_kneel = yes"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 52,
+     "kind": "news",
+     "title": "A King in the East",
+     "picture": "eastern_court",
+     "requires": [
+      "zin_afrit_abandoned_aenor"
+     ],
+     "fired_by": "zin_afrit.9, 30 days after the flight, when two courts or more knelt",
+     "desc": "In the East, kings have knelt to [zin_loc_deliverer] and named him their king, although not every crown along the caravan roads agrees with them, and the ones that do not are already counting their spears.",
+     "options": [
+      {
+       "text": "A king in the East, then.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "kind": "country",
+     "private": true,
+     "title": "The Keeper's Choice",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_flee_east",
+     "desc": "Merovan has kept the seals of Parim for you through two reigns, and now he asks whether he is to follow you east or stay behind with them. He would be useful in either place, and he knows it, which is why he has asked so politely.",
+     "options": [
+      {
+       "text": "Merovan follows us east.",
+       "ai": 50,
+       "tip": "The Keeper of the Seals brings what he knows of every court on the lake.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.53.a.tt",
+        "add_political_power = 50",
+        "hidden_effect = { set_global_flag = zin_afrit_merovan_followed }"
+       ]
+      },
+      {
+       "text": "Merovan stays in Parim.",
+       "ai": 50,
+       "tip": "The Keeper of the Seals stays in Parim and keeps his friends at court.",
+       "effect": [
+        "custom_effect_tooltip = zin_afrit.53.b.tt",
+        "hidden_effect = {",
+        "set_global_flag = zin_afrit_merovan_stayed",
+        "every_country = {",
+        "limit = { zin_aenor_is_realm = yes }",
+        "set_temp_variable = { zin_arg_value = 5 }",
+        "zin_aenor_add_council_influence = yes",
+        "}",
+        "}"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "kind": "country",
+     "private": true,
+     "title": "The Return from the East",
+     "picture": "eastern_court",
+     "requires": [
+      "zin_afrit_abandoned_aenor"
+     ],
+     "fired_by": "zin_afrit_return (the focus The Return from the East, or the Council's month for the AI)",
+     "desc": [
+      {
+       "if": "has_global_flag = zin_volgan_body_destroyed",
+       "text": "Volgan's body is broken in the south, the dead of the north have gone back behind their gate, and your brother is still weak from the field. Aenor lies open, and the Host of the East has been ready to march since the thaw."
+      },
+      {
+       "text": "The Host of the East is ready to march, and Aenor will not wait for a better season. Whoever holds Parim now holds it without you, and the kings who knelt to you would like to see what it was they knelt for."
+      }
+     ],
+     "options": [
+      {
+       "text": "Turn the banners west.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "kind": "country",
+     "private": true,
+     "title": "Brother Against Brother",
+     "picture": "council_chamber",
+     "fired_by": "the Council's month after the return (at war with the heir's country, the seat's side holding Middle Lands ground), or the date under the historical branch",
+     "immediate": [
+      "set_global_flag = zin_afrit_knows_brother",
+      "if = {",
+      "limit = { NOT = { has_global_flag = zin_afrit_cliff_sent } }",
+      "set_global_flag = zin_afrit_cliff_sent",
+      "@host 110",
+      "}"
+     ],
+     "desc": "Your brother is on the cliff road above the gorge, still weak from the field, with a guard too small for the road. You have hated him since the day your father refused you, and you have never explained it to anyone, not even to Merovan, and tonight you will not need to.",
+     "options": [
+      {
+       "text": "Go to the cliff.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "kind": "news",
+     "title": "Lord of All Aoaz",
+     "picture": "golden_court",
+     "fired_by": "the Council's month, once the heir is cast down and the seat's side holds Parim",
+     "immediate": [
+      "if = {",
+      "limit = { NOT = { has_global_flag = zin_afrit_claims_aoaz } }",
+      "zin_afrit_retake_aenor = yes",
+      "}"
+     ],
+     "desc": "[zin_loc_deliverer] has taken Parim again and proclaims himself king of Aenor, of the East and of every people of Aoaz, which is a larger claim than the lands he holds. Heralds are riding to every court with copies of the proclamation, and some of them are being received.",
+     "options": [
+      {
+       "text": "Every court has heard it.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "kind": "country",
+     "private": true,
+     "title": "The Palace Wards",
+     "picture": "hermitage",
+     "fired_by": "zin_afrit_begin_palace_battle (the journey's Enter the Palace)",
+     "desc": "Someone is in the service passages under the palace. The wards on the lower doors have woken one after another, and the captain of the guard says that the footprints in the dust of the old kitchens are fresh.",
+     "options": [
+      {
+       "text": "Wake the hermitage.",
+       "ai": 100,
+       "effect": [
+        "hidden_effect = { country_event = { id = zin_afrit.71 } }"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "kind": "country",
+     "private": true,
+     "palaceStage": 1,
+     "title": "The Eye and the Ring",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit.70",
+     "desc": "The intruders have reached the long gallery and the guard is wavering. If the Deliverer shows himself at the head of the stair the men will hold, and the Ring of Doors on your hand would carry you out of any room that turned against you."
+    },
+    {
+     "id": 72,
+     "kind": "country",
+     "private": true,
+     "palaceStage": 2,
+     "title": "The Seals of the Crown",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_palace_roll, after stage 1 falls to the intruders",
+     "desc": "The rebels of the palace have found the chamber where the seals of the crown are kept, and every seal they break takes something from the Crown of Witnesses you wear. Ilvane is sending every priest in the palace to the seal chamber, though few of them have held a sword."
+    },
+    {
+     "id": 73,
+     "kind": "country",
+     "private": true,
+     "palaceStage": 3,
+     "title": "The Bracelet",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_palace_roll, after stage 2",
+     "desc": "Your brother has reached the inner hall, and he is turning your own workings against you, which he can only have learned from the crystal he carries. The Bracelet of the First Seal grows warm on your wrist each time he speaks."
+    },
+    {
+     "id": 74,
+     "kind": "country",
+     "private": true,
+     "palaceStage": 4,
+     "title": "The Necklace",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_palace_roll, after stage 3",
+     "desc": "Your brother is on the floor at your feet and your blade is at his throat, and there is nothing left between you and the end of it but the Necklace of the Abyss and whatever it will still give you tonight."
+    },
+    {
+     "id": 75,
+     "kind": "news",
+     "title": "The False God Falls",
+     "picture": "generic_war",
+     "named": true,
+     "fired_by": "zin_afrit_palace_roll, when stage 4 falls to the intruders (O2: the only caller of zin_afrit_die)",
+     "immediate": [
+      "if = {",
+      "limit = { NOT = { has_global_flag = zin_afrit_death_told } }",
+      "set_global_flag = zin_afrit_death_told",
+      "zin_afrit_die = yes",
+      "@host 124",
+      "}"
+     ],
+     "desc": [
+      {
+       "if": "has_global_flag = zin_afrit_revealed",
+       "text": "Afrit, who was worshipped in Parim as the Deliverer, is dead. His brother killed him in the palace after the treasures of the hermitage had been torn from him one by one, and he died as a mortal man dies, without a miracle."
+      },
+      {
+       "text": "[zin_loc_deliverer] is dead, killed in the palace of Parim by [zin_loc_eindil] after the treasures he wore had been torn from him one by one. He died as a mortal man dies, and the priests who had promised a miracle have stopped promising anything."
+      }
+     ],
+     "options": [
+      {
+       "text": "A god who could die.",
+       "ai": 100
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "kind": "country",
+     "private": true,
+     "title": "The Palace Holds",
+     "picture": "council_chamber",
+     "fired_by": "zin_afrit_palace_roll, when a stage holds",
+     "desc": "The intruders have gone back into the passages they came by, and your brother went with them, bleeding. The palace holds, although the captain of the guard has not slept since the wards woke, and neither have you.",
+     "options": [
+      {
+       "text": "Seal the passages.",
+       "ai": 100,
+       "effect": [
+        "hidden_effect = {",
+        "@host 127",
+        "}"
+       ]
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "kind": "news",
+     "title": "The Hunt for the False God",
+     "picture": "generic_war",
+     "proposed": true,
+     "fired_by": "zin_afrit_lose_realm (SL-10: the realm that sheltered Afrit was annexed or capitulated)",
+     "desc": [
+      {
+       "if": "has_global_flag = zin_afrit_hidden",
+       "text": "The realm that sheltered [zin_loc_deliverer] has fallen, and he was not found among the dead or the prisoners. Some say he went into the hills with a handful of priests, and the courts that hunt him have put a price on his head that would buy a small kingdom."
+      },
+      {
+       "text": "The realm that sheltered [zin_loc_deliverer] has fallen, and he has fled to the court of [zin_afrit_refuge.GetName], which has taken him in with every honour it could find at short notice."
+      }
+     ],
+     "options": [
+      {
+       "text": "Let the hunters ride.",
+       "ai": 100
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

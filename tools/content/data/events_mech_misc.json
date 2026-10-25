@@ -1,0 +1,26 @@
+{
+ "kind": "events_mech",
+ "source": "docs/design/alternate_history.md (soft-lock audit SL-25: the successor events of the Aenor story that no module wrote). Every text is proposed in the accepted voice (docs/specs/02_lore/09_voice_and_style.md).",
+ "sets": [
+  {
+   "namespace": "zin_aenor",
+   "file": "events/zin_aenor_successors.txt",
+   "declaresNamespace": false,
+   "note": "The namespace is declared by events/zin_aenor_mechanic.txt (modules/mech_aenor.mjs), which loads first. Ids 470 to 479 hold the successors of the Golden King's story (proposed).",
+   "events": [
+    {
+     "id": 470,
+     "kind": "news",
+     "title": "The Golden King in Exile",
+     "picture": "golden_court",
+     "proposed": true,
+     "fired_by": "zin_aenor_exile_king (SL-25: the original Aenor annexed or capitulating while the Golden King lives)",
+     "desc": "Aenor has fallen to its enemies, but the Golden King was not taken with his crown. He left Parim by the lake road with his household and as much of the treasury as the wagons would carry, and he keeps his court now as the guest of whoever will feed it.",
+     "options": [
+      { "text": "A king without a kingdom.", "ai": 100 }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -319,6 +319,23 @@ on_actions = {
 			}
 		}
 	}
+	# SL-25: the original Aenor capitulates (ROOT) or is annexed while the Golden King lives; he goes into exile.
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = { tag = ${AEN} }
+				zin_aenor_exile_king = yes
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = { NOT = { country_exists = ${AEN} } }
+				zin_aenor_exile_king = yes
+			}
+		}
+	}
 }
 `));
 

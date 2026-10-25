@@ -219,6 +219,7 @@
       "@call zin_aenor_add_camp_support camp=host value=-20",
       "add_stability = 0.03",
       "@flag zin_aenor_eindil_denounced",
+      "@gflag zin_aenor_eindil_denounced",
       "@gflag zin_afrit_impostor_denounced",
       "zin_eindil_start_hunt = yes",
       "@fire zin_reign.83"
@@ -1340,15 +1341,13 @@
   },
   {
    "id": 101,
-   "title": "The Old God Comes Forth",
-   "picture": "vast_shadow",
+   "title": "The Heir Struck Down",
+   "picture": "generic_war",
    "named": true,
-   "requires": [
-    "zin_zol_manifested"
-   ],
+   "requires": [],
    "to": "the Host",
    "hist": "Harvest 1757",
-   "fired_by": "zin_mistake.21, or zin_zol_manifest when Eindil carries no Glo",
+   "fired_by": "zin_mistake.21 (the blue sword broken in the field), or the Zol mechanic when the heir carries no Glo",
    "desc": "The heir is down, badly wounded. The dead are overrunning the field, and the sword that cut them is in pieces on the ground. Those who carried him out say that his eyes were open and that he was counting something. Nobody asked what.",
    "options": [
     {
@@ -1799,7 +1798,7 @@
    "named": true,
    "to": "news: every country",
    "hist": "divergence",
-   "fired_by": "zin_eindil_lose_heir",
+   "fired_by": "zin_eindil_lose_heir (which also calls zin_ending_heir_lost: the league event reaches the Host, else the Aenor realm holding Parim)",
    "desc": "The heir is gone. The league he gathered is still in the field, and the dark has not gone home. In the camps there are men who say that he will come again, and men who say that the age has no more kings in it, and the quarrel is the only thing that is moving.",
    "options": [
     {
@@ -1807,26 +1806,34 @@
      "ai": 100,
      "effects": []
     }
-   ],
-   "immediate": [
+   ]
+  },
+  {
+   "id": 170,
+   "title": "The Mirror Without Its King",
+   "news": true,
+   "picture": "generic_court",
+   "named": true,
+   "to": "news: every country",
+   "hist": "divergence",
+   "fired_by": "zin_eindil_stage_runner (the naming fallback, when the Gala court has not named the stranger)",
+   "desc": [
     {
+     "key": "lorien",
      "if": [
-      "NOT = { has_global_flag = zin_eindil_140_done }"
+      "has_global_flag = zin_lorien_dead"
      ],
-     "then": [
-      "@gflag zin_eindil_140_done",
-      {
-       "if": [
-        "zin_eindil_has_host = yes"
-       ],
-       "then": [
-        "@fire zin_ending.80 days=14 to=host"
-       ],
-       "else": [
-        "@fire zin_ending.80 days=14 to=aenor"
-       ]
-      }
-     ]
+     "text": "Lorien of the Gala is dead, so there was no king to look into the Mirror of First Rain for the man from the ice. The Keepers did the work themselves: they sat with him through a season and read him the oldest records of the First Men, and when they had finished they said aloud that he was Eindil, son of Ein, of the line of Aen. Not every court believes the Keepers, but every court has heard what they said."
+    },
+    {
+     "text": "The court of Gala never gave its guest a name, and in the end the Keepers of the Mirror would not wait for it any longer. They read the oldest records of the First Men with the man from the ice in a borrowed house, and when the reading was done they named him Eindil, son of Ein, of the line of Aen. The Gala lords say the Keepers spoke out of turn, though none of them has said the Keepers were wrong."
+    }
+   ],
+   "options": [
+    {
+     "name": "So the stranger has a name.",
+     "ai": 100,
+     "effects": []
     }
    ]
   }

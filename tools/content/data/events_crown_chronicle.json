@@ -23,7 +23,7 @@
   "03": { "1": "The Truce of the Grey Ford broke, and the western clans remembered their old quarrels.", "2": "The Grey Ford truce held, and the clans kept their bows strung but quiet." },
   "04": { "1": "In the West he made a peace and laid a crown down.", "2": "Another hand made the western peace.", "3": "The West never knew him." },
   "05": { "1": "In Gaelor the Golden King died in his sleep, and Parim rang its bells for a day.",
-          "2": { "text": "The Golden King did not die in the year the age foretold.", "variants": [ { "if": ["gflag:zin_afrit_revealed"], "suffix": "revealed", "text": "The Golden King did not die as the Council planned." } ] } },
+          "2": { "text": "The Golden King did not die in the year the age foretold.", "variants": [ { "if": ["gflag:zin_golden_king_exiled"], "suffix": "exiled", "text": "The Golden King lost his kingdom while he lived, and went on living in exile." }, { "if": ["gflag:zin_golden_king_natural"], "suffix": "natural", "text": "The Golden King died in his bed in his own time, and no hand hastened him." }, { "if": ["gflag:zin_afrit_revealed"], "suffix": "revealed", "text": "The Golden King did not die as the Council planned." } ] } },
   "06": { "1": "The temples laid the crown before [zin_loc_deliverer].", "2": "Another camp took the seals of Parim.", "3": "No god took Aenor's crown." },
   "07": { "1": "Storms carried the stranger to the Islands of the South." },
   "08": { "1": "At Gala, Lorien named him Eindil, son of Ein.", "2": "He learned his name by another road.", "3": "Nobody named him." },
@@ -42,7 +42,7 @@
   "20": { "1": "Varner died shielding the living." },
   "21": { "1": "Volgan cast [zin_loc_eindil] down, and the New Gods raised him." },
   "22": { "1": "Volgan's body was broken by [zin_loc_eindil].", "2": "Volgan's body was not broken." },
-  "23": { "1": "The Old God came forth, and Lorien died forcing him back.", "2": "The Old God came forth and withdrew without the death of the King of Gala." },
+  "23": { "1": "A Great Spirit of the black north came forth, and Lorien died forcing it back.", "2": "A Great Spirit of the black north came forth and withdrew without the death of the King of Gala." },
   "24": { "1": { "text": "Afrit came back from the East and cast his brother from a cliff.", "needs": ["gflag:zin_afrit_revealed"] },
           "2": { "text": "The stranger's trial came in another shape.", "variants": [ { "if": ["gflag:zin_afrit_revealed"], "suffix": "revealed", "text": "The second betrayal went another way." } ] } },
   "25": { "1": { "text": "In the palace the false god was stripped and killed; Golbran died saving [zin_loc_eindil].", "needs": ["gflag:zin_afrit_revealed"] }, "2": "The palace held against [zin_loc_eindil]." },
@@ -76,7 +76,7 @@
   { "key": "ashen", "if": ["!gflag:zin_afrit_dead", "gflag:zin_afrit_revealed"], "text": "\n§YThe Ashen Throne§!: Afrit's temples ruling from Parim." }
  ],
  "outcomes": [
-  { "key": "golden", "if": ["!gflag:zin_golden_king_dead"], "text": "\n§YThe Golden Court endures§!: the Golden King still reigns." },
+  { "key": "golden", "if": ["!gflag:zin_golden_king_dead", "!gflag:zin_golden_king_exiled"], "text": "\n§YThe Golden Court endures§!: the Golden King still reigns." },
   { "key": "western", "if": ["gflag:zin_west_holds_parim"], "text": "\n§YA western crown in Parim§!: western banners hold the city." },
   { "key": "strait", "if": ["gflag:zin_leren_strait_supremacy", { "any": "any_country", "limit": ["zin_leren_holds_strait"] }], "text": "\n§YMaster of the Strait§!: Lerendor holds both shores." },
   { "key": "eastern", "if": ["gflag:zin_east_united"], "text": "\n§YOne king in the East§!: the caravan roads answer to one crown." }
