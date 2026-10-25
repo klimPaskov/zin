@@ -46,6 +46,9 @@ export const TERRAIN_STATS = new Set(['attack', 'defence', 'movement']);
 const LOGIC = new Set(['AND', 'OR', 'NOT', 'if', 'else', 'else_if', 'limit', 'hidden_trigger', 'custom_trigger_tooltip']);
 // Modifiers of systems Aoaz does not have (fuel, nuclear weapons, rockets, jets, tanks, paratroopers): never written by a technology or a doctrine.
 const MODERN_MODIFIER = /fuel|nuclear|nuke|rocket|jet_|paratroop|helicopter|synthetic|armored_car|tank/;
+// Engine years of the tree (owner decision K51). A year below FOURTH_AGE_FROM is an ordering value of the Third Age rows, not a date:
+// those rows carry era names and no text states it. From FOURTH_AGE_FROM on a year is a Fourth Age year; the sandbox ends in 4A 1800.
+export const YEAR_MIN = 1, YEAR_MAX = 1800, FOURTH_AGE_FROM = 100;
 const WINDOWS_1252 = /^[\x20-\x7E -ÿ]*$/;
 
 // ---------- small helpers ----------
@@ -55,6 +58,31 @@ const sortedKeys = o => Object.keys(o).sort((a, b) => a.localeCompare(b, 'en'));
 export const fullKey = k => (k.startsWith(PREFIX) ? k : PREFIX + k);
 const shortKey = k => (k.startsWith(PREFIX) ? k.slice(PREFIX.length) : k);
 const tab = n => '\t'.repeat(n);
+// What a technology cannot be researched without: itself, its dependencies, every path parent under `all`, and under an OR of path
+// parents only what all of them share.
+export function mandatory(t, byKey, memo = new Map()) {
+  if (memo.has(t.key)) return memo.get(t.key);
+  const out = new Set([t.key]);
+  memo.set(t.key, out);
+  const of = k => (byKey.get(k) ? mandatory(byKey.get(k), byKey, memo) : new Set([k]));
+  for (const n of t.needs) for (const k of of(n)) out.add(k);
+  if (t.all) for (const r of t.requires) for (const k of of(r)) out.add(k);
+  else if (t.requires.length) {
+    const sets = t.requires.map(of);
+    for (const k of sets[0]) if (sets.every(s => s.has(k))) out.add(k);
+  }
+  return out;
+}
+// The prerequisites a start package or a start list must add for `t`, given the keys it already has (`has(key)`): every dependency,
+// every path parent under `all`, and for an OR of path parents the first acceptable one when none is held yet.
+export function prerequisitesToAdd(t, has, acceptable = () => true) {
+  const out = [...t.needs, ...(t.all ? t.requires : [])].filter(k => !has(k));
+  if (!t.all && t.requires.length && !t.requires.some(has)) {
+    const pick = t.requires.find(acceptable);
+    out.push(pick ?? t.requires[0]);
+  }
+  return out;
+}
 export const canonicalJson = v => JSON.stringify(sortDeep(v), null, 2) + '\n';
 function sortDeep(v) {
   if (Array.isArray(v)) return v.map(sortDeep);
@@ -214,7 +242,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
   // rows
   const rows = [...raw.civil.technologies.map(t => ({ ...t, source: 'civil' })), ...raw.warfare.technologies.map(t => ({ ...t, source: 'warfare' }))];
   const techs = [], byKey = new Map();
-  const knownFields = new Set(['key', 'name', 'desc', 'line', 'year', 'cost', 'x', 'requires', 'needs', 'xor', 'modifiers', 'blocks', 'unlocks', 'who', 'allow', 'allowRaw', 'allowBranchRaw', 'completeRaw', 'completeLimitRaw', 'locked', 'grantOnly', 'specialization', 'ai', 'categories', 'inventory', 'source']);
+  const knownFields = new Set(['key', 'name', 'desc', 'line', 'year', 'cost', 'x', 'requires', 'all', 'needs', 'xor', 'lost', 'modifiers', 'blocks', 'unlocks', 'who', 'allow', 'allowRaw', 'allowBranchRaw', 'completeRaw', 'completeLimitRaw', 'locked', 'grantOnly', 'specialization', 'ai', 'categories', 'inventory', 'source']);
   for (const r of rows) {
     const where = `technology ${r.key}`;
     for (const k of Object.keys(r)) if (!knownFields.has(k)) P(`${where}: unknown field ${k}`);
@@ -223,13 +251,14 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
     if (byKey.has(key)) { P(`duplicate technology ${key}`); continue; }
     const line = lines.get(r.line);
     if (!line) { P(`${where}: unknown line ${r.line}`); continue; }
-    if (!Number.isInteger(r.year) || r.year < 1500 || r.year > 1790) P(`${where}: year ${r.year} is outside 1500 to 1790`);
+    if (!Number.isInteger(r.year) || r.year < YEAR_MIN || r.year > YEAR_MAX) P(`${where}: year ${r.year} is outside ${YEAR_MIN} to ${YEAR_MAX}`);
     if (!r.name || !r.desc) P(`${where}: name and desc are required`);
     for (const t of [r.name, r.desc]) if (t && !WINDOWS_1252.test(t)) P(`${where}: text has characters the game font does not draw`);
     const t = {
       key, short: shortKey(key), name: r.name, desc: r.desc, line: r.line, folder: line.folder, year: r.year, source: r.source,
-      cost: r.cost ?? ruleCost(r.year, raw.civil.costRule), costExplicit: r.cost !== undefined,
-      x: r.x, requires: (r.requires ?? []).map(fullKey), needs: (r.needs ?? []).map(fullKey), xor: (r.xor ?? []).map(fullKey),
+      cost: r.cost ?? ruleCost(r.year, raw.civil.costRule, !!r.lost), costExplicit: r.cost !== undefined,
+      x: r.x, requires: (r.requires ?? []).map(fullKey), all: !!r.all, lost: !!r.lost, needs: (r.needs ?? []).map(fullKey), xor: (r.xor ?? []).map(fullKey),
+      large: !!(r.unlocks?.equipment?.length),
       modifiers: r.modifiers ?? {}, blocks: r.blocks ?? [], unlocks: r.unlocks ?? {},
       whoRaw: r.who, allowRaw: r.allowRaw, allowBranchRaw: r.allowBranchRaw, completeRaw: r.completeRaw, completeLimitRaw: r.completeLimitRaw,
       locked: !!r.locked, grantOnly: !!r.grantOnly, ai: r.ai ?? line.ai, extraCategories: r.categories ?? [],
@@ -257,18 +286,25 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
   const dependsOn = new Map();
   for (const t of techs) {
     const where = `technology ${t.short}`;
-    if (t.requires.length > 1) P(`${where}: two path parents (a second path parent breaks the gridbox)`);
+    // Several path parents draw several connectors (owner decision K51). The first decides the gridbox; the others' paths carry
+    // ignore_for_layout. A path is an OR; `all` adds every path parent to the dependencies as well, which makes it an AND.
+    if (new Set(t.requires).size !== t.requires.length) P(`${where}: a path parent is listed twice`);
+    if (t.all && t.requires.length < 2) P(`${where}: all needs two or more path parents`);
     for (const p of t.requires) {
       const parent = byKey.get(p);
       if (!parent) { P(`${where}: path parent ${shortKey(p)} does not exist`); continue; }
-      if (parent.line !== t.line) P(`${where}: path parent ${parent.short} is in another line (${parent.line}); use needs`);
+      if (parent.folder !== t.folder) P(`${where}: path parent ${parent.short} is in another folder (${parent.folder}); use needs`);
       if (parent.year > t.year) P(`${where}: path parent ${parent.short} (${parent.year}) is later than the technology (${t.year})`);
       if (!whoCovered(t.who, parent.who, peopleOfName)) P(`${where}: visible to someone who cannot see its path parent ${parent.short}`);
     }
+    // Lost knowledge (a Third Age row nobody starts with) is recovered through later learning: its needs may be later than its year.
+    if (t.lost && !t.needs.length) P(`${where}: lost knowledge needs the later learning that recovers it`);
+    if (t.lost && t.year >= FOURTH_AGE_FROM) P(`${where}: lost knowledge belongs to the Third Age (year below ${FOURTH_AGE_FROM})`);
+    if (t.lost && t.xor.length) P(`${where}: lost knowledge is never exclusive`);
     for (const n of t.needs) {
       const need = byKey.get(n);
       if (!need) { P(`${where}: needs ${shortKey(n)}, which does not exist`); continue; }
-      if (need.year > t.year) P(`${where}: needs ${need.short} (${need.year}), which is later than the technology (${t.year})`);
+      if (need.year > t.year && !t.lost) P(`${where}: needs ${need.short} (${need.year}), which is later than the technology (${t.year})`);
       if (!whoCovered(t.who, need.who, peopleOfName)) P(`${where}: visible to someone who cannot research its dependency ${need.short}`);
     }
     for (const x of t.xor) {
@@ -288,6 +324,11 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
     state.set(k, 2);
   };
   for (const t of techs) visit(t.key, []);
+  if (!problems.some(p => p.startsWith('technology cycle'))) for (const t of techs) {
+    // Reachable: what a technology cannot be researched without holds no exclusive pair (an AND over both sides of a choice).
+    const must = mandatory(t, byKey);
+    for (const k of must) for (const x of byKey.get(k)?.xor ?? []) if (must.has(x) && k < x) P(`technology ${t.short} can never be researched: it needs both ${shortKey(k)} and ${shortKey(x)}, which exclude each other`);
+  }
 
   // effects, unlocks, triggers
   const checkTrigger = (snippet, where) => {
@@ -480,16 +521,17 @@ export function technologyPackages(model) {
         if (rule.folders && !rule.folders.includes(t.folder)) continue;
         if (rule.lines && !rule.lines.includes(t.line)) continue;
         if (!rule.folders && !rule.lines) continue;
-        if (t.locked || t.xor.length || /has_global_flag/.test(`${t.allowRaw ?? ''}${t.allowBranchRaw ?? ''}`)) continue;
+        if (t.locked || t.lost || t.xor.length || /has_global_flag/.test(`${t.allowRaw ?? ''}${t.allowBranchRaw ?? ''}`)) continue;
         if (!admitted(model, t, profile)) continue;
         chosen.add(t.key);
       }
     }
-    // closure under prerequisites
+    // closure under prerequisites (an OR of path parents takes the first one a package may grant)
     const queue = [...chosen];
+    const grantable = k => { const pt = model.byKey.get(k); return pt && admitted(model, pt, profile) && !pt.locked && !pt.xor.length; };
     while (queue.length) {
       const t = model.byKey.get(queue.pop());
-      for (const p of [...t.requires, ...t.needs]) {
+      for (const p of prerequisitesToAdd(t, k => chosen.has(k), grantable)) {
         const pt = model.byKey.get(p);
         if (chosen.has(p)) continue;
         if (!admitted(model, pt, profile)) { problems.push(`package ${pkg.key}: ${t.short} needs ${pt.short}, which is not open to ${JSON.stringify(profile)}`); continue; }
@@ -524,7 +566,7 @@ export function startFor(model, packages, country, people) {
   if (country.gunpowder) for (const e of a.gunpowder ?? []) techs.add(e);
   // closure over prerequisites for the extras
   const queue = [...techs];
-  while (queue.length) { const t = model.byKey.get(fullKey(queue.pop())); for (const p of [...t.requires, ...t.needs]) { const s = shortKey(p); if (!techs.has(s)) { techs.add(s); queue.push(s); } } }
+  while (queue.length) { const t = model.byKey.get(fullKey(queue.pop())); for (const p of prerequisitesToAdd(t, k => techs.has(shortKey(k)), k => !model.byKey.get(k)?.xor.length)) { const s = shortKey(p); if (!techs.has(s)) { techs.add(s); queue.push(s); } } }
   const land = sd.landNamed[country.name] ?? sd.landByPeople[people] ?? null;
   const naval = sd.navalNamed[country.name] ?? sd.navalRegion[country.scan] ?? sd.navalDefault;
   return { package: key, technologies: [...techs].sort(), landGrandDoctrine: land, navalGrandDoctrine: naval[0], navalSubDoctrine: naval[1] };
@@ -617,11 +659,14 @@ export function technologyBlock(t, model) {
     if (t.completeLimitRaw) push(`${tab(d)}on_research_complete_limit = {`, ...rawLines(t.completeLimitRaw, d + 1), `${tab(d)}}`);
     push(`${tab(d)}on_research_complete = {`, ...rawLines(t.completeRaw, d + 1), `${tab(d)}}`);
   }
-  for (const c of model.techs.filter(x => x.requires.includes(t.key)).sort((a, b) => a.key.localeCompare(b.key, 'en'))) push(`${tab(d)}path = {`, `${tab(d + 1)}leads_to_tech = ${c.key}`, `${tab(d + 1)}research_cost_coeff = 1`, `${tab(d)}}`);
+  // One path per child; a child's second and later parents mark theirs ignore_for_layout, so the first parent decides its gridbox
+  // (every gridbox of a folder sits at the folder origin, so each connector still lands on the child's slot).
+  for (const c of model.techs.filter(x => x.requires.includes(t.key)).sort((a, b) => a.key.localeCompare(b.key, 'en'))) push(`${tab(d)}path = {`, `${tab(d + 1)}leads_to_tech = ${c.key}`, `${tab(d + 1)}research_cost_coeff = 1`, ...(c.requires[0] !== t.key ? [`${tab(d + 1)}ignore_for_layout = yes`] : []), `${tab(d)}}`);
   const slot = model.layout.folders[t.folder].tiles.find(x => x.key === t.key);
   push(`${tab(d)}research_cost = ${num(t.cost)}`, `${tab(d)}start_year = ${t.year}`);
   push(`${tab(d)}folder = {`, `${tab(d + 1)}name = ${t.folder}`, `${tab(d + 1)}position = { x = ${slot.rx} y = ${slot.ry} }`, `${tab(d)}}`);
-  push(`${tab(d)}force_use_small_tech_layout = yes`);
+  // A technology that unlocks equipment takes the folder's large equipment item (owner decision K51); every other one the small item.
+  if (!t.large) push(`${tab(d)}force_use_small_tech_layout = yes`);
   // researchable?
   const allowBody = [];
   if (t.locked) allowBody.push(`${tab(d + 1)}always = no`);
@@ -639,7 +684,9 @@ export function technologyBlock(t, model) {
   push(...aiLines(t.ai, d, t.locked));
   push(`${tab(d)}categories = { ${t.categories.join(' ')} }`);
   if (t.specialization.length) push(`${tab(d)}special_project_specialization = { ${t.specialization.join(' ')} }`);
-  if (t.needs.length) push(`${tab(d)}dependencies = {`, ...t.needs.map(n => `${tab(d + 1)}${n} = 1`), `${tab(d)}}`);
+  // Hard requirements: the cross-folder needs, and every path parent of an AND (`all`), whose connectors are drawn as well.
+  const deps = [...(t.all ? t.requires : []), ...t.needs];
+  if (deps.length) push(`${tab(d)}dependencies = {`, ...deps.map(n => `${tab(d + 1)}${n} = 1`), `${tab(d)}}`);
   if (t.xor.length) push(`${tab(d)}XOR = { ${t.xor.join(' ')} }`);
   push(`${tab(d - 1)}}`);
   return L.join('\n');
@@ -902,7 +949,7 @@ export async function buildTechnologies(staged, ctx) {
   const loc = await localisation(staged, model);
   // published data for the folder windows (interface step) and the politics step
   const packages = technologyPackages(model);
-  const layoutOut = { origin: ORIGIN, slot: SLOT, rows: model.bands.map(b => b.y), rowCaptions: model.bandCaptions, folders: Object.fromEntries(Object.entries(model.layout.folders).map(([f, v]) => [f, { rows: v.rows, width: v.width, height: v.height, gridboxes: v.gridboxes.map(g => ({ name: g.name, px: g.px, py: g.py, width: g.width, height: g.height, slotsize: g.slotsize, format: g.format })), tiles: v.tiles.map(t => ({ key: t.key, x: t.x, y: t.y, rx: t.rx, ry: t.ry, root: t.root, sprite: `GFX_${t.key}_medium` })) }])) };
+  const layoutOut = { origin: ORIGIN, slot: SLOT, rows: model.bands.map(b => b.y), rowCaptions: model.bandCaptions, folders: Object.fromEntries(Object.entries(model.layout.folders).map(([f, v]) => [f, { rows: v.rows, width: v.width, height: v.height, gridboxes: v.gridboxes.map(g => ({ name: g.name, px: g.px, py: g.py, width: g.width, height: g.height, slotsize: g.slotsize, format: g.format })), tiles: v.tiles.map(t => ({ key: t.key, x: t.x, y: t.y, rx: t.rx, ry: t.ry, root: t.root, item: t.large ? 'large' : 'small', sprite: `GFX_${t.key}_medium` })), edges: v.edges, exclusive: v.xor }])) };
   staged.text('docs/design/technology/layout.json', canonicalJson(layoutOut));
   const starts = {};
   for (const c of model.countries) { const people = model.assignment?.get(c.tag) ?? defaultPeople(c); starts[c.name] = { people, ...startFor(model, packages, c, people) }; }

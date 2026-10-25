@@ -11,8 +11,9 @@ import { fileURLToPath } from 'node:url';
 import { Staged } from './lib/core.mjs';
 import { parse, scriptText } from './lib/clausewitz.mjs';
 import { ZIN } from './lib/paths.mjs';
-import { buildTechnologies, prepareModel, loadRaw, technologyPackages, startFor, parseWho, vanillaNames, gameDocs, FOLDER_FILES, DOCTRINE_FILES, technologyIconKeys, doctrineIconKeys, UNIT_STATS } from './modules/technologies.mjs';
-import { bandY, ruleCost, layoutFolders } from './lib/tech_layout.mjs';
+import { buildTechnologies, prepareModel, loadRaw, technologyPackages, startFor, parseWho, vanillaNames, gameDocs, FOLDER_FILES, DOCTRINE_FILES, technologyIconKeys, doctrineIconKeys, UNIT_STATS, mandatory, FOURTH_AGE_FROM } from './modules/technologies.mjs';
+import { bandY, ruleCost, layoutFolders, folderGeometry, tileRect, ORIGIN, ITEM } from './lib/tech_layout.mjs';
+import { folderGridboxes } from './lib/tech_tree_gui.mjs';
 import { allowanceCovers } from './lib/banned.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -39,7 +40,7 @@ const allLoc = () => new Map([...locEntries('localisation/english/zin_technologi
 
 // ---------- counts and files ----------
 test('The build stages every file the spec names and counts what it generates', () => {
-  assert.equal(summary.technologies, 54 + 123, 'the 54 civilian rows and warfare\'s rows (nine of them black powder, K19)');
+  assert.equal(summary.technologies, 67 + 164, 'the 67 civilian rows and warfare\'s 164 (nine of them black powder, K19; owner decision K51 added 54 rows)');
   assert.equal(summary.gates, 7);
   assert.equal(summary.folders, 13);
   assert.equal(summary.categories, 26);
@@ -49,16 +50,16 @@ test('The build stages every file the spec names and counts what it generates', 
   for (const rel of [...techFiles, 'common/technologies/zin_gates.txt', 'common/technology_tags/zin_technology_tags.txt', 'common/ai_focuses/zin_ai_focuses.txt', 'common/technology_sharing/zin_tech_sharing.txt', 'common/scripted_triggers/zin_technologies.txt', 'common/scripted_effects/zin_naval_air.txt', ...Object.values(DOCTRINE_FILES), 'localisation/english/zin_technologies_l_english.yml', 'docs/design/technology/layout.json', 'docs/design/technology/start_packages.json']) assert(staged.files.has(rel), rel);
 });
 
-test('Folder files hold the counts of the spec: 39 craft, 15 letters, 34 arms, 17 mounts, 20 engines, 16 lore, 14 camp, 17 naval, 5 skies', () => {
+test('Folder files hold the counts of the spec: 48 craft, 19 letters, 49 arms, 21 mounts, 24 engines, 22 lore, 18 camp, 23 naval, 7 skies', () => {
   const count = f => (file(`common/technologies/${f}`).match(/^\tzin_tech_[a-z0-9_]+ = \{$/gm) ?? []).length;
-  assert.deepEqual(Object.fromEntries(Object.entries(FOLDER_FILES).map(([k, f]) => [k, count(f)])), { zin_arms_folder: 34, zin_mounts_folder: 17, zin_engines_folder: 20, zin_lore_folder: 16, zin_camp_folder: 14, zin_naval_folder: 17, zin_skies_folder: 5, industry_folder: 39, electronics_folder: 15 });
+  assert.deepEqual(Object.fromEntries(Object.entries(FOLDER_FILES).map(([k, f]) => [k, count(f)])), { zin_arms_folder: 49, zin_mounts_folder: 21, zin_engines_folder: 24, zin_lore_folder: 22, zin_camp_folder: 18, zin_naval_folder: 23, zin_skies_folder: 7, industry_folder: 48, electronics_folder: 19 });
   assert.equal(count('zin_gates.txt'), 7);
 });
 
 test('Every technology key is a zin_tech_ key and no vanilla technology, folder or doctrine key is reused', async () => {
   const vanilla = await vanillaNames();
   const keys = [...allTechText().matchAll(/^\t(zin_tech_[a-z0-9_]+) = \{$/gm)].map(m => m[1]);
-  assert.equal(keys.length, 177 + 7);
+  assert.equal(keys.length, 231 + 7);
   assert.equal(new Set(keys).size, keys.length, 'unique');
   for (const k of keys) assert(!vanilla.techs.has(k), k);
   const tags = file('common/technology_tags/zin_technology_tags.txt');
@@ -81,12 +82,13 @@ const RENAMED = { lime_mortar: 'Slaked Lime', division_of_labour: 'Many Hands' }
 const strip = s => s.replace(/`/g, '');
 const keyList = s => (s === '-' ? [] : s.split(',').map(x => strip(x).trim()));
 
-test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, slot, year, cost, parents, exclusion, effects, unlocks, who)', async () => {
+test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, slot, year, cost, parents, exclusion, effects, unlocks, who, kind)', async () => {
   const md = await readFile(SPEC, 'utf8');
   const rows = [...tableRows(md, '#### 4.2 Craft and Works', '#### 4.3'), ...tableRows(md, '#### 4.3 Letters and Beacons', '### 5. Layout rules')];
-  assert.equal(rows.length, 54);
+  assert.equal(rows.length, 67);
   const tiles = new Map(Object.values(model.layout.folders).flatMap(f => f.tiles.map(t => [t.key, t])));
-  for (const [key, name, line, pos, year, cost, pth, needs, xor, effects, unlocks, who] of rows) {
+  const DWARF_HOLDS = ['Kunhrim', 'Hrakbrund', 'Brundahrim', 'Gromkerm'].map(country => ({ country }));
+  for (const [key, name, line, pos, year, cost, pth, needs, xor, effects, unlocks, who, kind] of rows) {
     const k = strip(key), t = model.byKey.get(`zin_tech_${k}`);
     assert(t, `${k} is in the data`);
     assert.equal(t.name, RENAMED[k] ?? name, `${k} name`);
@@ -95,14 +97,16 @@ test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, sl
     assert.deepEqual([tile.x, tile.y], [x, y], `${k} slot`);
     assert.equal(t.year, Number(year), `${k} year`);
     assert.equal(t.cost, Number(cost), `${k} cost`);
-    assert.deepEqual(t.requires.map(r => r.slice(9)), keyList(pth), `${k} path`);
+    assert.equal(t.all, / \(all\)$/.test(pth), `${k} AND or OR`);
+    assert.equal(t.lost, kind === 'lost', `${k} lost knowledge`);
+    assert.deepEqual(t.requires.map(r => r.slice(9)), keyList(pth.replace(/ \(all\)$/, '')), `${k} path`);
     assert.deepEqual(t.needs.map(r => r.slice(9)), keyList(needs), `${k} needs`);
     assert.deepEqual(t.xor.map(r => r.slice(9)), keyList(xor), `${k} xor`);
     const mods = effects === '-' ? {} : Object.fromEntries(effects.split(';').map(e => e.trim().split(' ')).map(([m, v]) => [m, Number(v)]));
     assert.deepEqual(t.modifiers, mods, `${k} effects`);
     const buildings = unlocks.startsWith('radar_station') ? [{ building: 'radar_station', level: Number(unlocks.match(/L(\d+)/)[1]) }] : [];
     assert.deepEqual(t.unlocks.buildings ?? [], buildings, `${k} unlocks`);
-    const whoWant = who === 'all' ? [] : who.split(',').map(w => w.trim()).map(w => (w === 'Volgan' ? { country: VOLGAN } : { people: w }));
+    const whoWant = who === 'all' ? [] : who.split(',').map(w => w.trim()).flatMap(w => (w === 'Volgan' ? [{ country: VOLGAN }] : w === 'dwarf holds' ? DWARF_HOLDS : [{ people: w }]));
     assert.deepEqual(t.whoOwn, whoWant, `${k} who`);
   }
 });
@@ -110,42 +114,53 @@ test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, sl
 test('Warfare spec section 11: every row has its technology with the same name and year', async () => {
   const md = await readFile(WARSPEC, 'utf8');
   const rows = tableRows(md, '#### 11.1 Arms and Armour', '### 12. Doctrines').filter(r => !r[0].includes(' to '));
-  assert.equal(rows.length, 123 - 3 + 0, '123 technologies (nine of them black powder, 11.8); the three deathless tide rows are one spec row');
+  assert.equal(rows.length, 164 - 3, '164 technologies (nine black powder, 11.8; 41 added by owner decision K51); the three deathless tide rows are one spec row');
   const NAME_FIX = { zin_tech_forged_steel: 'Forged Iron', zin_tech_tempered_steel: 'Tempered Iron', zin_tech_mountain_steel: 'Mountain Iron', zin_tech_leaf_steel: 'Leaf-Forging', zin_tech_veteran_sergeants: 'Veteran File-Leaders', zin_tech_camel_corps: 'Camel Host', zin_tech_engine_corps: 'Engine Crews' };
   for (const r of rows) {
     const k = strip(r[0]), t = model.byKey.get(k), year = Number(r[2]);
     assert(t, `${k} is in the data`);
     if (k !== 'zin_tech_bound_demons') assert.equal(t.name, NAME_FIX[k] ?? r[1], `${k} name`);
-    if (Number.isFinite(year)) assert.equal(t.year, k === 'zin_tech_elven_hulls' ? 1600 : year, `${k} year`);
+    if (Number.isFinite(year)) assert.equal(t.year, year, `${k} year`);
+    // The Requires column names the path parents (with "(all)" for an AND) and then the needs, comma-separated.
+    const want = r[3].startsWith('-') ? [] : r[3].replace(/ \(all\)/, '').split(',').map(x => strip(x).trim().replace(/;.*$/, ''));
+    assert.deepEqual([...t.requires, ...t.needs].map(x => x.slice(9)).sort(), want.map(x => x.replace(/^zin_tech_/, '')).sort(), `${k} requires`);
   }
   for (const n of [1, 2, 3]) assert(model.byKey.get(`zin_tech_deathless_tide_${n}`), `tide ${n}`);
 });
 
 // ---------- rules every technology obeys ----------
 test('Years, costs and rows follow the bands and the cost rule; no two tiles share a slot and every root has a gridbox', () => {
-  assert.equal(bandY(1748, model.bands), 8);
-  assert.equal(bandY(1745, model.bands), 6);
-  assert.equal(bandY(1790, model.bands), 20);
+  assert.equal(bandY(10, model.bands), 0, 'the Third Age');
+  assert.equal(bandY(99, model.bands), 2, 'the late Third Age');
+  assert.equal(bandY(300, model.bands), 4, 'the early Fourth Age');
+  assert.equal(bandY(1748, model.bands), 14);
+  assert.equal(bandY(1745, model.bands), 12);
+  assert.equal(bandY(1790, model.bands), 30);
   assert.equal(ruleCost(1745, model.costRule), 1.5);
   assert.equal(ruleCost(1746, model.costRule), 2);
   assert.equal(ruleCost(1761, model.costRule), 2.5);
+  assert.equal(ruleCost(1776, model.costRule), 3);
+  assert.equal(ruleCost(40, model.costRule, true), 2, 'lost knowledge');
   const seen = new Set();
   for (const [folder, f] of Object.entries(model.layout.folders)) {
     for (const tile of f.tiles) { const id = `${folder}:${tile.x},${tile.y}`; assert(!seen.has(id), `slot ${id}`); seen.add(id); }
     const roots = f.tiles.filter(t => t.root === t.key).map(t => `${t.key}_tree`).sort();
     assert.deepEqual(f.gridboxes.map(g => g.name).sort(), roots, `${folder} gridboxes`);
+    assert(f.gridboxes.every(g => g.px === ORIGIN.x && g.py === ORIGIN.y), `${folder}: every gridbox sits at the folder origin`);
   }
   for (const t of model.techs) {
-    assert(t.year >= 1500 && t.year <= 1790, t.key);
-    if (!t.costExplicit) assert.equal(t.cost, ruleCost(t.year, model.costRule), t.key);
+    assert(t.year >= 1 && t.year <= 1800, t.key);
+    if (!t.costExplicit) assert.equal(t.cost, ruleCost(t.year, model.costRule, t.lost), t.key);
     if (t.costExplicit && t.source === 'warfare') assert.fail(`${t.key} overrides the cost rule`);
     for (const p of t.requires) assert(bandY(model.byKey.get(p).year, model.bands) < bandY(t.year, model.bands), `${t.key} sits below its path parent`);
   }
 });
 
+const XOR_PAIRS = [['great_halls', 'village_forges'], ['pattern_books', 'masters_benches'], ['heavy_harness', 'light_harness'], ['pike_squares', 'sword_and_buckler'], ['blackened_iron', 'goblin_swarms'], ['couched_lance', 'light_horse'], ['engine_corps', 'field_engine_trains'], ['old_songs', 'hunt_songs'], ['winter_quarters', 'water_caravans'], ['fire_ships', 'bronze_rams'], ['sky_lances', 'far_eyries']];
 test('Exclusive pairs are written on both sides, and the exclusive roots are never starting knowledge', () => {
   const text = allTechText();
-  for (const [a, b] of [['great_halls', 'village_forges'], ['pattern_books', 'masters_benches']]) {
+  assert.equal(model.techs.filter(t => t.xor.length).length, XOR_PAIRS.length * 2, 'every exclusive technology is in the list');
+  for (const [a, b] of XOR_PAIRS) {
     assert(new RegExp(`zin_tech_${a} = \\{[^]*?XOR = \\{ zin_tech_${b} \\}`).test(text), `${a} excludes ${b}`);
     assert(new RegExp(`zin_tech_${b} = \\{[^]*?XOR = \\{ zin_tech_${a} \\}`).test(text), `${b} excludes ${a}`);
   }
@@ -241,7 +256,9 @@ test('Every roster country has a closed start package; none grants an exclusive 
     for (const k of p.technologies) {
       const t = model.byKey.get(`zin_tech_${k}`);
       assert(t, `${key}: ${k} exists`);
-      for (const pre of [...t.requires, ...t.needs]) assert(set.has(pre.slice(9)), `${key}: ${k} lacks its prerequisite ${pre}`);
+      for (const pre of [...t.needs, ...(t.all ? t.requires : [])]) assert(set.has(pre.slice(9)), `${key}: ${k} lacks its prerequisite ${pre}`);
+      if (!t.all && t.requires.length) assert(t.requires.some(pre => set.has(pre.slice(9))), `${key}: ${k} holds none of its path parents`);
+      assert(!t.lost, `${key}: grants the lost knowledge ${k}`);
       assert(!t.locked || key === 'mistake', `${key}: grants a locked row ${k}`);
     }
   }
@@ -394,19 +411,138 @@ test('Every sprite a technology or doctrine names is defined, and an interim spr
   for (const k of [...technologyIconKeys(model), ...doctrineIconKeys(model)]) assert(defined.has(k), k);
   for (const m of (allTechText() + doctrineText()).matchAll(/(GFX_[A-Za-z0-9_]+)/g)) if (!m[1].startsWith('GFX_technology_')) assert(defined.has(m[1]), `${m[1]} is used and defined`);
   for (const m of sprites.matchAll(/texturefile = "([^"]+)"/g)) assert(/^gfx\/interface\/(zin\/|technologies\/zin\/|doctrines\/zin\/)/.test(m[1]), m[1]);
-  assert.equal(technologyIconKeys(model).length, 177);
+  assert.equal(technologyIconKeys(model).length, 231);
 });
 
 test('The layout file gives the folder windows a gridbox for every root and a tile for every researchable technology', () => {
   const layout = JSON.parse(file('docs/design/technology/layout.json'));
   assert.equal(layout.slot, 70);
   const tiles = Object.values(layout.folders).flatMap(f => f.tiles);
-  assert.equal(tiles.length, 177);
+  assert.equal(tiles.length, 231);
   const boxes = Object.values(layout.folders).flatMap(f => f.gridboxes.map(g => g.name));
   assert.equal(new Set(boxes).size, boxes.length);
   assert(layout.folders.industry_folder.gridboxes.every(g => g.format === 'UP' && g.slotsize === 70));
   assert(!('zin_gates' in layout.folders));
-  for (const [f, v] of Object.entries(layout.folders)) assert(v.rows.every(r => r % 2 === 0), `${f} rows are even`);
+  for (const [f, v] of Object.entries(layout.folders)) {
+    assert(v.rows.every((r, i) => r.y === i * 2), `${f} rows are compact and even`);
+    assert(v.rows.every((r, i) => i === 0 || r.band > v.rows[i - 1].band), `${f} rows follow the years`);
+  }
+});
+
+// ---------- owner decision K51: span, large equipment tiles, branching ----------
+test('K51 layout: no two tiles overlap, no connector runs through a tile, and no two unrelated connectors cross or merge', () => {
+  for (const [f, l] of Object.entries(model.layout.folders)) {
+    assert.deepEqual(folderGeometry(l.tiles, l.edges, l.xor), [], f);
+    // the rule itself: a planted overlap and a planted crossing are both reported
+  }
+  const a = { key: 'a', x: 0, y: 0, large: true }, b = { key: 'b', x: 2, y: 0, large: true };
+  assert(folderGeometry([a, b], []).some(p => /overlap/.test(p)), 'two large tiles two slots apart overlap');
+  const p1 = { key: 'p1', x: 0, y: 0 }, c1 = { key: 'c1', x: 4, y: 4 }, p2 = { key: 'p2', x: 2, y: 0 }, c2 = { key: 'c2', x: 2, y: 4 };
+  assert(folderGeometry([p1, c1, p2, c2], [{ from: 'p1', to: 'c1' }, { from: 'p2', to: 'c2' }]).some(p => /cross/.test(p)), 'a connector across another is reported');
+  const blocker = { key: 'x', x: 0, y: 2 };
+  assert(folderGeometry([p1, blocker, { key: 'c', x: 0, y: 4 }], [{ from: 'p1', to: 'c' }]).some(p => /runs through x/.test(p)), 'a connector through a tile is reported');
+});
+
+test('K51 large equipment technologies: every technology that unlocks equipment takes the large item, every other one the small item', () => {
+  const text = allTechText();
+  const large = model.techs.filter(t => t.unlocks.equipment?.length);
+  assert.equal(large.length, 86);
+  for (const t of model.techs) {
+    const block = text.match(new RegExp(`\\t${t.key} = \\{[^]*?\\n\\t\\}`))[0];
+    assert.equal(/force_use_small_tech_layout = yes/.test(block), !t.unlocks.equipment?.length, `${t.key} item`);
+    assert.equal(t.large, !!t.unlocks.equipment?.length, `${t.key} is laid out as ${t.large ? 'large' : 'small'}`);
+  }
+  // The regular item of every ZIN folder is the installed large item (183 by 84 at -56, -7), the small item 72 by 72.
+  const gui = file('interface/countrytechtreeview.gui');
+  for (const f of Object.keys(FOLDER_FILES).filter(k => k.startsWith('zin_'))) {
+    const item = gui.match(new RegExp(`name = "techtree_${f}_item"[^]*?size = \\{ width = (\\d+) height = (\\d+) \\}`));
+    assert(item, `${f} has its regular item`);
+    assert.deepEqual([Number(item[1]), Number(item[2])], [ITEM.large.w, ITEM.large.h], `${f} regular item is the large equipment item`);
+    const small = gui.match(new RegExp(`name = "techtree_${f}_small_item"[^]*?size = \\{ width = (\\d+) height = (\\d+) \\}`));
+    assert.deepEqual([Number(small[1]), Number(small[2])], [ITEM.small.w, ITEM.small.h], `${f} small item`);
+  }
+  assert(!/Happy-Go-Lucky-Tank/.test(gui), 'the template name text is emptied');
+  // Every gridbox of a folder sits at the folder origin and every root has one.
+  const boxes = folderGridboxes(gui);
+  for (const [f, l] of Object.entries(model.layout.folders)) for (const g of l.gridboxes) assert(boxes.get(f)?.has(g.name), `${f}: ${g.name}`);
+});
+
+test('K51 branching: every exclusive pair sits side by side, every several-parent technology draws its connectors and can be reached', () => {
+  const text = allTechText();
+  const multi = model.techs.filter(t => t.requires.length > 1);
+  assert.equal(multi.length, 13);
+  assert.equal(multi.filter(t => t.all).length, 5, 'five technologies need all their parents (AND)');
+  for (const t of multi) {
+    const folder = model.layout.folders[t.folder];
+    for (const [i, p] of t.requires.entries()) {
+      const parent = text.match(new RegExp(`\\t${p} = \\{[^]*?\\n\\t\\}`))[0];
+      const path = parent.match(new RegExp(`path = \\{\\s+leads_to_tech = ${t.key}\\s+research_cost_coeff = 1(\\s+ignore_for_layout = yes)?\\s+\\}`));
+      assert(path, `${p} draws a path to ${t.key}`);
+      assert.equal(!!path[1], i > 0, `${p} > ${t.key}: only a second parent ignores the layout`);
+      assert(folder.edges.some(e => e.from === p && e.to === t.key), `${p} > ${t.key} is a drawn edge`);
+    }
+    const block = text.match(new RegExp(`\\t${t.key} = \\{[^]*?\\n\\t\\}`))[0];
+    for (const p of t.requires) assert.equal(new RegExp(`dependencies = \\{[^}]*${p} = 1`).test(block), t.all, `${t.key}: ${p} is a hard dependency only under all`);
+  }
+  for (const t of model.techs) {
+    const must = mandatory(t, model.byKey);
+    for (const k of must) for (const x of model.byKey.get(k).xor) assert(!must.has(x), `${t.key} needs both ${k} and ${x}`);
+    if (!t.all && t.requires.length > 1) assert(t.requires.some(p => !model.byKey.get(p).locked), `${t.key} has an open parent`);
+  }
+  for (const [a, b] of XOR_PAIRS) {
+    const ta = model.layout.folders[model.byKey.get(`zin_tech_${a}`).folder].tiles.find(x => x.key === `zin_tech_${a}`);
+    const tb = model.layout.folders[model.byKey.get(`zin_tech_${b}`).folder].tiles.find(x => x.key === `zin_tech_${b}`);
+    assert(ta.y === tb.y && Math.abs(ta.x - tb.x) === 2, `${a} and ${b} side by side`);
+    for (const k of [a, b]) assert(model.byKey.get(`zin_tech_${k}`).ai.modifiers?.length || ['great_halls', 'village_forges', 'pattern_books', 'masters_benches'].includes(k), `${k} has an AI weight that reads the realm`);
+  }
+  // Lines are not straight columns: every folder but the small Eyries and Lore folders has a connector that turns.
+  for (const [f, l] of Object.entries(model.layout.folders)) {
+    const tile = k => l.tiles.find(t => t.key === k);
+    if (!['zin_skies_folder'].includes(f)) assert(l.edges.some(e => tile(e.from).x !== tile(e.to).x), `${f} has a branch that turns`);
+  }
+});
+
+test('K51 span: the tree runs from the Third Age to the end of the sandbox, the Third Age rows carry era names, and no text dates an old age', () => {
+  const years = model.techs.map(t => t.year);
+  assert(Math.min(...years) < FOURTH_AGE_FROM && Math.max(...years) >= 1785);
+  for (const f of Object.keys(FOLDER_FILES)) {
+    const ys = model.techs.filter(t => t.folder === f).map(t => t.year);
+    assert(Math.min(...ys) < FOURTH_AGE_FROM, `${f} reaches into the Third Age`);
+    assert(Math.max(...ys) >= 1768, `${f} has research for the sandbox`);
+  }
+  const loc = allLoc();
+  for (const b of model.bands) {
+    const caption = loc.get(`zin_techtree_year_${b.y}`);
+    if (b.to < FOURTH_AGE_FROM) assert(/Third Age/.test(caption) && !/\d/.test(caption), `row ${b.y} is named by its era: ${caption}`);
+    else if (b.to < 1500) assert(/Fourth Age/.test(caption) && !/\d/.test(caption), `row ${b.y} is named by its era: ${caption}`);
+    else assert(/^4A \d{4} to \d{4}$/.test(caption), `row ${b.y} gives Fourth Age years: ${caption}`);
+  }
+  for (const [k, v] of loc) {
+    if (!/^zin_tech|^zin_techtree|_folder/.test(k)) continue;
+    assert(!/\b[123]A\s*\d/.test(v), `${k} dates an old age: ${v}`);
+    assert(!/\b(First|Second|Third) Age\b[^.]*\d/.test(v), `${k} numbers an old age: ${v}`);
+    assert(!/\b(\d[\d,]* (years|centuries)|(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|twenty) (centuries|hundred years|thousand years)|a (hundred|thousand) years)\b/i.test(v), `${k} counts the years of an age: ${v}`);
+  }
+});
+
+test('K51 Third Age knowledge is starting knowledge by people, and lost knowledge is recovered, never granted', () => {
+  const packages = technologyPackages(model);
+  const ta = k => model.byKey.get(`zin_tech_${k}`).year < FOURTH_AGE_FROM;
+  assert(packages.elves.technologies.includes('elven_arms') && packages.elves.technologies.includes('long_watch'));
+  assert(packages.concord.technologies.includes('hedge_fighting') && packages.concord.technologies.includes('hidden_refuges'));
+  assert(!packages.concord.technologies.some(k => ['elven_arms', 'grave_binding', 'troll_brood'].includes(k)), 'men keep only their own Third Age knowledge');
+  assert(packages.dominion.technologies.includes('grave_binding') && packages.kin_trolls.technologies.includes('troll_brood'));
+  for (const [key, p] of Object.entries(packages)) if (key !== 'mistake') assert(p.technologies.some(ta), `${key} starts with Third Age knowledge`);
+  const lost = model.techs.filter(t => t.lost);
+  assert.equal(lost.length, 8);
+  for (const t of lost) {
+    assert(t.year < FOURTH_AGE_FROM && t.needs.length, `${t.key}: Third Age with later learning`);
+    assert(t.needs.some(n => model.byKey.get(n).year >= FOURTH_AGE_FROM), `${t.key} is recovered through Fourth Age learning`);
+    for (const p of Object.values(packages)) assert(!p.technologies.includes(t.short), `${t.short} is never starting knowledge`);
+  }
+  const starts = JSON.parse(file('docs/design/technology/start_packages.json')).countries;
+  for (const name of ['Kunhrim', 'Hrakbrund', 'Brundahrim', 'Gromkerm']) assert(starts[name].technologies.includes('hall_delving') && starts[name].technologies.includes('deep_forges'), `${name} keeps the hold-craft`);
+  for (const s of Object.values(starts)) for (const k of s.technologies) assert(!model.byKey.get(`zin_tech_${k}`).lost, `${k} is lost knowledge`);
 });
 
 // ---------- determinism ----------
@@ -441,19 +577,25 @@ test('Negative: a vanilla name used as a folder, category or doctrine is refused
   await rejects(r => { r.doctrines.grand[0].key = 'new_mobile_warfare'; }, /vanilla key/);
   await rejects(r => { r.packages.sharing.groups[0].id = 'commonwealth_research'; }, /vanilla group/);
 });
-test('Negative: a second path parent, a cross-line path, a later parent and a cycle fail', async () => {
-  await rejects(r => { r.civil.technologies.find(t => t.key === 'arch_and_vault').requires = ['lime_mortar', 'dressed_stone']; }, /two path parents/);
-  await rejects(r => { r.civil.technologies.find(t => t.key === 'pit_props').requires = ['dressed_stone']; }, /is in another line/);
+test('Negative: a path parent in another folder, a lone AND parent, a later parent, a cycle and an AND over an exclusive pair fail', async () => {
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'arch_and_vault').requires = ['lime_mortar', 'lime_mortar']; }, /listed twice/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'pit_props').requires = ['scriptoria']; }, /is in another folder/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'masons_lodges').all = true; }, /all needs two or more path parents/);
   await rejects(r => { r.civil.technologies.find(t => t.key === 'dressed_stone').needs = ['great_scaffolds']; }, /later than the technology/);
   await rejects(r => { const t = r.civil.technologies; t.find(x => x.key === 'lime_mortar').needs = ['arch_and_vault']; }, /later than the technology|cycle/);
+  await rejects(r => { const t = r.civil.technologies.find(x => x.key === 'guild_charters'); t.all = true; }, /can never be researched/);
+  await rejects(r => { delete r.civil.technologies.find(t => t.key === 'refuge_granaries').needs; }, /lost knowledge needs the later learning/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'refuge_granaries').year = 1700; }, /lost knowledge belongs to the Third Age/);
 });
 test('Negative: an exclusive pair written on one side only fails', async () => {
   await rejects(r => { r.civil.technologies.find(t => t.key === 'masters_benches').xor = []; }, /XOR with masters_benches is written on one side only|written on one side only/);
 });
-test('Negative: a year outside 1500 to 1790, two tiles on one slot, and two rows of one line in one band fail', async () => {
-  await rejects(r => { r.civil.technologies.find(t => t.key === 'scriptoria').year = 1936; }, /outside 1500 to 1790/);
-  await rejects(r => { r.civil.technologies.find(t => t.key === 'libraries').year = 1600; }, /share the slot|not in a later row/);
-  await rejects(r => { r.civil.technologies.find(t => t.key === 'libraries').year = 1590; }, /not in a later row|share the slot/);
+test('Negative: a year outside 1 to 1800, two tiles on one slot, a child beside its parent and a tile on a connector fail', async () => {
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'scriptoria').year = 1936; }, /outside 1 to 1800/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'libraries').year = 300; }, /share the slot|not in a later row/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'libraries').year = 250; }, /not in a later row|share the slot/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'royal_works').x = 2; }, /share the slot|runs through|overlap/);
+  await rejects(r => { r.warfare.technologies.find(t => t.key === 'light_harness').x = 6; }, /side by side|overlap/);
 });
 test('Negative: a locked building listed by an ordinary technology, and a grant-only row outside the gates, fail', async () => {
   await rejects(r => { r.civil.technologies.find(t => t.key === 'water_wheels').unlocks = { buildings: [{ building: 'rocket_site', level: 1 }] }; }, /rocket_site must stay locked/);
@@ -522,6 +664,6 @@ test('Layout: the folder layout reports a shared slot instead of hiding it', () 
   const lines = new Map([['a', { folder: 'f', column: 0 }]]);
   const techs = [{ key: 'one', line: 'a', year: 1600, requires: [] }, { key: 'two', line: 'a', year: 1620, requires: [] }];
   const { problems } = layoutFolders(techs, lines, model.bands);
-  assert.equal(problems.length, 1);
-  assert(/share the slot 0,0/.test(problems[0]));
+  assert(problems.some(p => /share the slot 0,0/.test(p)), 'the shared slot');
+  assert(problems.some(p => /overlap/.test(p)), 'and the overlapping tiles');
 });

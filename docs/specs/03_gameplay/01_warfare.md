@@ -93,7 +93,7 @@ Who administers Zol's Mistake (Zol's armies are numbered hosts, S4); whether Vol
 
 ### 3. Equipment archetypes
 
-All are proposed. Variants are `<archetype>_0` to `_5`. `type` is the HOI4 equipment type used by production and the AI.
+All are proposed. Variants are `<archetype>_0` to `_6`. The late variants of owner decision K51 (25 October 2026), each unlocked by a sandbox technology of section 11, are arms `_6` (Crown-Iron Arms, 1786), bows `_5` (Iron-Bowed Crossbows, 1772), hand-guns `_4` and `_5` (Wheel-Lock and Firelock Hand-Guns, 1772 and 1788), armour `_5` (Proofed Plate, 1788), mounts `_4` (Crown Chargers, 1782), elven arms `_4` (Moon-Silver Arms, 1774), bombards `_5` (Field Culverins, 1780), the five kin gears `_3` (Kin-Lord gear, 1784), griffins `_3` (Barded Griffins, 1774) and pack trains `_3` (Crown Post Trains, 1782); no wagon train variant is added, because `train_equipment_2` is a vanilla key; their stats follow the archetype growth rule like every other variant. `type` is the HOI4 equipment type used by production and the AI.
 
 | Archetype | Name | HOI4 type | Who can produce (`can_be_produced`) | Used by |
 | --- | --- | --- | --- | --- |
@@ -454,7 +454,7 @@ Wall states carry the dynamic modifier `zin_war_great_wall` (state scope): `land
 
 ### 11. Technology tree
 
-Fourth Age years. Techs at or before 1745 are starting knowledge (by package, section 13). The historical campaign runs 1748 to 1760; late techs run to 1790 for the sandbox. `research_cost` 1.5 for starting-era techs, 2.0 for 1748–1760, 2.5 after. Folders are proposed; the interface spec draws them.
+Owner decision K51 (25 October 2026) lengthened and branched the tree; the rules are in [07_industry_and_electronics_techs.md](07_industry_and_electronics_techs.md) §3 and §5. The rows run from **the Third Age** (year values 1 to 99, ordering values that no text shows; the rows are captioned *The Third Age* and *The Late Third Age*) through *The Early Fourth Age* (4A 100 to 1499) to 4A 1800, the end of the sandbox. Techs at or before 1745 are starting knowledge (by package, section 13), so the old rows hold what each people kept: the elves' arms, songs, steeds and hulls, the men's iron arms, bows, horses, engines, galleys, hedge-fighting and hidden refuges, the kin's crafts, Volgan's grave rites and nether pacts. Rows marked lost knowledge (the Old Horse-Lines, the Old Wall-Craft, the Rites of Unbinding, the Healers' Case-Rolls, the Anchor-Stones, the Old Sea-Roads) are Third Age rows no realm starts with, recovered through their Fourth Age needs. The historical campaign runs 1748 to 1760; the sandbox research runs to 1788. `research_cost` 1.5 for starting-era techs, 2.0 for 1746–1760, 2.5 for 1761–1775, 3.0 from 1776, 2.0 for lost knowledge. Every technology that unlocks equipment uses the large equipment tile. The Requires column lists path parents (drawn connectors; "(all)" marks an AND join, otherwise one parent is enough) and then the needs (dependencies, no connector). Folders are proposed; the interface spec draws them.
 
 | Folder key | Name | Ledger |
 | --- | --- | --- |
@@ -476,96 +476,122 @@ New technology categories (`common/technology_tags`): `zin_cat_arms`, `zin_cat_b
 
 | Key | Name | Year | Requires | Unlocks / effect | Who |
 | --- | --- | ---: | --- | --- | --- |
-| `zin_tech_iron_arms` | Iron Arms | 1600 | - | arms `_0`; levy, line infantry | all with arms |
-| `zin_tech_forged_steel` | Forged Steel | 1700 | iron arms | arms `_1` | |
-| `zin_tech_tempered_steel` | Tempered Steel | 1749 | forged steel | arms `_2` | |
-| `zin_tech_pattern_welding` | Pattern-Welded Blades | 1753 | tempered | arms `_3` | |
-| `zin_tech_master_forges` | The Master Forges | 1758 | pattern | arms `_4` | |
-| `zin_tech_mountain_steel` | Mountain Steel | 1772 | master forges | arms `_5` | |
-| `zin_tech_hunting_bows` | Hunting Bows | 1600 | - | bows `_0`; archers | men, orcs |
-| `zin_tech_composite_bows` | Composite Bows | 1700 | hunting bows | bows `_1` | |
-| `zin_tech_war_longbows` | War Longbows | 1750 | composite | bows `_2` | |
-| `zin_tech_crossbows` | Crossbows | 1754 | longbows | bows `_3` (piercing +3) | |
-| `zin_tech_windlass_crossbows` | Windlass Crossbows | 1762 | crossbows | bows `_4` | |
-| `zin_tech_mail` | Mail Shirts | 1650 | iron arms | armour `_0`; heavy infantry | men, orcs, giants |
-| `zin_tech_plate_and_mail` | Plate and Mail | 1720 | mail | armour `_1` | |
-| `zin_tech_full_plate` | Full Plate | 1752 | plate and mail | armour `_2` | |
-| `zin_tech_tempered_plate` | Tempered Plate | 1759 | full plate | armour `_3` | |
-| `zin_tech_masterwork_plate` | Masterwork Plate | 1775 | tempered plate | armour `_4` | |
-| `zin_tech_shield_wall_drill` | Shield-Wall Drill | 1700 | mail | `category_all_infantry` defence +5% | |
-| `zin_tech_hill_companies` | Hill Companies | 1720 | iron arms | hill companies | men |
-| `zin_tech_sea_soldiers` | Sea Soldiers | 1730 | iron arms | sea soldiers | men |
-| `zin_tech_ranger_craft` | Ranger Craft | 1740 | composite bows | rangers | men |
-| `zin_tech_pike_squares` | Pike Squares | 1755 | tempered steel | infantry defence +5%, breakthrough +5% | men |
-| `zin_tech_veteran_sergeants` | Veteran Sergeants | 1763 | pike squares | infantry org +5 | |
-| `zin_tech_elven_arms` | Elven Arms | 1500 | - | elven arms `_0`, `_1`; wardens, archers | elves, sun_elves |
-| `zin_tech_leaf_steel` | Leaf-Steel | 1750 | elven arms | elven arms `_2` | elves, sun_elves |
-| `zin_tech_elven_mastery` | Elven Mastery | 1760 | leaf-steel | elven arms `_3` | elves, sun_elves |
-| `zin_tech_forest_rangers` | Forest Rangers | 1600 | elven arms | elven rangers | elves |
-| `zin_tech_sun_guard` | The Sun Guard | 1500 | elven arms | Sun Guard, Sun Bowmen | sun_elves |
-| `zin_tech_warband_iron` | Warband Iron | 1600 | - | orc warbands, goblins | orcs, trolls, the_dead (Volgan) |
-| `zin_tech_blackened_iron` | Blackened Iron | 1752 | warband iron | orc and goblin attack +10% | orcs |
-| `zin_tech_valley_wardens` | Valley Wardens | 1600 | iron arms | valley wardens | Worshipdom |
+| `zin_tech_elven_arms` | Elven Arms | 10 | - | elven arms `_0`, `_1`; wardens, archers | elves, sun_elves |
+| `zin_tech_hedge_fighting` | Hedge-Fighting | 30 | - | `category_all_infantry` forest attack +0.05, hills attack +0.05 | men |
+| `zin_tech_hunting_bows` | Hunting Bows | 60 | - | bows `_0`; archers | men, orcs |
+| `zin_tech_iron_arms` | Iron Arms | 60 | - | arms `_0`; levy, line infantry | all with arms |
+| `zin_tech_warband_iron` | Warband Iron | 60 | - | orc warbands, goblins | orcs, trolls, the_dead (Volgan) |
+| `zin_tech_forest_rangers` | Forest Rangers | 70 | elven_arms | elven rangers | elves |
+| `zin_tech_sun_guard` | The Sun Guard | 70 | elven_arms | Sun Guard, Sun Bowmen | sun_elves |
+| `zin_tech_long_watch` | The Long Watch | 80 | elven_arms | `zin_elves_warden` defense +0.05, forest defence +0.05; `zin_elves_archers` defense +0.05 |  |
+| `zin_tech_valley_wardens` | Valley Wardens | 1600 | iron_arms | valley wardens | Worshipdom |
+| `zin_tech_mail` | Mail Shirts | 1650 | iron_arms | armour `_0`; heavy infantry | men, orcs, giants |
+| `zin_tech_composite_bows` | Composite Bows | 1700 | hunting_bows | bows `_1` |  |
+| `zin_tech_forged_steel` | Forged Steel | 1700 | iron_arms | arms `_1` |  |
+| `zin_tech_shield_wall_drill` | Shield-Wall Drill | 1700 | mail | `category_all_infantry` defence +5% |  |
+| `zin_tech_hill_companies` | Hill Companies | 1720 | iron_arms | hill companies | men |
+| `zin_tech_plate_and_mail` | Plate and Mail | 1720 | mail | armour `_1` |  |
+| `zin_tech_sea_soldiers` | Sea Soldiers | 1730 | iron_arms | sea soldiers | men |
+| `zin_tech_ranger_craft` | Ranger Craft | 1740 | composite_bows | rangers | men |
+| `zin_tech_tempered_steel` | Tempered Steel | 1749 | forged_steel | arms `_2` |  |
+| `zin_tech_leaf_steel` | Leaf-Steel | 1750 | elven_arms | elven arms `_2` | elves, sun_elves |
+| `zin_tech_war_longbows` | War Longbows | 1750 | composite_bows | bows `_2` |  |
+| `zin_tech_blackened_iron` | Blackened Iron | 1752 | warband_iron | orc and goblin attack +10%; XOR `zin_tech_goblin_swarms` | orcs |
+| `zin_tech_full_plate` | Full Plate | 1752 | plate_and_mail | armour `_2` |  |
+| `zin_tech_goblin_swarms` | Goblin Swarms | 1752 | warband_iron | `zin_orcs_goblins` max_organisation +5, maximum_speed +0.1; XOR `zin_tech_blackened_iron` | orcs |
+| `zin_tech_pattern_welding` | Pattern-Welded Blades | 1753 | tempered_steel | arms `_3` |  |
+| `zin_tech_crossbows` | Crossbows | 1754 | war_longbows | bows `_3` (piercing +3) |  |
+| `zin_tech_pike_squares` | Pike Squares | 1755 | shield_wall_drill, tempered_steel | infantry defence +5%, breakthrough +5%; XOR `zin_tech_sword_and_buckler` | men |
+| `zin_tech_sword_and_buckler` | Sword-and-Buckler Men | 1755 | shield_wall_drill, tempered_steel | `category_all_infantry` soft_attack +0.05, breakthrough +0.05, forest attack +0.05, urban attack +0.05; XOR `zin_tech_pike_squares` | men |
+| `zin_tech_heavy_harness` | Harness of Proof | 1756 | full_plate | `zin_men_heavy_infantry` defense +0.08, max_strength +0.05; `zin_men_knights` defense +0.05; XOR `zin_tech_light_harness` |  |
+| `zin_tech_light_harness` | Half-Harness | 1756 | full_plate | `zin_men_heavy_infantry` maximum_speed +0.08, breakthrough +0.05; `zin_men_knights` breakthrough +0.05; XOR `zin_tech_heavy_harness` |  |
+| `zin_tech_master_forges` | The Master Forges | 1758 | pattern_welding | arms `_4` |  |
+| `zin_tech_tempered_plate` | Tempered Plate | 1759 | heavy_harness, light_harness | armour `_3` |  |
+| `zin_tech_elven_mastery` | Elven Mastery | 1760 | leaf_steel | elven arms `_3` | elves, sun_elves |
+| `zin_tech_windlass_crossbows` | Windlass Crossbows | 1762 | crossbows | bows `_4` |  |
+| `zin_tech_veteran_sergeants` | Veteran Sergeants | 1763 | pike_squares, sword_and_buckler | infantry org +5 |  |
+| `zin_tech_pike_and_shot` | Pike and Shot | 1764 | pike_squares, arquebuses (all) | `zin_men_handgunners` defense +0.1; `zin_men_infantry` soft_attack +0.05 | men+flag:zin_gunpowder |
+| `zin_tech_chieftains_iron` | Chieftains' Iron | 1768 | blackened_iron, goblin_swarms | `zin_orcs_warrior` soft_attack +0.05, max_organisation +3 |  |
+| `zin_tech_mountain_steel` | Mountain Steel | 1772 | master_forges | arms `_5` |  |
+| `zin_tech_steel_bows` | Iron-Bowed Crossbows | 1772 | windlass_crossbows | bows `_5` |  |
+| `zin_tech_moonsilver_arms` | Moon-Silver Arms | 1774 | elven_mastery | elven arms `_4` |  |
+| `zin_tech_masterwork_plate` | Masterwork Plate | 1775 | tempered_plate | armour `_4` |  |
+| `zin_tech_free_companies` | Free Companies | 1778 | veteran_sergeants | `experience_gain_army_factor = 0.05`; `category_all_infantry` max_organisation +3 |  |
+| `zin_tech_crown_steel` | Crown Iron | 1786 | mountain_steel | arms `_6` |  |
+| `zin_tech_proofed_plate` | Proofed Plate | 1788 | masterwork_plate | armour `_5` |  |
 
 #### 11.2 Mounts and Kin
 
 | Key | Name | Year | Requires | Unlocks / effect | Who |
 | --- | --- | ---: | --- | --- | --- |
-| `zin_tech_riding_horses` | Riding Horses | 1600 | - | mounts `_0`; cavalry | men, elves, orcs, Volgan |
-| `zin_tech_war_horses` | War Horses | 1700 | riding horses, mail | mounts `_1`; knights | men |
-| `zin_tech_camel_corps` | Camel Corps | 1650 | riding horses | camel line; camel riders | men of the East Lands and desert realms |
-| `zin_tech_horse_archery` | Horse Archery | 1740 | war horses, composite bows | horse archers | men |
-| `zin_tech_great_studs` | Great Studs | 1751 | war horses | mounts `_2` | |
-| `zin_tech_couched_lance` | The Couched Lance | 1755 | great studs | knights breakthrough +10% | men |
-| `zin_tech_remount_depots` | Remount Depots | 1760 | great studs | cavalry org +5, reinforce | |
-| `zin_tech_plains_destriers` | Destriers of the Plains | 1768 | remount depots | mounts `_3` | |
-| `zin_tech_elven_steeds` | Elven Steeds | 1500 | elven arms | elven riders | elves |
-| `zin_tech_raider_mounts` | Raider Mounts | 1650 | warband iron | orc raiders | orcs |
-| `zin_tech_troll_brood` | Troll Brood | 1600 | - | troll gear `_0`; brutes | trolls |
-| `zin_tech_giant_kin` | Giant Kin | 1600 | - | giant gear `_0`; host, hurlers | giants |
-| `zin_tech_ent_moots` | The Moots | 1500 | - | grove wardings `_0`; groves | ents |
-| `zin_tech_yeti_hunts` | Yeti Hunts | 1600 | - | yeti gear `_0`; bands | yeti |
-| `zin_tech_ogre_pacts` | Ogre Pacts | 1650 | warband iron | ogre gear `_0`; ogres | orcs, Volgan |
-| `zin_tech_kin_harness` | Kin Harness | 1752 | any kin tech | all kin gear `_1` | kin peoples, orcs, Volgan |
-| `zin_tech_kin_mastery` | Kin Mastery | 1764 | kin harness | all kin gear `_2` | |
+| `zin_tech_ent_moots` | The Moots | 10 | - | grove wardings `_0`; groves | ents |
+| `zin_tech_elven_steeds` | Elven Steeds | 20 | elven_arms | elven riders | elves |
+| `zin_tech_giant_kin` | Giant Kin | 20 | - | giant gear `_0`; host, hurlers | giants |
+| `zin_tech_old_horse_lines` | The Old Horse-Lines | 40 | riding_horses, libraries | lost knowledge (Third Age), recovered through its needs; `zin_men_cavalry` defense +0.05, maximum_speed +0.05; `zin_men_knights` defense +0.05 | men |
+| `zin_tech_riding_horses` | Riding Horses | 60 | - | mounts `_0`; cavalry | men, elves, orcs, Volgan |
+| `zin_tech_troll_brood` | Troll Brood | 60 | - | troll gear `_0`; brutes | trolls |
+| `zin_tech_yeti_hunts` | Yeti Hunts | 60 | - | yeti gear `_0`; bands | yeti |
+| `zin_tech_camel_corps` | Camel Corps | 1650 | riding_horses | camel line; camel riders | men of the East Lands and desert realms |
+| `zin_tech_ogre_pacts` | Ogre Pacts | 1650 | warband_iron | ogre gear `_0`; ogres | orcs, Volgan |
+| `zin_tech_raider_mounts` | Raider Mounts | 1650 | warband_iron | orc raiders | orcs |
+| `zin_tech_war_horses` | War Horses | 1700 | riding_horses, mail | mounts `_1`; knights | men |
+| `zin_tech_horse_archery` | Horse Archery | 1740 | war_horses, composite_bows | horse archers | men |
+| `zin_tech_great_studs` | Great Studs | 1751 | war_horses | mounts `_2` |  |
+| `zin_tech_kin_harness` | Kin Harness | 1752 | - (any kin tech) | all kin gear `_1` | kin peoples, orcs, Volgan |
+| `zin_tech_couched_lance` | The Couched Lance | 1755 | great_studs | knights breakthrough +10%; XOR `zin_tech_light_horse` | men |
+| `zin_tech_light_horse` | Light Horse | 1755 | great_studs | `category_cavalry` maximum_speed +0.1, recon +1; XOR `zin_tech_couched_lance` | men |
+| `zin_tech_remount_depots` | Remount Depots | 1760 | couched_lance, light_horse | cavalry org +5, reinforce |  |
+| `zin_tech_kin_mastery` | Kin Mastery | 1764 | kin_harness | all kin gear `_2` |  |
+| `zin_tech_plains_destriers` | Destriers of the Plains | 1768 | remount_depots | mounts `_3` |  |
+| `zin_tech_crown_chargers` | Crown Chargers | 1782 | plains_destriers | mounts `_4` |  |
+| `zin_tech_kin_lords` | Kin-Lords | 1784 | kin_mastery | troll gear `_3`, giant gear `_3`, ent grove `_3`, yeti gear `_3`, ogre gear `_3` |  |
 
 #### 11.3 Engines and Walls
 
 | Key | Name | Year | Requires | Unlocks / effect | Who |
 | --- | --- | ---: | --- | --- | --- |
-| `zin_tech_catapults` | Catapults | 1600 | - | catapults `_0`; catapult battalion and company | men, orcs, the_dead, giants, demons |
+| `zin_tech_old_wall_craft` | The Old Wall-Craft | 40 | arch_and_vault, universities | lost knowledge (Third Age), recovered through its needs; `land_bunker_effectiveness_factor = 0.05`; `dig_in_speed_factor = 0.1` |  |
+| `zin_tech_catapults` | Catapults | 60 | - | catapults `_0`; catapult battalion and company | men, orcs, the_dead, giants, demons |
+| `zin_tech_stone_forts` | Stone Forts | 100 | - | (forts buildable; baseline) | all |
+| `zin_tech_layered_walls` | Layered Walls | 1700 | stone_forts | `land_bunker_effectiveness_factor = 0.10` |  |
 | `zin_tech_torsion_engines` | Torsion Engines | 1700 | catapults | catapults `_1`; ballistae `_0`; ballista company | men, elves, sun_elves, the_dead |
-| `zin_tech_trebuchets` | Counterweight Trebuchets | 1750 | torsion | trebuchets `_0`; trebuchet battalion | men, the_dead |
-| `zin_tech_scorpions` | Scorpions | 1751 | torsion | scorpions `_0`; scorpion company (sky rule on) | men, elves, sun_elves |
-| `zin_tech_siege_towers` | Siege Towers and Rams | 1752 | catapults | sappers breakthrough +10% | |
-| `zin_tech_fire_pots` | Fire-Pots | 1753 | torsion | catapult soft attack +10% | |
-| `zin_tech_great_engines` | Great Engines | 1757 | trebuchets | catapults `_2`, trebuchets `_1`, ballistae `_1` | |
-| `zin_tech_engine_corps` | Engine Corps | 1763 | great engines | siege org +5, reliability | |
-| `zin_tech_master_engines` | Master Engines | 1772 | engine corps | catapults `_3`, trebuchets `_2`, ballistae `_2`, scorpions `_1` | |
-| `zin_tech_stone_forts` | Stone Forts | 1600 | - | (forts buildable; baseline) | all |
-| `zin_tech_layered_walls` | Layered Walls | 1700 | stone forts | `land_bunker_effectiveness_factor = 0.10` | |
-| `zin_tech_harbour_chains` | Harbour Chains | 1720 | stone forts | `coastal_bunker_effectiveness_factor = 0.10` | |
-| `zin_tech_wall_wardens` | Wall Wardens | 1749 | layered walls | `max_dig_in = 2`, `dig_in_speed_factor = 0.10` | |
-| `zin_tech_bastions` | Bastions | 1756 | wall wardens | `land_bunker_effectiveness_factor = 0.15` | |
-| `zin_tech_curtain_walls` | Curtain Walls | 1762 | bastions | land and coastal effectiveness +0.10 | |
+| `zin_tech_harbour_chains` | Harbour Chains | 1720 | stone_forts | `coastal_bunker_effectiveness_factor = 0.10` |  |
+| `zin_tech_wall_wardens` | Wall Wardens | 1749 | layered_walls | `max_dig_in = 2`, `dig_in_speed_factor = 0.10` |  |
+| `zin_tech_trebuchets` | Counterweight Trebuchets | 1750 | torsion_engines | trebuchets `_0`; trebuchet battalion | men, the_dead |
+| `zin_tech_scorpions` | Scorpions | 1751 | torsion_engines | scorpions `_0`; scorpion company (sky rule on) | men, elves, sun_elves |
+| `zin_tech_siege_towers` | Siege Towers and Rams | 1752 | catapults | sappers breakthrough +10% |  |
+| `zin_tech_fire_pots` | Fire-Pots | 1753 | torsion_engines | catapult soft attack +10% |  |
+| `zin_tech_bastions` | Bastions | 1756 | wall_wardens | `land_bunker_effectiveness_factor = 0.15` |  |
+| `zin_tech_great_engines` | Great Engines | 1757 | trebuchets | catapults `_2`, trebuchets `_1`, ballistae `_1` |  |
+| `zin_tech_curtain_walls` | Curtain Walls | 1762 | bastions, harbour_chains (all) | land and coastal effectiveness +0.10 |  |
+| `zin_tech_engine_corps` | Engine Corps | 1763 | great_engines | siege org +5, reliability; XOR `zin_tech_field_engine_trains` |  |
+| `zin_tech_field_engine_trains` | Field Engine Trains | 1763 | great_engines | `category_zin_siege` maximum_speed +0.1; `zin_support_catapults` soft_attack +0.05; XOR `zin_tech_engine_corps` |  |
+| `zin_tech_master_engines` | Master Engines | 1772 | engine_corps, field_engine_trains | catapults `_3`, trebuchets `_2`, ballistae `_2`, scorpions `_1` |  |
+| `zin_tech_star_forts` | Star Forts | 1776 | curtain_walls | `land_bunker_effectiveness_factor = 0.1`; `coastal_bunker_effectiveness_factor = 0.05` |  |
 
 #### 11.4 Lore and Wards
 
 | Key | Name | Year | Requires | Unlocks / effect | Who |
 | --- | --- | ---: | --- | --- | --- |
-| `zin_tech_field_healers` | Field Healers | 1650 | - | camp gear; healers company | living peoples |
-| `zin_tech_lantern_wards` | Lantern Wards | 1700 | field healers | wards `_1`; wardens company (piercing 30) | men, giants |
-| `zin_tech_hallowed_arms` | Hallowed Arms | 1755 | lantern wards; `has_global_flag = zin_zol_rising` | wards `_2` (piercing 38); arms piercing +2 via `equipment_bonus` | men, giants |
-| `zin_tech_wards_against_death` | Wards Against Death | 1757 | hallowed arms; `zin_zol_rising` | wards `_3` (piercing 45) | men, giants |
-| `zin_tech_wardsong` | Wardsong | 1500 | elven arms | wards (elven line, piercing 50); wardsingers | elves |
-| `zin_tech_old_songs` | The Old Songs | 1752 | wardsong | elven battalions org +5 | elves, sun_elves |
-| `zin_tech_grave_binding` | Grave Binding | 1600 | - | grave arms `_0`, `_1`; grave hosts | Volgan |
-| `zin_tech_necromantic_orders` | Necromantic Orders | 1650 | grave binding | necromancers | Volgan |
-| `zin_tech_deeper_rites` | Deeper Rites | 1752 | necromantic orders | grave arms `_2`; grave host org +10 | Volgan |
-| `zin_tech_grave_riders` | Grave Riders | 1754 | deeper rites, riding horses | grave riders | Volgan |
-| `zin_tech_nether_pacts` | Nether Pacts | 1600 | - | nether arms `_0`, `_1`; Netherborn | demons, Volgan |
-| `zin_tech_nether_forges` | Nether Forges | 1753 | nether pacts | nether arms `_2` | demons, Volgan |
-| `zin_tech_bound_demons` | (hidden name until reveal) | 1700 | `zin_afrit_revealed` | bound demons | Afrit's country; granted by the Afrit mechanic |
+| `zin_tech_wardsong` | Wardsong | 10 | elven_arms | wards (elven line, piercing 50); wardsingers | elves |
+| `zin_tech_grave_binding` | Grave Binding | 15 | - | grave arms `_0`, `_1`; grave hosts | Volgan |
+| `zin_tech_nether_pacts` | Nether Pacts | 20 | - | nether arms `_0`, `_1`; Netherborn | demons, Volgan |
+| `zin_tech_anchor_stones` | The Anchor-Stones | 50 | deeper_rites | lost knowledge (Third Age), recovered through its needs; `zin_the_dead_revenant` max_organisation +5, defense +0.05 | Volgan |
+| `zin_tech_field_healers` | Field Healers | 70 | - | camp gear; healers company | living peoples |
+| `zin_tech_necromantic_orders` | Necromantic Orders | 70 | grave_binding | necromancers | Volgan |
+| `zin_tech_healers_rolls` | The Healers' Case-Rolls | 75 | field_healers, libraries | lost knowledge (Third Age), recovered through its needs; `casualty_trickleback = 0.05` | healers |
+| `zin_tech_rites_of_unbinding` | Rites of Unbinding | 90 | lantern_wards, universities | lost knowledge (Third Age), recovered through its needs; `zin_support_wardens` max_organisation +5, defense +0.1 | wardmen |
+| `zin_tech_bound_demons` | (hidden name until reveal) | 1700 | - (`zin_afrit_revealed`) | bound demons | Afrit's country; granted by the Afrit mechanic |
+| `zin_tech_lantern_wards` | Lantern Wards | 1700 | field_healers | wards `_1`; wardens company (piercing 30) | men, giants |
+| `zin_tech_deeper_rites` | Deeper Rites | 1752 | necromantic_orders | grave arms `_2`; grave host org +10 | Volgan |
+| `zin_tech_hunt_songs` | Songs of the Hunt | 1752 | wardsong | `zin_elves_archers` soft_attack +0.08; `zin_elves_rangers` soft_attack +0.08; `zin_sun_elves_bowmen` soft_attack +0.08; XOR `zin_tech_old_songs` | elven |
+| `zin_tech_old_songs` | The Old Songs | 1752 | wardsong | elven battalions org +5; XOR `zin_tech_hunt_songs` | elves, sun_elves |
+| `zin_tech_nether_forges` | Nether Forges | 1753 | nether_pacts | nether arms `_2` | demons, Volgan |
+| `zin_tech_grave_riders` | Grave Riders | 1754 | deeper_rites, riding_horses | grave riders | Volgan |
+| `zin_tech_hallowed_arms` | Hallowed Arms | 1755 | lantern_wards; `has_global_flag = zin_zol_rising` | wards `_2` (piercing 38); arms piercing +2 via `equipment_bonus` | men, giants |
+| `zin_tech_wards_against_death` | Wards Against Death | 1757 | hallowed_arms; `zin_zol_rising` | wards `_3` (piercing 45) | men, giants |
+| `zin_tech_ward_schools` | Ward-Schools | 1770 | lantern_wards | `experience_gain_army_factor = 0.03`; `zin_support_wardens` max_organisation +5, reliability +0.05 |  |
+| `zin_tech_grave_legions` | Grave Legions | 1776 | deeper_rites | `zin_the_dead_revenant` max_organisation +5, defense +0.05; `zin_dead_grave_riders` breakthrough +0.05 |  |
 | `zin_tech_deathless_tide_1` to `_3` | The Deathless Tide | 1600 / 1755 / 1758 | not researchable; granted at `zin_mistake_power` 0, 40, 70 | deathless bonds `_0` to `_2`; crews; black sails | Zol |
 
 Rites and tide techs sit in the folder only for the countries that may have them (`allow_branch`), so no other player sees them.
@@ -574,52 +600,64 @@ Rites and tide techs sit in the folder only for the countries that may have them
 
 | Key | Name | Year | Requires | Unlocks / effect |
 | --- | --- | ---: | --- | --- |
-| `zin_tech_scouts` | Scouts | 1600 | - | scouts company |
+| `zin_tech_hidden_refuges` | Hidden Refuges | 30 | - | `attrition = -0.03`; `supply_factor = 0.03` |
+| `zin_tech_scouts` | Scouts | 60 | - | scouts company |
+| `zin_tech_wagon_trains` | Wagon Trains | 700 | - | `train_equipment_0` |
 | `zin_tech_sappers` | Sappers | 1650 | scouts | sappers company |
-| `zin_tech_wagon_trains` | Wagon Trains | 1680 | - | `train_equipment_0` |
-| `zin_tech_supply_columns` | Supply Columns | 1700 | wagon trains | `motorized_equipment_0`; `supply_factor = 0.05` |
 | `zin_tech_heralds` | Heralds and Beacons | 1700 | scouts | heralds company |
-| `zin_tech_quartermasters` | Quartermasters | 1720 | supply columns | quartermasters company |
+| `zin_tech_supply_columns` | Supply Columns | 1700 | wagon_trains | `motorized_equipment_0`; `supply_factor = 0.05` |
+| `zin_tech_quartermasters` | Quartermasters | 1720 | supply_columns | quartermasters company |
 | `zin_tech_provosts` | Provosts | 1730 | sappers | provosts company |
 | `zin_tech_armourers` | Armourers | 1740 | sappers | armourers company |
-| `zin_tech_high_roads` | The High Roads | 1745 | supply columns | `train_equipment_1`, `motorized_equipment_1`; `supply_node_range = 0.10` |
-| `zin_tech_winter_quarters` | Winter Quarters | 1750 | quartermasters | `winter_attrition_factor = -0.10` |
-| `zin_tech_water_caravans` | Water Caravans | 1750 | quartermasters | `heat_attrition_factor = -0.10` |
+| `zin_tech_high_roads` | The High Roads | 1745 | supply_columns | `train_equipment_1`, `motorized_equipment_1`; `supply_node_range = 0.10` |
+| `zin_tech_water_caravans` | Water Caravans | 1750 | quartermasters | `heat_attrition_factor = -0.10`; XOR `zin_tech_winter_quarters` |
+| `zin_tech_winter_quarters` | Winter Quarters | 1750 | quartermasters | `winter_attrition_factor = -0.10`; XOR `zin_tech_water_caravans` |
 | `zin_tech_war_camps` | War Camps | 1753 | quartermasters | `land_reinforce_rate = 0.02` |
-| `zin_tech_field_kitchens` | Field Kitchens | 1758 | war camps | `attrition = -0.05` |
-| `zin_tech_great_depots` | Great Depots | 1764 | field kitchens | `motorized_equipment_2`; `supply_factor = 0.10` |
+| `zin_tech_field_kitchens` | Field Kitchens | 1758 | war_camps | `attrition = -0.05` |
+| `zin_tech_great_depots` | Great Depots | 1764 | field_kitchens, high_roads (all) | `motorized_equipment_2`; `supply_factor = 0.10` |
+| `zin_tech_field_hospitals` | Field Hospitals | 1770 | field_kitchens, field_healers | `land_reinforce_rate = 0.01`; `casualty_trickleback = 0.05` |
+| `zin_tech_post_roads` | Post Roads | 1772 | high_roads | `supply_node_range = 0.1`; `supply_factor = 0.03` |
+| `zin_tech_crown_post` | The Crown Post | 1782 | great_depots | motorized `_3`; `supply_factor = 0.05` |
 
 #### 11.6 Galleys and Warships
 
 | Key | Name | Year | Requires | Unlocks / effect | Who |
 | --- | --- | ---: | --- | --- | --- |
-| `zin_tech_oared_galleys` | Oared Galleys | 1600 | - | galley hull `_0`; oars, ram, archers' deck, planking | all coastal |
-| `zin_tech_merchant_cogs` | Merchant Cogs | 1600 | - | `convoy_0` | all coastal |
-| `zin_tech_harbour_works` | Harbour Works | 1650 | cogs | naval base repair +; lookouts | |
-| `zin_tech_sailing_warships` | Sailing Warships | 1680 | cogs | warship hull `_0`; sails, oars and sail | |
-| `zin_tech_triton_charts` | The Triton Charts | 1702 | sailing warships | `navy_max_range_factor = 0.10` | |
-| `zin_tech_war_galleys` | War Galleys | 1730 | oared galleys | galley hull `_1`; ballista battery, rowers' benches | |
-| `zin_tech_corsair_craft` | Corsair Craft | 1730 | war galleys | raider hull `_0` | |
-| `zin_tech_high_castled_warships` | High-Castled Warships | 1745 | sailing warships | warship hull `_1`; catapult deck | |
-| `zin_tech_boarding_parties` | Boarding Parties | 1749 | war galleys | boarding party; `naval_invasion_capacity = 10` | |
-| `zin_tech_deep_water_hulls` | Deep-Water Hulls | 1752 | high-castled | `navy_max_range_factor = 0.20` (the game supports one convoy type: the Merchant Cog `convoy_1` of Merchant Cogs is the only cog, and no ocean cog exists; lead decision of the second error pass, 25 October 2026) | |
-| `zin_tech_fire_ships` | Fireships | 1753 | boarding parties | fire-pots | |
-| `zin_tech_bronze_sheathing` | Bronze Sheathing | 1755 | deep-water | bronze sheathing | |
-| `zin_tech_great_warships` | Great Warships | 1758 | deep-water | great warship hull `_0` | |
-| `zin_tech_storm_rigging` | Storm Rigging | 1760 | deep-water | `naval_attrition = -0.15` | |
-| `zin_tech_master_shipwrights` | Master Shipwrights | 1765 | great warships | all hulls next variant | |
-| `zin_tech_warded_hulls` | Warded Hulls | 1757 | lantern wards; `zin_zol_rising` | warded hull | men |
-| `zin_tech_elven_hulls` | Elven Hulls | 1500 | oared galleys | elven sails | elves (Gala's ships, Lorien's gift) |
+| `zin_tech_old_sea_roads` | The Old Sea-Roads | 30 | libraries | lost knowledge (Third Age), recovered through its needs; `navy_max_range_factor = 0.1` |  |
+| `zin_tech_oared_galleys` | Oared Galleys | 60 | - | galley hull `_0`; oars, ram, archers' deck, planking | all coastal |
+| `zin_tech_elven_hulls` | Elven Hulls | 80 | oared_galleys | elven sails | elves (Gala's ships, Lorien's gift) |
+| `zin_tech_merchant_cogs` | Merchant Cogs | 120 | - | `convoy_0` | all coastal |
+| `zin_tech_triton_charts` | The Triton Charts | 702 | merchant_cogs | `navy_max_range_factor = 0.10` |  |
+| `zin_tech_harbour_works` | Harbour Works | 1650 | merchant_cogs | naval base repair +; lookouts |  |
+| `zin_tech_sailing_warships` | Sailing Warships | 1680 | merchant_cogs | warship hull `_0`; sails, oars and sail |  |
+| `zin_tech_corsair_craft` | Corsair Craft | 1730 | war_galleys | raider hull `_0` |  |
+| `zin_tech_war_galleys` | War Galleys | 1730 | oared_galleys | galley hull `_1`; ballista battery, rowers' benches |  |
+| `zin_tech_high_castled_warships` | High-Castled Warships | 1745 | sailing_warships | warship hull `_1`; catapult deck |  |
+| `zin_tech_boarding_parties` | Boarding Parties | 1749 | war_galleys | boarding party; `naval_invasion_capacity = 10` |  |
+| `zin_tech_deep_water_hulls` | Deep-Water Hulls | 1752 | high_castled_warships | `navy_max_range_factor = 0.20` (the game supports one convoy type: the Merchant Cog `convoy_1` of Merchant Cogs is the only cog, and no ocean cog exists; lead decision of the second error pass, 25 October 2026) |  |
+| `zin_tech_bronze_rams` | Bronze Rams | 1753 | boarding_parties | `naval_damage_factor = 0.05`; `zin_ship_galley` naval_speed +0.05; XOR `zin_tech_fire_ships` |  |
+| `zin_tech_fire_ships` | Fireships | 1753 | boarding_parties | fire-pots; XOR `zin_tech_bronze_rams` |  |
+| `zin_tech_bronze_sheathing` | Bronze Sheathing | 1755 | deep_water_hulls | bronze sheathing |  |
+| `zin_tech_warded_hulls` | Warded Hulls | 1757 | lantern_wards; `zin_zol_rising` | warded hull | men |
+| `zin_tech_great_warships` | Great Warships | 1758 | deep_water_hulls | great warship hull `_0` |  |
+| `zin_tech_storm_rigging` | Storm Rigging | 1760 | deep_water_hulls | `naval_attrition = -0.15` |  |
+| `zin_tech_master_shipwrights` | Master Shipwrights | 1765 | great_warships, bronze_sheathing | all hulls next variant |  |
+| `zin_tech_corsair_havens` | Corsair Havens | 1766 | corsair_craft | `convoy_raiding_efficiency_factor = 0.1`; `zin_ship_raider` naval_speed +0.05 |  |
+| `zin_tech_galley_squadrons` | Galley Squadrons | 1770 | fire_ships, bronze_rams | `screening_efficiency = 0.1`; `positioning = 0.05` |  |
+| `zin_tech_ships_of_the_line` | Ships of the Line | 1778 | master_shipwrights | `naval_damage_factor = 0.05`; `naval_defense_factor = 0.05` |  |
+| `zin_tech_open_sea_charts` | Open-Sea Charts | 1788 | storm_rigging | `navy_max_range_factor = 0.1`; `naval_attrition = -0.05` |  |
 
 #### 11.7 Eyries (air; rule-dependent)
 
 | Key | Name | Year | Requires | Unlocks | Who |
 | --- | --- | ---: | --- | --- | --- |
+| `zin_tech_dragon_lore` | Dragon Lore | 10 | - | dragon flight sub-unit (dragons only by grant) | elves; any country granted dragons gets it with the grant |
 | `zin_tech_eyries` | Eyries | 1700 | - | griffins `_0`; griffin riders | men; only under rule `beasts` |
-| `zin_tech_griffin_harness` | Griffin Harness | 1752 | eyries | griffins `_1` | |
-| `zin_tech_sky_lances` | Sky Lances | 1758 | harness | griffins `_2` | |
-| `zin_tech_dragon_lore` | Dragon Lore | 1500 | - | dragon flight sub-unit (dragons only by grant) | elves; any country granted dragons gets it with the grant |
-| `zin_tech_dragon_kinship` | Dragon Kinship | 1755 | dragon lore | dragons `air_attack` +10% via `equipment_bonus` | elves |
+| `zin_tech_griffin_harness` | Griffin Harness | 1752 | eyries | griffins `_1` |  |
+| `zin_tech_dragon_kinship` | Dragon Kinship | 1755 | dragon_lore | dragons `air_attack` +10% via `equipment_bonus` | elves |
+| `zin_tech_far_eyries` | Far-Flying Eyries | 1758 | griffin_harness | `air_range_factor = 0.15`; `zin_air_griffin_riders` air_agility +0.1; XOR `zin_tech_sky_lances` |  |
+| `zin_tech_sky_lances` | Sky Lances | 1758 | griffin_harness | griffins `_2`; XOR `zin_tech_far_eyries` |  |
+| `zin_tech_barded_griffins` | Barded Griffins | 1774 | sky_lances, far_eyries | griffin `_3` |  |
 
 #### 11.8 Black powder (owner decision K19)
 
@@ -632,14 +670,17 @@ The equipment rows are in section 3 and the sub-unit rows in sections 4.1 and 4.
 | Key | Name | Year | Path parent | Unlocks | Who |
 | --- | --- | ---: | --- | --- | --- |
 | `zin_tech_black_powder` | Black Powder | 1600 | - (Engines and Walls, column 12) | bombards `_0`; Bombard Battery | `zin_gunpowder` |
-| `zin_tech_cast_bombards` | Cast Bombards | 1700 | black powder | bombards `_1`; Bombard Company | |
-| `zin_tech_corned_powder` | Corned Powder | 1749 | cast bombards | bombards `_2` | |
-| `zin_tech_culverins` | Culverins | 1756 | corned powder | bombards `_3` | |
-| `zin_tech_great_bombards` | Great Bombards | 1764 | culverins | bombards `_4` | |
-| `zin_tech_hand_guns` | Hand-Guns | 1650 | - (Arms and Armour, column 16; needs Black Powder) | hand-guns `_0`; Hand-Gunners | `zin_gunpowder` |
-| `zin_tech_matchlocks` | Matchlocks | 1720 | hand-guns | hand-guns `_1` | |
-| `zin_tech_long_matchlocks` | Long Matchlocks | 1752 | matchlocks | hand-guns `_2` | |
-| `zin_tech_arquebuses` | Arquebuses | 1760 | long matchlocks | hand-guns `_3` | |
+| `zin_tech_hand_guns` | Hand-Guns | 1650 | black_powder; needs Black Powder) | hand-guns `_0`; Hand-Gunners | `zin_gunpowder` |
+| `zin_tech_cast_bombards` | Cast Bombards | 1700 | black_powder | bombards `_1`; Bombard Company |  |
+| `zin_tech_matchlocks` | Matchlocks | 1720 | hand_guns | hand-guns `_1` |  |
+| `zin_tech_corned_powder` | Corned Powder | 1749 | cast_bombards | bombards `_2` |  |
+| `zin_tech_long_matchlocks` | Long Matchlocks | 1752 | matchlocks | hand-guns `_2` |  |
+| `zin_tech_culverins` | Culverins | 1756 | corned_powder | bombards `_3` |  |
+| `zin_tech_arquebuses` | Arquebuses | 1760 | long_matchlocks | hand-guns `_3` |  |
+| `zin_tech_great_bombards` | Great Bombards | 1764 | culverins | bombards `_4` |  |
+| `zin_tech_wheel_locks` | Wheel-Locks | 1772 | arquebuses | handgun `_4` |  |
+| `zin_tech_field_culverins` | Field Culverins | 1780 | great_bombards | bombard `_5` |  |
+| `zin_tech_firelocks` | Firelocks | 1788 | wheel_locks | handgun `_5` |  |
 
 **Start.** Every black-powder realm starts with Black Powder, Cast Bombards, Hand-Guns and Matchlocks on top of its package (`technologies_packages.json` `assign.gunpowder`). Its start templates prefer a Line Host with two hand-gunner battalions and a Siege Park (orcs: a Siege Band) with bombards, which its stockpile then holds.
 
@@ -736,9 +777,11 @@ All forces are at home and at peace. Most armies have little experience: Aoaz ha
 
 #### 13.3 Technology packages
 
+Every package also knows the Third Age rows of its people (their year values fall under every cap); lost knowledge and exclusive technologies are never in a package. The four dwarf holds add Hall-Delving and Deep Forges (owner decision K51).
+
 | Package | Who | Knows |
 | --- | --- | --- |
-| Concord | Aenor, Middle Lands men, Asgard | every tech up to 1745 in arms, mounts (men), engines and walls, camp, naval; lantern wards |
+| Concord | Aenor, Middle Lands men, Asgard | every tech up to 1745 in arms, mounts (men), engines and walls, camp, naval; lantern wards and field healers |
 | Great crowns | Lerendor, Coldor, Isengard, Noris, Stabilo, Gunwaith, Girdon, Dondor, Mirolon, tier B men | as Concord, without lantern wards |
 | Island and sea | Triton's Islands, Windwaith | Great crowns naval set; arms up to 1700 |
 | Common men | tier C men | up to 1700 |

@@ -675,7 +675,7 @@ test('Black powder (K19): bombards and hand-guns are made only under zin_gunpowd
   for (const v of model.archById.get('zin_bombard_equipment').variants) assert(unlocked.has(`zin_bombard_equipment_${v.n}`), `bombard ${v.n}`);
   for (const v of model.archById.get('zin_handgun_equipment').variants) assert(unlocked.has(`zin_handgun_equipment_${v.n}`), `hand-gun ${v.n}`);
   const powder = raw0.techs.technologies.filter(t => ['powder', 'hand_guns'].includes(t.line));
-  assert.equal(powder.length, 9);
+  assert.equal(powder.length, 12, 'nine of K19 and the late Wheel-Locks, Firelocks and Field Culverins of K51');
   for (const t of powder.filter(t => !t.requires)) assert.deepEqual(t.who, ['group:powder'], `${t.key} is the powder realms' own`);
   assert.deepEqual(raw0.techs.groups.powder, ['flag:zin_gunpowder']);
   for (const id of ['zin_men_handgunners', 'zin_siege_bombard', 'zin_support_bombards']) { assert(unitBlocks.has(id), id); assert.equal(model.unitById.get(id).unlock, 'tech'); }
