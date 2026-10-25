@@ -188,6 +188,10 @@ const historicalPath = await buildHistoricalPath(staged, { countries });
 // ids it must not take again.
 const mechEvents = await (await import('./modules/events_mech.mjs')).buildEventsMech(staged, { countries });
 void mechEvents;
+// The super events of K52 (docs/specs/06_events/06_super_events.md): the window, pictures, songs and texts here; the calls into the moments are
+// hooked over the finished tree below (hookSuperEvents), after every module that sets a hook flag has staged its files.
+const superEventsModule = await import('./modules/super_events.mjs');
+const superEvents = await superEventsModule.buildSuperEvents(staged);
 // Buldor's company books (regional decisions) come after the compiler; the focus companions (dynamic modifiers of Noris and Stabilo,
 // Triton's opinion modifiers) write what the compiler cannot, so they run before it.
 const focusMajorC = await buildFocusMajorC(staged);
@@ -235,6 +239,9 @@ const decisionsRegional = await buildDecisionsRegional(staged, { countries });
 // The game recruits a character only in history, so each waits there without a role in its home realm, and the effect that brings it in
 // moves it (set_nationality), gives it its roles and sets its flag of entry, which every presence test also asks.
 const lateCharacters = await applyLateCharacters(staged, { countries });
+// Super-event hooks: one call after every place that sets a super event's hook flag; a hook flag nothing sets stops the build.
+const superEventSites = superEventsModule.hookSuperEvents(staged, superEvents.data);
+console.error(`super events: ${superEvents.counts.superEvents} registered, ${Object.values(superEventSites).flat().length} hook sites`);
 console.error(`late characters: ${lateCharacters.calls} recruit_character calls during play are moves; ${lateCharacters.waiting} characters wait in their home realm`);
 // Final reference pass (C3) over the finished tree: the compiled trees, their helpers and the regional decisions included. A name that
 // dangles stops the build unless tools/content/data/pending_names.json declares it with the owner that will define it; each declared name

@@ -1,0 +1,374 @@
+{
+ "schema": 1,
+ "owner": "docs/specs/06_events/06_super_events.md",
+ "source": "tools/content/data/super_events.json",
+ "decision": "K52 (25 October 2026)",
+ "route": "hoi4_generated_feature_art through hoi4-feature-assets; image model gpt-6-luna only (K50); every generation recorded in art/source/provenance.jsonl; code only slices, resizes and converts the generated image",
+ "common": [
+  "Final picture 700 x 500 px, DDS A8R8G8B8 with one mip level, at gfx/event_pictures/zin/super_events/zin_se_<key>.dds (the sprite GFX_zin_se_<key> in interface/zin_super_events.gfx already points there; do not edit the .gfx).",
+  "Generate in a 7:5 landscape aspect (the model returns about 1.57 megapixels, A1) and resize with Lanczos 3; keep the main subject inside the central 90 percent, because the window frames the picture with a bronze border.",
+  "The mod's painted style (the accepted event and loading pictures): a rich painterly late-medieval fantasy illustration, natural light, readable at 700 x 500.",
+  "Prompt frame of A4: no signature or maker's mark; corners and bottom edge hold only plain ground; no lettering; no real-world religious symbol.",
+  "Figures follow the owner-chosen designs (K37 to K45; references in art/source/design_refs/); the gods never appear as humans (K38, K41); Great Spirits are plainly supernatural (K40); never show Zol in person (C26); Kusven follows his chosen redesign A (K41; named from the start, K55); Zol's dead are skeletal, armoured skeletons and giants are primeval and over 10 m tall (K57); non-human peoples keep their own anatomy (K54).",
+  "Knowledge layers: a picture may not reveal more than the text of its moment (knowledge_layers.md rule 6): no demonic sign on the Deliverer before id 9, no name or ancestry of the man in the ice before id 4.",
+  "One picture per super event (asset uniqueness group super_event_picture); no picture is reused from another event.",
+  "Never use or embed the owner's private drawings (docs/reference/originals/, docs/lore/vault/Maps/); the design references are the accepted generated redesigns only."
+ ],
+ "briefs": [
+  {
+   "id": 1,
+   "key": "man_in_the_ice",
+   "title": "The Man in the Ice",
+   "sprite": "GFX_zin_se_man_in_the_ice",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_man_in_the_ice.dds",
+   "size": "700x500",
+   "role": "first reveal",
+   "brief": "Night in a hunters' camp of the Cold Lands: by a low fire under a hide shelter, fur-clad hunters and an old woman of the tribe lean over a black-haired man lying wrapped in furs, newly cut from a block of clear blue ice that still stands half-broken behind them with axes and ropes beside it; his face is pale and calm, his eyes just opening; snow, the green curtain of a northern sky, warm firelight against cold blue. Painted, quiet and wondering, not heroic; the man is the canon Eindil (black hair, blue eyes) without armour or helmet.",
+   "references": [
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 2,
+   "key": "golden_king_dead",
+   "title": "The Golden King Is Dead",
+   "sprite": "GFX_zin_se_golden_king_dead",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_golden_king_dead.dds",
+   "size": "700x500",
+   "role": "irreversible political shift",
+   "brief": "The great bell-towers of Parim at night, every bell swinging, torches in the streets below and a black mourning banner being let down the front of the gilded palace; in the foreground a crowd of courtiers in rich gold-trimmed clothes stands on the palace steps in small whispering knots, one of them already holding a sealed letter. The Golden King himself is not shown, or only as an empty gilded throne seen through an open door. Painted, sombre and a little ironic, gold against black.",
+   "references": [
+    "art/source/design_refs/golden_king_c.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 3,
+   "key": "deliverer_crowned",
+   "title": "The Deliverer Takes the Crown",
+   "sprite": "GFX_zin_se_deliverer_crowned",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_deliverer_crowned.dds",
+   "size": "700x500",
+   "role": "ideological transformation",
+   "brief": "The interior of the great temple of Parim filled with white and gold banners and a dense crowd of pilgrims; at the far end, high on the steps under a shaft of light, the Deliverer in his public form (the canon Aurevan design: serene, radiant, robed in white and gold) receives the crown of Aenor; priests in white, censers, flower petals in the air, faces in the crowd weeping with joy. Nothing in the picture hints that he is anything but what the faithful believe; no demonic sign. Painted, luminous and triumphant, with one or two plainly dressed envoys at the edge watching without cheering.",
+   "references": [
+    "art/source/design_refs/aurevan_a.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 4,
+   "key": "heir_of_aen",
+   "title": "The Heir of Aen",
+   "sprite": "GFX_zin_se_heir_of_aen",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_heir_of_aen.dds",
+   "size": "700x500",
+   "role": "first reveal",
+   "brief": "A sunlit elven hall of the Gala with tall white pillars and gold light: the ancient King Lorien (canon v3 B: withered and ancient, extremely bright yellow glowing eyes, golden and white robe) stands before the black-haired man from the ice and lays a hand on his shoulder; between them a Keeper holds a shallow bowl of still water in which a faint crowned reflection shows; elven lords watch in silence. The man (Eindil v4 D face, black hair, blue eyes faintly glowing) is still in plain travelling clothes, not yet in armour. Painted, reverent and warm.",
+   "references": [
+    "art/source/design_refs/lorien_v3_b.png",
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 5,
+   "key": "last_crowns",
+   "title": "The War of the Last Crowns",
+   "sprite": "GFX_zin_se_last_crowns",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_last_crowns.dds",
+   "size": "700x500",
+   "role": "escalation",
+   "brief": "A wide painted panorama of the Middle Lands at dusk seen from a hill: in the distance several separate fires and columns of smoke along the horizon, banners of different crowns moving along different roads, levies marching one way and carts of fleeing townsfolk the other; a beacon blazes on the hill in the foreground with its keeper looking out. No single enemy is shown. Painted, sweeping and sombre, the light of evening.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 6,
+   "key": "western_crossing",
+   "title": "The Western Crossing",
+   "sprite": "GFX_zin_se_western_crossing",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_western_crossing.dds",
+   "size": "700x500",
+   "role": "escalation",
+   "brief": "Dawn over the central sea: a great fleet of western longships and broad-sailed cogs with clan banners runs onto a pebbled beach, warriors in mail and fur jumping into the surf with shields and axes, more sails crowding the horizon behind them; on the headland above, a beacon has just been lit by a startled watchman of the Concord. Painted, energetic, cold sea light.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 7,
+   "key": "black_north_marches",
+   "title": "The Black North Marches",
+   "sprite": "GFX_zin_se_black_north_marches",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_black_north_marches.dds",
+   "size": "700x500",
+   "role": "global threat escalation",
+   "brief": "A grey northern coast under a black sky: long ordered columns of the walking dead (skeletal, armoured skeletons in rusted mail and helms, K57) march along the shore and up into a mountain pass, ragged black banners without device among them; in the foreground a village on a ridge where folk are building a pyre and a woman holds back a child to watch. Zol himself does not appear in any form. Painted, cold and dreadful but restrained, no gore.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 8,
+   "key": "volgan_marches",
+   "title": "Volgan Marches North",
+   "sprite": "GFX_zin_se_volgan_marches",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_volgan_marches.dds",
+   "size": "700x500",
+   "role": "global threat escalation",
+   "brief": "The southern passes under a sky of dark storm cloud lit from below by ember-red light: an endless host of grave-warriors, ogres with great clubs and monstrous beasts pours north over a broken mountain gate of Mirolon; above them, larger than life and partly made of the storm, Volgan in his canon form (v4 B: a purple cloak filled with darkness in which only two glowing green eyes show, a crown floating above the darkness, green magic at the hem). Painted, epic and menacing, purple, green and ember against black.",
+   "references": [
+    "art/source/design_refs/volgan_v4_b.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 9,
+   "key": "name_of_the_deliverer",
+   "title": "The Name of the Deliverer",
+   "sprite": "GFX_zin_se_name_of_the_deliverer",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_name_of_the_deliverer.dds",
+   "size": "700x500",
+   "role": "first reveal",
+   "brief": "A crowded market square of Parim in grey morning light: a torn white and gold banner of the Deliverer lies trampled on the cobbles, a crier on a cart reads from a sealed proclamation, townsfolk argue and point, a confessor in white is shouted at, and on a wall someone has scrawled a mark over a painted image of the radiant Deliverer, half of the painted face scraped away to show darkness beneath. No lettering. Painted, tense and dramatic.",
+   "references": [
+    "art/source/design_refs/aurevan_a.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 10,
+   "key": "king_of_the_east",
+   "title": "A King in the East",
+   "sprite": "GFX_zin_se_king_of_the_east",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_king_of_the_east.dds",
+   "size": "700x500",
+   "role": "faction formation",
+   "brief": "A great hall of the East with carved stone pillars, hanging lamps and rich carpets: eastern kings and lords in many styles of dress kneel in rows before a raised throne where the Deliverer sits crowned, still in his radiant white and gold public form but with the light around him grown colder and a long shadow behind the throne that does not match his shape; caravan goods and tribute chests at the edges. Painted, opulent and uneasy.",
+   "references": [
+    "art/source/design_refs/aurevan_a.png",
+    "art/source/design_refs/afrit_true_v3_c.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 11,
+   "key": "parim_taken",
+   "title": "Western Banners over Parim",
+   "sprite": "GFX_zin_se_parim_taken",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_parim_taken.dds",
+   "size": "700x500",
+   "role": "irreversible political shift",
+   "brief": "The walls and gilded gate of Parim at evening with smoke rising from a few streets behind: western clan banners being hung over the gold banners of Aenor, western warriors in mail and fur standing guard, a line of city clerks in dark robes with ledgers being led up to a weary western captain at a trestle table in the gateway; townsfolk watching from windows. Painted, aftermath rather than battle, smoky gold light.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 12,
+   "key": "heir_returns",
+   "title": "The Heir Returns",
+   "sprite": "GFX_zin_se_heir_returns",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_heir_returns.dds",
+   "size": "700x500",
+   "role": "global response",
+   "brief": "A great dragon with wide wings flies low over a field of armed hosts in the Middle Lands, the hosts below raising spears and banners and cheering; on its back rides Eindil in his canon armour (light blue armour and helmet, black hair, blue eyes glowing slightly) holding a blue sword aloft; a forest edge and smoke of war in the distance, bright sky breaking through cloud. Painted, heroic and hopeful.",
+   "references": [
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 13,
+   "key": "varner_falls",
+   "title": "Varner Falls",
+   "sprite": "GFX_zin_se_varner_falls",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_varner_falls.dds",
+   "size": "700x500",
+   "role": "defeat aftermath",
+   "brief": "A battlefield at dusk: a great dome of pale blue light stands over a retreating host of the living while the walking dead break against its edge like a dark tide; at its centre the old wizard Varner (canon design A, an old man in a wizard's robe and hat with a staff) stands alone with both arms raised, his figure already fading into the light. Painted, tragic and luminous, cold blue against black.",
+   "references": [
+    "art/source/design_refs/varner_a.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 14,
+   "key": "volgan_broken",
+   "title": "The Body of Volgan Is Broken",
+   "sprite": "GFX_zin_se_volgan_broken",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_volgan_broken.dds",
+   "size": "700x500",
+   "role": "defeat aftermath",
+   "brief": "A scorched battlefield under breaking storm clouds: an empty crown lies in the ash beside a torn purple cloak from which green light is fading and wisps of darkness drift away, while grave-warriors around it collapse into bones; in the background the hosts of the living stand exhausted and silent, a few wardens of Mirolon in grey looking on without celebrating. Painted, solemn, purple and green fading to grey dawn.",
+   "references": [
+    "art/source/design_refs/volgan_v4_b.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 15,
+   "key": "kusven_forth",
+   "title": "The Grave-Wind",
+   "sprite": "GFX_zin_se_kusven_forth",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_kusven_forth.dds",
+   "size": "700x500",
+   "role": "global threat escalation",
+   "brief": "A battlefield in the north under a black sky: Kusven, a vast and plainly supernatural Great Spirit (the owner-chosen Kusven redesign A, K41), towers over the host of the black north, which stands straighter around him; the skeletal armoured dead (K57) in ranks at his feet; facing him across the field the banners and spears of the living, small against him, and a few Leren ships on a grey sea at the edge. No lettering, no figure of Zol. Painted, terrible and still, cold blue-grey and black.",
+   "references": [
+    "art/source/design_refs/kusven_v2_a.png",
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 16,
+   "key": "lorien_falls",
+   "title": "King Lorien Falls",
+   "sprite": "GFX_zin_se_lorien_falls",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_lorien_falls.dds",
+   "size": "700x500",
+   "role": "defeat aftermath",
+   "brief": "A field at the edge of the northern dark: the ancient King Lorien (canon v3 B, withered, extremely bright yellow glowing eyes, golden and white robe) on a white horse rides into a wall of darkness with a small company of shining elven lords and pale luminous spirits, his own golden light blazing like a sunrise against the black; soldiers of the living watch from behind. Painted, heroic and tragic, gold and white against black.",
+   "references": [
+    "art/source/design_refs/lorien_v3_b.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 17,
+   "key": "afrit_dead",
+   "title": "Afrit Is Dead",
+   "sprite": "GFX_zin_se_afrit_dead",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_afrit_dead.dds",
+   "size": "700x500",
+   "role": "defeat aftermath",
+   "brief": "The throne room of the palace of Parim after battle, shafts of dusty light through broken windows: the true form of Afrit (owner drawing, v3 C: a winged demon with a great nose) lies fallen at the foot of the throne, wings spread and broken, the light of three small broken artifacts fading on the floor around him; at the edge of the light stand the silhouettes of the heir and a ranger with a bow, not triumphant. Painted, grim and quiet.",
+   "references": [
+    "art/source/design_refs/afrit_true_v3_c.png",
+    "art/source/design_refs/alleria_d.png",
+    "art/source/design_refs/eindil_v4_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 18,
+   "key": "ending_lost_cause",
+   "title": "A King of Aen's Line",
+   "sprite": "GFX_zin_se_ending_lost_cause",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_lost_cause.dds",
+   "size": "700x500",
+   "role": "campaign-ending signal",
+   "brief": "The great hall of Parim, scarred by war but hung with the banners of many allied crowns (men, elves, dwarves, giants): Eindil in his canon light blue armour, helmet held at his side, kneels as an old crown is set on his black hair; Alleria of Selen, captains, elven lords and a giant stand witness; light falls through high windows. Painted, solemn and hopeful, not gaudy.",
+   "references": [
+    "art/source/design_refs/eindil_v4_d.png",
+    "art/source/design_refs/alleria_d.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 19,
+   "key": "ending_children_of_volgan",
+   "title": "Children of Volgan",
+   "sprite": "GFX_zin_se_ending_children_of_volgan",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_children_of_volgan.dds",
+   "size": "700x500",
+   "role": "world-end scenario",
+   "brief": "Parim under an ember-red storm sky, its gold banners replaced by tattered purple ones; grave-warriors stand guard at the gates, kneeling kings in their own crowns line a ruined avenue, and above the palace hangs Volgan's canon form (purple cloak full of darkness, glowing green eyes, a floating crown). Painted, bleak and final.",
+   "references": [
+    "art/source/design_refs/volgan_v4_b.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 20,
+   "key": "ending_ashen_throne",
+   "title": "The Ashen Throne",
+   "sprite": "GFX_zin_se_ending_ashen_throne",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_ashen_throne.dds",
+   "size": "700x500",
+   "role": "world-end scenario",
+   "brief": "The throne of Parim on a grey ashen dais, the hall dim and full of incense smoke: the Deliverer sits crowned in his radiant public form, but his shadow on the wall behind is the winged demon of his true form; rows of courtiers and priests bow, and the gold of the hall is dulled with ash. Painted, oppressive and quiet.",
+   "references": [
+    "art/source/design_refs/aurevan_a.png",
+    "art/source/design_refs/afrit_true_v3_c.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 21,
+   "key": "ending_golden_court",
+   "title": "The Golden Court Endures",
+   "sprite": "GFX_zin_se_ending_golden_court",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_golden_court.dds",
+   "size": "700x500",
+   "role": "campaign-ending signal",
+   "brief": "A lavish feast in the gilded hall of Parim: long tables loaded with gold plate, courtiers in gold-trimmed finery laughing and toasting, musicians in a gallery, a clerk at a side table counting coins for a line of office-buyers; through the tall windows the distant smoke of a war-torn land. Painted, rich, satirical and warm.",
+   "references": [
+    "art/source/design_refs/golden_king_c.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 22,
+   "key": "ending_western_crown",
+   "title": "A Western Crown in Parim",
+   "sprite": "GFX_zin_se_ending_western_crown",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_western_crown.dds",
+   "size": "700x500",
+   "role": "campaign-ending signal",
+   "brief": "Parim at noon with western clan banners on every tower: a western chieftain-king sits on the old gilded throne in fur and mail with a plain iron crown, his clan captains around him, while the city's clerks in dark robes bring ledgers; outside the windows the domes and temples of the old city. Painted, proud and a little out of place.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 23,
+   "key": "ending_strait_master",
+   "title": "Master of the Strait",
+   "sprite": "GFX_zin_se_ending_strait_master",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_strait_master.dds",
+   "size": "700x500",
+   "role": "campaign-ending signal",
+   "brief": "The harbour of Sonargur in the cold north: a massive iron chain stretched across the narrow strait between two towers, a line of merchant ships waiting with lowered sails, Leren tollmen in sea-blue rowing out with ledgers, King Ferlin's banner on the towers and grey sea under a pale sky. Painted, crisp and prosperous.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 24,
+   "key": "ending_eastern_king",
+   "title": "One King in the East",
+   "sprite": "GFX_zin_se_ending_eastern_king",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_eastern_king.dds",
+   "size": "700x500",
+   "role": "campaign-ending signal",
+   "brief": "A desert caravan city at sunset: a long caravan of camels and wagons passes under a single great gate bearing a new royal standard (no lettering), tollmen at one booth, envoys in eastern dress riding out westwards; minarets of no real-world faith and wells and palms. Painted, golden and expansive.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 25,
+   "key": "ending_unfinished",
+   "title": "The Age Unfinished",
+   "sprite": "GFX_zin_se_ending_unfinished",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_ending_unfinished.dds",
+   "size": "700x500",
+   "role": "campaign-ending signal",
+   "brief": "A chronicler's study at evening: a great open chronicle on a lectern, its last pages blank, a quill laid down beside it, and through the window a quiet countryside with a harvest being brought in on carts and a distant column of smoke on the horizon. Painted, wistful and calm, warm lamplight.",
+   "references": [],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  },
+  {
+   "id": 26,
+   "key": "nafeher_falls",
+   "title": "The Fall of Nafeher",
+   "sprite": "GFX_zin_se_nafeher_falls",
+   "file": "gfx/event_pictures/zin/super_events/zin_se_nafeher_falls.dds",
+   "size": "700x500",
+   "role": "defeat aftermath",
+   "brief": "The throne hall of Nafeher in the Ember Lands, half ruined, its roof torn open to a swirling purple and ember-red storm in which a faint green glint can just be made out; the great throne stands empty and cold, with no body and no crown before it; soldiers of the living with torches search the rubble and look up uneasily at the storm, and a grey-cloaked warden of Mirolon stands apart watching the sky. Painted, an uneasy victory, ember, purple and grey.",
+   "references": [
+    "art/source/design_refs/volgan_v4_b.png"
+   ],
+   "pending": "docs/plans/zin-art/pending_from_integration.md (Super-event pictures and recordings)"
+  }
+ ]
+}
