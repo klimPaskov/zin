@@ -37,6 +37,7 @@
 | Q-98 | Black powder spreads only through the dwarf holds' trade event (buying gives the flag, 20 bombards and a siege research bonus); should it spread any other way? | only the holds' trade |
 | Q-99 | Should goblin realms field hand-guns? Today goblin and orc powder realms get bombards only | bombards only |
 | Q-100 | Confirm the word "bombard" for the powder artillery | bombard |
+| Q-101 | Eindil waits (recruited without a role) in Kvittumm's history, the far north-west realm where the key-sites spec puts his ice; Kusven with Zol's Mistake. Right homes? | as proposed |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
