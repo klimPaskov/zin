@@ -17,6 +17,10 @@
 | Q-78 | The names and values of the Gathering Dark game-rule options | as written |
 | Q-79 | Which story roles announce a change of holder? Today: the crown of Aenor, the Host, the leader of the Western Crossing, the Leren crown | those four |
 | Q-80 | Under HISTORICAL, should the war also start piecemeal when a player's own front opens first? | no: under HISTORICAL the war starts on its date |
+| Q-81 | The minor peoples and the goblins proposal at start (peoples.mjs); should ogres become a people key of their own? | as proposed; ogres stay a creature, not a people key |
+| Q-82 | Does zin_kusven_withdrawn also cover the route where the Presence recedes before Kusven comes forth (the -12 tension then applies too)? | yes |
+| Q-83 | Should the journey's host pickers move under the story-role registry? | no: they keep the journey spec's fuller successor orders |
+| Q-84 | Review the 19 event texts written to complete the story wiring (elves, east, dark, diplomacy, world), all proposed | shipped as proposed |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
