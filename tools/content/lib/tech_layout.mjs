@@ -190,6 +190,7 @@ export function clauseAdmits(clause, profile) {
   if (clause.country && clause.country !== profile.country) return false;
   if (clause.region && clause.region !== profile.region) return false;
   if (clause.flag && !(profile.flags ?? []).includes(clause.flag)) return false;
+  if (clause.way && clause.way !== profile.way) return false;
   return true;
 }
 // A list of clauses is an OR; an empty list admits everyone.
@@ -205,6 +206,7 @@ export function whoCovered(inner, outer, peopleOf) {
     if (p.country && c.country !== p.country) return false;
     if (p.region && c.region !== p.region) return false;
     if (p.flag && c.flag !== p.flag) return false;
+    if (p.way && c.way !== p.way) return false;
     return true;
   }));
 }

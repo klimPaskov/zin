@@ -6,7 +6,7 @@
 
 Vanilla's industry and electronics tabs hold about 49 technologies that Aoaz cannot keep: machine tools, assembly lines, synthetic oil, radio, radar, computing, encryption, rocketry. The economy spec ([02_economy.md](02_economy.md)) says the two folders stay and are "re-themed", and the warfare spec names the folders in its §11, but no spec says which technologies Aoaz has there, what they do, when they appear, what they unlock, or who may research them. This spec does.
 
-It designs 67 researchable technologies in the two civilian folders (54 before owner decision K51 of 25 October 2026, which lengthened and branched the tree) (`industry_folder`, `electronics_folder`): masonry, mining, guild methods, granaries and fields, the Great Halls and Village Forges (a choice), shipwrights, essence-craft, peoples' crafts, scholarship, seals and codes, and beacon craft. It adds seven hidden technologies that keep unused vanilla buildings locked. It also fixes the rules the whole tree obeys (folders, categories, years, costs, layout, start knowledge, the research slot economy) and cross-checks the warfare spec's technology section against them, because both specs are written to the same builder module and the same files.
+It designs 82 researchable technologies in the two civilian folders (54 before owner decision K51 of 25 October 2026, which lengthened and branched the tree; 67 before owner decision K58, which added the ways of life of section 3.5 and the development tiers of section 3.6) (`industry_folder`, `electronics_folder`): masonry, mining, guild methods, granaries and fields, the Great Halls and Village Forges (a choice), shipwrights, essence-craft, peoples' crafts, scholarship, seals and codes, and beacon craft. It adds seven hidden technologies that keep unused vanilla buildings locked. It also fixes the rules the whole tree obeys (folders, categories, years, costs, layout, start knowledge, the research slot economy) and cross-checks the warfare spec's technology section against them, because both specs are written to the same builder module and the same files.
 
 ## Lore basis
 
@@ -175,6 +175,41 @@ Three other tech-gated buildings are unlocked by ordinary rows: `radar_station` 
 
 *Evidence status.* That unlisted buildings default to unlocked is read from how vanilla's tech-less buildings (infrastructure, arms factories) behave and from the `hide_if_missing_tech` and `missing_tech_loc` fields of the gated ones. The Linux run settles it (acceptance 6). If it shows unlisted buildings stay locked, the gates remain as harmless belt and braces.
 
+#### 3.5 Ways of life: regional technology lines (owner decision K58)
+
+The owner's words (25 October 2026): "every region should have their own special technologies, like predominantly rider culture country, would have horse technology and riding, etc. Or desert people would have camels, and elephants, etc." The lines below are proposals within that decision.
+
+A **way of life** groups cultures of `data/cultures_game.json` by how their realms live (`technologies.json` `ways`). A technology whose `who` names `way:<key>` is visible and researchable only for a realm whose dominant culture is in that way (`allow_branch` with the scripted trigger `zin_way_<key>`, an OR of the cultures module's `zin_is_culture_<culture>`). Each way has its own line in the folder its craft belongs to, beside the common lines; the lines are never copies of each other (a build test refuses two way technologies of different ways with the same effects). A realm starts with the start-era rows of its own way (`startFor`, year below 1746). Way lines carry an AI weight of 60, and they are never advanced learning (section 3.6): a realm's own craft is never harder for it.
+
+| Way (`key`) | Cultures | Folder | Technologies (year) | Equipment and sub-units |
+| --- | --- | --- | --- | --- |
+| Riders of the Steppe (`steppe`) | steppe_rider | Mounts and Kin | The Great Herds (Third Age), Steppe Breeds (1700), Horn Bows (1720), Steppe Remounts (1752, needs both), The Riding Horde (1770) | Steppe Breeds unlocks war mounts `_1` and horse archers (large tile) |
+| Peoples of the Sand (`desert`) | noris_riders, naamis_sea_crown, miaed_pass_lords, wahatud_oasis_folk | Mounts and Kin | Oasis Wells (Third Age), Camel Breeding (1650), War Elephants (1730), Salt Roads (1750), Towered Elephants (1758) | Camel riders; the new war elephants: equipment `zin_elephant_equipment_0` and `_1`, sub-unit `zin_men_war_elephants` (large tiles) |
+| River and Road Cities (`merchants`) | caravan_princes, river_kings, lake_road_cities, red_lands_tribunes, quay_folk | Craft and Works | Counting-Houses (Early Fourth Age), River Barges (1700), Hired Companies (1752), Bronze Trade-Fleets (1768) | - |
+| Sea-Kings of the North (`north_sea`) | leren_sea_kings, free_crowns_north | Galleys and Warships | Longships (Third Age), Shield-Rail Crews (1720), Sea-King Raids (1755) | Longships unlocks the raider hull `_0` and raider ships (large tile) |
+| Island Folk (`islands`) | chart_islanders, corsair_lords, southern_islanders, orato_fishers | Galleys and Warships | Reef-Lore (Third Age), Outrigger Galleys (1700), Surf Warriors (1750), Star-Paths (1765) | Outrigger Galleys unlocks the galley hull `_1` (large tile) |
+| Folk of the Long Winter (`winter`) | winter_crown, ice_clans, vindael_seafarers, reindeer_clans, woqood_sealers | Camp and Road | Snow-Craft (Third Age), Reindeer Sledges (1680), Ice-Fishing (1720), Frost Wardens (1756) | Reindeer Sledges unlocks pack trains `_1` (large tile) |
+| Folk of the Deep Woods (`forest`) | veiled_folk, redbark_tribes, selen_ranger | Camp and Road | Bark and Hide (Third Age), Tree-Paths (1700), Woodland Ambush (1752) | Woodland Ambush unlocks rangers |
+| Clans and Guilds of the West (`western`) | gunwyn_clans, girdon_wardens, western_guilds, buldor_companies | Arms and Armour | Clan Muster (Third Age), Highland Charge (1700), Guild Companies (1752) | - |
+| Iron Warlords (`warlords`) | dondor_brutes, melkgard_warlords | Arms and Armour | Warlord Retinues (Third Age), Brute Ranks (1720), Iron Tribute (1756) | - |
+| Wardens of the Passes (`wardens`) | mirolon_wardens, ember_freeholds | Engines and Walls | Pass-Forts (Third Age), Warden Signals (1700), Hold the Pass (1754) | - |
+| The Lake Crowns (`lake_crowns`) | lake_aenoran, vale_folk, march_folk, isle_houses, zilin_pilgrims, strait_folk, hilofrim_herders, teste_valley_folk | Letters and Beacons | Written Law (Third Age), Bell-Towers (1650), Lake Barges (1700), Crown Assizes (1756, needs both) | - |
+| Hearth and Holt (`hearth`) | hearth_folk, holt_gnomes | Craft and Works | Burrow-Gardens (Third Age), Hearth-Watch (1700), Tinkers' Benches (1745) | - |
+| The Warrens (`warrens`) | goblin_warrens, road_warrens, king_warrens, spring_warrens | Craft and Works | Warren-Tunnels (Third Age), Tunnel Raids (1730), Scrap-Forges (1755) | - |
+
+The elves, the Sunhot, the orc holds, the kin, the dead and the demons already have their own people lines (Elven Arms, Wardsong, the Sun Guard, Warband Iron, the kin crafts, Grave Rites, Nether Pacts); the dwarf holds' line gains a third step, Hold Engineers (1752). 47 way technologies, 6 of them large equipment tiles; one new sub-unit (war elephants) and one new equipment archetype (warfare spec section 3). The effects of every row are in the tables of section 4 and of the warfare spec section 11.
+
+#### 3.6 Development tiers (owner decision K58)
+
+The owner's words: "they can also develop advanced techs like any other country if they really really put effort into technology, and that should be hard for less civilized countries." No development measure existed, so this spec defines one from what the start packages already encode.
+
+- **Tiers.** Every realm takes a tier at the start from its start package (`development.packageTier`): **learned** (Concord, Great crowns, Elves, Sunhot), **settled** (Island and sea, Common men, Dominion) or **of custom** (Tribal, Orcs, the four kin packages, Nether). Zol's Mistake has none. At the start: 84 learned, 32 settled, 39 of custom realms. `on_startup` calls `zin_development_init` for every country (`docs/zin_dynamic_effects.md`).
+- **Advanced learning.** Every common technology of the campaign era and later (year 1746 on; no way of life; seen by everyone or by men) carries the category `cat_zin_advanced` (102 technologies). The dynamic modifier `zin_development` sets `cat_zin_advanced_cost_factor` (the engine's category cost factor, vanilla precedent `cat_battlefield_support_cost_factor` in `common/ideas/GER.txt`; the modifier reads the variable `zin_dev_advanced_cost`, vanilla precedent `common/dynamic_modifiers/aat_dynamic_modifiers.txt`) to the tier's cost: learned +0, settled +30 per cent, of custom +75 per cent research cost (script constants `zin_development.learned_cost`, `settled_cost`, `customary_cost`). A people's own craft (an elven, orcish, kin, dead or nether line) and every way line keep their normal cost.
+- **Closing the gap by effort.** Each step of learning adds one point (`zin_development.learn_points`), and every `zin_development.step` points (3) lift the realm one tier: researching Libraries, Universities, Scholars' Conclaves or Royal Academies (`on_research_complete`, research that itself costs the realm), the decision **Send Students to Learned Lands** (50 political power, once a year, only with a learned neighbour or league partner: contact with advanced realms), and the decision **Endow a House of Learning** (100 political power, every two years, once the realm has Libraries and at least three workshops). No event grants learning for free.
+- **AI.** The AI weight of an advanced technology is multiplied by 0.5 for a settled realm and 0.25 for a realm of custom, so less developed AI realms do not rush the advanced crafts and research their own lines first (way lines weigh 60). The decisions' AI weights are 3 and 2, and 0 at war.
+- **Files.** `common/script_constants/zin_development.txt`, `common/dynamic_modifiers/zin_development.txt`, `common/scripted_effects/zin_development.txt`, `common/decisions/zin_development.txt` and `categories/zin_development.txt`, `interface/zin_development.gfx` (five sprites on the ZIN frame until their art exists: the modifier icon, the category icon and picture, and the two decision icons), `localisation/english/zin_development_l_english.yml`; all written by `lib/tech_development.mjs`.
+- **Limits.** A country created in play (a release or a civil war) gets no tier and pays no penalty; the tooltip of the advanced cost shows as the category's cost modifier; whether the engine generates `<category>_cost_factor` for a mod category named `cat_zin_advanced` is read from the documentation (the modifier list names every `cat_` category of the loaded game) and is not yet observed in game.
+
 ### 4. The technologies
 
 Keys are shown without `zin_tech_`. `x, y` is the absolute slot in the folder (§5). `Year` and `Cost` follow §3.1; `Path` is the same-line parent, `Needs` the cross-line dependencies, `XOR` the exclusive twin. Effects use the engine's modifier names (checked against the installed `modifiers_documentation.md`; the `local_resources_<resource>_factor`, `country_resource_<resource>` families are the dynamic ones, §Implementation). The resource keys are the engine's: `steel` Iron, `aluminium` Timber, `tungsten` Stone, `chromium` Gold, `oil` Essence, `coal` Grain. This table is the data: `technologies.json` holds the same rows as objects (schema in §Implementation), and a build test compares the two.
@@ -199,62 +234,73 @@ Keys are shown without `zin_tech_`. `x, y` is the absolute slot in the folder (�
 
 `ai_will_do` uses the `factor` form of vanilla, with no tag, DLC or date conditions. The basic-research specialisations connect the technologies to the spell facilities of [08_institutions.md](08_institutions.md) §10: a scholar working in a matching circle speeds these technologies up. The four specialisation keys are the engine's, kept because the kept facility buildings name them.
 
-#### 4.2 Craft and Works (`industry_folder`, 48 technologies)
+#### 4.2 Craft and Works (`industry_folder`, 59 technologies)
 
 | Key | Name (working label) | Line | x, y | Year | Cost | Path | Needs | XOR | Effects | Unlocks | Who | Kind |
 | --- | --- | --- | --- | ---: | ---: | --- | --- | --- | --- | --- | --- | --- |
 | `dressed_stone` | Dressed Stone | Masonry | 0, 2 | 70 | 1.5 | - | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
-| `lime_mortar` | Slaked Lime | Masonry | 0, 4 | 1680 | 1.5 | dressed_stone | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
-| `arch_and_vault` | Arch and Vault | Masonry | 0, 6 | 1725 | 1.5 | lime_mortar | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
-| `masons_lodges` | Masons' Lodges | Masonry | 0, 12 | 1752 | 2 | arch_and_vault | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
-| `great_scaffolds` | Great Scaffolds | Masonry | 0, 18 | 1761 | 2.5 | masons_lodges | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
-| `royal_works` | The Royal Works | Masonry | 0, 24 | 1778 | 3 | great_scaffolds | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
-| `pit_props` | Pit Props | Mining | 2, 4 | 1650 | 1.5 | dressed_stone | - | - | local_resources_factor 0.1; local_resources_steel_factor 0.05 | - | all | - |
-| `quarry_wedges` | Quarry Wedges | Mining | 2, 6 | 1710 | 1.5 | pit_props | - | - | local_resources_factor 0.1; local_resources_tungsten_factor 0.05 | - | all | - |
-| `drainage_wheels` | Drainage Wheels | Mining | 2, 8 | 1745 | 1.5 | quarry_wedges | - | - | local_resources_factor 0.1; local_resources_chromium_factor 0.05 | - | all | - |
-| `deep_shafts` | Deep Shafts | Mining | 2, 12 | 1753 | 2 | drainage_wheels | - | - | local_resources_factor 0.1; local_resources_steel_factor 0.05; local_resources_tungsten_factor 0.05 | - | all | - |
-| `assayers_rolls` | Assayers' Rolls | Mining | 2, 20 | 1763 | 2.5 | deep_shafts | - | - | local_resources_factor 0.1; local_resources_steel_factor 0.05; local_resources_tungsten_factor 0.05; local_resources_chromium_factor 0.05 | - | all | - |
-| `deep_adits` | Deep Adits | Mining | 2, 24 | 1780 | 3 | assayers_rolls | - | - | local_resources_factor 0.1; local_resources_tungsten_factor 0.05; local_resources_chromium_factor 0.05 | - | all | - |
+| `lime_mortar` | Slaked Lime | Masonry | 0, 6 | 1680 | 1.5 | dressed_stone | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
+| `arch_and_vault` | Arch and Vault | Masonry | 0, 8 | 1725 | 1.5 | lime_mortar | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
+| `masons_lodges` | Masons' Lodges | Masonry | 0, 14 | 1752 | 2 | arch_and_vault | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
+| `great_scaffolds` | Great Scaffolds | Masonry | 0, 20 | 1761 | 2.5 | masons_lodges | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
+| `royal_works` | The Royal Works | Masonry | 0, 26 | 1778 | 3 | great_scaffolds | - | - | production_speed_buildings_factor 0.1; industry_repair_factor 0.1 | - | all | - |
+| `pit_props` | Pit Props | Mining | 2, 6 | 1650 | 1.5 | dressed_stone | - | - | local_resources_factor 0.1; local_resources_steel_factor 0.05 | - | all | - |
+| `quarry_wedges` | Quarry Wedges | Mining | 2, 8 | 1710 | 1.5 | pit_props | - | - | local_resources_factor 0.1; local_resources_tungsten_factor 0.05 | - | all | - |
+| `drainage_wheels` | Drainage Wheels | Mining | 2, 10 | 1745 | 1.5 | quarry_wedges | - | - | local_resources_factor 0.1; local_resources_chromium_factor 0.05 | - | all | - |
+| `deep_shafts` | Deep Shafts | Mining | 2, 14 | 1753 | 2 | drainage_wheels | - | - | local_resources_factor 0.1; local_resources_steel_factor 0.05; local_resources_tungsten_factor 0.05 | - | all | - |
+| `assayers_rolls` | Assayers' Rolls | Mining | 2, 22 | 1763 | 2.5 | deep_shafts | - | - | local_resources_factor 0.1; local_resources_steel_factor 0.05; local_resources_tungsten_factor 0.05; local_resources_chromium_factor 0.05 | - | all | - |
+| `deep_adits` | Deep Adits | Mining | 2, 26 | 1780 | 3 | assayers_rolls | - | - | local_resources_factor 0.1; local_resources_tungsten_factor 0.05; local_resources_chromium_factor 0.05 | - | all | - |
 | `crop_rotation` | Crop Rotation | Granaries and Fields | 4, 2 | 50 | 1.5 | - | - | - | energy_gain_factor 0.05 | - | all | - |
-| `seed_reserves` | Seed Reserves | Granaries and Fields | 4, 6 | 1700 | 1.5 | crop_rotation | lime_mortar | - | energy_gain_factor 0.15 | - | all | - |
-| `irrigation_canals` | Irrigation Canals | Granaries and Fields | 4, 12 | 1752 | 2 | seed_reserves, drainage_wheels (all) | - | - | energy_gain_factor 0.15; monthly_population 0.05 | - | all | - |
-| `parish_granaries` | Parish Granaries | Granaries and Fields | 4, 22 | 1772 | 2.5 | irrigation_canals | - | - | energy_gain_factor 0.1; monthly_population 0.03 | - | all | - |
-| `pattern_books` | Pattern Books | Guild Methods | 5, 18 | 1762 | 2.5 | division_of_labour | - | masters_benches | production_factory_max_efficiency_factor 0.1; line_change_production_efficiency_factor 0.2 | - | all | - |
+| `seed_reserves` | Seed Reserves | Granaries and Fields | 4, 8 | 1700 | 1.5 | crop_rotation | lime_mortar | - | energy_gain_factor 0.15 | - | all | - |
+| `irrigation_canals` | Irrigation Canals | Granaries and Fields | 4, 14 | 1752 | 2 | seed_reserves, drainage_wheels (all) | - | - | energy_gain_factor 0.15; monthly_population 0.05 | - | all | - |
+| `parish_granaries` | Parish Granaries | Granaries and Fields | 4, 24 | 1772 | 2.5 | irrigation_canals | - | - | energy_gain_factor 0.1; monthly_population 0.03 | - | all | - |
+| `pattern_books` | Pattern Books | Guild Methods | 5, 20 | 1762 | 2.5 | division_of_labour | - | masters_benches | production_factory_max_efficiency_factor 0.1; line_change_production_efficiency_factor 0.2 | - | all | - |
 | `refuge_granaries` | The Refuge Granaries | Granaries and Fields | 6, 0 | 40 | 2 | - | libraries | - | energy_gain_factor 0.05; monthly_population 0.03 | - | all | lost |
-| `water_wheels` | Water-Wheels | Guild Methods | 6, 4 | 1650 | 1.5 | - | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
-| `trip_hammers` | Trip-Hammers | Guild Methods | 6, 6 | 1710 | 1.5 | water_wheels | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
-| `standard_patterns` | Standard Patterns | Guild Methods | 6, 8 | 1746 | 2 | trip_hammers | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
-| `division_of_labour` | Many Hands | Guild Methods | 6, 14 | 1755 | 2 | standard_patterns | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
-| `guild_charters` | Guild Charters | Guild Methods | 6, 24 | 1776 | 3 | pattern_books, masters_benches | - | - | production_factory_max_efficiency_factor 0.1; production_factory_efficiency_gain_factor 0.05 | - | all | - |
-| `masters_benches` | Masters' Benches | Guild Methods | 7, 18 | 1762 | 2.5 | division_of_labour | - | pattern_books | production_factory_max_efficiency_factor 0.1; production_factory_efficiency_gain_factor 0.1 | - | all | - |
-| `great_halls` | Great Halls | Great Halls | 8, 10 | 1748 | 2 | standard_patterns | - | village_forges | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `vaulted_halls` | Vaulted Halls | Great Halls | 8, 12 | 1751 | 2 | great_halls | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `covered_yards` | Covered Yards | Great Halls | 8, 14 | 1754 | 2 | vaulted_halls | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `treadwheel_cranes` | Treadwheel Cranes | Great Halls | 8, 16 | 1758 | 2 | covered_yards | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `crown_foundries` | Crown Foundries | Great Halls | 8, 20 | 1764 | 2.5 | treadwheel_cranes | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `village_forges` | Village Forges | Village Forges | 10, 10 | 1748 | 2 | standard_patterns | - | great_halls | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `roadside_smithies` | Roadside Smithies | Village Forges | 10, 12 | 1751 | 2 | village_forges | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `charcoal_leagues` | Charcoal-Burners' Leagues | Village Forges | 10, 14 | 1754 | 2 | roadside_smithies | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `travelling_smiths` | Travelling Smiths | Village Forges | 10, 16 | 1758 | 2 | charcoal_leagues | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `steading_foundries` | Steading Foundries | Village Forges | 10, 20 | 1764 | 2.5 | travelling_smiths | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
-| `slipways` | Slipways | Shipwrights | 12, 4 | 1650 | 1.5 | - | dressed_stone | - | production_speed_dockyard_factor 0.1; industrial_capacity_dockyard 0.1 | - | all | - |
-| `dry_docks` | Dry Docks | Shipwrights | 12, 8 | 1735 | 1.5 | slipways | arch_and_vault | - | production_speed_dockyard_factor 0.1; industrial_capacity_dockyard 0.1 | - | all | - |
-| `great_yards` | Great Yards | Shipwrights | 12, 16 | 1758 | 2 | dry_docks | division_of_labour | - | production_speed_dockyard_factor 0.15; industrial_capacity_dockyard 0.15 | - | all | - |
-| `royal_dockyards` | Royal Dockyards | Shipwrights | 12, 22 | 1774 | 2.5 | great_yards | - | - | production_speed_dockyard_factor 0.1; industrial_capacity_dockyard 0.1 | - | all | - |
-| `wellspring_tapping` | Wellspring Tapping | Essence-Craft | 14, 6 | 1700 | 1.5 | - | pit_props | - | local_resources_oil_factor 0.2 | - | all | - |
-| `ley_stone_channels` | Ley-Stone Channels | Essence-Craft | 14, 8 | 1741 | 1.5 | wellspring_tapping | - | - | local_resources_oil_factor 0.2 | - | all | - |
-| `phials_and_vials` | Phials and Vials | Essence-Craft | 14, 14 | 1755 | 2 | ley_stone_channels | - | - | country_resource_oil 2 | - | all | - |
-| `deep_wells` | Deep Wells | Essence-Craft | 14, 20 | 1765 | 2.5 | phials_and_vials | great_library | - | local_resources_oil_factor 0.25 | - | all | - |
+| `water_wheels` | Water-Wheels | Guild Methods | 6, 6 | 1650 | 1.5 | - | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
+| `trip_hammers` | Trip-Hammers | Guild Methods | 6, 8 | 1710 | 1.5 | water_wheels | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
+| `standard_patterns` | Standard Patterns | Guild Methods | 6, 10 | 1746 | 2 | trip_hammers | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
+| `division_of_labour` | Many Hands | Guild Methods | 6, 16 | 1755 | 2 | standard_patterns | - | - | production_factory_max_efficiency_factor 0.1; equipment_conversion_speed 0.2 | - | all | - |
+| `guild_charters` | Guild Charters | Guild Methods | 6, 26 | 1776 | 3 | pattern_books, masters_benches | - | - | production_factory_max_efficiency_factor 0.1; production_factory_efficiency_gain_factor 0.05 | - | all | - |
+| `masters_benches` | Masters' Benches | Guild Methods | 7, 20 | 1762 | 2.5 | division_of_labour | - | pattern_books | production_factory_max_efficiency_factor 0.1; production_factory_efficiency_gain_factor 0.1 | - | all | - |
+| `great_halls` | Great Halls | Great Halls | 8, 12 | 1748 | 2 | standard_patterns | - | village_forges | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `vaulted_halls` | Vaulted Halls | Great Halls | 8, 14 | 1751 | 2 | great_halls | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `covered_yards` | Covered Yards | Great Halls | 8, 16 | 1754 | 2 | vaulted_halls | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `treadwheel_cranes` | Treadwheel Cranes | Great Halls | 8, 18 | 1758 | 2 | covered_yards | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `crown_foundries` | Crown Foundries | Great Halls | 8, 22 | 1764 | 2.5 | treadwheel_cranes | - | - | industrial_capacity_factory 0.15; industrial_capacity_dockyard 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `village_forges` | Village Forges | Village Forges | 10, 12 | 1748 | 2 | standard_patterns | - | great_halls | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `roadside_smithies` | Roadside Smithies | Village Forges | 10, 14 | 1751 | 2 | village_forges | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `charcoal_leagues` | Charcoal-Burners' Leagues | Village Forges | 10, 16 | 1754 | 2 | roadside_smithies | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `travelling_smiths` | Travelling Smiths | Village Forges | 10, 18 | 1758 | 2 | charcoal_leagues | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `steading_foundries` | Steading Foundries | Village Forges | 10, 22 | 1764 | 2.5 | travelling_smiths | - | - | industrial_capacity_factory 0.1; industrial_capacity_dockyard 0.1; line_change_production_efficiency_factor 0.1; production_factory_start_efficiency_factor 0.05; industry_repair_factor 0.1; global_building_slots_factor 0.1 | - | all | - |
+| `slipways` | Slipways | Shipwrights | 12, 6 | 1650 | 1.5 | - | dressed_stone | - | production_speed_dockyard_factor 0.1; industrial_capacity_dockyard 0.1 | - | all | - |
+| `dry_docks` | Dry Docks | Shipwrights | 12, 10 | 1735 | 1.5 | slipways | arch_and_vault | - | production_speed_dockyard_factor 0.1; industrial_capacity_dockyard 0.1 | - | all | - |
+| `great_yards` | Great Yards | Shipwrights | 12, 18 | 1758 | 2 | dry_docks | division_of_labour | - | production_speed_dockyard_factor 0.15; industrial_capacity_dockyard 0.15 | - | all | - |
+| `royal_dockyards` | Royal Dockyards | Shipwrights | 12, 24 | 1774 | 2.5 | great_yards | - | - | production_speed_dockyard_factor 0.1; industrial_capacity_dockyard 0.1 | - | all | - |
+| `wellspring_tapping` | Wellspring Tapping | Essence-Craft | 14, 8 | 1700 | 1.5 | - | pit_props | - | local_resources_oil_factor 0.2 | - | all | - |
+| `ley_stone_channels` | Ley-Stone Channels | Essence-Craft | 14, 10 | 1741 | 1.5 | wellspring_tapping | - | - | local_resources_oil_factor 0.2 | - | all | - |
+| `phials_and_vials` | Phials and Vials | Essence-Craft | 14, 16 | 1755 | 2 | ley_stone_channels | - | - | country_resource_oil 2 | - | all | - |
+| `deep_wells` | Deep Wells | Essence-Craft | 14, 22 | 1765 | 2.5 | phials_and_vials | great_library | - | local_resources_oil_factor 0.25 | - | all | - |
 | `leaf_craft` | Leaf-Craft | Peoples' Crafts | 16, 0 | 20 | 1.5 | - | - | - | local_resources_aluminium_factor 0.2; production_speed_buildings_factor 0.05 | - | elves, sun_elves | - |
 | `forge_pits` | Forge-Pits | Peoples' Crafts | 16, 2 | 60 | 1.5 | - | - | - | production_speed_arms_factory_factor 0.1; local_resources_steel_factor 0.1 | - | orcs, trolls | - |
 | `quarry_songs` | Quarry-Songs | Peoples' Crafts | 18, 0 | 25 | 1.5 | - | - | - | local_resources_tungsten_factor 0.25 | - | giants | - |
 | `vent_forges` | Vent-Forges | Peoples' Crafts | 18, 2 | 80 | 1.5 | - | - | - | local_resources_oil_factor 0.2; production_speed_arms_factory_factor 0.1 | - | Volgan, demons | - |
 | `hall_delving` | Hall-Delving | Peoples' Crafts | 20, 0 | 25 | 1.5 | - | - | - | production_speed_buildings_factor 0.1; local_resources_steel_factor 0.1 | - | dwarf holds | - |
 | `deep_forges` | Deep Forges | Peoples' Crafts | 20, 2 | 70 | 1.5 | hall_delving | - | - | production_speed_arms_factory_factor 0.1; local_resources_chromium_factor 0.1 | - | all | - |
+| `hold_engineers` | Hold Engineers | Peoples' Crafts | 20, 14 | 1752 | 2 | deep_forges | - | - | - | - | all | - |
+| `counting_houses` | Counting-Houses | River and Road Cities | 23, 4 | 400 | 1.5 | - | - | - | consumer_goods_factor -0.02 | - | way:merchants | - |
+| `river_barges` | River Barges | River and Road Cities | 23, 8 | 1700 | 1.5 | counting_houses | - | - | supply_factor 0.03 | - | all | - |
+| `bronze_fleets` | Bronze Trade-Fleets | River and Road Cities | 23, 24 | 1768 | 2.5 | hired_companies | - | - | trade_opinion_factor 0.2; production_speed_dockyard_factor 0.05 | - | all | - |
+| `hired_companies` | Hired Companies | River and Road Cities | 25, 14 | 1752 | 2 | river_barges | - | - | experience_gain_army_factor 0.05; recruitable_population_factor 0.03 | - | all | - |
+| `burrow_gardens` | Burrow-Gardens | Hearth and Holt | 28, 0 | 30 | 1.5 | - | - | - | energy_gain_factor 0.08 | - | way:hearth | - |
+| `hearth_watch` | Hearth-Watch | Hearth and Holt | 28, 8 | 1700 | 1.5 | burrow_gardens | - | - | - | - | all | - |
+| `tinkers_benches` | Tinkers' Benches | Hearth and Holt | 30, 10 | 1745 | 1.5 | burrow_gardens | - | - | production_factory_max_efficiency_factor 0.05; equipment_conversion_speed 0.1 | - | all | - |
+| `warren_tunnels` | Warren-Tunnels | The Warrens | 33, 0 | 40 | 1.5 | - | - | - | - | - | way:warrens | - |
+| `tunnel_raids` | Tunnel Raids | The Warrens | 33, 10 | 1730 | 1.5 | warren_tunnels | - | - | - | - | all | - |
+| `scrap_forges` | Scrap-Forges | The Warrens | 33, 16 | 1755 | 2 | tunnel_raids | - | - | production_speed_arms_factory_factor 0.05; industry_repair_factor 0.1 | - | all | - |
 
 Notes on rows. Exclusive roots (`great_halls`, `village_forges`) cost 2.0 and are researchable from 1 Thaw 4A 1748 with no ahead-of-time penalty; they need `standard_patterns` (1746). The two Guild Methods endings are exclusive and share the cost 2.5. Restricted rows sit in column 16 at different years so that no two tiles share a slot, and a realm sees at most one of them. `deep_wells` needs `great_library` (electronics folder); `irrigation_canals` needs `drainage_wheels`, so Provisions growth rides on the mining line.
 
-#### 4.3 Letters and Beacons (`electronics_folder`, 19 technologies)
+#### 4.3 Letters and Beacons (`electronics_folder`, 23 technologies)
 
 | Key | Name (working label) | Line | x, y | Year | Cost | Path | Needs | XOR | Effects | Unlocks | Who | Kind |
 | --- | --- | --- | --- | ---: | ---: | --- | --- | --- | --- | --- | --- | --- |
@@ -277,6 +323,10 @@ Notes on rows. Exclusive roots (`great_halls`, `village_forges`) cost 2.0 and ar
 | `far_seeing_glass` | Far-Seeing Glass | Beacon Craft | 6, 12 | 1756 | 1.25 | horn_chains | universities | - | naval_detection 0.1 | radar_station L5 | all | - |
 | `glass_towers` | Glass Towers | Beacon Craft | 6, 18 | 1766 | 1.25 | far_seeing_glass | scholars_conclaves | - | naval_detection 0.1; air_detection 0.1 | radar_station L6 | all | - |
 | `mirror_signals` | Mirror Signals | Beacon Craft | 6, 22 | 1784 | 1.5 | glass_towers | - | - | naval_detection 0.05; air_detection 0.05 | - | all | - |
+| `written_law` | Written Law | The Lake Crowns | 9, 0 | 60 | 1.5 | - | - | - | political_power_gain 0.05 | - | way:lake_crowns | - |
+| `bell_towers` | Bell-Towers | The Lake Crowns | 9, 4 | 1650 | 1.5 | written_law | - | - | mobilization_speed 0.1 | - | all | - |
+| `crown_assizes` | Crown Assizes | The Lake Crowns | 9, 12 | 1756 | 2 | bell_towers, lake_barges (all) | - | - | stability_factor 0.05 | - | all | - |
+| `lake_barges` | Lake Barges | The Lake Crowns | 11, 6 | 1700 | 1.5 | written_law | - | - | supply_factor 0.05; production_speed_dockyard_factor 0.05 | - | all | - |
 
 Notes on rows.
 
@@ -301,8 +351,8 @@ The same rules draw every technology folder, including warfare's (owner decision
    A folder shows only the bands it uses, in year order, two slots apart, so no folder has an empty era between its rows (the row of a band therefore differs between folders; the caption names the band). Every shown row has a caption in the left gutter (`instantTextBoxType`, key `zin_techtree_year_<band>`): an era name for the three old rows, never a year of an old age, and Fourth Age years after them. A path child always stands in a later row than every path parent.
 3. **Gridboxes at the folder origin.** Every technology without a path parent gets a gridbox `<key>_tree`, and every gridbox of a folder sits at the folder origin (210, 70) with the size of the folder, the way the vanilla infantry folder stacks `support_weapons_tree` and `night_vision_tree` on one position. A tile's position is therefore its absolute slot in every gridbox, and the connector from a second path parent in another gridbox lands where the slots say.
 4. **Connectors.** The engine draws a path one unit down from the parent, across in that gutter row, then down to the child. The build checks every folder (`folderGeometry`): no two tiles overlap or come within 6 pixels; no connector runs through a tile it does not join; no two unrelated connectors cross, meet or run on top of each other (a split from one parent, a rejoin into one child and a chain through one tile are allowed); every exclusive pair stands side by side, two slots apart, in one row. `needs` draw nothing, so a requirement whose connector would cross a line is a need.
-5. **Large equipment tiles.** A technology that unlocks equipment (`enable_equipments`) uses the folder's regular item, `techtree_<folder>_item`, which is the installed infantry folder's large item: 183 by 84 pixels at (−56, −7) from the slot, with the technology's name above the picture and the equipment picture `GFX_<technology>_medium` centred in it, as vanilla equipment technologies do. Every other technology writes `force_use_small_tech_layout = yes` and uses `techtree_<folder>_small_item` (72 by 72). 86 technologies are large. The kept folders (`industry_folder`, `electronics_folder`) unlock no equipment and keep their installed regular items.
-6. **Folder windows.** Each folder is a container window named exactly like its key, with a tiled background, a size filler that gives the scroll extent, the folder title, the row captions and the gridboxes. Folder sizes after K51 (`docs/design/technology/layout.json`): Arms and Armour 2590 × 2240 pixels, Craft and Works 1820 × 1960, Galleys and Warships 1680 × 2100, Engines and Walls 1540 × 1960, Camp and Road 1540 × 1820, Lore and Wards 1680 × 1400, Mounts and Kin 1400 × 1680, Letters and Beacons 840 × 1820, Eyries 840 × 980.
+5. **Large equipment tiles.** A technology that unlocks equipment (`enable_equipments`) uses the folder's regular item, `techtree_<folder>_item`, which is the installed infantry folder's large item: 183 by 84 pixels at (−56, −7) from the slot, with the technology's name above the picture and the equipment picture `GFX_<technology>_medium` centred in it, as vanilla equipment technologies do. Every other technology writes `force_use_small_tech_layout = yes` and uses `techtree_<folder>_small_item` (72 by 72). 92 technologies are large (86 after K51, six more in the ways of life of K58). The kept folders (`industry_folder`, `electronics_folder`) unlock no equipment and keep their installed regular items.
+6. **Folder windows.** Each folder is a container window named exactly like its key, with a tiled background, a size filler that gives the scroll extent, the folder title, the row captions and the gridboxes. Folder sizes after K58 (`docs/design/technology/layout.json`): Arms and Armour 3150 × 2240 pixels, Craft and Works 2730 × 2100, Galleys and Warships 2310 × 2240, Mounts and Kin 2170 × 1960, Camp and Road 2170 × 1960, Engines and Walls 1890 × 1960, Lore and Wards 1680 × 1400, Letters and Beacons 1190 × 1820, Eyries 840 × 980. The way lines stand at the right of their folder; a realm sees only its own way, so the columns of the other ways are empty for it.
 7. **Tab and sprites.** The tab is `<folder>_tab` (two frames: open and closed) in the `folder_tabs` strip, which has room for twelve emblems; the thirteen folders include the hidden special-forces one, which has none. A tile's icon is `GFX_<tech key>_medium`, so for example `GFX_zin_tech_water_wheels_medium` (the asset inventory's `GFX_zin_tech_<key>` is read with the engine suffix). Sprites are written to `interface/zin_technologies.gfx` from the generated icons.
 8. **Colours.** Researched, available, unavailable and researching backgrounds are the five default sprites re-skinned; exclusive twins use the red-wax backing of the focus tree. Peoples' crafts use a plate with the people's emblem. These are art directions for [07_interface/02_full_ui_reskin.md](../07_interface/02_full_ui_reskin.md).
 9. **The window file.** `interface/countrytechtreeview.gui` and `.gfx` are overridden by a file generated from the installed one at build time (vanilla removal rule 5): the vanilla folder windows are dropped, the ZIN windows inserted. `technologies.mjs` writes it, because it is the only module that knows the gridboxes. The interface spec lists the file as owned by the warfare spec; that moves here (§8).
@@ -364,7 +414,7 @@ This spec is written against [01_warfare.md](01_warfare.md) §11 and §15, the e
 | 8 | Economy acceptance 2 and "Buildings" intro | Add the gate technologies (§3.4); the sentence "unlocked only by technologies the ZIN tree never contains" is true only with them |
 | 9 | Interface spec ([02_full_ui_reskin.md](../07_interface/02_full_ui_reskin.md) §4.7, "the file owned by the warfare spec") | `countrytechtreeview.gui` is owned by `technologies.mjs` (§5.8) |
 | 10 | Warfare §11 intro | Cost rule, band table and the `who` syntax are this spec's §3; warfare's `Who` column maps to `allow_branch` as §3.2 says |
-| 11 | Asset inventory WE-024 | Icon count is 67 for the civilian folders (54 before K51; the full list of 230 is `docs/plans/zin-art/tech_icon_list.json`) (not about 40), plus none for the seven gates (they have no folder) |
+| 11 | Asset inventory WE-024 | Icon count is 82 for the civilian folders (54 before K51, 67 before K58; the full list of 279 technologies and the development sprites is `docs/plans/zin-art/tech_icon_list.json`) (not about 40), plus none for the seven gates (they have no folder) |
 | 12 | Warfare §12.3 (special forces folder) | The hidden `zin_sub_hidden_special_forces` needs a `track` that exists; see [09_naval_air_doctrines.md](09_naval_air_doctrines.md) §9 |
 
 ## Implementation
@@ -378,8 +428,8 @@ This spec is written against [01_warfare.md](01_warfare.md) §11 and §15, the e
 | `tools/content/data/technologies.json` (new) | builder data | This spec's rows (§4), the folder and category tables (§2), the band and cost rules (§3.1), the gate rows (§3.4), the AI focus table (§2.3) |
 | `tools/content/data/warfare/technologies.json` (warfare spec) | builder data | Warfare's rows in the same row schema |
 | `tools/content/technologies.test.mjs` (new) | test | Acceptance 1 to 5 and the negative tests |
-| `common/technologies/zin_industry.txt` | generated, stage 2 | The 48 `industry_folder` technologies |
-| `common/technologies/zin_scholarship.txt` | generated, stage 2 | The 19 `electronics_folder` technologies |
+| `common/technologies/zin_industry.txt` | generated, stage 2 | The 59 `industry_folder` technologies |
+| `common/technologies/zin_scholarship.txt` | generated, stage 2 | The 23 `electronics_folder` technologies |
 | `common/technologies/zin_gates.txt` | generated, stage 2 | The seven gate technologies |
 | `common/technologies/zin_arms.txt`, `zin_mounts.txt`, `zin_engines.txt`, `zin_lore.txt`, `zin_camp.txt`, `zin_naval.txt`, `zin_skies.txt` | generated, stage 2 | Warfare's rows |
 | `common/technology_tags/zin_technology_tags.txt` | generated, stage 2 | 13 folders, all categories |
@@ -455,7 +505,7 @@ The file is `{ "schema": 1, "bands": [...], "costRule": {...}, "folders": [...],
 
 ## Acceptance
 
-1. **Data.** `technologies.json` validates against the schema; it holds 67 researchable rows (48 and 19) and 7 gates; all keys, years and costs satisfy §3.1; every `y` matches the bands; no two visible tiles share a slot.
+1. **Data.** `technologies.json` validates against the schema; it holds 82 researchable rows (59 and 23) and 7 gates; all keys, years and costs satisfy §3.1; every `y` matches the bands; no two visible tiles share a slot.
 2. **Table equals data.** A test parses the tables of §4.2 and §4.3 and compares them, field by field, with the data file. A change to one without the other fails.
 3. **Modifiers.** Every modifier of every row exists in `modifiers_documentation.md` (dynamic families expanded). Negative: a planted `fuel_gain_factor` row fails.
 4. **Folders and categories.** The tag file holds 13 folders and every category of §2.2; the Eyries folder carries the sky-rule trigger; every category appears in an AI focus; no vanilla category survives (builder test). C3 reports no reference to a missing category.
@@ -480,7 +530,7 @@ All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.
 
 | Name | Kind | Scope | Meaning | Owner | Also used by |
 | --- | --- | --- | --- | --- | --- |
-| `zin_tech_<key>` (the 67 rows of §4 and seven `zin_tech_gate_<key>` rows) | technology | country | The craft, scholarship and gate technologies | this spec | 08_institutions (traits, upgrades), 01_warfare (cross-checks), economy |
+| `zin_tech_<key>` (the 82 rows of §4 and seven `zin_tech_gate_<key>` rows) | technology | country | The craft, scholarship and gate technologies | this spec | 08_institutions (traits, upgrades), 01_warfare (cross-checks), economy |
 | `zin_cat_granaries`, `zin_cat_yards`, `zin_cat_essence_craft`, `zin_cat_scholarship`, `zin_cat_seals`, `zin_cat_beacons` | technology category | country | New research-bonus categories (pattern `zin_cat_<key>` is owned by 01_warfare; these six are listed here) | this spec | trees, 08_institutions (workshops) |
 | `industry_folder`, `electronics_folder` | technology folder | country | Kept engine keys, shown as "Craft and Works" and "Letters and Beacons" | this spec | 01_warfare, economy |
 | `zin_rules_skies_present` | scripted trigger | country | The sky rule is not `none`; gates the Eyries folder, the air doctrine folder and the air hooks | this spec | 01_warfare, 09_naval_air_doctrines, 08_institutions |

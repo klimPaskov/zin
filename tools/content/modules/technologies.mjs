@@ -23,6 +23,7 @@ import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { layoutFolders, bandY, ruleCost, clauseAdmits, whoAdmits, whoCovered, SLOT, ORIGIN } from '../lib/tech_layout.mjs';
 import { defaultPeople, PEOPLES } from './peoples.mjs';
 import { techTreeGui } from '../lib/tech_tree_gui.mjs';
+import { ADVANCED_CATEGORY, DEVELOPMENT_EFFECTS, prepareWays, gameCultures, prepareDevelopment, developmentAi, wayAndTierTriggers, writeDevelopment } from '../lib/tech_development.mjs';
 import { buildDoctrineArt, doctrineTexture, loadDoctrineArtCells, assertDoctrineArtComplete } from './doctrine_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -166,6 +167,8 @@ export async function vanillaLocKeys() {
 // A "who" string is a clause: a people key, country:<name>, region:<key>, flag:<country flag>, group:<name>, joined with + for AND.
 // A flag clause names a country flag of the id list (countryFlags): zin_gunpowder marks the black-powder realms (owner decision K19),
 // set in their history and given by the story, so a realm that buys powder in play sees the powder technologies.
+// A way:<key> clause names a way of life of data/technologies.json `ways` (owner decision K58): the realms whose dominant culture is
+// one of that way's cultures (the scripted trigger zin_way_<key>).
 // A list of strings is an OR. An empty or missing list admits everyone.
 export function parseWho(list, ctx, problems, where) {
   const out = [];
@@ -178,7 +181,11 @@ export function parseWho(list, ctx, problems, where) {
     }
     const clause = {};
     for (const part of raw.split('+')) {
-      if (part.startsWith('country:')) {
+      if (part.startsWith('way:')) {
+        const w = part.slice(4);
+        if (!ctx.ways?.has(w)) problems.push(`${where}: unknown way of life ${w}`);
+        clause.way = w;
+      } else if (part.startsWith('country:')) {
         const name = part.slice(8);
         if (!ctx.tags.has(name)) problems.push(`${where}: country ${name} is not in the roster`);
         clause.country = name;
@@ -216,7 +223,9 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
   const ids = raw.ids;
   const tags = new Map(countries.map(c => [c.name, c.tag]));
   const peopleOfName = name => { const c = countries.find(x => x.name === name); return c ? (assignment?.get(c.tag) ?? defaultPeople(c)) : undefined; };
-  const ctx = { groups: raw.warfare.groups ?? {}, tags, ids };
+  // ways of life (owner decision K58): culture groups that see their own technology lines
+  const ways = prepareWays(raw.civil.ways ?? [], await gameCultures(), P);
+  const ctx = { groups: raw.warfare.groups ?? {}, tags, ids, ways };
 
   // folders and categories
   const folders = new Map(), categories = new Map();
@@ -283,6 +292,18 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
     return w;
   };
   for (const t of techs) t.who = eff(t);
+  // A way technology belongs to one way of life; an advanced technology is a common one of the campaign era or later, which costs a
+  // less developed realm more (owner decision K58, section 3.5 of the craft spec).
+  const dev = raw.civil.development;
+  for (const t of techs) {
+    const wayClauses = t.who.filter(c => c.way);
+    t.way = wayClauses[0]?.way ?? null;
+    if (wayClauses.length && (wayClauses.length !== t.who.length || new Set(wayClauses.map(c => c.way)).size > 1)) P(`technology ${t.short}: a way technology belongs to exactly one way of life`);
+    t.advanced = !!dev && t.year >= dev.advancedFrom && !t.way && !t.lost && !t.locked && (!t.who.length || t.who.some(c => c.people === 'men' && !c.region && !c.flag && !c.country && !c.way));
+    if (t.advanced) t.categories = [...t.categories, ADVANCED_CATEGORY];
+    if (t.way && t.categories.includes(ADVANCED_CATEGORY)) P(`technology ${t.short}: a way technology is never advanced learning`);
+  }
+  if (dev) prepareDevelopment(dev, raw, categories, P);
   const dependsOn = new Map();
   for (const t of techs) {
     const where = `technology ${t.short}`;
@@ -338,7 +359,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
       if (e.k === null) continue;
       if (LOGIC.has(e.k)) { if (Array.isArray(e.v)) walk(e.v); continue; }
       if (e.k === 'modifier') { if (Array.isArray(e.v)) walk(e.v.filter(c => !['factor', 'add', 'base'].includes(c.k))); continue; }
-      if (!docs.triggers.has(e.k) && !/^zin_(rules_skies_present|rules_skies_beasts|tech_not_zol|tech_people_[a-z_]+)$/.test(e.k)) P(`${where}: unknown trigger ${e.k}`);
+      if (!docs.triggers.has(e.k) && !/^zin_(rules_skies_present|rules_skies_beasts|tech_not_zol|tech_people_[a-z_]+|way_[a-z_]+|development_(learned|settled|customary))$/.test(e.k)) P(`${where}: unknown trigger ${e.k}`);
     } };
     walk(entries);
     for (const m of snippet.matchAll(/has_global_flag\s*=\s*([A-Za-z0-9_]+)/g)) if (!ids.globalFlags.includes(m[1])) P(`${where}: global flag ${m[1]} is not in the id list`);
@@ -374,7 +395,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
     for (const c of t.categories) if (!categories.has(c)) P(`${where}: unknown category ${c}`);
     for (const s of t.specialization) if (!ids.specializations.includes(s)) P(`${where}: unknown specialisation ${s}`);
     for (const f of ['allowRaw', 'allowBranchRaw', 'completeLimitRaw']) if (t[f]) checkTrigger(t[f], `${where} ${f}`);
-    if (t.completeRaw) { try { parse(t.completeRaw); } catch (e) { P(`${where}: completeRaw does not parse`); } for (const e of parse(t.completeRaw)) if (e.k && !docs.effects.has(e.k)) P(`${where}: unknown effect ${e.k}`); }
+    if (t.completeRaw) { try { parse(t.completeRaw); } catch (e) { P(`${where}: completeRaw does not parse`); } for (const e of parse(t.completeRaw)) if (e.k && !docs.effects.has(e.k) && !DEVELOPMENT_EFFECTS.has(e.k)) P(`${where}: unknown effect ${e.k}`); }
     checkTrigger(t.ai.modifiers ? t.ai.modifiers.map(m => m.trigger).join(' ') : '', `${where} ai`);
     if (typeof t.ai.base !== 'number') P(`${where}: ai base must be a number`);
     if (t.grantOnly) P(`${where}: grantOnly belongs to the gate technologies only (use locked for a visible row nobody researches)`);
@@ -401,7 +422,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
   for (const k of docs.aiFocusKeys) if (!aiFocuses[k]) P(`engine AI focus ${k} has no ZIN entry`);
   for (const c of categories.keys()) if (!Object.values(aiFocuses).some(f => c in f)) P(`category ${c} appears in no AI focus (the AI would never research it)`);
 
-  const model = { vanilla, raw, docs, ids, tags, countries, assignment, peopleOfName, folders, categories, lines, techs, byKey, gates, layout, aiFocuses, externalSharing: externalSharing ?? null, bands: raw.civil.bands, costRule: raw.civil.costRule, bandCaptions: raw.civil.bandCaptions, problems };
+  const model = { vanilla, raw, docs, ids, tags, countries, assignment, peopleOfName, folders, categories, lines, techs, byKey, gates, layout, aiFocuses, externalSharing: externalSharing ?? null, bands: raw.civil.bands, costRule: raw.civil.costRule, bandCaptions: raw.civil.bandCaptions, problems, ways, development: dev ?? null };
   prepareDoctrines(model, raw, P);
   prepareSharing(model, raw, P);
   if (problems.length) throw new Error(`Technology data is invalid (${problems.length} problems):\n  ${problems.slice(0, 60).join('\n  ')}`);
@@ -564,12 +585,16 @@ export function startFor(model, packages, country, people) {
   for (const e of a.extras[country.name] ?? []) techs.add(e);
   // The black-powder realms (the roster's gunpowder field, owner decision K19) start with the powder of their age.
   if (country.gunpowder) for (const e of a.gunpowder ?? []) techs.add(e);
+  // A realm knows the start-era technologies of its own way of life (owner decision K58).
+  const way = model.ways?.byCulture.get(country.culture) ?? null;
+  if (way) for (const t of model.techs) if (t.way === way && t.year < model.development.advancedFrom && !t.lost && !t.xor.length && !t.locked) techs.add(t.short);
   // closure over prerequisites for the extras
   const queue = [...techs];
   while (queue.length) { const t = model.byKey.get(fullKey(queue.pop())); for (const p of prerequisitesToAdd(t, k => techs.has(shortKey(k)), k => !model.byKey.get(k)?.xor.length)) { const s = shortKey(p); if (!techs.has(s)) { techs.add(s); queue.push(s); } } }
   const land = sd.landNamed[country.name] ?? sd.landByPeople[people] ?? null;
   const naval = sd.navalNamed[country.name] ?? sd.navalRegion[country.scan] ?? sd.navalDefault;
-  return { package: key, technologies: [...techs].sort(), landGrandDoctrine: land, navalGrandDoctrine: naval[0], navalSubDoctrine: naval[1] };
+  const development = model.development?.packageTier[key] ?? null;
+  return { package: key, technologies: [...techs].sort(), landGrandDoctrine: land, navalGrandDoctrine: naval[0], navalSubDoctrine: naval[1], way, development };
 }
 
 // ---------- writers: conditions ----------
@@ -580,6 +605,7 @@ function whoLines(clauses, model, depth) {
     if (c.country) parts.push(`original_tag = ${model.tags.get(c.country)}`);
     if (c.region) parts.push(`has_country_flag = zin_region_${c.region}`);
     if (c.flag) parts.push(`has_country_flag = ${c.flag}`);
+    if (c.way) parts.push(`zin_way_${c.way} = yes`);
     return parts;
   };
   const items = clauses.map(c => one(c));
@@ -681,7 +707,8 @@ export function technologyBlock(t, model) {
   if (t.allowBranchRaw) branch.push(...rawLines(t.allowBranchRaw, d + 1));
   if (t.folder === 'zin_skies_folder' && !t.allowBranchRaw) branch.push(`${tab(d + 1)}zin_rules_skies_present = yes`);
   if (branch.length) push(`${tab(d)}allow_branch = {`, ...branch, `${tab(d)}}`);
-  push(...aiLines(t.ai, d, t.locked));
+  // A less developed realm's AI does not rush advanced learning (owner decision K58).
+  push(...aiLines(t.advanced ? developmentAi(t.ai, model.development) : t.ai, d, t.locked));
   push(`${tab(d)}categories = { ${t.categories.join(' ')} }`);
   if (t.specialization.length) push(`${tab(d)}special_project_specialization = { ${t.specialization.join(' ')} }`);
   // Hard requirements: the cross-folder needs, and every path parent of an AND (`all`), whose connectors are drawn as well.
@@ -736,6 +763,8 @@ function scriptedTriggers(model) {
     'zin_rules_skies_beasts = {', '\thas_game_rule = { rule = zin_rule_skies option = beasts }', '}', '',
     'zin_tech_not_zol = {', `\tNOT = { original_tag = ${zol} }`, '}'];
   for (const p of Object.keys(PEOPLES)) L.push('', `zin_tech_people_${p} = {`, `\thas_country_flag = zin_people_${p}`, '}');
+  // ways of life and development tiers (owner decision K58; lib/tech_development.mjs)
+  L.push(...wayAndTierTriggers(model));
   return L.join('\n');
 }
 
@@ -767,7 +796,7 @@ function scriptedEffectsAir() {
 }
 
 function onActions() {
-  return [HEADER, '# Research sharing membership each month, and a fresh technology tree for every country once the start flags are set.', 'on_actions = {', '\ton_startup = {', '\t\teffect = {', '\t\t\tevery_country = {', '\t\t\t\tmark_technology_tree_layout_dirty = yes', '\t\t\t\tzin_tech_sharing_sync = yes', '\t\t\t}', '\t\t}', '\t}', '\ton_monthly = {', '\t\teffect = {', '\t\t\tzin_tech_sharing_sync = yes', '\t\t}', '\t}', '\ton_join_faction = {', '\t\teffect = {', '\t\t\tzin_tech_sharing_sync = yes', '\t\t}', '\t}', '}'].join('\n');
+  return [HEADER, '# Research sharing membership each month, and a fresh technology tree for every country once the start flags are set.', '# At the start every country also takes its development tier (owner decision K58; common/scripted_effects/zin_development.txt).', 'on_actions = {', '\ton_startup = {', '\t\teffect = {', '\t\t\tevery_country = {', '\t\t\t\tzin_development_init = yes', '\t\t\t\tmark_technology_tree_layout_dirty = yes', '\t\t\t\tzin_tech_sharing_sync = yes', '\t\t\t}', '\t\t}', '\t}', '\ton_monthly = {', '\t\teffect = {', '\t\t\tzin_tech_sharing_sync = yes', '\t\t}', '\t}', '\ton_join_faction = {', '\t\teffect = {', '\t\t\tzin_tech_sharing_sync = yes', '\t\t}', '\t}', '}'].join('\n');
 }
 
 // ---------- writers: doctrines ----------
@@ -954,6 +983,8 @@ export async function buildTechnologies(staged, ctx) {
   const starts = {};
   for (const c of model.countries) { const people = model.assignment?.get(c.tag) ?? defaultPeople(c); starts[c.name] = { people, ...startFor(model, packages, c, people) }; }
   staged.text('docs/design/technology/start_packages.json', canonicalJson({ packages, countries: starts }));
+  // development tiers: constants, the dynamic modifier, effects, decisions, text and sprites (owner decision K58)
+  await writeDevelopment(staged, model, starts);
   return {
     technologies: model.techs.length, gates: model.gates.length, folders: model.folders.size, categories: model.categories.size,
     grandDoctrines: d.grand.length, subdoctrines: d.subs.length + 1, tracks: d.tracks.length, sharingGroups: model.externalSharing ? model.externalSharing.length : model.sharing.groups.length + 1, packages: Object.keys(packages).length, localisationKeys: loc.keys,

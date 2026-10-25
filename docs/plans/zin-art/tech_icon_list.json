@@ -1,12 +1,12 @@
 {
  "schema": 1,
  "decision": "K51 (owner, 25 October 2026): a longer, branching technology tree; technologies that unlock equipment use the large layout",
- "source": "tools/content/data/technologies.json and technologies_warfare.json through modules/technologies.mjs (230 researchable technologies; the seven grant-only gates have no icon)",
+ "source": "tools/content/data/technologies.json and technologies_warfare.json through modules/technologies.mjs (279 researchable technologies after K58; the seven grant-only gates have no icon)",
  "wiring": "interface/zin_technologies.gfx names GFX_<technology>_medium for every row and points at gfx/interface/technologies/zin/<technology>.dds once that file exists (the ZIN frame until then); the art step only adds the DDS files.",
  "counts": {
-  "total": 231,
-  "large": 86,
-  "small": 145
+  "total": 279,
+  "large": 92,
+  "small": 187
  },
  "style": "Painted craft icons in the ZIN technology style: muted bronze, iron and parchment, one clear subject, no text, no modern objects. Equipment pictures match the equipment icons of the same item.",
  "technologies": [
@@ -35,6 +35,18 @@
    "brief": "A pile of dry wood on every headland, tended night and day."
   },
   {
+   "key": "zin_tech_written_law",
+   "sprite": "GFX_zin_tech_written_law_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_written_law.dds",
+   "folder": "electronics_folder",
+   "name": "Written Law",
+   "era": "Third Age",
+   "seenBy": "way:lake_crowns",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every judgement of the Lake courts is written down and kept, and a lord who wants a quarrel must first find a law that allows it."
+  },
+  {
    "key": "zin_tech_scriptoria",
    "sprite": "GFX_zin_tech_scriptoria_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_scriptoria.dds",
@@ -59,6 +71,18 @@
    "brief": "The copied books are gathered, shelved and catalogued, and a scholar can find in an hour what once took a year."
   },
   {
+   "key": "zin_tech_bell_towers",
+   "sprite": "GFX_zin_tech_bell_towers_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_bell_towers.dds",
+   "folder": "electronics_folder",
+   "name": "Bell-Towers",
+   "era": "4A 1650",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every parish has its bell, and when the bells ring from tower to tower the levy is on the road by the next morning."
+  },
+  {
    "key": "zin_tech_wax_seals",
    "sprite": "GFX_zin_tech_wax_seals_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_wax_seals.dds",
@@ -81,6 +105,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Horns on every hilltop answer one another from tower to tower, and a warning crosses a province before a rider could mount."
+  },
+  {
+   "key": "zin_tech_lake_barges",
+   "sprite": "GFX_zin_tech_lake_barges_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_lake_barges.dds",
+   "folder": "electronics_folder",
+   "name": "Lake Barges",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Flat barges carry grain, timber and soldiers across the Great Lake faster than any road."
   },
   {
    "key": "zin_tech_universities",
@@ -153,6 +189,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Ground lenses in brass tubes bring distant hulls close, and the watchers on the towers see a fleet hours before it lands."
+  },
+  {
+   "key": "zin_tech_crown_assizes",
+   "sprite": "GFX_zin_tech_crown_assizes_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_crown_assizes.dds",
+   "folder": "electronics_folder",
+   "name": "Crown Assizes",
+   "era": "4A 1756",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Royal judges ride from town to town with the bells and the barges, and a wrong done anywhere is heard within the season."
   },
   {
    "key": "zin_tech_sealed_couriers",
@@ -287,6 +335,30 @@
    "brief": "The holds cut their halls from the living rock, pillar by pillar, and know the stone as farmers know their soil."
   },
   {
+   "key": "zin_tech_burrow_gardens",
+   "sprite": "GFX_zin_tech_burrow_gardens_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_burrow_gardens.dds",
+   "folder": "industry_folder",
+   "name": "Burrow-Gardens",
+   "era": "Third Age",
+   "seenBy": "way:hearth",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Gardens on every slope above the burrows feed a village twice over, and the cellars below keep the harvest sweet all winter."
+  },
+  {
+   "key": "zin_tech_warren_tunnels",
+   "sprite": "GFX_zin_tech_warren_tunnels_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_warren_tunnels.dds",
+   "folder": "industry_folder",
+   "name": "Warren-Tunnels",
+   "era": "Third Age",
+   "seenBy": "way:warrens",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The warrens run under every hill they hold, and a goblin knows a way out of any fight."
+  },
+  {
    "key": "zin_tech_dressed_stone",
    "sprite": "GFX_zin_tech_dressed_stone_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_dressed_stone.dds",
@@ -345,6 +417,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Forges far under the mountain burn hot and steady, out of the wind, and the holds' smiths never lack for heat."
+  },
+  {
+   "key": "zin_tech_counting_houses",
+   "sprite": "GFX_zin_tech_counting_houses_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_counting_houses.dds",
+   "folder": "industry_folder",
+   "name": "Counting-Houses",
+   "era": "early Fourth Age",
+   "seenBy": "way:merchants",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Merchant houses keep ledgers of every bale and coin, and a city buys what it needs at the right price."
   },
   {
    "key": "zin_tech_lime_mortar",
@@ -455,6 +539,30 @@
    "brief": "At the known wells, careful hands draw Essence into sealed jars."
   },
   {
+   "key": "zin_tech_river_barges",
+   "sprite": "GFX_zin_tech_river_barges_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_river_barges.dds",
+   "folder": "industry_folder",
+   "name": "River Barges",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Barge-masters know every ford and shallow, and a host that marches with them crosses rivers others must bridge."
+  },
+  {
+   "key": "zin_tech_hearth_watch",
+   "sprite": "GFX_zin_tech_hearth_watch_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_hearth_watch.dds",
+   "folder": "industry_folder",
+   "name": "Hearth-Watch",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every household keeps a bow and a horn by the door, and a stranger in the fields is watched from a dozen windows."
+  },
+  {
    "key": "zin_tech_drainage_wheels",
    "sprite": "GFX_zin_tech_drainage_wheels_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_drainage_wheels.dds",
@@ -501,6 +609,30 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Channels cut into the old stones guide the Essence to where it can be gathered, and little is lost on the way."
+  },
+  {
+   "key": "zin_tech_tinkers_benches",
+   "sprite": "GFX_zin_tech_tinkers_benches_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_tinkers_benches.dds",
+   "folder": "industry_folder",
+   "name": "Tinkers' Benches",
+   "era": "4A 1745",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Clever hands at small benches mend and remake anything, and nothing that can be reworked is thrown away."
+  },
+  {
+   "key": "zin_tech_tunnel_raids",
+   "sprite": "GFX_zin_tech_tunnel_raids_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_tunnel_raids.dds",
+   "folder": "industry_folder",
+   "name": "Tunnel Raids",
+   "era": "4A 1730",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Raiders come up behind the line through tunnels dug in the night and are gone before the alarm is raised."
   },
   {
    "key": "zin_tech_great_halls",
@@ -587,6 +719,30 @@
    "brief": "Smithies beside the high roads mend wagons and tools on the spot, and the work never waits for a distant guild."
   },
   {
+   "key": "zin_tech_hold_engineers",
+   "sprite": "GFX_zin_tech_hold_engineers_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_hold_engineers.dds",
+   "folder": "industry_folder",
+   "name": "Hold Engineers",
+   "era": "4A 1752",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The holds' tunnellers go to war with the host, and no wall stands long over their mines."
+  },
+  {
+   "key": "zin_tech_hired_companies",
+   "sprite": "GFX_zin_tech_hired_companies_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_hired_companies.dds",
+   "folder": "industry_folder",
+   "name": "Hired Companies",
+   "era": "4A 1752",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The cities pay seasoned companies to fight for them, and the city sons learn from the hired veterans."
+  },
+  {
    "key": "zin_tech_division_of_labour",
    "sprite": "GFX_zin_tech_division_of_labour_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_division_of_labour.dds",
@@ -633,6 +789,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Sealed phials of warded glass let Essence be kept and carried, and a realm can lay some by for hard times."
+  },
+  {
+   "key": "zin_tech_scrap_forges",
+   "sprite": "GFX_zin_tech_scrap_forges_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_scrap_forges.dds",
+   "folder": "industry_folder",
+   "name": "Scrap-Forges",
+   "era": "4A 1755",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every broken blade and buckle is melted down in the warren forges and comes back as something useful."
   },
   {
    "key": "zin_tech_treadwheel_cranes",
@@ -779,6 +947,18 @@
    "brief": "Walled yards with their own timber ponds, ropewalks and smithies build the crown's ships from keel to masthead."
   },
   {
+   "key": "zin_tech_bronze_fleets",
+   "sprite": "GFX_zin_tech_bronze_fleets_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_bronze_fleets.dds",
+   "folder": "industry_folder",
+   "name": "Bronze Trade-Fleets",
+   "era": "4A 1768",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Fleets of bronze-bound trading ships sail under one charter, and every port wants their cargo."
+  },
+  {
    "key": "zin_tech_royal_works",
    "sprite": "GFX_zin_tech_royal_works_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_royal_works.dds",
@@ -841,6 +1021,18 @@
     "Leaf-Edged Arms (zin_elven_arms_equipment_1)"
    ],
    "brief": "Side view of elven blades: blades and bows of an older craft; the same picture as the equipment's own icon, no frame."
+  },
+  {
+   "key": "zin_tech_clan_muster",
+   "sprite": "GFX_zin_tech_clan_muster_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_clan_muster.dds",
+   "folder": "zin_arms_folder",
+   "name": "Clan Muster",
+   "era": "Third Age",
+   "seenBy": "way:western",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "When the clan chief sends the fiery cross, every hall sends its sons, and kin stand beside kin in the line."
   },
   {
    "key": "zin_tech_iron_arms",
@@ -922,6 +1114,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Rough iron, quickly made, for war bands that count on numbers and fury."
+  },
+  {
+   "key": "zin_tech_warlord_retinues",
+   "sprite": "GFX_zin_tech_warlord_retinues_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_warlord_retinues.dds",
+   "folder": "zin_arms_folder",
+   "name": "Warlord Retinues",
+   "era": "Third Age",
+   "seenBy": "way:warlords",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every warlord keeps a household of armoured champions who eat at his table and die at his side."
   },
   {
    "key": "zin_tech_valley_wardens",
@@ -1048,6 +1252,30 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Men of the high valleys are formed into companies that climb where hosts cannot march and hold the passes."
+  },
+  {
+   "key": "zin_tech_highland_charge",
+   "sprite": "GFX_zin_tech_highland_charge_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_highland_charge.dds",
+   "folder": "zin_arms_folder",
+   "name": "Highland Charge",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The clans come down the hillside at a run, and a line that has not fled by the time they arrive rarely holds."
+  },
+  {
+   "key": "zin_tech_brute_ranks",
+   "sprite": "GFX_zin_tech_brute_ranks_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_brute_ranks.dds",
+   "folder": "zin_arms_folder",
+   "name": "Brute Ranks",
+   "era": "4A 1720",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The biggest men of the realm are fed for war from boyhood and put in the front rank."
   },
   {
    "key": "zin_tech_ranger_craft",
@@ -1188,6 +1416,18 @@
    "brief": "The chiefs stop beating the goblins into the line and let them run ahead in packs, where they do the most harm."
   },
   {
+   "key": "zin_tech_guild_companies",
+   "sprite": "GFX_zin_tech_guild_companies_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_guild_companies.dds",
+   "folder": "zin_arms_folder",
+   "name": "Guild Companies",
+   "era": "4A 1752",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Each guild of the western towns keeps its own armed company, drilled on feast days and paid from the guild chest."
+  },
+  {
    "key": "zin_tech_heavy_harness",
    "sprite": "GFX_zin_tech_heavy_harness_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_heavy_harness.dds",
@@ -1249,6 +1489,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Companies of swordsmen with small round shields close inside the spears and fight where no square can form."
+  },
+  {
+   "key": "zin_tech_iron_tribute",
+   "sprite": "GFX_zin_tech_iron_tribute_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_iron_tribute.dds",
+   "folder": "zin_arms_folder",
+   "name": "Iron Tribute",
+   "era": "4A 1756",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every vassal pays the warlord in iron, and the warlord pays his host in blades."
   },
   {
    "key": "zin_tech_master_forges",
@@ -1506,6 +1758,30 @@
    "brief": "Caves, hill farms and forest steadings where a hunted company could eat, sleep and heal."
   },
   {
+   "key": "zin_tech_snow_craft",
+   "sprite": "GFX_zin_tech_snow_craft_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_snow_craft.dds",
+   "folder": "zin_camp_folder",
+   "name": "Snow-Craft",
+   "era": "Third Age",
+   "seenBy": "way:winter",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Skis, furs and snow-houses let the winter folk travel and fight where others freeze."
+  },
+  {
+   "key": "zin_tech_bark_and_hide",
+   "sprite": "GFX_zin_tech_bark_and_hide_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_bark_and_hide.dds",
+   "folder": "zin_camp_folder",
+   "name": "Bark and Hide",
+   "era": "Third Age",
+   "seenBy": "way:forest",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Armour of hardened bark and hide makes no sound among the trees and turns a blow as well as mail."
+  },
+  {
    "key": "zin_tech_scouts",
    "sprite": "GFX_zin_tech_scouts_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_scouts.dds",
@@ -1549,6 +1825,21 @@
    "brief": "Diggers and carpenters bridge rivers, clear roads, undermine walls and raise palisades in a single night."
   },
   {
+   "key": "zin_tech_reindeer_sledges",
+   "sprite": "GFX_zin_tech_reindeer_sledges_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_reindeer_sledges.dds",
+   "folder": "zin_camp_folder",
+   "name": "Reindeer Sledges",
+   "era": "4A 1680",
+   "seenBy": "all realms",
+   "kind": "large equipment picture",
+   "size": "about 160 x 64, transparent ground, centred in the 183 x 84 large item (vanilla equipment technology pictures are 103 to 160 wide, 30 to 64 high)",
+   "equipment": [
+    "Waggon Strings (motorized_equipment_1)"
+   ],
+   "brief": "Side view of waggon strings: strong carts drawn by teams; the same picture as the equipment's own icon, no frame."
+  },
+  {
    "key": "zin_tech_heralds",
    "sprite": "GFX_zin_tech_heralds_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_heralds.dds",
@@ -1586,6 +1877,30 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Officers who count every sack and every nail and see that the host eats before it fights."
+  },
+  {
+   "key": "zin_tech_ice_fishing",
+   "sprite": "GFX_zin_tech_ice_fishing_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_ice_fishing.dds",
+   "folder": "zin_camp_folder",
+   "name": "Ice-Fishing",
+   "era": "4A 1720",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Holes cut through the lake ice feed whole villages through the long dark when the fields are buried."
+  },
+  {
+   "key": "zin_tech_tree_paths",
+   "sprite": "GFX_zin_tech_tree_paths_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_tree_paths.dds",
+   "folder": "zin_camp_folder",
+   "name": "Tree-Paths",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Hidden paths through the deep woods let a whole host move unseen where strangers lose their way."
   },
   {
    "key": "zin_tech_provosts",
@@ -1664,6 +1979,30 @@
    "brief": "Standing camps behind the front keep recruits drilled and ready, and gaps in the line are filled within days."
   },
   {
+   "key": "zin_tech_woodland_ambush",
+   "sprite": "GFX_zin_tech_woodland_ambush_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_woodland_ambush.dds",
+   "folder": "zin_camp_folder",
+   "name": "Woodland Ambush",
+   "era": "4A 1752",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Woodsmen wait in the branches and the brush, and an enemy column learns of them when the first arrows fall."
+  },
+  {
+   "key": "zin_tech_frost_wardens",
+   "sprite": "GFX_zin_tech_frost_wardens_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_frost_wardens.dds",
+   "folder": "zin_camp_folder",
+   "name": "Frost Wardens",
+   "era": "4A 1756",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Watch-companies who winter in the high passes hold them against anyone foolish enough to come in the snows."
+  },
+  {
    "key": "zin_tech_field_kitchens",
    "sprite": "GFX_zin_tech_field_kitchens_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_field_kitchens.dds",
@@ -1740,6 +2079,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Recovered lost knowledge (a weathered scroll or broken relic motif): The great walls of the old wars were raised by masters whose methods died with them."
+  },
+  {
+   "key": "zin_tech_pass_forts",
+   "sprite": "GFX_zin_tech_pass_forts_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_pass_forts.dds",
+   "folder": "zin_engines_folder",
+   "name": "Pass-Forts",
+   "era": "Third Age",
+   "seenBy": "way:wardens",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "A small fort at the head of every pass, kept by the same families for generations."
   },
   {
    "key": "zin_tech_catapults",
@@ -1837,6 +2188,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "A chain across the harbour mouth, raised by a windlass, closes the port to any hull that does not fly the right flag."
+  },
+  {
+   "key": "zin_tech_warden_signals",
+   "sprite": "GFX_zin_tech_warden_signals_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_warden_signals.dds",
+   "folder": "zin_engines_folder",
+   "name": "Warden Signals",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Mirrors and smoke pass word from fort to fort, and the wardens know of a raid before it reaches the valley."
   },
   {
    "key": "zin_tech_trebuchets",
@@ -1945,6 +2308,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Angled towers that jut from the curtain let defenders shoot along the foot of every wall, so there is no blind ground to shelter an assault."
+  },
+  {
+   "key": "zin_tech_hold_the_pass",
+   "sprite": "GFX_zin_tech_hold_the_pass_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_hold_the_pass.dds",
+   "folder": "zin_engines_folder",
+   "name": "Hold the Pass",
+   "era": "4A 1754",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "A handful of wardens in a narrow place can stop a host, and they have practised it all their lives."
   },
   {
    "key": "zin_tech_great_engines",
@@ -2418,6 +2793,30 @@
    "brief": "Side view of grove wardings: the moot's old wardings, cut into bark and root; the same picture as the equipment's own icon, no frame."
   },
   {
+   "key": "zin_tech_great_herds",
+   "sprite": "GFX_zin_tech_great_herds_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_great_herds.dds",
+   "folder": "zin_mounts_folder",
+   "name": "The Great Herds",
+   "era": "Third Age",
+   "seenBy": "way:steppe",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The riders' herds cover the downs to the horizon, and every child can ride before it can walk."
+  },
+  {
+   "key": "zin_tech_oasis_wells",
+   "sprite": "GFX_zin_tech_oasis_wells_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_oasis_wells.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Oasis Wells",
+   "era": "Third Age",
+   "seenBy": "way:desert",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The desert folk know every well and hidden spring, and a host that marches with them never runs dry."
+  },
+  {
    "key": "zin_tech_riding_horses",
    "sprite": "GFX_zin_tech_riding_horses_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_riding_horses.dds",
@@ -2505,6 +2904,18 @@
    "brief": "Side view of ogre clubs: iron-bound clubs and heaps of chain; the same picture as the equipment's own icon, no frame."
   },
   {
+   "key": "zin_tech_camel_breeding",
+   "sprite": "GFX_zin_tech_camel_breeding_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_camel_breeding.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Camel Breeding",
+   "era": "4A 1650",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Camels bred for speed and patience carry warriors across sand no horse could cross."
+  },
+  {
    "key": "zin_tech_war_horses",
    "sprite": "GFX_zin_tech_war_horses_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_war_horses.dds",
@@ -2520,6 +2931,33 @@
    "brief": "Side view of war horses: heavy horses bred to carry a mailed rider; the same picture as the equipment's own icon, no frame."
   },
   {
+   "key": "zin_tech_steppe_breeds",
+   "sprite": "GFX_zin_tech_steppe_breeds_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_steppe_breeds.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Steppe Breeds",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "large equipment picture",
+   "size": "about 160 x 64, transparent ground, centred in the 183 x 84 large item (vanilla equipment technology pictures are 103 to 160 wide, 30 to 64 high)",
+   "equipment": [
+    "War Horses (zin_mounts_equipment_1)"
+   ],
+   "brief": "Side view of war horses: heavy horses bred to carry a mailed rider; the same picture as the equipment's own icon, no frame."
+  },
+  {
+   "key": "zin_tech_horn_bows",
+   "sprite": "GFX_zin_tech_horn_bows_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_horn_bows.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Horn Bows",
+   "era": "4A 1720",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Short bows of horn, sinew and wood throw an arrow from the saddle as far as a footman's longbow."
+  },
+  {
    "key": "zin_tech_horse_archery",
    "sprite": "GFX_zin_tech_horse_archery_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_horse_archery.dds",
@@ -2530,6 +2968,33 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Riders who shoot from the saddle at a gallop and wheel away before the foe can answer."
+  },
+  {
+   "key": "zin_tech_war_elephants",
+   "sprite": "GFX_zin_tech_war_elephants_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_war_elephants.dds",
+   "folder": "zin_mounts_folder",
+   "name": "War Elephants",
+   "era": "4A 1730",
+   "seenBy": "all realms",
+   "kind": "large equipment picture",
+   "size": "about 160 x 64, transparent ground, centred in the 183 x 84 large item (vanilla equipment technology pictures are 103 to 160 wide, 30 to 64 high)",
+   "equipment": [
+    "War Elephants (zin_elephant_equipment_0)"
+   ],
+   "brief": "Side view of war elephants: elephants trained to bear a rider and a few spearmen; the same picture as the equipment's own icon, no frame."
+  },
+  {
+   "key": "zin_tech_salt_roads",
+   "sprite": "GFX_zin_tech_salt_roads_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_salt_roads.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Salt Roads",
+   "era": "4A 1750",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Caravans of salt and spice cross the sands on roads marked from well to well, and every market knows the desert merchants."
   },
   {
    "key": "zin_tech_great_studs",
@@ -2566,6 +3031,18 @@
    "brief": "Side view of troll harness: boiled hide and riveted plates on the troll frame; the same picture as the equipment's own icon, no frame."
   },
   {
+   "key": "zin_tech_steppe_remounts",
+   "sprite": "GFX_zin_tech_steppe_remounts_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_steppe_remounts.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Steppe Remounts",
+   "era": "4A 1752",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Each rider leads three spare horses, and the host changes mounts on the move instead of resting."
+  },
+  {
    "key": "zin_tech_couched_lance",
    "sprite": "GFX_zin_tech_couched_lance_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_couched_lance.dds",
@@ -2588,6 +3065,21 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Riders in leather on quick horses scout, raid and harry, and leave the charge to others."
+  },
+  {
+   "key": "zin_tech_towered_elephants",
+   "sprite": "GFX_zin_tech_towered_elephants_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_towered_elephants.dds",
+   "folder": "zin_mounts_folder",
+   "name": "Towered Elephants",
+   "era": "4A 1758",
+   "seenBy": "all realms",
+   "kind": "large equipment picture",
+   "size": "about 160 x 64, transparent ground, centred in the 183 x 84 large item (vanilla equipment technology pictures are 103 to 160 wide, 30 to 64 high)",
+   "equipment": [
+    "Towered Elephants (zin_elephant_equipment_1)"
+   ],
+   "brief": "Side view of towered elephants: elephants in leather barding with a wooden tower of archers; the same picture as the equipment's own icon, no frame."
   },
   {
    "key": "zin_tech_remount_depots",
@@ -2636,6 +3128,18 @@
    "brief": "Side view of plains destriers: the great horses of the plains, fast and tireless; the same picture as the equipment's own icon, no frame."
   },
   {
+   "key": "zin_tech_riding_horde",
+   "sprite": "GFX_zin_tech_riding_horde_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_riding_horde.dds",
+   "folder": "zin_mounts_folder",
+   "name": "The Riding Horde",
+   "era": "4A 1770",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The whole people rides to war as one horde, and its outriders sweep the land a day ahead of the host."
+  },
+  {
    "key": "zin_tech_crown_chargers",
    "sprite": "GFX_zin_tech_crown_chargers_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_crown_chargers.dds",
@@ -2680,6 +3184,33 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Recovered lost knowledge (a weathered scroll or broken relic motif): Old pilots knew sea-roads between the coasts that later captains forgot."
+  },
+  {
+   "key": "zin_tech_longships",
+   "sprite": "GFX_zin_tech_longships_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_longships.dds",
+   "folder": "zin_naval_folder",
+   "name": "Longships",
+   "era": "Third Age",
+   "seenBy": "way:north_sea",
+   "kind": "large equipment picture",
+   "size": "about 160 x 64, transparent ground, centred in the 183 x 84 large item (vanilla equipment technology pictures are 103 to 160 wide, 30 to 64 high)",
+   "equipment": [
+    "zin_hull_raider_0"
+   ],
+   "brief": "Side view of longships; the same picture as the equipment's own icon, no frame."
+  },
+  {
+   "key": "zin_tech_reef_lore",
+   "sprite": "GFX_zin_tech_reef_lore_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_reef_lore.dds",
+   "folder": "zin_naval_folder",
+   "name": "Reef-Lore",
+   "era": "Third Age",
+   "seenBy": "way:islands",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The islanders know every reef and channel, and an enemy fleet that comes in without them runs aground."
   },
   {
    "key": "zin_tech_oared_galleys",
@@ -2763,6 +3294,33 @@
    "brief": "Side view of sailing warships; the same picture as the equipment's own icon, no frame."
   },
   {
+   "key": "zin_tech_shield_rails",
+   "sprite": "GFX_zin_tech_shield_rails_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_shield_rails.dds",
+   "folder": "zin_naval_folder",
+   "name": "Shield-Rail Crews",
+   "era": "4A 1720",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Every rower is a warrior with his shield on the rail, and the crew that rows ashore fights ashore."
+  },
+  {
+   "key": "zin_tech_outrigger_galleys",
+   "sprite": "GFX_zin_tech_outrigger_galleys_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_outrigger_galleys.dds",
+   "folder": "zin_naval_folder",
+   "name": "Outrigger Galleys",
+   "era": "4A 1700",
+   "seenBy": "all realms",
+   "kind": "large equipment picture",
+   "size": "about 160 x 64, transparent ground, centred in the 183 x 84 large item (vanilla equipment technology pictures are 103 to 160 wide, 30 to 64 high)",
+   "equipment": [
+    "zin_hull_galley_1"
+   ],
+   "brief": "Side view of outrigger galleys; the same picture as the equipment's own icon, no frame."
+  },
+  {
    "key": "zin_tech_war_galleys",
    "sprite": "GFX_zin_tech_war_galleys_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_war_galleys.dds",
@@ -2820,6 +3378,18 @@
    "brief": "Picked fighters, hooks and gangplanks turn any hull into a landing craft or a floating fortress."
   },
   {
+   "key": "zin_tech_island_marines",
+   "sprite": "GFX_zin_tech_island_marines_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_island_marines.dds",
+   "folder": "zin_naval_folder",
+   "name": "Surf Warriors",
+   "era": "4A 1750",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Island warriors wade ashore through surf and coral, and they are fighting before their boats have grounded."
+  },
+  {
    "key": "zin_tech_fire_ships",
    "sprite": "GFX_zin_tech_fire_ships_medium",
    "texture": "gfx/interface/technologies/zin/zin_tech_fire_ships.dds",
@@ -2866,6 +3436,18 @@
    "kind": "small icon",
    "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
    "brief": "Bronze plates below the waterline stop rot and borers, and a sheathed hull rams and is rammed with less harm."
+  },
+  {
+   "key": "zin_tech_sea_king_raids",
+   "sprite": "GFX_zin_tech_sea_king_raids_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_sea_king_raids.dds",
+   "folder": "zin_naval_folder",
+   "name": "Sea-King Raids",
+   "era": "4A 1755",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "The sea-kings send their ships out in packs each summer, and no merchant coast is safe from them."
   },
   {
    "key": "zin_tech_great_warships",
@@ -2935,6 +3517,18 @@
     "zin_hull_raider_1"
    ],
    "brief": "Side view of master shipwrights; the same picture as the equipment's own icon, no frame."
+  },
+  {
+   "key": "zin_tech_star_paths",
+   "sprite": "GFX_zin_tech_star_paths_medium",
+   "texture": "gfx/interface/technologies/zin/zin_tech_star_paths.dds",
+   "folder": "zin_naval_folder",
+   "name": "Star-Paths",
+   "era": "4A 1765",
+   "seenBy": "all realms",
+   "kind": "small icon",
+   "size": "64 x 64, transparent corners, drawn in the 72 x 72 small item",
+   "brief": "Navigators who steer by the stars take the galleys far beyond the sight of land and bring them home again."
   },
   {
    "key": "zin_tech_galley_squadrons",
@@ -3067,6 +3661,71 @@
     "Barded Griffins (zin_griffin_equipment_3)"
    ],
    "brief": "Side view of barded griffins: griffins in light barding of leather and scale; the same picture as the equipment's own icon, no frame."
+  }
+ ],
+ "otherSprites": [
+  {
+   "sprite": "GFX_zin_development_modifier",
+   "texture": "gfx/interface/technologies/zin/zin_development_modifier.dds",
+   "kind": "modifier icon",
+   "size": "as the vanilla dynamic modifier icons",
+   "brief": "An open book and a lamp on a lectern: the learning of a realm."
+  },
+  {
+   "sprite": "GFX_decision_category_zin_dev_learning",
+   "texture": "gfx/interface/technologies/zin/decision_category_zin_dev_learning.dds",
+   "kind": "decision category icon",
+   "size": "as the vanilla decision category icons",
+   "brief": "A scholar's quill crossed with a key over a bound book."
+  },
+  {
+   "sprite": "GFX_decision_cat_picture_zin_dev_learning",
+   "texture": "gfx/interface/technologies/zin/decision_cat_picture_zin_dev_learning.dds",
+   "kind": "decision category picture",
+   "size": "as the vanilla decision category pictures",
+   "brief": "Students in a lamplit hall of shelves copying from great books under a master's eye."
+  },
+  {
+   "sprite": "GFX_decision_zin_dev_send_scholars",
+   "texture": "gfx/interface/technologies/zin/decision_zin_dev_send_scholars.dds",
+   "kind": "decision icon",
+   "size": "as the vanilla decision icons",
+   "brief": "Two travellers with satchels of books on a road toward distant towers."
+  },
+  {
+   "sprite": "GFX_decision_zin_dev_endow_learning",
+   "texture": "gfx/interface/technologies/zin/decision_zin_dev_endow_learning.dds",
+   "kind": "decision icon",
+   "size": "as the vanilla decision icons",
+   "brief": "A sealed charter and a purse laid on the steps of a stone school."
+  },
+  {
+   "sprite": "GFX_zin_elephant_equipment_0_medium",
+   "texture": "gfx/interface/equipment/zin/zin_elephant_equipment_0.dds",
+   "kind": "equipment picture",
+   "size": "146 x 54 as the other ZIN equipment pictures",
+   "brief": "Side view of a war elephant with a rider and a few spearmen on its back."
+  },
+  {
+   "sprite": "GFX_zin_elephant_equipment_1_medium",
+   "texture": "gfx/interface/equipment/zin/zin_elephant_equipment_1.dds",
+   "kind": "equipment picture",
+   "size": "146 x 54",
+   "brief": "Side view of a war elephant in leather barding carrying a wooden tower of archers."
+  },
+  {
+   "sprite": "GFX_archetype_zin_elephant_equipment_medium",
+   "texture": "gfx/interface/archetypes/zin/zin_elephant_equipment.dds",
+   "kind": "equipment archetype picture",
+   "size": "as the other archetype pictures",
+   "brief": "A war elephant head with a painted brow-plate."
+  },
+  {
+   "sprite": "GFX_unit_zin_men_war_elephants_icon_medium (and _medium_white, _small)",
+   "texture": "gfx/interface/counters/divisions_large/zin/zin_men_war_elephants.dds and the small counters",
+   "kind": "unit counter",
+   "size": "the vanilla-green counter sizes of the other ZIN sub-units",
+   "brief": "An elephant in profile on the green counter ground; bespoke counter per the 3D pipeline rules (hoi4_icon_artist)."
   }
  ]
 }

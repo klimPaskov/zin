@@ -68,14 +68,14 @@ for (const f of await gameFiles('common/units/equipment/modules')) {
 
 // ------------------------------------------------------------------------------------------------ counts and files
 test('The build stages every file the spec names and counts what it generates', () => {
-  assert.equal(summary.subUnits, 63, '57 land sub-units (three of them black powder, K19), 4 ships, 2 air');
-  assert.equal(summary.landSubUnits, 57);
+  assert.equal(summary.subUnits, 64, '58 land sub-units (three of them black powder, K19; the war elephants of K58), 4 ships, 2 air');
+  assert.equal(summary.landSubUnits, 58);
   assert.equal(summary.ships, 4);
   assert.equal(summary.air, 2);
   assert.equal(summary.modules, 16);
   assert.equal(summary.upgrades, 5);
   assert.equal(summary.groups, 11);
-  assert.equal(summary.archetypes, 34, '30 archetypes (bombards and hand-guns among them) and 4 hulls');
+  assert.equal(summary.archetypes, 35, '31 archetypes (bombards, hand-guns and the war elephants of K58 among them) and 4 hulls');
   for (const f of [...unitFiles, ...eqFiles, 'common/units/equipment/modules/zin_ship_modules.txt', 'common/units/equipment/upgrades/zin_upgrades.txt', 'common/equipment_groups/zin_equipment_groups.txt', 'common/unit_tags/zin_unit_tags.txt', 'common/combat_tactics.txt', 'common/units/names/zin_names.txt', 'common/units/names_divisions/zin_names_divisions.txt', 'common/units/names_ships/zin_names_ships.txt', 'common/units/names_railway_guns/zin_names_railway_guns.txt', 'common/units/codenames_operatives/zin_operative_codenames.txt', 'gfx/entities/zin_warfare.asset', 'interface/zin_units.gfx', 'interface/zin_equipment.gfx', 'localisation/english/zin_warfare_l_english.yml', 'localisation/replace/zin_warfare_l_english.yml']) assert(staged.files.has(f), `missing ${f}`);
 });
 test('Every staged script file has balanced braces and every folder it replaces holds a definition', () => {

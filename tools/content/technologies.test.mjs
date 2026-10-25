@@ -40,26 +40,26 @@ const allLoc = () => new Map([...locEntries('localisation/english/zin_technologi
 
 // ---------- counts and files ----------
 test('The build stages every file the spec names and counts what it generates', () => {
-  assert.equal(summary.technologies, 67 + 164, 'the 67 civilian rows and warfare\'s 164 (nine of them black powder, K19; owner decision K51 added 54 rows)');
+  assert.equal(summary.technologies, 82 + 197, 'the 82 civilian rows and warfare\'s 197 (nine of them black powder, K19; K51 added 54 rows, K58 the 47 way technologies and Hold Engineers)');
   assert.equal(summary.gates, 7);
   assert.equal(summary.folders, 13);
-  assert.equal(summary.categories, 26);
+  assert.equal(summary.categories, 27);
   assert.equal(summary.grandDoctrines, 15);
   assert.equal(summary.subdoctrines, 37, '36 plus the hidden special-forces subdoctrine');
   assert.equal(summary.tracks, 11, '4 land, 4 naval, 2 air and the hidden track');
   for (const rel of [...techFiles, 'common/technologies/zin_gates.txt', 'common/technology_tags/zin_technology_tags.txt', 'common/ai_focuses/zin_ai_focuses.txt', 'common/technology_sharing/zin_tech_sharing.txt', 'common/scripted_triggers/zin_technologies.txt', 'common/scripted_effects/zin_naval_air.txt', ...Object.values(DOCTRINE_FILES), 'localisation/english/zin_technologies_l_english.yml', 'docs/design/technology/layout.json', 'docs/design/technology/start_packages.json']) assert(staged.files.has(rel), rel);
 });
 
-test('Folder files hold the counts of the spec: 48 craft, 19 letters, 49 arms, 21 mounts, 24 engines, 22 lore, 18 camp, 23 naval, 7 skies', () => {
+test('Folder files hold the counts of the spec: 59 craft, 23 letters, 55 arms, 31 mounts, 27 engines, 22 lore, 25 camp, 30 naval, 7 skies', () => {
   const count = f => (file(`common/technologies/${f}`).match(/^\tzin_tech_[a-z0-9_]+ = \{$/gm) ?? []).length;
-  assert.deepEqual(Object.fromEntries(Object.entries(FOLDER_FILES).map(([k, f]) => [k, count(f)])), { zin_arms_folder: 49, zin_mounts_folder: 21, zin_engines_folder: 24, zin_lore_folder: 22, zin_camp_folder: 18, zin_naval_folder: 23, zin_skies_folder: 7, industry_folder: 48, electronics_folder: 19 });
+  assert.deepEqual(Object.fromEntries(Object.entries(FOLDER_FILES).map(([k, f]) => [k, count(f)])), { zin_arms_folder: 55, zin_mounts_folder: 31, zin_engines_folder: 27, zin_lore_folder: 22, zin_camp_folder: 25, zin_naval_folder: 30, zin_skies_folder: 7, industry_folder: 59, electronics_folder: 23 });
   assert.equal(count('zin_gates.txt'), 7);
 });
 
 test('Every technology key is a zin_tech_ key and no vanilla technology, folder or doctrine key is reused', async () => {
   const vanilla = await vanillaNames();
   const keys = [...allTechText().matchAll(/^\t(zin_tech_[a-z0-9_]+) = \{$/gm)].map(m => m[1]);
-  assert.equal(keys.length, 231 + 7);
+  assert.equal(keys.length, 279 + 7);
   assert.equal(new Set(keys).size, keys.length, 'unique');
   for (const k of keys) assert(!vanilla.techs.has(k), k);
   const tags = file('common/technology_tags/zin_technology_tags.txt');
@@ -77,7 +77,7 @@ const tableRows = (md, startHeading, endHeading) => {
   assert(start >= 0 && end > start, `${startHeading} in the spec`);
   return md.slice(start, end).split('\n').filter(l => l.startsWith('| `')).map(l => l.split('|').slice(1, -1).map(c => c.trim()));
 };
-const LINE_KEYS = { Masonry: 'masonry', Mining: 'mining', 'Guild Methods': 'guild_methods', 'Granaries and Fields': 'granaries', 'Great Halls': 'great_halls', 'Village Forges': 'village_forges', Shipwrights: 'shipwrights', 'Essence-Craft': 'essence_craft', "Peoples' Crafts": 'peoples_crafts', Scholarship: 'scholarship', Seals: 'seals', Codes: 'codes', 'Beacon Craft': 'beacon_craft' };
+const LINE_KEYS = { 'The Lake Crowns': 'way_lake_crowns', 'River and Road Cities': 'way_merchants', 'Hearth and Holt': 'way_hearth', 'The Warrens': 'way_warrens', Masonry: 'masonry', Mining: 'mining', 'Guild Methods': 'guild_methods', 'Granaries and Fields': 'granaries', 'Great Halls': 'great_halls', 'Village Forges': 'village_forges', Shipwrights: 'shipwrights', 'Essence-Craft': 'essence_craft', "Peoples' Crafts": 'peoples_crafts', Scholarship: 'scholarship', Seals: 'seals', Codes: 'codes', 'Beacon Craft': 'beacon_craft' };
 const RENAMED = { lime_mortar: 'Slaked Lime', division_of_labour: 'Many Hands' };
 const strip = s => s.replace(/`/g, '');
 const keyList = s => (s === '-' ? [] : s.split(',').map(x => strip(x).trim()));
@@ -85,7 +85,7 @@ const keyList = s => (s === '-' ? [] : s.split(',').map(x => strip(x).trim()));
 test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, slot, year, cost, parents, exclusion, effects, unlocks, who, kind)', async () => {
   const md = await readFile(SPEC, 'utf8');
   const rows = [...tableRows(md, '#### 4.2 Craft and Works', '#### 4.3'), ...tableRows(md, '#### 4.3 Letters and Beacons', '### 5. Layout rules')];
-  assert.equal(rows.length, 67);
+  assert.equal(rows.length, 82);
   const tiles = new Map(Object.values(model.layout.folders).flatMap(f => f.tiles.map(t => [t.key, t])));
   const DWARF_HOLDS = ['Kunhrim', 'Hrakbrund', 'Brundahrim', 'Gromkerm'].map(country => ({ country }));
   for (const [key, name, line, pos, year, cost, pth, needs, xor, effects, unlocks, who, kind] of rows) {
@@ -106,7 +106,7 @@ test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, sl
     assert.deepEqual(t.modifiers, mods, `${k} effects`);
     const buildings = unlocks.startsWith('radar_station') ? [{ building: 'radar_station', level: Number(unlocks.match(/L(\d+)/)[1]) }] : [];
     assert.deepEqual(t.unlocks.buildings ?? [], buildings, `${k} unlocks`);
-    const whoWant = who === 'all' ? [] : who.split(',').map(w => w.trim()).flatMap(w => (w === 'Volgan' ? [{ country: VOLGAN }] : w === 'dwarf holds' ? DWARF_HOLDS : [{ people: w }]));
+    const whoWant = who === 'all' ? [] : who.split(',').map(w => w.trim()).flatMap(w => (w === 'Volgan' ? [{ country: VOLGAN }] : w === 'dwarf holds' ? DWARF_HOLDS : w.startsWith('way:') ? [{ way: w.slice(4) }] : [{ people: w }]));
     assert.deepEqual(t.whoOwn, whoWant, `${k} who`);
   }
 });
@@ -114,7 +114,7 @@ test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, sl
 test('Warfare spec section 11: every row has its technology with the same name and year', async () => {
   const md = await readFile(WARSPEC, 'utf8');
   const rows = tableRows(md, '#### 11.1 Arms and Armour', '### 12. Doctrines').filter(r => !r[0].includes(' to '));
-  assert.equal(rows.length, 164 - 3, '164 technologies (nine black powder, 11.8; 41 added by owner decision K51); the three deathless tide rows are one spec row');
+  assert.equal(rows.length, 197 - 3, '197 technologies (nine black powder, 11.8; 41 added by owner decision K51, 33 way technologies by K58); the three deathless tide rows are one spec row');
   const NAME_FIX = { zin_tech_forged_steel: 'Forged Iron', zin_tech_tempered_steel: 'Tempered Iron', zin_tech_mountain_steel: 'Mountain Iron', zin_tech_leaf_steel: 'Leaf-Forging', zin_tech_veteran_sergeants: 'Veteran File-Leaders', zin_tech_camel_corps: 'Camel Host', zin_tech_engine_corps: 'Engine Crews' };
   for (const r of rows) {
     const k = strip(r[0]), t = model.byKey.get(k), year = Number(r[2]);
@@ -223,7 +223,7 @@ test('The Eyries folder and the griffin rows are gated by the sky rule, and scor
 test('The tag file defines all categories, every category a technology names, and every category appears in an AI focus', () => {
   const tags = file('common/technology_tags/zin_technology_tags.txt');
   const cats = new Set(tags.slice(0, tags.indexOf('technology_folders')).split('\n').filter(l => /^\t[a-z_]+$/.test(l)).map(l => l.trim()));
-  assert.equal(cats.size, 26);
+  assert.equal(cats.size, 27, '26 and the advanced-learning category of K58');
   for (const c of ['zin_cat_arms', 'zin_cat_granaries', 'zin_cat_yards', 'zin_cat_essence_craft', 'zin_cat_scholarship', 'zin_cat_seals', 'zin_cat_beacons', 'industry', 'construction_tech', 'excavation_tech', 'land_doctrine', 'naval_doctrine', 'air_doctrine', 'special_forces_doctrine']) assert(cats.has(c), c);
   for (const m of allTechText().matchAll(/categories = \{ ([a-z_ ]+) \}/g)) for (const c of m[1].split(' ')) assert(cats.has(c), `category ${c}`);
   const ai = file('common/ai_focuses/zin_ai_focuses.txt');
@@ -411,14 +411,14 @@ test('Every sprite a technology or doctrine names is defined, and an interim spr
   for (const k of [...technologyIconKeys(model), ...doctrineIconKeys(model)]) assert(defined.has(k), k);
   for (const m of (allTechText() + doctrineText()).matchAll(/(GFX_[A-Za-z0-9_]+)/g)) if (!m[1].startsWith('GFX_technology_')) assert(defined.has(m[1]), `${m[1]} is used and defined`);
   for (const m of sprites.matchAll(/texturefile = "([^"]+)"/g)) assert(/^gfx\/interface\/(zin\/|technologies\/zin\/|doctrines\/zin\/)/.test(m[1]), m[1]);
-  assert.equal(technologyIconKeys(model).length, 231);
+  assert.equal(technologyIconKeys(model).length, 279);
 });
 
 test('The layout file gives the folder windows a gridbox for every root and a tile for every researchable technology', () => {
   const layout = JSON.parse(file('docs/design/technology/layout.json'));
   assert.equal(layout.slot, 70);
   const tiles = Object.values(layout.folders).flatMap(f => f.tiles);
-  assert.equal(tiles.length, 231);
+  assert.equal(tiles.length, 279);
   const boxes = Object.values(layout.folders).flatMap(f => f.gridboxes.map(g => g.name));
   assert.equal(new Set(boxes).size, boxes.length);
   assert(layout.folders.industry_folder.gridboxes.every(g => g.format === 'UP' && g.slotsize === 70));
@@ -446,7 +446,7 @@ test('K51 layout: no two tiles overlap, no connector runs through a tile, and no
 test('K51 large equipment technologies: every technology that unlocks equipment takes the large item, every other one the small item', () => {
   const text = allTechText();
   const large = model.techs.filter(t => t.unlocks.equipment?.length);
-  assert.equal(large.length, 86);
+  assert.equal(large.length, 92);
   for (const t of model.techs) {
     const block = text.match(new RegExp(`\\t${t.key} = \\{[^]*?\\n\\t\\}`))[0];
     assert.equal(/force_use_small_tech_layout = yes/.test(block), !t.unlocks.equipment?.length, `${t.key} item`);
@@ -470,8 +470,8 @@ test('K51 large equipment technologies: every technology that unlocks equipment 
 test('K51 branching: every exclusive pair sits side by side, every several-parent technology draws its connectors and can be reached', () => {
   const text = allTechText();
   const multi = model.techs.filter(t => t.requires.length > 1);
-  assert.equal(multi.length, 13);
-  assert.equal(multi.filter(t => t.all).length, 5, 'five technologies need all their parents (AND)');
+  assert.equal(multi.length, 15);
+  assert.equal(multi.filter(t => t.all).length, 7, 'seven technologies need all their parents (AND)');
   for (const t of multi) {
     const folder = model.layout.folders[t.folder];
     for (const [i, p] of t.requires.entries()) {
@@ -543,6 +543,69 @@ test('K51 Third Age knowledge is starting knowledge by people, and lost knowledg
   const starts = JSON.parse(file('docs/design/technology/start_packages.json')).countries;
   for (const name of ['Kunhrim', 'Hrakbrund', 'Brundahrim', 'Gromkerm']) assert(starts[name].technologies.includes('hall_delving') && starts[name].technologies.includes('deep_forges'), `${name} keeps the hold-craft`);
   for (const s of Object.values(starts)) for (const k of s.technologies) assert(!model.byKey.get(`zin_tech_${k}`).lost, `${k} is lost knowledge`);
+});
+
+// ---------- owner decision K58: ways of life and development tiers ----------
+const signature = t => [...Object.keys(t.modifiers).map(k => `m:${k}`), ...t.blocks.flatMap(b => [...Object.keys(b.stats ?? {}).map(k => `b:${b.target}:${k}`), ...Object.entries(b.terrain ?? {}).flatMap(([ter, st]) => Object.keys(st).map(k => `t:${b.target}:${ter}:${k}`))]), ...Object.values(t.unlocks).flat().map(u => `u:${typeof u === 'string' ? u : u.building}`)].sort().join('|');
+test('K58 ways of life: every way has its own line, seen only by its cultures, with distinct effects and its start knowledge', () => {
+  const ways = model.ways.list;
+  assert.equal(ways.length, 13);
+  const trig = file('common/scripted_triggers/zin_technologies.txt'), text = allTechText();
+  const starts = JSON.parse(file('docs/design/technology/start_packages.json')).countries;
+  const sigs = new Map();
+  for (const w of ways) {
+    const block = trig.match(new RegExp(`zin_way_${w.key} = \\{[^]*?\\n\\}`))?.[0];
+    assert(block, `trigger zin_way_${w.key}`);
+    for (const c of w.cultures) assert(block.includes(`zin_is_culture_${c} = yes`), `${w.key}: ${c}`);
+    const techs = model.techs.filter(t => t.way === w.key);
+    assert(techs.length >= 3, `${w.key} has its own line`);
+    for (const t of techs.filter(x => !x.requires.length)) assert(new RegExp(`\\t${t.key} = \\{[^]*?allow_branch = \\{[^}]*zin_way_${w.key} = yes`).test(text), `${t.key} is hidden from other ways`);
+    for (const t of techs) { assert(model.lines.get(t.line).ai.base >= 50, `${t.key} weighs strongly for its own realms`); assert(!t.categories.includes('cat_zin_advanced'), `${t.key} is the realm's own craft`); }
+    const realms = countries.filter(c => w.cultures.includes(c.culture));
+    assert(realms.length > 0, `${w.key} has realms`);
+    for (const c of realms) for (const t of techs.filter(x => x.year < model.development.advancedFrom)) assert(starts[c.name].technologies.includes(t.short), `${c.name} keeps ${t.short}`);
+    // no regional line copies another: no two way technologies of different ways share their effects
+    for (const t of techs) { const s = signature(t); assert(!sigs.has(s) || sigs.get(s) === w.key, `${t.short} repeats ${sigs.get(s)}`); sigs.set(s, w.key); }
+  }
+  assert(!starts.Aenor.technologies.includes('great_herds') && starts.Aenor.way === 'lake_crowns');
+  assert(starts.Noris.technologies.includes('war_elephants') && starts.Hunhun.technologies.includes('steppe_breeds'));
+  for (const k of ['steppe_breeds', 'war_elephants', 'towered_elephants', 'longships', 'outrigger_galleys', 'reindeer_sledges']) assert(model.byKey.get(`zin_tech_${k}`).large, `${k} is a large equipment technology`);
+  assert(model.byKey.get('zin_tech_war_elephants').unlocks.subunits.includes('zin_men_war_elephants'));
+});
+
+test('K58 development: tiers by package, a cost penalty on advanced learning, real effort to rise, and a careful AI', () => {
+  const dev = model.development;
+  assert.deepEqual(dev.tiers.map(t => [t.key, t.value]), [['learned', 1], ['settled', 2], ['customary', 3]]);
+  const constants = file('common/script_constants/zin_development.txt');
+  for (const t of dev.tiers) assert(new RegExp(`\\t${t.key}_cost = ${t.cost}\\n`).test(constants), `${t.key} cost constant`);
+  assert(/\tstep = 3\n/.test(constants) && /data = fixed_point/.test(constants));
+  assert(/cat_zin_advanced_cost_factor = zin_dev_advanced_cost/.test(file('common/dynamic_modifiers/zin_development.txt')));
+  const fx = file('common/scripted_effects/zin_development.txt');
+  for (const t of dev.tiers) assert(fx.includes(`set_variable = { zin_dev_advanced_cost = constant:zin_development.${t.key}_cost }`), t.key);
+  for (const e of ['zin_development_init', 'zin_development_apply', 'zin_development_learn']) assert(fx.includes(`${e} = {`), e);
+  assert(/zin_development_init = yes/.test(file('common/on_actions/zin_technologies.txt')), 'every country takes its tier at the start');
+  const starts = JSON.parse(file('docs/design/technology/start_packages.json')).countries;
+  for (const c of countries) assert(['learned', 'settled', 'customary', 'none'].includes(starts[c.name].development), c.name);
+  assert.equal(starts.Aenor.development, 'learned');
+  assert.equal(starts[ZOL].development, 'none');
+  assert.equal(starts.Goldoroth.development, 'customary');
+  assert(fx.includes(`original_tag = ${model.tags.get('Goldoroth')}`), 'the customary realms are listed by tag');
+  // effort: four scholarship technologies and two decisions add learning; nothing grants it for free
+  for (const k of dev.learnFrom) assert(new RegExp(`\\tzin_tech_${k} = \\{[^]*?on_research_complete_limit = \\{[^]*?on_research_complete = \\{\\s+zin_development_learn = yes`).test(allTechText()), k);
+  const dec = file('common/decisions/zin_development.txt');
+  assert(new RegExp(`zin_dev_send_scholars = \\{[^]*?any_neighbor_country = \\{ zin_development_learned = yes \\}[^]*?cost = ${dev.decisions.scholars.cost}\\n[^]*?days_re_enable = ${dev.decisions.scholars.days}`).test(dec));
+  assert(new RegExp(`zin_dev_endow_learning = \\{[^]*?has_tech = zin_tech_libraries[^]*?cost = ${dev.decisions.endow.cost}\\n`).test(dec));
+  assert.equal([...dec.matchAll(/zin_development_learn = yes/g)].length, 2);
+  // the advanced category: common technologies of the campaign era and later, never a people's own craft
+  const adv = model.techs.filter(t => t.advanced);
+  assert(adv.length > 80);
+  for (const t of model.techs) assert.equal(t.categories.includes('cat_zin_advanced'), t.advanced, t.key);
+  for (const k of ['tempered_steel', 'universities', 'great_warships', 'masons_lodges']) assert.equal(model.byKey.get(`zin_tech_${k}`).advanced, k !== 'universities', k);
+  for (const k of ['blackened_iron', 'leaf_steel', 'grave_legions', 'kin_harness', 'war_elephants', 'hold_engineers']) assert(!model.byKey.get(`zin_tech_${k}`).advanced, `${k} is a people's own craft`);
+  const text = allTechText();
+  for (const t of adv.slice(0, 20)) assert(new RegExp(`\\t${t.key} = \\{[^]*?ai_will_do = \\{[^]*?factor = 0\\.25\\s+zin_development_customary = yes`).test(text), `${t.key}: the customary AI holds back`);
+  const loc = locEntries('localisation/english/zin_development_l_english.yml');
+  for (const k of ['zin_development', 'cat_zin_advanced_cost_factor', 'zin_dev_learning', 'zin_dev_send_scholars', 'zin_dev_endow_learning', 'zin_development_learn_tt', 'zin_development_rise_tt']) assert(loc.get(k), k);
 });
 
 // ---------- determinism ----------

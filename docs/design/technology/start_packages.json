@@ -1,6 +1,7 @@
 {
   "countries": {
     "Adel": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -26,7 +27,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -38,9 +41,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Aenor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_shield_wall",
       "navalGrandDoctrine": "zin_gd_command_of_the_sea",
       "navalSubDoctrine": "zin_sub_line_of_battle",
@@ -49,6 +54,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "black_powder",
         "cast_bombards",
         "catapults",
@@ -75,6 +81,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -111,10 +118,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Aenor Forest": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -129,9 +139,11 @@
         "ranger_craft",
         "scouts",
         "scriptoria"
-      ]
+      ],
+      "way": null
     },
     "Alerhia": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -145,6 +157,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -177,6 +190,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -198,9 +212,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Andos Enda": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -238,9 +254,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Austklev": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -271,6 +289,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -285,6 +304,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -294,6 +314,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -307,9 +328,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Azano": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -323,6 +346,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -355,6 +379,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -376,9 +401,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Belonton": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -396,9 +423,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Benan": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -424,7 +453,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -436,15 +467,18 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Blackton": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
       "package": "common_men",
       "people": "men",
       "technologies": [
+        "brute_ranks",
         "catapults",
         "composite_bows",
         "crop_rotation",
@@ -478,13 +512,16 @@
         "triton_charts",
         "wagon_trains",
         "war_horses",
+        "warlord_retinues",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "warlords"
     },
     "Bloody Forest": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -493,6 +530,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bark_and_hide",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -542,6 +580,7 @@
         "stone_forts",
         "supply_columns",
         "torsion_engines",
+        "tree_paths",
         "trip_hammers",
         "triton_charts",
         "universities",
@@ -552,9 +591,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "forest"
     },
     "Bordon": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -572,9 +613,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Britadon": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -592,9 +635,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Brundahrim": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -644,9 +689,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Buldor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -660,6 +707,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -676,6 +724,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -717,9 +766,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Burnikit": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -739,11 +790,15 @@
         "pit_props",
         "raider_mounts",
         "scriptoria",
+        "tunnel_raids",
         "warband_iron",
+        "warren_tunnels",
         "water_wheels"
-      ]
+      ],
+      "way": "warrens"
     },
     "Burrikkrit": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -763,11 +818,15 @@
         "pit_props",
         "raider_mounts",
         "scriptoria",
+        "tunnel_raids",
         "warband_iron",
+        "warren_tunnels",
         "water_wheels"
-      ]
+      ],
+      "way": "warrens"
     },
     "Coldor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_horse_and_lance",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -798,6 +857,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -812,6 +872,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -821,6 +882,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -834,9 +896,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Corogon": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -848,6 +912,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -863,6 +928,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -903,9 +969,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Cursed Lands": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -914,6 +982,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bark_and_hide",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -963,6 +1032,7 @@
         "stone_forts",
         "supply_columns",
         "torsion_engines",
+        "tree_paths",
         "trip_hammers",
         "triton_charts",
         "universities",
@@ -973,9 +1043,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "forest"
     },
     "Dark Gate": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -993,9 +1065,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Delbiz": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1009,6 +1083,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -1041,6 +1116,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -1062,15 +1138,18 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Dobbum": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
       "package": "common_men",
       "people": "men",
       "technologies": [
+        "burrow_gardens",
         "catapults",
         "composite_bows",
         "crop_rotation",
@@ -1078,6 +1157,7 @@
         "field_healers",
         "forged_steel",
         "harbour_works",
+        "hearth_watch",
         "hedge_fighting",
         "heralds",
         "hidden_refuges",
@@ -1100,6 +1180,7 @@
         "slipways",
         "stone_forts",
         "supply_columns",
+        "tinkers_benches",
         "torsion_engines",
         "triton_charts",
         "wagon_trains",
@@ -1108,9 +1189,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "hearth"
     },
     "Dolon": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_nether_fury",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1128,9 +1211,11 @@
         "sappers",
         "scouts",
         "vent_forges"
-      ]
+      ],
+      "way": null
     },
     "Dolpar": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1166,6 +1251,7 @@
         "ley_stone_channels",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -1182,6 +1268,7 @@
         "scriptoria",
         "sea_soldiers",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -1197,9 +1284,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Dondor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_shield_wall",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1209,6 +1298,7 @@
         "arch_and_vault",
         "armourers",
         "black_powder",
+        "brute_ranks",
         "cast_bombards",
         "catapults",
         "cipher_scripts",
@@ -1266,13 +1356,16 @@
         "wagon_trains",
         "war_galleys",
         "war_horses",
+        "warlord_retinues",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "warlords"
     },
     "Drak": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1288,6 +1381,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -1322,6 +1416,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -1343,9 +1438,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Dreson": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1363,9 +1460,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Dulundur": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1383,9 +1482,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Dun": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1403,9 +1504,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Dunelaeth": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1443,9 +1546,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Eekedor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1481,6 +1586,7 @@
         "ley_stone_channels",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -1497,6 +1603,7 @@
         "scriptoria",
         "sea_soldiers",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -1512,9 +1619,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Eldafaen": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1552,9 +1661,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Elvana": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1586,9 +1697,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Enhis Is Rond": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1606,7 +1719,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -1617,9 +1732,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Erco": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1633,6 +1750,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -1665,6 +1783,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -1686,9 +1805,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Fearno": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1719,6 +1840,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -1733,6 +1855,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -1742,6 +1865,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -1755,9 +1879,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Fineger": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -1783,7 +1909,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -1795,9 +1923,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Fotan": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1806,6 +1936,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -1829,6 +1960,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -1864,10 +1996,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Freshon": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1876,6 +2011,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -1899,6 +2035,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -1934,10 +2071,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Gala": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1975,9 +2115,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Ghaahu": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -1988,9 +2130,11 @@
         "scouts",
         "scriptoria",
         "yeti_hunts"
-      ]
+      ],
+      "way": null
     },
     "Girdon": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2002,6 +2146,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -2017,6 +2162,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -2057,9 +2203,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Glimkit": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2075,11 +2223,15 @@
         "pit_props",
         "raider_mounts",
         "scriptoria",
+        "tunnel_raids",
         "warband_iron",
+        "warren_tunnels",
         "water_wheels"
-      ]
+      ],
+      "way": "warrens"
     },
     "God Forest": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2117,9 +2269,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Goldoroth": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_warband",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2144,9 +2298,11 @@
         "war_galleys",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Goodin": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2190,9 +2346,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Gromkerm": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2242,9 +2400,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Gunwyn": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2256,6 +2416,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -2271,6 +2432,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -2311,9 +2473,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Halenor": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -2339,7 +2503,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -2351,9 +2517,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Halia": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2392,6 +2560,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "pass_forts",
         "pit_props",
         "plate_and_mail",
         "provosts",
@@ -2416,13 +2585,16 @@
         "wagon_trains",
         "war_galleys",
         "war_horses",
+        "warden_signals",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "wardens"
     },
     "Heodwa Lands": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2444,6 +2616,7 @@
         "layered_walls",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -2454,6 +2627,7 @@
         "scouts",
         "scriptoria",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -2466,9 +2640,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Herez": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2477,6 +2653,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -2500,6 +2677,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -2535,10 +2713,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Herrodon": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2576,9 +2757,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Hirolon": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2593,9 +2776,11 @@
         "quarry_songs",
         "scouts",
         "scriptoria"
-      ]
+      ],
+      "way": null
     },
     "Holdon": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2609,24 +2794,29 @@
         "hedge_fighting",
         "hidden_refuges",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "mail",
         "merchant_cogs",
         "oared_galleys",
         "pit_props",
+        "reindeer_sledges",
         "riding_horses",
         "sappers",
         "scouts",
         "scriptoria",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "triton_charts",
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "winter"
     },
     "Hoorunoron": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2641,9 +2831,11 @@
         "quarry_songs",
         "scouts",
         "scriptoria"
-      ]
+      ],
+      "way": null
     },
     "Horidor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2674,6 +2866,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -2688,6 +2881,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -2697,6 +2891,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -2710,9 +2905,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Howan": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2730,7 +2927,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -2741,9 +2940,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Hrakbrund": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2793,9 +2994,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Hunhun": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_horse_and_lance",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2815,6 +3018,7 @@
         "dry_docks",
         "field_healers",
         "forged_steel",
+        "great_herds",
         "harbour_chains",
         "harbour_works",
         "hedge_fighting",
@@ -2823,6 +3027,7 @@
         "high_castled_warships",
         "high_roads",
         "hill_companies",
+        "horn_bows",
         "horn_chains",
         "horse_archery",
         "hunting_bows",
@@ -2850,6 +3055,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "steppe_breeds",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -2863,9 +3069,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "steppe"
     },
     "Igara": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2897,9 +3105,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Ihuy": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2931,9 +3141,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Kamu Lamo": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2951,7 +3163,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -2962,9 +3176,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Kea": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -2982,7 +3198,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -2993,9 +3211,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Keredor-Hellekton": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3017,6 +3237,7 @@
         "layered_walls",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -3027,6 +3248,7 @@
         "scouts",
         "scriptoria",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -3039,9 +3261,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Kersian": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3055,6 +3279,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -3087,6 +3312,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -3108,9 +3334,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Khorvrath": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_nether_fury",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3124,9 +3352,11 @@
         "sappers",
         "scouts",
         "vent_forges"
-      ]
+      ],
+      "way": null
     },
     "Kilinti": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3141,9 +3371,11 @@
         "ranger_craft",
         "scouts",
         "scriptoria"
-      ]
+      ],
+      "way": null
     },
     "Kingson": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3152,6 +3384,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "black_powder",
         "cast_bombards",
         "catapults",
@@ -3178,6 +3411,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -3214,10 +3448,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Klungori Guard": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3226,6 +3463,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -3249,6 +3487,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -3284,10 +3523,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Konori": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3307,6 +3549,7 @@
         "dry_docks",
         "field_healers",
         "forged_steel",
+        "great_herds",
         "harbour_chains",
         "harbour_works",
         "hedge_fighting",
@@ -3315,6 +3558,7 @@
         "high_castled_warships",
         "high_roads",
         "hill_companies",
+        "horn_bows",
         "horn_chains",
         "horse_archery",
         "hunting_bows",
@@ -3342,6 +3586,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "steppe_breeds",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -3355,9 +3600,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "steppe"
     },
     "Kradlon": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3367,6 +3614,7 @@
         "black_powder",
         "cast_bombards",
         "catapults",
+        "clan_muster",
         "composite_bows",
         "crop_rotation",
         "dressed_stone",
@@ -3377,6 +3625,7 @@
         "hedge_fighting",
         "heralds",
         "hidden_refuges",
+        "highland_charge",
         "hunting_bows",
         "iron_arms",
         "layered_walls",
@@ -3405,9 +3654,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Kunhrim": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3481,9 +3732,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Kvittumm": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3514,6 +3767,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -3528,6 +3782,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -3537,6 +3792,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -3550,9 +3806,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Lambin": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3564,6 +3822,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -3579,6 +3838,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -3619,9 +3879,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Lccimio": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3659,9 +3921,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Lerendor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_shield_wall",
       "navalGrandDoctrine": "zin_gd_command_of_the_sea",
       "navalSubDoctrine": "zin_sub_line_of_battle",
@@ -3700,6 +3964,7 @@
         "ley_stone_channels",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "matchlocks",
         "merchant_cogs",
@@ -3717,6 +3982,7 @@
         "scriptoria",
         "sea_soldiers",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -3732,9 +3998,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Luv-zhise": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3748,6 +4016,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -3780,6 +4049,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -3801,9 +4071,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Magical Forest": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3841,9 +4113,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Melkgard": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_shield_wall",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3852,6 +4126,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "brute_ranks",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -3906,13 +4181,16 @@
         "wagon_trains",
         "war_galleys",
         "war_horses",
+        "warlord_retinues",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "warlords"
     },
     "Miaed": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -3921,6 +4199,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "camel_breeding",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -3951,6 +4230,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "oasis_wells",
         "pit_props",
         "plate_and_mail",
         "provosts",
@@ -3973,15 +4253,18 @@
         "triton_charts",
         "universities",
         "wagon_trains",
+        "war_elephants",
         "war_galleys",
         "war_horses",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "desert"
     },
     "Mina": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4017,6 +4300,7 @@
         "ley_stone_channels",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -4033,6 +4317,7 @@
         "scriptoria",
         "sea_soldiers",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -4048,9 +4333,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Mirolon": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_shield_wall",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4089,6 +4376,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "pass_forts",
         "pit_props",
         "plate_and_mail",
         "provosts",
@@ -4113,13 +4401,16 @@
         "wagon_trains",
         "war_galleys",
         "war_horses",
+        "warden_signals",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "wardens"
     },
     "Molot": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4141,6 +4432,7 @@
         "layered_walls",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -4151,6 +4443,7 @@
         "scouts",
         "scriptoria",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -4163,9 +4456,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Mora": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4179,6 +4474,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -4211,6 +4507,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -4232,9 +4529,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Mostok": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4248,6 +4547,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -4280,6 +4580,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -4301,9 +4602,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Mushroom Forest": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4341,9 +4644,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Mustnom": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4359,11 +4664,15 @@
         "pit_props",
         "raider_mounts",
         "scriptoria",
+        "tunnel_raids",
         "warband_iron",
+        "warren_tunnels",
         "water_wheels"
-      ]
+      ],
+      "way": "warrens"
     },
     "Naamis": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4372,6 +4681,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "camel_breeding",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -4402,6 +4712,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "oasis_wells",
         "pit_props",
         "plate_and_mail",
         "provosts",
@@ -4424,15 +4735,18 @@
         "triton_charts",
         "universities",
         "wagon_trains",
+        "war_elephants",
         "war_galleys",
         "war_horses",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "desert"
     },
     "Nan": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4457,6 +4771,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "pass_forts",
         "pit_props",
         "riding_horses",
         "sailing_warships",
@@ -4472,13 +4787,16 @@
         "triton_charts",
         "wagon_trains",
         "war_horses",
+        "warden_signals",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "wardens"
     },
     "Nara": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4496,7 +4814,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -4507,9 +4827,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Nether": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_nether_fury",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4523,9 +4845,11 @@
         "sappers",
         "scouts",
         "vent_forges"
-      ]
+      ],
+      "way": null
     },
     "Nezer": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_nether_fury",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4539,9 +4863,11 @@
         "sappers",
         "scouts",
         "vent_forges"
-      ]
+      ],
+      "way": null
     },
     "Nivaros": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4556,9 +4882,11 @@
         "quarry_songs",
         "scouts",
         "scriptoria"
-      ]
+      ],
+      "way": null
     },
     "Noleksun": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4567,6 +4895,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -4590,6 +4919,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -4625,10 +4955,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Nolorim": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4666,9 +4999,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Nondondor": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -4686,7 +5021,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -4697,9 +5034,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Noris": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_horse_and_lance",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4708,6 +5047,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "camel_breeding",
         "camel_corps",
         "catapults",
         "cipher_scripts",
@@ -4739,6 +5079,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "oasis_wells",
         "pit_props",
         "plate_and_mail",
         "provosts",
@@ -4761,15 +5102,18 @@
         "triton_charts",
         "universities",
         "wagon_trains",
+        "war_elephants",
         "war_galleys",
         "war_horses",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "desert"
     },
     "Obmi": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4783,6 +5127,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -4815,6 +5160,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -4836,9 +5182,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Olen": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4863,6 +5211,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "pass_forts",
         "pit_props",
         "riding_horses",
         "sailing_warships",
@@ -4878,13 +5227,16 @@
         "triton_charts",
         "wagon_trains",
         "war_horses",
+        "warden_signals",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "wardens"
     },
     "Olodor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4893,6 +5245,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "burrow_gardens",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -4906,6 +5259,7 @@
         "forged_steel",
         "harbour_chains",
         "harbour_works",
+        "hearth_watch",
         "hedge_fighting",
         "heralds",
         "hidden_refuges",
@@ -4941,6 +5295,7 @@
         "slipways",
         "stone_forts",
         "supply_columns",
+        "tinkers_benches",
         "torsion_engines",
         "trip_hammers",
         "triton_charts",
@@ -4952,9 +5307,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "hearth"
     },
     "Omar": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -4985,6 +5342,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -4999,6 +5357,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -5008,6 +5367,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -5021,9 +5381,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Orato": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5062,12 +5424,14 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
         "plate_and_mail",
         "provosts",
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reef_lore",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -5090,9 +5454,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Orewele": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5123,6 +5489,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -5137,6 +5504,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -5146,6 +5514,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -5159,9 +5528,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Orohaf": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_shield_wall",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5170,6 +5541,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -5193,6 +5565,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -5228,10 +5601,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Ostoroth": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5245,6 +5621,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -5277,6 +5654,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -5298,9 +5676,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Pazoma": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5309,6 +5689,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -5332,6 +5713,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -5367,10 +5749,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Pertolor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5401,6 +5786,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -5415,6 +5801,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -5424,6 +5811,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -5437,9 +5825,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Plutondo": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5453,6 +5843,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -5485,6 +5876,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -5506,9 +5898,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Pollos": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -5534,7 +5928,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -5546,9 +5942,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Poloto": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5579,6 +5977,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -5593,6 +5992,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -5602,6 +6002,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -5615,9 +6016,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Pornivior": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5631,6 +6034,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -5663,6 +6067,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -5684,9 +6089,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Portogalor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5717,6 +6124,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -5731,6 +6139,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -5740,6 +6149,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -5753,9 +6163,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Puvulan": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_grave_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5802,9 +6214,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "R'en": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5826,6 +6240,7 @@
         "layered_walls",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -5836,6 +6251,7 @@
         "scouts",
         "scriptoria",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -5848,9 +6264,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Raerby": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -5876,7 +6294,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -5888,9 +6308,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Rhachia": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5899,6 +6321,7 @@
       "technologies": [
         "catapults",
         "composite_bows",
+        "counting_houses",
         "crop_rotation",
         "dressed_stone",
         "field_healers",
@@ -5917,6 +6340,7 @@
         "oared_galleys",
         "pit_props",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -5934,9 +6358,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Safeton": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -5945,6 +6371,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bell_towers",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -5968,6 +6395,7 @@
         "horse_archery",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "lantern_wards",
         "layered_walls",
         "ley_stone_channels",
@@ -6003,10 +6431,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Santon": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -6032,7 +6463,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -6044,9 +6477,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Saopon": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6054,6 +6489,7 @@
       "people": "men",
       "technologies": [
         "catapults",
+        "clan_muster",
         "composite_bows",
         "crop_rotation",
         "dressed_stone",
@@ -6063,6 +6499,7 @@
         "hedge_fighting",
         "heralds",
         "hidden_refuges",
+        "highland_charge",
         "hunting_bows",
         "iron_arms",
         "layered_walls",
@@ -6090,9 +6527,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Seite Islands": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -6118,7 +6557,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -6130,9 +6571,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Selen": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6141,6 +6584,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "bark_and_hide",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -6190,6 +6634,7 @@
         "stone_forts",
         "supply_columns",
         "torsion_engines",
+        "tree_paths",
         "trip_hammers",
         "triton_charts",
         "universities",
@@ -6200,9 +6645,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "forest"
     },
     "Sidea": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6220,7 +6667,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -6231,9 +6680,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Skragdurg": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6251,9 +6702,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Soyano": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6285,9 +6738,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Stabilo": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_horse_and_lance",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6303,6 +6758,7 @@
         "cipher_wheels",
         "composite_bows",
         "corsair_craft",
+        "counting_houses",
         "crop_rotation",
         "drainage_wheels",
         "dressed_stone",
@@ -6337,6 +6793,7 @@
         "quartermasters",
         "ranger_craft",
         "riding_horses",
+        "river_barges",
         "sailing_warships",
         "sappers",
         "scouts",
@@ -6358,15 +6815,18 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "merchants"
     },
     "Teste": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
       "package": "common_men",
       "people": "men",
       "technologies": [
+        "bell_towers",
         "catapults",
         "composite_bows",
         "crop_rotation",
@@ -6379,6 +6839,7 @@
         "hidden_refuges",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "layered_walls",
         "libraries",
         "lime_mortar",
@@ -6403,10 +6864,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "The Darks": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6424,9 +6888,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "The Lands of Light": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6458,9 +6924,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "The Lens": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -6478,7 +6946,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -6489,9 +6959,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Thenon": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6499,6 +6971,7 @@
       "people": "men",
       "technologies": [
         "catapults",
+        "clan_muster",
         "composite_bows",
         "crop_rotation",
         "dressed_stone",
@@ -6508,6 +6981,7 @@
         "hedge_fighting",
         "heralds",
         "hidden_refuges",
+        "highland_charge",
         "hunting_bows",
         "iron_arms",
         "layered_walls",
@@ -6535,9 +7009,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Tirlan": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6546,6 +7022,7 @@
       "technologies": [
         "arch_and_vault",
         "armourers",
+        "burrow_gardens",
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
@@ -6559,6 +7036,7 @@
         "forged_steel",
         "harbour_chains",
         "harbour_works",
+        "hearth_watch",
         "hedge_fighting",
         "heralds",
         "hidden_refuges",
@@ -6594,6 +7072,7 @@
         "slipways",
         "stone_forts",
         "supply_columns",
+        "tinkers_benches",
         "torsion_engines",
         "trip_hammers",
         "triton_charts",
@@ -6605,9 +7084,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "hearth"
     },
     "Tolhon": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6629,6 +7110,7 @@
         "layered_walls",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -6639,6 +7121,7 @@
         "scouts",
         "scriptoria",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -6651,9 +7134,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Tolvael": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6689,6 +7174,7 @@
         "ley_stone_channels",
         "libraries",
         "lime_mortar",
+        "longships",
         "mail",
         "merchant_cogs",
         "oared_galleys",
@@ -6705,6 +7191,7 @@
         "scriptoria",
         "sea_soldiers",
         "seed_reserves",
+        "shield_rails",
         "shield_wall_drill",
         "slipways",
         "stone_forts",
@@ -6720,9 +7207,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "north_sea"
     },
     "Tor Luni": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6754,9 +7243,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Troll Forest": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_warband",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6767,9 +7258,11 @@
         "scouts",
         "scriptoria",
         "troll_brood"
-      ]
+      ],
+      "way": null
     },
     "Varnondor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6781,6 +7274,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -6796,6 +7290,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -6836,9 +7331,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Verde": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6856,7 +7353,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -6867,9 +7366,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Veshazel": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_nether_fury",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6883,9 +7384,11 @@
         "sappers",
         "scouts",
         "vent_forges"
-      ]
+      ],
+      "way": null
     },
     "Vindael": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6905,6 +7408,7 @@
         "high_castled_warships",
         "horn_chains",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "libraries",
         "lime_mortar",
@@ -6912,26 +7416,31 @@
         "merchant_cogs",
         "oared_galleys",
         "pit_props",
+        "reindeer_sledges",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "triton_charts",
         "war_galleys",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Wahatud": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
       "package": "common_men",
       "people": "men",
       "technologies": [
+        "camel_breeding",
         "catapults",
         "composite_bows",
         "crop_rotation",
@@ -6950,6 +7459,7 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "oasis_wells",
         "pit_props",
         "riding_horses",
         "sailing_warships",
@@ -6964,14 +7474,17 @@
         "torsion_engines",
         "triton_charts",
         "wagon_trains",
+        "war_elephants",
         "war_horses",
         "watch_fires",
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "desert"
     },
     "Wennarith": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -6983,6 +7496,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -6998,6 +7512,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -7038,9 +7553,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Werlendor": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7052,6 +7569,7 @@
         "catapults",
         "cipher_scripts",
         "cipher_wheels",
+        "clan_muster",
         "composite_bows",
         "corsair_craft",
         "crop_rotation",
@@ -7067,6 +7585,7 @@
         "hidden_refuges",
         "high_castled_warships",
         "high_roads",
+        "highland_charge",
         "hill_companies",
         "horn_chains",
         "horse_archery",
@@ -7107,9 +7626,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "western"
     },
     "Wild Lands": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7127,9 +7648,11 @@
         "scriptoria",
         "warband_iron",
         "water_wheels"
-      ]
+      ],
+      "way": null
     },
     "Windy Lands": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_corsair_packs",
@@ -7155,7 +7678,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "sailing_warships",
         "scriptoria",
         "seed_reserves",
@@ -7167,9 +7692,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "islands"
     },
     "Woqood": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7200,6 +7727,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -7214,6 +7742,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -7223,6 +7752,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -7236,9 +7766,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Worlond": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7269,6 +7801,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -7283,6 +7816,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -7292,6 +7826,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -7305,15 +7840,18 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Worshipdom": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
       "package": "common_men",
       "people": "men",
       "technologies": [
+        "bell_towers",
         "catapults",
         "composite_bows",
         "crop_rotation",
@@ -7326,6 +7864,7 @@
         "hidden_refuges",
         "hunting_bows",
         "iron_arms",
+        "lake_barges",
         "layered_walls",
         "libraries",
         "lime_mortar",
@@ -7351,10 +7890,13 @@
         "watch_fires",
         "water_wheels",
         "wax_seals",
-        "wellspring_tapping"
-      ]
+        "wellspring_tapping",
+        "written_law"
+      ],
+      "way": "lake_crowns"
     },
     "Xison": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7385,6 +7927,7 @@
         "horn_chains",
         "horse_archery",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "ley_stone_channels",
@@ -7399,6 +7942,7 @@
         "quarry_wedges",
         "quartermasters",
         "ranger_craft",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -7408,6 +7952,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -7421,9 +7966,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Yavieth": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_old_ways",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7461,9 +8008,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Yeldenne": {
+      "development": "settled",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7481,6 +8030,7 @@
         "heralds",
         "hidden_refuges",
         "hunting_bows",
+        "ice_fishing",
         "iron_arms",
         "layered_walls",
         "libraries",
@@ -7489,6 +8039,7 @@
         "merchant_cogs",
         "oared_galleys",
         "pit_props",
+        "reindeer_sledges",
         "riding_horses",
         "sailing_warships",
         "sappers",
@@ -7497,6 +8048,7 @@
         "seed_reserves",
         "shield_wall_drill",
         "slipways",
+        "snow_craft",
         "stone_forts",
         "supply_columns",
         "torsion_engines",
@@ -7507,9 +8059,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": "winter"
     },
     "Yeni Alang": {
+      "development": "learned",
       "landGrandDoctrine": "zin_gd_sun_guard",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7541,9 +8095,11 @@
         "water_wheels",
         "wax_seals",
         "wellspring_tapping"
-      ]
+      ],
+      "way": null
     },
     "Yeti Lands": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_strength_of_the_wild",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7554,9 +8110,11 @@
         "scouts",
         "scriptoria",
         "yeti_hunts"
-      ]
+      ],
+      "way": null
     },
     "Yongyong": {
+      "development": "customary",
       "landGrandDoctrine": "zin_gd_great_muster",
       "navalGrandDoctrine": "zin_gd_oar_and_ram",
       "navalSubDoctrine": "zin_sub_oar_squadrons",
@@ -7574,7 +8132,9 @@
         "mail",
         "merchant_cogs",
         "oared_galleys",
+        "outrigger_galleys",
         "pit_props",
+        "reef_lore",
         "riding_horses",
         "sappers",
         "scouts",
@@ -7585,9 +8145,11 @@
         "wagon_trains",
         "watch_fires",
         "water_wheels"
-      ]
+      ],
+      "way": "islands"
     },
     "Zol's Mistake": {
+      "development": "none",
       "landGrandDoctrine": "zin_gd_deathless_tide",
       "navalGrandDoctrine": "zin_gd_corsair_fleets",
       "navalSubDoctrine": "zin_sub_night_raiders",
@@ -7598,7 +8160,8 @@
         "deathless_tide_1",
         "oared_galleys",
         "war_galleys"
-      ]
+      ],
+      "way": null
     }
   },
   "packages": {

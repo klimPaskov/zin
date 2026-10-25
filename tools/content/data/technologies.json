@@ -63,7 +63,8 @@
     {"key":"land_doctrine","group":"doctrine","kept":true,"name":"Doctrine of the Host"},
     {"key":"naval_doctrine","group":"doctrine","kept":true,"name":"Doctrine of the Sea"},
     {"key":"air_doctrine","group":"doctrine","kept":true,"name":"Doctrine of the Winged"},
-    {"key":"special_forces_doctrine","group":"doctrine","kept":true,"name":"Hidden Doctrine"}
+    {"key":"special_forces_doctrine","group":"doctrine","kept":true,"name":"Hidden Doctrine"},
+    {"key":"cat_zin_advanced","group":"development","name":"Advanced Learning"}
   ],
   "lines": [
     {"key":"masonry","folder":"industry_folder","column":0,"categories":["industry","construction_tech"],"name":"Masonry","ai":{"base":30}},
@@ -78,7 +79,11 @@
     {"key":"scholarship","folder":"electronics_folder","column":0,"categories":["zin_cat_scholarship"],"specialization":["specialization_nuclear"],"name":"Scholarship","ai":{"base":50}},
     {"key":"seals","folder":"electronics_folder","column":2,"categories":["zin_cat_seals"],"name":"Seals","ai":{"base":2,"modifiers":[{"factor":6,"trigger":"OR = { has_war = yes check_variable = { global.zin_gathering_dark > 24 } }"}]}},
     {"key":"codes","folder":"electronics_folder","column":4,"categories":["zin_cat_seals"],"name":"Codes","ai":{"base":2,"modifiers":[{"factor":6,"trigger":"OR = { has_war = yes check_variable = { global.zin_gathering_dark > 24 } }"}]}},
-    {"key":"beacon_craft","folder":"electronics_folder","column":6,"categories":["zin_cat_beacons"],"specialization":["specialization_air","specialization_nuclear"],"name":"Beacon Craft","ai":{"base":1,"modifiers":[{"factor":5,"trigger":"has_war = yes"}]}}
+    {"key":"beacon_craft","folder":"electronics_folder","column":6,"categories":["zin_cat_beacons"],"specialization":["specialization_air","specialization_nuclear"],"name":"Beacon Craft","ai":{"base":1,"modifiers":[{"factor":5,"trigger":"has_war = yes"}]}},
+    {"key":"way_lake_crowns","folder":"electronics_folder","column":9,"categories":["zin_cat_scholarship"],"name":"The Lake Crowns","ai":{"base":60}},
+    {"key":"way_merchants","folder":"industry_folder","column":23,"categories":["industry"],"name":"River and Road Cities","ai":{"base":60}},
+    {"key":"way_hearth","folder":"industry_folder","column":28,"categories":["industry","zin_cat_granaries"],"name":"Hearth and Holt","ai":{"base":60}},
+    {"key":"way_warrens","folder":"industry_folder","column":33,"categories":["industry"],"name":"The Warrens","ai":{"base":60}}
   ],
   "technologies": [
     {"key":"dressed_stone","name":"Dressed Stone","line":"masonry","year":70,"modifiers":{"production_speed_buildings_factor":0.1,"industry_repair_factor":0.1},"desc":"Masons learn to square and fit their blocks, so walls rise straight and halls stand longer. Building goes faster and repairs come cheaper."},
@@ -121,9 +126,9 @@
     {"key":"quarry_songs","name":"Quarry-Songs","line":"peoples_crafts","year":25,"x":18,"who":["giants"],"modifiers":{"local_resources_tungsten_factor":0.25},"desc":"Giants sing to the rock until it breaks along the line they want, and their quarries give stone in great clean blocks."},
     {"key":"vent_forges","name":"Vent-Forges","line":"peoples_crafts","year":80,"x":18,"who":["country:Puvulan","demons"],"modifiers":{"local_resources_oil_factor":0.2,"production_speed_arms_factory_factor":0.1},"desc":"In the Ember Lands the hot vents of the earth feed forges that never go cold, and Essence rises with the fumes."},
     {"key":"scriptoria","name":"Scriptoria","line":"scholarship","year":300,"cost":1,"modifiers":{"research_speed_factor":0.03},"desc":"Scribes copy the records of the realm in warm rooms, and what one scholar learns no longer dies with him."},
-    {"key":"libraries","name":"Libraries","line":"scholarship","year":1680,"requires":["scriptoria"],"modifiers":{"research_speed_factor":0.04},"desc":"The copied books are gathered, shelved and catalogued, and a scholar can find in an hour what once took a year."},
-    {"key":"universities","name":"Universities","line":"scholarship","year":1730,"requires":["libraries"],"modifiers":{"research_speed_factor":0.05},"desc":"Masters and students dwell together under a charter, and learning is taught, disputed and handed on in the open."},
-    {"key":"scholars_conclaves","name":"Scholars' Conclaves","line":"scholarship","year":1756,"requires":["universities"],"modifiers":{"research_speed_factor":0.08},"desc":"The learned of many halls meet each year to read their findings aloud, and each leaves with the others' work."},
+    {"key":"libraries","name":"Libraries","line":"scholarship","year":1680,"requires":["scriptoria"],"modifiers":{"research_speed_factor":0.04},"desc":"The copied books are gathered, shelved and catalogued, and a scholar can find in an hour what once took a year.","completeRaw":"zin_development_learn = yes","completeLimitRaw":"check_variable = { zin_dev_tier > 1 }"},
+    {"key":"universities","name":"Universities","line":"scholarship","year":1730,"requires":["libraries"],"modifiers":{"research_speed_factor":0.05},"desc":"Masters and students dwell together under a charter, and learning is taught, disputed and handed on in the open.","completeRaw":"zin_development_learn = yes","completeLimitRaw":"check_variable = { zin_dev_tier > 1 }"},
+    {"key":"scholars_conclaves","name":"Scholars' Conclaves","line":"scholarship","year":1756,"requires":["universities"],"modifiers":{"research_speed_factor":0.08},"desc":"The learned of many halls meet each year to read their findings aloud, and each leaves with the others' work.","completeRaw":"zin_development_learn = yes","completeLimitRaw":"check_variable = { zin_dev_tier > 1 }"},
     {"key":"great_library","name":"The Great Library","line":"scholarship","year":1764,"requires":["scholars_conclaves"],"modifiers":{"research_speed_factor":0.08},"allowRaw":"amount_research_slots < 5","completeLimitRaw":"amount_research_slots < 5","completeRaw":"add_research_slot = 1","desc":"One vast house holds every book the realm can gather. When the shelves are full, another chair is set for a scholar to work in."},
     {"key":"wax_seals","name":"Wax Seals","line":"seals","year":1700,"cost":1,"needs":["libraries"],"modifiers":{"encryption":1},"desc":"A letter closed with a signet and wax cannot be opened without showing it. Couriers and clerks learn to trust the mark."},
     {"key":"cipher_scripts","name":"Cipher Scripts","line":"seals","year":1740,"cost":1,"requires":["wax_seals"],"needs":["universities"],"modifiers":{"encryption":1},"desc":"Scribes agree on secret alphabets, so that a stolen letter is only a page of nonsense."},
@@ -146,8 +151,23 @@
     {"key":"deep_forges","name":"Deep Forges","line":"peoples_crafts","year":70,"x":20,"requires":["hall_delving"],"modifiers":{"production_speed_arms_factory_factor":0.1,"local_resources_chromium_factor":0.1},"desc":"Forges far under the mountain burn hot and steady, out of the wind, and the holds' smiths never lack for heat."},
     {"key":"courier_ciphers","name":"Couriers' Ciphers","line":"seals","year":60,"lost":true,"needs":["libraries"],"modifiers":{"encryption":1},"ai":{"base":5},"desc":"The couriers of the old resistance carried letters no governor could read. Their keys were burned when the danger passed; scholars can work them out again from what survives."},
     {"key":"chanceries","name":"Chanceries","line":"seals","year":1772,"x":3,"requires":["sealed_couriers","reading_rooms"],"all":true,"modifiers":{"encryption":1,"decryption":1},"desc":"One office seals the realm's letters and reads its neighbours', and the same clerks learn both crafts."},
-    {"key":"royal_academies","name":"Royal Academies","line":"scholarship","year":1778,"requires":["great_library"],"modifiers":{"research_speed_factor":0.04},"desc":"The crown pays scholars to argue, measure and write in one house, and what they find is copied for every university."},
-    {"key":"mirror_signals","name":"Mirror Signals","line":"beacon_craft","year":1784,"cost":1.5,"requires":["glass_towers"],"modifiers":{"naval_detection":0.05,"air_detection":0.05},"desc":"Polished mirrors flash news from tower to tower by day, faster than any rider."}
+    {"key":"royal_academies","name":"Royal Academies","line":"scholarship","year":1778,"requires":["great_library"],"modifiers":{"research_speed_factor":0.04},"desc":"The crown pays scholars to argue, measure and write in one house, and what they find is copied for every university.","completeRaw":"zin_development_learn = yes","completeLimitRaw":"check_variable = { zin_dev_tier > 1 }"},
+    {"key":"mirror_signals","name":"Mirror Signals","line":"beacon_craft","year":1784,"cost":1.5,"requires":["glass_towers"],"modifiers":{"naval_detection":0.05,"air_detection":0.05},"desc":"Polished mirrors flash news from tower to tower by day, faster than any rider."},
+    {"key":"written_law","name":"Written Law","line":"way_lake_crowns","year":60,"who":["way:lake_crowns"],"modifiers":{"political_power_gain":0.05},"desc":"Every judgement of the Lake courts is written down and kept, and a lord who wants a quarrel must first find a law that allows it."},
+    {"key":"bell_towers","name":"Bell-Towers","line":"way_lake_crowns","year":1650,"requires":["written_law"],"modifiers":{"mobilization_speed":0.1},"desc":"Every parish has its bell, and when the bells ring from tower to tower the levy is on the road by the next morning."},
+    {"key":"lake_barges","name":"Lake Barges","line":"way_lake_crowns","year":1700,"x":11,"requires":["written_law"],"modifiers":{"supply_factor":0.05,"production_speed_dockyard_factor":0.05},"desc":"Flat barges carry grain, timber and soldiers across the Great Lake faster than any road."},
+    {"key":"crown_assizes","name":"Crown Assizes","line":"way_lake_crowns","year":1756,"requires":["bell_towers","lake_barges"],"all":true,"modifiers":{"stability_factor":0.05},"desc":"Royal judges ride from town to town with the bells and the barges, and a wrong done anywhere is heard within the season."},
+    {"key":"counting_houses","name":"Counting-Houses","line":"way_merchants","year":400,"who":["way:merchants"],"modifiers":{"consumer_goods_factor":-0.02},"desc":"Merchant houses keep ledgers of every bale and coin, and a city buys what it needs at the right price."},
+    {"key":"river_barges","name":"River Barges","line":"way_merchants","year":1700,"requires":["counting_houses"],"modifiers":{"supply_factor":0.03},"blocks":[{"target":"category_all_infantry","terrain":{"river":{"attack":0.1}}}],"desc":"Barge-masters know every ford and shallow, and a host that marches with them crosses rivers others must bridge."},
+    {"key":"hired_companies","name":"Hired Companies","line":"way_merchants","year":1752,"x":25,"requires":["river_barges"],"modifiers":{"experience_gain_army_factor":0.05,"recruitable_population_factor":0.03},"desc":"The cities pay seasoned companies to fight for them, and the city sons learn from the hired veterans."},
+    {"key":"bronze_fleets","name":"Bronze Trade-Fleets","line":"way_merchants","year":1768,"requires":["hired_companies"],"modifiers":{"trade_opinion_factor":0.2,"production_speed_dockyard_factor":0.05},"desc":"Fleets of bronze-bound trading ships sail under one charter, and every port wants their cargo."},
+    {"key":"burrow_gardens","name":"Burrow-Gardens","line":"way_hearth","year":30,"who":["way:hearth"],"modifiers":{"energy_gain_factor":0.08},"desc":"Gardens on every slope above the burrows feed a village twice over, and the cellars below keep the harvest sweet all winter."},
+    {"key":"hearth_watch","name":"Hearth-Watch","line":"way_hearth","year":1700,"requires":["burrow_gardens"],"blocks":[{"target":"category_all_infantry","terrain":{"plains":{"defence":0.1},"forest":{"defence":0.05}}}],"desc":"Every household keeps a bow and a horn by the door, and a stranger in the fields is watched from a dozen windows."},
+    {"key":"tinkers_benches","name":"Tinkers' Benches","line":"way_hearth","year":1745,"x":30,"requires":["burrow_gardens"],"modifiers":{"production_factory_max_efficiency_factor":0.05,"equipment_conversion_speed":0.1},"desc":"Clever hands at small benches mend and remake anything, and nothing that can be reworked is thrown away."},
+    {"key":"warren_tunnels","name":"Warren-Tunnels","line":"way_warrens","year":40,"who":["way:warrens"],"blocks":[{"target":"zin_orcs_goblins","terrain":{"urban":{"attack":0.1},"hills":{"attack":0.1}}}],"desc":"The warrens run under every hill they hold, and a goblin knows a way out of any fight."},
+    {"key":"tunnel_raids","name":"Tunnel Raids","line":"way_warrens","year":1730,"requires":["warren_tunnels"],"blocks":[{"target":"zin_orcs_goblins","stats":{"soft_attack":0.1,"maximum_speed":0.05}}],"desc":"Raiders come up behind the line through tunnels dug in the night and are gone before the alarm is raised."},
+    {"key":"scrap_forges","name":"Scrap-Forges","line":"way_warrens","year":1755,"requires":["tunnel_raids"],"modifiers":{"production_speed_arms_factory_factor":0.05,"industry_repair_factor":0.1},"desc":"Every broken blade and buckle is melted down in the warren forges and comes back as something useful."},
+    {"key":"hold_engineers","name":"Hold Engineers","line":"peoples_crafts","year":1752,"x":20,"requires":["deep_forges"],"blocks":[{"target":"zin_support_sappers","stats":{"breakthrough":0.15,"max_organisation":5}}],"desc":"The holds' tunnellers go to war with the host, and no wall stands long over their mines."}
   ],
   "gates": [
     {"key":"rocket_site","building":"rocket_site","name":"The First Sealed Work","desc":"No craft of Aoaz reaches this work. It is kept shut, and nothing researches it."},
@@ -164,9 +184,25 @@
     "ai_focus_war_production": {"industry":10,"construction_tech":2,"excavation_tech":2,"zin_cat_yards":2},
     "ai_focus_military_equipment": {"zin_cat_arms":50,"zin_cat_bows":15,"zin_cat_armour":12,"zin_cat_siege":8,"zin_cat_camp":6.5,"zin_cat_wards":6,"zin_cat_dark_rites":6},
     "ai_focus_military_advancements": {"land_doctrine":100,"special_forces_doctrine":1,"zin_cat_armour":10,"zin_cat_camp":5},
-    "ai_focus_peaceful": {"industry":15,"construction_tech":5,"zin_cat_scholarship":10,"zin_cat_granaries":8,"zin_cat_essence_craft":4,"zin_cat_seals":2},
+    "ai_focus_peaceful": {"industry":15,"construction_tech":5,"zin_cat_scholarship":10,"zin_cat_granaries":8,"zin_cat_essence_craft":4,"zin_cat_seals":2,"cat_zin_advanced":2},
     "ai_focus_naval": {"zin_cat_galleys":5,"zin_cat_warships":5,"naval_doctrine":100,"zin_cat_yards":3},
     "ai_focus_naval_air": {"zin_cat_skies":4},
     "ai_focus_aviation": {"air_doctrine":50,"zin_cat_skies":20}
-  }
+  },
+  "ways": [
+    {"key":"steppe","name":"Riders of the Steppe","cultures":["steppe_rider"]},
+    {"key":"desert","name":"Peoples of the Sand","cultures":["noris_riders","naamis_sea_crown","miaed_pass_lords","wahatud_oasis_folk"]},
+    {"key":"merchants","name":"River and Road Cities","cultures":["caravan_princes","river_kings","lake_road_cities","red_lands_tribunes","quay_folk"]},
+    {"key":"north_sea","name":"Sea-Kings of the North","cultures":["leren_sea_kings","free_crowns_north"]},
+    {"key":"islands","name":"Island Folk","cultures":["chart_islanders","corsair_lords","southern_islanders","orato_fishers"]},
+    {"key":"winter","name":"Folk of the Long Winter","cultures":["winter_crown","ice_clans","vindael_seafarers","reindeer_clans","woqood_sealers"]},
+    {"key":"forest","name":"Folk of the Deep Woods","cultures":["veiled_folk","redbark_tribes","selen_ranger"]},
+    {"key":"western","name":"Clans and Guilds of the West","cultures":["gunwyn_clans","girdon_wardens","western_guilds","buldor_companies"]},
+    {"key":"warlords","name":"Iron Warlords","cultures":["dondor_brutes","melkgard_warlords"]},
+    {"key":"wardens","name":"Wardens of the Passes","cultures":["mirolon_wardens","ember_freeholds"]},
+    {"key":"lake_crowns","name":"The Lake Crowns","cultures":["lake_aenoran","vale_folk","march_folk","isle_houses","zilin_pilgrims","strait_folk","hilofrim_herders","teste_valley_folk"]},
+    {"key":"hearth","name":"Hearth and Holt","cultures":["hearth_folk","holt_gnomes"]},
+    {"key":"warrens","name":"The Warrens","cultures":["goblin_warrens","road_warrens","king_warrens","spring_warrens"]}
+  ],
+  "development": {"note":"A realm's development tier comes from its start package (packageTier) and rises with real effort: the scholarship technologies in learnFrom and the two decisions each add one point of learning, and every `step` points lift the tier one step. A tier makes the common technologies of the campaign era and later (year from advancedFrom, category cat_zin_advanced) cost `cost` more research and scales the AI's wish to research them by `ai`. The game reads the values from common/script_constants/zin_development.txt, which this block writes.","advancedFrom":1746,"step":3,"tiers":[{"key":"learned","value":1,"name":"Learned Realm","cost":0,"ai":1},{"key":"settled","value":2,"name":"Settled Realm","cost":0.3,"ai":0.5},{"key":"customary","value":3,"name":"Realm of Custom","cost":0.75,"ai":0.25}],"packageTier":{"concord":"learned","great_crowns":"learned","elves":"learned","sunhot":"learned","island_and_sea":"settled","common_men":"settled","dominion":"settled","tribal":"customary","orcs":"customary","kin_trolls":"customary","kin_giants":"customary","kin_ents":"customary","kin_yeti":"customary","nether":"customary","mistake":"none"},"learnFrom":["libraries","universities","scholars_conclaves","royal_academies"],"decisions":{"scholars":{"cost":50,"days":365},"endow":{"cost":100,"days":730,"factories":3}}}
 }

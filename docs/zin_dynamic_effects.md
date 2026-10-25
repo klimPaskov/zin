@@ -91,3 +91,30 @@ Spec: [04_magic_and_world_systems.md](specs/03_gameplay/04_magic_and_world_syste
 - **Scope:** a human player's country (the world tick calls it in `every_country = { limit = { is_ai = no } }`); safe from any panel.
 - **Inputs:** none.
 - **Example:** `zin_ui_refresh = yes`.
+
+## Development of a realm (`tools/content/lib/tech_development.mjs`, `common/scripted_effects/zin_development.txt`)
+
+Spec: [07_industry_and_electronics_techs.md](specs/03_gameplay/07_industry_and_electronics_techs.md) section 3.6 (owner decision K58). A realm's development tier is the country variable `zin_dev_tier` (1 learned, 2 settled, 3 of custom; the triggers `zin_development_learned`, `zin_development_settled` and `zin_development_customary` read it), and its learning toward the next tier is `zin_dev_progress`. The tuning values are the script constants `zin_development.<tier>_cost`, `zin_development.step` and `zin_development.learn_points` in `common/script_constants/zin_development.txt`, written from the `development` block of `tools/content/data/technologies.json`.
+
+### `zin_development_init`
+
+- **Purpose:** gives a country its start tier once: of custom or settled when its tag is in the builder's list for that tier (from its start package), learned otherwise; then applies the tier. A country without a tier (Zol's Mistake, whose package has the tier "none") is skipped.
+- **Scope:** country. Called by `on_startup` for every country (`common/on_actions/zin_technologies.txt`).
+- **Inputs:** none. **Outputs:** `zin_dev_tier`, `zin_dev_progress` (0) and the dynamic modifier `zin_development`.
+- **Side effects:** none when the country already has `zin_dev_tier`.
+- **Example:** `zin_development_init = yes`.
+
+### `zin_development_apply`
+
+- **Purpose:** sets `zin_dev_advanced_cost` to the script constant of the country's tier, adds the dynamic modifier `zin_development` (which reads it as `cat_zin_advanced_cost_factor`) if missing, and forces the modifier to update.
+- **Scope:** country with `zin_dev_tier`.
+- **Inputs:** `zin_dev_tier`. **Outputs:** `zin_dev_advanced_cost`.
+- **Example:** after changing `zin_dev_tier` by script, `zin_development_apply = yes`.
+
+### `zin_development_learn`
+
+- **Purpose:** one point of learning for a country below the learned tier; every `zin_development.step` points lift the tier by one and reapply it. Shows the tooltips `zin_development_learn_tt` and, on a rise, `zin_development_rise_tt`.
+- **Scope:** country. Called by the research of Libraries, Universities, Scholars' Conclaves and Royal Academies (`on_research_complete`, with `on_research_complete_limit = { check_variable = { zin_dev_tier > 1 } }`) and by the decisions `zin_dev_send_scholars` and `zin_dev_endow_learning`.
+- **Inputs:** none (the temporary variable `zin_dev_step` is internal). **Outputs:** `zin_dev_progress`, and `zin_dev_tier` on a rise.
+- **Side effects:** nothing for a learned country or a country without a tier.
+- **Example:** in a focus reward or an event option: `zin_development_learn = yes`.

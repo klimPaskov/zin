@@ -34,6 +34,9 @@
    { "regiments": [["zin_men_heavy_infantry", 4], ["zin_men_infantry", 2]], "support": ["zin_support_sappers"] } ] },
   "men_camel_riders": { "name": "Camel Riders", "role": "mobile", "people": ["men"], "needs": ["zin_men_camel_riders"], "options": [
    { "regiments": [["zin_men_camel_riders", 4], ["zin_men_infantry", 2]], "support": ["zin_support_scouts"] } ] },
+  "men_elephant_host": { "name": "Elephant Host", "role": "armor", "people": ["men"], "needs": ["zin_men_war_elephants"], "options": [
+   { "regiments": [["zin_men_war_elephants", 2], ["zin_men_camel_riders", 2], ["zin_men_infantry", 2]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_men_war_elephants", 2], ["zin_men_infantry", 4]], "support": ["zin_support_scouts"] } ] },
   "men_valley_wardens": { "name": "Valley Wardens", "role": "infantry", "people": ["country:Worshipdom"], "needs": ["zin_men_temple_wardens"], "options": [
    { "regiments": [["zin_men_temple_wardens", 4]], "support": ["zin_support_healers"] } ] },
 
@@ -131,7 +134,7 @@
  "profiles": {
   "men": { "arms": "zin_arms_equipment", "xp": 0.1, "garrison": "men_levy_garrison", "garrisonShare": 0.3, "mix": [
    { "t": "men_line_host", "w": 55 }, { "t": "men_riders", "w": 15, "mult": "riders" }, { "t": "men_knights", "w": 10, "mult": "knights" }, { "t": "men_siege_train", "w": 10, "mult": "siege" },
-   { "t": "men_sea_soldiers", "w": 5, "mult": "sea", "port": true }, { "t": "men_rangers", "w": 5, "mult": "rangers" }, { "t": "men_hill_companies", "w": 0, "mult": "hill", "base": 4 }, { "t": "men_heavy_host", "w": 0, "mult": "heavy", "base": 6 }, { "t": "men_camel_riders", "w": 0, "mult": "camel", "base": 8 } ] },
+   { "t": "men_sea_soldiers", "w": 5, "mult": "sea", "port": true }, { "t": "men_rangers", "w": 5, "mult": "rangers" }, { "t": "men_hill_companies", "w": 0, "mult": "hill", "base": 4 }, { "t": "men_heavy_host", "w": 0, "mult": "heavy", "base": 6 }, { "t": "men_camel_riders", "w": 0, "mult": "camel", "base": 8 }, { "t": "men_elephant_host", "w": 0, "mult": "elephant", "base": 4 } ] },
   "elves": { "arms": "zin_elven_arms_equipment", "xp": 0.15, "garrison": "elves_garrison", "garrisonShare": 0.15, "mix": [
    { "t": "elves_host", "w": 60 }, { "t": "elves_riders", "w": 25, "mult": "riders" }, { "t": "elves_siege", "w": 15, "mult": "siege" }, { "t": "elves_rangers", "w": 5, "mult": "rangers" } ] },
   "sun_elves": { "arms": "zin_elven_arms_equipment", "xp": 0.1, "garrison": "sun_elves_watch", "garrisonShare": 0.1, "mix": [ { "t": "sun_elves_guard", "w": 100 } ] },
@@ -171,7 +174,7 @@
   "buldor_companies": { "martial": 1.2, "mult": { "heavy": 2, "siege": 1.5 } },
   "chart_islanders": { "martial": 0.7, "sea": 1.5, "mult": { "sea": 3 } },
   "corsair_lords": { "martial": 0.9, "sea": 1.6, "mult": { "sea": 3 } },
-  "noris_riders": { "martial": 1.1, "mult": { "riders": 2, "camel": 3 } },
+  "noris_riders": { "martial": 1.1, "mult": { "riders": 2, "camel": 3, "elephant": 2 } },
   "caravan_princes": { "martial": 0.9, "mult": { "riders": 1.5, "camel": 2 } },
   "river_kings": { "martial": 1.0, "mult": { "siege": 1.2 } },
   "lake_road_cities": { "martial": 0.8, "mult": { "siege": 1.2 } },

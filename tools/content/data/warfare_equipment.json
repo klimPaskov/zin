@@ -392,6 +392,55 @@
    ]
   },
   {
+   "id": "zin_elephant_equipment",
+   "name": "War Elephants",
+   "desc": "Great grey beasts of the southern deserts, trained to carry a tower of archers and to break a line by their weight.",
+   "type": "support",
+   "prod": [
+    "flag:zin_culture_noris_riders",
+    "flag:zin_culture_naamis_sea_crown",
+    "flag:zin_culture_miaed_pass_lords",
+    "flag:zin_culture_wahatud_oasis_folk"
+   ],
+   "res": {
+    "rubber": 2
+   },
+   "cost": 6,
+   "rel": 0.8,
+   "base": {
+    "sa": 12,
+    "ha": 5,
+    "def": 8,
+    "brk": 20,
+    "ap": 6,
+    "arm": 12,
+    "hard": 0.9
+   },
+   "b": 0,
+   "g": {
+    "sa": 0.12,
+    "ha": 0.1,
+    "def": 0.1,
+    "brk": 0.12
+   },
+   "apStep": 0,
+   "armStep": 2,
+   "variants": [
+    {
+     "n": 0,
+     "year": 1730,
+     "name": "War Elephants",
+     "desc": "Elephants trained to bear a rider and a few spearmen."
+    },
+    {
+     "n": 1,
+     "year": 1758,
+     "name": "Towered Elephants",
+     "desc": "Elephants in leather barding with a wooden tower of archers."
+    }
+   ]
+  },
+  {
    "id": "zin_elven_arms_equipment",
    "name": "Elven Arms",
    "desc": "Swords, spears and longbows of the elven smiths, light and keen.",

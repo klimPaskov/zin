@@ -128,3 +128,92 @@ The 15 new equipment variants also need equipment pictures in the warfare module
 
 The technology, layout, GUI, data, test, spec, design-export, icon-list and handoff paths above only.
 `tools/content/modules/technologies.mjs` carries no other agent's hunks at the time of writing (the doctrine wiring was committed in `cb5e3b25`).
+
+The K51 tree was committed as `65e062ec`. The owner answered questions 3, 4, 5 and 7 under K57 (keep the eight lost arts, all eleven exclusive pairs, each folder's own eras, and Hall-Delving and Deep Forges); questions 1, 2 and 6 keep their defaults.
+
+# K58 extension: ways of life and development tiers
+
+**Decision:** K58 (owner, 25 October 2026): "every region should have their own special technologies, like predominantly rider culture country, would have horse technology and riding, etc. Or desert people would have camels, and elephants, etc. You get the gist. But they can also develop advanced techs like any other country if they really really put effort into technology, and that should be hard for less civilized countries."
+
+**Status:** Implemented in the builder, data, specs and tests. The technology, warfare and forces tests pass 181 of 181. The full build and suite were run on HEAD plus only these files in a scratch worktree, because the shared tree held other agents' unfinished work. The build exits 0 and the suite passes 1686 of 1692 (4 skipped); the 2 failures are listed under Verification and are not from this work. Every name, grouping, effect, year and tier assignment below is **proposed** within K58.
+
+## Ways of life (craft spec section 3.5)
+
+A way groups the cultures of `data/cultures_game.json` by how their realms live (`technologies.json` `ways`). Way technologies are seen and researched only by realms whose dominant culture is in the way (`allow_branch` with `zin_way_<key>`, an OR of `zin_is_culture_<culture>`). Each way's line stands in the folder of its craft, and the line weighs 60 for the AI. A realm starts with its way's start-era rows (before 1746).
+
+| Way | Cultures | Realms | Folder | Technologies | Large tiles, units |
+| --- | --- | ---: | --- | ---: | --- |
+| Riders of the Steppe | steppe_rider | 2 | Mounts and Kin | 5 | Steppe Breeds (war mounts `_1`, horse archers) |
+| Peoples of the Sand | noris_riders, naamis_sea_crown, miaed_pass_lords, wahatud_oasis_folk | 4 | Mounts and Kin | 5 | War Elephants and Towered Elephants (new equipment `zin_elephant_equipment_0`/`_1`, new sub-unit `zin_men_war_elephants`); camel riders |
+| River and Road Cities | caravan_princes, river_kings, lake_road_cities, red_lands_tribunes, quay_folk | 15 | Craft and Works | 4 | - |
+| Sea-Kings of the North | leren_sea_kings, free_crowns_north | 10 | Galleys and Warships | 3 | Longships (raider hull `_0`) |
+| Island Folk | chart_islanders, corsair_lords, southern_islanders, orato_fishers | 20 | Galleys and Warships | 4 | Outrigger Galleys (galley hull `_1`) |
+| Folk of the Long Winter | winter_crown, ice_clans, vindael_seafarers, reindeer_clans, woqood_sealers | 16 | Camp and Road | 4 | Reindeer Sledges (pack trains `_1`) |
+| Folk of the Deep Woods | veiled_folk, redbark_tribes, selen_ranger | 3 | Camp and Road | 3 | rangers |
+| Clans and Guilds of the West | gunwyn_clans, girdon_wardens, western_guilds, buldor_companies | 11 | Arms and Armour | 3 | - |
+| Iron Warlords | dondor_brutes, melkgard_warlords | 3 | Arms and Armour | 3 | - |
+| Wardens of the Passes | mirolon_wardens, ember_freeholds | 4 | Engines and Walls | 3 | - |
+| The Lake Crowns | lake_aenoran and seven more Aenoran cultures | 12 | Letters and Beacons | 4 | - |
+| Hearth and Holt | hearth_folk, holt_gnomes | 3 | Craft and Works | 3 | - |
+| The Warrens | goblin_warrens, road_warrens, king_warrens, spring_warrens | 4 | Craft and Works | 3 | - |
+
+13 ways, 47 technologies (6 large), plus Hold Engineers (1752) as the dwarf holds' third craft. The elves, Sunhot, orc holds, kin, dead and demons keep their existing people lines as their ways. A test refuses two way technologies of different ways with the same effects, so no line copies another.
+
+**War elephants (new).** The equipment archetype `zin_elephant_equipment` has `_0` War Elephants (1730) and `_1` Towered Elephants (1758). It is produced only by the desert cultures (`can_be_produced` on their culture flags) and costs 2 Horses. The sub-unit `zin_men_war_elephants` (armor group, width 3, hardness 0.4) is strong on desert and plains and weak in forest, marsh, mountains and towns. Its counter is on the ZIN frame; it borrows the infantry model like the camel riders (decision P13). The start template "Elephant Host" is used by the desert realms (`forces_templates.json`, cultural weight `elephant`). The warfare spec sections 3 and 4.1 are updated.
+
+## Development tiers (craft spec section 3.6)
+
+| Tier | Start packages | Realms at start | Advanced-learning research cost | AI weight on advanced techs |
+| --- | --- | ---: | ---: | ---: |
+| Learned | Concord, Great crowns, Elves, Sunhot | 84 | +0 | ×1 |
+| Settled | Island and sea, Common men, Dominion | 32 | +30 per cent | ×0.5 |
+| Of custom | Tribal, Orcs, the four kin packages, Nether | 39 | +75 per cent | ×0.25 |
+| None | Mistake (Zol) | 1 | - | - |
+
+- **Advanced learning:** 102 common technologies of 1746 and later carry the category `cat_zin_advanced`. A people's own craft and every way line are excluded. The dynamic modifier `zin_development` sets `cat_zin_advanced_cost_factor = zin_dev_advanced_cost`, with the value taken from the script constants `zin_development.<tier>_cost`.
+- **Effort, never a free event:** each of the following adds one point of learning, and every 3 points lift the realm one tier (`zin_development_learn`, documented in `docs/zin_dynamic_effects.md`):
+  - researching Libraries, Universities, Scholars' Conclaves or Royal Academies;
+  - the decision "Send Students to Learned Lands" (50 political power, once a year, needs a learned neighbour or league partner);
+  - the decision "Endow a House of Learning" (100 political power, every two years, needs Libraries and three workshops).
+- **AI:** the AI weight of advanced techs is multiplied by 0.5 for settled realms and 0.25 for realms of custom; way lines weigh 60; the decisions weigh 3 and 2, and 0 at war.
+
+## MCP evidence (K58)
+
+- **Renders.** Workspace `k51after` (the staged technology and warfare output over the applied mod, private config) gave a scan, seven folder renders (`TECH_RENDERED` for Mounts, Naval, Camp, Arms, Engines, Craft and Letters) and a lint. Output is in `scratchpad/k51/k58/`. The steppe line (with its AND join into Steppe Remounts) and the desert line (both elephant tiles large, the Salt Roads split) were checked in the Mounts render. The four new Craft and Works lines were checked in the Craft render.
+- **Compare.** `hoi4_tech_inspect` mode `compare` on the applied mod, with 37 staged technology, unit, equipment, interface and localisation files as overlays (`scratchpad/k51/k58c/`):
+  - 0 regressions and 0 newly orphaned technologies;
+  - 102 technologies added and newly reachable since the applied tree (54 of K51 and 48 of K58); 26 unlocks added; 117 edges added and 2 removed;
+  - introduced: only the 2 known `TECH_SUSPICIOUS_IDENTICAL_SIGNATURE` design warnings of K51.
+- **Layout check.** The build's geometry check passes for every folder with the way lines in place.
+
+## Verification (K58)
+
+- `node --test content/technologies.test.mjs content/warfare.test.mjs content/forces.test.mjs` passes 181 of 181. The new tests: "K58 ways of life" (13 ways, triggers, hidden roots, at least three technologies each, AI weight, realms, start knowledge, no copied effects, the six large tiles, the elephants) and "K58 development" (tiers, constants, the modifier, effects, start call, tiers per realm, the learning sources, the decisions, the advanced category on exactly the right technologies, the AI factors, text).
+- **Shared tree run (`rgt`).** The build stopped on 5 `UNIQ_PORTRAIT_POOL` asset errors in `common/characters` from the portrait and character work in progress.
+- **Worktree run (HEAD plus only the K58 and K51 files).** The build exits 0, and the suite passes 1686 of 1692 (4 skipped). The 2 failures are outside this work:
+  - "Every country has a generated flag; every staged art source traces to a recorded generation": an untracked realm-flag source from the flag redesign.
+  - "The build is deterministic": two builds of the worktree differ only in `art/source/provenance.jsonl`, the art store's generation log that the flag and portrait work is writing.
+- **Not observed in game:**
+  - that the engine creates `cat_zin_advanced_cost_factor` for a mod category; the documentation's modifier list names every `cat_` category of the loaded game, and vanilla uses `cat_battlefield_support_cost_factor`;
+  - the decisions' AI use;
+  - the elephants in battle;
+  - that a culture changed in play redraws the tree; `zin_culture_set` does not call `mark_technology_tree_layout_dirty`.
+- **Limits:**
+  - realms created in play get no tier;
+  - the way of a realm follows its dominant culture only, not its second culture.
+
+## Icons (K58)
+
+`docs/plans/zin-art/tech_icon_list.json` now lists 279 technologies (92 large, 187 small), and its `otherSprites` section lists:
+- the five development sprites: modifier icon, decision category icon and picture, two decision icons (`interface/zin_development.gfx`, all on the ZIN frame until drawn);
+- the two elephant equipment pictures and the archetype picture;
+- the war elephants' counters, which follow the bespoke-counter rule for custom units.
+
+The war elephants' own 3D model, sounds and counters are pending; they follow the 3D pipeline rules of `CLAUDE.md`.
+
+## Owner questions (K58)
+
+1. **Groupings.** Are the thirteen ways right? For example, should Selen's rangers be with the forest tribes, the Konori with the steppe, and the Lake Crowns cover all eight Aenoran cultures?
+2. **Elephants.** War elephants are new to the canon of Aoaz (proposed from the owner's example). Which desert realms keep them, and should they be rare beasts from the far south?
+3. **Tier assignment.** Is the start package a fair measure of development? Any realm should move.
+4. **Penalties.** Is +75 per cent research for realms of custom (and +30 for settled) the right weight, and is three steps of learning per tier the right pace?

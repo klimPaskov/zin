@@ -4,7 +4,7 @@
   "note": "Ids that technologies and doctrines name but other modules write (warfare.mjs: sub-units, equipment, unit tags, ship modules; economy.mjs: buildings and specialisations; the rules module: game rules). The technology module checks every id it writes against these lists, and the integration note repeats them as dependencies. A variant id is <archetype>_<n> with 0 <= n <= 5.",
   "subUnits": [
     "zin_men_levy", "zin_men_infantry", "zin_men_archers", "zin_men_handgunners", "zin_men_heavy_infantry", "zin_men_hill_companies", "zin_men_sea_soldiers", "zin_men_rangers",
-    "zin_men_cavalry", "zin_men_horse_archers", "zin_men_knights", "zin_men_camel_riders", "zin_men_temple_wardens",
+    "zin_men_cavalry", "zin_men_horse_archers", "zin_men_knights", "zin_men_camel_riders", "zin_men_war_elephants", "zin_men_temple_wardens",
     "zin_elves_warden", "zin_elves_archers", "zin_elves_riders", "zin_elves_rangers", "zin_sun_elves_guard", "zin_sun_elves_bowmen",
     "zin_orcs_warrior", "zin_orcs_goblins", "zin_orcs_raiders", "zin_ogres_brutes", "zin_abyss_folk",
     "zin_trolls_brute", "zin_giants_host", "zin_giants_hurlers", "zin_ents_grove", "zin_yeti_band",
@@ -17,7 +17,7 @@
     "zin_air_griffin_riders", "zin_air_dragon_flight"
   ],
   "archetypes": [
-    "zin_arms_equipment", "zin_bows_equipment", "zin_armour_equipment", "zin_mounts_equipment", "zin_elven_arms_equipment", "zin_camp_equipment", "zin_ward_equipment",
+    "zin_arms_equipment", "zin_bows_equipment", "zin_armour_equipment", "zin_mounts_equipment", "zin_elephant_equipment", "zin_elven_arms_equipment", "zin_camp_equipment", "zin_ward_equipment",
     "zin_catapult_equipment", "zin_trebuchet_equipment", "zin_ballista_equipment", "zin_scorpion_equipment", "zin_bombard_equipment", "zin_handgun_equipment",
     "zin_troll_gear_equipment", "zin_giant_gear_equipment", "zin_ent_grove_equipment", "zin_yeti_gear_equipment", "zin_ogre_gear_equipment",
     "zin_grave_arms_equipment", "zin_nether_arms_equipment", "zin_deathless_equipment", "zin_griffin_equipment", "zin_dragon_equipment",
