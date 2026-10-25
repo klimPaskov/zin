@@ -23,7 +23,7 @@ import { parse } from '../lib/clausewitz.mjs';
 import { compileBanned, findBanned } from '../lib/banned.mjs';
 import { loadCountryTable } from './countries.mjs';
 import { prepareModel as prepareTech, technologyPackages, startFor } from './technologies.mjs';
-import { cultureRows } from '../lib/roster.mjs';
+import { cultureRows, GUNPOWDER_FLAG } from '../lib/roster.mjs';
 import { shipModuleRows } from './warfare.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -233,6 +233,7 @@ export async function prepareModel(ctx, raw0 = null, staged = null) {
     for (const a of Object.keys(row)) if (!archetypes.has(a)) P(`production ${pk}: unknown archetype ${a}`);
   }
   for (const a of ai.production.never) if (!archetypes.has(a)) P(`production: unknown archetype ${a} in never`);
+  for (const [a, v] of Object.entries(ai.production.powder ?? {})) if (typeof v === 'number' && !archetypes.has(a)) P(`production: unknown archetype ${a} in powder`);
   for (const a of Object.keys(ai.production.surplus)) if (!archetypes.has(a)) P(`production: unknown archetype ${a} in surplus`);
   for (const a of Object.keys(ai.production.minFactories)) if (!archetypes.has(a)) P(`production: unknown archetype ${a} in minFactories`);
   const shipIds = ['zin_ship_galley', 'zin_ship_warship', 'zin_ship_great_warship', 'zin_ship_raider'];
@@ -674,6 +675,8 @@ function productionStrategies(model) {
     for (const a of Object.keys(v).sort(byEn)) L.push(strat('equipment_variant_production_factor', a, v[a] - 100));
     out.push(stratBlock(`zin_default_production_${slugOf(key)}`, peopleEnable(model, key), L, `Factory mix and equipment lines of ${labelOf(key)}`));
   }
+  // The black-powder realms (K19): hand-guns and bombards on top of their people's lines; the flag is set in their history or by the story.
+  if (P.powder) out.push(stratBlock('zin_default_production_powder', [`has_country_flag = ${GUNPOWDER_FLAG}`], Object.keys(P.powder).filter(a => typeof P.powder[a] === 'number').sort(byEn).map(a => strat('equipment_variant_production_factor', a, P.powder[a] - 100)), 'Bombards and hand-guns of the black-powder realms'));
   out.push(stratBlock('zin_default_production_never', ['always = yes'], P.never.slice().sort(byEn).map(a => strat('equipment_variant_production_factor', a, -100)), 'Granted and unproducible equipment is never produced'));
   out.push(stratBlock('zin_default_production_types', ['always = yes'], Object.entries(P.types).map(([t, w]) => strat('equipment_production_factor', t, w - 100)), 'How many of each equipment type'));
   out.push(stratBlock('zin_default_production_no_skies', ['NOT = { zin_rules_skies_present = yes }'], [strat('equipment_production_factor', 'anti_air', -100)], 'No scorpions when the sky rule is none'));

@@ -857,7 +857,7 @@ export function aenorScripts(D, T) {
     else_if = {
     	limit = { zin_rules_ai_random_aenor = yes }
     	random_list = {
-    		${D.camps.map(c => list('5 = {', c.key === 'host' ? 'trigger = { zin_aenor_host_available = yes }' : '',
+    		${D.camps.map(c => list('5 = {', c.key === 'host' ? 'modifier = {\nfactor = 0\nNOT = { zin_aenor_host_available = yes }\n}' : '',
       `modifier = {\nadd = 10\ncheck_variable = { zin_aenor_camp_${c.key} > 24 }\n}`, `modifier = {\nadd = 20\ncheck_variable = { zin_aenor_camp_${c.key} > 49 }\n}`,
       `set_variable = { zin_aenor_ai_camp = ${c.code} }`, '}')).join('\n')}
     	}

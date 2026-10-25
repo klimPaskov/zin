@@ -16,6 +16,7 @@ import { writeAbilities, writeUnitLeaderTraits, hqUnitText } from './lib/inst_wa
 import { writeOperations, writeAgencies } from './lib/inst_intrigue.mjs';
 import { writeWorkshops } from './lib/inst_craft.mjs';
 import { assertDefinesExist } from './modules/defines.mjs';
+import { identifiersOf as identifiersIn } from './modules/economy.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const countries = countryTable();
@@ -299,7 +300,10 @@ test('AI strategies: only types the installed game documents; market never offer
   const s = text('common/ai_strategy/zin_institutions.txt'), used = new Set([...s.matchAll(/type = (\w+)/g)].map(m => m[1]));
   for (const t of used) assert(types.has(t) || ['become_head_of_crypto', 'become_head_of_operations'].includes(t), `unknown AI strategy type ${t}`);
   for (const t of ['equipment_market_for_sale_threshold', 'send_lend_lease_desire', 'intelligence_agency_branch_desire_factor', 'operative_operation', 'build_building']) assert(used.has(t), t);
-  assert(s.includes('id = zin_hull_warship') && s.includes('value = 1000000'));
+  // A market strategy names an equipment type, as vanilla does (an archetype id is a malformed token there).
+  assert(s.includes('id = capital_ship') && s.includes('value = 1000000'));
+  const categories = new Set(identifiersIn(await readFile(`${GAME}/common/script_enums.txt`, 'utf8'), 'script_enum_equipment_category'));
+  for (const m of s.matchAll(/type = equipment_market_\w+\s+id = (\w+)/g)) assert(categories.has(m[1]), `market strategy id ${m[1]} is not an equipment category`);
   assert.equal([...s.matchAll(/type = send_lend_lease_desire/g)].length, countries.filter(c => c.overlord).length);
 });
 

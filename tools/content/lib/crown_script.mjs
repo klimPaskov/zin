@@ -91,7 +91,10 @@ export function condLines(c, env, depth = 0) {
     case 'any': return block(c.any, flat((c.limit ?? []).map(x => condLines(x, env, depth + 1))));
     case 'target': env.used.targets.add(c.target.replace('event_target:', '')); return block(c.target, flat(c.is.map(x => condLines(x, env, depth + 1))));
     case 'opinion': return block('has_opinion', [`target = ${target(env, c.opinion)}`, `value ${c.op ?? '>'} ${c.value}`]);
-    case 'opinion_modifier': return block('has_opinion_modifier', [`target = ${target(env, c.target)}`, `modifier = ${c.opinion_modifier}`]);
+    // has_opinion_modifier takes a modifier name only and cannot name a target: the holder of the modifier carries the targeted flag
+    // <modifier>_<TAG of the target> beside it (set where the modifier is added, e.g. mech_crossing.mjs for zin_west_fought_beside).
+    // Inside the target's scope PREV is the holder, and inside PREV's scope PREV is the target again.
+    case 'opinion_modifier': return block(target(env, c.target), block('PREV', [`has_country_flag = ${c.opinion_modifier}_@PREV`]));
     case 'raw': env.raw.n++; return c.raw;
     case 'faction_with': case 'subject_of': case 'war': case 'tag': case 'flag': case 'gflag': case 'idea': return strCond(`${k}:${c[k]}`, env, depth);
     default: throw new Error(`Unknown condition ${JSON.stringify(c)}`);

@@ -287,13 +287,18 @@ export function zolScripts(D, T) {
     		random_list = {
     			40 = { }
     			30 = {
-    				trigger = { has_country_flag = zin_zol_muster_sodoloro }
+    				modifier = { factor = 0 NOT = { has_country_flag = zin_zol_muster_sodoloro } }
     				set_temp_variable = { zin_site = 2 }
     			}
     			40 = {
-    				trigger = {
-    					has_country_flag = zin_zol_muster_islands
-    					check_variable = { zin_zol_islands_stirring > 0 }
+    				modifier = {
+    					factor = 0
+    					NOT = {
+    						AND = {
+    							has_country_flag = zin_zol_muster_islands
+    							check_variable = { zin_zol_islands_stirring > 0 }
+    						}
+    					}
     				}
     				set_temp_variable = { zin_site = 3 }
     			}
@@ -711,23 +716,24 @@ export function zolScripts(D, T) {
     }
     country_event = { id = zin_mistake.6 }`);
 
-  // A service falters: one order with two or more points loses one.
+  // A service falters: one order with two or more points loses one. A random_list option is ruled out with modifier = { factor = 0 }
+  // (vanilla); HOI4 reads no trigger block there ("Invalid effect 'trigger'").
   effects.zin_zol_falter = dedent(`
     # Scope: Zol. The text never gives a reason.
     set_temp_variable = { zin_lost = 0 }
     random_list = {
     	1 = {
-    		trigger = { ${ge('zin_zol_bond_great', 2)} }
+    		modifier = { factor = 0 check_variable = { zin_zol_bond_great < 2 } }
     		add_to_variable = { zin_zol_bond_great = -1 }
     		set_temp_variable = { zin_lost = 1 }
     	}
     	1 = {
-    		trigger = { ${ge('zin_zol_bond_lesser', 2)} }
+    		modifier = { factor = 0 check_variable = { zin_zol_bond_lesser < 2 } }
     		add_to_variable = { zin_zol_bond_lesser = -1 }
     		set_temp_variable = { zin_lost = 2 }
     	}
     	1 = {
-    		trigger = { ${ge('zin_zol_bond_divine', 2)} }
+    		modifier = { factor = 0 check_variable = { zin_zol_bond_divine < 2 } }
     		add_to_variable = { zin_zol_bond_divine = -1 }
     		set_temp_variable = { zin_lost = 3 }
     	}

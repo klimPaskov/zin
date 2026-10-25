@@ -48,6 +48,10 @@ export const GAME_PEOPLE = {
   mycids: 'elves',         // the peoples spec's proposal: mycids live inside an elven realm's kit
 };
 export const KIT_PEOPLE = ['men', 'elves', 'sun_elves', 'giants', 'ents', 'yeti', 'trolls', 'orcs', 'the_dead', 'demons'];
+// The country flag of the black-powder realms (the roster's gunpowder field, owner decision K19): set in their history by the country
+// package and given by the story to a realm that buys powder (the delving holds' event powder_offered). Equipment, technologies and AI
+// read it; can_be_produced may test it, as it tests only engine triggers.
+export const GUNPOWDER_FLAG = 'zin_gunpowder';
 export const gamePeopleOf = people => (KIT_PEOPLE.includes(people) ? people : GAME_PEOPLE[people] ?? (() => { throw new Error(`No game people for the roster people ${people}`); })());
 
 let cache = null;

@@ -162,6 +162,65 @@
    ]
   },
   {
+   "id": "zin_handgun_equipment",
+   "name": "Hand-Guns",
+   "desc": "Iron tubes on wooden stocks, loaded with black powder and a lead ball. A hand-gun is slow to load and loud enough to frighten horses, and its ball goes through mail.",
+   "type": "infantry",
+   "prod": [
+    "flag:zin_gunpowder"
+   ],
+   "res": {
+    "steel": 1,
+    "aluminium": 1
+   },
+   "cost": 0.6,
+   "rel": 0.8,
+   "base": {
+    "sa": 11,
+    "ha": 1.5,
+    "def": 10,
+    "brk": 2.5,
+    "ap": 9,
+    "arm": 0,
+    "hard": 0
+   },
+   "b": 1,
+   "g": {
+    "sa": 0.15,
+    "ha": 0.2,
+    "def": 0.04,
+    "brk": 0.1
+   },
+   "apStep": 1,
+   "armStep": 0,
+   "variants": [
+    {
+     "n": 0,
+     "year": 1650,
+     "name": "Touch-Hole Hand-Guns",
+     "desc": "A short iron tube fired with a glowing match held to the touch-hole."
+    },
+    {
+     "n": 1,
+     "year": 1720,
+     "name": "Matchlocks",
+     "desc": "A lever brings the burning match down to the pan, and the gunner keeps both eyes on the foe."
+    },
+    {
+     "n": 2,
+     "year": 1752,
+     "name": "Long Matchlocks",
+     "desc": "Longer barrels of better iron throw the ball further and straighter."
+    },
+    {
+     "n": 3,
+     "year": 1760,
+     "name": "Arquebuses",
+     "desc": "Heavy hand-guns fired from a forked rest. Their ball stops a knight in plate."
+    }
+   ]
+  },
+  {
    "id": "zin_armour_equipment",
    "name": "Mail and Plate",
    "desc": "Mail shirts, helms and plate harness for the men who stand in front.",
@@ -686,6 +745,71 @@
      "year": 1772,
      "name": "Master Scorpions",
      "desc": "Scorpions with a longer reach and a steadier aim."
+    }
+   ]
+  },
+  {
+   "id": "zin_bombard_equipment",
+   "name": "Bombards",
+   "desc": "Iron and bronze tubes that throw stone and iron balls with black powder. They batter down walls that a trebuchet only scars.",
+   "type": "artillery",
+   "prod": [
+    "flag:zin_gunpowder"
+   ],
+   "res": {
+    "steel": 2,
+    "tungsten": 1
+   },
+   "cost": 7,
+   "rel": 0.7,
+   "base": {
+    "sa": 30,
+    "ha": 6,
+    "def": 4,
+    "brk": 3,
+    "ap": 14,
+    "arm": 0,
+    "hard": 0
+   },
+   "b": 1,
+   "g": {
+    "sa": 0.12,
+    "ha": 0.15,
+    "def": 0.05,
+    "brk": 0.08
+   },
+   "apStep": 1,
+   "armStep": 0,
+   "variants": [
+    {
+     "n": 0,
+     "year": 1600,
+     "name": "Hooped Iron Bombards",
+     "desc": "Iron staves hooped like a barrel. They burst now and then, and the crews know it."
+    },
+    {
+     "n": 1,
+     "year": 1700,
+     "name": "Cast Bronze Bombards",
+     "desc": "Bombards cast whole in bronze, which bends before it bursts."
+    },
+    {
+     "n": 2,
+     "year": 1749,
+     "name": "Corned-Powder Bombards",
+     "desc": "Powder pressed wet into grains burns evenly and throws the ball harder."
+    },
+    {
+     "n": 3,
+     "year": 1756,
+     "name": "Culverins",
+     "desc": "Long, lighter pieces on wheeled carriages that keep up with the host."
+    },
+    {
+     "n": 4,
+     "year": 1764,
+     "name": "Great Bombards",
+     "desc": "Pieces so heavy that a team of oxen draws each one. Their shot breaks a gate tower in a day."
     }
    ]
   },
@@ -1245,39 +1369,6 @@
      "desc": "An old spirit bound to the host."
     }
    ]
-  },
-  {
-   "id": "zin_zol_manifestation_equipment",
-   "name": "Zol Made Flesh",
-   "desc": "Zol shown to the field. It cannot be made, traded or kept.",
-   "type": "support",
-   "prod": [],
-   "granted": true,
-   "res": {},
-   "cost": 0.1,
-   "rel": 1,
-   "base": {
-    "sa": 100,
-    "ha": 60,
-    "def": 0,
-    "brk": 0,
-    "ap": 300,
-    "arm": 0,
-    "hard": 0
-   },
-   "b": 0,
-   "g": {},
-   "apStep": 0,
-   "armStep": 0,
-   "active": true,
-   "variants": [
-    {
-     "n": 0,
-     "year": 1600,
-     "name": "Zol Made Flesh",
-     "desc": "Zol shown to the field."
-    }
-   ]
   }
  ],
  "logistics": [
@@ -1480,7 +1571,8 @@
     "zin_troll_gear_equipment",
     "zin_giant_gear_equipment",
     "zin_yeti_gear_equipment",
-    "zin_ogre_gear_equipment"
+    "zin_ogre_gear_equipment",
+    "zin_handgun_equipment"
    ]
   },
   {
@@ -1518,7 +1610,8 @@
     "zin_catapult_equipment",
     "zin_trebuchet_equipment",
     "zin_ballista_equipment",
-    "zin_scorpion_equipment"
+    "zin_scorpion_equipment",
+    "zin_bombard_equipment"
    ]
   },
   {
@@ -1562,7 +1655,6 @@
     "zin_glo_blade_equipment",
     "zin_volgan_presence_equipment",
     "zin_great_spirit_equipment",
-    "zin_zol_manifestation_equipment",
     "zin_dragon_equipment"
    ]
   }

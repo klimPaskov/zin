@@ -5,6 +5,7 @@
  "roles": ["infantry", "garrison", "mobile", "armor", "siege_role", "marines", "rangers_role"],
  "templates": {
   "men_line_host": { "name": "Line Host", "role": "infantry", "people": ["men"], "needs": ["zin_men_infantry"], "options": [
+   { "regiments": [["zin_men_infantry", 6], ["zin_men_handgunners", 2]], "support": ["zin_support_scouts", "zin_support_sappers"] },
    { "regiments": [["zin_men_infantry", 6], ["zin_men_archers", 2]], "support": ["zin_support_scouts", "zin_support_sappers"] },
    { "regiments": [["zin_men_infantry", 8]], "support": ["zin_support_scouts", "zin_support_sappers"] } ] },
   "men_levy_garrison": { "name": "Levy Garrison", "role": "garrison", "people": ["men"], "needs": ["zin_men_levy"], "reserve": true, "options": [
@@ -19,6 +20,7 @@
    { "regiments": [["zin_men_knights", 2], ["zin_men_cavalry", 2], ["zin_men_heavy_infantry", 2]], "support": ["zin_support_ballistae"] },
    { "regiments": [["zin_men_knights", 2], ["zin_men_cavalry", 2], ["zin_men_infantry", 2]], "support": ["zin_support_ballistae"] } ] },
   "men_siege_train": { "name": "Siege Park", "role": "siege_role", "people": ["men"], "needs": ["zin_siege_catapult"], "options": [
+   { "regiments": [["zin_siege_bombard", 2], ["zin_siege_catapult", 1], ["zin_men_infantry", 3]], "support": ["zin_support_sappers", "zin_support_bombards"] },
    { "regiments": [["zin_siege_trebuchet", 2], ["zin_siege_catapult", 2], ["zin_men_infantry", 2]], "support": ["zin_support_sappers"] },
    { "regiments": [["zin_siege_catapult", 3], ["zin_men_infantry", 3]], "support": ["zin_support_sappers", "zin_support_catapults"] } ] },
   "men_sea_soldiers": { "name": "Sea Soldiers", "role": "marines", "people": ["men"], "needs": ["zin_men_sea_soldiers"], "options": [
@@ -61,6 +63,7 @@
   "orcs_raiders": { "name": "Raiders", "role": "mobile", "people": ["orcs"], "needs": ["zin_orcs_raiders"], "options": [
    { "regiments": [["zin_orcs_raiders", 4], ["zin_orcs_warrior", 2]], "support": ["zin_support_scouts"] } ] },
   "orcs_siege": { "name": "Siege Band", "role": "siege_role", "people": ["orcs"], "needs": ["zin_siege_catapult"], "options": [
+   { "regiments": [["zin_siege_bombard", 2], ["zin_orcs_warrior", 4]], "support": ["zin_support_bombards", "zin_support_scouts"] },
    { "regiments": [["zin_siege_catapult", 2], ["zin_orcs_warrior", 4]], "support": ["zin_support_catapults", "zin_support_scouts"] } ] },
   "orcs_garrison": { "name": "Goblin Watch", "role": "garrison", "people": ["orcs"], "needs": ["zin_orcs_goblins"], "reserve": true, "options": [
    { "regiments": [["zin_orcs_goblins", 4]], "support": [] } ] },

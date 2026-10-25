@@ -283,7 +283,7 @@ if (uiEnforced.length) throw new Error(uiEnforced.map(c => `ui check ${c.id} ${c
 // Engine-form checks (checks/engine_forms.mjs): forms the game rejects, from the error log of the first integrated run. Over the finished
 // script tree, the pending stand-ins included.
 const engineForms = checkEngineForms(staged.files);
-console.error(`engine forms: ${engineForms.errors.length} problems; reported, not enforced: recruit_character in ${engineForms.reported.recruit_in_game.length} in-game effects, has_opinion_modifier with a block in ${engineForms.reported.opinion_check_block.length} places`);
+console.error(`engine forms: ${engineForms.errors.length} problems; reported, not enforced: recruit_character in ${engineForms.reported.recruit_in_game.length} in-game effects; state_trigger on an AI strategy type that reads none in ${engineForms.reported.strategy_state_trigger.length} places (${engineForms.reported.strategy_state_trigger.join(", ") || "none"})`);
 assertEngineForms(engineForms);
 // Asset manifest and completeness check (docs/specs/08_art_and_assets/05_asset_manifest.md): the very last step, so it
 // sees every staged file. It reports everything and fails only on errors that docs/design/validation/asset_baseline.json

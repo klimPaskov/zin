@@ -23,6 +23,7 @@
   "zin_men_archers",
   "zin_men_camel_riders",
   "zin_men_cavalry",
+  "zin_men_handgunners",
   "zin_men_heavy_infantry",
   "zin_men_hill_companies",
   "zin_men_horse_archers",
@@ -40,12 +41,14 @@
   "zin_ship_great_warship",
   "zin_ship_raider",
   "zin_ship_warship",
+  "zin_siege_bombard",
   "zin_siege_catapult",
   "zin_siege_trebuchet",
   "zin_sun_elves_bowmen",
   "zin_sun_elves_guard",
   "zin_support_armourers",
   "zin_support_ballistae",
+  "zin_support_bombards",
   "zin_support_catapults",
   "zin_support_healers",
   "zin_support_heralds",
@@ -61,8 +64,7 @@
   "zin_volgan_presence",
   "zin_yeti_band",
   "zin_zol_deathless",
-  "zin_zol_deathless_crews",
-  "zin_zol_manifestation"
+  "zin_zol_deathless_crews"
  ],
  "landSubUnits": [
   "zin_abyss_folk",
@@ -84,6 +86,7 @@
   "zin_men_archers",
   "zin_men_camel_riders",
   "zin_men_cavalry",
+  "zin_men_handgunners",
   "zin_men_heavy_infantry",
   "zin_men_hill_companies",
   "zin_men_horse_archers",
@@ -97,12 +100,14 @@
   "zin_orcs_goblins",
   "zin_orcs_raiders",
   "zin_orcs_warrior",
+  "zin_siege_bombard",
   "zin_siege_catapult",
   "zin_siege_trebuchet",
   "zin_sun_elves_bowmen",
   "zin_sun_elves_guard",
   "zin_support_armourers",
   "zin_support_ballistae",
+  "zin_support_bombards",
   "zin_support_catapults",
   "zin_support_healers",
   "zin_support_heralds",
@@ -118,8 +123,7 @@
   "zin_volgan_presence",
   "zin_yeti_band",
   "zin_zol_deathless",
-  "zin_zol_deathless_crews",
-  "zin_zol_manifestation"
+  "zin_zol_deathless_crews"
  ],
  "archetypes": [
   "convoy",
@@ -128,6 +132,7 @@
   "zin_armour_equipment",
   "zin_arms_equipment",
   "zin_ballista_equipment",
+  "zin_bombard_equipment",
   "zin_bows_equipment",
   "zin_camp_equipment",
   "zin_catapult_equipment",
@@ -140,6 +145,7 @@
   "zin_grave_arms_equipment",
   "zin_great_spirit_equipment",
   "zin_griffin_equipment",
+  "zin_handgun_equipment",
   "zin_hull_galley",
   "zin_hull_great_warship",
   "zin_hull_raider",
@@ -153,8 +159,7 @@
   "zin_troll_gear_equipment",
   "zin_volgan_presence_equipment",
   "zin_ward_equipment",
-  "zin_yeti_gear_equipment",
-  "zin_zol_manifestation_equipment"
+  "zin_yeti_gear_equipment"
  ],
  "equipmentTypes": [
   "convoy_1",
@@ -177,6 +182,11 @@
   "zin_ballista_equipment_0",
   "zin_ballista_equipment_1",
   "zin_ballista_equipment_2",
+  "zin_bombard_equipment_0",
+  "zin_bombard_equipment_1",
+  "zin_bombard_equipment_2",
+  "zin_bombard_equipment_3",
+  "zin_bombard_equipment_4",
   "zin_bows_equipment_0",
   "zin_bows_equipment_1",
   "zin_bows_equipment_2",
@@ -210,6 +220,10 @@
   "zin_griffin_equipment_0",
   "zin_griffin_equipment_1",
   "zin_griffin_equipment_2",
+  "zin_handgun_equipment_0",
+  "zin_handgun_equipment_1",
+  "zin_handgun_equipment_2",
+  "zin_handgun_equipment_3",
   "zin_hull_galley_0",
   "zin_hull_galley_1",
   "zin_hull_galley_2",
@@ -246,8 +260,7 @@
   "zin_ward_equipment_3",
   "zin_yeti_gear_equipment_0",
   "zin_yeti_gear_equipment_1",
-  "zin_yeti_gear_equipment_2",
-  "zin_zol_manifestation_equipment_0"
+  "zin_yeti_gear_equipment_2"
  ],
  "groupsOfEquipment": [
   "zin_group_armourers",
@@ -312,8 +325,7 @@
   "zin_glo_blade_equipment",
   "zin_great_spirit_equipment",
   "zin_shachihata_equipment",
-  "zin_volgan_presence_equipment",
-  "zin_zol_manifestation_equipment"
+  "zin_volgan_presence_equipment"
  ],
  "unlock": {
   "zin_abyss_folk": "script",
@@ -337,6 +349,7 @@
   "zin_men_archers": "tech",
   "zin_men_camel_riders": "tech",
   "zin_men_cavalry": "tech",
+  "zin_men_handgunners": "tech",
   "zin_men_heavy_infantry": "tech",
   "zin_men_hill_companies": "tech",
   "zin_men_horse_archers": "tech",
@@ -354,12 +367,14 @@
   "zin_ship_great_warship": "tech",
   "zin_ship_raider": "tech",
   "zin_ship_warship": "tech",
+  "zin_siege_bombard": "tech",
   "zin_siege_catapult": "tech",
   "zin_siege_trebuchet": "tech",
   "zin_sun_elves_bowmen": "tech",
   "zin_sun_elves_guard": "tech",
   "zin_support_armourers": "tech",
   "zin_support_ballistae": "tech",
+  "zin_support_bombards": "tech",
   "zin_support_catapults": "tech",
   "zin_support_healers": "tech",
   "zin_support_heralds": "tech",
@@ -375,14 +390,14 @@
   "zin_volgan_presence": "grant",
   "zin_yeti_band": "tech",
   "zin_zol_deathless": "tech",
-  "zin_zol_deathless_crews": "tech",
-  "zin_zol_manifestation": "grant"
+  "zin_zol_deathless_crews": "tech"
  },
  "recruit": {
   "men": [
    "zin_men_levy",
    "zin_men_infantry",
    "zin_men_archers",
+   "zin_men_handgunners",
    "zin_men_heavy_infantry",
    "zin_men_hill_companies",
    "zin_men_sea_soldiers",
@@ -495,6 +510,9 @@
   "zin_men_cavalry": [
    "men"
   ],
+  "zin_men_handgunners": [
+   "men"
+  ],
   "zin_men_heavy_infantry": [
    "men"
   ],
@@ -542,6 +560,11 @@
    "orcs",
    "country:Puvulan"
   ],
+  "zin_siege_bombard": [
+   "men",
+   "orcs",
+   "demons"
+  ],
   "zin_siege_catapult": [
    "men",
    "elves",
@@ -573,6 +596,11 @@
    "sun_elves",
    "giants",
    "country:Puvulan"
+  ],
+  "zin_support_bombards": [
+   "men",
+   "orcs",
+   "demons"
   ],
   "zin_support_catapults": [
    "men",
@@ -651,8 +679,7 @@
   ],
   "zin_zol_deathless_crews": [
    "country:Zol's Mistake"
-  ],
-  "zin_zol_manifestation": []
+  ]
  },
  "hostGroupByCulture": "ZIN_HOSTS_<CULTURE ID IN CAPITALS> (Zol: ZIN_HOSTS_ZOL; any other realm: ZIN_HOSTS)",
  "hostGroupByCountry": {

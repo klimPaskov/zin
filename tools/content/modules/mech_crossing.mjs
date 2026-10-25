@@ -327,9 +327,13 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     '# The scope joined Eindil\'s coalition (after zin_eindil_join_coalition): opinions both ways with the Host and the Aenor realms in it, the spirit, and the old claims are set aside.',
     L('if', 'limit = { has_variable = global.zin_eindil_host }',
       'save_event_target_as = zin_west_joiner',
-      // Both directions from the Host's scope: the target field of an opinion modifier takes no var: token.
+      // Both directions from the Host's scope: the target field of an opinion modifier takes no var: token. has_opinion_modifier
+      // cannot name a target, so each holder of the modifier also gets the flag zin_west_fought_beside_<TAG of the other> (a targeted
+      // flag); the Gunwaith tree and the endings test that flag. PREV is the joiner here, and the Host inside the joiner's scope.
       L('var:global.zin_eindil_host', 'add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }',
-        'reverse_add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }')),
+        'set_country_flag = zin_west_fought_beside_@PREV',
+        'reverse_add_opinion_modifier = { target = event_target:zin_west_joiner modifier = zin_west_fought_beside }',
+        'PREV = { set_country_flag = zin_west_fought_beside_@PREV }')),
     'add_ideas = zin_west_beside_former_foes',
     'if = { limit = { has_idea = zin_west_old_claims } remove_ideas = zin_west_old_claims }');
   dep('zin_eindil_host', 'global variable (country)', 'eindil_journey');
@@ -529,7 +533,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
       `country_event = { id = zin_west.65 days = ${C.pulse_days} }`)] });
   news(66, NEWS('generic_sea'), 'Some did not sail.');
   shown(70, EVT('generic_peace'), { options: opts(70, [
-    ['a', ['zin_west_bring_home_here = yes'], 60], ['b', ['zin_west_leave_some = yes', L('every_country', 'limit = { zin_aenor_is_realm = yes }', 'add_opinion_modifier = { target = PREV modifier = zin_west_fought_beside }')].flat(), 40]]) });
+    ['a', ['zin_west_bring_home_here = yes'], 60], ['b', ['zin_west_leave_some = yes', L('every_country', 'limit = { zin_aenor_is_realm = yes }', 'add_opinion_modifier = { target = PREV modifier = zin_west_fought_beside }', 'set_country_flag = zin_west_fought_beside_@PREV')].flat(), 40]]) });
   news(71, NEWS('generic_war'), 'A crown across the sea.');
   shown(72, EVT('war_king'), { options: opts(72, [
     ['a', [L('var:global.zin_eindil_host', 'save_event_target_as = zin_west_heir_host'), L('every_state', 'limit = { zin_is_site_parim = yes }', 'set_state_controller_to = event_target:zin_west_heir_host'), 'white_peace = event_target:zin_west_heir_host', 'set_temp_variable = { zin_arg_value = 25 }', 'zin_eindil_add_regard = yes'].flat(), 50], ['b', ['# Parim stays with its holder.'], 50]]) });

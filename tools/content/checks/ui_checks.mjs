@@ -9,6 +9,7 @@
 //   6 checkProvenance           7 checkLuminance  8 checkOverrides     9 checkDeterminism
 //   runUiChecks(ctx)            runs every check its inputs allow
 import { existsSync, readFileSync } from 'node:fs';
+import { droppedVanillaText } from '../lib/tech_tree_gui.mjs';
 import { createHash } from 'node:crypto';
 import { GAME } from '../lib/paths.mjs';
 import { parse } from '../lib/clausewitz.mjs';
@@ -241,7 +242,10 @@ export function checkOverrides({ files, game = GAME, allowed = OVERRIDE_FILES, v
     const src = vanilla.get(low), vbytes = typeof src === 'string' ? (existsSync(src) ? readFileSync(src) : null) : src;
     if (!vbytes) { pending.push(`${path}: no vanilla file to compare element names`); continue; }
     const want = elementNames(readText(vbytes)), have = elementNames(readText(bytes));
-    const lost = [...want].filter(n => !have.has(n)).sort(ord);
+    // The technology tree window drops the vanilla folders' windows, tabs and items on purpose (lib/tech_tree_gui.mjs): their names, and
+    // only theirs, are excused.
+    const excused = low === 'interface/countrytechtreeview.gui' ? elementNames(droppedVanillaText(readText(vbytes))) : new Set();
+    const lost = [...want].filter(n => !have.has(n) && !excused.has(n)).sort(ord);
     if (lost.length) problems.push({ code: 'overrides.dropped', name: path, message: `${path} drops ${lost.length} bound name(s) of the vanilla file: ${lost.slice(0, 8).join(', ')}` });
   }
   return result(8, 'overrides', problems, pending, { checked });

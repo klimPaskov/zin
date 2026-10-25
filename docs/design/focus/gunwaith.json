@@ -50,7 +50,7 @@
  },
  "scripted_triggers": {
   "zin_gunwaith_relief_possible": {"conditions":[{"or":[{"global_flag":"zin_eindil_named"},{"global_flag":"zin_afrit_revealed"},{"variable":{"name":"global.zin_gathering_dark","above":39}}]}]},
-  "zin_gunwaith_fought_beside": {"conditions":[{"raw":"has_opinion_modifier = {\n\ttarget = FROM\n\tmodifier = zin_west_fought_beside\n}"}]}
+  "zin_gunwaith_fought_beside": {"conditions":[{"raw":"has_country_flag = zin_west_fought_beside_@FROM"}]}
  },
  "opinion_modifiers": {
   "ford_brothers": {"name":"Brothers of the Ford","value":25},

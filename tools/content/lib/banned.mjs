@@ -56,11 +56,13 @@ export function findBanned(text, compiled, severities = null) {
   return hits;
 }
 
-// Does an allowance entry cover a rule id for a key in a file? A rule reference may end in * (a prefix match).
+// Does an allowance entry cover a rule id for a key in a file? A rule reference and a key may end in * (a prefix match: a key family
+// such as an equipment archetype with its variants, short names and descriptions).
+const matches = (p, s) => (p.endsWith('*') ? s.startsWith(p.slice(0, -1)) : p === s);
 export function allowanceCovers(allowance, ruleId, key, file) {
-  const ruleOk = (allowance.rules ?? []).some(p => p.endsWith('*') ? ruleId.startsWith(p.slice(0, -1)) : p === ruleId);
+  const ruleOk = (allowance.rules ?? []).some(p => matches(p, ruleId));
   if (!ruleOk) return false;
-  return (allowance.keys ?? []).includes(key) || (allowance.files ?? []).includes(file);
+  return (allowance.keys ?? []).some(k => matches(k, key ?? '')) || (allowance.files ?? []).includes(file);
 }
 
 // ------------------------------------------------------------------------------------------------ rule sets

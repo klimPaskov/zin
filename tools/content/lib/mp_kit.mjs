@@ -196,7 +196,8 @@ export class Kit {
     this.loc.set(spec.id, t.n); this.loc.set(`${spec.id}_desc`, t.d);
     this.art(`GFX_decision_${spec.id}`, spec.icon);
     const L = [`icon = ${spec.id}`, `allowed = {\n${spec.allowed ?? 'always = yes'}\n}`];
-    if (spec.state_trigger) L.push(`state_trigger = ${spec.state_trigger}`);
+    // The decision key is state_target ("Unexpected token: state_trigger"; vanilla writes state_target = yes for every state).
+    if (spec.state_trigger) L.push(`state_target = ${spec.state_trigger === 'any' ? 'yes' : spec.state_trigger}`);
     if (spec.targeted) {
       L.push(`target_root_trigger = {\n${spec.targeted.root ?? 'always = yes'}\n}`);
       L.push(`target_trigger = {\n${spec.targeted.trigger}\n}`);

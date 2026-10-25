@@ -21,11 +21,13 @@
   { "people": "men", "role": "infantry", "targets": [
    { "id": "line_host", "regiments": { "zin_men_infantry": 6, "zin_men_archers": 2 }, "support": { "zin_support_scouts": 1, "zin_support_sappers": 1 }, "prio": 1, "replace": "heavy_host", "at": 0.9, "min": 0.5 },
    { "id": "heavy_host", "regiments": { "zin_men_heavy_infantry": 4, "zin_men_archers": 2, "zin_siege_catapult": 1 }, "support": { "zin_support_sappers": 1, "zin_support_catapults": 1, "zin_support_healers": 1 }, "prio": 1, "enable": ["not_tier_c", "tech:zin_men_heavy_infantry"], "replace": "warded_host", "at": 0.9, "min": 0.5 },
-   { "id": "warded_host", "regiments": { "zin_men_heavy_infantry": 6, "zin_men_archers": 2 }, "support": { "zin_support_wardens": 1, "zin_support_sappers": 1 }, "prio": 1, "enable": ["not_tier_c", "flag:zin_zol_rising"] } ] },
+   { "id": "warded_host", "regiments": { "zin_men_heavy_infantry": 6, "zin_men_archers": 2 }, "support": { "zin_support_wardens": 1, "zin_support_sappers": 1 }, "prio": 1, "enable": ["not_tier_c", "flag:zin_zol_rising"] },
+   { "id": "powder_host", "regiments": { "zin_men_infantry": 6, "zin_men_handgunners": 2 }, "support": { "zin_support_scouts": 1, "zin_support_sappers": 1 }, "prio": 2, "enable": ["tech:zin_men_handgunners"] } ] },
   { "people": "men", "role": "garrison", "targets": [ { "id": "levy_garrison", "regiments": { "zin_men_levy": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
   { "people": "men", "role": "mobile", "targets": [ { "id": "riders", "regiments": { "zin_men_cavalry": 4, "zin_men_horse_archers": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
   { "people": "men", "role": "armor", "targets": [ { "id": "knights", "regiments": { "zin_men_knights": 2, "zin_men_cavalry": 2, "zin_men_heavy_infantry": 2 }, "support": { "zin_support_ballistae": 1 }, "prio": 1, "reinforce": 2, "enable": ["not_tier_c"] } ] },
-  { "people": "men", "role": "siege_role", "targets": [ { "id": "siege_train", "regiments": { "zin_siege_trebuchet": 2, "zin_siege_catapult": 2, "zin_men_infantry": 2 }, "support": { "zin_support_sappers": 1 }, "prio": 1, "enable": ["not_tier_c"] } ] },
+  { "people": "men", "role": "siege_role", "targets": [ { "id": "siege_train", "regiments": { "zin_siege_trebuchet": 2, "zin_siege_catapult": 2, "zin_men_infantry": 2 }, "support": { "zin_support_sappers": 1 }, "prio": 1, "enable": ["not_tier_c"] },
+   { "id": "bombard_park", "regiments": { "zin_siege_bombard": 2, "zin_siege_catapult": 1, "zin_men_infantry": 3 }, "support": { "zin_support_sappers": 1, "zin_support_bombards": 1 }, "prio": 2, "enable": ["not_tier_c", "tech:zin_siege_bombard"] } ] },
   { "people": "men", "role": "marines", "targets": [ { "id": "sea_soldiers", "regiments": { "zin_men_sea_soldiers": 6 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
   { "people": "men", "role": "rangers_role", "targets": [ { "id": "rangers", "regiments": { "zin_men_rangers": 4 }, "support": { "zin_support_scouts": 1 }, "prio": 1, "reinforce": 2 } ] },
 
@@ -42,7 +44,8 @@
   { "people": "orcs", "role": "garrison", "targets": [ { "id": "goblin_watch", "regiments": { "zin_orcs_goblins": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
   { "people": "orcs", "role": "mobile", "targets": [ { "id": "raiders", "regiments": { "zin_orcs_raiders": 4, "zin_orcs_warrior": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
   { "people": "orcs", "role": "armor", "targets": [ { "id": "brute_host", "regiments": { "zin_ogres_brutes": 2, "zin_orcs_warrior": 5 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
-  { "people": "orcs", "role": "siege_role", "targets": [ { "id": "siege_band", "regiments": { "zin_siege_catapult": 2, "zin_orcs_warrior": 4 }, "support": { "zin_support_catapults": 1 }, "prio": 1, "enable": ["not_tier_c"] } ] },
+  { "people": "orcs", "role": "siege_role", "targets": [ { "id": "siege_band", "regiments": { "zin_siege_catapult": 2, "zin_orcs_warrior": 4 }, "support": { "zin_support_catapults": 1 }, "prio": 1, "enable": ["not_tier_c"] },
+   { "id": "bombard_band", "regiments": { "zin_siege_bombard": 2, "zin_orcs_warrior": 4 }, "support": { "zin_support_bombards": 1, "zin_support_scouts": 1 }, "prio": 2, "enable": ["not_tier_c", "tech:zin_siege_bombard"] } ] },
 
   { "people": "trolls", "role": "infantry", "targets": [ { "id": "pack", "regiments": { "zin_trolls_brute": 2, "zin_orcs_goblins": 3 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
   { "people": "trolls", "role": "garrison", "targets": [ { "id": "watch", "regiments": { "zin_trolls_brute": 2 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
@@ -92,11 +95,12 @@
    "country:Puvulan": { "zin_grave_arms_equipment": 100, "zin_nether_arms_equipment": 40, "zin_ogre_gear_equipment": 40, "zin_arms_equipment": 60, "zin_armour_equipment": 25, "zin_mounts_equipment": 30, "zin_catapult_equipment": 15, "zin_trebuchet_equipment": 10, "zin_ballista_equipment": 20, "zin_camp_equipment": 50 },
    "country:Zol's Mistake": {}
   },
+  "powder": { "note": "The black-powder realms (country flag zin_gunpowder, K19), on top of their people's lines: hand-guns and bombards, as weights like the variants above.", "zin_handgun_equipment": 35, "zin_bombard_equipment": 20 },
   "types": { "infantry": 100, "support": 80, "artillery": 60, "anti_tank": 60, "anti_air": 50 },
   "surplus": { "zin_arms_equipment": 10, "zin_elven_arms_equipment": 10, "zin_bows_equipment": 8, "zin_camp_equipment": 8, "zin_catapult_equipment": 2, "zin_ballista_equipment": 2 },
   "minFactories": { "train_equipment": 1, "convoy": 1, "motorized_equipment": 1 },
   "minArmouries": 12,
-  "never": ["zin_deathless_equipment", "zin_dragon_equipment", "zin_glo_blade_equipment", "zin_great_spirit_equipment", "zin_shachihata_equipment", "zin_volgan_presence_equipment", "zin_zol_manifestation_equipment", "zin_griffin_equipment", "zin_scorpion_equipment"]
+  "never": ["zin_deathless_equipment", "zin_dragon_equipment", "zin_glo_blade_equipment", "zin_great_spirit_equipment", "zin_shachihata_equipment", "zin_volgan_presence_equipment", "zin_griffin_equipment", "zin_scorpion_equipment"]
  },
  "navy": {
   "seaPower": { "names": ["Lerendor", "Gala"], "scans": ["Tritons Islands"], "ratios": { "screen_ship": 40, "capital_ship": 30, "submarine": 10, "convoy": 20 } },

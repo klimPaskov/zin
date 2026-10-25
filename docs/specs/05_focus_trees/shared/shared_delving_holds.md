@@ -75,9 +75,9 @@ All three converge on *One Voice at the Gate* (75 authority). Tradeoff: each cou
 **D. The powder secret.** *The Powder Secret* (siege research +100%) opens the tree's special mechanic, a binding choice:
 
 - *Keep the Secret*: spirit `powder_kept` (+10% siege attack, +5% defence), later `powder_kept_2` (+20%, +10%). The hold's own gate-forts get the bombards; no other country does.
-- *Sell the Powder* (historical for all four holds): spirit `powder_trade` (+10% authority gain, +10% trade opinion), later `powder_trade_2`. It also unlocks each hold's buyer focus in its own branch (*Powder for the Pass Forts*, *Bombards for Sonargur*, *Fire for Whoever Pays*, *Fire for the Crossing*, *Bombards for One Court*), all of which fire event 2, `powder_offered`, to the buyer: the buyer pays 50 authority for siege engines and owes the hold an opinion, and the hold gains 50 authority.
+- *Sell the Powder* (historical for all four holds): spirit `powder_trade` (+10% authority gain, +10% trade opinion), later `powder_trade_2`. It also unlocks each hold's buyer focus in its own branch (*Powder for the Pass Forts*, *Bombards for Sonargur*, *Fire for Whoever Pays*, *Fire for the Crossing*, *Bombards for One Court*), all of which fire event 2, `powder_offered`, to the buyer: the buyer pays 50 authority for 20 Cast Bronze Bombards (`zin_bombard_equipment_1`), learns black powder (the country flag `zin_gunpowder`, which opens the powder technologies to it, a siege research bonus and a redrawn technology tree) and owes the hold an opinion, and the hold gains 50 authority. This event is the trade route by which powder spreads beyond the black-powder realms (warfare spec 11.8).
 
-*The Bombard Foundries* and *The Great Bombards* build an armoury, grant siege engines and upgrade whichever powder spirit the hold chose. Tradeoff: keeping the secret makes the hold a fortress that no court can buy; selling makes it rich and courted, and arms its neighbours.
+*The Bombard Foundries* and *The Great Bombards* build an armoury, cast 20 bombards (`zin_bombard_equipment`, the hold's best) and upgrade whichever powder spirit the hold chose. Tradeoff: keeping the secret makes the hold a fortress that no court can buy; selling makes it rich and courted, and arms its neighbours.
 
 **E. Axes and hammers.** Army experience and arms research, 500 arms and 2,000 levies (*The Hammer Companies*), forts in the capital's cities (*The Gate-Forts*), *The Tunnel Companies* (15 army experience, flag `zin_delving_tunnel_fighters`), and *The Hold Marches*, available only at war or once the War of the Last Crowns has begun (`zin_war_of_last_crowns`): a one-year spirit (+10% attack, +5% organisation), 3,000 levies and +10% will to war. Dwarves never use bows, so the branch never grants bows.
 
@@ -166,7 +166,7 @@ All icons are catalog keys ([../02_icon_catalog.md](../02_icon_catalog.md)); the
 | `the_powder_secret` | The Powder Secret | the_deep_hall | — | 16,1 | 70 | `scroll_sealed` | — | res [zin_cat_siege] 1 ×1; tooltip | 50 |
 | `keep_the_secret` | Keep the Secret | the_powder_secret | sell_the_powder | 15,2 | 35 | `fort_wall` | — | spirit `powder_kept` | 25; ×1.5 if country Gromkerm; ×0.5 if hist |
 | `sell_the_powder` | Sell the Powder | the_powder_secret | keep_the_secret | 17,2 | 35 | `tribute_chest` | — | spirit `powder_trade` | 25; ×3 if hist |
-| `the_bombard_foundries` | The Bombard Foundries | keep_the_secret / sell_the_powder | — | 16,3 | 70 | `siege_trebuchet` | — | bld arms_factory 1 @capital; zin_catapult_equipment 20; zin_trebuchet_equipment 10 | 30 |
+| `the_bombard_foundries` | The Bombard Foundries | keep_the_secret / sell_the_powder | — | 16,3 | 70 | `siege_trebuchet` | — | bld arms_factory 1 @capital; zin_bombard_equipment 20 | 30 |
 | `the_great_bombards` | The Great Bombards | the_bombard_foundries | — | 16,4 | 105 | `war_drums` | — | if spirit powder_kept: swap `powder_kept`→`powder_kept_2` else: swap `powder_trade`→`powder_trade_2`; res [zin_cat_siege] 1 ×1 | 25 |
 | `axes_and_hammers` | Axes and Hammers | the_deep_hall | — | 20,1 | 70 | `sword_shield` | — | army_xp 10; res [zin_cat_arms] 0.5 ×1 | 35 |
 | `the_hammer_companies` | The Hammer Companies | axes_and_hammers | — | 19,2 | 70 | `levy_muster` | — | zin_arms_equipment 500; mp 2000 | 25 |
@@ -247,7 +247,7 @@ All icons are catalog keys ([../02_icon_catalog.md](../02_icon_catalog.md)); the
 | n | Key | Title | Picture | Options (effects; AI) |
 | ---: | --- | --- | --- | --- |
 | 1 | `charter_petition` | [FROM.GetName] Asks to Reopen Its Charter | `concord_council` | **The Iron Charter stands as it was sworn.** (FROM: call zin_aenor_add_concord_loyalty(value: -10); flag zin_delving_charter_refused; AI 50)<br>**Give the clans a free charter.** (pp -50; FROM: call zin_aenor_set_charter(charter: free); call zin_aenor_add_concord_loyalty(value: 10); AI 50; ×0.5 if check zin_aenor_king_alive) |
-| 2 | `powder_offered` | [FROM.GetName] Offers Black Powder | `generic_court` | **Send the factors home.** (nothing; AI 30)<br>**Pay their price.** (pp -50; zin_catapult_equipment 20; zin_trebuchet_equipment 10; flag zin_delving_powder_buyer; opinion FROM `powder_bought` both ways; FROM: pp 50; AI 70) |
+| 2 | `powder_offered` | [FROM.GetName] Offers Black Powder | `generic_court` | **Send the factors home.** (nothing; AI 30)<br>**Pay their price.** (pp -50; zin_bombard_equipment_1 20; flag zin_delving_powder_buyer; flag zin_gunpowder; redraw the technology tree; siege research bonus; opinion FROM `powder_bought` both ways; FROM: pp 50; AI 70) |
 | 3 | `an_elf_at_the_gate` | An Elf at the Gate | `generic_wilds` | **Turn him away, courteously.** (flag zin_delving_kept_grudge; call zin_elves_add_wall_grievance(value: 5); AI 40; ×3 if focus_done no_elf_on_our_roads; ×0.2 if focus_done bury_the_grudge)<br>**Let him in and hear him out.** (flag zin_delving_grudge_eased; call zin_elves_add_wall_grievance(value: -10); pp -25; AI 40; ×3 if focus_done bury_the_grudge; ×0.2 if focus_done no_elf_on_our_roads) |
 | 4 | `weregild_demanded` | [FROM.GetName] Asks the Price of the Looting | `generic_court` | **We pay nothing for an old crime.** (FROM: flag zin_delving_kulolo_closed; AI 50)<br>**Pay the weregild and be done with it.** (pp -75; opinion FROM `kulolo_contract` both ways; FROM: pp 75; flag zin_delving_weregild_paid; AI 50) |
 
@@ -290,7 +290,7 @@ All icons are catalog keys ([../02_icon_catalog.md](../02_icon_catalog.md)); the
 | --- | --- | --- | --- |
 | The deep halls | branch C | implemented | five focuses, map changes in the hold's states |
 | The gate-trade | branch B | implemented | open market or sworn buyers; decision family proposed |
-| The powder secret | branch D and the buyer focuses | implemented | equipment stand-ins until powder equipment exists |
+| The powder secret | branch D and the buyer focuses | implemented | the black-powder equipment of the warfare spec (11.8): the foundries cast bombards, event 2 sells Cast Bronze Bombards and the powder flag |
 | The Iron Charter | branch K | implemented | crown, petition, embargo, Lamp Truce, capstone |
 | The Hill Pact | branch H | implemented | pact or own mountains; Sonargur's bombards |
 | The old grudge against elves | branch F | implemented | keep or bury; elven envoy event; Dunelaeth hook |

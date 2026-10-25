@@ -137,7 +137,7 @@ test('No order of battle names a granted unit, the Abyss-folk, an air wing or gr
   for (const c of countries) {
     const p = parsed.get(c.tag);
     assert.equal(p.hasAirWings, false, `${c.name} has an air wing`);
-    for (const [, tm] of p.templates) for (const r of [...regimentsOf(tm), ...supportOf(tm)]) assert(!['zin_abyss_folk', 'zin_demons_shachihata', 'zin_demons_bound', 'zin_glo_bearer', 'zin_great_spirit', 'zin_volgan_presence', 'zin_zol_manifestation', 'zin_air_dragon_flight', 'zin_air_griffin_riders'].includes(r.sub), `${c.name}: ${r.sub}`);
+    for (const [, tm] of p.templates) for (const r of [...regimentsOf(tm), ...supportOf(tm)]) assert(!['zin_abyss_folk', 'zin_demons_shachihata', 'zin_demons_bound', 'zin_glo_bearer', 'zin_great_spirit', 'zin_volgan_presence', 'zin_air_dragon_flight', 'zin_air_griffin_riders'].includes(r.sub), `${c.name}: ${r.sub}`);
     for (const s of [...p.stock, ...p.production.map(x => ({ type: x.type }))]) assert(!(s.type && [...granted].some(g => s.type.startsWith(g))), `${c.name} stocks ${s.type}`);
   }
 });

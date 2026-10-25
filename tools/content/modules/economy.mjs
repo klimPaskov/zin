@@ -152,17 +152,34 @@ export function stagedEquipmentKeys(staged) {
   }
   return [...keys];
 }
-
-// script_enums.txt: the installed file with the ZIN equipment keys added to script_enum_equipment_bonus_type
-// (spec 06 rule 5: an identifier list may be generated from the installed file plus ZIN entries).
-export function scriptEnumsFile(vanilla, equipmentKeys) {
-  const block = topLevelBlock(vanilla, 'script_enum_equipment_bonus_type');
-  if (!block) throw new Error('script_enum_equipment_bonus_type is missing from the installed script_enums.txt');
-  const have = new Set(identifiersOf(vanilla, 'script_enum_equipment_bonus_type')), add = [...new Set(equipmentKeys)].filter(k => !have.has(k)).sort();
-  if (!add.length) return vanilla.replace(/^﻿/, '');
-  const text = vanilla.replace(/^﻿/, ''), end = block[1] - 1;
-  return `${text.slice(0, end).replace(/\s*$/, '\n')}\n\t# ZIN equipment archetypes and types (economy module, generated)\n${add.map(k => `\t${k}\n`).join('')}${text.slice(end)}`;
+// The hull aliases the staged equipment names (alias = heavy_cruiser): the engine counts an alias as an equipment type, so the bonus
+// enum must list it ("heavy_cruiser is an equipment type or equipment category but is not in script enum").
+export function stagedEquipmentAliases(staged) {
+  const aliases = new Set();
+  for (const [rel, bytes] of staged.files) {
+    if (!/^common\/units\/equipment\/[^/]+\.txt$/.test(rel)) continue;
+    for (const top of parse(scriptText(bytes))) if (top.k === 'equipments' && Array.isArray(top.v)) for (const e of top.v) if (Array.isArray(e.v)) for (const f of e.v) if (f.k === 'alias' && typeof f.v === 'string') aliases.add(f.v);
+  }
+  return [...aliases];
 }
+
+// script_enums.txt: the installed file with script_enum_equipment_bonus_type rebuilt from what the mod defines (spec 06 rule 5: an
+// identifier list may be generated from the installed file plus ZIN entries). The engine checks the list at startup against the loaded
+// equipment and the categories: a vanilla equipment name the mod removes (infantry_equipment_1, the airframes, transport planes) is an
+// error ("is in script enum ... but is not an equipment type"), and so is a ZIN key or alias missing from it. The list is the installed
+// equipment categories (script_enum_equipment_category) followed by every staged ZIN equipment key and hull alias.
+export function scriptEnumsFile(vanilla, equipmentKeys) {
+  const text = vanilla.replace(/^﻿/, '');
+  const block = topLevelBlock(text, 'script_enum_equipment_bonus_type');
+  if (!block) throw new Error('script_enum_equipment_bonus_type is missing from the installed script_enums.txt');
+  const categories = identifiersOf(text, 'script_enum_equipment_category');
+  if (!categories.length) throw new Error('script_enum_equipment_category is missing from the installed script_enums.txt');
+  const keys = [...new Set(equipmentKeys)].filter(k => !categories.includes(k)).sort();
+  const body = ['script_enum_equipment_bonus_type = {', '\t# Equipment categories (script_enum_equipment_category)', ...categories.map(c => `\t${c}`), '',
+    '\t# ZIN equipment archetypes, types and hull aliases (economy module, generated from common/units/equipment)', ...keys.map(k => `\t${k}`), '}'];
+  return `${text.slice(0, block[0])}${body.join('\n')}${text.slice(block[1])}`;
+}
+export { identifiersOf };
 
 export function tokensFile(data, extra) {
   const tokens = new Set([...data.resources.map(r => r.key), ...data.buildings.filter(b => b.status === 'used').map(b => b.key), 'democratic', 'fascism', 'communism', 'neutrality', ...extra]);
@@ -387,7 +404,7 @@ export async function buildEconomy(staged, ctx = {}) {
   const equipment = [...new Set([...stagedEquipmentKeys(staged), ...(ctx.equipmentKeys ?? [])])].sort();
   staged.text('common/resources/00_resources.txt', resourcesFile(data));
   staged.text('common/buildings/01_landmark_buildings.txt', landmarksFile(data));
-  staged.text('common/script_enums.txt', scriptEnumsFile(vanillaEnums, equipment));
+  staged.text('common/script_enums.txt', scriptEnumsFile(vanillaEnums, [...equipment, ...stagedEquipmentAliases(staged)]));
   staged.text('common/synchronized_dynamic_tokens/zin_tokens.txt', tokensFile(data, [...equipment, ...(ctx.extraTokens ?? [])]));
   staged.text('common/script_constants/zin_economy_constants.txt', constantsFile(data));
   staged.text('common/ideas/zin_economy.txt', await spiritsFile(data, game));

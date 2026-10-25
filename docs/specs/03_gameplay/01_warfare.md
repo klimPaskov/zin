@@ -38,7 +38,7 @@ The Great Wall's origin in Elzon's Pale March; Mirolon fortifying its passes (c.
 
 ### Proposed by this spec
 
-Every unit name, equipment name, technology name and year, doctrine, stat, ship and beast design, the piercing rule for the deathless, griffins as an optional beast of war, "grave-host strain", "great being" companies, and all identifiers below. No gunpowder exists in the Fourth Age; crossbows and torsion engines are the most advanced missile weapons, and only dragons fly by default (owner short list 13, proposal in use).
+Every unit name, equipment name, technology name and year, doctrine, stat, ship and beast design, the piercing rule for the deathless, griffins as an optional beast of war, "grave-host strain", "great being" companies, and all identifiers below. Gunpowder weapons are common in some realms (owner decision K19): the black-powder realms of the roster field bombards and hand-guns (section 11.8); everywhere else crossbows and torsion engines are the most advanced missile weapons. Only dragons fly by default (owner short list 13, proposal in use).
 
 ### Decisions applied
 
@@ -108,6 +108,8 @@ All are proposed. Variants are `<archetype>_0` to `_5`. `type` is the HOI4 equip
 | `zin_trebuchet_equipment` | Trebuchets | `artillery` | men, the_dead | Trebuchet battalions |
 | `zin_ballista_equipment` | Ballistae | `anti_tank` | men, elves, sun_elves, the_dead | Ballista companies |
 | `zin_scorpion_equipment` | Scorpions | `anti_air` | men, elves, sun_elves | Scorpion companies |
+| `zin_bombard_equipment` | Bombards (black powder, K19) | `artillery` | country flag `zin_gunpowder` | Bombard batteries and companies (11.8) |
+| `zin_handgun_equipment` | Hand-guns (black powder, K19) | `infantry` | country flag `zin_gunpowder` | Hand-gunners (11.8) |
 | `zin_troll_gear_equipment` | Troll gear (iron-bound clubs, hide plates) | `infantry` | trolls | Troll brutes |
 | `zin_giant_gear_equipment` | Giant gear (great weapons, slings) | `infantry` | giants | Giant hosts, hurlers |
 | `zin_ent_grove_equipment` | Grove wardings (stone, sap, the moot's care) | `infantry` | ents | Ent groves |
@@ -121,7 +123,6 @@ All are proposed. Variants are `<archetype>_0` to `_5`. `type` is the HOI4 equip
 | `zin_glo_blade_equipment_shard` | The bearer of Glo (the broken blade) | `support` | nobody (granted) | Glo bearer company after `zin_horos_sword_broken` (§6.2) |
 | `zin_volgan_presence_equipment` | Volgan's presence | `support` | nobody (granted) | Volgan's presence company |
 | `zin_great_spirit_equipment` | A great spirit | `support` | nobody (granted) | Great spirit company |
-| `zin_zol_manifestation_equipment` | Zol made flesh | `support` | nobody (granted) | Zol manifestation company |
 | `motorized_equipment` (kept key) | Pack trains | `motorized` | all | Supply hubs only; no unit needs it |
 | `train_equipment` (kept key) | Wagon trains | `train` | all | High roads (railways) |
 | `convoy` (kept key) | Merchant cogs | `convoy` | all with a harbour | Trade and transport |
@@ -145,6 +146,8 @@ Every equipment has `fuel_consumption = 0`. Resource costs use the economy spec'
 | Wards | Essence (`oil`) 1 |
 | Grave arms, nether arms | Iron 1, Essence 1 |
 | Catapults, trebuchets | Timber 1, Stone (`tungsten`) 1 |
+| Bombards | Iron 2, Stone 1 |
+| Hand-guns | Iron 1, Timber 1 |
 | Ballistae, scorpions | Timber 1, Iron 1 |
 | Pack trains | Horses 1 |
 | Wagon trains, merchant cogs | Timber 1 |
@@ -170,6 +173,7 @@ Stats are targets for a battalion with the 1748 baseline variant (`_1`), equipme
 | `zin_men_infantry` | Line Infantry | infantry; front_line, light_infantry, all_infantry | arms 100 | 60 | 25 | 6 | 1 | 22 | 3 | 0 | 5 | 4 | 2 | 1000 | 90 |
 | `zin_men_archers` | Archers | infantry; front_line, all_infantry, zin_archers | bows 100, arms 20 | 50 | 18 | 9 | 0.5 | 14 | 2 | 0 | 4 | 4 | 2 | 800 | 120 |
 | `zin_men_heavy_infantry` | Heavy Infantry | infantry; front_line, all_infantry | arms 100, armour 60 | 55 | 28 | 7 | 2 | 28 | 6 | 8 | 8 | 3.5 | 2 | 1000 | 120 |
+| `zin_men_handgunners` | Hand-Gunners (black powder, 11.8) | infantry; front_line, all_infantry | hand-guns 100, arms 20 | 45 | 18 | 10 | 1.5 | 13 | 2.5 | 0 | 9 | 4 | 2 | 800 | 120 |
 | `zin_men_hill_companies` | Hill Companies | infantry; special_forces, mountaineers | arms 100 | 70 | 25 | 6 | 1 | 24 | 4 | 0 | 5 | 4 | 2 | 1000 | 150 |
 | `zin_men_sea_soldiers` | Sea Soldiers | infantry; special_forces, marines | arms 100 | 70 | 25 | 6 | 1 | 22 | 4 | 0 | 5 | 4 | 2 | 1000 | 150 |
 | `zin_men_rangers` | Rangers | infantry; special_forces, rangers, zin_archers | bows 60, arms 40 | 70 | 22 | 7 | 1 | 18 | 5 | 0 | 6 | 5 | 2 | 800 | 150 |
@@ -249,11 +253,13 @@ Netherborn ignore heat attrition and suffer +50% winter attrition (people idea).
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | `zin_siege_catapult` | Catapults | combat_support; artillery, line_artillery, zin_siege | catapults 12 | 20 | 6 | 22 | 2 | 6 | 2 | 0 | 5 | 3.5 | 3 | 500 | 120 |
 | `zin_siege_trebuchet` | Trebuchets | combat_support; artillery, line_artillery, zin_siege | trebuchets 8 | 15 | 6 | 36 | 4 | 4 | 2 | 0 | 8 | 2.5 | 4 | 600 | 150 |
+| `zin_siege_bombard` | Bombard Battery (black powder, 11.8) | combat_support; artillery, line_artillery, zin_siege | bombards 6 | 15 | 6 | 30 | 6 | 4 | 3 | 0 | 14 | 2.5 | 3 | 500 | 150 |
+| `zin_support_bombards` | Bombard Company (black powder, 11.8) | support; artillery, support_artillery, zin_siege | bombards 3 | 0 | 0.6 | 16 | 3 | 3 | 1 | 0 | 14 | 3 | 0 | 300 | 120 |
 | `zin_support_catapults` | Catapult Company | support; artillery, support_artillery, zin_siege | catapults 6 | 0 | 0.6 | 12 | 1 | 4 | 1 | 0 | 5 | 3.5 | 0 | 300 | 120 |
 | `zin_support_ballistae` | Ballista Company | support; anti_tank, zin_siege | ballistae 6 | 0 | 0.6 | 2 | 12 | 6 | 1 | 0 | 40 | 3.5 | 0 | 300 | 120 |
 | `zin_support_scorpions` | Scorpion Company | support; anti_air, zin_siege | scorpions 6 | 0 | 0.6 | 1 | 1 | 4 | 0 | 0 | 5 | 3.5 | 0 | 300 | 120 |
 
-Catapults get `fort = { attack = 0.4 }`, trebuchets `fort = { attack = 0.8 }`, giant hurlers `fort = { attack = 0.5 }`. Scorpions have air attack 12. Scorpion companies exist only when the sky rule is not "none".
+Catapults get `fort = { attack = 0.4 }`, trebuchets `fort = { attack = 0.8 }`, bombard batteries `fort = { attack = 1.0 }`, bombard companies `fort = { attack = 0.3 }` (a bombard company and a catapult company share one support type), giant hurlers `fort = { attack = 0.5 }`. Scorpions have air attack 12. Scorpion companies exist only when the sky rule is not "none".
 
 #### 4.8 Camp (support companies)
 
@@ -278,7 +284,7 @@ Ents, yeti and trolls may use scouts only. Orcs may not use healers or heralds. 
 | `zin_glo_bearer` | The Bearer of Glo | `zin_glo_blade_equipment` 1 | Eindil's journey, on `zin_glo_with_eindil`, to the country Eindil serves | Piercing 300, SA 20, HA 20; division piercing then passes the deathless armour |
 | `zin_volgan_presence` | Volgan Himself | `zin_volgan_presence_equipment` 1 | Volgan mechanic, on `zin_volgan_marches` | SA 60, HA 30, piercing 200; removed on `zin_volgan_body_destroyed` |
 | `zin_great_spirit` | A Great Spirit | `zin_great_spirit_equipment` 1 each | Volgan mechanic (his "great spirits"), up to 3 | SA 15, piercing 60, org +10 |
-| `zin_zol_manifestation` | Zol Made Flesh | `zin_zol_manifestation_equipment` 1 | Zol mechanic, on `zin_zol_manifested`, for a limited time: its template `zin_zol_the_presence` is 4 deathless battalions and this company | SA 100, HA 60, piercing 300; removed on `zin_zol_withdrawn` |
+| ~~`zin_zol_manifestation`~~ | retired | | | Zol never appears in person (Kusven's Host uses A Great Spirit): the company, its equipment and the template "The Presence" are retired (second error pass, 25 October 2026) |
 
 A great being can only exist in a division that also has at least one line battalion. Each has `category_zin_great_beings` so doctrines and scripts can find it.
 
@@ -294,7 +300,6 @@ Mechanics create these division templates with the `division_template` effect wh
 | "Abyss Host" | Volgan mechanic | 6 `zin_abyss_folk` | See §4.3 |
 | "Grave Host" | Volgan mechanic, `zin_volgan_spawn_grave_host` | 8 `zin_the_dead_revenant` | The AI template `zin_ai_volgan_grave_host` is its fuller form for AI recruitment |
 | `zin_zol_deathless_host` | Zol mechanic | 10 `zin_zol_deathless` | Raised only at and after the rising |
-| "The Presence" (`zin_zol_the_presence`) | Zol mechanic | 4 `zin_zol_deathless`; the great-being company `zin_zol_manifestation` | Only while Zol is manifested |
 | "Buldor Company" | [Economy](02_economy.md), Hire the Buldor Companies | 6 `zin_men_infantry`, 2 `zin_men_archers` | Aenor's hired swords, 365 days |
 | `zin_west_crossing_host` | [Western Crossing](../04_mechanics/western_crossing.md), `zin_west.1` | as that spec sets, from this spec's men's sub-units | Created on every West Lands country |
 
@@ -597,7 +602,7 @@ Rites and tide techs sit in the folder only for the countries that may have them
 | `zin_tech_corsair_craft` | Corsair Craft | 1730 | war galleys | raider hull `_0` | |
 | `zin_tech_high_castled_warships` | High-Castled Warships | 1745 | sailing warships | warship hull `_1`; catapult deck | |
 | `zin_tech_boarding_parties` | Boarding Parties | 1749 | war galleys | boarding party; `naval_invasion_capacity = 10` | |
-| `zin_tech_deep_water_hulls` | Deep-Water Hulls | 1752 | high-castled | `navy_max_range_factor = 0.20`; `convoy_1` (ocean cogs) | |
+| `zin_tech_deep_water_hulls` | Deep-Water Hulls | 1752 | high-castled | `navy_max_range_factor = 0.20` (the game supports one convoy type: the Merchant Cog `convoy_1` of Merchant Cogs is the only cog, and no ocean cog exists; lead decision of the second error pass, 25 October 2026) | |
 | `zin_tech_fire_ships` | Fireships | 1753 | boarding parties | fire-pots | |
 | `zin_tech_bronze_sheathing` | Bronze Sheathing | 1755 | deep-water | bronze sheathing | |
 | `zin_tech_great_warships` | Great Warships | 1758 | deep-water | great warship hull `_0` | |
@@ -615,6 +620,34 @@ Rites and tide techs sit in the folder only for the countries that may have them
 | `zin_tech_sky_lances` | Sky Lances | 1758 | harness | griffins `_2` | |
 | `zin_tech_dragon_lore` | Dragon Lore | 1500 | - | dragon flight sub-unit (dragons only by grant) | elves; any country granted dragons gets it with the grant |
 | `zin_tech_dragon_kinship` | Dragon Kinship | 1755 | dragon lore | dragons `air_attack` +10% via `equipment_bonus` | elves |
+
+#### 11.8 Black powder (owner decision K19)
+
+Implemented in `modules/warfare.mjs` and `modules/technologies.mjs` from `data/warfare_equipment.json`, `warfare_units.json` and `technologies_warfare.json`. Everything below except K19 itself is proposed (second error pass, 25 October 2026).
+
+**Who.** The roster's `gunpowder` realms (16: the four dwarf holds Kunhrim, Hrakbrund, Brundahrim and Gromkerm, Aenor, Lerendor, Stabilo, Goldoroth, Dondor, Kingson, Burrikkrit, Buldor, Kradlon, Burnikit, Dolon and Drak) carry the country flag `zin_gunpowder`, set in their history (`modules/countries.mjs`, `lib/roster.mjs` `GUNPOWDER_FLAG`). The flag is the only gate: `can_be_produced` of both archetypes tests it (an engine trigger, so it loads), the two technology roots show and open only under it (the who clause `flag:zin_gunpowder`, group `powder`), and the AI's powder production reads it. Powder spreads only through the story or trade: the delving holds' event `powder_offered` (`shared_delving_holds` event 2, *Pay their price*) sets the flag on the buyer, gives it 20 Cast Bronze Bombards and a siege research bonus, and redraws its technology tree. Neither archetype can be licensed or lent (institutions licence table).
+
+The equipment rows are in section 3 and the sub-unit rows in sections 4.1 and 4.7. Stats and costs per piece (baseline `_1`): bombards SA 30, HA 6, Def 4, Brk 3, piercing 14, reliability 0.7, 7 IC, Iron 2 and Stone 1, variants `_0` Hooped Iron Bombards 1600, `_1` Cast Bronze Bombards 1700, `_2` Corned-Powder Bombards 1749, `_3` Culverins 1756, `_4` Great Bombards 1764; hand-guns SA 11, HA 1.5, Def 10, Brk 2.5, piercing 9, reliability 0.8, 0.6 IC, Iron 1 and Timber 1, variants `_0` Touch-Hole Hand-Guns 1650, `_1` Matchlocks 1720, `_2` Long Matchlocks 1752, `_3` Arquebuses 1760.
+
+| Key | Name | Year | Path parent | Unlocks | Who |
+| --- | --- | ---: | --- | --- | --- |
+| `zin_tech_black_powder` | Black Powder | 1600 | - (Engines and Walls, column 12) | bombards `_0`; Bombard Battery | `zin_gunpowder` |
+| `zin_tech_cast_bombards` | Cast Bombards | 1700 | black powder | bombards `_1`; Bombard Company | |
+| `zin_tech_corned_powder` | Corned Powder | 1749 | cast bombards | bombards `_2` | |
+| `zin_tech_culverins` | Culverins | 1756 | corned powder | bombards `_3` | |
+| `zin_tech_great_bombards` | Great Bombards | 1764 | culverins | bombards `_4` | |
+| `zin_tech_hand_guns` | Hand-Guns | 1650 | - (Arms and Armour, column 16; needs Black Powder) | hand-guns `_0`; Hand-Gunners | `zin_gunpowder` |
+| `zin_tech_matchlocks` | Matchlocks | 1720 | hand-guns | hand-guns `_1` | |
+| `zin_tech_long_matchlocks` | Long Matchlocks | 1752 | matchlocks | hand-guns `_2` | |
+| `zin_tech_arquebuses` | Arquebuses | 1760 | long matchlocks | hand-guns `_3` | |
+
+**Start.** Every black-powder realm starts with Black Powder, Cast Bombards, Hand-Guns and Matchlocks on top of its package (`technologies_packages.json` `assign.gunpowder`). Its start templates prefer a Line Host with two hand-gunner battalions and a Siege Park (orcs: a Siege Band) with bombards, which its stockpile then holds.
+
+**Balance.** Against the torsion engines and crossbows of the same years: a bombard costs more than a trebuchet (7 IC against 6) and throws a little less soft attack per piece at the start (30 against 36 for the 1750 trebuchet), but it pierces more (14 against 8), breaks forts harder and is open a century earlier to the realms that have it; a hand-gun matches a crossbow's soft attack (12.65 against 12.92 in the 1750s) with more piercing (10 against 7.6), less defence and a higher price. Tested in `warfare.test.mjs`.
+
+**AI.** The men's infantry role has the target `powder_host` (6 line infantry, 2 hand-gunners; enabled by the Hand-Guns technology, priority 2), the men's siege role `bombard_park` and the orcs' `bombard_band` (enabled by Black Powder, tiers A and B). The strategy `zin_default_production_powder` (flag `zin_gunpowder`) weights hand-guns 35 and bombards 20 against the people's own lines (data `forces_ai.json` `production.powder`). The demons' AI has no siege role, so Dolon fields bombards only by hand.
+
+**Text.** Powder text names bombards, hand-guns and black powder plainly (voice spec 2.5); the banned-word allowance `al_black_powder` covers the keys of the hand-gun archetype, the Hand-Gunners and the four hand-gun technologies. No other realm's text names a firearm.
 
 ### 12. Doctrines
 
@@ -910,11 +943,10 @@ All warfare content is generated by `tools/content/modules/warfare.mjs` from `to
 | --- | --- | --- |
 | `zin_war_feed_deathless` | Zol | Adds `zin_mistake_power × 25` deathless bonds (capped before `zin_zol_rising`) |
 | `zin_war_grant_glo_bearer` | country | Adds the bearer equipment, the Host of the Ice template and its division led by Eindil |
-| `zin_war_grant_dragons` | country | Argument `amount`: adds dragons (3 per flight), raises `zin_dragon_flights`, grants dragon lore; or the timed idea when the sky rule is none |
+| `zin_war_grant_dragons` | country | Argument `amount` (temp variable `zin_arg_amount`, flights): adds dragons (3 per flight, `zin_dragon_equipment_0`), raises `zin_dragon_flights` up to 10, grants Dragon Lore and the first air doctrine; or the timed idea `zin_war_dragon_ally` (180 days per flight) when the sky rule is none; fires `zin_war.2`. Implemented in `modules/warfare.mjs` (data `warfare_dragons.json`, constants `zin_warfare`) |
 | `zin_war_grant_volgan_presence` | Volgan | Adds the presence equipment and attaches it to Volgan's division |
 | `zin_war_remove_volgan_presence` | Volgan | Removes it everywhere |
 | `zin_war_grant_great_spirit` | Volgan | Adds one great spirit (max 3) |
-| `zin_war_grant_zol_manifestation` / `zin_war_remove_zol_manifestation` | Zol | The Zol mechanic's manifestation company |
 | `zin_war_grant_shachihata` | country | Adds one Shachihata (demons, Volgan) |
 | `zin_war_build_great_wall` | global | Sets fort levels on wall states and adds `zin_war_great_wall` (used by the builder check and by world systems repairs) |
 
@@ -1012,7 +1044,7 @@ Countries next to Troll Forest, the Dark Lands or the Ember Lands add a ballista
 1. **No vanilla left.** The staged mod defines no vanilla sub-unit, equipment, technology or doctrine key except the kept `convoy`, `train_equipment` and `motorized_equipment`, and no file of §15.2 marked "replace" or "override" loads its vanilla content (vanilla removal checks C1 and C2). The Linux run's `error.log` has no "unknown equipment", "unknown technology" or "unknown sub unit" line.
 2. **Stage 2 budget.** After the stage-2 build, the Linux run's `error.log` has at most 13 lines, all in B12; no line matches the B11 or B14 patterns of `tools/content/data/vanilla/baseline_errors.json` (check C6). C3 reports no reference to an undefined name, and C4 finds no bridge marked "remove in stage 2".
 3. **Everyone can fight.** A builder test over all 305 countries: each can recruit at least one line template from its people, research at least one technology in every folder it sees, and, if coastal, build one ship; every country has a start package.
-4. **Start constraints.** On 1 Thaw 4A 1748: no country at war; no division outside its owner's territory; Zol has no division; no `zin_glo_blade_equipment`, `zin_dragon_equipment`, `zin_volgan_presence_equipment`, `zin_zol_manifestation_equipment` or `zin_shachihata_equipment` anywhere; the bound-demon tech and unit are invisible to every country (`zin_war.1` with `zin_rule_debug_checks` on, Linux run).
+4. **Start constraints.** On 1 Thaw 4A 1748: no country at war; no division outside its owner's territory; Zol has no division; no `zin_glo_blade_equipment`, `zin_dragon_equipment`, `zin_volgan_presence_equipment` or `zin_shachihata_equipment` anywhere; the bound-demon tech and unit are invisible to every country (`zin_war.1` with `zin_rule_debug_checks` on, Linux run).
 5. **Secret.** Names spec check T2 finds no "Afrit" or Deliverer-as-demon text in any warfare localisation reachable before `zin_afrit_revealed`.
 6. **Deathless invariant.** An offline calculator in the builder tests computes division piercing for the best template of every people at tech years 1748, 1755, 1760, 1775 and 1790: every ratio against the deathless armour stays below 0.5; with the bearer of Glo it is at least 1.0.
 7. **Deathless in play.** A scenario test (HOI4 Agent Tools scenario tester, then the Linux run): an Aenor host of 10 divisions against 8 deathless divisions for 60 days leaves the deathless with at least 85% strength; one Glo's Wave (Yeldenne spec, later wave) removes at least 50% of the strength in its state.
@@ -1036,7 +1068,7 @@ All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.
 1. **The sky.** Dragons only, griffins under a rule, or no air at all? **Proposal, in use:** dragons only by default; griffins under `beasts`.
 2. **Orc mounts.** What, if anything, do orc raiders ride? **Proposal, in use:** unnamed "mounts" (the raider line uses the generic mounts equipment).
 3. **Dragons and the dark.** May Volgan receive dragons in the Fourth Age? **Proposal, in use:** no route (magic spec).
-4. **Gunpowder.** **Owner decision K19 (24 October 2026):** gunpowder weapons are common in some realms, and the ruleset carries black-powder equipment for them (the realms are the roster's `gunpowder` list). **Not yet implemented:** crossbows and torsion engines are still the peak in the builder; black-powder equipment, its technologies and the realms' access are owed (lead status, next steps).
+4. **Gunpowder.** **Owner decision K19 (24 October 2026):** gunpowder weapons are common in some realms, and the ruleset carries black-powder equipment for them (the realms are the roster's `gunpowder` list). **Implemented (second error pass, 25 October 2026; design proposed, section 11.8):** bombards and hand-guns, their sub-units and nine technologies, open only to realms with the country flag `zin_gunpowder` (set in the history of the roster's black-powder realms, and given by the delving holds' `powder_offered` event to a realm that buys their powder). Open: whether other routes spread powder (owner question).
 5. **Glo after the sword.** **Proposal, in use:** a reduced bearer (piercing 120) after `zin_horos_sword_broken`, as gameplay only.
 6. **Two kinds of dead.** **Proposal, in use:** Volgan's grave hosts and Zol's deathless are separate unit families with separate models and equipment, and no stated relation.
 7. **Dwarves.** **Proposal, in use:** no dwarven units until the lore places them (owner short list 12).

@@ -279,6 +279,23 @@
       "asset": "zin_the_dead_revenant",
       "height": 1,
       "own": false
+    },
+    "zin_men_handgunners": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the hand-gun has no model yet; the foot model shows (art debt, pending_from_integration.md)"
+    },
+    "zin_siege_bombard": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the bombard model is missing; the crew shows"
+    },
+    "zin_support_bombards": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
     }
   },
   "noModel": {
@@ -289,7 +306,6 @@
     "zin_ship_great_warship": "No ship model exists.",
     "zin_ship_raider": "No ship model exists.",
     "zin_air_griffin_riders": "No griffin model exists (WE-076).",
-    "zin_air_dragon_flight": "No dragon model exists (WE-076).",
-    "zin_zol_manifestation": "Zol's own; it never reuses the grave host (spec 14.1)."
+    "zin_air_dragon_flight": "No dragon model exists (WE-076)."
   }
 }

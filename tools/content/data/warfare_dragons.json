@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/03_gameplay/01_warfare.md section 6.3 (dragons); read by tools/content/modules/warfare.mjs",
+  "note": "zin_war_grant_dragons: the dragons the magic and world systems hand to a realm (the Dragon Pact, Bound by Corruption, Eindil's dragon; modules/world_magic.mjs zin_world_give_dragon). The caller sets the temp variable zin_arg_amount to the flights it grants. A flight is a wing of perFlight dragons; a realm never holds more than maxFlights flights. With the sky rule none the dragons fight beside the host instead: the timed idea for allyDays days per flight. Tuning goes to common/script_constants/zin_warfare_constants.txt.",
+  "perFlight": 3,
+  "maxFlights": 10,
+  "allyDays": 180,
+  "equipment": "zin_dragon_equipment_0",
+  "lore": "dragon_lore",
+  "ally": { "id": "zin_war_dragon_ally", "picture": "zin_dragon_wing", "name": "Dragons Beside the Host", "desc": "Dragons of the Mountain fly over our hosts. Where their shadow falls, our foe's ranks waver and our own stand fast.", "modifier": { "army_attack_factor": 0.05, "army_morale_factor": 0.05 } },
+  "event": {
+    "id": "zin_war.2", "picture": "GFX_zin_evt_dragon_return",
+    "title": "Dragons Answer the Call",
+    "desc": "They came down from the Mountain at dawn, low over the hills, and the herds scattered before them. The riders who went to meet them came back changed, and the eyries have not been quiet since. Dragons do not serve; they keep a bargain. For as long as they keep it, they fly for [ROOT.GetNameDef].",
+    "option": "Keep faith with them."
+  }
+}

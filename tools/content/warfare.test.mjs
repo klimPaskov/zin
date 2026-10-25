@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { Staged } from './lib/core.mjs';
 import { parse, scriptText } from './lib/clausewitz.mjs';
 import { GAME, ZIN } from './lib/paths.mjs';
-import { compileBanned, findBanned } from './lib/banned.mjs';
+import { compileBanned, findBanned, allowanceCovers } from './lib/banned.mjs';
 import { buildNames } from './modules/names.mjs';
 import {
   buildWarfare, loadRaw, prepareModel, solveUnit, unitPiercing, divisionPiercing, variantStats, hullBase, transformTactics, ordinalWord,
@@ -68,14 +68,14 @@ for (const f of await gameFiles('common/units/equipment/modules')) {
 
 // ------------------------------------------------------------------------------------------------ counts and files
 test('The build stages every file the spec names and counts what it generates', () => {
-  assert.equal(summary.subUnits, 61, '55 land sub-units, 4 ships, 2 air');
-  assert.equal(summary.landSubUnits, 55);
+  assert.equal(summary.subUnits, 63, '57 land sub-units (three of them black powder, K19), 4 ships, 2 air');
+  assert.equal(summary.landSubUnits, 57);
   assert.equal(summary.ships, 4);
   assert.equal(summary.air, 2);
   assert.equal(summary.modules, 16);
   assert.equal(summary.upgrades, 5);
   assert.equal(summary.groups, 11);
-  assert.equal(summary.archetypes, 33, '29 archetypes and 4 hulls');
+  assert.equal(summary.archetypes, 34, '30 archetypes (bombards and hand-guns among them) and 4 hulls');
   for (const f of [...unitFiles, ...eqFiles, 'common/units/equipment/modules/zin_ship_modules.txt', 'common/units/equipment/upgrades/zin_upgrades.txt', 'common/equipment_groups/zin_equipment_groups.txt', 'common/unit_tags/zin_unit_tags.txt', 'common/combat_tactics.txt', 'common/units/names/zin_names.txt', 'common/units/names_divisions/zin_names_divisions.txt', 'common/units/names_ships/zin_names_ships.txt', 'common/units/names_railway_guns/zin_names_railway_guns.txt', 'common/units/codenames_operatives/zin_operative_codenames.txt', 'gfx/entities/zin_warfare.asset', 'interface/zin_units.gfx', 'interface/zin_equipment.gfx', 'localisation/english/zin_warfare_l_english.yml', 'localisation/replace/zin_warfare_l_english.yml']) assert(staged.files.has(f), `missing ${f}`);
 });
 test('Every staged script file has balanced braces and every folder it replaces holds a definition', () => {
@@ -168,7 +168,7 @@ test('Every id the technology slice names is defined, and the unlock path of eve
 });
 function mods() { return entriesOf('common/units/equipment/modules/zin_ship_modules.txt').find(x => x.k === 'equipment_modules').v; }
 test('Granted equipment cannot be produced, lent or bought, and no technology unlocks the great beings', () => {
-  const granted = ['zin_deathless_equipment', 'zin_shachihata_equipment', 'zin_glo_blade_equipment', 'zin_volgan_presence_equipment', 'zin_great_spirit_equipment', 'zin_zol_manifestation_equipment', 'zin_dragon_equipment'];
+  const granted = ['zin_deathless_equipment', 'zin_shachihata_equipment', 'zin_glo_blade_equipment', 'zin_volgan_presence_equipment', 'zin_great_spirit_equipment', 'zin_dragon_equipment'];
   for (const id of granted) {
     const b = eqBlocks.get(id);
     assert.equal(field(field(b, 'can_be_produced'), 'always'), 'no', id);
@@ -176,7 +176,7 @@ test('Granted equipment cannot be produced, lent or bought, and no technology un
     if (id !== 'zin_dragon_equipment' || true) assert(field(b, 'can_be_lend_leased') || id === 'zin_dragon_equipment', `${id} lend-lease`);
   }
   const unlockedEq = new Set(raw0.techs.technologies.flatMap(t => t.unlocks?.equipment ?? []));
-  for (const id of ['zin_dragon_equipment_0', 'zin_glo_blade_equipment_0', 'zin_glo_blade_equipment_shard', 'zin_volgan_presence_equipment_0', 'zin_great_spirit_equipment_0', 'zin_zol_manifestation_equipment_0', 'zin_shachihata_equipment_0']) { assert(!unlockedEq.has(id), `${id} must be granted, not researched`); assert(eqBlocks.has(id), id); assert.equal(field(eqBlocks.get(id), 'active') ?? field(eqBlocks.get('zin_' + id.split('_').slice(1, -1).join('_')), 'active'), 'yes', id); }
+  for (const id of ['zin_dragon_equipment_0', 'zin_glo_blade_equipment_0', 'zin_glo_blade_equipment_shard', 'zin_volgan_presence_equipment_0', 'zin_great_spirit_equipment_0', 'zin_shachihata_equipment_0']) { assert(!unlockedEq.has(id), `${id} must be granted, not researched`); assert(eqBlocks.has(id), id); assert.equal(field(eqBlocks.get(id), 'active') ?? field(eqBlocks.get('zin_' + id.split('_').slice(1, -1).join('_')), 'active'), 'yes', id); }
   assert(eqBlocks.has('zin_glo_blade_equipment_shard') && field(eqBlocks.get('zin_glo_blade_equipment_shard'), 'archetype') === 'zin_glo_blade_equipment');
   assert.equal(field(eqBlocks.get('zin_glo_blade_equipment_shard'), 'ap_attack'), '120');
   assert.equal(field(eqBlocks.get('zin_glo_blade_equipment'), 'ap_attack'), '300');
@@ -406,7 +406,7 @@ test('Every people can recruit a line unit whose gear its people can produce, an
     const buildable = list.filter(id => Object.keys(model.unitById.get(id).needs).every(a => (people === 'the_dead' ? ['Puvulan', "Zol's Mistake"].some(c => producers.get(a)?.has(`country:${c}`) || producers.get(a)?.size === 0) : producers.get(a)?.has(people) || producers.get(a)?.has(`country:${people}`))) || ['zin_zol_deathless', 'zin_zol_deathless_crews'].includes(id));
     assert(buildable.length > 0, `${people} cannot produce the gear of any of its units`);
   }
-  for (const id of ['zin_abyss_folk', 'zin_demons_shachihata', 'zin_demons_bound', 'zin_glo_bearer', 'zin_volgan_presence', 'zin_great_spirit', 'zin_zol_manifestation']) {
+  for (const id of ['zin_abyss_folk', 'zin_demons_shachihata', 'zin_demons_bound', 'zin_glo_bearer', 'zin_volgan_presence', 'zin_great_spirit']) {
     assert(!Object.values(raw0.units.recruit.line).flat().includes(id), `${id} is recruited by someone`);
     assert.deepEqual(model.unitById.get(id).people, [], id);
   }
@@ -432,7 +432,6 @@ test('The story templates of the spec use defined sub-units that their people ma
     abyss_host: ['zin_abyss_folk'],
     grave_host: ['zin_the_dead_revenant'],
     deathless_host: ['zin_zol_deathless'],
-    the_presence: ['zin_zol_deathless', 'zin_zol_manifestation'],
     buldor_company: ['zin_men_infantry', 'zin_men_archers'],
   };
   for (const [name, ids] of Object.entries(templates)) for (const id of ids) assert(unitBlocks.has(id), `${name}: ${id}`);
@@ -580,7 +579,8 @@ test('No localised value says a modern word, uses a glyph outside Windows-1252, 
     if (existsSync(p)) for (const m of readFileSync(p, 'utf8').matchAll(/^ ([A-Za-z0-9_.\-]+):\d* "(.*)"\s*$/gm)) installed.set(m[1], m[2]);
   }
   for (const [k, v] of [...mainLoc, ...replaceLoc]) {
-    assert.deepEqual(findBanned(v, banned, ['error']), [], `${k}: ${v}`);
+    // The allowances of the banned-word data hold here too: the black-powder keys may name hand-guns (owner decision K19).
+    assert.deepEqual(findBanned(v, banned, ['error']).filter(h => !banned.allowances.some(a => allowanceCovers(a, h.id, k, 'zin_warfare_l_english.yml'))), [], `${k}: ${v}`);
     assert(/^[\x20-\x7e -ÿ]*$/.test(v), `${k}: glyph`);
     if (installed.has(k)) assert.notEqual(v, installed.get(k), `${k} copies the installed text`);
   }
@@ -651,4 +651,43 @@ test('Piercing arithmetic follows the engine blend', () => {
   assert.equal(divisionPiercing([]), 0);
   assert.equal(divisionPiercing([10, 10]), 10);
   assert.equal(Math.round(divisionPiercing([0, 50]) * 10) / 10, 0.4 * 25 + 0.6 * 50);
+});
+
+// ------------------------------------------------------------------------------------------------ dragons, black powder, retired gear
+test('zin_war_grant_dragons grants flights under the cap: dragons, Dragon Lore and the doctrine with skies, the timed idea without; it reports zin_war.2', () => {
+  const e = text('common/scripted_effects/zin_warfare.txt');
+  assert.match(e, /^zin_war_grant_dragons = \{/m);
+  for (const s of ['set_temp_variable = { zin_war_flights = zin_arg_amount }', 'constant:zin_warfare.max_dragon_flights', 'add_to_variable = { zin_dragon_flights = zin_war_flights }', 'add_equipment_to_stockpile = { type = zin_dragon_equipment_0 amount = zin_war_dragons producer = THIS }', 'set_technology = { zin_tech_dragon_lore = 1 popup = no }', 'zin_inst_air_start = yes', 'add_timed_idea = { idea = zin_war_dragon_ally days = zin_war_days }', 'country_event = { id = zin_war.2 }']) assert(e.includes(s), s);
+  assert.equal(braces(e), 0);
+  const c = text('common/script_constants/zin_warfare_constants.txt');
+  for (const k of ['dragons_per_flight = 3', 'max_dragon_flights = 10', 'dragon_ally_days = 180']) assert(c.includes(k), k);
+  assert.match(text('common/ideas/zin_warfare.txt'), /zin_war_dragon_ally = \{[\s\S]*army_attack_factor = 0\.05[\s\S]*army_morale_factor = 0\.05/);
+  assert.match(text('events/zin_warfare.txt'), /add_namespace = zin_war\ncountry_event = \{\n\tid = zin_war\.2/);
+  for (const k of ['zin_war.2.t', 'zin_war.2.d', 'zin_war.2.a', 'zin_war_dragon_ally', 'zin_war_dragon_ally_desc']) assert(mainLoc.has(k), k);
+});
+test('Black powder (K19): bombards and hand-guns are made only under zin_gunpowder, unlocked only by the powder technologies, and fielded by their sub-units', () => {
+  for (const a of ['zin_bombard_equipment', 'zin_handgun_equipment']) {
+    const b = eqBlocks.get(a);
+    assert.equal(field(field(b, 'can_be_produced'), 'has_country_flag'), 'zin_gunpowder', `${a} is made by the black-powder realms`);
+  }
+  const unlocked = new Map();
+  for (const t of raw0.techs.technologies) for (const e of t.unlocks?.equipment ?? []) unlocked.set(e, t.key);
+  for (const v of model.archById.get('zin_bombard_equipment').variants) assert(unlocked.has(`zin_bombard_equipment_${v.n}`), `bombard ${v.n}`);
+  for (const v of model.archById.get('zin_handgun_equipment').variants) assert(unlocked.has(`zin_handgun_equipment_${v.n}`), `hand-gun ${v.n}`);
+  const powder = raw0.techs.technologies.filter(t => ['powder', 'hand_guns'].includes(t.line));
+  assert.equal(powder.length, 9);
+  for (const t of powder.filter(t => !t.requires)) assert.deepEqual(t.who, ['group:powder'], `${t.key} is the powder realms' own`);
+  assert.deepEqual(raw0.techs.groups.powder, ['flag:zin_gunpowder']);
+  for (const id of ['zin_men_handgunners', 'zin_siege_bombard', 'zin_support_bombards']) { assert(unitBlocks.has(id), id); assert.equal(model.unitById.get(id).unlock, 'tech'); }
+  // Balance against the torsion engines and crossbows of the same years: a bombard costs more and shoots harder than a trebuchet, a hand-gun
+  // pierces more than a crossbow and shoots no harder.
+  const st = (a, n) => variantStats(model.archById.get(a), model.archById.get(a).variants.find(v => v.n === n));
+  assert(st('zin_bombard_equipment', 2).sa < st('zin_trebuchet_equipment', 0).sa * 1.2 && st('zin_bombard_equipment', 2).ap > st('zin_trebuchet_equipment', 0).ap);
+  assert(model.archById.get('zin_bombard_equipment').cost > model.archById.get('zin_trebuchet_equipment').cost);
+  assert(st('zin_handgun_equipment', 2).ap > st('zin_bows_equipment', 3).ap && st('zin_handgun_equipment', 2).sa <= st('zin_bows_equipment', 3).sa);
+});
+test('Zol never takes the field in person: no Zol Made Flesh company or equipment', () => {
+  assert(!model.unitById.has('zin_zol_manifestation'));
+  assert(!model.archById.has('zin_zol_manifestation_equipment'));
+  for (const [k, v] of mainLoc) assert(!/Zol Made Flesh/.test(v), k);
 });

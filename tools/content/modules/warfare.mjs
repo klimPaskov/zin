@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import { Staged, yml } from '../lib/core.mjs';
 import { GAME, ZIN } from '../lib/paths.mjs';
 import { placeNames, buildNames } from './names.mjs';
-import { compileBanned, findBanned } from '../lib/banned.mjs';
+import { compileBanned, findBanned, allowanceCovers } from '../lib/banned.mjs';
 import { cultureRows, gamePeopleOf } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -43,12 +43,12 @@ const ZIN_CATEGORIES = ['category_zin_archers', 'category_zin_dead', 'category_z
 
 const readJson = async f => JSON.parse(await readFile(path.join(DATA, f), 'utf8'));
 export async function loadRaw() {
-  const [units, equipment, naval, names, text, models, econ, cultures, cultureDefs, techs, techIds] = await Promise.all([
+  const [units, equipment, naval, names, text, models, econ, cultures, cultureDefs, techs, techIds, dragons] = await Promise.all([
     readJson('warfare_units.json'), readJson('warfare_equipment.json'), readJson('warfare_naval.json'), readJson('warfare_names.json'),
     readJson('warfare_text.json'), readJson('warfare_models.json'), readJson('economy.json'), Promise.resolve({ countries: cultureRows() }),
-    readJson('world/cultures.json'), readJson('technologies_warfare.json'), readJson('technologies_ids.json'),
+    readJson('world/cultures.json'), readJson('technologies_warfare.json'), readJson('technologies_ids.json'), readJson('warfare_dragons.json'),
   ]);
-  return { units, equipment, naval, names, text, models, econ, cultures, cultureDefs, techs, techIds };
+  return { units, equipment, naval, names, text, models, econ, cultures, cultureDefs, techs, techIds, dragons };
 }
 
 // ------------------------------------------------------------------------------------------------ small helpers
@@ -427,7 +427,7 @@ function unitFileOf(u) {
   const id = u.id;
   if (u.great) return 'great';
   if (id === 'zin_support_pack_train' || id === 'zin_elves_wardsingers') return 'camp';
-  if (id.startsWith('zin_support_')) return ['catapults', 'ballistae', 'scorpions'].some(x => id.endsWith(x)) ? 'siege' : 'camp';
+  if (id.startsWith('zin_support_')) return ['catapults', 'ballistae', 'scorpions', 'bombards'].some(x => id.endsWith(x)) ? 'siege' : 'camp';
   if (id.startsWith('zin_siege_')) return 'siege';
   if (id.startsWith('zin_men_')) return 'men';
   if (id.startsWith('zin_elves_')) return 'elves';
@@ -469,7 +469,9 @@ export function checkEquipmentTriggers(id, block) {
 
 function producePredicate(model, prod, rule) {
   const parts = [];
-  for (const p of prod) parts.push(p.startsWith('country:') ? `tag = ${model.tag(p.slice(8))}` : `has_country_flag = zin_people_${p}`);
+  // A producer is a people (its flag zin_people_<people>), a roster country (country:<name>) or a country flag (flag:<name>: the black-powder
+  // realms carry zin_gunpowder, set in their history and given by the story; owner decision K19).
+  for (const p of prod) parts.push(p.startsWith('country:') ? `tag = ${model.tag(p.slice(8))}` : p.startsWith('flag:') ? `has_country_flag = ${p.slice(5)}` : `has_country_flag = zin_people_${p}`);
   if (rule) {
     if (!model.raw.techIds.gameRules?.[SKIES_RULE]?.includes(rule)) err(`warfare: the sky rule has no option ${rule}`);
     return `\t\tcan_be_produced = {\n\t\t\thas_game_rule = { rule = ${SKIES_RULE} option = ${rule} }\n\t\t\t${parts.length === 1 ? parts[0] : 'OR = { ' + parts.join(' ') + ' }'}\n\t\t}`;
@@ -940,15 +942,69 @@ function writeText(staged, model) {
   for (const g of raw.equipment.groups) main[g.id] = g.name;
   for (const [hull, name] of Object.entries(raw.names.shipThemeNames)) main[raw.names.shipThemes[hull]] = name;
   main.ZIN_OPERATIVE_CODENAME_THEME = 'Agents of the Courts';
+  Object.assign(main, model.dragonText ?? {});
   for (const k of Object.keys(main)) if (/[\u0080-￿]/.test(main[k]) && !/^[\u0000-ÿ]*$/.test(main[k])) err(`warfare: ${k} has a character outside Windows-1252`);
   const banned = compileBanned(JSON.parse(readFileSync(path.join(DATA, 'banned_words.json'), 'utf8')));
   for (const [k, v] of [...Object.entries(main), ...Object.entries(replace)]) {
-    const hits = findBanned(v, banned, ['error']);
+    // An allowance of the banned-word data covers its keys here too (the black-powder keys may name hand-guns, owner decision K19).
+    const hits = findBanned(v, banned, ['error']).filter(h => !banned.allowances.some(a => allowanceCovers(a, h.id, k, 'zin_warfare_l_english.yml')));
     if (hits.length) err(`warfare: the text of ${k} says "${hits[0].word}" (${hits[0].id})`);
   }
   staged.add('localisation/english/zin_warfare_l_english.yml', yml(main));
   staged.add('localisation/replace/zin_warfare_l_english.yml', yml(replace));
   model.text = { main, replace };
+}
+
+// ------------------------------------------------------------------------------------------------ dragons (spec 6.3)
+// zin_war_grant_dragons (country scope; the caller sets the temp variable zin_arg_amount to the flights it grants): the realm's
+// zin_dragon_flights rises by the flights it has room for (never above the cap), and with a sky rule that has dragons it receives the
+// flights' dragons as equipment, the Dragon Lore that lets it field them and its first air doctrine; with the sky rule none the dragons
+// fight beside the host as a timed idea. The report zin_war.2 tells the realm. Data: data/warfare_dragons.json.
+function writeDragons(staged, model) {
+  const D = model.raw.dragons, C = 'zin_warfare';
+  if (!model.equipmentIds.has(D.equipment)) err(`warfare: the dragon grant names ${D.equipment}, which is not defined`);
+  if (!model.raw.techs.technologies.some(t => t.key === D.lore)) err(`warfare: the dragon grant names the technology ${D.lore}, which is not defined`);
+  const [ns, id] = D.event.id.split('.');
+  staged.text('common/script_constants/zin_warfare_constants.txt', `${HEADER}\n# Tuning of the dragon grant (data/warfare_dragons.json).\n${C} = {\n\tschema = {\n\t\tany_key = yes\n\t\tdata = int\n\t}\n\n\tdragons_per_flight = ${D.perFlight}\n\tmax_dragon_flights = ${D.maxFlights}\n\tdragon_ally_days = ${D.allyDays}\n}\n`);
+  staged.text('common/scripted_effects/zin_warfare.txt', `${HEADER}
+# zin_war_grant_dragons: country scope. Input: the temp variable zin_arg_amount, the flights granted (a flight is ${D.perFlight} dragons).
+# Raises zin_dragon_flights by the flights the realm has room for under the cap; with dragons in the skies adds the dragons
+# (${D.equipment}), Dragon Lore and the first air doctrine (zin_inst_air_start); with the sky rule none adds ${D.ally.id} for
+# ${D.allyDays} days per flight instead. Fires the report ${D.event.id}. Called by the magic and world systems (zin_world_give_dragon).
+zin_war_grant_dragons = {
+\tset_temp_variable = { zin_war_flights = zin_arg_amount }
+\tset_temp_variable = { zin_war_room = constant:${C}.max_dragon_flights }
+\tsubtract_from_temp_variable = { zin_war_room = zin_dragon_flights }
+\tif = {
+\t\tlimit = { check_variable = { zin_war_flights > zin_war_room } }
+\t\tset_temp_variable = { zin_war_flights = zin_war_room }
+\t}
+\tif = {
+\t\tlimit = { check_variable = { zin_war_flights > 0 } }
+\t\tadd_to_variable = { zin_dragon_flights = zin_war_flights }
+\t\tif = {
+\t\t\tlimit = { zin_rules_skies_present = yes }
+\t\t\tset_temp_variable = { zin_war_dragons = zin_war_flights }
+\t\t\tmultiply_temp_variable = { zin_war_dragons = constant:${C}.dragons_per_flight }
+\t\t\tadd_equipment_to_stockpile = { type = ${D.equipment} amount = zin_war_dragons producer = THIS }
+\t\t\tif = {
+\t\t\t\tlimit = { NOT = { has_tech = zin_tech_${D.lore} } }
+\t\t\t\tset_technology = { zin_tech_${D.lore} = 1 popup = no }
+\t\t\t}
+\t\t\tzin_inst_air_start = yes
+\t\t}
+\t\telse = {
+\t\t\tset_temp_variable = { zin_war_days = zin_war_flights }
+\t\t\tmultiply_temp_variable = { zin_war_days = constant:${C}.dragon_ally_days }
+\t\t\tadd_timed_idea = { idea = ${D.ally.id} days = zin_war_days }
+\t\t}
+\t\tcountry_event = { id = ${D.event.id} }
+\t}
+}
+`);
+  staged.text('common/ideas/zin_warfare.txt', `${HEADER}\n# The dragons beside the host when the sky rule has none (spec 6.3).\nideas = {\n\tcountry = {\n\t\t${D.ally.id} = {\n\t\t\tpicture = ${D.ally.picture}\n\t\t\tallowed = { always = no }\n\t\t\tallowed_civil_war = { always = yes }\n\t\t\tremoval_cost = -1\n\t\t\tmodifier = {\n${Object.entries(D.ally.modifier).map(([k, v]) => `\t\t\t\t${k} = ${num(v)}`).join('\n')}\n\t\t\t}\n\t\t}\n\t}\n}\n`);
+  staged.text('events/zin_warfare.txt', `${HEADER}\n# The reports of the warfare module (spec section 14): ${D.event.id}, shown to the receiver of zin_war_grant_dragons.\nadd_namespace = ${ns}\ncountry_event = {\n\tid = ${D.event.id}\n\ttitle = ${ns}.${id}.t\n\tdesc = ${ns}.${id}.d\n\tpicture = ${D.event.picture}\n\tis_triggered_only = yes\n\toption = {\n\t\tname = ${ns}.${id}.a\n\t}\n}\n`);
+  model.dragonText = { [`${ns}.${id}.t`]: D.event.title, [`${ns}.${id}.d`]: D.event.desc, [`${ns}.${id}.a`]: D.event.option, [D.ally.id]: D.ally.name, [`${D.ally.id}_desc`]: D.ally.desc };
 }
 
 // ------------------------------------------------------------------------------------------------ the build
@@ -963,6 +1019,7 @@ export async function buildWarfare(staged, ctx = {}) {
   buildNameFiles(staged, model, ctx);
   writeSprites(staged, model);
   writeEntities(staged, model);
+  writeDragons(staged, model);
   writeText(staged, model);
   // review aids: the solved stats of every land sub-unit and the hull totals
   const stats = {};

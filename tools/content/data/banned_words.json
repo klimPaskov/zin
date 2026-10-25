@@ -1359,6 +1359,22 @@
       ],
       "files": [],
       "reason": "Strategic region is the name of a map division ZIN keeps (map/strategicregions); the review rule aims at modern staff vocabulary, not at this engine concept"
+    },
+    {
+      "id": "al_black_powder",
+      "rules": [
+        "bw_modern_industry_030"
+      ],
+      "keys": [
+        "zin_handgun_equipment*",
+        "zin_men_handgunners*",
+        "zin_tech_hand_guns*",
+        "zin_tech_matchlocks*",
+        "zin_tech_long_matchlocks*",
+        "zin_tech_arquebuses*"
+      ],
+      "files": [],
+      "reason": "Owner decision K19: gunpowder weapons are common in some realms, and the voice spec (02_lore/09_voice_and_style.md, 2.5) has the text of those realms name hand-guns plainly. These keys are the black-powder equipment, sub-unit and technologies, which only the black-powder realms (country flag zin_gunpowder) can see, research or field."
     }
   ],
   "allowanceRules": "An allowance names rules by id or by the pattern bw_<class>_*, and keys or files. Every entry needs a reason. The scan prints the allowances it used and fails on one it did not use."

@@ -15,6 +15,7 @@ import { PEOPLES, defaultPeople } from './peoples.mjs';
 import { stanceIdeology } from './ideologies.mjs';
 import { START_DATE } from '../lib/calendar.mjs';
 import { fullKey as techKey } from './technologies.mjs';
+import { GUNPOWDER_FLAG } from '../lib/roster.mjs';
 
 // Defaults for a country without a stance of its own (a synthetic test row); every realm of the roster has one.
 const BY_NAME = {
@@ -101,6 +102,8 @@ export function buildCountryPackage(staged, { countries, table, recruits = new M
     H.push(`capital = ${c.capitalState}`, `oob = "${c.tag}_world"`);
     const setup = c.focusTier === 'major' ? SETUP.major : SETUP.other;
     H.push(`add_ideas = { ${SETUP.laws.join(' ')} }`, `set_research_slots = ${setup.slots}`, `set_stability = ${SETUP.stability}`, `set_war_support = ${setup.war}`);
+    // A black-powder realm (roster gunpowder, K19) carries the flag its powder equipment, technologies and AI read.
+    if (c.gunpowder) H.push(`set_country_flag = ${GUNPOWDER_FLAG}`);
     const pack = starts?.countries?.[c.name];
     if (starts && !pack) problems.push(`${c.name} has no start package`);
     if (pack?.technologies?.length) H.push(`set_technology = {\n${pack.technologies.map(k => `\t${techKey(k)} = 1`).join('\n')}\n}`);

@@ -365,21 +365,25 @@ test('The constants file declares the treasury numbers with a schema', () => {
 });
 
 // ------------------------------------------------------------------------------------- enums and tokens
-test('script_enums.txt is the installed file when no ZIN equipment is staged', async () => {
+test('script_enums.txt with no ZIN equipment: the bonus type block is the installed categories, every other block is the installed one', async () => {
   const vanilla = (await readFile(`${GAME}/common/script_enums.txt`, 'utf8')).replace(/^﻿/, '').replace(/\r\n/g, '\n');
-  assert.equal(text('common/script_enums.txt').replace(/\r\n/g, '\n').trimEnd(), vanilla.trimEnd());
+  const t = text('common/script_enums.txt').replace(/\r\n/g, '\n');
+  const [a, b] = E.topLevelBlock(t, 'script_enum_equipment_bonus_type'), [va, vb] = E.topLevelBlock(vanilla, 'script_enum_equipment_bonus_type');
+  assert.equal(t.slice(0, a), vanilla.slice(0, va));
+  assert.equal(t.slice(b).trimEnd(), vanilla.slice(vb).trimEnd());
+  assert.deepEqual(E.identifiersOf(t, 'script_enum_equipment_bonus_type'), E.identifiersOf(vanilla, 'script_enum_equipment_category'));
 });
 
-test('script_enums.txt gains every staged ZIN equipment key inside the bonus type block, once, sorted', async () => {
+test('script_enums.txt: the bonus type block holds the categories and every staged ZIN equipment key and hull alias, once, sorted; no removed vanilla name', async () => {
   const s2 = new Staged();
-  s2.text('common/units/equipment/zin_arms.txt', 'equipments = {\n\tzin_arms_equipment = { year = 1748 is_archetype = yes }\n\tzin_arms_equipment_1 = { archetype = zin_arms_equipment }\n\tzin_cog_hull = { }\n}\n');
+  s2.text('common/units/equipment/zin_arms.txt', 'equipments = {\n\tzin_arms_equipment = { year = 1748 is_archetype = yes }\n\tzin_arms_equipment_1 = { archetype = zin_arms_equipment }\n\tzin_cog_hull = { alias = heavy_cruiser }\n}\n');
   await E.buildEconomy(s2, { countries, equipmentKeys: ['zin_arms_equipment', 'zin_wardstone_equipment'], yieldToTextSweep: false });
   const t = s2.files.get('common/script_enums.txt').toString('utf8');
   const [a, b] = E.topLevelBlock(t, 'script_enum_equipment_bonus_type');
   const body = t.slice(a, b);
-  for (const k of ['zin_arms_equipment', 'zin_arms_equipment_1', 'zin_cog_hull', 'zin_wardstone_equipment']) assert.equal((body.match(new RegExp(`^\\t${k}$`, 'm')) ?? []).length, 1, k);
+  for (const k of ['zin_arms_equipment', 'zin_arms_equipment_1', 'zin_cog_hull', 'zin_wardstone_equipment', 'heavy_cruiser', 'infantry', 'convoy']) assert.equal((body.match(new RegExp(`^\\t${k}$`, 'm')) ?? []).length, 1, k);
   assert(body.indexOf('zin_arms_equipment\n') < body.indexOf('zin_wardstone_equipment'));
-  assert(body.includes('infantry_equipment') && body.includes('motorized_equipment_1'), 'vanilla identifiers stay');
+  for (const k of ['infantry_equipment', 'infantry_equipment_1', 'small_plane_airframe', 'transport_plane_equipment']) assert(!new RegExp(`^\\t${k}$`, 'm').test(body), `the removed vanilla name ${k} is dropped`);
   assert(braces(t));
   assert(E.topLevelBlock(t, 'script_enum_equipment_category') && E.topLevelBlock(t, 'script_enum_equipment_stat'), 'other blocks intact');
   assert(s2.files.get('common/synchronized_dynamic_tokens/zin_tokens.txt').toString('utf8').includes('zin_cog_hull'));

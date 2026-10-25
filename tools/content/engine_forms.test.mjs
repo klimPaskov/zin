@@ -31,11 +31,62 @@ test('convoy_types: a second convoy type fails', () => {
   assert.deepEqual(rules({ 'common/units/equipment/x.txt': eq(['convoy_1']) }), []);
 });
 
-test('recruit_on_actions: recruit_character in an on_action fails; history passes; in-game effects are reported', () => {
+test('recruit_on_actions: recruit_character in an on_action fails; history and the set_nationality move pass; other in-game calls are reported', () => {
   assert.deepEqual(rules({ 'common/on_actions/x.txt': 'on_actions = {\n\ton_startup = { effect = { AEN = { recruit_character = zin_a } } }\n}\n' }), ['recruit_on_actions']);
   assert.deepEqual(rules({ 'history/countries/AEN - Aenor.txt': 'capital = 1\nrecruit_character = zin_a\nset_politics = { }\n' }), []);
   const r = checkEngineForms(tree({ 'events/x.txt': 'country_event = {\n\tid = x.1\n\toption = { recruit_character = zin_a }\n}\n' }));
   assert.deepEqual([r.errors.length, r.reported.recruit_in_game], [0, ['events/x.txt:3']]);
+  assert.deepEqual(rules({ 'events/x.txt': 'country_event = {\n\tid = x.1\n\toption = { if = { limit = { NOT = { has_character = zin_a } } zin_a = { set_nationality = PREV } } }\n}\n' }), []);
+});
+
+test('opinion_check_block: has_opinion_modifier with a target block fails; the targeted flag passes', () => {
+  assert.deepEqual(rules({ 'common/scripted_triggers/x.txt': 'zin_x = {\n\thas_opinion_modifier = { target = FROM modifier = zin_m }\n}\n' }), ['opinion_check_block']);
+  assert.deepEqual(rules({ 'common/scripted_triggers/x.txt': 'zin_x = {\n\thas_country_flag = zin_m_@FROM\n\thas_opinion_modifier = zin_m\n}\n' }), []);
+});
+
+test('decision_state_trigger: state_trigger in a decision fails; state_target passes', () => {
+  const dec = k => `zin_cat = {\n\tzin_dec = {\n\t\t${k} = yes\n\t\ttarget_trigger = { FROM = { is_coastal = yes } }\n\t}\n}\n`;
+  assert.deepEqual(rules({ 'common/decisions/x.txt': dec('state_trigger') }), ['decision_state_trigger']);
+  assert.deepEqual(rules({ 'common/decisions/x.txt': dec('state_target') }), []);
+});
+
+test('trait_slot: a leader trait with slot fails', () => {
+  assert.deepEqual(rules({ 'common/country_leader/x.txt': 'leader_traits = {\n\tzin_t = {\n\t\tslot = political_advisor\n\t\tstability_factor = 0.05\n\t}\n}\n' }), ['trait_slot']);
+  assert.deepEqual(rules({ 'common/country_leader/x.txt': 'leader_traits = {\n\tzin_t = {\n\t\trandom = no\n\t\tstability_factor = 0.05\n\t}\n}\n' }), []);
+});
+
+test('iterator_as_effect: any_country in an effect fails; in its limit, a trigger or as every_country it passes', () => {
+  assert.deepEqual(rules({ 'common/decisions/x.txt': 'zin_cat = {\n\tzin_dec = {\n\t\tcomplete_effect = {\n\t\t\tany_country = { limit = { tag = AEN } add_stability = 0.05 }\n\t\t}\n\t}\n}\n' }), ['iterator_as_effect']);
+  assert.deepEqual(rules({ 'common/scripted_effects/x.txt': 'zin_x = {\n\tany_country = { limit = { tag = AEN } add_stability = 0.05 }\n}\n' }), ['iterator_as_effect']);
+  assert.deepEqual(rules({ 'common/decisions/x.txt': 'zin_cat = {\n\tzin_dec = {\n\t\tavailable = { any_country = { tag = AEN } }\n\t\tcomplete_effect = {\n\t\t\tif = { limit = { any_country = { tag = AEN } } every_country = { limit = { tag = AEN } add_stability = 0.05 } }\n\t\t}\n\t}\n}\n' }), []);
+});
+
+test('random_list_trigger: a trigger block in a random_list option fails; modifier factor 0 passes', () => {
+  assert.deepEqual(rules({ 'common/scripted_effects/x.txt': 'zin_x = {\n\trandom_list = {\n\t\t10 = { trigger = { has_country_flag = f } add_stability = 0.05 }\n\t\t10 = { }\n\t}\n}\n' }), ['random_list_trigger']);
+  assert.deepEqual(rules({ 'common/scripted_effects/x.txt': 'zin_x = {\n\trandom_list = {\n\t\t10 = { modifier = { factor = 0 NOT = { has_country_flag = f } } add_stability = 0.05 }\n\t\t10 = { }\n\t}\n}\n' }), []);
+});
+
+test('market_strategy_id and bonus_enum: an archetype as a market id fails; the category passes; the bonus enum must match the staged equipment', () => {
+  const enums = list => `script_enum_equipment_category = {\n\tinfantry\n\tsupport\n}\nscript_enum_equipment_bonus_type = {\n${list.map(k => `\t${k}`).join('\n')}\n}\n`;
+  const eq = 'equipments = {\n\tzin_arms_equipment = { is_archetype = yes type = infantry }\n\tzin_arms_equipment_0 = { archetype = zin_arms_equipment }\n\tzin_hull_x = { is_archetype = yes alias = heavy_cruiser }\n}\n';
+  const strat = id => `zin_s = {\n\tai_strategy = {\n\t\ttype = equipment_market_for_sale_threshold\n\t\tid = ${id}\n\t\tvalue = 10\n\t}\n}\n`;
+  const good = enums(['infantry', 'support', 'zin_arms_equipment', 'zin_arms_equipment_0', 'zin_hull_x', 'heavy_cruiser']);
+  assert.deepEqual(rules({ 'common/script_enums.txt': good, 'common/units/equipment/x.txt': eq, 'common/ai_strategy/x.txt': strat('zin_arms_equipment') }), ['market_strategy_id']);
+  assert.deepEqual(rules({ 'common/script_enums.txt': good, 'common/units/equipment/x.txt': eq, 'common/ai_strategy/x.txt': strat('infantry') }), []);
+  assert.deepEqual(rules({ 'common/script_enums.txt': enums(['infantry', 'support', 'zin_arms_equipment', 'zin_arms_equipment_0', 'zin_hull_x', 'infantry_equipment_1']), 'common/units/equipment/x.txt': eq }), ['bonus_enum', 'bonus_enum']);
+});
+
+test('tech_gridbox: a root technology of a folder needs its gridbox in the tree window; a path child does not', () => {
+  const techs = 'technologies = {\n\tzin_tech_a = {\n\t\tpath = { leads_to_tech = zin_tech_b research_cost_coeff = 1 }\n\t\tfolder = { name = zin_arms_folder position = { x = 0 y = 0 } }\n\t}\n\tzin_tech_b = {\n\t\tfolder = { name = zin_arms_folder position = { x = 0 y = 2 } }\n\t}\n}\n';
+  const gui = box => `guiTypes = {\n\tcontainerWindowType = {\n\t\tname = "countrytechtreeview"\n\t\tcontainerWindowType = {\n\t\t\tname = "zin_arms_folder"\n\t\t\tgridboxtype = {\n\t\t\t\tname = "${box}"\n\t\t\t\tslotsize = { width = 70 height = 70 }\n\t\t\t}\n\t\t}\n\t}\n}\n`;
+  assert.deepEqual(rules({ 'common/technologies/x.txt': techs, 'interface/countrytechtreeview.gui': gui('zin_tech_a_tree') }), []);
+  assert.deepEqual(rules({ 'common/technologies/x.txt': techs, 'interface/countrytechtreeview.gui': gui('infantry_weapons_tree') }), ['tech_gridbox']);
+  assert.deepEqual(rules({ 'common/technologies/x.txt': techs }), ['tech_gridbox']);
+});
+
+test('strategy_state_trigger is reported, not enforced: state_trigger on a garrison strategy', () => {
+  const r = checkEngineForms(tree({ 'common/ai_strategy/x.txt': 'zin_s = {\n\tai_strategy = {\n\t\ttype = garrison\n\t\tvalue = 50\n\t\tstate_trigger = { is_coastal = yes }\n\t}\n\tai_strategy = {\n\t\ttype = front_unit_request\n\t\tvalue = 50\n\t\tstate_trigger = { is_coastal = yes }\n\t}\n}\n' }));
+  assert.deepEqual([r.errors.length, r.reported.strategy_state_trigger], [0, ['common/ai_strategy/x.txt:5']]);
 });
 
 test('ship_variant: a modular hull ship needs version_name and the variant in its country history', () => {

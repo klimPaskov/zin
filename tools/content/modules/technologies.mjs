@@ -22,6 +22,7 @@ import { START_SHOWN } from '../lib/calendar.mjs';
 import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { layoutFolders, bandY, ruleCost, clauseAdmits, whoAdmits, whoCovered, SLOT, ORIGIN } from '../lib/tech_layout.mjs';
 import { defaultPeople, PEOPLES } from './peoples.mjs';
+import { techTreeGui } from '../lib/tech_tree_gui.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const dataFile = name => path.join(here, '../data', name);
@@ -133,7 +134,9 @@ export async function vanillaLocKeys() {
 }
 
 // ---------- who: clauses ----------
-// A "who" string is a clause: a people key, country:<name>, region:<key>, group:<name>, joined with + for AND.
+// A "who" string is a clause: a people key, country:<name>, region:<key>, flag:<country flag>, group:<name>, joined with + for AND.
+// A flag clause names a country flag of the id list (countryFlags): zin_gunpowder marks the black-powder realms (owner decision K19),
+// set in their history and given by the story, so a realm that buys powder in play sees the powder technologies.
 // A list of strings is an OR. An empty or missing list admits everyone.
 export function parseWho(list, ctx, problems, where) {
   const out = [];
@@ -150,6 +153,10 @@ export function parseWho(list, ctx, problems, where) {
         const name = part.slice(8);
         if (!ctx.tags.has(name)) problems.push(`${where}: country ${name} is not in the roster`);
         clause.country = name;
+      } else if (part.startsWith('flag:')) {
+        const f = part.slice(5);
+        if (!ctx.ids.countryFlags.includes(f)) problems.push(`${where}: unknown country flag ${f}`);
+        clause.flag = f;
       } else if (part.startsWith('region:')) {
         const r = part.slice(7);
         if (!ctx.ids.regionFlags.includes(r)) problems.push(`${where}: unknown region flag ${r}`);
@@ -512,6 +519,8 @@ export function startFor(model, packages, country, people) {
   key ??= a.theDeadOther;
   const techs = new Set(packages[key].technologies);
   for (const e of a.extras[country.name] ?? []) techs.add(e);
+  // The black-powder realms (the roster's gunpowder field, owner decision K19) start with the powder of their age.
+  if (country.gunpowder) for (const e of a.gunpowder ?? []) techs.add(e);
   // closure over prerequisites for the extras
   const queue = [...techs];
   while (queue.length) { const t = model.byKey.get(fullKey(queue.pop())); for (const p of [...t.requires, ...t.needs]) { const s = shortKey(p); if (!techs.has(s)) { techs.add(s); queue.push(s); } } }
@@ -527,6 +536,7 @@ function whoLines(clauses, model, depth) {
     if (c.people) parts.push(`zin_tech_people_${c.people} = yes`);
     if (c.country) parts.push(`original_tag = ${model.tags.get(c.country)}`);
     if (c.region) parts.push(`has_country_flag = zin_region_${c.region}`);
+    if (c.flag) parts.push(`has_country_flag = ${c.flag}`);
     return parts;
   };
   const items = clauses.map(c => one(c));
@@ -868,7 +878,14 @@ export async function buildTechnologies(staged, ctx) {
   staged.text(DOCTRINE_FILES.grand, grandDoctrines(model));
   for (const f of ['land', 'naval', 'air', 'special_forces']) staged.text(DOCTRINE_FILES[f], subdoctrines(model, f));
   // sprites
-  staged.text('interface/zin_technologies.gfx', spriteFile('Technology tile icons, GFX_<technology>_medium.', model.techs.filter(t => !t.grantOnly).map(t => [`GFX_${t.key}_medium`, textureFor('gfx/interface/technologies/zin', t.key)]).sort(([a], [b]) => a.localeCompare(b, 'en'))));
+  // The tabs of the ZIN folders (GFX_<folder>_tab; their art is pending, the tab says the folder's name until then). The kept folders keep
+  // their vanilla tabs.
+  const zinFolders = Object.keys(FOLDER_FILES).filter(f => !KEPT_FOLDERS.has(f));
+  staged.text('interface/zin_technologies.gfx', spriteFile('Technology tile icons, GFX_<technology>_medium, and the tabs of the ZIN folders, GFX_<folder>_tab.', [...model.techs.filter(t => !t.grantOnly).map(t => [`GFX_${t.key}_medium`, textureFor('gfx/interface/technologies/zin', t.key)]), ...zinFolders.map(f => [`GFX_${f}_tab`, textureFor('gfx/interface/techtree/zin', `${f}_tab`)]), ['GFX_zin_technology_blank', FALLBACK_TEXTURE]].sort(([a], [b]) => a.localeCompare(b, 'en'))));
+  // The technology tree window (spec section 5.8): generated from the installed file with one window per folder and a gridbox for every
+  // root, so no technology is without its grid box ("Found no grid box for tech").
+  const installedGui = await readFile(`${GAME}/interface/countrytechtreeview.gui`, 'latin1');
+  staged.add('interface/countrytechtreeview.gui', Buffer.from(techTreeGui(installedGui, { folders: Object.keys(FOLDER_FILES).map(key => ({ key })), layout: model.layout.folders, tabSprite: f => `GFX_${f}_tab`, blankIcon: 'GFX_zin_technology_blank' }), 'latin1'));
   const dEntries = [];
   const d = model.doctrines;
   for (const g of d.grand) dEntries.push([`GFX_${g.key}_medium`, textureFor('gfx/interface/doctrines/zin', g.key)]);

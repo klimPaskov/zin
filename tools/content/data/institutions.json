@@ -170,22 +170,17 @@
     ]
   },
   "market": {
-    "note": "AI strategies of the Great Fairs (section 4). Thresholds are in units of equipment. Types are those the installed game documents.",
+    "note": "AI strategies of the Great Fairs (section 4). Thresholds are in units of equipment. The id of a market strategy is an equipment type (category) of the installed script_enum_equipment_category, as vanilla writes it (infantry, support, artillery, train): an archetype id is a malformed token there. Each type takes the largest threshold of the archetypes it holds: infantry (arms 500/100, bows 300/60, hand-guns), support (camp gear 400/80, armour and mounts 200/40), artillery (catapults, trebuchets, bombards), anti_tank (ballistae), anti_air (scorpions).",
     "forSale": [
-      {"id":"zin_arms_equipment","threshold":500,"min":100},
-      {"id":"zin_bows_equipment","threshold":300,"min":60},
-      {"id":"zin_armour_equipment","threshold":200,"min":40},
-      {"id":"zin_mounts_equipment","threshold":200,"min":40},
-      {"id":"zin_camp_equipment","threshold":400,"min":80},
-      {"id":"zin_catapult_equipment","threshold":60,"min":10},
-      {"id":"zin_trebuchet_equipment","threshold":60,"min":10},
-      {"id":"zin_ballista_equipment","threshold":60,"min":10},
-      {"id":"zin_scorpion_equipment","threshold":60,"min":10}
+      {"id":"infantry","threshold":500,"min":100},
+      {"id":"support","threshold":400,"min":80},
+      {"id":"artillery","threshold":60,"min":10},
+      {"id":"anti_tank","threshold":60,"min":10},
+      {"id":"anti_air","threshold":60,"min":10}
     ],
-    "neverForSale": ["zin_hull_galley","zin_hull_warship","zin_hull_great_warship","zin_hull_raider","convoy","train_equipment","motorized_equipment"],
+    "neverForSale": ["screen_ship","capital_ship","submarine","convoy","train","motorized"],
     "buying": [
-      {"id":"zin_arms_equipment","threshold":-20},
-      {"id":"zin_bows_equipment","threshold":-20}
+      {"id":"infantry","threshold":-20}
     ],
     "buyWhenDarkAbove": 25,
     "spendWorkshops": 3
@@ -193,11 +188,11 @@
   "licences": {
     "note": "can_license per archetype group (section 5). Warfare writes the fields on its equipment; this table is the agreed answer and the builder test reads it.",
     "yes": ["zin_arms_equipment","zin_bows_equipment","zin_armour_equipment","zin_mounts_equipment","zin_camp_equipment","zin_ward_equipment","zin_elven_arms_equipment","zin_troll_gear_equipment","zin_giant_gear_equipment","zin_ent_grove_equipment","zin_yeti_gear_equipment","zin_ogre_gear_equipment","zin_catapult_equipment","zin_trebuchet_equipment","zin_ballista_equipment","zin_scorpion_equipment","zin_hull_galley","zin_hull_warship","zin_hull_raider","zin_hull_great_warship","zin_grave_arms_equipment","zin_nether_arms_equipment","motorized_equipment","train_equipment","convoy"],
-    "no": ["zin_deathless_equipment","zin_shachihata_equipment","zin_glo_blade_equipment","zin_glo_blade_equipment_shard","zin_volgan_presence_equipment","zin_great_spirit_equipment","zin_zol_manifestation_equipment","zin_dragon_equipment","zin_griffin_equipment"]
+    "no": ["zin_handgun_equipment","zin_bombard_equipment","zin_deathless_equipment","zin_shachihata_equipment","zin_glo_blade_equipment","zin_glo_blade_equipment_shard","zin_volgan_presence_equipment","zin_great_spirit_equipment","zin_dragon_equipment","zin_griffin_equipment"]
   },
   "lend": {
     "weights": {"zin_arms_equipment":1,"zin_bows_equipment":1,"zin_armour_equipment":2,"zin_mounts_equipment":2,"zin_camp_equipment":0.5,"zin_ward_equipment":3,"zin_catapult_equipment":4,"zin_ballista_equipment":3,"zin_scorpion_equipment":3,"zin_trebuchet_equipment":8,"convoy":0},
-    "notLendable": ["zin_hull_galley","zin_hull_warship","zin_hull_great_warship","zin_hull_raider","zin_deathless_equipment","zin_shachihata_equipment","zin_glo_blade_equipment","zin_glo_blade_equipment_shard","zin_volgan_presence_equipment","zin_great_spirit_equipment","zin_zol_manifestation_equipment","zin_dragon_equipment","zin_griffin_equipment"],
+    "notLendable": ["zin_hull_galley","zin_hull_warship","zin_hull_great_warship","zin_hull_raider","zin_deathless_equipment","zin_shachihata_equipment","zin_glo_blade_equipment","zin_glo_blade_equipment_shard","zin_volgan_presence_equipment","zin_great_spirit_equipment","zin_dragon_equipment","zin_griffin_equipment"],
     "opinionMin": 50,
     "overlordDesire": 60
   },

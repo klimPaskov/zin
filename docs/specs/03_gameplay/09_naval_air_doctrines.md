@@ -49,7 +49,7 @@ S6 (dragons use the air layer), R1 (the sky rule `zin_rule_skies` sits in `RULE_
 | Heavy cruisers, battle cruisers, battleships (capital ships) | **Warships** and **Great Warships** | `zin_hull_warship`, `zin_hull_great_warship`; `zin_ship_warship`, `zin_ship_great_warship`; type `capital_ship` |
 | Submarines | **Corsairs** (raiders) | `zin_hull_raider`, `zin_ship_raider`; type `submarine`; hidden raiders, stealth, convoy raiding |
 | Carriers and carrier air wings | **none** | No hull, no sub-unit, no designer slot. Dragons do not fly from ships; the fourth doctrine track slot becomes the sea lanes |
-| Transports and convoys | **Merchant Fleets** (cogs) | Key `convoy` kept; `convoy_0` cogs, `convoy_1` ocean cogs |
+| Transports and convoys | **Merchant Fleets** (cogs) | Key `convoy` kept; one convoy type, `convoy_1` the Merchant Cog (the game supports a single convoy type; the ocean cog is retired) |
 | Naval bases | **Harbours** | Building `naval_base` |
 | Naval supply hubs | **Victualling Yards** | Building `naval_supply_hub` |
 | Naval headquarters | **The Admiralty** | Building `naval_headquarters` |
@@ -370,7 +370,7 @@ The engine's AI navy uses fleet templates (made of task force templates), goals 
 
 **Doctrine choice** (`ai_will_do`): each naval grand doctrine 10 for its group above, 1 elsewhere, 0 for Zol's first two. Subdoctrines: the start subdoctrine's track first; then the lowest unfilled track in the order warships, galleys, sea lanes, raiders for Command of the Sea realms; galleys, sea lanes, warships, raiders for Oar and Ram; raiders, sea lanes, galleys, warships for Corsair realms. Corsair Packs over Cog Escorts for raiding crowns, the reverse for the rest. The AI takes a doctrine when it has 100 Valour and nothing in the queue.
 
-**Navy and sea behaviour.** Galleys patrol and escort; warships form the strike force; corsairs raid convoys (warfare AI). A West Lands AI builds ocean cogs and great warships only after the Western Crossing mechanic prepares the crossing. Zol keeps its three corsairs in its waters until the rising. No AI builds Black Sails unless it has the Zol technology.
+**Navy and sea behaviour.** Galleys patrol and escort; warships form the strike force; corsairs raid convoys (warfare AI). A West Lands AI builds great warships only after the Western Crossing mechanic prepares the crossing. Zol keeps its three corsairs in its waters until the rising. No AI builds Black Sails unless it has the Zol technology.
 
 **Air behaviour.** Elven AI uses dragon flights on close support in states it owns or borders, on naval strike when an enemy fleet is within range, and on wing exercises at peace; it never trades or lends a flight (`can_be_lend_leased` is `{ always = no }`, [08_institutions.md](08_institutions.md) §4). Under `beasts`, men with eyries keep griffins at 10 per cent of military production at war and none in peace (warfare). No AI builds an eyrie before it has a flight or the Eyries technology.
 

@@ -155,7 +155,9 @@ export function writeDecision(d, loc, sprites) {
   if (d.rootTrigger) out.push(blk('target_root_trigger', d.rootTrigger));
   if (d.targets) out.push(`targets = { ${d.targets.join(' ')} }`);
   if (d.targetsDynamic) out.push('targets_dynamic = yes');
-  if (d.stateTarget) out.push(`state_trigger = ${d.stateTarget}`);
+  // The decision key is state_target (vanilla: 209 state_target = yes, none state_trigger; the installed _documentation.md names it
+  // state_trigger, which the parser rejects with "Unexpected token: state_trigger"). `any` is spelled yes, as vanilla does.
+  if (d.stateTarget) out.push(`state_target = ${d.stateTarget === 'any' ? 'yes' : d.stateTarget}`);
   if (d.target) out.push(blk('target_trigger', d.target));
   if (d.onMap) out.push('on_map_mode = map_and_decisions_view');
   if (d.visible) out.push(blk('visible', d.visible));
