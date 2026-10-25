@@ -84,6 +84,28 @@ export async function flagJobs({ heraldry = null, countries = countryTable() } =
   return { jobs, cells };
 }
 
+// One flag per image (the dark realms whose sheet was rejected): each flag is one picture on a 1536x1024 canvas, the flag centred on
+// solid black as a 41:26 rectangle filling about 78 percent of the width. The accepted sheet is a style reference only. The cell map
+// gives each flag a one-cell sheet, id realm-flags-one-<TAG>, index 0; slice-flags.mjs cuts it like any sheet.
+export const singleFlagId = tag => `realm-flags-one-${tag}`;
+export async function singleFlagJobs({ heraldry = null, tags, outRaw }) {
+  const H = heraldry ?? JSON.parse(await readFile(HERALDRY_FILE, 'utf8'));
+  const designs = new Map(H.countries.map(d => [d.tag, d]));
+  const style = await acceptedLayoutRef(outRaw);
+  const jobs = [], cells = [];
+  for (const tag of tags) {
+    const d = designs.get(tag);
+    if (!d) throw new Error(`single flag: ${tag} has no design`);
+    const id = singleFlagId(tag), palette = [...new Set(tinctureNames(d))];
+    const keyline = isNearBlackField(d) ? ' Keyline: the field is near-black, so the flag is edged all round by a thin light-grey keyline (#a6a6a6), about two percent of the flag\'s width, drawn just inside its edge. The keyline is the only addition; every tincture stays exactly as named.' : '';
+    const prompt = `Image 1 is a STYLE reference only: copy its flat painted heraldic look, its thin outline weight, its woven-cloth texture and its solid pure black ground, but copy none of its designs or layout.\nA flat asset image of ONE heraldic flag for a medieval-fantasy strategy game, on a canvas 1536 by 1024 pixels. The background is solid flat pure black (#000000) everywhere outside the flag: no glow, no blur, no gradient, no texture. The flag is a single perfectly flat, front-facing rectangle with an aspect ratio of 41 to 26 (about 1.58 times as wide as tall), centred on the canvas, about 78 percent of the canvas width, with black ground all around it; never square. No perspective, no waving, no folds, no shadows, no frame, no pole. Painted heraldic style: flat tinctures exactly as named, bold silhouettes with a thin dark outline. No lettering, letters, numbers or runes anywhere; no signature or maker's mark; no real-world religious symbol; no real national flag or coat of arms; no crosses, stars, crescents or eagles; no masonry or battlements.\nBlazon: ${d.blazon} Shared palette of this flag: ${palette.join(', ')}.${keyline}`;
+    jobs.push({ id, prompt, references: style ? [style] : [], out: path.join(outRaw, `${id}.png`).split(path.sep).join('/'), size: S_CANVAS, quality: 'high', designs: [{ tag: d.tag, hash: d.design_hash }] });
+    cells.push({ sheet: id, index: 0, row: 0, col: 0, rows: 1, tag: d.tag, name: d.name, design: d.design_hash });
+  }
+  return { jobs, cells };
+}
+const S_CANVAS = '1536x1024';
+
 if (isMain) {
   const { jobs, cells } = await flagJobs();
   await mkdir(outDir, { recursive: true });

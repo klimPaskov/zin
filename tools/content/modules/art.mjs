@@ -126,7 +126,7 @@ export async function stageRealmFlags(staged, countries) {
 export async function stageArtSources(staged, art) {
   for (const rel of art.sources) staged.add(`art/source/${rel}`, await readFile(rawFile(rel)));
   const flagSheets = existsSync(`${ART}/raw/flags`) ? `${ART}/raw/flags` : `${ART_SOURCE}/flags`;
-  for (const f of (await readdir(flagSheets)).filter(f => /^(realm-)?flags-sheet-\d+\.png$/.test(f)).sort()) staged.add(`art/source/flags/${f}`, await readFile(`${flagSheets}/${f}`));
+  for (const f of (await readdir(flagSheets)).filter(f => /^((realm-)?flags-sheet-\d+|realm-flags-one-[A-Z]{3})\.png$/.test(f)).sort()) staged.add(`art/source/flags/${f}`, await readFile(`${flagSheets}/${f}`));
   staged.add('art/source/provenance.jsonl', await readFile(provenanceFile()));
 }
 export { dds };

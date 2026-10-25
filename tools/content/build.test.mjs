@@ -12,7 +12,10 @@ import { fileURLToPath } from 'node:url';
 import { PEOPLES } from './modules/peoples.mjs';
 import { historyFile } from './modules/countries.mjs';
 import { stanceIdeology, IDEOLOGIES } from './modules/ideologies.mjs';
-import { flagKey } from './art/slice-flags.mjs';
+import { flagKey, sliceSheet } from './art/slice-flags.mjs';
+import sharp from 'sharp';
+import { mkdtemp } from 'node:fs/promises';
+import os from 'node:os';
 import { flagsDir, realmFlagsDir, acceptedRealmCells, FLAG_CELLS, REALM_FLAG_CELLS } from './modules/art.mjs';
 import { HERALDRY_FILE, flagJobs, acceptedLayoutRef, isNearBlackField } from './art/flag-jobs.mjs';
 import { stagingDir, ART, ZIN } from './lib/paths.mjs';
@@ -105,6 +108,21 @@ test('Negative: unknown modifiers, peoples and stances are rejected', async () =
 test('Negative: the staged tree is never placed inside the repository', () => {
   for (const dir of [ZIN, path.join(ZIN, 'tools/staged'), path.join(ZIN, 'common')]) assert.throws(() => stagingDir(dir), /outside the ZIN repository/, dir);
   assert.equal(path.resolve(stagingDir(path.join(ZIN, '..', 'zin-staged'))), path.resolve(ZIN, '..', 'zin-staged'));
+});
+
+test('A one-flag picture is trimmed to exactly 41:26 at both sides and resized to the flag size', async () => {
+  // A flag painted 1290 by 720 (1.79:1) on a 1536 by 1024 black canvas: the slicer trims plain field evenly at the sides to 1.58:1.
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'flag-one-'));
+  const file = path.join(dir, 'one.png'), out = path.join(dir, 'out');
+  const flag = await sharp({ create: { width: 1290, height: 720, channels: 3, background: '#c81e1e' } }).png().toBuffer();
+  await sharp({ create: { width: 1536, height: 1024, channels: 3, background: '#000000' } }).composite([{ input: flag, left: 123, top: 152 }]).png().toFile(file);
+  const n = await sliceSheet(file, [{ name: 'One Test Flag', index: 0, row: 0, col: 0, rows: 1 }], out);
+  assert.equal(n, 1);
+  const got = path.join(out, `${flagKey('One Test Flag')}.png`), meta = await sharp(got).metadata();
+  assert.deepEqual([meta.width, meta.height], [492, 312]);
+  const { data, info } = await sharp(got).raw().toBuffer({ resolveWithObject: true });
+  const px = (x, y) => [data[(y * 492 + x) * info.channels], data[(y * 492 + x) * info.channels + 1], data[(y * 492 + x) * info.channels + 2]];
+  for (const [x, y] of [[2, 2], [489, 2], [2, 309], [489, 309], [246, 156]]) assert(px(x, y)[0] > 150, `flag red at ${x},${y}: ${px(x, y)}`);
 });
 
 test('Flag jobs copy the layout of an accepted sheet only and key the near-black fields', async () => {
