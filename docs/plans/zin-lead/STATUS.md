@@ -22,6 +22,9 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Portraits tranche two | subagent `hoi4-portrait-creator` | `$ZIN_ART/raw/portraits/tranche2/`, `art/source/portraits/`, `docs/plans/zin-art/portraits_handoff.md` |
 | Error-log causes (r3b profile) | subagent | builder modules except art and geography; `docs/plans/zin-errors/r3b_fixes.md` |
 | MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
+| Story framework (SL-01, 02, 03, 23, 26, 29, 30) | subagent | `lib/story_dates.mjs`, `modules/world_tension.mjs`, `modules/historical_path.mjs`, `checks/story_wiring.mjs`, `alternate_history.test.mjs`; `docs/plans/story/framework_handoff.md` |
+| Afrit, Aenor, Eindil (SL-04 to 11, 18, 20, 21, 25, 31 to 33, 35, 37) | subagent | `modules/events_mech.mjs`, `data/events_mech_{afrit,misc}.json`, the Afrit, Aenor and Eindil scripts; `docs/plans/story/afrit_aenor_eindil_handoff.md` |
+| Kusven, Volgan, Leren, the West (SL-12 to 17, 19, 22, 27, 34, 36) | subagent | Zol and Volgan scripts, `modules/events_mech_war.mjs`, Lerendor and crossing modules; `docs/plans/story/war_side_handoff.md` |
 
 ## Next, in order
 
