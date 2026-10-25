@@ -12,6 +12,11 @@
 | Q-73 | Lorien dies only if Kusven is still on the field 14 days after Lorien's ride (zin_mistake.26) | as proposed |
 | Q-74 | News when Volgan's realm is annexed with his body intact (zin_dominion.29), and its effects | as proposed |
 | Q-75 | The steward weights in After the King (40/30/30) | as proposed |
+| Q-76 | The Gathering Dark: are the four tier names and their news texts right for players? | as written in world_tension.json |
+| Q-77 | The 1762 judgement is deferred once, to 1764, while a canon ending is still in reach; is that reading right, and is one two-year deferral enough? | yes, one deferral |
+| Q-78 | The names and values of the Gathering Dark game-rule options | as written |
+| Q-79 | Which story roles announce a change of holder? Today: the crown of Aenor, the Host, the leader of the Western Crossing, the Leren crown | those four |
+| Q-80 | Under HISTORICAL, should the war also start piecemeal when a player's own front opens first? | no: under HISTORICAL the war starts on its date |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
