@@ -42,6 +42,8 @@ Internet images may be studied for anatomy and creature design, with their URLs 
 
 Before generating a pool, write a variety matrix (see `references/variety-matrix.md`) covering age spread from young to elderly, build, face shape, nose, brow, scars and blemishes, missing teeth, hair and beard, expression, gaze, wear, jewellery, lighting, and per-culture dress. No two members of a pool may share more than a stated number of axes (default: three of the individual axes). Faces must not look perfect or model-like: asymmetry, weathering, wrinkles, bad teeth, sunburn, pockmarks, and broken noses where they fit the person.
 
+A multi-portrait sheet tends to collapse into one face: the generator repeats the same age, features, scar, hair and head angle across cells, and drifts toward young faces and toward the other sex. Give every cell its own explicit description (age with its signs such as grey hair, wrinkles or baldness; face shape; nose; build; beard or its absence; a scar or blemish worded differently and placed elsewhere; expression; head angle; lighting) and state the sex with visible cues in every cell. Review the first sheet of each pool before running the rest; if a sheet still shows one face, drop to two portraits per image or one.
+
 Demographics follow the setting, not the generator's defaults. Apply the ratios and per-people constraints from step 1, and write each per-people prohibition into every prompt of that people.
 
 ## 6. Named figures keep the approved design
