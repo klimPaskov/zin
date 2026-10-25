@@ -94,7 +94,8 @@ export async function buildDoctrineArt(staged, { warn = () => {}, provenance } =
     }
   }
   for (const [rel, s] of [...sources].sort(([a], [b]) => a.localeCompare(b, 'en'))) staged.add(`art/source/${rel}`, s.bytes);
-  staged.add('art/source/doctrines/doctrine_art_manifest.json', Buffer.from(JSON.stringify({ generator: 'tools/content/modules/doctrine_art.mjs', files: manifest.sort((a, b) => a.out.localeCompare(b.out, 'en')) }, null, 1) + '\n'));
+  // One provenance line per shipped DDS (the asset gate reads art/source/<name>_manifest.json directly under art/source/).
+  staged.add('art/source/doctrine_art_manifest.json', Buffer.from(JSON.stringify({ generator: 'tools/content/modules/doctrine_art.mjs', files: manifest.sort((a, b) => a.out.localeCompare(b.out, 'en')) }, null, 1) + '\n'));
   return shipped;
 }
 
