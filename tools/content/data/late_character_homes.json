@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "owner": "tools/content/modules/late_characters.mjs (second error pass, docs/plans/zin-errors/powder_and_pass2_handoff.md; lead decision of 25 October 2026)",
+  "note": "The home realm (roster name) of each character that an in-game effect brings into play and that no court of data/world/characters lists. The character is recruited without a role in that realm's history and moved by set_nationality to the realm that brings it in. A character of a court is recruited by its court's realm and needs no row here.",
+  "homes": {
+    "zin_aenor_captains_regency": { "realm": "Aenor", "why": "The Captains' Regency rules Aenor while Eindil is lost (Aenor court spec)." },
+    "zin_aenor_concord_speaker": { "realm": "Aenor", "why": "The Concord's speaker rules Aenor when the dominions take the throne (Aenor court spec)." },
+    "zin_aenor_golden_regency": { "realm": "Aenor", "why": "The Golden Regency rules Aenor when the court takes the throne (Aenor court spec)." },
+    "zin_kusven": { "realm": "Zol's Mistake", "why": "Kusven is Zol's servant and takes the field from the Mistake (Zol's Mistake spec, K29)." },
+    "zin_eindil": { "realm": "Kvittumm", "why": "Eindil lies in the ice of the far north-west (zin_is_site_eindil_ice: the Cold Lands state farthest from Fandanar within the far north-west, key sites spec); Kvittumm is the realm of the far north-west. Proposed: the site trigger is still a stand-in, and the journey moves him to whichever realm finds him." }
+  }
+}

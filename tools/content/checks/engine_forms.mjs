@@ -10,6 +10,8 @@
 //                          only happen in game/history files")
 //   opinion_check_block    has_opinion_modifier takes a modifier name only ("Invalid trigger 'target'"); test the targeted flag that
 //                          is set beside the modifier instead
+//   recruit_in_game        no recruit_character anywhere outside history/ (the same log line): modules/late_characters.mjs makes every
+//                          call during play a set_nationality move of a character recruited in its home realm's history
 //   ship_variant           a ship of a modular hull names the variant (version_name) its country history creates ("Could not find proper
 //                          equipment variant", "does not have any equipment variant for type")
 //   decision_state_trigger a decision makes itself state-targeted with state_target ("Unexpected token: state_trigger"; vanilla writes
@@ -25,8 +27,7 @@
 //                          interface/countrytechtreeview.gui ("Found no grid box for tech"; lib/tech_tree_gui.mjs writes the windows)
 //   bonus_enum             script_enum_equipment_bonus_type lists exactly the equipment categories and the staged equipment keys and
 //                          hull aliases ("... is in script enum ... but is not an equipment type", "... is not in script enum ...")
-// Reported, not enforced: recruit_in_game (recruit_character outside history/, the same log line; modules/late_characters.mjs holds the
-// fix, which waits for the lead's decision on its waiting realm) and strategy_state_trigger (state_trigger on an AI strategy type the
+// Reported, not enforced: strategy_state_trigger (state_trigger on an AI strategy type the
 // installed documentation does not give it; owned by the story AI slice).
 // The technology names (set_technology, has_tech) are held by the C3 reference scan (checks/vanilla_refs.mjs, category technology).
 import path from 'node:path';
@@ -66,7 +67,7 @@ function context(rel, ancestors) {
 
 // files: Map<rel, Buffer> (the staged tree). Returns { errors: [{ rule, rel, line, message }], reported: { rule: [ 'rel:line' ] } }.
 export function checkEngineForms(files) {
-  const errors = [], reported = { recruit_in_game: [], strategy_state_trigger: [] };
+  const errors = [], reported = { strategy_state_trigger: [] };
   const err = (rule, rel, line, message) => errors.push({ rule, rel, line, message });
   const parsed = new Map();
   for (const [rel, bytes] of files) if (isScript(rel)) parsed.set(rel, parse(scriptText(bytes)));
@@ -123,7 +124,7 @@ export function checkEngineForms(files) {
       if (e.k && a.length && effects.has(e.k) && Array.isArray(e.v) && e.v.some(x => x.k && /^[A-Z][A-Z0-9_]*$/.test(x.k))) err('effect_arguments', rel, e.line, `${e.k} is called with a block of arguments (${e.v.filter(x => x.k).map(x => x.k).join(', ')}); set zin_arg_* temp variables and call it with = yes`);
       if (e.k === 'recruit_character') {
         if (dir === 'common/on_actions') err('recruit_on_actions', rel, e.line, `recruit_character = ${e.v} in an on_action: recruit it in the country history`);
-        else if (!rel.startsWith('history/')) reported.recruit_in_game.push(`${rel}:${e.line}`);
+        else if (!rel.startsWith('history/')) err('recruit_in_game', rel, e.line, `recruit_character = ${e.v} during play: recruit it in a history and move it with set_nationality (modules/late_characters.mjs)`);
       }
       if (e.k === 'state_trigger' && rel.startsWith('common/decisions/') && a.length === 2) err('decision_state_trigger', rel, e.line, `decision ${a[1].k} writes state_trigger; the key is state_target`);
       if (e.k === 'state_trigger' && rel.startsWith('common/ai_strategy/') && a.at(-1)?.k === 'ai_strategy' && !STATE_TRIGGER_STRATEGIES.has(child(a.at(-1).v, 'type')?.v)) reported.strategy_state_trigger.push(`${rel}:${e.line}`);

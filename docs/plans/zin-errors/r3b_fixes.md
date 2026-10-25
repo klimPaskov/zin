@@ -68,7 +68,7 @@ The builder now runs `checks/engine_forms.mjs` over the finished staged tree (af
 
 ## Queued (reported by the build, not enforced)
 
-The second pass (docs/plans/zin-errors/powder_and_pass2_handoff.md) fixed every item below except the recruit_character calls, whose fix waits for the lead's decision on a technical country tag; that file records each fix and the check that keeps it fixed.
+The second pass (docs/plans/zin-errors/powder_and_pass2_handoff.md) fixed every item below, the recruit_character calls included (recruited in the home realm's history and moved with set_nationality); that file records each fix and the check that keeps it fixed.
 
 - 92 `recruit_character` uses in in-game effects (group 5).
 - Three `has_opinion_modifier` triggers with a target block, whose meaning needs the owner's choice: `zin_gunwaith_fought_beside` (`docs/design/focus/gunwaith.json`) and two AI modifiers of `events/zin_ending.txt` (crown events data). The trigger cannot test a target; a flag set with the opinion modifier is the likely replacement.

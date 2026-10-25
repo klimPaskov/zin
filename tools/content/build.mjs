@@ -70,6 +70,7 @@ import { loadInventory } from './modules/ui_inventory.mjs';
 import { loadReskin, loadSheets, buildReskin, publishUiData } from './modules/ui_reskin.mjs';
 import { runUiChecks, scriptReferences } from './checks/ui_checks.mjs';
 import { checkEngineForms, assertEngineForms } from './checks/engine_forms.mjs';
+import { applyLateCharacters } from './modules/late_characters.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export { ZIN };
@@ -230,6 +231,11 @@ const bridgeCounts = Object.fromEntries([...bridges.triggers.map(b => 'trigger')
 const focusTrees = await buildFocusTrees(staged, { countries });
 // Regional decisions come after the compiler: they name spirits the Buldor tree writes, which the C3 scan above cannot see.
 const decisionsRegional = await buildDecisionsRegional(staged, { countries });
+// Characters brought into play during play (modules/late_characters.mjs): over the finished script tree, before the final reference pass.
+// The game recruits a character only in history, so each waits there without a role in its home realm, and the effect that brings it in
+// moves it (set_nationality), gives it its roles and sets its flag of entry, which every presence test also asks.
+const lateCharacters = await applyLateCharacters(staged, { countries });
+console.error(`late characters: ${lateCharacters.calls} recruit_character calls during play are moves; ${lateCharacters.waiting} characters wait in their home realm`);
 // Final reference pass (C3) over the finished tree: the compiled trees, their helpers and the regional decisions included. A name that
 // dangles stops the build unless tools/content/data/pending_names.json declares it with the owner that will define it; each declared name
 // gets an inert stand-in (modules/pending_names.mjs). A declared name that a module now defines, or that nothing uses, stops the build too.
@@ -283,7 +289,7 @@ if (uiEnforced.length) throw new Error(uiEnforced.map(c => `ui check ${c.id} ${c
 // Engine-form checks (checks/engine_forms.mjs): forms the game rejects, from the error log of the first integrated run. Over the finished
 // script tree, the pending stand-ins included.
 const engineForms = checkEngineForms(staged.files);
-console.error(`engine forms: ${engineForms.errors.length} problems; reported, not enforced: recruit_character in ${engineForms.reported.recruit_in_game.length} in-game effects; state_trigger on an AI strategy type that reads none in ${engineForms.reported.strategy_state_trigger.length} places (${engineForms.reported.strategy_state_trigger.join(", ") || "none"})`);
+console.error(`engine forms: ${engineForms.errors.length} problems; reported, not enforced: state_trigger on an AI strategy type that reads none in ${engineForms.reported.strategy_state_trigger.length} places (${engineForms.reported.strategy_state_trigger.join(", ") || "none"})`);
 assertEngineForms(engineForms);
 // Asset manifest and completeness check (docs/specs/08_art_and_assets/05_asset_manifest.md): the very last step, so it
 // sees every staged file. It reports everything and fails only on errors that docs/design/validation/asset_baseline.json

@@ -31,11 +31,10 @@ test('convoy_types: a second convoy type fails', () => {
   assert.deepEqual(rules({ 'common/units/equipment/x.txt': eq(['convoy_1']) }), []);
 });
 
-test('recruit_on_actions: recruit_character in an on_action fails; history and the set_nationality move pass; other in-game calls are reported', () => {
+test('recruit_on_actions and recruit_in_game: recruit_character outside history fails; history and the set_nationality move pass', () => {
   assert.deepEqual(rules({ 'common/on_actions/x.txt': 'on_actions = {\n\ton_startup = { effect = { AEN = { recruit_character = zin_a } } }\n}\n' }), ['recruit_on_actions']);
   assert.deepEqual(rules({ 'history/countries/AEN - Aenor.txt': 'capital = 1\nrecruit_character = zin_a\nset_politics = { }\n' }), []);
-  const r = checkEngineForms(tree({ 'events/x.txt': 'country_event = {\n\tid = x.1\n\toption = { recruit_character = zin_a }\n}\n' }));
-  assert.deepEqual([r.errors.length, r.reported.recruit_in_game], [0, ['events/x.txt:3']]);
+  assert.deepEqual(rules({ 'events/x.txt': 'country_event = {\n\tid = x.1\n\toption = { recruit_character = zin_a }\n}\n' }), ['recruit_in_game']);
   assert.deepEqual(rules({ 'events/x.txt': 'country_event = {\n\tid = x.1\n\toption = { if = { limit = { NOT = { has_character = zin_a } } zin_a = { set_nationality = PREV } } }\n}\n' }), []);
 });
 

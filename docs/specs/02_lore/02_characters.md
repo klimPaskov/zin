@@ -449,6 +449,80 @@ Country-leader and advisor traits in `common/country_leader/00_zin_leader_traits
 
 Until a character's portrait exists, the builder uses its people's generated portrait with a build warning (never a vanilla portrait).
 
+### Characters brought into play
+
+The game recruits a character only in country history (wiki, Character modding). A character that a focus, an event, a decision or a mechanic brings into play is recruited without a role in the history of its home realm (its court's realm, or `tools/content/data/late_character_homes.json`), and the effect that brings it in moves it with `set_nationality`, gives it the roles of its definition and sets its global flag of entry; every test of its presence also asks that flag (`tools/content/modules/late_characters.mjs`; lead decision of 25 October 2026). Eindil's home is Kvittumm, the realm of the far north-west where his ice lies (proposed while `zin_is_site_eindil_ice` is a stand-in).
+
+| Character | Home realm (history) | Flag of entry |
+| --- | --- | --- |
+| `zin_aenor_captains_regency` | Aenor | `zin_in_play_aenor_captains_regency` |
+| `zin_aenor_concord_speaker` | Aenor | `zin_in_play_aenor_concord_speaker` |
+| `zin_aenor_golden_regency` | Aenor | `zin_in_play_aenor_golden_regency` |
+| `zin_coldor_harl` | Coldor | `zin_in_play_coldor_harl` |
+| `zin_coldor_ysolde` | Coldor | `zin_in_play_coldor_ysolde` |
+| `zin_corvel` | Worshipdom | `zin_in_play_corvel` |
+| `zin_eindil` | Kvittumm | `zin_in_play_eindil` |
+| `zin_eronel` | Aenor | `zin_in_play_eronel` |
+| `zin_golbran` | Magical Forest | `zin_in_play_golbran` |
+| `zin_goldoroth_bredo` | Goldoroth | `zin_in_play_goldoroth_bredo` |
+| `zin_goldoroth_britag` | Goldoroth | `zin_in_play_goldoroth_britag` |
+| `zin_goldoroth_rask` | Goldoroth | `zin_in_play_goldoroth_rask` |
+| `zin_goldoroth_snikkit` | Goldoroth | `zin_in_play_goldoroth_snikkit` |
+| `zin_goldoroth_sungor` | Goldoroth | `zin_in_play_goldoroth_sungor` |
+| `zin_goldoroth_ulgra` | Goldoroth | `zin_in_play_goldoroth_ulgra` |
+| `zin_gunwaith_ostra` | Gunwyn | `zin_in_play_gunwaith_ostra` |
+| `zin_ilvane` | Worshipdom | `zin_in_play_ilvane` |
+| `zin_kessarion` | Worshipdom | `zin_in_play_kessarion` |
+| `zin_kusven` | Zol's Mistake | `zin_in_play_kusven` |
+| `zin_lerendor_brannoc` | Lerendor | `zin_in_play_lerendor_brannoc` |
+| `zin_lerendor_hesk` | Lerendor | `zin_in_play_lerendor_hesk` |
+| `zin_lerendor_maelis` | Lerendor | `zin_in_play_lerendor_maelis` |
+| `zin_lerendor_ostvar` | Lerendor | `zin_in_play_lerendor_ostvar` |
+| `zin_mirolon_hadric` | Mirolon | `zin_in_play_mirolon_hadric` |
+| `zin_mirolon_maeric` | Mirolon | `zin_in_play_mirolon_maeric` |
+| `zin_mirolon_selda` | Mirolon | `zin_in_play_mirolon_selda` |
+| `zin_ossar` | Worshipdom | `zin_in_play_ossar` |
+| `zin_regional_adel_edda` | Adel | `zin_in_play_regional_adel_edda` |
+| `zin_regional_adel_ysmay` | Adel | `zin_in_play_regional_adel_ysmay` |
+| `zin_regional_buldor_mara` | Buldor | `zin_in_play_regional_buldor_mara` |
+| `zin_regional_buldor_ulric` | Buldor | `zin_in_play_regional_buldor_ulric` |
+| `zin_regional_corogon_lio` | Corogon | `zin_in_play_regional_corogon_lio` |
+| `zin_regional_corogon_ves` | Corogon | `zin_in_play_regional_corogon_ves` |
+| `zin_regional_fearno_hroth` | Fearno | `zin_in_play_regional_fearno_hroth` |
+| `zin_regional_fearno_ilse` | Fearno | `zin_in_play_regional_fearno_ilse` |
+| `zin_regional_girdon_aldo` | Girdon | `zin_in_play_regional_girdon_aldo` |
+| `zin_regional_girdon_corla` | Girdon | `zin_in_play_regional_girdon_corla` |
+| `zin_regional_halenor_gull` | Halenor | `zin_in_play_regional_halenor_gull` |
+| `zin_regional_halenor_rhea` | Halenor | `zin_in_play_regional_halenor_rhea` |
+| `zin_regional_horidor_maela` | Horidor | `zin_in_play_regional_horidor_maela` |
+| `zin_regional_horidor_tarvo` | Horidor | `zin_in_play_regional_horidor_tarvo` |
+| `zin_regional_isengard_brana` | Melkgard | `zin_in_play_regional_isengard_brana` |
+| `zin_regional_isengard_veska` | Melkgard | `zin_in_play_regional_isengard_veska` |
+| `zin_regional_kradlon_bram` | Kradlon | `zin_in_play_regional_kradlon_bram` |
+| `zin_regional_kradlon_hesta` | Kradlon | `zin_in_play_regional_kradlon_hesta` |
+| `zin_regional_lambin_essa` | Lambin | `zin_in_play_regional_lambin_essa` |
+| `zin_regional_lambin_orrin` | Lambin | `zin_in_play_regional_lambin_orrin` |
+| `zin_regional_nondondor_saric` | Nondondor | `zin_in_play_regional_nondondor_saric` |
+| `zin_regional_pollos_marra` | Pollos | `zin_in_play_regional_pollos_marra` |
+| `zin_regional_pollos_teo` | Pollos | `zin_in_play_regional_pollos_teo` |
+| `zin_regional_raerby_ilka` | Raerby | `zin_in_play_regional_raerby_ilka` |
+| `zin_regional_raerby_osk` | Raerby | `zin_in_play_regional_raerby_osk` |
+| `zin_regional_seite_islands_brann` | Seite Islands | `zin_in_play_regional_seite_islands_brann` |
+| `zin_regional_titanos_hrimla` | Nivaros | `zin_in_play_regional_titanos_hrimla` |
+| `zin_regional_titanos_skarn` | Nivaros | `zin_in_play_regional_titanos_skarn` |
+| `zin_regional_varnondor_sevra` | Varnondor | `zin_in_play_regional_varnondor_sevra` |
+| `zin_regional_varnondor_tomas` | Varnondor | `zin_in_play_regional_varnondor_tomas` |
+| `zin_regional_windwaith_odo` | Vindael | `zin_in_play_regional_windwaith_odo` |
+| `zin_regional_windwaith_tamsin` | Vindael | `zin_in_play_regional_windwaith_tamsin` |
+| `zin_regional_yeti_lands_oruk` | Yeti Lands | `zin_in_play_regional_yeti_lands_oruk` |
+| `zin_regional_yeti_lands_sima` | Yeti Lands | `zin_in_play_regional_yeti_lands_sima` |
+| `zin_sevrin` | Worshipdom | `zin_in_play_sevrin` |
+| `zin_varner` | Magical Forest | `zin_in_play_varner` |
+| `zin_volgan_ember_herald` | Puvulan | `zin_in_play_volgan_ember_herald` |
+| `zin_volgan_ghorvak` | Puvulan | `zin_in_play_volgan_ghorvak` |
+| `zin_volgan_grave_warden` | Puvulan | `zin_in_play_volgan_grave_warden` |
+| `zin_yeldenne_warden` | Yeldenne | `zin_in_play_yeldenne_warden` |
+
 ## AI
 
 - AI recruits only characters marked "Start" and never recruits `zin_eindil`, `zin_varner`, `zin_golbran` or `zin_sevrin`; those enter only through mechanic effects.
