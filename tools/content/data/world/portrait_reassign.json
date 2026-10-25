@@ -1,0 +1,345 @@
+[
+ {
+  "op": "move",
+  "from": "girdon_wardens.men.female",
+  "source": "art/source/portraits/pool/men_female_s03.png",
+  "cell": 0,
+  "to": "girdon_wardens.men.male"
+ },
+ {
+  "op": "remove",
+  "pool": "isle_houses.men.female",
+  "source": "art/source/portraits/pool/men_female_s03.png",
+  "cell": 1,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "move",
+  "from": "chart_islanders.men.male",
+  "source": "art/source/portraits/pool/men_male_s06.png",
+  "cell": 0,
+  "to": "chart_islanders.men.female"
+ },
+ {
+  "op": "remove",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/pool/men_male_s10.png",
+  "cell": 1,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "remove",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/pool/elves_male_s01.png",
+  "cell": 1,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "remove",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/pool/sun_elves_male_s01.png",
+  "cell": 1,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "move",
+  "from": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/pool/sun_elves_male_s02.png",
+  "cell": 0,
+  "to": "sunhot_western.sun_elves.female"
+ },
+ {
+  "op": "move",
+  "from": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/pool/sun_elves_male_s02.png",
+  "cell": 3,
+  "to": "sunhot_western.sun_elves.female"
+ },
+ {
+  "op": "move",
+  "from": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/tranche2/tranche2_s011.png",
+  "cell": 2,
+  "to": "volcano_clans.orcs.female"
+ },
+ {
+  "op": "remove",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/tranche2/tranche2_s024.png",
+  "cell": 1,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "remove",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/tranche2/tranche2_s025.png",
+  "cell": 0,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "remove",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/tranche2/tranche2_s025.png",
+  "cell": 2,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "move",
+  "from": "dondor_brutes.men.female",
+  "source": "art/source/portraits/tranche2/tranche2_s045.png",
+  "cell": 0,
+  "to": "dondor_brutes.men.male"
+ },
+ {
+  "op": "remove",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/tranche2/tranche2_s047.png",
+  "cell": 2,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "move",
+  "from": "iron_clans.orcs.male",
+  "source": "art/source/portraits/tranche2/tranche2_s053.png",
+  "cell": 0,
+  "to": "iron_clans.orcs.female"
+ },
+ {
+  "op": "remove",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/tranche2/tranche2_s071.png",
+  "cell": 3,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "remove",
+  "pool": "holt_gnomes.gnomes.female",
+  "source": "art/source/portraits/tranche2/tranche2_s072.png",
+  "cell": 2,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "remove",
+  "pool": "holt_gnomes.gnomes.female",
+  "source": "art/source/portraits/tranche2/tranche2_s072.png",
+  "cell": 3,
+  "note": "wrong-sex cell with no other-sex room"
+ },
+ {
+  "op": "move",
+  "from": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/tranche2/tranche2_s087.png",
+  "cell": 2,
+  "to": "rift_coast_elves.elves.female"
+ },
+ {
+  "op": "move",
+  "from": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/tranche2/tranche2_s087.png",
+  "cell": 3,
+  "to": "rift_coast_elves.elves.female"
+ },
+ {
+  "op": "remap",
+  "source": "art/source/portraits/tranche2/tranche2_s049.png",
+  "to": "art/source/portraits/tranche4/tranche2_s049_r2.png"
+ },
+ {
+  "op": "remap",
+  "source": "art/source/portraits/tranche2/tranche2_s050.png",
+  "to": "art/source/portraits/tranche4/tranche2_s050.png"
+ },
+ {
+  "op": "remap",
+  "source": "art/source/portraits/tranche2/tranche2_s101.png",
+  "to": "art/source/portraits/tranche4/tranche2_s101.png"
+ },
+ {
+  "op": "remap",
+  "source": "art/source/portraits/tranche2/tranche2_s118.png",
+  "to": "art/source/portraits/tranche4/tranche2_s118.png"
+ },
+ {
+  "op": "remove",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/tranche4/tranche2_s049_r2.png",
+  "cell": 3
+ },
+ {
+  "op": "add",
+  "pool": "hearth_folk.small_folk.male",
+  "source": "art/source/portraits/tranche4/hearth_male_r6.png",
+  "cell": 0,
+  "origin": "round 6 replacement for the removed wrong-sex cell"
+ },
+ {
+  "op": "add",
+  "pool": "dondor_brutes.men.female",
+  "source": "art/source/portraits/tranche4/dondor_brutes_men_female.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/tranche4/forest_council_elves_elves_male.png",
+  "cell": 1,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "forest_council_elves.elves.male",
+  "source": "art/source/portraits/tranche4/forest_council_elves_elves_male.png",
+  "cell": 3,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "gala_court.elves.male",
+  "source": "art/source/portraits/tranche4/gala_court_elves_male.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "girdon_wardens.men.female",
+  "source": "art/source/portraits/tranche4/girdon_wardens_men_female.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "goblin_warrens.goblins.male",
+  "source": "art/source/portraits/tranche4/goblin_warrens_goblins_male.png",
+  "cell": 1,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "hill_kingdom_elves.elves.male",
+  "source": "art/source/portraits/tranche4/hill_kingdom_elves_elves_male.png",
+  "cell": 1,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.female",
+  "source": "art/source/portraits/tranche4/holt_gnomes_gnomes_female.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "holt_gnomes.gnomes.female",
+  "source": "art/source/portraits/tranche4/holt_gnomes_gnomes_female.png",
+  "cell": 2,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "isle_houses.men.female",
+  "source": "art/source/portraits/tranche4/isle_houses_men_female.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "kingdom_forest_elves.elves.male",
+  "source": "art/source/portraits/tranche4/kingdom_forest_elves_elves_male.png",
+  "cell": 1,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "quay_folk.men.male",
+  "source": "art/source/portraits/tranche4/quay_folk_men_male.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/tranche4/rift_coast_elves_elves_male.png",
+  "cell": 1,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "rift_coast_elves.elves.male",
+  "source": "art/source/portraits/tranche4/rift_coast_elves_elves_male.png",
+  "cell": 3,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_light.sun_elves.male",
+  "source": "art/source/portraits/tranche4/sunhot_light_sun_elves_male.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/tranche4/sunhot_western_sun_elves_male.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "sunhot_western.sun_elves.male",
+  "source": "art/source/portraits/tranche4/sunhot_western_sun_elves_male.png",
+  "cell": 2,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "volcano_clans.orcs.male",
+  "source": "art/source/portraits/tranche4/volcano_clans_orcs_male.png",
+  "cell": 0,
+  "origin": "round 5 wrong-sex replacement"
+ },
+ {
+  "op": "add",
+  "pool": "chart_islanders.men.male",
+  "source": "art/source/portraits/tranche4/chart_islanders_men_male.png",
+  "cell": 0,
+  "origin": "round 7 replacement for the moved woman cell"
+ },
+ {
+  "op": "remove",
+  "pool": "troll_tribes.trolls.female",
+  "source": "art/source/portraits/tranche2/tranche2_s124.png",
+  "cell": 0
+ },
+ {
+  "op": "add",
+  "pool": "troll_tribes.trolls.female",
+  "source": "art/source/portraits/tranche4/tranche2_s124_r8.png",
+  "cell": 0,
+  "origin": "round 8 replacement (troll woman)"
+ },
+ {
+  "op": "remove",
+  "pool": "veshazel_court.men.male",
+  "source": "art/source/portraits/tranche2/tranche2_s124.png",
+  "cell": 1
+ },
+ {
+  "op": "add",
+  "pool": "veshazel_court.men.male",
+  "source": "art/source/portraits/tranche4/tranche2_s124_r8.png",
+  "cell": 1,
+  "origin": "round 8 replacement (courtier)"
+ },
+ {
+  "op": "crop",
+  "id": "NET_zin_ruler",
+  "crop": {
+   "x0": 255,
+   "y0": 0,
+   "x1": 1190,
+   "y1": 1086,
+   "fit": "contain"
+  }
+ }
+]

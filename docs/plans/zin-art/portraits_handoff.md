@@ -557,3 +557,11 @@ Outside the plan: six mechanic-recruited figures of the courts (zin_aenor_court,
 Named portraits and the emblem are listed in the named table above; the table covers the pool members only.
 
 Kusven (zin_kusven, Zol's field marshal, a Great Spirit): the named portrait `GFX_zin_portrait_zin_kusven` is drawn from the owner's chosen design (decision K41, redesign A, `art/source/design_refs/kusven_v2_a.png`) and archived as `art/source/portraits/named/zin_kusven.png` (gpt-6-luna, 1024 x 1536). It shows a Great Spirit of the grave-wind with one pale glowing eye and no human body. The Zol slice sets the portrait of the unit leader in tools/content/data/mech_zol.json. He is listed as a mechanic figure in the named table, outside the roster.
+
+## Round 5: wrong-sex cells, likeness, the Zol emblem and the King of Demons crop (25 October 2026)
+
+Wrong-sex cells were reassigned in the table (tools/content/data/world/portrait_reassign.json, applied to portrait_pools.base.json by tools/content/art/portrait_reassign.mjs, which writes portrait_pools.json and checks never-twice and the allowance). A cell that had no other-sex pool with room was removed. Replacement sheets were generated with gpt-6-luna and recorded in art/source/provenance.jsonl; the review line of each accepted sheet lists the cells the table uses.
+
+The small-folk sheets tranche2_s049, s050, s101 and s118 were regenerated with original small-folk faces; the Bastian portrait was regenerated from bastian_v2_b.png (K44) with a flat-crowned hat and a short-to-medium beard. The Zol emblem was regenerated once with the same prompt and sigil reference. The King of Demons crop is a declared box (x 255 to 1190, full height, fit contain) so the head and both horns are whole and centred.
+
+Not resolved: the troll pool's replacement cell is accepted, but no troll-culture orc pool exists, so orc faces were not used.

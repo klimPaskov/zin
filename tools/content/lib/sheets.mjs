@@ -107,7 +107,7 @@ export async function findGridLines(file, cols, rows, count, { aspect = [1.3, 1.
 }
 
 // Crop a found region (inset to drop anti-aliased edge pixels) and resize to an exact size; returns RGBA raw.
-export async function cropRegion(file, r, width, height, { inset = 4, fit = 'fill' } = {}) {
+export async function cropRegion(file, r, width, height, { inset = 4, fit = 'fill', background = { r: 0, g: 0, b: 0, alpha: 0 } } = {}) {
   return sharp(file).extract({ left: r.x0 + inset, top: r.y0 + inset, width: r.x1 - r.x0 - inset * 2, height: r.y1 - r.y0 - inset * 2 })
-    .resize(width, height, { fit, kernel: 'lanczos3', background: { r: 0, g: 0, b: 0, alpha: 0 } }).ensureAlpha().raw().toBuffer();
+    .resize(width, height, { fit, kernel: 'lanczos3', background }).ensureAlpha().raw().toBuffer();
 }

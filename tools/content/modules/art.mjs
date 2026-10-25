@@ -71,7 +71,10 @@ async function slicePoolPortraits(art, source, plan) {
     if (t.cell === null) {
       if (!singles.has(rel)) singles.set(rel, source(rel));
       const file = singles.get(rel), meta = await (await import('sharp')).default(file).metadata();
-      art.portraits.set(sprite, fromRaw(await cropRegion(file, { x0: 0, y0: 0, x1: meta.width, y1: meta.height }, 156, 210, { inset: 0, fit: 'cover' }), 156, 210));
+      // A named portrait is the whole picture unless the table declares a crop (portrait_pools.json, crop: the box and the fit).
+      const box = t.crop ? { x0: t.crop.x0, y0: t.crop.y0, x1: t.crop.x1, y1: t.crop.y1 } : { x0: 0, y0: 0, x1: meta.width, y1: meta.height };
+      const fit = t.crop?.fit ?? 'cover', background = t.crop?.fit === 'contain' ? { r: 14, g: 11, b: 10, alpha: 1 } : undefined;
+      art.portraits.set(sprite, fromRaw(await cropRegion(file, box, 156, 210, { inset: 0, fit, ...(background ? { background } : {}) }), 156, 210));
     } else {
       const s = await sheetOf(rel);
       if (!s.cells[t.cell]) throw new Error(`${sprite}: ${rel} has no cell ${t.cell}`);

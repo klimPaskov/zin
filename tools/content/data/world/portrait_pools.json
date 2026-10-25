@@ -48,7 +48,14 @@
    "sprite": "GFX_zin_portrait_NET_zin_ruler",
    "file": "gfx/leaders/zin/lore/NET_zin_ruler.dds",
    "source": "art/source/portraits/named/NET_zin_ruler.png",
-   "owner": "agent-accepted"
+   "owner": "agent-accepted",
+   "crop": {
+    "x0": 255,
+    "y0": 0,
+    "x1": 1190,
+    "y1": 1086,
+    "fit": "contain"
+   }
   },
   {
    "id": "zin_kusven",
@@ -691,7 +698,7 @@
    "culture": "chart_islanders",
    "people": "men",
    "sex": "female",
-   "size": 5,
+   "size": 6,
    "characters": [
     {
      "id": "zin_regional_adel_ysmay",
@@ -810,6 +817,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s042.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 6,
+     "sprite": "GFX_zin_portrait_men_chart_islanders_female_6",
+     "file": "gfx/leaders/zin/pools/men_chart_islanders_female_6.dds",
+     "source": "art/source/portraits/pool/men_male_s06.png",
+     "cell": 0,
+     "origin": "tranche 1"
     }
    ]
   },
@@ -919,14 +934,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_men_male_23",
-     "file": "gfx/leaders/zin/men_male_23.dds",
-     "source": "art/source/portraits/pool/men_male_s06.png",
-     "cell": 0,
-     "origin": "tranche 1"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_men_male_26",
      "file": "gfx/leaders/zin/men_male_26.dds",
@@ -965,6 +972,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s043.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 7,
+     "sprite": "GFX_zin_portrait_men_chart_islanders_male_7",
+     "file": "gfx/leaders/zin/pools/men_chart_islanders_male_7.dds",
+     "source": "art/source/portraits/tranche4/chart_islanders_men_male.png",
+     "cell": 0,
+     "origin": "round 7 replacement for the moved woman cell"
     }
    ]
   },
@@ -1212,20 +1227,20 @@
      "origin": "tranche 2"
     },
     {
-     "n": 4,
-     "sprite": "GFX_zin_portrait_men_dondor_brutes_female_4",
-     "file": "gfx/leaders/zin/pools/men_dondor_brutes_female_4.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s045.png",
-     "cell": 0,
-     "origin": "tranche 2"
-    },
-    {
      "n": 5,
      "sprite": "GFX_zin_portrait_men_dondor_brutes_female_5",
      "file": "gfx/leaders/zin/pools/men_dondor_brutes_female_5.dds",
      "source": "art/source/portraits/tranche2/tranche2_s045.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 6,
+     "sprite": "GFX_zin_portrait_men_dondor_brutes_female_6",
+     "file": "gfx/leaders/zin/pools/men_dondor_brutes_female_6.dds",
+     "source": "art/source/portraits/tranche4/dondor_brutes_men_female.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -1234,7 +1249,7 @@
    "culture": "dondor_brutes",
    "people": "men",
    "sex": "male",
-   "size": 5,
+   "size": 6,
    "characters": [
     {
      "id": "DND_zin_ruler",
@@ -1308,6 +1323,14 @@
      "file": "gfx/leaders/zin/pools/men_dondor_brutes_male_5.dds",
      "source": "art/source/portraits/tranche2/tranche2_s098.png",
      "cell": 3,
+     "origin": "tranche 2"
+    },
+    {
+     "n": 6,
+     "sprite": "GFX_zin_portrait_men_dondor_brutes_male_6",
+     "file": "gfx/leaders/zin/pools/men_dondor_brutes_male_6.dds",
+     "source": "art/source/portraits/tranche2/tranche2_s045.png",
+     "cell": 0,
      "origin": "tranche 2"
     }
    ]
@@ -1583,14 +1606,6 @@
      "origin": "tranche 1"
     },
     {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_elves_forest_council_elves_male_2",
-     "file": "gfx/leaders/zin/pools/elves_forest_council_elves_male_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s024.png",
-     "cell": 1,
-     "origin": "tranche 2"
-    },
-    {
      "n": 3,
      "sprite": "GFX_zin_portrait_elves_forest_council_elves_male_3",
      "file": "gfx/leaders/zin/pools/elves_forest_council_elves_male_3.dds",
@@ -1607,20 +1622,28 @@
      "origin": "tranche 2"
     },
     {
-     "n": 5,
-     "sprite": "GFX_zin_portrait_elves_forest_council_elves_male_5",
-     "file": "gfx/leaders/zin/pools/elves_forest_council_elves_male_5.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s025.png",
-     "cell": 0,
-     "origin": "tranche 2"
-    },
-    {
      "n": 6,
      "sprite": "GFX_zin_portrait_elves_forest_council_elves_male_6",
      "file": "gfx/leaders/zin/pools/elves_forest_council_elves_male_6.dds",
      "source": "art/source/portraits/tranche2/tranche2_s025.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 7,
+     "sprite": "GFX_zin_portrait_elves_forest_council_elves_male_7",
+     "file": "gfx/leaders/zin/pools/elves_forest_council_elves_male_7.dds",
+     "source": "art/source/portraits/tranche4/forest_council_elves_elves_male.png",
+     "cell": 1,
+     "origin": "round 5 wrong-sex replacement"
+    },
+    {
+     "n": 8,
+     "sprite": "GFX_zin_portrait_elves_forest_council_elves_male_8",
+     "file": "gfx/leaders/zin/pools/elves_forest_council_elves_male_8.dds",
+     "source": "art/source/portraits/tranche4/forest_council_elves_elves_male.png",
+     "cell": 3,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -2018,14 +2041,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_elves_gala_court_male_1",
-     "file": "gfx/leaders/zin/pools/elves_gala_court_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s025.png",
-     "cell": 2,
-     "origin": "tranche 2"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_elves_gala_court_male_2",
      "file": "gfx/leaders/zin/pools/elves_gala_court_male_2.dds",
@@ -2056,6 +2071,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s026.png",
      "cell": 2,
      "origin": "tranche 2"
+    },
+    {
+     "n": 6,
+     "sprite": "GFX_zin_portrait_elves_gala_court_male_6",
+     "file": "gfx/leaders/zin/pools/elves_gala_court_male_6.dds",
+     "source": "art/source/portraits/tranche4/gala_court_elves_male.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -2097,14 +2120,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_men_female_11",
-     "file": "gfx/leaders/zin/men_female_11.dds",
-     "source": "art/source/portraits/pool/men_female_s03.png",
-     "cell": 0,
-     "origin": "tranche 1"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_men_girdon_wardens_female_2",
      "file": "gfx/leaders/zin/pools/men_girdon_wardens_female_2.dds",
@@ -2127,6 +2142,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s069.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_men_girdon_wardens_female_5",
+     "file": "gfx/leaders/zin/pools/men_girdon_wardens_female_5.dds",
+     "source": "art/source/portraits/tranche4/girdon_wardens_men_female.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -2135,7 +2158,7 @@
    "culture": "girdon_wardens",
    "people": "men",
    "sex": "male",
-   "size": 3,
+   "size": 4,
    "characters": [
     {
      "id": "zin_regional_girdon_bransyn",
@@ -2182,6 +2205,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s100.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_men_girdon_wardens_male_4",
+     "file": "gfx/leaders/zin/pools/men_girdon_wardens_male_4.dds",
+     "source": "art/source/portraits/pool/men_female_s03.png",
+     "cell": 0,
+     "origin": "tranche 1"
     }
    ]
   },
@@ -2234,14 +2265,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_goblins_goblin_warrens_male_1",
-     "file": "gfx/leaders/zin/pools/goblins_goblin_warrens_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s047.png",
-     "cell": 2,
-     "origin": "tranche 2"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_goblins_goblin_warrens_male_2",
      "file": "gfx/leaders/zin/pools/goblins_goblin_warrens_male_2.dds",
@@ -2264,6 +2287,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s048.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_goblins_goblin_warrens_male_5",
+     "file": "gfx/leaders/zin/pools/goblins_goblin_warrens_male_5.dds",
+     "source": "art/source/portraits/tranche4/goblin_warrens_goblins_male.png",
+     "cell": 1,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -2556,7 +2587,7 @@
      "n": 3,
      "sprite": "GFX_zin_portrait_the_dead_grave_hosts_male_3",
      "file": "gfx/leaders/zin/pools/the_dead_grave_hosts_male_3.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s049.png",
+     "source": "art/source/portraits/tranche4/tranche2_s049_r2.png",
      "cell": 0,
      "origin": "tranche 2"
     },
@@ -2564,7 +2595,7 @@
      "n": 4,
      "sprite": "GFX_zin_portrait_the_dead_grave_hosts_male_4",
      "file": "gfx/leaders/zin/pools/the_dead_grave_hosts_male_4.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s049.png",
+     "source": "art/source/portraits/tranche4/tranche2_s049_r2.png",
      "cell": 1,
      "origin": "tranche 2"
     }
@@ -2841,7 +2872,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_men_hearth_folk_male_1",
      "file": "gfx/leaders/zin/pools/men_hearth_folk_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s118.png",
+     "source": "art/source/portraits/tranche4/tranche2_s118.png",
      "cell": 0,
      "origin": "tranche 2"
     }
@@ -2876,7 +2907,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_small_folk_hearth_folk_female_1",
      "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_female_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s101.png",
+     "source": "art/source/portraits/tranche4/tranche2_s101.png",
      "cell": 0,
      "origin": "tranche 2"
     },
@@ -2884,7 +2915,7 @@
      "n": 2,
      "sprite": "GFX_zin_portrait_small_folk_hearth_folk_female_2",
      "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_female_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s101.png",
+     "source": "art/source/portraits/tranche4/tranche2_s101.png",
      "cell": 1,
      "origin": "tranche 2"
     }
@@ -2931,23 +2962,15 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_small_folk_hearth_folk_male_1",
      "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s049.png",
+     "source": "art/source/portraits/tranche4/tranche2_s049_r2.png",
      "cell": 2,
-     "origin": "tranche 2"
-    },
-    {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_small_folk_hearth_folk_male_2",
-     "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_male_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s049.png",
-     "cell": 3,
      "origin": "tranche 2"
     },
     {
      "n": 3,
      "sprite": "GFX_zin_portrait_small_folk_hearth_folk_male_3",
      "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_male_3.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s050.png",
+     "source": "art/source/portraits/tranche4/tranche2_s050.png",
      "cell": 0,
      "origin": "tranche 2"
     },
@@ -2955,9 +2978,17 @@
      "n": 4,
      "sprite": "GFX_zin_portrait_small_folk_hearth_folk_male_4",
      "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_male_4.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s050.png",
+     "source": "art/source/portraits/tranche4/tranche2_s050.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_small_folk_hearth_folk_male_5",
+     "file": "gfx/leaders/zin/pools/small_folk_hearth_folk_male_5.dds",
+     "source": "art/source/portraits/tranche4/hearth_male_r6.png",
+     "cell": 0,
+     "origin": "round 6 replacement for the removed wrong-sex cell"
     }
    ]
   },
@@ -2982,7 +3013,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_yeti_height_yeti_female_1",
      "file": "gfx/leaders/zin/pools/yeti_height_yeti_female_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s101.png",
+     "source": "art/source/portraits/tranche4/tranche2_s101.png",
      "cell": 2,
      "origin": "tranche 2"
     },
@@ -2990,7 +3021,7 @@
      "n": 2,
      "sprite": "GFX_zin_portrait_yeti_height_yeti_female_2",
      "file": "gfx/leaders/zin/pools/yeti_height_yeti_female_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s101.png",
+     "source": "art/source/portraits/tranche4/tranche2_s101.png",
      "cell": 3,
      "origin": "tranche 2"
     }
@@ -3025,7 +3056,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_yeti_height_yeti_male_1",
      "file": "gfx/leaders/zin/pools/yeti_height_yeti_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s050.png",
+     "source": "art/source/portraits/tranche4/tranche2_s050.png",
      "cell": 2,
      "origin": "tranche 2"
     },
@@ -3033,7 +3064,7 @@
      "n": 2,
      "sprite": "GFX_zin_portrait_yeti_height_yeti_male_2",
      "file": "gfx/leaders/zin/pools/yeti_height_yeti_male_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s050.png",
+     "source": "art/source/portraits/tranche4/tranche2_s050.png",
      "cell": 3,
      "origin": "tranche 2"
     },
@@ -3072,7 +3103,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_giants_hill_giants_female_1",
      "file": "gfx/leaders/zin/pools/giants_hill_giants_female_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s118.png",
+     "source": "art/source/portraits/tranche4/tranche2_s118.png",
      "cell": 1,
      "origin": "tranche 2"
     }
@@ -3241,14 +3272,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_elves_hill_kingdom_elves_male_1",
-     "file": "gfx/leaders/zin/pools/elves_hill_kingdom_elves_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s071.png",
-     "cell": 3,
-     "origin": "tranche 2"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_elves_hill_kingdom_elves_male_2",
      "file": "gfx/leaders/zin/pools/elves_hill_kingdom_elves_male_2.dds",
@@ -3263,6 +3286,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s072.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_elves_hill_kingdom_elves_male_4",
+     "file": "gfx/leaders/zin/pools/elves_hill_kingdom_elves_male_4.dds",
+     "source": "art/source/portraits/tranche4/hill_kingdom_elves_elves_male.png",
+     "cell": 1,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -3288,28 +3319,28 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_gnomes_holt_gnomes_female_1",
-     "file": "gfx/leaders/zin/pools/gnomes_holt_gnomes_female_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s072.png",
-     "cell": 2,
-     "origin": "tranche 2"
-    },
-    {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_gnomes_holt_gnomes_female_2",
-     "file": "gfx/leaders/zin/pools/gnomes_holt_gnomes_female_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s072.png",
-     "cell": 3,
-     "origin": "tranche 2"
-    },
-    {
      "n": 3,
      "sprite": "GFX_zin_portrait_gnomes_holt_gnomes_female_3",
      "file": "gfx/leaders/zin/pools/gnomes_holt_gnomes_female_3.dds",
      "source": "art/source/portraits/tranche2/tranche2_s073.png",
      "cell": 0,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_gnomes_holt_gnomes_female_4",
+     "file": "gfx/leaders/zin/pools/gnomes_holt_gnomes_female_4.dds",
+     "source": "art/source/portraits/tranche4/holt_gnomes_gnomes_female.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_gnomes_holt_gnomes_female_5",
+     "file": "gfx/leaders/zin/pools/gnomes_holt_gnomes_female_5.dds",
+     "source": "art/source/portraits/tranche4/holt_gnomes_gnomes_female.png",
+     "cell": 2,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -3377,7 +3408,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_dwarves_ice_clans_male_1",
      "file": "gfx/leaders/zin/pools/dwarves_ice_clans_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s118.png",
+     "source": "art/source/portraits/tranche4/tranche2_s118.png",
      "cell": 2,
      "origin": "tranche 2"
     }
@@ -3830,7 +3861,7 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_men_ice_clans_none_1",
      "file": "gfx/leaders/zin/pools/men_ice_clans_none_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s118.png",
+     "source": "art/source/portraits/tranche4/tranche2_s118.png",
      "cell": 3,
      "origin": "tranche 2"
     }
@@ -4027,7 +4058,7 @@
    "culture": "iron_clans",
    "people": "orcs",
    "sex": "female",
-   "size": 3,
+   "size": 4,
    "characters": [
     {
      "id": "zin_regional_bordon_nadra",
@@ -4098,6 +4129,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s120.png",
      "cell": 0,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_orcs_iron_clans_female_4",
+     "file": "gfx/leaders/zin/pools/orcs_iron_clans_female_4.dds",
+     "source": "art/source/portraits/tranche2/tranche2_s053.png",
+     "cell": 0,
+     "origin": "tranche 2"
     }
    ]
   },
@@ -4106,7 +4145,7 @@
    "culture": "iron_clans",
    "people": "orcs",
    "sex": "male",
-   "size": 6,
+   "size": 5,
    "characters": [
     {
      "id": "BOR_zin_ruler",
@@ -4231,14 +4270,6 @@
      "origin": "tranche 2"
     },
     {
-     "n": 5,
-     "sprite": "GFX_zin_portrait_orcs_iron_clans_male_5",
-     "file": "gfx/leaders/zin/pools/orcs_iron_clans_male_5.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s053.png",
-     "cell": 0,
-     "origin": "tranche 2"
-    },
-    {
      "n": 6,
      "sprite": "GFX_zin_portrait_orcs_iron_clans_male_6",
      "file": "gfx/leaders/zin/pools/orcs_iron_clans_male_6.dds",
@@ -4270,14 +4301,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_men_female_12",
-     "file": "gfx/leaders/zin/men_female_12.dds",
-     "source": "art/source/portraits/pool/men_female_s03.png",
-     "cell": 1,
-     "origin": "tranche 1"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_men_isle_houses_female_2",
      "file": "gfx/leaders/zin/pools/men_isle_houses_female_2.dds",
@@ -4292,6 +4315,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s103.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_men_isle_houses_female_4",
+     "file": "gfx/leaders/zin/pools/men_isle_houses_female_4.dds",
+     "source": "art/source/portraits/tranche4/isle_houses_men_female.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -4626,14 +4657,6 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_elves_male_4",
-     "file": "gfx/leaders/zin/elves_male_4.dds",
-     "source": "art/source/portraits/pool/elves_male_s01.png",
-     "cell": 1,
-     "origin": "tranche 1"
-    },
-    {
      "n": 2,
      "sprite": "GFX_zin_portrait_elves_kingdom_forest_elves_male_2",
      "file": "gfx/leaders/zin/pools/elves_kingdom_forest_elves_male_2.dds",
@@ -4648,6 +4671,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s104.png",
      "cell": 3,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_elves_kingdom_forest_elves_male_4",
+     "file": "gfx/leaders/zin/pools/elves_kingdom_forest_elves_male_4.dds",
+     "source": "art/source/portraits/tranche4/kingdom_forest_elves_elves_male.png",
+     "cell": 1,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -6780,20 +6811,20 @@
      "origin": "tranche 1"
     },
     {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_men_male_40",
-     "file": "gfx/leaders/zin/men_male_40.dds",
-     "source": "art/source/portraits/pool/men_male_s10.png",
-     "cell": 1,
-     "origin": "tranche 1"
-    },
-    {
      "n": 3,
      "sprite": "GFX_zin_portrait_men_quay_folk_male_3",
      "file": "gfx/leaders/zin/pools/men_quay_folk_male_3.dds",
      "source": "art/source/portraits/tranche2/tranche2_s122.png",
      "cell": 0,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_men_quay_folk_male_4",
+     "file": "gfx/leaders/zin/pools/men_quay_folk_male_4.dds",
+     "source": "art/source/portraits/tranche4/quay_folk_men_male.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -7120,7 +7151,7 @@
    "culture": "rift_coast_elves",
    "people": "elves",
    "sex": "female",
-   "size": 3,
+   "size": 5,
    "characters": [
     {
      "id": "zin_regional_lccimio_aenwith",
@@ -7171,6 +7202,22 @@
      "source": "art/source/portraits/tranche2/tranche2_s087.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_elves_rift_coast_elves_female_4",
+     "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_female_4.dds",
+     "source": "art/source/portraits/tranche2/tranche2_s087.png",
+     "cell": 2,
+     "origin": "tranche 2"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_elves_rift_coast_elves_female_5",
+     "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_female_5.dds",
+     "source": "art/source/portraits/tranche2/tranche2_s087.png",
+     "cell": 3,
+     "origin": "tranche 2"
     }
    ]
   },
@@ -7208,28 +7255,28 @@
    ],
    "members": [
     {
-     "n": 1,
-     "sprite": "GFX_zin_portrait_elves_rift_coast_elves_male_1",
-     "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s087.png",
-     "cell": 2,
-     "origin": "tranche 2"
-    },
-    {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_elves_rift_coast_elves_male_2",
-     "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_male_2.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s087.png",
-     "cell": 3,
-     "origin": "tranche 2"
-    },
-    {
      "n": 3,
      "sprite": "GFX_zin_portrait_elves_rift_coast_elves_male_3",
      "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_male_3.dds",
      "source": "art/source/portraits/tranche2/tranche2_s088.png",
      "cell": 0,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_elves_rift_coast_elves_male_4",
+     "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_male_4.dds",
+     "source": "art/source/portraits/tranche4/rift_coast_elves_elves_male.png",
+     "cell": 1,
+     "origin": "round 5 wrong-sex replacement"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_elves_rift_coast_elves_male_5",
+     "file": "gfx/leaders/zin/pools/elves_rift_coast_elves_male_5.dds",
+     "source": "art/source/portraits/tranche4/rift_coast_elves_elves_male.png",
+     "cell": 3,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -8723,20 +8770,20 @@
      "origin": "tranche 1"
     },
     {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_sun_elves_male_4",
-     "file": "gfx/leaders/zin/sun_elves_male_4.dds",
-     "source": "art/source/portraits/pool/sun_elves_male_s01.png",
-     "cell": 1,
-     "origin": "tranche 1"
-    },
-    {
      "n": 3,
      "sprite": "GFX_zin_portrait_sun_elves_male_5",
      "file": "gfx/leaders/zin/sun_elves_male_5.dds",
      "source": "art/source/portraits/pool/sun_elves_male_s01.png",
      "cell": 2,
      "origin": "tranche 1"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_sun_elves_sunhot_light_male_4",
+     "file": "gfx/leaders/zin/pools/sun_elves_sunhot_light_male_4.dds",
+     "source": "art/source/portraits/tranche4/sunhot_light_sun_elves_male.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -8803,7 +8850,7 @@
    "culture": "sunhot_western",
    "people": "sun_elves",
    "sex": "female",
-   "size": 3,
+   "size": 5,
    "characters": [
     {
      "id": "ELV_zin_ruler",
@@ -8858,6 +8905,22 @@
      "source": "art/source/portraits/tranche2/tranche2_s112.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 4,
+     "sprite": "GFX_zin_portrait_sun_elves_sunhot_western_female_4",
+     "file": "gfx/leaders/zin/pools/sun_elves_sunhot_western_female_4.dds",
+     "source": "art/source/portraits/pool/sun_elves_male_s02.png",
+     "cell": 0,
+     "origin": "tranche 1"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_sun_elves_sunhot_western_female_5",
+     "file": "gfx/leaders/zin/pools/sun_elves_sunhot_western_female_5.dds",
+     "source": "art/source/portraits/pool/sun_elves_male_s02.png",
+     "cell": 3,
+     "origin": "tranche 1"
     }
    ]
   },
@@ -8927,28 +8990,28 @@
      "origin": "tranche 1"
     },
     {
-     "n": 2,
-     "sprite": "GFX_zin_portrait_sun_elves_male_7",
-     "file": "gfx/leaders/zin/sun_elves_male_7.dds",
-     "source": "art/source/portraits/pool/sun_elves_male_s02.png",
-     "cell": 0,
-     "origin": "tranche 1"
-    },
-    {
-     "n": 3,
-     "sprite": "GFX_zin_portrait_sun_elves_male_10",
-     "file": "gfx/leaders/zin/sun_elves_male_10.dds",
-     "source": "art/source/portraits/pool/sun_elves_male_s02.png",
-     "cell": 3,
-     "origin": "tranche 1"
-    },
-    {
      "n": 4,
      "sprite": "GFX_zin_portrait_sun_elves_sunhot_western_male_4",
      "file": "gfx/leaders/zin/pools/sun_elves_sunhot_western_male_4.dds",
      "source": "art/source/portraits/tranche2/tranche2_s123.png",
      "cell": 3,
      "origin": "tranche 2"
+    },
+    {
+     "n": 5,
+     "sprite": "GFX_zin_portrait_sun_elves_sunhot_western_male_5",
+     "file": "gfx/leaders/zin/pools/sun_elves_sunhot_western_male_5.dds",
+     "source": "art/source/portraits/tranche4/sunhot_western_sun_elves_male.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
+    },
+    {
+     "n": 6,
+     "sprite": "GFX_zin_portrait_sun_elves_sunhot_western_male_6",
+     "file": "gfx/leaders/zin/pools/sun_elves_sunhot_western_male_6.dds",
+     "source": "art/source/portraits/tranche4/sunhot_western_sun_elves_male.png",
+     "cell": 2,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },
@@ -9063,9 +9126,9 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_trolls_troll_tribes_female_1",
      "file": "gfx/leaders/zin/pools/trolls_troll_tribes_female_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s124.png",
+     "source": "art/source/portraits/tranche4/tranche2_s124_r8.png",
      "cell": 0,
-     "origin": "tranche 2"
+     "origin": "round 8 replacement (troll woman)"
     }
    ]
   },
@@ -9440,9 +9503,9 @@
      "n": 1,
      "sprite": "GFX_zin_portrait_men_veshazel_court_male_1",
      "file": "gfx/leaders/zin/pools/men_veshazel_court_male_1.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s124.png",
+     "source": "art/source/portraits/tranche4/tranche2_s124_r8.png",
      "cell": 1,
-     "origin": "tranche 2"
+     "origin": "round 8 replacement (courtier)"
     }
    ]
   },
@@ -9638,7 +9701,7 @@
    "culture": "volcano_clans",
    "people": "orcs",
    "sex": "female",
-   "size": 2,
+   "size": 3,
    "characters": [
     {
      "id": "zin_goldoroth_ulgra",
@@ -9672,6 +9735,14 @@
      "file": "gfx/leaders/zin/pools/orcs_volcano_clans_female_2.dds",
      "source": "art/source/portraits/tranche2/tranche2_s125.png",
      "cell": 1,
+     "origin": "tranche 2"
+    },
+    {
+     "n": 3,
+     "sprite": "GFX_zin_portrait_orcs_volcano_clans_female_3",
+     "file": "gfx/leaders/zin/pools/orcs_volcano_clans_female_3.dds",
+     "source": "art/source/portraits/tranche2/tranche2_s011.png",
+     "cell": 2,
      "origin": "tranche 2"
     }
    ]
@@ -9766,14 +9837,6 @@
      "origin": "tranche 2"
     },
     {
-     "n": 5,
-     "sprite": "GFX_zin_portrait_orcs_volcano_clans_male_5",
-     "file": "gfx/leaders/zin/pools/orcs_volcano_clans_male_5.dds",
-     "source": "art/source/portraits/tranche2/tranche2_s011.png",
-     "cell": 2,
-     "origin": "tranche 2"
-    },
-    {
      "n": 6,
      "sprite": "GFX_zin_portrait_orcs_volcano_clans_male_6",
      "file": "gfx/leaders/zin/pools/orcs_volcano_clans_male_6.dds",
@@ -9796,6 +9859,14 @@
      "source": "art/source/portraits/tranche2/tranche2_s012.png",
      "cell": 1,
      "origin": "tranche 2"
+    },
+    {
+     "n": 9,
+     "sprite": "GFX_zin_portrait_orcs_volcano_clans_male_9",
+     "file": "gfx/leaders/zin/pools/orcs_volcano_clans_male_9.dds",
+     "source": "art/source/portraits/tranche4/volcano_clans_orcs_male.png",
+     "cell": 0,
+     "origin": "round 5 wrong-sex replacement"
     }
    ]
   },

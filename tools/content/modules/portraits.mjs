@@ -29,7 +29,7 @@ export const loadPortraitPools = (file = PORTRAIT_POOLS_FILE) => JSON.parse(read
 // (cell = its reading-order index); a named portrait's source is a single image (cell = null).
 export function tablePortraits(plan) {
   const out = new Map();
-  for (const n of plan.named) out.set(n.sprite, { file: n.file, source: n.source, cell: null, named: n.id });
+  for (const n of plan.named) out.set(n.sprite, { file: n.file, source: n.source, cell: null, named: n.id, ...(n.crop ? { crop: n.crop } : {}) });
   for (const e of plan.emblems ?? []) out.set(e.sprite, { file: e.file, source: e.source, cell: null, emblem: e.id });
   for (const p of plan.pools) for (const m of p.members) {
     if (out.has(m.sprite)) throw new Error(`portrait_pools.json: ${m.sprite} is named twice`);
@@ -103,7 +103,7 @@ export function buildPortraits(staged, countries, assignment, art) {
     sprites.push(`\tspriteType = {\n\t\tname = "${sprite}"\n\t\ttexturefile = "${t.file}"\n\t}`);
     const sha = (buf) => createHash('sha256').update(buf).digest('hex');
     const cell = t.cell === null ? null : t.cell;
-    manifest.push({ out: t.file, source: t.source, sourceSha256: sha(readFileSync(path.join(ZIN, t.source))), ...(cell === null ? {} : { cell }), ops: [cell === null ? 'cover 156x210' : `cell ${cell} cover 156x210`, 'dds'], sha256: sha(bytes) });
+    manifest.push({ out: t.file, source: t.source, sourceSha256: sha(readFileSync(path.join(ZIN, t.source))), ...(cell === null ? {} : { cell }), ops: [cell === null ? (t.crop ? `crop ${t.crop.x0},${t.crop.y0},${t.crop.x1},${t.crop.y1} ${t.crop.fit ?? 'cover'} 156x210` : 'cover 156x210') : `cell ${cell} cover 156x210`, 'dds'], sha256: sha(bytes) });
   }
   staged.add('art/source/portraits_manifest.json', Buffer.from(JSON.stringify({ generator: 'tools/content/modules/portraits.mjs', files: manifest.sort((a, b) => a.out.localeCompare(b.out, 'en')) }, null, 1) + '\n'));
   staged.text('interface/zin_portraits.gfx', `spriteTypes = {\n${sprites.join('\n')}\n}\n`);
