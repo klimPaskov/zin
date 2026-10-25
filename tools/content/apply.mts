@@ -17,7 +17,11 @@ import { pathToFileURL } from 'node:url';
 import assert from 'node:assert/strict';
 import { ZIN, AGENT_TOOLS, GAME, stagingDir } from './lib/paths.mjs';
 
-const core = (name: string) => import(pathToFileURL(`${AGENT_TOOLS}/src/hoi4_agent_tools/core/${name}.js`).href);
+// The engine comes from the tool checkout when its packages are installed, else from the installed release (the worker
+// keeps it current; HOI4_AGENT_TOOLS_RUNTIME names another), whose compiled dist has the same core modules.
+const RELEASED = process.env.HOI4_AGENT_TOOLS_RUNTIME || 'C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v440/node_modules/hoi4-agent-tools';
+const ENGINE = existsSync(`${AGENT_TOOLS}/node_modules/zod`) ? `${AGENT_TOOLS}/src` : `${RELEASED}/dist`;
+const core = (name: string) => import(pathToFileURL(`${ENGINE}/hoi4_agent_tools/core/${name}.js`).href);
 const { serverConfigurationSchema } = await core('configuration');
 const { WorkspaceResolver } = await core('workspace');
 const { TransactionManager } = await core('transactions');

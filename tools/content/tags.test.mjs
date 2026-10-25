@@ -33,6 +33,10 @@ test('Negative: vanilla tags, script words, dynamic tags, tripled letters and un
   const vanilla = [...VANILLA_TAGS][0];
   assert.equal(refused(vanilla), 'vanilla tag');
   assert.equal(refused('D07'), 'shape');
+  // a tag names files such as gfx/flags/<TAG>.tga, and Windows refuses its device names as file names
+  for (const t of ['CON', 'PRN', 'AUX', 'NUL']) assert.ok(refused(t), t);
+  assert.equal(refused('PRN'), 'windows device name');
+  assert.equal(deriveTag('Pornivior'), 'PON');
   assert.equal(refused('AAA'), 'tripled letter');
   assert.equal(refused('ASS'), 'unseemly');
   assert.throws(() => assignTags([{ key: 'x', name: 'Germany', fixed: 'GER' }]), /refused: vanilla tag/);

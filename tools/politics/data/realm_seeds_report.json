@@ -11,7 +11,7 @@
  "inputs": {
   "roster": {
    "path": "tools/content/data/world/roster.json",
-   "sha256": "6a22ad68dcaf1108d75a866fd7a1189e1a014a892813dc001514fff74deb4e08"
+   "sha256": "c27fd1cf159efbbc84d69017f7b8b16325835c5a35178d1052b552d71f5c4063"
   },
   "geography": {
    "path": "tools/content/data/geography/import/aoaz.geography.json",
@@ -23,11 +23,11 @@
   },
   "assignment": {
    "path": "tools/content/data/world/state_assignment.json",
-   "sha256": "a445364766f95f6b757a8e7796b08e5796e01848ac262fe0dbef983d03b14f86"
+   "sha256": "90bd3578be94495124a0e6495c2aa14ff6953bd41647f2f6c5d655ae83395e77"
   },
   "stateCentres": {
    "path": "tools/content/data/forces_geography.json",
-   "sha256": "96b0d0a7d1780367f2b84c1493fbd19e588b6ddc943d7e7d7562f441f095670c"
+   "sha256": "6cb2080580e42cd1935dcaad25f85fc5d4e3ff831f5877eff34148ce4606a765"
   },
   "sheets": {
    "path": "tools/content/data/geography/import/aoaz.sheets.json",
@@ -649,10 +649,10 @@
   "capitalsByMethod": {
    "site": 63,
    "model feature": 16,
-   "old capital": 5,
+   "old capital": 6,
    "dossier text": 5,
    "model area": 12,
-   "drawn label": 44,
+   "drawn label": 43,
    "model land": 11
   },
   "sitesMovedOntoLand": [
@@ -5641,7 +5641,7 @@
    ]
   },
   {
-   "tag": "PRN",
+   "tag": "PON",
    "key": "pornivior",
    "name": "Pornivior",
    "region": "east_lands",
@@ -5649,20 +5649,21 @@
    "capital": {
     "name": "Nerhuus",
     "point": [
-     4157,
-     2150
+     4307,
+     2403
     ],
-    "method": "drawn label",
-    "source": "world (4157, 2150)",
+    "method": "old capital",
+    "source": "old state 462 at (4288, 2406) moved by the displacement field",
     "anchor": [
-     4157,
-     2150
+     4307,
+     2403
     ],
     "snapPx": 0,
-    "basis": "The drawn label Pornyior beside the drawn Argon: Nerhuus below the devils' mountains (the roster says below Mount Ergo; see the owner questions).",
+    "basis": "No canon anchor; the old map's capital state, moved into the new frame.",
     "status": "proposed",
-    "zone": "east_lands",
-    "land": "land_eastern_mainland"
+    "zone": "south_lands",
+    "land": "land_eastern_mainland",
+    "zoneNote": "stands in the repaired model's south_lands zone, not a zone of east_lands; the zones are coarse and the placement follows the drawing and the dossier"
    },
    "seeds": [],
    "claim": [],
@@ -5680,7 +5681,7 @@
    "overlord": null,
    "conflicts": [],
    "proposed": [
-    "Capital Nerhuus: The drawn label Pornyior beside the drawn Argon: Nerhuus below the devils' mountains (the roster says below Mount Ergo; see the owner questions)."
+    "Capital Nerhuus: No canon anchor; the old map's capital state, moved into the new frame."
    ]
   },
   {

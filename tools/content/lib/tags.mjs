@@ -51,6 +51,8 @@ export function refused(tag, taken = new Set()) {
   if (VANILLA_TAGS.has(tag)) return 'vanilla tag';
   if (RESERVED_WORDS.has(tag)) return 'script word';
   if (/^D\d\d$/.test(tag)) return 'dynamic tag';
+  // A tag names files (gfx/flags/<TAG>.tga); Windows refuses the device names as file names.
+  if (/^(CON|PRN|AUX|NUL)$/.test(tag)) return 'windows device name';
   if (/^(.)\1\1$/.test(tag)) return 'tripled letter';
   if (UNSEEMLY.has(tag)) return 'unseemly';
   if (taken.has(tag)) return 'taken';
