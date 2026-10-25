@@ -21,8 +21,10 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Work | Who | Writes |
 | --- | --- | --- |
 | MCP worker: release 4.5.0 | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
-| Story AI and the magic module (next step 2) | subagent | AI strategy plans and MTTH, tier AI, magic module, world-tension widget; `docs/plans/story/ai_magic_handoff.md` |
-| Black powder (K19) and the second error pass (next steps 4 and 7b) | subagent | `modules/warfare.mjs`, `forces.mjs`, equipment data, the pass-2 fixes; `docs/plans/zin-errors/powder_and_pass2_handoff.md` |
+| Doctrine art manifest fix | subagent | `modules/doctrine_art.mjs`, doctrine provenance; `docs/plans/zin-art/tech_doctrine_icons_handoff.md` |
+| Technology tree redesign (K51) | subagent | `data/technologies*.json`, `warfare_equipment.json`, `lib/tech_layout.mjs`, `lib/tech_tree_gui.mjs`, `modules/technologies.mjs`, gameplay specs 01 and 07 |
+| Super-event framework (K52) | subagent | super-event modules, interface and docs |
+| Flag redesign (K53): culture-rooted medieval banners, all 156 regenerated with luna | subagent | heraldry generator, `heraldry.json`, `06_heraldry.md`, `art/flag-jobs.mjs`, `realm-flags-cells.json`, new `realm-flags-v2-*` sheets; `docs/plans/zin-art/flags_v2_handoff.md` |
 
 ## Next, in order
 
