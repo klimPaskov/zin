@@ -21,7 +21,9 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Work | Who | Writes |
 | --- | --- | --- |
 | MCP worker: release 4.5.0 | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
-| Doctrine art manifest fix | subagent | `modules/doctrine_art.mjs`, doctrine provenance; `docs/plans/zin-art/tech_doctrine_icons_handoff.md` |
+| Skill `hoi4-character-art-direction` (K54) | subagent (skill maintainer) | `.claude/skills/`, mirrors, CLAUDE.md skill list |
+| Character sex rebalance (K54, about one woman in ten) | subagent | `data/world/characters/*.json`, references, pool membership; `docs/plans/zin-characters/sex_rebalance_handoff.md` |
+| Portrait redesign (K54): King of Demons crop from v4 A, named audit, non-human peoples from the owner's drawings, then human pools after the rebalance | subagent (portrait creator) | portrait pools and art, `docs/specs/08_art_and_assets/07_peoples_appearance.md`; `docs/plans/zin-art/portraits_v2_handoff.md`. Tell it when the rebalance lands. |
 | Technology tree redesign (K51) | subagent | `data/technologies*.json`, `warfare_equipment.json`, `lib/tech_layout.mjs`, `lib/tech_tree_gui.mjs`, `modules/technologies.mjs`, gameplay specs 01 and 07 |
 | Super-event framework (K52) | subagent | super-event modules, interface and docs |
 | Flag redesign (K53): culture-rooted medieval banners, all 156 regenerated with luna | subagent | heraldry generator, `heraldry.json`, `06_heraldry.md`, `art/flag-jobs.mjs`, `realm-flags-cells.json`, new `realm-flags-v2-*` sheets; `docs/plans/zin-art/flags_v2_handoff.md` |
