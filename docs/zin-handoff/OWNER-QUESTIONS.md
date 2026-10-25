@@ -21,6 +21,14 @@
 | Q-82 | Does zin_kusven_withdrawn also cover the route where the Presence recedes before Kusven comes forth (the -12 tension then applies too)? | yes |
 | Q-83 | Should the journey's host pickers move under the story-role registry? | no: they keep the journey spec's fuller successor orders |
 | Q-84 | Review the 19 event texts written to complete the story wiring (elves, east, dark, diplomacy, world), all proposed | shipped as proposed |
+| Q-85 | Rulers' years: at the design's rate a man's reign lasts at most about eight years; keep it, or age rulers per season or per year? | as designed, tuned after the Linux runs |
+| Q-86 | May a surviving Golden King (he exposed the plot) die of age in the end, closing the Golden Court Endures before its judgement? | no |
+| Q-87 | Realms without a named heir: are engine-named successors enough, or should every inheriting realm get a pre-built heir? | engine-named for now |
+| Q-88 | When the Golden King's court returns, may the Golden Court Endures hold again? | yes |
+| Q-89 | The nineteen raider realms (the Dark Lands holds outside Goldoroth, Halenor, Santon and Benan, Halia, and the Cold Lands clans of Horidor, Glimkit, Omar and Orewele) | yes |
+| Q-90 | The Golden King's shelters in exile: Lerendor first, then Selen, then the old dominions | yes |
+| Q-91 | The eight ruler tempers (Bold-Hearted, Cautious, Pious, Grasping, Scholarly, Vengeful, Generous, Weary) and their effects | yes |
+| Q-92 | Should start-variety changes that land on one realm (tempers, feuds, lands, bonds) also reach a player's realm under FULL? | no: every ZIN rule spares the player's realm |
 
 ## Answers (owner, 24 October 2026, in the interactive question round)
 
