@@ -860,3 +860,9 @@ Realms still flying the old flag of a former row, until their own flag is accept
 | P0024 | 4 event pictures to take the place of GFX_zin_evt_strait_toll | E1 event picture | Picture GFX_zin_evt_strait_toll is used by 12 events; the cap is 8. | 05_asset_manifest.md section 5 (event_picture: at most 8 events in the game); 08_art_and_assets/03_full_asset_inventory.md |
 | P0025 | 8 event pictures to take the place of GFX_zin_evt_black_isles_lights | E1 event picture | Picture GFX_zin_evt_black_isles_lights is used by 16 events; the cap is 8. | 05_asset_manifest.md section 5 (event_picture: at most 8 events in the game); 08_art_and_assets/03_full_asset_inventory.md |
 
+
+## Generic portraits outside the roster plan
+
+The portrait plan (tools/content/data/world/portrait_pools.json) covers the 1,033 roster characters. Six mechanic-recruited figures of the courts sit outside it: zin_aenor_golden_regency, zin_aenor_concord_speaker and zin_aenor_captains_regency (zin_aenor_court), zin_afrit_council figures (zin_afrit_council) and figures of zin_realm_characters. The chooser gives them one of the two legacy generics of their people, so six generics serve four to eleven characters each and exceed the pool cap (UNIQ_PORTRAIT_POOL). Each is accepted in the asset baseline with its reason.
+
+Disposition: add these figures to the portrait plan with their own pool members when the owner decides whether they need pool portraits, or keep the legacy generics. Owner question candidate: which pool portraits the mechanic figures should wear.

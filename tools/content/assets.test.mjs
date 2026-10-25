@@ -549,3 +549,72 @@ test('The report is deterministic and sorted by severity, code and path', () => 
   const keys = a.report.findings.map(f => order.indexOf(f.severity));
   assert.deepEqual(keys, [...keys].sort((x, y) => x - y));
 });
+
+// The portrait plan (data/world/portrait_pools.json, modules/portraits.mjs): coverage of the roster, the sources of every portrait,
+// the assignment and the builder check (docs/plans/zin-art/portraits_handoff.md).
+test('Portrait plan: every roster character is named, pooled or held exactly once', async () => {
+  const P = await import('./modules/portraits.mjs'), { loadCharacterData } = await import('./modules/characters.mjs');
+  const plan = P.loadPortraitPools();
+  const roster = loadCharacterData().flatMap(r => [r.ruler, r.heir, ...r.advisors, ...r.commanders, ...(r.figures ?? [])]).filter(c => c?.id).map(c => c.id);
+  // A held character with a fallback pool is listed in that pool too; only the held entries are counted here.
+  const planned = [...plan.named.map(n => n.id), ...(plan.emblems ?? []).flatMap(e => e.characters), ...plan.pools.flatMap(p => p.characters.map(c => c.id)), ...plan.held.filter(h => h.status === 'held').flatMap(h => h.characters.map(c => c.id))];
+  assert.equal(new Set(planned).size, planned.length, 'no character is planned twice');
+  assert.deepEqual(roster.filter(id => !planned.includes(id)), [], 'every roster character is planned');
+  assert.deepEqual(planned.filter(id => !roster.includes(id)), [], 'every planned character is on the roster');
+});
+
+test('Portrait plan: every portrait has a source sheet under art/source/ and a valid cell; pool sizes match their members', async () => {
+  const P = await import('./modules/portraits.mjs'), { ZIN } = await import('./lib/paths.mjs');
+  const plan = P.loadPortraitPools();
+  for (const n of plan.named) assert.ok(fs.existsSync(path.join(ZIN, n.source)), `${n.id} source ${n.source}`);
+  for (const e of plan.emblems ?? []) assert.ok(fs.existsSync(path.join(ZIN, e.source)), `${e.id} source ${e.source}`);
+  for (const p of plan.pools) {
+    assert.equal(p.members.length, p.size, `${p.key} has one member per portrait`);
+    assert.ok(p.characters.length >= p.size, `${p.key} has at least one character per portrait`);
+    for (const m of p.members) {
+      assert.ok(fs.existsSync(path.join(ZIN, m.source)), `${m.sprite} source ${m.source}`);
+      assert.ok(Number.isInteger(m.cell) && m.cell >= 0 && m.cell <= 3, `${m.sprite} cell ${m.cell}`);
+    }
+  }
+  assert.equal(P.tablePortraits(plan).size, plan.named.length + (plan.emblems ?? []).length + plan.pools.reduce((n, p) => n + p.members.length, 0));
+});
+
+test('Portrait assignment: named figures keep their own portrait, pool characters a member of their pool, never twice in a realm, within the cap', async () => {
+  const P = await import('./modules/portraits.mjs');
+  const plan = P.loadPortraitPools(), assigned = P.assignPortraits(plan);
+  for (const n of plan.named) assert.equal(assigned.get(n.id), n.sprite, n.id);
+  for (const e of plan.emblems ?? []) for (const id of e.characters) assert.equal(assigned.get(id), e.sprite, id);
+  const realmOf = new Map(), uses = new Map();
+  for (const p of plan.pools) {
+    const members = new Set(p.members.map(m => m.sprite));
+    for (const c of p.characters) {
+      const s = assigned.get(c.id);
+      assert.ok(members.has(s), `${c.id} wears a portrait of ${p.key}`);
+      const realm = realmOf.get(c.tag) ?? realmOf.set(c.tag, new Set()).get(c.tag);
+      assert.ok(!realm.has(s), `${c.id}: ${c.tag} does not share ${s}`);
+      realm.add(s); uses.set(s, (uses.get(s) ?? 0) + 1);
+    }
+    const served = p.characters.length, allowance = Math.min(P.SERVE_CAP, Math.ceil(served / p.size) + 1);
+    for (const m of p.members) assert.ok((uses.get(m.sprite) ?? 0) <= allowance, `${m.sprite} serves at most ${allowance}`);
+  }
+  // The owner-pending figures keep the pool portrait until the owner decides (owner question Q-32).
+  for (const id of ['zin_horos', 'zin_varner', 'zin_golbran', 'zin_aurevan']) assert.ok(!plan.named.some(n => n.id === id) && assigned.get(id).startsWith('GFX_zin_portrait_'), id);
+  assert.ok(!plan.named.some(n => n.id === 'zin_eindil'), 'Eindil has no named portrait yet');
+  for (const ids of [plan.ownerPending.map(o => o.id)]) assert.equal(ids.length, 5);
+});
+
+test('Portrait check: a realm sharing a portrait, a pool past its allowance and a realm holding a whole pool are caught', async () => {
+  const P = await import('./modules/portraits.mjs');
+  const member = (n, sprite) => ({ n, sprite, file: `gfx/leaders/zin/${sprite}.dds`, source: 'art/source/x.png', cell: 0 });
+  const plan = {
+    named: [{ id: 'zin_named', sprite: 'GFX_zin_portrait_zin_named', file: 'gfx/leaders/zin/lore/zin_named.dds', source: 'art/source/n.png' }],
+    pools: [{ key: 'k.men.male', size: 2, characters: [{ id: 'a', tag: 'X' }, { id: 'b', tag: 'X' }, { id: 'c', tag: 'Y' }], members: [member(1, 'GFX_m_1'), member(2, 'GFX_m_2')] }],
+  };
+  const shared = P.portraitProblems(plan, [{ id: 'a', tag: 'X', sprite: 'GFX_m_1' }, { id: 'b', tag: 'X', sprite: 'GFX_m_1' }, { id: 'c', tag: 'Y', sprite: 'GFX_m_2' }]);
+  assert.ok(shared.some(p => /share the portrait GFX_m_1/.test(p)), shared.join(' | '));
+  assert.deepEqual(P.portraitProblems(plan, [{ id: 'a', tag: 'X', sprite: 'GFX_m_1' }, { id: 'c', tag: 'Y', sprite: 'GFX_m_2' }]), []);
+  const crowd = Array.from({ length: 12 }, (_, i) => ({ id: `z${i}`, tag: `T${i}`, sprite: 'GFX_m_1' }));
+  assert.ok(P.portraitProblems({ named: [], pools: [{ key: 'k.men.male', size: 1, characters: [], members: [member(1, 'GFX_m_1')] }] }, crowd).some(p => /allows 5/.test(p)));
+  const whole = { named: [], pools: [{ key: 'k.men.male', size: 1, characters: [{ id: 'a', tag: 'X' }, { id: 'b', tag: 'X' }], members: [member(1, 'GFX_m_1')] }] };
+  assert.throws(() => P.assignPortraits(whole), /no free portrait for b in realm X/);
+});

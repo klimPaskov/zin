@@ -213,14 +213,18 @@ test('Coverage: every country has a culture and a faith that exist, every cultur
 
 test('Mappings: portrait pools, flag styles, building kits, music moods, unit groups and graphical cultures', () => {
   const pools = model.cultureKeys.map(k => C.portraitPoolFor(model, k));
-  assert.equal(C.portraitPoolFor(model, 'lake_aenoran').per_sex, 6);
-  assert.equal(C.portraitPoolFor(model, 'selen_ranger').per_sex, 4);
-  assert.equal(C.portraitPoolFor(model, 'march_folk').per_sex, 2);
-  assert.equal(C.portraitPoolFor(model, 'goblin_warrens').per_sex, 1);
-  // The budget of 08_world_in_game.md: tier 1 x 12, tier 2 x 8, tier 3 x 4, a minor people 2. About 374 for the 53 cultures of the
-  // bible; the 29 cultures of the roster of 24 October 2026 add theirs by the same rule.
+  // The roster's cultures take the sizes of the portrait table (data/world/portrait_pools.json, the culture pools of the roster).
+  const tablePools = key => model.portraitPools.pools.filter(q => q.culture === key);
+  for (const key of ['lake_aenoran', 'selen_ranger', 'march_folk', 'goblin_warrens']) {
+    assert.ok(tablePools(key).length >= 1, `${key} has a portrait pool in the table`);
+    assert.equal(C.portraitPoolFor(model, key).per_sex, Math.max(...tablePools(key).map(q => q.size)), key);
+    assert.equal(C.portraitPoolFor(model, key).total, tablePools(key).reduce((n, q) => n + q.size, 0), key);
+  }
+  // The budget of 08_world_in_game.md: tier 1 x 12, tier 2 x 8, tier 3 x 4, a minor people 2, for the cultures the table does not cover.
+  // A culture of the roster counts the portraits of its pools instead; the table's totals are the sum of its pools.
   const rule = { 1: 12, 2: 8, 3: 4 }, minor = new Set(Object.keys(model.game.portrait_pools.per_sex_overrides));
-  assert.equal(pools.reduce((n, p) => n + p.total, 0), model.cultureKeys.reduce((n, k) => n + (minor.has(k) ? 2 * model.game.portrait_pools.per_sex_overrides[k] : rule[model.world.cultures[k].tier]), 0));
+  const inTable = new Set(model.portraitPools.pools.map(q => q.culture));
+  assert.equal(pools.reduce((n, p) => n + p.total, 0), model.cultureKeys.reduce((n, k) => n + (inTable.has(k) ? tablePools(k).reduce((m, q) => m + q.size, 0) : minor.has(k) ? 2 * model.game.portrait_pools.per_sex_overrides[k] : rule[model.world.cultures[k].tier]), 0));
   assert.equal(pools.filter(p => p.tier === 1).length * 12 + pools.filter(p => p.tier === 2).length * 8 <= pools.reduce((n, p) => n + p.total, 0), true);
   assert.equal(C.portraitPoolFor(model, 'volcano_clans').kit, 'orcs');
   assert.equal(C.flagStyleFor(model, 'leren_sea_kings').shape, 'swallowtail');

@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { rng, assertModifiers } from '../lib/core.mjs';
 import { KIT_PEOPLE, gamePeopleOf } from '../lib/roster.mjs';
 import { stanceIdeology } from './ideologies.mjs';
-import { spriteName, VARIANTS } from './portraits.mjs';
+import { spriteName, VARIANTS, loadPortraitPools, assignPortraits, portraitProblems } from './portraits.mjs';
 import { TRAITS as GENERAL_TRAITS } from './vanilla_removal.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -113,6 +113,8 @@ export async function buildCharacters(staged, { countries, data = loadCharacterD
   }
 
   const existing = stagedCharacterIds(staged), portraitOf = portraitChooser(staged);
+  // The culture pools and named portraits of the portrait plan (modules/portraits.mjs); a character outside the plan keeps the generic chooser.
+  const portraitPlan = loadPortraitPools(), planned = assignPortraits(portraitPlan), served = [];
   const blocks = [], recruits = new Map(), leaders = new Map(), skipped = [], withAdvisors = new Set();
   const counts = { realms: 0, characters: 0, defined: 0, mirrored: 0, recruited: 0, rulers: 0, heirs: 0, advisors: 0, commanders: 0, figures: 0 };
   for (const r of data) {
@@ -134,7 +136,9 @@ export async function buildCharacters(staged, { countries, data = loadCharacterD
       if (existing.has(c.id)) { counts.mirrored++; skipped.push({ id: c.id, file: existing.get(c.id) }); continue; }
       const lines = [`\t${c.id} = {`, `\t\tname = ${c.id}`];
       const military = role === 'commander' || (role === 'advisor' && MILITARY_SLOTS.has(c.slot));
-      lines.push(`\t\tportraits = {`, `\t\t\t${military ? 'army' : 'civilian'} = {`, `\t\t\t\tlarge = ${portraitOf(c)}`, `\t\t\t}`, `\t\t}`);
+      const sprite = planned.get(c.id) ?? portraitOf(c);
+      served.push({ id: c.id, tag, sprite });
+      lines.push(`\t\tportraits = {`, `\t\t\t${military ? 'army' : 'civilian'} = {`, `\t\t\t\tlarge = ${sprite}`, `\t\t\t}`, `\t\t}`);
       loc[c.id] = c.name;
       if (role === 'ruler' || role === 'heir') {
         const stance = c.stance ?? r.stance ?? realm.stance;
@@ -158,6 +162,7 @@ export async function buildCharacters(staged, { countries, data = loadCharacterD
     counts.recruited += mine.length;
     recruits.set(tag, mine);
   }
+  problems.push(...portraitProblems(portraitPlan, served));
   if (problems.length) throw new Error(`Characters data is invalid (${problems.length}):\n  ${problems.slice(0, 50).join('\n  ')}`);
   staged.text('common/characters/zin_realm_characters.txt', `${HEADER}\n# The courts of the realms of Aoaz (data/world/characters). Rulers and heirs carry the realm's stance; advisors may be hired only by their realm.\ncharacters = {\n${blocks.join('\n')}\n}\n`);
   staged.text('common/country_leader/zin_character_traits.txt', `${HEADER}\n# Leader and advisor traits of the characters of Aoaz (data/world/character_traits.json).\nleader_traits = {\n${traitLines.join('\n')}\n}\n`);

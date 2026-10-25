@@ -22,6 +22,7 @@ import {
 import { loadProvenance, loadModuleManifests, compileRules, classify, createSourceResolver } from '../lib/asset_sources.mjs';
 import { validateManifest } from '../lib/asset_schema.mjs';
 import { countryTable, supersededWorldFile } from '../lib/roster.mjs';
+import { loadPortraitPools } from '../modules/portraits.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_DIR = path.join(here, '../data');
@@ -522,7 +523,9 @@ function uniqueness(ctx, A, F) {
     if (!c.country) continue;
     const k = `${c.country}|${p.sprite}`, l = byCountry.get(k) ?? byCountry.set(k, []).get(k); if (!l.includes(c)) l.push(c);
   }
-  const poolOf = s => /^GFX_zin_portrait_(.+)_(male|female)_\d+$/.exec(s)?.slice(1, 3).join('.');
+  const poolOf = s => /^GFX_zin_portrait_(.+)_(male|female|none)_\d+$/.exec(s)?.slice(1, 3).join('.');
+  // An emblem (no person shown) serves the characters of its realm, so the one-character rule does not apply to it (portrait_pools.json emblems).
+  const emblems = new Set((loadPortraitPools().emblems ?? []).map(e => e.sprite));
   const pools = new Map();
   for (const name of g.sprites.keys()) { const p = poolOf(name); if (p) (pools.get(p) ?? pools.set(p, []).get(p)).push(name); }
   const slots = new Map();
@@ -530,11 +533,11 @@ function uniqueness(ctx, A, F) {
   for (const [s, list] of [...uses].sort(([a], [b]) => (a < b ? -1 : 1))) {
     out.portraits[s] = list.length;
     const p = poolOf(s);
-    if (!p) { if (list.length > 1) F.add('UNIQ_PORTRAIT_NAMED', 'error', list[0].file, `Portrait ${s} is used by ${list.length} characters; a named portrait belongs to one character.`, s); continue; }
+    if (!p) { if (list.length > 1 && !emblems.has(s)) F.add('UNIQ_PORTRAIT_NAMED', 'error', list[0].file, `Portrait ${s} is used by ${list.length} characters; a named portrait belongs to one character.`, s); continue; }
     const cap = Math.ceil((slots.get(p) ?? 0) / (pools.get(p)?.length || 1)) + 1;
     if (list.length > cap) F.add('UNIQ_PORTRAIT_POOL', 'error', list[0].file, `Generic portrait ${s} serves ${list.length} characters; the pool ${p} (${pools.get(p)?.length} portraits, ${slots.get(p)} characters) allows ${cap}.`, s);
   }
-  for (const [k, list] of byCountry) if (list.length > 1) F.add('UNIQ_PORTRAIT_COUNTRY', 'error', list[0].file, `Characters ${list.map(c => c.id).join(', ')} of one country share the portrait ${k.split('|')[1]}.`, k);
+  for (const [k, list] of byCountry) if (list.length > 1 && !emblems.has(k.split('|')[1])) F.add('UNIQ_PORTRAIT_COUNTRY', 'error', list[0].file, `Characters ${list.map(c => c.id).join(', ')} of one country share the portrait ${k.split('|')[1]}.`, k);
   return out;
 }
 

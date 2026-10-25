@@ -43,7 +43,9 @@ export async function loadCultureModel(over = {}) {
   const state = over.state ?? JSON.parse(stateText);
   const languageRows = Array.isArray(languageList) ? languageList : Object.values(languageList);
   const languages = Object.fromEntries(languageRows.map(l => [l.id, { id: l.id, name: l.name, family: l.family }]));
-  return { game, gameText, world, assignments, languages, state, stateText, cultureKeys: Object.keys(game.cultures), faithKeys: Object.keys(game.faiths), languageKeys: Object.keys(game.language_ids) };
+  // The culture portrait pools of the roster (data/world/portrait_pools.json; numbers and ids only, see modules/portraits.mjs).
+  const portraitPools = over.portraitPools ?? await readJson(path.join(DATA, 'world/portrait_pools.json'));
+  return { game, gameText, world, assignments, languages, state, stateText, portraitPools, cultureKeys: Object.keys(game.cultures), faithKeys: Object.keys(game.faiths), languageKeys: Object.keys(game.language_ids) };
 }
 
 // ---------------------------------------------------------------------------------------------------- identifiers
@@ -119,10 +121,16 @@ export function ideaCategory(model, key, secondary = false) {
 }
 
 // -------------------------------------------------------------------------------------- mappings for other modules
+// A culture of the roster has the pools of the portrait table (one per people and sex: `per_sex` is the largest of them, `total` the
+// portraits of all of them, `pools` each pool's people.sex:size). A culture the table does not cover keeps the tier rule of the spec.
 export function portraitPoolFor(model, key) {
   const p = model.game.portrait_pools, tier = tierOf(model, key);
+  const pools = (model.portraitPools?.pools ?? []).filter(q => q.culture === key);
+  if (pools.length) {
+    return { pool: key, kit: kitPeopleOf(model, key), tier, per_sex: Math.max(...pools.map(q => q.size)), total: pools.reduce((n, q) => n + q.size, 0), unique: tier < 3, pools: pools.map(q => `${q.people}.${q.sex}:${q.size}`) };
+  }
   const perSex = p.per_sex_overrides[key] ?? p.per_sex_by_tier[tier];
-  return { pool: key, kit: kitPeopleOf(model, key), tier, per_sex: perSex, total: perSex * 2, unique: tier < 3 };
+  return { pool: key, kit: kitPeopleOf(model, key), tier, per_sex: perSex, total: perSex * 2, unique: tier < 3, pools: [] };
 }
 export function flagStyleFor(model, key) {
   const f = model.game.cultures[key].flag, shapes = model.game.flag_shapes;

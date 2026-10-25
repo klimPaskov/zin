@@ -14,6 +14,7 @@ import { findRegionsAdaptive as findRegions, cropRegion } from '../lib/sheets.mj
 import { fromRaw, tga, dds } from '../lib/raster.mjs';
 import { readEmblemSheet, emblemCell, fitEmblem } from '../lib/emblem.mjs';
 import { PEOPLES } from './peoples.mjs';
+import { loadPortraitPools, tablePortraits } from './portraits.mjs';
 
 export { ART };
 
@@ -42,6 +43,8 @@ export async function loadArt(countries) {
     const order = [['male', 1], ['female', 1], ['male', 2], ['female', 2]];
     for (const [i, [sex, n]] of order.entries()) art.portraits.set(`${k}_${sex}_${n}`, fromRaw(await cropRegion(sheet, pr[i], 156, 210, { fit: 'cover' }), 156, 210));
   }
+  // Culture pools and named portraits (data/world/portrait_pools.json, modules/portraits.mjs): sliced from their accepted sheets.
+  await slicePoolPortraits(art, source, loadPortraitPools());
   // Interface: frame panel (whole image), three button states, divider rule.
   const frameFile = source('ui/ui-frame.png');
   art.frame = fromRaw(await (await import('sharp')).default(frameFile).resize(128, 128, { kernel: 'lanczos3' }).ensureAlpha().raw().toBuffer(), 128, 128);
@@ -50,6 +53,31 @@ export async function loadArt(countries) {
   const ruleFile = source('ui/ui-rule.png'), rr = await regions(ruleFile, 1, { cols: 1, rows: 1, aspect: [8, 400], minAreaFraction: 0 });
   art.rule = fromRaw(await cropRegion(ruleFile, rr[0], 520, 12, { inset: 0, fit: 'fill' }), 520, 12);
   return art;
+}
+
+// Each pool sheet is a 2 x 2 grid read in reading order (the cell index of the table); each named portrait is one image, cropped to the
+// whole picture. Every sheet is read once, so the staged source list names it once.
+async function slicePoolPortraits(art, source, plan) {
+  const sheets = new Map(), singles = new Map();
+  const sheetOf = async rel => {
+    if (!sheets.has(rel)) {
+      const file = source(rel), r = await regions(file, 4, { cols: 2, rows: 2, aspect: [0.45, 1.0], minAreaFraction: 0.3 });
+      sheets.set(rel, { file, cells: [...r].sort((a, b) => (Math.abs(a.y0 - b.y0) > 40 ? a.y0 - b.y0 : a.x0 - b.x0)) });
+    }
+    return sheets.get(rel);
+  };
+  for (const [sprite, t] of tablePortraits(plan)) {
+    const rel = t.source.replace(/^art\/source\//, '');
+    if (t.cell === null) {
+      if (!singles.has(rel)) singles.set(rel, source(rel));
+      const file = singles.get(rel), meta = await (await import('sharp')).default(file).metadata();
+      art.portraits.set(sprite, fromRaw(await cropRegion(file, { x0: 0, y0: 0, x1: meta.width, y1: meta.height }, 156, 210, { inset: 0, fit: 'cover' }), 156, 210));
+    } else {
+      const s = await sheetOf(rel);
+      if (!s.cells[t.cell]) throw new Error(`${sprite}: ${rel} has no cell ${t.cell}`);
+      art.portraits.set(sprite, fromRaw(await cropRegion(s.file, s.cells[t.cell], 156, 210, { fit: 'cover' }), 156, 210));
+    }
+  }
 }
 
 // The per-country flag slices: <ZIN_ART>/flags/ when present. Otherwise they are cut again from the flag sheets by

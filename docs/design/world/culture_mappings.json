@@ -888,10 +888,14 @@
       "people": "tree_people",
       "portrait_pool": {
         "kit": "ents",
-        "per_sex": 2,
+        "per_sex": 5,
         "pool": "baelim",
+        "pools": [
+          "men.female:1",
+          "tree_people.none:5"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -922,10 +926,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "buldor_companies",
+        "pools": [
+          "men.female:2",
+          "men.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -956,10 +964,14 @@
       "people": "giants",
       "portrait_pool": {
         "kit": "giants",
-        "per_sex": 2,
+        "per_sex": 5,
         "pool": "cairn_giants",
+        "pools": [
+          "giants.female:1",
+          "giants.male:5"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -992,8 +1004,12 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 6,
+        "per_sex": 8,
         "pool": "caravan_princes",
+        "pools": [
+          "men.female:4",
+          "men.male:8"
+        ],
         "tier": 1,
         "total": 12,
         "unique": true
@@ -1026,10 +1042,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 6,
         "pool": "chart_islanders",
+        "pools": [
+          "men.female:5",
+          "men.male:6"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 11,
         "unique": true
       },
       "tier": 2,
@@ -1060,10 +1080,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "corsair_lords",
+        "pools": [
+          "men.female:3",
+          "men.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -1096,10 +1120,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "dondor_brutes",
+        "pools": [
+          "men.female:5",
+          "men.male:5"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 10,
         "unique": true
       },
       "tier": 2,
@@ -1132,10 +1160,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 6,
         "pool": "ember_freeholds",
+        "pools": [
+          "men.female:3",
+          "men.male:6"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 9,
         "unique": false
       },
       "tier": 3,
@@ -1171,6 +1203,11 @@
         "kit": "elves",
         "per_sex": 6,
         "pool": "forest_council_elves",
+        "pools": [
+          "elves.female:4",
+          "elves.male:6",
+          "spirits.male:2"
+        ],
         "tier": 1,
         "total": 12,
         "unique": true
@@ -1205,10 +1242,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 7,
         "pool": "free_crowns_north",
+        "pools": [
+          "men.female:4",
+          "men.male:7"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 11,
         "unique": false
       },
       "tier": 3,
@@ -1239,10 +1280,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 6,
+        "per_sex": 5,
         "pool": "gala_court",
+        "pools": [
+          "elves.female:4",
+          "elves.male:5"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 9,
         "unique": true
       },
       "tier": 1,
@@ -1275,8 +1320,12 @@
         "kit": "men",
         "per_sex": 4,
         "pool": "girdon_wardens",
+        "pools": [
+          "men.female:4",
+          "men.male:3"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 7,
         "unique": true
       },
       "tier": 2,
@@ -1307,10 +1356,15 @@
       "people": "goblins",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 1,
+        "per_sex": 4,
         "pool": "goblin_warrens",
+        "pools": [
+          "goblins.female:1",
+          "goblins.male:4",
+          "hobgoblins.male:1"
+        ],
         "tier": 3,
-        "total": 2,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1345,6 +1399,7 @@
         "kit": "elves",
         "per_sex": 2,
         "pool": "god_forest_keepers",
+        "pools": [],
         "tier": 3,
         "total": 4,
         "unique": false
@@ -1377,10 +1432,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "goodin_sunfolk",
+        "pools": [
+          "men.female:3",
+          "men.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1411,10 +1470,18 @@
       "people": "the_dead",
       "portrait_pool": {
         "kit": "the_dead",
-        "per_sex": 6,
+        "per_sex": 4,
         "pool": "grave_hosts",
+        "pools": [
+          "goblins.male:1",
+          "ogres.male:1",
+          "orcs.male:1",
+          "spirits.male:1",
+          "the_dead.female:2",
+          "the_dead.male:4"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 10,
         "unique": true
       },
       "tier": 1,
@@ -1449,8 +1516,12 @@
         "kit": "men",
         "per_sex": 6,
         "pool": "gunwyn_clans",
+        "pools": [
+          "men.female:5",
+          "men.male:6"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 11,
         "unique": true
       },
       "tier": 1,
@@ -1483,10 +1554,15 @@
       "people": "small_folk",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "hearth_folk",
+        "pools": [
+          "men.male:1",
+          "small_folk.female:2",
+          "small_folk.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -1517,10 +1593,14 @@
       "people": "yeti",
       "portrait_pool": {
         "kit": "yeti",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "height_yeti",
+        "pools": [
+          "yeti.female:2",
+          "yeti.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1551,10 +1631,15 @@
       "people": "giants",
       "portrait_pool": {
         "kit": "giants",
-        "per_sex": 4,
+        "per_sex": 3,
         "pool": "hill_giants",
+        "pools": [
+          "giants.female:1",
+          "giants.male:3",
+          "men.male:2"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -1585,10 +1670,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "hill_kingdom_elves",
+        "pools": [
+          "elves.female:4",
+          "elves.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -1623,6 +1712,7 @@
         "kit": "men",
         "per_sex": 2,
         "pool": "hilofrim_herders",
+        "pools": [],
         "tier": 3,
         "total": 4,
         "unique": false
@@ -1657,10 +1747,14 @@
       "people": "gnomes",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "holt_gnomes",
+        "pools": [
+          "gnomes.female:3",
+          "gnomes.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1691,10 +1785,17 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 11,
         "pool": "ice_clans",
+        "pools": [
+          "dwarves.male:1",
+          "men.female:6",
+          "men.male:11",
+          "men.none:1",
+          "spirits.male:1"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 20,
         "unique": false
       },
       "tier": 3,
@@ -1725,10 +1826,14 @@
       "people": "giants",
       "portrait_pool": {
         "kit": "giants",
-        "per_sex": 2,
+        "per_sex": 5,
         "pool": "ice_giants",
+        "pools": [
+          "giants.female:1",
+          "giants.male:5"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1759,10 +1864,17 @@
       "people": "orcs",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 4,
+        "per_sex": 6,
         "pool": "iron_clans",
+        "pools": [
+          "goblins.female:1",
+          "ogres.female:1",
+          "ogres.male:1",
+          "orcs.female:3",
+          "orcs.male:6"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 12,
         "unique": true
       },
       "tier": 2,
@@ -1796,10 +1908,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 3,
         "pool": "isle_houses",
+        "pools": [
+          "men.female:3",
+          "men.male:3"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -1830,10 +1946,15 @@
       "people": "ents",
       "portrait_pool": {
         "kit": "ents",
-        "per_sex": 4,
+        "per_sex": 3,
         "pool": "kilinti_ents",
+        "pools": [
+          "ents.none:3",
+          "men.female:1",
+          "men.male:2"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -1866,10 +1987,15 @@
       "people": "goblins",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "king_warrens",
+        "pools": [
+          "goblins.female:1",
+          "goblins.male:3",
+          "hobgoblins.male:2"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1902,10 +2028,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "kingdom_forest_elves",
+        "pools": [
+          "elves.female:3",
+          "elves.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -1939,8 +2069,12 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 6,
+        "per_sex": 9,
         "pool": "lake_aenoran",
+        "pools": [
+          "men.female:3",
+          "men.male:9"
+        ],
         "tier": 1,
         "total": 12,
         "unique": true
@@ -1973,10 +2107,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "lake_elves",
+        "pools": [
+          "elves.female:4",
+          "elves.male:2"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2009,10 +2147,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 5,
         "pool": "lake_road_cities",
+        "pools": [
+          "men.female:4",
+          "men.male:5"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 9,
         "unique": false
       },
       "tier": 3,
@@ -2046,10 +2188,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 6,
+        "per_sex": 7,
         "pool": "leren_sea_kings",
+        "pools": [
+          "men.female:4",
+          "men.male:7"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 11,
         "unique": true
       },
       "tier": 1,
@@ -2080,10 +2226,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "march_folk",
+        "pools": [
+          "men.female:3",
+          "men.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -2118,8 +2268,12 @@
         "kit": "men",
         "per_sex": 4,
         "pool": "melkgard_warlords",
+        "pools": [
+          "men.female:2",
+          "men.male:4"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -2152,10 +2306,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "miaed_pass_lords",
+        "pools": [
+          "men.female:2",
+          "men.male:5"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 7,
         "unique": true
       },
       "tier": 2,
@@ -2188,10 +2346,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 7,
         "pool": "mirolon_wardens",
+        "pools": [
+          "men.female:5",
+          "men.male:7"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 12,
         "unique": true
       },
       "tier": 2,
@@ -2224,6 +2386,7 @@
         "kit": "elves",
         "per_sex": 2,
         "pool": "mycid_rings",
+        "pools": [],
         "tier": 3,
         "total": 4,
         "unique": false
@@ -2260,8 +2423,12 @@
         "kit": "men",
         "per_sex": 4,
         "pool": "naamis_sea_crown",
+        "pools": [
+          "men.female:3",
+          "men.male:4"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 7,
         "unique": true
       },
       "tier": 2,
@@ -2294,10 +2461,14 @@
       "people": "demons",
       "portrait_pool": {
         "kit": "demons",
-        "per_sex": 4,
+        "per_sex": 3,
         "pool": "nether_houses",
+        "pools": [
+          "demons.female:2",
+          "demons.male:3"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 5,
         "unique": true
       },
       "tier": 2,
@@ -2330,6 +2501,11 @@
         "kit": "demons",
         "per_sex": 4,
         "pool": "netherborn",
+        "pools": [
+          "demons.female:3",
+          "demons.male:4",
+          "orcs.male:1"
+        ],
         "tier": 2,
         "total": 8,
         "unique": true
@@ -2365,10 +2541,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 6,
+        "per_sex": 9,
         "pool": "noris_riders",
+        "pools": [
+          "men.female:2",
+          "men.male:9"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 11,
         "unique": true
       },
       "tier": 1,
@@ -2401,10 +2581,14 @@
       "people": "dwarves",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 5,
         "pool": "north_delvers",
+        "pools": [
+          "dwarves.female:1",
+          "dwarves.male:5"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2439,6 +2623,7 @@
         "kit": "orcs",
         "per_sex": 2,
         "pool": "ogre_clans",
+        "pools": [],
         "tier": 3,
         "total": 4,
         "unique": false
@@ -2473,10 +2658,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 5,
         "pool": "orato_fishers",
+        "pools": [
+          "men.female:2",
+          "men.male:5"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -2507,10 +2696,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "pass_wardens",
+        "pools": [
+          "elves.female:2",
+          "elves.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2543,6 +2736,7 @@
         "kit": "orcs",
         "per_sex": 2,
         "pool": "plateau_soldiery",
+        "pools": [],
         "tier": 3,
         "total": 4,
         "unique": false
@@ -2577,10 +2771,15 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "quay_folk",
+        "pools": [
+          "elves.female:1",
+          "men.female:2",
+          "men.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2611,10 +2810,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "red_lands_tribunes",
+        "pools": [
+          "men.female:3",
+          "men.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -2647,10 +2850,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "redbark_tribes",
+        "pools": [
+          "men.female:2",
+          "men.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2681,10 +2888,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "reindeer_clans",
+        "pools": [
+          "men.female:4",
+          "men.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 8,
         "unique": false
       },
       "tier": 3,
@@ -2715,10 +2926,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "rift_coast_elves",
+        "pools": [
+          "elves.female:3",
+          "elves.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2751,10 +2966,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "river_kings",
+        "pools": [
+          "men.female:2",
+          "men.male:5"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 7,
         "unique": true
       },
       "tier": 2,
@@ -2787,10 +3006,14 @@
       "people": "dwarf_goblins",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "road_warrens",
+        "pools": [
+          "dwarf_goblins.female:2",
+          "dwarf_goblins.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2823,10 +3046,14 @@
       "people": "elves",
       "portrait_pool": {
         "kit": "elves",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "roost_keepers",
+        "pools": [
+          "elves.female:3",
+          "elves.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2857,10 +3084,14 @@
       "people": "orcs",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "sea_orcs",
+        "pools": [
+          "orcs.female:3",
+          "orcs.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2895,8 +3126,12 @@
         "kit": "men",
         "per_sex": 4,
         "pool": "selen_ranger",
+        "pools": [
+          "men.female:3",
+          "men.male:4"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 7,
         "unique": true
       },
       "tier": 2,
@@ -2927,10 +3162,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 7,
         "pool": "southern_islanders",
+        "pools": [
+          "men.female:6",
+          "men.male:7"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 13,
         "unique": false
       },
       "tier": 3,
@@ -2961,10 +3200,15 @@
       "people": "goblins",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "spring_warrens",
+        "pools": [
+          "goblins.female:1",
+          "goblins.male:4",
+          "hobgoblins.male:1"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -2997,8 +3241,12 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "steppe_rider",
+        "pools": [
+          "men.female:3",
+          "men.male:5"
+        ],
         "tier": 2,
         "total": 8,
         "unique": true
@@ -3033,10 +3281,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 6,
         "pool": "strait_folk",
+        "pools": [
+          "men.female:1",
+          "men.male:6"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -3067,10 +3319,15 @@
       "people": "sun_elves",
       "portrait_pool": {
         "kit": "sun_elves",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "sunhot_isles",
+        "pools": [
+          "men.male:1",
+          "sun_elves.female:3",
+          "sun_elves.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 7,
         "unique": false
       },
       "tier": 3,
@@ -3101,10 +3358,15 @@
       "people": "sun_elves",
       "portrait_pool": {
         "kit": "sun_elves",
-        "per_sex": 4,
+        "per_sex": 3,
         "pool": "sunhot_light",
+        "pools": [
+          "men.female:2",
+          "sun_elves.female:1",
+          "sun_elves.male:3"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -3135,10 +3397,16 @@
       "people": "sun_elves",
       "portrait_pool": {
         "kit": "sun_elves",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "sunhot_western",
+        "pools": [
+          "men.female:1",
+          "men.male:1",
+          "sun_elves.female:3",
+          "sun_elves.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 9,
         "unique": false
       },
       "tier": 3,
@@ -3171,10 +3439,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "teste_valley_folk",
+        "pools": [
+          "men.female:3",
+          "men.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3205,10 +3477,14 @@
       "people": "trolls",
       "portrait_pool": {
         "kit": "trolls",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "troll_tribes",
+        "pools": [
+          "trolls.female:1",
+          "trolls.male:5"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -3241,8 +3517,12 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "vale_folk",
+        "pools": [
+          "men.female:3",
+          "men.male:5"
+        ],
         "tier": 2,
         "total": 8,
         "unique": true
@@ -3275,10 +3555,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "veiled_folk",
+        "pools": [
+          "men.female:4",
+          "men.male:2"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3309,10 +3593,16 @@
       "people": "demons",
       "portrait_pool": {
         "kit": "demons",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "veshazel_court",
+        "pools": [
+          "demons.male:3",
+          "men.male:1",
+          "orcs.female:1",
+          "orcs.male:1"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3345,10 +3635,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "vindael_seafarers",
+        "pools": [
+          "men.female:3",
+          "men.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3379,10 +3673,15 @@
       "people": "orcs",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 6,
+        "per_sex": 8,
         "pool": "volcano_clans",
+        "pools": [
+          "goblins.male:1",
+          "orcs.female:2",
+          "orcs.male:8"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 11,
         "unique": true
       },
       "tier": 1,
@@ -3415,10 +3714,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "wahatud_oasis_folk",
+        "pools": [
+          "men.female:3",
+          "men.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3451,10 +3754,14 @@
       "people": "dwarves",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "wall_delvers",
+        "pools": [
+          "dwarves.female:1",
+          "dwarves.male:5"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -3487,10 +3794,14 @@
       "people": "dwarves",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "west_delvers",
+        "pools": [
+          "dwarves.female:2",
+          "dwarves.male:4"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3521,10 +3832,15 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 4,
         "pool": "western_guilds",
+        "pools": [
+          "men.female:3",
+          "men.male:4",
+          "unknown.male:1"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 8,
         "unique": false
       },
       "tier": 3,
@@ -3555,10 +3871,14 @@
       "people": "orcs",
       "portrait_pool": {
         "kit": "orcs",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "wild_holds",
+        "pools": [
+          "orcs.female:3",
+          "orcs.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3594,8 +3914,12 @@
         "kit": "men",
         "per_sex": 6,
         "pool": "winter_crown",
+        "pools": [
+          "men.female:5",
+          "men.male:6"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 11,
         "unique": true
       },
       "tier": 1,
@@ -3626,10 +3950,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 2,
+        "per_sex": 3,
         "pool": "woqood_sealers",
+        "pools": [
+          "men.female:3",
+          "men.male:3"
+        ],
         "tier": 3,
-        "total": 4,
+        "total": 6,
         "unique": false
       },
       "tier": 3,
@@ -3660,10 +3988,14 @@
       "people": "yeti",
       "portrait_pool": {
         "kit": "yeti",
-        "per_sex": 4,
+        "per_sex": 5,
         "pool": "yeti_clans",
+        "pools": [
+          "yeti.female:1",
+          "yeti.male:5"
+        ],
         "tier": 2,
-        "total": 8,
+        "total": 6,
         "unique": true
       },
       "tier": 2,
@@ -3694,10 +4026,14 @@
       "people": "men",
       "portrait_pool": {
         "kit": "men",
-        "per_sex": 6,
+        "per_sex": 8,
         "pool": "zilin_pilgrims",
+        "pools": [
+          "men.female:1",
+          "men.male:8"
+        ],
         "tier": 1,
-        "total": 12,
+        "total": 9,
         "unique": true
       },
       "tier": 1,
@@ -3730,6 +4066,7 @@
         "kit": "the_dead",
         "per_sex": 6,
         "pool": "zols_dead",
+        "pools": [],
         "tier": 1,
         "total": 12,
         "unique": true

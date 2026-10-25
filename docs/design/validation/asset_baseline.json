@@ -1,166 +1,100 @@
 {
  "version": 1,
- "note": "Errors accepted for now, each with its reason (tools/content/checks/assets.mjs, baselineOf). The build fails on an error that is not listed here with a reason. Warnings are in the report, not here. Integration round 3 (docs/design/stage2/integration_r3.md) replaced the unreviewed growth of the interrupted round with these entries.",
+ "note": "Errors accepted for now, each with its reason (tools/content/checks/assets.mjs, baselineOf). The build fails on an error that is not listed here with a reason. Warnings are in the report, not here.",
  "phase": 1,
+ "counts": {
+  "shippedFiles": 6491,
+  "assetFiles": 4812,
+  "byFamily": {
+   "A1": 350,
+   "A3": 20,
+   "D7": 121,
+   "E1": 71,
+   "F1": 53,
+   "F2": 8,
+   "F3": 4,
+   "G2": 4,
+   "I1": 468,
+   "K": 50,
+   "M": 11,
+   "U": 3652
+  },
+  "sprites": 2432,
+  "spriteUses": 17528,
+  "spritesUnused": 633,
+  "entities": 62,
+  "meshes": 5,
+  "animations": 30,
+  "references": 27975,
+  "unresolved": 225,
+  "orphans": 0,
+  "boundUnreferenced": 498,
+  "replacesVanilla": 3141,
+  "filesWithoutFormatRule": 3662,
+  "provenanceLinked": 4801,
+  "tags": 231,
+  "locKeys": 34059,
+  "parseErrors": 0
+ },
+ "bySeverity": {
+  "error": 818,
+  "warning": 572,
+  "info": 0
+ },
+ "byCode": {
+  "PROV_REF_OUTSIDE": 4,
+  "PROV_UNREVIEWED": 14,
+  "REPLACE_SHAPE": 1,
+  "UNIQ_EVENT_PICTURE_CAP": 25,
+  "UNIQ_EXACT_DUP": 302,
+  "UNIQ_ICON_GAME_CAP": 41,
+  "UNIQ_ICON_PREREQUISITE": 117,
+  "UNIQ_ICON_TREE_CAP": 310,
+  "UNIQ_PORTRAIT_POOL": 6,
+  "FALLBACK_KEY": 81,
+  "FLAG_MISSING": 225,
+  "UNIQ_NEAR_DUPLICATE": 210,
+  "VANILLA_TEXTURE": 54
+ },
  "findings": [
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_emblem_v1.png",
+   "message": "branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 1 shipped file, for example gfx/interface/logo_game.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_emblem_v1.png|branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_emblem_v1.png",
+   "message": "branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ZinLogoCut.png, outside art/source/ (affects 1 shipped file, for example gfx/interface/logo_game.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_emblem_v1.png|branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ZinLogoCut.png, outside art/source/",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_menu_backdrop_v1.png",
+   "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Backgrounds/ZIN.LOGO.BACKGROUND.png, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Backgrounds/ZIN.LOGO.BACKGROUND.png, outside ar",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_menu_backdrop_v1.png",
+   "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
   {
    "code": "PROV_UNREVIEWED",
    "severity": "error",
    "path": "art/source/emblems/emblems-peoples.png",
    "message": "no review line for the exact bytes of art/source/emblems/emblems-peoples.png (affects 21 shipped files, for example gfx/interface/goals/zin/people_demons.dds).",
    "key": "PROV_UNREVIEWED|art/source/emblems/emblems-peoples.png|no review line for the exact bytes of art/source/emblems/emblems-peoples.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-01.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-01.png (affects 48 shipped files, for example gfx/flags/Y01.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-01.png|no review line for the exact bytes of art/source/flags/flags-sheet-01.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-03.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-03.png (affects 48 shipped files, for example gfx/flags/Y0X.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-03.png|no review line for the exact bytes of art/source/flags/flags-sheet-03.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-04.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-04.png (affects 48 shipped files, for example gfx/flags/Y1E.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-04.png|no review line for the exact bytes of art/source/flags/flags-sheet-04.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-05.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-05.png (affects 48 shipped files, for example gfx/flags/Y1U.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-05.png|no review line for the exact bytes of art/source/flags/flags-sheet-05.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-06.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-06.png (affects 48 shipped files, for example gfx/flags/Y2A.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-06.png|no review line for the exact bytes of art/source/flags/flags-sheet-06.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-07.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-07.png (affects 48 shipped files, for example gfx/flags/Y2Q.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-07.png|no review line for the exact bytes of art/source/flags/flags-sheet-07.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-08.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-08.png (affects 48 shipped files, for example gfx/flags/Y36.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-08.png|no review line for the exact bytes of art/source/flags/flags-sheet-08.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-09.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-09.png (affects 48 shipped files, for example gfx/flags/Y3M.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-09.png|no review line for the exact bytes of art/source/flags/flags-sheet-09.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-10.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-10.png (affects 48 shipped files, for example gfx/flags/Y42.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-10.png|no review line for the exact bytes of art/source/flags/flags-sheet-10.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-11.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-11.png (affects 48 shipped files, for example gfx/flags/Y4I.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-11.png|no review line for the exact bytes of art/source/flags/flags-sheet-11.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-12.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-12.png (affects 48 shipped files, for example gfx/flags/Y4Y.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-12.png|no review line for the exact bytes of art/source/flags/flags-sheet-12.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-13.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-13.png (affects 48 shipped files, for example gfx/flags/Y5E.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-13.png|no review line for the exact bytes of art/source/flags/flags-sheet-13.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-14.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-14.png (affects 48 shipped files, for example gfx/flags/Y5W.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-14.png|no review line for the exact bytes of art/source/flags/flags-sheet-14.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-15.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-15.png (affects 48 shipped files, for example gfx/flags/Y6C.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-15.png|no review line for the exact bytes of art/source/flags/flags-sheet-15.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-16.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-16.png (affects 48 shipped files, for example gfx/flags/Y6S.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-16.png|no review line for the exact bytes of art/source/flags/flags-sheet-16.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-17.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-17.png (affects 48 shipped files, for example gfx/flags/Y79.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-17.png|no review line for the exact bytes of art/source/flags/flags-sheet-17.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-18.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-18.png (affects 48 shipped files, for example gfx/flags/Y7Q.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-18.png|no review line for the exact bytes of art/source/flags/flags-sheet-18.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-19.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-19.png (affects 36 shipped files, for example gfx/flags/Y86.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-19.png|no review line for the exact bytes of art/source/flags/flags-sheet-19.png",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "PROV_UNREVIEWED",
-   "severity": "error",
-   "path": "art/source/flags/flags-sheet-20.png",
-   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-20.png (affects 15 shipped files, for example gfx/flags/Y18.tga).",
-   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-20.png|no review line for the exact bytes of art/source/flags/flags-sheet-20.png",
    "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
   },
   {
@@ -278,24 +212,8 @@
   {
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
-   "path": "events/zin_aenor_mechanic.txt",
-   "message": "Picture GFX_zin_evt_dragon_return is used by 15 events; the cap is 8.",
-   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor_mechanic.txt|GFX_zin_evt_dragon_return",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0012."
-  },
-  {
-   "code": "UNIQ_EVENT_PICTURE_CAP",
-   "severity": "error",
-   "path": "events/zin_aenor_story.txt",
-   "message": "Picture GFX_zin_news_generic_war is used by 23 events; the cap is 8.",
-   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor_story.txt|GFX_zin_news_generic_war",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0013."
-  },
-  {
-   "code": "UNIQ_EVENT_PICTURE_CAP",
-   "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_black_ships_tale is used by 13 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_black_ships_tale is used by 14 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_black_ships_tale",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0001."
   },
@@ -303,7 +221,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_concord_council is used by 40 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_concord_council is used by 42 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_concord_council",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0002."
   },
@@ -311,7 +229,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_generic_court is used by 193 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_generic_court is used by 204 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_generic_court",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0003."
   },
@@ -327,7 +245,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_generic_war is used by 81 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_generic_war is used by 84 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_generic_war",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0005."
   },
@@ -335,7 +253,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_generic_wilds is used by 106 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_generic_wilds is used by 112 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_generic_wilds",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0006."
   },
@@ -343,7 +261,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_golden_court is used by 24 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_golden_court is used by 25 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_golden_court",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0007."
   },
@@ -351,7 +269,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_houses is used by 40 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_houses is used by 42 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_houses",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0008."
   },
@@ -367,7 +285,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_aenor.txt",
-   "message": "Picture GFX_zin_evt_mirolon_passes is used by 27 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_mirolon_passes is used by 30 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor.txt|GFX_zin_evt_mirolon_passes",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0010."
   },
@@ -382,8 +300,24 @@
   {
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
+   "path": "events/zin_aenor_mechanic.txt",
+   "message": "Picture GFX_zin_evt_dragon_return is used by 15 events; the cap is 8.",
+   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor_mechanic.txt|GFX_zin_evt_dragon_return",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0012."
+  },
+  {
+   "code": "UNIQ_EVENT_PICTURE_CAP",
+   "severity": "error",
+   "path": "events/zin_aenor_story.txt",
+   "message": "Picture GFX_zin_news_generic_war is used by 26 events; the cap is 8.",
+   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_aenor_story.txt|GFX_zin_news_generic_war",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0013."
+  },
+  {
+   "code": "UNIQ_EVENT_PICTURE_CAP",
+   "severity": "error",
    "path": "events/zin_afrit_mechanic.txt",
-   "message": "Picture GFX_zin_evt_council_chamber is used by 17 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_council_chamber is used by 30 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_afrit_mechanic.txt|GFX_zin_evt_council_chamber",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0014."
   },
@@ -391,7 +325,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_afrit_mechanic.txt",
-   "message": "Picture GFX_zin_evt_hermitage is used by 21 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_hermitage is used by 24 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_afrit_mechanic.txt|GFX_zin_evt_hermitage",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0015."
   },
@@ -407,7 +341,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_cold.txt",
-   "message": "Picture GFX_zin_evt_generic_sea is used by 78 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_generic_sea is used by 77 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_cold.txt|GFX_zin_evt_generic_sea",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0017."
   },
@@ -423,7 +357,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_dark.txt",
-   "message": "Picture GFX_zin_evt_leren_envoys is used by 19 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_leren_envoys is used by 22 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_dark.txt|GFX_zin_evt_leren_envoys",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0019."
   },
@@ -431,7 +365,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_dominion.txt",
-   "message": "Picture GFX_zin_evt_ember_lands_storm is used by 36 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_ember_lands_storm is used by 46 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_dominion.txt|GFX_zin_evt_ember_lands_storm",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0020."
   },
@@ -447,7 +381,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_eindil.txt",
-   "message": "Picture GFX_zin_evt_gala_court is used by 20 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_gala_court is used by 22 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_eindil.txt|GFX_zin_evt_gala_court",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0022."
   },
@@ -455,7 +389,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_eindil.txt",
-   "message": "Picture GFX_zin_evt_grave_muster is used by 9 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_grave_muster is used by 11 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_eindil.txt|GFX_zin_evt_grave_muster",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0023."
   },
@@ -463,7 +397,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_ending.txt",
-   "message": "Picture GFX_zin_evt_strait_toll is used by 12 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_strait_toll is used by 13 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_ending.txt|GFX_zin_evt_strait_toll",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0024."
   },
@@ -471,7 +405,7 @@
    "code": "UNIQ_EVENT_PICTURE_CAP",
    "severity": "error",
    "path": "events/zin_lore.txt",
-   "message": "Picture GFX_zin_evt_black_isles_lights is used by 16 events; the cap is 8.",
+   "message": "Picture GFX_zin_evt_black_isles_lights is used by 18 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_lore.txt|GFX_zin_evt_black_isles_lights",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0025."
   },
@@ -506,6 +440,14 @@
    "message": "14 different assets share the same bytes (ae5dacc30cad): gfx/game_rules/boosting_party_popularity.dds, gfx/game_rules/coups.dds, gfx/game_rules/kick_from_faction.dds, gfx/game_rules/leave_faction.dds, gfx/game_rules/lend_lease.dds, gfx/game_rules/maximum_fort_level.dds, ....",
    "key": "UNIQ_EXACT_DUP|gfx/game_rules/boosting_party_popularity.dds|ae5dacc30cadc5446cc80c57a9bbdb84895d15913d4922aedf721f692ff9bb1f",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0029."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/CARRIER_SORTIE_EFFICIENCY_FACTOR.dds",
+   "message": "4 different assets share the same bytes (0834121e8e1e): gfx/interface/CARRIER_SORTIE_EFFICIENCY_FACTOR.dds, gfx/interface/modifiers/MODIFIER_NAVAL_SUPPLY_CONSUMPTION_FACTOR.dds, gfx/interface/modifiers/MODIFIER_SUPPLY_CONSUMPTION_FACTOR.dds, gfx/interface/onmap_unit_counter_overlay.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/CARRIER_SORTIE_EFFICIENCY_FACTOR.dds|0834121e8e1e6674965390ce329d0a5b587d5eb952f2a2b53842550380ae9a02",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0030."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -794,14 +736,6 @@
    "message": "2 different assets share the same bytes (ffc520181f32): gfx/interface/carrier_airwing_comp_button.dds, gfx/interface/ship_missile_launcher_comp_button.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/carrier_airwing_comp_button.dds|ffc520181f32913aa603c9616f5e0d29c577c45a1d99ecfb4829dba0e8fe7e5e",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0066."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
-   "path": "gfx/interface/CARRIER_SORTIE_EFFICIENCY_FACTOR.dds",
-   "message": "4 different assets share the same bytes (0834121e8e1e): gfx/interface/CARRIER_SORTIE_EFFICIENCY_FACTOR.dds, gfx/interface/modifiers/MODIFIER_NAVAL_SUPPLY_CONSUMPTION_FACTOR.dds, gfx/interface/modifiers/MODIFIER_SUPPLY_CONSUMPTION_FACTOR.dds, gfx/interface/onmap_unit_counter_overlay.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/CARRIER_SORTIE_EFFICIENCY_FACTOR.dds|0834121e8e1e6674965390ce329d0a5b587d5eb952f2a2b53842550380ae9a02",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0030."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1142,14 +1076,6 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/divisiondesigner/bg_3d_land_96.dds",
-   "message": "2 different assets share the same bytes (6564e07f95e0): gfx/interface/divisiondesigner/bg_3d_land_96.dds, gfx/interface/divisiondesigner/bg_3d_sea_96.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/divisiondesigner/bg_3d_land_96.dds|6564e07f95e0536608dce4a014a6e31e35a59ac628d9e580f15b88b5ab58d5de",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0110."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
    "path": "gfx/interface/divisiondesigner/bg_3d_land.dds",
    "message": "2 different assets share the same bytes (b23ac1e5890e): gfx/interface/divisiondesigner/bg_3d_land.dds, gfx/interface/divisiondesigner/bg_3d_sea.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/divisiondesigner/bg_3d_land.dds|b23ac1e5890e089c889972c12052eff288820c7099f2d3af7deb03a6cca9b788",
@@ -1158,18 +1084,18 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/dockyard_icon.dds",
-   "message": "2 different assets share the same bytes (2cdcdf7b7f88): gfx/interface/dockyard_icon.dds, gfx/interface/dockyard_icon_with_wrench.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/dockyard_icon.dds|2cdcdf7b7f880e1e85bde7750c7b24bd3efa8dfadd9c536f8065fc9a609a3679",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0111."
+   "path": "gfx/interface/divisiondesigner/bg_3d_land_96.dds",
+   "message": "2 different assets share the same bytes (6564e07f95e0): gfx/interface/divisiondesigner/bg_3d_land_96.dds, gfx/interface/divisiondesigner/bg_3d_sea_96.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/divisiondesigner/bg_3d_land_96.dds|6564e07f95e0536608dce4a014a6e31e35a59ac628d9e580f15b88b5ab58d5de",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0110."
   },
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/doctrines/icons/doctrine_placeholder.dds",
-   "message": "2 different assets share the same bytes (5a3363cc12bc): gfx/interface/doctrines/icons/doctrine_placeholder.dds, gfx/interface/technology_sharing/default.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/doctrines/icons/doctrine_placeholder.dds|5a3363cc12bceb6b43bb2ad01e73ad1f0929f2fc1cec976369d34131a89493dc",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0114."
+   "path": "gfx/interface/dockyard_icon.dds",
+   "message": "2 different assets share the same bytes (2cdcdf7b7f88): gfx/interface/dockyard_icon.dds, gfx/interface/dockyard_icon_with_wrench.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/dockyard_icon.dds|2cdcdf7b7f880e1e85bde7750c7b24bd3efa8dfadd9c536f8065fc9a609a3679",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0111."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1186,6 +1112,14 @@
    "message": "4 different assets share the same bytes (65c16ca140f3): gfx/interface/doctrines/UI/mastery_progress_bar_strip_air.dds, gfx/interface/doctrines/UI/mastery_progress_bar_strip_inactive.dds, gfx/interface/doctrines/UI/mastery_progress_bar_strip_land.dds, gfx/interface/doctrines/UI/mastery_progress_bar_strip_navy.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/doctrines/UI/mastery_progress_bar_strip_air.dds|65c16ca140f38642fab3174f1255bdaea2f12a353c6be0ff91baae6c442e89dc",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0113."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/doctrines/icons/doctrine_placeholder.dds",
+   "message": "2 different assets share the same bytes (5a3363cc12bc): gfx/interface/doctrines/icons/doctrine_placeholder.dds, gfx/interface/technology_sharing/default.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/doctrines/icons/doctrine_placeholder.dds|5a3363cc12bceb6b43bb2ad01e73ad1f0929f2fc1cec976369d34131a89493dc",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0114."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1390,18 +1324,18 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/focusview/titlebar/focus_can_start_joint_bg.dds",
-   "message": "2 different assets share the same bytes (9f376553a446): gfx/interface/focusview/titlebar/focus_can_start_joint_bg.dds, gfx/interface/focusview/titlebar/focus_unavailable_joint_bg.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/focusview/titlebar/focus_can_start_joint_bg.dds|9f376553a4469c4b6c4d2268629794613a2bea10cf5ba66f7da89e473c798511",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0141."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
    "path": "gfx/interface/focusview/titlebar/focus_can_start_joint_MA_bg.dds",
    "message": "3 different assets share the same bytes (f407236e3c00): gfx/interface/focusview/titlebar/focus_can_start_joint_MA_bg.dds, gfx/interface/focusview/titlebar/focus_completed_joint_MA_bg.dds, gfx/interface/focusview/titlebar/focus_unavailable_joint_MA_bg.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/focusview/titlebar/focus_can_start_joint_MA_bg.dds|f407236e3c00381861d15056705a27f2c0ab5f484df5917015361c73d8133cff",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0140."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/focusview/titlebar/focus_can_start_joint_bg.dds",
+   "message": "2 different assets share the same bytes (9f376553a446): gfx/interface/focusview/titlebar/focus_can_start_joint_bg.dds, gfx/interface/focusview/titlebar/focus_unavailable_joint_bg.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/focusview/titlebar/focus_can_start_joint_bg.dds|9f376553a4469c4b6c4d2268629794613a2bea10cf5ba66f7da89e473c798511",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0141."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1590,14 +1524,6 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/mapicons/mapicon_bar_org_sprite.dds",
-   "message": "2 different assets share the same bytes (0fb9f36f8ea9): gfx/interface/mapicons/mapicon_bar_org_sprite.dds, gfx/interface/mapicons/mapicon_bar_str_sprite.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/mapicons/mapicon_bar_org_sprite.dds|0fb9f36f8ea9d2c1087333493948c685d487eef00e7958b97e469a39ec4c2d17",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0166."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
    "path": "gfx/interface/mapicons/mapicon_bar_org.dds",
    "message": "2 different assets share the same bytes (f20d22d2cbeb): gfx/interface/mapicons/mapicon_bar_org.dds, gfx/interface/mapicons/mapicon_bar_str.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/mapicons/mapicon_bar_org.dds|f20d22d2cbeb410583834dbcc90f73cb63050553c82a27fdc0508500258649de",
@@ -1606,10 +1532,10 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/mapicons/mapicon_building_mega_gun_emplacement_large.dds",
-   "message": "2 different assets share the same bytes (6df4cceb5d1f): gfx/interface/mapicons/mapicon_building_mega_gun_emplacement_large.dds, gfx/interface/mapicons/mapicon_building_rocketsite_large.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/mapicons/mapicon_building_mega_gun_emplacement_large.dds|6df4cceb5d1f534062d4af2ff1455c4b9ad02074e4b435e74fbec260ef4d424b",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0168."
+   "path": "gfx/interface/mapicons/mapicon_bar_org_sprite.dds",
+   "message": "2 different assets share the same bytes (0fb9f36f8ea9): gfx/interface/mapicons/mapicon_bar_org_sprite.dds, gfx/interface/mapicons/mapicon_bar_str_sprite.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/mapicons/mapicon_bar_org_sprite.dds|0fb9f36f8ea9d2c1087333493948c685d487eef00e7958b97e469a39ec4c2d17",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0166."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1618,6 +1544,14 @@
    "message": "2 different assets share the same bytes (5a60c1c688f2): gfx/interface/mapicons/mapicon_building_mega_gun_emplacement.dds, gfx/interface/mapicons/mapicon_building_rocketsite.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/mapicons/mapicon_building_mega_gun_emplacement.dds|5a60c1c688f21c37efcddc94f370d82c0ce68e37bda13a68478a241453d4b1e0",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0167."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/mapicons/mapicon_building_mega_gun_emplacement_large.dds",
+   "message": "2 different assets share the same bytes (6df4cceb5d1f): gfx/interface/mapicons/mapicon_building_mega_gun_emplacement_large.dds, gfx/interface/mapicons/mapicon_building_rocketsite_large.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/mapicons/mapicon_building_mega_gun_emplacement_large.dds|6df4cceb5d1f534062d4af2ff1455c4b9ad02074e4b435e74fbec260ef4d424b",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0168."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1774,18 +1708,18 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/navalcombat/bar_progress_loose_157x14.dds",
-   "message": "2 different assets share the same bytes (6c9a6fbefba4): gfx/interface/navalcombat/bar_progress_loose_157x14.dds, gfx/interface/navalcombat/bar_progress_win_157x14.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/navalcombat/bar_progress_loose_157x14.dds|6c9a6fbefba484e96cf1c6ab93d63d2aa06fd6158820ef4afeb6a16a1c502137",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0189."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
    "path": "gfx/interface/navalcombat/bar_progress_loose.dds",
    "message": "2 different assets share the same bytes (3703bf2c80b6): gfx/interface/navalcombat/bar_progress_loose.dds, gfx/interface/navalcombat/bar_progress_win.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/navalcombat/bar_progress_loose.dds|3703bf2c80b64593780f5af7b095a2251c71dfe7703211f9069bbc13cd3f1d68",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0188."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/navalcombat/bar_progress_loose_157x14.dds",
+   "message": "2 different assets share the same bytes (6c9a6fbefba4): gfx/interface/navalcombat/bar_progress_loose_157x14.dds, gfx/interface/navalcombat/bar_progress_win_157x14.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/navalcombat/bar_progress_loose_157x14.dds|6c9a6fbefba484e96cf1c6ab93d63d2aa06fd6158820ef4afeb6a16a1c502137",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0189."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -1854,18 +1788,18 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/navalcombat/ships/sh_battleship_III.dds",
-   "message": "2 different assets share the same bytes (dcbbf683315a): gfx/interface/navalcombat/ships/sh_battleship_III.dds, gfx/interface/navalcombat/ships/sh_battleship_IV.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/navalcombat/ships/sh_battleship_III.dds|dcbbf683315a5c802b60ab754970c4d8531ee7ac5c2711e5646f0808785f200e",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0199."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
    "path": "gfx/interface/navalcombat/ships/sh_battleship.dds",
    "message": "3 different assets share the same bytes (1e085b7ce34d): gfx/interface/navalcombat/ships/sh_battleship.dds, gfx/interface/navalcombat/ships/sh_battleship_I.dds, gfx/interface/navalcombat/ships/sh_battleship_II.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/navalcombat/ships/sh_battleship.dds|1e085b7ce34d3898af9fe94610b81f66d6756688334b9c39073866f99a290fbe",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0198."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/navalcombat/ships/sh_battleship_III.dds",
+   "message": "2 different assets share the same bytes (dcbbf683315a): gfx/interface/navalcombat/ships/sh_battleship_III.dds, gfx/interface/navalcombat/ships/sh_battleship_IV.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/navalcombat/ships/sh_battleship_III.dds|dcbbf683315a5c802b60ab754970c4d8531ee7ac5c2711e5646f0808785f200e",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0199."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -2614,14 +2548,6 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/techtree/techtree_dotline_horisontal_left_anim_strip.dds",
-   "message": "2 different assets share the same bytes (eb1c24a8fd05): gfx/interface/techtree/techtree_dotline_horisontal_left_anim_strip.dds, gfx/interface/techtree/techtree_dotline_horisontal_right_anim_strip.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/techtree/techtree_dotline_horisontal_left_anim_strip.dds|eb1c24a8fd058880287faf5b805484216c7189508f88fd5aa84ea702aed3de38",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0294."
-  },
-  {
-   "code": "UNIQ_EXACT_DUP",
-   "severity": "error",
    "path": "gfx/interface/techtree/techtree_dotline_horisontal.dds",
    "message": "2 different assets share the same bytes (326b39949b25): gfx/interface/techtree/techtree_dotline_horisontal.dds, gfx/interface/techtree/techtree_line_horisontal.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/techtree/techtree_dotline_horisontal.dds|326b39949b2559f74a11f66f4a42d305e6fdb70d9693ba76b8db1e97b94ee4e0",
@@ -2630,10 +2556,10 @@
   {
    "code": "UNIQ_EXACT_DUP",
    "severity": "error",
-   "path": "gfx/interface/techtree/techtree_dotline_vertical_down_anim_strip.dds",
-   "message": "4 different assets share the same bytes (a32d21a22eb3): gfx/interface/techtree/techtree_dotline_vertical_down_anim_strip.dds, gfx/interface/techtree/techtree_dotline_vertical_up_anim_strip.dds, gfx/interface/techtree/techtree_line_down_strip.dds, gfx/interface/techtree/techtree_line_up_strip.dds.",
-   "key": "UNIQ_EXACT_DUP|gfx/interface/techtree/techtree_dotline_vertical_down_anim_strip.dds|a32d21a22eb3bbdcf43be9377db7ab03c8dae2abd3ce4c266fc3d7ac5669682a",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0296."
+   "path": "gfx/interface/techtree/techtree_dotline_horisontal_left_anim_strip.dds",
+   "message": "2 different assets share the same bytes (eb1c24a8fd05): gfx/interface/techtree/techtree_dotline_horisontal_left_anim_strip.dds, gfx/interface/techtree/techtree_dotline_horisontal_right_anim_strip.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/techtree/techtree_dotline_horisontal_left_anim_strip.dds|eb1c24a8fd058880287faf5b805484216c7189508f88fd5aa84ea702aed3de38",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0294."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -2642,6 +2568,14 @@
    "message": "2 different assets share the same bytes (8c227c67c461): gfx/interface/techtree/techtree_dotline_vertical.dds, gfx/interface/techtree/techtree_line_vertical.dds.",
    "key": "UNIQ_EXACT_DUP|gfx/interface/techtree/techtree_dotline_vertical.dds|8c227c67c461707da6cfbd892042759acfbec90207768a0d54f86ad71fd6abe0",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0295."
+  },
+  {
+   "code": "UNIQ_EXACT_DUP",
+   "severity": "error",
+   "path": "gfx/interface/techtree/techtree_dotline_vertical_down_anim_strip.dds",
+   "message": "4 different assets share the same bytes (a32d21a22eb3): gfx/interface/techtree/techtree_dotline_vertical_down_anim_strip.dds, gfx/interface/techtree/techtree_dotline_vertical_up_anim_strip.dds, gfx/interface/techtree/techtree_line_down_strip.dds, gfx/interface/techtree/techtree_line_up_strip.dds.",
+   "key": "UNIQ_EXACT_DUP|gfx/interface/techtree/techtree_dotline_vertical_down_anim_strip.dds|a32d21a22eb3bbdcf43be9377db7ab03c8dae2abd3ce4c266fc3d7ac5669682a",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0296."
   },
   {
    "code": "UNIQ_EXACT_DUP",
@@ -2895,7 +2829,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_alliance_rings is used by 71 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_alliance_rings is used by 70 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_alliance_rings",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0328."
   },
@@ -2911,7 +2845,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_banner_plain is used by 107 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_banner_plain is used by 110 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_banner_plain",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0330."
   },
@@ -2919,7 +2853,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_beacon is used by 56 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_beacon is used by 59 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_beacon",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0331."
   },
@@ -2935,7 +2869,15 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_charter_old is used by 41 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_caravan is used by 41 focuses in the game; the cap is 40.",
+   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_caravan",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0795."
+  },
+  {
+   "code": "UNIQ_ICON_GAME_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_aenor.txt",
+   "message": "Icon GFX_focus_zin_charter_old is used by 44 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_charter_old",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0333."
   },
@@ -2943,7 +2885,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_coin_chest is used by 88 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_coin_chest is used by 91 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_coin_chest",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0334."
   },
@@ -2951,7 +2893,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_council_table is used by 118 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_council_table is used by 123 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_council_table",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0335."
   },
@@ -2959,7 +2901,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_crown_iron is used by 60 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_crown_iron is used by 64 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_crown_iron",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0336."
   },
@@ -2967,7 +2909,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_envoy is used by 103 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_envoy is used by 108 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_envoy",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0337."
   },
@@ -2975,7 +2917,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_eye_watchful is used by 71 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_eye_watchful is used by 72 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_eye_watchful",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0338."
   },
@@ -2983,7 +2925,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_forest_ancient is used by 42 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_forest_ancient is used by 43 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_forest_ancient",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0339."
   },
@@ -2991,7 +2933,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_forge_anvil is used by 51 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_forge_anvil is used by 55 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_forge_anvil",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0340."
   },
@@ -2999,7 +2941,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_fort_wall is used by 146 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_fort_wall is used by 155 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_fort_wall",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0341."
   },
@@ -3007,7 +2949,15 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_granary is used by 51 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_galley_oars is used by 41 focuses in the game; the cap is 40.",
+   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_galley_oars",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0796."
+  },
+  {
+   "code": "UNIQ_ICON_GAME_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_aenor.txt",
+   "message": "Icon GFX_focus_zin_granary is used by 56 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_granary",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0342."
   },
@@ -3015,7 +2965,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_handshake_oath is used by 90 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_handshake_oath is used by 96 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_handshake_oath",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0343."
   },
@@ -3031,7 +2981,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_house_first_light is used by 47 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_house_first_light is used by 46 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_house_first_light",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0345."
   },
@@ -3039,7 +2989,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_ledger_coins is used by 60 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_ledger_coins is used by 64 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_ledger_coins",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0346."
   },
@@ -3047,7 +2997,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_levy_muster is used by 86 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_levy_muster is used by 91 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_levy_muster",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0347."
   },
@@ -3071,7 +3021,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_market_stalls is used by 64 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_market_stalls is used by 68 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_market_stalls",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0350."
   },
@@ -3079,7 +3029,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_olive_branch is used by 124 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_olive_branch is used by 123 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_olive_branch",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0351."
   },
@@ -3087,7 +3037,15 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_roads_paved is used by 56 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_pass_fort is used by 44 focuses in the game; the cap is 40.",
+   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_pass_fort",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0797."
+  },
+  {
+   "code": "UNIQ_ICON_GAME_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_aenor.txt",
+   "message": "Icon GFX_focus_zin_roads_paved is used by 58 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_roads_paved",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0352."
   },
@@ -3095,7 +3053,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_scout_lantern is used by 42 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_scout_lantern is used by 48 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_scout_lantern",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0353."
   },
@@ -3103,7 +3061,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_scroll_sealed is used by 64 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_scroll_sealed is used by 69 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_scroll_sealed",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0354."
   },
@@ -3111,7 +3069,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_scroll_treaty is used by 63 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_scroll_treaty is used by 67 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_scroll_treaty",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0355."
   },
@@ -3119,7 +3077,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_seal_royal is used by 48 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_seal_royal is used by 50 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_seal_royal",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0356."
   },
@@ -3127,7 +3085,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_ship_voyage is used by 66 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_ship_voyage is used by 67 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_ship_voyage",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0357."
   },
@@ -3143,7 +3101,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_sword_shield is used by 67 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_sword_shield is used by 70 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_sword_shield",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0359."
   },
@@ -3151,7 +3109,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_tribute_chest is used by 66 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_tribute_chest is used by 72 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_tribute_chest",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0360."
   },
@@ -3159,7 +3117,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_war_council_map is used by 48 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_war_council_map is used by 50 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_war_council_map",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0361."
   },
@@ -3167,7 +3125,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_war_drums is used by 67 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_war_drums is used by 71 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_war_drums",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0362."
   },
@@ -3183,7 +3141,7 @@
    "code": "UNIQ_ICON_GAME_CAP",
    "severity": "error",
    "path": "common/national_focus/zin_gala.txt",
-   "message": "Icon GFX_focus_zin_chain_broken is used by 60 focuses in the game; the cap is 40.",
+   "message": "Icon GFX_focus_zin_chain_broken is used by 66 focuses in the game; the cap is 40.",
    "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_gala.txt|GFX_focus_zin_chain_broken",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0364."
   },
@@ -3378,6 +3336,14 @@
    "message": "Focus zin_regional_bloody_forest_the_forest_market shares an icon with its prerequisite zin_regional_bloody_forest_furs_and_amber.",
    "key": "UNIQ_ICON_PREREQUISITE|common/national_focus/zin_regional_bloody_forest.txt|zin_regional_bloody_forest/zin_regional_bloody_forest_the_forest_market",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0388."
+  },
+  {
+   "code": "UNIQ_ICON_PREREQUISITE",
+   "severity": "error",
+   "path": "common/national_focus/zin_regional_burrikkrit.txt",
+   "message": "Focus zin_regional_burrikkrit_nobody_gets_through shares an icon with its prerequisite zin_regional_burrikkrit_keep_the_road_dark.",
+   "key": "UNIQ_ICON_PREREQUISITE|common/national_focus/zin_regional_burrikkrit.txt|zin_regional_burrikkrit/zin_regional_burrikkrit_nobody_gets_through",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0798."
   },
   {
    "code": "UNIQ_ICON_PREREQUISITE",
@@ -5094,6 +5060,22 @@
   {
    "code": "UNIQ_ICON_TREE_CAP",
    "severity": "error",
+   "path": "common/national_focus/zin_regional_burrikkrit.txt",
+   "message": "Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_regional_burrikkrit; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_burrikkrit.txt|zin_regional_burrikkrit|GFX_focus_zin_fort_wall",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0799."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_regional_burrikkrit.txt",
+   "message": "Icon GFX_focus_zin_goblin_raiders is used by 3 focuses of tree zin_regional_burrikkrit; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_burrikkrit.txt|zin_regional_burrikkrit|GFX_focus_zin_goblin_raiders",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0800."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
    "path": "common/national_focus/zin_regional_cursed_lands.txt",
    "message": "Icon GFX_focus_zin_ward_circle is used by 4 focuses of tree zin_regional_cursed_lands; the cap is 2.",
    "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_cursed_lands.txt|zin_regional_cursed_lands|GFX_focus_zin_ward_circle",
@@ -5510,6 +5492,22 @@
   {
    "code": "UNIQ_ICON_TREE_CAP",
    "severity": "error",
+   "path": "common/national_focus/zin_regional_nether.txt",
+   "message": "Icon GFX_focus_zin_nether_gate is used by 4 focuses of tree zin_regional_nether; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_nether.txt|zin_regional_nether|GFX_focus_zin_nether_gate",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0801."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_regional_nether.txt",
+   "message": "Icon GFX_focus_zin_throne_ashen is used by 3 focuses of tree zin_regional_nether; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_nether.txt|zin_regional_nether|GFX_focus_zin_throne_ashen",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0802."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
    "path": "common/national_focus/zin_regional_nezer.txt",
    "message": "Icon GFX_focus_zin_banner_black is used by 3 focuses of tree zin_regional_nezer; the cap is 2.",
    "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_nezer.txt|zin_regional_nezer|GFX_focus_zin_banner_black",
@@ -5854,6 +5852,70 @@
   {
    "code": "UNIQ_ICON_TREE_CAP",
    "severity": "error",
+   "path": "common/national_focus/zin_shared_delving_holds.txt",
+   "message": "Icon GFX_focus_zin_crown_iron is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_crown_iron",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0803."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_delving_holds.txt",
+   "message": "Icon GFX_focus_zin_forge_anvil is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_forge_anvil",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0804."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_delving_holds.txt",
+   "message": "Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_fort_wall",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0805."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_delving_holds.txt",
+   "message": "Icon GFX_focus_zin_foundry_fire is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_foundry_fire",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0806."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_delving_holds.txt",
+   "message": "Icon GFX_focus_zin_pass_fort is used by 4 focuses of tree zin_shared_delving_holds; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_pass_fort",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0807."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_east_lands.txt",
+   "message": "Icon GFX_focus_zin_banner_plain is used by 3 focuses of tree zin_shared_east_lands; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_east_lands.txt|zin_shared_east_lands|GFX_focus_zin_banner_plain",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0703."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_east_lands.txt",
+   "message": "Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_shared_east_lands; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_east_lands.txt|zin_shared_east_lands|GFX_focus_zin_fort_wall",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0704."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_east_lands.txt",
+   "message": "Icon GFX_focus_zin_ledger_coins is used by 3 focuses of tree zin_shared_east_lands; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_east_lands.txt|zin_shared_east_lands|GFX_focus_zin_ledger_coins",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0705."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
    "path": "common/national_focus/zin_shared_ember_lands.txt",
    "message": "Icon GFX_focus_zin_banner_plain is used by 3 focuses of tree zin_shared_ember_lands; the cap is 2.",
    "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_ember_lands.txt|zin_shared_ember_lands|GFX_focus_zin_banner_plain",
@@ -5882,30 +5944,6 @@
    "message": "Icon GFX_focus_zin_warden_crown is used by 3 focuses of tree zin_shared_ember_lands; the cap is 2.",
    "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_ember_lands.txt|zin_shared_ember_lands|GFX_focus_zin_warden_crown",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0702."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_east_lands.txt",
-   "message": "Icon GFX_focus_zin_banner_plain is used by 3 focuses of tree zin_shared_east_lands; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_east_lands.txt|zin_shared_east_lands|GFX_focus_zin_banner_plain",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0703."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_east_lands.txt",
-   "message": "Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_shared_east_lands; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_east_lands.txt|zin_shared_east_lands|GFX_focus_zin_fort_wall",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0704."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_east_lands.txt",
-   "message": "Icon GFX_focus_zin_ledger_coins is used by 3 focuses of tree zin_shared_east_lands; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_east_lands.txt|zin_shared_east_lands|GFX_focus_zin_ledger_coins",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0705."
   },
   {
    "code": "UNIQ_ICON_TREE_CAP",
@@ -5958,10 +5996,34 @@
   {
    "code": "UNIQ_ICON_TREE_CAP",
    "severity": "error",
+   "path": "common/national_focus/zin_shared_middle_free.txt",
+   "message": "Icon GFX_focus_zin_tree_silver is used by 3 focuses of tree zin_shared_middle_free; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_middle_free.txt|zin_shared_middle_free|GFX_focus_zin_tree_silver",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0808."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
    "path": "common/national_focus/zin_shared_north_lands.txt",
    "message": "Icon GFX_focus_zin_two_crowns is used by 3 focuses of tree zin_shared_north_lands; the cap is 2.",
    "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_north_lands.txt|zin_shared_north_lands|GFX_focus_zin_two_crowns",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0712."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_small_folk.txt",
+   "message": "Icon GFX_focus_zin_farm_sowing is used by 3 focuses of tree zin_shared_small_folk; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_small_folk.txt|zin_shared_small_folk|GFX_focus_zin_farm_sowing",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0809."
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "error",
+   "path": "common/national_focus/zin_shared_small_folk.txt",
+   "message": "Icon GFX_focus_zin_granary is used by 4 focuses of tree zin_shared_small_folk; the cap is 2.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_small_folk.txt|zin_shared_small_folk|GFX_focus_zin_granary",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0810."
   },
   {
    "code": "UNIQ_ICON_TREE_CAP",
@@ -6492,164 +6554,52 @@
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0778."
   },
   {
-   "code": "PROV_REF_OUTSIDE",
+   "code": "UNIQ_PORTRAIT_POOL",
    "severity": "error",
-   "path": "art/source/branding/branding_emblem_v1.png",
-   "message": "branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 1 shipped file, for example gfx/interface/logo_game.dds).",
-   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_emblem_v1.png|branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
-   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+   "path": "common/characters/zin_aenor_court.txt",
+   "message": "Generic portrait GFX_zin_portrait_men_male_1 serves 11 characters; the pool men.male (46 portraits, 108 characters) allows 4.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_aenor_court.txt|GFX_zin_portrait_men_male_1",
+   "reason": "Accepted in integration round 3 (10/25/2026): a generic portrait of a character outside the roster portrait plan (a mechanic-recruited figure of the courts) that the fallback chooser gives one of the two legacy generics of its people; the rows are in docs/plans/zin-art/pending_from_integration.md (Generic portraits outside the roster plan)."
   },
   {
-   "code": "PROV_REF_OUTSIDE",
+   "code": "UNIQ_PORTRAIT_POOL",
    "severity": "error",
-   "path": "art/source/branding/branding_emblem_v1.png",
-   "message": "branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ZinLogoCut.png, outside art/source/ (affects 1 shipped file, for example gfx/interface/logo_game.dds).",
-   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_emblem_v1.png|branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ZinLogoCut.png, outside art/source/",
-   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+   "path": "common/characters/zin_afrit_council.txt",
+   "message": "Generic portrait GFX_zin_portrait_men_male_2 serves 5 characters; the pool men.male (46 portraits, 108 characters) allows 4.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_afrit_council.txt|GFX_zin_portrait_men_male_2",
+   "reason": "Accepted in integration round 3 (10/25/2026): a generic portrait of a character outside the roster portrait plan (a mechanic-recruited figure of the courts) that the fallback chooser gives one of the two legacy generics of its people; the rows are in docs/plans/zin-art/pending_from_integration.md (Generic portraits outside the roster plan)."
   },
   {
-   "code": "PROV_REF_OUTSIDE",
+   "code": "UNIQ_PORTRAIT_POOL",
    "severity": "error",
-   "path": "art/source/branding/branding_menu_backdrop_v1.png",
-   "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Backgrounds/ZIN.LOGO.BACKGROUND.png, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
-   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Backgrounds/ZIN.LOGO.BACKGROUND.png, outside ar",
-   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+   "path": "common/characters/zin_realm_characters.txt",
+   "message": "Generic portrait GFX_zin_portrait_men_female_3 serves 4 characters; the pool men.female (14 portraits, 26 characters) allows 3.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_realm_characters.txt|GFX_zin_portrait_men_female_3",
+   "reason": "Accepted in integration round 3 (10/25/2026): a generic portrait of a character outside the roster portrait plan (a mechanic-recruited figure of the courts) that the fallback chooser gives one of the two legacy generics of its people; the rows are in docs/plans/zin-art/pending_from_integration.md (Generic portraits outside the roster plan)."
   },
   {
-   "code": "PROV_REF_OUTSIDE",
+   "code": "UNIQ_PORTRAIT_POOL",
    "severity": "error",
-   "path": "art/source/branding/branding_menu_backdrop_v1.png",
-   "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
-   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
-   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+   "path": "common/characters/zin_realm_characters.txt",
+   "message": "Generic portrait GFX_zin_portrait_men_female_7 serves 4 characters; the pool men.female (14 portraits, 26 characters) allows 3.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_realm_characters.txt|GFX_zin_portrait_men_female_7",
+   "reason": "Accepted in integration round 3 (10/25/2026): a generic portrait of a character outside the roster portrait plan (a mechanic-recruited figure of the courts) that the fallback chooser gives one of the two legacy generics of its people; the rows are in docs/plans/zin-art/pending_from_integration.md (Generic portraits outside the roster plan)."
   },
   {
-   "code": "UNIQ_ICON_GAME_CAP",
+   "code": "UNIQ_PORTRAIT_POOL",
    "severity": "error",
-   "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_caravan is used by 41 focuses in the game; the cap is 40.",
-   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_caravan",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0795."
+   "path": "common/characters/zin_realm_characters.txt",
+   "message": "Generic portrait GFX_zin_portrait_orcs_female_3 serves 4 characters; the pool orcs.female (6 portraits, 12 characters) allows 3.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_realm_characters.txt|GFX_zin_portrait_orcs_female_3",
+   "reason": "Accepted in integration round 3 (10/25/2026): a generic portrait of a character outside the roster portrait plan (a mechanic-recruited figure of the courts) that the fallback chooser gives one of the two legacy generics of its people; the rows are in docs/plans/zin-art/pending_from_integration.md (Generic portraits outside the roster plan)."
   },
   {
-   "code": "UNIQ_ICON_GAME_CAP",
+   "code": "UNIQ_PORTRAIT_POOL",
    "severity": "error",
-   "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_galley_oars is used by 41 focuses in the game; the cap is 40.",
-   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_galley_oars",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0796."
-  },
-  {
-   "code": "UNIQ_ICON_GAME_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_aenor.txt",
-   "message": "Icon GFX_focus_zin_pass_fort is used by 44 focuses in the game; the cap is 40.",
-   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_aenor.txt|GFX_focus_zin_pass_fort",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0797."
-  },
-  {
-   "code": "UNIQ_ICON_PREREQUISITE",
-   "severity": "error",
-   "path": "common/national_focus/zin_regional_burrikkrit.txt",
-   "message": "Focus zin_regional_burrikkrit_nobody_gets_through shares an icon with its prerequisite zin_regional_burrikkrit_keep_the_road_dark.",
-   "key": "UNIQ_ICON_PREREQUISITE|common/national_focus/zin_regional_burrikkrit.txt|zin_regional_burrikkrit/zin_regional_burrikkrit_nobody_gets_through",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0798."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_regional_burrikkrit.txt",
-   "message": "Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_regional_burrikkrit; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_burrikkrit.txt|zin_regional_burrikkrit|GFX_focus_zin_fort_wall",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0799."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_regional_burrikkrit.txt",
-   "message": "Icon GFX_focus_zin_goblin_raiders is used by 3 focuses of tree zin_regional_burrikkrit; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_burrikkrit.txt|zin_regional_burrikkrit|GFX_focus_zin_goblin_raiders",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0800."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_regional_nether.txt",
-   "message": "Icon GFX_focus_zin_nether_gate is used by 4 focuses of tree zin_regional_nether; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_nether.txt|zin_regional_nether|GFX_focus_zin_nether_gate",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0801."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_regional_nether.txt",
-   "message": "Icon GFX_focus_zin_throne_ashen is used by 3 focuses of tree zin_regional_nether; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_regional_nether.txt|zin_regional_nether|GFX_focus_zin_throne_ashen",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0802."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_delving_holds.txt",
-   "message": "Icon GFX_focus_zin_crown_iron is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_crown_iron",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0803."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_delving_holds.txt",
-   "message": "Icon GFX_focus_zin_forge_anvil is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_forge_anvil",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0804."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_delving_holds.txt",
-   "message": "Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_fort_wall",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0805."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_delving_holds.txt",
-   "message": "Icon GFX_focus_zin_foundry_fire is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_foundry_fire",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0806."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_delving_holds.txt",
-   "message": "Icon GFX_focus_zin_pass_fort is used by 4 focuses of tree zin_shared_delving_holds; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_delving_holds.txt|zin_shared_delving_holds|GFX_focus_zin_pass_fort",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0807."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_middle_free.txt",
-   "message": "Icon GFX_focus_zin_tree_silver is used by 3 focuses of tree zin_shared_middle_free; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_middle_free.txt|zin_shared_middle_free|GFX_focus_zin_tree_silver",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0808."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_small_folk.txt",
-   "message": "Icon GFX_focus_zin_farm_sowing is used by 3 focuses of tree zin_shared_small_folk; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_small_folk.txt|zin_shared_small_folk|GFX_focus_zin_farm_sowing",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0809."
-  },
-  {
-   "code": "UNIQ_ICON_TREE_CAP",
-   "severity": "error",
-   "path": "common/national_focus/zin_shared_small_folk.txt",
-   "message": "Icon GFX_focus_zin_granary is used by 4 focuses of tree zin_shared_small_folk; the cap is 2.",
-   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zin_shared_small_folk.txt|zin_shared_small_folk|GFX_focus_zin_granary",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0810."
+   "path": "common/characters/zin_realm_characters.txt",
+   "message": "Generic portrait GFX_zin_portrait_orcs_female_5 serves 4 characters; the pool orcs.female (6 portraits, 12 characters) allows 3.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_realm_characters.txt|GFX_zin_portrait_orcs_female_5",
+   "reason": "Accepted in integration round 3 (10/25/2026): a generic portrait of a character outside the roster portrait plan (a mechanic-recruited figure of the courts) that the fallback chooser gives one of the two legacy generics of its people; the rows are in docs/plans/zin-art/pending_from_integration.md (Generic portraits outside the roster plan)."
   }
  ]
 }
