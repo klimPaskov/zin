@@ -6,36 +6,29 @@ Working notes of the implementation lead. `docs/specs/PROGRAM.md` is the progres
 
 All owner questions of 24 October 2026 are answered and recorded as decisions K9 to K50 in `docs/specs/INTEGRATION_DECISIONS.md` (table of answers: `docs/zin-handoff/OWNER-QUESTIONS.md`). The owner is away since the evening of 24 October and asked for autonomous work: new questions queue in `docs/zin-handoff/OWNER-QUESTIONS.md` (Q-31 to Q-62 open, each with the default in use).
 
-## State (25 October 2026, about 03:30)
+## State (25 October 2026, about 08:00)
 
-- Branch `zin/integration-r3`, not pushed. Build green; suite green except the two build-determinism tests while the portrait generation appends to the art store's provenance.
-- Roster: 156 realms, 231 tags of 439, 1,033 characters, 99 focus trees (4,747 focuses) including Burrikkrit, the Nether, `shared_delving_holds`, `shared_middle_free`, `shared_small_folk`.
-- Flags: all 156 realms fly their own heraldry flag (`tools/content/data/realm-flags-cells.json`).
-- Portraits: tranche one (11 named, 84 pool) committed `edcff969`, not yet wired; tranche two (pools per culture for the new roster, 126 sheets) generating.
-- Map import: converter, sheets, annotations and feature surface ready; preview on the released 4.4.0 is READY with land IoU 0.9574 and no warnings (`tools/content/data/geography/import/preview_call.json`, run with `scratchpad/mcp_call.mjs` on `runtime-v440` because this session's own MCP connection is the old project registration until the owner reconnects). Realm seeds for ZR-8 in `tools/politics/data/realm_seeds.json`. Any change to annotations, sheets or geography needs `node tools/politics/realm_seeds.mjs --write` afterwards.
-- MCP worker: 4.4.0 released and installed (`runtime-v440`); ZR-8 (workspace-owned countries) in PR 44, seed growth waits for the territory service (C11); ZR-6 (strait crossings) and ADR 0067 steps 3 to 5 (override file, stable ids, alignment checks) queued; ZR-7 resolved on the mod side (project `.mcp.json` entry removed).
+- Branch `zin/integration-r3`, not pushed; working tree clean. Build green; full suite 1,635 pass, 1 skipped (needs the private drawing). The 156-realm build is applied to the mod (`0841f343`): realm tags, files, histories, orders of battle, flags, portraits, focus trees, story framework and events, realm life, start variety, error-log fixes. The game is not run on this state: the map generator's 305 old Y-tag files are still present until the new map's `create_world` retires them (536 tags would crash).
+- Roster: 156 realms, 231 tags of 439 (Pornivior retagged PON: PRN is a Windows device name), 1,033 characters, 99 focus trees.
+- Flags: all 156 realms fly their own heraldry flag. Portraits: 179 pools (595 members), named portraits for Volgan, Lorien, Bastian, Alleria, the Golden King, the King of Demons and Kusven; the five awaiting owner approval (Q-32) keep pool portraits; the Zol emblem for Zol's dead.
+- Story: the 37 soft-locks addressed (framework, Afrit/Aenor/Eindil, Kusven and the war side, wiring completion with the story check enforced for every owner), realm life G1 to G9 and start variety V1 to V13.
+- Map import: preview on the released 4.4.0 is READY with land IoU 0.9574 and no warnings; realm seeds and `tools/politics/data/create_world_call.json` ready for 4.5.0 (ZR-8 merged as PR 44, release being cut). Run calls with `scratchpad/mcp_call.mjs` on the installed runtime (this session's own MCP connection is the old project registration until the owner reconnects); point it at `runtime-v450` once installed.
+- MCP worker: 4.4.0 installed; 4.5.0 (ZR-8 workspace countries) next; C11 territory growth, ZR-6 strait crossings and ADR 0067 steps 3 to 5 after it; ZR-7 resolved on the mod side.
+- Tooling notes: `scratchpad/verify.sh <label>` builds into the default staged tree with a private TEMP and runs the suite (refreshes the art snapshot's provenance first; `KEEP_STAGED=1` keeps the tree for an apply); `tools/content/apply.mts` and `validate_import.mjs` fall back to the installed tool release when the tool checkout has no packages.
 
 ## Running
 
 | Work | Who | Writes |
 | --- | --- | --- |
-| Portraits tranche two | subagent `hoi4-portrait-creator` | `$ZIN_ART/raw/portraits/tranche2/`, `art/source/portraits/`, `docs/plans/zin-art/portraits_handoff.md` |
-| Error-log causes (r3b profile) | subagent | builder modules except art and geography; `docs/plans/zin-errors/r3b_fixes.md` |
-| MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
-| Portrait wiring, then Kusven's named portrait | subagent `hoi4-portrait-creator` | `modules/portraits.mjs`, `art.mjs`, `characters.mjs` (narrow), `lib/cultures_model.mjs`, `data/world/portrait_pools.json` |
-| Story wiring completion (22 events, 27 flags, Kusven flag readers, role pickers, then enforce) | subagent | story owners' modules; `docs/plans/story/wiring_completion_handoff.md` |
-| Realm life (G1 to G10) and start variety (V1 to V13) | subagent | `modules/realm_life.mjs`, `modules/start_variety.mjs`, their data, `zin_rule_start_variety`; `docs/plans/story/realm_life_handoff.md` |
-
-Done this round: story framework (`794e1fd9`, `d961bceb`), Afrit/Aenor/Eindil (`1db698eb`, `431a5273`), Kusven and the war side (`a9f08d94`), error-log causes (`8b5793c6`), all 156 realm flags (`c1273a22`), import land IoU 0.9574 (`95324a05`), realm seeds re-fitted (`ed2e153f`).
-Still to start: AI for the story (strategy plans, paced MTTH, the Gathering Dark tier AI, the magic module's weekly tick, the world-tension widget, tick step 10's missing effects); the key-sites module (`zin_is_site_parim`, `zin_is_site_great_wall` and the others are stand-ins; keyed to the new map's states, so after the import).
+| MCP worker: release 4.5.0 | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
 
 ## Next, in order
 
-1. When ZR-8 is released: content apply (writes the 156 realm tags), then the `create_world` write of the new map with `countries` from `realm_seeds.json` (retires the 305 old Y-tag files), then content apply again, then the first Linux run on the new map (sync, start, run, capture; error profile).
-2. Wire the portraits (both tranches) through the builder per `portraits_handoff.md`; Q-32 (approval of five named portraits) stays open, so those five stay out until approved.
-3. Black-powder equipment for the roster's `gunpowder` realms (K19) in `modules/warfare.mjs`; swap the stand-ins in *The Bombard Foundries*.
-4. Story soft-locks of `docs/design/alternate_history.md` (world-tension module, ending runner, Afrit's death, the missing spec events, Kusven replacing the Zol-in-person content), the generic realm systems (K34: monthly batches allowed) and start variety.
-5. Art debt: the pending rows of `docs/plans/zin-art/pending_from_integration.md` (focus icons over caps, event pictures, interface reskin duplicates), with gpt-6-luna on the Plus allowance.
+1. When 4.5.0 is installed: preview then write `create_world` with `create_world_call.json` (preview false for the write; retires the 305 Y-tag files), rebuild and apply the content again (the bookmark and orders of battle come back), then the first Linux run on the new map (sync, start, run, capture; error profile).
+2. AI for the story: strategy plans, paced MTTH, the Gathering Dark tier AI, the magic module (and its weekly tick, `zin_world.45`), the world-tension widget, tick step 10's missing effects; AI-weight audits once the session runs a current server.
+3. Key-sites module (`zin_is_site_parim`, `zin_is_site_great_wall` and the others are stand-ins) on the new map's states.
+4. Black-powder equipment for the roster's `gunpowder` realms (K19) in `modules/warfare.mjs`; swap the stand-ins in *The Bombard Foundries*.
+5. Art debt: the pending rows of `docs/plans/zin-art/pending_from_integration.md` (focus icons over caps, event pictures, interface reskin duplicates, ruler-temper icons), with gpt-6-luna on the Plus allowance.
 6. Calendar follow-ups: `zin_reckoning_new_reign` from the river-kings' succession; the politics step's bookmark text still says "Erdae".
 7. AI-weight audits once this session runs the 4.4.0 server (ZR-7); the Linux sweep, observer runs to 4A 1760 and 1800, save and load, zero ZIN error lines; final report.
 7b. Second error pass after the story agents (`docs/plans/zin-errors/r3b_fixes.md`, "needs your decision" and "not touched"): the 92 `recruit_character` calls during play (recruit in history, give the role later), the three `has_opinion_modifier` checks with a target block (Gunwaith tree, two in `zin_ending.txt`: a flag set beside the modifier), malformed equipment tokens in the institutions AI strategy, `state_trigger` in two decision files, `slot` in the Afrit traits, `any_country` used as an effect, airframe names in the equipment script enum, missing technology grid boxes; the Deep-Water Hulls text (one convoy type, the Merchant Cog; lead decision). Orders-group lines: read the AI's army groups from a save if they remain.
