@@ -1,6 +1,14 @@
 # Handoff: realm seeds for the drawn-map import (politics input, ZR-8)
 
-Status: implemented and validated offline on the land of commit `95324a05` (the import reads the model's land outside a 6-px coast band); not yet passed to `create_world` (the tool's workspace form is still being implemented on `claude/zr8-workspace-countries`). Every placement of a realm without a capital site is a proposal; the owner questions are Q-50 to Q-62 below.
+Status: implemented, validated offline on the land of commit `95324a05` (the import reads the model's land outside a 6-px coast band), and in the shape of the tool's published schema (`schemas/map-operation.schema.json` on the tool's `origin/main`, PR 44, release 4.5.0). The ready call is `tools/politics/data/create_world_call.json` (a preview); the lead runs the preview and then the write once 4.5.0 is installed. Every placement of a realm without a capital site is a proposal; the owner questions are Q-50 to Q-62 below.
+
+## Released schema (4.5.0) and natural borders (25 October 2026)
+
+- **Shape.** Points are `{ "x": <px>, "y": <px> }` objects of integer world pixels, top-left origin: capitals, seeds and every polygon vertex. The `countries` object holds only `source`, `realms`, `unowned` and `islands`; `connectedMainland` is gone (the schema is strict); a realm holds only `tag`, `capital`, `seeds`, `claim`, `exclude` and `weight`. The schema has **no `overlord`** either (ADR 0069 leaves subjects grown inside an overlord out), so the 19 subject relations are dropped from the output and kept in the report (`subjects`, checked for unknown overlords and cycles); the mod's build owns them. The intended connected-mainland rule is kept in the report (`options.connectedMainlandNotSent`): check the preview for realms split across their landmass.
+- **Limits** (checked by the build and the validator): at most 256 seeds, 64 claim polygons and 64 exclusion polygons per realm, 256 unowned polygons, 10,000 points per polygon, 512 realms. The output's largest: 9 seeds in all, 6 claim polygons per realm at most, 4 exclusion polygons per realm at most, 10 unowned polygons.
+- **Schema check.** `node tools/politics/realm_seeds.mjs --schema` validates the call file's operation against the schema read from the tool's `origin/main` (`git show`, read-only) with the tool's own Ajv (the installed release's `runtime-v440`, as `validate_import.mjs` does): valid. The test file checks it too, and that the schema refuses the old shape.
+- **The call file.** `create_world_call.json` is `preview_call.json` (same tool, workspace `zin` and operation) with `countries` added and `preview: true`; `--write` regenerates it with the seeds. For the write, the lead sets `preview` to false.
+- **Natural borders.** Until the tool grows ownership along rivers and ranges, the land claims leave free grows in weight-balanced blobs. The generator therefore turns the natural borders the canon names between two realms (the repaired model's `naturalBorders` per region, after the geography spec section 6, and the dossiers) into exclusions: along each named line, a band 96 px wide on each realm's side, which the other realm may not enter, kept 8 px clear of the realm's own claims. A border applies only where its line lies between the two seats on this map (the straight line from capital to capital crosses it), and only the crossed lines are used. Applied (7): Coldor and Melkgard (the Ormolak Mountains), Gunwyn and Girdon (the Grey River), Girdon and Buldor (the Fog and Eye ridge), Aenor and Kingson (the Gigantic Mountains), Aenor and Herez (the Grey Hills), the Magical Forest and the Mushroom Forest (the Elwen River), Noris and Naamis (the Fosoco River). Not applied because the model's line does not lie between the seats: Coldor and Horidor (Naepu), Girdon and Saopon (Kulolo), Aenor and Selen (Selenar: the model's river runs north of Selen's seat), Aenor and Hirolon (Grano and Hilorn; Hirolon's ring claim holds that line anyway), Aenor and the Bloody Forest (northern Crown Mountains), Aenor and the Cursed Lands (Grey Hills), Herrodon and Andos Enda (Andos Water), Goldoroth and Bordon (Goldoroth Mountains), Noris and Stabilo (Noris Rise), Stabilo and Drak (Drak Mountains). Not lines of the model: the Lake of Mirolon, the Loron highland (one realm), the Darkness ridge (two lands), the Sun and Sukro Mountains (realms unnamed). The report lists each with its basis (`naturalBorders`, `naturalBordersNotApplied`).
 
 ## Re-fit on the land of 95324a05 (25 October 2026)
 
@@ -17,52 +25,39 @@ After the annotations began to force the model's land and sea, the first build f
 | Path | What |
 | --- | --- |
 | `tools/politics/realm_seeds.mjs` | The deterministic generator: canon tables (capital anchors, seeds, claims, barriers, wild lands, owner questions, import observations), the build, the report and the command line. |
-| `tools/politics/countries_validator.mjs` | Validator of the workspace form of `create_world.countries` (ADR 0069 rules). |
+| `tools/politics/countries_validator.mjs` | Validator of the workspace form of `create_world.countries` in the schema's shape, with the ADR 0069 rules the schema cannot express, and of the subject relations. |
 | `tools/politics/world_inputs.mjs` | Read-only inputs: roster, import geography, repaired model zones, old state assignment and centres, the drawing as the import reads it. |
 | `tools/politics/geometry.mjs` | Point, polygon and raster helpers (world pixels, top-left origin). |
 | `tools/politics/realm_seeds.test.mjs` | `node:test` file (registered in `tools/package.json`): validator rules on synthetic cases and the real output. |
 | `tools/politics/data/realm_seeds.json` | The output: `{ schema, note, countries }`, one realm per line, numbers and ids only. |
-| `tools/politics/data/realm_seeds_report.json` | Per realm: inputs used, method, anchor and snap distance, canon basis, seeds, claims, exclusions, weight basis, overlord, conflicts and proposals; plus the barriers, wild lands (with what claims cut from them), summary, owner questions, import observations and the validation result. |
+| `tools/politics/data/realm_seeds_report.json` | Per realm: inputs used, method, anchor and snap distance, canon basis, seeds, claims, exclusions (barriers and natural borders), weight basis, overlord, conflicts and proposals; plus the barriers, natural borders, wild lands (with what claims cut from them), subject relations, summary, owner questions, import observations and the validation result. |
+| `tools/politics/data/create_world_call.json` | The ready call: `preview_call.json` with `countries` (a preview). |
 
-Commands (from the mod root): `node tools/politics/realm_seeds.mjs` builds, validates and prints a summary; `--write` writes both data files (refuses when validation fails); `--check` validates the committed `realm_seeds.json` against the land and the rules; `node --test tools/politics/*.test.mjs` runs the tests (14 pass, about 16 s).
+Commands (from the mod root): `node tools/politics/realm_seeds.mjs` builds, validates and prints a summary; `--write` writes the three data files (refuses when validation fails); `--check` validates the committed `realm_seeds.json` against the land and the rules; `--schema` validates the call file against the tool's published schema; `node --test tools/politics/*.test.mjs` runs the tests (17 pass, about 20 s).
 
 The build reads the private drawing (`docs/reference/originals/Erdae.png`) in memory only, through `tools/content/geography/import_measures.mjs`, with the current annotations; nothing derived from its pixels is written except point coordinates. Without the drawing, `--no-drawing` builds on the model's land, and the two tests that need the drawing (land check and byte-for-byte rebuild) skip with a reason. **Any change to the annotations, sheets or geography changes the land, so rerun `--write` after the geography pipeline** (the rebuild test fails until then, as it did here).
 
 ## The schema and the validator
 
-The tool's published schema does not carry the realm definitions yet (no `workspace`, `realms` or realm definitions in `schemas/map-operation.schema.json` on `claude/zr8-workspace-countries`; only ADR 0069 at `867807d`), so `countries_validator.mjs` implements the ADR's rules itself: the form (`source: "workspace"`, 1 to 512 realms, no unknown fields, unique three-character tags, points and vertices inside the frame, valid polygons, weights 0.05 to 100, the `islands` and `connectedMainland` values); every capital and seed on land (`MAP_WORLD_REALM_POINT_WATER`); no point inside another realm's claim, its own exclusion or the unowned area; no two realms' claims overlapping; overlords listed, not self and acyclic; tags known (`MAP_WORLD_REALM_TAG_UNKNOWN`). It also refuses a claim overlapping its own exclusion or the unowned area, and warns when two realms' points are closer than 12 px. The other codes are its own (`REALM_*`, `COUNTRIES_FORM_INVALID`). When the tool's schema lands, validate `realm_seeds.json` against it with the tool's Ajv, as `tools/content/geography/validate_import.mjs` does for the geography.
+The output is checked twice. The tool's published schema (origin/main, read-only, the tool's Ajv; `--schema`) checks the shape and limits. `countries_validator.mjs` mirrors that shape (strict objects, `{ x, y }` integer points, tags `^[A-Z][A-Z0-9]{2}$`, the limits above, weights 0.05 to 100, `islands` values) and adds the ADR's rules the schema cannot express: every capital and seed on land (`MAP_WORLD_REALM_POINT_WATER`); no point inside another realm's claim, its own exclusion or the unowned area; no two realms' claims overlapping; tags known (`MAP_WORLD_REALM_TAG_UNKNOWN`); points in the frame. It also refuses a claim overlapping its own exclusion or the unowned area, and warns when two realms' points are closer than 12 px. `validateSubjects` checks the roster's subject relations (known overlord, not self, no cycle) for the report. The other codes are its own (`REALM_*`, `COUNTRIES_FORM_INVALID`).
 
 ## The `countries` block to pass
 
-Pass the `countries` object of `tools/politics/data/realm_seeds.json` verbatim as `create_world.countries`, beside the operation fields of the verified preview (`tools/content/data/geography/import/preview_call.json`):
+The whole call is ready: `tools/politics/data/create_world_call.json` (`{ "tool": "hoi4_map_rewrite", "arguments": { "workspaceId": "zin", "preview": true, "operations": [ ... ] } }`), the operation of the verified preview (`tools/content/data/geography/import/preview_call.json`: `create_world`, 5,120 x 2,560, `edge.mode` sea-band, the illustrated reference with its sheets and annotations, `geographyPath`) with `countries` added. Run it as a preview first; for the write, set `preview` to false. After any geography or seed change, rerun `node tools/politics/realm_seeds.mjs --write` so the call carries the current annotations and seeds.
 
-```json
-{
-  "id": "world",
-  "kind": "create_world",
-  "width": 5120,
-  "height": 2560,
-  "edge": { "mode": "sea-band" },
-  "reference": "(as in preview_call.json: imagePath, sheetsPath, mode illustrated, agreement, annotations)",
-  "geographyPath": "tools/content/data/geography/import/aoaz.geography.json",
-  "countries": "(the countries object of tools/politics/data/realm_seeds.json)"
-}
-```
-
-Its shape (abridged; the file holds all 156 realms):
+The `countries` object (abridged; `realm_seeds.json` holds all 156 realms):
 
 ```json
 {
   "source": "workspace",
   "realms": [
-    { "tag": "AEN", "capital": [3061, 1464], "exclude": [[[3459, 1057], "..."], [[3150, 1960], "..."]], "weight": 5.5 },
-    { "tag": "LER", "capital": [2975, 1023], "seeds": [[2758, 782]], "weight": 2 },
-    { "tag": "KIN", "capital": [3348, 1497], "claim": [[[3278, 1312], "..."]], "exclude": ["..."], "weight": 0.75, "overlord": "AEN" },
+    { "tag": "AEN", "capital": { "x": 3061, "y": 1464 }, "exclude": [[{ "x": 3459, "y": 1057 }, "..."], [{ "x": 3150, "y": 1960 }, "..."], [{ "x": 3318, "y": 1280 }, "..."], [{ "x": 3130, "y": 1748 }, "..."]], "weight": 5.5 },
+    { "tag": "LER", "capital": { "x": 2975, "y": 1023 }, "seeds": [{ "x": 2758, "y": 782 }], "weight": 2 },
+    { "tag": "KIN", "capital": { "x": 3348, "y": 1497 }, "claim": [[{ "x": 3278, "y": 1312 }, "..."]], "exclude": ["..."], "weight": 0.75 },
     "..."
   ],
-  "unowned": [[[4719, 2381], "..."], "..."],
-  "islands": "one-owner",
-  "connectedMainland": true
+  "unowned": [[{ "x": 4674, "y": 2348 }, "..."], "..."],
+  "islands": "one-owner"
 }
 ```
 
@@ -78,7 +73,7 @@ Before the write, the roster's tags must be declared by `common/country_tags/01_
 
 **Claims (6).** Zol's Mistake: the black north and the black isles of the Kusmeel (the repaired model's zone, on land). The Nether: `land_nether_island`. Vindael: `land_island_001`. Orohaf: `land_aenor_isle`. Kingson: the model's Kingson Vale plain (Q-57). Hirolon: bands along the Hiloff Rim from Hirolon Head to the Hilorn mouth and along the Grano (Q-56). No claims overlap; no other realm's point lies in one.
 
-**Exclusions (5 barriers).** Each keeps the realms of one region out of the canon land of a neighbouring region on the same landmass and leaves a strip between the two sides to natural growth:
+**Exclusions (5 barriers and 7 natural borders).** The natural borders are the one-sided bands along the Ormolak Mountains, the Grey River, the Fog and Eye ridge, the Gigantic Mountains, the Grey Hills, the Elwen River and the Fosoco River (see "Released schema and natural borders" above). Each barrier keeps the realms of one region out of the canon land of a neighbouring region on the same landmass and leaves a strip between the two sides to natural growth:
 
 - `great_wall`: Middle Lands realms stay west of the eastern foothill edge of the repaired model's `zone_great_wall`, Magical Lands realms east of its western edge (K2; middle_lands.md 2.9);
 - `zilin_marches`: Middle and Magical realms stay out of Mirolon's tongue and the arm east of it; Ember realms stay out of the Middle and Magical Lands north of the Zilin marches (ember_lands.md 2);
@@ -90,18 +85,18 @@ Before the write, the roster's tags must be declared by `common/country_tags/01_
 
 **Weights.** `weight = clamp(targetStates / 4, 0.05, 100)`, two decimals. `targetStates` is the roster's stated extent where it gives a state count (47 realms), else the realm's state count on the old map (109 realms); population is only the fallback when neither exists (no realm).
 
-**Overlords (19).** 12 chartered dominions of Aenor, Dark Gate under Goldoroth, Khorvrath, Dolon and Nezer sworn to Puvulan, Teste under Herrodon, Tirlan under Hirolon. No cycles.
+**Subjects (19, report only).** 12 chartered dominions of Aenor, Dark Gate under Goldoroth, Khorvrath, Dolon and Nezer sworn to Puvulan, Teste under Herrodon, Tirlan under Hirolon. No cycles. Not sent: the schema has no `overlord`, so subjects grow as realms of their own with their own weights (Tirlan inside Hirolon's ring is still held by Hirolon's crest claim).
 
-**`islands: "one-owner"`** (every drawn island belongs to one realm or is a named wild place; the approved layout gives each small island one owner) and **`connectedMainland: true`** (every mainland realm is one connected piece; the tool joins a realm's seeds on its capital's landmass by a corridor, which matters for Lerendor, Q-51).
+**`islands: "one-owner"`** (every drawn island belongs to one realm or is a named wild place; the approved layout gives each small island one owner). **No `connectedMainland`** (not in the schema); the intended rule, every mainland realm one connected piece, is in the report; whether the tool joins Lerendor's two parts by a corridor (Q-51) is to be seen in the preview.
 
 ## Canon and proposal
 
-Derived from canon: the 63 capital sites, the 19 overlord relations, the Nether, Vindael, Orohaf and Zol claims (Zol's including the roster's Edvoid's Mistake coast), the Great Wall as the Middle and Magical Lands' border (K2), Lerendor's North (K49), Hirolon and Tirlan (K35), the stated extents behind the weights, and the list of wild lands (named in the dossiers, themselves marked proposed). Proposed here: all 93 siteless seats, every seed, the Kingson and Hirolon claims' shapes, every barrier's line, every wild land's shape and size, the rule that a claim wins over a wild land, and the weight formula.
+Derived from canon: the 63 capital sites, the 19 subject relations (report only), the natural borders the model and the dossiers name, the Nether, Vindael, Orohaf and Zol claims (Zol's including the roster's Edvoid's Mistake coast), the Great Wall as the Middle and Magical Lands' border (K2), Lerendor's North (K49), Hirolon and Tirlan (K35), the stated extents behind the weights, and the list of wild lands (named in the dossiers, themselves marked proposed). Proposed here: all 93 siteless seats, every seed, the Kingson and Hirolon claims' shapes, every barrier's line, every wild land's shape and size, the rule that a claim wins over a wild land, the natural borders' band width (96 px) and the rule that a border applies only where its line lies between the seats, and the weight formula.
 
 ## Owner questions (queued by the lead as Q-50 to Q-62; changes from the re-fit marked)
 
 - **Q-50 (Yeldenne), changed figure.** Simoto (the landing on the Gulf of Minnolomak) lies about 400 px from the Castle of Yeldenne and the valley of Mp'E; the site now stands 63 px from the nearest land (was 28 px), and the seat is that land. Move the landing below the castle, or the seat to the valley?
-- **Q-51 (Lerendor).** Lerendor's North joins Sonargur by a corridor through Tolvael, the Heodwa Lands, Hrakbrund or Mustnom; or a separate realm under the same crown? Unchanged.
+- **Q-51 (Lerendor).** Lerendor's North joins Sonargur by a corridor through Tolvael, the Heodwa Lands, Hrakbrund or Mustnom; or a separate realm under the same crown? Unchanged, but note: the schema has no `connectedMainland`, so whether the tool makes that corridor at all is to be seen in the preview.
 - **Q-52 (Lerendor).** Where are the Low-ness Islands and Ferlinon's pine hills? Unchanged.
 - **Q-53 (Pornivior).** Beside Mount Argul (the drawing) or below Mount Ergo (the roster)? Unchanged.
 - **Q-54 (Ihuy, Soyano).** Hol's island goes to Ihuy, Soyano's seat to the northernmost Sun isle. Unchanged.

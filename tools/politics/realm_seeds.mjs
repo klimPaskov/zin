@@ -2,8 +2,11 @@
 // form of `create_world.countries` (map tool ADR 0069, request ZR-8), in world pixels of the 5,120 x 2,560 frame.
 //
 //   node tools/politics/realm_seeds.mjs            build, validate and print the summary; writes nothing
-//   node tools/politics/realm_seeds.mjs --write    also write tools/politics/data/realm_seeds.json and realm_seeds_report.json
+//   node tools/politics/realm_seeds.mjs --write    also write tools/politics/data/realm_seeds.json, realm_seeds_report.json
+//                                                  and create_world_call.json (the preview call with the countries)
 //   node tools/politics/realm_seeds.mjs --check    validate the committed realm_seeds.json against the land and the rules
+//   node tools/politics/realm_seeds.mjs --schema   validate create_world_call.json against the tool's published
+//                                                  map-operation schema (origin/main, read-only, the tool's own Ajv)
 //   --no-drawing                                   build on the model's land alone (the private drawing is absent)
 //
 // What it does, in order (every step is deterministic; ties break by roster order, then reading order):
@@ -31,17 +34,22 @@
 //                wild land the dossier's proposal) and the wild land keeps WILD.claimClearancePx from it.
 //   6 weights    WEIGHT: target states (the roster's stated extent, else the realm's state count on the old map) over
 //                WEIGHT.statesPerUnit, clamped to the tool's 0.05 to 100.
-//   7 overlords  from the roster's subject relations (overlord keys to tags).
-// The result is validated by countries_validator.mjs before anything is written.
+//   7 borders    NATURAL_BORDERS: one-sided exclusion bands along the rivers and ranges the canon names between two
+//                realms, where the line lies between their seats.
+//   8 subjects   the roster's subject relations go to the report only (the tool's realm object has no overlord).
+// Output is in the tool's schema (points as { x, y }, no connectedMainland), validated by countries_validator.mjs
+// before anything is written; --schema checks the written create_world call against the tool's published schema.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { FRAME, pointInPolygons, circleRing, components, outlines, bandMask, fillRings, erodeBox, dilateBox } from './geometry.mjs';
-import { loadWorld, toPx, ZONE_GRID, PATHS } from './world_inputs.mjs';
-import { validateCountries } from './countries_validator.mjs';
+import { loadWorld, toPx, ZONE_GRID, PATHS, ZIN } from './world_inputs.mjs';
+import { validateCountries, validateSubjects, RULES } from './countries_validator.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-export const OUT = Object.freeze({ seeds: path.join(here, 'data/realm_seeds.json'), report: path.join(here, 'data/realm_seeds_report.json') });
+export const OUT = Object.freeze({ seeds: path.join(here, 'data/realm_seeds.json'), report: path.join(here, 'data/realm_seeds_report.json'), call: path.join(here, 'data/create_world_call.json') });
+export const PREVIEW_CALL = 'tools/content/data/geography/import/preview_call.json';
+export const DEFAULT_TOOL = process.env.HOI4_AGENT_TOOLS_DIR ?? 'C:/Users/klimp/Documents/Projects/hoi4-agent-tools';
 
 // ---------------------------------------------------------------------------------------------------- tuning
 export const PLACE = Object.freeze({
@@ -69,8 +77,9 @@ export const WILD = Object.freeze({
 export const COUNTRIES_OPTIONS = Object.freeze({
   islands: 'one-owner',
   islandsReason: 'Every drawn island in the dossiers belongs to one realm or is a named wild place; the approved layout of 17 October 2026 gives each small island one owner (docs/generation/assumptions.md, "a small island has one owner"). With one-owner a landmass no seed is on goes whole to the first realm that reaches it over the sea (ADR 0060).',
-  connectedMainland: true,
-  connectedMainlandReason: 'Every mainland realm is one connected piece in the approved layout (docs/generation/assumptions.md, "Every mainland country is one connected piece; island possessions are allowed"); seeds on a realm\'s capital landmass are joined by a corridor (ADR 0060).',
+  // not part of the released schema (4.5.0: the countries object is strict); kept here as the intended rule
+  connectedMainlandNotSent: 'The tool\'s schema has no connectedMainland key. The intended rule stands: every mainland realm is one connected piece in the approved layout (docs/generation/assumptions.md, "Every mainland country is one connected piece; island possessions are allowed"); the territory service joins a realm\'s seeds on its capital\'s landmass by a corridor (ADR 0060). Check the preview for split realms.',
+  subjectsNotSent: 'The tool\'s realm object has no overlord key (ADR 0069 leaves subjects grown inside an overlord out); the 19 subject relations are the mod\'s own (its build writes them into the country histories) and are listed in this report under subjects.',
 });
 
 // ---------------------------------------------------------------------------------------------------- canon tables
@@ -216,6 +225,40 @@ export const CLAIMS = Object.freeze({
 // kept out of the polygon of the other side; a strip between the two polygons stays open to natural growth.
 const GREAT_WALL_WEST = [[3156, 1083], [3188, 1172], [3228, 1261], [3253, 1344], [3284, 1426], [3308, 1499], [3291, 1565], [3243, 1635], [3188, 1725], [3160, 1839]];
 const GREAT_WALL_EAST = [[3459, 1057], [3489, 1142], [3530, 1232], [3556, 1318], [3587, 1400], [3615, 1496], [3591, 1599], [3536, 1682], [3489, 1756], [3465, 1857]];
+// Natural borders between two realms that the canon names (the repaired model's `naturalBorders` per region, after the
+// geography model spec section 6, and the dossiers). Until the tool grows ownership along rivers and ranges, each
+// becomes a pair of exclusions: a band NATURAL.bandPx wide along the named line on each realm's side, which the other
+// realm may not enter. A border applies only where its line separates the two seats (the straight line between the
+// capitals crosses it); bands keep clear of the realm's own claims and seeds. Lines are model ranges (their crest
+// paths) and model rivers (the repaired model's river courses).
+export const NATURAL = Object.freeze({ bandPx: 96, claimClearancePx: 8 });
+export const NATURAL_BORDERS = Object.freeze([
+  { realms: ['CLD', 'MLK'], lines: ['range_isengar_mountains', 'river_fandan'], basis: 'Coldor and Melkgard: the Fandan River and the Ormolak (former Isengar) Mountains (repaired model, Cold Lands; cold_lands.md 2).' },
+  { realms: ['CLD', 'HOR'], lines: ['river_naepu'], basis: 'Coldor and Horidor: the Naepu ridge and the Naepu River (repaired model, Cold Lands).' },
+  { realms: ['GNW', 'GIR'], lines: ['river_grey'], basis: 'Gunwyn and Girdon: the Grey River, crossed at the Grey Ford (west_lands.md 2; repaired model, West Lands).' },
+  { realms: ['GIR', 'BLD'], lines: ['range_fog_eye'], basis: 'Girdon and Buldor: the Fog and Eye ridge (repaired model, West Lands; roster: Buldor lies south of the Fog and Eye range).' },
+  { realms: ['GIR', 'SAO'], lines: ['river_kulolo'], basis: 'Girdon and Saopon: the Kulolo River (west_lands.md 2; repaired model, West Lands).' },
+  { realms: ['AEN', 'SEL'], lines: ['river_selenar'], basis: 'Aenor and Selen: the River Selenar (middle_lands.md 2.5; repaired model, Middle Lands).' },
+  { realms: ['AEN', 'HIR'], lines: ['range_grano', 'river_hilorn'], basis: 'Aenor and Hirolon: the Grano hills and the River Hilorn (hirolon.md 2.1; repaired model, Middle Lands).' },
+  { realms: ['AEN', 'KIN'], lines: ['range_gigantic', 'river_great'], basis: 'Aenor and Kingson: the Gigantic Mountains and the Great River gorge (middle_lands.md 2.7; repaired model, Middle Lands).' },
+  { realms: ['AEN', 'BLO'], lines: ['range_crown_north'], basis: 'Aenor and the Bloody Forest: the northern Crown Mountains (the Konori Heights; repaired model, Middle Lands).' },
+  { realms: ['AEN', 'HER'], lines: ['range_grey_hills'], basis: 'Aenor and Herez: the Grey Hills (middle_lands.md 2.9; repaired model, Middle Lands).' },
+  { realms: ['AEN', 'CUR'], lines: ['range_grey_hills'], basis: 'Aenor and the Cursed Lands: the Grey Hills (repaired model, Middle Lands).' },
+  { realms: ['HRR', 'ANE'], lines: ['river_andos'], basis: 'Herrodon and Andos Enda: the Andos Water (magical_lands.md 2; repaired model, Magical Lands).' },
+  { realms: ['MAG', 'MSH'], lines: ['river_elwen'], basis: 'The Magical Forest and the Mushroom Forest: the Elwen River (magical_lands.md 2; repaired model, Magical Lands).' },
+  { realms: ['GOL', 'BOR'], lines: ['range_goldoroth'], basis: 'Goldoroth and Bordon: the Goldoroth Mountains (repaired model, Dark Lands).' },
+  { realms: ['NRS', 'STA'], lines: ['range_noris_rise'], basis: 'Noris and Stabilo: the Noris Rise and the Flaming Forests (repaired model, East Lands).' },
+  { realms: ['NRS', 'NAA'], lines: ['river_fosoco', 'range_woqood_alps'], basis: 'Noris and Naamis (former Gondolin): the Fosoco River and the Woqood Spires (repaired model, East Lands).' },
+  { realms: ['STA', 'DRA'], lines: ['range_drak'], basis: 'Stabilo and Drak: the Drak Mountains (repaired model, East Lands).' },
+]);
+// Natural borders the canon names that are not lines of the model, and why they are not exclusions.
+export const NATURAL_NOT_APPLIED = Object.freeze([
+  { border: 'Nolorim and the Worshipdom: the Lake of Mirolon (magical_lands.md 2)', reason: 'A lake, not a line; the lake itself already separates the two seats on the land the import reads.' },
+  { border: 'Lerendor\'s North and Lerendor: the Loron highland (north_lands.md 2)', reason: 'Both are one realm (decision K49).' },
+  { border: 'Dondor and Goldoroth: the Darkness ridge and the inner sea (repaired model, Dark Lands)', reason: 'The Dondor and Goldoroth arms are separate lands; the sea already divides them.' },
+  { border: 'The Sun Mountains and the Sukro Mountains split the Lands of the Sun\'s realms (lands_of_the_sun.md 2)', reason: 'The canon does not say which realms each range divides.' },
+]);
+
 export const BARRIERS = Object.freeze([
   {
     id: 'great_wall',
@@ -321,7 +364,8 @@ export function featureIndex(world) {
   for (const v of g.volcanoes) idx.set(v.id, { kind: 'volcano', point: toPx(v.at), raw: v });
   for (const p of g.passes) idx.set(p.id, { kind: 'pass', point: toPx(p.position), raw: p });
   for (const r of g.ranges) idx.set(r.id, { kind: 'range', path: r.path.map(toPx), halfWidthPx: r.halfWidth * FRAME.width, raw: r });
-  for (const r of g.rivers) idx.set(r.id, { kind: 'river', source: r.source ? toPx(r.source) : null, mouth: r.mouth ? toPx(r.mouth) : null, raw: r });
+  const riverPaths = new Map((m.rivers ?? []).filter(r => r.geometry?.type === 'LineString').map(r => [r.id, r.geometry.coordinates.map(toPx)]));
+  for (const r of g.rivers) idx.set(r.id, { kind: 'river', source: r.source ? toPx(r.source) : null, mouth: r.mouth ? toPx(r.mouth) : null, path: riverPaths.get(r.id) ?? null, raw: r });
   for (const s of g.straits) idx.set(s.id, { kind: 'strait', ends: s.between.map(toPx), raw: s });
   for (const l of g.lakes) idx.set(l.id, { kind: 'lake', rings: l.polygons.map(r => r.map(toPx)), raw: l });
   g.lands.forEach((l, k) => idx.set(l.id, { kind: 'land', index: k, rings: l.polygons.map(r => r.map(toPx)), raw: l }));
@@ -461,6 +505,8 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
     wildReport.push({ id: wl.id, name: wl.name, polygons: p, basis: wl.basis, ...(cut ? { cutByClaimsPx: cut * ZONE_GRID.cell ** 2 } : {}), ...(wl.land ? { land: wl.land } : {}) });
   }
   const regionOf = tag => realms.find(r => r.tag === tag).region;
+  // natural borders as one-sided bands (built after the capitals, below); the per-realm lists start empty
+  const borderExclusions = new Map(), borderReport = [];
   const exclusionsFor = region => BARRIERS.flatMap(b => b.sides.filter(s => s.keepOut.includes(region)).map(s => ({ barrier: b.id, name: s.name, polygon: s.polygon })));
 
   // ---- capitals
@@ -636,6 +682,61 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
     taken.set(c, new Set([winner]));
   }
 
+  // ---- natural borders: one-sided bands along the canon's lines
+  const cross2 = (a, b, p) => (b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0]);
+  const segCross = (a, b, c, d) => { const d1 = cross2(c, d, a), d2 = cross2(c, d, b), d3 = cross2(a, b, c), d4 = cross2(a, b, d); return d1 * d2 < 0 && d3 * d4 < 0; };
+  /** Nearest point of a set of polylines: { d, side (+1/-1), atEnd } where atEnd means past a polyline's free end. */
+  const nearestOnLines = (lines, p) => {
+    let best = null;
+    for (const path of lines) for (let k = 1; k < path.length; k++) {
+      const a = path[k - 1], b = path[k], dx = b[0] - a[0], dy = b[1] - a[1], l2 = dx * dx + dy * dy;
+      const tRaw = l2 ? ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / l2 : 0, t = Math.max(0, Math.min(1, tRaw));
+      const q = [a[0] + t * dx, a[1] + t * dy], d = Math.hypot(p[0] - q[0], p[1] - q[1]);
+      if (!best || d < best.d) best = { d, side: Math.sign(cross2(a, b, p)) || 1, atEnd: (k === 1 && tRaw < 0) || (k === path.length - 1 && tRaw > 1) };
+    }
+    return best;
+  };
+  const pointsOf = tag => { const rec = records.get(tag); return [rec.capital.point, ...(rec.seeds ?? []).map(s => s.point)]; };
+  const ownClaimGuard = tag => dilateBox(gridMaskOfRings(claims.get(tag) ?? []), Math.ceil(NATURAL.claimClearancePx / ZONE_GRID.cell), ZONE_GRID.w, ZONE_GRID.h);
+  for (const nb of NATURAL_BORDERS) {
+    const [A, B] = nb.realms;
+    const ca = records.get(A).capital.point, cb = records.get(B).capital.point;
+    // each named line counts only where the straight line between the two seats crosses it; the seats' sides come
+    // from the crossed segment (a line's left and right are consistent along its own direction)
+    const crossed = [], missed = [];
+    for (const id of nb.lines) {
+      const path = feature(id).path;
+      const k = path ? path.findIndex((q, i) => i > 0 && segCross(ca, cb, path[i - 1], q)) : -1;
+      if (k > 0) crossed.push({ id, path, sideA: Math.sign(cross2(path[k - 1], path[k], ca)), sideB: Math.sign(cross2(path[k - 1], path[k], cb)) });
+      else missed.push(id);
+    }
+    if (!crossed.length) { borderReport.push({ realms: nb.realms, lines: nb.lines, applied: false, reason: 'on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)', basis: nb.basis }); continue; }
+    const r = NATURAL.bandPx;
+    const bandOf = (path, side) => {
+      const m = new Uint8Array(ZONE_GRID.w * ZONE_GRID.h);
+      const xs = path.map(p => p[0]), ys = path.map(p => p[1]);
+      const c0 = Math.max(0, Math.floor((Math.min(...xs) - r) / ZONE_GRID.cell)), c1 = Math.min(ZONE_GRID.w - 1, Math.ceil((Math.max(...xs) + r) / ZONE_GRID.cell));
+      const r0 = Math.max(0, Math.floor((Math.min(...ys) - r) / ZONE_GRID.cell)), r1 = Math.min(ZONE_GRID.h - 1, Math.ceil((Math.max(...ys) + r) / ZONE_GRID.cell));
+      for (let j = r0; j <= r1; j++) for (let i = c0; i <= c1; i++) {
+        const n = nearestOnLines([path], [(i + 0.5) * ZONE_GRID.cell, (j + 0.5) * ZONE_GRID.cell]);
+        if (n.d <= r && !n.atEnd && n.side === side) m[j * ZONE_GRID.w + i] = 1;
+      }
+      return m;
+    };
+    const applied = [];
+    for (const [tag, other, otherSideOf] of [[A, B, l => l.sideB], [B, A, l => l.sideA]]) {
+      const m = new Uint8Array(ZONE_GRID.w * ZONE_GRID.h), guard = ownClaimGuard(tag);
+      for (const l of crossed) { const b = bandOf(l.path, otherSideOf(l)); for (let c = 0; c < m.length; c++) if (b[c] && !guard[c]) m[c] = 1; }
+      const polys = polygonFromMask(m);
+      const hit = pointsOf(tag).find(p => pointInPolygons(p[0], p[1], polys));
+      if (hit) { borderReport.push({ realms: nb.realms, lines: crossed.map(l => l.id), applied: false, for: tag, reason: `the band on ${other}'s side holds ${tag}'s point (${hit.join(', ')})`, basis: nb.basis }); continue; }
+      if (!borderExclusions.has(tag)) borderExclusions.set(tag, []);
+      borderExclusions.get(tag).push({ border: `${A}|${B}`, name: `${other}'s side of ${crossed.map(l => l.id).join(' and ')}`, polygons: polys });
+      applied.push(tag);
+    }
+    if (applied.length) borderReport.push({ realms: nb.realms, lines: crossed.map(l => l.id), ...(missed.length ? { linesNotBetweenSeats: missed } : {}), applied: true, excludedRealms: applied, basis: nb.basis });
+  }
+
   // ---- weights and overlords
   const oldCounts = new Map(world.assignment.realms.map(x => [x.tag, x]));
   for (const r of realms) {
@@ -653,50 +754,57 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
     }
   }
 
-  // ---- assemble
+  // ---- assemble, in the tool's schema: points are { x, y } objects of integer world pixels
+  const P = p => ({ x: p[0], y: p[1] });
+  const poly = ring => ring.map(P);
+  const exclusionPolygons = tag => [...exclusionsFor(regionOf(tag)).map(e => e.polygon), ...(borderExclusions.get(tag) ?? []).flatMap(e => e.polygons)];
   const countries = {
     source: 'workspace',
     realms: realms.filter(r => records.get(r.tag).capital).map(r => {
       const rec = records.get(r.tag);
-      const out = { tag: r.tag, capital: rec.capital.point };
-      if (rec.seeds?.length) out.seeds = rec.seeds.map(s => s.point);
-      if (claims.get(r.tag)?.length) out.claim = claims.get(r.tag);
-      const ex = exclusionsFor(r.region);
-      if (ex.length) out.exclude = ex.map(e => e.polygon);
+      const out = { tag: r.tag, capital: P(rec.capital.point) };
+      if (rec.seeds?.length) out.seeds = rec.seeds.map(s => P(s.point));
+      if (claims.get(r.tag)?.length) out.claim = claims.get(r.tag).map(poly);
+      const ex = exclusionPolygons(r.tag);
+      if (ex.length) out.exclude = ex.map(poly);
       out.weight = rec.weight.value;
-      if (rec.overlord) out.overlord = rec.overlord.tag;
+      if ((out.seeds?.length ?? 0) > RULES.maxSeeds || (out.claim?.length ?? 0) > RULES.maxClaimPolygons || (out.exclude?.length ?? 0) > RULES.maxExcludePolygons) issues.push(`${r.tag}: more seeds, claim or exclusion polygons than the schema allows`);
       return out;
     }),
-    unowned: wildReport.flatMap(w => w.polygons),
+    unowned: wildReport.flatMap(w => w.polygons).map(poly),
     islands: COUNTRIES_OPTIONS.islands,
-    connectedMainland: COUNTRIES_OPTIONS.connectedMainland,
   };
+  if (countries.unowned.length > RULES.maxUnownedPolygons) issues.push(`${countries.unowned.length} unowned polygons, more than the schema's ${RULES.maxUnownedPolygons}`);
   for (const r of realms) {
     const rec = records.get(r.tag);
     rec.claim = claimNotes.get(r.tag) ?? [];
-    rec.exclude = exclusionsFor(r.region).map(e => ({ barrier: e.barrier, name: e.name }));
+    rec.exclude = [...exclusionsFor(r.region).map(e => ({ barrier: e.barrier, name: e.name })), ...(borderExclusions.get(r.tag) ?? []).map(e => ({ border: e.border, name: e.name, polygons: e.polygons.length }))];
   }
-  return { countries, records: [...records.values()], wild: wildReport, issues, world };
+  const subjects = realms.filter(r => records.get(r.tag).overlord).map(r => ({ tag: r.tag, overlord: records.get(r.tag).overlord.tag, subjectType: records.get(r.tag).overlord.subjectType }));
+  return { countries, records: [...records.values()], wild: wildReport, borders: borderReport, subjects, issues, world };
 }
 
 /** Land predicate for the validator: the land the import reads (the surface the generator places points on). */
 export const landPredicate = world => (x, y) => x >= 0 && y >= 0 && x < FRAME.width && y < FRAME.height && world.surface[y * FRAME.width + x] === 1;
 
 export function reportOf(build, validation) {
-  const { records, wild, issues, world } = build;
+  const { records, wild, borders, subjects, issues, world } = build;
   return {
     schema: 1,
     generatedBy: 'tools/politics/realm_seeds.mjs (deterministic; regenerate with --write, never edit by hand)',
-    target: 'hoi4_map_rewrite create_world.countries, workspace form (map tool ADR 0069 at commit 867807d, request ZR-8)',
+    target: 'hoi4_map_rewrite create_world.countries, workspace form (map tool ADR 0069; schemas/map-operation.schema.json of the tool\'s main branch after PR 44, release 4.5.0; request ZR-8)',
     frame: { width: FRAME.width, height: FRAME.height, origin: 'top-left', unit: 'world pixel' },
     inputs: Object.fromEntries(Object.entries(world.hashes).map(([k, v]) => [k, { path: PATHS[k], sha256: v }])),
     drawing: world.drawn ? { path: PATHS.drawing, sha256: world.drawn.sha256, use: 'read in memory only; points must stand on the land the import reads from it' } : null,
     surface: world.drawn ? 'the drawing as the import reads it (illustrated heuristic with the surface-override annotations of preview_call.json) less the model lakes the import carves; points keep PLACE.marginPx from its coast and generated points PLACE.edgeClearPx from the frame edge' : 'model land only (lands less lakes; the private drawing was absent)',
-    tuning: { PLACE, FIELD, WEIGHT, POLYGON },
+    tuning: { PLACE, FIELD, WEIGHT, POLYGON, WILD, NATURAL },
     options: COUNTRIES_OPTIONS,
     barriers: BARRIERS.map(b => ({ id: b.id, basis: b.basis, sides: b.sides.map(s => ({ name: s.name, keepOut: s.keepOut })) })),
     wildLands: wild.map(w => ({ id: w.id, name: w.name, polygons: w.polygons.length, basis: w.basis, status: 'proposed' })),
     wildNotPlaced: WILD_NOT_PLACED,
+    naturalBorders: borders,
+    naturalBordersNotApplied: NATURAL_NOT_APPLIED,
+    subjects: { relations: subjects, validation: validateSubjects(subjects, records.map(r => r.tag)), note: COUNTRIES_OPTIONS.subjectsNotSent },
     summary: {
       realms: records.length,
       capitalsByMethod: records.reduce((m, r) => ({ ...m, [r.capital.method]: (m[r.capital.method] ?? 0) + 1 }), {}),
@@ -705,6 +813,7 @@ export function reportOf(build, validation) {
       seeds: records.reduce((s, r) => s + (r.seeds?.length ?? 0), 0),
       realmsWithClaims: records.filter(r => r.claim.length).map(r => r.tag),
       subjects: records.filter(r => r.overlord).length,
+      naturalBordersApplied: borders.filter(b => b.applied).map(b => b.realms.join('|')),
     },
     ownerQuestions: OWNER_QUESTIONS,
     importObservations: IMPORT_OBSERVATIONS,
@@ -722,11 +831,38 @@ export function reportOf(build, validation) {
 /** The data file with one realm and one unowned polygon per line, so a change reads as a change of that realm. */
 export function formatSeeds(doc) {
   const c = doc.countries, list = items => items.map(x => `   ${JSON.stringify(x)}`).join(',\n');
-  return `{\n "schema": ${doc.schema},\n "note": ${JSON.stringify(doc.note)},\n "countries": {\n  "source": ${JSON.stringify(c.source)},\n  "realms": [\n${list(c.realms)}\n  ],\n  "unowned": [\n${list(c.unowned)}\n  ],\n  "islands": ${JSON.stringify(c.islands)},\n  "connectedMainland": ${JSON.stringify(c.connectedMainland)}\n }\n}\n`;
+  return `{\n "schema": ${doc.schema},\n "note": ${JSON.stringify(doc.note)},\n "countries": {\n  "source": ${JSON.stringify(c.source)},\n  "realms": [\n${list(c.realms)}\n  ],\n  "unowned": [\n${list(c.unowned)}\n  ],\n  "islands": ${JSON.stringify(c.islands)}\n }\n}\n`;
+}
+
+/**
+ * The ready `create_world` call: the verified preview call of the import (preview_call.json, the same tool, workspace
+ * and operation) with `countries` added. It stays a preview; the lead turns `preview` off for the write.
+ */
+export function createWorldCall(countries) {
+  const base = JSON.parse(readFileSync(path.join(ZIN, PREVIEW_CALL), 'utf8'));
+  const [op, ...rest] = base.arguments.operations;
+  if (op?.kind !== 'create_world' || rest.length) throw new Error(`${PREVIEW_CALL} is not one create_world operation`);
+  return { ...base, arguments: { ...base.arguments, preview: true, operations: [{ ...op, countries }] } };
+}
+/** Errors of a create_world call's operations against the tool's published map-operation schema (read-only use). */
+export async function schemaCheck(call, { tool = DEFAULT_TOOL, ref = 'origin/main' } = {}) {
+  const V = await import(pathToFileURL(path.join(ZIN, 'tools/content/geography/validate_import.mjs')).href);
+  const schema = V.toolSchema(tool, ref, V.SCHEMAS.operation);
+  const ajv = V.toolAjv(tool);
+  return call.arguments.operations.flatMap(op => V.schemaErrors(ajv, schema, op));
 }
 
 async function main(argv) {
   const args = argv.slice(2);
+  if (args.includes('--schema')) {
+    const seeds = JSON.parse(readFileSync(OUT.seeds, 'utf8'));
+    const errs = await schemaCheck(JSON.parse(readFileSync(OUT.call, 'utf8')));
+    const own = await schemaCheck(createWorldCall(seeds.countries));
+    console.log(`create_world_call.json against the tool's map-operation schema (origin/main): ${errs.length ? 'INVALID' : 'valid'}; realm_seeds.json in the preview call: ${own.length ? 'INVALID' : 'valid'}`);
+    for (const e of [...errs, ...own]) console.log(`  ${e}`);
+    if (errs.length || own.length) process.exitCode = 1;
+    return;
+  }
   if (args.includes('--check')) {
     const world = await loadWorld({ drawing: !args.includes('--no-drawing'), marginPx: 0 });
     const seeds = JSON.parse(readFileSync(OUT.seeds, 'utf8'));
@@ -748,7 +884,8 @@ async function main(argv) {
     const doc = { schema: 1, note: 'The realms of tools/content/data/world/roster.json as the workspace form of create_world.countries (map tool ADR 0069). World pixels of the 5,120 x 2,560 frame, top-left origin. Generated by tools/politics/realm_seeds.mjs; numbers and ids only. Per-realm inputs, canon basis and proposals: realm_seeds_report.json.', countries: build.countries };
     writeFileSync(OUT.seeds, formatSeeds(doc));
     writeFileSync(OUT.report, `${JSON.stringify(report, null, 1)}\n`);
-    console.log(`wrote ${path.relative(process.cwd(), OUT.seeds)} and ${path.relative(process.cwd(), OUT.report)}`);
+    writeFileSync(OUT.call, `${JSON.stringify(createWorldCall(build.countries))}\n`);
+    console.log(`wrote ${[OUT.seeds, OUT.report, OUT.call].map(f => path.relative(process.cwd(), f)).join(', ')}`);
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main(process.argv).catch(e => { console.error(e); process.exitCode = 1; });

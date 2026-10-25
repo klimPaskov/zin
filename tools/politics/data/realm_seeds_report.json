@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generatedBy": "tools/politics/realm_seeds.mjs (deterministic; regenerate with --write, never edit by hand)",
- "target": "hoi4_map_rewrite create_world.countries, workspace form (map tool ADR 0069 at commit 867807d, request ZR-8)",
+ "target": "hoi4_map_rewrite create_world.countries, workspace form (map tool ADR 0069; schemas/map-operation.schema.json of the tool's main branch after PR 44, release 4.5.0; request ZR-8)",
  "frame": {
   "width": 5120,
   "height": 2560,
@@ -11,7 +11,7 @@
  "inputs": {
   "roster": {
    "path": "tools/content/data/world/roster.json",
-   "sha256": "59a68d675b2ea086a595faf2f55a2d69525fcb63902d8170572669b0e605f159"
+   "sha256": "6a22ad68dcaf1108d75a866fd7a1189e1a014a892813dc001514fff74deb4e08"
   },
   "geography": {
    "path": "tools/content/data/geography/import/aoaz.geography.json",
@@ -73,13 +73,21 @@
    "tolPx": 2,
    "minAreaPx": 64,
    "bandMinRadiusPx": 12
+  },
+  "WILD": {
+   "claimClearancePx": 8,
+   "landCoverPx": 8
+  },
+  "NATURAL": {
+   "bandPx": 96,
+   "claimClearancePx": 8
   }
  },
  "options": {
   "islands": "one-owner",
   "islandsReason": "Every drawn island in the dossiers belongs to one realm or is a named wild place; the approved layout of 17 October 2026 gives each small island one owner (docs/generation/assumptions.md, \"a small island has one owner\"). With one-owner a landmass no seed is on goes whole to the first realm that reaches it over the sea (ADR 0060).",
-  "connectedMainland": true,
-  "connectedMainlandReason": "Every mainland realm is one connected piece in the approved layout (docs/generation/assumptions.md, \"Every mainland country is one connected piece; island possessions are allowed\"); seeds on a realm's capital landmass are joined by a corridor (ADR 0060)."
+  "connectedMainlandNotSent": "The tool's schema has no connectedMainland key. The intended rule stands: every mainland realm is one connected piece in the approved layout (docs/generation/assumptions.md, \"Every mainland country is one connected piece; island possessions are allowed\"); the territory service joins a realm's seeds on its capital's landmass by a corridor (ADR 0060). Check the preview for split realms.",
+  "subjectsNotSent": "The tool's realm object has no overlord key (ADR 0069 leaves subjects grown inside an overlord out); the 19 subject relations are the mod's own (its build writes them into the country histories) and are listed in this report under subjects."
  },
  "barriers": [
   {
@@ -277,6 +285,365 @@
    "reason": "The dossier itself has them held on the map by Kunhrim, Aenor and Glimik."
   }
  ],
+ "naturalBorders": [
+  {
+   "realms": [
+    "CLD",
+    "MLK"
+   ],
+   "lines": [
+    "range_isengar_mountains"
+   ],
+   "linesNotBetweenSeats": [
+    "river_fandan"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "CLD",
+    "MLK"
+   ],
+   "basis": "Coldor and Melkgard: the Fandan River and the Ormolak (former Isengar) Mountains (repaired model, Cold Lands; cold_lands.md 2)."
+  },
+  {
+   "realms": [
+    "CLD",
+    "HOR"
+   ],
+   "lines": [
+    "river_naepu"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Coldor and Horidor: the Naepu ridge and the Naepu River (repaired model, Cold Lands)."
+  },
+  {
+   "realms": [
+    "GNW",
+    "GIR"
+   ],
+   "lines": [
+    "river_grey"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "GNW",
+    "GIR"
+   ],
+   "basis": "Gunwyn and Girdon: the Grey River, crossed at the Grey Ford (west_lands.md 2; repaired model, West Lands)."
+  },
+  {
+   "realms": [
+    "GIR",
+    "BLD"
+   ],
+   "lines": [
+    "range_fog_eye"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "GIR",
+    "BLD"
+   ],
+   "basis": "Girdon and Buldor: the Fog and Eye ridge (repaired model, West Lands; roster: Buldor lies south of the Fog and Eye range)."
+  },
+  {
+   "realms": [
+    "GIR",
+    "SAO"
+   ],
+   "lines": [
+    "river_kulolo"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Girdon and Saopon: the Kulolo River (west_lands.md 2; repaired model, West Lands)."
+  },
+  {
+   "realms": [
+    "AEN",
+    "SEL"
+   ],
+   "lines": [
+    "river_selenar"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Aenor and Selen: the River Selenar (middle_lands.md 2.5; repaired model, Middle Lands)."
+  },
+  {
+   "realms": [
+    "AEN",
+    "HIR"
+   ],
+   "lines": [
+    "range_grano",
+    "river_hilorn"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Aenor and Hirolon: the Grano hills and the River Hilorn (hirolon.md 2.1; repaired model, Middle Lands)."
+  },
+  {
+   "realms": [
+    "AEN",
+    "KIN"
+   ],
+   "lines": [
+    "range_gigantic"
+   ],
+   "linesNotBetweenSeats": [
+    "river_great"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "AEN",
+    "KIN"
+   ],
+   "basis": "Aenor and Kingson: the Gigantic Mountains and the Great River gorge (middle_lands.md 2.7; repaired model, Middle Lands)."
+  },
+  {
+   "realms": [
+    "AEN",
+    "BLO"
+   ],
+   "lines": [
+    "range_crown_north"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Aenor and the Bloody Forest: the northern Crown Mountains (the Konori Heights; repaired model, Middle Lands)."
+  },
+  {
+   "realms": [
+    "AEN",
+    "HER"
+   ],
+   "lines": [
+    "range_grey_hills"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "AEN",
+    "HER"
+   ],
+   "basis": "Aenor and Herez: the Grey Hills (middle_lands.md 2.9; repaired model, Middle Lands)."
+  },
+  {
+   "realms": [
+    "AEN",
+    "CUR"
+   ],
+   "lines": [
+    "range_grey_hills"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Aenor and the Cursed Lands: the Grey Hills (repaired model, Middle Lands)."
+  },
+  {
+   "realms": [
+    "HRR",
+    "ANE"
+   ],
+   "lines": [
+    "river_andos"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Herrodon and Andos Enda: the Andos Water (magical_lands.md 2; repaired model, Magical Lands)."
+  },
+  {
+   "realms": [
+    "MAG",
+    "MSH"
+   ],
+   "lines": [
+    "river_elwen"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "MAG",
+    "MSH"
+   ],
+   "basis": "The Magical Forest and the Mushroom Forest: the Elwen River (magical_lands.md 2; repaired model, Magical Lands)."
+  },
+  {
+   "realms": [
+    "GOL",
+    "BOR"
+   ],
+   "lines": [
+    "range_goldoroth"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Goldoroth and Bordon: the Goldoroth Mountains (repaired model, Dark Lands)."
+  },
+  {
+   "realms": [
+    "NRS",
+    "STA"
+   ],
+   "lines": [
+    "range_noris_rise"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Noris and Stabilo: the Noris Rise and the Flaming Forests (repaired model, East Lands)."
+  },
+  {
+   "realms": [
+    "NRS",
+    "NAA"
+   ],
+   "lines": [
+    "river_fosoco"
+   ],
+   "linesNotBetweenSeats": [
+    "range_woqood_alps"
+   ],
+   "applied": true,
+   "excludedRealms": [
+    "NRS",
+    "NAA"
+   ],
+   "basis": "Noris and Naamis (former Gondolin): the Fosoco River and the Woqood Spires (repaired model, East Lands)."
+  },
+  {
+   "realms": [
+    "STA",
+    "DRA"
+   ],
+   "lines": [
+    "range_drak"
+   ],
+   "applied": false,
+   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "basis": "Stabilo and Drak: the Drak Mountains (repaired model, East Lands)."
+  }
+ ],
+ "naturalBordersNotApplied": [
+  {
+   "border": "Nolorim and the Worshipdom: the Lake of Mirolon (magical_lands.md 2)",
+   "reason": "A lake, not a line; the lake itself already separates the two seats on the land the import reads."
+  },
+  {
+   "border": "Lerendor's North and Lerendor: the Loron highland (north_lands.md 2)",
+   "reason": "Both are one realm (decision K49)."
+  },
+  {
+   "border": "Dondor and Goldoroth: the Darkness ridge and the inner sea (repaired model, Dark Lands)",
+   "reason": "The Dondor and Goldoroth arms are separate lands; the sea already divides them."
+  },
+  {
+   "border": "The Sun Mountains and the Sukro Mountains split the Lands of the Sun's realms (lands_of_the_sun.md 2)",
+   "reason": "The canon does not say which realms each range divides."
+  }
+ ],
+ "subjects": {
+  "relations": [
+   {
+    "tag": "SEL",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "KIN",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "KON",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "HNH",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "KLU",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "HER",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "NOL",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "KIL",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "SFT",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "FRE",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "PAZ",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "ORH",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "KUN",
+    "overlord": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   {
+    "tag": "DRK",
+    "overlord": "GOL",
+    "subjectType": "tributary"
+   },
+   {
+    "tag": "KHO",
+    "overlord": "PUV",
+    "subjectType": "sworn realm"
+   },
+   {
+    "tag": "DLN",
+    "overlord": "PUV",
+    "subjectType": "sworn realm"
+   },
+   {
+    "tag": "NEZ",
+    "overlord": "PUV",
+    "subjectType": "sworn realm"
+   },
+   {
+    "tag": "TES",
+    "overlord": "HRR",
+    "subjectType": "protectorate"
+   },
+   {
+    "tag": "TIR",
+    "overlord": "HIR",
+    "subjectType": "protectorate"
+   }
+  ],
+  "validation": {
+   "ok": true,
+   "errors": []
+  },
+  "note": "The tool's realm object has no overlord key (ADR 0069 leaves subjects grown inside an overlord out); the 19 subject relations are the mod's own (its build writes them into the country histories) and are listed in this report under subjects."
+ },
  "summary": {
   "realms": 156,
   "capitalsByMethod": {
@@ -320,7 +687,16 @@
    "VND",
    "NET"
   ],
-  "subjects": 19
+  "subjects": 19,
+  "naturalBordersApplied": [
+   "CLD|MLK",
+   "GNW|GIR",
+   "GIR|BLD",
+   "AEN|KIN",
+   "AEN|HER",
+   "MAG|MSH",
+   "NRS|NAA"
+  ]
  },
  "ownerQuestions": [
   {
@@ -469,6 +845,16 @@
     {
      "barrier": "zilin_marches",
      "name": "Mirolon south of the Zilin marches"
+    },
+    {
+     "border": "AEN|KIN",
+     "name": "KIN's side of range_gigantic",
+     "polygons": 1
+    },
+    {
+     "border": "AEN|HER",
+     "name": "HER's side of range_grey_hills",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -552,6 +938,11 @@
     {
      "barrier": "cold_neck",
      "name": "the West Lands south of the neck"
+    },
+    {
+     "border": "CLD|MLK",
+     "name": "MLK's side of range_isengar_mountains",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -588,6 +979,11 @@
     {
      "barrier": "hardtmuth",
      "name": "the Sun Desert west of the Hardtmuth chain"
+    },
+    {
+     "border": "NRS|NAA",
+     "name": "NAA's side of river_fosoco",
+     "polygons": 2
     }
    ],
    "weight": {
@@ -950,6 +1346,11 @@
     {
      "barrier": "zilin_marches",
      "name": "Mirolon south of the Zilin marches"
+    },
+    {
+     "border": "MAG|MSH",
+     "name": "MSH's side of river_elwen",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -1017,6 +1418,11 @@
     {
      "barrier": "cold_neck",
      "name": "the Cold Lands north of the neck"
+    },
+    {
+     "border": "GNW|GIR",
+     "name": "GIR's side of river_grey",
+     "polygons": 2
     }
    ],
    "weight": {
@@ -1107,6 +1513,11 @@
     {
      "barrier": "zilin_marches",
      "name": "Mirolon south of the Zilin marches"
+    },
+    {
+     "border": "AEN|KIN",
+     "name": "AEN's side of range_gigantic",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -1197,6 +1608,11 @@
     {
      "barrier": "cold_neck",
      "name": "the West Lands south of the neck"
+    },
+    {
+     "border": "CLD|MLK",
+     "name": "CLD's side of range_isengar_mountains",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -1307,6 +1723,16 @@
     {
      "barrier": "cold_neck",
      "name": "the Cold Lands north of the neck"
+    },
+    {
+     "border": "GNW|GIR",
+     "name": "GNW's side of river_grey",
+     "polygons": 2
+    },
+    {
+     "border": "GIR|BLD",
+     "name": "BLD's side of range_fog_eye",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -1487,6 +1913,11 @@
     {
      "barrier": "zilin_marches",
      "name": "Mirolon south of the Zilin marches"
+    },
+    {
+     "border": "AEN|HER",
+     "name": "AEN's side of range_grey_hills",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -3612,6 +4043,11 @@
     {
      "barrier": "cold_neck",
      "name": "the Cold Lands north of the neck"
+    },
+    {
+     "border": "GIR|BLD",
+     "name": "GIR's side of range_fog_eye",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -4741,6 +5177,11 @@
     {
      "barrier": "hardtmuth",
      "name": "the Sun Desert west of the Hardtmuth chain"
+    },
+    {
+     "border": "NRS|NAA",
+     "name": "NRS's side of river_fosoco",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -6834,6 +7275,11 @@
     {
      "barrier": "zilin_marches",
      "name": "Mirolon south of the Zilin marches"
+    },
+    {
+     "border": "MAG|MSH",
+     "name": "MAG's side of river_elwen",
+     "polygons": 1
     }
    ],
    "weight": {
