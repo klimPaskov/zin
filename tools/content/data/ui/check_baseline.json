@@ -1,0 +1,131 @@
+{
+ "format": 1,
+ "recorded": "2026-10-31",
+ "build": "zin/integration-r3 at 56f78e71 plus the phase 0 working tree (UI overhaul D4)",
+ "about": "Counts of the design-system checks 10 to 18 on the day they were added; the build prints each check against these numbers. Checks 10 to 18 fail only a release build (ZIN_RELEASE=1) until the phases of docs/plans/ui_overhaul/02_plan.md that satisfy them land.",
+ "checks": {
+  "10": {
+   "name": "icon.registry",
+   "problems": 400,
+   "pending": 0,
+   "codes": {
+    "icon.unexplained_share": 400
+   },
+   "notes": {
+    "textures": 570,
+    "sharedTextures": 400,
+    "unexplainedTextures": 400,
+    "conceptsOnUnexplained": 8698,
+    "explainedTextures": 0
+   }
+  },
+  "11": {
+   "name": "icon.placeholder",
+   "problems": 648,
+   "pending": 0,
+   "codes": {
+    "icon.placeholder": 648
+   },
+   "notes": {
+    "placeholders": [
+     "gfx/interface/zin/frame.dds"
+    ]
+   }
+  },
+  "12": {
+   "name": "icon.family_size",
+   "problems": 428,
+   "pending": 0,
+   "codes": {
+    "family.size": 260,
+    "family.missing": 31,
+    "family.cross": 137
+   },
+   "notes": {
+    "checked": 769,
+    "vanilla": 43
+   }
+  },
+  "13": {
+   "name": "chrome.family",
+   "problems": 115,
+   "pending": 0,
+   "codes": {
+    "chrome.sheet": 114,
+    "chrome.zin_frame": 1
+   },
+   "notes": {
+    "accepted": 0,
+    "level0": 114
+   }
+  },
+  "14": {
+   "name": "texture.noise",
+   "problems": 3,
+   "pending": 10,
+   "codes": {
+    "texture.noise": 3
+   },
+   "notes": {
+    "checked": 97
+   }
+  },
+  "15": {
+   "name": "texture.seam",
+   "problems": 91,
+   "pending": 12,
+   "codes": {
+    "texture.seam": 91
+   },
+   "notes": {
+    "checked": 100
+   }
+  },
+  "16": {
+   "name": "fit.scale",
+   "problems": 292,
+   "pending": 0,
+   "codes": {
+    "fit.scale": 292
+   },
+   "notes": {
+    "entries": 3139
+   }
+  },
+  "17": {
+   "name": "button.states",
+   "problems": 766,
+   "pending": 89,
+   "codes": {
+    "button.same_frames": 708,
+    "button.disabled_colour": 58
+   },
+   "notes": {
+    "checked": 599
+   }
+  },
+  "18": {
+   "name": "layout.grid",
+   "problems": 1060,
+   "pending": 0,
+   "codes": {
+    "layout.grid": 1024,
+    "layout.font": 36
+   },
+   "notes": {
+    "files": 9,
+    "byFile": {
+     "interface/countrytechtreeview.gui": 815,
+     "interface/zin_aenor_court.gui": 34,
+     "interface/zin_afrit_council.gui": 54,
+     "interface/zin_dark_panels.gui": 29,
+     "interface/zin_interim_inlay.gui": 2,
+     "interface/zin_mech_powers.gui": 60,
+     "interface/zin_realm.gui": 8,
+     "interface/zin_super_events.gui": 16,
+     "interface/zin_zol_presence.gui": 42
+    }
+   }
+  }
+ }
+}

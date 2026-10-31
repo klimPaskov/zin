@@ -156,6 +156,26 @@ async function frameFit(name, cell, w, h, target, opts) {
   }
 }
 
+// The largest enlargement a frame fit applies to its cell (1 = none, below 1 = reduced): the fit log of design system §5.2.3, read by
+// check 16 (fit.scale) from the manifest ops as "scale <n>". A nine-slice reports the larger of its corner and centre scales.
+export function scaleOf(name, cell, w, h, target = {}, opts = {}) {
+  switch (name) {
+    case 'exact': case 'cover': case 'same_shape': return Math.max(w / cell.w, h / cell.h);
+    case 'contain': return Math.min(w / cell.w, h / cell.h);
+    case 'repeat_x': return h / cell.h;
+    case 'repeat_y': return w / cell.w;
+    case 'nine_slice': {
+      let b; try { b = typeof opts.cellBorder === 'function' ? opts.cellBorder(cell) : opts.cellBorder; } catch { return null; }
+      const sb = typeof b === 'number' ? { x: b, y: b } : b;
+      if (!sb || !target.borderSize) return null;
+      const sx = Math.round(sb.x), sy = Math.round(sb.y), bx = Math.min(target.borderSize[0], Math.floor((w - 1) / 2)), by = Math.min(target.borderSize[1], Math.floor((h - 1) / 2));
+      return Math.max(bx / sx, by / sy, (w - 2 * bx) / Math.max(1, cell.w - 2 * sx), (h - 2 * by) / Math.max(1, cell.h - 2 * sy));
+    }
+    default: return null;
+  }
+}
+const scaleOp = s => s === null || !Number.isFinite(s) ? [] : [`scale ${Math.round(s * 100) / 100}`];
+
 // cells: one Img per frame for `strip`, otherwise exactly one. opts: { frameFit, padding, cellBorder, alpha, mask, transform }.
 export async function runFit(name, cells, target, opts = {}) {
   if (!FITS.includes(name)) throw new FitError('fit', `unknown fit ${name}`);
@@ -171,13 +191,17 @@ export async function runFit(name, cells, target, opts = {}) {
     if (!FRAME_FITS.includes(inner)) throw new FitError('fit', `strip frameFit ${inner} is not a frame fit`);
     img = makeImg(width, height);
     const inner0 = [];
-    for (let i = 0; i < frames; i++) { const r = await frameFit(inner, cells[i], fw, height, target, opts); blit(img, r.img, i * fw, 0); if (i === 0) inner0.push(...r.ops); }
-    ops = [`strip ${frames} frames of ${fw}x${height}`, ...inner0];
+    let most = null;
+    for (let i = 0; i < frames; i++) {
+      const r = await frameFit(inner, cells[i], fw, height, target, opts); blit(img, r.img, i * fw, 0); if (i === 0) inner0.push(...r.ops);
+      const s = scaleOf(inner, cells[i], fw, height, target, opts); if (s !== null && (most === null || s > most)) most = s;
+    }
+    ops = [`strip ${frames} frames of ${fw}x${height}`, ...inner0, ...scaleOp(most)];
   } else {
     if (frames !== 1) throw new FitError('frames', `${name} makes one frame; use strip for ${frames} frames`);
     if (cells.length !== 1) throw new FitError('cells', `${name} takes one cell, got ${cells.length}`);
     const r = await frameFit(name, cells[0], width, height, target, opts);
-    img = r.img; ops = r.ops;
+    img = r.img; ops = [...r.ops, ...scaleOp(scaleOf(name, cells[0], width, height, target, opts))];
   }
   ops = [...pre, ...ops];
   if (img.w !== width || img.h !== height) throw new FitError('size', `fit produced ${img.w}x${img.h}, expected ${width}x${height}`);

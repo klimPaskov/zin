@@ -14,6 +14,8 @@ Sizes are counts of generated pictures (sheets are cut into cells, so calls are 
 
 ## Phase 0: decisions and foundations (lead, then one worker)
 
+**State (31 October 2026):** D1 decided (K69, K70). D2 to D5 implemented: [handoffs/phase0.md](handoffs/phase0.md) (design system accepted with area themes; icon registry; checks 10 to 18 with baseline; review harness `tools/content/ui_review.mjs` with check 19; MCP requests in [mcp_requests.md](mcp_requests.md)).
+
 | Step | Work | Owner | Files | Done when |
 | --- | --- | --- | --- | --- |
 | D1 | Owner picks a direction (A, B or C) and answers the open questions of the design system (layout overrides allowed; one shared frame instead of eight themes; focus icon granularity) | owner via lead | — | answers recorded in `INTEGRATION_DECISIONS.md` as a K-decision |

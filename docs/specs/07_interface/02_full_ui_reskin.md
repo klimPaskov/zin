@@ -100,6 +100,8 @@ Any further override needs a new row here with its reason. ZIN never overrides `
 
 ### 3. Visual language: the Aoaz chancery
 
+**Superseded for materials and tokens (31 October 2026, K69 and K70).** The [interface design system](07_design_system.md) is the source of the visual language: three area themes (Banner Hall, Chancery, Chronicle) and one neutral family for buttons, tooltips and dialogs, with sampled tokens (§1), the window-to-theme table (§7) and the vanilla kept register (§10). Principle 1 of this spec (textures inside vanilla layouts) is widened by K69: layouts may be rebuilt. The chancery language below is the origin of the design system's Chancery theme; the ideology table (§3.5), the ornament vocabulary (§3.6), the text-colour route (§3.4) and the font route (§3.7) stay in force, with the colour values of design system §1.6.
+
 The interface reads as the furniture of a Fourth Age chancery: dark walnut cabinets bound in bronze, gilded iron fittings, and parchment ledgers where reports are read. It is old, well kept and calm, matching a world that has been at peace for seventeen centuries. Danger appears only in content and in the Gathering Dark.
 
 #### 3.1 Materials

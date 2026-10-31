@@ -281,7 +281,9 @@ Localisation keys follow the engine pattern for the map mode name: `MAPMODE_ZIN_
 
 ### 12. Themed frames
 
-Eight themes. Each is one generated theme sheet on a flat black ground (decision A2), sliced into a nine-slice frame, a gauge pair (empty and full), a tab strip and a row strip ([01_art_pipeline.md](../08_art_and_assets/01_art_pipeline.md) §4).
+**Superseded (31 October 2026, K69 and K70).** ZIN windows take the frame, title band, tabs and meters of their area's theme in the [interface design system](07_design_system.md) (§1 themes, §6.4 mechanic identity, §7 the window table): the Realm panel and every mechanic panel below, the journey tracker included, are Chancery windows, and a mechanic's identity is its header art, its 4 px accent strip and its icons. The eight per-mechanic frame sheets below are not built; the table is kept as the record of the earlier proposal and as the source of the mechanic accents and header subjects.
+
+Eight themes (earlier proposal). Each is one generated theme sheet on a flat black ground (decision A2), sliced into a nine-slice frame, a gauge pair (empty and full), a tab strip and a row strip ([01_art_pipeline.md](../08_art_and_assets/01_art_pipeline.md) §4).
 
 | Theme | Used by | Look (prompt core) |
 | --- | --- | --- |

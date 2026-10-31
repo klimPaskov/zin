@@ -26,6 +26,11 @@ import {
   checkInventoryFreshness, checkCoverage, checkShape, checkReachability, checkNoVanillaPixels, checkProvenance, checkLuminance, checkOverrides,
   checkDeterminism, runUiChecks, scriptReferences, elementNames, PHASH_THRESHOLD, PHASH_MIN_SUPPORT, CONTENT_LIMIT,
 } from './checks/ui_checks.mjs';
+import {
+  checkIconRegistry, checkIconPlaceholder, checkIconFamilySize, checkChromeFamily, checkTextureNoise, checkTextureSeam, checkFitScale,
+  checkButtonStates, checkLayoutGrid, runDesignChecks, enforced, baselineDelta, loadBaseline, GATED_FROM,
+} from './checks/ui_checks.mjs';
+import { iconRegistry } from './modules/icon_registry.mjs';
 import { GAME } from './lib/paths.mjs';
 
 const sha256 = b => createHash('sha256').update(b).digest('hex');
@@ -851,4 +856,135 @@ test('measureSheets reads accepted sheets only and records one mean luma per cel
   assert.deepEqual(m.limits, { dark: LUMA.dark, light: LUMA.light });
   const none = await measureSheets({ sheets, provenance: lines.map(l => ({ ...l, accepted: false })), rawPath: rel => path.join(dir, rel), warn: s => skipped.push(s) });
   assert.deepEqual(none.sheets, {}); assert.match(skipped[0], /review rejected/);
+});
+
+// ---------------------------------------------------------------------------------------------------- design checks 10 to 18
+// Each check of the UI overhaul (docs/plans/ui_overhaul/02_plan.md) on synthetic inputs: one passing case and at least one negative.
+const D_DESIGN = {
+  grid: 4, fontRoles: { body: ['hoi_18mbs'], label: ['hoi_16mbs'] }, placeholderTextures: ['gfx/interface/zin/frame.dds'], placeholderOwners: ['GFX_zin_frame'],
+  iconFamilies: { decision: { size: [32, 32], frames: 1 }, focus: { size: [8, 8], frames: 1 } }, acceptedChromeSheets: { chancery: ['ui-chancery-chrome'] },
+};
+const dTree = (extra = []) => new Map([
+  ['interface/zin_t.gfx', Buffer.from(`spriteTypes = {
+	spriteType = { name = "GFX_decision_zin_a" texturefile = "gfx/interface/decisions/zin/a.dds" }
+	spriteType = { name = "GFX_decision_zin_b" texturefile = "gfx/interface/decisions/zin/a.dds" }
+	spriteType = { name = "GFX_zin_tech_x_medium" texturefile = "gfx/interface/zin/frame.dds" }
+	spriteType = { name = "GFX_zin_frame" texturefile = "gfx/interface/zin/frame.dds" }
+}`)],
+  ['common/decisions/zin_t.txt', Buffer.from('zin_cat = {\n\tzin_a = {\n\t\ticon = zin_a\n\t}\n\tzin_b = {\n\t\ticon = zin_b\n\t}\n}\n')],
+  ...extra,
+]);
+const dReg = files => iconRegistry(files, { vanilla: [], design: D_DESIGN });
+const ddsOf = canvas => dds(canvas);
+const noisy = (w, h) => { const c = new Canvas(w, h, SIX); for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) if ((x + y) % 2) c.rect(x, y, x + 1, y + 1, LIGHT); return c; };
+
+test('check 10 icon.registry: two concepts on one texture need one deliberate share; bad or stale entries fail', () => {
+  const r = dReg(dTree());
+  const none = checkIconRegistry({ registry: r, shares: { shares: [] } });
+  assert.equal(none.status, 'fail'); assert.equal(none.problems[0].code, 'icon.unexplained_share'); assert.equal(none.notes.conceptsOnUnexplained, 2);
+  const ok = checkIconRegistry({ registry: r, shares: { shares: [{ id: 's', kind: 'same_concept', reason: 'one seal for the call and its answer', concepts: ['decision:zin_a', 'decision:zin_b'] }] } });
+  assert.equal(ok.status, 'pass'); assert.equal(ok.notes.explainedTextures, 1);
+  const bad = checkIconRegistry({ registry: r, shares: { shares: [{ id: 's', kind: 'looks_alike', reason: 'they look alike anyway', concepts: ['decision:zin_a', 'decision:zin_b'] }] } });
+  assert.ok(bad.problems.some(p => p.code === 'shares.invalid') && bad.problems.some(p => p.code === 'icon.unexplained_share'), 'an unknown kind explains nothing');
+  const half = checkIconRegistry({ registry: r, shares: { shares: [{ id: 's', kind: 'tiers', reason: 'marks of one seal line', concepts: ['decision:zin_a', 'decision:zin_gone'] }] } });
+  assert.ok(half.problems.some(p => p.code === 'shares.stale') && half.problems.some(p => p.code === 'icon.unexplained_share'));
+});
+
+test('check 11 icon.placeholder: a ZIN sprite on the shared frame fails; the frame sprite itself does not', () => {
+  const r = dReg(dTree());
+  const c = checkIconPlaceholder({ sprites: r.sprites, design: D_DESIGN });
+  assert.equal(c.status, 'fail'); assert.deepEqual(c.problems.map(p => p.name), ['GFX_zin_tech_x_medium']);
+  const clean = dReg(new Map([['interface/zin_t.gfx', Buffer.from('spriteTypes = { spriteType = { name = "GFX_zin_frame" texturefile = "gfx/interface/zin/frame.dds" } }')]]));
+  assert.equal(checkIconPlaceholder({ sprites: clean.sprites, design: D_DESIGN }).status, 'pass');
+});
+
+test('check 12 icon.family_size: wrong size, missing texture and an unshared cross-family texture fail', () => {
+  const good = dTree([['gfx/interface/decisions/zin/a.dds', ddsOf(fill(32, 32, MID))]]), shares = { shares: [] };
+  assert.equal(checkIconFamilySize({ registry: dReg(good), shares, design: D_DESIGN, files: good, game: root }).status, 'pass');
+  const wrong = dTree([['gfx/interface/decisions/zin/a.dds', ddsOf(fill(64, 64, MID))]]);
+  assert.deepEqual(checkIconFamilySize({ registry: dReg(wrong), shares, design: D_DESIGN, files: wrong, game: root }).problems.map(p => p.code), ['family.size']);
+  assert.deepEqual(checkIconFamilySize({ registry: dReg(dTree()), shares, design: D_DESIGN, files: dTree(), game: root }).problems.map(p => p.code), ['family.missing']);
+  const cross = dTree([
+    ['gfx/interface/decisions/zin/a.dds', ddsOf(fill(32, 32, MID))],
+    ['interface/zin_f.gfx', Buffer.from('spriteTypes = { spriteType = { name = "GFX_focus_f" texturefile = "gfx/interface/decisions/zin/a.dds" } }')],
+    ['common/national_focus/zin_f.txt', Buffer.from('focus_tree = { id = t focus = { id = zin_f_one icon = GFX_focus_f } }')],
+  ]);
+  const cr = checkIconFamilySize({ registry: dReg(cross), shares, design: D_DESIGN, files: cross, game: root });
+  assert.ok(cr.problems.some(p => p.code === 'family.cross') && cr.problems.some(p => p.code === 'family.size'), 'the focus family is 8 x 8 and may not borrow a decision seal');
+});
+
+const tileInv = (extra = {}) => ({ sprites: [{ name: 'GFX_tiled_t', kind: 'cornered_tile', texture: 'gfx/interface/tiles/t.dds', width: 48, height: 48, frames: 1, borderSize: [8, 8], ...extra }] });
+const tileRow = (extra = {}) => ({ rows: [{ name: 'GFX_tiled_t', disposition: 'R', family: 'chrome_panels', sheet: 'ui-chrome-panels', cells: ['walnut_thin'], fit: 'nine_slice', ...extra }] });
+
+test('check 13 chrome.family: a level-0 window texture from a sheet the design system has not accepted fails', () => {
+  const sprites = new Map();
+  assert.equal(checkChromeFamily({ inventory: tileInv(), reskin: tileRow(), design: D_DESIGN, sprites }).status, 'fail');
+  assert.equal(checkChromeFamily({ inventory: tileInv(), reskin: tileRow({ sheet: 'ui-chancery-chrome' }), design: D_DESIGN, sprites }).status, 'pass');
+  const zin = new Map([['gfx_zin_frame', { name: 'GFX_zin_frame', texture: 'gfx/interface/zin/frame.dds', origin: 'mod', frames: 1 }]]);
+  assert.equal(checkChromeFamily({ inventory: tileInv(), reskin: tileRow({ sheet: 'ui-chancery-chrome' }), design: D_DESIGN, sprites: zin }).problems[0].code, 'chrome.zin_frame');
+  assert.equal(checkChromeFamily({ inventory: tileInv(), reskin: tileRow({ sheet: 'ui-chancery-chrome' }), design: { ...D_DESIGN, zinFrameSheets: { GFX_zin_frame: 'ui-chancery-chrome' } }, sprites: zin }).status, 'pass');
+});
+
+test('check 14 texture.noise: a busy panel body fails, a quiet one passes; an unbuilt one is pending', async () => {
+  const quiet = new Map([['gfx/interface/tiles/t.dds', ddsOf(fill(48, 48, SIX))]]), busy = new Map([['gfx/interface/tiles/t.dds', ddsOf(noisy(48, 48))]]);
+  assert.equal((await checkTextureNoise({ inventory: tileInv(), reskin: tileRow(), files: quiet })).status, 'pass');
+  const b = await checkTextureNoise({ inventory: tileInv(), reskin: tileRow(), files: busy });
+  assert.equal(b.status, 'fail'); assert.match(b.problems[0].message, /deviation 0\.\d+/);
+  assert.equal((await checkTextureNoise({ inventory: tileInv(), reskin: tileRow(), files: new Map() })).status, 'pending');
+});
+
+test('check 15 texture.seam: a tiled body whose edges do not meet fails; a repeat fit is judged at its tile joins', async () => {
+  const flat = new Map([['gfx/interface/tiles/t.dds', ddsOf(fill(48, 48, MID))]]);
+  assert.equal((await checkTextureSeam({ inventory: tileInv(), reskin: tileRow(), files: flat, manifest: { files: [] } })).status, 'pass');
+  const ramp = new Map([['gfx/interface/tiles/t.dds', ddsOf(gradient(48, 48))]]);
+  assert.equal((await checkTextureSeam({ inventory: tileInv(), reskin: tileRow(), files: ramp, manifest: { files: [] } })).problems[0].code, 'texture.seam');
+  const strip = new Canvas(40, 8, SIX); for (let x = 0; x < 40; x += 10) strip.rect(x, 0, x + 5, 8, LIGHT);
+  const inv = { sprites: [{ name: 'GFX_bar', kind: 'sprite', texture: 'gfx/interface/bar.dds', width: 40, height: 8, frames: 1 }] }, rows = { rows: [{ name: 'GFX_bar', disposition: 'R', family: 'chrome_bars', sheet: 'ui-bars', cells: ['x'], fit: 'repeat_x' }] };
+  const r = await checkTextureSeam({ inventory: inv, reskin: rows, files: new Map([['gfx/interface/bar.dds', ddsOf(strip)]]), manifest: { files: [{ out: 'gfx/interface/bar.dds', ops: ['repeat_x tile 10x8'] }] } });
+  assert.equal(r.status, 'fail', 'each 10 px tile ends light and the next starts dark');
+});
+
+test('check 16 fit.scale: an enlarged cell fails, a reduced one passes, a manifest line without the log is pending; runFit writes the log', async () => {
+  assert.equal(checkFitScale({ manifest: { files: [{ out: 'a.dds', ops: ['cover', 'scale 2.5'] }] } }).status, 'fail');
+  assert.equal(checkFitScale({ manifest: { files: [{ out: 'a.dds', ops: ['cover', 'scale 0.5'] }] } }).status, 'pass');
+  assert.equal(checkFitScale({ manifest: { files: [{ out: 'a.dds', ops: ['cover'] }] } }).status, 'pending');
+  const up = await runFit('cover', [makeImg(10, 10)], { width: 20, height: 20, frames: 1 });
+  assert.ok(up.ops.includes('scale 2'), up.ops.join(', '));
+  const down = await runFit('strip', [makeImg(40, 40), makeImg(40, 40)], { width: 40, height: 20, frames: 2 }, { frameFit: 'cover' });
+  assert.ok(down.ops.includes('scale 0.5'), down.ops.join(', '));
+});
+
+test('check 17 button.states: identical normal and hover frames fail; a coloured disabled frame fails; distinct frames pass', async () => {
+  const inv = { sprites: [{ name: 'GFX_btn', kind: 'sprite', texture: 'gfx/interface/btn.dds', width: 40, height: 10, frames: 4 }] };
+  const rows = { rows: [{ name: 'GFX_btn', disposition: 'R', family: 'chrome_controls', sheet: 'ui-buttons', cells: ['a', 'b', 'c', 'd'], fit: 'strip', frames: ['normal', 'hover', 'pressed', 'disabled'] }] };
+  const strip = colours => { const c = new Canvas(40, 10); colours.forEach((col, i) => c.rect(i * 10, 0, i * 10 + 10, 10, col)); return new Map([['gfx/interface/btn.dds', ddsOf(c)]]); };
+  const good = await checkButtonStates({ inventory: inv, reskin: rows, files: strip([[60, 50, 40, 255], [90, 80, 70, 255], [40, 30, 20, 255], [70, 70, 70, 255]]) });
+  assert.equal(good.status, 'pass', good.problems.map(p => p.message).join('; '));
+  const same = await checkButtonStates({ inventory: inv, reskin: rows, files: strip([[60, 50, 40, 255], [60, 50, 40, 255], [40, 30, 20, 255], [70, 70, 70, 255]]) });
+  assert.deepEqual(same.problems.map(p => p.code), ['button.same_frames']);
+  const red = await checkButtonStates({ inventory: inv, reskin: rows, files: strip([[60, 50, 40, 255], [90, 80, 70, 255], [40, 30, 20, 255], [200, 30, 30, 255]]) });
+  assert.deepEqual(red.problems.map(p => p.code), ['button.disabled_colour']);
+});
+
+test('check 18 layout.grid: ZIN .gui positions and sizes on the 4 px grid, fonts from the role table; other files are not read', () => {
+  const gui = body => new Map([['interface/zin_t.gui', Buffer.from(`guiTypes = { containerWindowType = { name = "w" position = { x = 8 y = 12 } size = { width = 100% height = 64 }
+	instantTextBoxType = { name = "t" position = { x = ${body.x} y = 4 } font = "${body.font}" text = "x" } } }`)], ['interface/topbar.gui', Buffer.from('guiTypes = { containerWindowType = { name = "v" position = { x = 3 y = 3 } } }')]]);
+  assert.equal(checkLayoutGrid({ files: gui({ x: 16, font: 'hoi_18mbs' }), design: D_DESIGN }).status, 'pass');
+  const off = checkLayoutGrid({ files: gui({ x: 15, font: 'hoi_18mbs' }), design: D_DESIGN });
+  assert.deepEqual(off.problems.map(p => p.code), ['layout.grid']); assert.match(off.problems[0].message, /t: position\.x = 15/);
+  assert.deepEqual(checkLayoutGrid({ files: gui({ x: 16, font: 'hoi4_typewriter16' }), design: D_DESIGN }).problems.map(p => p.code), ['layout.font']);
+});
+
+test('design checks report in every build and stop only a release build; the baseline delta is per check', async () => {
+  const r = await runDesignChecks({ files: dTree(), design: D_DESIGN, shares: { shares: [] }, registry: dReg(dTree()) });
+  assert.deepEqual(r.checks.map(c => c.id), [10, 11, 12, 16, 18], 'without the reskin inputs the texture checks are left out');
+  const all = [{ id: 3, status: 'fail', problems: [1] }, { id: 4, status: 'fail', problems: [1] }, ...r.checks];
+  assert.deepEqual(enforced(all).map(c => c.id), [3]);
+  assert.deepEqual(enforced(all, true).map(c => c.id).sort((a, b) => a - b), [3, 4, 10, 11, 12]);
+  const d = baselineDelta(r.checks, { checks: { 10: { problems: 5 } } });
+  assert.equal(d.find(x => x.id === 10).delta, r.checks.find(c => c.id === 10).problems.length - 5);
+  assert.equal(d.find(x => x.id === 11).baseline, null);
+  assert.ok(GATED_FROM === 10);
+  const base = loadBaseline();
+  for (const id of [10, 11, 12, 13, 14, 15, 16, 17, 18]) assert.equal(typeof base.checks[id]?.problems, 'number', `baseline recorded for check ${id}`);
 });

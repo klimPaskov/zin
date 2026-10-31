@@ -1,4 +1,6 @@
-// The nine builder checks of the interface reskin (spec docs/specs/07_interface/02_full_ui_reskin.md, "Builder checks").
+// The nine builder checks of the interface reskin (spec docs/specs/07_interface/02_full_ui_reskin.md, "Builder checks"), and the
+// design-system checks 10 to 18 of the UI overhaul (docs/specs/07_interface/07_design_system.md §9), reported in every build and
+// enforced only in a release build (runDesignChecks, enforced, GATED_FROM).
 // Each check is a function that returns { id, name, status, problems, pending, notes } where status is
 //   pass     the check ran and found nothing
 //   fail     problems is not empty (the build stops)
@@ -18,6 +20,8 @@ import { acceptance } from '../modules/presentation.mjs';
 import { verifyInventory, readText, interfaceFiles } from '../modules/ui_inventory.mjs';
 import { validateReskin, textureIndex, vanillaFileOf } from '../modules/ui_reskin.mjs';
 import { windowState, framesOf, ENGINE_DEFAULTS, OVERRIDE_FILES } from '../lib/ui_plan.mjs';
+import { fileURLToPath } from 'node:url';
+import { iconRegistry, loadShares, loadDesign, validateShares, SHARE_KINDS } from '../modules/icon_registry.mjs';
 
 // Check 5 thresholds, tuned on the first 48 accepted sheets (1,914 compared textures) and recorded in the spec and in
 // docs/design/stage2/ui_infrastructure.md, item 9. A picture is a suspected copy of its vanilla file only when all three hold:
@@ -262,6 +266,278 @@ export async function checkDeterminism({ build }) {
   }
   return result(9, 'determinism', problems, [], { files: a.size });
 }
+
+// ==================================================================================================== 10 to 18
+// The design-system checks of the UI overhaul (docs/plans/ui_overhaul/02_plan.md, "Checks to add"; rules in
+// docs/specs/07_interface/07_design_system.md §9). They report in every build and are enforced only in a release build
+// (ZIN_RELEASE=1, see GATED_FROM) until the phases that satisfy them land. Their inputs: the icon registry (modules/icon_registry.mjs),
+// the share list (data/ui/icon_shares.json), the design data (data/ui/design_system.json) and the staged files.
+export const GATED_FROM = 10;
+export const NOISE_LIMIT = 0.05, SEAM_LIMIT = 0.02, SCALE_LIMIT = 1.0, STATE_DIFF_MIN = 0.03, DISABLED_SAT_MAX = 0.15;
+const lum = (r, g, b) => (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+async function decodedStaged(idx, rel) {
+  const hit = idx.get(String(rel).toLowerCase());
+  if (!hit) return null;
+  try { return await decodeRgba(hit.bytes, extOf(rel)); } catch { return null; }
+}
+
+// ---------------------------------------------------------------------------------------------------- 10
+// Every texture that serves two or more concepts (inside a family or across families) must be covered by one share entry of an allowed
+// kind that names all of them. The share list itself must be valid and must not name concepts that do not exist.
+export function checkIconRegistry({ registry, shares }) {
+  const problems = [], notes = { textures: registry.textures.size, sharedTextures: 0, unexplainedTextures: 0, conceptsOnUnexplained: 0, explainedTextures: 0 };
+  for (const p of validateShares(shares)) problems.push({ code: 'shares.invalid', name: 'icon_shares.json', message: p });
+  const known = new Set(registry.concepts.map(c => `${c.family}:${c.id}`)), entryOf = new Map();
+  for (const s of shares.shares ?? []) for (const c of s.concepts ?? []) { if (!known.has(c)) problems.push({ code: 'shares.stale', name: s.id, message: `${s.id} names ${c}, which is not a concept of this build` }); entryOf.set(c, s); }
+  for (const [tex, list] of [...registry.textures].sort(([a], [b]) => ord(a, b))) {
+    if (list.length < 2) continue;
+    notes.sharedTextures++;
+    const entries = new Set(list.map(c => entryOf.get(c)));
+    const covered = entries.size === 1 && !entries.has(undefined) && SHARE_KINDS.includes([...entries][0].kind);
+    if (covered) { notes.explainedTextures++; continue; }
+    notes.unexplainedTextures++; notes.conceptsOnUnexplained += list.length;
+    const fams = [...new Set(list.map(c => c.split(':')[0]))].sort(ord);
+    problems.push({ code: 'icon.unexplained_share', name: tex, message: `${tex} serves ${list.length} concepts (${fams.join(', ')}: ${list.slice(0, 4).join(', ')}${list.length > 4 ? ', ...' : ''}) without one deliberate share entry` });
+  }
+  return result(10, 'icon.registry', problems, [], notes);
+}
+
+// ---------------------------------------------------------------------------------------------------- 11
+// No sprite ZIN defines may draw a listed placeholder texture (the shared frame); the frame's own sprite is exempt.
+export function checkIconPlaceholder({ sprites, design }) {
+  const problems = [], placeholders = new Set((design.placeholderTextures ?? []).map(t => t.toLowerCase())), owners = new Set((design.placeholderOwners ?? []).map(n => n.toLowerCase()));
+  for (const s of [...sprites.values()].sort((a, b) => ord(a.name, b.name))) {
+    if (s.origin !== 'mod' || !placeholders.has(s.texture) || owners.has(s.name.toLowerCase())) continue;
+    problems.push({ code: 'icon.placeholder', name: s.name, message: `${s.name} (${s.file}) draws the placeholder ${s.texture}` });
+  }
+  return result(11, 'icon.placeholder', problems, [], { placeholders: [...placeholders] });
+}
+
+// ---------------------------------------------------------------------------------------------------- 12
+// Each family's textures have the family's size and frame count (data/ui/design_system.json iconFamilies); a texture the family needs
+// exists; a texture is used by one family only unless a share entry covers it (that part is also seen by check 10, from the family side).
+export function checkIconFamilySize({ registry, shares, design, files, game = GAME }) {
+  const problems = [], idx = lowerIndex(files), fams = design.iconFamilies ?? {}, notes = { checked: 0, vanilla: 0 };
+  const seen = new Set();
+  for (const c of registry.concepts) {
+    if (!c.texture || c.frame !== undefined) continue;
+    const key = `${c.family}|${c.texture}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const spec = fams[c.family], hit = idx.get(c.texture);
+    if (!hit) {
+      if (existsSync(`${game}/${c.texture}`)) { notes.vanilla++; continue; }
+      problems.push({ code: 'family.missing', name: c.texture, message: `${c.family} ${c.id}: ${c.sprite} names ${c.texture}, which neither ZIN nor the game ships` });
+      continue;
+    }
+    if (!spec) continue;
+    notes.checked++;
+    const h = readHeader(hit.bytes, extOf(c.texture)), frames = registry.sprites.get(String(c.sprite).toLowerCase())?.frames ?? 1;
+    const want = { w: spec.size[0] * spec.frames, h: spec.size[1] };
+    if (!h.valid || h.width !== want.w || h.height !== want.h || frames !== spec.frames) problems.push({ code: 'family.size', name: c.texture, message: `${c.family} ${c.id}: ${c.texture} is ${h.width}x${h.height} with ${frames} frame(s); the family is ${spec.size[0]}x${spec.size[1]} with ${spec.frames}` });
+  }
+  const covered = new Set((shares.shares ?? []).filter(s => SHARE_KINDS.includes(s.kind)).map(s => s.concepts ?? []).filter(cs => new Set(cs.map(x => x.split(':')[0])).size > 1).flat());
+  for (const x of registry.crossFamily) {
+    const members = registry.textures.get(x.texture) ?? [];
+    if (members.length && members.every(m => covered.has(m))) continue;
+    problems.push({ code: 'family.cross', name: x.texture, message: `${x.texture} is used by ${x.families.join(', ')} without a share entry` });
+  }
+  return result(12, 'icon.family_size', problems, [], notes);
+}
+
+// ---------------------------------------------------------------------------------------------------- 13
+// Every level-0 window texture (a reskin R row drawn as a cornered tile, or a chrome panel nine-slice; and ZIN's own window frames)
+// comes from an accepted chrome sheet of the design system.
+export function checkChromeFamily({ inventory, reskin, design, sprites }) {
+  const problems = [], byName = new Map(inventory.sprites.map(s => [s.name, s]));
+  const accepted = new Set(Object.entries(design.acceptedChromeSheets ?? {}).filter(([k]) => k !== 'note').flatMap(([, v]) => v));
+  const zinFrames = design.zinFrameSheets ?? {}, seen = new Set();
+  for (const row of reskin.rows) {
+    if (row.disposition !== 'R') continue;
+    const s = byName.get(row.name);
+    if (!s || !(s.kind === 'cornered_tile' || (row.family === 'chrome_panels' && row.fit === 'nine_slice'))) continue;
+    if (seen.has(s.texture.toLowerCase())) continue;
+    seen.add(s.texture.toLowerCase());
+    const sheets = [].concat(row.sheet ?? []);
+    if (!sheets.length || sheets.some(id => !accepted.has(id))) problems.push({ code: 'chrome.sheet', name: s.texture, message: `${row.name} (${s.texture}) is cut from ${sheets.join(', ') || 'no sheet'}, not an accepted chrome sheet` });
+  }
+  for (const s of [...(sprites?.values() ?? [])].sort((a, b) => ord(a.name, b.name))) {
+    if (s.origin !== 'mod' || !/^GFX_zin_frame/i.test(s.name)) continue;
+    if (!accepted.has(zinFrames[s.name])) problems.push({ code: 'chrome.zin_frame', name: s.name, message: `${s.name} (${s.texture}) is not drawn from an accepted chrome sheet` });
+  }
+  return result(13, 'chrome.family', problems, [], { accepted: accepted.size, level0: seen.size });
+}
+
+// ---------------------------------------------------------------------------------------------------- 14 and 15
+// The body of a panel: inside the declared border (a cornered tile) or inside a 15% margin.
+function bodyBox(px, border) {
+  const bx = border ? Math.min(border[0], Math.floor(px.width / 3)) : Math.round(px.width * 0.15), by = border ? Math.min(border[1], Math.floor(px.height / 3)) : Math.round(px.height * 0.15);
+  return { x0: bx, y0: by, x1: px.width - bx, y1: px.height - by };
+}
+export function lumaStd(px, box) {
+  let n = 0, sum = 0, sq = 0;
+  for (let y = box.y0; y < box.y1; y++) for (let x = box.x0; x < box.x1; x++) { const o = (y * px.width + x) * 4; if (px.data[o + 3] < 128) continue; const l = lum(px.data[o], px.data[o + 1], px.data[o + 2]); n++; sum += l; sq += l * l; }
+  return n ? Math.sqrt(Math.max(0, sq / n - (sum / n) ** 2)) : 0;
+}
+// Mean absolute luminance step across a tile boundary: between column `a` and column `b` (axis x) or row a and row b (axis y).
+export function seamStep(px, box, axis, a, b) {
+  let n = 0, s = 0;
+  const L = (x, y) => { const o = (y * px.width + x) * 4; return lum(px.data[o], px.data[o + 1], px.data[o + 2]); };
+  if (axis === 'x') for (let y = box.y0; y < box.y1; y++) { s += Math.abs(L(a, y) - L(b, y)); n++; }
+  else for (let x = box.x0; x < box.x1; x++) { s += Math.abs(L(x, a) - L(x, b)); n++; }
+  return n ? s / n : 0;
+}
+function panelRows({ inventory, reskin }) {
+  const byName = new Map(inventory.sprites.map(s => [s.name, s])), out = [], seen = new Set();
+  for (const row of reskin.rows) {
+    if (row.disposition !== 'R') continue;
+    const s = byName.get(row.name);
+    if (!s?.texture || seen.has(s.texture.toLowerCase())) continue;
+    seen.add(s.texture.toLowerCase());
+    out.push({ row, s });
+  }
+  return out;
+}
+export async function checkTextureNoise({ inventory, reskin, files, sprites, limit = NOISE_LIMIT }) {
+  const problems = [], pending = [], idx = lowerIndex(files);
+  const targets = panelRows({ inventory, reskin }).filter(({ row, s }) => row.family === 'chrome_panels' && (s.kind === 'cornered_tile' || row.fit === 'nine_slice')).map(({ s }) => ({ texture: s.texture, border: s.borderSize }));
+  for (const s of [...(sprites?.values() ?? [])]) if (s.origin === 'mod' && /^GFX_zin_frame/i.test(s.name)) targets.push({ texture: s.texture, border: null });
+  let checked = 0;
+  for (const t of targets) {
+    const px = await decodedStaged(idx, t.texture);
+    if (!px) { pending.push(t.texture); continue; }
+    checked++;
+    const sd = lumaStd(px, bodyBox(px, t.border));
+    if (sd > limit) problems.push({ code: 'texture.noise', name: t.texture, message: `${t.texture}: body luminance deviation ${sd.toFixed(3)} (limit ${limit})` });
+  }
+  return result(14, 'texture.noise', problems, [...new Set(pending)].sort(ord), { checked });
+}
+export async function checkTextureSeam({ inventory, reskin, files, manifest, limit = SEAM_LIMIT }) {
+  const problems = [], pending = [], idx = lowerIndex(files), ops = new Map((manifest?.files ?? []).map(m => [m.out.toLowerCase(), m.ops ?? []]));
+  let checked = 0;
+  for (const { row, s } of panelRows({ inventory, reskin })) {
+    const repeat = row.fit === 'repeat_x' || row.fit === 'repeat_y', tiled = s.kind === 'cornered_tile';
+    if (!repeat && !tiled) continue;
+    const px = await decodedStaged(idx, s.texture);
+    if (!px) { if ((row.writer ?? 'reskin') === 'reskin') pending.push(s.texture); continue; }
+    checked++;
+    let step = 0;
+    if (repeat) {
+      const m = /repeat_([xy]) tile (\d+)x(\d+)/.exec((ops.get(s.texture.toLowerCase()) ?? []).join(' '));
+      const axis = row.fit === 'repeat_x' ? 'x' : 'y', tile = m ? Number(axis === 'x' ? m[2] : m[3]) : 0, full = { x0: 0, y0: 0, x1: px.width, y1: px.height };
+      for (let k = tile; tile && k < (axis === 'x' ? px.width : px.height); k += tile) step = Math.max(step, seamStep(px, full, axis, k - 1, k));
+    } else {
+      const b = bodyBox(px, s.borderSize);
+      if (b.x1 - b.x0 < 2 || b.y1 - b.y0 < 2) continue;
+      step = Math.max(seamStep(px, b, 'x', b.x1 - 1, b.x0), seamStep(px, b, 'y', b.y1 - 1, b.y0));
+    }
+    if (step > limit) problems.push({ code: 'texture.seam', name: s.texture, message: `${s.texture}: seam step ${step.toFixed(3)} where the ${repeat ? 'repeat' : 'engine tiling'} joins (limit ${limit})` });
+  }
+  return result(15, 'texture.seam', problems, [...new Set(pending)].sort(ord), { checked });
+}
+
+// ---------------------------------------------------------------------------------------------------- 16
+// No fit enlarges its cell: the "scale <n>" op that lib/fit.mjs writes into the reskin manifest stays at or below 1.
+export function checkFitScale({ manifest, limit = SCALE_LIMIT }) {
+  const problems = [], pending = [];
+  for (const m of manifest?.files ?? []) {
+    const s = (m.ops ?? []).map(o => /^scale ([\d.]+)$/.exec(o)).find(Boolean);
+    if (!s) { pending.push(m.out); continue; }
+    if (Number(s[1]) > limit) problems.push({ code: 'fit.scale', name: m.out, message: `${m.out}: its cell is enlarged ${s[1]} times (limit ${limit})` });
+  }
+  return result(16, 'fit.scale', problems, pending.sort(ord), { entries: manifest?.files?.length ?? 0 });
+}
+
+// ---------------------------------------------------------------------------------------------------- 17
+// Multi-frame buttons: normal, hover and pressed differ visibly (mean channel difference at least STATE_DIFF_MIN), and a disabled frame
+// is desaturated (mean saturation at most DISABLED_SAT_MAX). Reskin rows name their frames; ZIN button and tab sprites follow the
+// design-system order normal, hover, pressed[, disabled].
+function frameOf(px, i, n) { const w = Math.floor(px.width / n); return { w, h: px.height, at: (x, y) => ((y * px.width) + i * w + x) * 4 }; }
+export function frameDifference(px, i, j, n) {
+  const a = frameOf(px, i, n), b = frameOf(px, j, n);
+  let s = 0, c = 0;
+  for (let y = 0; y < a.h; y++) for (let x = 0; x < a.w; x++) { const p = a.at(x, y), q = b.at(x, y); if (px.data[p + 3] < 128 && px.data[q + 3] < 128) continue; s += (Math.abs(px.data[p] - px.data[q]) + Math.abs(px.data[p + 1] - px.data[q + 1]) + Math.abs(px.data[p + 2] - px.data[q + 2])) / 3; c++; }
+  return c ? s / c / 255 : 0;
+}
+export function frameSaturation(px, i, n) {
+  const f = frameOf(px, i, n);
+  let s = 0, c = 0;
+  for (let y = 0; y < f.h; y++) for (let x = 0; x < f.w; x++) { const o = f.at(x, y); if (px.data[o + 3] < 128) continue; const r = px.data[o], g = px.data[o + 1], b = px.data[o + 2], mx = Math.max(r, g, b), mn = Math.min(r, g, b); s += mx ? (mx - mn) / mx : 0; c++; }
+  return c ? s / c : 0;
+}
+export async function checkButtonStates({ inventory, reskin, files, sprites, minDiff = STATE_DIFF_MIN, maxSat = DISABLED_SAT_MAX }) {
+  const problems = [], pending = [], idx = lowerIndex(files), targets = [];
+  for (const { row, s } of panelRows({ inventory, reskin })) if (Array.isArray(row.frames) && row.frames.includes('normal') && row.frames.includes('hover')) targets.push({ texture: s.texture, labels: row.frames, reskin: (row.writer ?? 'reskin') === 'reskin' });
+  for (const s of [...(sprites?.values() ?? [])].sort((a, b) => ord(a.name, b.name))) if (s.origin === 'mod' && s.frames > 1 && /^GFX_zin_.*(button|tab)/i.test(s.name)) targets.push({ texture: s.texture, labels: ['normal', 'hover', 'pressed', 'disabled'].slice(0, s.frames), reskin: false, name: s.name });
+  let checked = 0;
+  for (const t of targets) {
+    const px = await decodedStaged(idx, t.texture);
+    if (!px) { if (t.reskin) pending.push(t.texture); continue; }
+    checked++;
+    const n = t.labels.length, at = l => t.labels.indexOf(l);
+    for (const [a, b] of [['normal', 'hover'], ['normal', 'pressed'], ['hover', 'pressed']]) {
+      if (at(a) < 0 || at(b) < 0) continue;
+      const d = frameDifference(px, at(a), at(b), n);
+      if (d < minDiff) problems.push({ code: 'button.same_frames', name: t.name ?? t.texture, message: `${t.name ?? t.texture}: ${a} and ${b} differ by ${(d * 100).toFixed(1)}% (at least ${minDiff * 100}%)` });
+    }
+    if (at('disabled') >= 0) { const sat = frameSaturation(px, at('disabled'), n); if (sat > maxSat) problems.push({ code: 'button.disabled_colour', name: t.name ?? t.texture, message: `${t.name ?? t.texture}: the disabled frame has saturation ${(sat * 100).toFixed(0)}% (at most ${maxSat * 100}%)` }); }
+  }
+  return result(17, 'button.states', problems, [...new Set(pending)].sort(ord), { checked });
+}
+
+// ---------------------------------------------------------------------------------------------------- 18
+// ZIN-owned .gui files: every position and size on the 4 px grid (percentages and engine anchors are free), and every font from the
+// role table of the design system.
+export const ZIN_GUI = rel => /^interface\/(zin_|zz_zin)[^/]*\.gui$/i.test(rel) || /^interface\/countrytechtreeview\.gui$/i.test(rel);
+export function checkLayoutGrid({ files, design }) {
+  const problems = [], grid = design.grid ?? 4, roles = design.fontRoles ?? {};
+  const fonts = new Set(Object.values(roles).filter(Array.isArray).flat().map(f => f.toLowerCase()));
+  let checked = 0;
+  for (const [rel, bytes] of [...toMap(files)].sort(([a], [b]) => ord(a, b))) {
+    if (!ZIN_GUI(rel)) continue;
+    checked++;
+    let tree;
+    try { tree = parse(readText(bytes)); } catch (e) { problems.push({ code: 'layout.parse', name: rel, message: `${rel}: ${e.message}` }); continue; }
+    const element = [];
+    const walk = entries => {
+      for (const e of entries) {
+        const k = String(e.k).toLowerCase();
+        if (Array.isArray(e.v)) {
+          const nm = e.v.find(c => String(c.k).toLowerCase() === 'name')?.v;
+          if (nm) element.push(nm);
+          if (k === 'position' || k === 'size') for (const c of e.v) {
+            if (typeof c.v !== 'string' || !/^(x|y|width|height)$/i.test(c.k) || /%/.test(c.v) || !/^-?\d+$/.test(c.v)) continue;
+            if (Number(c.v) % grid) problems.push({ code: 'layout.grid', name: `${rel}:${element.at(-1) ?? '?'}`, message: `${rel} ${element.at(-1) ?? '?'}: ${k}.${c.k} = ${c.v} is off the ${grid} px grid (line ${c.line})` });
+          }
+          walk(e.v);
+          if (nm) element.pop();
+        } else if (k === 'font' && typeof e.v === 'string' && fonts.size && !fonts.has(e.v.toLowerCase())) problems.push({ code: 'layout.font', name: `${rel}:${element.at(-1) ?? '?'}`, message: `${rel} ${element.at(-1) ?? '?'}: font ${e.v} has no role in the design system (line ${e.line})` });
+      }
+    };
+    walk(tree);
+  }
+  const byFile = {}; for (const p of problems) { const f = p.name.split(':')[0]; byFile[f] = (byFile[f] ?? 0) + 1; }
+  return result(18, 'layout.grid', problems, [], { files: checked, byFile });
+}
+
+// Run 10 to 18. ctx needs files; registry, shares and design are built or loaded when absent.
+export async function runDesignChecks(ctx) {
+  const design = ctx.design ?? loadDesign(), shares = ctx.shares ?? loadShares();
+  const registry = ctx.registry ?? iconRegistry(ctx.files, { game: ctx.game ?? GAME, design });
+  const c = { ...ctx, design, shares, registry, sprites: registry.sprites, manifest: ctx.manifest ?? safeManifest(ctx.files) };
+  const out = [checkIconRegistry(c), checkIconPlaceholder(c), checkIconFamilySize(c)];
+  if (ctx.inventory && ctx.reskin) out.push(checkChromeFamily(c), await checkTextureNoise(c), await checkTextureSeam(c));
+  out.push(checkFitScale(c));
+  if (ctx.inventory && ctx.reskin) out.push(await checkButtonStates(c));
+  out.push(checkLayoutGrid(c));
+  return { registry, checks: out };
+}
+// Baseline comparison: counts per check id against data/ui/check_baseline.json.
+export const BASELINE_FILE = fileURLToPath(new URL('../data/ui/check_baseline.json', import.meta.url));
+export function loadBaseline(file = BASELINE_FILE) { return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : { checks: {} }; }
+export const baselineDelta = (checks, baseline) => checks.filter(c => c.id >= GATED_FROM).map(c => { const b = baseline.checks?.[c.id]?.problems; return { id: c.id, name: c.name, problems: c.problems.length, baseline: b ?? null, delta: b === undefined ? null : c.problems.length - b }; });
+// Which failing checks stop the build: 1 to 9 except reachability (4) always; in a release build every failing check.
+export const enforced = (checks, release = false) => checks.filter(c => c.status === 'fail' && (release || (c.id !== 4 && c.id < GATED_FROM)));
 
 // ---------------------------------------------------------------------------------------------------- all
 // ctx: { inventory, reskin, sheets, files, game, manifest, provenance, scriptRefs, build, deep }. A check whose inputs are

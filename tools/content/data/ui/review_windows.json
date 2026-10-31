@@ -1,0 +1,70 @@
+{
+ "format": 1,
+ "about": "The window list, scenarios and contact sheets of the UI review harness (tools/content/ui_review.mjs). It is the render set of the UI overhaul audit (docs/plans/ui_overhaul/01_audit.md §1, §7 and appendix A): every vanilla window at 1920x1080, 1280x720 and long-text; every ZIN window at 1920x1080, 1280x720, 2560x1440 and long-text, minus the combinations the audit did not render (skip). Scenario fields follow hoi4.gui_render (flags, variables, values, visibility, closedFlags); every scenario also gets date 1936.1.1 and the viewer AEN unless it names a country.",
+ "base": { "date": "1936.1.1", "country": { "tag": "AEN" } },
+ "columns": {
+  "vanilla": ["1920", "1280", "long"],
+  "zin": ["1920", "1280", "2560", "long"]
+ },
+ "variants": {
+  "1920": { "width": 1920, "height": 1080, "uiScale": 1 },
+  "1280": { "width": 1280, "height": 720, "uiScale": 1 },
+  "2560": { "width": 2560, "height": 1440, "uiScale": 1 },
+  "long": { "width": 1920, "height": 1080, "uiScale": 1, "states": ["long-text"] }
+ },
+ "skip": [
+  "^z_(?!(realm|realm_btn|court1|court2|court3|court4|court_btn|council1|mistake1|se1)_2560$).*_2560$",
+  "^z_(council[23]|dominion2|watch2|strait2|mistake2)_(long|1280)$"
+ ],
+ "vanilla": [
+  "topbar", "countrypoliticsview", "countrydiplomacyview", "countrytechnologyview", "countrytechtreeview", "countrydoctrineview",
+  "countryproductionlineview", "countryconstructionsview", "countrytradeview", "countrydeploymentview", "countrylogisticsview",
+  "countryintelligenceagencyview", "countrydecisionview", "nationalfocusview", "naviesview_window", "strategicairview",
+  "theatre_selection_window", "countrystateview", "landcombatview", "navalcombatview", "peaceconference_full_window",
+  "world_tension_popup", "EventWindow", "EventWindow_News", "mini_map_interface", "clock_window", "ingamemenu", "menu_settings",
+  "musicplayer_window", "load_screen", "frontend_background", "mainmenu_panel_bottom", "mainmenu_single_player",
+  "frontendgamesetupview", "gamesetup_country_details", "game_rule_window", "countryarmyview", "MapmodesInterface_Ingame",
+  "diplomacy_standard_popup_window", "global_alerticon_window", "unitleaderwindow", "countryintelledger"
+ ],
+ "zin": [
+  { "label": "z_realm_btn", "window": "zin_realm_button_window", "scenario": { "visibility": { "zin_realm_button_window": true } } },
+  { "label": "z_realm", "window": "zin_realm_window", "scenario": { "flags": { "zin_realm_open": true }, "visibility": { "zin_realm_window": true }, "values": { "GetRealmName": "Aenor", "GetPeopleName": "Men of Aenor" } } },
+  { "label": "z_court1", "window": "zin_court_window", "scenario": { "flags": { "zin_ui_court_open": true }, "variables": { "zin_ui_tab": 1 }, "visibility": { "zin_court_window": true } } },
+  { "label": "z_court2", "window": "zin_court_window", "scenario": { "flags": { "zin_ui_court_open": true }, "variables": { "zin_ui_tab": 2 }, "visibility": { "zin_court_window": true } } },
+  { "label": "z_court3", "window": "zin_court_window", "scenario": { "flags": { "zin_ui_court_open": true }, "variables": { "zin_ui_tab": 3 }, "visibility": { "zin_court_window": true } } },
+  { "label": "z_court4", "window": "zin_court_window", "scenario": { "flags": { "zin_ui_court_open": true }, "variables": { "zin_ui_tab": 4 }, "visibility": { "zin_court_window": true } } },
+  { "label": "z_court_btn", "window": "zin_court_button_window", "scenario": { "visibility": { "zin_court_button_window": true } } },
+  { "label": "z_council1", "window": "zin_council_window", "scenario": { "country": { "tag": "WOR" }, "flags": { "zin_ui_council_open": true, "zin_afrit_revealed": false }, "variables": { "zin_ui_tab": 1 }, "visibility": { "zin_council_window": true } } },
+  { "label": "z_council2", "window": "zin_council_window", "scenario": { "country": { "tag": "WOR" }, "flags": { "zin_ui_council_open": true, "zin_afrit_revealed": false }, "variables": { "zin_ui_tab": 2 }, "visibility": { "zin_council_window": true } } },
+  { "label": "z_council3", "window": "zin_council_window", "scenario": { "country": { "tag": "WOR" }, "flags": { "zin_ui_council_open": true, "zin_afrit_revealed": false }, "variables": { "zin_ui_tab": 3 }, "visibility": { "zin_council_window": true } } },
+  { "label": "z_horde", "window": "zin_horde_window", "scenario": { "country": { "tag": "GOL" }, "flags": { "zin_ui_horde_open": true }, "visibility": { "zin_horde_window": true } } },
+  { "label": "z_accord", "window": "zin_accord_window", "scenario": { "flags": { "zin_ui_accord_open": true }, "visibility": { "zin_accord_window": true } } },
+  { "label": "z_dominion1", "window": "zin_dominion_window", "scenario": { "flags": { "zin_ui_dominion_open": true }, "variables": { "zin_ui_tab": 1 }, "visibility": { "zin_dominion_window": true } } },
+  { "label": "z_dominion2", "window": "zin_dominion_window", "scenario": { "flags": { "zin_ui_dominion_open": true }, "variables": { "zin_ui_tab": 2 }, "visibility": { "zin_dominion_window": true } } },
+  { "label": "z_watch1", "window": "zin_watch_window", "scenario": { "flags": { "zin_ui_watch_open": true }, "variables": { "zin_ui_tab": 1 }, "visibility": { "zin_watch_window": true } } },
+  { "label": "z_watch2", "window": "zin_watch_window", "scenario": { "flags": { "zin_ui_watch_open": true }, "variables": { "zin_ui_tab": 2 }, "visibility": { "zin_watch_window": true } } },
+  { "label": "z_strait1", "window": "zin_strait_window", "scenario": { "flags": { "zin_ui_strait_open": true }, "variables": { "zin_ui_tab": 1 }, "visibility": { "zin_strait_window": true } } },
+  { "label": "z_strait2", "window": "zin_strait_window", "scenario": { "flags": { "zin_ui_strait_open": true }, "variables": { "zin_ui_tab": 2 }, "visibility": { "zin_strait_window": true } } },
+  { "label": "z_mistake1", "window": "zin_mistake_window", "scenario": { "flags": { "zin_ui_mistake_open": true }, "variables": { "zin_ui_tab": 1 }, "visibility": { "zin_mistake_window": true } } },
+  { "label": "z_mistake2", "window": "zin_mistake_window", "scenario": { "flags": { "zin_ui_mistake_open": true }, "variables": { "zin_ui_tab": 2 }, "visibility": { "zin_mistake_window": true } } },
+  { "label": "z_se1", "window": "zin_super_event_window", "scenario": { "closedFlags": true, "flags": { "zin_se_open": true }, "variables": { "zin_se_id": 1, "zin_se_queue^num": 0 }, "values": { "GetDateText": "1 Thaw 4A 1748", "?zin_se_queue^num|0": "0" } } },
+  { "label": "z_se5", "window": "zin_super_event_window", "scenario": { "closedFlags": true, "flags": { "zin_se_open": true }, "variables": { "zin_se_id": 5, "zin_se_queue^num": 2 }, "values": { "GetDateText": "11 Gaelor 4A 1750", "?zin_se_queue^num|0": "2" } } },
+  { "label": "z_inlay", "window": "zin_interim_inlay_window", "scenario": { "visibility": { "zin_interim_inlay_window": true } } },
+  { "label": "z_techtree", "window": "countrytechtreeview", "scenario": {} }
+ ],
+ "sheets": {
+  "vanilla_frontend_menus": { "kind": "vanilla", "rows": ["frontend_background", "mainmenu_panel_bottom", "mainmenu_single_player", "frontendgamesetupview", "gamesetup_country_details", "game_rule_window", "load_screen", "ingamemenu", "menu_settings"] },
+  "vanilla_topbar_map": { "kind": "vanilla", "rows": ["topbar", "clock_window", "mini_map_interface", "MapmodesInterface_Ingame", "musicplayer_window", "global_alerticon_window"] },
+  "vanilla_politics_diplomacy_decisions": { "kind": "vanilla", "rows": ["countrypoliticsview", "countrydiplomacyview", "countrydecisionview", "diplomacy_standard_popup_window", "peaceconference_full_window", "world_tension_popup"] },
+  "vanilla_focus_research": { "kind": "vanilla", "rows": ["nationalfocusview", "countrytechnologyview", "countrytechtreeview", "countrydoctrineview"] },
+  "vanilla_economy": { "kind": "vanilla", "rows": ["countryproductionlineview", "countryconstructionsview", "countrytradeview", "countrylogisticsview", "countrydeploymentview", "countrystateview"] },
+  "vanilla_military_intel": { "kind": "vanilla", "rows": ["countryarmyview", "naviesview_window", "strategicairview", "theatre_selection_window", "landcombatview", "navalcombatview", "unitleaderwindow", "countryintelligenceagencyview", "countryintelledger"] },
+  "vanilla_events": { "kind": "vanilla", "rows": ["EventWindow", "EventWindow_News"] },
+  "zin_panels_a": { "kind": "zin", "rows": ["z_realm_btn", "z_realm", "z_court1", "z_court2", "z_court3", "z_court4", "z_court_btn", "z_council1", "z_council2", "z_council3"] },
+  "zin_panels_b": { "kind": "zin", "rows": ["z_horde", "z_accord", "z_dominion1", "z_dominion2", "z_watch1", "z_watch2", "z_strait1", "z_strait2", "z_mistake1", "z_mistake2", "z_se1", "z_se5", "z_inlay", "z_techtree"] }
+ },
+ "focusTrees": [
+  { "label": "focus_tree_aenor", "relativePath": "common/national_focus/zin_aenor.txt", "treeId": "zin_aenor" },
+  { "label": "focus_tree_konori", "relativePath": "common/national_focus/zin_regional_konori.txt", "treeId": "zin_regional_konori" }
+ ]
+}
