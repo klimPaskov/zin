@@ -10,8 +10,10 @@
 // Dispositions (spec 2.1): R replace the texture at its vanilla path; Z ZIN sprite (ZIN's own GFX_zin_* rows are not
 // inventory rows, so no vanilla row is Z); O re-authored override; D derived override (reserved, unused); E engine
 // generic; H hidden by an override; U unreachable.
-import { FIXED_SHEETS, FAMILY_TRANCHE, SHEET_ASPECTS, validateSheet } from './ui_sheets.mjs';
+import { FIXED_SHEETS, LEGACY_CHROME_SHEETS, FAMILY_TRANCHE, SHEET_ASPECTS, validateSheet } from './ui_sheets.mjs';
 import { LUMA } from './image_codec.mjs';
+import { THEME_SHEET, BUTTON_SHEET, CONTROL_SHEET, CHROME_THEMES } from './ui_chrome_sheets.mjs';
+import { readFileSync } from 'node:fs';
 import { TEXTICON_SUBJECTS, CHARGES, FOLDER_EMBLEMS, RESOURCE_EMBLEMS, GATHERING_TIERS, TOOLBAR_EMBLEMS, VALUE_EMBLEMS, cursorGlyph, humanize } from './ui_vocab.mjs';
 
 export const DISPOSITIONS = ['R', 'Z', 'O', 'D', 'E', 'H', 'U'];
@@ -286,7 +288,7 @@ class Emblems {
 
 // ---------------------------------------------------------------------------------------------------- shape treatment
 const lumOf = s => (['dark', 'mid', 'light'].includes(s.luminance) ? s.luminance : 'dark');
-const CHROME_CELLS = new Map(); for (const sh of FIXED_SHEETS) for (const cell of sh.cells) CHROME_CELLS.set(`${sh.id}:${cell.key}`, cell);
+const CHROME_CELLS = new Map(); for (const sh of [...FIXED_SHEETS, ...LEGACY_CHROME_SHEETS]) for (const cell of sh.cells) CHROME_CELLS.set(`${sh.id}:${cell.key}`, cell);
 // Measured luminance of the cells of accepted sheets (data/ui/cell_luma.json, written by `ui_reskin.mjs measure`): sheet id -> cell key -> mean luma.
 // The design class of a cell is what the prompt asked for; the generator does not always deliver it, so the plan picks by what was measured and
 // writes the measured class into the sheet map (the design class stays beside it as `design` when they differ). Set for the length of one plan.
@@ -404,8 +406,9 @@ const SPECIFIC = [
   [/^gfx\/game_rules\/[a-z_]+\.dds$/, 'frontend', 'ui-frontend', 'rule_icon', 'contain', 'cell'],
 ];
 
-// Chrome treatment of one sprite by kind, geometry, frames, luminance and name: returns the row's R fields.
-function chrome(s) {
+// Chrome treatment of one sprite by kind, geometry, frames, luminance and name: returns the row's R fields in the roles of the
+// single-material sheets of spec 02 section 5; chrome() below moves them onto the themed sheets of the design system.
+function chromeRole(s) {
   const p = s.texture.toLowerCase(), stem = p.replace(/^.*\//, '').replace(/\.[a-z0-9]+$/, ''), name = s.name.toLowerCase();
   const f = framesOf(s), fw = s.width / f, h = s.height, lum = lumOf(s), alpha = alphaPolicy(s), ar = fw / h;
   const tag = `${stem} ${name}`;
@@ -497,6 +500,137 @@ function chrome(s) {
   }
   // Everything small that is left is an icon: a neutral socket of the sprite's shape and class.
   return iconSocket();
+}
+
+// ---------------------------------------------------------------------------------------------------- themed chrome (UI overhaul C1)
+// The design system (docs/specs/07_interface/07_design_system.md §7, K70) gives every window an area theme. A texture takes the theme of
+// the windows that draw it (data/ui/chrome_themes.json); buttons, tooltips, dialogs and small controls are neutral everywhere. The roles of
+// chromeRole() (cells of the old single-material sheets) become roles of the themed sheets (lib/ui_chrome_sheets.mjs), picked by the
+// sprite's luminance class among the cells the role allows, and plates are fitted with frame_tile (no enlargement, seam-matched repeat).
+export const CHROME_THEMES_FILE = new URL('../data/ui/chrome_themes.json', import.meta.url);
+const LEGACY_CHROME = new Set(['ui-chrome-panels', 'ui-chrome-small', 'ui-buttons', 'ui-buttons-tall', 'ui-bars', 'ui-bars-2', 'ui-controls-small']);
+let THEME_RULES = null;
+function themeRules() {
+  if (!THEME_RULES) { const t = JSON.parse(readFileSync(CHROME_THEMES_FILE, 'utf8')); THEME_RULES = { ...t, gui: t.guiRules.map(([re, th]) => [new RegExp(re, 'i'), th]), research: new RegExp(t.researchPattern) }; }
+  return THEME_RULES;
+}
+export const guiTheme = file => { for (const [re, th] of themeRules().gui) if (re.test(file)) return th; return null; };
+// Theme votes of one texture: the windows of every sprite that draws it, one vote per window of a ruled .gui file. A main window of the design
+// system's table (design_system.json windowThemes, the audit's window set) votes with its own theme and weighs `mainWeight` ordinary
+// windows, so a texture shared by the politics view and a few minor military dialogs takes the politics view's theme.
+let MAIN_WINDOWS = null;
+const mainWindows = () => (MAIN_WINDOWS ??= JSON.parse(readFileSync(new URL('../data/ui/design_system.json', import.meta.url), 'utf8')).windowThemes ?? {});
+export function textureThemeVotes(sprites) {
+  const votes = {}, main = mainWindows(), weight = themeRules().mainWeight ?? 1;
+  for (const s of sprites) for (const [file, windows] of Object.entries(s.refs ?? {})) {
+    const th = guiTheme(file);
+    for (const w of windows) { const t = main[w] ?? th; if (t) votes[t] = (votes[t] ?? 0) + (main[w] ? weight : 1); }
+  }
+  return votes;
+}
+export function textureTheme(sprites, texture) {
+  const t = themeRules(), votes = textureThemeVotes(sprites);
+  const ranked = Object.entries(votes).sort(([a, x], [b, y]) => y - x || t.order.indexOf(a) - t.order.indexOf(b));
+  if (ranked.length) return ranked[0][0];
+  const p = texture.toLowerCase(), fam = surfaceFamily(p, 'chrome_panels');
+  if (fam === 'research_production' && t.research.test(p)) return t.families.research_production_research;
+  return t.families[fam] ?? 'neutral';
+}
+let TEXTURE_SPRITES = new Map();   // texture (lower case) -> sprites, set for the length of one plan
+const LEGACY_ROLES = {
+  walnut_thick: ['window', 'section', 'title', 'plate_mid', 'plate_mid_lit', 'reading'],
+  walnut_thin: ['section', 'window', 'inset', 'entry_selected', 'plate_mid', 'plate_mid_lit', 'reading', 'reading_selected'],
+  walnut_plain: ['body', 'inset', 'section', 'plate_mid', 'reading_plain', 'reading'],
+  parchment: ['reading', 'reading_plain', 'reading_selected', 'plate_mid_lit', 'section'],
+  slate: ['section', 'inset', 'window', 'plate_mid', 'reading'],
+  bronze_plate: ['plate_mid', 'plate_mid_lit', 'section', 'reading'],
+  header_band: ['title', 'section', 'plate_mid_lit', 'plate_mid', 'reading_selected', 'reading'],
+  list_entry: ['section', 'inset', 'entry_selected', 'plate_mid', 'plate_mid_lit', 'reading_plain', 'reading', 'reading_selected'],
+  entry_selected: ['entry_selected', 'tab_selected', 'plate_mid_lit', 'reading_selected'],
+  progress_groove: ['groove', 'inset', 'plate_mid', 'reading_plain'],
+  progress_fill: ['fill_dark', 'fill_mid', 'plate_mid_lit', 'reading_selected'],
+  tab_body: ['tab', 'section', 'plate_mid', 'reading'],
+  tab_selected: ['tab_selected', 'entry_selected', 'plate_mid_lit', 'reading_selected'],
+  text_plate: ['inset', 'section', 'plate_mid', 'reading_plain', 'reading'],
+};
+Object.assign(LEGACY_ROLES, { walnut_double: LEGACY_ROLES.walnut_thick, iron_plate: LEGACY_ROLES.bronze_plate, enamel_plate: ['plate_mid_lit', 'plate_mid', 'section', 'reading'], small_window: LEGACY_ROLES.walnut_thick, window_transparent: LEGACY_ROLES.walnut_plain, header_cap: LEGACY_ROLES.header_band });
+// Neutral cells that stay neutral whatever the window (chrome-small keys of the same name in ui-chrome-neutral).
+const NEUTRAL_KEYS = new Set(['tooltip', 'mini_dialog', 'mini_dialog_grey', 'selection_line', 'flag_bezel', 'flag_bezel_gilt', 'separator', 'glow_red', 'glow_amber', 'glow_green', 'glow_gold', 'shine']);
+// A shape-keeping frame (bezel, selection line, marker) takes its colour from a plate of its class, because the vanilla outline cuts the shape;
+// a glow's second state takes the next glow.
+const NEUTRAL_FALLBACK = {
+  tooltip: ['tooltip', 'mini_dialog', 'plate_mid', 'plate_light'], mini_dialog: ['mini_dialog', 'dialog', 'plate_mid', 'plate_light'], mini_dialog_grey: ['mini_dialog_grey', 'mini_dialog', 'plate_mid', 'plate_light'],
+  selection_line: ['plate_mid', 'plate_light', 'mini_dialog'], flag_bezel: ['flag_bezel', 'plate_mid', 'plate_light'], flag_bezel_gilt: ['flag_bezel_gilt', 'plate_mid', 'plate_light'],
+  glow_gold: ['glow_gold', 'glow_amber'], glow_amber: ['glow_amber', 'glow_gold'], glow_green: ['glow_green', 'glow_gold'], glow_red: ['glow_red', 'glow_amber'],
+};
+// A theme role on the neutral sheet (windows the table gives the neutral family: settings, popups, messages).
+const NEUTRAL_OF = { window: 'dialog', section: 'mini_dialog', inset: 'mini_dialog_grey', body: 'body', title: 'mini_dialog', entry_selected: 'plate_mid', tab: 'mini_dialog', tab_selected: 'plate_mid', reading: 'plate_light', reading_selected: 'plate_light', reading_plain: 'plate_light', plate_mid: 'plate_mid', plate_mid_lit: 'plate_mid', groove: 'mini_dialog_grey', fill_mid: 'plate_mid', fill_dark: 'body' };
+const CONTROL_OF = { check_off: 'check_off', check_on: 'check_on', radio_off: 'radio_off', radio_on: 'radio_on', close_stud: 'close', close_stud_small: 'close', scroll_arrow: 'arrow', scroll_knob: 'knob', scroll_track: 'track', plus_stud: 'plus', minus_stud: 'minus', pips_two: 'pips_two', pips_three: 'pips_three', expand_arrow: 'expand', tick_mark: 'check_on', cross_mark: 'close', arrow_gold: 'expand', stud_round: 'stud_round', stud_square: 'stud_square', slider_knob: 'slider_knob', slider_track: 'slider_track', toggle_off: 'check_off', toggle_on: 'check_on', lamp_off: 'lamp_off', lamp_green: 'lamp_green', lamp_amber: 'lamp_amber', lamp_red: 'lamp_red', lock_plate: 'lock', unlock_plate: 'unlock', bar_stud: 'stud_square', corner_stud: 'stud_round', wax_seal: 'lamp_red', wax_seal_green: 'lamp_green', wax_seal_amber: 'lamp_amber', wax_seal_grey: 'lamp_off' };
+// A light plate must clear its class edge by a margin: its darker rim weighs more on a small target than on the cell.
+const CLASS_MARGIN = 24;
+const inClass = (luma, cls) => bandGap(luma, cls) === 0 && (cls !== 'light' || luma >= LUMA.light + CLASS_MARGIN);
+// The first allowed key in the class (preference order), else the nearest; `avoid` keeps frames of one strip apart.
+function pickKey(sheet, keys, lum, avoid = new Set()) {
+  const cands = [...new Set(keys)].map(k => CHROME_CELLS.get(`${sheet}:${k}`)).filter(Boolean).map(cell => ({ sheet, cell }));
+  if (!cands.length) throw new Error(`no cell for ${sheet}: ${keys.join(', ')}`);
+  // A frame that must differ takes the next free cell of the class; with none free it repeats a cell of the class rather than leave it.
+  const ok = c => inClass(lumaOf(c.sheet, c.cell), lum);
+  const rest = avoid.size ? [...CHROME_CELLS].filter(([k]) => k.startsWith(`${sheet}:`)).map(([, cell]) => ({ sheet, cell })) : [];
+  const hit = cands.find(c => !avoid.has(c.cell.key) && ok(c)) ?? rest.find(c => !avoid.has(c.cell.key) && ok(c)) ?? cands.find(ok);
+  return (hit ?? best(cands, lum)).cell.key;
+}
+const PLATE_FITS = new Set(['nine_slice', 'cover', 'exact']);
+const STATE_OF = { normal: 'normal', hover: 'hover', pressed: 'pressed', disabled: 'disabled', selected: 'selected', off: 'normal', on: 'selected' };
+function chrome(s) {
+  const r = chromeRole(s), from = [].concat(r.sheet ?? []);
+  if (!from.some(id => LEGACY_CHROME.has(id))) return r;
+  const f = framesOf(s), lum = lumOf(s), labels = r.frames ?? (f > 1 ? frameLabels(f) : ['normal']);
+  const cells = r.cells.length === f ? r.cells : Array.from({ length: f }, (_, i) => r.cells[i] ?? r.cells[0]);
+  const fitOf = inner => (PLATE_FITS.has(inner) ? 'frame_tile' : inner);
+  const out = (sheet, keys, inner) => ({ ...r, sheet, cells: keys, ...(f > 1 ? { fit: 'strip', frames: labels, frameFit: fitOf(inner) } : { fit: fitOf(inner) }) });
+  const inner = r.fit === 'strip' ? r.frameFit : r.fit;
+  // Small controls: one control, its state per frame.
+  if (from.includes('ui-controls-small')) {
+    const base = cells.map(k => CONTROL_OF[k] ?? 'stud_round'), has = k => CHROME_CELLS.has(`${CONTROL_SHEET}:${k}`);
+    let keys;
+    if (f > 2 && base.every(k => k === 'check_off' || k === 'check_on')) keys = f === 3 ? ['check_off', 'check_on', 'check_off_hover'] : ['check_off', 'check_off_hover', 'check_on', 'check_disabled', ...Array(Math.max(0, f - 4)).fill('check_on_hover')].slice(0, f);
+    else keys = base.map((k, i) => { const st = labels[i]; if (st === 'disabled') return 'check_disabled'; if (st === 'hover' && has(`${k}_hover`)) return `${k}_hover`; if (st === 'pressed') return has(`${k}_pressed`) ? `${k}_pressed` : has(`${k}_hover`) ? `${k}_hover` : k; return k; });
+    return { ...r, sheet: CONTROL_SHEET, cells: keys };
+  }
+  // Buttons: the neutral plate of the sprite's class, its state per frame.
+  if (from.some(id => id === 'ui-buttons' || id === 'ui-buttons-tall')) {
+    // The bronze plate at rest sits at the dark edge of mid, so a mid button is lit one step: rest on its hover cell, hover on its selected cell.
+    const row = pickKey(BUTTON_SHEET, ['iron_normal', 'bronze_hover', 'pale_normal'], lum).replace(/_(normal|hover)$/, '');
+    const shift = row === 'bronze' && lum === 'mid' ? { normal: 'hover', hover: 'selected', pressed: 'normal' } : {};
+    const keys = labels.map((l, i) => { const st = STATE_OF[l] ?? ['normal', 'hover', 'pressed', 'disabled'][Math.min(i, 3)]; return `${row}_${shift[st] ?? st}`; });
+    return out(BUTTON_SHEET, keys, inner);
+  }
+  const theme = textureTheme(TEXTURE_SPRITES.get(s.texture.toLowerCase()) ?? [s], s.texture);
+  const used = new Set(), keys = [], sheetIds = [];
+  cells.forEach((k, i) => {
+    const role0 = k.replace(/_(dark|mid|light)$/, ''), role = role0 === 'mini_dialog' && /gr[ae]y/.test(s.texture.toLowerCase()) ? 'mini_dialog_grey' : role0;   // the grey dialog keeps its grey plate
+    const again = i > 0 && i < 3 && cells.slice(0, i).includes(k);   // the same role in another state (hover, pressed, a second tab): the next cell of the class
+    if (NEUTRAL_KEYS.has(role) || role === 'spare' || labels[i] === 'disabled') {
+      // A disabled frame is a grey plate of the class (design system §6.2: saturation at most 15%).
+      const nk = labels[i] === 'disabled' ? ['body', 'mini_dialog_grey', 'plate_light'] : role === 'spare' ? ['body'] : NEUTRAL_FALLBACK[role] ?? [role];
+      // A glow keeps its colour whatever its brightness (glows are judged by their soft vanilla alpha); a second state takes the next glow.
+      const key = /^glow_/.test(role) && labels[i] !== 'disabled' ? nk[again ? 1 : 0] : pickKey(THEME_SHEET.neutral, nk, lum, again && /^(hover|pressed)$/.test(labels[i]) ? used : new Set());
+      keys.push(key); sheetIds.push(THEME_SHEET.neutral); used.add(key);
+      return;
+    }
+    const roles = LEGACY_ROLES[role];
+    if (!roles) throw new Error(`no themed role for ${k} (${s.texture})`);
+    // A piece too small to hold a frame (or a tile the engine does not border) takes a plain cell of its class first.
+    const tiny = role !== 'progress_fill' && (Math.min(s.width / f, s.height) < 24 || (s.borderSize && Math.min(...s.borderSize) < 2));   // fills are plain already
+    const list = (tiny ? ['body', 'reading_plain', 'plate_mid'] : []).concat(theme === 'neutral' ? roles.map(x => NEUTRAL_OF[x]) : roles).map(x => (theme === 'neutral' && x === 'reading_plain' ? 'plate_light' : x));
+    let key = pickKey(THEME_SHEET[theme], list, lum, again ? used : new Set());
+    if (!again && i > 0 && keys.includes(key)) key = pickKey(THEME_SHEET[theme], list, lum, used);   // another role that lands on a cell already used
+    keys.push(key); sheetIds.push(THEME_SHEET[theme]); used.add(key);
+  });
+  const sheet = [...new Set(sheetIds)].sort();
+  // Glows, the shine and the shape-keeping bezels and lines keep their fit; plates tile.
+  const keep = !PLATE_FITS.has(inner) || keys.every(k => /^(glow_|shine)/.test(k));
+  return { ...r, sheet: sheet.length === 1 ? sheet[0] : sheet.sort(), cells: keys, ...(keep ? {} : f > 1 ? { fit: 'strip', frames: labels, frameFit: 'frame_tile' } : { fit: 'frame_tile' }) };
 }
 
 // ---------------------------------------------------------------------------------------------------- specific emblem rules
@@ -627,6 +761,7 @@ const isLumaFree = e => e.alpha === 'cell' || e.fit === 'same_shape';
 // ---------------------------------------------------------------------------------------------------- the plan
 // cellLuma: { sheets: { <sheet id>: { cells: { <key>: mean luma } } } } measured from the accepted raw sheets (see MEASURED above).
 export function buildPlan(inventory, { alertFrames, cellLuma } = {}) {
+  TEXTURE_SPRITES = new Map(); for (const sp of inventory.sprites) if (sp.texture) { const k = sp.texture.toLowerCase(); if (!TEXTURE_SPRITES.has(k)) TEXTURE_SPRITES.set(k, []); TEXTURE_SPRITES.get(k).push(sp); }
   MEASURED = new Map(Object.entries(cellLuma?.sheets ?? {}).flatMap(([id, sh]) => Object.entries(sh.cells ?? {}).map(([key, luma]) => [`${id}:${key}`, luma])));
   try { return planRows(inventory, { alertFrames }); } finally { MEASURED = new Map(); }
 }
@@ -662,7 +797,7 @@ function planRows(inventory, { alertFrames } = {}) {
     const gfx = s.gfx ?? '';
     if (OVERRIDDEN_GFX.test(gfx) && !s.root) { done('O', { override: gfx }); continue; }
     if (DLC_BACKGROUND_GFX.test(gfx) && s.root) { reason('U', 'dlc_background'); continue; }
-    if (s.kind === 'linked' && /shine_overlay/.test(p)) { done('R', { family: 'focus', sheet: 'ui-chrome-small', cells: ['shine'], fit: 'cover', alpha: 'cell', tranche: FAMILY_TRANCHE.focus }); continue; }
+    if (s.kind === 'linked' && /shine_overlay/.test(p)) { done('R', { family: 'focus', sheet: THEME_SHEET.neutral, cells: ['shine'], fit: 'cover', alpha: 'cell', tranche: FAMILY_TRANCHE.focus }); continue; }
 
     // The main-menu logo is an isolated emblem cut by its own alpha (R-90): no text is drawn over it, so it carries luma free.
     if (PRESENTATION_TEXTURES[p]) { done('R', { family: PRESENTATION_TEXTURES[p], writer: 'presentation', state: 'in_game', tranche: FAMILY_TRANCHE[PRESENTATION_TEXTURES[p]], ...(p === 'gfx/interface/logo_game.dds' ? { luma: 'free' } : {}) }); continue; }

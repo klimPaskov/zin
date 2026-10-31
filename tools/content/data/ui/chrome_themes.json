@@ -1,0 +1,28 @@
+{
+ "format": 1,
+ "about": "Which area theme of the design system (docs/specs/07_interface/07_design_system.md §7, K70) a vanilla chrome texture takes (UI overhaul lane C1). lib/ui_plan.mjs reads the .gui files that reference each texture (vanilla_inventory.json refs), gives every referencing file the theme of the first rule below that matches it, and cuts the texture from the theme sheet with the most referencing windows (ties: the order of `order`); a main window of design_system.json windowThemes (the audit window set) votes with its own theme and counts `mainWeight` times. A texture no window file names takes the theme of its surface family (`families`). The rules extend the window table of design_system.json (windowThemes) from its named windows to the .gui files that hold them and to the windows §7 does not list (lead mapping by area: military and economy to the Banner Hall, government and intrigue to the Chancery, research, doctrine, the focus tree and projects to the Chronicle, menus, dialogs and messages to the neutral family). Buttons, tooltips, dialogs and small controls are neutral in every area whatever the rule says (K70).",
+ "order": ["banner_hall", "chancery", "chronicle", "neutral"],
+ "mainWeight": 10,
+ "guiRules": [
+  ["(^|/)(nationalfocusview|countrytechnologyview|countrytechtreeview|countrydoctrineview|countrydoctrinetreeview|worldtensionwindowpopup)\\.gui$", "chronicle"],
+  ["(^|/)(doctrines|special_projects)/", "chronicle"],
+  ["(^|/)factions/faction_research\\.gui$", "chronicle"],
+  ["(^|/)(countrypoliticsview|countrydiplomacyview|countrydecisionview|peaceconferencewindow|countryintelligenceagencyview|countryintelledger|operationoverview|operativeleader|operative|countryoccupationview|advisorroleselectionview|powerbalanceview|waroverview|eventwindow)\\.gui$", "chancery"],
+  ["(^|/)factions/", "chancery"],
+  ["(^|/)(settings|popupwindow|menubar|msg_filters|messagesettings|rightclickmenu|chat|matchmaking_chat|core|nudge|ai_trace|browser|backend|social_view|frontend_friends_view|achievements|tutorialscreen|subscription_message_view|credits|frontendcreditview|ingamelobby|detailedwindows)\\.gui$", "neutral"],
+  ["(^|/)(notifications|career_profile|pdx_online|widgets)/", "neutral"],
+  ["(^|/)(topbar|minimap|mapmodes_interface|musicplayer|music_station_[a-z]+|mtg_music|alerts|mapicons|battleplantools|findview)\\.gui$", "banner_hall"],
+  ["(^|/)(frontendmainview|frontendgamesetupview|frontendmultiplayerview|playerlobby|matchmaking|hotjoin|savedgamerules|playeraiprefs|ingamemenu)\\.gui$", "banner_hall"],
+  ["(^|/)(countryproductionlineview|countryconstructionsview|countrytradeview|countrylogisticsview|countrydeploymentview|countrystateview|equipmentoverview|divisions_summary)\\.gui$", "banner_hall"],
+  ["(^|/)(international_market|military_industrial_organization|military_raids|building_roster|equipmentdesigner)/", "banner_hall"],
+  ["(^|/)(countryarmyview|unitview|naviesview|strategicairview|theatreselector|landcombat|navalcombat|navalcombatresultswindow|naval_losses|naval_strategic_region_view|unitleaderwindow|leadergroups|divisiondesignerview|airwingreorganization|airselectionview|airgroupview|airwingdetails|acesview|abilitylist|combatlogview|garrisonlogview|traittreewindow_common|armytraittreewindow|navytraittreewindow|command_character_view|countryofficercorpview|insigniaselection|navyleaderview|railway_gun|carrierairwingcompositionwindow|equipmentdesignerview|equipmentupgradedesignerwindow|tank_designer_view|plane_designer_view)\\.gui$", "banner_hall"]
+ ],
+ "families": {
+  "topbar": "banner_hall", "map_interface": "banner_hall", "alerts": "banner_hall", "military": "banner_hall", "frontend": "banner_hall", "loading_frame": "banner_hall",
+  "events": "chancery", "politics_diplomacy": "chancery",
+  "focus": "chronicle",
+  "research_production": "banner_hall", "research_production_research": "chronicle",
+  "chrome_panels": "neutral", "chrome_controls": "neutral", "chrome_bars": "neutral", "cursors": "neutral", "texticons": "neutral"
+ },
+ "researchPattern": "research|tech|doctrine|folder"
+}

@@ -6,15 +6,15 @@
 //   Target = { width, height, frames, borderSize }     measured from the inventory, never invented
 //
 //   runFit(name, cells, target, opts) -> Promise<{ img, ops }>
-//   FITS: nine_slice exact cover contain repeat_x repeat_y strip same_shape
+//   FITS: nine_slice exact cover contain repeat_x repeat_y strip same_shape frame_tile
 //
 // A fit makes the whole texture. For a target with several frames the fit is `strip`: one cell per frame, each fitted
 // into the frame by `opts.frameFit`. Every function is deterministic for the pinned sharp build (tools/package-lock.json).
 import sharp from 'sharp';
 import { Canvas, fromRaw } from './raster.mjs';
 
-export const FITS = ['nine_slice', 'exact', 'cover', 'contain', 'repeat_x', 'repeat_y', 'strip', 'same_shape'];
-export const FRAME_FITS = ['nine_slice', 'exact', 'cover', 'contain', 'repeat_x', 'repeat_y', 'same_shape'];
+export const FITS = ['nine_slice', 'exact', 'cover', 'contain', 'repeat_x', 'repeat_y', 'strip', 'same_shape', 'frame_tile'];
+export const FRAME_FITS = ['nine_slice', 'exact', 'cover', 'contain', 'repeat_x', 'repeat_y', 'same_shape', 'frame_tile'];
 export const ASPECT_TOLERANCE = 0.15;
 export class FitError extends Error { constructor(code, message) { super(message); this.code = code; } }
 
@@ -112,6 +112,77 @@ export async function nineSlice(cell, w, h, borderSize, cellBorder) {
   return { img: out, ops: [`nine_slice cell border ${sx}x${sy} -> ${bx}x${by}`] };
 }
 
+// Frame tile (UI overhaul C1, design system §5.2): the cell is reduced (never enlarged) until its painted rim is `frame` pixels, then
+// its corners are placed as they are and its edges and body are repeated from a seam-matched span of the reduced cell, so a target of
+// any size is filled without enlarging a pixel. `frame` is the design frame width, capped by the engine border of a cornered tile (a
+// rim wider than the engine border would repeat inside the body) and by a third of the target. On a cornered tile the repeat starts at
+// the engine border and its period equals the engine's tiled body when the reduced cell allows it, so the engine's own tiling meets the
+// same seam-matched join. Only crop, resize and placement of generated pixels; nothing is painted.
+export const FRAME_WIDTH = 16;
+const lumaAt = (img, x, y) => { const o = (y * img.w + x) * 4; return 0.2126 * img.data[o] + 0.7152 * img.data[o + 1] + 0.0722 * img.data[o + 2]; };
+// Candidate spans [a, a + p) along an axis inside [lo, hi), best first: the repeat joins line a + p - 1 to line a, so the smaller their
+// difference, the less a seam shows. `want` (an engine body in pixels) restricts the period to its divisors, so every engine repeat meets
+// the same join. Returns { list, diff(i, j) } where diff compares two lines of the cell.
+export function seamSpans(img, axis, lo, hi, want, keep = 96, across = [0, axis === 'x' ? img.h : img.w]) {
+  const room = hi - lo, [c0, c1] = across, n = Math.max(1, c1 - c0), cache = new Map();
+  // Lines are compared across the body only (`across`): a rim runs along the repeat and would otherwise decide the join.
+  const L = k => { if (!cache.has(k)) { const v = new Float64Array(n); for (let i = 0; i < n; i++) v[i] = axis === 'x' ? lumaAt(img, k, c0 + i) : lumaAt(img, c0 + i, k); cache.set(k, v); } return cache.get(k); };
+  const diff = (i, j) => { if (i === j) return 0; const a = L(i), b = L(j); let t = 0; for (let q = 0; q < n; q++) t += Math.abs(a[q] - b[q]); return t / n / 255; };
+  if (room < 2) return { list: [{ a: lo, p: Math.max(1, room), step: 0 }], diff };
+  // A short period would show as stripes: a divisor of the engine body is at least 24 pixels (or the whole body when it is shorter).
+  const divisors = want ? Array.from({ length: want }, (_, i) => want - i).filter(p => p >= Math.min(want, 24) && p <= room && want % p === 0) : [];
+  const periods = divisors.length ? divisors : Array.from({ length: room - Math.floor(room / 2) + 1 }, (_, i) => room - i).filter(p => p >= 2);
+  const list = [];
+  for (const p of periods) {
+    const slack = room - p, stride = divisors.length ? 1 : Math.max(1, Math.floor(slack / 24));   // an engine period is searched at every offset
+    for (let a = lo; a <= lo + slack; a += stride) list.push({ a, p, step: diff(a + p - 1, a) });
+  }
+  list.sort((x, y) => x.step - y.step || y.p - x.p);
+  return { list: list.slice(0, keep), diff };
+}
+export function seamSpan(img, axis, lo, hi, want) { return seamSpans(img, axis, lo, hi, want).list[0]; }
+// The cell line a target line shows: the rims map one to one at both ends, the inside repeats the span with phase 0 at the anchor.
+const lineOf = (t, size, ff, s, span, anchor) => t < ff ? t : t >= size - ff ? s - (size - t) : span.a + ((((t - anchor) % span.p) + span.p) % span.p);
+// Of the candidate spans, the one whose worst join is smallest: the engine's repeat of a cornered body (its last line beside its first)
+// and the same join as the design checks measure it (texture.seam reads the body inside min(border, a third of the side)).
+function bestSpan(c, size, ff, s, anchor, border) {
+  if (!border) return c.list[0];
+  const joins = [[size - border - 1, border], [size - Math.min(border, Math.floor(size / 3)) - 1, Math.min(border, Math.floor(size / 3))]];
+  let best = null;
+  for (const span of c.list) {
+    const worst = Math.max(...joins.map(([i, j]) => c.diff(lineOf(i, size, ff, s, span, anchor), lineOf(j, size, ff, s, span, anchor))));
+    if (!best || worst < best.worst) best = { ...span, worst };
+  }
+  return best;
+}
+// `seed` (the target's path) turns the phase of the repeat, so two targets of one size cut from one cell are different cuts of the material;
+// a period that divides the body keeps every join matched whatever the phase.
+const seedPhase = (seed, p) => { if (!seed || p < 2) return 0; let h = 2166136261; for (const ch of String(seed)) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; } h ^= h >>> 16; h = Math.imul(h, 0x85ebca6b) >>> 0; h ^= h >>> 13; h = Math.imul(h, 0xc2b2ae35) >>> 0; h ^= h >>> 16; return h % p; };   // FNV-1a with a final mix (its low bits alone repeat for similar names)
+export async function frameTile(cell, w, h, { cellBorder, borderSize, frame = FRAME_WIDTH, seed } = {}) {
+  const sb = Math.max(1, Math.round(cellBorder ?? Math.min(cell.w, cell.h) * 0.06));
+  let f = Math.min(frame, Math.floor(Math.min(w, h) / 3));
+  if (borderSize) f = Math.min(f, borderSize[0], borderSize[1]);
+  f = Math.max(1, f);
+  const k = Math.min(1, f / sb);
+  const sw = Math.max(3, Math.round(cell.w * k)), sh = Math.max(3, Math.round(cell.h * k));
+  const S = await resize(cell, sw, sh);
+  const fx = Math.min(Math.max(1, Math.round(sb * k)), Math.floor((sw - 1) / 2), Math.floor((w - 1) / 2)), fy = Math.min(Math.max(1, Math.round(sb * k)), Math.floor((sh - 1) / 2), Math.floor((h - 1) / 2));
+  const bx = borderSize ? Math.min(borderSize[0], Math.floor((w - 1) / 2)) : fx, by = borderSize ? Math.min(borderSize[1], Math.floor((h - 1) / 2)) : fy;
+  // A short period has few phases, so two small targets could still come out alike: the seed also picks among the best few spans.
+  const pickSpan = (c, best, tag) => (best.p < 16 && seed ? c.list[seedPhase(`${seed}|${tag}`, Math.min(4, c.list.length))] ?? best : best);
+  const cx = seamSpans(S, 'x', fx, sw - fx, borderSize ? w - 2 * bx : undefined, 48, [fy, sh - fy]), cy = seamSpans(S, 'y', fy, sh - fy, borderSize ? h - 2 * by : undefined, 48, [fx, sw - fx]);
+  const sx = pickSpan(cx, bestSpan(cx, w, fx, sw, bx, borderSize && bx), 'ax'), sy = pickSpan(cy, bestSpan(cy, h, fy, sh, by, borderSize && by), 'ay');
+  const out = makeImg(w, h), map = lineOf, px = seedPhase(seed, sx.p), py = seedPhase(`${seed}|y`, sy.p);
+  for (let y = 0; y < h; y++) {
+    const yy = map(y, h, fy, sh, sy, by - py);
+    for (let x = 0; x < w; x++) {
+      const xx = map(x, w, fx, sw, sx, bx - px);
+      S.data.copy(out.data, (y * w + x) * 4, (yy * sw + xx) * 4, (yy * sw + xx) * 4 + 4);
+    }
+  }
+  return { img: out, scale: k, ops: [`frame_tile reduce ${Math.round(k * 1000) / 1000} to ${sw}x${sh}`, `rim ${fx}x${fy}`, `repeat x ${sx.p} at ${sx.a} (step ${sx.step.toFixed(3)})`, `repeat y ${sy.p} at ${sy.a} (step ${sy.step.toFixed(3)})`] };
+}
+
 // ---------------------------------------------------------------------------------------------------- alpha
 // Alpha policies (reskin.json `alpha`): opaque, uniform:<a>, cell (keep the cell's own matte), shape (the vanilla outline, binary)
 // and soft (the vanilla alpha channel as it is, for translucent glows and plates whose alpha never reaches 128; only alpha is kept).
@@ -152,6 +223,7 @@ async function frameFit(name, cell, w, h, target, opts) {
     case 'repeat_x': return repeat(cell, w, h, 'x');
     case 'repeat_y': return repeat(cell, w, h, 'y');
     case 'nine_slice': return nineSlice(cell, w, h, target.borderSize, typeof opts.cellBorder === 'function' ? opts.cellBorder(cell) : opts.cellBorder);
+    case 'frame_tile': return frameTile(cell, w, h, { cellBorder: typeof opts.cellBorder === 'function' ? opts.cellBorder(cell) : opts.cellBorder, borderSize: target.borderSize, frame: opts.frame, seed: opts.seed });
     default: throw new FitError('fit', `unknown fit ${name}`);
   }
 }
@@ -171,6 +243,7 @@ export function scaleOf(name, cell, w, h, target = {}, opts = {}) {
       const sx = Math.round(sb.x), sy = Math.round(sb.y), bx = Math.min(target.borderSize[0], Math.floor((w - 1) / 2)), by = Math.min(target.borderSize[1], Math.floor((h - 1) / 2));
       return Math.max(bx / sx, by / sy, (w - 2 * bx) / Math.max(1, cell.w - 2 * sx), (h - 2 * by) / Math.max(1, cell.h - 2 * sy));
     }
+    case 'frame_tile': return opts.lastScale ?? null;
     default: return null;
   }
 }
@@ -194,14 +267,14 @@ export async function runFit(name, cells, target, opts = {}) {
     let most = null;
     for (let i = 0; i < frames; i++) {
       const r = await frameFit(inner, cells[i], fw, height, target, opts); blit(img, r.img, i * fw, 0); if (i === 0) inner0.push(...r.ops);
-      const s = scaleOf(inner, cells[i], fw, height, target, opts); if (s !== null && (most === null || s > most)) most = s;
+      const s = r.scale ?? scaleOf(inner, cells[i], fw, height, target, opts); if (s !== null && (most === null || s > most)) most = s;
     }
     ops = [`strip ${frames} frames of ${fw}x${height}`, ...inner0, ...scaleOp(most)];
   } else {
     if (frames !== 1) throw new FitError('frames', `${name} makes one frame; use strip for ${frames} frames`);
     if (cells.length !== 1) throw new FitError('cells', `${name} takes one cell, got ${cells.length}`);
     const r = await frameFit(name, cells[0], width, height, target, opts);
-    img = r.img; ops = [...r.ops, ...scaleOp(scaleOf(name, cells[0], width, height, target, opts))];
+    img = r.img; ops = [...r.ops, ...scaleOp(r.scale ?? scaleOf(name, cells[0], width, height, target, opts))];
   }
   ops = [...pre, ...ops];
   if (img.w !== width || img.h !== height) throw new FitError('size', `fit produced ${img.w}x${img.h}, expected ${width}x${height}`);

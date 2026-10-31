@@ -13,6 +13,7 @@ import { ART, ART_SOURCE, rawFile, provenanceFile } from '../lib/paths.mjs';
 import { findRegionsAdaptive as findRegions, cropRegion } from '../lib/sheets.mjs';
 import { fromRaw, tga, dds } from '../lib/raster.mjs';
 import { readEmblemSheet, emblemCell, fitEmblem } from '../lib/emblem.mjs';
+import { loadZinChrome } from '../lib/zin_chrome.mjs';
 import { PEOPLES } from './peoples.mjs';
 import { loadPortraitPools, tablePortraits } from './portraits.mjs';
 
@@ -45,13 +46,8 @@ export async function loadArt(countries) {
   }
   // Culture pools and named portraits (data/world/portrait_pools.json, modules/portraits.mjs): sliced from their accepted sheets.
   await slicePoolPortraits(art, source, loadPortraitPools());
-  // Interface: frame panel (whole image), three button states, divider rule.
-  const frameFile = source('ui/ui-frame.png');
-  art.frame = fromRaw(await (await import('sharp')).default(frameFile).resize(128, 128, { kernel: 'lanczos3' }).ensureAlpha().raw().toBuffer(), 128, 128);
-  const buttonFile = source('ui/ui-button.png'), br = await regions(buttonFile, 3, { cols: 1, rows: 3, aspect: [2.5, 8], minAreaFraction: 0.15 });
-  art.buttons = await Promise.all(br.map(async r => fromRaw(await cropRegion(buttonFile, r, 132, 30, { inset: 2 }), 132, 30)));
-  const ruleFile = source('ui/ui-rule.png'), rr = await regions(ruleFile, 1, { cols: 1, rows: 1, aspect: [8, 400], minAreaFraction: 0 });
-  art.rule = fromRaw(await cropRegion(ruleFile, rr[0], 520, 12, { inset: 0, fit: 'fill' }), 520, 12);
+  // Interface: the design-system cells of ZIN's own windows (frames, button, tabs, rows, meters, rules, accents, unknown icons).
+  art.chrome = await loadZinChrome(source);
   return art;
 }
 

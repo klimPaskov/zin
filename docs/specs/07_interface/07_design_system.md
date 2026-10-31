@@ -149,12 +149,13 @@ The Banner Hall's red cloth buttons of its component sheet are **not** used: K70
 | `text.primary` | `#F4ECDC` | body text on dark surfaces |
 | `text.secondary` | `#C3B091` | labels, captions |
 | `text.disabled` | `#7D7366` | disabled labels |
+| `text.highlight` | `#EBCA80` | emphasis in text (`§Y`, `§H`); the neutral gilt of `button.rim.selected` |
 | `state.good` | `#76B262` | gains, completed, allowed |
 | `state.warning` | `#E28C34` | thresholds, caution |
 | `state.danger` | `#DE5240` | losses, war, blocked |
 | `state.info` | `#84BAE2` | links, map selection |
 
-They are shared so that a text colour code means one thing everywhere. The codes keep their vanilla meaning and move to these values through the additive `interface/zz_zin_textcolors.gfx` of spec 02 §3.4 (plan lane C2): `§Y` and `§H` to the theme's `text.title`, `§G` to `state.good`, `§R` to `state.danger`, `§O` to `state.warning`, `§C` and `§B` to `state.info`, `§W` to `text.primary`, `§g` to `text.secondary`, `§b` to `text.ink`. One text-colour table serves all themes, so `text.title` there is `#F5EAD1` (the Banner Hall value; the Chancery `#FCF5DB` and Chronicle `#FBF3C8` titles are the same warm white, slightly lighter).
+They are shared so that a text colour code means one thing everywhere. The codes keep their vanilla meaning and move to these values through the additive `interface/zz_zin_textcolors.gfx` of spec 02 §3.4 (plan lane C2): `§Y` and `§H` to `text.highlight`, `§T` to `text.title`, `§G` to `state.good`, `§R` to `state.danger`, `§O` to `state.warning`, `§C` and `§B` to `state.info`, `§W` to `text.primary`, `§g` to `text.secondary`, `§b` to `text.ink`. The highlight codes keep a distinct gold so emphasis stays readable in tooltips (lead decision, 31 October 2026, on lane C2's finding that `text.title` made them nearly equal to `§W`); `text.highlight` measures 9.84:1 on `tooltip.surface`, 10.70:1 on the Banner Hall window, 10.25:1 on the Chancery window, 7.90:1 on the Chronicle window and 9.03:1 on `button.face`. One text-colour table serves all themes, so `text.title` there is `#F5EAD1` (the Banner Hall value; the Chancery `#FCF5DB` and Chronicle `#FBF3C8` titles are the same warm white, slightly lighter).
 
 ### 1.7 Fixed colour families
 

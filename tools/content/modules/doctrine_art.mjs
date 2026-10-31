@@ -14,7 +14,7 @@ import { acceptance } from './presentation.mjs';
 
 export const CELLS_FILE = fileURLToPath(new URL('../data/doctrine_art_cells.json', import.meta.url));
 export const DOCTRINE_DIR = 'gfx/interface/doctrines/zin';
-export const FRAME_TEXTURE = 'gfx/interface/zin/frame.dds';
+export const FRAME_TEXTURE = 'gfx/interface/zin/unknown/doctrine.dds';   // the family unknown icon (UI lane C3): check 11 reports every sprite on it
 // Sizes: the medallion icons are 64x64 as the vanilla doctrine icons (gfx/interface/doctrines/icons, 64x64 RGBA); the track
 // backgrounds are 360x660 as vanilla grand_battleplan_bg; the tabs are 182x61 as vanilla techtree_landdoctrine_tab; the decor
 // strips are 764x82 as vanilla doctrine_decor_land. The ledger icons share the 64x64 medallion size.

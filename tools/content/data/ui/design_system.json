@@ -92,6 +92,8 @@
   "text.primary": "#F4ECDC",
   "text.secondary": "#C3B091",
   "text.disabled": "#7D7366",
+  "text.highlight": "#EBCA80",
+  "text.highlightNote": "Lead decision, 31 October 2026 (lane C2): the highlight codes Y and H keep a distinct gold so emphasis stays readable in tooltips; the value is the neutral family's gilt (button.rim.selected, the mean of the a and c bright rims). Contrast: 9.84 on tooltip.surface, 10.70 on the Banner Hall window, 10.25 Chancery, 7.90 Chronicle, 9.03 on button.face.",
   "state.good": "#76B262",
   "state.warning": "#E28C34",
   "state.danger": "#DE5240",
@@ -139,16 +141,28 @@
   "map_mode": { "size": [44, 21], "frames": 2, "from": "vanilla small map-mode button; lane I11 confirms" }
  },
  "acceptedChromeSheets": {
-  "note": "Sheet ids accepted as the level-0 chrome of each theme (check 13 chrome.family). Empty until phase 1 (lane C1) delivers the themed chrome sheets; every level-0 window texture is a finding until then.",
-  "banner_hall": [],
-  "chancery": [],
-  "chronicle": [],
-  "neutral": []
+  "note": "Sheet ids accepted as the level-0 chrome of each theme (check 13 chrome.family). Empty until phase 1 (lane C1) delivers the themed chrome sheets; every level-0 window texture is a finding until then. ui-zin-chrome (lane C3, sha256 e01f2235, gpt-6-luna) holds the three themed ZIN window frames; accepted by the lane on review against design system 1.2 to 1.4 under the phase 1 authorization (handoff C3.md); Lane C1 (31 October 2026) adds the themed vanilla chrome sheets ui-chrome-banner-hall, ui-chrome-chancery, ui-chrome-chronicle and the neutral ui-chrome-neutral, ui-buttons-neutral and ui-controls-small (lib/ui_chrome_sheets.mjs; theme of each texture from data/ui/chrome_themes.json; reviews in art/source/provenance.jsonl; handoff C1.md).",
+  "banner_hall": ["ui-zin-chrome", "ui-chrome-banner-hall"],
+  "chancery": ["ui-zin-chrome", "ui-chrome-chancery"],
+  "chronicle": ["ui-zin-chrome", "ui-chrome-chronicle"],
+  "neutral": ["ui-chrome-neutral", "ui-buttons-neutral", "ui-controls-small"]
  },
  "placeholderTextures": [
-  "gfx/interface/zin/frame.dds"
+  "gfx/interface/zin/frame.dds",
+  "gfx/interface/zin/unknown/technology.dds",
+  "gfx/interface/zin/unknown/doctrine.dds",
+  "gfx/interface/zin/unknown/unit.dds",
+  "gfx/interface/zin/unknown/equipment.dds"
  ],
- "placeholderOwners": ["GFX_zin_frame"],
+ "placeholderNote": "Lane C3 (31 October 2026): the shared window frame no longer serves as an icon. A sprite without accepted art points at its family's designed unknown icon (gfx/interface/zin/unknown/<family>.dds, cut from the ui-zin-chrome sheet; design system 4.3 engine_fallback); check 11 reports every sprite that still draws one, so the count is the families' real missing art, and a release build fails on it. frame.dds stays listed so that any return of the old fallback is caught.",
+ "placeholderOwners": ["GFX_zin_unknown_technology", "GFX_zin_unknown_doctrine", "GFX_zin_unknown_unit", "GFX_zin_unknown_equipment"],
+ "zinFrameSheets": {
+  "note": "The sheet each GFX_zin_frame* sprite is cut from (check 13 chrome.zin_frame); lane C3, tools/content/data/ui/zin_chrome.json.",
+  "GFX_zin_frame": "ui-zin-chrome",
+  "GFX_zin_frame_chancery": "ui-zin-chrome",
+  "GFX_zin_frame_banner_hall": "ui-zin-chrome",
+  "GFX_zin_frame_chronicle": "ui-zin-chrome"
+ },
  "windowThemes": {
   "topbar": "banner_hall",
   "zin_aoaz_bar_window": "banner_hall",

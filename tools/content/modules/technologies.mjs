@@ -889,7 +889,7 @@ function subdoctrines(model, folder) {
 }
 
 // ---------- writers: sprites and localisation ----------
-const FALLBACK_TEXTURE = 'gfx/interface/zin/frame.dds';
+const FALLBACK_TEXTURE = 'gfx/interface/zin/unknown/technology.dds';   // the family unknown icon (UI lane C3): check 11 reports every sprite on it
 function spriteFile(title, entries) {
   const L = [HEADER, `# ${title}`, '# A sprite points at its own DDS when the art step has shipped it, and at the ZIN frame texture until then (interim: no vanilla texture, no missing-sprite line).', 'spriteTypes = {'];
   for (const [name, tex] of entries) L.push('\tspriteType = {', `\t\tname = "${name}"`, `\t\ttexturefile = "${tex}"`, '\t}');

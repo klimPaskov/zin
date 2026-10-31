@@ -275,7 +275,7 @@ export async function buildReskin(staged, { inventory, reskin, sheets, provenanc
     };
     const target = { width: s.width, height: s.height, frames: t.frames, borderSize: t.borderSize };
     let result;
-    try { result = await runFit(row.fit, picked.map(p => p.img), target, { frameFit: row.frameFit, alpha: row.alpha === 'cell' ? 'cell' : row.alpha, mask, transform: row.transform, cellBorder, padding: 0.06 }); }
+    try { result = await runFit(row.fit, picked.map(p => p.img), target, { frameFit: row.frameFit, alpha: row.alpha === 'cell' ? 'cell' : row.alpha, mask, transform: row.transform, cellBorder, padding: 0.06, seed: s.texture.toLowerCase() }); }
     catch (e) { if (e instanceof FitError) { pending.push({ texture: s.texture, names: g.names, why: `fit refused: ${e.message}` }); continue; } throw e; }
     // Engine text colours are bound to the luminance class of a surface (spec 02, rule 2), and no tone is ever applied by code: an output that
     // is not of its vanilla class is not shipped, it waits for a cell of the class (check 7 would fail it).

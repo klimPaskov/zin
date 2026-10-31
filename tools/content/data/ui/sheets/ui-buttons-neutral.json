@@ -1,0 +1,134 @@
+{
+ "id": "ui-buttons-neutral",
+ "family": "chrome_controls",
+ "theme": "neutral",
+ "kind": "grid",
+ "aspect": "3:2",
+ "grid": [
+  5,
+  3
+ ],
+ "ground": "black",
+ "matte": "none",
+ "cellBorder": 0.14,
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_a_components.png",
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The neutral family used in every window: blackened iron plate (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, smooth and matte.",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Every cell holds one empty wide rectangular button plate about three times as wide as tall, centred in its cell with black around it, all plates the same size and shape; each row shows the same button in five states left to right, so the states differ only as described. No label on any button.",
+ "cells": [
+  {
+   "key": "iron_normal",
+   "subject": "a button of blackened iron (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, at rest",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 46.2
+  },
+  {
+   "key": "iron_hover",
+   "subject": "a button of blackened iron (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, the face clearly brighter (about one step lighter) and the rim catching more light",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 59.8
+  },
+  {
+   "key": "iron_pressed",
+   "subject": "a button of blackened iron (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, the face clearly darker (about one step darker) with a soft inner shadow along its top edge, as if pressed in",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 41.2
+  },
+  {
+   "key": "iron_disabled",
+   "subject": "a button of blackened iron (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, disabled: the face flat dull grey with no colour at all, the rim plain dull grey with no gilt, matte and lifeless",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 83.2
+  },
+  {
+   "key": "iron_selected",
+   "subject": "a button of blackened iron (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, selected: the face as at rest, framed by a bright two-pixel gilt rim (#EBCA80)",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 54.3
+  },
+  {
+   "key": "bronze_normal",
+   "subject": "a button of matte muted bronze (#8C7A5C) with a thin darker bronze rim and four tiny corner studs, at rest",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 91.8,
+   "design": "mid"
+  },
+  {
+   "key": "bronze_hover",
+   "subject": "a button of matte muted bronze (#8C7A5C) with a thin darker bronze rim and four tiny corner studs, the face clearly brighter (about one step lighter) and the rim catching more light",
+   "border": 0.16,
+   "lum": "mid",
+   "luma": 105.7
+  },
+  {
+   "key": "bronze_pressed",
+   "subject": "a button of matte muted bronze (#8C7A5C) with a thin darker bronze rim and four tiny corner studs, the face clearly darker (about one step darker) with a soft inner shadow along its top edge, as if pressed in",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 71.8,
+   "design": "mid"
+  },
+  {
+   "key": "bronze_disabled",
+   "subject": "a button of matte muted bronze (#8C7A5C) with a thin darker bronze rim and four tiny corner studs, disabled: the face flat dull grey with no colour at all, the rim plain dull grey with no gilt, matte and lifeless",
+   "border": 0.16,
+   "lum": "dark",
+   "luma": 94.9,
+   "design": "mid"
+  },
+  {
+   "key": "bronze_selected",
+   "subject": "a button of matte muted bronze (#8C7A5C) with a thin darker bronze rim and four tiny corner studs, selected: the face as at rest, framed by a bright two-pixel gilt rim (#EBCA80)",
+   "border": 0.16,
+   "lum": "mid",
+   "luma": 103.8
+  },
+  {
+   "key": "pale_normal",
+   "subject": "a button of pale stone-grey enamel (#D3CCC0) with a thin muted-bronze rim and four tiny corner studs, at rest",
+   "border": 0.16,
+   "lum": "light",
+   "luma": 177.9
+  },
+  {
+   "key": "pale_hover",
+   "subject": "a button of pale stone-grey enamel (#D3CCC0) with a thin muted-bronze rim and four tiny corner studs, the face clearly brighter (about one step lighter) and the rim catching more light",
+   "border": 0.16,
+   "lum": "light",
+   "luma": 180.1
+  },
+  {
+   "key": "pale_pressed",
+   "subject": "a button of pale stone-grey enamel (#D3CCC0) with a thin muted-bronze rim and four tiny corner studs, the face clearly darker (about one step darker) with a soft inner shadow along its top edge, as if pressed in",
+   "border": 0.16,
+   "lum": "mid",
+   "luma": 144.1,
+   "design": "light"
+  },
+  {
+   "key": "pale_disabled",
+   "subject": "a button of pale stone-grey enamel (#D3CCC0) with a thin muted-bronze rim and four tiny corner studs, disabled: the face flat dull grey with no colour at all, the rim plain dull grey with no gilt, matte and lifeless",
+   "border": 0.16,
+   "lum": "mid",
+   "luma": 105.5,
+   "design": "light"
+  },
+  {
+   "key": "pale_selected",
+   "subject": "a button of pale stone-grey enamel (#D3CCC0) with a thin muted-bronze rim and four tiny corner studs, selected: the face as at rest, framed by a bright two-pixel gilt rim (#EBCA80)",
+   "border": 0.16,
+   "lum": "light",
+   "luma": 182.3
+  }
+ ],
+ "tranche": 3
+}

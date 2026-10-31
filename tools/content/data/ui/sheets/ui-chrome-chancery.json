@@ -1,0 +1,136 @@
+{
+ "id": "ui-chrome-chancery",
+ "family": "chrome_panels",
+ "theme": "chancery",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  4,
+  4
+ ],
+ "ground": "black",
+ "matte": "none",
+ "cellBorder": 0.06,
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_a_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The Chancery: the old, calm court. Dark oiled walnut (#2D1D13) with a very fine straight grain of low contrast, one cast-bronze moulding (#634027, lit edge #E0AB6D) with tiny gilt corner leaves and small green inset stones, cream vellum (#E4D7C2) reading surfaces.",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Every cell is one flat rectangular plate seen straight on, filling its own cell edge to edge as a full-bleed square swatch, all cells the same size, separated by narrow black gutters. Any rim or frame of a plate runs straight along its four sides at an even width, with its corner ornament kept inside the rim width; the body inside the rim is one plain, uniform, seamless surface with no motif, so it can be tiled.",
+ "cells": [
+  {
+   "key": "window",
+   "subject": "a window plate: dark walnut body inside a cast-bronze moulding along all four sides with a tiny gilt leaf and a small green inset stone at each corner inside the moulding",
+   "border": 0.11,
+   "lum": "dark",
+   "luma": 45.8
+  },
+  {
+   "key": "section",
+   "subject": "a section plate: walnut a little lighter than the window body, with one thin bronze line along its edge",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 46.1
+  },
+  {
+   "key": "inset",
+   "subject": "an inset well: very dark walnut set slightly lower, with a thin dark recessed edge",
+   "border": 0.05,
+   "lum": "dark",
+   "luma": 32.7
+  },
+  {
+   "key": "body",
+   "subject": "a plain swatch of dark walnut, uniform fine grain, with no border and no moulding at all",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 35.5
+  },
+  {
+   "key": "title",
+   "subject": "a title band: walnut with a thin bronze rule along its top and bottom edges and along its sides",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 39.4
+  },
+  {
+   "key": "entry_selected",
+   "subject": "a selected row plate: walnut with a bright polished gilt-bronze edge all around",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 48.8
+  },
+  {
+   "key": "tab",
+   "subject": "a tab plate: walnut with a thin bronze edge all around",
+   "border": 0.07,
+   "lum": "dark",
+   "luma": 37.1
+  },
+  {
+   "key": "tab_selected",
+   "subject": "a selected tab plate: raised walnut a step lighter, with a bright gilt-bronze edge all around",
+   "border": 0.07,
+   "lum": "dark",
+   "luma": 64.3
+  },
+  {
+   "key": "reading",
+   "subject": "a reading plate: cream vellum, smooth and clean, with a thin bronze edge",
+   "border": 0.05,
+   "lum": "light",
+   "luma": 200.8
+  },
+  {
+   "key": "reading_selected",
+   "subject": "a selected reading plate: cream vellum with a bright gilt edge",
+   "border": 0.06,
+   "lum": "light",
+   "luma": 206.1
+  },
+  {
+   "key": "reading_plain",
+   "subject": "a plain swatch of cream vellum, uniform, with no edge at all",
+   "border": 0.03,
+   "lum": "light",
+   "luma": 216.8
+  },
+  {
+   "key": "plate_mid",
+   "subject": "a mid-tone plate: matte cast bronze (#8A6A40), plain centre, with a slightly darker rim",
+   "border": 0.07,
+   "lum": "mid",
+   "luma": 99
+  },
+  {
+   "key": "plate_mid_lit",
+   "subject": "a lighter mid-tone plate: matte light bronze (#A8814A), plain centre, with a bright gilt rim",
+   "border": 0.07,
+   "lum": "mid",
+   "luma": 123.5
+  },
+  {
+   "key": "groove",
+   "subject": "an empty meter groove: a dark walnut channel inside a thin bronze casing",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 45.5
+  },
+  {
+   "key": "fill_mid",
+   "subject": "a meter fill: bright verdigris enamel (#4F8A5A), plain, smooth",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 91.8,
+   "design": "mid"
+  },
+  {
+   "key": "fill_dark",
+   "subject": "a meter fill: deep verdigris enamel (#2F5A38), plain, smooth",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 56.4
+  }
+ ],
+ "tranche": 3
+}

@@ -14,7 +14,7 @@ import sharp from 'sharp';
 
 import { Canvas, dds, tga, png, cur, ico, ani, fromRaw } from './lib/raster.mjs';
 import { readHeader, decodeRgba, measure, perceptualHash, hashDistance, hashSupport, contentDifference, luminanceClass, LUMA } from './lib/image_codec.mjs';
-import { runFit, makeImg, crop, resize, applyAlpha, outlineOf, FitError, boxDownscale as fitBox, keyMatte as fitKey, strip as fitStrip, transformImg } from './lib/fit.mjs';
+import { runFit, makeImg, crop, resize, applyAlpha, outlineOf, FitError, boxDownscale as fitBox, keyMatte as fitKey, strip as fitStrip, transformImg, seamSpans } from './lib/fit.mjs';
 import { boxDownscale as presBox, keyMatte as presKey } from './modules/presentation.mjs';
 import { Staged } from './lib/core.mjs';
 import { buildInventory, serializeInventory, verifyInventory, parseGfx, parseGuiRefs, loadInventory, INVENTORY_FILE, readText, gameRoots } from './modules/ui_inventory.mjs';
@@ -324,7 +324,7 @@ test('the plan classifies every inventory entry once, with the dispositions the 
   const rows = new Map(plan.reskin.rows.map(r => [r.name, r]));
   assert.equal(plan.reskin.rows.length, inventory.sprites.length);
   assert.ok(plan.reskin.rows.every(r => DISPOSITIONS.includes(r.disposition)));
-  assert.equal(rows.get('GFX_tiled_test').disposition, 'R'); assert.equal(rows.get('GFX_tiled_test').fit, 'nine_slice');
+  assert.equal(rows.get('GFX_tiled_test').disposition, 'R'); assert.equal(rows.get('GFX_tiled_test').fit, 'frame_tile', 'chrome plates are tiled from a themed cell, never enlarged');
   assert.equal(rows.get('GFX_button_test').fit, 'strip'); assert.deepEqual(rows.get('GFX_button_test').frames, ['normal', 'hover', 'pressed']);
   assert.equal(rows.get('GFX_focus_test').disposition, 'U', 'a focus icon only a vanilla country GUI names is unreachable');
   assert.equal(rows.get('GFX_GER_content').disposition, 'U');
@@ -387,7 +387,7 @@ test('sheet definitions are valid, and the committed ones agree with their cells
   assert.ok(validateSheet({ ...FIXED_SHEETS[0], cells: [...FIXED_SHEETS[0].cells, FIXED_SHEETS[0].cells[0]] }).some(p => /duplicate cell/.test(p)));
   assert.ok(validateSheet({ ...FIXED_SHEETS[0], grid: [1, 1] }).some(p => /cells in a/.test(p)));
   assert.ok(validateSheet({ ...FIXED_SHEETS[0], aspect: '9:1' }).some(p => /aspect/.test(p)));
-  const chk = layoutCheck(FIXED_SHEETS[0]); assert.equal(chk.expected, FIXED_SHEETS[0].cells.length); assert.equal(chk.cols, 3);
+  const chk = layoutCheck(FIXED_SHEETS[0]); assert.equal(chk.expected, FIXED_SHEETS[0].cells.length); assert.equal(chk.cols, FIXED_SHEETS[0].grid[0]);
   for (const family of ['chrome_panels', 'military', 'cursors']) assert.ok(PREAMBLES[family].includes('#1E1610'), `${family} preamble carries the palette`);
 });
 
@@ -456,7 +456,7 @@ test('build: no accepted source leaves rows pending and reports them; nothing fa
 });
 
 test('build: a sheet that yields the wrong number of cells is refused as pending, not guessed', async () => {
-  const id = 'ui-chrome-panels', sheet = sheetsOf(plan).get(id), f = path.join(rawDir, 'ui/reskin', `${id}.png`), good = readFileSync(f);
+  const id = [].concat(plan.reskin.rows.find(r => r.name === 'GFX_tiled_test').sheet)[0], sheet = sheetsOf(plan).get(id), f = path.join(rawDir, 'ui/reskin', `${id}.png`), good = readFileSync(f);
   const bad = await fakeSheet(sheet, { dropOne: true }); writeFileSync(f, bad);
   const prov = [...provenance, { id, out: `ui/reskin/${id}.png`, sha256: sha256(bad), accepted: true, reviewer: 'agent' }];
   try {
@@ -620,11 +620,15 @@ test('check 1: inventory freshness detects a patched game and lists the changed 
 
 // ---------------------------------------------------------------------------------------------------- jobs
 test('jobs: one imagegen job per sheet, with the layout check and the family preamble', () => {
-  const sheet = FIXED_SHEETS.find(s => s.id === 'ui-buttons'), job = sheetJob(sheet, '/art/raw');
-  assert.equal(job.id, 'reskin-ui-buttons'); assert.equal(job.out, '/art/raw/ui/reskin/ui-buttons.png'); assert.equal(job.size, '3072x768');
-  assert.equal(job.check.expected, 12); assert.equal(job.check.cols, 3); assert.equal(job.check.rows, 4);
-  assert.ok(job.prompt.includes('exact grid of 3 columns and 4 rows') && job.prompt.includes('Row 4, left to right: 10.'));
+  const sheet = FIXED_SHEETS.find(s => s.id === 'ui-research'), job = sheetJob(sheet, '/art/raw');
+  assert.equal(job.id, 'reskin-ui-research'); assert.equal(job.out, '/art/raw/ui/reskin/ui-research.png'); assert.equal(job.size, '1024x1024');
+  assert.equal(job.check.expected, 9); assert.equal(job.check.cols, 3); assert.equal(job.check.rows, 3);
+  assert.ok(job.prompt.includes('exact grid of 3 columns and 3 rows') && job.prompt.includes('Row 3, left to right: 7.'));
   assert.ok(job.prompt.includes('solid flat pure black (#000000)') && job.prompt.includes('no lettering') && job.prompt.includes('#D9B562'));
+  // The themed chrome sheets (UI overhaul C1) carry their own quiet preamble and the direction picture of their theme as a reference.
+  const buttons = sheetJob(FIXED_SHEETS.find(s => s.id === 'ui-buttons-neutral'), '/art/raw');
+  assert.equal(buttons.check.expected, 15); assert.ok(buttons.prompt.includes('exact grid of 5 columns and 3 rows') && buttons.prompt.includes('#282B2C') && /no text/.test(buttons.prompt));
+  assert.ok(buttons.references.every(r => /directions\/direction_[ac]_components\.png$/.test(r)));
   const outline = sheetPrompt(FIXED_SHEETS.find(s => s.id === 'ui-sockets')); assert.ok(outline.includes('isolated object'));
   const sheets = new Map(FIXED_SHEETS.map(s => [s.id, s])), all = reskinJobs({ sheets, rawDir: '/art/raw' });
   assert.equal(all.jobs.length, FIXED_SHEETS.length); assert.ok(all.jobs.every((j, i, a) => i === 0 || a[i - 1].tranche <= j.tranche), 'ordered by production step');
@@ -987,4 +991,35 @@ test('design checks report in every build and stop only a release build; the bas
   assert.ok(GATED_FROM === 10);
   const base = loadBaseline();
   for (const id of [10, 11, 12, 13, 14, 15, 16, 17, 18]) assert.equal(typeof base.checks[id]?.problems, 'number', `baseline recorded for check ${id}`);
+});
+
+// ---------------------------------------------------------------------------------------------------- frame_tile (UI overhaul C1)
+// A framed plate: a bright rim of `rim` pixels around a body whose columns repeat with period 10 (a fine weave), so a seam-matched span exists.
+function framedCell(w, h, rim) {
+  const img = makeImg(w, h);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const o = (y * w + x) * 4, edge = x < rim || y < rim || x >= w - rim || y >= h - rim, v = edge ? 200 : 40 + ((x % 10) * 3) + ((y % 7) * 2);
+    img.data[o] = v; img.data[o + 1] = v; img.data[o + 2] = v; img.data[o + 3] = 255;
+  }
+  return img;
+}
+test('frame_tile: any target from one cell without enlargement; the rim stays the design width and the body repeats without a step', async () => {
+  const cell = framedCell(300, 200, 24);
+  for (const [w, h, borderSize] of [[192, 192, [64, 64]], [1343, 826, null], [600, 30, null], [16, 16, [5, 5]]]) {
+    const r = await runFit('frame_tile', [cell], { width: w, height: h, borderSize }, { cellBorder: 24 });
+    assert.equal(r.img.w, w); assert.equal(r.img.h, h);
+    const scale = Number(r.ops.find(o => o.startsWith('scale ')).slice(6));
+    assert.ok(scale <= 1, `${w}x${h}: scale ${scale}`);
+    // The engine tiles a cornered body: its last column must join its first like any two neighbours.
+    if (borderSize) {
+      const L = (x, y) => r.img.data[(y * w + x) * 4], bx = borderSize[0], step = Array.from({ length: h - 2 * bx }, (_, i) => Math.abs(L(w - bx - 1, bx + i) - L(bx, bx + i))).reduce((a, b) => a + b, 0) / (h - 2 * bx) / 255;
+      assert.ok(step < 0.02, `${w}x${h}: engine seam ${step}`);
+    }
+  }
+  // The rim is reduced to 16 pixels (the design frame) and never widened: a 24-pixel painted rim becomes 16 at the corner.
+  const r = await runFit('frame_tile', [cell], { width: 400, height: 300 }, { cellBorder: 24 });
+  assert.ok(r.img.data[(8 * 400 + 200) * 4] > 180, 'rim'); assert.ok(r.img.data[(20 * 400 + 200) * 4] < 120, 'body inside 16 pixels');
+  // A period that must divide an engine body of 62 pixels is one of its divisors.
+  const spans = seamSpans(framedCell(120, 120, 10), 'x', 10, 110, 62);
+  assert.ok(spans.list.every(sp => 62 % sp.p === 0));
 });

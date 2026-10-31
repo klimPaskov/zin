@@ -34,6 +34,7 @@ const WINDOWS_FILE = path.join(here, 'data/ui/review_windows.json');
 const DESIGN_FILE = path.join(here, 'data/ui/design_system.json');
 export const PREVIEW_NAME = 'zin_ui_preview';
 // Thresholds of design system §2.2 (rules 2 and 4).
+export const MIN_TEXT_PX = 16;
 export const CONTRAST_SMALL = 4.5, CONTRAST_LARGE = 3, LARGE_PX = 20, GROUND_LIMIT = 0.06;
 
 // ---------------------------------------------------------------------------------------------------- tasks
@@ -64,7 +65,7 @@ export const RAW_KEY = /^\s*(?:[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+|[A-Z][A-Z0
 export function rawKey(text) { return RAW_KEY.test(text) || /\[dynamic_loc\]|\$[A-Za-z_]+\$|\[[A-Za-z_]+\.[A-Za-z_]+\]/.test(text); }
 // image: { data (RGB or RGBA), width, height, channels }. layout: the parsed -layout.json. Returns findings per text element.
 export function textMetrics(layout, image) {
-  const out = { texts: 0, contrast: [], ground: [], rawKeys: [], overflow: [] }, ch = image.channels;
+  const out = { texts: 0, contrast: [], ground: [], rawKeys: [], overflow: [], small: [] }, ch = image.channels;
   for (const e of layout.scene?.elements ?? []) {
     const t = e.text;
     if (!t || !e.visible || !String(t.text ?? '').trim()) continue;
@@ -73,6 +74,8 @@ export function textMetrics(layout, image) {
     out.texts++;
     const name = e.name ?? e.id, where = `${e.location?.path ?? e.sourcePath}:${e.location?.start?.line ?? '?'}`;
     if ((t.lines ?? [t.text]).some(rawKey) || (t.unresolvedTokens ?? []).length) out.rawKeys.push({ name, where, text: String(t.text).slice(0, 80) });
+    // text.size (design system §2.2 rule 1): nothing under 16 px at UI scale 1 (lane C2).
+    if ((t.fontSize ?? 16) < MIN_TEXT_PX) out.small.push({ name, where, text: String(t.text).slice(0, 60), px: t.fontSize });
     if (t.overflowX || t.overflowY) out.overflow.push({ name, where, text: String(t.text).slice(0, 80), x: !!t.overflowX, y: !!t.overflowY });
     const fg = hexRgb(t.colour);
     if (!fg) continue;
@@ -245,12 +248,12 @@ async function main() {
     // Metrics: the per-render report and a summary in Markdown.
     results.sort((a, b) => (a.label < b.label ? -1 : 1));
     const total = k => results.reduce((n, r) => n + (r.metrics?.[k]?.length ?? 0), 0);
-    const summary = { tool, runtime: slash(rt), staged: slash(staged), renders: results.length, errors: results.filter(r => r.isError).length, thresholds: { contrastSmall: CONTRAST_SMALL, contrastLarge: CONTRAST_LARGE, largePx: LARGE_PX, ground: GROUND_LIMIT }, totals: { texts: results.reduce((n, r) => n + (r.metrics?.texts ?? 0), 0), contrast: total('contrast'), ground: total('ground'), rawKeys: total('rawKeys'), overflow: total('overflow') }, sheets: sheets.map(s => path.basename(s.file)), focus };
+    const summary = { tool, runtime: slash(rt), staged: slash(staged), renders: results.length, errors: results.filter(r => r.isError).length, thresholds: { contrastSmall: CONTRAST_SMALL, contrastLarge: CONTRAST_LARGE, largePx: LARGE_PX, ground: GROUND_LIMIT }, totals: { texts: results.reduce((n, r) => n + (r.metrics?.texts ?? 0), 0), contrast: total('contrast'), ground: total('ground'), rawKeys: total('rawKeys'), overflow: total('overflow'), small: total('small') }, sheets: sheets.map(s => path.basename(s.file)), focus };
     writeFileSync(path.join(out, 'metrics.json'), JSON.stringify({ ...summary, results }, null, 1) + '\n');
     const md = ['# UI review metrics', '', `Offline renders, tool-generated (${tool}); check 19 text.render_metrics of the design system (§2.2, §9). ${results.length} renders, ${summary.errors} errors. Thresholds: contrast ${CONTRAST_SMALL}:1 under ${LARGE_PX} px and ${CONTRAST_LARGE}:1 from ${LARGE_PX} px; ground deviation ${GROUND_LIMIT}. Engine-filled keys appear as raw keys in the offline model (audit §1, fidelity limits).`, '',
-      `Totals: ${summary.totals.texts} text elements; contrast ${summary.totals.contrast}, ground ${summary.totals.ground}, raw keys ${summary.totals.rawKeys}, overflow ${summary.totals.overflow}.`, '',
-      '| Render | Window | Theme | Size | Texts | Contrast | Ground | Raw keys | Overflow | Diagnostics | PNG sha256 (first 12) |', '| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |',
-      ...results.map(r => `| ${r.label} | \`${r.window}\` | ${r.theme ?? ''} | ${r.width}x${r.height} | ${r.metrics?.texts ?? ''} | ${r.metrics?.contrast.length ?? ''} | ${r.metrics?.ground.length ?? ''} | ${r.metrics?.rawKeys.length ?? ''} | ${r.metrics?.overflow.length ?? ''} | ${r.error ? `error: ${r.error.slice(0, 60)}` : Object.entries(r.diagnostics ?? {}).filter(([k]) => !/INLINE|STATE_COVERAGE/.test(k)).map(([k, v]) => `${k.replace(/^GUI_/, '')} ${v}`).join(', ')} | ${(r.sha256 ?? '').slice(0, 12)} |`)];
+      `Totals: ${summary.totals.texts} text elements; contrast ${summary.totals.contrast}, ground ${summary.totals.ground}, raw keys ${summary.totals.rawKeys}, overflow ${summary.totals.overflow}, under 16 px ${summary.totals.small}.`, '',
+      '| Render | Window | Theme | Size | Texts | Contrast | Ground | Raw keys | Overflow | Under 16 px | Diagnostics | PNG sha256 (first 12) |', '| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |',
+      ...results.map(r => `| ${r.label} | \`${r.window}\` | ${r.theme ?? ''} | ${r.width}x${r.height} | ${r.metrics?.texts ?? ''} | ${r.metrics?.contrast.length ?? ''} | ${r.metrics?.ground.length ?? ''} | ${r.metrics?.rawKeys.length ?? ''} | ${r.metrics?.overflow.length ?? ''} | ${r.metrics?.small?.length ?? ''} | ${r.error ? `error: ${r.error.slice(0, 60)}` : Object.entries(r.diagnostics ?? {}).filter(([k]) => !/INLINE|STATE_COVERAGE/.test(k)).map(([k, v]) => `${k.replace(/^GUI_/, '')} ${v}`).join(', ')} | ${(r.sha256 ?? '').slice(0, 12)} |`)];
     writeFileSync(path.join(out, 'metrics.md'), md.join('\n') + '\n');
     log(`done: ${results.length} renders, ${sheets.length} sheets, metrics in ${slash(out)}`);
   } finally {

@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { ART } from '../lib/paths.mjs';
 import { PREAMBLES, PROMPT_TAIL, SHEET_ASPECTS, FAMILY_TRANCHE, layoutCheck, GROUND } from '../lib/ui_sheets.mjs';
 import { loadSheets, loadReskin, SHEET_RAW_DIR, ALERT_FRAMES_FILE } from '../modules/ui_reskin.mjs';
+import { chromePrompt } from '../lib/ui_chrome_sheets.mjs';
 
 // What a sheet needs before its subjects are meaningful: the file under data/ui/, or a provisional list from the spec.
 const DATA_NEEDS = { 'alert_frames.json': () => existsSync(ALERT_FRAMES_FILE) };
@@ -18,6 +19,7 @@ const PROVISIONAL = new Set(['warfare_folders', 'economy_buildings']);
 
 
 export function sheetPrompt(sheet) {
+  if (sheet.preamble) return chromePrompt(sheet);   // the themed chrome sheets of the UI overhaul carry their own preamble (lib/ui_chrome_sheets.mjs)
   const [cols, rows] = sheet.grid, n = sheet.cells.length;
   const preamble = PREAMBLES[sheet.family] ?? PREAMBLES.chrome_panels, ground = GROUND[sheet.ground ?? 'black'];
   const isolated = sheet.matte === 'outline';
@@ -36,7 +38,7 @@ export function sheetPrompt(sheet) {
 
 export function sheetJob(sheet, rawDir = `${ART}/raw`) {
   const [w, h] = SHEET_ASPECTS[sheet.aspect];
-  return { id: `reskin-${sheet.id}`, size: `${w}x${h}`, quality: 'high', out: path.posix.join(rawDir.split(path.sep).join('/'), SHEET_RAW_DIR, `${sheet.id}.png`), check: layoutCheck(sheet), prompt: sheetPrompt(sheet), sheet: sheet.id, family: sheet.family, tranche: sheet.tranche ?? FAMILY_TRANCHE[sheet.family], ...(sheet.needs?.some(x => PROVISIONAL.has(x)) ? { provisional: sheet.needs.filter(x => PROVISIONAL.has(x)) } : {}) };
+  return { id: `reskin-${sheet.id}`, size: `${w}x${h}`, quality: 'high', out: path.posix.join(rawDir.split(path.sep).join('/'), SHEET_RAW_DIR, `${sheet.id}.png`), check: layoutCheck(sheet), prompt: sheetPrompt(sheet), ...(sheet.references?.length ? { references: sheet.references.map(r => `${ART}/raw/ui/directions/${path.posix.basename(r)}`) } : {}), sheet: sheet.id, family: sheet.family, tranche: sheet.tranche ?? FAMILY_TRANCHE[sheet.family], ...(sheet.needs?.some(x => PROVISIONAL.has(x)) ? { provisional: sheet.needs.filter(x => PROVISIONAL.has(x)) } : {}) };
 }
 
 // Split the sheets into ready jobs and blocked sheets; `only` is a Set of sheet ids still used by some R row.

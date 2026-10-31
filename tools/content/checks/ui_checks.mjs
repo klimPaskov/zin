@@ -305,12 +305,13 @@ export function checkIconRegistry({ registry, shares }) {
 // ---------------------------------------------------------------------------------------------------- 11
 // No sprite ZIN defines may draw a listed placeholder texture (the shared frame); the frame's own sprite is exempt.
 export function checkIconPlaceholder({ sprites, design }) {
-  const problems = [], placeholders = new Set((design.placeholderTextures ?? []).map(t => t.toLowerCase())), owners = new Set((design.placeholderOwners ?? []).map(n => n.toLowerCase()));
+  const problems = [], placeholders = new Set((design.placeholderTextures ?? []).map(t => t.toLowerCase())), owners = new Set((design.placeholderOwners ?? []).map(n => n.toLowerCase())), byTexture = {};
   for (const s of [...sprites.values()].sort((a, b) => ord(a.name, b.name))) {
     if (s.origin !== 'mod' || !placeholders.has(s.texture) || owners.has(s.name.toLowerCase())) continue;
+    byTexture[s.texture] = (byTexture[s.texture] ?? 0) + 1;
     problems.push({ code: 'icon.placeholder', name: s.name, message: `${s.name} (${s.file}) draws the placeholder ${s.texture}` });
   }
-  return result(11, 'icon.placeholder', problems, [], { placeholders: [...placeholders] });
+  return result(11, 'icon.placeholder', problems, [], { placeholders: [...placeholders], byTexture });
 }
 
 // ---------------------------------------------------------------------------------------------------- 12

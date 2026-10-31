@@ -8,6 +8,7 @@
 //          'outline' every cell is one isolated object on black; its own outline is the alpha (decision A3)
 // lum      the design luminance class of the cell (dark, mid, light), so a row picks a cell of its sprite's class
 import { STYLE_LINE, MATERIALS, PALETTE, LIGHTING, CLAUSE_A4, FORBIDDEN_MOTIFS, GROUND } from './ui_vocab.mjs';
+import { CHROME_SHEETS } from './ui_chrome_sheets.mjs';
 
 // The family preamble: every sheet of a family shares it, so they match (spec section 5).
 export const PREAMBLES = {
@@ -39,6 +40,75 @@ const c = (key, subject, lum = 'dark', extra = {}) => ({ key, subject, lum, ...e
 
 // Fixed chrome sheets. Panels: the cell's painted border is a fraction of the cell's shorter side.
 export const FIXED_SHEETS = [
+  // The chrome sheets (panels, bars, buttons, small controls) are the themed sheets of lib/ui_chrome_sheets.mjs (UI overhaul C1).
+  ...CHROME_SHEETS,
+  { id: 'ui-sockets', family: 'chrome_controls', kind: 'grid', aspect: '1:1', grid: [6, 6], ground: 'black', matte: 'outline',
+    note: 'Cells 1 to 12 are the dark sockets and may keep a dark recess. Cells 13 to 16 are mid-tone and cells 17 to 20 are light: in those eight the whole recess of the socket, not only its rim, is painted in the lit tone named for the cell (cells 13 to 16 a light caramel-tan of about #B08050 with a bright bronze rim, never dark brown or walnut; cells 17 to 20 a pale cream-gold), so that the cell reads as mid-tone or as light from rim to centre, with an average brightness well above the dark sockets, and no black or dark brown shows inside the socket. The black of the sheet is only the ground between the cells.',
+    cells: [
+    c('socket_round', 'an empty round bronze socket with a dark recess and a thin gilt ring'), c('socket_square', 'an empty square bronze socket with a dark recess'),
+    c('socket_wide', 'an empty wide bronze socket, about twice as wide as tall'), c('socket_tall', 'an empty tall bronze socket, about twice as tall as wide'),
+    c('chip_wide', 'a small wide bronze chip with a dark centre'), c('chip_tall', 'a small tall bronze chip with a dark centre'),
+    c('badge_shield', 'an empty bronze heater shield with a dark field'), c('pip_round', 'a tiny round bronze stud'), c('pip_square', 'a tiny square bronze stud'),
+    c('socket_round_lit', 'the round bronze socket with a gilt ring, brighter'), c('socket_square_lit', 'the square bronze socket with a gilt edge, brighter'),
+    c('socket_round_dull', 'the round socket in dull iron, no gilt, matte'),
+    c('socket_square_mid', 'an empty square socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'), c('socket_round_mid', 'an empty round socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'),
+    c('socket_wide_mid', 'an empty wide socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'), c('socket_tall_mid', 'an empty tall socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'),
+    c('socket_round_light', 'an empty round socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'), c('socket_square_light', 'an empty square socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'),
+    c('socket_wide_light', 'an empty wide socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'), c('socket_tall_light', 'an empty tall socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'),
+  ] },
+  { id: 'ui-topbar', family: 'topbar', kind: 'grid', aspect: '3:1', grid: [1, 8], ground: 'black', matte: 'none', cells: [
+    c('band', 'a long top bar band: walnut with a gilt line along the lower edge, seamless along its length', 'dark'),
+    c('band_extended', 'a long top bar band with a deeper walnut lower lip and a gilt line, seamless along its length', 'dark'),
+    c('date_plate', 'a wide date plate: bronze cartouche with a dark inset, rounded ends', 'dark'),
+    c('speed_1', 'a row of three small speed lamps in a bronze rail, the first lamp lit', 'dark'),
+    c('speed_2', 'a row of three small speed lamps in a bronze rail, the first two lamps lit', 'dark'),
+    c('speed_3', 'a row of three small speed lamps in a bronze rail, all three lamps lit', 'dark'),
+    c('alert_plate', 'a narrow alert tray plate: iron with a bronze rim, empty', 'dark'),
+    c('overview_tray', 'an overview tray: a wide shallow walnut tray with a bronze edge, empty', 'dark'),
+  ] },
+  { id: 'ui-map', family: 'map_interface', kind: 'grid', aspect: '3:2', grid: [3, 2], ground: 'black', matte: 'none', cells: [
+    c('map_tray', 'a tall map mode tray: slate with a bronze edge, plain', 'dark'), c('minimap_frame', 'a wide minimap frame: bronze border around a plain dark slate centre with a small compass rose in one corner', 'dark', { border: 0.12 }),
+    c('clock_plate', 'a clock plate: bronze cartouche with a dark inset', 'dark'), c('handle', 'a tall narrow gilded-iron view handle', 'dark'),
+    c('ping_button', 'a wide ping button plate: gilded iron with a bronze rim, empty', 'dark'), c('toggle', 'a small toggle plate: slate with a bronze rim, empty', 'dark'),
+  ] },
+  { id: 'ui-events', family: 'events', kind: 'grid', aspect: '2:3', grid: [2, 3], ground: 'black', matte: 'none', cells: [
+    c('board_top', 'the top of a writing board: walnut with a bronze rim, plain', 'light', { border: 0.12 }), c('board_mid', 'a seamless vertical tile of a parchment-faced writing board with bronze side rails', 'light'),
+    c('board_bottom', 'the bottom of a writing board: parchment with a bronze lower rim', 'light', { border: 0.12 }), c('board_end', 'the lower end of a writing board: bronze rim and walnut lip', 'mid'),
+    c('option_plate', 'a wide option plate: gilded iron with a bronze rim, empty centre', 'dark'), c('picture_clamp', 'a bronze picture clamp: two small bronze clasps with a short bar', 'mid'),
+  ] },
+  { id: 'ui-news', family: 'events', kind: 'grid', aspect: '2:3', grid: [1, 2], ground: 'black', matte: 'none', cells: [
+    c('broadsheet', 'a parchment broadsheet on a walnut board, no masthead, no lettering, plain', 'light', { border: 0.1 }), c('inner_frame', 'a thin bronze inner frame with a plain dark centre', 'mid', { border: 0.1 }),
+  ] },
+  { id: 'ui-focus', family: 'focus', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none',
+    note: 'The whole sheet background and every gutter between the tiles is flat pure black (#000000) with nothing painted on it: no backdrop, no lit or tinted panel behind a tile, no glow, no halo, no vignette, no gradient, no light spilling out of a tile. Each of the 9 tiles is a flat full-bleed swatch of its material that runs to its own edges with no margin of ground inside the tile and no frame drawn around it, so a crop of the tile holds only the material. The three wire cells are not thin lines: each is a thick bar of braided cord that fills the full width and most of the height of its cell.',
+    cells: [
+    c('board_tile', 'a seamless walnut board tile, plain even grain, edge to edge', 'dark'), c('title_unavailable', 'a title bar in dull iron, no gilt, matte', 'dark'),
+    c('title_can_start', 'a title bar in bronze', 'mid'), c('title_completed', 'a title bar in gilt with a verdigris enamel inlay', 'mid'),
+    c('ongoing_plate', 'a wide ongoing-focus plate: walnut with a gilt edge, empty', 'dark'), c('link_bronze', 'a thick horizontal bar of braided bronze wire filling the whole cell edge to edge, no glow', 'dark'),
+    c('link_gilt', 'a thick horizontal bar of braided gilt wire filling the whole cell edge to edge, no glow', 'dark'), c('link_wax', 'a thick horizontal bar of twisted red wax cord filling the whole cell edge to edge, no glow', 'dark'), c('selection_plate', 'a walnut selection plate with a gold edge', 'dark'),
+  ] },
+  { id: 'ui-research', family: 'research_production', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
+    c('item_available', 'a technology item plate, available: walnut with a bronze rim, empty', 'dark'), c('item_researched', 'a technology item plate, researched: walnut with a gilt rim and a verdigris inlay', 'dark'),
+    c('item_unavailable', 'a technology item plate, unavailable: dull iron, matte', 'dark'), c('folder_tab', 'a folder tab: bronze with a dark inset, empty', 'dark'),
+    c('line_plate', 'a long research line plate: walnut with a thin bronze border', 'dark'), c('stripes', 'faint vertical walnut stripes on a plain ground', 'dark'),
+    c('bonus_plate', 'a small bonus plate: parchment with a bronze rim', 'light'), c('queue_plate', 'a production queue plate: walnut with a bronze edge', 'dark'), c('slot_glow', 'a soft gold glow on black', 'light'),
+  ] },
+  { id: 'ui-military', family: 'military', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
+    c('counter_plate', 'a unit counter bar in a muted vanilla-green palette with a thin bronze rim, empty', 'mid'), c('counter_plate_selected', 'the same counter bar with a gold edge, brighter', 'mid'),
+    c('group_plate', 'an army group plate: slate with a bronze rim', 'dark'), c('list_header', 'a unit list header: bronze plate with a slate inset', 'mid'),
+    c('sort_cell', 'a small sort strip cell: iron with a bronze rim', 'dark'), c('level_pips', 'a row of five tiny bronze pips on iron', 'dark'),
+    c('badge_plate', 'a bronze shield-shaped badge plate, empty', 'mid'), c('entry_plate', 'a unit entry plate: slate with a bronze edge', 'dark'), c('stat_plate', 'a stat plate: dark slate inset with a bronze rim', 'dark'),
+  ] },
+  { id: 'ui-frontend', family: 'frontend', kind: 'grid', aspect: '3:2', grid: [3, 3], ground: 'black', matte: 'none', cells: [
+    c('menu_button_normal', 'a wide menu button: gilded iron with a bronze rim, empty, at rest', 'dark'), c('menu_button_hover', 'the same menu button one step brighter', 'dark'), c('menu_button_pressed', 'the same menu button one step darker with a gold edge', 'dark'),
+    c('menu_divider', 'a thin bronze rule with a small eight-pointed star', 'mid'), c('entry_plate', 'a country entry plate: framed parchment with a bronze rim', 'light'), c('entry_plate_selected', 'the same country entry plate with a gold edge', 'light'),
+    c('bookmark_frame', 'a bronze-framed parchment panel, wide, plain', 'light', { border: 0.1 }), c('play_button', 'a very wide play button: gilded iron with a bronze rim, empty', 'dark'), c('rule_icon', 'a plain round bronze seat for a rule icon', 'dark'),
+  ] },
+];
+
+// The single-material chrome sheets of spec 02 section 5 that the themed sheets replaced (UI overhaul C1). They are no longer generated or
+// cut; lib/ui_plan.mjs still classifies a sprite into one of their roles (chromeRole) and then moves the role onto a themed sheet.
+export const LEGACY_CHROME_SHEETS = [
   { id: 'ui-chrome-panels', family: 'chrome_panels', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cellBorder: 0.16, cells: [
     c('walnut_thick', 'a square window panel: dark walnut body with a thick cast-bronze border with rivets and mitred corners, border about one sixth of the width', 'dark', { border: 0.18 }),
     c('walnut_double', 'a square window panel: dark walnut body with a double bronze border, a thin inner line inside a thick outer band', 'dark', { border: 0.2 }),
@@ -114,68 +184,6 @@ export const FIXED_SHEETS = [
     c('bar_stud', 'a wide iron bar stud with a bronze rim'), c('corner_stud', 'a small bronze corner stud'),
     c('wax_seal', 'a plain red wax seal without any imprint'), c('wax_seal_green', 'a plain verdigris wax seal without any imprint'),
     c('wax_seal_amber', 'a plain amber wax seal without any imprint'), c('wax_seal_grey', 'a plain grey wax seal without any imprint'),
-  ] },
-  { id: 'ui-sockets', family: 'chrome_controls', kind: 'grid', aspect: '1:1', grid: [6, 6], ground: 'black', matte: 'outline',
-    note: 'Cells 1 to 12 are the dark sockets and may keep a dark recess. Cells 13 to 16 are mid-tone and cells 17 to 20 are light: in those eight the whole recess of the socket, not only its rim, is painted in the lit tone named for the cell (cells 13 to 16 a light caramel-tan of about #B08050 with a bright bronze rim, never dark brown or walnut; cells 17 to 20 a pale cream-gold), so that the cell reads as mid-tone or as light from rim to centre, with an average brightness well above the dark sockets, and no black or dark brown shows inside the socket. The black of the sheet is only the ground between the cells.',
-    cells: [
-    c('socket_round', 'an empty round bronze socket with a dark recess and a thin gilt ring'), c('socket_square', 'an empty square bronze socket with a dark recess'),
-    c('socket_wide', 'an empty wide bronze socket, about twice as wide as tall'), c('socket_tall', 'an empty tall bronze socket, about twice as tall as wide'),
-    c('chip_wide', 'a small wide bronze chip with a dark centre'), c('chip_tall', 'a small tall bronze chip with a dark centre'),
-    c('badge_shield', 'an empty bronze heater shield with a dark field'), c('pip_round', 'a tiny round bronze stud'), c('pip_square', 'a tiny square bronze stud'),
-    c('socket_round_lit', 'the round bronze socket with a gilt ring, brighter'), c('socket_square_lit', 'the square bronze socket with a gilt edge, brighter'),
-    c('socket_round_dull', 'the round socket in dull iron, no gilt, matte'),
-    c('socket_square_mid', 'an empty square socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'), c('socket_round_mid', 'an empty round socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'),
-    c('socket_wide_mid', 'an empty wide socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'), c('socket_tall_mid', 'an empty tall socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'),
-    c('socket_round_light', 'an empty round socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'), c('socket_square_light', 'an empty square socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'),
-    c('socket_wide_light', 'an empty wide socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'), c('socket_tall_light', 'an empty tall socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'),
-  ] },
-  { id: 'ui-topbar', family: 'topbar', kind: 'grid', aspect: '3:1', grid: [1, 8], ground: 'black', matte: 'none', cells: [
-    c('band', 'a long top bar band: walnut with a gilt line along the lower edge, seamless along its length', 'dark'),
-    c('band_extended', 'a long top bar band with a deeper walnut lower lip and a gilt line, seamless along its length', 'dark'),
-    c('date_plate', 'a wide date plate: bronze cartouche with a dark inset, rounded ends', 'dark'),
-    c('speed_1', 'a row of three small speed lamps in a bronze rail, the first lamp lit', 'dark'),
-    c('speed_2', 'a row of three small speed lamps in a bronze rail, the first two lamps lit', 'dark'),
-    c('speed_3', 'a row of three small speed lamps in a bronze rail, all three lamps lit', 'dark'),
-    c('alert_plate', 'a narrow alert tray plate: iron with a bronze rim, empty', 'dark'),
-    c('overview_tray', 'an overview tray: a wide shallow walnut tray with a bronze edge, empty', 'dark'),
-  ] },
-  { id: 'ui-map', family: 'map_interface', kind: 'grid', aspect: '3:2', grid: [3, 2], ground: 'black', matte: 'none', cells: [
-    c('map_tray', 'a tall map mode tray: slate with a bronze edge, plain', 'dark'), c('minimap_frame', 'a wide minimap frame: bronze border around a plain dark slate centre with a small compass rose in one corner', 'dark', { border: 0.12 }),
-    c('clock_plate', 'a clock plate: bronze cartouche with a dark inset', 'dark'), c('handle', 'a tall narrow gilded-iron view handle', 'dark'),
-    c('ping_button', 'a wide ping button plate: gilded iron with a bronze rim, empty', 'dark'), c('toggle', 'a small toggle plate: slate with a bronze rim, empty', 'dark'),
-  ] },
-  { id: 'ui-events', family: 'events', kind: 'grid', aspect: '2:3', grid: [2, 3], ground: 'black', matte: 'none', cells: [
-    c('board_top', 'the top of a writing board: walnut with a bronze rim, plain', 'light', { border: 0.12 }), c('board_mid', 'a seamless vertical tile of a parchment-faced writing board with bronze side rails', 'light'),
-    c('board_bottom', 'the bottom of a writing board: parchment with a bronze lower rim', 'light', { border: 0.12 }), c('board_end', 'the lower end of a writing board: bronze rim and walnut lip', 'mid'),
-    c('option_plate', 'a wide option plate: gilded iron with a bronze rim, empty centre', 'dark'), c('picture_clamp', 'a bronze picture clamp: two small bronze clasps with a short bar', 'mid'),
-  ] },
-  { id: 'ui-news', family: 'events', kind: 'grid', aspect: '2:3', grid: [1, 2], ground: 'black', matte: 'none', cells: [
-    c('broadsheet', 'a parchment broadsheet on a walnut board, no masthead, no lettering, plain', 'light', { border: 0.1 }), c('inner_frame', 'a thin bronze inner frame with a plain dark centre', 'mid', { border: 0.1 }),
-  ] },
-  { id: 'ui-focus', family: 'focus', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none',
-    note: 'The whole sheet background and every gutter between the tiles is flat pure black (#000000) with nothing painted on it: no backdrop, no lit or tinted panel behind a tile, no glow, no halo, no vignette, no gradient, no light spilling out of a tile. Each of the 9 tiles is a flat full-bleed swatch of its material that runs to its own edges with no margin of ground inside the tile and no frame drawn around it, so a crop of the tile holds only the material. The three wire cells are not thin lines: each is a thick bar of braided cord that fills the full width and most of the height of its cell.',
-    cells: [
-    c('board_tile', 'a seamless walnut board tile, plain even grain, edge to edge', 'dark'), c('title_unavailable', 'a title bar in dull iron, no gilt, matte', 'dark'),
-    c('title_can_start', 'a title bar in bronze', 'mid'), c('title_completed', 'a title bar in gilt with a verdigris enamel inlay', 'mid'),
-    c('ongoing_plate', 'a wide ongoing-focus plate: walnut with a gilt edge, empty', 'dark'), c('link_bronze', 'a thick horizontal bar of braided bronze wire filling the whole cell edge to edge, no glow', 'dark'),
-    c('link_gilt', 'a thick horizontal bar of braided gilt wire filling the whole cell edge to edge, no glow', 'dark'), c('link_wax', 'a thick horizontal bar of twisted red wax cord filling the whole cell edge to edge, no glow', 'dark'), c('selection_plate', 'a walnut selection plate with a gold edge', 'dark'),
-  ] },
-  { id: 'ui-research', family: 'research_production', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
-    c('item_available', 'a technology item plate, available: walnut with a bronze rim, empty', 'dark'), c('item_researched', 'a technology item plate, researched: walnut with a gilt rim and a verdigris inlay', 'dark'),
-    c('item_unavailable', 'a technology item plate, unavailable: dull iron, matte', 'dark'), c('folder_tab', 'a folder tab: bronze with a dark inset, empty', 'dark'),
-    c('line_plate', 'a long research line plate: walnut with a thin bronze border', 'dark'), c('stripes', 'faint vertical walnut stripes on a plain ground', 'dark'),
-    c('bonus_plate', 'a small bonus plate: parchment with a bronze rim', 'light'), c('queue_plate', 'a production queue plate: walnut with a bronze edge', 'dark'), c('slot_glow', 'a soft gold glow on black', 'light'),
-  ] },
-  { id: 'ui-military', family: 'military', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
-    c('counter_plate', 'a unit counter bar in a muted vanilla-green palette with a thin bronze rim, empty', 'mid'), c('counter_plate_selected', 'the same counter bar with a gold edge, brighter', 'mid'),
-    c('group_plate', 'an army group plate: slate with a bronze rim', 'dark'), c('list_header', 'a unit list header: bronze plate with a slate inset', 'mid'),
-    c('sort_cell', 'a small sort strip cell: iron with a bronze rim', 'dark'), c('level_pips', 'a row of five tiny bronze pips on iron', 'dark'),
-    c('badge_plate', 'a bronze shield-shaped badge plate, empty', 'mid'), c('entry_plate', 'a unit entry plate: slate with a bronze edge', 'dark'), c('stat_plate', 'a stat plate: dark slate inset with a bronze rim', 'dark'),
-  ] },
-  { id: 'ui-frontend', family: 'frontend', kind: 'grid', aspect: '3:2', grid: [3, 3], ground: 'black', matte: 'none', cells: [
-    c('menu_button_normal', 'a wide menu button: gilded iron with a bronze rim, empty, at rest', 'dark'), c('menu_button_hover', 'the same menu button one step brighter', 'dark'), c('menu_button_pressed', 'the same menu button one step darker with a gold edge', 'dark'),
-    c('menu_divider', 'a thin bronze rule with a small eight-pointed star', 'mid'), c('entry_plate', 'a country entry plate: framed parchment with a bronze rim', 'light'), c('entry_plate_selected', 'the same country entry plate with a gold edge', 'light'),
-    c('bookmark_frame', 'a bronze-framed parchment panel, wide, plain', 'light', { border: 0.1 }), c('play_button', 'a very wide play button: gilded iron with a bronze rim, empty', 'dark'), c('rule_icon', 'a plain round bronze seat for a rule icon', 'dark'),
   ] },
 ];
 

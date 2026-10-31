@@ -1,0 +1,771 @@
+{
+  "format": 1,
+  "about": "The design-system cells of ZIN's own windows (UI overhaul lane C3, docs/plans/ui_overhaul/02_plan.md phase 1; design system docs/specs/07_interface/07_design_system.md sections 1, 5, 6.4). One generated sheet on a flat black ground, read by rows: every row holds the items listed under it, left to right, separated by black gutters. lib/zin_chrome.mjs cuts the rows and items, and modules/ui.mjs writes the sprites of the sprites table. Code only crops, nine-slices, resizes and places generated frames side by side (spec 02 section 2.2).",
+  "sheet": {
+    "id": "ui-zin-chrome",
+    "raw": "ui/ui-zin-chrome.png",
+    "size": "1536x1024",
+    "threshold": 14,
+    "minGutter": 4,
+    "references": [
+      "docs/plans/ui_overhaul/directions/direction_a_components.png",
+      "docs/plans/ui_overhaul/directions/direction_b_components.png",
+      "docs/plans/ui_overhaul/directions/direction_c_components.png"
+    ],
+    "alphaFromOutline": {
+      "rule_banner_hall": 48,
+      "rule_chancery": 48,
+      "rule_chronicle": 48,
+      "mark_banner_hall": 48,
+      "mark_chancery": 48,
+      "mark_chronicle": 48,
+      "groove_banner_hall": 12,
+      "groove_chancery": 12,
+      "groove_chronicle": 12
+    },
+    "alphaNote": "Cells whose alpha is taken from their outline on the black ground (value: the luminance, 0 to 255, at which a pixel becomes opaque): the dividers and marks are isolated objects, the grooves have terminals that leave black corners."
+  },
+  "themes": {
+    "banner_hall": "Banner Hall: dyed woad-black wool (#141E25) edged with couched gold cord (#B28339, lit #FAEC98), madder red cloth (#811F14) and woad blue cloth (#13283F), undyed linen (#CEBCA6); weave visible only at close view; no metal",
+    "chancery": "Chancery: dark oiled walnut (#2D1D13) in one cast-bronze moulding (#634027, lit #E0AB6D) with tiny gilt corner leaves and small green inset stones, cream vellum (#E4D7C2)",
+    "chronicle": "Chronicle: carved blue-grey slate (#2D353A) with an inlaid bronze line (#78664C, lit #CAB289) and small diamond studs, rubric red cloth (#5C1714)",
+    "neutral": "neutral: blackened iron plate (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs"
+  },
+  "rows": [
+    {
+      "row": "frames",
+      "items": [
+        {
+          "key": "frame_banner_hall",
+          "theme": "banner_hall",
+          "subject": "a square window panel: plain calm woad-black wool body, a gold cord frame couched along all four edges about one eighth of the width thick, a small knotted cord diamond at each corner; the body is even and dark with no pattern"
+        },
+        {
+          "key": "frame_chancery",
+          "theme": "chancery",
+          "subject": "a square window panel: plain calm dark walnut body, a cast-bronze moulding frame about one eighth of the width thick with a small gilt leaf and a small green stone at each corner; the body is even and dark with no pattern"
+        },
+        {
+          "key": "frame_chronicle",
+          "theme": "chronicle",
+          "subject": "a square window panel: plain calm dark blue-grey slate body, a carved slate frame about one eighth of the width thick with an inlaid bronze line and a small bronze diamond stud at each corner; the body is even and dark with no pattern"
+        }
+      ]
+    },
+    {
+      "row": "tabs",
+      "items": [
+        {
+          "key": "tab_banner_hall_normal",
+          "theme": "banner_hall",
+          "subject": "a tab: woad blue cloth with a gold cord rim, plain"
+        },
+        {
+          "key": "tab_banner_hall_hover",
+          "theme": "banner_hall",
+          "subject": "the same tab, hovered: slightly lighter woad blue cloth with a brighter gold cord rim"
+        },
+        {
+          "key": "tab_banner_hall_selected",
+          "theme": "banner_hall",
+          "subject": "the same tab, selected: madder red cloth with a bright gold cord rim"
+        },
+        {
+          "key": "tab_chancery_normal",
+          "theme": "chancery",
+          "subject": "a tab: dark walnut in a bronze rail, plain"
+        },
+        {
+          "key": "tab_chancery_hover",
+          "theme": "chancery",
+          "subject": "the same tab, hovered: lighter walnut with a brighter bronze rim"
+        },
+        {
+          "key": "tab_chancery_selected",
+          "theme": "chancery",
+          "subject": "the same tab, selected: a raised cream vellum tab with a bronze rim"
+        },
+        {
+          "key": "tab_chronicle_normal",
+          "theme": "chronicle",
+          "subject": "a tab: dark slate with a thin bronze line, plain"
+        },
+        {
+          "key": "tab_chronicle_hover",
+          "theme": "chronicle",
+          "subject": "the same tab, hovered: lighter slate with a brighter bronze line"
+        },
+        {
+          "key": "tab_chronicle_selected",
+          "theme": "chronicle",
+          "subject": "the same tab, selected: rubric red cloth with a bronze rim"
+        }
+      ]
+    },
+    {
+      "row": "buttons and rows",
+      "items": [
+        {
+          "key": "button_normal",
+          "theme": "neutral",
+          "subject": "a button plate, normal: blackened iron with a thin muted-bronze rim and four tiny corner studs, plain face"
+        },
+        {
+          "key": "button_hover",
+          "theme": "neutral",
+          "subject": "the same button plate, hovered: a visibly lighter iron face and a bright gilt rim"
+        },
+        {
+          "key": "button_pressed",
+          "theme": "neutral",
+          "subject": "the same button plate, pressed: a darker sunken iron face with an inner shadow"
+        },
+        {
+          "key": "button_disabled",
+          "theme": "neutral",
+          "subject": "the same button plate, disabled: flat dull grey iron, no gilt, colourless"
+        },
+        {
+          "key": "row_normal",
+          "theme": "neutral",
+          "subject": "a long list row strip: very dark iron-grey, almost black, plain, with a hair-thin bronze line along its bottom edge"
+        },
+        {
+          "key": "row_selected",
+          "theme": "neutral",
+          "subject": "the same long list row strip, selected: dark iron-grey with a thin gilt rim all around"
+        }
+      ]
+    },
+    {
+      "row": "meter grooves",
+      "items": [
+        {
+          "key": "groove_banner_hall",
+          "theme": "banner_hall",
+          "subject": "a long empty meter groove: undyed linen inside a gold cord hem"
+        },
+        {
+          "key": "groove_chancery",
+          "theme": "chancery",
+          "subject": "a long empty meter groove: a dark walnut channel in a bronze casing with small leaf terminals at both ends"
+        },
+        {
+          "key": "groove_chronicle",
+          "theme": "chronicle",
+          "subject": "a long empty meter groove: a dark slate channel with a bronze stud at each end"
+        }
+      ]
+    },
+    {
+      "row": "meter fills",
+      "items": [
+        {
+          "key": "fill_banner_hall",
+          "theme": "banner_hall",
+          "subject": "a long flat meter fill bar: plain madder red cloth, even colour, square ends, no frame"
+        },
+        {
+          "key": "fill_chancery",
+          "theme": "chancery",
+          "subject": "a long flat meter fill bar: plain verdigris green enamel, even colour, square ends, no frame"
+        },
+        {
+          "key": "fill_chronicle",
+          "theme": "chronicle",
+          "subject": "a long flat meter fill bar: plain cool verdigris green, even colour, square ends, no frame"
+        }
+      ]
+    },
+    {
+      "row": "rules and marks",
+      "items": [
+        {
+          "key": "rule_banner_hall",
+          "theme": "banner_hall",
+          "subject": "a long thin divider: one twisted gold cord, plain"
+        },
+        {
+          "key": "mark_banner_hall",
+          "theme": "banner_hall",
+          "subject": "a small stitched gold cord diamond, the threshold mark of a meter"
+        },
+        {
+          "key": "rule_chancery",
+          "theme": "chancery",
+          "subject": "a long thin divider: one plain bronze moulding line"
+        },
+        {
+          "key": "mark_chancery",
+          "theme": "chancery",
+          "subject": "a small bronze diamond with a tiny green stone, the threshold mark of a meter"
+        },
+        {
+          "key": "rule_chronicle",
+          "theme": "chronicle",
+          "subject": "a long thin divider: one inlaid bronze line, plain"
+        },
+        {
+          "key": "mark_chronicle",
+          "theme": "chronicle",
+          "subject": "a small bronze diamond stud, the threshold mark of a meter"
+        }
+      ]
+    },
+    {
+      "row": "accent strips",
+      "items": [
+        {
+          "key": "accent_court",
+          "theme": "accent",
+          "subject": "a short flat strip of court gold enamel"
+        },
+        {
+          "key": "accent_council",
+          "theme": "accent",
+          "subject": "a short flat strip of ash grey enamel"
+        },
+        {
+          "key": "accent_dominion",
+          "theme": "accent",
+          "subject": "a short flat strip of storm blue-grey enamel"
+        },
+        {
+          "key": "accent_watch",
+          "theme": "accent",
+          "subject": "a short flat strip of weathered sandstone colour"
+        },
+        {
+          "key": "accent_strait",
+          "theme": "accent",
+          "subject": "a short flat strip of sea-green enamel"
+        },
+        {
+          "key": "accent_presence",
+          "theme": "accent",
+          "subject": "a short flat strip of cold charcoal black with a faint grey sheen"
+        },
+        {
+          "key": "accent_horde",
+          "theme": "accent",
+          "subject": "a short flat strip of ember orange-red enamel"
+        },
+        {
+          "key": "accent_accord",
+          "theme": "accent",
+          "subject": "a short flat strip of deep sea blue enamel"
+        },
+        {
+          "key": "accent_journey",
+          "theme": "accent",
+          "subject": "a short flat strip of frost white-blue enamel"
+        }
+      ]
+    },
+    {
+      "row": "unknown icons",
+      "items": [
+        {
+          "key": "unknown_technology",
+          "theme": "chronicle",
+          "subject": "an empty square slate plate with a bronze rim and an empty round socket in the middle: the icon for a technology without a picture"
+        },
+        {
+          "key": "unknown_doctrine",
+          "theme": "chronicle",
+          "subject": "an empty square slate plate with a bronze rim and an empty diamond socket in the middle: the icon for a doctrine without a picture"
+        },
+        {
+          "key": "unknown_unit",
+          "theme": "banner_hall",
+          "subject": "an empty wide woad-black cloth plate, about three and a half times as wide as tall, with a gold cord rim and an empty roundel in the middle: the icon for a troop type without a picture"
+        },
+        {
+          "key": "unknown_equipment",
+          "theme": "banner_hall",
+          "subject": "an empty wide woad-black cloth plate, about three times as wide as tall, with a gold cord rim and an empty oblong socket in the middle: the icon for equipment without a picture"
+        }
+      ]
+    }
+  ],
+  "sprites": {
+    "note": "Each sprite: its texture under gfx/interface/zin/chrome/ (or unknown/), the target size of one frame, the fit and the cells in frame order. Frame order follows the design system section 6.2 (normal, hover, pressed[, disabled]); tabs are normal, hover, selected; rows are normal, selected. GFX_zin_frame keeps its name and is the Chancery frame (every ZIN panel today is a Chancery window, design system section 7). nine_slice sprites keep their painted rim and corners: cellBorder is the painted border as a fraction of the cell height, border the target border in pixels; the centre is resized (never past its cell size except where the handoff says so).",
+    "frames": {
+      "size": [
+        232,
+        232
+      ],
+      "border": 32,
+      "cellBorder": {
+        "frame_banner_hall": 0.13,
+        "frame_chancery": 0.15,
+        "frame_chronicle": 0.17,
+        "note": "The painted border of each window cell as a fraction of the cell width, measured on the accepted sheet (e01f2235): it holds the cord, moulding or slate band and the corner ornaments, so the corners are never stretched."
+      },
+      "list": [
+        {
+          "name": "GFX_zin_frame",
+          "cell": "frame_chancery",
+          "texture": "gfx/interface/zin/chrome/frame_chancery.dds",
+          "theme": "chancery"
+        },
+        {
+          "name": "GFX_zin_frame_chancery",
+          "cell": "frame_chancery",
+          "texture": "gfx/interface/zin/chrome/frame_chancery.dds",
+          "theme": "chancery"
+        },
+        {
+          "name": "GFX_zin_frame_banner_hall",
+          "cell": "frame_banner_hall",
+          "texture": "gfx/interface/zin/chrome/frame_banner_hall.dds",
+          "theme": "banner_hall"
+        },
+        {
+          "name": "GFX_zin_frame_chronicle",
+          "cell": "frame_chronicle",
+          "texture": "gfx/interface/zin/chrome/frame_chronicle.dds",
+          "theme": "chronicle"
+        }
+      ]
+    },
+    "list": [
+      {
+        "name": "GFX_zin_button",
+        "texture": "gfx/interface/zin/chrome/button.dds",
+        "size": [
+          132,
+          30
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "button_normal",
+          "button_hover",
+          "button_pressed"
+        ],
+        "button": true,
+        "border": 8,
+        "cellBorder": 0.24
+      },
+      {
+        "name": "GFX_zin_rule",
+        "texture": "gfx/interface/zin/chrome/rule_chancery.dds",
+        "size": [
+          520,
+          12
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "rule_chancery"
+        ],
+        "border": [
+          12,
+          1
+        ],
+        "cellBorder": [
+          1,
+          0.1
+        ]
+      },
+      {
+        "name": "GFX_zin_rule_banner_hall",
+        "texture": "gfx/interface/zin/chrome/rule_banner_hall.dds",
+        "size": [
+          520,
+          12
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "rule_banner_hall"
+        ],
+        "border": [
+          12,
+          1
+        ],
+        "cellBorder": [
+          1,
+          0.1
+        ]
+      },
+      {
+        "name": "GFX_zin_rule_chronicle",
+        "texture": "gfx/interface/zin/chrome/rule_chronicle.dds",
+        "size": [
+          520,
+          12
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "rule_chronicle"
+        ],
+        "border": [
+          12,
+          1
+        ],
+        "cellBorder": [
+          1,
+          0.1
+        ]
+      },
+      {
+        "name": "GFX_zin_tab_banner_hall",
+        "texture": "gfx/interface/zin/chrome/tab_banner_hall.dds",
+        "size": [
+          128,
+          32
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "tab_banner_hall_normal",
+          "tab_banner_hall_hover",
+          "tab_banner_hall_selected"
+        ],
+        "button": true,
+        "border": 8,
+        "cellBorder": 0.22
+      },
+      {
+        "name": "GFX_zin_tab_chancery",
+        "texture": "gfx/interface/zin/chrome/tab_chancery.dds",
+        "size": [
+          128,
+          32
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "tab_chancery_normal",
+          "tab_chancery_hover",
+          "tab_chancery_selected"
+        ],
+        "button": true,
+        "border": 8,
+        "cellBorder": 0.22
+      },
+      {
+        "name": "GFX_zin_tab_chronicle",
+        "texture": "gfx/interface/zin/chrome/tab_chronicle.dds",
+        "size": [
+          128,
+          32
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "tab_chronicle_normal",
+          "tab_chronicle_hover",
+          "tab_chronicle_selected"
+        ],
+        "button": true,
+        "border": 8,
+        "cellBorder": 0.22
+      },
+      {
+        "name": "GFX_zin_row",
+        "texture": "gfx/interface/zin/chrome/row.dds",
+        "size": [
+          320,
+          32
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "row_normal",
+          "row_selected"
+        ],
+        "border": 4,
+        "cellBorder": 0.16
+      },
+      {
+        "name": "GFX_zin_meter_groove_banner_hall",
+        "texture": "gfx/interface/zin/chrome/meter_groove_banner_hall.dds",
+        "size": [
+          256,
+          16
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "groove_banner_hall"
+        ],
+        "border": [
+          12,
+          4
+        ],
+        "cellBorder": [
+          0.6,
+          0.18
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_groove_chancery",
+        "texture": "gfx/interface/zin/chrome/meter_groove_chancery.dds",
+        "size": [
+          256,
+          16
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "groove_chancery"
+        ],
+        "border": [
+          12,
+          4
+        ],
+        "cellBorder": [
+          0.6,
+          0.18
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_groove_chronicle",
+        "texture": "gfx/interface/zin/chrome/meter_groove_chronicle.dds",
+        "size": [
+          256,
+          16
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "groove_chronicle"
+        ],
+        "border": [
+          12,
+          4
+        ],
+        "cellBorder": [
+          0.6,
+          0.18
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_fill_banner_hall",
+        "texture": "gfx/interface/zin/chrome/meter_fill_banner_hall.dds",
+        "size": [
+          256,
+          8
+        ],
+        "fit": "exact",
+        "cells": [
+          "fill_banner_hall"
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_fill_chancery",
+        "texture": "gfx/interface/zin/chrome/meter_fill_chancery.dds",
+        "size": [
+          256,
+          8
+        ],
+        "fit": "exact",
+        "cells": [
+          "fill_chancery"
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_fill_chronicle",
+        "texture": "gfx/interface/zin/chrome/meter_fill_chronicle.dds",
+        "size": [
+          256,
+          8
+        ],
+        "fit": "exact",
+        "cells": [
+          "fill_chronicle"
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_mark_banner_hall",
+        "texture": "gfx/interface/zin/chrome/meter_mark_banner_hall.dds",
+        "size": [
+          16,
+          16
+        ],
+        "fit": "contain",
+        "cells": [
+          "mark_banner_hall"
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_mark_chancery",
+        "texture": "gfx/interface/zin/chrome/meter_mark_chancery.dds",
+        "size": [
+          16,
+          16
+        ],
+        "fit": "contain",
+        "cells": [
+          "mark_chancery"
+        ]
+      },
+      {
+        "name": "GFX_zin_meter_mark_chronicle",
+        "texture": "gfx/interface/zin/chrome/meter_mark_chronicle.dds",
+        "size": [
+          16,
+          16
+        ],
+        "fit": "contain",
+        "cells": [
+          "mark_chronicle"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_court",
+        "texture": "gfx/interface/zin/chrome/accent_court.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_court"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_council",
+        "texture": "gfx/interface/zin/chrome/accent_council.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_council"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_dominion",
+        "texture": "gfx/interface/zin/chrome/accent_dominion.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_dominion"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_watch",
+        "texture": "gfx/interface/zin/chrome/accent_watch.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_watch"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_strait",
+        "texture": "gfx/interface/zin/chrome/accent_strait.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_strait"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_presence",
+        "texture": "gfx/interface/zin/chrome/accent_presence.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_presence"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_horde",
+        "texture": "gfx/interface/zin/chrome/accent_horde.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_horde"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_accord",
+        "texture": "gfx/interface/zin/chrome/accent_accord.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_accord"
+        ]
+      },
+      {
+        "name": "GFX_zin_accent_journey",
+        "texture": "gfx/interface/zin/chrome/accent_journey.dds",
+        "size": [
+          128,
+          4
+        ],
+        "fit": "exact",
+        "cells": [
+          "accent_journey"
+        ]
+      },
+      {
+        "name": "GFX_zin_unknown_technology",
+        "texture": "gfx/interface/zin/unknown/technology.dds",
+        "size": [
+          64,
+          64
+        ],
+        "fit": "exact",
+        "cells": [
+          "unknown_technology"
+        ]
+      },
+      {
+        "name": "GFX_zin_unknown_doctrine",
+        "texture": "gfx/interface/zin/unknown/doctrine.dds",
+        "size": [
+          64,
+          64
+        ],
+        "fit": "exact",
+        "cells": [
+          "unknown_doctrine"
+        ]
+      },
+      {
+        "name": "GFX_zin_unknown_unit",
+        "texture": "gfx/interface/zin/unknown/unit.dds",
+        "size": [
+          152,
+          42
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "unknown_unit"
+        ],
+        "border": 8,
+        "cellBorder": 0.2
+      },
+      {
+        "name": "GFX_zin_unknown_equipment",
+        "texture": "gfx/interface/zin/unknown/equipment.dds",
+        "size": [
+          146,
+          54
+        ],
+        "fit": "nine_slice",
+        "cells": [
+          "unknown_equipment"
+        ],
+        "border": 8,
+        "cellBorder": 0.2
+      }
+    ],
+    "ruleNote": "The dividers keep the 520 px width their windows lay out: the end caps are kept and the plain moulding or cord between them is resized along its length (up to about 1.6 times for the Chancery line); no other cell is enlarged."
+  }
+}

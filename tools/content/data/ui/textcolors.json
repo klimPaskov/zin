@@ -1,0 +1,471 @@
+{
+  "format": 1,
+  "about": "Text colours and font aliases of interface/zz_zin_textcolors.gfx (UI overhaul lane C2; design system docs/specs/07_interface/07_design_system.md sections 1.6 and 2.1; spec 02 sections 3.4 and 3.7). Colour values are not repeated here: every code names a token of tools/content/data/ui/design_system.json (semantic.<token> or <theme>.<token>), which modules/ui.mjs resolves at build time. 'vanilla' keeps the installed 1.19.3 value of interface/core.gfx for codes the design system leaves unchanged (the global block is written whole, so the file does not depend on how the engine merges two global blocks).",
+  "global": {
+    "note": "The global textcolors block of interface/core.gfx, written whole. Design system 1.6: Y and H to text.highlight (the gilt #EBCA80, lead decision 31 October 2026: emphasis stays distinct from plain text), G to state.good, R to state.danger, O to state.warning, C and B to state.info, W to text.primary, g to text.secondary, b to text.ink; T (title) to text.title. L and the heat gradient 0 to 9 and t keep the vanilla values (engine-generic, spec 02 section 3.4).",
+    "codes": {
+      "0": {
+        "vanilla": [
+          203,
+          0,
+          203
+        ]
+      },
+      "1": {
+        "vanilla": [
+          128,
+          120,
+          211
+        ]
+      },
+      "2": {
+        "vanilla": [
+          81,
+          112,
+          243
+        ]
+      },
+      "3": {
+        "vanilla": [
+          81,
+          143,
+          220
+        ]
+      },
+      "4": {
+        "vanilla": [
+          90,
+          190,
+          231
+        ]
+      },
+      "5": {
+        "vanilla": [
+          63,
+          181,
+          194
+        ]
+      },
+      "6": {
+        "vanilla": [
+          119,
+          204,
+          186
+        ]
+      },
+      "7": {
+        "vanilla": [
+          153,
+          209,
+          153
+        ]
+      },
+      "8": {
+        "vanilla": [
+          204,
+          163,
+          51
+        ]
+      },
+      "9": {
+        "vanilla": [
+          252,
+          169,
+          125
+        ]
+      },
+      "C": "semantic.state.info",
+      "L": {
+        "vanilla": [
+          195,
+          176,
+          145
+        ]
+      },
+      "W": "semantic.text.primary",
+      "B": "semantic.state.info",
+      "G": "semantic.state.good",
+      "R": "semantic.state.danger",
+      "b": "banner_hall.text.ink",
+      "g": "semantic.text.secondary",
+      "Y": "semantic.text.highlight",
+      "H": "semantic.text.highlight",
+      "T": "banner_hall.text.title",
+      "O": "semantic.state.warning",
+      "t": {
+        "vanilla": [
+          255,
+          76,
+          77
+        ]
+      }
+    }
+  },
+  "fontColours": {
+    "note": "A bitmapfont with its own textcolors block overrides the global block for the codes it lists (wiki Font modding, 'Defining bitmaps'; installed interface/core.gfx). Every light-on-dark face of the design system's roles and of the vanilla windows lists G, R, Y, H and T itself, so the global block alone would not reach them. These faces are redefined with their installed definition unchanged except the per-font codes, which take the same tokens as the global block. Faces drawn dark on light grounds (vic_18_black, vic_36_black) and the map and decorative faces (tahoma_60, hoi_22tech, hoi_33, hoi_arrow_font, null_font) are not redefined: their per-font colours are made for their own grounds.",
+    "codes": {
+      "G": "semantic.state.good",
+      "R": "semantic.state.danger",
+      "Y": "semantic.text.highlight",
+      "H": "semantic.text.highlight",
+      "T": "banner_hall.text.title",
+      "O": "semantic.state.warning",
+      "g": "semantic.text.secondary"
+    },
+    "fonts": [
+      {
+        "name": "hoi_16mbs",
+        "fontfiles": [
+          "gfx/fonts/hoi_16mbs",
+          "gfx/fonts/hoi_16mbs_cryllic"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "O",
+          "H",
+          "T",
+          "g"
+        ]
+      },
+      {
+        "name": "hoi_18",
+        "fontfiles": [
+          "gfx/fonts/hoi_18",
+          "gfx/fonts/hoi_18_cryllic"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_18b",
+        "fontfiles": [
+          "gfx/fonts/hoi_18",
+          "gfx/fonts/hoi_18_cryllic"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_18mbs",
+        "fontfiles": [
+          "gfx/fonts/hoi_18mbs",
+          "gfx/fonts/hoi_18mbs_cryllic"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_20b",
+        "fontfiles": [
+          "gfx/fonts/hoi_20b"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_20bs",
+        "fontfiles": [
+          "gfx/fonts/hoi_20bs"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_24header",
+        "fontfiles": [
+          "gfx/fonts/hoi_24header"
+        ],
+        "cursor_offset": [
+          0,
+          4
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "nsb_hoi_24header",
+        "fontfiles": [
+          "gfx/fonts/hoi_24header"
+        ],
+        "cursor_offset": [
+          0,
+          4
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_30header",
+        "fontfiles": [
+          "gfx/fonts/hoi_30header"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_36header",
+        "fontfiles": [
+          "gfx/fonts/hoi_36header"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "nsb_hoi_36header",
+        "fontfiles": [
+          "gfx/fonts/hoi_36header"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi_30",
+        "fontfiles": [
+          "gfx/fonts/hoi_30"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "vic_18",
+        "path": "gfx/fonts/vic_18",
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "vic_22",
+        "path": "gfx/fonts/vic_22",
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "vic_36",
+        "path": "gfx/fonts/vic_36",
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "Arial12",
+        "path": "gfx/fonts/Arial12",
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      }
+    ],
+    "baseColour": "semantic.text.primary",
+    "baseNote": "Design system 2.1: body, label and value text is text.primary on dark surfaces. A redefined face whose installed colour is plain white (0xffffffff) draws in text.primary instead; the installed colour stays recorded in color. Faces with another installed colour (black, translucent) keep it."
+  },
+  "aliases": {
+    "note": "Spec 02 section 3.7 and design system 2.1: the four typewriter faces (twentieth-century documents, used by 25 vanilla .gui files) draw the installed Garamond glyphs of the nearest size. The name, colour and per-font codes stay; only the glyph files change. The dark faces (colour black, drawn on paper) keep their installed per-font codes, which are made for light grounds; the inverted (light) faces take the dark-ground tokens. The bitmapfont_override blocks of core.gfx for Russian, Polish and Japanese are not touched.",
+    "fonts": [
+      {
+        "name": "hoi4_typewriter16",
+        "fontfiles": [
+          "gfx/fonts/garamond_16"
+        ],
+        "color": "0xff000000",
+        "textcolors": {
+          "G": {
+            "vanilla": [
+              86,
+              172,
+              91
+            ]
+          },
+          "R": {
+            "vanilla": [
+              238,
+              0,
+              0
+            ]
+          },
+          "Y": {
+            "vanilla": [
+              238,
+              201,
+              35
+            ]
+          },
+          "H": {
+            "vanilla": [
+              238,
+              201,
+              35
+            ]
+          },
+          "T": {
+            "vanilla": [
+              255,
+              255,
+              255
+            ]
+          }
+        }
+      },
+      {
+        "name": "hoi4_typewriter16_inverted",
+        "fontfiles": [
+          "gfx/fonts/garamond_16"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      },
+      {
+        "name": "hoi4_typewriter22",
+        "fontfiles": [
+          "gfx/fonts/garamond_24"
+        ],
+        "color": "0xff000000",
+        "textcolors": {
+          "G": {
+            "vanilla": [
+              86,
+              172,
+              91
+            ]
+          },
+          "R": {
+            "vanilla": [
+              222,
+              86,
+              70
+            ]
+          },
+          "Y": {
+            "vanilla": [
+              238,
+              201,
+              35
+            ]
+          },
+          "H": {
+            "vanilla": [
+              238,
+              201,
+              35
+            ]
+          },
+          "T": {
+            "vanilla": [
+              255,
+              255,
+              255
+            ]
+          }
+        }
+      },
+      {
+        "name": "hoi4_typewriter22_inverted",
+        "fontfiles": [
+          "gfx/fonts/garamond_24"
+        ],
+        "color": "0xffffffff",
+        "codes": [
+          "G",
+          "R",
+          "Y",
+          "H",
+          "T"
+        ]
+      }
+    ]
+  }
+}
