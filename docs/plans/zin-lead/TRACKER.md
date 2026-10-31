@@ -1,0 +1,91 @@
+# ZIN progress tracker
+
+The persistent inventory of every major subsystem and interface surface of ZIN, with its real state, the work it needs, its dependencies, who has it, how it was tested and what is still wrong. It is updated after every meaningful change. A row is **Done** only when its requirements are met and its tests have run; "built" or "loads" is not done. `STATUS.md` says what is running now; this file says where everything stands.
+
+States: **Not started**, **Provisional** (exists, never reviewed to standard), **In progress**, **Built, untested** (complete in source, no live or visual proof), **Blocked** (named blocker), **Done** (requirements met, tests recorded).
+
+Last full review: 31 October 2026 (owner's overhaul brief: complete UI redesign, full overhaul, continuous MCP improvement).
+
+## 1. Interface
+
+The honest history (31 October 2026). The interface specs (`docs/specs/07_interface/01` to `06`) were written and marked Ready on 19 October 2026. What was built from them is mostly mechanical: `modules/ui_reskin.mjs` replaces 3,139 vanilla textures with cells sliced from generated theme sheets (202 still pending), fitted to the vanilla outlines and luminance classes. The reskin's builder checks run (inventory, coverage and overrides pass; reachability fails; shape, no-vanilla-pixels, provenance and luminance are pending), but its acceptance renders, review sheets, overflow and contrast checks (spec acceptance 3 to 6) and its Linux captures (acceptance 9) were never done. No surface of the reskinned vanilla interface has had a design review as a player sees it. A few ZIN windows were previewed with `hoi4.gui_render` while they were built (the super-event window in six render passes; the world-tension popup; some mechanic panels); none has had a matched in-game review. The owner does not approve the current interface (31 October 2026).
+
+| Surface | State | Required | Depends on | Owner | Tests | Open issues |
+| --- | --- | --- | --- | --- | --- | --- |
+| Design system (palette, type, iconography, panels, spacing, states) | Not started as a written, enforced standard; the reskin spec's "visual language" section is a texture recipe, not a system | A written design system with tokens and rules, applied by every surface; a reviewable style sheet and a component sheet | owner review of the direction | UI lead (to start) | none | the owner finds the interface inconsistent, with reused icons and questionable layouts |
+| Main menu, frontend, loading screens | Provisional: loading frame, emblem, menu backgrounds built; menu layout, bookmark, country selection, rules screens not done (spec 03) | Full design and build; country selection with portraits, flags, descriptions, realm lore | design system; flags; portraits (done) | UI | none | |
+| Top bar, Aoaz bar, clock, minimap, map interface | Provisional (reskinned textures; the Aoaz bar built) | Design review, layout, states, resolutions | design system | UI | none | |
+| Politics, diplomacy, country overview | Provisional (reskinned textures) | Design pass; realm lore and sign shown | design system | UI | none | |
+| Focus tree window and focus icons | Provisional: 4,799 focuses drawn from 175 catalog icons (heavy reuse); window reskinned | A distinct icon per focus family with deliberate reuse rules; per-tree art where the tree is bespoke | design system; icon production | UI + icon art | focus renders for trees only | accidental icon reuse |
+| National spirits and ideas | Provisional: 1,319 spirits drawn from 175 catalog icons | Distinct icons per concept | design system | icon art | none | accidental icon reuse |
+| Research, technology tree, doctrines | Built, untested: K51/K58 tree (285 technologies, large equipment tiles), 86 doctrine icons generated; technology icons still the shared frame | Technology and equipment icons; tree review in renders and in game | design system; icon production | technology + icon art | MCP tech_inspect/render | 185 technology icons pending at last count |
+| Production, construction, logistics, trade, recruitment | Provisional (reskinned textures); equipment pictures and unit icons pending (shared frame) | Equipment pictures, unit icons and vanilla-green counters; layout review | design system; warfare | UI + icon art | none | 601 sprites drew from the shared frame on 25 October |
+| Military (army, navy, air, combat views) | Provisional | Design pass; unit counters | design system | UI | none | |
+| Decisions and missions | Provisional | Category pictures, icons, layout review | design system | UI | none | |
+| Events, news, super events | Built, untested: event window reskinned; 43 catalog event pictures for 495+ events; super-event window built with 32 moments, art and audio pending (SE/SA rows) | Event pictures per chain; super-event art and licensed audio | design system | events + art | super-event renders (six passes) | catalog picture reuse; super-event art and audio missing |
+| ZIN mechanic windows (Aenor court, Hidden Council, Zol presence, Dark Lands panels, powers, realm panel, world tension) | Built, untested | Matched review in renders and in game; design-system pass | design system | UI | partial MCP previews | |
+| Map modes and overlays | Provisional | Review after the new map | map | UI + map | none | |
+| Tooltips, buttons, dialogs, notifications | Provisional (reskinned textures) | Component standards, states, long-text and contrast checks | design system | UI | none | |
+| Chronicle of Aoaz (codex) | Not started in game (spec 04 Ready) | Build the window and entries | design system; lore | UI + lore | none | |
+| Career, honours, meta surfaces | Provisional (spec 06 Draft) | Decide and build | design system | UI | none | |
+| Text sweep (vanilla words) | In progress: 2,121 entries written; text scan at its baseline | Finish the families | glossary | text | text scan | |
+
+## 2. World and map
+
+| Subsystem | State | Required | Depends on | Owner | Tests | Open issues |
+| --- | --- | --- | --- | --- | --- | --- |
+| Geography model and import | In progress: model repaired (rivers off crests, Aenar, Andos, Darkness ridge, passes on crests); import preview READY, land agreement 0.957 | Write the map with `create_world` on HOI4 Agent Tools 4.6.1 | MCP 4.6.1 (installed) | lead | synthesisCheck preview | the write was blocked by pass saddles until 4.6.1 |
+| Provinces, states, regions, borders, resources, starting positions | Blocked on the write: the old map's 305 Y-tag files are still in the mod | Write, then review borders (territory service), states, resources, supply | map write | lead + MCP worker | none on the new map | realms grow by weight, not yet along rivers and ranges (territory service released in 4.6.0, not yet used) |
+| The Mothers' Mound islet (K64) | Not started | Geography request to the map | map write | lead | none | written request in `docs/plans/deep_history/map_islet_request.md` |
+| Key sites and storm seas | Not started on the new map | Key-sites module; storm seas regenerated | map write | lead | none | stand-in site triggers |
+
+## 3. Lore and worldbuilding
+
+| Subsystem | State | Required | Depends on | Owner | Tests | Open issues |
+| --- | --- | --- | --- | --- | --- | --- |
+| Canon and vault | Maintained: owner decisions K1 to K67 recorded | Keep consistent | | lead | migration dry run, text scan | |
+| Deep history (six fallen realms) | Built, untested (K64) | Live proof | Linux run | | deep_past tests | |
+| Realm roots and signs (K67) | Built in data for 155 realms, proposed; about 55 open questions in the vault | Owner rulings; switch `REQUIRE_ROOTS` on | owner | lead | schema check | |
+
+## 4. Countries and national content
+
+| Subsystem | State | Required | Depends on | Owner | Tests | Open issues |
+| --- | --- | --- | --- | --- | --- | --- |
+| Roster and tags | Done in source: 156 realms (Yeldenne retired, K56, content still present), 231 of 439 tags | Remove Yeldenne's content | | lead | tag check | |
+| Focus trees | Built, untested: 99 trees, 4,799 focuses; 52 deep-past focuses | Realm-roots branches (≈580 proposed), bespoke trees for realms on shared trees, history-rooted formables (≈68 proposed) | realm roots | content | focus MCP inspect/render, focus tests | many realms share regional trees |
+| Characters, rulers, heirs, advisors | Built: 1,142 characters, 8 women (K54/Q-104), 109 heirs | Live proof | | | portrait plan tests | |
+| Portraits | Built: 634 pool members, 181 pools, named crops | Owner review | | portraits | portrait tests | chart-islander look not fully met |
+| Flags | In progress: K65 pipeline built, flags to be drawn from the K67 signs | Draw, review, wire | realm signs; owner review | flags | heraldry tests; three flag tests fail until wired | |
+| National spirits, decisions, events, mechanics per realm | Built, untested for the story mechanics; realm-roots proposals queued | Implement the proposals | realm roots | content | story wiring check | |
+
+## 5. Technologies and mechanics
+
+| Subsystem | State | Required | Depends on | Owner | Tests | Open issues |
+| --- | --- | --- | --- | --- | --- | --- |
+| Technology tree | Built, untested: 285 technologies, regional ways of life, development tiers, elder technologies | Icons; balance in play | | technology | MCP tech routes | |
+| Story mechanics, world tension, realm life, succession, news reach, super events | Built, untested | Linux runs | map write | | story check, tests | |
+| Magic, religion, economy, warfare, diplomacy | Built, untested | Review, balance | | | tests | |
+| Beasts of the black north (custom unit, K55/Q-71) | Not started | Meshy model (110 credits on 25 October), counters, sourced sound | warfare files free | 3D pipeline | none | Meshy MCP failing to connect in this session |
+
+## 6. Art and audio
+
+| Subsystem | State | Required | Depends on | Owner | Tests | Open issues |
+| --- | --- | --- | --- | --- | --- | --- |
+| Pending art list | 921 rows in `docs/plans/zin-art/pending_from_integration.md` | Produce with gpt-6-luna | design system for interface art | art | asset gate | |
+| Licensed audio (super events, units, menu) | Not started | Sourced, licensed recordings | | audio research | none | |
+
+## 7. Validation
+
+| Check | State | Notes |
+| --- | --- | --- |
+| Builder and suite | Green except the three flag tests (until the flags are wired) | `scratchpad/verify.sh` |
+| Linux harness: start, sweep, observer runs to 4A 1760 and 4A 1800, save and load, zero ZIN error lines | Not run on the current content; last run 24 October on the old map (loads and runs ten minutes) | needs the map write and an apply |
+| UI acceptance renders and Linux captures | Never run for the reskin | the UI overhaul's first deliverable |
+
+## 8. Tools and workflow
+
+| Item | State | Notes |
+| --- | --- | --- |
+| MCP worker | Running as its own session; released 4.5.0, 4.6.0 and 4.6.1 for ZIN on 25 October (workspace countries, territory service, straits, river carving, pass saddles) | standing improvement loop; requests filed with evidence |
+| Skills | `hoi4-character-art-direction` added; portrait lessons recorded | update on every recurring mistake |
+| CLAUDE.md and AGENTS.md | Current; the guidance size check fails (about 68 KB against 60 KB) | trim by moving rarely used detail into skills or docs |

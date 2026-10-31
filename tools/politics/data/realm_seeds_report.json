@@ -46,7 +46,7 @@
  "surface": "the drawing as the import reads it (illustrated heuristic with the surface-override annotations of preview_call.json) less the model lakes the import carves; points keep PLACE.marginPx from its coast and generated points PLACE.edgeClearPx from the frame edge",
  "tuning": {
   "PLACE": {
-   "marginPx": 3,
+   "marginPx": 8,
    "minSeparationPx": 20,
    "snapReachPx": 220,
    "seedSnapReachPx": 40,
@@ -409,8 +409,11 @@
    "lines": [
     "range_crown_north"
    ],
-   "applied": false,
-   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "applied": true,
+   "excludedRealms": [
+    "AEN",
+    "BLO"
+   ],
    "basis": "Aenor and the Bloody Forest: the northern Crown Mountains (the Konori Heights; repaired model, Middle Lands)."
   },
   {
@@ -517,8 +520,11 @@
    "lines": [
     "range_drak"
    ],
-   "applied": false,
-   "reason": "on this map no named line lies between the two seats (the straight line from capital to capital crosses none of them)",
+   "applied": true,
+   "excludedRealms": [
+    "STA",
+    "DRA"
+   ],
    "basis": "Stabilo and Drak: the Drak Mountains (repaired model, East Lands)."
   }
  ],
@@ -647,33 +653,162 @@
  "summary": {
   "realms": 155,
   "capitalsByMethod": {
-   "site": 62,
-   "model feature": 16,
+   "site": 61,
+   "model feature": 15,
    "old capital": 6,
    "dossier text": 5,
-   "model area": 12,
-   "drawn label": 43,
+   "drawn label": 46,
+   "model area": 11,
    "model land": 11
   },
   "sitesMovedOntoLand": [
    {
+    "tag": "LER",
+    "site": "site_sonargur",
+    "movedPx": 7.1
+   },
+   {
+    "tag": "DND",
+    "site": "site_notbuton",
+    "movedPx": 1
+   },
+   {
+    "tag": "PUV",
+    "site": "site_nafeher",
+    "movedPx": 3
+   },
+   {
+    "tag": "MIR",
+    "site": "site_mirolon",
+    "movedPx": 10
+   },
+   {
+    "tag": "WOR",
+    "site": "site_worshipdom_valleys",
+    "movedPx": 15.8
+   },
+   {
+    "tag": "MAG",
+    "site": "site_magical_forest",
+    "movedPx": 4
+   },
+   {
+    "tag": "GAA",
+    "site": "site_gala",
+    "movedPx": 2
+   },
+   {
     "tag": "HNH",
     "site": "site_hunhun",
-    "movedPx": 3.6
+    "movedPx": 15.5
+   },
+   {
+    "tag": "HER",
+    "site": "site_herez",
+    "movedPx": 7.1
+   },
+   {
+    "tag": "SFT",
+    "site": "site_safeton",
+    "movedPx": 5.8
+   },
+   {
+    "tag": "ORH",
+    "site": "site_asgard",
+    "movedPx": 9.1
+   },
+   {
+    "tag": "REN",
+    "site": "site_ren",
+    "movedPx": 2
+   },
+   {
+    "tag": "KRA",
+    "site": "site_kradlon",
+    "movedPx": 5
+   },
+   {
+    "tag": "VRN",
+    "site": "site_varnondor_staging",
+    "movedPx": 7.2
+   },
+   {
+    "tag": "BOR",
+    "site": "site_bordon",
+    "movedPx": 5.7
+   },
+   {
+    "tag": "DRE",
+    "site": "site_dreson",
+    "movedPx": 37.5
+   },
+   {
+    "tag": "DUL",
+    "site": "site_dulundur",
+    "movedPx": 5
+   },
+   {
+    "tag": "DLN",
+    "site": "site_demon_dolon",
+    "movedPx": 8.1
+   },
+   {
+    "tag": "NAN",
+    "site": "site_nan",
+    "movedPx": 6.4
    },
    {
     "tag": "MOA",
     "site": "site_mora",
-    "movedPx": 3
+    "movedPx": 9.4
+   },
+   {
+    "tag": "NAR",
+    "site": "site_nara",
+    "movedPx": 109.8
+   },
+   {
+    "tag": "ADE",
+    "site": "site_adel",
+    "movedPx": 28.3
+   },
+   {
+    "tag": "PLL",
+    "site": "site_pollos",
+    "movedPx": 5.7
+   },
+   {
+    "tag": "NND",
+    "site": "site_nondondor",
+    "movedPx": 101.8
+   },
+   {
+    "tag": "ELV",
+    "site": "site_elvana",
+    "movedPx": 6.4
+   },
+   {
+    "tag": "IGA",
+    "site": "site_igara",
+    "movedPx": 6.4
+   },
+   {
+    "tag": "HRR",
+    "site": "site_herrodon",
+    "movedPx": 9
    }
   ],
   "capitalsMovedOver60Px": [
    {
     "tag": "XIS",
-    "movedPx": 64.4
+    "movedPx": 71.4
+   },
+   {
+    "tag": "YON",
+    "movedPx": 72.9
    }
   ],
-  "seeds": 10,
+  "seeds": 6,
   "realmsWithClaims": [
    "ZOL",
    "KIN",
@@ -688,9 +823,11 @@
    "GNW|GIR",
    "GIR|BLD",
    "AEN|KIN",
+   "AEN|BLO",
    "AEN|HER",
    "MAG|MSH",
-   "NRS|NAA"
+   "NRS|NAA",
+   "STA|DRA"
   ]
  },
  "ownerQuestions": [
@@ -847,6 +984,11 @@
      "polygons": 1
     },
     {
+     "border": "AEN|BLO",
+     "name": "BLO's side of range_crown_north",
+     "polygons": 1
+    },
+    {
      "border": "AEN|HER",
      "name": "HER's side of range_grey_hills",
      "polygons": 1
@@ -870,12 +1012,12 @@
    "capital": {
     "name": "Sonargur",
     "point": [
-     2975,
-     1023
+     2970,
+     1018
     ],
     "method": "site",
     "source": "site_sonargur",
-    "snapPx": 0,
+    "snapPx": 7.1,
     "status": "canon",
     "zone": "north_lands",
     "land": "land_isle_of_the_north_lands"
@@ -883,8 +1025,8 @@
    "seeds": [
     {
      "point": [
-      2758,
-      782
+      2742,
+      786
      ],
      "method": "model area",
      "source": "ice_lerenwaith",
@@ -902,6 +1044,7 @@
    },
    "overlord": null,
    "conflicts": [
+    "The capital site site_sonargur (2975, 1023) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.1 px away.",
     "1 old state(s) of this realm fall on a land that already holds DND, DUL, BLK, TRO, HOO, DAK, SKR, DUN; no seed added there."
    ],
    "proposed": [
@@ -1015,6 +1158,11 @@
     {
      "barrier": "hardtmuth",
      "name": "the Sun Desert west of the Hardtmuth chain"
+    },
+    {
+     "border": "STA|DRA",
+     "name": "DRA's side of range_drak",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -1049,11 +1197,11 @@
     {
      "point": [
       2570,
-      1194
+      1196
      ],
      "method": "old states",
      "source": "old state 243 (1 old state(s) on this land)",
-     "snapPx": 0,
+     "snapPx": 2,
      "status": "proposed",
      "land": "land_island_016"
     }
@@ -1078,12 +1226,12 @@
    "capital": {
     "name": "Notbuton",
     "point": [
-     2544,
-     1054
+     2545,
+     1056
     ],
     "method": "site",
     "source": "site_notbuton",
-    "snapPx": 0,
+    "snapPx": 1,
     "status": "canon",
     "zone": "north_lands",
     "land": "land_dondor_arm",
@@ -1098,7 +1246,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_notbuton (2545, 1055) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 1 px away."
+   ],
    "proposed": []
   },
   {
@@ -1111,11 +1261,11 @@
     "name": "Nafeher",
     "point": [
      3041,
-     2189
+     2186
     ],
     "method": "site",
     "source": "site_nafeher",
-    "snapPx": 0,
+    "snapPx": 3,
     "status": "canon",
     "zone": "ember_lands",
     "land": "land_ember_lands_island"
@@ -1135,11 +1285,11 @@
     {
      "point": [
       2954,
-      2302
+      2301
      ],
      "method": "model land",
      "source": "land_island_060",
-     "snapPx": 0,
+     "snapPx": 5.4,
      "basis": "Unlo, an isle of Volgan's coast (ember_lands.md 2, 11).",
      "status": "proposed"
     }
@@ -1161,7 +1311,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_nafeher (3041, 2189) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 3 px away."
+   ],
    "proposed": [
     "Seed: The isle of Exhoros (drawn Vez) off Volgan's coast (roster extent).",
     "Seed: Unlo, an isle of Volgan's coast (ember_lands.md 2, 11)."
@@ -1189,12 +1341,12 @@
    "seeds": [
     {
      "point": [
-      3702,
-      636
+      3697,
+      641
      ],
      "method": "old states",
      "source": "old state 1097 (1 old state(s) on this land)",
-     "snapPx": 22,
+     "snapPx": 29.1,
      "status": "proposed",
      "land": "land_island_015"
     }
@@ -1226,11 +1378,11 @@
     "name": "Miherta",
     "point": [
      3397,
-     1961
+     1951
     ],
     "method": "site",
     "source": "site_mirolon",
-    "snapPx": 0,
+    "snapPx": 10,
     "status": "canon",
     "zone": "ember_lands",
     "land": "land_central_mainland"
@@ -1238,7 +1390,7 @@
    "seeds": [
     {
      "point": [
-      3382,
+      3390,
       1870
      ],
      "method": "model area",
@@ -1266,6 +1418,7 @@
    },
    "overlord": null,
    "conflicts": [
+    "The capital site site_mirolon (3397, 1961) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 10 px away.",
     "1 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
    ],
    "proposed": [
@@ -1281,12 +1434,12 @@
    "capital": {
     "name": "Lenlakron",
     "point": [
-     3530,
-     1807
+     3521,
+     1820
     ],
     "method": "site",
     "source": "site_worshipdom_valleys",
-    "snapPx": 0,
+    "snapPx": 15.8,
     "status": "canon",
     "zone": "magical_lands",
     "land": "land_central_mainland"
@@ -1309,7 +1462,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_worshipdom_valleys (3530, 1807) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 15.8 px away."
+   ],
    "proposed": []
   },
   {
@@ -1321,12 +1476,12 @@
    "capital": {
     "name": "Lyrion",
     "point": [
-     3660,
-     1484
+     3661,
+     1489
     ],
     "method": "site",
     "source": "site_magical_forest",
-    "snapPx": 0,
+    "snapPx": 4,
     "status": "canon",
     "zone": "magical_lands",
     "land": "land_central_mainland"
@@ -1354,7 +1509,9 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_magical_forest (3661, 1485) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 4 px away."
+   ],
    "proposed": []
   },
   {
@@ -1366,12 +1523,12 @@
    "capital": {
     "name": "Sodoli",
     "point": [
-     754,
-     2319
+     752,
+     2320
     ],
     "method": "site",
     "source": "site_gala",
-    "snapPx": 0,
+    "snapPx": 2,
     "status": "canon",
     "zone": "lands_sun",
     "land": "land_lands_of_the_sun"
@@ -1385,7 +1542,9 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_gala (754, 2320) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 2 px away."
+   ],
    "proposed": []
   },
   {
@@ -1753,12 +1912,12 @@
    "capital": {
     "name": "Ulrono",
     "point": [
-     3141,
-     1588
+     3153,
+     1590
     ],
     "method": "site",
     "source": "site_hunhun",
-    "snapPx": 3.6,
+    "snapPx": 15.5,
     "status": "canon",
     "zone": "middle_lands",
     "land": "land_central_mainland"
@@ -1785,7 +1944,7 @@
     "subjectType": "chartered dominion"
    },
    "conflicts": [
-    "The capital site site_hunhun (3138, 1586) is not on the land the import reads (or within 3 px of its coast); the nearest acceptable land is 3.6 px away."
+    "The capital site site_hunhun (3138, 1586) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 15.5 px away."
    ],
    "proposed": []
   },
@@ -1849,12 +2008,12 @@
    "capital": {
     "name": "Hugomon",
     "point": [
-     3280,
-     1807
+     3285,
+     1802
     ],
     "method": "site",
     "source": "site_herez",
-    "snapPx": 0,
+    "snapPx": 7.1,
     "status": "canon",
     "zone": "magical_lands",
     "land": "land_central_mainland",
@@ -1886,7 +2045,9 @@
     "tag": "AEN",
     "subjectType": "chartered dominion"
    },
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_herez (3280, 1807) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.1 px away."
+   ],
    "proposed": []
   },
   {
@@ -1992,12 +2153,12 @@
    "capital": {
     "name": "Lotrenri",
     "point": [
-     3126,
-     1752
+     3129,
+     1747
     ],
     "method": "site",
     "source": "site_safeton",
-    "snapPx": 0,
+    "snapPx": 5.8,
     "status": "canon",
     "zone": "middle_lands",
     "land": "land_central_mainland"
@@ -2023,7 +2184,9 @@
     "tag": "AEN",
     "subjectType": "chartered dominion"
    },
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_safeton (3126, 1752) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5.8 px away."
+   ],
    "proposed": []
   },
   {
@@ -2135,12 +2298,12 @@
    "capital": {
     "name": "Borrak",
     "point": [
-     2631,
+     2640,
      1456
     ],
     "method": "site",
     "source": "site_asgard",
-    "snapPx": 0,
+    "snapPx": 9.1,
     "status": "canon",
     "zone": "aenor_isle",
     "land": "land_aenor_isle"
@@ -2172,7 +2335,9 @@
     "tag": "AEN",
     "subjectType": "chartered dominion"
    },
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_asgard (2631, 1457) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 9.1 px away."
+   ],
    "proposed": []
   },
   {
@@ -2184,8 +2349,8 @@
    "capital": {
     "name": "Deoreh",
     "point": [
-     3065,
-     1122
+     3060,
+     1127
     ],
     "method": "model feature",
     "source": "strait_narrow",
@@ -2193,7 +2358,7 @@
      3066,
      1118
     ],
-    "snapPx": 4.1,
+    "snapPx": 10.8,
     "basis": "Deoreh, the narrowest crossing of the Leren Sea on the Middle Lands side: the Middle Lands end of the Narrow Strait (middle_lands.md 10).",
     "status": "proposed",
     "zone": "middle_lands",
@@ -2277,17 +2442,17 @@
    "capital": {
     "name": "Glimzig",
     "point": [
-     3379,
-     1651
+     3401,
+     1640
     ],
-    "method": "model feature",
-    "source": "range_cursed_mountains",
+    "method": "drawn label",
+    "source": "world (3409, 1631)",
     "anchor": [
-     3379,
-     1651
+     3409,
+     1631
     ],
-    "snapPx": 0,
-    "basis": "Glimzig, the throne-cave deep under the Cursed Mountains; the south end of the ridge, as the old carve (middle_lands.md 2.9, 10).",
+    "snapPx": 12,
+    "basis": "Glimzig, the throne-cave deep under the Cursed Mountains, set apart from Yavieth's roosts and outside the Kingson Vale (middle_lands.md 2.9, 10).",
     "status": "proposed",
     "zone": "magical_lands",
     "land": "land_central_mainland",
@@ -2313,7 +2478,7 @@
    "overlord": null,
    "conflicts": [],
    "proposed": [
-    "Capital Glimzig: Glimzig, the throne-cave deep under the Cursed Mountains; the south end of the ridge, as the old carve (middle_lands.md 2.9, 10)."
+    "Capital Glimzig: Glimzig, the throne-cave deep under the Cursed Mountains, set apart from Yavieth's roosts and outside the Kingson Vale (middle_lands.md 2.9, 10)."
    ]
   },
   {
@@ -2420,14 +2585,14 @@
    "capital": {
     "name": "Baeldran",
     "point": [
-     3058,
-     1158
+     3054,
+     1162
     ],
     "method": "model area",
     "source": "forest_crown",
     "anchor": [
-     3058,
-     1158
+     3054,
+     1162
     ],
     "snapPx": 0,
     "basis": "Baeldran, the oldest stand of the Aenor Forest (middle_lands.md 2.5a, 11).",
@@ -2467,16 +2632,16 @@
    "capital": {
     "name": "Morluma",
     "point": [
-     3292,
-     1776
+     3290,
+     1773
     ],
     "method": "model area",
     "source": "waste_cursed_lands",
     "anchor": [
      3298,
-     1770
+     1766
     ],
-    "snapPx": 8.5,
+    "snapPx": 10.6,
     "basis": "Morluma, deep in the sour ground of the Cursed Lands (middle_lands.md 10).",
     "status": "proposed",
     "zone": "magical_lands",
@@ -2515,14 +2680,14 @@
    "capital": {
     "name": "Giritren",
     "point": [
-     3234,
-     1134
+     3202,
+     1122
     ],
     "method": "model area",
     "source": "forest_bloody",
     "anchor": [
-     3234,
-     1134
+     3202,
+     1122
     ],
     "snapPx": 0,
     "basis": "Giritren, the oldest stand of red oak in the Bloody Forest (middle_lands.md 10).",
@@ -2530,19 +2695,7 @@
     "zone": "middle_lands",
     "land": "land_central_mainland"
    },
-   "seeds": [
-    {
-     "point": [
-      3275,
-      1004
-     ],
-     "method": "old states",
-     "source": "old state 324 (1 old state(s) on this land)",
-     "snapPx": 27.7,
-     "status": "proposed",
-     "land": "land_island_049"
-    }
-   ],
+   "seeds": [],
    "claim": [],
    "exclude": [
     {
@@ -2552,6 +2705,11 @@
     {
      "barrier": "zilin_marches",
      "name": "Mirolon south of the Zilin marches"
+    },
+    {
+     "border": "AEN|BLO",
+     "name": "AEN's side of range_crown_north",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -2606,11 +2764,11 @@
     "name": "Farnardur",
     "point": [
      3133,
-     1052
+     1050
     ],
     "method": "site",
     "source": "site_ren",
-    "snapPx": 0,
+    "snapPx": 2,
     "status": "canon",
     "zone": "north_lands",
     "land": "land_isle_of_the_north_lands"
@@ -2624,7 +2782,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_ren (3133, 1052) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 2 px away."
+   ],
    "proposed": []
   },
   {
@@ -2675,7 +2835,7 @@
     "name": "Nuadoso",
     "point": [
      3068,
-     818
+     819
     ],
     "method": "drawn label",
     "source": "world (3068, 818)",
@@ -2683,7 +2843,7 @@
      3068,
      818
     ],
-    "snapPx": 0,
+    "snapPx": 1,
     "basis": "The drawn label Keredor-Hellekton; Nuadoso, the shared inlet of the double crown.",
     "status": "proposed",
     "zone": "north_lands",
@@ -2750,7 +2910,7 @@
    "capital": {
     "name": "Migur",
     "point": [
-     2770,
+     2768,
      945
     ],
     "method": "drawn label",
@@ -2759,7 +2919,7 @@
      2770,
      945
     ],
-    "snapPx": 0,
+    "snapPx": 2,
     "basis": "Migur, the island principality's harbour: the drawn island west of the long vale (land_island_008).",
     "status": "proposed",
     "zone": "north_lands",
@@ -2826,7 +2986,7 @@
    "capital": {
     "name": "Ilmahrim",
     "point": [
-     2895,
+     2893,
      908
     ],
     "method": "drawn label",
@@ -2835,7 +2995,7 @@
      2895,
      908
     ],
-    "snapPx": 0,
+    "snapPx": 2,
     "basis": "The drawn High Mountains at the island's centre; Ilmahrim, the deep hall.",
     "status": "proposed",
     "zone": "north_lands",
@@ -2902,8 +3062,8 @@
    "capital": {
     "name": "Parur",
     "point": [
-     2973,
-     908
+     2968,
+     903
     ],
     "method": "model feature",
     "source": "lake_evian",
@@ -2911,7 +3071,7 @@
      2982,
      919
     ],
-    "snapPx": 14.2,
+    "snapPx": 21.3,
     "basis": "Parur, the lake league's market on Dolpar (the model's lake_evian), with the drawn Cinargo west of it.",
     "status": "proposed",
     "zone": "north_lands",
@@ -2941,7 +3101,7 @@
     "name": "Krakur",
     "point": [
      2893,
-     990
+     989
     ],
     "method": "drawn label",
     "source": "world (2893, 990)",
@@ -2949,7 +3109,7 @@
      2893,
      990
     ],
-    "snapPx": 0,
+    "snapPx": 1,
     "basis": "The drawn label Must... under the Solondor Mountains: Krakur, the dwarf goblins' largest warren.",
     "status": "proposed",
     "zone": "north_lands",
@@ -3021,8 +3181,8 @@
    "capital": {
     "name": "Vaestia",
     "point": [
-     1642,
-     681
+     1647,
+     676
     ],
     "method": "drawn label",
     "source": "world (1612, 712)",
@@ -3030,7 +3190,7 @@
      1612,
      712
     ],
-    "snapPx": 43.1,
+    "snapPx": 50.2,
     "basis": "The drawn town Vaestia where the east-coast forest meets the coast, beside the drawn Wonderland (Austklev).",
     "status": "proposed",
     "zone": "cold_lands",
@@ -3064,13 +3224,13 @@
    "capital": {
     "name": "Tarvak",
     "point": [
-     1106,
+     1086,
      778
     ],
     "method": "model area",
     "source": "forest_worlond",
     "anchor": [
-     1106,
+     1086,
      778
     ],
     "snapPx": 0,
@@ -3107,8 +3267,8 @@
    "capital": {
     "name": "Fandhavn",
     "point": [
-     1392,
-     740
+     1387,
+     745
     ],
     "method": "model feature",
     "source": "river_fandan",
@@ -3116,7 +3276,7 @@
      1401,
      732
     ],
-    "snapPx": 12,
+    "snapPx": 19.1,
     "basis": "Fandhavn at the Fandan mouth, beside the drawn label Poloto.",
     "status": "proposed",
     "zone": "cold_lands",
@@ -3193,8 +3353,8 @@
    "capital": {
     "name": "Drikzig",
     "point": [
-     564,
-     677
+     571,
+     672
     ],
     "method": "model feature",
     "source": "range_coldor_mountains",
@@ -3202,7 +3362,7 @@
      561,
      677
     ],
-    "snapPx": 3,
+    "snapPx": 11.2,
     "basis": "Drikzig in the warm-spring valleys of the Coldor Mountains; the drawn glens Agoron and Belor lie beside the range's western end.",
     "status": "proposed",
     "zone": "cold_lands",
@@ -3236,8 +3396,8 @@
    "capital": {
     "name": "Akahew",
     "point": [
-     345,
-     594
+     350,
+     589
     ],
     "method": "drawn label",
     "source": "world (300, 640)",
@@ -3245,7 +3405,7 @@
      300,
      640
     ],
-    "snapPx": 64.4,
+    "snapPx": 71.4,
     "basis": "Akahew, where the upland road meets the coast road: the west coast below the drawn Rion and Yeneldmore (the drawn label itself lies on water as the import reads it).",
     "status": "proposed",
     "zone": "windwaith",
@@ -3266,7 +3426,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "The anchor (300, 640) is 64.4 px from the nearest acceptable land; check the placement."
+    "The anchor (300, 640) is 71.4 px from the nearest acceptable land; check the placement."
    ],
    "proposed": [
     "Capital Akahew: Akahew, where the upland road meets the coast road: the west coast below the drawn Rion and Yeneldmore (the drawn label itself lies on water as the import reads it)."
@@ -3539,13 +3699,13 @@
    "capital": {
     "name": "Ghaumbhu",
     "point": [
-     818,
+     834,
      822
     ],
     "method": "model area",
     "source": "hills_yeti_lands",
     "anchor": [
-     818,
+     834,
      822
     ],
     "snapPx": 0,
@@ -3582,13 +3742,13 @@
    "capital": {
     "name": "Huummal",
     "point": [
-     1458,
+     1462,
      354
     ],
     "method": "model area",
     "source": "ice_north_yeti_lands",
     "anchor": [
-     1458,
+     1462,
      354
     ],
     "snapPx": 0,
@@ -3597,19 +3757,7 @@
     "zone": "cold_lands",
     "land": "land_western_mainland"
    },
-   "seeds": [
-    {
-     "point": [
-      1491,
-      103
-     ],
-     "method": "old states",
-     "source": "old state 319 (1 old state(s) on this land)",
-     "snapPx": 43.8,
-     "status": "proposed",
-     "land": "land_island_028"
-    }
-   ],
+   "seeds": [],
    "claim": [],
    "exclude": [
     {
@@ -3623,9 +3771,7 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 142 projects to (1771, 207), 346 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Huummal: Huummal, the hum-cave of the snow plain the drawing calls North Yeti Lands (Ghaahu)."
    ]
@@ -3639,17 +3785,17 @@
    "capital": {
     "name": "Porideon",
     "point": [
-     254,
-     1029
+     390,
+     1062
     ],
     "method": "model land",
     "source": "land_island_001",
     "anchor": [
-     254,
-     1029
+     390,
+     1062
     ],
     "snapPx": 0,
-    "basis": "Porideon, the council port on the westward headland of the Vindael ice arm (the model's land_island_001).",
+    "basis": "Porideon, the council port of the Vindael ice arm, at the middle of what the open-sea band leaves of the arm (the model's land_island_001).",
     "status": "proposed",
     "zone": "windwaith",
     "land": "land_island_001"
@@ -3676,7 +3822,7 @@
    "overlord": null,
    "conflicts": [],
    "proposed": [
-    "Capital Porideon: Porideon, the council port on the westward headland of the Vindael ice arm (the model's land_island_001)."
+    "Capital Porideon: Porideon, the council port of the Vindael ice arm, at the middle of what the open-sea band leaves of the arm (the model's land_island_001)."
    ]
   },
   {
@@ -3774,8 +3920,8 @@
    "capital": {
     "name": "Tummin",
     "point": [
-     860,
-     1220
+     865,
+     1215
     ],
     "method": "drawn label",
     "source": "world (860, 1220)",
@@ -3783,7 +3929,7 @@
      860,
      1220
     ],
-    "snapPx": 0,
+    "snapPx": 7.1,
     "basis": "The drawn label Thenon: Tummin in the olive lowland.",
     "status": "proposed",
     "zone": "west_lands",
@@ -3817,8 +3963,8 @@
    "capital": {
     "name": "Luddum",
     "point": [
-     810,
-     1358
+     815,
+     1363
     ],
     "method": "drawn label",
     "source": "world (800, 1350)",
@@ -3826,7 +3972,7 @@
      800,
      1350
     ],
-    "snapPx": 12.8,
+    "snapPx": 19.8,
     "basis": "The drawn basin label (HKY, the Ronbo basin) under the Herlitz Mountains: Luddum.",
     "status": "proposed",
     "zone": "west_lands",
@@ -3889,9 +4035,7 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 264 projects to (623, 1663), 339 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Hrennost: The drawn Dusty Mountains: Hrennost, where the West's first powder was made from their saltpetre."
    ]
@@ -3906,7 +4050,7 @@
     "name": "Hrunost",
     "point": [
      1162,
-     1216
+     1212
     ],
     "method": "model feature",
     "source": "range_bolpor_boldor",
@@ -3914,7 +4058,7 @@
      1162,
      1216
     ],
-    "snapPx": 0,
+    "snapPx": 4,
     "basis": "Hrunost in the Bolpor and Boldor Mountains on the east flank of the Kulolo valley.",
     "status": "proposed",
     "zone": "west_lands",
@@ -4039,12 +4183,12 @@
    "capital": {
     "name": "Bolbin",
     "point": [
-     760,
-     1504
+     764,
+     1509
     ],
     "method": "site",
     "source": "site_kradlon",
-    "snapPx": 0,
+    "snapPx": 5,
     "status": "canon",
     "zone": "west_lands",
     "land": "land_western_mainland"
@@ -4063,7 +4207,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_kradlon (761, 1505) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5 px away."
+   ],
    "proposed": []
   },
   {
@@ -4075,8 +4221,8 @@
    "capital": {
     "name": "Oslodon",
     "point": [
-     1315,
-     1435
+     1310,
+     1440
     ],
     "method": "drawn label",
     "source": "world (1320, 1430)",
@@ -4084,7 +4230,7 @@
      1320,
      1430
     ],
-    "snapPx": 7.1,
+    "snapPx": 14.1,
     "basis": "The drawn label Corogon: Oslodon, the consuls' port on the bay facing the central sea.",
     "status": "proposed",
     "zone": "west_lands",
@@ -4118,12 +4264,12 @@
    "capital": {
     "name": "Varlibo",
     "point": [
-     1364,
-     1536
+     1368,
+     1531
     ],
     "method": "site",
     "source": "site_varnondor_staging",
-    "snapPx": 0,
+    "snapPx": 7.2,
     "status": "canon",
     "zone": "west_lands",
     "land": "land_island_002"
@@ -4143,6 +4289,7 @@
    },
    "overlord": null,
    "conflicts": [
+    "The capital site site_varnondor_staging (1364, 1537) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.2 px away.",
     "2 old state(s) of this realm fall on a land that already holds CLD, GNW, MLK, HOR, GIR, KRA, FEA, AUT, WRL, PLT, HLD, GLI, XIS, PRT, OMR, POT, KVI, ORW, NIV, YEI, GHH, WER, LAB, THN, DOB, BRU, GRO, SAO, BLD, CRG; no seed added there."
    ],
    "proposed": []
@@ -4156,8 +4303,8 @@
    "capital": {
     "name": "Datidon",
     "point": [
-     1480,
-     1421
+     1472,
+     1419
     ],
     "method": "drawn label",
     "source": "world (1480, 1420)",
@@ -4165,7 +4312,7 @@
      1480,
      1420
     ],
-    "snapPx": 1,
+    "snapPx": 8.1,
     "basis": "The drawn label Argo (Wennarith) on the Varnondor peninsula's eastern bend.",
     "status": "proposed",
     "zone": "west_lands",
@@ -4200,7 +4347,7 @@
     "name": "Doldes",
     "point": [
      2534,
-     1279
+     1274
     ],
     "method": "model feature",
     "source": "pass_dark_gate",
@@ -4208,7 +4355,7 @@
      2534,
      1280
     ],
-    "snapPx": 1,
+    "snapPx": 6,
     "basis": "Doldes, the gate hold on the Dark Gate pass.",
     "status": "proposed",
     "zone": "dark_lands",
@@ -4240,8 +4387,8 @@
    "capital": {
     "name": "Burnikzig",
     "point": [
-     2473,
-     1150
+     2469,
+     1153
     ],
     "method": "drawn label",
     "source": "world (2473, 1150)",
@@ -4249,7 +4396,7 @@
      2473,
      1150
     ],
-    "snapPx": 0,
+    "snapPx": 5,
     "basis": "The drawn label South Goldor at the Goldoroth Volcano: the warm deep caves the volcano heats (Burnikzig).",
     "status": "proposed",
     "zone": "dark_lands",
@@ -4293,19 +4440,7 @@
     "zone": "dark_lands",
     "land": "land_goldoroth_arm"
    },
-   "seeds": [
-    {
-     "point": [
-      2587,
-      1347
-     ],
-     "method": "old states",
-     "source": "old state 313 (1 old state(s) on this land)",
-     "snapPx": 0,
-     "status": "proposed",
-     "land": "land_island_047"
-    }
-   ],
+   "seeds": [],
    "claim": [],
    "exclude": [],
    "weight": {
@@ -4315,7 +4450,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "1 old state(s) fall on a land where GOL has 1; the island goes to GOL (one owner)."
+    "1 old state(s) of this realm fall on a land that already holds DND, DUL, BLK, TRO, HOO, DAK, SKR, DUN; no seed added there."
    ],
    "proposed": [
     "Capital Ozmath-Vesh: The drawn Goldoroth Dead Lands, renamed the Goldoroth Ash Fields, facing the Sea of Dolon."
@@ -4406,12 +4541,12 @@
    "capital": {
     "name": "Zubudor",
     "point": [
-     2416,
-     1060
+     2420,
+     1065
     ],
     "method": "site",
     "source": "site_bordon",
-    "snapPx": 0,
+    "snapPx": 5.7,
     "status": "canon",
     "zone": "north_lands",
     "land": "land_goldoroth_arm",
@@ -4426,7 +4561,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_bordon (2416, 1061) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5.7 px away."
+   ],
    "proposed": []
   },
   {
@@ -4438,12 +4575,12 @@
    "capital": {
     "name": "Dolido",
     "point": [
-     2406,
-     1075
+     2433,
+     1049
     ],
     "method": "site",
     "source": "site_dreson",
-    "snapPx": 0,
+    "snapPx": 37.5,
     "status": "canon",
     "zone": "north_lands",
     "land": "land_goldoroth_arm",
@@ -4458,7 +4595,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_dreson (2406, 1075) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 37.5 px away."
+   ],
    "proposed": []
   },
   {
@@ -4470,12 +4609,12 @@
    "capital": {
     "name": "Lesderle",
     "point": [
-     2498,
-     1085
+     2502,
+     1081
     ],
     "method": "site",
     "source": "site_dulundur",
-    "snapPx": 0,
+    "snapPx": 5,
     "status": "canon",
     "zone": "north_lands",
     "land": "land_dondor_arm",
@@ -4490,7 +4629,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_dulundur (2499, 1085) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5 px away."
+   ],
    "proposed": []
   },
   {
@@ -4503,19 +4644,20 @@
     "name": "Holos",
     "point": [
      2590,
-     1094
+     1090
     ],
     "method": "model area",
     "source": "forest_troll",
     "anchor": [
      2590,
-     1094
+     1090
     ],
     "snapPx": 0,
     "basis": "Holos, Smash's great cave in the Troll Forest's heart.",
     "status": "proposed",
-    "zone": "dark_lands",
-    "land": "land_dondor_arm"
+    "zone": "north_lands",
+    "land": "land_dondor_arm",
+    "zoneNote": "stands in the repaired model's north_lands zone, not a zone of dark_lands; the zones are coarse and the placement follows the drawing and the dossier"
    },
    "seeds": [],
    "claim": [],
@@ -4542,8 +4684,8 @@
    "capital": {
     "name": "Maruunos",
     "point": [
-     2653,
-     1107
+     2656,
+     1101
     ],
     "method": "drawn label",
     "source": "world (2651, 1114)",
@@ -4551,7 +4693,7 @@
      2651,
      1114
     ],
-    "snapPx": 7.3,
+    "snapPx": 13.9,
     "basis": "The drawn Giant Forest by the Giant River: Maruunos, the cairn-hall.",
     "status": "proposed",
     "zone": "dark_lands",
@@ -4581,13 +4723,13 @@
     "name": "Notdertu",
     "point": [
      2694,
-     1050
+     1058
     ],
     "method": "model area",
     "source": "forest_dark",
     "anchor": [
      2694,
-     1050
+     1058
     ],
     "snapPx": 0,
     "basis": "Notdertu, the forest hold of the Dark Forests' band.",
@@ -4619,8 +4761,8 @@
    "capital": {
     "name": "Gollonlon",
     "point": [
-     2540,
-     1112
+     2536,
+     1107
     ],
     "method": "drawn label",
     "source": "world (2540, 1112)",
@@ -4628,7 +4770,7 @@
      2540,
      1112
     ],
-    "snapPx": 0,
+    "snapPx": 6.4,
     "basis": "The drawn Fonoor Forest: Gollonlon at the forest's edge.",
     "status": "proposed",
     "zone": "dark_lands",
@@ -4657,8 +4799,8 @@
    "capital": {
     "name": "Dobudo",
     "point": [
-     2784,
-     1181
+     2783,
+     1179
     ],
     "method": "drawn label",
     "source": "world (2784, 1181)",
@@ -4666,7 +4808,7 @@
      2784,
      1181
     ],
-    "snapPx": 0,
+    "snapPx": 2.2,
     "basis": "The drawn labels Dun and Dunbulinor: Dobudo on the Dun Sea.",
     "status": "proposed",
     "zone": "dark_lands",
@@ -4733,8 +4875,8 @@
    "capital": {
     "name": "Zudertu",
     "point": [
-     2401,
-     1181
+     2403,
+     1182
     ],
     "method": "drawn label",
     "source": "world (2401, 1181)",
@@ -4742,7 +4884,7 @@
      2401,
      1181
     ],
-    "snapPx": 0,
+    "snapPx": 2.2,
     "basis": "The drawn label Wild Lands: Zudertu, the largest winter camp.",
     "status": "proposed",
     "zone": "dark_lands",
@@ -4771,8 +4913,8 @@
    "capital": {
     "name": "Khorvazel",
     "point": [
-     3040,
-     2285
+     3063,
+     2287
     ],
     "method": "dossier text",
     "source": "world (3040, 2300)",
@@ -4780,7 +4922,7 @@
      3040,
      2300
     ],
-    "snapPx": 15,
+    "snapPx": 26.4,
     "basis": "Khorvazel in the Nether foothills: the island's south coast facing the Nether across the Nether Sound (ember_lands.md 11).",
     "status": "proposed",
     "zone": "ember_lands",
@@ -4821,12 +4963,12 @@
    "capital": {
     "name": "Unzeky",
     "point": [
-     3027,
-     2176
+     3021,
+     2181
     ],
     "method": "site",
     "source": "site_demon_dolon",
-    "snapPx": 0,
+    "snapPx": 8.1,
     "status": "canon",
     "zone": "ember_lands",
     "land": "land_ember_lands_island"
@@ -4852,7 +4994,9 @@
     "tag": "PUV",
     "subjectType": "sworn realm"
    },
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_demon_dolon (3028, 2177) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 8.1 px away."
+   ],
    "proposed": []
   },
   {
@@ -4942,7 +5086,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "2 old state(s) of this realm fall on a land that already holds PUV, DLN, NEZ, KHO; no seed added there."
+    "1 old state(s) of this realm fall on a land that already holds PUV, DLN, NEZ, KHO; no seed added there."
    ],
    "proposed": []
   },
@@ -5004,12 +5148,12 @@
    "capital": {
     "name": "Larorun",
     "point": [
-     3419,
-     2042
+     3424,
+     2038
     ],
     "method": "site",
     "source": "site_nan",
-    "snapPx": 0,
+    "snapPx": 6.4,
     "status": "canon",
     "zone": "ember_lands",
     "land": "land_island_010"
@@ -5032,7 +5176,9 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_nan (3419, 2042) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 6.4 px away."
+   ],
    "proposed": []
   },
   {
@@ -5171,13 +5317,18 @@
    "capital": {
     "name": "Castronuro",
     "point": [
-     4862,
+     4780,
      1922
     ],
-    "method": "site",
-    "source": "site_drak",
+    "method": "drawn label",
+    "source": "world (4780, 1922)",
+    "anchor": [
+     4780,
+     1922
+    ],
     "snapPx": 0,
-    "status": "canon",
+    "basis": "Castronuro, the forge-city at the Drak Furnace, set back from the east coast the map write generates.",
+    "status": "proposed",
     "zone": "east_lands",
     "land": "land_eastern_mainland"
    },
@@ -5187,6 +5338,11 @@
     {
      "barrier": "hardtmuth",
      "name": "the Sun Desert west of the Hardtmuth chain"
+    },
+    {
+     "border": "STA|DRA",
+     "name": "STA's side of range_drak",
+     "polygons": 1
     }
    ],
    "weight": {
@@ -5196,7 +5352,9 @@
    },
    "overlord": null,
    "conflicts": [],
-   "proposed": []
+   "proposed": [
+    "Capital Castronuro: Castronuro, the forge-city at the Drak Furnace, set back from the east coast the map write generates."
+   ]
   },
   {
    "tag": "RHA",
@@ -5365,12 +5523,12 @@
    "capital": {
     "name": "Gonnois",
     "point": [
-     4717,
-     1658
+     4722,
+     1653
     ],
     "method": "site",
     "source": "site_mora",
-    "snapPx": 3,
+    "snapPx": 9.4,
     "status": "canon",
     "zone": "east_lands",
     "land": "land_eastern_mainland"
@@ -5390,7 +5548,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "The capital site site_mora (4714, 1658) is not on the land the import reads (or within 3 px of its coast); the nearest acceptable land is 3 px away."
+    "The capital site site_mora (4714, 1658) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 9.4 px away."
    ],
    "proposed": []
   },
@@ -5403,8 +5561,8 @@
    "capital": {
     "name": "Furtonlin",
     "point": [
-     4130,
-     1480
+     4126,
+     1478
     ],
     "method": "drawn label",
     "source": "world (4130, 1480)",
@@ -5412,7 +5570,7 @@
      4130,
      1480
     ],
-    "snapPx": 0,
+    "snapPx": 4.5,
     "basis": "The drawn Delbiz Grasslands: Furtonlin, the horse-fair town toward the rift coast.",
     "status": "proposed",
     "zone": "east_lands",
@@ -5662,8 +5820,8 @@
    "capital": {
     "name": "Pehami",
     "point": [
-     4283,
-     1100
+     4288,
+     1105
     ],
     "method": "drawn label",
     "source": "world (4280, 1100)",
@@ -5671,11 +5829,11 @@
      4280,
      1100
     ],
-    "snapPx": 3,
+    "snapPx": 9.4,
     "basis": "The drawn label Woqood on the snow coast: Pehami, the sealers' moot on the Kusmeel coast.",
     "status": "proposed",
     "zone": "east_lands",
-    "land": null
+    "land": "land_eastern_mainland"
    },
    "seeds": [],
    "claim": [],
@@ -5705,14 +5863,14 @@
    "capital": {
     "name": "Nodoqood",
     "point": [
-     4214,
-     1070
+     4218,
+     1066
     ],
     "method": "model land",
     "source": "land_island_004",
     "anchor": [
-     4214,
-     1070
+     4218,
+     1066
     ],
     "snapPx": 0,
     "basis": "Nodoqood, the harbour of the drawn isle Orato (the model's land_island_004).",
@@ -5720,19 +5878,7 @@
     "zone": "east_lands",
     "land": "land_island_004"
    },
-   "seeds": [
-    {
-     "point": [
-      4373,
-      888
-     ],
-     "method": "old states",
-     "source": "old state 478 (1 old state(s) on this land)",
-     "snapPx": 5,
-     "status": "proposed",
-     "land": "land_island_017"
-    }
-   ],
+   "seeds": [],
    "claim": [],
    "exclude": [
     {
@@ -5890,8 +6036,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "Old state 113 projects to (1263, 2008), 419 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 861 projects to (1280, 2016), 406 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "Old state 861 projects to (1299, 2028), 393 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
    ],
    "proposed": []
   },
@@ -5935,15 +6080,15 @@
    "capital": {
     "name": "Riwang",
     "point": [
-     1800,
-     1824
+     1695,
+     1857
     ],
     "method": "site",
     "source": "site_nara",
-    "snapPx": 0,
+    "snapPx": 109.8,
     "status": "canon",
     "zone": "islands_south",
-    "land": "land_island_044"
+    "land": "land_island_020"
    },
    "seeds": [],
    "claim": [],
@@ -5954,7 +6099,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_nara (1800, 1825) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 109.8 px away."
+   ],
    "proposed": []
   },
   {
@@ -5966,20 +6113,20 @@
    "capital": {
     "name": "Yongwa",
     "point": [
-     1206,
-     2038
+     1276,
+     2026
     ],
     "method": "model land",
     "source": "land_island_026",
     "anchor": [
-     1206,
-     2038
+     1212,
+     2061
     ],
-    "snapPx": 0,
+    "snapPx": 72.9,
     "basis": "Yongwa on the Yong lagoon ring: the model's ring-shaped island land_island_026.",
     "status": "proposed",
     "zone": "islands_south",
-    "land": "land_island_026"
+    "land": "land_island_007"
    },
    "seeds": [],
    "claim": [],
@@ -5990,7 +6137,9 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The anchor (1212, 2061) is 72.9 px from the nearest acceptable land; check the placement."
+   ],
    "proposed": [
     "Capital Yongwa: Yongwa on the Yong lagoon ring: the model's ring-shaped island land_island_026."
    ]
@@ -6004,16 +6153,16 @@
    "capital": {
     "name": "Bukonyo",
     "point": [
-     1090,
-     2062
+     1092,
+     2061
     ],
     "method": "model land",
     "source": "land_island_041",
     "anchor": [
-     1090,
-     2062
+     1092,
+     2063
     ],
-    "snapPx": 0,
+    "snapPx": 2,
     "basis": "Bukonyo above the tally-caves of the cave island (land_island_041).",
     "status": "proposed",
     "zone": "islands_south",
@@ -6042,14 +6191,14 @@
    "capital": {
     "name": "Tuwang",
     "point": [
-     962,
-     2238
+     958,
+     2234
     ],
     "method": "model land",
     "source": "land_island_034",
     "anchor": [
-     962,
-     2238
+     958,
+     2234
     ],
     "snapPx": 0,
     "basis": "Tuwang, the terrace town of the rice isles, next along the western arc (land_island_034).",
@@ -6067,7 +6216,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "Old state 302 projects to (714, 1878), 437 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "Old state 302 projects to (736, 1859), 436 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
    ],
    "proposed": [
     "Capital Tuwang: Tuwang, the terrace town of the rice isles, next along the western arc (land_island_034)."
@@ -6107,7 +6256,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "Old state 863 projects to (1263, 2008), 476 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "Old state 863 projects to (1295, 2033), 489 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
    ],
    "proposed": [
     "Capital Ponwan: Ponwan at the end of the western arc: its westernmost island (land_island_027)."
@@ -6122,12 +6271,12 @@
    "capital": {
     "name": "Sanderz",
     "point": [
-     302,
-     1407
+     321,
+     1428
     ],
     "method": "site",
     "source": "site_adel",
-    "snapPx": 0,
+    "snapPx": 28.3,
     "status": "canon",
     "zone": "tritons_islands",
     "land": "land_island_006"
@@ -6142,8 +6291,8 @@
    },
    "overlord": null,
    "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds LEN; no seed added there.",
-    "5 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
+    "The capital site site_adel (302, 1407) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 28.3 px away.",
+    "1 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
    ],
    "proposed": []
   },
@@ -6175,9 +6324,7 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "2 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": []
   },
   {
@@ -6189,12 +6336,12 @@
    "capital": {
     "name": "Havnai",
     "point": [
-     568,
-     1487
+     565,
+     1483
     ],
     "method": "site",
     "source": "site_pollos",
-    "snapPx": 0,
+    "snapPx": 5.7,
     "status": "canon",
     "zone": "tritons_islands",
     "land": "land_island_009"
@@ -6209,7 +6356,9 @@
    },
    "overlord": null,
    "conflicts": [
-    "2 old state(s) of this realm fall on a land that already holds SEI; no seed added there."
+    "The capital site site_pollos (569, 1487) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5.7 px away.",
+    "1 old state(s) of this realm fall on a land that already holds ADE, SEI, LEN; no seed added there.",
+    "2 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
    ],
    "proposed": []
   },
@@ -6222,15 +6371,15 @@
    "capital": {
     "name": "Kudaini",
     "point": [
-     600,
-     1649
+     516,
+     1594
     ],
     "method": "site",
     "source": "site_nondondor",
-    "snapPx": 0,
+    "snapPx": 101.8,
     "status": "canon",
     "zone": "tritons_islands",
-    "land": "land_island_009"
+    "land": "land_island_005"
    },
    "seeds": [],
    "claim": [],
@@ -6242,7 +6391,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+    "The capital site site_nondondor (601, 1650) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 101.8 px away."
    ],
    "proposed": []
   },
@@ -6255,13 +6404,13 @@
    "capital": {
     "name": "Kapai",
     "point": [
-     354,
+     358,
      1210
     ],
     "method": "model land",
     "source": "land_island_022",
     "anchor": [
-     354,
+     358,
      1210
     ],
     "snapPx": 0,
@@ -6280,8 +6429,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "Old state 253 projects to (403, 1547), 341 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "2 old state(s) of this realm fall on a land that already holds ADE; no seed added there."
+    "2 old state(s) of this realm fall on a land that already holds ADE, SEI, LEN; no seed added there."
    ],
    "proposed": [
     "Capital Kapai: Kapai, the pilots' harbour of the northern isles: the northernmost Triton island (land_island_022)."
@@ -6296,21 +6444,20 @@
    "capital": {
     "name": "Sonrale",
     "point": [
-     366,
-     1730
+     331,
+     1694
     ],
     "method": "model land",
     "source": "land_island_059",
     "anchor": [
-     366,
+     367,
      1730
     ],
-    "snapPx": 0,
+    "snapPx": 50.9,
     "basis": "Sonrale, the wreck-right lords' harbour on the storm isles by the Kilos Sound (former Kim Sound): the isle south-east of the sound (land_island_059).",
     "status": "proposed",
-    "zone": "lands_sun",
-    "land": "land_island_059",
-    "zoneNote": "stands in the repaired model's lands_sun zone, not a zone of tritons_islands; the zones are coarse and the placement follows the drawing and the dossier"
+    "zone": "tritons_islands",
+    "land": "land_island_014"
    },
    "seeds": [],
    "claim": [],
@@ -6321,10 +6468,7 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there.",
-    "1 old state(s) of this realm fall on a land that already holds NND; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Sonrale: Sonrale, the wreck-right lords' harbour on the storm isles by the Kilos Sound (former Kim Sound): the isle south-east of the sound (land_island_059)."
    ]
@@ -6338,8 +6482,8 @@
    "capital": {
     "name": "Audailon",
     "point": [
-     450,
-     1660
+     456,
+     1656
     ],
     "method": "drawn label",
     "source": "world (445, 1655)",
@@ -6347,7 +6491,7 @@
      445,
      1655
     ],
-    "snapPx": 7.1,
+    "snapPx": 11,
     "basis": "Audailon, the windward capes' harbour: the drawn Sondor, Cheko and Amarelo on the south of the eastern arc.",
     "status": "proposed",
     "zone": "tritons_islands",
@@ -6362,9 +6506,7 @@
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "5 old state(s) of this realm fall on a land that already holds NND; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Audailon: Audailon, the windward capes' harbour: the drawn Sondor, Cheko and Amarelo on the south of the eastern arc."
    ]
@@ -6378,20 +6520,20 @@
    "capital": {
     "name": "Vesko",
     "point": [
-     434,
-     1506
+     411,
+     1540
     ],
     "method": "model land",
     "source": "land_island_029",
     "anchor": [
-     434,
-     1506
+     438,
+     1555
     ],
-    "snapPx": 0,
+    "snapPx": 30.9,
     "basis": "Vesko, the moot isle of the four Seite isles: the long isle under the drawn Seite Islands label (land_island_029).",
     "status": "proposed",
     "zone": "tritons_islands",
-    "land": "land_island_029"
+    "land": "land_island_006"
    },
    "seeds": [],
    "claim": [],
@@ -6403,7 +6545,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "2 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
+    "1 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
    ],
    "proposed": [
     "Capital Vesko: Vesko, the moot isle of the four Seite isles: the long isle under the drawn Seite Islands label (land_island_029)."
@@ -6443,8 +6585,8 @@
    },
    "overlord": null,
    "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds SEI; no seed added there.",
-    "2 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+    "1 old state(s) of this realm fall on a land that already holds ADE, SEI, LEN; no seed added there.",
+    "1 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
    ],
    "proposed": [
     "Capital Straton: Straton on the outer western arc facing the Santon Sea (land_island_014)."
@@ -6459,8 +6601,8 @@
    "capital": {
     "name": "Torni",
     "point": [
-     550,
-     1520
+     548,
+     1539
     ],
     "method": "model feature",
     "source": "range_benan",
@@ -6468,7 +6610,7 @@
      550,
      1520
     ],
-    "snapPx": 0,
+    "snapPx": 19.1,
     "basis": "Torni, a cove under the Benan Mountains (the model's range_benan).",
     "status": "proposed",
     "zone": "tritons_islands",
@@ -6484,7 +6626,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+    "1 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
    ],
    "proposed": [
     "Capital Torni: Torni, a cove under the Benan Mountains (the model's range_benan)."
@@ -6499,8 +6641,8 @@
    "capital": {
     "name": "Lighon",
     "point": [
-     411,
-     1412
+     355,
+     1437
     ],
     "method": "old capital",
     "source": "old state 1169 at (199, 1387) moved by the displacement field",
@@ -6508,11 +6650,11 @@
      397,
      1401
     ],
-    "snapPx": 17.8,
+    "snapPx": 55.3,
     "basis": "No canon anchor; the old map's capital state, moved into the new frame.",
     "status": "proposed",
     "zone": "tritons_islands",
-    "land": "land_island_032"
+    "land": "land_island_006"
    },
    "seeds": [],
    "claim": [],
@@ -6538,13 +6680,13 @@
     "name": "Eldoga",
     "point": [
      550,
-     2362
+     2366
     ],
     "method": "model area",
     "source": "plain_sun_grasslands",
     "anchor": [
      550,
-     2362
+     2366
     ],
     "snapPx": 0,
     "basis": "Eldoga, the largest valley of the eastern lowland and the Sun Grasslands.",
@@ -6564,16 +6706,16 @@
    "conflicts": [
     "Old state 199 projects to (3793, 2471), 3245 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 201 projects to (3849, 2471), 3301 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 209 projects to (3843, 2213), 3296 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 209 projects to (3843, 2213), 3297 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 210 projects to (3895, 2299), 3346 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 211 projects to (3763, 2275), 3214 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 212 projects to (3764, 2392), 3214 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 258 projects to (3821, 2157), 3277 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 258 projects to (3821, 2157), 3278 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 399 projects to (3662, 2385), 3112 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 400 projects to (3574, 2440), 3025 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
     "Old state 933 projects to (3901, 2383), 3351 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 979 projects to (3838, 2078), 3300 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 980 projects to (3886, 2141), 3343 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "Old state 979 projects to (3838, 2078), 3301 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 980 projects to (3886, 2141), 3344 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
    ],
    "proposed": [
     "Capital Eldoga: Eldoga, the largest valley of the eastern lowland and the Sun Grasslands."
@@ -6588,12 +6730,12 @@
    "capital": {
     "name": "Googavis",
     "point": [
-     648,
-     2243
+     653,
+     2248
     ],
     "method": "site",
     "source": "site_elvana",
-    "snapPx": 0,
+    "snapPx": 6.4,
     "status": "canon",
     "zone": "lands_sun",
     "land": "land_lands_of_the_sun"
@@ -6607,7 +6749,9 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_elvana (648, 2244) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 6.4 px away."
+   ],
    "proposed": []
   },
   {
@@ -6619,12 +6763,12 @@
    "capital": {
     "name": "Repgin",
     "point": [
-     713,
-     2379
+     718,
+     2384
     ],
     "method": "site",
     "source": "site_igara",
-    "snapPx": 0,
+    "snapPx": 6.4,
     "status": "canon",
     "zone": "lands_sun",
     "land": "land_lands_of_the_sun"
@@ -6638,7 +6782,9 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_igara (714, 2379) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 6.4 px away."
+   ],
    "proposed": []
   },
   {
@@ -6737,11 +6883,11 @@
    },
    "overlord": null,
    "conflicts": [
-    "Old state 141 projects to (1387, 2079), 805 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 250 projects to (1466, 2333), 982 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 381 projects to (1288, 2038), 698 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 890 projects to (1377, 2070), 792 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 1159 projects to (2720, 1254), 2177 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "Old state 141 projects to (1382, 2084), 801 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 250 projects to (1466, 2332), 981 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 381 projects to (1296, 2034), 704 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 890 projects to (1372, 2075), 789 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 1159 projects to (2715, 1249), 2174 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
    ],
    "proposed": [
     "Capital Holang: Holang, the harbour of Hol under the Great Volcano."
@@ -6782,8 +6928,7 @@
    "overlord": null,
    "conflicts": [
     "Old state 1147 projects to (2875, 1303), 2131 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 1149 projects to (2713, 1259), 1984 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 1157 projects to (2832, 1257), 2100 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "Old state 1157 projects to (2839, 1262), 2105 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
    ],
    "proposed": [
     "Capital Ileslia: Ileslia, the main harbour of the northern isles: the northernmost island of the Sun group (land_island_023)."
@@ -6798,8 +6943,8 @@
    "capital": {
     "name": "Elgagen",
     "point": [
-     430,
-     2300
+     432,
+     2301
     ],
     "method": "dossier text",
     "source": "world (430, 2300)",
@@ -6807,7 +6952,7 @@
      430,
      2300
     ],
-    "snapPx": 0,
+    "snapPx": 2.2,
     "basis": "Elgagen, the largest Sunfolk steading of the western grasslands, west of the Sun Mountains.",
     "status": "proposed",
     "zone": "lands_sun",
@@ -6836,13 +6981,13 @@
    "capital": {
     "name": "the Keepers' Glade",
     "point": [
-     630,
+     626,
      2366
     ],
     "method": "model area",
     "source": "forest_god",
     "anchor": [
-     630,
+     626,
      2366
     ],
     "snapPx": 0,
@@ -6875,11 +7020,11 @@
     "name": "Verozo",
     "point": [
      3412,
-     962
+     954
     ],
     "method": "site",
     "source": "site_herrodon",
-    "snapPx": 0,
+    "snapPx": 9,
     "status": "canon",
     "zone": "magical_lands",
     "land": "land_central_mainland"
@@ -6902,7 +7047,9 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "The capital site site_herrodon (3412, 963) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 9 px away."
+   ],
    "proposed": []
   },
   {
@@ -7041,8 +7188,8 @@
    "capital": {
     "name": "Lenkei",
     "point": [
-     3870,
-     1630
+     3865,
+     1625
     ],
     "method": "dossier text",
     "source": "world (3880, 1640)",
@@ -7050,7 +7197,7 @@
      3880,
      1640
     ],
-    "snapPx": 14.1,
+    "snapPx": 21.2,
     "basis": "Lenkei, the Archive at the southern end of the rift coast where the old roads stop (roster: the southern rift shore); the old map and the drawn Endelond label put it in the north-east instead (owner question Q-61).",
     "status": "proposed",
     "zone": "magical_lands",
@@ -7128,17 +7275,17 @@
    "capital": {
     "name": "Testebur",
     "point": [
-     3679,
-     1055
+     3658,
+     1106
     ],
-    "method": "model area",
-    "source": "plain_herrodon_vale",
+    "method": "drawn label",
+    "source": "world (3658, 1106)",
     "anchor": [
-     3662,
-     1038
+     3658,
+     1106
     ],
-    "snapPx": 24,
-    "basis": "Testebur, where the Teste Brook leaves the Teste Vale.",
+    "snapPx": 0,
+    "basis": "Testebur, where the Teste Brook leaves the Teste Vale, below the Herrodon crest.",
     "status": "proposed",
     "zone": "magical_lands",
     "land": "land_central_mainland"
@@ -7166,7 +7313,7 @@
    },
    "conflicts": [],
    "proposed": [
-    "Capital Testebur: Testebur, where the Teste Brook leaves the Teste Vale."
+    "Capital Testebur: Testebur, where the Teste Brook leaves the Teste Vale, below the Herrodon crest."
    ]
   },
   {
@@ -7178,8 +7325,8 @@
    "capital": {
     "name": "Hisemrak",
     "point": [
-     3987,
-     1492
+     3982,
+     1487
     ],
     "method": "model feature",
     "source": "strait_rift_narrows",
@@ -7187,7 +7334,7 @@
      3990,
      1494
     ],
-    "snapPx": 3.6,
+    "snapPx": 10.6,
     "basis": "Hisemrak, the quay town at the Rift Narrows.",
     "status": "proposed",
     "zone": "magical_lands",

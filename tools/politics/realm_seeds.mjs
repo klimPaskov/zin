@@ -53,7 +53,9 @@ export const DEFAULT_TOOL = process.env.HOI4_AGENT_TOOLS_DIR ?? 'C:/Users/klimp/
 
 // ---------------------------------------------------------------------------------------------------- tuning
 export const PLACE = Object.freeze({
-  marginPx: 3, // a point stands this far inside the coast of both readings of the land
+  // a point stands this far inside the coast of both readings of the land; the coast the map write generates moves by
+  // up to about ten pixels from the drawing's (31 October 2026: Vindael's seat fell in the water at 3 px; Drak's needs its own anchor)
+  marginPx: 8,
   minSeparationPx: 20, // points of two realms at least this far apart (about one province of the import)
   snapReachPx: 220, // how far a point may move to reach acceptable land
   seedSnapReachPx: 40, // how far an old state's centre may move to reach a land
@@ -104,7 +106,9 @@ export const CAPITAL_ANCHORS = Object.freeze({
   FRE: { old: true, basis: 'Hordorton, a spring where the lake road meets the south road; the old map\'s Freshon seat (middle_lands.md 10).' },
   PAZ: { method: 'dossier text', at: [3172, 1652], basis: 'Horlomon, a lake town on a deep bay (middle_lands.md 10): the Great Lake\'s south-east bay between the Hunhun Downs and the Saeton reeds, since Parim, Silesire, Dolepar and Grafas hold the north, east, south and west lobes.' },
   FOT: { feature: 'strait_narrow', end: 0, basis: 'Deoreh, the narrowest crossing of the Leren Sea on the Middle Lands side: the Middle Lands end of the Narrow Strait (middle_lands.md 10).' },
-  BRR: { feature: 'range_cursed_mountains', t: 1, basis: 'Glimzig, the throne-cave deep under the Cursed Mountains; the south end of the ridge, as the old carve (middle_lands.md 2.9, 10).' },
+  // At the ridge's south end the throne-cave shared a province with Yavieth's seat (map write of 31 October 2026,
+  // MAP_WORLD_REALM_POINT_CONFLICT), so Glimzig stands where neither Yavieth's seat nor Kingson's claimed vale reaches.
+  BRR: { at: [3409, 1631], basis: 'Glimzig, the throne-cave deep under the Cursed Mountains, set apart from Yavieth\'s roosts and outside the Kingson Vale (middle_lands.md 2.9, 10).' },
   OLO: { feature: 'range_deodolor', t: 0.5, basis: 'Tovodor in the Deodolor Hills north of the Stone Forest (middle_lands.md 2.3, 3.7).' },
   DNL: { area: 'forest_kingdom', basis: 'Thamiel, a hill in the Kingdom Forests (the model\'s Dunelaeth forest) at the foot of Lunhrim (middle_lands.md 10, 11).' },
   ANR: { area: 'forest_crown', basis: 'Baeldran, the oldest stand of the Aenor Forest (middle_lands.md 2.5a, 11).' },
@@ -137,7 +141,9 @@ export const CAPITAL_ANCHORS = Object.freeze({
   NIV: { at: [400, 178], basis: 'The drawn label Titanos (Nivaros) on the heights of the far north-west.' },
   YEI: { area: 'hills_yeti_lands', basis: 'Ghaumbhu, the high cave of the Yeti Lands shelf south of the Coldor Mountains.' },
   GHH: { area: 'ice_north_yeti_lands', basis: 'Huummal, the hum-cave of the snow plain the drawing calls North Yeti Lands (Ghaahu).' },
-  VND: { land: 'land_island_001', side: 'west', basis: 'Porideon, the council port on the westward headland of the Vindael ice arm (the model\'s land_island_001).' },
+  // The westward headland lies in the open-sea band the edge cut leaves thin, and the generated coast put the seat in the water
+  // (map write of 31 October 2026, MAP_WORLD_REALM_POINT_WATER): the council port stands inland at the arm's middle instead.
+  VND: { land: 'land_island_001', side: 'centre', basis: 'Porideon, the council port of the Vindael ice arm, at the middle of what the open-sea band leaves of the arm (the model\'s land_island_001).' },
   // West Lands (west_lands.md 10, 11; labels of the West-Earth sheet)
   WER: { feature: 'range_erg', t: 0.5, basis: 'Caer-Erg, the hill-fort at the Erg spur on the drawn Erg finger.' },
   LAB: { at: [1070, 1175], basis: 'The drawn label Lambin: Faennon, the granary town of the eastern downs.' },
@@ -181,8 +187,13 @@ export const CAPITAL_ANCHORS = Object.freeze({
   WAH: { feature: 'site_sun_desert', basis: 'Biir-Raab, the greatest oasis of the dune sea: the model\'s Sun Desert town.' },
   // Magical Lands (magical_lands.md 10, 11)
   LCC: { old: true, basis: 'Hidirim, the best harbour of the northern rift shore; the old map\'s Lccimio seat (the drawing labels Lccimio there).' },
+  // The Drak Furnace site lies where the generated east coast cuts the land (map write of 31 October 2026,
+  // MAP_WORLD_REALM_POINT_WATER): Castronuro stands inland on the same forge-ground instead.
+  DRA: { at: [4780, 1922], overridesSite: true, basis: 'Castronuro, the forge-city at the Drak Furnace, set back from the east coast the map write generates.' },
   ELD: { method: 'dossier text', at: [3880, 1640], basis: 'Lenkei, the Archive at the southern end of the rift coast where the old roads stop (roster: the southern rift shore); the old map and the drawn Endelond label put it in the north-east instead (owner question Q-61).' },
-  TES: { area: 'plain_herrodon_vale', basis: 'Testebur, where the Teste Brook leaves the Teste Vale.' },
+  // The vale's pole lay 4 px from the unowned Herrodon crest, and the seat's province fell in the wild land (map write of
+  // 31 October 2026, MAP_WORLD_REALM_POINT_CONFLICT): Testebur stands lower in the vale, clear of the crest.
+  TES: { at: [3658, 1106], basis: 'Testebur, where the Teste Brook leaves the Teste Vale, below the Herrodon crest.' },
   LUV: { feature: 'strait_rift_narrows', end: 1, basis: 'Hisemrak, the quay town at the Rift Narrows.' },
   // Triton's Islands (tritons_islands.md 10, 11)
   FNG: { land: 'land_island_022', side: 'centre', basis: 'Kapai, the pilots\' harbour of the northern isles: the northernmost Triton island (land_island_022).' },
@@ -591,7 +602,7 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
   // sited capitals first (fixed; snapped only when the site is not on safe land)
   for (const r of realms) {
     const s = sites.get(r.capital.siteId);
-    if (!s) continue;
+    if (!s || CAPITAL_ANCHORS[r.tag]?.overridesSite) continue;
     const rec = records.get(r.tag), start = toPx(s.at), p0 = ip([Math.floor(start[0]), Math.floor(start[1])]);
     let p = p0, dist = 0;
     if (world.safe[p0[1] * W + p0[0]] !== 1) {
@@ -604,7 +615,7 @@ export async function buildRealmSeeds({ world: given, drawing = true } = {}) {
     placed.push({ tag: r.tag, p });
   }
   for (const r of realms) {
-    if (records.get(r.tag).capital || sites.get(r.capital.siteId)) continue;
+    if (records.get(r.tag).capital || (sites.get(r.capital.siteId) && !CAPITAL_ANCHORS[r.tag]?.overridesSite)) continue;
     const a = CAPITAL_ANCHORS[r.tag] ?? { old: true, basis: 'No canon anchor; the old map\'s capital state, moved into the new frame.' };
     const res = resolveAnchor(a, r);
     const sn = snap(r.tag, res.start, PLACE.snapReachPx);
