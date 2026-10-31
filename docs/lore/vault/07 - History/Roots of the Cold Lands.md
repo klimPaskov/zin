@@ -6,6 +6,8 @@ updated: 2026-10-25
 
 # Roots of the Cold Lands
 
+**Adopted (owner, 31 October 2026; decision K68):** every proposal in this note is established canon; the "Proposed" labels below record how each entry began.
+
 **Status of this note:** **Proposed** (decision K67, 25 October 2026). Every root and sign below is a creative addition, not established fact, under the [[Canon Policy]]. The **established** spine it builds on is the fall of [[Heulufaenn, the Sunfields]] to lengthening winters and the three Boreal peoples who came out of it (owner, K64). Statements marked **Belief** are what a people holds, not what is true. The data is in `tools/content/data/world/history/cold_lands.json`; the play hooks are in `docs/specs/02_lore/realm_roots/cold_lands.md`.
 
 **Kept open:** who built the castle above the town of Yeldenne, where the yeti first came from and where the north-coast raiders first sailed from. Horos is story only and appears in no root here.

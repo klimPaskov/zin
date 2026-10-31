@@ -70,6 +70,8 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 ## Realm roots of the north and the east, proposed on 25 October 2026 (K67)
 
+**Answered (owner, 31 October 2026; decision K68):** every question in this section takes its proposed answer.
+
 Proposals for the Cold Lands, the Dark Lands, the Magical Lands and Zol's Mistake: [[Roots of the Cold Lands]], [[Roots of the Dark Lands]], [[Roots of the Magical Lands]], [[Roots of Zol's Mistake]]. Each line asks the owner to adopt, change or reject one choice.
 
 - [ ] Is Melkgard's Black Wind a devil (a corrupted Lesser Spirit who fled an Old God), as Fandanar's fire-keepers say, or a spirit of the storm, as the Storm Court holds? The roots keep it a disputed belief.
@@ -94,6 +96,8 @@ Proposals for the Cold Lands, the Dark Lands, the Magical Lands and Zol's Mistak
 
 ## Realm roots and signs, 25 October 2026
 
+**Answered (owner, 31 October 2026; decision K68):** every question in this section takes its proposed answer.
+
 Proposals for the Middle Lands, the West Lands and the North Lands (K67): [[Roots of the Middle Lands]], [[Roots of the West Lands]], [[Roots of the North Lands]]. Each line asks the owner to adopt, change or reject one choice.
 
 - [ ] May Aen have spread his black and red cloak over the kneeling kings at the end of the War of Men (the Mantling), so that the Mantle of Aen is Aenor's sign and a relic lost when Volgan took the capital in 1A 1612?
@@ -115,6 +119,8 @@ Proposals for the Middle Lands, the West Lands and the North Lands (K67): [[Root
 - [ ] May the margraves of Molot and the lords of Fotan be kin through the house of Ostvar, or only bear the same name?
 
 ## Realm roots of the south and the east, 25 October 2026
+
+**Answered (owner, 31 October 2026; decision K68):** every question in this section takes its proposed answer.
 
 Proposals for the East Lands, the South Lands, the Lands of the Sun, the Islands of the South, the Ember Lands and Triton's Islands (K67): [[Roots of the East Lands]], [[Roots of the South Lands]], [[Roots of the Lands of the Sun]], [[Roots of the Islands of the South]], [[Roots of the Ember Lands]], [[Roots of Triton's Islands]]. Each line asks the owner to adopt, change or reject one choice.
 

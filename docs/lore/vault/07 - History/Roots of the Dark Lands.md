@@ -6,6 +6,8 @@ updated: 2026-10-25
 
 # Roots of the Dark Lands
 
+**Adopted (owner, 31 October 2026; decision K68):** every proposal in this note is established canon; the "Proposed" labels below record how each entry began.
+
 **Status of this note:** proposed (decision K67, 25 October 2026). Everything below is a **Proposed** creative addition under the [[Canon Policy]] unless it is marked **Established**, and nothing here answers an item of [[Open Questions]]. The play hooks are in `docs/specs/02_lore/realm_roots/dark_lands.md` and the data in `tools/content/data/world/history/dark_lands.json`.
 
 **Established background:** the Dark Lands were never one nation; men, orcs, goblins, trolls, ogres, giants and demons live there under separate rulers, and none is [[Volgan]]'s by nature. Volgan opened contacts with Dark Lands powers in the First Age and orcs and goblins marched in his armies, while parts of the Dark Lands joined the [[Grand Alliance]]; Dark Lands soldiers fought on both sides at [[Battle of Dardan|Dardan]]. Many orcs and goblins kept fighting in Volgan's name in the Second Age. [[Elzon]] relied on orc and goblin forces, and the Buried Wars of 3A 431 to 690 eroded his manpower. Smash rules the trolls of his own forest only. Devils are corrupted Lesser Spirits (owner, 24 October 2026); who they served stays unsaid here. The giants of Hoorunoron are the Forgotten Giants of the low hills of [[Muzerar, the Low Country|the Low Country]] (K64), and the giants of the Giant Forest are a different people (K66).

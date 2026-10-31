@@ -6,6 +6,8 @@ updated: 2026-10-25
 
 # Roots of the Magical Lands
 
+**Adopted (owner, 31 October 2026; decision K68):** every proposal in this note is established canon; the "Proposed" labels below record how each entry began.
+
 **Status of this note:** proposed (decision K67, 25 October 2026). Everything below is a **Proposed** creative addition under the [[Canon Policy]] unless it is marked **Established**, and nothing here answers an item of [[Open Questions]]. The play hooks are in `docs/specs/02_lore/realm_roots/magical_lands.md` and the data in `tools/content/data/world/history/magical_lands.json`.
 
 **Established background:** the Magical Lands were never conquered, not by [[Volgan]]'s corrupted kin and not by [[Elzon]]; the elves helped the Grand Alliance at [[Battle of Dardan|Dardan]] and then kept [[The Elven Refusal]]; dragons come chiefly from Dragon Mountain; the mycids live in the Mushroom Forest; the rift-coast elves were neighbours of [[Tarkia, the Bridge Kingdom|the Bridge Kingdom]], never its subjects, and Luv-zhise ferries over its drowned road (K64).

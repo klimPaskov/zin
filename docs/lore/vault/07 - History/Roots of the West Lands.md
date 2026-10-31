@@ -1,5 +1,7 @@
 ---
 type: history
+**Adopted (owner, 31 October 2026; decision K68):** every proposal in this note is established canon; the "Proposed" labels below record how each entry began.
+
 status: proposed
 updated: 2026-10-25
 ---

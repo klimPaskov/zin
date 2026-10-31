@@ -6,6 +6,8 @@ updated: 2026-10-25
 
 # Roots of Zol's Mistake
 
+**Adopted (owner, 31 October 2026; decision K68):** every proposal in this note is established canon; the "Proposed" labels below record how each entry began.
+
 **Status of this note:** proposed (decision K67, 25 October 2026). Everything below is a **Proposed** creative addition under the [[Canon Policy]] unless it is marked **Established**, and nothing here answers an item of [[Open Questions]]. The play hooks are in `docs/specs/02_lore/realm_roots/zols_mistake.md` and the data in `tools/content/data/world/history/zols_mistake.json`.
 
 **Established background:** [[Zol]], the Old God of Death and the only Old God in Aoaz, came to the black north long before Aen and Volgan, and the land was already desolate. Nobody knows why it is called a Mistake. Who administers Furviatlon is unknown. The dead wander the land without an established allegiance. [[Kusven]], Zol's most loyal servant, dwells on Šodolôrō and is known from the start as a legend of the winter tales (owner, 25 October 2026, K55). The souls of the dead remain Zol's (owner, 24 October 2026).
