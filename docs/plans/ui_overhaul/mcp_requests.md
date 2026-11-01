@@ -66,3 +66,16 @@
 | Evidence | builder check 17 finds 708 reskinned buttons whose normal and hover frames are identical (`tools/content/data/ui/check_baseline.json`), which no window render shows. |
 | Priority | Medium. |
 | Acceptance | for `zin_court_window` the artifact shows the four tab buttons in normal, hover, pressed and selected, and marks a pair of identical frames. |
+
+## R6. Focus routes on a staged tree
+
+| Field | Content |
+| --- | --- |
+| Task | Inspect, render and lint a new focus tree before the build is applied to the mod (the Pertolor regional tree of 1 November 2026, written after Yeldenne's retirement). |
+| Tool | `hoi4.focus_inspect`, `hoi4.focus_render`, `hoi4.focus_lint` |
+| Inputs | `treeId` `regional_pertolor`; the tree exists only in the builder's staged tree (`<TEMP>/zin-content-staged/common/national_focus/`), not yet in the mod root |
+| Current behaviour | `FOCUS_SOURCE_NOT_FOUND`, then `FOCUS_TREE_NOT_FOUND` (workspace `mod_zin_86bac5c64231`): the routes read only the indexed mod root. |
+| Wanted change | An optional root (or overlay directory) argument for the focus routes, so a staged tree is inspected, rendered and linted with the mod's other files as context. |
+| Evidence | the Pertolor agent's report of 1 November 2026 (`docs/plans/story/yeldenne_retirement_handoff.md`). |
+| Priority | Medium. |
+| Acceptance | `hoi4.focus_render` with the staged root renders `regional_pertolor` with its 32 focuses and the same layout diagnostics as after an apply. |
