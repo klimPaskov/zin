@@ -1,0 +1,90 @@
+{
+  "about": "Facts of the mechanics the secrecy check may assume (spec section 12.4 computes what each text's conditions guarantee). Each axiom holds in every world the mechanics can reach; the reason cites the contract or the journey spec.",
+  "axioms": [
+    {
+      "if": "S>=6",
+      "then": "F:zin_eindil_named",
+      "why": "eindil_journey.md stage table: stage 6 starts only after the naming at Gala (stage 5 sets zin_eindil_named)."
+    },
+    {
+      "if": "F:zin_eindil_named, S>=8",
+      "then": "heir",
+      "why": "zin_chr_heir_known is zin_eindil_named and stage 8 or later, or the viewer is the host (contract additions)."
+    },
+    {
+      "if": "S>=2",
+      "then": "F:zin_eindil_awake",
+      "why": "eindil_journey.md: stage 1 sets zin_eindil_awake; later stages follow it."
+    },
+    {
+      "if": "F:zin_eindil_named",
+      "then": "F:zin_eindil_awake",
+      "why": "He is named at Gala, after he wakes."
+    },
+    {
+      "if": "F:zin_eindil_returned",
+      "then": "S>=9",
+      "why": "eindil_journey.md stage 9 (The Return) sets zin_eindil_returned."
+    },
+    {
+      "if": "F:zin_eindil_restored",
+      "then": "S>=9",
+      "why": "eindil_journey.md stage 9 sets zin_eindil_restored."
+    },
+    {
+      "if": "F:zin_volgan_struck_down_eindil",
+      "then": "S>=9",
+      "why": "Volgan strikes down the returned heir in stage 9 (§ X)."
+    },
+    {
+      "if": "F:zin_eindil_cast_down",
+      "then": "S>=10",
+      "why": "eindil_journey.md stage 10 (The Cliff) sets zin_eindil_cast_down."
+    },
+    {
+      "if": "F:zin_eindil_wears_necklace",
+      "then": "S>=11",
+      "why": "eindil_journey.md stage 11 (The Palace) sets zin_eindil_wears_necklace."
+    },
+    {
+      "if": "F:zin_eindil_crowned",
+      "then": "S>=12",
+      "why": "eindil_journey.md stage 12 (Crowned)."
+    },
+    {
+      "if": "F:zin_kusven_wounded",
+      "then": "S>=9",
+      "why": "contract additions: the heir wounds Kusven with a shard of the blue sword (zin_mistake.21), in the war after his return."
+    },
+    {
+      "if": "F:zin_eindil_war_king",
+      "then": "S>=3",
+      "why": "eindil_journey.md stage 3 (The War-King)."
+    },
+    {
+      "if": "F:zin_eindil_dragon_pact",
+      "then": "S>=8",
+      "why": "eindil_journey.md stage 8 sets zin_eindil_dragon_pact."
+    },
+    {
+      "if": "F:zin_glo_with_eindil",
+      "then": "S>=7",
+      "why": "eindil_journey.md stage 7 (Yeldenne)."
+    },
+    {
+      "if": "F:zin_volgan_body_destroyed",
+      "then": "S>=9",
+      "why": "volgan_southern_dominion.md: zin_volgan_destroy_body is called by the journey event zin_eindil.100 \"The Blue Sword Through Volgan\" (stage 9, the second duel)."
+    },
+    {
+      "if": "F:zin_ending_lost_cause",
+      "then": "F:zin_eindil_crowned",
+      "why": "05_world_tension_and_endings.md: the Lost Cause ending requires zin_eindil_crowned."
+    },
+    {
+      "if": "F:zin_golden_king_survives",
+      "then": "F:zin_golden_king_plot_exposed",
+      "why": "04_chronicle_codex.md entry 604 and aenor_court_and_succession.md: the King survives only when the plot is exposed."
+    }
+  ]
+}

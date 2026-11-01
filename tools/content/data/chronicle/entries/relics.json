@@ -1,0 +1,789 @@
+{
+  "category": "relics",
+  "entries": [
+    {
+      "id": 1101,
+      "key": "glo",
+      "title": "Glo",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Relic",
+      "plate": {
+        "subject": "a green crystal glowing before a dark throne"
+      },
+      "unlock": "start",
+      "parts": [
+        {
+          "when": "start",
+          "paragraphs": [
+            {
+              "text": "In the far north of the Cold Lands, in the Castle of Yeldenne by the small town of that name, the Great Spirit Horos keeps Glo, a crystal of old and holy power. He has guarded it through the ages, and it is said to hold part of the power of Glernaen, the New God of Power and Wisdom and the mightiest of the twelve main New Gods.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                },
+                {
+                  "note": "03 - Figures/Glernaen.md",
+                  "section": "Glernaen",
+                  "sha256": "280326a7af9a02860d092538b687de5d3011cddf4a941b9b9d74788a533ca706"
+                }
+              ]
+            },
+            {
+              "text": "The green crystal shines before the throne of Horos in his cold hall. Horos is an enormous knight in yellow-green armour, with branching points on his helm, blue eyes that glow in the shadow and a great blue sword. Beneath the castle lie old halls whose name the chronicles of men do not record.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            },
+            {
+              "text": "The tales say that Glo is entrusted only to the worthy and cannot be taken merely by holding the castle, and that Horos has turned away every claimant who sought it for conquest. It is wanted all the same: Volgan desires it, and the Lost Cause holds that it must be kept safe. No chronicle tells where Glo came from or how far its power reaches.",
+              "status": "mixed",
+              "note": "Glo’s guardian and the rival desires for it are established; the rule that only a worthy bearer may hold it is a working rule.",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                },
+                {
+                  "note": "06 - Politics/Kingdoms Factions and Conflicts.md",
+                  "section": "The artifact conflict",
+                  "sha256": "6dcf1eb32e782daa361792b895d9c33248f0e102095910e25bfc359312e8efdb"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_horos_dead, S>=8",
+          "paragraphs": [
+            {
+              "text": "Glo was never an ornament of the throne. It was the heart of Horos himself, the living crystal at the core of the guardian’s existence, and the power of Glernaen that it carried was a power entrusted to him. When Horos died, his form crumbled to dust.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                },
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_horos_dead, S>=8, heir, F:zin_glo_with_eindil",
+          "paragraphs": [
+            {
+              "text": "Glo passed to Eindil, the first claimant whom the guardian’s power would willingly trust with it. Freed from its old bond to the castle, the crystal goes where its bearer goes, and part of Glernaen’s power goes with him.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_restored, F:zin_horos_dead, S>=8, heir",
+          "paragraphs": [
+            {
+              "text": "When Eindil fell before Volgan in the last war, Glo became the bridge of the gods. Through the heart of Horos, which already carried Glernaen’s power, the New Gods each offered a measured part of their own, and they restored Eindil to life. The chronicles hold that this was a gift the gods could not simply repeat.",
+              "status": "mixed",
+              "note": "Glo as the bridge through which the New Gods restored Eindil is established; that the gift cannot be repeated is proposed.",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XI. The gathering of the New Gods",
+                  "sha256": "671f4aec446838fa7ae42473a85dfa1f0227443675bdc650d8952f918eb85f9e"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_horos_sword_broken, F:zin_horos_dead, S>=8, heir",
+          "paragraphs": [
+            {
+              "text": "When the Great Spirit Kusven, Zol’s most loyal servant, crushed the blue sword of Horos, Glo’s power did not leave the shards, and one fragment that still carried it wounded the servant. How much of Glo’s power remains after the breaking of the sword is not known.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Follow-up decisions and potential improvements",
+                  "sha256": "5e3854cc6fd3eb064d7a979761a5b62bbb96f8ca1e1636ce5f6f83d615030746"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_glo_sealed",
+          "paragraphs": [
+            {
+              "text": "Horos was slain in his hall before a worthy bearer came. Dying, he bound Glo to the empty hall, and the crystal stays there under his last seal, which no unworthy hand can open.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_glo_dimmed",
+          "paragraphs": [
+            {
+              "text": "A dark power that held the sealed hall defiled the seal, and the light of Glo went out. The crystal still lies in the Castle of Yeldenne, but nobody can use it now, and no one who sought it for conquest ever held it.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "horos",
+        "glernaen",
+        "castle_yeldenne",
+        "blue_sword"
+      ],
+      "secrets": [
+        "glo",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 1102,
+      "key": "blue_sword",
+      "title": "The Blue Sword of Horos",
+      "short": "The Blue Sword",
+      "title_after": null,
+      "subtitle": "Fourth Age · Relic",
+      "plate": {
+        "subject": "a huge blue blade across a stone table"
+      },
+      "unlock": "start",
+      "parts": [
+        {
+          "when": "start",
+          "paragraphs": [
+            {
+              "text": "Horos, the Great Spirit who keeps the Castle of Yeldenne in the Cold Lands, carries a large blue magical sword. Those who have seen him describe an enormous knight in yellow-green armour holding a blade too great for any man to wield.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                },
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                }
+              ]
+            },
+            {
+              "text": "No chronicle records how the sword was made. The tales of the Cold Lands hold that Glernaen’s power runs in the blade as it runs in the crystal that Horos keeps.",
+              "status": "mixed",
+              "note": "The sword carrying Glernaen’s power is established; the Cold Lands tale is proposed framing.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "03 - Figures/Glernaen.md",
+                  "section": "Glernaen",
+                  "sha256": "280326a7af9a02860d092538b687de5d3011cddf4a941b9b9d74788a533ca706"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_returned, F:zin_glo_with_eindil, heir",
+          "paragraphs": [
+            {
+              "text": "The sword of Horos passed to Eindil with Glo. In the last war Eindil came down from a dragon’s back and drove it into the earth, and a wave of Glernaen’s power broke the magic that sustained a whole front of Zol’s dead. Unlike ordinary weapons, the blade could end them for good.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_volgan_body_destroyed, F:zin_eindil_restored, heir",
+          "paragraphs": [
+            {
+              "text": "After the New Gods restored Eindil, he drove the blue sword through Volgan, and the manifested body of the Great Spirit broke apart.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XII. The destruction of Volgan",
+                  "sha256": "cd424c74a7e63868ac9fdce7b85437d7c39d836d3eb084c27d586d94d23a54b9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_horos_sword_broken, heir",
+          "paragraphs": [
+            {
+              "text": "Kusven, the Great Spirit who is Zol’s most loyal servant, stopped Eindil, took the sword and crushed it into shards. Eindil drove one shard into the servant, and the divine magic still in it wounded the servant. No whole blade of Horos remains.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "horos",
+        "glo",
+        "castle_yeldenne",
+        "dragon_return"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 1103,
+      "key": "necklace",
+      "title": "The Necklace of the Abyss",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Relic",
+      "plate": {
+        "subject": "a heavy dark necklace on black stone"
+      },
+      "unlock": "start",
+      "parts": [
+        {
+          "when": "start",
+          "paragraphs": [
+            {
+              "text": "The Necklace of the Abyss is a powerful artifact of the Abyss in the far south of the Ember Lands. The old tales tie it to Roka, a huge being of the rhinoceros-headed people of the Abyss, whose name, history and ways are not known.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                },
+                {
+                  "note": "03 - Figures/Roka.md",
+                  "section": "Roka",
+                  "sha256": "6b11ebe298aa53d3522b94f5296b6ae9b3b87d939e3edbdee73c5bb48e94211b"
+                }
+              ]
+            },
+            {
+              "text": "No chronicle tells how the necklace was made, what its true powers are, or why it holds such strength. The scholars of Parim and Selen know it as the greatest relic of the Abyss, and they know the Abyss as a place where few go and fewer come back.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "rev | hub",
+          "paragraphs": [
+            {
+              "text": "The Necklace of the Abyss is Afrit’s greatest relic. His master thief took it from Roka’s domain, and Afrit used its power to grant the thief the eternal life he had promised. It greatly amplifies Afrit’s abilities and helps to sustain his supernatural power and his demonic form, most of all in the prepared centre of Aenor.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                }
+              ]
+            },
+            {
+              "text": "With his other artifacts it lets him wield strength like that which ordinary people expect of a god. Whether it grants him true divine order is not known.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_afrit_lost_necklace, rev",
+          "paragraphs": [
+            {
+              "text": "In the palace the necklace was torn from Afrit’s neck. Without it his gathered power and supernatural protection collapsed, and the once-human Afrit stood exposed as a mortal man who could die.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_wears_necklace, heir",
+          "paragraphs": [
+            {
+              "text": "Eindil took the Necklace of the Abyss and put it around his own neck, and he wore it when he returned to the royal palace. That he took it does not mean that it is harmless, or that he accepted the ways of the one who wore it before him. What price it carries is not known.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "roka",
+        "abyss",
+        "theft_of_necklace",
+        "abyss_folk"
+      ],
+      "secrets": [
+        "afrit",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 1104,
+      "key": "ring_of_doors",
+      "title": "The Ring of Doors",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Relic",
+      "plate": null,
+      "unlock": "rev | hub",
+      "parts": [
+        {
+          "when": "rev | hub",
+          "paragraphs": [
+            {
+              "text": "The Ring of Doors is one of the lesser artifacts that Afrit gathered after the theft of the Necklace of the Abyss, between 4A 1611 and 4A 1700, through trade, theft, excavation and bargains with servants across Aoaz. The temples call such things the Graces of the Deliverer.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "II. Roka's necklace and the gathering of powers",
+                  "sha256": "aaa5ae3ea5832430c9f7c9ea27bf1e29f1b26c1d76acab42f476ad5b9877e351"
+                },
+                {
+                  "note": "07 - History/Fourth Age Chronology.md",
+                  "section": "III. The Kingdom Behind the Throne, 4A 1000 to 4A 1729",
+                  "sha256": "2517214964465f836e556ef64edca9f4490b534e364ede1df96cd03eb2ede056"
+                }
+              ]
+            },
+            {
+              "text": "The ring helps him cross between places and reach his private refuge, a realm of his own beyond the world, so that he can pass behind an enemy in a moment or slip out of a closing trap. The full number of his artifacts and all their powers are not known.",
+              "status": "mixed",
+              "note": "Afrit’s ring is established; its name and powers are proposed.",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "(rev | hub), F:zin_afrit_lost_ring",
+          "paragraphs": [
+            {
+              "text": "In the palace the ring was taken from Afrit together with the finger that wore it, and the easiest of his escapes was closed to him.",
+              "status": "mixed",
+              "note": "A ring cut away with Afrit’s finger is established; its name is proposed.",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "crown_witnesses",
+        "bracelet_seal",
+        "necklace",
+        "afrit"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 1105,
+      "key": "crown_witnesses",
+      "title": "The Crown of Witnesses",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Relic",
+      "plate": null,
+      "unlock": "rev | hub",
+      "parts": [
+        {
+          "when": "rev | hub",
+          "paragraphs": [
+            {
+              "text": "The Crown of Witnesses is one of the lesser artifacts that Afrit gathered between 4A 1611 and 4A 1700. It magnifies his public authority by drawing power from oaths and courts that have been prepared for it, so that every royal oath sworn in its presence and every office sworn to his service adds to his strength.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "II. Roka's necklace and the gathering of powers",
+                  "sha256": "aaa5ae3ea5832430c9f7c9ea27bf1e29f1b26c1d76acab42f476ad5b9877e351"
+                }
+              ]
+            },
+            {
+              "text": "Its strength is greatest in chambers prepared with seals for it. How it was made, and where Afrit found it, is not known.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                },
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "(rev | hub), F:zin_afrit_lost_crown",
+          "paragraphs": [
+            {
+              "text": "In the palace the seals that let the Crown of Witnesses draw strength from the chamber were destroyed and the crown was broken, and the oaths it had fed on no longer fed Afrit.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "ring_of_doors",
+        "bracelet_seal",
+        "necklace",
+        "afrit"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 1106,
+      "key": "bracelet_seal",
+      "title": "The Bracelet of the First Seal",
+      "short": "Bracelet of the First Seal",
+      "title_after": null,
+      "subtitle": "Fourth Age · Relic",
+      "plate": null,
+      "unlock": "rev | hub",
+      "parts": [
+        {
+          "when": "rev | hub",
+          "paragraphs": [
+            {
+              "text": "The Bracelet of the First Seal is one of the lesser artifacts that Afrit gathered between 4A 1611 and 4A 1700. It keeps part of his personal shield, the magical defence that turns aside blows and spells that would wound a mortal man.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "II. Roka's necklace and the gathering of powers",
+                  "sha256": "aaa5ae3ea5832430c9f7c9ea27bf1e29f1b26c1d76acab42f476ad5b9877e351"
+                }
+              ]
+            },
+            {
+              "text": "Afrit was once a man, and stripped of his sustaining magic and enchanted objects he can still bleed, suffer and die. The bracelet is one of the things that stand between him and that weakness.",
+              "status": "mixed",
+              "note": "Afrit’s mortality without his artifacts is established; the bracelet’s name and function are proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "I. The hidden birthright of Afrit",
+                  "sha256": "f228f0450347bf221c3acfc78b770741a9fe6772884cba2390b4994f256bd175"
+                },
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "(rev | hub), F:zin_afrit_lost_bracelet",
+          "paragraphs": [
+            {
+              "text": "In the palace the bracelet was turned: Afrit’s own spell was forced back against it, and the part of his shield that it kept failed him.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "ring_of_doors",
+        "crown_witnesses",
+        "necklace",
+        "afrit"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 1107,
+      "key": "mirror",
+      "title": "The Mirror of First Rain",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Wonder",
+      "plate": {
+        "subject": "a moonlit spring in an elven courtyard"
+      },
+      "unlock": "start",
+      "parts": [
+        {
+          "when": "start",
+          "paragraphs": [
+            {
+              "text": "The Mirror of First Rain is a spring enclosed in an old elven courtyard in the realm of the Gala elves, under the guardianship of King Lorien. Its water does not show a sure future. It shows true traces of the past and a series of possible futures to those who have the courage to look without demanding certainty.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Mirror of First Rain (proposed).md",
+                  "section": "Mirror of First Rain",
+                  "sha256": "7cd0b2f3c8e9737df2570189d2182322a78e87c3e046edc19532f327aacfdba4"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                }
+              ]
+            },
+            {
+              "text": "The Mirror need not show every secret plainly. It may show bloodlines and images that Lorien reads through his long memory, and Lorien warns that prophecies can be used to frighten people into committing the very deeds they foretell.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Mirror of First Rain (proposed).md",
+                  "section": "Mirror of First Rain",
+                  "sha256": "7cd0b2f3c8e9737df2570189d2182322a78e87c3e046edc19532f327aacfdba4"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "heir",
+          "paragraphs": [
+            {
+              "text": "When the stranger came to Gala, Lorien led him to the Mirror. In the vision Lorien saw the old royal line and knew him as Eindil, son of Ein, son of Aen. Eindil saw a burning capital, armies from west and east, death moving from the north and Volgan’s renewed strength, and the vision sent him north to Horos in the Castle of Yeldenne.",
+              "status": "mixed",
+              "note": "Lorien revealing Eindil’s ancestry and a vision of coming dangers that sent him to Horos is established; the Mirror as the means is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                },
+                {
+                  "note": "08 - Artifacts/Mirror of First Rain (proposed).md",
+                  "section": "Mirror of First Rain",
+                  "sha256": "7cd0b2f3c8e9737df2570189d2182322a78e87c3e046edc19532f327aacfdba4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_mirror_stilled",
+          "paragraphs": [
+            {
+              "text": "The Mirror of First Rain is still. Since Gala passed into the hands of a realm that is neither of the elves nor of the Sunhot folk, the spring has given no visions, and its water shows nothing but the sky.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "08 - Artifacts/Mirror of First Rain (proposed).md",
+                  "section": "Mirror of First Rain",
+                  "sha256": "7cd0b2f3c8e9737df2570189d2182322a78e87c3e046edc19532f327aacfdba4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "lorien",
+        "gala_elves",
+        "naming_at_gala",
+        "lands_of_sun"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    }
+  ]
+}

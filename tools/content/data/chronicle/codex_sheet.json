@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "about": "The Chronicle theme sheet of the Chronicle of Aoaz window (spec 04 section 8, design system section 1.4; UI overhaul lane W9), in the format of tools/content/data/ui/zin_chrome.json so lib/zin_chrome.mjs cuts it: rows of pieces separated by black gutters. Painted by gpt-6-luna (tools/content/art/chronicle-jobs.mjs); modules/chronicle.mjs cuts and fits it. Frame order normal, hover, pressed (design system 6.2).",
+  "sheet": {
+    "id": "ui-chronicle-codex",
+    "raw": "ui/chronicle/ui-chronicle-codex.png",
+    "size": "2048x1536",
+    "threshold": 14,
+    "minGutter": 6,
+    "references": ["ui/ui-zin-chrome.png"],
+    "alphaFromOutline": { "plate_frame": 40, "new_mark": 48, "prev_n": 40, "prev_h": 40, "prev_p": 40, "next_n": 40, "next_h": 40, "next_p": 40, "sigil_order": 40, "sigil_deep_past": 40, "sigil_first_age": 40, "sigil_second_age": 40, "sigil_third_age": 40, "sigil_fourth_age": 40, "sigil_last_crowns": 40, "sigil_figures": 40, "sigil_peoples": 40, "sigil_lands": 40, "sigil_realms": 40, "sigil_orders": 40, "sigil_relics": 40 },
+    "alphaNote": "Cells whose alpha comes from their outline on the black ground: the open plate frame (its centre is black and becomes transparent), the arrows, the unread mark and the sigils."
+  },
+  "themes": {
+    "chronicle": "Chronicle: carved blue-grey slate (#2D353A) with an inlaid bronze line (#78664C, lit #CAB289) and small diamond studs; pale vellum (#E2D1B5) for reading leaves; rubric red cloth (#5C1714) with a tooth-cut edge for the title band and the selected state"
+  },
+  "rows": [
+    { "row": "panels", "items": [
+      { "key": "inset", "theme": "chronicle", "subject": "a square recessed slate well: a plain, calm, even dark blue-grey slate floor sunk below a thin inlaid bronze rim, with a tiny bronze diamond stud at each corner; the floor has no pattern" },
+      { "key": "page", "theme": "chronicle", "subject": "a square vellum reading leaf: plain pale cream vellum, very calm and even, with a thin inlaid bronze rule all round about one twentieth of the width in from the edge and a small bronze diamond at each corner; nothing written on it" },
+      { "key": "plate_frame", "theme": "chronicle", "subject": "an open rectangular frame about two and a half times as wide as tall: a narrow bronze-inlaid slate moulding with small diamond studs at the corners; its whole inside is empty pure black" },
+      { "key": "title_cloth", "theme": "chronicle", "subject": "a long horizontal rubric-red cloth band about nine times as wide as tall, calm and even, with a thin bronze edge line along top and bottom and short tooth-cut ends at left and right" }
+    ] },
+    { "row": "category buttons", "items": [
+      { "key": "cat_n", "theme": "chronicle", "subject": "a long flat slate button plate about six times as wide as tall, plain calm dark slate face, thin bronze rim" },
+      { "key": "cat_h", "theme": "chronicle", "subject": "the same slate button plate, its face slightly lighter and its bronze rim brighter (hover)" },
+      { "key": "cat_p", "theme": "chronicle", "subject": "the same slate button plate, its face slightly darker with a faint inner shadow along the top (pressed)" },
+      { "key": "cat_sel", "theme": "chronicle", "subject": "the same button plate in rubric red cloth with a bright bronze rim (selected)" }
+    ] },
+    { "row": "list rows", "items": [
+      { "key": "row_n", "theme": "chronicle", "subject": "a long thin flat slate row strip about eight and a half times as wide as tall, plain calm face slightly lighter than the slate, hairline bronze edge" },
+      { "key": "row_h", "theme": "chronicle", "subject": "the same row strip, slightly lighter, its edge brighter (hover)" },
+      { "key": "row_p", "theme": "chronicle", "subject": "the same row strip, slightly darker with a faint inner shadow (pressed)" },
+      { "key": "row_sel", "theme": "chronicle", "subject": "the same row strip in deep rubric red with a bright bronze edge line (selected)" }
+    ] },
+    { "row": "links and age", "items": [
+      { "key": "link_n", "theme": "chronicle", "subject": "a long thin flat button about nine times as wide as tall in pale vellum with a thin bronze rim" },
+      { "key": "link_h", "theme": "chronicle", "subject": "the same vellum button slightly brighter, its rim brighter (hover)" },
+      { "key": "link_p", "theme": "chronicle", "subject": "the same vellum button slightly darker with a faint inner shadow (pressed)" },
+      { "key": "age_n", "theme": "chronicle", "subject": "a short flat slate plaque about three times as wide as tall, plain calm face, bronze rim with tiny diamond studs at its ends" },
+      { "key": "age_h", "theme": "chronicle", "subject": "the same short plaque, slightly lighter, rim brighter (hover)" },
+      { "key": "age_p", "theme": "chronicle", "subject": "the same short plaque, slightly darker with a faint inner shadow (pressed)" }
+    ] },
+    { "row": "arrows and mark", "items": [
+      { "key": "prev_n", "theme": "chronicle", "subject": "a small bronze arrowhead pointing left inside a small round slate stud" },
+      { "key": "prev_h", "theme": "chronicle", "subject": "the same left arrow stud, brighter bronze (hover)" },
+      { "key": "prev_p", "theme": "chronicle", "subject": "the same left arrow stud, darker (pressed)" },
+      { "key": "next_n", "theme": "chronicle", "subject": "a small bronze arrowhead pointing right inside a small round slate stud" },
+      { "key": "next_h", "theme": "chronicle", "subject": "the same right arrow stud, brighter bronze (hover)" },
+      { "key": "next_p", "theme": "chronicle", "subject": "the same right arrow stud, darker (pressed)" },
+      { "key": "new_mark", "theme": "chronicle", "subject": "a tiny bright red-gold enamel diamond, the mark of an unread page" }
+    ] },
+    { "row": "sigils one", "items": [
+      { "key": "sigil_order", "theme": "chronicle", "subject": "an ink-engraved sigil on a small vellum roundel in a slate bezel: a ring of seven faint stars" },
+      { "key": "sigil_deep_past", "theme": "chronicle", "subject": "the same kind of sigil roundel: a broken stone arch half sunk in water" },
+      { "key": "sigil_first_age", "theme": "chronicle", "subject": "the same kind of sigil roundel: an upright spear with a long pennant" },
+      { "key": "sigil_second_age", "theme": "chronicle", "subject": "the same kind of sigil roundel: a cracked bell" },
+      { "key": "sigil_third_age", "theme": "chronicle", "subject": "the same kind of sigil roundel: a pale lantern on a short chain" },
+      { "key": "sigil_fourth_age", "theme": "chronicle", "subject": "the same kind of sigil roundel: a slender tower on the shore of still water" },
+      { "key": "sigil_last_crowns", "theme": "chronicle", "subject": "the same kind of sigil roundel: five banners converging on one point" }
+    ] },
+    { "row": "sigils two", "items": [
+      { "key": "sigil_figures", "theme": "chronicle", "subject": "the same kind of sigil roundel: a quill crossed over an open book" },
+      { "key": "sigil_peoples", "theme": "chronicle", "subject": "the same kind of sigil roundel: a circle of four joined hands" },
+      { "key": "sigil_lands", "theme": "chronicle", "subject": "the same kind of sigil roundel: a compass rose with no letters" },
+      { "key": "sigil_realms", "theme": "chronicle", "subject": "the same kind of sigil roundel: a small shield on a tree with deep roots" },
+      { "key": "sigil_orders", "theme": "chronicle", "subject": "the same kind of sigil roundel: a wax seal on a ribbon" },
+      { "key": "sigil_relics", "theme": "chronicle", "subject": "the same kind of sigil roundel: a faceted crystal" }
+    ] }
+  ],
+  "sprites": {
+    "note": "Each sprite: its texture under gfx/interface/zin/chronicle/, the size of one frame, the fit and the cells in frame order (normal, hover, pressed). nine_slice cells keep their painted rim: cellBorder is the painted border as a fraction of the cell height, border the target border in pixels.",
+    "frames": { "size": [128, 128], "border": 16, "cellBorder": {}, "list": [] },
+    "list": [
+      { "name": "GFX_zin_chr_inset", "texture": "gfx/interface/zin/chronicle/inset.dds", "size": [128, 128], "fit": "nine_slice", "border": 12, "cellBorder": 0.06, "cells": ["inset"], "kind": "cornered" },
+      { "name": "GFX_zin_chr_page", "texture": "gfx/interface/zin/chronicle/page.dds", "size": [128, 128], "fit": "nine_slice", "border": 16, "cellBorder": 0.08, "cells": ["page"], "kind": "cornered" },
+      { "name": "GFX_zin_chr_plate_frame", "texture": "gfx/interface/zin/chronicle/plate_frame.dds", "size": [440, 168], "fit": "nine_slice", "border": 8, "cellBorder": 0.07, "cells": ["plate_frame"] },
+      { "name": "GFX_zin_chr_title_cloth", "texture": "gfx/interface/zin/chronicle/title_cloth.dds", "size": [256, 40], "fit": "nine_slice", "border": [24, 8], "cellBorder": [0.6, 0.2], "cells": ["title_cloth"], "kind": "cornered" },
+      { "name": "GFX_zin_chr_category", "texture": "gfx/interface/zin/chronicle/category.dds", "size": [188, 24], "fit": "cover", "cells": ["cat_n", "cat_h", "cat_p"], "button": true },
+      { "name": "GFX_zin_chr_category_selected", "texture": "gfx/interface/zin/chronicle/category_selected.dds", "size": [188, 24], "fit": "cover", "cells": ["cat_sel"] },
+      { "name": "GFX_zin_chr_row", "texture": "gfx/interface/zin/chronicle/row.dds", "size": [240, 24], "fit": "cover", "cells": ["row_n", "row_h", "row_p"], "button": true },
+      { "name": "GFX_zin_chr_row_selected", "texture": "gfx/interface/zin/chronicle/row_selected.dds", "size": [240, 24], "fit": "cover", "cells": ["row_sel"] },
+      { "name": "GFX_zin_chr_link", "texture": "gfx/interface/zin/chronicle/link.dds", "size": [204, 24], "fit": "cover", "cells": ["link_n", "link_h", "link_p"], "button": true },
+      { "name": "GFX_zin_chr_age_button", "texture": "gfx/interface/zin/chronicle/age_button.dds", "size": [76, 24], "fit": "cover", "cells": ["age_n", "age_h", "age_p"], "button": true },
+      { "name": "GFX_zin_chr_arrow_prev", "texture": "gfx/interface/zin/chronicle/arrow_prev.dds", "size": [20, 20], "fit": "contain", "padding": 0, "cells": ["prev_n", "prev_h", "prev_p"], "button": true },
+      { "name": "GFX_zin_chr_arrow_next", "texture": "gfx/interface/zin/chronicle/arrow_next.dds", "size": [20, 20], "fit": "contain", "padding": 0, "cells": ["next_n", "next_h", "next_p"], "button": true },
+      { "name": "GFX_zin_chr_new", "texture": "gfx/interface/zin/chronicle/new.dds", "size": [16, 16], "fit": "contain", "padding": 0, "cells": ["new_mark"] },
+      { "name": "GFX_zin_chr_sigil_order", "texture": "gfx/interface/zin/chronicle/sigils/order.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_order"] },
+      { "name": "GFX_zin_chr_sigil_deep_past", "texture": "gfx/interface/zin/chronicle/sigils/deep_past.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_deep_past"] },
+      { "name": "GFX_zin_chr_sigil_first_age", "texture": "gfx/interface/zin/chronicle/sigils/first_age.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_first_age"] },
+      { "name": "GFX_zin_chr_sigil_second_age", "texture": "gfx/interface/zin/chronicle/sigils/second_age.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_second_age"] },
+      { "name": "GFX_zin_chr_sigil_third_age", "texture": "gfx/interface/zin/chronicle/sigils/third_age.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_third_age"] },
+      { "name": "GFX_zin_chr_sigil_fourth_age", "texture": "gfx/interface/zin/chronicle/sigils/fourth_age.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_fourth_age"] },
+      { "name": "GFX_zin_chr_sigil_last_crowns", "texture": "gfx/interface/zin/chronicle/sigils/last_crowns.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_last_crowns"] },
+      { "name": "GFX_zin_chr_sigil_figures", "texture": "gfx/interface/zin/chronicle/sigils/figures.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_figures"] },
+      { "name": "GFX_zin_chr_sigil_peoples", "texture": "gfx/interface/zin/chronicle/sigils/peoples.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_peoples"] },
+      { "name": "GFX_zin_chr_sigil_lands", "texture": "gfx/interface/zin/chronicle/sigils/lands.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_lands"] },
+      { "name": "GFX_zin_chr_sigil_realms", "texture": "gfx/interface/zin/chronicle/sigils/realms.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_realms"] },
+      { "name": "GFX_zin_chr_sigil_orders", "texture": "gfx/interface/zin/chronicle/sigils/orders.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_orders"] },
+      { "name": "GFX_zin_chr_sigil_relics", "texture": "gfx/interface/zin/chronicle/sigils/relics.dds", "size": [24, 24], "fit": "contain", "padding": 0, "cells": ["sigil_relics"] }
+    ]
+  }
+}

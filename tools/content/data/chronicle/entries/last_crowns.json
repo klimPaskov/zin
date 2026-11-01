@@ -1,0 +1,3323 @@
+{
+  "category": "last_crowns",
+  "entries": [
+    {
+      "id": 601,
+      "key": "man_from_ice",
+      "title": "The Man from the Ice",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "man_in_ice"
+      },
+      "unlock": "F:zin_eindil_awake",
+      "parts": [
+        {
+          "when": "F:zin_eindil_awake",
+          "paragraphs": [
+            {
+              "text": "Far to the north-west of the Cold Lands, beyond most of Aenor’s knowledge, ancient ice released a man who had slept through kingdoms and ages. Cold Lands tribes found him alive where no unprotected traveller could have survived. They fed him and sheltered him.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                },
+                {
+                  "note": "03 - Figures/Eindil.md",
+                  "section": "Eindil",
+                  "sha256": "91aa6b347f1b3e591079d1ef224a7ec6800847c5c7fee3f6b815d3851bfbb9a6"
+                }
+              ]
+            },
+            {
+              "text": "He remembered almost nothing of his former life, and his name was not clear even to himself. He had extraordinary strength, quickness and endurance. What set him apart was his unwillingness to misuse them.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "People began to give him names, and among them was the Man from the Ice. No chronicle tells where he came from, how he came to lie in the ice, or for how long he lay there.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "03 - Figures/Eindil.md",
+                  "section": "Eindil",
+                  "sha256": "91aa6b347f1b3e591079d1ef224a7ec6800847c5c7fee3f6b815d3851bfbb9a6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_awake, S>=2",
+          "paragraphs": [
+            {
+              "text": "In time the tribes entrusted him to western travellers on the traders’ road south. In the West Lands villagers remembered him carrying survivors out of floodwaters, restraining raiders without slaughtering their captives, and settling disputes that their lords had allowed to grow into blood feuds.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "eindil",
+        "cold_lands",
+        "west_lands",
+        "king_without_house"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 602,
+      "key": "king_without_house",
+      "title": "The King Without a House",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "war_king"
+      },
+      "unlock": "F:zin_eindil_war_king",
+      "parts": [
+        {
+          "when": "F:zin_eindil_war_king",
+          "paragraphs": [
+            {
+              "text": "The stranger’s road through the West Lands ran by the Bridge of the Three Oaths, Girdon’s Winter Ford and the courts of Gunwaith, and at each the tale of him grew. Western courts heard that he did not ask to stand above the law of the lands he crossed.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                }
+              ]
+            },
+            {
+              "text": "Every western court remembered that Aenor had once tried to rule them, and the old quarrel of the Grey Ford between Gunwaith and Girdon was never far from war. When it threatened the peace again, several western rulers who could not keep the peace alone chose the stranger as their temporary war-king.",
+              "status": "mixed",
+              "note": "The Grey Ford as the place of the quarrel is proposed; the temporary war-kingship and the peace are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The West Lands",
+                  "sha256": "f6e290774adb1fd858b49b76787558e7c3a25c31a23c91f44f447c95901b1da7"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "He accepted only to end the conflict, and laid the title down when his work was done. So the West remembers him as a king without leaving any lasting kingdom behind him, and people began to call him the King Without a House.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "03 - Figures/Eindil.md",
+                  "section": "Eindil",
+                  "sha256": "91aa6b347f1b3e591079d1ef224a7ec6800847c5c7fee3f6b815d3851bfbb9a6"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "man_from_ice",
+        "west_lands",
+        "western_wars",
+        "eindil"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 603,
+      "key": "golden_king_dies",
+      "title": "The Death of the Golden King",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "king_is_dead"
+      },
+      "unlock": "F:zin_golden_king_dead",
+      "parts": [
+        {
+          "when": "F:zin_golden_king_dead",
+          "paragraphs": [
+            {
+              "text": "The Golden King ascended the throne of Aenor late in the age. He was greedy, extravagant and deeply concerned with his own grandeur. He hoarded treasure, sold offices and favoured those who flattered him. Aenor went on working because the institutions of earlier generations were strong.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "03 - Figures/Golden King.md",
+                  "section": "The Golden King",
+                  "sha256": "6df11657b9cdf3147cb8f03be94b387cf0c890e13921b93b17b1e4217bbc8316"
+                }
+              ]
+            },
+            {
+              "text": "He founded the Lost Cause, a league meant to guard the kingdom against the return of dark powers. Its councils and alliances were real, but its founder used it for prestige, and his corruption weakened trust in it. Some of its officers became true defenders of Aenor.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "03 - Figures/Golden King.md",
+                  "section": "The Golden King",
+                  "sha256": "6df11657b9cdf3147cb8f03be94b387cf0c890e13921b93b17b1e4217bbc8316"
+                }
+              ]
+            },
+            {
+              "text": "Then the Golden King died. His death left the throne of Parim empty and opened a contest for the crown. No chronicle gives his own name.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Golden King.md",
+                  "section": "The Golden King",
+                  "sha256": "6df11657b9cdf3147cb8f03be94b387cf0c890e13921b93b17b1e4217bbc8316"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_golden_king_dead, rev",
+          "paragraphs": [
+            {
+              "text": "The King did not die by chance. Afrit had decided that the time had come to stop ruling through human kings. He arranged the Golden King’s death and hid his own part in it, and his agents presented the succession as a crisis that no ordinary claimant could resolve.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "03 - Figures/Golden King.md",
+                  "section": "The Golden King",
+                  "sha256": "6df11657b9cdf3147cb8f03be94b387cf0c890e13921b93b17b1e4217bbc8316"
+                },
+                {
+                  "note": "03 - Figures/Afrit the Deliverer.md",
+                  "section": "Afrit the Deliverer",
+                  "sha256": "ac71f710580c360121182d6c0e6eaa1cf400ac030b10334aa1852774002ed7f2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "golden_king",
+        "lost_cause",
+        "four_camps",
+        "deliverer_crowned"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 604,
+      "key": "plot_exposed",
+      "title": "The Plot Against the King",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": null,
+      "unlock": "F:zin_golden_king_plot_exposed",
+      "parts": [
+        {
+          "when": "F:zin_golden_king_plot_exposed",
+          "paragraphs": [
+            {
+              "text": "The Golden King did not die when his enemies meant him to. A plot against his life was found out before it could strike. Those who uncovered it pointed to a circle at the heart of the King’s own court and to men in temple robes.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                }
+              ]
+            },
+            {
+              "text": "The court of Parim was shaken. The King, who had left the work of ruling to those around his throne, learned that some of them had wanted him dead. From that day the quarrel over Aenor was no longer about who would succeed him, but about who had tried to hasten his end.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_golden_king_plot_exposed, F:zin_golden_king_survives",
+          "paragraphs": [
+            {
+              "text": "The King lived. Those who had plotted against him rose in arms or scattered, and when it was over the Golden King still held his throne. The war of succession that might have torn Aenor apart never came.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_golden_king_plot_exposed, rev",
+          "paragraphs": [
+            {
+              "text": "The plot had been Afrit’s. Through his Hidden Council, which governed much of Aenor behind the throne, he had prepared the King’s death so that he could take the crown for himself. Its exposure struck at the Council’s work before that work was done.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "06 - Politics/Afrits Hidden Council.md",
+                  "section": "Afrit's Hidden Council",
+                  "sha256": "305310580cede2f0e45d03d58de86342b35943362a2f7b410156f6421e7e3fa9"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                },
+                {
+                  "note": "03 - Figures/Golden King.md",
+                  "section": "The Golden King",
+                  "sha256": "6df11657b9cdf3147cb8f03be94b387cf0c890e13921b93b17b1e4217bbc8316"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "golden_king",
+        "golden_king_dies",
+        "hidden_council",
+        "golden_court"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 605,
+      "key": "deliverer_crowned",
+      "title": "The Deliverer Crowned",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "coronation"
+      },
+      "unlock": "F:zin_aurevan_crowned",
+      "parts": [
+        {
+          "when": "F:zin_aurevan_crowned",
+          "paragraphs": [
+            {
+              "text": "After the Golden King’s death, temple authorities proclaimed the Deliverer, Aurevan, the one protector whose blessing had preserved the kingdom for centuries. Members of the royal council gave him the seals of the realm. Military commanders swore obedience, many sincerely believing that they were preventing another civil war.",
+              "status": "mixed",
+              "note": "The public name Aurevan is proposed; the proclamation and the transfer of the seals are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "03 - Figures/Aurevan the Deliverer.md",
+                  "section": "Aurevan the Deliverer",
+                  "sha256": "bdb105033d5cacb861da81b46f6940fd7f8fac6de5cec24e310f0cc73bd1b913"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "Aurevan accepted the crown and declared himself King of Aenor, First of His Name, and New God of Men, adding other titles gathered through his worship. Most of the capital celebrated. Much of the kingdom obeyed.",
+              "status": "mixed",
+              "note": "The public name Aurevan is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "03 - Figures/Aurevan the Deliverer.md",
+                  "section": "Aurevan the Deliverer",
+                  "sha256": "bdb105033d5cacb861da81b46f6940fd7f8fac6de5cec24e310f0cc73bd1b913"
+                }
+              ]
+            },
+            {
+              "text": "There were dissenters, rival claimants and scholars who questioned his descent, and those judged dangerous were quickly silenced. It was possible to praise him freely, to serve him from fear, and still to remember the freedom of earlier kings. These answers lived side by side.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_aurevan_crowned, rev",
+          "paragraphs": [
+            {
+              "text": "The god-king of Parim was Afrit. In private the new king let his demonic form show more and more often, while the people still saw the familiar figure of the Deliverer. Only his inner council called him by his true name.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                }
+              ]
+            },
+            {
+              "text": "For centuries his people had governed Aenor through kings who wore the crown while its true ruler was elsewhere. With the Golden King’s death Afrit stopped ruling through human kings and took the throne openly, and many people worshipped him on it.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Prologue: the peace that followed Elzon",
+                  "sha256": "c4b09bd068a9dc37187d3edb84f61433b41cd2b0775bcaba4ba3f2fea0c56a03"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "the_deliverer",
+        "golden_king_dies",
+        "afrit",
+        "parim"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 606,
+      "key": "storm_voyage",
+      "title": "The Storm and the Islands",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "storm_wreck"
+      },
+      "unlock": "S>=5",
+      "parts": [
+        {
+          "when": "S>=5",
+          "paragraphs": [
+            {
+              "text": "The stranger wanted to learn who he was. Stories and broken genealogies pointed him toward the First Men and the old kingdom across the great central sea. He set sail for Aenor, but a violent run of storms and unfamiliar currents carried his ship far to the south.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                }
+              ]
+            },
+            {
+              "text": "After wreck and hardship he reached the Islands of the South and lived among their people. He helped them settle disputes and survive dangers of their own, and he heard tales of the long-lived elves who dwelt farther to the south-west.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "On one island the fisherfolk would not cross a reef at night, for drowned voices were said to call ships onto the rocks. The stranger brought back children stranded there in a storm. The islanders said afterwards that the sea had gone silent when he carried them ashore.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                }
+              ]
+            },
+            {
+              "text": "Farther south a ruined shrine stood beneath the tide. In it he found an inscription naming Aen, which the island priests had repeated for generations without understanding it. Neither wonder told him who he was, but each made his search harder to abandon.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                }
+              ]
+            },
+            {
+              "text": "Among the islanders went a saying that when the tales of men grew too old for any man to explain, they should be carried to Gala. So the stranger travelled on to the Lands of the Sun.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IV. The stranger in the Cold Lands",
+                  "sha256": "d4e2b33ecfc4722d0a452d654e1845f8485517040921315ae919364a1c287470"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "islands_of_south",
+        "lands_of_sun",
+        "man_from_ice",
+        "naming_at_gala"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 607,
+      "key": "naming_at_gala",
+      "title": "The Naming at Gala",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "subject": "a spring in an old elven courtyard at night"
+      },
+      "unlock": "heir",
+      "parts": [
+        {
+          "when": "heir",
+          "paragraphs": [
+            {
+              "text": "The Gala elves were among the few peoples whose rulers still remembered the time of Dardan. Their king, Lorien, received the stranger from the Islands of the South and spoke with him for weeks. He told him of the War of Men, Aen’s unnatural birth, the founding of Aenor, the long peace, Dardan and the death of Elzon.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                },
+                {
+                  "note": "03 - Figures/Lorien.md",
+                  "section": "Lorien",
+                  "sha256": "cdb6fc98004116311e84ca8c8c2a347e899f5165ad0b314b9b9ccfd9abb79229"
+                }
+              ]
+            },
+            {
+              "text": "The stranger learned how small his own memories were against the age of the world. Lorien recognised in him the signs of the First Men, but would not name him on strength alone.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                }
+              ]
+            },
+            {
+              "text": "Lorien led him to the Mirror of First Rain, a spring enclosed in an old elven courtyard. Its water shows no certain future. It shows true traces of the past, and possible futures to those brave enough to look without demanding certainty. In it Lorien saw the old royal line and knew the stranger: Eindil, son of Ein, son of Aen.",
+              "status": "mixed",
+              "note": "The Mirror of First Rain and the form of its visions are proposed; that Lorien named him with a vision is established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                },
+                {
+                  "note": "08 - Artifacts/Mirror of First Rain (proposed).md",
+                  "section": "Mirror of First Rain",
+                  "sha256": "7cd0b2f3c8e9737df2570189d2182322a78e87c3e046edc19532f327aacfdba4"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                }
+              ]
+            },
+            {
+              "text": "Eindil saw a burning capital, armies from west and east, death moving from the north, Volgan’s strength renewed, and himself carrying a shard of broken blue metal against a darkness almost beyond understanding. Lorien warned him that prophecies can frighten people into the very deeds they foretell.",
+              "status": "mixed",
+              "note": "The details of the vision are proposed; a vision of coming events is established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "Lorien sent him north to the Castle of Yeldenne in the Cold Lands, where the guardian Horos kept Glo, a crystal of old and holy power said to hold a portion of the power of Glernaen, the New God of Power and Wisdom. Aenor could not be saved by strength alone. Lorien gave him a ship and a fine sword for the voyage.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "V. Lorien and the Mirror of First Rain",
+                  "sha256": "44c8d5560c242f3f9b4c57c8a33c6408faaf9648a63498609a48a4365ccd8eec"
+                },
+                {
+                  "note": "03 - Figures/Lorien.md",
+                  "section": "Lorien",
+                  "sha256": "cdb6fc98004116311e84ca8c8c2a347e899f5165ad0b314b9b9ccfd9abb79229"
+                },
+                {
+                  "note": "07 - History/The Journey of Eindil.md",
+                  "section": "The Journey of Eindil",
+                  "sha256": "59ceb5c3650b50287a750cb08d00131dcd49078028c69f8641cc1498e2990dd9"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "lorien",
+        "gala_elves",
+        "mirror",
+        "eindil"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 608,
+      "key": "hall_of_horos",
+      "title": "The Ambush and the Hall of Horos",
+      "short": "The Hall of Horos",
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "yeldenne_hall"
+      },
+      "unlock": "F:zin_horos_dead, S>=8",
+      "parts": [
+        {
+          "when": "F:zin_horos_dead, S>=8",
+          "paragraphs": [
+            {
+              "text": "The Castle of Yeldenne stood cold and almost silent in the Cold Lands. In its hall the Great Spirit Horos sat between stone pillars: an immense knight in yellow-green armour, with a blue blade, dark branching edges to his helm, and blue eyes that showed in its shadow. Through the ages he had guarded Glo and refused every claimant who sought it for conquest.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            },
+            {
+              "text": "Glo was no ornament of the throne. It was the living crystal at the heart of Horos’s own being, and it held part of the power of Glernaen, a true New God of Power and Wisdom.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            },
+            {
+              "text": "Horos is dead. The guardian who had outlasted the ages died in his own hall, and the throne of Yeldenne stands empty. The Man from the Ice came to that hall in the north, and from there he went south again.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Key distinctions and continuity rules",
+                  "sha256": "5fed11ceb93a575d723686efa8cd2b168f8ad285e9060db986e99195ebc5aea9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_horos_dead, S>=8, F:zin_glo_with_eindil, F:zin_afrit_wounded",
+          "paragraphs": [
+            {
+              "text": "An ambush met the company of the Man from the Ice after it came ashore, and he went on alone across the snow. A crowned stranger from the south who came for Glo had reached the hall before him. When he gave himself grand titles, Horos answered: “Those are the names you have taken. I asked who walks here.” He bade the intruder depart, and the intruder attacked.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VI. The road to Yeldenne",
+                  "sha256": "3079b3d2c6bfe36934e242471f03088017b9b77bd777a4d57fdb0cb925f584fb"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "Horos seized him by the throat and raised him from the ground. At that moment the Man from the Ice entered the hall. The intruder passed behind the guardian and drove a blade beneath his helm into his neck. The Man from the Ice ran him through, and he fled bleeding. Dying, Horos took Glo from his breast, placed it in the stranger’s hands with his blue sword, and turned to dust.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "03 - Figures/Horos.md",
+                  "section": "Horos",
+                  "sha256": "2ff691be411ecd6639b8870bf0e581c2053ad08d4c5f9cf797840ff859e9784a"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_horos_dead, S>=8, F:zin_glo_with_eindil, F:zin_afrit_wounded, rev, heir",
+          "paragraphs": [
+            {
+              "text": "The intruder was Afrit, wearing the outward form of the Deliverer and carrying the Necklace of the Abyss and his gathered artifacts. Horos knew him at once: “Afrit, son of Ein. I know why your father denied you.” Struck by Eindil, Afrit bled openly for the first time in many years, his divine show broken by the castle’s protections, and escaped through a last opening into his private refuge.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            },
+            {
+              "text": "Before he died, Horos told Eindil the hidden history of the two sons of Ein: Afrit had once betrayed his brother over the inheritance their father denied him. Eindil left the empty castle with Glo, the blue sword, and the knowledge that the Deliverer whom Aenor adored was his own brother.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VII. The hall of Horos",
+                  "sha256": "5569a17f64db3d4c51db376f9e9525155ae7d09d29fdb4e731ec4a21cdf1686b"
+                },
+                {
+                  "note": "03 - Figures/Eindil.md",
+                  "section": "Eindil",
+                  "sha256": "91aa6b347f1b3e591079d1ef224a7ec6800847c5c7fee3f6b815d3851bfbb9a6"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "horos",
+        "glo",
+        "castle_yeldenne",
+        "blue_sword"
+      ],
+      "secrets": [
+        "glo",
+        "afrit",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 609,
+      "key": "unheeded_warnings",
+      "title": "The Unheeded Warnings",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "subject": "a cloaked stranger speaking in a crowded square, seen from behind"
+      },
+      "unlock": "S>=8",
+      "parts": [
+        {
+          "when": "S>=8",
+          "paragraphs": [
+            {
+              "text": "The stranger came ashore in the Middle Lands and tried to warn their people. He spoke of dangers he could now read in reports from across the world: Volgan rebuilding his armies, death stirring in Zol’s Mistake, western kingdoms planning a great crossing, northern rulers drawing back from their treaties, and eastern coalitions preparing to invade the Middle Lands and the Magical Lands.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "The North Lands were not one enemy, and the eastern states were not all united. Each region held rulers with motives of their own, but enough forces were moving at once to threaten Aenor’s survival.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                }
+              ]
+            },
+            {
+              "text": "Some men believed him, above all frontier troops, scholars of the First Men and branches of the Lost Cause. Alleria of Selen, a ranger famed as an archer, looked into his story. Most of the court would not hear him. He did not try to seize a crown by force. He wanted men to unite before the invasion began.",
+              "status": "mixed",
+              "note": "Alleria’s inquiry into his story is proposed; the believers among frontier troops, scholars and the Lost Cause are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                },
+                {
+                  "note": "03 - Figures/Alleria of Selen.md",
+                  "section": "Alleria of Selen",
+                  "sha256": "1307e70a9607cb36bfc9849cdf9845d9e90b81191fa9e8f191bd5c11be6b71fd"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "S>=8, heir",
+          "paragraphs": [
+            {
+              "text": "In the squares and halls where he spoke he gave his name: Eindil, son of Ein, son of Aen. So the courts of Aoaz first heard it, from the man himself.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                },
+                {
+                  "note": "03 - Figures/Eindil.md",
+                  "section": "Eindil",
+                  "sha256": "91aa6b347f1b3e591079d1ef224a7ec6800847c5c7fee3f6b815d3851bfbb9a6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "S>=8, F:zin_afrit_impostor_denounced",
+          "paragraphs": [
+            {
+              "text": "Word went out that the stranger was a foreign impostor, a traitor and a threat to the peace. The people knew the Deliverer as their divine guardian, and very few wished to hear a wanderer speak against the order of the realm. Men were sent to hunt him.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "alleria",
+        "selen",
+        "lost_cause",
+        "last_crowns"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 610,
+      "key": "last_crowns",
+      "title": "The War of the Last Crowns",
+      "short": "The Last Crowns",
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "last_crowns"
+      },
+      "unlock": "F:zin_war_of_last_crowns",
+      "parts": [
+        {
+          "when": "F:zin_war_of_last_crowns",
+          "paragraphs": [
+            {
+              "text": "The War of the Last Crowns is the name the scholars give to the great war that closed the Fourth Age. It was not a single attack on one day. It was many wars that overlapped, as crowns armed on every shore.",
+              "status": "mixed",
+              "note": "The name War of the Last Crowns is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "War of the Last Crowns",
+                  "sha256": "c992a1c7f49b701dedd202cfedecc2c6e52b7145055a1adbcd53b4f9904e2796"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                }
+              ]
+            },
+            {
+              "text": "After more than a thousand years of peace, almost nobody alive remembered a war that threatened everyone at once. The living kingdoms found their old alliances weak and their old grudges strong. Each front had its own causes and its own masters, and none of the powers could see them all.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The shape of the world",
+                  "sha256": "f864e0a83913bb94582191c920ccf07779a9be3999a0c4314833858882f9ac33"
+                }
+              ]
+            },
+            {
+              "text": "At the centre stood Aenor, rich and strong after its long peace, whose crown every power coveted or feared.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Prologue: the peace that followed Elzon",
+                  "sha256": "c4b09bd068a9dc37187d3edb84f61433b41cd2b0775bcaba4ba3f2fea0c56a03"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "western_crossing",
+        "north_apart",
+        "volgan_marches",
+        "host_from_east"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 611,
+      "key": "western_crossing",
+      "title": "The Western Crossing",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "western_crossing"
+      },
+      "unlock": "F:zin_western_crossing",
+      "parts": [
+        {
+          "when": "F:zin_western_crossing",
+          "paragraphs": [
+            {
+              "text": "From the west, fleets crossed the wide central sea. Some western kings sought revenge for Aenor’s ancient conquests. Others wanted to take the capital before a weakened kingdom could threaten them again. The western army landed and seized ports on the shores of the Middle Lands.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            },
+            {
+              "text": "The West Lands had been divided, and in the years before the war their kingdoms were at peace with one another. Every western court remembered that Aenor had once tried to rule them, and against Aenor they sailed together.",
+              "status": "mixed",
+              "note": "That the kingdoms were at peace among themselves before the crossing is proposed detail.",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The West Lands",
+                  "sha256": "f6e290774adb1fd858b49b76787558e7c3a25c31a23c91f44f447c95901b1da7"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_western_crossing, F:zin_west_parim_taken",
+          "paragraphs": [
+            {
+              "text": "The western army occupied Aenor’s capital and claimed the human throne. Western commanders accepted surrenders and expected to keep their conquest.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_western_crossing, F:zin_west_evacuated",
+          "paragraphs": [
+            {
+              "text": "The conquest could not be held. The western fleet made ready to carry its armies home. Some soldiers escaped. Others were left stranded on the far shore, among the people they had come to conquer.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "west_lands",
+        "western_wars",
+        "parim",
+        "last_crowns"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 612,
+      "key": "north_apart",
+      "title": "The North Stands Apart",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": null,
+      "unlock": "F:zin_leren_withdrawal",
+      "parts": [
+        {
+          "when": "F:zin_leren_withdrawal",
+          "paragraphs": [
+            {
+              "text": "From the north, rulers of the North Lands withdrew from their alliances with Aenor. Lerendor left the Treaty of the Narrow Strait, the old alliance under which the North Lands were bound to defend Aenor in war.",
+              "status": "mixed",
+              "note": "The name Treaty of the Narrow Strait is proposed; the old alliance and the withdrawal are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The North Lands",
+                  "sha256": "15a8fb076a162692d0bd122358f821f6a19fd5c064f2a86ccc074c8d20ec3558"
+                }
+              ]
+            },
+            {
+              "text": "The North Lands were not one unanimous enemy. Lerendor’s kings were proud, its fleets guarded the strait, and its court had resented Aenor since the toll quarrel of 4A 1716. The smaller northern crowns looked to Lerendor or to Parim as it suited them.",
+              "status": "mixed",
+              "note": "The toll quarrel of 4A 1716 is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The North Lands",
+                  "sha256": "15a8fb076a162692d0bd122358f821f6a19fd5c064f2a86ccc074c8d20ec3558"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "north_lands",
+        "narrow_strait",
+        "toll_quarrel",
+        "last_crowns"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 613,
+      "key": "volgan_marches",
+      "title": "Volgan Marches North",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "subject": "a dark host pouring through mountain passes"
+      },
+      "unlock": "F:zin_volgan_marches",
+      "parts": [
+        {
+          "when": "F:zin_volgan_marches",
+          "paragraphs": [
+            {
+              "text": "From the south, Volgan came out of the Ember Lands and marched north with an army greater than any seen since the First Age. He had rebuilt his strength for a century behind the storms and heat of the Ember Lands, while the courts of the north thought him a spent legend.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Ember Lands",
+                  "sha256": "0f203cc494c9fc0d33cc8840e198af3f791da328c5017681884ac60063be20dc"
+                }
+              ]
+            },
+            {
+              "text": "He commanded creatures, Great Spirits, demons and vast war hosts. These forces had gathered for centuries while he recovered from his exile after Dardan. The independent Dark Lands were not all his, but his agents courted every one of them.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Ember Lands",
+                  "sha256": "0f203cc494c9fc0d33cc8840e198af3f791da328c5017681884ac60063be20dc"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Dark Lands",
+                  "sha256": "690b318031a563f160b0daa64adcdbc159fa00d4abb68b5fbba04b303161108d"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_volgan_marches, F:zin_mirolon_fallen",
+          "paragraphs": [
+            {
+              "text": "Mirolon stood first in his way: the human kingdom that Volgan had conquered in the First Age, long since free again. It fell, and Volgan held Mirolon once more.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Ember Lands",
+                  "sha256": "0f203cc494c9fc0d33cc8840e198af3f791da328c5017681884ac60063be20dc"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "volgan",
+        "mirolon",
+        "southern_dominion",
+        "ember_lands"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 614,
+      "key": "host_from_east",
+      "title": "The Host from the East",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "subject": "eastern banners crossing the rift sea"
+      },
+      "unlock": "F:zin_eastern_invasion",
+      "parts": [
+        {
+          "when": "F:zin_eastern_invasion",
+          "paragraphs": [
+            {
+              "text": "From the east, a coalition of eastern crowns crossed seas and mountain approaches to threaten the Magical Lands and the Middle Kingdom. Their commanders expected wealth, land, revenge, or deliverance from the troubles of their own rulers.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            },
+            {
+              "text": "The East Lands are the richest region of Aoaz and the most divided. Not every eastern crown joined the host, and some went on fighting one another for the caravan roads.",
+              "status": "mixed",
+              "note": "The rival leagues of the caravan roads are a working table; the wealth and division of the East are established direction.",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The East Lands and the South Lands",
+                  "sha256": "397b4a9c75667f65d6dd85a83b845ecd6b2f7e37a82007541bb8fb93f90874b9"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "VIII. The unheeded warnings",
+                  "sha256": "57acbca2f1edb7aa23445ca38efb6df300187a84395fbe841b2aef91dadb5d16"
+                }
+              ]
+            },
+            {
+              "text": "In its path lay the elves of the Magical Lands, whom not even Elzon had conquered.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Magical Lands",
+                  "sha256": "f582d71a23ea1044f5fa7717cfc468b7d8173c4eee4118e26b6e6bec3695ec1b"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "east_lands",
+        "magical_lands",
+        "last_crowns",
+        "king_of_east"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 615,
+      "key": "dead_of_mistake",
+      "title": "The Dead of the Mistake",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "zol_rising"
+      },
+      "unlock": "F:zin_zol_rising",
+      "parts": [
+        {
+          "when": "F:zin_zol_rising",
+          "paragraphs": [
+            {
+              "text": "From the black north, the dead of Zol’s Mistake moved out through the islands and straits of the Kusmeel toward the settled kingdoms. Before the war, only fishermen had seen them stir, and nobody believed them.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Zol's Mistake",
+                  "sha256": "6ad0c676d9f016bfffb497ce871aa63543492fe086c42cb25f111aa3445b06df"
+                }
+              ]
+            },
+            {
+              "text": "Zol’s dead were unlike the raised corpses of Elzon, which needed his continuing magic to stand. They were death-bound beings sustained by the Old God’s own magic. Ordinary weapons could break their shapes but could not end their existence. Only potent magic could truly destroy them.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "03 - Figures/Zol.md",
+                  "sha256": "f4a396658840c7468f0d21d2f06446de68dba2ce1b68cc7506360cc6f2c873b1"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Distinctions",
+                  "sha256": "7cd91f0abec5cc1ab125b5f75ea59e8e7db61071894433582abdca13cea4c43f"
+                }
+              ]
+            },
+            {
+              "text": "Zol is the only Old God present in Aoaz, the God of Death. He takes no ordinary body, and he did not walk among his dead.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Zol.md",
+                  "sha256": "f4a396658840c7468f0d21d2f06446de68dba2ce1b68cc7506360cc6f2c873b1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_zol_rising, F:zin_volgan_zol_clash",
+          "paragraphs": [
+            {
+              "text": "As the living armies turned on one another, the dead of Zol collided with the hosts of Volgan. The two ancient powers had settled on no common command. For a time each destroyed the other’s servants, while the mortal kingdoms were crushed between them.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "zol",
+        "zols_mistake",
+        "the_dead",
+        "black_sky"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 616,
+      "key": "name_of_afrit",
+      "title": "The Name of Afrit",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Revelation",
+      "plate": {
+        "reuse": "unmasking"
+      },
+      "unlock": "rev",
+      "parts": [
+        {
+          "when": "rev",
+          "paragraphs": [
+            {
+              "text": "The Deliverer, the god whom Aenor had loved for ages, was Afrit. Most of his worshippers had known him as Aurevan the Deliverer. The name Afrit had belonged to his inner council, his enemies and certain beings of the spirit world.",
+              "status": "mixed",
+              "note": "Aurevan as his public name is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                },
+                {
+                  "note": "03 - Figures/Afrit the Deliverer.md",
+                  "section": "Afrit the Deliverer",
+                  "sha256": "ac71f710580c360121182d6c0e6eaa1cf400ac030b10334aa1852774002ed7f2"
+                },
+                {
+                  "note": "03 - Figures/Aurevan the Deliverer.md",
+                  "section": "Aurevan the Deliverer",
+                  "sha256": "bdb105033d5cacb861da81b46f6940fd7f8fac6de5cec24e310f0cc73bd1b913"
+                }
+              ]
+            },
+            {
+              "text": "Afrit had been a man of the old blood of the First Men. He sought dominion through corruption, demonic magic, bargains, worship and artifacts, and his demonic form grew over time. It was an acquired state, not proof that he was made a demon. Beneath his protections he was still a mortal man who could bleed, suffer and die.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "I. The hidden birthright of Afrit",
+                  "sha256": "f228f0450347bf221c3acfc78b770741a9fe6772884cba2390b4994f256bd175"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                }
+              ]
+            },
+            {
+              "text": "His works ran through the ages. In the First Age he secretly gathered demons and other beings who helped oppose Volgan at Dardan. In the Second Age he gained worship, networks and power. When Elzon fell he helped protect the people, and they began to call him a New God who had saved them.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "I. The hidden birthright of Afrit",
+                  "sha256": "f228f0450347bf221c3acfc78b770741a9fe6772884cba2390b4994f256bd175"
+                }
+              ]
+            },
+            {
+              "text": "For most of the Fourth Age he governed Aenor indirectly, through priests, schools, houses of relief, councillors and kings who served his wishes. The kingdom prospered while its freedom was slowly lost.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Prologue: the peace that followed Elzon",
+                  "sha256": "c4b09bd068a9dc37187d3edb84f61433b41cd2b0775bcaba4ba3f2fea0c56a03"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "Whether he was ever a true New God is not known. Public worship does not by itself make him one of the New Gods made by the Holy Seven. His worship keeps a feast in his honour, not a month, for the twelve months honour the twelve main New Gods.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "03 - Figures/Afrit the Deliverer.md",
+                  "section": "Afrit the Deliverer",
+                  "sha256": "ac71f710580c360121182d6c0e6eaa1cf400ac030b10334aa1852774002ed7f2"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Key distinctions and continuity rules",
+                  "sha256": "5fed11ceb93a575d723686efa8cd2b168f8ad285e9060db986e99195ebc5aea9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "rev, heir",
+          "paragraphs": [
+            {
+              "text": "Afrit was a son of Ein and a grandson of Aen, and the brother of Eindil; the two were born at about the same time. Their father denied Afrit the throne of men, and Afrit betrayed his brother. Why Ein refused him, and how the betrayal was done, no chronicle tells.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "I. The hidden birthright of Afrit",
+                  "sha256": "f228f0450347bf221c3acfc78b770741a9fe6772884cba2390b4994f256bd175"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "afrit",
+        "the_deliverer",
+        "hidden_council",
+        "necklace"
+      ],
+      "secrets": [
+        "afrit",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 617,
+      "key": "king_of_east",
+      "title": "The King of the East",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "eastern_court"
+      },
+      "unlock": "F:zin_afrit_king_of_east, rev",
+      "parts": [
+        {
+          "when": "F:zin_afrit_king_of_east, rev",
+          "paragraphs": [
+            {
+              "text": "Afrit looked at the attacks converging on Aenor and decided that the kingdom could no longer serve his ambitions. He abandoned the realm he had claimed to protect. His council and prepared agents helped him move east.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                }
+              ]
+            },
+            {
+              "text": "Through his council he had courted the eastern courts for four centuries, as a reserve against the loss of Aenor. Now he used that influence over several rulers and took command of an eastern dominion. He meant to rule there if the Middle Kingdom fell.",
+              "status": "mixed",
+              "note": "The four centuries of courting are established direction with a proposed figure.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "06 - Politics/Afrits Hidden Council.md",
+                  "section": "Afrit's Hidden Council",
+                  "sha256": "305310580cede2f0e45d03d58de86342b35943362a2f7b410156f6421e7e3fa9"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The East Lands and the South Lands",
+                  "sha256": "397b4a9c75667f65d6dd85a83b845ecd6b2f7e37a82007541bb8fb93f90874b9"
+                }
+              ]
+            },
+            {
+              "text": "Afrit and his allies proclaimed him King of the East. The title was larger than the truth: many states of the East Lands still resisted him.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "IX. The War of the Last Crowns",
+                  "sha256": "9fad479172e0faee3950c21b399c0c463d87867f0730d209bbbaab198210673d"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Key distinctions and continuity rules",
+                  "sha256": "5fed11ceb93a575d723686efa8cd2b168f8ad285e9060db986e99195ebc5aea9"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "afrit",
+        "east_lands",
+        "host_from_east",
+        "hidden_council"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 618,
+      "key": "dragon_return",
+      "title": "The Return on the Dragon",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "dragon_return"
+      },
+      "unlock": "F:zin_eindil_returned",
+      "parts": [
+        {
+          "when": "F:zin_eindil_returned",
+          "paragraphs": [
+            {
+              "text": "Eindil returned to the main battlefield of the Middle Lands riding a dragon. With him came Varner, the Lesser Spirit wizard who had helped end Elzon’s reign, and Golbran, Varner’s small purple servant of unknown origin.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            },
+            {
+              "text": "The dragon had been entrusted to him by the elves of the Magical Lands, whose ancient bond with the dragons made such a pact possible. It was a free ally, not a beast brought under the rule of men.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                }
+              ]
+            },
+            {
+              "text": "The witnesses knew him from rumour, from his warnings and from the stories of the West. Those who would fight beside him joined in one coalition for one purpose: to save what remained of the free lands. He took command without demanding that any kingdom give up its independence.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Distinctions",
+                  "sha256": "7cd91f0abec5cc1ab125b5f75ea59e8e7db61071894433582abdca13cea4c43f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_returned, F:zin_glo_with_eindil, F:zin_zol_rising",
+          "paragraphs": [
+            {
+              "text": "Eindil leapt from the dragon’s back and struck the earth with Horos’s blue sword. Glo released a wave of Glernaen’s power across the ground and broke the magic that sustained a whole front of Zol’s dead. Thousands fell in moments. Where ordinary soldiers had struck again and again for nothing, the sword ended these beings for good.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "eindil",
+        "varner",
+        "golbran",
+        "dragons"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 619,
+      "key": "varners_ward",
+      "title": "Varner’s Last Ward",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "subject": "a ward of light held against a dark tide"
+      },
+      "unlock": "F:zin_varner_dead",
+      "parts": [
+        {
+          "when": "F:zin_varner_dead",
+          "paragraphs": [
+            {
+              "text": "Varner stood against the darkness rolling down from Zol’s armies. He lifted curses, opened ways of escape and preserved as many living souls as he could. The effort cost him his life.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "03 - Figures/Varner.md",
+                  "section": "Varner",
+                  "sha256": "37e8425fa6fff31d8c9d6046c1284de12f4babc9881a7422c402ddb0c5950392"
+                }
+              ]
+            },
+            {
+              "text": "Golbran spent almost all of his own magic holding up Varner’s last wards, and collapsed. Those who saw him fall thought him dead.",
+              "status": "mixed",
+              "note": "Golbran’s survival of this collapse is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "03 - Figures/Golbran.md",
+                  "section": "Golbran",
+                  "sha256": "18c85c93d0c167580dfa2fd7f2cadd4d49beed55a82d14ed57854cbc90b8cdaf"
+                }
+              ]
+            },
+            {
+              "text": "Varner was a wise wizard of the Magical Lands and a Lesser Spirit in the form of an old man. Through the long Third Age he had helped elves and men withstand Elzon’s necromancy. His last defence won the time on which the living depended.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Varner.md",
+                  "section": "Varner",
+                  "sha256": "37e8425fa6fff31d8c9d6046c1284de12f4babc9881a7422c402ddb0c5950392"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_varner_dead, F:zin_volgan_struck_down_eindil",
+          "paragraphs": [
+            {
+              "text": "Volgan himself appeared at the southern front, and a blast of his magic struck Eindil to the ground. The Great Spirit looked across the ranks of men who stood together against him and asked why this time should be different. “Because these men have chosen to stand together while there is still something left to save,” Eindil answered. “Then I will bury them together,” said Volgan.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                }
+              ]
+            },
+            {
+              "text": "Eindil shattered Volgan’s advance guard and cut through enchantments that had ruined whole companies. But the Great Spirit turned the earth itself against him and struck through his protections. Eindil learned how much of the power at Dardan had needed a whole alliance of spirits. Volgan cast him down, gravely wounded.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "X. The return of the king without a kingdom",
+                  "sha256": "fea09f03f3146cae22aeac5f17f4568dda19323c1eac911e6ba5fd1245b52764"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "varner",
+        "golbran",
+        "volgan",
+        "new_gods_gather"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 620,
+      "key": "new_gods_gather",
+      "title": "The Gathering of the New Gods",
+      "short": "Gathering of the Gods",
+      "title_after": null,
+      "subtitle": "Fourth Age · Wonder",
+      "plate": {
+        "subject": "a lamp that never went out; rain over ploughed fields"
+      },
+      "unlock": "F:zin_eindil_restored",
+      "parts": [
+        {
+          "when": "F:zin_eindil_restored",
+          "paragraphs": [
+            {
+              "text": "Struck down by Volgan, Eindil’s spirit reached a realm of the gods, which he understood as Heaven. The New Gods gathered around him. Glo, the crystal of Glernaen, was the bridge that made the meeting possible. The gods knew that a descendant of Aen had tried to unite the divided peoples of Aoaz without claiming dominion over them.",
+              "status": "mixed",
+              "note": "Glo as the bridge of the meeting is proposed; the gathering and the restoration are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XI. The gathering of the New Gods",
+                  "sha256": "671f4aec446838fa7ae42473a85dfa1f0227443675bdc650d8952f918eb85f9e"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                },
+                {
+                  "note": "03 - Figures/Glernaen.md",
+                  "section": "Glernaen",
+                  "sha256": "280326a7af9a02860d092538b687de5d3011cddf4a941b9b9d74788a533ca706"
+                }
+              ]
+            },
+            {
+              "text": "Eindil could not see every god clearly. One came as a lamp that had never gone out, and spoke of the common people he had protected on his travels. Another came as rain over ploughed fields, and remembered Aenor’s long centuries of hunger. Others spoke of promises kept, wars prevented, and those whom kings had forgotten. Their names and domains are not written.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XI. The gathering of the New Gods",
+                  "sha256": "671f4aec446838fa7ae42473a85dfa1f0227443675bdc650d8952f918eb85f9e"
+                }
+              ]
+            },
+            {
+              "text": "Last came Glernaen, the New God of Power and Wisdom, whose voice Eindil knew from the living crystal. Glernaen recalled that he had made peace in the West and left its crown behind, and asked: “Tell us now, son of Ein, what will you do if you rise?” “I will return to them,” Eindil said.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XI. The gathering of the New Gods",
+                  "sha256": "671f4aec446838fa7ae42473a85dfa1f0227443675bdc650d8952f918eb85f9e"
+                },
+                {
+                  "note": "03 - Figures/Glernaen.md",
+                  "section": "Glernaen",
+                  "sha256": "280326a7af9a02860d092538b687de5d3011cddf4a941b9b9d74788a533ca706"
+                }
+              ]
+            },
+            {
+              "text": "The New Gods could not stay in Aoaz to fight the war themselves; its magic and the limits between the realms of the gods held them back. Instead each offered a measured part of their power through Glo. They restored Eindil to life and renewed his armour. His eyes shone with lightning, and the sword of Horos blazed as it never had in the old guardian’s hand.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XI. The gathering of the New Gods",
+                  "sha256": "671f4aec446838fa7ae42473a85dfa1f0227443675bdc650d8952f918eb85f9e"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            },
+            {
+              "text": "It was a single gift, given because Glo already carried Glernaen’s power and because Eindil freely took up the burden. It made him mighty, but not beyond harm, and not equal to an Old God. Glernaen had warned him that he might yet fall, and that the gods could not promise to raise him again.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XI. The gathering of the New Gods",
+                  "sha256": "671f4aec446838fa7ae42473a85dfa1f0227443675bdc650d8952f918eb85f9e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "new_gods",
+        "glernaen",
+        "glo",
+        "breaking_volgan"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 621,
+      "key": "breaking_volgan",
+      "title": "The Breaking of Volgan",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "volgan_broken"
+      },
+      "unlock": "F:zin_volgan_body_destroyed",
+      "parts": [
+        {
+          "when": "F:zin_volgan_body_destroyed",
+          "paragraphs": [
+            {
+              "text": "Eindil returned to the battlefield and broke the southern host. He destroyed the commanders and the works of sorcery on which Volgan’s army depended, then faced the Great Spirit again.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XII. The destruction of Volgan",
+                  "sha256": "cd424c74a7e63868ac9fdce7b85437d7c39d836d3eb084c27d586d94d23a54b9"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                }
+              ]
+            },
+            {
+              "text": "This time Volgan could not withstand him. Eindil drove the blue sword through him, and the Great Spirit’s visible body broke apart. A violent burst of magic shattered much of the command of his host. His servants screamed and fled, and some of the bonds that held the southern army together gave way.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XII. The destruction of Volgan",
+                  "sha256": "cd424c74a7e63868ac9fdce7b85437d7c39d836d3eb084c27d586d94d23a54b9"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                },
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                }
+              ]
+            },
+            {
+              "text": "Volgan’s manifested body is destroyed. What remains of Volgan, no one living can say. Whether his spirit survives is not known.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XII. The destruction of Volgan",
+                  "sha256": "cd424c74a7e63868ac9fdce7b85437d7c39d836d3eb084c27d586d94d23a54b9"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Distinctions",
+                  "sha256": "7cd91f0abec5cc1ab125b5f75ea59e8e7db61071894433582abdca13cea4c43f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_volgan_body_destroyed, F:zin_black_compact",
+          "paragraphs": [
+            {
+              "text": "Before the end, Volgan had joined his surviving forces to those of Zol in a brief compact against Eindil and the remaining kingdoms, which the scholars call the Black Compact. The two dark powers never settled on a common command, and the compact did not outlast the breaking of Volgan’s body.",
+              "status": "mixed",
+              "note": "The name Black Compact is proposed; the brief alliance of the two powers is established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XII. The destruction of Volgan",
+                  "sha256": "cd424c74a7e63868ac9fdce7b85437d7c39d836d3eb084c27d586d94d23a54b9"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Principal strategic phases",
+                  "sha256": "ed1fd52e40f7550c0aa565157d6fc385563bcf9469c949d09eeb128b76288c0f"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "volgan",
+        "southern_dominion",
+        "blue_sword",
+        "black_sky"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 622,
+      "key": "black_sky",
+      "title": "The Servant Beneath the Black Sky",
+      "short": "Beneath the Black Sky",
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "vast_shadow"
+      },
+      "unlock": "F:zin_kusven_forth",
+      "parts": [
+        {
+          "when": "F:zin_kusven_forth",
+          "paragraphs": [
+            {
+              "text": "Zol’s most loyal servant came forth: Kusven, whose name in Leren means the grave-wind. He is a Great Spirit whom Zol made, and a being of his own. He is feared by all. He feeds on souls, covets all of Aoaz, and dwells in Šodolôro in Zol’s Mistake.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Kusven.md",
+                  "section": "Kusven",
+                  "sha256": "beec0cbaa45ef5ba4d7e2d2b0668020c3280267c3641e4afc78500a1c77bd9ee"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                }
+              ]
+            },
+            {
+              "text": "Zol himself did not take the field. He took no body in the war, and his servant carried his power onto the battlefield. Why the Old God stayed away, no chronicle tells.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                },
+                {
+                  "note": "03 - Figures/Zol.md",
+                  "sha256": "f4a396658840c7468f0d21d2f06446de68dba2ce1b68cc7506360cc6f2c873b1"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Distinctions",
+                  "sha256": "7cd91f0abec5cc1ab125b5f75ea59e8e7db61071894433582abdca13cea4c43f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_kusven_forth, F:zin_kusven_wounded",
+          "paragraphs": [
+            {
+              "text": "Eindil charged. The servant stopped him with one finger, took Horos’s sword and crushed it into glittering shards. He seized Eindil by the throat and began to draw the power out of him, and the light in Eindil’s armour dimmed.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                },
+                {
+                  "note": "03 - Figures/Kusven.md",
+                  "section": "Proposed elsewhere",
+                  "sha256": "faf5ec246775b642f5b7db1cead17a9714b03f27aa73a55e5928f5dee33258e6"
+                },
+                {
+                  "note": "08 - Artifacts/Horos Sword.md",
+                  "section": "Horos's Blue Sword",
+                  "sha256": "5174abf44d9f6c480ebaa580ade00af6b3735a9219cb315047a37690d7c56fd2"
+                }
+              ]
+            },
+            {
+              "text": "With his remaining strength Eindil caught a shard of the broken blade and drove it into the servant. The shard still carried Glernaen’s power through Glo. It did not kill him, but loosened his hold on the power he carried. A storm swept across Aoaz and the sky darkened. The servant struck back, and Eindil fell, gravely wounded.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                },
+                {
+                  "note": "03 - Figures/Kusven.md",
+                  "section": "Kusven",
+                  "sha256": "beec0cbaa45ef5ba4d7e2d2b0668020c3280267c3641e4afc78500a1c77bd9ee"
+                },
+                {
+                  "note": "08 - Artifacts/Castle of Yeldenne and Glo.md",
+                  "section": "Castle Yeldenne and Glo",
+                  "sha256": "3b36ce2f8eb006570ef1295ea25dc89ad2e6c6208bd2932ed9c00e6a87d911c3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_kusven_forth, F:zin_lorien_dead",
+          "paragraphs": [
+            {
+              "text": "At last Lorien came with Gala elves and some of the great lords and spirits who had lived through the long history since Dardan. They had not come to restore an Aenoran empire. They came because a victory for the servant of the Old God would destroy the freedom of the living, elves and men alike.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                },
+                {
+                  "note": "03 - Figures/Lorien.md",
+                  "section": "Lorien",
+                  "sha256": "cdb6fc98004116311e84ca8c8c2a347e899f5165ad0b314b9b9ccfd9abb79229"
+                }
+              ]
+            },
+            {
+              "text": "The oldest warriors spent the last of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged the servant directly and died in the struggle.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                },
+                {
+                  "note": "03 - Figures/Lorien.md",
+                  "section": "Lorien",
+                  "sha256": "cdb6fc98004116311e84ca8c8c2a347e899f5165ad0b314b9b9ccfd9abb79229"
+                },
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "Established consequences",
+                  "sha256": "c52464acbdd0e8184ba9617894e7da478caa0344c9d04bcad0f6c1561bf88061"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_kusven_forth, F:zin_kusven_withdrawn",
+          "paragraphs": [
+            {
+              "text": "Kusven withdrew into the darkness of Zol’s domain, leaving a vast wasteland behind him. He was not destroyed. Zol’s remaining hosts lost their hold on the field or drew back with him. What the war cost him is not known.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIII. The servant beneath the black sky",
+                  "sha256": "e4391361763be140bf2401629797f537a9560d76c3597c6d37171e670074bf23"
+                },
+                {
+                  "note": "03 - Figures/Kusven.md",
+                  "section": "Kusven",
+                  "sha256": "beec0cbaa45ef5ba4d7e2d2b0668020c3280267c3641e4afc78500a1c77bd9ee"
+                },
+                {
+                  "note": "03 - Figures/Kusven.md",
+                  "section": "Open",
+                  "sha256": "67f2f9496dfb9097f83f397ef21d369e9d8b43ea9577b43dc14c61da27a1b896"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "zol",
+        "furviatlon",
+        "lorien",
+        "blue_sword"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 623,
+      "key": "second_betrayal",
+      "title": "The Second Betrayal",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "cliff"
+      },
+      "unlock": "F:zin_eindil_cast_down, rev",
+      "parts": [
+        {
+          "when": "F:zin_eindil_cast_down, rev",
+          "paragraphs": [
+            {
+              "text": "Afrit returned from the East with a new eastern host. He believed that the wounds of the war had at last left Eindil weak enough, and he demanded that the exhausted kingdoms recognise him as ruler of both the East and the Middle Lands.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIV. The second betrayal",
+                  "sha256": "396ca9c41507612e18dd007011dcf35028838e3181cde51fe6748927c2aeed61"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                }
+              ]
+            },
+            {
+              "text": "The two brothers met in the fighting near a high cliff. Afrit severed Eindil’s arm and drove a blade through his body. He told him that he had hated him since their father’s refusal. Then he cast him over the edge and believed him dead.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIV. The second betrayal",
+                  "sha256": "396ca9c41507612e18dd007011dcf35028838e3181cde51fe6748927c2aeed61"
+                },
+                {
+                  "note": "07 - History/The Last Battle in the Palace.md",
+                  "section": "The Last Battle in the Palace",
+                  "sha256": "3961da7215936c780c2170d6e88a0adc6adc828b00d29391322d5145d71acecf"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_cast_down, rev, F:zin_afrit_claims_aoaz",
+          "paragraphs": [
+            {
+              "text": "With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands and at last every people of Aoaz. The claim was larger than the land he held, but his army and his court treated it as a claim to all. His old council took up its work again, and those who opposed him were punished.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIV. The second betrayal",
+                  "sha256": "396ca9c41507612e18dd007011dcf35028838e3181cde51fe6748927c2aeed61"
+                },
+                {
+                  "note": "07 - History/Fourth Age Canon Register.md",
+                  "section": "Settled by the world creator",
+                  "sha256": "e6a6c2ce08c7c90ba5a5eb0aa32dd6c751ba501bb6b289e2389f79503a1a4a8e"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_cast_down, rev, S>=11",
+          "paragraphs": [
+            {
+              "text": "Eindil had not died. How he lived is not known. Alleria of Selen and her scouts found him and carried him into hiding, and he recovered slowly through care and time and what strength remained to him. Afrit had not searched below the cliff, for he had seen a mortal body fall from a height no man could survive.",
+              "status": "mixed",
+              "note": "Alleria’s part in his rescue is proposed; his survival is established and its manner is open.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XIV. The second betrayal",
+                  "sha256": "396ca9c41507612e18dd007011dcf35028838e3181cde51fe6748927c2aeed61"
+                },
+                {
+                  "note": "07 - History/The Last Battle in the Palace.md",
+                  "section": "The Last Battle in the Palace",
+                  "sha256": "3961da7215936c780c2170d6e88a0adc6adc828b00d29391322d5145d71acecf"
+                },
+                {
+                  "note": "03 - Figures/Alleria of Selen.md",
+                  "section": "Alleria of Selen",
+                  "sha256": "1307e70a9607cb36bfc9849cdf9845d9e90b81191fa9e8f191bd5c11be6b71fd"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "afrit",
+        "alleria",
+        "eindil",
+        "palace_battle"
+      ],
+      "secrets": [
+        "afrit",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 624,
+      "key": "palace_battle",
+      "title": "The Battle in the Palace",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · War",
+      "plate": {
+        "reuse": "palace_battle"
+      },
+      "unlock": "F:zin_afrit_dead, rev",
+      "parts": [
+        {
+          "when": "F:zin_afrit_dead, rev",
+          "paragraphs": [
+            {
+              "text": "Afrit is dead. The man who had been worshipped as the god of men, and who had ruled Aenor from behind its throne and then from upon it, died without his miracles. His death was a true death. No divine incarnation of him survived it.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "Key distinctions and continuity rules",
+                  "sha256": "5fed11ceb93a575d723686efa8cd2b168f8ad285e9060db986e99195ebc5aea9"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Distinctions",
+                  "sha256": "7cd91f0abec5cc1ab125b5f75ea59e8e7db61071894433582abdca13cea4c43f"
+                }
+              ]
+            },
+            {
+              "text": "Stripped of the magic and the enchanted objects that sustained him, Afrit was what he had always been beneath them: a mortal man of the line of the First Men, who could bleed and die.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "I. The hidden birthright of Afrit",
+                  "sha256": "f228f0450347bf221c3acfc78b770741a9fe6772884cba2390b4994f256bd175"
+                },
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_afrit_dead, rev, F:zin_eindil_wears_necklace",
+          "paragraphs": [
+            {
+              "text": "Eindil entered the royal palace in battered armour, missing an arm, with a simpler sword in his hand. He fought for openings rather than power. Alleria of Selen shot an arrow into Afrit’s eye, and Eindil cut off a finger and tore away the Ring of Doors. The palace rebels destroyed the seals that fed the Crown of Witnesses, and Eindil broke the Bracelet of the First Seal with Afrit’s own turned spell.",
+              "status": "mixed",
+              "note": "The names Ring of Doors, Crown of Witnesses and Bracelet of the First Seal are proposed; the arrow, the finger, the ring and the stripping of his artifacts are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                },
+                {
+                  "note": "07 - History/The Last Battle in the Palace.md",
+                  "section": "The Last Battle in the Palace",
+                  "sha256": "3961da7215936c780c2170d6e88a0adc6adc828b00d29391322d5145d71acecf"
+                },
+                {
+                  "note": "08 - Artifacts/Afrits Collected Artifacts.md",
+                  "section": "Afrit's Collected Artifacts",
+                  "sha256": "574d58850bea117805e795a8ec5b214f4f63dbbacadabef5c13b95441481685a"
+                },
+                {
+                  "note": "03 - Figures/Alleria of Selen.md",
+                  "section": "Alleria of Selen",
+                  "sha256": "1307e70a9607cb36bfc9849cdf9845d9e90b81191fa9e8f191bd5c11be6b71fd"
+                }
+              ]
+            },
+            {
+              "text": "When only the Necklace of the Abyss remained, Afrit fled through a hidden passage, and Eindil, gripping its chain, was carried with him. There Afrit beat him to the floor. But Golbran, who had lived through Varner’s last stand, had followed through the same opening. He tore the Necklace from Afrit’s neck, and Eindil cut his brother’s throat.",
+              "status": "mixed",
+              "note": "Golbran’s earlier survival is proposed; his removal of the Necklace and Afrit’s death by Eindil’s hand are established.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                },
+                {
+                  "note": "07 - History/The Last Battle in the Palace.md",
+                  "section": "The Last Battle in the Palace",
+                  "sha256": "3961da7215936c780c2170d6e88a0adc6adc828b00d29391322d5145d71acecf"
+                },
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                },
+                {
+                  "note": "03 - Figures/Golbran.md",
+                  "section": "Golbran",
+                  "sha256": "18c85c93d0c167580dfa2fd7f2cadd4d49beed55a82d14ed57854cbc90b8cdaf"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_afrit_dead, rev, F:zin_eindil_wears_necklace, F:zin_golbran_dead",
+          "paragraphs": [
+            {
+              "text": "Eindil himself was dying. Golbran gave the last of his life and magic to close his most dangerous wounds, and the small one died beside the two brothers. His origin was never learned.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                },
+                {
+                  "note": "03 - Figures/Golbran.md",
+                  "section": "Golbran",
+                  "sha256": "18c85c93d0c167580dfa2fd7f2cadd4d49beed55a82d14ed57854cbc90b8cdaf"
+                },
+                {
+                  "note": "07 - History/The Last Battle in the Palace.md",
+                  "section": "The Last Battle in the Palace",
+                  "sha256": "3961da7215936c780c2170d6e88a0adc6adc828b00d29391322d5145d71acecf"
+                }
+              ]
+            },
+            {
+              "text": "Alone, Eindil put the Necklace of the Abyss around his own neck and through it returned from Afrit’s realm to the palace, carrying the proof of the false king’s fall and an artifact of unresolved danger.",
+              "status": "mixed",
+              "note": "The Necklace as the way out of Afrit’s realm is proposed.",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XV. The palace of the false god",
+                  "sha256": "fef86fd58eb33a859a737fb509505c28c2063d09d41a7b0554828dd9a16ea7c0"
+                },
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                },
+                {
+                  "note": "07 - History/The Last Battle in the Palace.md",
+                  "section": "The Last Battle in the Palace",
+                  "sha256": "3961da7215936c780c2170d6e88a0adc6adc828b00d29391322d5145d71acecf"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "alleria",
+        "golbran",
+        "necklace",
+        "ring_of_doors"
+      ],
+      "secrets": [
+        "afrit",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 625,
+      "key": "king_of_men",
+      "title": "The King of Men",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": {
+        "reuse": "crown_of_aen"
+      },
+      "unlock": "F:zin_eindil_crowned",
+      "parts": [
+        {
+          "when": "F:zin_eindil_crowned",
+          "paragraphs": [
+            {
+              "text": "Eindil was crowned King of Aenor. His claim came from his descent as son of Ein and grandson of Aen, but his people also knew what he had done to reach that day.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                },
+                {
+                  "note": "03 - Figures/Eindil.md",
+                  "section": "Eindil",
+                  "sha256": "91aa6b347f1b3e591079d1ef224a7ec6800847c5c7fee3f6b815d3851bfbb9a6"
+                }
+              ]
+            },
+            {
+              "text": "Survivors whose banners had lately faced one another across battle lines attended the coronation. Among the witnesses were envoys, wounded soldiers and families still searching for those who would never come home. The ceremony did not erase their grievances.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                }
+              ]
+            },
+            {
+              "text": "With his coronation the Fourth Age ended. A rightful king had returned, but peace could not be taken for granted because of it.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                },
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "The Fifth Age: open foundations",
+                  "sha256": "563dcada529cac0e869bad6810c09a56fffcf056e42ca1747387762e6cbe55bf"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_crowned, rev, F:zin_eindil_wears_necklace",
+          "paragraphs": [
+            {
+              "text": "Among the deeds his people remembered was the last: he had destroyed Afrit, the brother who had stolen his future.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "eindil",
+        "line_of_aen",
+        "after_coronation",
+        "ending_lost_cause"
+      ],
+      "secrets": [
+        "afrit",
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 626,
+      "key": "after_coronation",
+      "title": "After the Coronation",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Event",
+      "plate": null,
+      "unlock": "F:zin_eindil_crowned",
+      "parts": [
+        {
+          "when": "F:zin_eindil_crowned",
+          "paragraphs": [
+            {
+              "text": "Eindil inherited a kingdom worn by war, a capital that needed rebuilding and an exhausted army. The victory did not by itself restore the prosperity or the alliances of the thousand years before it.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "The Fifth Age: open foundations",
+                  "sha256": "563dcada529cac0e869bad6810c09a56fffcf056e42ca1747387762e6cbe55bf"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                }
+              ]
+            },
+            {
+              "text": "The West Lands, the North Lands, the East Lands and the other free regions kept their own claims and grievances, whatever help they had given in the war. The kingdoms that remained would need treaties, not forced submission.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "Established consequences",
+                  "sha256": "c52464acbdd0e8184ba9617894e7da478caa0344c9d04bcad0f6c1561bf88061"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                },
+                {
+                  "note": "07 - History/War of the Last Crowns.md",
+                  "section": "Distinctions",
+                  "sha256": "7cd91f0abec5cc1ab125b5f75ea59e8e7db61071894433582abdca13cea4c43f"
+                }
+              ]
+            },
+            {
+              "text": "Zol remains an Old God. The Fading constrains him, but he was not slain.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "Established consequences",
+                  "sha256": "c52464acbdd0e8184ba9617894e7da478caa0344c9d04bcad0f6c1561bf88061"
+                },
+                {
+                  "note": "03 - Figures/Zol.md",
+                  "sha256": "f4a396658840c7468f0d21d2f06446de68dba2ce1b68cc7506360cc6f2c873b1"
+                }
+              ]
+            },
+            {
+              "text": "The form, the name and the promises of the age that followed are not yet written.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                },
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "The Fifth Age: open foundations",
+                  "sha256": "563dcada529cac0e869bad6810c09a56fffcf056e42ca1747387762e6cbe55bf"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_crowned, F:zin_lorien_dead, F:zin_varner_dead, F:zin_golbran_dead, F:zin_horos_dead",
+          "paragraphs": [
+            {
+              "text": "The victories had been costly. Varner, Horos, Golbran and Lorien were dead.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "Established consequences",
+                  "sha256": "c52464acbdd0e8184ba9617894e7da478caa0344c9d04bcad0f6c1561bf88061"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_crowned, F:zin_volgan_body_destroyed",
+          "paragraphs": [
+            {
+              "text": "Volgan’s visible form had been destroyed, but what remained of his spirit no one living could say.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_eindil_crowned, F:zin_eindil_wears_necklace",
+          "paragraphs": [
+            {
+              "text": "Roka’s Necklace of the Abyss remained in human hands, around the king’s own neck. What wearing it would mean for him, no one could yet say.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Fifth Age Seeds.md",
+                  "section": "Established consequences",
+                  "sha256": "c52464acbdd0e8184ba9617894e7da478caa0344c9d04bcad0f6c1561bf88061"
+                },
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "king_of_men",
+        "necklace",
+        "lost_cause",
+        "ending_lost_cause"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 627,
+      "key": "ending_lost_cause",
+      "title": "The Lost Cause Prevails",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Ending",
+      "plate": {
+        "reuse": "ending_lost_cause"
+      },
+      "unlock": "F:zin_ending_lost_cause",
+      "parts": [
+        {
+          "when": "F:zin_ending_lost_cause",
+          "paragraphs": [
+            {
+              "text": "The Lost Cause prevailed. Under Eindil it became a settlement that sought peace and refused imperial domination.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "The Lost Cause",
+                  "sha256": "0e4fbfd3eb7349b3c46daf2ec37d088900404bd893caed55740b0c3037f22f3e"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            },
+            {
+              "text": "It was no longer the Golden King’s league, raised for his prestige. Its frontier companies, rangers and scholars had become the shield of the living, and the crowns that stood with it kept their freedom.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "The Lost Cause",
+                  "sha256": "0e4fbfd3eb7349b3c46daf2ec37d088900404bd893caed55740b0c3037f22f3e"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Middle Lands: Aenor and the Concord",
+                  "sha256": "d5b40592486c4d3a9a2729bcede7c84823b0a7342941cfd029cf8033f6f42742"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_lost_cause",
+          "paragraphs": [
+            {
+              "text": "So ends this chronicle of the Fourth Age. The scholars of Parim and Selen set down that the last crowns of the age did not fall into one hand, and that the king who might have ruled them all chose to stand among them.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "The Lost Cause",
+                  "sha256": "0e4fbfd3eb7349b3c46daf2ec37d088900404bd893caed55740b0c3037f22f3e"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "XVI. The king of men",
+                  "sha256": "80950e0a3a00eb6e19acca8a97c8b38d78eae254cecddf411d51aa776f51a8f1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "lost_cause",
+        "king_of_men",
+        "after_coronation",
+        "eindil"
+      ],
+      "secrets": [
+        "heir",
+        "story"
+      ]
+    },
+    {
+      "id": 628,
+      "key": "ending_children",
+      "title": "The Children of Volgan",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Ending",
+      "plate": {
+        "reuse": "ending_children_of_volgan"
+      },
+      "unlock": "F:zin_ending_children_of_volgan",
+      "parts": [
+        {
+          "when": "F:zin_ending_children_of_volgan",
+          "paragraphs": [
+            {
+              "text": "Volgan prevailed. From the Ember Lands he came to dominate a ruined world through armies of monsters, grave hosts and client crowns.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "Children of Volgan",
+                  "sha256": "637e76c2f70b5cf91565e8e32c749257607eb94f91e5d3482e54dff1f26e5253"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            },
+            {
+              "text": "He rose as a Great Spirit, not as a god of the New or of the Old. Parim itself answered to Nafeher, and the crowns that remained knelt to him or waited for their turn.",
+              "status": "mixed",
+              "note": "Nafeher as his seat is a working name.",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "Children of Volgan",
+                  "sha256": "637e76c2f70b5cf91565e8e32c749257607eb94f91e5d3482e54dff1f26e5253"
+                },
+                {
+                  "note": "03 - Figures/Volgan.md",
+                  "sha256": "428296eb019adc148b6ef2268d149b3102f3ae15e67ef4292ed6b5be2d56c5d6"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The Ember Lands",
+                  "sha256": "0f203cc494c9fc0d33cc8840e198af3f791da328c5017681884ac60063be20dc"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_children_of_volgan",
+          "paragraphs": [
+            {
+              "text": "So ends this chronicle of the Fourth Age. Its last pages were written in hiding, by scholars who set down that the children of Volgan held the lands where the kingdoms of men had stood.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "Children of Volgan",
+                  "sha256": "637e76c2f70b5cf91565e8e32c749257607eb94f91e5d3482e54dff1f26e5253"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "volgan",
+        "southern_dominion",
+        "ember_lands",
+        "volgan_marches"
+      ],
+      "secrets": [
+        "story"
+      ]
+    },
+    {
+      "id": 629,
+      "key": "ending_ashen",
+      "title": "The Ashen Throne",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Ending",
+      "plate": {
+        "reuse": "ending_ashen_throne"
+      },
+      "unlock": "F:zin_ending_ashen_throne",
+      "parts": [
+        {
+          "when": "F:zin_ending_ashen_throne",
+          "paragraphs": [
+            {
+              "text": "The Ashen Throne was raised in Parim. The god-king who held it ruled through worship, bargains, corruption and the captured institutions of the world, and the crowns of Aoaz bent to him.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "The Ashen Throne",
+                  "sha256": "83b7c910f3ebaf23de7895001ae15232fcfc69195d85a9a2f068efd28e752b63"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_ashen_throne, rev",
+          "paragraphs": [
+            {
+              "text": "The throne was Afrit’s. With the Necklace of the Abyss, and with the houses, temples and councils he had gathered over the ages, he held by power the dominion that he had sought for so long.",
+              "status": "established",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "The Ashen Throne",
+                  "sha256": "83b7c910f3ebaf23de7895001ae15232fcfc69195d85a9a2f068efd28e752b63"
+                },
+                {
+                  "note": "03 - Figures/Afrit.md",
+                  "section": "Afrit",
+                  "sha256": "6aaa1bbbe41a03b0edfd040509140bf5674ec8876d35d7061639672acd4ea65c"
+                },
+                {
+                  "note": "08 - Artifacts/Necklace of the Abyss.md",
+                  "section": "Necklace of the Abyss",
+                  "sha256": "2143a5b1ee15a11d264431c41e64f0d9a8d5f5be32319d8669604d7198e2f311"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_ashen_throne",
+          "paragraphs": [
+            {
+              "text": "So ends this chronicle of the Fourth Age. Its last pages were kept far from Parim, by scholars who still remembered the freedom of earlier kings.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/Possible Endings.md",
+                  "section": "The Ashen Throne",
+                  "sha256": "83b7c910f3ebaf23de7895001ae15232fcfc69195d85a9a2f068efd28e752b63"
+                },
+                {
+                  "note": "07 - History/The Fourth Age of Aoaz.md",
+                  "section": "III. The Golden King and the empty throne",
+                  "sha256": "fd7368ffd50585149f268e28505c78e6f4d1ef5b823ac98c30e87728416e8d3b"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "afrit",
+        "the_deliverer",
+        "worshipdom",
+        "necklace"
+      ],
+      "secrets": [
+        "afrit",
+        "story"
+      ]
+    },
+    {
+      "id": 630,
+      "key": "other_ending",
+      "title": "How the Age Ended",
+      "short": null,
+      "title_after": null,
+      "subtitle": "Fourth Age · Ending",
+      "plate": null,
+      "unlock": "F:zin_ending_golden_court | F:zin_ending_western_crown | F:zin_ending_strait_master | F:zin_ending_eastern_king | F:zin_ending_unfinished",
+      "parts": [
+        {
+          "when": "F:zin_ending_golden_court | F:zin_ending_western_crown | F:zin_ending_strait_master | F:zin_ending_eastern_king | F:zin_ending_unfinished",
+          "paragraphs": [
+            {
+              "text": "The Fourth Age did not end in the triumph of the Lost Cause, of Volgan or of the Ashen Throne. It closed in another way, which no single power had planned.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_golden_court",
+          "paragraphs": [
+            {
+              "text": "The Golden Court endured. The court of the Golden King held Parim to the end of the age, under the King himself or under the regency that ruled in his name, and its gilded halls outlasted the war.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_western_crown",
+          "paragraphs": [
+            {
+              "text": "A western crown held Parim. The kingdoms of the West, which Aenor had once tried to rule, ended the age with a western banner over the old capital of the Middle Lands.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_strait_master",
+          "paragraphs": [
+            {
+              "text": "Lerendor became master of the strait. The Leren crown held the waters between the North Lands and the Middle Lands, and the old treaty that had bound the North to Aenor became Leren supremacy over the strait.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_eastern_king",
+          "paragraphs": [
+            {
+              "text": "The East was united under one king of its own. The rich and divided East Lands, whose courts had long competed for the caravan roads, ended the age under a single crown.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "Where history can turn",
+                  "sha256": "55171eb30b468afe939d7c557d4d936880a7eb1bb31c00b48014c9589f958b2a"
+                },
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_unfinished",
+          "paragraphs": [
+            {
+              "text": "The age ended unfinished. No crown, league or dark power prevailed, and the wars of the last crowns wore down into a long and uncertain quiet that no chronicle could call a peace.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "when": "F:zin_ending_golden_court | F:zin_ending_western_crown | F:zin_ending_strait_master | F:zin_ending_eastern_king | F:zin_ending_unfinished",
+          "paragraphs": [
+            {
+              "text": "So ends this chronicle of the Fourth Age. The scholars of Parim and Selen set it down as it happened, and leave to those who come after them the judgement of what it meant.",
+              "status": "proposed",
+              "sources": [
+                {
+                  "note": "07 - History/The Campaign of 4A 1748.md",
+                  "section": "The three endings",
+                  "sha256": "5dca922aca1c75bc65bee70c4f13b45b3634eac0fcc043a2ed70b2147a6d2669"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "related": [
+        "golden_court",
+        "west_lands",
+        "narrow_strait",
+        "east_lands"
+      ],
+      "secrets": [
+        "story"
+      ]
+    }
+  ]
+}

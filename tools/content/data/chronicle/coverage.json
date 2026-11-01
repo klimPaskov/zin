@@ -1,0 +1,485 @@
+{
+  "about": "Vault sections in scope (spec section 11) that no Chronicle paragraph cites, each with the reason. The builder warns on any in-scope section neither cited nor listed here.",
+  "exclusions": [
+    {
+      "note": "01 - Cosmology/Holy Seven.md",
+      "section": "Connections",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "02 - Spirits/Damned Spirits.md",
+      "section": "Optional motifs for later use",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "03 - Figures/Agon.md",
+      "section": "Possible roles for later development",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "03 - Figures/Ein.md",
+      "section": "Appearance",
+      "reason": "Appearance and reference images; the plates and portraits own appearance (plate rule 4: Horos from the established text only)."
+    },
+    {
+      "note": "03 - Figures/King of Demons.md",
+      "section": "Proposed development",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "04 - Peoples/Peoples of Aoaz.md",
+      "section": "Peoples of Aoaz",
+      "reason": "The note’s status banner and framing; its facts are cited through the note’s own sections."
+    },
+    {
+      "note": "05 - Geography/Abyss.md",
+      "section": "Proposed possibilities",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "05 - Geography/Nether.md",
+      "section": "Proposed local texture",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "06 - Politics/Kingdoms Factions and Conflicts.md",
+      "section": "Arms",
+      "reason": "Which realms have gunpowder is undecided, and gunpowder words are banned in player text."
+    },
+    {
+      "note": "07 - History/Fifth Age Seeds.md",
+      "section": "Proposed directions, not established",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "07 - History/Fourth Age Chronology.md",
+      "section": "Fourth Age Chronology",
+      "reason": "The note’s status banner and framing; its facts are cited through the note’s own sections."
+    },
+    {
+      "note": "07 - History/Gromatrak, the Stone Road.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/Heulufaenn, the Sunfields.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/Margorodai, the Sea-Roads.md",
+      "section": "Heirs and shadows",
+      "reason": "The play roles of the fallen realms’ heirs, not history."
+    },
+    {
+      "note": "07 - History/Margorodai, the Sea-Roads.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/Muzerar, the Low Country.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/Possible Endings.md",
+      "section": "Possible Endings",
+      "reason": "The note’s status banner and framing; its facts are cited through the note’s own sections."
+    },
+    {
+      "note": "07 - History/Rhabtarkia, the Kalioth Crown.md",
+      "section": "Heirs and shadows",
+      "reason": "The play roles of the fallen realms’ heirs, not history."
+    },
+    {
+      "note": "07 - History/Rhabtarkia, the Kalioth Crown.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/Roots of the Cold Lands.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Dondor: the garrison that was never relieved",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Dark Gate: the chain",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Burnikit: the Unpaid and the Fire at the Door",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Veshazel: the stolen name",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Blackton: the empty seat",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Bordon: the horn and the Road-Peace",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Dreson: the three piles",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Dulundur: the four fires",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "The Troll Forest: the King-Stones",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Hoorunoron: the dike rebuilt",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "The Darks: the Meat Moot",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Skragdurg: the Old Black",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Dun: the crooked ancestor",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "Britadon: the Hollow",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Dark Lands.md",
+      "section": "The Wild Lands: the rag-pole",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the East Lands.md",
+      "section": "Realm by realm (proposed)",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the East Lands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the Ember Lands.md",
+      "section": "What stays open",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the Ember Lands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the Islands of the South.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the Lands of the Sun.md",
+      "section": "Realm by realm (proposed)",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Lands of the Sun.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "Herrodon: the White Winter",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "Andos Enda: the court afloat",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "Lccimio: the Seed Pledge",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "Eldafaen: the Broken Spears",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "Teste: the Swallows at Dusk",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "Luv-zhise: the Western Gate",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Magical Lands.md",
+      "section": "The Mushroom Forest: the Bale-Mark",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the Middle Lands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the North Lands.md",
+      "section": "Realm by realm (proposed)",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of the North Lands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the South Lands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the West Lands.md",
+      "section": "What stays open",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of the West Lands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Roots of Triton's Islands.md",
+      "section": "Roots of Triton's Islands",
+      "reason": "The note’s framing; its facts are carried by the Roots and Signs entries of Triton’s Islands."
+    },
+    {
+      "note": "07 - History/Roots of Triton's Islands.md",
+      "section": "Realm by realm (proposed)",
+      "reason": "The realm-by-realm roots and signs: carried in full by the Roots and Signs entries, built from the regional histories (tools/content/data/world/history) that these sections summarise."
+    },
+    {
+      "note": "07 - History/Roots of Triton's Islands.md",
+      "section": "Questions for the owner",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Second Age Canon Register.md",
+      "section": "Second Age Canon Register",
+      "reason": "The note’s status banner and framing; its facts are cited through the note’s own sections."
+    },
+    {
+      "note": "07 - History/Second Age Canon Register.md",
+      "section": "Established addendum on 17 October 2026",
+      "reason": "Repeats the register’s established facts, which are cited."
+    },
+    {
+      "note": "07 - History/Tarkia, the Bridge Kingdom.md",
+      "section": "Heirs and shadows",
+      "reason": "The play roles of the fallen realms’ heirs, not history."
+    },
+    {
+      "note": "07 - History/Tarkia, the Bridge Kingdom.md",
+      "section": "Related",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/The Campaign of 4A 1748.md",
+      "section": "The Campaign of 4A 1748",
+      "reason": "Start-state framing and the outline of events still to come; the End of the Age entries cite the history sections of each event."
+    },
+    {
+      "note": "07 - History/The Campaign of 4A 1748.md",
+      "section": "The established path",
+      "reason": "Start-state framing and the outline of events still to come; the End of the Age entries cite the history sections of each event."
+    },
+    {
+      "note": "07 - History/The First Age of Aoaz.md",
+      "section": "Important people in the proposed expansion",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "07 - History/The First Age of Aoaz.md",
+      "section": "Proposed place and strategic importance",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "07 - History/The First Age of Aoaz.md",
+      "section": "Linked articles",
+      "reason": "Links to other notes only."
+    },
+    {
+      "note": "07 - History/The Fourth Age of Aoaz.md",
+      "section": "The Fourth Age of Aoaz",
+      "reason": "The note’s status banner and framing; its facts are cited through the note’s own sections."
+    },
+    {
+      "note": "07 - History/The Fourth Age of Aoaz.md",
+      "section": "Draft dating and chronology",
+      "reason": "Notes on how the dates were drafted, not history."
+    },
+    {
+      "note": "07 - History/The Second Age of Aoaz.md",
+      "section": "XII. Proposed characters and their dramatic roles",
+      "reason": "Unselected proposals or mutually exclusive alternatives, which the text must not pick (voice rule 3); proposed characters adopted by the spec are entries 721 to 725."
+    },
+    {
+      "note": "07 - History/The Second Age of Aoaz.md",
+      "section": "XIV. Open story decisions",
+      "reason": "Questions left open for the owner; no entry answers them."
+    },
+    {
+      "note": "07 - History/Timeline.md",
+      "section": "Dating cautions",
+      "reason": "Notes on how the dates were drafted, not history."
+    },
+    {
+      "note": "08 - Artifacts/Horos Visual References.md",
+      "section": "Face",
+      "reason": "Appearance and reference images; the plates and portraits own appearance (plate rule 4: Horos from the established text only)."
+    },
+    {
+      "note": "08 - Artifacts/Horos Visual References.md",
+      "section": "Seated on the throne",
+      "reason": "Appearance and reference images; the plates and portraits own appearance (plate rule 4: Horos from the established text only)."
+    },
+    {
+      "note": "08 - Artifacts/Horos Visual References.md",
+      "section": "Full armor and sword",
+      "reason": "Appearance and reference images; the plates and portraits own appearance (plate rule 4: Horos from the established text only)."
+    },
+    {
+      "note": "09 - Development/Names and Retcons.md",
+      "section": "Names, Ages, and Retcons",
+      "reason": "Spelling and rename rules: enforced by the banned-word and superseded-name checks, not told as history."
+    },
+    {
+      "note": "09 - Development/Names and Retcons.md",
+      "section": "Mapping",
+      "reason": "Spelling and rename rules: enforced by the banned-word and superseded-name checks, not told as history."
+    },
+    {
+      "note": "09 - Development/Names and Retcons.md",
+      "section": "Current name of Aen’s grandson",
+      "reason": "Spelling and rename rules: enforced by the banned-word and superseded-name checks, not told as history."
+    },
+    {
+      "note": "09 - Development/Names and Retcons.md",
+      "section": "Deep history answers of 25 October 2026",
+      "reason": "Spelling and rename rules: enforced by the banned-word and superseded-name checks, not told as history."
+    },
+    {
+      "note": "09 - Development/Names and Retcons.md",
+      "section": "Corrections of 24 October 2026",
+      "reason": "Spelling and rename rules: enforced by the banned-word and superseded-name checks, not told as history."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Open Questions",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Family and early history",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Dates, places and government",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Spiritual and magical laws",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Characters and aftermath",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Owner questions of 24 October 2026",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Raised by the answers of 24 October 2026",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Deep history left open on 25 October 2026",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Realm roots of the north and the east, proposed on 25 October 2026 (K67)",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Realm roots and signs, 25 October 2026",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "09 - Development/Open Questions.md",
+      "section": "Realm roots of the south and the east, 25 October 2026",
+      "reason": "The vault’s open questions: kept open by the voice rules (open questions said as open) and the secrecy check; no entry answers them."
+    },
+    {
+      "note": "07 - History/Gromatrak, the Stone Road.md",
+      "section": "Gromatrak, the Stone Road",
+      "reason": "The fallen realm note’s introduction; its facts are cited through the note’s detailed sections in the realm’s entry of The Fallen Realms."
+    },
+    {
+      "note": "07 - History/Heulufaenn, the Sunfields.md",
+      "section": "Heulufaenn, the Sunfields",
+      "reason": "The fallen realm note’s introduction; its facts are cited through the note’s detailed sections in the realm’s entry of The Fallen Realms."
+    },
+    {
+      "note": "07 - History/Margorodai, the Sea-Roads.md",
+      "section": "Margorodai, the Sea-Roads",
+      "reason": "The fallen realm note’s introduction; its facts are cited through the note’s detailed sections in the realm’s entry of The Fallen Realms."
+    },
+    {
+      "note": "07 - History/Rhabtarkia, the Kalioth Crown.md",
+      "section": "Rhabtarkia, the Kalioth Crown",
+      "reason": "The fallen realm note’s introduction; its facts are cited through the note’s detailed sections in the realm’s entry of The Fallen Realms."
+    },
+    {
+      "note": "07 - History/Tarkia, the Bridge Kingdom.md",
+      "section": "Tarkia, the Bridge Kingdom",
+      "reason": "The fallen realm note’s introduction; its facts are cited through the note’s detailed sections in the realm’s entry of The Fallen Realms."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "about": "The categories of the Chronicle of Aoaz (docs/specs/07_interface/04_chronicle_codex.md section 2), in the order the window lists them. n is the category number used in entry ids (n x 100 + position; realms use the ids of realm_ids.json). The spec's eleven categories, plus deep_past (the six fallen realms, owner decision K64 of 25 October 2026) and realms (every realm's roots and sign, owner decision K67 of 25 October 2026), both added by lane W9. sigil and plate are image subjects (tools/content/art/chronicle-jobs.mjs).",
+  "categories": [
+    { "n": 1, "key": "order", "name": "The Order of Being", "sigil": "a ring of seven faint stars", "plate": "stars over a black sea with one pale band of light across the sky" },
+    { "n": 12, "key": "deep_past", "name": "The Fallen Realms", "sigil": "a broken stone arch half sunk in water", "plate": "the stumps of ancient walls and broken pillars rising from a grey sea at low tide under an overcast sky" },
+    { "n": 2, "key": "first_age", "name": "The First Age", "sigil": "an upright spear with a long pennant", "plate": "ancient banners on long poles on a windswept hill under a wide sky" },
+    { "n": 3, "key": "second_age", "name": "The Second Age", "sigil": "a cracked bronze bell", "plate": "rebuilt city walls of pale stone in grey rain, wreaths of mourning laid along them" },
+    { "n": 4, "key": "third_age", "name": "The Third Age", "sigil": "a pale lantern hanging from a short chain", "plate": "a grey occupied city at dusk under a row of pale cold lanterns" },
+    { "n": 5, "key": "fourth_age", "name": "The Fourth Age", "sigil": "a slender tower on the shore of still water", "plate": "the towers of a great lake city above calm water in morning light" },
+    { "n": 6, "key": "last_crowns", "name": "The End of the Age", "sigil": "five banners converging on one point", "plate": "smoke rising over a crossroads where ragged war banners meet under a red evening sky" },
+    { "n": 7, "key": "figures", "name": "Figures", "sigil": "a quill pen crossed over an open book", "plate": "an empty scriptorium desk with an open book, a quill and one lit oil lamp" },
+    { "n": 8, "key": "peoples", "name": "Peoples", "sigil": "a circle of four joined hands", "plate": "a crowded market square of many folk seen from high above, small and distant" },
+    { "n": 9, "key": "lands", "name": "Lands and Places", "sigil": "a compass rose without any letters", "plate": "mountains, sea and forest folding into each other at dusk" },
+    { "n": 13, "key": "realms", "name": "Roots and Signs", "sigil": "a small shield on a tree with deep roots", "plate": "a long stone hall hung with many old embroidered banners without lettering, fading into the dark" },
+    { "n": 10, "key": "orders", "name": "Realms and Orders", "sigil": "a wax seal on a ribbon", "plate": "a long dark table covered with wax seals, ribbons and rolled charters" },
+    { "n": 11, "key": "relics", "name": "Relics and Wonders", "sigil": "a faceted crystal", "plate": "an open dark velvet case with empty hollows of different shapes" }
+  ]
+}

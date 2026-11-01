@@ -16,6 +16,8 @@ import { buildCharacters } from './modules/characters.mjs';
 import { buildUi, buildAoazBar } from './modules/ui.mjs';
 import { loadArt, stageArtSources, stageRealmFlags } from './modules/art.mjs';
 import { stageLore } from './modules/lore.mjs';
+import { buildChronicle } from './modules/chronicle.mjs';
+import { PANEL_FLAGS } from './lib/mech_court_gui.mjs';
 import { buildNames } from './modules/names.mjs';
 import { buildPortraits } from './modules/portraits.mjs';
 import { buildUnits3d } from './modules/units3d.mjs';
@@ -200,6 +202,9 @@ const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign',
 // (potent magic, the interventions, dragons, the Wall, the storms, the weekly magic tick): before the world tension module, whose tick calls
 // zin_ui_refresh once it is staged.
 // The Aoaz bar (modules/ui.mjs, UI lane W1) comes first: the story module's monthly interface refresh calls zin_aoaz_bar_refresh once staged.
+// The Chronicle of Aoaz (modules/chronicle.mjs, UI lane W9) comes before the bar, whose age opens it once zin_chr_toggle is staged.
+const chronicle = await buildChronicle(staged, { provenance, panelFlags: PANEL_FLAGS });
+console.error(`Chronicle: ${JSON.stringify(chronicle)}`);
 const aoazBar = await buildAoazBar(staged, { provenance });
 const storyAi = await buildStoryAi(staged, { countries });
 const worldMagic = await buildWorldMagic(staged, { countries });
@@ -309,7 +314,8 @@ let storyWiringCounts;
   storyWiringCounts = report.counts;
 }
 // Text scan (X1 to X15) over the finished staged tree; the report is staged beside the other validation data.
-const textScan = await runTextScan(staged);
+// zin_chr_empty: the Chronicle's blank text for an empty list slot or link (modules/chronicle.mjs)
+const textScan = await runTextScan(staged, { emptyOk: ['zin_chr_empty'] });
 writeScanReport(staged, textScan);
 console.error(summariseScan(textScan));
 assertTextScan(textScan);
