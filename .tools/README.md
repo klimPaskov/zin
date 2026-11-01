@@ -11,6 +11,53 @@ Before retiring a tool, search its filename, module name, generated headers, and
 
 ## Supported tools
 
+### Repository checks
+
+`check.py` is the single read-only entry point for mechanical questions about a mod: run `python -B .tools/check.py quick` on the files you changed before review and `python -B .tools/check.py full` at the end of a large task. `quick` takes the changed paths from Git (or `--paths`), runs only the checks those paths can affect and reports only findings in them; `full` runs every check over the whole repository. Both print errors as `path:line: level RULE message` and one summary line per check, and `--json <file>` writes every finding, including review candidates. Exit status: 0 no errors, 1 errors, 2 a check could not run.
+
+First run on a machine, or whenever `doctor` reports a gap:
+
+```powershell
+python -B .tools/check.py setup                                   # install, configure, sync, then report
+python -B .tools/check.py setup --save-game-dir "<game folder>"   # also record the game folder if it was not found
+python -B .tools/check.py doctor                                  # report only; writes nothing
+```
+
+`setup` performs every preparation step and ends with the `doctor` report. It is idempotent:
+- **Packages:** installs the packages in `.tools/requirements.txt`. If the system Python refuses packages (PEP 668 "externally managed", as on Debian and Ubuntu), it installs them into a project virtual environment at `.tools/.venv`, and `check.py` relaunches itself inside it.
+- **Game folder:** records it in the machine-local `.tools/local_settings.json` when one is given.
+- **`.gitignore`:** adds the machine-local paths.
+- **Synchronizers:** runs every generator in `sync/generators.json`, so the generated projections match the installed canonical files, then checks them. A generator that fails or leaves a stale output makes `setup` exit non-zero. `--git-hook` also writes an optional pre-commit check (off by default).
+- **Quality baseline:** runs `quality.py --adopt`, so a mod's pre-existing Python tools start from a passing run. This needs `uv`.
+
+HOI4 Mod Setup runs it after an install, update or repair. The game folder comes from `HOI4_GAME_DIR`, `.tools/local_settings.json` (never committed), or the Steam libraries on the machine, in that order.
+
+`doctor` exits 0 when everything a `full` run needs is present. Optional items only cause their own check to be skipped with a notice:
+- `uv`, for the `quality` check;
+- the HOI4 Agent Tools server and its workspace registration, for `script-validate`.
+
+The server selects the mod from its folder unless a configuration file lists other mods; then the mod must sit under a `modRoots` entry. `--adopt` records only Python files that have no quality-baseline entries yet. Files already in the baseline stay ratcheted, and new code must meet the limits instead of being adopted.
+
+Every check follows `lib/report.py`: an `error` is an exact rule and fails the run, a `warning` is a heuristic that is printed but never fails, and a `review` item is a candidate list for a person. Each tool also runs alone with `--paths`, `--paths-from`, `--fail-on` and `--json`.
+
+| Check | Tool | Question it answers | Needs the game |
+| --- | --- | --- | --- |
+| `localisation` | `audits/audit_localisation_static.py` | Are localisation files encoded, parsed and unique, and does every key the engine or script reads exist here or in vanilla? `--calibrate` measures each implicit-key rule on vanilla. | yes |
+| `asset-wiring` | `audits/audit_asset_wiring_static.py` | Does every `GFX_` name, texture, mesh and implicit engine lookup (idea, decision, focus shine, flag, achievement art) resolve? Is every custom 3D model registered: `.mesh` and `.anim` files present, `pdxmesh` animations defined, each `entity` on a defined `pdxmesh`, each sub-unit `sprite` backed by `<sprite>_entity`, `meshsettings` names matching the objects read from the `.mesh`, and model textures present (`GFX-3D-*`)? Unreferenced sprites are review items. | yes |
+| `script-rules` | `audits/audit_script_rules.py` | Does script use `<=` or `>=`, unary minus on a variable token, or `§`/`£` written into scripted localisation? Lexical only; fixtures in `tests/fixtures/script_rules/`. | no |
+| `gfx` | `gfx/gfx.py audit` | Frame-strip widths, the flag size ladder and TGA origin, achievement art size, LFS pointers and truncated runtime binaries, profiled icon families and report-image provenance (`gfx/README.md`). | for vanilla textures |
+| `guidance` | `sync/check_guidance_size.py` | Are instructions, skills and agent prompts within the single-read ceiling? | no |
+| `generators` | `sync/generators.py --check` | Does every generated file in `sync/generators.json` (`AGENTS.md`, the generated agents, the skill copies) match its canonical source? A generator that is missing or crashes cannot run, which is never a pass. | no |
+| `tests` | `unittest` over `tests/`, `gfx/` and skill `tools/tests/` folders | Do the maintained tests pass? | no |
+| `quality` | `quality.py` | Ruff defect rules, the complexity ratchet in `quality_baseline.json` and `mypy --strict` for the strict tooling files; skipped with a notice without `uv`. | no |
+| `script-validate` | `audits/validate_scripts_mcp.py` | Does `hoi4.script_validate` accept each changed script file? Quick only; skipped with a notice when the HOI4 Agent Tools server cannot start. Unresolved commands are warnings and unchecked argument blocks review items, never passes. | no |
+
+Tools that read vanilla files take the game folder from `HOI4_GAME_DIR` and fall back to the default Steam path (`lib/game.py`); without the game they exit 2 and name the variable. `lib/` holds the one shared implementation of the finding contract, the script and localisation readers, the game-folder lookup, the `doctor` report, the `setup` steps and the MCP client; tools import it instead of copying it.
+
+A passing check proves only the properties it checks: a size or alpha check does not establish visual quality, and a reference check does not establish gameplay behaviour. Never weaken a check, add a suppression, lower a threshold or edit a baseline to make validation pass. `quality.py --write-baseline` records the first baseline or improvements only and refuses while errors remain.
+
+`lib/`, `audits/audit_script_rules.py`, `audits/validate_scripts_mcp.py`, `gfx/gfx.py` with its tests, the asset tools in `hoi4-feature-assets/tools/` and `save_inspect.py` are byte-identical copies of upstream tools, listed in the source package's `scripts/shared_tools.json`; repository values live in their settings files (`gfx/settings.json`, `gfx/profiles.json`, the asset tools' `project_settings.json`), which are not shared. `check.py`, `quality.py` and the localisation and asset-wiring audits are this package's own editions.
+
 ### ChatGPT source packaging
 
 `package_chatgpt_project_sources.py` builds a curated flat source folder with
@@ -59,16 +106,14 @@ Its package version, integrity, runtime-entry evidence, manifest declaration, an
 
 ### Runtime synchronization
 
-Claude Code files are canonical. The tools under `sync/` regenerate `AGENTS.md` from `CLAUDE.md`, the Codex, Cursor, Qoder, and OpenCode agents from `.claude/agents/`, and the `.agents/skills/` and `.qoder/skills/` copies from `.claude/skills/`. `check_guidance_size.py` keeps instruction files, skills, and agent prompts within the single-read ceiling. Run them after a canonical change and again with `--check`:
+Claude Code files are canonical. The tools under `sync/` regenerate `AGENTS.md` from `CLAUDE.md`, the Codex, Cursor, Qoder, and OpenCode agents from `.claude/agents/`, and the `.agents/skills/` and `.qoder/skills/` copies from `.claude/skills/`. `check_guidance_size.py` keeps instruction files, skills, and agent prompts within the single-read ceiling. `sync/generators.json` lists them all, and `sync/generators.py` runs the ones a change affects. In Claude Code the hook in `.claude/settings.json` runs it after every edit. Elsewhere, run it after a canonical change and again with `--check`:
 
 ```powershell
-python -B .tools/sync/sync_instructions.py
-python -B .tools/sync/sync_agents.py
-python -B .tools/sync/sync_skills.py
-python -B .tools/sync/check_guidance_size.py
+python -B .tools/sync/generators.py
+python -B .tools/sync/generators.py --check
 ```
 
-Generated files are tracked so a checkout works immediately. Never hand-edit them or copy project-specific MCP paths between runtimes. `sync/README.md` documents each tool and its configuration file, and `docs/runtimes.md` documents what every runtime reads, including DeepSeek Harness, which has no agent registry.
+`py.sh` starts the first working Python 3.9 or newer for the hooks. Generated instructions and agents are tracked so a checkout works immediately. The skill copies are built at install, because the source package tracks only `.claude/skills/`. Never hand-edit generated files or copy project-specific MCP paths between runtimes. `sync/README.md` documents each tool and its configuration file, and `docs/runtimes.md` documents what every runtime reads, including DeepSeek Harness, which has no agent registry.
 
 ### HOI4 Live Tools
 
@@ -82,16 +127,17 @@ Do not commit secrets, provider outputs, job artifacts, virtual environments, ve
 
 ### Offline Paradox wiki snapshot
 
-`wiki/sync_wiki_snapshot.py` regenerates `paradox_wiki/` from the live Hearts of Iron IV wiki, and `wiki/verify_wiki_snapshot.py` is the read-only acceptance check for the result.
-The snapshot ships as the `wiki.snapshot` manifest component and is named by the project instructions as the required modding reference, so both commands run as a pair whenever the wiki moves:
+`wiki/sync_wiki_snapshot.py` regenerates `paradox_wiki/` from the live Hearts of Iron IV wiki and keeps the kit's local additions (kit blocks and kit pages), `wiki/verify_wiki_snapshot.py` is the read-only acceptance check for the result, and `wiki/wiki_status.py` reports which pages are current for the installed game build and which to re-check after a game update.
+The snapshot ships as the `wiki.snapshot` manifest component and is named by the project instructions as the required modding reference, so the commands run together whenever the wiki or the game moves:
 
 ```powershell
 python -B .tools/wiki/sync_wiki_snapshot.py
 python -B .tools/wiki/verify_wiki_snapshot.py
+python -B .tools/wiki/wiki_status.py
 ```
 
 After a refresh, regenerate `hoi4-mod-setup.manifest.json` with `scripts/generate_manifest_evidence.py --revision <new commit>` so `wiki.snapshot` pins the refreshed hashes.
-Contract, options, and the page set are in `wiki/README.md`.
+The page format, evidence tags, refresh workflow and options are in `wiki/README.md`.
 
 ## Generated and local-only data
 

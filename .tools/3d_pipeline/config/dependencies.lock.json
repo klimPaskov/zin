@@ -5,7 +5,7 @@
   "resolved_at_utc": "2026-10-18T19:44:53Z",
   "bootstrap": ".tools/3d_pipeline/bootstrap_3d_workflow.py",
   "sources": {
-    "meshy_mcp": "npm:@meshy-ai/meshy-mcp-server@0.6.2",
+    "meshy_mcp": "npm:@meshy-ai/meshy-mcp-server@0.6.7",
     "blender_lab_mcp": "https://projects.blender.org/lab/blender_mcp.git@dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
     "io_pdx_mesh": "https://github.com/ross-g/io_pdx_mesh/releases/download/0.91/blender-io_pdx_mesh.zip"
   },
@@ -15,6 +15,7 @@
       "source_size": 235195,
       "builder": ".tools/3d_pipeline/build_io_pdx_py313_compat.py",
       "blender_minors": [
+        "5.1",
         "5.2"
       ],
       "archive_sha256": "A0ED30187494889B5415D579C823D888CFEAF197A3D4FC6A2D024E6BB0E10697",
@@ -24,6 +25,12 @@
         "pdx_maya/maya_ui.py": "3ADE7A263A0475B4270254DB2323B0E0958A34648F9632024FD304B49B8E2ED7",
         "pdx_blender/blender_import_export.py": "CA396896F1B963C86C33F75ADC9B27E10C2C35200D0C691FAE265B4DE22DFF57"
       }
+    },
+    "blender": {
+      "supported_minors": [
+        "5.1",
+        "5.2"
+      ]
     }
   },
   "routes": {
@@ -373,8 +380,6 @@
   "policy": {
     "provider_input_image_count": 1,
     "allow_meshy_multiview_thumbnails": false,
-    "required_generation_model": "meshy-7",
-    "default_generation_model": "Meshy 7 via explicit ai_model=meshy-7",
     "retry_paid_calls": false,
     "runtime_sources_must_not_reference_docs_assets": true,
     "silent_generation_model_downgrade": false,
@@ -390,6 +395,7 @@
       1.0
     ],
     "building_footprint_and_object_name_evidence_required": true,
-    "runtime_wiring_owner": "parent"
+    "runtime_wiring_owner": "parent",
+    "generation_model_source": "config/asset_profiles.json profiles.<profile>.generation.ai_model"
   }
 }

@@ -34,10 +34,11 @@ Do not reproduce the files below from memory; read the section that bears on the
 | Dynamic variables such as `num_equipment@type` | `GAME/documentation/dynamic_variables_documentation.md` |
 | Modifiers (`equipment_conversion_speed`, licence modifiers, design cost factors) | `GAME/documentation/modifiers_documentation.md` |
 | Defines (stockpile, licence, module XP costs) | `GAME/common/defines/00_defines.lua` |
-| Concepts and legacy notes | `WIKI/Equipment modding - Hearts of Iron 4 Wiki.md`, `WIKI/Division modding - Hearts of Iron 4 Wiki.md` (equipment production), `WIKI/Country creation - Hearts of Iron 4 Wiki.md` (Variants) |
+| Concepts and legacy notes | `WIKI/equipment_modding.md`, `WIKI/division_modding.md` (equipment production), `WIKI/country_creation.md` (Variants) |
 
 The detailed module, designer, and AI design material is in `references/modular-equipment-and-designer.md`.
 The full effect, trigger, and dynamic variable catalogue is in `references/production-and-stockpile.md`.
+Military industrial organisations and special projects are in `references/mios-and-special-projects.md`.
 
 ## Decision table
 
@@ -128,10 +129,12 @@ Rules that follow from `_documentation.md` and vanilla:
 - `max_military_factories` and `max_dockyard_factories` cap factories per line.
 - `resources` is limited to three different strategic resources per equipment (`MAX_EQUIPMENT_RESOURCES_NEED` in `GAME/common/defines/00_defines.lua`).
 - Stats are limited to the names the engine knows; the list is in `script_enum_equipment_stat` and in the Equipment modding wiki Stats section.
+  `fire_range`, `shore_bombardment`, `port_capacity_usage` and `evasion` are not equipment stats in 1.19.4.1. [vanilla-confirmed 1.19.4.1]
   Land stats are per unit of equipment, air stats are per aircraft, naval stats are per ship.
-- The internal `type` values come from `_documentation.md`: land (`armor`, `infantry`, `motorized`, `mechanized`, `anti_air`, `artillery`, `anti_tank`, `rocket`, `support`), naval (`capital_ship`, `submarine`, `screen_ship`, `carrier`, `convoy`, `naval_transport`), air (`air_transport`, `fighter`, `cas`, `interceptor`, `tactical_bomber`, `strategic_bomber`, `naval_bomber`, `missile`, `suicide`).
+- The internal `type` values are the 38 entries of `script_enum_equipment_category` in `common/script_enums.txt` [vanilla-confirmed 1.19.3], which `_documentation.md` describes: land (`armor`, `infantry`, `motorized`, `mechanized`, `anti_air`, `artillery`, `anti_tank`, `rocket`, `support`), naval (`capital_ship`, `submarine`, `screen_ship`, `carrier`, `convoy`; its `naval_transport` is in neither the enum nor vanilla), air (`air_transport`, `fighter`, `cas`, `interceptor`, `tactical_bomber`, `strategic_bomber`, `naval_bomber`, `missile`, `suicide`).
   A list is allowed, as in `type = { armor anti_air }`.
   `ai_type` only changes which AI strategy bucket the equipment counts in.
+  `strat_bomber`, `support_equipment` and the `*_tank_chassis` names are not equipment types. [vanilla-confirmed 1.19.4.1]
 
 ### Non-modular upgrade chains
 

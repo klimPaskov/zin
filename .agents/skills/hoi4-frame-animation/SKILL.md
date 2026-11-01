@@ -72,10 +72,10 @@ Before wiring an animated asset into the game, inspect the local sources that ap
 
 Required references:
 
-- `paradox_wiki/Graphical asset modding - Hearts of Iron 4 Wiki.md`
-- `paradox_wiki/Interface modding - Hearts of Iron 4 Wiki.md` when the animation appears in GUI
-- `paradox_wiki/Scripted GUI Modding - Hearts of Iron 4 Wiki.md` when the animation appears in scripted GUI
-- `paradox_wiki/Character modding - Hearts of Iron 4 Wiki.md` when the animation is a portrait
+- `paradox_wiki/graphical_asset_modding.md`
+- `paradox_wiki/interface_modding.md` when the animation appears in GUI
+- `paradox_wiki/scripted_gui_modding.md` when the animation appears in scripted GUI
+- `paradox_wiki/character_modding.md` when the animation is a portrait
 - relevant vanilla `.gfx` and `.gui` files under `<HOI4_INSTALL_DIR>/`
 - existing repository `.gfx`, `.gui`, portrait, focus, decision, and scripted GUI examples when available
 
@@ -83,7 +83,7 @@ The agent must record which local example was used.
 
 If the wiki and vanilla examples disagree, prefer vanilla and document the difference.
 
-If the surface has no clear vanilla or mod animated precedent, report a blocker or ask for permission to run a narrow exploration pass.
+If the surface has no clear vanilla or mod animated precedent, report a blocker or ask for permission to run a narrow exploration pass, in the upfront consultation when the spec already shows the gap.
 
 ## 5. When to use this skill
 

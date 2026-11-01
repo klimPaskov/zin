@@ -17,6 +17,10 @@ Read `AGENTS.md` and the linked source for the exact window. Verify live schemas
 
 For an attached visual meter, vanilla `interface/sov_paranoia_system_scripted_gui.gui` and `common/scripted_guis/SOV_paranoia_system_scripted_gui.txt` demonstrate separate background, meter, text, and dynamic-frame consumers. Choose a closer precedent when the requested interaction differs. Verify context-specific scope, variable, and event-target support against installed documentation and actual consumers. Inspect pointer lifecycle, stale-target handling, and cleanup instead of assuming support or prohibition from memory.
 
+In a scripted GUI definition, `weight` and `ignore_lower_weights` sit beside `ai_will_do`, not inside it. [docs]
+Use `parent_window_name` for the parent window, because the documentation's `parent_window_window` is a slip. [docs] [unverified] (executable string)
+Font overrides for Chinese and Korean live in `core_chinese.gfx` and `core_korean.gfx`, not `code_chinese.gfx`. [vanilla-confirmed 1.19.3]
+
 Name the authorized window, files, entry point, parent or context, linked assets, states, resolutions, and exclusions before editing. Route a dedicated UI introduced and owned by one named event to `hoi4_event_ui_worker` under `hoi4-subagents`. Shared event logs, event-detail frameworks, settings, super-event frameworks, shared registries, and unrelated interfaces remain parent-owned and require their own task authorization. Using this skill or opening a shared window does not authorize changing it.
 
 ## Reference image before implementation
@@ -86,6 +90,8 @@ Render and inspect the actual disabled state of each unavailable action. `_click
 Trace each action's source availability trigger, effect-time rechecks, and side effects before declaring a reference or fixture route-valid or impossible. A locked fixture must satisfy the actual predicate for its displayed reason.
 
 ## Handoff and completion
+
+Run `python -B .tools/check.py quick` on the changed `.gui`, `.gfx`, scripted-GUI and texture files; it reports missing textures and sprites, uneven frame strips (`gfx.py sprites`) and broken runtime binaries, not layout, which stays with `hoi4.gui_render` and visual review.
 
 Return exact changed files and identifiers, source precedents, reference images and acceptance basis, image-to-element and background mapping, justified native adaptations, asset and state coverage, and matched MCP before and after artifacts with scenario and source identities. Include intermediate MCP preview evidence and corrections, completed visual-review findings, content and action budget assessment, and the decision owner's action-integrity evidence where gameplay controls exist.
 

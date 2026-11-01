@@ -18,14 +18,14 @@ If a route fails once, retry once with narrower input, then read the local files
 
 | Question | Read |
 | --- | --- |
-| Technology fields, cost, paths, folders, GUI, sharing groups | `WIKI/Technology modding - Hearts of Iron 4 Wiki.md` |
+| Technology fields, cost, paths, folders, GUI, sharing groups | `WIKI/technology_modding.md` |
 | Doctrine concepts, effects, triggers, modifiers | `GAME/common/doctrines/_documentation.md` |
 | Doctrine folder, grand doctrine, track, and sub-doctrine syntax | `GAME/common/doctrines/folders/_documentation.md`, `grand_doctrines/_documentation.md`, `tracks/_documentation.md`, `subdoctrines/_documentation.md` |
 | Effects (`set_technology`, `add_tech_bonus`, `set_grand_doctrine`, and the rest) | `GAME/documentation/effects_documentation.md` |
 | Triggers (`has_tech`, `has_doctrine`, `has_mastery`, and the rest) | `GAME/documentation/triggers_documentation.md` |
 | Modifiers (`research_speed_factor`, `<folder>_doctrine_cost_factor`, mastery gain factors) | `GAME/documentation/modifiers_documentation.md` |
 | Defines (`NTechnology`, `NDoctrines`) | `GAME/common/defines/00_defines.lua` |
-| Research weighting for the AI | `WIKI/Technology modding - Hearts of Iron 4 Wiki.md` (AI weighting), `WIKI/AI focuses - Hearts of Iron 4 Wiki.md`, `hoi4-ai-strategies` |
+| Research weighting for the AI | `WIKI/technology_modding.md` (AI weighting), `WIKI/ai_focuses.md`, `hoi4-ai-strategies` |
 
 The tree and folder interface authoring detail is in `references/technology-tree-gui.md`.
 Doctrine authoring skeletons, loc keys, and GUI notes are in `references/doctrine-authoring.md`.
@@ -190,6 +190,7 @@ technology_folders = {
   Without them the AI can still research it and `set_technology` still works, but a player cannot research there.
   Authoring detail is in `references/technology-tree-gui.md`.
 - Category words in `GAME/common/technology_tags/00_technology.txt` include `mio_cat_*` entries that military industrial organizations use; keep any renamed categories consistent across every reference.
+- Folder ids use the British spelling, as in `armour_folder` and `nsb_armour_folder` in `common/technology_tags/00_technology.txt`. [vanilla-confirmed 1.19.4.1]
 
 ## Technology effects, triggers, and research bonuses
 
@@ -214,9 +215,12 @@ technology_folders = {
 
 The installed `GAME/common/on_actions/_documentation.md` lists no on action for a country completing a technology; the only research-related ones are the military industrial organization actions such as `on_mio_tech_reseach_completed`.
 Use `on_research_complete` on the tech itself.
+The MIO tech hooks are really spelled `on_mio_tech_reseach_*`, so copy that spelling exactly. [docs] [vanilla-confirmed 1.19.3]
 
 Limited bonuses are consumed by the research that uses them; the interface text keys `RESEARCH_BONUS_USED` and `RESEARCH_BONUS` in `core_l_english.yml` describe the behaviour.
 `NDefines.NTechnology.USE_BONUS_REGRET_TIMER` gives three days to reverse a use.
+
+`add_tech_bonus` takes its category from `common/technology_tags/00_technology.txt`, where `construction_tech` is valid and `construction` is not, and `research_bonus` is an idea key rather than an effect. [vanilla-confirmed 1.19.4.1]
 
 ## Technology sharing groups
 

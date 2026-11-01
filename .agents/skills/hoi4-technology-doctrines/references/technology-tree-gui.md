@@ -2,8 +2,8 @@
 
 Read this file when a technology folder, branch, tile, or tab must be added or changed.
 `GAME` is the installed Hearts of Iron IV folder named in `CLAUDE.md` and `WIKI` is the repository folder `paradox_wiki`.
-Source: `WIKI/Technology modding - Hearts of Iron 4 Wiki.md` (Brief user interface, Position, Folders, Graphical user interface), checked against `GAME/interface/countrytechtreeview.gui` and `.gfx`.
-Also read `WIKI/Interface modding - Hearts of Iron 4 Wiki.md` for the control types.
+Source: `WIKI/technology_modding.md` (Brief user interface, Position, Folders, Graphical user interface), checked against `GAME/interface/countrytechtreeview.gui` and `.gfx`.
+Also read `WIKI/interface_modding.md` for the control types.
 
 ## What must exist for a visible folder
 
@@ -65,7 +65,7 @@ A scripted GUI can attach with `parent_window_name`.
 - Tile layout comes from the container named for the folder.
   A tile that unlocks equipment uses the regular item; one that does not uses the small item, if the folder defines one.
   If no small item exists, every tile uses the regular item.
-  `force_use_small_tech_layout = yes` on the technology overrides the choice.
+  `force_use_small_tech_layout = yes` on the technology overrides the choice. Vanilla sets it on 12 technologies. Set on every technology, it hides every card's name, because no small item in vanilla `countrytechtreeview.gui` has a `Name` box (10 of the 13 regular items do). [vanilla-confirmed 1.19.4.1]
 - The tile contains, by element name:
   `Background` (a `quadTextureSprite`), `Icon` (an `iconType` with `spriteType = "GFX_technology_medium"`, replaced per tech by `GFX_<tech>_medium`), `Name` (optional `instantTextBoxType` on regular tiles), `bonus_icon` (`GFX_tech_bonus`), `bonus` (the bonus percentage text), and up to three `sub_technology_slot_0`, `_1`, `_2` containers with a `picture` icon.
 - Sub-technology pictures depend on the sub-technology index, not on the technology.

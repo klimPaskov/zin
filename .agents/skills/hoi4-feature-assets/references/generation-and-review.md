@@ -2,9 +2,14 @@
 
 Use the project's selected image-generation route and its generated provider details below. When that route offers a model choice, choose only from its listed models and capabilities. Never invent a tool, model, size, reference argument, or backend. Describe the desired canvas and background in the prompt, inspect the returned dimensions, and process to the runtime canvas afterward. Ask for one image per call.
 
-<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:START -->
-[The selected image-generation provider details are added by HOI4 Mod Setup.]
-<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:END -->
+### ChatGPT subscription (GPTImage)
+- Tools: generate: `generate_image`, auth_status: `image_auth_status`, list_references: `list_references`
+- Tool inputs: prompt: `prompt`, output_path: `out`, reference_images: `reference_images`, quality: `quality`, size: `size`
+- References: Use list_references to discover project references, then pass relevant image paths and describe each one's role. Reference count is not documented; output sizes have a maximum edge and aspect-ratio rule.
+- Size: This route uses the model's default image size; limits can vary by model.
+- Transparent backgrounds: PNG output does not guarantee a transparent background. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
+- Reference edits: not available on this route. If unavailable: Use reference_images to make a new version; choose another configured provider for precise image edits.
+- Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
 
 Before generation, identify the asset type, exact consumer, subject, intended footprint, composition, palette, reserved space, and prohibited additions. Label every supplied reference by filename and role: edit target, permitted subject anchor, style anchor, geometry/composition anchor, or explicit insertion layer. State which properties may transfer. A style reference does not authorize copying its identity, lettering, frame, or unrelated canvas. Portrait sourcing rules and exact map geometry remain authoritative.
 

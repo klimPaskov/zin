@@ -39,12 +39,12 @@ Installed documentation is more authoritative than the wiki; where they disagree
 | Topic | Authoritative text | Vanilla precedent |
 | --- | --- | --- |
 | Every `ai_strategy` token, value semantics, unit ratios | `GAME/common/ai_strategy/_documentation.md` (updated 2024-11) | `GAME/common/ai_strategy/default.txt` (generic), `GER.txt`, `FRA.txt`, `INS.txt` (reversed), `SOV.txt` (front_control) |
-| AI strategy plans, ai_will_do math, ai_chance, AI areas | `WIKI/AI modding - Hearts of Iron 4 Wiki.md` (sections MTTH blocks, AI strategies, AI areas, AI strategy plans) | `GAME/common/ai_strategy_plans/GER_historical_strategy_plan.txt`, `ENG_historical_strategy_plan.txt` |
-| Research and focus weighting | `WIKI/AI focuses - Hearts of Iron 4 Wiki.md` | `GAME/common/ai_focuses/generic.txt`, `GER.txt` |
-| Focus `ai_will_do` and the plan override | `WIKI/National focus modding - Hearts of Iron 4 Wiki.md` (AI will do, AI strategy plans) | `GAME/common/national_focus/*.txt` |
-| Decision `ai_will_do` | `WIKI/Decision modding - Hearts of Iron 4 Wiki.md` (AI section) | `GAME/common/decisions/political_decisions.txt` |
-| Event option `ai_chance` | `WIKI/Event modding - Hearts of Iron 4 Wiki.md` (options) | `GAME/events/Germany.txt` |
-| Technology `ai_will_do`, `ai_research_weights` | `WIKI/Technology modding - Hearts of Iron 4 Wiki.md` | `GAME/common/technologies/*.txt` |
+| AI strategy plans, ai_will_do math, ai_chance, AI areas | `WIKI/ai_modding.md` (sections MTTH blocks, AI strategies, AI areas, AI strategy plans) | `GAME/common/ai_strategy_plans/GER_historical_strategy_plan.txt`, `ENG_historical_strategy_plan.txt` |
+| Research and focus weighting | `WIKI/ai_focuses.md` | `GAME/common/ai_focuses/generic.txt`, `GER.txt` |
+| Focus `ai_will_do` and the plan override | `WIKI/national_focus_modding.md` (AI will do, AI strategy plans) | `GAME/common/national_focus/*.txt` |
+| Decision `ai_will_do` | `WIKI/decision_modding.md` (AI section) | `GAME/common/decisions/political_decisions.txt` |
+| Event option `ai_chance` | `WIKI/event_modding.md` (options) | `GAME/events/Germany.txt` |
+| Technology `ai_will_do`, `ai_research_weights` | `WIKI/technology_modding.md` | `GAME/common/technologies/*.txt` |
 | AI templates | `GAME/common/ai_templates/_documentation.md` (updated 2024-08) | `GAME/common/ai_templates/generic.txt`, `templates_ENG.txt` |
 | AI equipment designer | `GAME/common/ai_equipment/_documentation.md` | `GAME/common/ai_equipment/generic_tank.txt` |
 | Goal-based naval AI | `GAME/common/ai_navy/_documentation.md`, `ai_navy/taskforce/_documentation.md` | `GAME/common/ai_navy/goals/goals_generic.txt`, `fleet/generic_fleet_templates.txt` |
@@ -227,6 +227,7 @@ Targeted types accept several of `tag`, `state`, `strategic_region`, `area`, `co
 
 `role_ratio` (division role weights; also ship and tank roles from AI equipment), `template_prio`, `unit_ratio`, `build_army`, `equipment_production_factor`, `equipment_variant_production_factor`, `equipment_production_min_factories`, `equipment_production_min_factories_archetype`, `build_building`, `building_target`, `research_tech`, `research_weight_factor`, `pp_spend_priority`, `pp_spend_amount`, `land_xp_spend_priority`, `air_xp_spend_priority`, `navy_xp_spend_priority`, `build_airplane` (computed by the game from air `unit_ratio`; see the catalog for the formula).
 `research_tech` forces the tech as soon as possible; `research_weight_factor` multiplies the tech's `ai_will_do` (50 means plus 50 percent).
+`stockpile_fuel` (added in 1.19.4.1) has no `value`: optional `start_below` and `stop_above`, percent of wanted max fuel, make the AI stand down new attacks and throttle air and naval fuel until fuel recovers. `stop_above` must be above `start_below`; the catalog has the rest.
 `GAME/common/ai_strategy/default.txt` shows vanilla uses of nearly all of these.
 
 ## AI strategy plans
@@ -279,6 +280,7 @@ TAG_historical = {
 - `research`, `ideas`, `traits` multiply the AI weight of research categories, individual ideas or advisors (by idea token), and country leader traits.
 - `weight` is an MTTH block that scales the plan's factors (a weight of 1.25 turns a focus factor of 4 into 5). Vanilla recommends about 1.0 because the value is also used as a factor for some research needs.
 - Several plans can be active at once. Make mutually exclusive plans exclude each other in `enable` or `abort`, usually through a game rule option or a randomisation flag set in `on_startup` (`has_game_rule`, `is_historical_focus_on`, `has_country_flag`).
+- Game rules define no rule-level `desc` in vanilla, since every option sets its own, and 18 rule ids are referenced in a different case than they are defined, so copy the definition's spelling. [vanilla-confirmed 1.19.3]
 - `ai_historical_focus_list_<tag>` in `common/ai_focuses` is superseded by plans (vanilla `ai_focuses/USA.txt` has it commented out).
 - Plans are the right place for a path-level decision such as "this country should take the democratic route"; a single focus `ai_will_do` is the right place for local preference.
 

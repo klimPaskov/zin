@@ -1,7 +1,7 @@
 # Unit Leader Traits, Skills and Abilities
 
 Read this when defining or auditing traits in `common/unit_leader/`, trait assignment trees, experience rules, unit-leader skill levels, abilities, or officer-corps advisor conversions.
-Primary sources: the header comment of installed `common/unit_leader/00_traits.txt` (the schema), `paradox_wiki/Character modding - Hearts of Iron 4 Wiki.md` > Unit leader traits, `documentation/modifiers_documentation.md` (`unit_leader`, `army`, `naval` scopes), `documentation/triggers_documentation.md` (COMBATANT and CHARACTER sections), and `common/defines/00_defines.lua`.
+Primary sources: the header comment of installed `common/unit_leader/00_traits.txt` (the schema), `paradox_wiki/character_modding.md` > Unit leader traits, `documentation/modifiers_documentation.md` (`unit_leader`, `army`, `naval` scopes), `documentation/triggers_documentation.md` (COMBATANT and CHARACTER sections), and `common/defines/00_defines.lua`.
 Root is the installed Hearts of Iron IV folder named in `CLAUDE.md`.
 
 ## File and keys
@@ -94,6 +94,7 @@ Additional keys seen in vanilla `00_traits.txt` and the wiki: `slot`, `specialis
 ## Skill levels and skill definitions
 
 - Level definitions: `leader_skills`, `leader_attack_skills` and similar roots in `00_skills.txt`, `00_attack_skills.txt` and siblings, with `cost`, `type = navy` or `land`, `modifier`, and for navy `building_module_modifier`. They are the source for what each level grants; copy structure when adding a new level.
+- The overall `skill` level grants no modifier in `leader_skills`. [vanilla-confirmed 1.19.3]
 - Character effects that change skill: `add_skill_level`, `add_attack`, `add_defense`, `add_planning`, `add_logistics`, `add_maneuver`, `add_coordination`, `gain_xp`, `add_max_trait`.
 
 ## Abilities

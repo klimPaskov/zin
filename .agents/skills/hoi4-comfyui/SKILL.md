@@ -11,4 +11,4 @@ Provider selection is explicit and recorded in the portrait handoff. Do not infe
 
 Agents do not operate RunPod. For Cloud and Local routes, agents still use only the configured endpoint and credentials boundary named by the parent; they do not discover arbitrary installations, expose credentials, or substitute another workflow. If authorization, endpoint, models, custom nodes, hardware, or user-supplied output is missing, leave the portrait pending and report the exact blocker.
 
-This router does not apply to fictional or impossible portraits: `hoi4_portrait_creator` uses native ImageGen for those subjects. It also does not own generic non-portrait art, final gameplay wiring, or live in-game validation.
+This router does not apply to fictional or impossible portraits: `hoi4_portrait_creator` uses the image generator for those subjects. It also does not own generic non-portrait art, final gameplay wiring, or live in-game validation.

@@ -34,9 +34,14 @@ Maps may still appear as secondary props when useful, but they should rarely be 
 
 The image generator is the image-generation route selected for this project. HOI4 Mod Setup fills in the provider-specific details below from the manifest table. If no route is configured, stop and report the blocker instead of building a substitute pipeline.
 
-<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:START -->
-[The selected image-generation provider details are added by HOI4 Mod Setup.]
-<!-- HOI4_MOD_SETUP:IMAGE_GENERATION_PROVIDER:END -->
+### ChatGPT subscription (GPTImage)
+- Tools: generate: `generate_image`, auth_status: `image_auth_status`, list_references: `list_references`
+- Tool inputs: prompt: `prompt`, output_path: `out`, reference_images: `reference_images`, quality: `quality`, size: `size`
+- References: Use list_references to discover project references, then pass relevant image paths and describe each one's role. Reference count is not documented; output sizes have a maximum edge and aspect-ratio rule.
+- Size: This route uses the model's default image size; limits can vary by model.
+- Transparent backgrounds: PNG output does not guarantee a transparent background. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
+- Reference edits: not available on this route. If unavailable: Use reference_images to make a new version; choose another configured provider for precise image edits.
+- Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
 
 Use the image generator by default for:
 
