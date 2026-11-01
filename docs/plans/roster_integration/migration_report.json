@@ -65,58 +65,64 @@
   },
   "culturesInput": "tools/content/data/world/cultures_new.json stays: the heraldry generator (tools/content/heraldry/build_heraldry.mjs) reads its grammars and renames"
  },
- "renames": [
+ "renames": [],
+ "tags": [],
+ "names": [
   {
-   "where": "tools/content/data/world/portrait_pools.base.json",
-   "from": "isengard_warlords",
-   "to": "melkgard_warlords",
-   "count": 10
+   "where": "tools/content/data/mech_journey_eindil.json $.stages[6].name",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.base.json",
-   "from": "windwaith_seafarers",
-   "to": "vindael_seafarers",
-   "count": 12
+   "where": "docs/design/focus/coldor.json $.focuses[67].effects[1].non_aggression",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.base.json",
-   "from": "gunwaith_clans",
-   "to": "gunwyn_clans",
-   "count": 20
+   "where": "docs/design/focus/coldor.json $.focuses[71].effects[0].event_for.country",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.base.json",
-   "from": "ember_lands_freeholds",
-   "to": "ember_freeholds",
-   "count": 8
+   "where": "docs/design/focus/coldor.json $.focuses[73].available[0].exists",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.json",
-   "from": "isengard_warlords",
-   "to": "melkgard_warlords",
-   "count": 10
+   "where": "docs/design/focus/coldor.json $.focuses[73].effects[0].guarantee",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.json",
-   "from": "windwaith_seafarers",
-   "to": "vindael_seafarers",
-   "count": 12
+   "where": "docs/design/focus/regional_yeti_lands.json $.focuses[12].available[0].exists",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.json",
-   "from": "gunwaith_clans",
-   "to": "gunwyn_clans",
-   "count": 20
+   "where": "docs/design/focus/regional_yeti_lands.json $.focuses[12].effects[0].non_aggression",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   },
   {
-   "where": "tools/content/data/world/portrait_pools.json",
-   "from": "ember_lands_freeholds",
-   "to": "ember_freeholds",
-   "count": 8
+   "where": "docs/design/focus/shared_cold_lands.json $.focuses[47].available[0].exists",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
+  },
+  {
+   "where": "docs/design/focus/shared_cold_lands.json $.focuses[47].effects[0].non_aggression",
+   "from": "Yeldenne",
+   "to": "Pertolor",
+   "fate": "merged"
   }
  ],
- "tags": [],
- "names": [],
  "keys": [],
  "deduped": [],
  "dropped": [],
@@ -205,6 +211,10 @@
     "tag": "Y60"
    },
    {
+    "where": "tools/content/events_world.test.mjs:498",
+    "name": "Yeldenne"
+   },
+   {
     "where": "tools/content/focus_major_b.test.mjs:178",
     "name": "Volgan"
    },
@@ -265,6 +275,10 @@
     "name": "Asgard"
    },
    {
+    "where": "tools/content/focus_regional_d.test.mjs:30",
+    "name": "Yeldenne"
+   },
+   {
     "where": "tools/content/focus_shared_a.test.mjs:380",
     "name": "Volgan"
    },
@@ -287,6 +301,22 @@
    {
     "where": "tools/content/focus_shared_b.test.mjs:400",
     "name": "Poyang"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:162",
+    "name": "Yeldenne"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:167",
+    "name": "Yeldenne"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:525",
+    "name": "Yeldenne"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:584",
+    "name": "Yeldenne"
    },
    {
     "where": "tools/content/geography/geography_steps.test.mjs:242",
@@ -313,8 +343,24 @@
     "tag": "Y6A"
    },
    {
-    "where": "tools/content/heraldry/build_heraldry.test.mjs:297",
+    "where": "tools/content/heraldry/build_heraldry.test.mjs:314",
     "tag": "Y0L"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:154",
+    "name": "Yeldenne"
+   },
+   {
+    "where": "tools/content/mech_cold.test.mjs:29",
+    "name": "Yeldenne"
+   },
+   {
+    "where": "tools/content/mech_court.test.mjs:311",
+    "name": "Yeldenne"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:25",
+    "name": "Yeldenne"
    },
    {
     "where": "tools/content/names.test.mjs:91",
@@ -361,34 +407,34 @@
     "tag": "Y7Y"
    },
    {
-    "where": "tools/content/roster.test.mjs:112",
+    "where": "tools/content/roster.test.mjs:113",
     "tag": "Y0L"
    },
    {
-    "where": "tools/content/roster.test.mjs:113",
+    "where": "tools/content/roster.test.mjs:114",
     "tag": "Y01"
    },
    {
-    "where": "tools/content/tags.test.mjs:42",
+    "where": "tools/content/tags.test.mjs:46",
     "tag": "Y01"
    },
    {
-    "where": "tools/content/technologies.test.mjs:21",
+    "where": "tools/content/technologies.test.mjs:23",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/technologies.test.mjs:21",
+    "where": "tools/content/technologies.test.mjs:23",
     "name": "Zol"
    },
    {
-    "where": "tools/content/technologies.test.mjs:104",
+    "where": "tools/content/technologies.test.mjs:109",
     "name": "Volgan"
    }
   ]
  },
  "retired": [],
  "summary": {
-  "files": 2,
+  "files": 4,
   "world": {
    "cultures": {
     "added": [
@@ -453,9 +499,9 @@
    },
    "culturesInput": "tools/content/data/world/cultures_new.json stays: the heraldry generator (tools/content/heraldry/build_heraldry.mjs) reads its grammars and renames"
   },
-  "idRenames": 100,
+  "idRenames": 0,
   "tagsMigrated": 0,
-  "namesMigrated": 0,
+  "namesMigrated": 9,
   "keysMigrated": 0,
   "deduped": 0,
   "dropped": 0,
@@ -464,8 +510,10 @@
   "special": 0,
   "codeTags": 1,
   "codeNames": 0,
-  "testRefs": 63,
+  "testRefs": 73,
   "retired": [],
-  "byFate": {}
+  "byFate": {
+   "merged": 9
+  }
  }
 }

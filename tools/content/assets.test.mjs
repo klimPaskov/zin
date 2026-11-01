@@ -610,10 +610,10 @@ test('Portrait assignment: named figures keep their own portrait, pool character
     const served = p.characters.length, allowance = Math.min(P.SERVE_CAP, Math.ceil(served / p.size) + 1);
     for (const m of p.members) assert.ok((uses.get(m.sprite) ?? 0) <= allowance, `${m.sprite} serves at most ${allowance}`);
   }
-  // Horos is story only (K56) and keeps his pool portrait; Varner, Golbran and Aurevan are owner-approved (K43, K44; Q-32).
-  for (const id of ['zin_horos']) assert.ok(!plan.named.some(n => n.id === id) && assigned.get(id).startsWith('GFX_zin_portrait_'), id);
+  // Horos is story only (K56): no character, no pool portrait, no owner-pending portrait. Varner, Golbran and Aurevan are owner-approved (K43, K44; Q-32).
+  for (const id of ['zin_horos']) assert.ok(!plan.named.some(n => n.id === id) && !assigned.has(id), id);
   assert.ok(!plan.named.some(n => n.id === 'zin_eindil'), 'Eindil has no named portrait yet');
-  for (const ids of [plan.ownerPending.map(o => o.id)]) assert.equal(ids.length, 5);
+  for (const ids of [plan.ownerPending.map(o => o.id)]) { assert.equal(ids.length, 4); assert.ok(!ids.includes('zin_horos'), 'K56: Horos has no pending portrait'); }
 });
 
 test('Portrait check: a realm sharing a portrait, a pool past its allowance and a realm holding a whole pool are caught', async () => {

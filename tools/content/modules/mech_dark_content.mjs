@@ -71,6 +71,16 @@ every_country = {
 every_country = {
   limit = { zin_dark_is_accord_member = yes }
   add_to_array = { array = global.zin_dark_accord_rows value = THIS }
+}
+# the meters and the page of rows of an open Horde or Accord window (modules/mech_dark_panels.mjs)
+every_country = {
+  limit = {
+    OR = {
+      has_country_flag = zin_ui_horde_open
+      has_country_flag = zin_ui_accord_open
+    }
+  }
+  zin_dark_ui_meters = yes
 }`);
 
   // The Zol hook of section 9: the northern shore and the Kusmeel coast watch for the dead (zin_dark.80 is the events slice's).

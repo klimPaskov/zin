@@ -42,13 +42,21 @@
     { "id": "select_date", "match": "^gfx/interface/(select_date_[0-9]+)\\.dds$", "family": "F3", "key": "$1", "kind": "frontend", "group": "scene", "bound_by": "path_convention", "route": "imagegen" },
     { "id": "zin_ui_people_strip", "match": "^gfx/interface/zin/(people_strip)\\.dds$", "family": "G2", "key": "$1", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/emblems/emblems-peoples.png" },
     { "id": "zin_ui_chrome", "match": "^gfx/interface/zin/chrome/([a-z_]+)\\.dds$", "family": "G2", "key": "chrome_$1", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/ui-zin-chrome.png" },
+    { "id": "zin_ui_header", "match": "^gfx/interface/zin/headers/([a-z_]+)\\.dds$", "family": "G2", "key": "header_$1", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/headers/$1.png" },
+    { "id": "zin_ui_dialogs", "match": "^gfx/interface/zin/dialogs/([a-z_]+)\\.dds$", "family": "G2", "key": "dialogs_$1", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "imagegen" },
     { "id": "zin_ui_unknown", "match": "^gfx/interface/zin/unknown/([a-z_]+)\\.dds$", "family": "G2", "key": "unknown_$1", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/ui-zin-chrome.png" },
+    { "id": "zin_aoaz_meters_1", "match": "^gfx/interface/zin/aoaz/meters_1\\.dds$", "family": "G2", "key": "aoaz_meters_1", "kind": "stat_icon", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/aoaz/ui-aoaz-meters-1.png" },
+    { "id": "zin_aoaz_meters_2", "match": "^gfx/interface/zin/aoaz/meters_2\\.dds$", "family": "G2", "key": "aoaz_meters_2", "kind": "stat_icon", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/aoaz/ui-aoaz-meters-2.png" },
+    { "id": "zin_aoaz_sigils", "match": "^gfx/interface/zin/aoaz/(sigil_[a-z_]+|button)\\.dds$", "family": "G2", "key": "aoaz_$1", "kind": "stat_icon", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/aoaz/ui-aoaz-sigils.png" },
+    { "id": "zin_aoaz_frame", "match": "^gfx/interface/zin/aoaz/bar_frame\\.dds$", "family": "G2", "key": "aoaz_bar_frame", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/reskin/ui-chrome-banner-hall.png" },
+    { "id": "zin_mapmode_buttons", "match": "^gfx/interface/zin/mapmodes/([a-z_]+)\\.dds$", "family": "G2", "key": "mapmode_$1", "kind": "map_icon", "group": "ui", "bound_by": "sprite", "route": "imagegen", "source": "art/source/ui/reskin/icons-topbar-values.png" },
     { "id": "unit_model", "match": "^gfx/models/units/zin/([a-z0-9_]+)/(.+)$", "family": "K", "key": "$1", "kind": "model", "group": "unit_look", "bound_by": "entity", "route": "meshy", "job": "docs/assets/hoi4_3d_model_jobs/models_3d/$1", "people": "", "reach": "visible" },
     { "id": "cursor", "match": "^gfx/cursors/([A-Za-z0-9_]+)\\.(cur|ani|png|ico)$", "family": "I3", "key": "$1", "kind": "cursor", "group": "cursor", "bound_by": "cursor_name", "route": "imagegen" },
     { "id": "font", "match": "^gfx/fonts/(.+)\\.(fnt|dds|tga|png)$", "family": "FN", "key": "$1", "kind": "font", "group": "font", "bound_by": "font_asset", "route": "kept" },
     { "id": "map_file", "match": "^map/(.+)\\.(bmp|dds|png|tga)$", "family": "M", "key": "$1", "kind": "map_texture", "group": "map_tile", "bound_by": "map_file", "route": "derived", "reach": "engine" },
     { "id": "music", "match": "^music/(.+)\\.(ogg|mp3|wav)$", "family": "MU", "key": "$1", "kind": "music", "group": "music", "bound_by": "music_asset", "route": "synth" },
     { "id": "sound", "match": "^sound/(.+)\\.(wav|ogg)$", "family": "S", "key": "$1", "kind": "sound", "group": "sound", "bound_by": "sound_effect", "route": "synth" },
+    { "id": "technology_blank", "match": "^gfx/interface/technologies/zin/(blank)\\.dds$", "family": "G2", "key": "technology_$1", "kind": "ui_panel", "group": "ui", "bound_by": "sprite", "route": "derived" },
     { "id": "unclassified_image", "match": "^((?:gfx|interface)/.+)\\.(dds|tga|png)$", "family": "U", "key": "$1", "kind": "ui_chrome", "group": "ui", "bound_by": "sprite", "route": "imagegen" }
   ]
 }

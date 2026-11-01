@@ -1,5 +1,5 @@
 // Tests of the regional_d focus trees (docs/design/stage2/focus_regional_d.md): the five North Lands crowns, the six
-// Triton's Islands, the six West Lands realms and Yeldenne, as data files under docs/design/focus/, plus the Buldor
+// Triton's Islands and the six West Lands realms (Yeldenne's tree is retired, K56), as data files under docs/design/focus/, plus the Buldor
 // decisions module. The trees are compiled with the focus compiler's own check API and compared with the counts of
 // their specs; negative cases plant one failure each and expect the matching check to fail.
 //   node --test tools/content/focus_regional_d.test.mjs
@@ -27,7 +27,6 @@ const SPEC = {
   regional_nondondor: ['Nondondor', 34, 8, 2, 17, 7], regional_halenor: ['Halenor', 33, 9, 1, 19, 7], regional_seite_islands: ['Seite Islands', 32, 6, 2, 18, 7],
   regional_girdon: ['Girdon', 37, 8, 4, 20, 9], regional_lambin: ['Lambin', 33, 9, 1, 19, 9], regional_buldor: ['Buldor', 32, 8, 3, 19, 7],
   regional_kradlon: ['Kradlon', 32, 7, 1, 20, 4], regional_corogon: ['Corogon', 32, 8, 4, 19, 7], regional_varnondor: ['Varnondor', 32, 9, 1, 19, 8],
-  regional_yeldenne: ['Yeldenne', 36, 8, 9, 17, 10],
 };
 const IDS = Object.keys(SPEC);
 // The start spirit of every tree whose country history adds one at game start (the tier B island and western specs).
@@ -69,7 +68,7 @@ const allLoc = Object.assign({}, ...[...compiled.values()].map(c => c.loc));
 
 // ------------------------------------------------------------------------------------------------ the data files
 test('Eighteen tree files exist, with the ids, countries and tier of the specs', () => {
-  assert.equal(IDS.length, 18);
+  assert.equal(IDS.length, 17);
   for (const id of IDS) {
     const t = BASE[id];
     assert.equal(t.id, id);
@@ -77,11 +76,11 @@ test('Eighteen tree files exist, with the ids, countries and tier of the specs',
     assert.deepEqual(t.countries, [SPEC[id][0]]);
     assert(roster.some(c => c.name === t.countries[0]), `${t.countries[0]} is not a roster country`);
   }
-  assert.equal(new Set(IDS.flatMap(id => BASE[id].countries)).size, 18, 'no country has two trees');
+  assert.equal(new Set(IDS.flatMap(id => BASE[id].countries)).size, 17, 'no country has two trees');
 });
 
 test('Every tree passes the compiler checks with no problem', () => {
-  assert.equal(analysis.list.length, 18);
+  assert.equal(analysis.list.length, 17);
   assert.deepEqual(real(analysis.problems).map(p => p.message), []);
 });
 
@@ -94,7 +93,8 @@ test('Focus, spirit and event counts match the specs', () => {
     assert.equal(Object.keys(t.events ?? {}).length, e, `${id} events`);
     focuses += f; spirits += s; events += e;
   }
-  assert.deepEqual([focuses, spirits, events], [600, 153, 54]);
+  // The Yeldenne tree (36 focuses, 8 spirits, 9 events) is retired with the realm (K56).
+  assert.deepEqual([focuses, spirits, events], [564, 145, 45]);
   // Tier B holds 30 to 50 focuses.
   for (const id of IDS) assert(BASE[id].focuses.length >= 30 && BASE[id].focuses.length <= 50, id);
 });
@@ -109,7 +109,7 @@ test('Each grid spans the columns and rows of its spec', () => {
   }
 });
 
-test('Focus ids, spirit ids and event ids are unique across the 18 trees and carry the regional prefix', () => {
+test('Focus ids, spirit ids and event ids are unique across the 17 trees and carry the regional prefix', () => {
   const seen = new Set();
   for (const id of IDS) {
     const t = BASE[id];
@@ -117,7 +117,7 @@ test('Focus ids, spirit ids and event ids are unique across the 18 trees and car
     for (const k of Object.keys(t.spirits ?? {})) { const full = spiritId(t, k); assert(!seen.has(full), full); seen.add(full); }
     for (const [k, ev] of Object.entries(t.events ?? {})) { const full = `zin_${id}.${ev.n}`; assert(!seen.has(full), `${id} ${k}`); seen.add(full); }
   }
-  assert(seen.size > 770);
+  assert.equal(seen.size, 564 + 145 + 45, 'every focus, spirit and event id of the 17 trees is listed once');
 });
 
 test('No spirit key repeats a focus key of its tree (F3), and every spirit carries an icon or a focus that adds it', () => {
@@ -157,7 +157,6 @@ test('The exclusive choices of the specs are symmetric, three-way where the spec
     regional_girdon: [['brothers_across_the_ford', 'aenors_old_friend', 'the_southern_councils']],
     regional_buldor: [['swords_for_the_west', 'whoever_pays', 'swords_for_parim']],
     regional_varnondor: [['close_the_approaches', 'open_the_approaches', 'watch_for_parim']],
-    regional_yeldenne: [['ride_after_the_bearer', 'keep_the_empty_hall', 'seal_the_hall'], ['open_for_the_heir', 'seek_a_second_bearer']],
     regional_tolvael: [['friendship_with_sonargur', 'parims_old_friend', 'a_third_way']],
     regional_halenor: [['wreckers_of_the_storm_isles', 'pilots_of_the_storms'], ['the_storm_isles_apart', 'pilots_for_the_crossing']],
     regional_nondondor: [['press_the_banks', 'share_the_banks'], ['corsair_letters', 'hang_the_corsairs']],
@@ -179,7 +178,6 @@ test('The historical branch heads of the specs are in place with the right gates
     const ship = BASE[id].focuses.find(f => (f.allow_branch ?? []).some(c => c.check === 'zin_tritons_ship_has_sailed'));
     assert(ship && ship.available.some(c => c.check === 'zin_tritons_ship_has_sailed'), `${id}: the southern ship repeats its gate in available`);
   }
-  assert.deepEqual(g('regional_yeldenne', 'the_hall_falls_silent').available, [{ global_flag: 'zin_horos_dead' }]);
 });
 
 test('Peace at the start: no focus makes a war goal or a claim without a war gate, and nothing is free to take a war on day one', () => {
@@ -224,12 +222,11 @@ test('No banned word, glossary term or superseded name appears in any compiled t
   assert.deepEqual(hits, []);
 });
 
-test('No text names Afrit, the Hidden Council or Eindil; the Deliverer appears only in the public label of Yeldenne\'s pilgrims', () => {
+test('No text names Afrit, the Hidden Council or Eindil, and no regional focus text names the Deliverer (K56: the Yeldenne pilgrims\' tree is retired)', () => {
   for (const [id, c] of compiled) for (const [k, v] of Object.entries(c.loc)) {
     assert(!/Afrit|Hidden Council|Eindil|Einendil/i.test(v), `${id} ${k}`);
-    if (/Deliverer/.test(v)) assert.equal(id, 'regional_yeldenne');
+    assert(!/Deliverer/.test(v), `${id} ${k}`);
   }
-  assert.match(allLoc['zin_regional_yeldenne.5.d'], /Deliverer/);
 });
 
 test('The returning figure is named (the Heir, the stranger, the war-king) only by focuses that wait for the story flags', () => {
@@ -247,7 +244,6 @@ test('The returning figure is named (the Heir, the stranger, the war-king) only 
     for (const f of BASE[id].focuses) if (needle.test(`${f.name} ${f.desc}`)) { named++; assert(gated(f), `${id}: ${f.key} names the returning figure with no story gate`); }
   }
   assert(named >= 10, String(named));
-  assert.match(allLoc['zin_regional_yeldenne.9.d'], /walked out of the old ice/);
   assert.match(allLoc['zin_regional_tolvael_northern_companies_desc'], /Heir/);
 });
 
@@ -272,7 +268,7 @@ test('Every call, check, event, flag, idea and faction a tree names resolves', (
 });
 
 test('Recruit effects exist for every named character, with a code per person', () => {
-  for (const id of IDS.filter(i => i !== 'regional_yeldenne')) {
+  for (const id of IDS) {
     const name = id.replace('regional_', ''), def = BASE[id].scripted_effects?.[`zin_regional_${name}_recruit`];
     if (!def) { assert(['regional_tolvael', 'regional_mina', 'regional_r_en', 'regional_molot', 'regional_eekedor'].includes(id), `${id} lacks recruit`); continue; }
     const people = Object.keys(def.args.character.keyword);
@@ -304,7 +300,7 @@ test('Events are fired only by effects and the first option is the default of th
 
 // ------------------------------------------------------------------------------------------------ the compiled files
 test('Compilation is deterministic and writes the files of the format spec', () => {
-  for (const id of ['regional_yeldenne', 'regional_buldor', 'regional_girdon']) {
+  for (const id of ['regional_buldor', 'regional_girdon']) {
     const again = compileTree(analysis.trees.get(id), analysis.ctx);
     for (const [rel, body] of compiled.get(id).files) assert(Buffer.from(body).equals(Buffer.from(again.files.get(rel))), rel);
     const rels = [...compiled.get(id).files.keys()];
@@ -316,14 +312,10 @@ test('Compilation is deterministic and writes the files of the format spec', () 
   assert.equal(compiled.get('regional_pollos').files.has('common/opinion_modifiers/zin_regional_pollos.txt'), false);
 });
 
-test('Yeldenne keeps its ward score, its three branch heads and the tribes\' two texts', () => {
-  const y = BASE.regional_yeldenne;
-  const wardsSum = y.focuses.filter(f => ['the_long_watch', 'wake_the_wards', 'the_frozen_gate', 'glernaens_old_protections', 'the_hall_of_pillars', 'the_unyielding_hall'].includes(f.key))
-    .flatMap(f => f.effects).filter(e => e.call === 'zin_yeldenne_add_wards').reduce((n, e) => n + e.args.value, 0);
-  assert.equal(wardsSum, 5 + 10 + 5 + 15 + 10 + 15);
-  assert.equal(find(BASE, 'regional_yeldenne', 'the_tribes_of_the_ice').effects.at(-1).if.else[0].event, 'tribes_of_the_ice');
-  assert.equal(Object.keys(y.opinion_modifiers).length, 3);
-  assert.equal(Object.keys(y.scripted_effects).length, 3);
+test('K56: the Yeldenne tree is retired; no regional tree is compiled under its name and its data file is gone', () => {
+  assert.equal(compiled.has('regional_yeldenne'), false);
+  assert.equal(existsSync(`${ZIN}/docs/design/focus/regional_yeldenne.json`), false, 'Yeldenne is a town in Pertolor\'s land, not a country');
+  assert.equal(existsSync(`${ZIN}/tools/content/data/focus_registry_regional_d.json`), true);
 });
 
 // ------------------------------------------------------------------------------------------------ negative cases

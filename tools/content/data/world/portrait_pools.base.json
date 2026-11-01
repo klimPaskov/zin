@@ -173,11 +173,6 @@
  ],
  "ownerPending": [
   {
-   "id": "zin_horos",
-   "question": "Q-32",
-   "fallback": "the culture pool portrait (until the owner approves the named portrait)"
-  },
-  {
    "id": "zin_varner",
    "question": "Q-32",
    "fallback": "the culture pool portrait (until the owner approves the named portrait)"
@@ -2187,19 +2182,19 @@
     },
     {
      "id": "zin_regional_yeldenne_aldek",
-     "tag": "YEL"
+     "tag": "PRT"
     },
     {
      "id": "zin_regional_yeldenne_ezhkar",
-     "tag": "YEL"
+     "tag": "PRT"
     },
     {
      "id": "zin_regional_yeldenne_stenulv",
-     "tag": "YEL"
+     "tag": "PRT"
     },
     {
      "id": "zin_regional_yeldenne_zenvar",
-     "tag": "YEL"
+     "tag": "PRT"
     },
     {
      "id": "FEA_zin_ruler",
@@ -2355,7 +2350,7 @@
     },
     {
      "id": "zin_regional_yeldenne_alddok",
-     "tag": "YEL"
+     "tag": "PRT"
     },
     {
      "id": "zin_regional_fearno_ilse",
@@ -2468,35 +2463,7 @@
    ],
    "members": []
   },
-  {
-   "key": "ice_clans.men.none",
-   "culture": "ice_clans",
-   "people": "men",
-   "sex": "none",
-   "size": 1,
-   "characters": [
-    {
-     "id": "zin_yeldenne_warden",
-     "tag": "YEL"
-    }
-   ],
-   "members": []
-  },
-  {
-   "key": "ice_clans.spirits.male",
-   "culture": "ice_clans",
-   "people": "spirits",
-   "sex": "male",
-   "size": 1,
-   "characters": [
-    {
-     "id": "zin_horos",
-     "tag": "YEL"
-    }
-   ],
-   "members": []
-  },
-  {
+{
    "key": "ice_giants.giants.female",
    "culture": "ice_giants",
    "people": "giants",

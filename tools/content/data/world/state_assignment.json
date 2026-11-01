@@ -4,14 +4,14 @@
  "note": "The old generated map's 1,332 states given to the 156 realms of roster.json until the new map from the owner's drawing replaces it. Every state carries its rule and reason so that the politics step can redo the assignment on the new map: kept and renamed rows keep their states, merged rows give them to the target, split rows divide them by nearest seat, removed rows give them to the realm or the wild-land holder named in `rules`, and realms with no old row take the states their dossier describes (`rules.carve`). The extent of most realms on this map differs from their roster `extent`; `realms` lists both counts. Owner decisions K35 (Tirlan) and K36 (the Concord) are followed.",
  "counts": {
   "states": 1332,
-  "kept": 621,
+  "kept": 620,
   "renamed": 234,
-  "merged": 402,
+  "merged": 403,
   "carved": 23,
   "split": 36,
   "wild": 11,
   "removed": 5,
-  "realms": 156,
+  "realms": 155,
   "landless": 0
  },
  "rules": {
@@ -356,14 +356,6 @@
    "name": "Ollondo",
    "rosterCapital": "Ollondo",
    "reason": "The old capital of Horidor (Y03)."
-  },
-  {
-   "realm": "yeldenne",
-   "tag": "YEL",
-   "state": 1063,
-   "name": "Simoto",
-   "rosterCapital": "Simoto",
-   "reason": "The old capital of Yeldenne (Y8H)."
   },
   {
    "realm": "girdon",
@@ -1570,12 +1562,6 @@
    "extentStates": null
   },
   {
-   "realm": "yeldenne",
-   "tag": "YEL",
-   "states": 1,
-   "extentStates": 1
-  },
-  {
    "realm": "girdon",
    "tag": "GIR",
    "states": 6,
@@ -1800,7 +1786,7 @@
   {
    "realm": "pertolor",
    "tag": "PRT",
-   "states": 17,
+   "states": 18,
    "extentStates": null
   },
   {
@@ -13018,10 +13004,10 @@
    "name": "Simoto",
    "oldOwner": "Y8H",
    "oldName": "Yeldenne",
-   "owner": "YEL",
-   "realm": "yeldenne",
-   "rule": "kept",
-   "reason": "Yeldenne (Y8H) continues as Yeldenne."
+   "owner": "PRT",
+   "realm": "pertolor",
+   "rule": "merged",
+   "reason": "Yeldenne (Y8H) joins Pertolor."
   },
   {
    "id": 1064,

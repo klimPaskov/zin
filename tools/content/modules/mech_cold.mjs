@@ -90,9 +90,10 @@ export async function buildMechCold(staged, ctx) {
   const cold = ctx.countries.filter(c => c.scan === R.scan);
   if (cold.length !== R.expectedCountries) throw new Error(`The roster has ${cold.length} ${R.scan} countries, the data expects ${R.expectedCountries}`);
   const tag = n => { const c = found.get(n) ?? others.get(n); if (!c) throw new Error(`${n} is not resolved`); return c.tag; };
-  const COL = tag('Coldor'), ISE = tag('Melkgard'), YEL = tag('Yeldenne'), HOR = tag('Horidor'), WIN = tag('Vindael'), GUN = tag('Gunwyn'), AEN = tag('Aenor');
+  // K56: Yeldenne is a place in Pertolor's land; Pertolor keeps the hall (its state's owner) and is a clan realm like the rest.
+  const COL = tag('Coldor'), ISE = tag('Melkgard'), KEEPER = tag('Pertolor'), HOR = tag('Horidor'), WIN = tag('Vindael'), GUN = tag('Gunwyn'), AEN = tag('Aenor');
   const pactTag = p => tag(p.country);
-  const clans = cold.filter(c => ![COL, ISE, YEL].includes(c.tag));
+  const clans = cold.filter(c => ![COL, ISE].includes(c.tag));
   for (const name of Object.keys(R.leans)) if (!clans.some(c => c.name === name)) throw new Error(`The lean table names ${name}, which is not a lean-holding Cold Lands country`);
   const textTags = new Map([...found, ...others].map(([n, c]) => [n, c.tag]));
   const T = new Texts(Object.fromEntries(Object.entries(data.text).map(([k, v]) => [k, resolveText(v, { tags: textTags, numbers: N })])));
@@ -106,8 +107,8 @@ export async function buildMechCold(staged, ctx) {
   const trig = [];
   const T_ = (id, body, note) => { defs.triggers.push(id); trig.push(`${note ? `# ${note}\n` : ''}${id} = {\n${ind(1, fmt(body))}\n}`); };
   T_('zin_cold_is_cold', 'has_country_flag = zin_region_cold_lands', 'A Cold Lands country by its roster region (the economy slice sets the flag on startup).');
-  T_('zin_cold_is_clan_realm', `zin_cold_is_cold = yes\nhas_variable = zin_cold_lean\nNOT = {\n  original_tag = ${COL}\n  original_tag = ${ISE}\n  original_tag = ${YEL}\n}`,
-    'Every lean-holding Cold Lands country: the clans, Horidor, Holdon, Fearno, Windwaith, the Yeti Lands and Titanos; never Coldor, Isengard or Yeldenne.');
+  T_('zin_cold_is_clan_realm', `zin_cold_is_cold = yes\nhas_variable = zin_cold_lean\nNOT = {\n  original_tag = ${COL}\n  original_tag = ${ISE}\n}`,
+    'Every lean-holding Cold Lands country: the clans, Horidor, Holdon, Fearno, Windwaith, the Yeti Lands and Titanos; never Coldor or Isengard.');
   T_('zin_cold_historical', 'zin_rules_ai_branch_cold_historical = yes', 'zin_rule_cold_isengard resolves to HISTORICAL (directly, or DEFAULT under the historical path), through the rules wrapper.');
   for (const [key, [y, m, d]] of Object.entries(N.dates)) {
     const id = `zin_cold_date_${key}`;
@@ -621,7 +622,7 @@ if = {
     country_exists = ${COL}
     ${COL} = {
       has_idea = zin_cold_hall_guard
-      NOT = { has_guaranteed = ${YEL} }
+      NOT = { has_guaranteed = ${KEEPER} }
     }
   }
   ${COL} = { remove_ideas = zin_cold_hall_guard }
@@ -903,6 +904,6 @@ ${monthly}
   return {
     files: [...files.keys(), 'localisation/english/zin_cold_l_english.yml'].sort(), text: entries, definitions: defs, dependencies: COLD_DEPENDENCIES, externalEvents: [],
     counts: { effects: defs.effects.length, triggers: defs.triggers.length, events: defs.events.length, decisions: defs.decisions.length, categories: defs.categories.length, ideas: defs.ideas.length, opinions: defs.opinions.length, dynamicModifiers: defs.dynamicModifiers.length, aiStrategies: defs.aiStrategies.length, textKeys: Object.keys(entries).length },
-    tags: { coldor: COL, isengard: ISE, yeldenne: YEL, horidor: HOR, windwaith: WIN, gunwaith: GUN, aenor: AEN, yeti: pactTag(PACTS[0]), titanos: pactTag(PACTS[1]), clanRealms: clans.length, cold: cold.map(c => c.tag) },
+    tags: { coldor: COL, isengard: ISE, keeper: KEEPER, horidor: HOR, windwaith: WIN, gunwaith: GUN, aenor: AEN, yeti: pactTag(PACTS[0]), titanos: pactTag(PACTS[1]), clanRealms: clans.length, cold: cold.map(c => c.tag) },
   };
 }

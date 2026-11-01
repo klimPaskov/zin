@@ -66,12 +66,12 @@
   "kinNote": "G7: men with men, elves with elves; giants, orcs and dwarves among themselves. The small folk and the gnomes marry among men, the yeti among the giants, every goblin-kind among the orcs (proposed). Ents, the Baelim, the mycids, the demons, the dead and the spirits make no royal matches."
  },
  "storyRulers": {
-  "characters": ["AEN_zin_ruler", "zin_aurevan", "zin_lorien", "zin_volgan", "zin_horos", "zin_zol_will", "NET_zin_ruler", "zin_eindil"],
-  "traits": ["zin_trait_ancient_king", "zin_yeldenne_warden_trait"],
-  "realms": ["Aenor", "Worshipdom", "Puvulan", "Zol's Mistake", "Yeldenne"],
-  "note": "The Golden King (while the Aenor mechanic owns his death), Aurevan, Lorien, Volgan, Horos, the Will of Zol, the King of Demons, every ancient king and the Warden of Yeldenne, and the heir if he ever rules. Aenor's whole line of rulers (the King, the regencies, the crowned god-king and the crowned heir) belongs to the court mechanic, and the Worshipdom, Puvulan, Zol's Mistake and Yeldenne are ruled by figures the story owns."
+  "characters": ["AEN_zin_ruler", "zin_aurevan", "zin_lorien", "zin_volgan", "zin_zol_will", "NET_zin_ruler", "zin_eindil"],
+  "traits": ["zin_trait_ancient_king"],
+  "realms": ["Aenor", "Worshipdom", "Puvulan", "Zol's Mistake"],
+  "note": "The Golden King (while the Aenor mechanic owns his death), Aurevan, Lorien, Volgan, the Will of Zol, the King of Demons, every ancient king, and the heir if he ever rules. Aenor's whole line of rulers (the King, the regencies, the crowned god-king and the crowned heir) belongs to the court mechanic, and the Worshipdom, Puvulan and Zol's Mistake are ruled by figures the story owns."
  },
- "historicalCourts": ["Selen", "Girdon", "Yeldenne"],
+ "historicalCourts": ["Selen", "Girdon"],
  "crisisPending": [
   { "realm": "Aenor", "until": "zin_path_cp06_done", "trigger": "zin_aenor_is_realm = yes" },
   { "realm": "Worshipdom" },

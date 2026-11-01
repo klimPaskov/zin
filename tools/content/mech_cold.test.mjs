@@ -26,7 +26,8 @@ const DATA = await loadColdData();
 const clone = v => JSON.parse(JSON.stringify(v));
 const tagOf = n => countries.find(c => c.name === n).tag;
 // Melkgard holds Isengard's role, Vindael Windwaith's, Gunwyn Gunwaith's and Nivaros the Titanos giants' (roster of 24 October 2026).
-const COL = tagOf('Coldor'), ISE = tagOf('Melkgard'), YEL = tagOf('Yeldenne'), HOR = tagOf('Horidor'), WIN = tagOf('Vindael'), GUN = tagOf('Gunwyn');
+// K56: Yeldenne is a town in Pertolor's land; Pertolor is the hall's keeper and a clan realm like the rest.
+const COL = tagOf('Coldor'), ISE = tagOf('Melkgard'), KEEP = tagOf('Pertolor'), HOR = tagOf('Horidor'), WIN = tagOf('Vindael'), GUN = tagOf('Gunwyn');
 const COLD = countries.filter(c => c.scan === 'Cold Lands');
 
 async function build(mutate) {
@@ -69,8 +70,8 @@ const events = text => parse(text).filter(e => /^(country|news)_event$/.test(e.k
 
 // ------------------------------------------------------------------------------------------------ the spec's values (cold_lands.md)
 const SPEC = {
-  // The roster of 24 October 2026 counts 20 Cold Lands realms (the data's expected count); all but Coldor, Melkgard and Yeldenne hold a lean.
-  coldCountries: DATA.roster.expectedCountries, clanRealms: DATA.roster.expectedCountries - 3,
+  // The roster counts 19 Cold Lands realms after K56 (Yeldenne retired, 20 before); all but Coldor and Melkgard hold a lean.
+  coldCountries: DATA.roster.expectedCountries, clanRealms: DATA.roster.expectedCountries - 2,
   defiance: 70, swear: 30, court: 80, marchDark: 15, marchDefiance: 80, reachDefiance: 40,
   reach: { crown: 1.5, member: 1, divisor: 150, pp: 400, winter: 500 },
   drift: { reach: 0.3, war: 0.3, bread: 0.5, court: 0.5 },
@@ -113,9 +114,9 @@ function specProblems(v) {
   // Start values (section "The situation on 1 Thaw 4A 1748", section 2)
   need(has(startup, `set_variable = { zin_cold_isengard_defiance = ${SPEC.defiance} }`), 'start defiance');
   for (const [n, l] of Object.entries(SPEC.leans)) need(has(startup, `${tagOf(n)} = { set_variable = { zin_cold_lean = ${l} } }`), `start lean of ${n}`);
-  const others = COLD.filter(c => ![COL, ISE, YEL].includes(c.tag) && !(c.name in SPEC.leans));
+  const others = COLD.filter(c => ![COL, ISE].includes(c.tag) && !(c.name in SPEC.leans));
   for (const c of others) need(has(startup, `${c.tag} = {\n\t\tset_variable = { zin_cold_lean = ${SPEC.otherLean} }\n\t\tif = {\n\t\t\tlimit = { is_neighbor_of = ${ISE} }\n\t\t\tset_variable = { zin_cold_lean = ${SPEC.borderLean} }`), `start lean of ${c.name}`);
-  need([COL, ISE, YEL].every(t => !has(startup, `${t} = { set_variable = { zin_cold_lean`) && !has(startup, `${t} = {\n\t\tset_variable = { zin_cold_lean`)), 'Coldor, Isengard and Yeldenne hold no lean');
+  need([COL, ISE].every(t => !has(startup, `${t} = { set_variable = { zin_cold_lean`) && !has(startup, `${t} = {\n\t\tset_variable = { zin_cold_lean`)), 'Coldor and Isengard hold no lean');
   for (const [a, b] of [[COL, ISE], [ISE, COL]]) need(has(startup, `${a} = { add_opinion_modifier = { target = ${b} modifier = zin_opinion_cold_rivalry } }`), `rivalry ${a} -> ${b}`);
   need(has(startup, 'add_ideas = zin_coldor_ports_against_interior') && has(startup, 'add_dynamic_modifier = { modifier = zin_cold_reach_mod }'), 'Coldor start spirit and reach modifier');
   need(has(startup, 'add_dynamic_modifier = { modifier = zin_cold_far_ice }') && has(startup, 'zin_is_region_far_northwest = yes'), 'far ice on the far north-west');
@@ -337,7 +338,7 @@ function dateProblems(text, dates) {
 // ------------------------------------------------------------------------------------------------ tests
 test('Counts: what the module writes matches the spec\'s tables', () => {
   assert.equal(COLD.length, SPEC.coldCountries);
-  assert.equal(R.tags.clanRealms, SPEC.clanRealms, 'every Cold Lands country but Coldor, Isengard and Yeldenne holds a lean');
+  assert.equal(R.tags.clanRealms, SPEC.clanRealms, 'every Cold Lands country but Coldor and Isengard holds a lean');
   assert.deepEqual(R.definitions.categories, ['zin_cold_accord', 'zin_cold_isengard', 'zin_cold_trade']);
   assert.deepEqual([...R.definitions.decisions].sort(), Object.keys(SPEC.decisions).sort(), 'nine decisions of the spec and the two cost variants');
   assert.deepEqual([...R.definitions.ideas].sort(), [...Object.keys(SPEC.spirits), 'zin_cold_far_ice_charted_idea'].sort());
@@ -630,7 +631,7 @@ test('Monthly runner: no every-country pulse; a per-tag hook for each Cold Lands
   assert(monthly.trimEnd().endsWith('every_country = {\n\t\tlimit = { zin_cold_is_cold = yes }\n\t\tmark_focus_tree_layout_dirty = yes\n\t}\n}'), 'layouts last');
   assert(monthly.startsWith('zin_cold_monthly = {\n\tset_global_flag = { flag = zin_cold_month_ran days = '), 'a tie runs once a month');
   assert(block(TR, 'zin_cold_is_runner').includes('NOT = { has_global_flag = zin_cold_month_ran }'));
-  assert(monthly.includes(`has_guaranteed = ${YEL}`) && monthly.includes('remove_ideas = zin_cold_hall_guard'), 'the hall guard lasts while the guarantee stands');
+  assert(monthly.includes(`has_guaranteed = ${KEEP}`) && monthly.includes('remove_ideas = zin_cold_hall_guard'), 'the hall guard lasts while the guarantee stands');
 });
 
 test('Negative: an every-country on_monthly is refused', () => {
@@ -644,7 +645,7 @@ test('Accord and Isengard: swearing, the Iron Hand charter, the counter-decision
   const monthly = block(EF, 'zin_cold_monthly');
   assert(monthly.includes('has_country_flag = zin_cold_iron_hand') && monthly.includes('has_country_flag = zin_cold_march_war_fought') && monthly.includes('set_global_flag = zin_cold_charter_sent') && monthly.includes('id = zin_cold.30'), 'the charter at the sword\'s point, once');
   for (const id of ['zin_cold_winter_gifts', 'zin_cold_isengard_feeds']) assert(block(DEC, id).includes(`original_tag = ${ISE}`) && block(DEC, id).includes('FROM = { is_neighbor_of = ROOT }'), `${id} is Isengard's and aims at neighbours`);
-  assert(block(TR, 'zin_cold_is_clan_realm').includes(`original_tag = ${YEL}`) && block(TR, 'zin_cold_is_clan_realm').includes('has_variable = zin_cold_lean'));
+  assert(block(TR, 'zin_cold_is_clan_realm').includes(`original_tag = ${COL}`) && !block(TR, 'zin_cold_is_clan_realm').includes(`original_tag = ${KEEP}`) && block(TR, 'zin_cold_is_clan_realm').includes('has_variable = zin_cold_lean'), 'K56: the hall keeper is a clan realm');
 });
 
 test('Old pacts: level one by answer, AI 60 + lean / 2, doubled when open, nil when apart; renewal after 180 days, never against an apart people', () => {

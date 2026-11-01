@@ -8,7 +8,7 @@
   "seatCodes": { "seals": 1, "censers": 2, "whispers": 3, "relics": 4 },
   "artifactCodes": { "ring": 1, "crown": 2, "bracelet": 3, "necklace": 4 },
   "regionCodes": { "middle_lands": 1, "north_lands": 2, "cold_lands": 3, "west_lands": 4, "tritons_islands": 5, "dark_lands": 6, "magical_lands": 7, "zols_mistake": 8, "ember_lands": 9, "east_lands": 10, "islands_of_the_south": 11, "lands_of_the_sun": 12 },
-  "caps": { "zero": ["Puvulan", "Khorvrath", "Dolon", "Nezer", "Zol's Mistake", "Yeldenne"], "elves": 2, "aenor": 5, "base": 3 },
+  "caps": { "zero": ["Puvulan", "Khorvrath", "Dolon", "Nezer", "Zol's Mistake"], "elves": 2, "aenor": 5, "base": 3 },
   "footholdRows": [
     { "match": { "name": "Aenor" }, "start": 5 },
     { "match": { "overlord": "Aenor", "people": "men", "notName": "Selen" }, "start": 2 },
@@ -17,7 +17,7 @@
     { "match": { "name": "Fotan" }, "start": 1 },
     { "match": { "name": ["Cursed Lands", "Bloody Forest"] }, "start": 0 },
     { "match": { "region": "ember_lands", "people": "men", "notName": "Mirolon" }, "start": 1 },
-    { "match": { "region": "cold_lands", "notName": "Yeldenne" }, "start": 1 },
+    { "match": { "region": "cold_lands" }, "start": 1 },
     { "match": { "name": ["Alerhia", "Erco", "Plutondo", "Miaed", "Noris", "Stabilo"] }, "start": 3 },
     { "match": { "region": "east_lands" }, "start": 2 },
     { "match": { "name": ["Lerendor", "Dondor"] }, "start": 2 },

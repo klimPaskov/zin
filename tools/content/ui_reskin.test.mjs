@@ -633,7 +633,8 @@ test('jobs: one imagegen job per sheet, with the layout check and the family pre
   const sheets = new Map(FIXED_SHEETS.map(s => [s.id, s])), all = reskinJobs({ sheets, rawDir: '/art/raw' });
   assert.equal(all.jobs.length, FIXED_SHEETS.length); assert.ok(all.jobs.every((j, i, a) => i === 0 || a[i - 1].tranche <= j.tranche), 'ordered by production step');
   assert.equal(reskinJobs({ sheets, rawDir: '/art/raw', tranche: 5 }).jobs.every(j => j.tranche === 5), true);
-  assert.equal(reskinJobs({ sheets, rawDir: '/art/raw', family: 'topbar' }).jobs.map(j => j.sheet).join(), 'ui-topbar');
+  // the top bar's fixed sheets: the band and plates, and the values and count badges of UI lane W1
+  assert.equal(reskinJobs({ sheets, rawDir: '/art/raw', family: 'topbar' }).jobs.map(j => j.sheet).join(), 'icons-topbar-badges,icons-topbar-values,ui-topbar');
   const waiting = new Map([['icons-alerts-1', { id: 'icons-alerts-1', family: 'alerts', kind: 'grid', aspect: '1:1', grid: [6, 6], ground: 'black', matte: 'outline', needs: ['alert_frames.json'], tranche: 10, cells: [{ key: 'a', subject: 's', lum: 'dark' }] }]]);
   assert.equal(reskinJobs({ sheets: waiting, dataPresent: () => false }).blocked[0].needs[0], 'alert_frames.json');
   assert.equal(reskinJobs({ sheets: waiting, dataPresent: () => true }).jobs.length, 1);

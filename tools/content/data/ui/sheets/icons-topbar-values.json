@@ -1,0 +1,34 @@
+{
+ "id": "icons-topbar-values",
+ "family": "topbar",
+ "kind": "grid",
+ "aspect": "4:3",
+ "grid": [
+  4,
+  3
+ ],
+ "ground": "black",
+ "matte": "outline",
+ "group": "topbar_values",
+ "needs": [],
+ "note": "UI overhaul lane W1: the top bar values whose sockets were empty, painted to match the attached top bar icon sheet (the same dark walnut plaque with a thin bronze rim and corner rivets, and the same gilded bronze emblem style), so they sit beside the existing top bar icons. The last two items are map-mode buttons and follow the attached map-mode sheet instead: a dark slate tile with a riveted iron rim and a bronze relief glyph.",
+ "references": [
+  "ui/reskin/icons-topbar.png",
+  "ui/reskin/icons-mapmodes.png"
+ ],
+ "cells": [
+  { "key": "tv_army_speed", "subject": "a square walnut plaque with a bronze rim showing a gilded bronze horseshoe with three short trailing speed lines behind it (marching speed)", "lum": "dark" },
+  { "key": "tv_research_speed", "subject": "a square walnut plaque with a bronze rim showing a small gilded hourglass standing beside an open book (speed of learning)", "lum": "dark" },
+  { "key": "tv_construction_speed", "subject": "a square walnut plaque with a bronze rim showing a mason's trowel laid across two stacked stone blocks (speed of building)", "lum": "dark" },
+  { "key": "tv_convoys", "subject": "a square walnut plaque with a bronze rim showing a small round-hulled merchant cog under one square sail on three wavy lines (merchant ships)", "lum": "dark" },
+  { "key": "tv_faction", "subject": "a tall upright walnut plaque, about two thirds as wide as it is tall, with a bronze rim, showing three small pennants bound together on one gilded staff (an alliance of realms)", "lum": "dark" },
+  { "key": "tv_faction_empty", "subject": "the same tall upright walnut plaque with a bronze rim, showing one bare gilded staff with an empty crossbar and a loose cord (no alliance)", "lum": "dark" },
+  { "key": "tv_wildfire", "subject": "a square walnut plaque with a bronze rim showing a round sealed clay fire-pot bound with cord, a short twisted fuse on top", "lum": "dark" },
+  { "key": "tv_deeds", "subject": "a round walnut medallion with a bronze rim showing a small gilded laurel wreath", "lum": "dark" },
+  { "key": "tv_dismissed_alerts", "subject": "a round walnut medallion with a bronze rim showing a small bronze hand bell lying on its side", "lum": "dark" },
+  { "key": "tv_attacker_speed", "subject": "a square walnut plaque with a bronze rim showing a gilded lance head pointing right with three short trailing speed lines (speed of the attack)", "lum": "dark" },
+  { "key": "mm_footholds_off", "subject": "a square map-mode button: a dark slate tile with a dull riveted iron rim, a small pilgrim house with a pitched roof and one lit round window in dull bronze relief (unselected)", "lum": "dark" },
+  { "key": "mm_footholds_on", "subject": "exactly the same map-mode button and the same house, but with a bright gilded rim and a brighter gold relief (selected)", "lum": "mid" }
+ ],
+ "tranche": 5
+}

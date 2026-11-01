@@ -27,6 +27,18 @@ export async function sliceOne(file, outFile) {
   return 1;
 }
 
+// Full-bleed (lead, 25 October 2026): the flag cloth fills the whole canvas edge to edge, so no detector is needed. The canvas is
+// trimmed evenly at the top and bottom to exactly 41:26 (a 1536 by 1024 canvas loses about 2.4 percent of its height) and resized.
+export async function sliceFullBleed(file, outFile) {
+  const meta = await sharp(file).metadata();
+  const W = meta.width, H = meta.height;
+  const h = Math.round(W / FLAG_RATIO);
+  if (h > H) throw new Error(`${path.basename(file)}: full-bleed canvas ${W}x${H} is narrower than 41:26`);
+  const top = Math.floor((H - h) / 2);
+  await sharp(file).extract({ left: 0, top, width: W, height: h }).resize(FLAG_W, FLAG_H, { fit: 'fill', kernel: 'lanczos3' }).png({ compressionLevel: 9 }).toFile(outFile);
+  return 1;
+}
+
 export async function sliceSheet(file, cells, outDir) {
   if (cells.length === 1) { await mkdir(outDir, { recursive: true }); await sliceOne(file, path.join(outDir, `${flagKey(cells[0].name)}.png`)); return 1; }
   const found = await findRegionsAdaptive(file, cells.length, { cols: 4, rows: Math.max(...cells.map(c => c.rows)), aspect: [1.1, 2.2], minAreaFraction: 1 / 3 });

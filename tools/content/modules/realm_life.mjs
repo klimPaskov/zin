@@ -108,7 +108,7 @@ export function realmPlan(countries, D, courts = loadCharacterData()) {
     raiders: tags(D.raiders.realms), corsairs: tags(D.raiders.styles.corsair), steppe: tags(D.raiders.styles.steppe),
     historicalCourts: tags(D.historicalCourts), storyRealms: [...storyRealms],
     shelterGoldenKing: tags(D.goldenKingShelter),
-    aenor: need('Aenor'), worshipdom: need('Worshipdom').tag, volgan: need('Puvulan').tag, zol: need("Zol's Mistake").tag, yeldenne: need('Yeldenne').tag,
+    aenor: need('Aenor'), worshipdom: need('Worshipdom').tag, volgan: need('Puvulan').tag, zol: need("Zol's Mistake").tag,
     gala: need('Gala').tag, mirolon: need('Mirolon').tag, selen: need('Selen').tag, gunwyn: need('Gunwyn').tag, girdon: need('Girdon').tag, lerendor: need('Lerendor').tag,
     crisisPending: D.crisisPending.map(p => ({ ...p, tag: need(p.realm).tag })),
   };
@@ -135,7 +135,7 @@ const c = k => `constant:zin_realm.${k}`;
 export function realmScripts(D, plan, heirs) {
   const C = D.constants;
   const T = {}, E = {};
-  const AEN = plan.aenor.tag, PUV = plan.volgan, ZOL = plan.zol, WOR = plan.worshipdom, YEL = plan.yeldenne;
+  const AEN = plan.aenor.tag, PUV = plan.volgan, ZOL = plan.zol, WOR = plan.worshipdom;
   const heirRows = plan.rows.filter(r => heirs.has(r.tag));
   const stances = Object.keys(stanceIdeology);
   const groups = ['democratic', 'fascism', 'communism', 'neutrality'];
@@ -153,10 +153,10 @@ export function realmScripts(D, plan, heirs) {
   T.zin_realm_is_monarchy = `# G7: the royal houses that make matches (the forms of rule of data/realm_life.json).\n${tagOr(plan.rows.filter(r => r.monarchy).map(r => r.tag))}`;
   T.zin_realm_story_court = `# Courts the chronicle names (their rulers do not die of age on the historical path).\n${tagOr(plan.historicalCourts)}`;
   T.zin_realm_is_story_ruler = list('# G1 to G4 exemption: a canon figure or a story ruler leads, or the realm\'s rulers are a story mechanic\'s (the Aenor court, the Worshipdom,',
-    '# Volgan, Zol, Yeldenne).', 'OR = {',
+    '# Volgan, Zol).', 'OR = {',
     D.storyRulers.characters.map(id => `has_country_leader = { character = ${id} ruling_only = yes }`),
     D.storyRulers.traits.map(t => `has_country_leader_with_trait = ${t}`),
-    'zin_aenor_is_realm = yes', [WOR, PUV, ZOL, YEL].map(t => `original_tag = ${t}`), '}');
+    'zin_aenor_is_realm = yes', [WOR, PUV, ZOL].map(t => `original_tag = ${t}`), '}');
   T.zin_realm_story_pending = list('# Story realms whose beat is pending (data/realm_life.json crisisPending, those with an end): Mirolon\'s watch and Gala\'s court, among others.',
     tagOr([], plan.crisisPending.filter(p => p.until).map(p => `AND = {\n${p.trigger ?? `original_tag = ${p.tag}`}\nNOT = { has_global_flag = ${p.until} }\n}`)));
   T.zin_realm_mortal = list('# G1: the ruler ages. On the historical path tier A rulers and the courts the chronicle names never die of age; a story realm\'s ruler',
@@ -187,8 +187,8 @@ export function realmScripts(D, plan, heirs) {
     '# god is dead, whose autonomy rule decides).', 'OR = {', 'zin_aenor_is_concord_dominion = yes', `is_subject_of = ${PUV}`, `is_subject_of = ${ZOL}`,
     'OVERLORD = { zin_aenor_is_realm = yes }', 'AND = {', 'has_country_flag = zin_afrit_eastern_client', 'NOT = { has_global_flag = zin_afrit_dead }', '}', '}');
   T.zin_realm_story_war_side = list('# G6: a party whose wars a story owner ends (the court of Aenor, the Deliverer\'s seat, the dark powers and their sworn realms, Mirolon,',
-    '# Gala, Selen, the Grey Ford pair, Lerendor, Yeldenne, the heir\'s host, and the clients of the East while the false god lives).', 'OR = {', 'zin_aenor_is_realm = yes',
-    [WOR, PUV, ZOL, plan.mirolon, plan.gala, plan.selen, plan.gunwyn, plan.girdon, plan.lerendor, YEL].map(t => `original_tag = ${t}`),
+    '# Gala, Selen, the Grey Ford pair, Lerendor, the heir\'s host, and the clients of the East while the false god lives).', 'OR = {', 'zin_aenor_is_realm = yes',
+    [WOR, PUV, ZOL, plan.mirolon, plan.gala, plan.selen, plan.gunwyn, plan.girdon, plan.lerendor].map(t => `original_tag = ${t}`),
     `is_subject_of = ${PUV}`, `is_subject_of = ${ZOL}`, 'has_character = zin_eindil', 'AND = {', 'has_country_flag = zin_afrit_eastern_client', 'NOT = { has_global_flag = zin_afrit_dead }', '}', '}');
   T.zin_realm_may_pledge = '# G7: the match may be sealed with a guarantee (not where a story mechanic owns the bonds of either house).\nNOT = { zin_realm_alliance_owned = yes }\nevent_target:zin_realm_match_answer = {\nexists = yes\nNOT = { zin_realm_alliance_owned = yes }\n}\nNOT = { has_guaranteed = event_target:zin_realm_match_answer }';
   T.zin_realm_may_answer_kin = '# G7: we can go to war beside our kin.\nhas_capitulated = no\nevent_target:zin_realm_kin_foe = { exists = yes }\nNOT = { has_war_with = event_target:zin_realm_kin_foe }\nNOT = { is_in_faction_with = event_target:zin_realm_kin_foe }';

@@ -406,61 +406,6 @@
       "canon": "proposed"
     },
     {
-      "name": "Yeldenne",
-      "tag": "YEL",
-      "founding": {
-        "year": 2825,
-        "date": "2A 1150",
-        "story": "Herders and charcoal-burners from the Ormolak country settled the sheltered valley of Mp'E around 2A 1150, below a castle that was already old and already silent. Their first headman, Sten Ezhson, set the custom the valley still keeps: a loaf is left each Long Dark at the start of the Silent Road that climbs to the castle, and nobody walks on, because the folk of Simoto believe that the Watcher in the Hall is a sleeping king of the old north who will wake if the valley ever breaks its bread."
-      },
-      "dynasties": [
-        {
-          "name": "The headmen of Simoto, Sten Ezhson's line",
-          "from": 2825,
-          "date": "2A 1150",
-          "notable": "The valley chooses its headman from the founder's kin; he keeps the bread-custom and the valley's peace with both crowns. Above the town, the lord of the hall, whom the valley names Horos, has never been seen to come down."
-        }
-      ],
-      "events": [
-        {
-          "name": "The First Loaf",
-          "year": 2825,
-          "date": "2A 1150",
-          "summary": "Sten Ezhson laid the first loaf at the start of the Silent Road, and the valley has never let a Long Dark pass without one."
-        },
-        {
-          "name": "The Warlord's Climb",
-          "year": 6077,
-          "date": "4A 1009",
-          "summary": "A warlord of Melkgard who meant to tax the valley sent twenty oath-men up the Silent Road; none came back down, and since then neither Melkgard nor Coldor has asked Mp'E for anything."
-        },
-        {
-          "name": "The Southern Pilgrims",
-          "year": 6716,
-          "date": "4A 1648",
-          "summary": "A party of southern scholars and temple folk reached Simoto asking about a castle in the ice; the headman fed them, refused them a guide and sent them home by the Ormolak Pass."
-        }
-      ],
-      "rivalries": [],
-      "capital": "Simoto",
-      "capitalReason": "Simoto is the ordinary town of the valley, on the only good ground below the Silent Road where the sheltered air lets barley ripen; the castle above it is the valley's mystery, not its seat.",
-      "today": "About three thousand herders and charcoal-burners live in the valley of Mp'E, paying no tax to anyone and keeping their loaf on the Silent Road. Travellers who come over the Ormolak Pass tell of a green light seen above the town at night; the headman tells them it is none of their business and gives them supper.",
-      "divergence": [
-        {
-          "id": "yel_warden_calls",
-          "what": "The headman calls the valley's men to guard the empty road to the hall when strangers come asking.",
-          "consequence": "The hall's defenders are mortal men with bows, few but forewarned, and a party that tries to force the road meets them first.",
-          "beat": "B15"
-        },
-        {
-          "id": "yel_bread_broken",
-          "what": "A hungry winter makes the valley eat the loaf it owes the Silent Road.",
-          "consequence": "The valley's belief says the Watcher will wake; what happens in the hall is not known, but the town would never be the same in its own eyes."
-        }
-      ],
-      "canon": "proposed"
-    },
-    {
       "name": "Fearno",
       "tag": "FEA",
       "founding": {
@@ -1057,6 +1002,12 @@
           "from": 5828,
           "date": "4A 760",
           "notable": "Descended from Hildra Hozening; the lordship passes to the eldest child, and the family marries into both crowns' houses when it can."
+        },
+        {
+          "name": "The headmen of Simoto, Sten Ezhson's line",
+          "from": 2825,
+          "date": "2A 1150",
+          "notable": "The valley chooses its headman from the founder's kin; he keeps the bread-custom and the valley's peace with both crowns. Above the town, the lord of the hall, whom the valley names Horos, has never been seen to come down."
         }
       ],
       "events": [
@@ -1084,12 +1035,30 @@
           "year": 6799,
           "date": "4A 1731",
           "summary": "Both crowns sent grain to the vale, and the lord took both and thanked both."
+        },
+        {
+          "name": "The First Loaf",
+          "year": 2825,
+          "date": "2A 1150",
+          "summary": "Sten Ezhson laid the first loaf at the start of the Silent Road, and the valley has never let a Long Dark pass without one."
+        },
+        {
+          "name": "The Warlord's Climb",
+          "year": 6077,
+          "date": "4A 1009",
+          "summary": "A warlord of Melkgard who meant to tax the valley sent twenty oath-men up the Silent Road; none came back down, and since then neither Melkgard nor Coldor has asked Mp'E for anything."
+        },
+        {
+          "name": "The Southern Pilgrims",
+          "year": 6716,
+          "date": "4A 1648",
+          "summary": "A party of southern scholars and temple folk reached Simoto asking about a castle in the ice; the headman fed them, refused them a guide and sent them home by the Ormolak Pass."
         }
       ],
       "rivalries": [],
       "capital": "Minsentia",
       "capitalReason": "Minsentia stands at the head of the sheep vale where the drove roads to Faaennar and the Ormolak country meet, the market-place of the vale's wool.",
-      "today": "About ninety thousand herders live in the sheep vale and on the Faaennar plain. The lord is cousin to the Winter Queen and godfather to a Melkgard captain, and he intends to stay both for as long as the crowns let him.",
+      "today": "About ninety thousand herders live in the sheep vale and on the Faaennar plain. The lord is cousin to the Winter Queen and godfather to a Melkgard captain, and he intends to stay both for as long as the crowns let him. The valley of Mp'E above the Ormolak Pass, with the town of Simoto and the castle above it, lies in the lordship's land; the headman keeps the loaf on the Silent Road every Long Dark.",
       "divergence": [
         {
           "id": "prt_choose_crown",
@@ -1104,7 +1073,18 @@
         {
           "id": "prt_due_unpaid",
           "what": "The ram's due goes unpaid for a Long Light, because of war in the vale or a lord who scorns the custom.",
-          "consequence": "The shepherds fear for their flocks and the lord's hold on the vale weakens, the town of Yeldenne shuts its doors to the vale's men, and nobody in the vale can say what the high ground will do, which is worse than any answer."
+          "consequence": "The shepherds fear for their flocks and the lord's hold on the vale weakens, the town of Simoto shuts its doors to the vale's men, and nobody in the vale can say what the high ground will do, which is worse than any answer."
+        },
+        {
+          "id": "prt_mp_warden_calls",
+          "what": "The headman calls the valley's men to guard the empty road to the hall when strangers come asking.",
+          "consequence": "The hall's defenders are mortal men with bows, few but forewarned, and a party that tries to force the road meets them first.",
+          "beat": "B15"
+        },
+        {
+          "id": "prt_mp_bread_broken",
+          "what": "A hungry winter makes the valley eat the loaf it owes the Silent Road.",
+          "consequence": "The valley's belief says the Watcher will wake; what happens in the hall is not known, but the town would never be the same in its own eyes."
         }
       ],
       "canon": "proposed"
@@ -1880,7 +1860,7 @@
     },
     {
       "name": "Simoto",
-      "country": "Yeldenne",
+      "country": "Pertolor",
       "role": "town",
       "size": "village",
       "founded": 2825,
@@ -1992,7 +1972,7 @@
     {
       "name": "The loaf on the Silent Road",
       "realms": [
-        "Yeldenne"
+        "Pertolor"
       ],
       "summary": "Each Long Dark the valley of Mp'E leaves a loaf at the start of the road to the castle, and nobody walks further.",
       "canon": "proposed"

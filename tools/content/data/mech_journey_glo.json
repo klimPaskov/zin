@@ -4,7 +4,7 @@
   "spec": "docs/specs/04_mechanics/yeldenne_and_glo.md",
   "note": "Data of the Yeldenne and Glo mechanic: tuning constants (script constants, integers; hundredths where a fraction is meant), the spirits, traits, dynamic modifiers and opinion modifiers of the spec, the decisions and the text of every event. Scripts live in the module.",
   "countries": {
-    "yeldenne": "Yeldenne",
+    "keeper": "Pertolor",
     "worshipdom": "Worshipdom",
     "volgan": "Puvulan",
     "zol": "Zol's Mistake",
@@ -12,12 +12,8 @@
     "coldor": "Coldor",
     "isengard": "Melkgard"
   },
-  "characters": {
-    "horos": "zin_horos",
-    "warden": "zin_yeldenne_warden",
-    "wardenPortrait": "GFX_zin_portrait_men_male_2",
-    "wardenStance": "zin_light_wardens"
-  },
+  "hallState": 1063,
+  "characters": {},
   "constants": {
     "wards_start": 50,
     "wards_max": 100,
@@ -110,25 +106,7 @@
       }
     }
   ],
-  "countryLeaderTraits": [
-    {
-      "id": "zin_horos_guardian",
-      "name": "Guardian of the Hall",
-      "desc": "He has kept one crystal and one oath through more ages than the chronicles number.",
-      "modifier": {
-        "stability_factor": 0.1,
-        "political_power_gain": 0.25
-      }
-    },
-    {
-      "id": "zin_yeldenne_warden_trait",
-      "name": "Warden of Mp'E",
-      "desc": "Chosen from the household that keeps the doors, the Warden rules as the hall's steward and never as its master.",
-      "modifier": {
-        "army_core_defence_factor": 0.05
-      }
-    }
-  ],
+  "countryLeaderTraits": [],
   "unitLeaderTraits": [
     {
       "id": "zin_glo_second_bearer",

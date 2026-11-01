@@ -11,6 +11,7 @@
 import { ZIN } from '../lib/paths.mjs';
 import { loadCatalogKeys } from '../lib/inst_util.mjs';
 import { Kit, loadMech, num, ge, gt, le, lt, eq, bump, call, ai, fmt } from '../lib/mp_kit.mjs';
+import { meterFill } from '../lib/mech_court_gui.mjs';
 
 export async function buildLerendor(staged, ctx) {
   const { countries } = ctx;
@@ -250,16 +251,9 @@ news_event = { id = zin_leren.60 }
     ...dark.map(c => ({ c, v: D.leans.dark[c.name] ?? D.leans.darkDefault })),
     { c: byName.get(R.andos_enda), v: D.leans.other[R.andos_enda] },
   ];
-  E_('zin_leren_ui_refresh', `set_variable = { zin_ui_standing_x = ${SD} }
-add_to_variable = { zin_ui_standing_x = 100 }
-multiply_variable = { zin_ui_standing_x = 2.6 }
-add_to_variable = { zin_ui_standing_x = 27 }
-set_variable = { zin_ui_cohesion_x = zin_leren_union_cohesion }
-multiply_variable = { zin_ui_cohesion_x = 5.2 }
-add_to_variable = { zin_ui_cohesion_x = 27 }
-set_variable = { zin_ui_hegemony_x = zin_leren_hegemony }
-multiply_variable = { zin_ui_hegemony_x = 5.2 }
-add_to_variable = { zin_ui_hegemony_x = 27 }
+  E_('zin_leren_ui_refresh', `${meterFill(SD, 'zin_ui_standing_fill', 'signed')}
+${meterFill('zin_leren_union_cohesion', 'zin_ui_cohesion_fill')}
+${meterFill('zin_leren_hegemony', 'zin_ui_hegemony_fill')}
 set_variable = { zin_ui_compact_members = 0 }
 every_country = {
 limit = {
@@ -268,7 +262,7 @@ is_in_faction_with = ${LER}
 }
 ${LER} = { add_to_variable = { zin_ui_compact_members = 1 } }
 }
-add_to_variable = { global.zin_ui_tick = 1 }`, 'Scope: Lerendor. Positions of the gauge markers of the Narrow Strait panel and the count of Compact crowns.');
+add_to_variable = { global.zin_ui_tick = 1 }`, 'Scope: Lerendor. Meter fills of the Narrow Strait panel and the count of Compact crowns.');
   E_('zin_leren_startup', `# Lerendor
 ${LER} = {
 save_global_event_target_as = zin_leren_country

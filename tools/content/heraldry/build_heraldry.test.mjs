@@ -63,9 +63,9 @@ test('owner canon: Hirolon sovereign, Tirlan its protectorate, the Concord chart
   assert.ok(!rec(doc, 'hirolon').marks.some((m) => m.tincture.overlord_mark));
   assert.ok(rec(doc, 'tirlan').marks.some((m) => m.mark === 'ward_border' && m.tincture.source === 'hill_giants'));
   for (const realm of src.roster.realms.filter((r) => r.overlord === 'aenor')) assert.ok(rec(doc, realm.key).marks.some((m) => m.mark === 'charter_border'), realm.key);
-  for (const realm of src.roster.realms.filter((r) => r.overlord === 'puvulan')) assert.ok(rec(doc, realm.key).marks.some((m) => m.mark === 'grave_base'), realm.key);
+  for (const realm of src.roster.realms.filter((r) => r.overlord === 'puvulan' && r.key !== 'dolon')) assert.ok(rec(doc, realm.key).marks.some((m) => m.mark === 'grave_base'), realm.key);
   const zol = rec(doc, 'zols_mistake');
-  assert.equal(zol.primary_charge.id, 'broken_rings_sigil');
+  assert.equal(zol.primary_charge.id, 'broken_bar');
   assert.equal(zol.secondary_charge, null);
   assert.equal(zol.marks.length, 0);
   assert.equal(doc.dynamic.story.length, 9);
@@ -141,9 +141,17 @@ test('a tincture outside the culture palette, an undeclared borrowing or two bor
 });
 
 test('a division or line outside the grammar fails', () => {
-  let doc = fresh(); rec(doc, 'girdon').field.division = 'gyronny';
+  // A divided field takes two tinctures (the checker reads both), so the fixtures add one to Girdon's plain field.
+  const divided = (doc, division, line) => {
+    const g = rec(doc, 'girdon');
+    g.field.division = division;
+    g.field.line = line;
+    g.field.tinctures.push({ name: 'stone grey', hex: '#8a8f8c', source: g.culture });
+    return doc;
+  };
+  let doc = divided(fresh(), 'gyronny', 'indented');
   assert.ok(hasRule(checkRecordRules(doc), 'grammar_fit'));
-  doc = fresh(); rec(doc, 'girdon').field.line = 'wavy';
+  doc = divided(fresh(), 'per_fess', 'wavy');
   assert.ok(hasRule(checkRecordRules(doc), 'grammar_fit'));
 });
 
@@ -153,10 +161,11 @@ test('low contrast without fimbriation, a weak secondary and an over-full achiev
   assert.ok(hasRule(checkRecordRules(doc), 'contrast'));
   doc = fresh(); rec(doc, 'aenor').primary_charge.contrast = 1.2; rec(doc, 'aenor').primary_charge.fimbriated = { name: 'deep lake', hex: '#1d3a5c', source: 'lake_aenoran' };
   assert.ok(hasRule(checkRecordRules(doc), 'contrast'));
-  doc = fresh(); rec(doc, 'selen').secondary_charge.contrast = 1.1;
+  doc = fresh(); const sel = rec(doc, 'selen'); sel.secondary_charge = { id: 'test_bar', name: 'a plain bar', class: 'sigil', tincture: { ...sel.primary_charge.tincture }, contrast: 1.1 };
   assert.ok(hasRule(checkRecordRules(doc), 'contrast'));
   doc = fresh(); const k = rec(doc, 'konori');
   k.secondary_charge = { id: 'milk_bowl', name: 'a wooden bowl', class: 'vessel', tincture: k.primary_charge.tincture, contrast: 3 };
+  k.marks.push({ mark: 'extra_a', text: '', tincture: k.primary_charge.tincture }, { mark: 'extra_b', text: '', tincture: k.primary_charge.tincture });
   assert.ok(hasRule(checkRecordRules(doc), 'budget'));
 });
 
@@ -164,18 +173,22 @@ test('the marks of rank and form are enforced', () => {
   const doc0 = fresh();
   const strip = (key, mark) => { const doc = fresh(); const r = rec(doc, key); r.marks = r.marks.filter((m) => m.mark !== mark); return doc; };
   assert.ok(hasRule(checkForms(strip('selen', 'charter_border'), src.roster), 'form'), 'dominion without charter border');
-  assert.ok(hasRule(checkForms(strip('dolon', 'grave_base'), src.roster), 'form'), 'sworn realm without grave base');
+  const sworn = src.roster.realms.filter((r) => r.overlord === 'puvulan' && r.key !== 'dolon').map((r) => r.key);
+  assert.ok(sworn.length > 0);
+  assert.ok(hasRule(checkForms(strip(sworn[0], 'grave_base'), src.roster), 'form'), 'sworn realm without grave base');
+  assert.ok(!hasRule(checkForms(strip('dolon', 'grave_base'), src.roster), 'form'), 'Dolon: the grave base is waived for the banner (K68 lead ruling)');
+  let waived = fresh(); rec(waived, 'dolon').marks.push(JSON.parse(JSON.stringify(rec(doc0, sworn[0]).marks.find((m) => m.mark === 'grave_base'))));
+  assert.ok(hasRule(checkForms(waived, src.roster), 'form'), 'a waived grave base drawn on the banner fails');
   assert.ok(hasRule(checkForms(strip('tirlan', 'ward_border'), src.roster), 'form'), 'Tirlan without ward');
-  assert.ok(hasRule(checkForms(strip('gunwyn', 'crown'), src.roster), 'form'), 'kingdom without crown');
-  assert.ok(hasRule(checkForms(strip('fotan', 'label'), src.roster), 'form'), 'Ainic realm without label');
+  assert.ok(!hasRule(checkForms(strip('gunwyn', 'crown'), src.roster), 'form'), 'a kingdom without a crown mark passes: crowns are charges only (K65)');
   let doc = fresh(); rec(doc, 'hirolon').marks.push(JSON.parse(JSON.stringify(rec(doc0, 'selen').marks.find((m) => m.mark === 'charter_border'))));
   assert.ok(hasRule(checkForms(doc, src.roster), 'form'), 'charter border on sovereign Hirolon');
   doc = fresh(); rec(doc, 'worshipdom').marks.push({ mark: 'label', text: '', tincture: { name: 'bread brown', hex: '#9a6c3e', source: 'zilin_pilgrims' } });
   assert.ok(hasRule(checkForms(doc, src.roster), 'form'), 'theocracy with label');
   doc = fresh(); rec(doc, 'aenor').marks.push({ mark: 'label', text: '', tincture: { name: 'Parim white', hex: '#f2f0e6', source: 'lake_aenoran' } });
   assert.ok(hasRule(checkForms(doc, src.roster), 'form'), 'Aenor with label');
-  doc = fresh(); rec(doc, 'kvittumm').primary_charge.count = 1;
-  assert.ok(hasRule(checkForms(doc, src.roster), 'form'), 'confederation without tripled charge');
+  doc = fresh(); rec(doc, 'kvittumm').primary_charge.count = 1; delete rec(doc, 'kvittumm').form_note;
+  assert.ok(hasRule(checkForms(doc, src.roster), 'form'), 'confederation without tripled charge and without its form note');
   doc = fresh(); rec(doc, 'olodor').marks = [];
   assert.ok(hasRule(checkForms(doc, src.roster), 'form'), 'enclave without orle');
 });
@@ -196,7 +209,8 @@ test('regional clichés fail: palm trees, snowflakes, a second camel, skulls, a 
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'palm_tree'));
   doc = fresh(); rec(doc, 'coldor').primary_charge.name = 'a snowflake';
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'snowflake'));
-  doc = fresh(); rec(doc, 'naamis').secondary_charge = { id: 'kneeling_camel', name: 'a camel kneeling', class: 'beast', tincture: { name: 'coast white', hex: '#f0f0e8' } };
+  doc = fresh(); rec(doc, 'noris').secondary_charge = { id: 'kneeling_camel', name: 'a camel kneeling', class: 'beast', tincture: { name: 'well ochre', hex: '#c89a3a' } };
+  rec(doc, 'naamis').secondary_charge = { id: 'kneeling_camel', name: 'a camel kneeling', class: 'beast', tincture: { name: 'coast white', hex: '#f0f0e8' } };
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'camel'));
   doc = fresh(); rec(doc, 'santon').primary_charge.id = 'skull_cairn';
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'skull'));
@@ -213,7 +227,7 @@ test('real-world flags and arms and their look-alikes fail', () => {
     const doc = fresh(); rec(doc, 'kersian').blazon += ` ${words}`;
     assert.ok(checkForbidden(doc, src.pantheon).some((x) => x.rule.startsWith('forbidden:')), words);
   }
-  const doc = fresh(); rec(doc, 'azano').field = { division: 'plain', line: null, tinctures: [rec(doc, 'azano').field.tinctures[0]] };
+  const doc = fresh(); rec(doc, 'azano').primary_charge.id = 'struck_coin'; rec(doc, 'azano').field = { division: 'plain', line: null, tinctures: [rec(doc, 'azano').field.tinctures[0]] };
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'plain_disc'), 'a plain disc on a plain field');
 });
 
@@ -226,7 +240,10 @@ test('real religious symbols, crosses of any arrangement and a pentagram outside
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'cross'), 'a cross even on a demon realm');
   doc = fresh(); rec(doc, 'aenor').primary_charge.id = 'kings_seal';
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'pentagram'), 'pentagram outside the demons');
-  doc = fresh(); rec(doc, 'veshazel').primary_charge.id = 'kings_seal';
+  // Round 6 (lead): no five-pointed star on any banner; Nether's seal is its hall-crown, so no realm carries a pentagram.
+  assert.equal(rec(fresh(), 'nether').primary_charge.id, 'sulphur_plume');
+  doc = fresh(); rec(doc, 'nether').primary_charge.id = 'pentagram_line';
+  rec(doc, 'veshazel').primary_charge.id = 'kings_seal';
   assert.ok(checkForbidden(doc, src.pantheon).some((x) => x.rule === 'forbidden:pentagram' && /more than one/.test(x.message)), 'a second pentagram');
 });
 
@@ -270,7 +287,7 @@ test('canon guards fail: named gods and their devices, named persons, Zol\'s ser
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'afrit_deny'));
   doc = fresh(); rec(doc, 'aenor').meaning += ' The ash of the god-king.';
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'afrit_deny'));
-  doc = fresh(); rec(doc, 'yeldenne').blazon += ' A blue sword.';
+  doc = fresh(); rec(doc, 'aenor').blazon += ' A blue sword.';
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'reserved_glo_sword'));
   doc = fresh(); doc.cultures.ice_giants.charges[0].meaning = 'the Ice-Throne of Titanos';
   assert.ok(hasRule(checkForbidden(doc, src.pantheon), 'retired_names'), 'a retired name in a grammar');
@@ -296,6 +313,38 @@ test('dynamic-tag rules fail: a missing fallback, a repeated fallback, a story p
   assert.ok(hasRule(checkDynamic(doc, src.roster), 'dynamic'));
   doc = fresh(); doc.dynamic.story[0].parent = 'Y0L';
   assert.ok(hasRule(checkDynamic(doc, src.roster), 'dynamic'));
+});
+
+test('K68 per-realm overrides: Dolon, Dondor and Kvittumm take the plain sewn border, Dolon draws no grave base, other realms keep their culture hem', () => {
+  for (const key of ['dolon', 'dondor', 'kvittumm']) {
+    const r = rec(base.doc, key);
+    assert.equal(r.hem_override, 'sewn', key);
+    assert.match(r.style_text, /its hem: a plain narrow border sewn in the second tincture/, key);
+    assert.doesNotMatch(r.style_text, /overlapping scales|fringe of short tassels|scallops along|linked rings/, `${key} style line keeps a toothed hem`);
+  }
+  assert.ok(!rec(base.doc, 'dolon').marks.some((m) => m.mark === 'grave_base'), 'Dolon banner draws no grave base');
+  assert.doesNotMatch(rec(base.doc, 'dolon').blazon, /grave base|grave black/, 'Dolon blazon has no grave base text');
+  const other = base.doc.countries.find((r) => r.culture === 'netherborn' && r.key !== 'dolon');
+  if (other) assert.match(other.style_text, /its hem: a border of overlapping scales/, `${other.key} keeps the netherborn hem`);
+  const cultureHem = base.doc.cultures.netherborn.style.text;
+  assert.match(cultureHem, /overlapping scales/, 'the culture row keeps its hem');
+});
+
+test('K68 round 7 (lead): Hirolon and Molot draw straight-edged solid devices with no curl, scroll or volute', () => {
+  assert.equal(rec(base.doc, 'hirolon').primary_charge.id, 'giant_standing_stone');
+  assert.equal(rec(base.doc, 'molot').primary_charge.id, 'square_post');
+  for (const key of ['hirolon', 'molot']) {
+    assert.match(rec(base.doc, key).style_text, /flat solid shapes, straight edges, no curls, no scrolls, no volutes/, key);
+    assert.doesNotMatch(rec(base.doc, key).style_text, /curling volutes and scrolls/, `${key} keeps the scrolled hand`);
+  }
+});
+
+test('K68 round 6 (lead): Mustnom has no ring and a plain field, Worshipdom a plain ground, Yeldenne is not a realm', () => {
+  assert.ok(!rec(base.doc, 'mustnom').marks.some((m) => m.mark === 'boss_ring'), 'Mustnom draws no ring round the magpie');
+  assert.equal(rec(base.doc, 'mustnom').field.division, 'plain');
+  assert.match(rec(base.doc, 'worshipdom').style_text, /its ground: a plain ground of one tincture, without pattern, no band across it\./);
+  assert.equal(base.doc.countries.length, 155);
+  assert.ok(!base.doc.countries.some((r) => r.key === 'yeldenne'), 'Yeldenne has no design');
 });
 
 test('the tuning table holds the thresholds the spec states', () => {

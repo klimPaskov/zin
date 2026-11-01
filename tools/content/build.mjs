@@ -13,7 +13,7 @@ import { countryTable, loadRoster } from './lib/roster.mjs';
 import { checkTags } from './lib/tags.mjs';
 import { buildIdeologies } from './modules/ideologies.mjs';
 import { buildCharacters } from './modules/characters.mjs';
-import { buildUi } from './modules/ui.mjs';
+import { buildUi, buildAoazBar } from './modules/ui.mjs';
 import { loadArt, stageArtSources, stageRealmFlags } from './modules/art.mjs';
 import { stageLore } from './modules/lore.mjs';
 import { buildNames } from './modules/names.mjs';
@@ -52,6 +52,7 @@ import { buildElves } from './modules/mech_elves.mjs';
 import { buildLerendor } from './modules/mech_lerendor.mjs';
 import { buildVolgan } from './modules/mech_volgan.mjs';
 import { buildPowersUi } from './modules/mech_powers_ui.mjs';
+import { stagePanelHeaders } from './modules/zin_panel_art.mjs';
 import { buildMechCold } from './modules/mech_cold.mjs';
 import { buildMechDark } from './modules/mech_dark.mjs';
 import { buildMechEast } from './modules/mech_east.mjs';
@@ -101,6 +102,8 @@ const uiInventory = loadInventory(), uiReskin = loadReskin(), uiSheets = loadShe
 const provenance = existsSync(provenanceFile()) ? (await readFile(provenanceFile(), 'utf8')).split('\n').filter(Boolean).map(l => JSON.parse(l)) : [];
 const ui = await buildReskin(staged, { inventory: uiInventory, reskin: uiReskin, sheets: uiSheets, provenance });
 publishUiData(staged, { reskin: uiReskin, sheets: uiSheets });
+// Event, news, pause-menu, options and Gathering Dark windows (UI overhaul lane W5): own sprites and the .gui overrides of those windows.
+const uiDialogs = await (await import('./modules/ui_dialogs.mjs')).buildDialogs(staged, { sheets: uiSheets, provenance });
 const peopleStartup = await buildPeoples(staged, countries, assignment, art);
 // Cultures, faiths and the per-state culture data (docs/design/stage2/cultures.md): after buildPeoples, whose on_startup block it joins.
 const cultures = await buildCultures(staged, { countries });
@@ -145,6 +148,7 @@ const powersElves = await buildElves(staged, { countries, table });
 const powersLeren = await buildLerendor(staged, { countries, table });
 const powersVolgan = await buildVolgan(staged, { countries });
 await buildPowersUi(staged, { countries });
+await stagePanelHeaders(staged);   // the header pictures of the ZIN panels (UI lane W7)
 const mechCold = await buildMechCold(staged, { countries });
 const mechDark = await buildMechDark(staged, { countries, assignment });
 const mechEast = await buildMechEast(staged, { countries });
@@ -185,6 +189,8 @@ const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign',
 // The story AI (strategy plans, the tier rules, the paced MTTH, the interface refresh of the tick's step 10) and the world layer of magic
 // (potent magic, the interventions, dragons, the Wall, the storms, the weekly magic tick): before the world tension module, whose tick calls
 // zin_ui_refresh once it is staged.
+// The Aoaz bar (modules/ui.mjs, UI lane W1) comes first: the story module's monthly interface refresh calls zin_aoaz_bar_refresh once staged.
+const aoazBar = await buildAoazBar(staged, { provenance });
 const storyAi = await buildStoryAi(staged, { countries });
 const worldMagic = await buildWorldMagic(staged, { countries });
 const worldTension = await buildWorldTension(staged, { countries });

@@ -1,6 +1,7 @@
 // The start, the monthly pulses, the on_actions and the AI strategies of the Volgan and Mirolon mechanic
 // (docs/specs/04_mechanics/volgan_southern_dominion.md, sections 1 to 13 and "AI").
 import { ge, gt, le, lt, eq, bump, call } from './mp_kit.mjs';
+import { meterFill } from './mech_court_gui.mjs';
 
 export function writePulse(V) {
   const { K, N, VOL, MIR, HEREZ, ZOL, AEN, members, dark, exists, gd, inVol, inMir, ST, VL, NP, PF, PS } = V;
@@ -54,13 +55,11 @@ country_leader = { ideology = zin_light_wardens expire = "1965.1.1.1" traits = {
 zin_mirolon_raise_pass_forts = yes
 zin_dominion_ui_refresh_mirolon = yes`)}`, 'Run by the hidden event zin_dominion.1 the day after the start: start values, the dynamic modifier, the start spirits of both trees, Mirolon\'s forts at level 2 and High Warden Maeric (section "Files").');
 
-  // ---- the panels' gauge positions (the windows only read these)
-  const slider = (x, v) => `set_variable = { ${x} = ${v} }
-multiply_variable = { ${x} = 5.2 }
-add_to_variable = { ${x} = 27 }`;
-  E_('zin_dominion_ui_refresh_volgan', `${slider('zin_ui_hosts_x', ST)}
-${slider('zin_ui_veil_x', VL)}
-${slider('zin_ui_nether_x', NP)}
+  // ---- the panels' meter fills (the windows only read these): the fill offset in the 232 px well of the meter (lib/mech_court_gui.mjs)
+  const slider = (x, v) => meterFill(v, x);
+  E_('zin_dominion_ui_refresh_volgan', `${slider('zin_ui_hosts_fill', ST)}
+${slider('zin_ui_veil_fill', VL)}
+${slider('zin_ui_nether_fill', NP)}
 set_variable = { zin_ui_dark_1 = 0 }
 set_variable = { zin_ui_dark_2 = 0 }
 set_variable = { zin_ui_dark_3 = 0 }
@@ -76,10 +75,10 @@ every_country = {
 limit = { zin_dominion_is_dark_lands_country = yes ${eq('zin_volgan_pact', 3)} }
 ${VOL} = { add_to_variable = { zin_ui_dark_3 = 1 } }
 }
-add_to_variable = { global.zin_ui_tick = 1 }`, 'Scope: Volgan. Positions of the gauge markers of the Southern Dominion panel.');
-  E_('zin_dominion_ui_refresh_mirolon', `${slider('zin_ui_proof_x', PF)}
-${slider('zin_ui_passes_x', PS)}
-add_to_variable = { global.zin_ui_tick = 1 }`, 'Scope: Mirolon. Positions of the gauge markers of the Watch panel.');
+add_to_variable = { global.zin_ui_tick = 1 }`, 'Scope: Volgan. Meter fills of the Southern Dominion panel.');
+  E_('zin_dominion_ui_refresh_mirolon', `${slider('zin_ui_proof_fill', PF)}
+${slider('zin_ui_passes_fill', PS)}
+add_to_variable = { global.zin_ui_tick = 1 }`, 'Scope: Mirolon. Meter fills of the Watch panel.');
 
   // ---- Volgan's pulse
   const membersAtOath = members.map(m => `if = {\nlimit = {\n${exists(m)}\n${m} = { ${ge('zin_dominion_oath', N('strength.member_oath'))} }\n}\nadd_to_temp_variable = { zin_volgan_t_members = ${N('strength.per_member')} }\n}`).join('\n');

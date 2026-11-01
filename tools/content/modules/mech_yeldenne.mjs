@@ -22,8 +22,9 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   const opt = ctx.glo ?? {};
   const roster = makeRoster(ctx.countries);
   const TAG = Object.fromEntries(Object.entries(data.countries).map(([k, name]) => [k, roster.tag(name)]));
-  const HALL = roster.capitalState(data.countries.yeldenne);
-  const C = data.constants, ch = data.characters, ev = data.events;
+  // K56: Yeldenne is a place in Pertolor's land. The hall is the castle's state (data hallState); its owner is the keeper.
+  const HALL = data.hallState;
+  const C = data.constants, ev = data.events;
   const loc = new Loc('zin_glo');
   const scripts = new ScriptSet();
   const files = [];
@@ -47,7 +48,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   put('common/ideas/zin_glo.txt', `${HEADER}\nideas = {\n\tcountry = {\n${cw(ideas, 2)}\t}\n}\n`);
   const leaderTraits = {};
   for (const t of data.countryLeaderTraits) { leaderTraits[t.id] = { random: false, ...t.modifier }; loc.add(t.id, t.name); loc.add(`${t.id}_desc`, t.desc); defs.traits.push(t.id); }
-  put('common/country_leader/zin_yeldenne_glo.txt', `${HEADER}\nleader_traits = {\n${cw(leaderTraits, 1)}}\n`);
+  if (data.countryLeaderTraits.length) put('common/country_leader/zin_yeldenne_glo.txt',`${HEADER}\nleader_traits = {\n${cw(leaderTraits, 1)}}\n`);
   const unitTraits = {};
   for (const t of data.unitLeaderTraits) { unitTraits[t.id] = { type: 'land', trait_type: 'personality_trait', modifier: t.modifier }; loc.add(t.id, t.name); loc.add(`${t.id}_desc`, t.desc); defs.traits.push(t.id); }
   put('common/unit_leader/zin_yeldenne_glo.txt', `${HEADER}\nleader_traits = {\n${cw(unitTraits, 1)}}\n`);
@@ -57,11 +58,6 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   const opin = {};
   for (const o of data.opinionModifiers) { opin[o.id] = { value: o.value, decay: o.decay }; defs.opinions.push(o.id); loc.add(o.id, o.name); }
   put('common/opinion_modifiers/zin_glo.txt', `${HEADER}\nopinion_modifiers = {\n${cw(opin, 1)}}\n`);
-  if (!(opt.externalCharacters ?? []).includes(ch.warden)) {
-    put('common/characters/zin_yeldenne_glo.txt', `${HEADER}\ncharacters = {\n${cw({ [ch.warden]: { name: ch.warden, portraits: { civilian: { large: ch.wardenPortrait } } } }, 1)}}\n`);
-    defs.characters.push(ch.warden);
-  }
-  loc.add(ch.warden, "The Warden of Mp'E");
 
   // ---------------------------------------------------------------------------------------------- scripted triggers
   const triggerDefs = [];
@@ -117,10 +113,6 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
       'set_global_flag = zin_glo_sword_handled',
       `set_variable = { global.zin_glo_power_cap = ${K('power_max_broken')} }`,
       `set_variable = { global.zin_glo_power = ${K('power_broken')} }`));
-  E('zin_glo_clear_seal_keepers',
-    "# Glo has left the hall (or dimmed): the regional tree's seal-keepers spirit has nothing left to keep.",
-    L(TAG.yeldenne, 'if = { limit = { has_idea = zin_regional_yeldenne_seal_keepers } remove_ideas = zin_regional_yeldenne_seal_keepers }'));
-  dep('zin_regional_yeldenne_seal_keepers', 'idea', 'regional yeldenne tree');
   E('zin_glo_follow_bearer',
     "# Glernaen's Light rests on the host that employs the bearer, and moves with him.",
     'every_country = { limit = { has_idea = zin_glo_glernaens_light } remove_ideas = zin_glo_glernaens_light }',
@@ -147,10 +139,10 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     '# Glo moves only here. zin_arg_to: 1 Eindil, 2 a second bearer (ROOT is the claimant), 3 sealed in the hall. Nobody unworthy ever holds it (O3).',
     L('if', 'limit = { check_variable = { zin_arg_to = 1 } }',
       'set_variable = { global.zin_glo_state = 1 }', 'set_global_flag = zin_glo_with_eindil', `set_variable = { global.zin_glo_power = ${K('power_max')} }`,
-      'zin_glo_clear_seal_keepers = yes', 'zin_glo_follow_bearer = yes'),
+      'zin_glo_follow_bearer = yes'),
     L('else_if', 'limit = { check_variable = { zin_arg_to = 2 } }',
       'set_variable = { global.zin_glo_state = 4 }', `set_variable = { global.zin_glo_power = ${K('power_max')} }`,
-      'zin_glo_pick_second_bearer = yes', 'zin_glo_clear_seal_keepers = yes', 'zin_glo_follow_bearer = yes'),
+      'zin_glo_pick_second_bearer = yes', 'zin_glo_follow_bearer = yes'),
     L('else', 'set_variable = { global.zin_glo_state = 2 }', 'set_global_flag = zin_glo_sealed'),
     'zin_yeldenne_set_hall_modifier = yes',
     'set_temp_variable = { zin_arg_to = 0 }');
@@ -194,7 +186,6 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
       'set_variable = { global.zin_glo_defile_end = 0 }',
       'set_variable = { global.zin_glo_state = 3 }',
       'set_global_flag = zin_glo_dimmed',
-      'zin_glo_clear_seal_keepers = yes',
       'zin_yeldenne_set_hall_modifier = yes',
       `set_temp_variable = { zin_arg_value = ${K('dark_glo_dims')} }`, 'zin_world_add_gathering_dark = yes',
       L('every_country', 'limit = { is_ai = no }', 'news_event = { id = zin_glo.51 }')));
@@ -235,32 +226,16 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     `set_temp_variable = { zin_arg_value = -${C.wave_cost} }`,
     'zin_glo_add_power = yes',
     L('random_state', 'limit = { zin_glo_wave_target = yes }', 'set_temp_variable = { zin_arg_first = 0 }', 'zin_glo_wave = yes'));
-  E('zin_yeldenne_install_warden',
-    "# Horos is dust: the Warden of Mp'E rules for the hall. The wards spirits of the regional tree stay only while the crystal lies sealed.",
-    L(TAG.yeldenne, L('if', 'limit = { exists = yes }',
-      `recruit_character = ${ch.warden}`,
-      `add_country_leader_role = { character = ${ch.warden} promote_leader = yes country_leader = { ideology = ${ch.wardenStance} expire = "2000.1.1.1" traits = { zin_yeldenne_warden_trait } } }`,
-      L('if', 'limit = { NOT = { check_variable = { global.zin_glo_state = 2 } } }',
-        'if = { limit = { has_idea = zin_regional_yeldenne_glernaens_wards } remove_ideas = zin_regional_yeldenne_glernaens_wards }',
-        'if = { limit = { has_idea = zin_regional_yeldenne_glernaens_wards_2 } remove_ideas = zin_regional_yeldenne_glernaens_wards_2 }'))));
-  dep('zin_regional_yeldenne_glernaens_wards', 'idea', 'regional yeldenne tree'); dep('zin_regional_yeldenne_glernaens_wards_2', 'idea', 'regional yeldenne tree');
-  E('zin_glo_request_northern_watch',
-    "# From Yeldenne's focus: the Lost Cause's leader is asked to send a company to the gate.",
-    L('every_country', 'limit = { zin_glo_lost_cause_leader = yes }', 'set_variable = { global.zin_glo_watch_sender = THIS }', 'country_event = { id = zin_glo.64 }'));
 
   // the hall: common effects when Horos dies, the cases and the score test
   E('zin_glo_horos_falls',
-    '# Horos is dust. Wardens keep the hall; the guard stands down; the world hears of it.',
+    '# Horos is dust (story only, never a character). The hall keeps its owner; the guard stands down; the world hears of it.',
     'set_global_flag = zin_horos_dead',
-    L('every_country', 'limit = { has_character = zin_horos }', 'retire_character = zin_horos'),
-    'zin_yeldenne_install_warden = yes',
-    L(TAG.yeldenne, L('if', 'limit = { exists = yes }',
-      'if = { limit = { has_idea = zin_yeldenne_guardian_of_glo } remove_ideas = zin_yeldenne_guardian_of_glo }',
-      'add_timed_idea = { idea = zin_yeldenne_the_empty_throne days = 365 }')),
+    hallOwner('if = { limit = { has_idea = zin_yeldenne_guardian_of_glo } remove_ideas = zin_yeldenne_guardian_of_glo }',
+      'add_timed_idea = { idea = zin_yeldenne_the_empty_throne days = 365 }'),
     'zin_yeldenne_set_hall_modifier = yes',
     L('every_country', 'limit = { is_ai = no }', 'news_event = { id = zin_glo.30 }'),
     `set_temp_variable = { zin_arg_value = ${K('dark_horos_dies')} }`, 'zin_world_add_gathering_dark = yes');
-  dep('zin_horos', 'character', 'characters module (renames the Yeldenne ruler Y8H_zin_ruler to the contract id)');
   E('zin_glo_give_to_heir', 'set_temp_variable = { zin_arg_to = 1 }', 'zin_glo_transfer = yes', 'zin_eindil_fire_bearer_leaves = yes');
   E('zin_glo_hall_holds',
     '# The attacker is repelled: the wards fall by a fifth, the hall is proved, and its owner keeps Horos.',
@@ -272,7 +247,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     'set_temp_variable = { glo_score = global.zin_yeldenne_wards }',
     `add_to_temp_variable = { glo_score = ${K('hall_base')} }`,
     L('if', 'limit = { has_global_flag = zin_yeldenne_forewarned }', `add_to_temp_variable = { glo_score = ${K('hall_forewarned')} }`),
-    L('if', 'limit = { has_global_flag = zin_yeldenne_hall_unyielding }', `add_to_temp_variable = { glo_score = ${K('hall_unyielding')} }`),
+    L('if', 'limit = { has_global_flag = zin_glo_hall_unyielding }', `add_to_temp_variable = { glo_score = ${K('hall_unyielding')} }`),
     'set_temp_variable_to_random = { var = glo_roll min = -10 max = 11 integer = yes }',
     'add_to_temp_variable = { glo_score = glo_roll }',
     L('if', 'limit = { check_variable = { zin_arg_case = 5 } }', `subtract_from_temp_variable = { glo_score = ${K('volgan_hunt')} }`),
@@ -295,7 +270,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
       ...outcomeEvents(23), 'zin_glo_show_hall = yes'),
     L('else_if', 'limit = { check_variable = { zin_arg_case = 3 } }',
       'set_global_flag = zin_glo_heir_in_hall',
-      L('if', 'limit = { has_global_flag = zin_yeldenne_awaits_heir }', hallOwner(`country_event = { id = zin_glo.3 days = ${C.test_days_awaits} }`)),
+      L('if', 'limit = { has_global_flag = zin_glo_awaits_heir }', hallOwner(`country_event = { id = zin_glo.3 days = ${C.test_days_awaits} }`)),
       L('else', hallOwner(`country_event = { id = zin_glo.3 days = ${C.test_days} }`)),
       'zin_glo_show_hall = yes'),
     L('else_if', 'limit = { check_variable = { zin_arg_case = 4 } }',
@@ -326,7 +301,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   E('zin_glo_heir_arrives',
     '# The journey calls this when Eindil reaches the castle. Sealed Glo opens for him; Horos tests him; dimmed Glo is lost to him.',
     L('if', 'limit = { check_variable = { global.zin_glo_state = 2 } }',
-      L('if', 'limit = { has_global_flag = zin_yeldenne_calls_heir }',
+      L('if', 'limit = { has_global_flag = zin_glo_calls_heir }',
         'set_temp_variable = { zin_arg_value = 10 }', 'zin_eindil_add_renown = yes',
         hallOwner('country_event = { id = zin_glo.80 }')),
       L('else', hallOwner(`country_event = { id = zin_glo.80 days = ${C.seal_open_days} }`))),
@@ -350,7 +325,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     `set_variable = { global.zin_glo_power_cap = ${K('power_max')} }`,
     'set_variable = { global.zin_glo_regen_days = 0 }',
     `set_variable = { global.zin_yeldenne_wards = ${K('wards_start')} }`,
-    `${TAG.yeldenne} = { country_event = { id = zin_glo.1 days = 2 } }`];
+    hallOwner('country_event = { id = zin_glo.1 days = 2 }')];
 
   // ---------------------------------------------------------------------------------------------- events
   const events = [];
@@ -365,7 +340,6 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     '# Yeldenne is a guarded hall: the wards on Mp\'E, the guardian\'s spirit and trait, and the weekly pulse.',
     L(`${HALL}`, 'add_dynamic_modifier = { modifier = zin_yeldenne_hall_wards }'),
     'add_ideas = zin_yeldenne_guardian_of_glo',
-    'add_country_leader_trait = zin_horos_guardian',
     hallOwner(`country_event = { id = zin_glo.2 days = ${C.pulse_days} }`)] });
   addEvent({ id: 2, hidden: true, immediate: [
     hallOwner(`country_event = { id = zin_glo.2 days = ${C.pulse_days} }`),
@@ -418,8 +392,8 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   ack(62, EVT('yeldenne_hall'), 'Withdraw.');
   ack(63, EVT('yeldenne_hall'), 'So the north keeps its own king.');
   shown(64, EVT('lost_cause_triumph'), { trigger: ['zin_horos_alive = yes'], options: opts(64, [
-    ['a', [`${TAG.yeldenne} = { country_event = { id = zin_glo.60 days = 1 } }`], ['base = 60', L('modifier', 'factor = 0.5', 'has_war = yes'), L('modifier', 'factor = 1.7', 'zin_eindil_historical = yes NOT = { has_war = yes }')]],
-    ['b', [`${TAG.yeldenne} = { add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked } }`], 40]]) });
+    ['a', [hallOwner('country_event = { id = zin_glo.60 days = 1 }')],['base = 60', L('modifier', 'factor = 0.5', 'has_war = yes'), L('modifier', 'factor = 1.7', 'zin_eindil_historical = yes NOT = { has_war = yes }')]],
+    ['b', [hallOwner('add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked }')], 40]]) });
   addNews(70, NEWS('generic_court'), 'The light is carried.');
   shown(80, EVT('glo_given'), { trigger: ['check_variable = { global.zin_glo_state = 2 }'], options: opts(80, [['a', ['set_temp_variable = { zin_arg_to = 1 }', 'zin_glo_transfer = yes', 'zin_eindil_bearer_effects = yes'], 100]]) });
   dep('zin_eindil_bearer_effects', 'scripted effect', 'eindil_journey (mech_eindil.mjs)');
@@ -438,7 +412,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   };
   D('zin_glo_seekers', 'zin_glo_petition_horos',
     'allowed = { always = yes }',
-    L('visible', 'zin_horos_alive = yes', `NOT = { original_tag = ${TAG.yeldenne} }`, 'NOT = { zin_afrit_is_hub = yes }', 'NOT = { has_country_flag = zin_glo_petitioned }'),
+    L('visible', 'zin_horos_alive = yes', `NOT = { original_tag = ${TAG.keeper} }`, 'NOT = { zin_afrit_is_hub = yes }', 'NOT = { has_country_flag = zin_glo_petitioned }'),
     L('available', 'zin_horos_alive = yes'),
     'cost = 50', 'fire_only_once = yes',
     L('complete_effect', 'set_country_flag = zin_glo_petitioned', `country_event = { id = zin_glo.61 days = ${C.petition_days} }`),
@@ -448,7 +422,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     L('visible', 'zin_glo_lost_cause_leader = yes', 'zin_horos_alive = yes', 'NOT = { has_global_flag = zin_glo_watch_active }'),
     L('available', 'zin_horos_alive = yes', 'NOT = { has_war = yes }'),
     'cost = 100', 'days_re_enable = 180',
-    L('complete_effect', 'set_variable = { global.zin_glo_watch_sender = THIS }', `${TAG.yeldenne} = { country_event = { id = zin_glo.60 } }`),
+    L('complete_effect', 'set_variable = { global.zin_glo_watch_sender = THIS }', hallOwner('country_event = { id = zin_glo.60 }')),
     L('ai_will_do', 'base = 0', L('modifier', 'add = 3', 'zin_eindil_historical = no', 'NOT = { has_global_flag = zin_golden_king_dead }', 'NOT = { has_war = yes }')));
   D('zin_glo_seekers', 'zin_glo_grave_hunt',
     'allowed = { always = yes }',
@@ -471,7 +445,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     'cost = 200', 'days_remove = -1',
     L('complete_effect', 'set_global_flag = zin_glo_defiling', 'set_variable = { global.zin_glo_defiler = THIS }',
       'set_variable = { global.zin_glo_defile_end = global.num_days }',
-      L('if', 'limit = { has_global_flag = zin_yeldenne_seal_warded }', `add_to_variable = { global.zin_glo_defile_end = ${K('defile_days_warded')} }`),
+      L('if', 'limit = { has_global_flag = zin_glo_seal_warded }', `add_to_variable = { global.zin_glo_defile_end = ${K('defile_days_warded')} }`),
       L('else', `add_to_variable = { global.zin_glo_defile_end = ${K('defile_days')} }`),
       `country_event = { id = zin_glo.50 days = ${C.defile_roll_days} }`),
     L('cancel_trigger', L('OR', `NOT = { controls_state = ${HALL} }`, 'NOT = { has_global_flag = zin_glo_defiling }')),
@@ -481,8 +455,8 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   const bearerAvail = L('available', 'has_global_flag = zin_eindil_lost', 'zin_glo_worthy_claimant = yes', L('OR', 'check_variable = { global.zin_glo_state = 0 }', 'check_variable = { global.zin_glo_state = 2 }'));
   const bearerTail = ['days_remove = 180', L('remove_effect', 'zin_glo_second_bearer_claimed = yes'), L('ai_will_do', 'base = 0', L('modifier', 'add = 3', 'zin_eindil_historical = no'))];
   const bearerVisible = (flag) => L('visible', 'has_global_flag = zin_eindil_lost', flag, L('OR', 'check_variable = { global.zin_glo_state = 0 }', 'check_variable = { global.zin_glo_state = 2 }'));
-  D('zin_glo_seekers', 'zin_glo_seek_as_bearer', 'allowed = { always = yes }', bearerVisible('NOT = { has_global_flag = zin_yeldenne_calls_bearer }'), bearerAvail, 'cost = 100', ...bearerTail);
-  D('zin_glo_seekers', 'zin_glo_seek_as_bearer_called', 'allowed = { always = yes }', bearerVisible('has_global_flag = zin_yeldenne_calls_bearer'), bearerAvail, 'cost = 0', ...bearerTail);
+  D('zin_glo_seekers', 'zin_glo_seek_as_bearer', 'allowed = { always = yes }', bearerVisible('NOT = { has_global_flag = zin_glo_calls_bearer }'), bearerAvail, 'cost = 100', ...bearerTail);
+  D('zin_glo_seekers', 'zin_glo_seek_as_bearer_called', 'allowed = { always = yes }', bearerVisible('has_global_flag = zin_glo_calls_bearer'), bearerAvail, 'cost = 0', ...bearerTail);
   D('zin_glo_cat_bearer', 'zin_glo_wave_decision',
     'allowed = { always = yes }',
     L('visible', 'zin_glo_is_bearer_host = yes'),
@@ -509,12 +483,12 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     L('on_state_control_changed', L('effect',
       L('if', `limit = { FROM.FROM = { state = ${HALL} } }`,
         L('FROM.FROM', 'set_variable = { zin_glo_occupied_since = global.num_days }', L('if', 'limit = { is_controlled_by = OWNER }', 'clear_variable = zin_glo_occupied_since'))))),
-    L('on_annex', L('effect', L('if', `limit = { FROM = { original_tag = ${TAG.yeldenne} } zin_horos_alive = yes }`, 'country_event = { id = zin_glo.63 }'))),
+    L('on_annex', L('effect', L('if', `limit = { FROM = { original_tag = ${TAG.keeper} } zin_horos_alive = yes }`, 'country_event = { id = zin_glo.63 }'))),
     L('on_declare_war', L('effect', L('if', `limit = { NOT = { has_country_flag = zin_glo_conqueror } FROM = { ${notAllowedTargets} } }`, 'set_country_flag = zin_glo_conqueror')))))));
   scripts.add('on_actions', 'on_action', [...startup, `if = { limit = { FROM.FROM = { state = ${HALL} } } FROM.FROM = { set_variable = { zin_glo_occupied_since = global.num_days } } }`, `if = { limit = { NOT = { has_country_flag = zin_glo_conqueror } FROM = { ${notAllowedTargets} } } set_country_flag = zin_glo_conqueror }`]);
-  put('common/ai_strategy/zin_glo.txt', fileText(comment('Nobody takes the hall by conquest while Horos lives: every AI realm gives Yeldenne a wide berth until he is dust.'),
-    render(L('zin_glo_leave_the_hall_alone', 'allowed = { always = yes }', L('enable', 'is_ai = yes', `NOT = { original_tag = ${TAG.yeldenne} }`, 'zin_horos_alive = yes'), 'abort_when_not_enabled = yes',
-      L('ai_strategy', 'type = conquer', `id = "${TAG.yeldenne}"`, 'value = -500')))));
+  put('common/ai_strategy/zin_glo.txt', fileText(comment('Nobody takes the hall by conquest while Horos lives: every AI realm gives the keeper of the hall a wide berth until he is dust.'),
+    render(L('zin_glo_leave_the_hall_alone', 'allowed = { always = yes }', L('enable', 'is_ai = yes', `NOT = { original_tag = ${TAG.keeper} }`, 'zin_horos_alive = yes'), 'abort_when_not_enabled = yes',
+      L('ai_strategy', 'type = conquer', `id = "${TAG.keeper}"`, 'value = -500')))));
 
   // ---------------------------------------------------------------------------------------------- interface
   const sprites = [];

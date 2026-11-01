@@ -27,6 +27,26 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { K53_STYLE, K53_CHARGES } from './k53_vocabulary.mjs';
+import { K65_CHARGES, K65_OVERRIDES, K65_JUSTIFIED } from './k65_designs.mjs';
+import { K68_CHARGES, K68_OVERRIDES, K68_REALM_HEM, K68_REALM_HEM_TEXT, K68_MARK_WAIVED, K68_REALM_GROUND, K68_REALM_HAND } from './k68_designs.mjs';
+
+// K68 per-realm hem (the culture's hem text is replaced in the realm's style line) and waived marks (kept in the lore, not drawn).
+const realmStyleText = (text, key) => {
+  let t = text;
+  if (K68_REALM_HAND[key]) t = t.replace(/The culture's hand: .*?; its hem:/, `The culture's hand: ${K68_REALM_HAND[key]}; its hem:`);
+  const h = K68_REALM_HEM[key];
+  if (h) t = t.replace(/its hem: .*?; its ground:/, `its hem: ${K68_REALM_HEM_TEXT[h]}; its ground:`);
+  if (K68_REALM_GROUND[key]) t = t.replace(/its ground: .*$/, `its ground: ${K68_REALM_GROUND[key]}.`);
+  return t;
+};
+// Realms that are not realms of the world (K56: Yeldenne is a town in Pertolor's land). Dropped from the roster the generator reads,
+// so the coverage check holds for the 155 realms; the roster file itself is the world owner's and still lists them.
+const RETIRED_REALMS = new Set(['yeldenne']);
+const markWaived = (key, mark) => Object.hasOwn(K68_MARK_WAIVED[key] ?? {}, mark);
+// K65 (lead rulings, 25 October 2026): realm devices come from k65_designs.mjs, which overrides the charge, tincture and meaning of each DESIGNS row.
+// K68 (owner ruling K68, 31 October 2026): a K68 row replaces the K65 row of its realm (k68_designs.mjs).
+const k65Apply = (des) => { const o = K68_OVERRIDES[des.key] ?? K65_OVERRIDES[des.key]; if (!o) return des; return { ...des, primary: o.primary, secondary: o.secondary, meaning: o.meaning, ...(o.division ? { division: o.division, field: o.field.map((n) => n) } : {}), opts: { ...des.opts, ...(o.form_note ? { formNote: o.form_note } : {}), ...(o.on !== undefined ? { on: o.on } : {}), regionalPrimary: o.regional === true, ...(o.noCrown ? { noCrown: true } : {}) } }; };
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(HERE, '../../..');
@@ -130,6 +150,69 @@ export const TUNING = {
 // ---------------------------------------------------------------------------------------------------------------
 // Vocabulary additions
 // ---------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------
+// K53 (owner, 25 October 2026): the medieval banner language. A culture is told apart by its hand (how its devices are
+// drawn), its hem (its border ornament) and its ground (its field pattern), never by a region's line of partition.
+// Every culture of the grammar takes one hand, one hem and one ground by its place in the sorted list of cultures
+// (see assignCultureStyles): the three cycles are 10, 8 and 6, so no two of the cultures share a triple.
+// ---------------------------------------------------------------------------------------------------------------
+
+export const HANDS = {
+  elongated: 'its devices drawn in long, tapering, flowing forms, stretched along the field like the beasts of a standard',
+  angular: 'its devices cut in angular, faceted, geometric forms, like carved bone or cut stone, with no curves',
+  interlaced: 'its devices built from one band woven over and under itself, like a knotted cord or a basket-work',
+  applique: 'its devices made as stitched applique, cut from a second cloth and sewn on with a visible couching stitch',
+  stamped: 'its devices stamped as bold, flat, brand-like silhouettes with a plain inner shape and no modelling',
+  armorial: 'its devices drawn in the manner of a medieval armorial, with fine inner hatching and the features shown by line',
+  radiant: 'its devices set on a sunburst of fine rays that spread behind the charge from its lower edge',
+  stippled: 'its devices worked in pricked dots and stitch-marks, as in embroidered work, with the outline in dotted thread',
+  jointed: 'its devices segmented and jointed, like a carved totem, each part set one above another',
+  scrolled: 'its devices ending in curling volutes and scrolls, like wrought iron or gilded scroll-work',
+};
+export const HEMS = {
+  cord: 'a hem of twisted cord in the field\'s second tincture',
+  pearled: 'a hem of small round beads, like pearls sewn in a row',
+  vine: 'a border of climbing vine-scroll, leaves and tendrils, in the second tincture',
+  scale: 'a border of overlapping scales, like lamellar plate armour',
+  dagged: 'a border of small rounded scallops along the lower edge',
+  chain: 'a border of linked rings, like mail',
+  tasselled: 'a fringe of short tassels along the hem, in the second tincture',
+  notched: 'a plain narrow edge stitched in the second tincture, straight and unbroken',
+};
+export const GROUNDS = {
+  plain: 'a plain ground of one tincture, without pattern',
+  diapered: 'a ground of one tincture with a few dots of the second tincture set far apart, never a repeated figure',
+  strewn: 'a ground of one tincture with a few dots of the second tincture set far apart, never a repeated figure',
+  counter: 'a ground counterchanged, its two tinctures swapped in a band across the middle of the field',
+  woven: 'a ground of narrow woven bands running with the field, like a textile stripe',
+  lozenged: 'a ground of one tincture with a single bar of the second tincture across its middle',
+};
+export const STYLE_CYCLES = { hand: Object.keys(HANDS), hem: Object.keys(HEMS), ground: Object.keys(GROUNDS) };
+
+// Realms whose records carry a charge from a regional or trade class (REGIONAL_CLASSES). Each entry justifies the charge from the
+// realm's own history, with the specific story the owner asked for; a record in REGIONAL_CLASSES without an entry fails the build.
+export const REGIONAL_CLASSES = ['landform', 'plant', 'tree', 'water', 'sea_creature', 'bird', 'beast', 'ship', 'garment'];
+export const REGIONAL_JUSTIFIED = {
+  konori: "The sign is the riders' own rite, not the steppe's: the horse's head marks the custom by which every king of the Hundreds is lifted on the white felt at the Aenar crossing, a crowning the riders keep and no other people of the plain shares.",
+  kilinti: "The sign is the ents' own charter, not the forest's: the Eldest is the ent-moot's lawful voice and the Kilinti charter with Parim, a claim the ents make in their own name rather than the forest's.",
+  aenor_forest: "The sign is the Baelim's own lineage, not the forest's: the fir with spreading roots is the tree of the Baelim's lineage, the people who have never had a crown and let no man build among them.",
+  lerendor: "The sign is the Lerendor crown's own marriage story, not the strait's: the two waves stand for the two straits joined when Ostrik of the Sonarvik wed Runild, and the strait dues that follow are the realm's own record.",
+  tolvael: "The sign is the free crown's own household beast, not the North's: the bear wears its own crown as the household sign of the first free crown, the story of a lord proud of his timber and of asking rather than being told.",
+  austklev: "The sign is the jarldom's own tithe, not the sea's: the narwhal is the spear-whale whose tusk the jarldom sold south, the whale-tithe of the Vaestia harbour boom that the jarls themselves kept.",
+  mirolon: "The sign is the High Warden's own watch, not the lake's: the heron on one leg is the warden's sworn beacon-sign, kept every night since the first warden chose it.",
+  magical_forest: "The sign is the elven realm's own founding song, not the forest's: the tree of the Singing Grove is the realm's founding tree, which the houses say was sung before it grew.",
+  andos_enda: "The sign is the Weir Compact's own federation, not the lake's: three boats carry the letters of the federation the lake groves swore to share the water by, and the Water-Court judges at the weir.",
+  mushroom_forest: "The sign is the mycids' own ring-circle, not the rift shore's: the ring of caps is the mycids' sign of a people whose rule no one outside the forest knows; only the ring is drawn.",
+  gala: "The sign is the elven court's own founding relic, not the spring's: the Mirror of First Rain is the court's founding relic, the spring in which the court first saw the rain, the story the court tells of itself.",
+  soyano: "The sign is the shipwrights' council's own craft, not the sea's: the white ship is the Tide-Speaker's founding vessel of the Archipelago Council, a craft the shipwrights built and the council keeps.",
+  goodin: "The sign is the guest-towns' own self-rule, not the shade's: the shade tree is the tree under which the guest-towns' elders govern themselves in the shade of their Sunhot patrons.",
+  verde: "The sign is the hall's own craft, not the coast's: the woven sail is the canoe-makers' sail, woven by the clan hall that sells pilots, the founding craft of the hall.",
+  seite_islands: "The sign is the bank-fishers' own oath, not the reef's: the green turtle is the oath-beast of the bank-fishers, the turtle of the banks their fathers fished, and the sign of the isle moot's reef-shrines.",
+};
+// The prompt frame of every flag sheet (K53): medieval banner cloth, stylised devices, no clip-art. {n}, {cols}, {rows}, {family_style}
+// and {rows_text} are filled by tools/content/art/flag-jobs.mjs.
+export const PROMPT_FRAME = 'A flat asset sheet of {n} distinct medieval embroidered flags for a medieval-fantasy strategy game, arranged in an exact {cols} columns by {rows} rows grid. The background is solid flat pure black (#000000) everywhere between and around the flags: no glow, no blur, no gradient, no texture. Every flag is a perfectly flat, front-facing rectangle with an aspect ratio of 41 to 26, all the same size, evenly spaced with identical black gutters; no perspective, no waving, no folds, no shadows, no frames, no poles, no swallowtails, no tassels, no fringes, no tabs, no finials, no pennant tails, no hanging ends, and nothing attached to the top edge of any flag: no bar, rail, hook, ring, loop, cord or fringe at the top, and no bar across the upper edge: every flag is a plain rectangle, wider than it is tall, about 1.58 times as wide as it is tall. The look is a medieval embroidered silk banner: a deep, saturated silk field, one appliqued cloth device outlined with couched gold or silver thread, a restrained composition of one device with at most one small accent, and stylised heraldic drawing in the manner of medieval armorials and tapestries. A beast is a flat, elongated, posed heraldic silhouette in profile, with no fur strokes, no shading, no modelled musculature and no natural walking pose. A plain field is one unbroken tincture with no band, stripe or division of any kind, and no field is ever banded in three equal bands. No crenellated, toothed or stepped bar and no stepped or toothed line of division anywhere on the flag: every line of division is straight or simply curved. No castle walls, battlements, towers or gate-towers anywhere; any rayonny edge is drawn as soft, rounded rays, never as flame-shaped tongues. Each flag has one strong central device, stylised and heraldic, never naturalistic and never clip-art: no cartoon, no outline illustration, no pictorial scene, no landscape, no modern vector style, no fine detail smaller than one fortieth of the flag\'s height. Each flag\'s hand (how its devices are drawn), hem (its border ornament) and ground (its field pattern) are given in its style line and must be shown exactly. No lettering, no letters, numbers or runes anywhere; no signature or maker\'s mark; no real-world religious symbol; no real national flag or coat of arms; no crosses of any kind, no stars, crescents or eagles; no masonry or battlements. {family_style}\n{rows_text}';
 
 const LINES_ADD = {
   gnarled: 'a gnarled line of slow, uneven swellings like old bark',
@@ -489,7 +572,7 @@ const NEW_GRAMMARS = [
   grammar({
     id: 'wall_delvers', name: 'Delving-Clans of Kunhrim', people: 'dwarves', family: 'dwarven', language: 'dwarvish', faith: 'deep_reckoning', tier: 2, line: 'dovetailed',
     palette: 'delving brown #4a3b2f; anvil gold #c9973a; stone grey #8f8f8a; black powder #1e1c1c; lamp white #e6e0d2',
-    divisions: ['chief', 'per_chevron', 'pile_reversed', 'per_fess', 'base'],
+    divisions: ['plain', 'bordure', 'chief', 'per_chevron', 'pile_reversed', 'per_fess', 'base'],
     charges: [
       ch('rock_gate', 'building', 'a squared gate cut into a rock face', 'the Western Gate the clans cut into the Lunhrim massif to trade with Aen\'s kingdom'),
       ch('powder_horn', 'tool', 'a powder horn', 'the black powder the hold sells to the crown and nobody else'),
@@ -505,7 +588,7 @@ const NEW_GRAMMARS = [
   grammar({
     id: 'west_delvers', name: 'Western Hold-Folk', people: 'dwarves', family: 'dwarven', language: 'dwarvish', faith: 'deep_reckoning', tier: 3, line: 'dovetailed',
     palette: 'hold dark #3d3a36; rim gold #c8a048; forge red #a33a2a; ash white #dcd6ca; grey stone #8a8680; iron black #222224',
-    divisions: ['chief', 'per_fess', 'pile_reversed', 'per_chevron', 'base'],
+    divisions: ['plain', 'bordure', 'chief', 'per_fess', 'pile_reversed', 'per_chevron', 'base'],
     charges: [
       ch('forge_flame', 'fire', 'a forge-flame on a hearth-stone', 'Hrennost, the fire-hold, ruled from its deepest hall'),
       ch('outer_gate', 'building', 'a squared outer gate in a rock face, shut', 'the Outer Gate where men trade and beyond which they have never been'),
@@ -587,7 +670,7 @@ const NEW_GRAMMARS = [
   grammar({
     id: 'king_warrens', name: 'Warrens of the Hobgoblin King', people: 'goblins', family: 'goblin', language: 'goblin', faith: 'warren_luck', tier: 3, line: 'potenty',
     palette: 'deep moss #4a5a2a; pit black #2a2a22; salvage gold #d0b050; wurgh grey #7a7468; fire-pot orange #c86a2a',
-    divisions: ['base', 'per_fess', 'chief', 'pile_reversed'],
+    divisions: ['plain', 'bordure', 'base', 'per_fess', 'chief', 'pile_reversed'],
     charges: [
       ch('under_road', 'landform', 'a tunnel mouth under a mountain peak', 'the under-roads, the one hidden way through the range, which the king sells in war'),
       ch('wurgh_head', 'beast', "a wurgh's head", 'the wurgh riders of the southern roads'),
@@ -604,7 +687,7 @@ const NEW_GRAMMARS = [
   grammar({
     id: 'spring_warrens', name: 'Warrens of the Warm Springs', people: 'goblins', family: 'goblin', language: 'goblin', faith: 'warren_luck', tier: 3, line: 'potenty',
     palette: 'steam green #5a7a5a; warren dark #3a3a2a; lamp-fat yellow #e8d070; spring white #e4e8e0; hound brown #6a5038',
-    divisions: ['base', 'per_fess', 'chief'],
+    divisions: ['plain', 'bordure', 'base', 'per_fess', 'chief'],
     charges: [
       ch('steaming_spring', 'water', 'a round spring sending up three plumes of steam', 'Drikzig, the hall of the warm water, dug round the largest spring'),
       ch('fat_lantern', 'fire', 'a lantern burning rendered fat', 'the best lamps of the north, sold at the snowline fair'),
@@ -738,7 +821,7 @@ const NEW_GRAMMARS = [
   grammar({
     id: 'melkgard_warlords', name: 'Melkgard Warlords', people: 'men', family: 'boreal_men', language: 'coldic', faith: 'storm_court', tier: 2, line: 'indented',
     palette: 'forge black #2f2f33; war red #8a2a2a; iron grey #9a9aa0; storm white #dcdcd8; gunmetal #4a4c52',
-    divisions: ['per_bend', 'per_fess', 'pile', 'per_chevron'],
+    divisions: ['plain', 'bordure', 'per_bend', 'per_fess', 'pile', 'per_chevron'],
     charges: [
       ch('spear_sheaf', 'weapon', 'three spears bound in a sheaf', 'the oath-companies that hold the march for the warlord'),
       ch('storm_cloud', 'celestial', 'a storm cloud loosing three bolts', "the Storm Court, whose captains keep their tokens in the Black Gallery"),
@@ -822,7 +905,11 @@ const NEW_GRAMMARS = [
 ];
 
 // Charges, tinctures, crowns and form texts added to grammars that existed before the roster redesign.
+// Lead decision under K68 (31 October 2026, open to the owner's overrule): the goblin and yeti grammars also allow a plain undivided field and a bordure.
 const GRAMMAR_ADDITIONS = {
+  road_warrens: { divisions: ['plain'] },
+  goblin_warrens: { divisions: ['plain', 'bordure'] },
+  yeti_clans: { divisions: ['plain', 'bordure'] },
   lake_aenoran: {
     charges: [ch('golden_seal', 'token', 'a hanging gold seal on a cord', 'the Golden Charter a town buys from the court')],
     rename: { change_bell: { name: 'a great bell', meaning: 'the change-bells of the chartered towns and the bell-signalled formations of the Concord of Aen\'s joined kingdoms' } },
@@ -904,6 +991,7 @@ const GRAMMAR_ADDITIONS = {
       ch('powder_cask', 'vessel', 'a bound powder cask', 'the black powder the East learned at Drak'),
       ch('tapped_trunk', 'tree', 'a tall hardwood trunk with a tapping cup', 'the hardwood and the jungle gum that seals casks and ships\' seams'),
       ch('tithe_bowl', 'vessel', 'a heaped tithe-bowl held up', 'the fire-tithe paid every year without fail'),
+      ch('bench_seal', 'token', 'a banker\'s seal hung on a cord', 'the sealed bond of the bench of houses that built the Gold Road from the bronze mines to the sea'),
     ],
   },
   river_kings: {
@@ -1008,8 +1096,8 @@ const PEOPLE_PATCH = {
 const OVERLORD_MARKS = {
   aenor: { mark: 'charter_border', culture: 'lake_aenoran', tincture: 'lamp gold', text: 'the charter border: a plain narrow border of lamp gold, the seal-cord of the Charters of Parim', blazon: 'A plain narrow border of lamp gold.' },
   puvulan: { mark: 'grave_base', culture: 'grave_hosts', tincture: 'grave black', text: "a narrow base of grave black: the realm stands on the Dominion's ground", blazon: 'A narrow plain base of grave black.' },
-  goldoroth: { mark: 'yoke_border', culture: 'volcano_clans', tincture: 'ash grey', text: 'the Iron Yoke: a narrow border raguly of ash grey', blazon: 'A narrow border raguly of ash grey.' },
   hirolon: { mark: 'ward_border', culture: 'hill_giants', tincture: 'cairn brown', text: "Hirolon's ward: a narrow border of cairn brown, the giants who guard every way in", blazon: 'A plain narrow border of cairn brown.' },
+  goldoroth: { mark: 'yoke_border', culture: 'volcano_clans', tincture: 'ash grey', text: 'the Iron Yoke: a narrow border raguly of ash grey', blazon: 'A narrow border raguly of ash grey.' },
   herrodon: { mark: 'ward_border', culture: 'hill_kingdom_elves', tincture: 'night slate', text: "Herrodon's ward: a narrow border engrailed of night slate", blazon: 'A narrow border engrailed of night slate.' },
 };
 
@@ -1022,7 +1110,7 @@ const CROWN_BLAZON = {
   winter_crown: 'Above the charge a circlet of short icicle points in {t}.',
   gunwyn_clans: 'Above the charge an open torc worn as a crown, in {t}.',
   corsair_lords: 'The charge is set within a plain heavy ring of {t}.',
-  noris_riders: 'Above the charge a circlet set with small cups, in {t}.',
+  noris_riders: 'Above the charge a plain circlet in {t}.',
   river_kings: 'Above the charge a low collar-crown in {t}.',
   lake_road_cities: 'Above the charge a circlet of small lantern points in {t}.',
   hill_kingdom_elves: 'Above the charge a circlet of upright leaves in {t}.',
@@ -1050,6 +1138,7 @@ const CHARGE_TAGS = {
   sun_court: ['sun_disc'],
   noon_door: ['sun_disc'],
   kings_seal: ['pentagram'],
+  pentagram_line: ['pentagram'],
   struck_coin: ['disc'],
   reading_lens: ['disc'],
   cut_gem: ['lozenge'],
@@ -1102,6 +1191,15 @@ export const FORBIDDEN = [
   { id: 'trident', re: /\btridents?\b/i, scope: 'blazon' },
   // other fiction
   { id: 'other_fiction', re: /\b(white tree|lidless|flaming eye|white hand|black tower|white horse|direwolf|kraken|three-headed|round door|golden rose)\b/i, scope: 'all' },
+  // K53 additions (25 October 2026): the medieval banner style brings in knotwork, runes and steppe or imperial devices that must stay out
+  { id: 'celtic_knotwork', re: /\b(knotwork|triskel\w*|triple spirals?|spiral knots?|celtic)\b/i, scope: 'all' },
+  { id: 'norse_runic', re: /\b(futhark|norse|runic|valknut|rune-?stones?)\b/i, scope: 'all' },
+  { id: 'tamga', re: /\btamgh?as?\b/i, scope: 'all' },
+  { id: 'byzantine_imperial', re: /\b(byzantine|double-headed|double eagle|imperial monograms?|labarum|chi-rho)\b/i, scope: 'all' },
+  { id: 'real_heraldry_terms', re: /\b(quartered arms|royal arms|coat of arms of|national arms)\b/i, scope: 'all' },
+  // K53 (lead, after the pilots): real-world fields and emblems that look like a national flag or a justice sign
+  { id: 'triband_equal_bands', re: /\b(triband|red-white-red|three equal (horizontal |vertical )?bands|three (horizontal |vertical )?bands of equal)\b/i, scope: 'all' },
+  { id: 'scales_of_justice', re: /\b(balance|weighing scales?|scales? of justice|honest scales?|justice scales?)\b/i, scope: 'blazon' },
   // lettering
   { id: 'lettering', re: /\b(letters?|lettering|numerals?|runes?|monograms?|mottoe?s?|inscriptions?|inscribed|signature|maker's mark|writing|written on)\b/i, scope: 'blazon' },
   // the owner's emblem
@@ -1131,186 +1229,182 @@ const d = (key, division, field, primary, secondary, meaning, opts = {}) => ({ k
 
 export const DESIGNS = [
   // ---- Middle Lands ------------------------------------------------------------------------------------------------
-  d('aenor', 'plain', ['lake blue'], ['change_bell', 'lamp gold'], null,
-    "Aenor bears the great bell of the Concord, whose change-bells rang the formations of Aen's joined kingdoms, under the lamp-crown on lake blue and with no label, because the crown of Aen's own realm needs no difference.",
-    { canon: 'Public arms of a realm governed in secret by the Hidden Council: the deny-list of 1.5 applies. The bell replaces the old bowl-lamp, which is the arms of Lumae of the twelve (pantheon.json).' }),
-  d('safeton', 'base', ['Parim white', 'lake blue'], ['lake_barge', 'bell bronze'], null,
-    "Safeton's barge stands on the lake blue of the Safen mouth, where lake water meets the sea: the harbour republic of the ship-houses, whose Harbour-Master has more ships than the crown, sealed into the Concord by the charter border."),
-  d('freshon', 'chief', ['lake blue', 'pale gold'], ['barley_sheaf', 'Parim white'], ['golden_seal', 'lamp gold'],
-    'Freshon bears the barley of its four states of spring country under a chief of pale gold, with the hanging gold seal of the Golden Charter it bought in 4A 1731: a proud spring-town whose loyalty the Golden Court holds by its debts.'),
-  d('pazoma', 'per_bend_sinister', ['deep lake', 'pale gold'], ['glass_flask', 'Parim white'], ['scribe_quill', 'bell bronze'],
-    'Pazoma bears the flask of its lake-glass and the quill of its paper-makers and copyists: the guild-city of the deep bay that has never had a lord and makes the Concord\'s bells, glass, cloth, paper and books.'),
-  d('orohaf', 'base', ['foam white', 'sea grey'], ['isle_lighthouse', 'sash red'], null,
-    'Orohaf bears the lighthouse-shrine of Borrak under the oar-crown of the queen the eldest women of the five Isle Houses choose for life: the harbour every fleet from the West must pass, where the dead are given to the tide.'),
-  d('selen', 'plain', ['wood green'], ['hollow_oak', 'birch white'], ['three_arrows', 'hazel gold'],
-    'Selen bears the Moot Tree with the Three Arrows of the Quiet Law beneath it: the woodland moots that elect a First Warden under the oak, once hid a king for two winters and still write their own birth rolls inside the Concord.'),
-  d('kingson', 'per_chevron', ['snowline white', 'vale slate'], ['pass_key', 'pass gold'], null,
-    "Kingson's key lies beneath the snow peaks of the Great Wall of Aenor: the Pass-Lord's charter over the only wheel road through the range, whose tolls are the elves' oldest complaint.",
+  d('aenor', 'plain', ['lake blue'], ['clasped_hands', 'lamp gold'], null,
+    "Aenor bears two hands clasped at the wrist in gold on lake blue, the sign of the Concord of Aen's joined kingdoms, sworn hand to hand, with no label, because the crown of Aen's own realm needs no difference.",
+    { canon: 'Public arms of a realm governed in secret by the Hidden Council: the deny-list of 1.5 applies.' }),
+  d('safeton', 'base', ['Parim white', 'lake blue'], ['rod_of_office', 'lamp gold'], null,
+    'Safeton raises the rod of its Harbour-Master over the lake blue of the Safen mouth: the harbour charter by which its Harbour-Master holds more ships than the crown, sealed into the Concord by the charter border.'),
+  d('freshon', 'chief', ['lake blue', 'pale gold'], ['gold_disc', 'lamp gold'], null,
+    'Freshon bears the plain gold seal-disc of the Golden Charter it bought in 4A 1731, under a chief of pale gold: a proud spring-town of four states whose loyalty the Golden Court holds by its debts.'),
+  d('pazoma', 'per_bend_sinister', ['deep lake', 'pale gold'], ['glass_drops', 'Parim white'], null,
+    "Pazoma raises the glass goblet of its glassmakers: the guild-city of the deep bay that has never had a lord and makes the Concord's bells, glass, cloth, paper and books."),
+  d('orohaf', 'base', ['foam white', 'sea grey'], ['sea_fire', 'sash red'], null,
+    'Orohaf bears three tongues of sea-fire kept lit at the lighthouse-shrine of Borrak, under the low crown the eldest women of the five Isle Houses give their queen for life: the harbour every fleet from the West must pass, where the dead are given to the tide.'),
+  d('selen', 'plain', ['wood green'], ['longbow', 'hazel gold'], null,
+    'Selen bears a longbow strung upright, the arm of the Quiet Law of the woodland moots that elect a First Warden under their oak: the realm that once hid a king for two winters and still writes its own birth rolls inside the Concord.'),
+  d('kingson', 'per_chevron', ['snowline white', 'vale slate'], ['vigil_flame', 'pass gold'], null,
+    "Kingson's vigil flame stands between two pale points beneath the snow peaks of the Great Wall of Aenor: the Pass-Lord's charter over the only wheel road through the range, whose tolls are the elves' oldest complaint.",
     { on: 1 }),
-  d('klungori_guard', 'pile_reversed', ['lichen green', 'snowline white'], ['crossbow', 'granite'], null,
-    'The Klungori Guard bears the crossbow of its sworn watch on the rising peak of the South Pass: a garrison company that took land instead of pay to watch the goblin warrens for ever, and whose posts pass from parent to eldest child.'),
+  d('klungori_guard', 'pile_reversed', ['lichen green', 'snowline white'], ['pass_spear', 'granite'], null,
+    'The Klungori Guard bears a spear upright, its point crowned by a ring, on the rising peak of the South Pass: a garrison company that took land instead of pay to watch the goblin warrens for ever, and whose posts pass from parent to eldest child.'),
   d('hirolon', 'base', ['Grano green', 'deep earth'], ['great_cairn', 'chalk'], null,
     'Hirolon raises the Eldest Cairn on its arched hill over the green of the Grano that its Hilofrim tenants graze: a sovereign giants\' kingdom that treats with Aenor under the Cairn Treaty from outside the Charters and asks only to be left alone.',
     { borrow: ['hilofrim_herders:Grano green'] }),
-  d('tirlan', 'base', ['harvest yellow', 'basin green'], ['grain_ship', 'hearth brown'], null,
-    'Tirlan bears the grain ship that blew its first households south to the Hilorn mouth, riding above the double-arched hills of its three valleys, inside the cairn-brown border of the giants who guard every way in.'),
+  d('tirlan', 'base', ['harvest yellow', 'basin green'], ['harvest_stone', 'hearth brown'], null,
+    'Tirlan bears the harvest stone its first households raised at the Hilorn mouth, above the double-arched hills of its three valleys, inside the cairn-brown border of the giants who guard every way in.'),
   d('konori', 'plain', ['steppe red'], ['horse_head', 'black felt'], null,
     "Konori's horse's head rests on the white felt on which every king of the Hundreds is lifted at the ford of the Aenar: a riders' kingdom that breeds the Concord's remounts and is paid for them in titles."),
   d('hunhun', 'per_bend', ['felt white', 'steppe red'], ['horsetail_standard', 'black felt'], null,
     'Hunhun bears the horse-tail standard of the midsummer Gathering where its Horse-Lord is chosen, with the hoof-marks of the host beneath it: the first riders to swear to the One Crown, and the largest horse fair in Aoaz.'),
   d('herez', 'per_chevron', ['chalk white', 'palisade brown'], ['beacon', 'beacon red'], null,
     'Herez lights the beacon of the march Edran set across the Grey Hills so that the remnants of Volgan\'s host could never again come up the southern road unseen: the realm that will feel the south first, and the only one that expects to.'),
-  d('noleksun', 'base', ['field green', 'march ochre'], ['ploughshare', 'chalk white', 3], null,
-    "Noleksun's three ploughshares are the three leagues of free farmers whose eight market towns swore the Oath of Eight Hearths at Saelori: the richest of the frontier dominions, with a Chief Speaker chosen by every hearth."),
+  d('noleksun', 'base', ['field green', 'march ochre'], ['linked_rings', 'chalk white'], null,
+    "Noleksun's three linked rings are the three leagues of free farmers whose eight market towns swore the Oath of Eight Hearths at Saelori: the richest of the frontier dominions, with a Chief Speaker chosen by every hearth.",
+    { formNote: 'A confederation of three leagues: the three rings are the members, so the charge is not tripled.' }),
   d('kilinti', 'base', ['deep grove', 'bark umber'], ['eldest_tree', 'moss pale'], null,
     'Kilinti bears the Eldest with its roots spread over a rooted base: a forest whose ent-moot takes years to say a sentence, while the men of its edges keep its accounts and its charter with Parim.'),
-  d('fotan', 'per_fess', ['quay white', 'toll blue'], ['toll_chain', 'chain red'], null,
-    "Fotan stretches its chain across the strait as Ostvar's house first did at the narrowest landing: a free toll-lordship that sealed no charter of Parim and can open or shut the shortest crossing between the North Lands and Aenor."),
-  d('kunhrim', 'chief', ['delving brown', 'stone grey'], ['rock_gate', 'anvil gold'], ['powder_horn', 'lamp white'],
-    'Kunhrim bears the Western Gate cut into the Lunhrim massif under a dovetailed chief of the range\'s stone, with the horn of the black powder it sells to the crown and nobody else: the hold of the Iron Charter, which can starve any ruler in Parim of iron.'),
-  d('burrikkrit', 'base', ['deep moss', 'pit black'], ['under_road', 'salvage gold'], ['fire_pot', 'fire-pot orange'],
-    'Burrikkrit bears the tunnel mouth under the peak, its hidden way through the range, under the too-small crown of its hobgoblin king, with the fire-pot of the tunnel fights: a warren-kingdom held to the Lamp Truce that sells its under-roads in war.'),
-  d('olodor', 'per_fess', ['holt green', 'root brown'], ['gold_pot', 'pot gold'], null,
-    "Olodor's pot of gold stands inside an orle of Aenor's lake blue: hidden holts within a day's walk of Parim, whose village-kings are crowned when their pots are full and whose luck goes to whoever brings them gold freely.",
+  d('fotan', 'per_fess', ['quay white', 'toll blue'], ['toll_ring', 'chain red'], null,
+    "Fotan hangs its toll-ring across the strait, as Ostvar's house first did at the narrowest landing: a free toll-lordship that sealed no charter of Parim and can open or shut the shortest crossing between the North Lands and Aenor."),
+  d('kunhrim', 'chief', ['delving brown', 'stone grey'], ['rock_arch', 'lamp white'], null,
+    "Kunhrim bears the Western Gate cut into the Lunhrim massif under a dovetailed chief of the range's stone: the hold of the Iron Charter, which sells the black powder to the crown and nobody else, and can starve any ruler in Parim of iron."),
+  d('burrikkrit', 'base', ['deep moss', 'pit black'], ['truce_fire', 'salvage gold'], ['fire_pot', 'fire-pot orange'],
+    'Burrikkrit bears a small truce fire set in a plain circle at its tunnel mouth, with the fire-pot of the tunnel fights: a warren-kingdom held to the Lamp Truce that sells its under-roads in war, under a hobgoblin king who rules only these warrens.'),
+  d('olodor', 'per_fess', ['holt green', 'root brown'], ['gold_torc', 'pot gold'], null,
+    "Olodor's gold torc stands inside an orle of Aenor's lake blue: hidden holts within a day's walk of Parim, whose village-kings are crowned when their pots are full and whose luck goes to whoever brings them gold freely.",
     { orle: { realm: 'aenor', culture: 'lake_aenoran', tincture: 'lake blue' } }),
-  d('dunelaeth', 'plain', ['kingdom green'], ['kept_beech', 'old silver'], ['silver_road', 'moon white'],
-    'Dunelaeth bears the beech that kept its leaves over the road to the Kingson Pass: the one household that would not leave the forests where its dead lay when its kin went east, and still guides travellers on the wrong side of the mountains.'),
+  d('dunelaeth', 'plain', ['kingdom green'], ['guide_flame', 'old silver'], null,
+    'Dunelaeth bears a single flame on a tall staff in old silver: the guide-lantern its household hangs on the road to the Kingson Pass, the one household that would not leave the forests where its dead lay when its kin went east, and still guides travellers on the wrong side of the mountains.'),
   d('aenor_forest', 'base', ['dew silver', 'stand green'], ['rooted_fir', 'deep shade'], null,
     'The Aenor Forest bears a fir whose roots spread as wide as its crown above a gnarled base: the uncut forest of the Baelim, who have never had a crown, never let a man build among them and never share a forest with the ents.'),
   d('cursed_lands', 'per_fess', ['veil grey', 'char'], ['cord_knot', 'undyed wool'], null,
     'The Cursed Lands bear a cord tied in one knot with its ends hanging free: the Veiled count their years by the ties of the eldest cord and keep every name in its mother\'s line, and no crown since Aen\'s has untied them.'),
   d('bloody_forest', 'per_pale', ['redbark', 'deep bark'], ['stag_attires', 'antler bone'], ['beaded_cord', 'ochre'],
     'The Bloody Forest bears the antlers of the red deer with a beaded cord: the hunting clans of the red-oak forest whose bark bleeds when it is cut, ruled by cord-mothers in peace and by war-chiefs on raids, and never chartered by any king.'),
-
   // ---- North Lands -------------------------------------------------------------------------------------------------
   d('lerendor', 'plain', ['strait blue'], ['two_waves', 'salt white'], null,
     'Lerendor bears two waves under the ship-crown: the High Crown of Lerendor and Lerendor\'s North, set on one head when Ostrik of the Sonarvik married Runild of Lerendor\'s North, and the strait dues that make it the North\'s counterweight to Parim.'),
-  d('eekedor', 'per_fess', ['salt white', 'strait blue'], ['salt_cellar', 'deep strait'], null,
-    'Eekedor bears the salt cellar of its Arbitration Court, where salt shared at the table binds both sides of a quarrel: the council of counting houses that keeps the island\'s grain and money and holds its court open to any crown that pays.'),
+  d('eekedor', 'per_fess', ['salt white', 'strait blue'], ['salt_ring', 'deep strait'], null,
+    "Eekedor bears a ring of six salt-stones round a bare centre, the salt shared at the table that binds both sides of a quarrel: the council of counting houses that keeps the island's grain and money and holds its Arbitration Court open to any crown that comes to it.",
+    { formNote: 'A council of counting houses: the ring of six salt-stones is the one council, so the charge is not tripled.' }),
   d('ren', 'base', ['Leren silver', 'strait blue'], ['cape_watch', 'deep strait'], null,
     "R'en bears the watch-house its first prince built on the strait cape and refused to pay for: a gateway principality that has lived between two masters ever since and leans to Parim."),
   d('keredor_hellekton', 'per_pale', ['strait blue', 'kelp green'], ['joined_oars', 'clasp gold'], null,
     'Keredor-Hellekton impales its two coast crowns and joins their steering oars in one ring, as the Arbitration Court joined Vigda of Keredor and Helmund of Hellekton: a double crown whose court still crowns every heir twice.'),
-  d('molot', 'base', ['hearth red', 'peat black'], ['grey_crane', 'fleece white'], null,
-    'Molot bears the crane that stands watch above the marsh: the margraves whose fortress line behind the marsh took the raiders of the Raiding Years, and who still balance Sonargur against Parim so that neither will ever own them.'),
+  d('molot', 'base', ['hearth red', 'peat black'], ['raised_wings', 'fleece white'], null,
+    'Molot bears a pair of wings raised high, the crane that stands watch above the marsh: the margraves whose fortress line behind the marsh took the raiders of the Raiding Years, and who still balance Sonargur against Parim so that neither will ever own them.'),
   d('tolvael', 'per_fess', ['fleece white', 'fir green'], ['brown_bear', 'earth brown'], null,
     "Tolvael's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told."),
-  d('tolhon', 'per_bend_sinister', ['fir green', 'straw gold'], ['otter', 'peat black'], null,
-    'Tolhon bears the otter of its fisheries and its herring ban: an island principality of the Onp coast that lives by its toll-bridge at Sirtum and by its distance from everyone else.'),
-  d('heodwa_lands', 'plain', ['fleece white'], ['rowan', 'fir green', 3], ['pact_hammer', 'hill grey'],
-    'The Heodwa Lands bear three rowans for the hill crowns of Heodwa, Nuatax and Agniy with the dwarves\' hammer of the Hill Pact beneath them: a hill council that every crown of the North knows cannot be fought without fighting Hrakbrund.',
-    { borrow: ['north_delvers:pact_hammer'] }),
+  d('tolhon', 'per_bend_sinister', ['fir green', 'straw gold'], ['three_arch_bridge', 'peat black'], null,
+    'Tolhon bears a bridge of three round arches, the toll-bridge at Sirtum: an island principality of the Onp coast that lives by its herring ban and its distance from everyone else.'),
+  d('heodwa_lands', 'plain', ['fleece white'], ['hill_crown', 'peat black'], ['pact_hammer', 'hearth red'],
+    'The Heodwa Lands bear three hill crowns for Heodwa, Nuatax and Agniy, with the dwarves\' hammer of the Hill Pact beneath them: a hill council that every crown of the North knows cannot be fought without fighting Hrakbrund.',
+    { borrow: ['north_delvers:pact_hammer'], formNote: 'A confederation of three hill kings: the one crown of the Hill Pact stands for all three, so the charge is not tripled.' }),
   d('hrakbrund', 'pile_reversed', ['high slate', 'snow white'], ['high_gate', 'gate black'], null,
     'Hrakbrund bears its black High Gate on the white peak above Ilmahrim: the dwarves of the High Mountains receive men only at the gate, sell them iron, gold and bombards there, and keep the Hill Pact with the hills below.'),
-  d('mina', 'per_chevron', ['fleece white', 'hill grey'], ['miner_pick', 'earth brown'], ['mole', 'peat black'],
-    'Mina bears the miner\'s pick under the crown its king earns by working a season in the Delvings, with the mole of Mine Din, the sister crown joined to it by marriage.'),
-  d('dolpar', 'base', ['straw gold', 'fir green'], ['white_stork', 'earth brown', 3], null,
-    'Dolpar bears three storks of Stork, one of the walled towns round its deep lake, above the lake-court\'s green: a lake league of four towns and the market of Parur that settles its own quarrels and competes with Eekedor for the North\'s.'),
-  d('mustnom', 'per_bend', ['pack brown', 'road moss'], ['laden_pack', 'trade brass'], ['news_horn', 'salt white'],
-    "Mustnom bears the laden pack inside the boss's iron ring, with the horn of the packmen who carry news of a landing faster than any courier: boss-warrens whose people are always half on the road."),
-
+  d('mina', 'per_chevron', ['earth brown', 'hill grey'], ['notched_crown', 'fleece white'], null,
+    'Mina bears the notched crown its king earns by working a season in the Delvings: the sister crown joined to Mine Din by marriage, whose miners and kings are the same people.'),
+  d('dolpar', 'base', ['straw gold', 'fir green'], ['lake_fires', 'hearth red'], null,
+    "Dolpar bears four fires set in a row above the lake-court's green: a lake league of four walled towns round its deep lake and the market of Parur, which settles its own quarrels and competes with Eekedor for the North's trade.",
+    { formNote: 'A league of four walled towns: the four fires are the members, so the charge is not tripled.' }),
+  d('mustnom', 'per_bend', ['pack brown', 'road moss'], ['long_staff_ring', 'trade brass'], null,
+    "Mustnom bears a long staff with an iron ring at its head, set inside the boss's iron ring: boss-warrens whose people are always half on the road, and whose packmen carry news of a landing faster than any courier."),
   // ---- Cold Lands --------------------------------------------------------------------------------------------------
-  d('coldor', 'per_fess', ['frost white', 'winter blue'], ['winter_sheaf', 'hearth red'], ['hearth_ring', 'deep night'],
-    "Coldor bears the winter rye of its crown granaries under the icicle crown of the Winter Queen, with the clan fire of the clans that swore to her: the strongest crown of the north and the least warlike, whose power is the bread in the Frost-Hall."),
+  d('coldor', 'per_fess', ['frost white', 'winter blue'], ['rye_bundle', 'hearth red'], ['hearth_ring', 'deep night'],
+    'Coldor binds a bundle of winter rye with a white cord over the clan fire of the clans that swore to the Winter Queen: the strongest crown of the north and the least warlike, whose power is the bread in the Frost-Hall.'),
   d('melkgard', 'per_bend', ['forge black', 'war red'], ['spear_sheaf', 'storm white'], ['storm_cloud', 'iron grey'],
     "Melkgard bears the bound spears of its oath-companies under the storm cloud of the Storm Court: a warlord's march of black forts that took no crown and left none, and whose men would rather go hungry than eat the queen's bread."),
-  d('horidor', 'chief', ['fjord blue', 'snow'], ['gap_cairn', 'bone'], ['hearth_ring', 'snow'],
-    "Horidor bears the cairn of the Neridor Gap road with Coldor's clan fire beneath it: the cairn moot that keeps the Gap open for every traveller who pays the due and has held the Northern Accord faithfully since the White Year.",
+  d('horidor', 'chief', ['fjord blue', 'snow'], ['gap_stones', 'bone'], ['hearth_ring', 'snow'],
+    'Horidor piles three stones in the Neridor Gap road, with Coldor\'s clan fire beneath them: the cairn moot that keeps the Gap open for every traveller who pays the due and has held the Northern Accord faithfully since the White Year.',
     { borrow: ['winter_crown:hearth_ring'] }),
-  d('yeldenne', 'plain', ['snow'], ['bone_arch', 'soot'], ['road_loaf', 'hide brown'],
-    'Yeldenne bears the whale-rib arch of its valley door and the loaf it leaves each Long Dark at the start of the Silent Road: an ordinary herders\' town that pays no tax, asks nothing of the castle above it and gives the traveller supper.',
-    { canon: 'Decision L2: an ordinary northern town; never Glo, a green crystal, a knight or a blue sword.' }),
-  d('fearno', 'per_chevron', ['ice', 'fjord blue'], ['musk_ox', 'hide brown', 3], null,
-    "Fearno's three musk oxen stand together as the herd stands against wolves: the Free Steadings that refused both Fandanar and Minnolomak in 4A 1304 and choose a first lord to speak for them for seven winters."),
+  d('fearno', 'per_chevron', ['ice', 'fjord blue'], ['harpoon_bundle', 'hide brown'], null,
+    'Fearno binds three harpoons together with one cord, as the steadings stand together: the Free Steadings that refused both Fandanar and Minnolomak in 4A 1304 and choose a first lord to speak for them for seven winters.',
+    { formNote: 'A confederation of three steadings: the three bound harpoons are the members, so the charge is bound together rather than tripled.' }),
   d('austklev', 'plain', ['fjord blue'], ['narwhal', 'snow'], null,
     'Austklev bears the spear-whale whose tusk it sells south and west: a jarldom of whalers that takes a tithe of every whale brought ashore at Vaestia, keeps the harbour boom and stays out of the Cold Rivalry.'),
-  d('worlond', 'per_bend_sinister', ['lichen green', 'soot'], ['waystation', 'snow'], null,
-    'Worlond bears the turf waystation of the Neck Road, its roof smoking with dry wood: the forest lordship the Neck Road Compact made to keep the stages stocked for both crowns.'),
+  d('worlond', 'per_bend_sinister', ['lichen green', 'soot'], ['turf_roof', 'snow'], null,
+    'Worlond raises the turf waystation of the Neck Road, its roof smoking with dry wood: the forest lordship the Neck Road Compact made to keep the stages stocked for both crowns.'),
   d('holdon', 'per_pale', ['fjord blue', 'berry red'], ['fair_pole', 'bone'], null,
-    "Holdon bears the fair-pole of Fentene hung with pelts under the tine crown of the king who keeps the snowline fair's peace: a coast kingdom whose kings are judged by one thing, whether the fair was good."),
-  d('glimkit', 'base', ['steam green', 'warren dark'], ['steaming_spring', 'spring white'], ['spring_snare', 'lamp-fat yellow'],
-    'Glimkit bears the steaming spring of Drikzig with a spring snare beneath it: goblin warrens in the warm valleys of the Coldor Mountains that make the best traps and lamps of the north and pay tax to no crown.'),
+    'Holdon raises the fair-pole of Fentene hung with three pelts under the tine crown of the king who keeps the snowline fair\'s peace: a coast kingdom whose kings are judged by one thing, whether the fair was good.'),
+  d('glimkit', 'base', ['steam green', 'warren dark'], ['three_plumes', 'spring white'], null,
+    'Glimkit rises in three plumes of steam from the steaming spring of Drikzig: goblin warrens in the warm valleys of the Coldor Mountains that make the best traps and lamps of the north and pay tax to no crown.'),
   d('xison', 'chief', ['hide brown', 'snow'], ['amber_drop', 'amber', 3], null,
     'Xison bears three drops of amber for the upland clans of Xison, Rion and Yeneldmore, who swore a road league at Akahew to keep the high road stretch by stretch and share its tolls.'),
-  d('pertolor', 'per_bend', ['snow', 'berry red'], ['vale_ewe', 'soot'], null,
-    'Pertolor bears the ewe of the one valley of the north where sheep do better than reindeer: a wool-market lordship whose lord is cousin to the Winter Queen and godfather to a Melkgard captain, and means to stay both.'),
-  d('omar', 'per_fess', ['ice', 'hide brown'], ['wolverine', 'soot'], null,
-    'Omar bears the wolverine that yields to nobody: one clan on one hill-fort above the border moor, owing Coldor for the Hill-Fort Winter and Melkgard for the White Year and paying neither.'),
-  d('portogalor', 'per_chevron', ['snow', 'soot'], ['walrus', 'bone'], null,
-    'Portogalor bears the walrus whose ivory and fat it sells on the Frozen Sea: sealers descended from the last raider fleet that broke on Melkgard\'s forts, proud of their forebears and careful not to remind Melkgard of them.'),
+  d('pertolor', 'per_bend', ['snow', 'berry red'], ['wool_skein', 'soot'], null,
+    'Pertolor winds a skein of pale wool on a bar: the one valley of the north where sheep do better than reindeer, a wool-market lordship whose lord is cousin to the Winter Queen and godfather to a Melkgard captain, and means to stay both.'),
+  d('omar', 'per_fess', ['ice', 'hide brown'], ['clenched_fist', 'soot'], null,
+    'Omar raises a clenched fist: the oath of the one clan on one hill-fort above the border moor that yields to nobody, owing Coldor for the Hill-Fort Winter and Melkgard for the White Year and paying neither.'),
+  d('portogalor', 'per_chevron', ['snow', 'soot'], ['ice_axe', 'bone'], null,
+    'Portogalor raises an ice-axe upright: sealers descended from the last raider fleet that broke on Melkgard\'s forts, proud of their forebears and careful not to remind Melkgard of them.'),
   d('orewele', 'base', ['snow', 'hide brown'], ['iron_bloom', 'fjord blue'], null,
-    'Orewele bears the bloom of iron it digs from the Orewell lowland and sells by the cartload to the western dwarves: a mining clan whose chief came home a lord from the dwarves\' gate and keeps both crowns at arm\'s length.'),
-  d('kvittumm', 'plain', ['white hills'], ['antlered_head', 'hide red', 3], null,
-    'Kvittumm bears three antlered heads for the reindeer clans of the white hills, who meet each Long Dark at Esrom and keep the toll-peace with the giants together.',
+    "Orewele sets a bloom of raw iron on a ring above the Orewell lowland it digs and sells by the cartload to the western dwarves: a mining clan whose chief came home a lord from the dwarves' gate and keeps both crowns at arm's length."),
+  d('kvittumm', 'plain', ['white hills'], ['moot_fire', 'hide red', 3], null,
+    'Kvittumm kindles three moot-fires for the reindeer clans of the white hills, who meet each Long Dark at Esrom and keep the toll-peace with the giants together.',
     { canon: 'Nothing on the arms hints at anything but herds, weather and the winter moot.' }),
-  d('nivaros', 'base', ['deep ice', 'rime white'], ['ice_throne', 'glacier blue'], null,
-    'Nivaros bears the Ice-Throne of its Frost-King on the arched edge of the glacier: a few thousand giants who let the clans\' herds pass for the toll and close their heights to any crown that comes in arms.'),
-  d('yeti_lands', 'base', ['dusk violet', 'yeti white'], ['hum_cave', 'yeti white'], null,
-    'The Yeti Lands bear the cave that answers the Eldest\'s song: the shelf clans of Haruhu, who sang the hunting truce at Fentene, divide the seal-grounds with the coast and alone can vouch for an envoy to the heights.'),
-  d('ghaahu', 'per_chevron', ['height white', 'deep rock'], ['herd_horns', 'dusk blue'], null,
-    'Ghaahu bears the horns of the wild herds its height clans follow among the Cold Mountains, above the three peaks of the yeti line: a land no crown can reach unless a shelf Eldest vouches for its envoy.'),
-  d('vindael', 'per_bend_sinister', ['sea teal', 'sail white'], ['bellied_sail', 'tar brown'], null,
-    'Vindael bears a ship under a bellied sail, owned by shares and sent south since the captains of Porideon first chose a Speaker to hold the harbour book: a council of whalers and sealers on the ice arm that keeps the coast watch.'),
+  d('nivaros', 'base', ['deep ice', 'rime white'], ['ice_sun', 'glacier blue'], null,
+    'Nivaros raises a sun with its rays cut in ice over the arched edge of the glacier, the sign of its Frost-King: a few thousand giants who let the clans\' herds pass for the toll and close their heights to any crown that comes in arms.'),
+  d('yeti_lands', 'base', ['dusk violet', 'yeti white'], ['cave_arch', 'yeti white'], null,
+    "The Yeti Lands raise the dark cave-mouth that answers the Eldest's song: the shelf clans of Haruhu, who sang the hunting truce at Fentene, divide the seal-grounds with the coast and alone can vouch for an envoy to the heights."),
+  d('ghaahu', 'per_chevron', ['height white', 'deep rock'], ['song_cave_fire', 'dusk blue'], null,
+    'Ghaahu kindles the fire of the song-cave among the Cold Mountains, above the three peaks of the yeti line: a land no crown can reach unless a shelf Eldest vouches for its envoy.'),
+  d('vindael', 'per_bend_sinister', ['sea teal', 'sail white'], ['wind_knots', 'tar brown'], null,
+    "Vindael ties three sailors' knots in one cord, the shares of its ships, owned by shares and sent south since the captains of Porideon first chose a Speaker to hold the harbour book: a council of whalers and sealers on the ice arm that keeps the coast watch.",
+    { formNote: 'A council of shares: the three knots are the three shares, tied in one cord, so the charge is not tripled.' }),
   d('poloto', 'per_fess', ['sail white', 'gale blue'], ['fur_bale', 'amber'], null,
-    'Poloto bears the bale of furs the Fandan carries down to the free port at its mouth: harbour men who kept Parim\'s old trading post for themselves, wrote their dues into a harbour book and swear to nobody.'),
-
+    'Poloto ties a round bale of furs with cord: the fur the Fandan carries down to the free port at its mouth, harbour men who kept Parim\'s old trading post for themselves, wrote their dues into a harbour book and swear to nobody.'),
   // ---- West Lands --------------------------------------------------------------------------------------------------
   d('gunwyn', 'per_pale', ['clan madder', 'clan green'], ['stone_ring', 'torc gold'], null,
     'Gunwyn bears the Oath-Ring of Bulligon under the torc-crown on its two clan colours: a king acclaimed at the stones for life and bound by the Lawspeaker, who signed the Truce of the Grey Ford over the war-thanes\' grumbling.'),
-  d('werlendor', 'per_fess', ['lime white', 'moor brown'], ['wild_boar', 'clan madder'], null,
-    'Werlendor bears the boar of the old feud-clans under a torc-crown of its own: the hill kingdom of Caer-Erg, where Emric had himself acclaimed at the Erg stone, whose kings still call themselves the heirs of Bulligon.'),
+  d('werlendor', 'per_fess', ['lime white', 'moor brown'], ['feud_blade', 'clan madder'], null,
+    'Werlendor raises a short broad feud-blade with a ring at its hilt under a torc-crown of its own: the hill kingdom of Caer-Erg, where Emric had himself acclaimed at the Erg stone, whose kings still call themselves the heirs of Bulligon.'),
   d('lambin', 'chief', ['clan green', 'lime white'], ['stone_granary', 'torc gold'], null,
     'Lambin bears the round stone granary Branorn built below the hills to feed every clan in the famine years: the West\'s granary and its neutral ground, where courts that must talk without losing face send their envoys.'),
-  d('thenon', 'per_bend', ['slate blue', 'torc gold'], ['olive_tree', 'clan green'], null,
-    "Thenon bears the olive tree of the West's mildest corner under the torc-crown: a quiet, rich lowland kingdom that bought its peace with cattle and olives and sends its men to the Ronbo Watch."),
-  d('varnondor', 'plain', ['clan green'], ['cape_lantern', 'torc gold'], null,
-    'Varnondor bears the lantern King Oslin first set on the western capes to watch the old approaches, under the torc-crown: the sea watch of the West and its natural staging port for any crossing.'),
+  d('thenon', 'per_bend', ['slate blue', 'torc gold'], ['peace_cup', 'clan green'], null,
+    'Thenon raises a cup of peace held level under the torc-crown: a quiet, rich lowland kingdom that bought its peace with cattle and olives and sends its men to the Ronbo Watch.'),
+  d('varnondor', 'plain', ['clan green'], ['sea_watch_flame', 'torc gold'], null,
+    'Varnondor raises the watch-flame King Oslin first lit on the western capes to watch the old approaches, under the torc-crown: the sea watch of the West and its natural staging port for any crossing.'),
   d('girdon', 'per_fess', ['river green', 'water blue'], ['ford_stones', 'ford stone'], null,
-    'Girdon bears the stepping stones of the ford of Arligon, where the first wardens swore to keep every crossing and judge every quarrel on the river by one law: a commonwealth of wardens, each named for the ford he keeps.'),
-  d('wennarith', 'base', ['reed gold', 'water blue'], ['ferry_raft', 'dark pool'], null,
-    "Wennarith bears the ferry raft on its rope above the river: the ferry-wardens of Datidon and Pernogon, who keep every crossing of the peninsula's rivers on the model of Girdon's fords and are in no hurry to join anyone's war."),
-  d('saopon', 'quarterly', ['guild green', 'ivory'], ['guild_book', 'guild wine'], null,
-    'Saopon bears the guild book on which the towns of the Kulolo swore their league and stopped paying Parim, on the quartered colours of a guild city: a league that weighs Aenoran gold against Aenoran tariffs every year.'),
-  d('kradlon', 'quarterly', ['guild wine', 'ivory'], ['smith_bellows', 'guild gold'], null,
-    'Kradlon bears the bellows of the workshops that bought the dwarves\' powder secret and make powder-pieces and bombards for anyone who pays: the first guild port of the West, the old settler harbour of Bolbin.'),
+    'Girdon bears three stepping stones across the ford of Arligon, where the first wardens swore to keep every crossing and judge every quarrel on the river by one law: a commonwealth of wardens, each named for the ford he keeps.'),
+  d('wennarith', 'base', ['reed gold', 'water blue'], ['ferry_ring', 'dark pool'], null,
+    "Wennarith hangs a ring on its rope above the river: the ferry-wardens of Datidon and Pernogon, who keep every crossing of the peninsula's rivers on the model of Girdon's fords and are in no hurry to join anyone's war."),
+  d('saopon', 'quarterly', ['guild green', 'ivory'], ['league_rings', 'guild gold'], null,
+    'Saopon ties two rings on one cord, the league the towns of the Kulolo swore on their guild book and kept when they stopped paying Parim, on the quartered colours of a guild city: a league that weighs Aenoran gold against Aenoran tariffs every year.'),
+  d('kradlon', 'quarterly', ['guild wine', 'ivory'], ['fuse_flame', 'guild gold'], null,
+    'Kradlon kindles a fuse-flame for the workshops that bought the dwarves\' powder secret and make powder-pieces and bombards for anyone who pays: the first guild port of the West, the old settler harbour of Bolbin.'),
   d('corogon', 'quarterly', ['guild blue', 'guild gold'], ['paired_seals', 'vermilion'], null,
     'Corogon bears two seals hanging from one cord for the two consuls its great merchant houses choose each year: the consulate of Oslodon, the first Aenoran settlement of the western coast, which fears the corsairs and resents Parim\'s tariffs.'),
-  d('buldor', 'bordure', ['steel blue', 'livery red'], ['company_banner', 'buff'], ['sealed_contract', 'olive'],
-    'Buldor bears the company banner, which is a company\'s soul, within the livery border of its companies and above the sealed contract-book: a company state at the crossroads of Toples that hires its banners and gunners to the highest bidder.'),
+  d('buldor', 'bordure', ['steel blue', 'livery red'], ['halberd', 'buff'], ['seal_ring', 'olive'],
+    "Buldor raises a halberd, which is a company's soul, within the livery border of its companies and above a signet ring on the sealed contract-book: a company state at the crossroads of Toples that hires its banners and gunners to the highest bidder."),
   d('dobbum', 'base', ['basin green', 'hedge dark'], ['famine_bread', 'harvest yellow'], null,
-    "Dobbum bears the basket of the Famine Bread above the double-arched hills of its green basin: the small folk who carried grain to starving clansmen and were given the Ronbo Watch in return, so that evil has not entered the basin since."),
+    'Dobbum raises a round loaf on a stand above the double-arched hills of its green basin: the small folk who carried grain to starving clansmen and were given the Ronbo Watch in return, so that evil has not entered the basin since.'),
   d('brundahrim', 'chief', ['hold dark', 'rim gold'], ['forge_flame', 'forge red'], null,
     'Brundahrim bears the forge-flame of Hrennost, the fire-hold, under a dovetailed chief of gold: dwarves of the Herlitz and Dusty Mountains who sell gold and powder-pieces at the Outer Gate to whoever wins their favour and keep the small folk\'s high passes shut.'),
   d('gromkerm', 'per_fess', ['grey stone', 'iron black'], ['outer_gate', 'rim gold'], ['bombard', 'ash white'],
     'Gromkerm bears the shut Outer Gate above the Kulolo with a bombard beneath it: the old hold of Hrunost, whose gate-wardens sell iron and siege bombards and let no armed company within a bowshot of the gate.'),
-
   // ---- Dark Lands --------------------------------------------------------------------------------------------------
-  d('goldoroth', 'plain', ['obsidian'], ['fire_mountain', 'lava red'], null,
-    'Goldoroth bears the Fire-Mountain under the tusk crown of the Warking whom the moot of four clan blocs acclaims: the forge-kingdom of Cocanoor that wants the whole Dark Lands, casts bombards with goblin powder and binds its tributaries with the Iron Yoke.'),
-  d('dark_gate', 'per_chevron', ['ember orange', 'ash black'], ['cleft_ridge', 'sulphur'], null,
-    'The Dark Gate bears the cleft of the only pass from the Goldoroth arm to the south inside the raguly border of the Iron Yoke: a gate-hold that has tolled every caravan since Zugash built his fort at Doldes and pays its tribute to the Warking.',
-    { on: 1 }),
-  d('dondor', 'plain', ['hold black'], ['bearded_axe', 'ash'], ['hearth_iron', 'bone'],
-    "Dondor bears the bearded axe of its Brute-Kings above the hearth-iron, under the plain iron band: descendants of an Aenoran garrison who took their orc neighbours' insult for a boast and lead the Dark Sea Accord."),
-  d('blackton', 'per_fess', ['hold black', 'strait blue'], ['leren_cog', 'bone', 3], null,
-    'Blackton bears three Leren cogs over Dondor\'s black and the strait\'s blue: five walled harbour towns of mixed Dondric and Leren blood that sell Dondor\'s iron to the North, want no king and argue about their charter.',
-    { borrow: ['leren_sea_kings:strait blue', 'leren_sea_kings:leren_cog'] }),
+  d('goldoroth', 'plain', ['obsidian'], ['undying_fire', 'lava red'], null,
+    'Goldoroth raises an undying fire under the tusk crown of the Warking whom the moot of four clan blocs acclaims: the forge-kingdom of Cocanoor that wants the whole Dark Lands, casts bombards with goblin powder and binds its tributaries with the Iron Yoke.'),
+  d('dark_gate', 'per_chevron', ['ember orange', 'ash black'], ['cleft_gate', 'sulphur'], null,
+    "The Dark Gate raises a gate split down its middle by the one narrow pass from the Goldoroth arm to the south, inside the raguly border of the Iron Yoke: a gate-hold that has tolled every caravan since Zugash built his fort at Doldes and pays its tribute to the Warking."),
+  d('dondor', 'plain', ['hold black'], ['iron_fist', 'ash'], ['hearth_iron', 'bone'],
+    "Dondor raises a clenched iron fist above the hearth-iron, under the plain iron band: descendants of an Aenoran garrison who took their orc neighbours' insult for a boast and lead the Dark Sea Accord."),
+  d('blackton', 'per_fess', ['hold black', 'iron grey'], ['sail_bar', 'bone'], null,
+    "Blackton hangs a single square sail from a bar over Dondor's black and the strait's blue: five walled harbour towns of mixed Dondric and Leren blood that sell Dondor's iron to the North, want no king and argue about their charter.",
+    { formNote: 'A league of five harbour towns: the five towns are the members, so the single sail is not tripled.' }),
   d('belonton', 'per_fess', ['salt teal', 'tar'], ['salt_cone', 'salt white', 3], null,
     'Belonton bears three cones of the Salt Tithe: the sea-orc confederacy sworn at Notle so that its ships would raid others rather than each other, under a Sea-Chief chosen by the voyages he has won.'),
   d('bordon', 'chief', ['coal', 'steel'], ['toll_gate_bar', 'forge orange'], null,
     "Bordon bears the toll-bar of the Black Road: a hold that turned the barracks of the Buried Wars into caravan inns, takes Volgan's gifts and Goldoroth's threats with the same grin and knows exactly where the Troll Forest begins."),
-  d('dreson', 'base', ['slag green', 'coal'], ['fen_reeds', 'steel'], null,
-    'Dreson bears the reeds of the fens where the orcs who would not fight for the Necromancer built a hall on black piles: a fen-hold under a reed-council that lives on eels, peat and bog-iron and swallows the armies that come after it.'),
+  d('dreson', 'base', ['slag green', 'coal'], ['reed_crown', 'steel'], null,
+    'Dreson binds the reeds of the fens where the orcs who would not fight for the Necromancer built a hall on black piles: a fen-hold under a reed-council that lives on eels, peat and bog-iron and swallows the armies that come after it.'),
   d('dulundur', 'plain', ['rust'], ['four_fires', 'steel'], ['moot_ring', 'coal'],
     'Dulundur bears the four fires lit in one hall at Lesderle, with the ring of the Free Moot it hosts against the Iron Yoke: four valleys that each keep their own chief and their own fire, and burn them together.',
     { formNote: 'A confederation of four: the four fires are the members, so the charge is not tripled.' }),
-  d('the_darks', 'per_pale', ['coal', 'iron'], ['offered_haunch', 'ogre bone'], null,
-    'The Darks bear the haunch of meat that Grimduth carried into the ogres\' caves instead of spears in the hard winter of 4A 1222: one moot of the forest orc holds and the ogre clans at Notdertu.',
-    { borrow: ['ogre_clans:offered_haunch', 'ogre_clans:ogre bone'] }),
-  d('skragdurg', 'pile_reversed', ['slag green', 'steel'], ['charcoal_clamp', 'coal'], null,
-    'Skragdurg bears the smoking charcoal clamp of the Fonoor Forest: the forest-hold that sells timber and charcoal to every shipwright on the straits, whatever master they serve.'),
+  d('the_darks', 'per_pale', ['coal', 'iron'], ['moot_ring', 'steel'], null,
+    "The Darks raise the moot ring where Grimduth carried the haunch of meat into the ogres' caves instead of spears in the hard winter of 4A 1222: one moot of the forest orc holds and the ogre clans at Notdertu."),
+  d('skragdurg', 'pile_reversed', ['slag green', 'steel'], ['smoulder', 'coal'], null,
+    'Skragdurg kindles a low smouldering fire in the Fonoor Forest: the forest-hold that sells timber and charcoal to every shipwright on the straits, whatever master they serve.'),
   d('britadon', 'per_bend', ['slag green', 'coal'], ['forge_hammer', 'steel'], null,
-    'Britadon bears the forge-hammer of the iron hills that Bredesk of the Brakgul made one hold with the headland of Beriath: a hold that sells its iron by sea, sits at the Free Moot and watches Goldoroth\'s border.'),
+    'Britadon raises a war-hammer head above the iron hills that Bredesk of the Brakgul made one hold with the headland of Beriath: a hold that sells its iron by sea, sits at the Free Moot and watches Goldoroth\'s border.'),
   d('dun', 'plain', ['hide brown'], ['swing_gate', 'bone'], null,
     "Dun bears a gate hung to swing both ways under the toll-king's crown of bone charms: the crown of the Dun Sea's mouth that swings to whichever neighbour pays best, which has made it the least trusted in the Dark Lands."),
   d('wild_lands', 'base', ['lucky ochre', 'peat'], ['casting_bones', 'peat'], null,
@@ -1320,11 +1414,10 @@ export const DESIGNS = [
   d('hoorunoron', 'base', ['giant-forest green', 'forest earth'], ['three_stone_cairn', 'lichen white'], null,
     "Hoorunoron bears a cairn of three great stones inside an orle of Dondor's iron grey: a few hundred giants behind the Borderline of Giants who never attack first and carry trespassers back over the cairn-line, one under each arm.",
     { orle: { realm: 'dondor', culture: 'dondor_brutes', tincture: 'iron grey' } }),
-  d('burnikit', 'per_fess', ['rust', 'cave black'], ['powder_pouch', 'hoard gold'], null,
-    'Burnikit bears the powder pouch of the best powder-makers of the Dark Lands: free warrens under a Big Snik, the loudest and cleverest boss, chosen first to lie to the Necromancer\'s recruiters and since to sell to whoever pays most.'),
+  d('burnikit', 'per_fess', ['rust', 'cave black'], ['warren_fuse', 'hoard gold'], null,
+    'Burnikit kindles a fuse-flame for the best powder-makers of the Dark Lands: free warrens under a Big Snik, the loudest and cleverest boss, chosen first to lie to the Necromancer\'s recruiters and since to sell to whoever pays most.'),
   d('veshazel', 'plain', ['ash-hall black'], ['ash_flame', 'ash grey'], ['blank_seal', 'ember gold'],
     'Veshazel bears an ash-grey flame above a blank seal for the pact-name only its pact knows: a demon lordship on the Goldoroth Ash Fields, sworn to neither Volgan nor Goldoroth, shunned by its neighbours and courted by the Southern Dominion.'),
-
   // ---- Ember Lands -------------------------------------------------------------------------------------------------
   d('puvulan', 'plain', ['grave black'], ['nafeher_gate', 'bone'], ['ring_of_names', 'ember red'],
     "Puvulan shows the Gate of Nafeher within the ring of names its necromantic orders keep: the Dominion of the dust fields, whose arms show the gate and never the Great Spirit who raised it.",
@@ -1333,34 +1426,33 @@ export const DESIGNS = [
     'Mirolon bears the heron that stands watch on one leg by its lake: a free warden-realm whose High Warden is chosen for life, whose beacon towers are manned every night, and which alone takes the signs from the south seriously.'),
   d('khorvrath', 'pile', ['ash black', 'nether red'], ['pact_horn', 'ember gold'], null,
     'Khorvrath bears the pact-horn of the horn-hold of Khorvazel on the grave-black ground of the Dominion: the horned court of the Southern Dominion, which keeps its oath to Nafeher while Volgan\'s strength stands and still demands the thralls who fled to Olen.'),
-  d('dolon', 'per_fess', ['obsidian', 'nether red'], ['brine_cauldron', 'ember gold'], null,
-    'Dolon bears the brine cauldron over the fire where the salt of its coast and the sulphur of the Maw make the Dominion\'s black powder: the forge of the Southern Dominion, whose laws are written in salt so that the sea can wash away any oath its queen regrets.'),
-  d('nezer', 'per_bend', ['nether red', 'ash black'], ['lava_galley', 'ash white'], null,
-    'Nezer bears the galley that crosses the Sea of Lava to the Nether on a field divided between its two crowns of one family, standing on the Dominion\'s grave-black ground: the largest of the sworn realms and the keeper of the broken Burning Gate on its coast.',
-    { formNote: 'A confederacy of two crowns: the field is divided between them instead of tripling the charge.' }),
+  d('dolon', 'per_fess', ['obsidian', 'nether red'], ['maw_fire', 'ember gold'], null,
+    'Dolon raises a fire over the sulphur Maw, where the salt of its coast and the sulphur of the Maw make the Dominion\'s black powder: the forge of the Southern Dominion, whose laws are written in salt so that the sea can wash away any oath its queen regrets.'),
+  d('nezer', 'per_bend', ['nether red', 'ash black'], ['burning_gate', 'ash white'], null,
+    'Nezer raises a broken gate with fire through its arch, on a field divided between its two crowns of one family and standing on the Dominion\'s grave-black ground: the largest of the sworn realms and the keeper of the broken Burning Gate on its coast.',
+    { formNote: 'A confederacy of two crowns of one family: the field is divided between them instead of tripling the charge.' }),
   d('nether', 'per_fess', ['hall black', 'lava red'], ['kings_seal', 'pact gold'], null,
     "The Nether bears the King of Demons' seal, a five-pointed figure drawn in one unbroken line inside a ring of fire, under the hall-crown: the court beneath the volcanic island whose pacts bind every house and which sells companies to Nafeher only by bargain.",
     { canon: 'The pentagram is allowed in a demon sigil (owner, 24 October 2026); the King\'s name is never shown.' }),
-  d('halia', 'per_fess', ['sand', 'sea teal'], ['salt_pan', 'tar black', 3], null,
-    'Halia bears three salt-pans for the freeholds of the salt coast that swore at Halon to pay one toll as one league, so that no freehold could be squeezed alone: salt-makers who pay Nafeher for silence and remember the thief only in their taverns.'),
-  d('nan', 'per_bend', ['tar black', 'sand'], ['gaff_hook', 'salt white'], null,
-    'Nan bears the gaff hook of the warlord who takes its tolls: the realm of the strongest captain of the Nan Mountains, who lends the Dominion its storm-pilots and sells the same pilots to anyone who pays more.'),
-  d('olen', 'chief', ['salt white', 'storm grey'], ['storm_lantern', 'tar black'], null,
-    'Olen bears the lantern that the Holy Breeze kept lit on its cliffs for a whole winter: a shrine-realm of lamp-keepers whose lights are the first a ship sees coming out of the storm belt, and who shelter whoever reaches them.'),
-
+  d('halia', 'per_fess', ['sand', 'sea teal'], ['salt_stones', 'tar black'], null,
+    'Halia sets three white salt-stones in a row for the freeholds of the salt coast that swore at Halon to pay one toll as one league, so that no freehold could be squeezed alone: salt-makers who pay Nafeher for silence and remember the thief only in their taverns.',
+    { formNote: 'A league of three salt-pans: the three salt-stones are the three pans, so the charge is one row rather than tripled.' }),
+  d('nan', 'per_bend', ['tar black', 'sand'], ['tolling_spear', 'salt white'], null,
+    'Nan raises a spear with a hooked head, the mark of the warlord who takes its tolls: the realm of the strongest captain of the Nan Mountains, who lends the Dominion its storm-pilots and sells the same pilots to anyone who pays more.'),
+  d('olen', 'chief', ['salt white', 'storm grey'], ['holy_breeze_flame', 'tar black'], null,
+    'Olen raises a flame standing alone on a cliff-top, the light the Holy Breeze kept lit for a whole winter: a shrine-realm of lamp-keepers whose lights are the first a ship sees coming out of the storm belt, and who shelter whoever reaches them.'),
   // ---- Zol's Mistake -----------------------------------------------------------------------------------------------
   d('zols_mistake', 'plain', ['void black'], ['broken_rings_sigil', 'cold grey'], null,
     "Zol's Mistake shows only the sigil of its emblem leader, the Will of Zol: broken concentric rings on the void, which say nothing of who administers Furviatlon.",
     { canon: 'Emblem realm: the Will of Zol alone; nothing of Zol, of his servant or of the black isles appears.' }),
-
   // ---- Magical Lands -----------------------------------------------------------------------------------------------
-  d('worshipdom', 'plain', ['hostel white'], ['offered_loaf', 'bread brown'], ['pilgrim_staff', 'bread brown'],
-    'The Worshipdom shows only its public charity: a hand offering a loaf above the pilgrim\'s staff, the hostels of the Deliverer that shelter pilgrims from every land and carry letters for every court.',
+  d('worshipdom', 'plain', ['hostel white'], ['offered_loaf', 'bread brown'], null,
+    'The Worshipdom shows only its public charity: a hand offering a loaf a hand offering a loaf, the hostels of the Deliverer that shelter pilgrims from every land and carry letters for every court.',
     { canon: 'Public arms of a secret realm: nothing may reveal Afrit or the Hidden Council (deny-list of 1.5), and no lamp with an open flame (the arms of Lumae of the twelve).' }),
   d('magical_forest', 'per_fess', ['leaf green', 'deep wood'], ['living_tree', 'elven silver'], ['precedent_book', 'moon white'],
-    'The Magical Forest bears the tree of the Singing Grove, which its houses say was sung before it grew, above the book of precedents its elected council keeps, inside the silver border of elected speakers: the oldest realm of the elves, never conquered and the keeper of the Refusal.',
+    'The Magical Forest bears the tree of the Singing Grove, which its houses say was sung before it grew, above the ring of seven rings its elected council keeps for its precedents, inside the silver border of elected speakers: the oldest realm of the elves, never conquered and the keeper of the Refusal.',
     { council: true }),
-  d('herrodon', 'per_bend', ['hill green', 'night slate'], ['hall_stair', 'elven silver'], ['silver_road', 'scale gold'],
+  d('herrodon', 'per_bend', ['hill green', 'night slate'], ['hall_stair', 'elven silver'], ['hill_road', 'scale gold'],
     'Herrodon bears the stair of the hall where each queen is acclaimed by the houses of the hills, under the leaf circlet, with the road west to the lost kin it still remembers: a hill queenship that keeps the Boundary Groves feud with Andos Enda alive by ceremony.',
     { borrow: ['kingdom_forest_elves:silver_road'] }),
   d('andos_enda', 'per_fess', ['lake teal', 'deep blue'], ['glass_boat', 'water silver', 3], null,
@@ -1370,10 +1462,10 @@ export const DESIGNS = [
   d('lccimio', 'per_bend', ['rift teal', 'night sea'], ['lantern_tower', 'quay silver'], null,
     'Lccimio bears the lantern tower of its rift-coast quays inside the silver border of its council of elder houses: the elves who know the eastern courts better than any alive, and who will be the first to meet an eastern landing.',
     { council: true }),
-  d('eldafaen', 'plain', ['night sea'], ['archive_scroll', 'quay silver'], null,
-    'Eldafaen bears the tied scroll of the Archive, where a house of loremasters keeps the names, letters and songs of the elves who died in the Alliance\'s wars so that no one will again ask the elves to march without reading them first.'),
-  d('yavieth', 'plain', ['keeper silver'], ['three_spurs', 'roost slate'], ['gift_scale', 'dragon red'],
-    'Yavieth bears the three spurs of Dragon Mountain with a shed dragon scale beneath them: a fellowship without a ruler whose roost-keepers go up to the roosts to listen rather than to command, and trade the shed scales at Kingson.'),
+  d('eldafaen', 'plain', ['night sea'], ['silver_circlet', 'quay silver'], null,
+    "Eldafaen raises a silver circlet of five points over the night sea: the Archive, where a house of loremasters keeps the names, letters and songs of the elves who died in the Alliance's wars, so that no one will again ask the elves to march without reading them first."),
+  d('yavieth', 'plain', ['keeper silver'], ['roost_flame', 'roost slate'], ['gift_scale', 'dragon red'],
+    'Yavieth raises three flames in a row over the spurs of Dragon Mountain, with a shed dragon scale beneath them: a fellowship without a ruler whose roost-keepers go up to the roosts to listen rather than to command, and trade the shed scales at Kingson.'),
   d('teste', 'chief', ['vale green', 'straw'], ['plough_furrow', 'linen white'], null,
     'Teste bears the ploughed furrow of the one fertile vale under the Herrodon rim, within the border of the hall that protects it: a commune of men descended from Third Age refugees, who feed Herrodon and Andos Enda and choose their Reeve at the harvest moot.'),
   d('luv_zhise', 'per_pale', ['narrows teal', 'quay silver'], ['rift_ferry', 'ferry plum'], null,
@@ -1382,7 +1474,6 @@ export const DESIGNS = [
   d('mushroom_forest', 'plain', ['spore purple'], ['ring_of_caps', 'cap cream'], null,
     'The Mushroom Forest bears a ring of pale mushroom caps inside an orle of the rift coast\'s teal: the land of the mycids along the rift shore, a people that trades through Luv-zhise and whose ways of rule nobody outside the forest knows.',
     { orle: { realm: 'lccimio', culture: 'rift_coast_elves', tincture: 'rift teal' }, canon: 'Proposed until the owner rules on the mycids: nothing about their rule is drawn.' }),
-
   // ---- Lands of the Sun --------------------------------------------------------------------------------------------
   d('gala', 'base', ['court white', 'shade green'], ['mirror_spring', 'rain blue'], null,
     'Gala bears the Mirror of First Rain under the endless circlet of King Lorien, above the green shore its Sunfolk villages farm: the oldest elven court of Aoaz, courteous to Aenor and distrustful of kings who turn victories into crowns.',
@@ -1391,8 +1482,8 @@ export const DESIGNS = [
     'The Lands of Light bear the noon-door that only they may bear: the sanctuaries of the eastern lowland that chose one Radiant Speaker to share out the water of Sun Lake in the drought of 1A 840, and that still chair the Noon Council.'),
   d('elvana', 'per_fess', ['sanctuary white', 'shade blue'], ['spindle_skein', 'deep red'], null,
     'Elvana bears the spindle of the weavers of its cape sanctuary: a small, gentle house of weavers and healers that chose its own Speaker rather than answer to Eldoga and keeps its one quarrel in the world with Igara.'),
-  d('igara', 'per_pale', ['sanctuary gold', 'sanctuary white'], ['shallows_crane', 'shade blue'], null,
-    'Igara bears the crane of its shrine of the shallows on Sun Lake: the smallest sanctuary realm, which chose its own Speaker sixty-two years after Elvana and measures its standing at the Noon Council by how often it can outvote it.'),
+  d('igara', 'per_pale', ['sanctuary gold', 'sanctuary white'], ['shallows_reeds', 'shade blue'], null,
+    'Igara binds three reeds at the head, the sign of its shrine of the shallows on Sun Lake: the smallest sanctuary realm, which chose its own Speaker sixty-two years after Elvana and measures its standing at the Noon Council by how often it can outvote it.'),
   d('yeni_alang', 'pile_reversed', ['sanctuary white', 'shade blue'], ['seen_wings', 'sanctuary white'], null,
     'Yeni Alang bears a pair of wings seen from below on its rising terrace: the house of sky-watchers founded when one of them saw wings over the terraces on a still day, which still adds a line to the Roll of Wings a few times in a good year.'),
   d('tor_luni', 'per_bend', ['sanctuary gold', 'deep red'], ['uncut_stones', 'sanctuary white'], null,
@@ -1406,19 +1497,17 @@ export const DESIGNS = [
   d('god_forest', 'base', ['god-wood green', 'shadow'], ['branch_gate', 'glade gold'], null,
     'The God Forest bears a closed gate of woven branches: the household of Keepers who were there when the first sanctuary was built, who close their wood to everyone and say nothing at all.',
     { canon: 'No sun and no Sunhot or Gala line: the Keepers\' kin is open.' }),
-
   // ---- East Lands --------------------------------------------------------------------------------------------------
-  d('noris', 'plain', ['indigo'], ['well_head', 'well ochre'], ['kneeling_camel', 'robe white'],
-    'Noris bears the well of the Seven Wells of Furvior under the well-crown of the king the well-lords choose from one line, with the kneeling camel of the tribes he leads in war: the camel-kingship of the northern desert and the Salt Road.',
-    { canon: 'The one camel of the East (the Moco tribes are now part of Noris).' }),
+  d('noris', 'plain', ['indigo'], ['well_head', 'well ochre'], null,
+    'Noris raises the well-head of the Seven Wells of Furvior under the well-crown of the king the well-lords choose from one line: the camel-kingship of the northern desert and the Salt Road, whose tribes he leads in war.'),
   d('naamis', 'per_fess', ['coast white', 'naam blue'], ['twin_harbour', 'sail ochre'], null,
     'Naamis bears the two harbour moles of Hacsen and Vigodor that one marriage joined under the sea-crown: a sea crown whose ships carry the Salt Road\'s goods to the rift and whose policy rests on the Noris Treaty.'),
   d('woqood', 'chief', ['seal water', 'snow coast'], ['woqood_harpoon', 'snow coast', 3], null,
     'Woqood bears three harpoons for the boat clans that swore the moot of Pehami to share the seal grounds without blood under a Harpoon-Speaker: sealers of the snow coast who stay out of every eastern coalition unless someone attacks them.'),
-  d('orato', 'per_pale', ['isle blue', 'boat brown'], ['orato_cod', 'net white'], null,
-    'Orato impales its two isles of Orato and Fladev, joined by marriage, with the cod its families sell to the Naamis ship-masters: a lordship of the boats facing the Kusmeel under one lord who built the stone harbour at Nodoqood.'),
-  d('stabilo', 'plain', ['caravan red'], ['honest_scale', 'linen'], null,
-    "Stabilo bears the honest balance of its Prince of the Scales, first of the bench of houses that built the Gold Road from the bronze mines to the sea: the strongest military purse of the East and Noris's rival on the caravan roads."),
+  d('orato', 'per_pale', ['isle blue', 'boat brown'], ['net_ring', 'net white'], null,
+    'Orato impales its two isles of Orato and Fladev, joined by marriage, with the ring of net-floats its families sell to the Naamis ship-masters: a lordship of the boats facing the Kusmeel under one lord who built the stone harbour at Nodoqood.'),
+  d('stabilo', 'plain', ['caravan red'], ['bench_seal', 'linen'], null,
+    "Stabilo bears the sealed bond of the bench of houses that built the Gold Road from the bronze mines to the sea, under its Prince of the Scales: the strongest military purse of the East, whose bond every caravan on the road is sealed by and Noris's rival there."),
   d('drak', 'per_fess', ['bronze', 'caravan red'], ['furnace_cone', 'ink'], ['powder_cask', 'linen'],
     'Drak bears the smoking cone of the Drak Furnace under which its forge-houses swore the Furnace Oath, with the powder cask whose recipe its forge-masters guard: the place where the East learned black powder.'),
   d('mostok', 'chief', ['market green', 'bronze'], ['nested_weights', 'linen'], null,
@@ -1439,13 +1528,12 @@ export const DESIGNS = [
     'Delbiz bears a horse of the great fair at Furtonlin under the river-diadem: the grassland kingdom whose horse-lords swore to keep their horses and their grass for themselves when Alerhia could no longer pay them.'),
   d('ostoroth', 'per_fess', ['deep water', 'lake silver-blue'], ['quay_lantern', 'lantern amber'], null,
     'Ostoroth bears the lantern of the shrine on the water at Ohitus under the lantern-crown, because the highland lords made the lord of Ohitus king so that the shrine would always be in a king\'s keeping: the kingdom of the Lake Road that keeps the Lantern Peace with Mora.'),
-  d('mora', 'per_fess', ['quay white', 'lake silver-blue'], ['harvest_basket', 'lantern amber'], ['perch', 'deep water'],
-    'Mora bears the basket of harvests with which the fishers and farmers of Gonnois bought their lord\'s rights, and the perch of the fish-hall where their council meets: the granary of the East, which has no king and wants none.'),
+  d('mora', 'per_fess', ['quay white', 'lake silver-blue'], ['harvest_basket', 'lantern amber'], null,
+    'Mora bears the heap of grain in a shallow dish with which the fishers and farmers of Gonnois bought their lord\'s rights: the granary of the East, which has no king and wants none, and whose fish-hall council meets under the heap.'),
   d('kersian', 'plain', ['lake silver-blue'], ['market_gate', 'quay white'], null,
     'Kersian bears the gate of the walled market that Aenoran exiles and Alerhic lake traders built where the Lake Road would cross the Gold Road: a free city, rich, small and anxious, kept free by the rivalry of two powers.'),
-  d('rhachia', 'per_chevron', ['kiln ochre', 'red clay'], ['kiln', 'umber'], ['clay_jar', 'slip white'],
-    'Rhachia bears the kiln of the kiln-mothers who opened the gates of Pordoce in 4A 1719 and elected a tribune instead of a king, with a jar of the pots the caravan houses still buy: a poor, proud commonwealth watched by the deposed king\'s heir.'),
-
+  d('rhachia', 'per_chevron', ['kiln ochre', 'red clay'], ['kiln', 'umber'], null,
+    'Rhachia raises the kiln of the kiln-mothers who opened the gates of Pordoce in 4A 1719 and elected a tribune instead of a king: a poor, proud commonwealth watched by the deposed king\'s heir.'),
   // ---- South Lands -------------------------------------------------------------------------------------------------
   d('miaed', 'per_chevron', ['sand white', 'gorge red'], ['pass_fire', 'fire gold'], null,
     'Miaed bears the fire the pass-lords keep in the Hardtmuth passes for the spirits of the high road: a lordship of pass-forts that elects the Lord of Erdozan and sells passage to Noris and Stabilo alike.',
@@ -1453,7 +1541,6 @@ export const DESIGNS = [
   d('wahatud', 'plain', ['oasis green'], ['four_wells', 'dune'], null,
     'Wahatud bears the four wells of the Well-Moot that the surviving clan-mothers swore at Biir-Raab after the war of the poisoned wells: a league that never joins a war and always offers water to refugees.',
     { formNote: 'A league of four strings of wells: the four wells are the members, so the charge is not tripled.' }),
-
   // ---- Islands of the South ----------------------------------------------------------------------------------------
   d('enhis_is_rond', 'plain', ['coral sand'], ['reef_shrine', 'deep reef'], null,
     'Enhis Is Rond bears the shrine beneath the tide that the Rising Tide drowned, whose Priest-Elders rule the centre of the Great Isle and repeat in its rites a name they do not understand.'),
@@ -1466,12 +1553,11 @@ export const DESIGNS = [
   d('yongyong', 'per_chevron', ['coral sand', 'deep reef'], ['shell_necklace', 'coral red'], null,
     'Yongyong bears a necklace of the shell its villages carve: the ring-council of the villages round the Yong lagoon, which all carry one name and burned three of their own in the Year of the Red Wind before they made peace round one ring.'),
   d('kamu_lamo', 'plain', ['deep reef'], ['wave_tally', 'coral sand'], null,
-    'Kamu Lamo bears the tally itself: the deep isle of the oldest tally-caves of the south, where the dead have been counted as waves on the cave walls since before any Aenoran sailor saw the arcs.'),
+    'Kamu Lamo bears the spiral conch of the tally-caves: the deep isle of the oldest tally-caves of the south, where the dead have been counted as waves on the cave walls since before any Aenoran sailor saw the arcs.'),
   d('kea', 'pile_reversed', ['lagoon turquoise', 'coral sand'], ['rice_terrace', 'frond green'], null,
     'Kea bears three stepped rice terraces on the rising slope: the terrace council of Kea, Agla and the Rice Islands, which shares its scarce water by council and sends rice to any island in a bad year.'),
   d('sidea', 'per_pale', ['lagoon turquoise', 'deep reef'], ['storm_drum', 'coral sand'], null,
     'Sidea bears the slit drum on which its drummers carry the first warning of every storm to the Great Isle: a cluster of islets that chose one elder in the storm year that cut them off for a whole season.'),
-
   // ---- Triton's Islands --------------------------------------------------------------------------------------------
   d('adel', 'per_fess', ['chart paper', 'chart teal'], ['rolled_chart', 'ink', 3], null,
     'Adel bears three rolled charts for the chart-houses that agreed in 4A 388 to copy every chart in one house at Sanderz: the chart-house league whose Chart Hall decides which crown gets the newest chart.'),
@@ -1560,7 +1646,7 @@ const STORY_PATCH = {
 export function loadSources(paths = PATHS) {
   return {
     heraldry: readJson(paths.heraldry),
-    roster: readJson(paths.roster),
+    roster: (() => { const r = readJson(paths.roster); return { ...r, realms: r.realms.filter((x) => !RETIRED_REALMS.has(x.key)) }; })(),
     culturesNew: readJson(paths.culturesNew),
     pantheon: readJson(paths.pantheon),
   };
@@ -1568,8 +1654,12 @@ export function loadSources(paths = PATHS) {
 
 const cultureOf = (id) => CULTURE_RENAMES[id] ?? id;
 
+// K53 (lead): charge names the register forbids, renamed in every grammar that carries the charge (the seeded grammars keep the old text).
+const CHARGE_TEXT = { struck_coin: 'a bronze coin stamped with a city gate' };
+
 function applyGrammarChanges(doc, src) {
   doc.lines = { ...doc.lines, ...LINES_ADD };
+  for (const g of Object.values(doc.cultures)) for (const c of g.charges ?? []) if (CHARGE_TEXT[c.id]) c.name = CHARGE_TEXT[c.id];
   doc.families = clone(FAMILIES);
   for (const id of Object.keys(RETIRED_CULTURES)) delete doc.cultures[id];
   const cn = src.culturesNew.cultures;
@@ -1601,6 +1691,15 @@ function applyGrammarChanges(doc, src) {
     if (add.dropForms) for (const f of add.dropForms) delete g.forms[f];
     if (add.ornament) g.ornament = add.ornament;
     if (add.ornamentAppend && !g.ornament.endsWith(add.ornamentAppend)) g.ornament += add.ornamentAppend;
+  }
+  // K53 emblem charges: each replaces a charge of the same id or joins the grammar's stock.
+  for (const [cid, charges] of Object.entries(K53_CHARGES)) {
+    const g = doc.cultures[cid];
+    if (!g) throw new Error(`K53 charge for unknown culture ${cid}`);
+    for (const c of charges) {
+      const i = g.charges.findIndex((x) => x.id === c.id);
+      if (i >= 0) g.charges[i] = clone(c); else g.charges.push(clone(c));
+    }
   }
   // Faith ids renamed in cultures_new.json.
   for (const g of Object.values(doc.cultures)) if (FAITH_RENAMES[g.faith]) g.faith = FAITH_RENAMES[g.faith];
@@ -1655,12 +1754,24 @@ function bestTincture(PAL, cultureId, against) {
 }
 const tref = (t, source, extra = {}) => ({ name: t.name, hex: t.hex, source, ...extra });
 
+// K53: each culture takes a hand, a hem and a ground by its index in the sorted list of culture ids. The cycles have
+// lengths 10, 8 and 6, so the triples are all distinct for up to 120 cultures; the style line of each record is written from it.
+export function assignCultureStyles(doc) {
+  const ids = Object.keys(doc.cultures).sort();
+  ids.forEach((cid, i) => {
+    // K53 vocabulary: a culture with an explicit triple keeps it; the cycle is only the fallback for a culture not yet styled.
+    const [hand, hem, ground] = K53_STYLE[cid] ?? [STYLE_CYCLES.hand[i % STYLE_CYCLES.hand.length], STYLE_CYCLES.hem[i % STYLE_CYCLES.hem.length], STYLE_CYCLES.ground[i % STYLE_CYCLES.ground.length]];
+    doc.cultures[cid].style = { hand, hem, ground, text: `The culture's hand: ${HANDS[hand]}; its hem: ${HEMS[hem]}; its ground: ${GROUNDS[ground]}.` };
+  });
+  return doc;
+}
+
 export function buildRecords(doc, roster) {
   const { PAL, CH } = paletteIndex(doc);
   const realms = Object.fromEntries(roster.realms.map((r) => [r.key, r]));
   const errors = [];
   const out = [];
-  for (const des of DESIGNS) {
+  for (const des of DESIGNS.map(k65Apply)) {
     const realm = realms[des.key];
     if (!realm) { errors.push(`design ${des.key}: no realm of that key in the roster`); continue; }
     const cid = cultureOf(realm.culture);
@@ -1685,6 +1796,8 @@ export function buildRecords(doc, roster) {
         const [bc, bn] = b.split(':');
         if (bn === id && CH[bc]?.[id]) return { c: CH[bc][id], source: bc, borrowed: true };
       }
+      if (K68_CHARGES[id]) return { c: K68_CHARGES[id], source: cid };
+      if (K65_CHARGES[id]) return { c: K65_CHARGES[id], source: cid };
       errors.push(`${des.key}: charge ${id} is not in the ${cid} or ${people} stock or a declared borrowing`);
       return { c: { id, name: id, meaning: '', class: 'token' }, source: '?' };
     };
@@ -1692,11 +1805,11 @@ export function buildRecords(doc, roster) {
     const line = des.division === 'plain' ? null : g.line;
     const [pid, ptin, pcount = 1] = des.primary;
     const pc = resolveC(pid);
-    const P = { id: pc.c.id, name: pc.c.name, meaning: pc.c.meaning, class: pc.c.class, culture: pc.source, ...(pc.borrowed ? { borrowed: true } : {}), tincture: resolveT(ptin), count: pcount };
+    const P = { id: pc.c.id, name: pc.c.name, meaning: pc.c.meaning, class: pc.c.class, ...(pc.c.regional || des.opts.regionalPrimary ? { regional: true } : {}), culture: pc.source, ...(pc.borrowed ? { borrowed: true } : {}), tincture: resolveT(ptin), count: pcount };
     let S = null;
     if (des.secondary) {
       const sc = resolveC(des.secondary[0]);
-      S = { id: sc.c.id, name: sc.c.name, meaning: sc.c.meaning, class: sc.c.class, culture: sc.source, ...(sc.borrowed ? { borrowed: true } : {}), tincture: resolveT(des.secondary[1]) };
+      S = { id: sc.c.id, name: sc.c.name, meaning: sc.c.meaning, class: sc.c.class, ...(sc.c.regional ? { regional: true } : {}), culture: sc.source, ...(sc.borrowed ? { borrowed: true } : {}), tincture: resolveT(des.secondary[1]) };
     }
     // Contrast and fimbriation.
     const ov = overlap(des.division, F, des.opts.on);
@@ -1712,10 +1825,7 @@ export function buildRecords(doc, roster) {
     const marks = [];
     const form = realm.politicalForm;
     const family = g.family;
-    if (family === 'ainic_men' && des.key !== 'aenor' && form !== 'theocracy') {
-      const top = topOf(des.division, F.map((t) => t.hex));
-      marks.push({ mark: 'label', text: "Aen's label of three points in chief", tincture: tref(bestTincture(PAL, cid, top ? [top] : F.map((t) => t.hex)), cid) });
-    }
+    // K53: the Ainic label (a chief bar of three square points) is no longer drawn; it read as battlements and made the flags alike.
     if (CROWNED_FORMS.has(form) && g.crown) {
       const top = topOf(des.division, F.map((t) => t.hex)) ?? F[0].hex;
       let ct;
@@ -1723,7 +1833,7 @@ export function buildRecords(doc, roster) {
       else if (cid === 'free_crowns_north') ct = tref(bestTincture(PAL, cid, [P.tincture.hex]), cid);
       else if (contrastRatio(P.tincture.hex, top) >= TUNING.contrastMin) ct = P.tincture;
       else ct = tref(bestTincture(PAL, cid, [top]), cid);
-      marks.push({ mark: 'crown', text: g.crown, tincture: ct });
+      if (!des.opts?.noCrown) marks.push({ mark: 'crown', text: g.crown, tincture: ct });
     }
     if (des.opts.council && SYLVAN_SILVER[cid]) marks.push({ mark: 'council_border', text: 'a border engrailed: the elected speakers', tincture: tref(PAL[cid][SYLVAN_SILVER[cid]], cid) });
     if (form === 'council' && SYLVAN_SILVER[cid] && !des.opts.council) marks.push({ mark: 'council_border', text: 'a border engrailed: the elected speakers', tincture: tref(PAL[cid][SYLVAN_SILVER[cid]], cid) });
@@ -1731,12 +1841,12 @@ export function buildRecords(doc, roster) {
     if (cid === 'river_kings') marks.push({ mark: 'river_bendlet', text: "a narrow wavy bendlet: the king's river", tincture: tref(bestTincture(PAL, cid, F.map((t) => t.hex)), cid) });
     if (cid === 'steppe_rider' && form === 'moot') marks.push({ mark: 'host_marks', text: 'three small hoof-marks in base: the host', tincture: P.tincture });
     if (cid === 'buldor_companies') marks.push({ mark: 'bordure_compony', text: 'a border compony of livery red and buff: the companies\' livery', tincture: F[1] });
-    if (cid === 'road_warrens') marks.push({ mark: 'boss_ring', text: "the boss's iron ring round the charge", tincture: tref(PAL[cid]['boss black'], cid) });
+    if (cid === 'road_warrens' && !markWaived(des.key, 'boss_ring')) marks.push({ mark: 'boss_ring', text: "the boss's iron ring round the charge", tincture: tref(PAL[cid]['boss black'], cid) });
     if (des.opts.orle) {
       const o = des.opts.orle;
       marks.push({ mark: 'enclave_orle', text: `an orle of ${o.tincture}: held inside the land of ${realms[o.realm]?.name ?? o.realm}`, tincture: tref(PAL[o.culture][o.tincture], o.culture, { context_mark: o.realm }) });
     }
-    if (realm.overlord && OVERLORD_MARKS[realm.overlord]) {
+    if (realm.overlord && OVERLORD_MARKS[realm.overlord] && !markWaived(des.key, OVERLORD_MARKS[realm.overlord].mark)) {
       const om = OVERLORD_MARKS[realm.overlord];
       marks.push({ mark: om.mark, text: om.text, tincture: tref(PAL[om.culture][om.tincture], om.culture, { overlord_mark: true }) });
     }
@@ -1749,6 +1859,10 @@ export function buildRecords(doc, roster) {
       meaning: des.meaning,
       ...(des.opts.formNote ? { form_note: des.opts.formNote } : {}),
       ...(des.opts.canon ? { canon_note: des.opts.canon } : {}),
+      ...(K65_JUSTIFIED[des.key] ? { regional_justification: K65_JUSTIFIED[des.key] } : {}),
+      style_text: realmStyleText(g.style?.text ?? '', des.key),
+      ...(K68_REALM_HEM[des.key] ? { hem_override: K68_REALM_HEM[des.key] } : {}),
+      ...(K68_MARK_WAIVED[des.key] ? { marks_waived: K68_MARK_WAIVED[des.key] } : {}),
       ...(des.opts.on !== undefined ? { placement: des.opts.on === 1 ? 'on the lower part of the field' : 'on the upper part of the field' } : {}),
     };
     rec.blazon = blazon(rec, doc);
@@ -1888,10 +2002,15 @@ function updateDynamic(doc, records) {
 export function build(src = loadSources()) {
   const doc = clone(src.heraldry);
   applyGrammarChanges(doc, src);
+  assignCultureStyles(doc);
   const { records, errors } = buildRecords(doc, src.roster);
   doc.countries = records;
   updateDynamic(doc, records);
-  doc.schema = 'zin-heraldry/2';
+  doc.schema = 'zin-heraldry/3';
+  doc.pipeline.prompt_frame = PROMPT_FRAME;
+  doc.pipeline.style = 'K53 (25 October 2026): medieval banner cloth, stylised heraldic devices, no clip-art or outline illustration; each culture has its own hand, hem and ground (cultures[].style); lines are no longer the regional identifier.';
+  doc.checks.regional_symbols = `a record whose primary or secondary charge is in REGIONAL_CLASSES (${REGIONAL_CLASSES.join(', ')}) must carry a regional_justification from the realm's own history (generator table REGIONAL_JUSTIFIED); a realm with no entry fails`;
+  doc.checks.culture_style = 'every culture has a distinct hand, hem and ground triple (assignCultureStyles, cycles 10, 8 and 6)';
   doc.status = 'Draft: one design per realm of the roster of 24 October 2026 (156 realms, real tags); every design is proposed and provisional until the owner reviews the sheets';
   doc.updated = '2026-10-24';
   doc.generator = 'tools/content/heraldry/build_heraldry.mjs (node tools/content/heraldry/build_heraldry.mjs --write)';
@@ -2012,6 +2131,10 @@ export function checkRecordRules(doc) {
     if (single && P.contrast < TUNING.contrastFloor) f.push(finding('contrast', r.key, `primary contrast ${P.contrast} on a single field tincture`));
     if (P.fimbriated && contrastRatio(P.fimbriated.hex, P.tincture.hex) < TUNING.contrastMin) f.push(finding('contrast', r.key, 'the fimbriation does not separate the charge from its outline'));
     if (r.secondary_charge && r.secondary_charge.contrast < TUNING.contrastFloor) f.push(finding('contrast', r.key, `secondary contrast ${r.secondary_charge.contrast} below ${TUNING.contrastFloor}`));
+    // K53: a regional or trade charge needs a justification from the realm's own history, written out in full.
+    const regional = [r.primary_charge, r.secondary_charge].filter((c) => c && c.regional === true);
+    if (regional.length && (!r.regional_justification || r.regional_justification.length < 80)) f.push(finding('regional_symbol', r.key, `regional or trade charge ${regional.map((c) => c.name).join(', ')} without a regional_justification of at least 80 characters`));
+    if (r.regional_justification && !regional.length) f.push(finding('regional_symbol', r.key, 'a regional_justification without a regional charge; remove the entry'));
     // Element budget.
     const n = r.marks.length + 1 + (r.secondary_charge ? 1 : 0);
     if (n > TUNING.elementMax) f.push(finding('budget', r.key, `${n} elements (at most ${TUNING.elementMax})`));
@@ -2028,11 +2151,12 @@ export function checkForms(doc, roster) {
     const has = (m) => r.marks.some((x) => x.mark === m);
     if (realm.overlord === 'aenor' && !has('charter_border')) f.push(finding('form', r.key, 'a dominion of the Concord lacks the charter border'));
     if (realm.overlord !== 'aenor' && has('charter_border')) f.push(finding('form', r.key, 'charter border on a realm that is not a dominion of the Concord'));
-    if (realm.overlord === 'puvulan' && !has('grave_base')) f.push(finding('form', r.key, 'a realm sworn to the Dominion lacks the grave base'));
+    if (realm.overlord === 'puvulan' && !has('grave_base') && !markWaived(r.key, 'grave_base')) f.push(finding('form', r.key, 'a realm sworn to the Dominion lacks the grave base'));
+    for (const w of Object.keys(K68_MARK_WAIVED[r.key] ?? {})) if (has(w)) f.push(finding('form', r.key, `waived mark ${w} is drawn on the banner`));
     if (realm.overlord !== 'puvulan' && has('grave_base')) f.push(finding('form', r.key, 'grave base on a realm not sworn to the Dominion'));
-    if (realm.overlord && OVERLORD_MARKS[realm.overlord] && !has(OVERLORD_MARKS[realm.overlord].mark)) f.push(finding('form', r.key, `subject of ${realm.overlord} lacks its mark`));
+    if (realm.overlord && OVERLORD_MARKS[realm.overlord] && !has(OVERLORD_MARKS[realm.overlord].mark) && !markWaived(r.key, OVERLORD_MARKS[realm.overlord].mark)) f.push(finding('form', r.key, `subject of ${realm.overlord} lacks its mark`));
     if (!realm.overlord && r.marks.some((m) => m.tincture.overlord_mark)) f.push(finding('form', r.key, 'an overlord mark on a sovereign realm'));
-    if (CROWNED_FORMS.has(realm.politicalForm) && g.crown && !has('crown')) f.push(finding('form', r.key, 'a kingdom of a crowned culture lacks its crown'));
+    if (CROWNED_FORMS.has(realm.politicalForm) && g.crown && !has('crown') && !(K68_OVERRIDES[r.key] ?? K65_OVERRIDES[r.key])?.noCrown) f.push(finding('form', r.key, 'a kingdom of a crowned culture lacks its crown'));
     if (!CROWNED_FORMS.has(realm.politicalForm) && has('crown')) f.push(finding('form', r.key, `crown on a ${realm.politicalForm}`));
     if (realm.politicalForm === 'theocracy') {
       if (has('crown') || has('label')) f.push(finding('form', r.key, 'a theocracy wears a crown or a label'));
@@ -2041,7 +2165,6 @@ export function checkForms(doc, roster) {
     }
     if (['confederation', 'league'].includes(realm.politicalForm) && r.primary_charge.count !== 3 && !r.form_note && !['quarterly'].includes(r.field.division)) f.push(finding('form', r.key, `a ${realm.politicalForm} neither triples its charge nor states why`));
     if (realm.politicalForm === 'enclave' && !has('enclave_orle') && r.culture !== 'zols_dead') f.push(finding('form', r.key, 'an enclave lacks its orle'));
-    if (g.family === 'ainic_men' && r.key !== 'aenor' && realm.politicalForm !== 'theocracy' && !has('label')) f.push(finding('form', r.key, "an Ainic realm lacks Aen's label"));
     if (r.key === 'aenor' && has('label')) f.push(finding('form', r.key, 'Aenor bears a label'));
   }
   // Named form facts of the owner canon.
@@ -2182,7 +2305,8 @@ export function checkForbidden(doc, pantheon) {
   if (pentas.length > 1) f.push(finding('forbidden:pentagram', pentas.map((r) => r.key).join('/'), 'more than one pentagram in Aoaz'));
   // Zol's Mistake: the emblem alone.
   const zol = doc.countries.find((r) => r.key === 'zols_mistake');
-  if (zol && (zol.primary_charge.id !== 'broken_rings_sigil' || zol.secondary_charge || zol.marks.length)) f.push(finding('canon:zol_emblem', 'zols_mistake', 'the arms show more than the Will of Zol'));
+  // Round 6 (lead): the Will of Zol is drawn as a non-circular element of its sign (a broken bar), never a roundel.
+  if (zol && (zol.primary_charge.id !== 'broken_bar' || zol.secondary_charge || zol.marks.length)) f.push(finding('canon:zol_emblem', 'zols_mistake', 'the arms show more than the one broken bar of the Will of Zol'));
   // Named gods: no name and no device on any country or story flag.
   const godNames = new RegExp(`\\b(${pantheon.gods.map((g) => g.name).join('|')})\\b`, 'i');
   for (const it of items) {

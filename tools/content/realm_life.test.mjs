@@ -90,7 +90,8 @@ test('K34: the pulse is four weekly batches inside the world tick, never an ever
 test('G1: the people rates of the design, the story rulers exempt, and tier A immortal on the historical path', () => {
   for (const [p, r] of Object.entries({ men: 1, orcs: 1.3, goblins: 1.3, dwarves: 0.6, giants: 0.5, elves: 0.05 })) assert.equal(D.people.rate[p], r, p);
   const story = block(triggers, 'zin_realm_is_story_ruler');
-  for (const id of ['AEN_zin_ruler', 'zin_aurevan', 'zin_lorien', 'zin_volgan', 'zin_horos', 'zin_zol_will', 'NET_zin_ruler']) assert(story.includes(`character = ${id}`), id);
+  for (const id of ['AEN_zin_ruler', 'zin_aurevan', 'zin_lorien', 'zin_volgan', 'zin_zol_will', 'NET_zin_ruler']) assert(story.includes(`character = ${id}`), id);
+  assert(!story.includes('character = zin_horos'), 'K56: Horos is story only and never a character');
   assert(story.includes('has_country_leader_with_trait = zin_trait_ancient_king'));
   assert(story.includes('zin_aenor_is_realm = yes'), 'the Aenor court\'s whole line');
   assert.match(block(triggers, 'zin_realm_mortal'), /zin_rules_is_historical = yes\s*OR = \{\s*zin_realm_tier_a = yes/);

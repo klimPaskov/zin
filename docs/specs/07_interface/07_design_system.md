@@ -186,7 +186,7 @@ Only installed HOI4 bitmap fonts are used (`gfx/fonts/` of the game, 1.19.3): `h
 | Section heading | `hoi_20bs` | 20 | Sentence case | `text.title` | Section bands, tab labels |
 | Body | `hoi_18mbs` | 18 | Sentence case | `text.primary` or `text.ink` | Descriptions, event text |
 | Label and value | `hoi_16mbs` | 16 | Sentence case | `text.secondary` label, `text.primary` value | Rows, meters, buttons |
-| Reading (long text on `surface.reading`) | `garamond_16` | 16 | Sentence case | `text.ink` | Event bodies, Chronicle entries |
+| Reading (long text on `surface.reading`) | `hoi4_typewriter16` (aliased to Garamond 16 by lane C2; `garamond_16` is not a 1.19.3 font name) | 16 | Sentence case | `text.ink` | Event bodies, Chronicle entries |
 | Tooltip | `cg_16b` (engine) | 16 | Sentence case | engine colours remapped by §1.6 | All tooltips |
 
 ### 2.2 Rules
@@ -377,7 +377,7 @@ Every window of the audit (01_audit.md §2) and the windows the plan adds, with 
 | `topbar`, `zin_aoaz_bar_window` | Top bar, Aoaz bar | Banner Hall | K70 |
 | `clock_window`, `mini_map_interface`, `MapmodesInterface_Ingame`, `musicplayer_window`, `global_alerticon_window` | Clock, minimap, map modes, music, alerts | Banner Hall | K70 (top bar area; lead mapping) |
 | `frontend_background`, `mainmenu_panel_bottom`, `mainmenu_single_player`, `frontendgamesetupview`, `gamesetup_country_details`, `game_rule_window`, `load_screen` | Frontend and loading | Banner Hall | K70 |
-| `ingamemenu` | Pause menu | Banner Hall | K70 frontend (lead mapping) |
+| `ingamemenu` | Pause menu | Neutral | K70 dialogs (lead mapping, corrected 1 November 2026) |
 | `countryproductionlineview`, `countryconstructionsview`, `countrylogisticsview`, `countrydeploymentview` | Production, construction, logistics, recruitment | Banner Hall | K70 |
 | `countrytradeview`, `countrystateview` | Trade, state view | Banner Hall | lead mapping (economy beside production) |
 | `countryarmyview`, `naviesview_window`, `strategicairview`, `theatre_selection_window`, `landcombatview`, `navalcombatview`, `unitleaderwindow` | Army, navy, air, theatres, combat, leaders | Banner Hall | K70 |
@@ -447,6 +447,6 @@ K69: every surface changes; a vanilla element stays only where the engine draws 
 
 ## Open questions
 
-1. The lead mapping of §7 (pause menu, trade and state view in the Banner Hall; intelligence in the Chancery; the Gathering Dark popup in the Chronicle) stands until the owner overrules it (K70).
+1. The lead mapping of §7 (trade and state view in the Banner Hall; the pause menu in the neutral family with the other dialogs, a lead correction of 1 November 2026; intelligence in the Chancery; the Gathering Dark popup in the Chronicle) stands until the owner overrules it (K70).
 2. The 226 general focus groups of §4.5 are proposed; the owner may cut groups whose copies should look different per realm.
 3. Icon family sizes marked "confirms" in `design_system.json` (technology, special project, map mode) are confirmed by their phase 3 lanes before art is produced.

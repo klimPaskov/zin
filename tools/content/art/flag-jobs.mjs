@@ -25,7 +25,9 @@ export const REALM_CELLS_FILE = path.join(here, '../data/realm-flags-cells.json'
 // copied from a sheet that passed review and the designs are not. Returns null while no sheet is accepted.
 export async function acceptedLayoutRef(dir) {
   const cells = JSON.parse(await readFile(REALM_CELLS_FILE, 'utf8'));
-  const sheet = cells.filter(c => c.accepted === true).map(c => c.sheet).sort()[0];
+  // A multi-flag sheet is preferred: a one-flag picture (realm-flags-one-TAG) has no grid to copy.
+  const accepted = cells.filter(c => c.accepted === true).map(c => c.sheet);
+  const sheet = accepted.filter(s => /-sheet-\d+$/.test(s)).sort()[0] ?? accepted.sort()[0];
   return sheet ? path.join(dir, `${sheet}.png`).split(path.sep).join('/') : null;
 }
 
@@ -43,7 +45,7 @@ function tinctureNames(d) {
   return out;
 }
 
-export async function flagJobs({ heraldry = null, countries = countryTable() } = {}) {
+export async function flagJobs({ heraldry = null, countries = countryTable(), sheetPrefix = 'realm-flags-sheet', styleRef = null } = {}) {
   const H = heraldry ?? JSON.parse(await readFile(HERALDRY_FILE, 'utf8'));
   const P = H.pipeline, S = P.sheet;
   const designs = new Map(H.countries.map(d => [d.tag, d]));
@@ -59,9 +61,10 @@ export async function flagJobs({ heraldry = null, countries = countryTable() } =
   const chunk = (list, size) => Array.from({ length: Math.ceil(list.length / size) }, (_, i) => list.slice(i * size, (i + 1) * size));
   const groups = [...chunk(streams[0], S.per_sheet), ...chunk(streams[1], DARK_PER_SHEET)];
   const jobs = [], cells = [];
-  const layoutRef = await acceptedLayoutRef(path.join(outDir, '../raw/flags'));
+  // K53 (lead): the Tor Luni picture is the style reference of every v2 sheet; without it the layout reference of the accepted sheets is used.
+  const layoutRef = styleRef ?? await acceptedLayoutRef(path.join(outDir, '../raw/flags'));
   groups.forEach((group, s) => {
-    const id = `realm-flags-sheet-${String(s + 1).padStart(2, '0')}`;
+    const id = `${sheetPrefix}-${String(s + 1).padStart(2, '0')}`;
     // A dark sheet is one row with as many columns as flags (no empty cell); the living sheets keep the reference grid.
     const darkSheet = DARK.has(group[0].people), cols = darkSheet ? (group.length % 2 === 0 ? group.length / 2 : group.length) : S.columns;
     const rows = Math.ceil(group.length / cols);
@@ -69,12 +72,13 @@ export async function flagJobs({ heraldry = null, countries = countryTable() } =
     const palette = [...new Set(group.flatMap(tinctureNames))];
     const dark = group.map((d, i) => (isNearBlackField(d) ? i + 1 : 0)).filter(Boolean);
     const keyline = dark.length ? ` Keyline: flags ${dark.join(', ')} have a near-black field; each of them is edged all round by a thin light-grey keyline (#a6a6a6), about two percent of the flag's width, drawn just inside the flag's own edge so it stands clear of the black ground. The keyline is the only addition; every tincture stays exactly as named.` : '';
-    const shape = darkSheet ? ` Shape: every flag is a wide horizontal rectangle in the exact 41:26 proportion of the reference sheet's flags, about 1.58 times as wide as it is tall, never square. ${rows === 1 ? "Each flag measures about 300 by 190 pixels on the 1536 by 1024 canvas, so the row is wide and short." : "Each flag measures about 600 by 380 pixels on the 1536 by 1024 canvas, so the flags are large, wide and short."} Layout: ${rows} row${rows > 1 ? "s" : ""} of ${cols} flags, all the same size, evenly spaced, left to right, each flag fully inside the frame.` : '';
+    const flagW = Math.round((1536 - 2 * 48 - (cols - 1) * 60) / cols), flagH = Math.round(flagW * 26 / 41);
+    const shape = ` Shape: every flag is a wide horizontal rectangle in the exact 41:26 proportion, about 1.58 times as wide as it is tall, never square and never taller than wide. Each flag measures about ${flagW} by ${flagH} pixels on the 1536 by 1024 canvas, so the flags are wide and short. Layout: ${rows} row${rows > 1 ? 's' : ''} of ${cols} flags, all the same size, evenly spaced with identical black gutters, left to right, each flag fully inside the frame; nothing hangs from the top edge of any flag.`;
     const familyStyle = `${families.map(f => `Family style: ${H.families[f]?.mark_text ?? 'no family mark'}.`).join(' ')} Shared palette of this sheet: ${palette.join(', ')}.${shape}${keyline}`;
-    const rowsText = Array.from({ length: rows }, (_, r) => `Row ${r + 1}, left to right: ${group.slice(r * cols, (r + 1) * cols).map((d, i) => `${r * cols + i + 1}. ${d.blazon}`).join(' ')}`).join('\n');
+    const rowsText = Array.from({ length: rows }, (_, r) => `Row ${r + 1}, left to right: ${group.slice(r * cols, (r + 1) * cols).map((d, i) => `${r * cols + i + 1}. ${d.blazon} ${d.style_text ?? ''}`).join(' ')}`).join('\n');
     const prompt = P.prompt_frame.replace('{n}', String(group.length)).replace('{cols}', String(cols)).replace('{rows}', String(rows)).replace('{family_style}', familyStyle).replace('{rows_text}', rowsText);
     jobs.push({
-      id, prompt: layoutRef ? `Image 1 is ONLY a layout reference: copy its solid pure black background, ${darkSheet ? `its ${cols}-column grid of ${group.length} flags` : `its ${cols}-column grid`}, its flag size and its spacing exactly, but paint completely new flags as described below and copy none of its designs.\n${prompt}` : prompt,
+      id, prompt: styleRef ? `Image 1 is a STYLE reference only: copy its embroidered silk finish, its deep saturated field, its couched thread outline and its solid black ground, but copy none of its device. Paint ${group.length} new flags in a ${cols} by ${rows} grid as described below, on solid black.\n${prompt}` : layoutRef ? `Image 1 is ONLY a layout reference: copy its solid pure black background, ${darkSheet ? `its ${cols}-column grid of ${group.length} flags` : `its ${cols}-column grid`}, its flag size and its spacing exactly, but paint completely new flags as described below and copy none of its designs.\n${prompt}` : prompt,
       references: layoutRef ? [layoutRef] : [], out: path.join(outDir, '../raw/flags', `${id}.png`).split(path.sep).join('/'), size: S.canvas, quality: 'high',
       check: { expected: group.length, cols: cols, rows, aspect: [1.4, 1.75], minAreaFraction: 1 / 3 },
       designs: group.map(d => ({ tag: d.tag, hash: d.design_hash })),
@@ -88,26 +92,31 @@ export async function flagJobs({ heraldry = null, countries = countryTable() } =
 // solid black as a 41:26 rectangle filling about 78 percent of the width. The accepted sheet is a style reference only. The cell map
 // gives each flag a one-cell sheet, id realm-flags-one-<TAG>, index 0; slice-flags.mjs cuts it like any sheet.
 export const singleFlagId = tag => `realm-flags-one-${tag}`;
-export async function singleFlagJobs({ heraldry = null, tags, outRaw }) {
+export async function singleFlagJobs({ heraldry = null, tags, outRaw, fullBleed = false, idPrefix = null }) {
   const H = heraldry ?? JSON.parse(await readFile(HERALDRY_FILE, 'utf8'));
   const designs = new Map(H.countries.map(d => [d.tag, d]));
-  const style = await acceptedLayoutRef(outRaw);
+  // K53 pilot: no reference from the retired style; the flags are painted from the new prompt alone.
+  // K63 (owner, lead): the full-bleed flags use the accepted Konori flag as the style reference (its finish, field, outline and hem; never its device).
+  const style = fullBleed ? KONORI_STYLE_REF : null;
   const jobs = [], cells = [];
   for (const tag of tags) {
     const d = designs.get(tag);
     if (!d) throw new Error(`single flag: ${tag} has no design`);
-    const id = singleFlagId(tag), palette = [...new Set(tinctureNames(d))];
+    const id = idPrefix ? `${idPrefix}-${tag}` : singleFlagId(tag), palette = [...new Set(tinctureNames(d))];
     const keyline = isNearBlackField(d) ? ' Keyline: the field is near-black, so the flag is edged all round by a thin light-grey keyline (#a6a6a6), about two percent of the flag\'s width, drawn just inside its edge. The keyline is the only addition; every tincture stays exactly as named.' : '';
-    const prompt = `Image 1 is a STYLE reference only: copy its flat painted heraldic look, its thin outline weight, its woven-cloth texture and its solid pure black ground, but copy none of its designs or layout.\nA flat asset image of ONE heraldic flag for a medieval-fantasy strategy game, on a canvas 1536 by 1024 pixels. The background is solid flat pure black (#000000) everywhere outside the flag: no glow, no blur, no gradient, no texture. The flag is a single perfectly flat, front-facing rectangle with an aspect ratio of 41 to 26 (about 1.58 times as wide as tall), centred on the canvas, about 78 percent of the canvas width, with black ground all around it; never square. No perspective, no waving, no folds, no shadows, no frame, no pole. Painted heraldic style: flat tinctures exactly as named, bold silhouettes with a thin dark outline. No lettering, letters, numbers or runes anywhere; no signature or maker's mark; no real-world religious symbol; no real national flag or coat of arms; no crosses, stars, crescents or eagles; no masonry or battlements.\nBlazon: ${d.blazon} Shared palette of this flag: ${palette.join(', ')}.${keyline}`;
-    jobs.push({ id, prompt, references: style ? [style] : [], out: path.join(outRaw, `${id}.png`).split(path.sep).join('/'), size: S_CANVAS, quality: 'high', designs: [{ tag: d.tag, hash: d.design_hash }] });
+    const prompt = fullBleed ? `A flat asset image of ONE medieval banner cloth for a medieval-fantasy strategy game, on a canvas 1536 by 1024 pixels. The cloth of the flag fills the WHOLE canvas edge to edge: a flat front-facing textile with no background, no black ground, no border or frame outside the cloth, no pole, no fold, no waving, no shadow, no vignette, no glow and no gradient outside the cloth. Keep every device and every border at least six percent inside each edge of the canvas, so that nothing is cut at the top or bottom. The look is a medieval embroidered silk banner: a deep, saturated silk field, one appliqued cloth device outlined with couched gold or silver thread, a restrained composition of one device with at most one small accent, and stylised heraldic drawing. A beast is a flat, elongated, posed heraldic silhouette in profile. No fleur-de-lis, no repeated motif, no diaper or powdering anywhere on the ground; a plain field is one unbroken tincture. No hands, no torches, no braziers, no chalices, no keys and no burning objects of any kind as devices. Every device is a flat, symmetrical heraldic emblem, never a botanical, zoological or naturalistic drawing, and never a literal everyday object (no well, no cup, no tool, no reeds, no plant with leaves and roots); every hem, fringe, tassel or dagging ends at least six percent above the bottom edge, inside the canvas. Field (lead ruling under K68, 31 October 2026): the cloth is one undivided piece of single-colour dyed wool, with no stripes, no bands, no divisions and no hem teeth. Hard negatives (absolute, lead spot check of 31 October 2026): no crenellated, stepped, toothed or battlemented band or edge anywhere on the cloth, including on a crown, a base or a hem; no fleur-de-lis and no lily-like points on any crown (crown points are plain, rounded or leaf-less); no device placed across horizontal stripes, no field divided into three equal horizontal bands, and no device sitting on a plain white-over-blue or red-over-white bicolour; no letter-like shape (no ring with a bar, no hook shaped like a question mark or the letter S, no O-shaped outline); no triangle or pointed frame behind any device, and no helm, shield or emblem that looks like a game logo; no bell, column, stake, log or hook other than the sign named in the blazon; no fire except a flat flame. Forbidden in any device, field or hem (lead, 25 October 2026): crenellated or battlemented bands, hems and fields; a red ring with a bar across it (a roundel); a plain disc on a plain or banded field; a bundle of rods or spears bound together; a raised clenched fist, and clasped or shaking hands; an interlaced knot or knotwork of any kind; equal horizontal bands carrying the device. Handmade rule (owner K65): the banner must be makeable by hand. At most four flat colours plus gold or silver thread; every device is a bold cut-cloth (appliqué) shape with a stitched outline; no painted shading, no gradients, no fine illustration, no scenes, no tiny details, no photographic texture. Draw a design a weaver or embroiderer could sew and that reads from a distance when carried in battle. Culture, not region: the device is the realm's own culture's sign, never the region's landscape, animal, plant, or goods, unless the realm's own founding story makes it so. No lettering, letters, numbers or runes; no real-world religious symbol or real national flag or coat of arms; no crosses of any kind, no stars, crescents or eagles; no masonry or battlements.
+Blazon: ${d.blazon} Shared palette of this flag: ${palette.join(', ')}. Style: ${d.style_text ?? ''}` : `A flat asset image of ONE medieval banner for a medieval-fantasy strategy game, on a canvas 1536 by 1024 pixels. The background is solid flat pure black (#000000) everywhere outside the flag: no glow, no blur, no gradient, no texture. The flag is a single perfectly flat, front-facing rectangle with an aspect ratio of 41 to 26 (about 1.58 times as wide as tall), centred on the canvas, about 78 percent of the canvas width, with black ground all around it; never square. No perspective, no waving, no folds, no shadows, no frame, no pole, no swallowtail. The look is a medieval embroidered silk banner: a deep, saturated silk field, one appliqued cloth device outlined with couched gold or silver thread, a restrained composition of one device with at most one small accent, and stylised heraldic drawing in the manner of medieval armorials and tapestries. A beast is a flat, elongated, posed heraldic silhouette in profile, with no fur strokes, no shading, no modelled musculature and no natural walking pose. A plain field is one unbroken tincture with no band, stripe or division of any kind, and no field is ever banded in three equal bands. No crenellated, toothed or stepped bar anywhere on the flag; any rayonny edge is drawn as soft, rounded rays, never as flame-shaped tongues. Never clip-art: no cartoon, no outline illustration, no pictorial scene, no landscape, no modern vector style, no naturalistic rendering. No lettering, letters, numbers or runes anywhere; no signature or maker's mark; no real-world religious symbol; no real national flag or coat of arms; no crosses of any kind, no stars, crescents or eagles; no masonry or battlements.\nBlazon: ${d.blazon} Shared palette of this flag: ${palette.join(', ')}. Style: ${d.style_text ?? ''}${keyline}`;
+    jobs.push({ id, prompt: style ? `Image 1 is a STYLE reference only: copy its embroidered silk finish, its deep saturated field, its couched gold outline, its cloth filling the whole canvas and its cultural hem style, but copy none of its device. Paint one new bold stylised emblem as described below.
+${prompt}` : prompt, references: style ? [style] : [], out: path.join(outRaw, `${id}.png`).split(path.sep).join('/'), size: S_CANVAS, quality: 'high', designs: [{ tag: d.tag, hash: d.design_hash }] });
     cells.push({ sheet: id, index: 0, row: 0, col: 0, rows: 1, tag: d.tag, name: d.name, design: d.design_hash });
   }
   return { jobs, cells };
 }
+const KONORI_STYLE_REF = 'C:/Users/klimp/Documents/Projects/hoi4-agent-tools/.tmp/zin-art/raw/flags/fb/realm-flags-fb-KON.png';
 const S_CANVAS = '1536x1024';
 
 if (isMain) {
-  const { jobs, cells } = await flagJobs();
+  const { jobs, cells } = await flagJobs({ sheetPrefix: process.argv[3] || 'realm-flags-sheet' });
   await mkdir(outDir, { recursive: true });
   await writeFile(path.join(outDir, 'realm-flags-jobs.json'), JSON.stringify(jobs, null, 1));
   await writeFile(path.join(outDir, 'realm-flags-cells.json'), JSON.stringify(cells, null, 1));

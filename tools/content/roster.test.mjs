@@ -13,9 +13,10 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const ZIN = path.resolve(here, '../..');
 const R = loadRoster(), countries = countryTable();
 
-test('The country table is the roster: 156 realms with real tags, names, cultures, faiths, peoples and political forms', () => {
+test('The country table is the roster: 155 realms with real tags, names, cultures, faiths, peoples and political forms', () => {
   assert.equal(countries.length, R.realms.length);
-  assert.equal(countries.length, 156);
+  assert.equal(countries.length, 155);
+  assert.ok(!R.realms.some(r => r.tag === 'YEL'), 'K56: Yeldenne is a town in Pertolor\'s land, not a realm');
   assert.equal(new Set(countries.map(c => c.tag)).size, countries.length);
   for (const c of countries) {
     assert.match(c.tag, /^[A-Z]{3}$/, c.name);
@@ -95,9 +96,10 @@ test('Every realm has one court; character ids are unique and rulers carry the r
     assert.ok(!keys.has(r.key), `${r.key} twice`); keys.add(r.key);
     for (const c of [r.ruler, r.heir?.id ? r.heir : null, ...r.advisors, ...r.commanders, ...(r.figures ?? [])].filter(Boolean)) { assert.ok(!ids.has(c.id), c.id); ids.add(c.id); }
   }
-  assert.equal(keys.size, 156);
-  // 1,033 court characters and the 109 pre-built heirs of data/world/heirs.json (owner answer Q-87).
-  assert.equal(ids.size, 1142);
+  assert.equal(keys.size, 155);
+  // 1,031 court characters and the 109 pre-built heirs of data/world/heirs.json (owner answer Q-87). Yeldenne's ruler Horos and its
+  // warden are retired with the realm (K56: Horos is story only); the five valley people moved to Pertolor's court under their own ids.
+  assert.equal(ids.size, 1140);
 });
 
 test('No old debug tag is left in the builder data or the focus designs (records excepted)', () => {

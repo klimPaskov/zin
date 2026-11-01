@@ -7008,6 +7008,14 @@
    "message": "Font hoi4_typewriter22_inverted is also defined by a vanilla file that stays loaded.",
    "key": "FONT_DUPLICATE|interface/zz_zin_textcolors.gfx|hoi4_typewriter22_inverted",
    "reason": "UI overhaul lane C2 (design system 1.6 and 2.1, spec 02 3.4 and 3.7): the face is redefined on purpose with its installed files and colour and new per-font text colours (or, for the typewriter faces, the Garamond glyphs), in the additive file instead of a patched core.gfx; the precedent is Old World Blues interface/z_fallout_font.gfx. Whether the later definition wins is checked on the Linux run (docs/plans/ui_overhaul/handoffs/C2.md); if it does not, textcolors.json drops the face."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/eventwindow.gui",
+   "message": "spriteType at line 205 names the engine fallback sprite GFX_leader_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/eventwindow.gui|GFX_leader_unknown",
+   "reason": "UI lane W5: the leader button of EventWindow_leader is an engine slot that the game fills with the event leader portrait at runtime; vanilla interface/eventwindow.gui names the same sprite there. No fallback picture is ever shown in its place (handoff docs/plans/ui_overhaul/handoffs/W5.md)."
   }
  ]
 }

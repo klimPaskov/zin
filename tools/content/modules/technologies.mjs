@@ -25,6 +25,7 @@ import { defaultPeople, PEOPLES } from './peoples.mjs';
 import { techTreeGui } from '../lib/tech_tree_gui.mjs';
 import { ADVANCED_CATEGORY, DEVELOPMENT_EFFECTS, prepareWays, gameCultures, prepareDevelopment, developmentAi, wayAndTierTriggers, writeDevelopment } from '../lib/tech_development.mjs';
 import { buildDoctrineArt, doctrineTexture, loadDoctrineArtCells, assertDoctrineArtComplete } from './doctrine_art.mjs';
+import { buildTechnologyArt, loadTechnologyArtCells, assertTechnologyArtComplete, techTexture, BLANK_TEXTURE } from './technology_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const dataFile = name => path.join(here, '../data', name);
@@ -967,7 +968,12 @@ export async function buildTechnologies(staged, ctx) {
   // The tabs of the ZIN folders (GFX_<folder>_tab; their art is pending, the tab says the folder's name until then). The kept folders keep
   // their vanilla tabs.
   const zinFolders = Object.keys(FOLDER_FILES).filter(f => !KEPT_FOLDERS.has(f));
-  staged.text('interface/zin_technologies.gfx', spriteFile('Technology tile icons, GFX_<technology>_medium, and the tabs of the ZIN folders, GFX_<folder>_tab.', [...model.techs.filter(t => !t.grantOnly).map(t => [`GFX_${t.key}_medium`, textureFor('gfx/interface/technologies/zin', t.key)]), ...zinFolders.map(f => [`GFX_${f}_tab`, textureFor('gfx/interface/techtree/zin', `${f}_tab`)]), ['GFX_zin_technology_blank', FALLBACK_TEXTURE]].sort(([a], [b]) => a.localeCompare(b, 'en'))));
+  // Technology art (modules/technology_art.mjs): an accepted sheet ships its own DDS per sprite; any other sprite keeps the unknown icon.
+  const techCells = await loadTechnologyArtCells();
+  const techShipped = await buildTechnologyArt(staged, { warn: msg => process.stderr.write(`technology art: ${msg}\n`) });
+  assertTechnologyArtComplete(techCells, techShipped);
+  const techTex = key => techShipped.has(key) ? techTexture(key) : FALLBACK_TEXTURE;
+  staged.text('interface/zin_technologies.gfx', spriteFile('Technology tile icons, GFX_<technology>_medium, and the tabs of the ZIN folders, GFX_<folder>_tab.', [...model.techs.filter(t => !t.grantOnly).map(t => [`GFX_${t.key}_medium`, techTex(t.key)]), ...zinFolders.map(f => [`GFX_${f}_tab`, textureFor('gfx/interface/techtree/zin', `${f}_tab`)]), ['GFX_zin_technology_blank', BLANK_TEXTURE]].sort(([a], [b]) => a.localeCompare(b, 'en'))));
   // The technology tree window (spec section 5.8): generated from the installed file with one window per folder and a gridbox for every
   // root, so no technology is without its grid box ("Found no grid box for tech").
   const installedGui = await readFile(`${GAME}/interface/countrytechtreeview.gui`, 'latin1');

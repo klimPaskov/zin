@@ -20,9 +20,9 @@ import { buildWesternCrossing } from './modules/mech_crossing.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const countries = countryTable();
-// Tags come from the roster: Zol's Mistake (ZOL), Puvulan (the Volgan role), Worshipdom, Yeldenne, Kradlon and Gunwyn.
+// Tags come from the roster: Zol's Mistake (ZOL), Puvulan (the Volgan role), Worshipdom, Kradlon and Gunwyn. Yeldenne is no realm (K56).
 const tagOf = n => { const c = countries.find(x => x.name === n); assert(c, `${n} is not in the roster`); return c.tag; };
-const ZOL = tagOf("Zol's Mistake"), VOL = tagOf('Puvulan'), WOR = tagOf('Worshipdom'), YEL = tagOf('Yeldenne'), KRA = tagOf('Kradlon'), GUN = tagOf('Gunwyn');
+const ZOL = tagOf("Zol's Mistake"), VOL = tagOf('Puvulan'), WOR = tagOf('Worshipdom'), KRA = tagOf('Kradlon'), GUN = tagOf('Gunwyn');
 const readData = async n => JSON.parse(await readFile(path.join(here, 'data', n), 'utf8'));
 const eindilData = await readData('mech_journey_eindil.json'), gloData = await readData('mech_journey_glo.json'), westData = await readData('mech_journey_west.json');
 const clone = o => structuredClone(o);
@@ -274,7 +274,7 @@ test('Hindrance adds delay and never sets the heir lost before stage 9', () => {
 test('The ambush formula matches N9 and the battles use the dates and conditions of the spec', () => {
   const eff = text('common/scripted_effects/zin_eindil.txt');
   const amb = eff.slice(eff.indexOf('zin_eindil_compute_ambush = {'), eff.indexOf('zin_eindil_ambush_resolved = {'));
-  assert.match(amb, /eind_str = constant:zin_eindil\.ambush_base/); for (const f of ['zin_eindil_hunted', 'zin_worshipdom_ships_ready', 'zin_worshipdom_hunters', 'zin_eindil_elven_crew', 'zin_eindil_landing_guides', 'zin_yeldenne_beacon', 'zin_yeldenne_coast_watch', 'zin_yeldenne_guides', 'zin_afrit_sent_others']) assert(amb.includes(f), f);
+  assert.match(amb, /eind_str = constant:zin_eindil\.ambush_base/); for (const f of ['zin_eindil_hunted', 'zin_worshipdom_ships_ready', 'zin_worshipdom_hunters', 'zin_eindil_elven_crew', 'zin_eindil_landing_guides', 'zin_pertolor_beacon', 'zin_pertolor_coast_watch', 'zin_pertolor_guides', 'zin_afrit_sent_others']) assert(amb.includes(f), f);
   const dates = text('common/scripted_triggers/zin_eindil.txt');
   for (const d of ['1757_06', '1757_07', '1757_08', '1757_12']) assert(dates.includes(`zin_eindil_date_${d} = {`));
   for (const id of [96, 98, 99, 100, 102]) assert(eff.includes(`zin_eindil.${id}`), `battle ${id}`);
@@ -317,11 +317,15 @@ test('Hall outcomes: the cases A, B1, B2, C and D and the effects common to a de
   const eff = text('common/scripted_effects/zin_glo.txt');
   for (const c of [1, 2, 3, 4, 5]) assert(eff.includes(`zin_arg_case = ${c}`), `case ${c}`);
   const falls = eff.slice(eff.indexOf('zin_glo_horos_falls = {'), eff.indexOf('zin_glo_give_to_heir = {'));
-  for (const s of ['zin_horos_dead', 'zin_yeldenne_install_warden', 'zin_yeldenne_the_empty_throne', 'zin_world_add_gathering_dark', 'news_event = { id = zin_glo.30 }']) assert(falls.includes(s), s);
+  for (const s of ['zin_horos_dead', 'zin_yeldenne_the_empty_throne', 'zin_world_add_gathering_dark', 'news_event = { id = zin_glo.30 }']) assert(falls.includes(s), s);
+  // K56: no warden is installed and no character is retired; the hall's owner (the keeper of the castle's state) takes the empty throne.
+  assert(!falls.includes('zin_yeldenne_install_warden') && !falls.includes('retire_character'), 'K56: Horos is no character');
+  assert(falls.includes(`${gloData.hallState} = {`), 'the empty throne is the hall owner\'s');
   assert.match(text('common/on_actions/zin_glo.txt'), /on_declare_war[\s\S]*zin_glo_conqueror/);
 });
 test('Glo\'s startup and ai: wards 50, power 0, state 0, the conquer block', () => {
-  const s = text('common/on_actions/zin_glo.txt'); assert.match(s, /zin_glo_state = 0/); assert.match(s, /zin_yeldenne_wards = constant:zin_glo\.wards_start/); assert.match(s, new RegExp(`${YEL} = \\{ country_event = \\{ id = zin_glo\\.1`));
+  const s = text('common/on_actions/zin_glo.txt'); assert.match(s, /zin_glo_state = 0/); assert.match(s, /zin_yeldenne_wards = constant:zin_glo\.wards_start/); assert.match(s, new RegExp(`${gloData.hallState} = \\{[\\s\\S]*owner = \\{[\\s\\S]*country_event = \\{ id = zin_glo\\.1`), 'the startup event goes to the hall owner');
+  assert.equal(gloData.countries.keeper, 'Pertolor', 'K56: the keeper of the castle is the owner of its state, Pertolor');
   assert.match(text('common/ai_strategy/zin_glo.txt'), /type = conquer[\s\S]*value = -500/);
   assert.match(text('common/dynamic_modifiers/zin_glo.txt'), /zin_yeldenne_hall_wards[\s\S]*enemy_attrition = 0\.2/);
 });

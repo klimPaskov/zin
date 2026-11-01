@@ -1,5 +1,5 @@
 {
- "source": "Names the 18 regional_d focus trees (regional/north_lands.md, tritons_islands.md, west_lands.md, yeldenne.md) reference that other owners write: the mechanics modules, the shared trees and the Aenor, Lerendor, journey, Glo, Western Crossing and diplomacy slices. Hand-kept while those modules are missing, as focus_registry.json describes; loadRegistry reads this file next to it and marks every name pending. Remove a name when its module stages it.",
+ "source": "Names the 17 regional_d focus trees (regional/north_lands.md, tritons_islands.md, west_lands.md) reference that other owners write: the mechanics modules, the shared trees and the Aenor, Lerendor, journey, Glo, Western Crossing and diplomacy slices. Hand-kept while those modules are missing, as focus_registry.json describes; loadRegistry reads this file next to it and marks every name pending. Remove a name when its module stages it.",
  "scripted_effects": [
   "zin_aenor_event_for_parim",
   "zin_afrit_add_footholds",
@@ -7,7 +7,6 @@
   "zin_eindil_add_renown",
   "zin_eindil_aid_host",
   "zin_eindil_join_coalition",
-  "zin_glo_request_northern_watch",
   "zin_leren_add_lean",
   "zin_leren_add_strait_standing",
   "zin_leren_offer_protection",
@@ -24,8 +23,7 @@
   "zin_west_add_fleet",
   "zin_west_add_grudge",
   "zin_west_add_truce",
-  "zin_west_add_unity",
-  "zin_yeldenne_add_wards"
+  "zin_west_add_unity"
  ],
  "scripted_triggers": [
   "zin_aenor_parim_lost",

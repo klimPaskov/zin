@@ -158,13 +158,13 @@ test('Every equipment type and ship definition is in the warfare id list', () =>
     for (const s of p.ships) { assert(shipIds.has(s.definition) && sub.has(s.definition), `${c.name}: ship ${s.definition}`); assert(types.has(s.hull), `${c.name}: hull ${s.hull}`); assert(s.hull.startsWith(`zin_hull_${s.definition.replace('zin_ship_', '')}`), `${c.name}: hull ${s.hull} for ${s.definition}`); }
   }
 });
-test('The start is at peace: no army outside its realm, Zol\'s Mistake has three black ships and no division, Yeldenne nothing', () => {
-  const zol = parsed.get(tag("Zol's Mistake")), yel = parsed.get(tag('Yeldenne'));
+test('The start is at peace: no army outside its realm, Zol\'s Mistake has three black ships and no division, and Yeldenne (K56, a town in Pertolor\'s land) has no realm or order of battle', () => {
+  const zol = parsed.get(tag("Zol's Mistake"));
   assert.equal(zol.divisions.length, 0); assert.equal(zol.ships.length, 3);
   assert(zol.ships.every(s => s.definition === 'zin_ship_raider' && s.hull === 'zin_hull_raider_0'), 'three corsairs');
   assert.equal(new Set(zol.ships.map(s => s.name)).size, 3);
-  assert.equal(yel.divisions.length, 0); assert.equal(yel.ships.length, 0); assert.equal(yel.stock.length, 0);
-  assert(text(oobFile(tag('Yeldenne'))).includes('units = {'), 'Yeldenne still has an order of battle file (a country without one has broken buildings)');
+  assert.equal(parsed.has('YEL'), false, 'K56: Yeldenne is no realm and has no forces entry');
+  assert.equal(existsSync(oobFile('YEL')), false, 'K56: no order of battle file for the retired realm');
   assert.equal(parsed.get(tag('Worshipdom')).divisions.length, 1);
   assert.deepEqual([...parsed.get(tag('Worshipdom')).templates.keys()], ['Valley Wardens']);
 });
@@ -522,7 +522,7 @@ test('Tier triggers cover the roster once (13 + 70 named, the rest by negation) 
   const a = tagsIn('zin_ai_is_tier_a'), b = tagsIn('zin_ai_is_tier_b');
   // 71 named tier-B realms in the spec; Poyang and Hengyang are one realm of the roster (Soyano), so 70 remain.
   assert.equal(a.size, 13); assert.equal(b.size, raw0.institutions.tiers.b.length); assert.equal(b.size, new Set(raw0.institutions.tiers.b.map(tag)).size); for (const t of a) assert(!b.has(t));
-  assert(a.has(tag("Zol's Mistake")) && a.has(tag('Aenor')) && b.has(tag('Yeldenne')));
+  assert(a.has(tag("Zol's Mistake")) && a.has(tag('Aenor')) && !raw0.institutions.tiers.b.includes('Yeldenne'), 'K56: Yeldenne is in no tier');
   assert(JSON.stringify(field(field(tiers, 'zin_ai_is_tier_c'), 'NOT')).includes('zin_ai_is_tier_a'));
   const eras = text(FILES.eras);
   for (const e of ['zin_ai_era_peace', 'zin_ai_era_stirring', 'zin_ai_era_war', 'zin_ai_era_after']) assert(eras.includes(`${e} = {`));
@@ -581,7 +581,7 @@ test('divisionCount follows the spec formula, the tier B bonus and the populatio
   const m = model, f = m.raw.templates.formula;
   const big = countries.find(c => geo[c.tag].length >= 12 && !m.raw.templates.named[c.name] && m.tierOf(c.tag) === 'c' && m.popOf.get(c.tag) > 500000);
   if (big) assert(divisionCount(m, big) <= f.max * 1.25 + 1);
-  assert.equal(divisionCount(m, byName.get('Aenor')), 36); assert.equal(divisionCount(m, byName.get('Yeldenne')), 0);
+  assert.equal(divisionCount(m, byName.get('Aenor')), 36); assert.equal(byName.get('Yeldenne'), undefined, 'K56: no realm Yeldenne to count');
   const tiny = countries.find(c => geo[c.tag].length === 1 && m.popOf.get(c.tag) < f.villagePeople && !m.raw.templates.named[c.name]);
   assert.equal(divisionCount(m, tiny), 1);
 });

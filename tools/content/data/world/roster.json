@@ -1064,60 +1064,6 @@
    }
   },
   {
-   "key": "yeldenne",
-   "name": "Yeldenne",
-   "adjective": "Yeldennish",
-   "endonym": null,
-   "formerLabels": [
-    "Yeldenne (Y8H)"
-   ],
-   "tag": "YEL",
-   "region": "cold_lands",
-   "subRegion": "Mp'E",
-   "people": "men",
-   "peoples": {
-    "men": 1
-   },
-   "culture": "ice_clans",
-   "cultureSecondary": null,
-   "language": "coldic",
-   "faith": {
-    "id": "winter_hearth",
-    "name": "The Winter Hearth",
-    "pantheon": "twelve",
-    "follows": "the twelve New Gods, favouring Lumae and Glernaen"
-   },
-   "calendar": "twelve",
-   "politicalForm": "domain",
-   "governmentNote": "The guardian's domain: Horos sits in the Castle of Yeldenne with Glo in his breast; the valley town has a Warden of men.",
-   "overlord": null,
-   "subjectType": null,
-   "capital": {
-    "name": "Simoto",
-    "siteId": "site_yeldenne_landing",
-    "why": "Working name kept from the old roster; the drawn town reads \"Hul...\" under a seam and its full name is the owner's to give. The castle is a site, not the capital."
-   },
-   "extent": "The valley of Mp'E with the Castle of Yeldenne (1 state).",
-   "population": 3000,
-   "focusTier": "regional",
-   "focusTree": "regional_yeldenne",
-   "focusNote": null,
-   "mechanics": [
-    "yeldenne_and_glo",
-    "cold_lands",
-    "eindil_journey",
-    "afrit_hidden_council"
-   ],
-   "storyRole": "Horos guards Glo against everyone and gives it to Eindil.",
-   "gunpowder": false,
-   "heraldry": "ice_clans",
-   "heraldryNote": null,
-   "source": {
-    "dossier": "docs/lore/regions/cold_lands.md",
-    "section": "11"
-   }
-  },
-  {
    "key": "girdon",
    "name": "Girdon",
    "adjective": "Girdonese",
@@ -3075,9 +3021,9 @@
    },
    "extent": "The sheep vale and the plain east of Melkgard, Faaennar (former label Londor).",
    "population": 90000,
-   "focusTier": "shared",
-   "focusTree": "shared_cold_lands",
-   "focusNote": null,
+   "focusTier": "regional",
+   "focusTree": "regional_pertolor",
+   "focusNote": "Pertolor holds the castle, the town of Simoto and the hall of Glo (K56); its own regional tree.",
    "mechanics": [
     "cold_lands"
    ],
@@ -11904,14 +11850,14 @@
   {
    "oldTag": "Y8H",
    "oldName": "Yeldenne",
-   "fate": "kept",
+   "fate": "merged",
    "into": [
-    "yeldenne"
+    "pertolor"
    ],
    "newTag": [
-    "YEL"
+    "PRT"
    ],
-   "reason": "Same realm, new tag."
+   "reason": "Yeldenne is a town in Pertolor's land, not a realm (decision K56): the castle, the valley of Mp'E and the town of Simoto join Pertolor."
   }
  ]
 }

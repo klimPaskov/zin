@@ -154,6 +154,8 @@ export const OVERRIDE_FILES = [
   'interface/frontendmainview.gui', 'interface/frontendmainviewbg.gfx', 'interface/frontendmainviewbg_basic.gfx', 'interface/frontendcreditview.gui',
   'interface/small_background.gfx', 'interface/countrytechtreeview.gui', 'interface/ingamemenu.gui', 'interface/armytraittreewindow.gui',
   'interface/navytraittreewindow.gui', 'interface/career_profile/playthrough_overview_window.gui',
+  // UI overhaul lane W5 (K69: layouts may be rebuilt; modules/ui_dialogs.mjs): the event and news windows, the Gathering Dark history, the options.
+  'interface/eventwindow.gui', 'interface/worldtensionwindowpopup.gui', 'interface/settings.gui',
 ];
 export const WRITERS = ['reskin', 'presentation', 'cursors', 'minimap'];
 export const MINIMAP_TEXTURES = new Set(['gfx/minimap/minimap.dds', 'gfx/interface/minimap.dds']);
@@ -327,7 +329,11 @@ function socketCell(shape, lum) {
   return cands.length ? best(cands, lum).cell.key : pick('ui-sockets', ['socket_square'], lum);
 }
 export const SOFT_COVERAGE = 0.05;   // below this share of pixels at alpha 128 or more a shaped picture is translucent, not outlined
+// Tooltip plates (design system §6.3, UI overhaul lane W5): an opaque neutral plate whose own 1 px bronze rim is its edge. The vanilla
+// outline of these textures has a transparent margin that would cut the generated rim away.
+export const TOOLTIP_TEXTURES = new Set(['gfx/interface/tiles/tiles_dialog.dds', 'gfx/interface/tooltip_tile.dds', 'gfx/interface/small_tiles_dialog.dds', 'gfx/interface/tiles/tiled_mini_dialog.dds']);
 export function alphaPolicy(s) {
+  if (TOOLTIP_TEXTURES.has(String(s.texture ?? '').toLowerCase())) return 'opaque';
   const a = s.alpha ?? 'opaque';
   if (a === 'opaque' || a === 'unknown' || a === 'none') return 'opaque';
   if (a.startsWith('uniform:')) return a;
@@ -367,7 +373,12 @@ const SPECIFIC = [
   [/^gfx\/interface\/topbar\/background_extended\.dds$/, 'topbar', 'ui-topbar', 'band_extended', 'repeat_x'],
   [/^gfx\/interface\/topbar\/topbar_date_overlay\.dds$/, 'topbar', 'ui-topbar', 'date_plate', 'cover'],
   [/^gfx\/interface\/topbar\/speed_step\.dds$/, 'topbar', 'ui-topbar', ['speed_1', 'speed_2', 'speed_3'], 'cover'],
-  [/^gfx\/interface\/topbar\/toolbar\/topbar_alert_bg\.dds$/, 'topbar', 'ui-topbar', 'alert_plate', 'cover'],
+  // The count badges and the top bar values whose sockets were empty (UI lane W1): emblems cut by their own outline, so luma is free;
+  // the badge frames keep vanilla's order and meaning (plain, runs out, waits, ready).
+  [/^gfx\/interface\/topbar\/toolbar\/topbar_alert_bg\.dds$/, 'topbar', 'icons-topbar-badges', ['badge_neutral', 'badge_timeout', 'badge_pending', 'badge_done'], 'contain', 'cell', { frames: ['neutral', 'timeout', 'pending', 'done'], luma: 'free' }],
+  ...Object.entries({ 'modifiers/modifier_army_speed_factor': 'tv_army_speed', research_speed_icon: 'tv_research_speed', construction_speed_icon: 'tv_construction_speed', 'topbar/topbar_convoys': 'tv_convoys',
+    'factions/ui/topbar_faction': 'tv_faction', 'factions/ui/topbar_faction_empty': 'tv_faction_empty', 'topbar/nuke_icon': 'tv_wildfire', 'topbar/achievements_button': 'tv_deeds',
+    'topbar/show_dismissed_alerts_icon': 'tv_dismissed_alerts', attacker_speed_icon: 'tv_attacker_speed' }).map(([stem, cell]) => [new RegExp(`^gfx/interface/${stem}\\.dds$`), 'topbar', 'icons-topbar-values', cell, 'contain', 'cell', { luma: 'free' }]),
   [/^gfx\/interface\/topbar\/armyoverview_buttons_bg\.dds$/, 'topbar', 'ui-topbar', 'overview_tray', 'cover'],
   [/^gfx\/interface\/ingameclock_bg\.dds$/, 'map_interface', 'ui-map', 'clock_plate', 'cover'],
   [/^gfx\/interface\/mapmode\/mapmode_(main|bottom)_bg\.dds$/, 'map_interface', 'ui-map', 'map_tray', 'cover'],
@@ -423,13 +434,17 @@ function chromeRole(s) {
   const bars = (roles, fit, extra) => { const r = roles.map(x => barCell(x, lum)), sheets = [...new Set(r.map(x => x.sheet))].sort(); return strip(sheets.length === 1 ? sheets[0] : sheets, r.map(x => x.key), fit, extra); };
 
   // Surfaces the spec names.
-  for (const [re, fam, sheet, cellSpec, fit, a] of SPECIFIC) {
+  for (const [re, fam, sheet, cellSpec, fit, a, extra] of SPECIFIC) {
     const m = re.exec(p);
     if (!m) continue;
     const key = typeof cellSpec === 'function' ? cellSpec(m) : cellSpec;
     const cells = Array.isArray(key) ? key : repeatFrames(key);
     if (cells.length !== f) continue;   // the cells do not match this texture's frames: use the generic treatment
-    return { family: fam, ...strip(sheet, cells, fit, { alpha: a === 'shape' || (a === undefined && fit === 'same_shape') ? shapeOf(s) : a ?? alpha }) };
+    const row = { family: fam, ...strip(sheet, cells, fit, { alpha: a === 'shape' || (a === undefined && fit === 'same_shape') ? shapeOf(s) : a ?? alpha }) };
+    // extra (optional): frame labels of their own meaning, and luma 'free' for an emblem cut by its own outline
+    if (extra?.frames && f > 1) row.frames = extra.frames;
+    if (extra?.luma) row.luma = extra.luma;
+    return row;
   }
   // Cornered tiles: nine-slice of a panel cell (a tile with no border in its definition cannot be sliced).
   if (s.kind === 'cornered_tile' && s.borderSize && !/(^|_)(exlusive|exclusive)_link|techline|focus_link/.test(stem)) {
@@ -855,7 +870,7 @@ function planRows(inventory, { alertFrames } = {}) {
       finished.set(s.name, row);
       continue;
     }
-    const row = { name: s.name, disposition: 'R', family: item.family, sheet: item.sheet, cells: item.cells, fit: item.fit, ...(item.frames ? { frames: item.frames, frameFit: item.frameFit } : {}), alpha: item.alpha, ...(item.transform ? { transform: item.transform } : {}) };
+    const row = { name: s.name, disposition: 'R', family: item.family, sheet: item.sheet, cells: item.cells, fit: item.fit, ...(item.frames ? { frames: item.frames, frameFit: item.frameFit } : {}), alpha: item.alpha, ...(item.transform ? { transform: item.transform } : {}), ...(item.luma ? { luma: item.luma } : {}) };
     row.tranche = FAMILY_TRANCHE[sheetFamily.get(item.sheet)] ?? FAMILY_TRANCHE[item.family] ?? 3;
     finished.set(s.name, row);
   }

@@ -1,0 +1,39 @@
+{
+ "format": 1,
+ "about": "The sprites of the event, news, pause-menu, options and Gathering Dark windows (UI overhaul lane W5, docs/plans/ui_overhaul/02_plan.md phase 2; design system docs/specs/07_interface/07_design_system.md sections 1.3, 1.4, 1.5, 5, 6.1 to 6.3, 7). Every texture is cut by modules/ui_dialogs.mjs from an accepted lane C1 chrome sheet (art/source/ui/reskin/<sheet>.png, reviewed in art/source/provenance.jsonl): code only crops, reduces, repeats and places generated pixels and clears the inside of a picture frame. Each window draws its own textures, so a window takes its own theme even where vanilla shares a texture across areas (renders/C1/theme_conflicts.json): the event and news windows Chancery, the Gathering Dark history Chronicle, the pause menu, its load and save panels and the options neutral (K70; lead instruction for lane W5: menus are neutral).",
+ "dir": "gfx/interface/zin/dialogs",
+ "sheets": ["ui-chrome-chancery", "ui-chrome-chronicle", "ui-chrome-neutral", "ui-buttons-neutral", "ui-controls-small"],
+ "notes": {
+  "kind": "cornered: a corneredTileSpriteType the engine stretches (size and border are the engine values); sprite: a spriteType of fixed size; button: a spriteType with one frame per state (normal, hover, pressed; design system 6.2); slice: a crop of a plate fitted at the size of a whole panel, so the pieces of one vanilla panel (top, list, bottom) join without a seam.",
+  "fit": "frame_tile (lib/fit.mjs): the cell is reduced until its painted rim is `frame` pixels and its body repeats from a seam-matched span; never enlarged. contain: an isolated control centred with padding.",
+  "hollow": "The frame's inside (inside `frame` pixels from every edge) is cleared, so the picture under it shows; nothing is painted."
+ },
+ "sprites": [
+  { "name": "GFX_zin_event_window", "theme": "chancery", "kind": "cornered", "texture": "event_window.dds", "size": [192, 192], "border": 32, "sheet": "ui-chrome-chancery", "cells": ["window"], "fit": "frame_tile", "frame": 16 },
+  { "name": "GFX_zin_event_title", "theme": "chancery", "kind": "cornered", "texture": "event_title.dds", "size": [192, 40], "border": [16, 8], "sheet": "ui-chrome-chancery", "cells": ["title"], "fit": "frame_tile", "frame": 6 },
+  { "name": "GFX_zin_event_reading", "theme": "chancery", "kind": "cornered", "texture": "event_reading.dds", "size": [192, 96], "border": 12, "sheet": "ui-chrome-chancery", "cells": ["reading"], "fit": "frame_tile", "frame": 6 },
+  { "name": "GFX_zin_event_well", "theme": "chancery", "kind": "cornered", "texture": "event_well.dds", "size": [192, 96], "border": 12, "sheet": "ui-chrome-chancery", "cells": ["inset"], "fit": "frame_tile", "frame": 6 },
+  { "name": "GFX_zin_event_picture_frame", "theme": "chancery", "kind": "sprite", "texture": "event_picture_frame.dds", "size": [226, 192], "sheet": "ui-chrome-chancery", "cells": ["window"], "fit": "frame_tile", "frame": 8, "hollow": true, "about": "Bronze moulding round the 210 x 176 event picture (drawn at an 8 px offset)." },
+  { "name": "GFX_zin_news_picture_frame", "theme": "chancery", "kind": "sprite", "texture": "news_picture_frame.dds", "size": [413, 169], "sheet": "ui-chrome-chancery", "cells": ["window"], "fit": "frame_tile", "frame": 8, "hollow": true, "about": "Bronze moulding round the 397 x 153 news picture." },
+  { "name": "GFX_zin_leader_picture_frame", "theme": "chancery", "kind": "sprite", "texture": "leader_picture_frame.dds", "size": [172, 226], "sheet": "ui-chrome-chancery", "cells": ["window"], "fit": "frame_tile", "frame": 8, "hollow": true, "about": "Bronze moulding round the 156 x 210 portrait of a leader event." },
+  { "name": "GFX_zin_event_option", "theme": "neutral", "kind": "cornered", "texture": "event_option.dds", "size": [312, 40], "border": [12, 8], "sheet": "ui-buttons-neutral", "cells": ["iron_normal"], "fit": "frame_tile", "frame": 6, "about": "The option plate of the event and news windows: a neutral iron button face (design system 6.1, K70 buttons are neutral)." },
+  { "name": "GFX_zin_event_minimize", "theme": "neutral", "kind": "button", "texture": "event_minimize.dds", "size": [28, 28], "sheet": "ui-controls-small", "cells": ["minus", "minus_hover", "minus_pressed"], "fit": "contain", "padding": 0.04 },
+  { "name": "GFX_zin_dialog_window", "theme": "neutral", "kind": "cornered", "texture": "dialog_window.dds", "size": [192, 192], "border": 24, "sheet": "ui-chrome-neutral", "cells": ["dialog"], "fit": "frame_tile", "frame": 16 },
+  { "name": "GFX_zin_menu_button", "theme": "neutral", "kind": "button", "texture": "menu_button.dds", "size": [288, 36], "sheet": "ui-buttons-neutral", "cells": ["iron_normal", "iron_hover", "iron_pressed"], "fit": "frame_tile", "frame": 6 },
+  { "name": "GFX_zin_menu_list_load_top", "theme": "neutral", "kind": "slice", "texture": "menu_load_top.dds", "plate": "load", "crop": [1, 0, 346, 69] },
+  { "name": "GFX_zin_menu_list_load", "theme": "neutral", "kind": "slice", "texture": "menu_load_list.dds", "plate": "load", "crop": [0, 63, 350, 370] },
+  { "name": "GFX_zin_menu_list_load_bottom", "theme": "neutral", "kind": "slice", "texture": "menu_load_bottom.dds", "plate": "load", "crop": [1, 427, 346, 64] },
+  { "name": "GFX_zin_menu_list_save_top", "theme": "neutral", "kind": "slice", "texture": "menu_save_top.dds", "plate": "save", "crop": [1, 0, 346, 69] },
+  { "name": "GFX_zin_menu_list_save", "theme": "neutral", "kind": "slice", "texture": "menu_save_list.dds", "plate": "save", "crop": [0, 66, 350, 320] },
+  { "name": "GFX_zin_menu_list_save_bottom", "theme": "neutral", "kind": "slice", "texture": "menu_save_bottom.dds", "plate": "save", "crop": [1, 386, 346, 109] },
+  { "name": "GFX_zin_settings_panel", "theme": "neutral", "kind": "cornered", "texture": "settings_panel.dds", "size": [192, 192], "border": 16, "sheet": "ui-chrome-neutral", "cells": ["mini_dialog"], "fit": "frame_tile", "frame": 8 },
+  { "name": "GFX_zin_settings_row", "theme": "neutral", "kind": "sprite", "texture": "settings_row.dds", "size": [417, 29], "sheet": "ui-chrome-neutral", "cells": ["body"], "fit": "frame_tile", "frame": 2, "about": "Plain blackened iron: option labels sit on it, so its ground stays under the design system limit of 0.06." },
+  { "name": "GFX_zin_tension_window", "theme": "chronicle", "kind": "cornered", "texture": "tension_window.dds", "size": [192, 192], "border": 32, "sheet": "ui-chrome-chronicle", "cells": ["window"], "fit": "frame_tile", "frame": 16 },
+  { "name": "GFX_zin_tension_title", "theme": "chronicle", "kind": "cornered", "texture": "tension_title.dds", "size": [496, 40], "border": [16, 8], "sheet": "ui-chrome-chronicle", "cells": ["title"], "fit": "frame_tile", "frame": 6 },
+  { "name": "GFX_zin_tension_list", "theme": "chronicle", "kind": "cornered", "texture": "tension_list.dds", "size": [192, 192], "border": 12, "sheet": "ui-chrome-chronicle", "cells": ["inset"], "fit": "frame_tile", "frame": 6 }
+ ],
+ "plates": {
+  "load": { "size": [350, 491], "sheet": "ui-chrome-neutral", "cells": ["dialog"], "fit": "frame_tile", "frame": 16, "about": "The load panel of the pause menu as one plate: vanilla places its top (76, 63), list (75, 126) and bottom (76, 490) pieces; the plate starts at (75, 63)." },
+  "save": { "size": [350, 495], "sheet": "ui-chrome-neutral", "cells": ["dialog"], "fit": "frame_tile", "frame": 16, "about": "The save panel: top (76, 60), list (75, 126), bottom (76, 446); the plate starts at (75, 60)." }
+ }
+}

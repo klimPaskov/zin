@@ -1,0 +1,89 @@
+{
+ "format": 1,
+ "about": "The Aoaz bar (docs/specs/07_interface/01_interface.md section 2; design system docs/specs/07_interface/07_design_system.md, Banner Hall, section 6.4). Source of truth for its art sheets, its meters and the rows that pick a country's three meters. Built by tools/content/modules/ui.mjs (the Aoaz-bar part); jobs written by tools/content/art/aoaz-bar-jobs.mjs. UI overhaul lane W1.",
+ "window": { "x": 8, "y": 88, "w": 600, "h": 32 },
+ "style": "Banner Hall appliqué: every item is one round emblem roundel cut from deep madder-red dyed wool (#850B0E), edged with a couched twisted gold cord (#FBE68F), with one flat appliqué symbol stitched on it in undyed linen, pale gold thread and woad blue wool. One bold symbol per roundel that still reads when the roundel is shown 24 pixels wide: a strong silhouette, few parts, no fine detail. Flat front view, the cloth weave visible only at close view, even soft light from the upper left. All roundels the same size.",
+ "sheets": [
+  {
+   "id": "ui-aoaz-meters-1",
+   "aspect": "3:2",
+   "grid": [5, 4],
+   "ground": "black",
+   "matte": "outline",
+   "kind": "grid",
+   "family": "aoaz_bar",
+   "cells": [
+    { "key": "m_court_gold", "subject": "a heap of gold coins spilling from an open purse", "lum": "dark" },
+    { "key": "m_temple_favour", "subject": "a temple oil lamp hanging from three short chains", "lum": "dark" },
+    { "key": "m_hidden_hand", "subject": "an open hand half covered by a falling cloth veil", "lum": "dark" },
+    { "key": "m_concord", "subject": "a closed ring of knotted cord with five knots", "lum": "dark" },
+    { "key": "m_ruling_camp", "subject": "a large round wax seal hanging from a cord", "lum": "dark" },
+    { "key": "m_veil", "subject": "a hanging cloth veil gathered at the top", "lum": "dark" },
+    { "key": "m_faithful", "subject": "a cluster of five small lit candles", "lum": "dark" },
+    { "key": "m_plot", "subject": "a dagger half hidden under a folded cloak", "lum": "dark" },
+    { "key": "m_artifacts", "subject": "a closed reliquary casket with a domed lid", "lum": "dark" },
+    { "key": "m_houses", "subject": "a small pilgrim house with a pitched roof and one lit round window", "lum": "dark" },
+    { "key": "m_hosts", "subject": "a row of three round shields overlapping", "lum": "dark" },
+    { "key": "m_storm_veil", "subject": "a heavy storm cloud with slanting rain beneath it", "lum": "dark" },
+    { "key": "m_nether_pact", "subject": "two linked iron rings above a dark wave", "lum": "dark" },
+    { "key": "m_proof", "subject": "a rolled scout's report tied with a cord", "lum": "dark" },
+    { "key": "m_passes", "subject": "a narrow pass between two steep peaks with a small gate tower in it", "lum": "dark" },
+    { "key": "m_the_south", "subject": "a dark ridge under a storm sky with one lightning bolt", "lum": "dark" },
+    { "key": "m_presence", "subject": "a cold black flame with a pale edge", "lum": "dark" },
+    { "key": "m_service", "subject": "three knotted cords tied together in one knot", "lum": "dark" },
+    { "key": "m_isles", "subject": "three small rocky islets rising from grey water", "lum": "dark" },
+    { "key": "m_convergence", "subject": "three arrows meeting at one point", "lum": "dark" }
+   ]
+  },
+  {
+   "id": "ui-aoaz-meters-2",
+   "aspect": "3:2",
+   "grid": [5, 3],
+   "ground": "black",
+   "matte": "outline",
+   "kind": "grid",
+   "family": "aoaz_bar",
+   "cells": [
+    { "key": "m_strait", "subject": "a narrow sea channel between two cliffs", "lum": "dark" },
+    { "key": "m_dues", "subject": "a chain stretched across water with one coin hanging from it", "lum": "dark" },
+    { "key": "m_hegemony", "subject": "a tall harbour beacon tower with a fire on top", "lum": "dark" },
+    { "key": "m_stranger", "subject": "a line of footprints crossing a field of ice", "lum": "dark" },
+    { "key": "m_renown", "subject": "a laurel wreath tied with a ribbon", "lum": "dark" },
+    { "key": "m_glo", "subject": "a softly glowing pale stone in a simple silver setting", "lum": "dark" },
+    { "key": "m_temper", "subject": "a clenched fist wrapped in a red cloth band", "lum": "dark" },
+    { "key": "m_unity", "subject": "a bundle of arrows bound together with a cord", "lum": "dark" },
+    { "key": "m_border", "subject": "a line of sharpened wooden stakes", "lum": "dark" },
+    { "key": "m_resolve", "subject": "an anchor wrapped in a rope", "lum": "dark" },
+    { "key": "m_members", "subject": "three small ships sailing in a row", "lum": "dark" },
+    { "key": "m_sway", "subject": "a wooden ox yoke", "lum": "dark" },
+    { "key": "m_loyalty", "subject": "a cord tied in an oath knot with two loops", "lum": "dark" },
+    { "key": "m_charter", "subject": "a rolled charter with a seal hanging from it", "lum": "dark" },
+    { "key": "m_leaning", "subject": "a weathervane arrow between two small towers", "lum": "dark" }
+   ]
+  },
+  {
+   "id": "ui-aoaz-sigils",
+   "aspect": "4:3",
+   "grid": [4, 3],
+   "ground": "black",
+   "matte": "outline",
+   "kind": "grid",
+   "family": "aoaz_bar",
+   "note": "The first nine items are panel sigils: the same roundel, a little smaller symbol. The last three items are one plain round button in three states with no symbol at all: the empty madder roundel with its gold cord.",
+   "cells": [
+    { "key": "s_realm", "subject": "a swallow-tailed pennant banner on a short staff", "lum": "dark" },
+    { "key": "s_court", "subject": "a large ornate key", "lum": "dark" },
+    { "key": "s_council", "subject": "a small hermit's lantern with a closed door", "lum": "dark" },
+    { "key": "s_dominion", "subject": "a square storm-grey tower under a cloud", "lum": "dark" },
+    { "key": "s_watch", "subject": "a watchtower with a beacon fire on top", "lum": "dark" },
+    { "key": "s_mistake", "subject": "a tall dark standing stone", "lum": "dark" },
+    { "key": "s_strait", "subject": "a coiled rope with a ship's oar across it", "lum": "dark" },
+    { "key": "s_horde", "subject": "a fire bowl on three legs with flames", "lum": "dark" },
+    { "key": "s_accord", "subject": "a ship's prow with an iron ram", "lum": "dark" },
+    { "key": "b_normal", "subject": "an empty plain madder roundel with its gold cord rim, no symbol (normal)", "lum": "dark" },
+    { "key": "b_hover", "subject": "the same empty roundel, the gold cord rim brighter and the wool a little lighter (hover)", "lum": "dark" },
+    { "key": "b_pressed", "subject": "the same empty roundel, the wool darker and the cord dimmer as if pressed in (pressed)", "lum": "dark" }
+   ]
+  }
+ ]
+}

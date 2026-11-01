@@ -517,157 +517,6 @@
     "figures": []
   },
   {
-    "tag": "YEL",
-    "key": "yeldenne",
-    "name": "Yeldenne",
-    "stance": "zin_light_wardens",
-    "court": "story",
-    "ruler": {
-      "id": "zin_horos",
-      "name": "Horos",
-      "given": "Horos",
-      "title": {
-        "native": null,
-        "english": "Lord of the Castle of Yeldenne"
-      },
-      "gender": "male",
-      "people": "spirits",
-      "stance": "zin_light_wardens",
-      "traits": [
-        "zin_horos_guardian",
-        "zin_trait_guardian_spirit"
-      ],
-      "bio": "Above the valley of Mp'E stands a silent castle, and in its hall sits the lord whom the valley calls Horos, who has not been seen to come down in the memory of any family in Simoto. The green light that travellers see above the town at night is the light at his breast. He asks nothing of the valley, and the valley leaves him a loaf on the Silent Road each Long Dark and walks no further.",
-      "portrait": {
-        "appearance": "Follow the owner's drawing closely (K38): an enormous knight with glowing blue eyes behind a helm of branching dark points, plainly a being of magic and not a man (K40).",
-        "dress": "Yellow-green armour, a large blue sword and a green crystal at his breast.",
-        "colours": "Yellow-green armour (#9aa83a), sword blue (#3a6ac8), crystal green (#4adf8a)."
-      },
-      "canon": "E",
-      "definedBy": "characters module (contract id zin_horos); traits from the Yeldenne and Glo mechanic and the characters spec",
-      "note": "Glo, his heart, is named only in data; player text speaks of \"the light at his breast\"."
-    },
-    "heir": {
-      "note": "No heir: on Horos's death zin_yeldenne_install_warden makes the Warden of Mp'E (zin_yeldenne_warden, defined by the mechanic, title only) Yeldenne's ruler.",
-      "succession": "When Horos dies, the Warden of Mp'E keeps the hall and the valley."
-    },
-    "advisors": [
-      {
-        "id": "zin_regional_yeldenne_aldek",
-        "name": "Aldek Ezhson, Headman of Simoto",
-        "given": "Aldek",
-        "house": "Sten Ezhson's line",
-        "office": "Headman of Simoto",
-        "gender": "male",
-        "people": "men",
-        "born": 6758,
-        "slot": "political_advisor",
-        "traits": [
-          "zin_adv_elder"
-        ],
-        "role": "Headman of the valley town, of the founder's kin, who feeds every traveller from the Ormolak Pass and tells each one that the castle is none of his business.",
-        "portrait": "A grey-bearded herder in a sheepskin coat with a headman's copper chain.",
-        "canon": "P"
-      },
-      {
-        "id": "zin_regional_yeldenne_alddok",
-        "name": "Old Alddok",
-        "given": "Alddok",
-        "office": "Bearer of the Loaf",
-        "gender": "male",
-        "people": "men",
-        "born": 6746,
-        "slot": "theorist",
-        "traits": [
-          "zin_adv_hedge_wise"
-        ],
-        "role": "Has carried the valley's loaf to the start of the Silent Road every Long Dark for forty years, and nobody in Simoto remembers who carried it before him.",
-        "portrait": "A small old man wrapped in black wool, carrying a round loaf in a cloth.",
-        "canon": "P"
-      },
-      {
-        "id": "zin_regional_yeldenne_ezhkar",
-        "name": "Ezhkar Kolson, Captain of the Valley Bows",
-        "given": "Ezhkar",
-        "office": "Captain of the Valley Bows",
-        "gender": "male",
-        "people": "men",
-        "born": 6782,
-        "slot": "high_command",
-        "traits": [
-          "zin_adv_muster_master"
-        ],
-        "role": "Keeps the valley's few bowmen at practice behind the charcoal yards, which the headman calls a waste of arrows and Ezhkar calls a habit worth keeping.",
-        "portrait": "A young charcoal-burner with a long bow and blackened hands.",
-        "canon": "P"
-      }
-    ],
-    "commanders": [
-      {
-        "id": "zin_regional_yeldenne_stenulv",
-        "name": "Stenulv of the Pass",
-        "given": "Stenulv",
-        "office": "Watcher of the Ormolak Road",
-        "gender": "male",
-        "people": "men",
-        "born": 6775,
-        "type": "corps_commander",
-        "skill": {
-          "level": 2,
-          "attack": 1,
-          "defense": 3,
-          "planning": 2,
-          "logistics": 2
-        },
-        "traits": [
-          "trait_mountaineer",
-          "ambusher"
-        ],
-        "role": "A herder who watches the Ormolak Pass road for the headman and has turned back two parties of curious southerners without either of them knowing they were watched.",
-        "portrait": "A quiet herder in a hooded grey coat with a crook and a bow.",
-        "canon": "P"
-      },
-      {
-        "id": "zin_regional_yeldenne_zenvar",
-        "name": "Zenvar Ezhson, Keeper of the Charcoal Yards",
-        "given": "Zenvar",
-        "office": "Keeper of the Charcoal Yards",
-        "gender": "male",
-        "people": "men",
-        "born": 6767,
-        "type": "field_marshal",
-        "skill": {
-          "level": 1,
-          "attack": 1,
-          "defense": 2,
-          "planning": 1,
-          "logistics": 2
-        },
-        "traits": [
-          "defensive_doctrine"
-        ],
-        "role": "The headman's brother, who would lead the valley's men if anyone ever came up the road in arms and hopes that nobody does.",
-        "portrait": "A soot-streaked, heavy man with a woodsman's axe.",
-        "canon": "P"
-      }
-    ],
-    "figures": [
-      {
-        "id": "zin_yeldenne_warden",
-        "name": "The Warden of Mp'E",
-        "given": "Warden",
-        "office": "Warden of Mp'E",
-        "gender": "none",
-        "people": "men",
-        "role": "The title of the warden who keeps the valley and the empty hall after Horos, whose personal name stays open.",
-        "portrait": "A hooded warden in grey-green before a pale stone gate, face unseen.",
-        "canon": "S",
-        "definedBy": "Yeldenne and Glo mechanic (common/characters/zin_yeldenne_glo.txt)",
-        "recruit": "Recruited by zin_yeldenne_install_warden when Horos dies; never at the start."
-      }
-    ]
-  },
-  {
     "tag": "FEA",
     "key": "fearno",
     "name": "Fearno",
@@ -1740,6 +1589,55 @@
         "role": "Leads the shepherds' levy, which can guard a flock against wolves and has never been asked to guard one against an army.",
         "portrait": "A weathered shepherd in a hooded coat with a crook and a sling.",
         "canon": "P"
+      },
+      {
+        "id": "zin_regional_yeldenne_aldek",
+        "name": "Aldek Ezhson, Headman of Simoto",
+        "given": "Aldek",
+        "house": "Sten Ezhson's line",
+        "office": "Headman of Simoto",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Headman of the valley town, of the founder's kin, who feeds every traveller from the Ormolak Pass and tells each one that the castle is none of his business.",
+        "portrait": "A grey-bearded herder in a sheepskin coat with a headman's copper chain.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_yeldenne_alddok",
+        "name": "Old Alddok",
+        "given": "Alddok",
+        "office": "Bearer of the Loaf",
+        "gender": "male",
+        "people": "men",
+        "born": 6746,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Has carried the valley's loaf to the start of the Silent Road every Long Dark for forty years, and nobody in Simoto remembers who carried it before him.",
+        "portrait": "A small old man wrapped in black wool, carrying a round loaf in a cloth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_yeldenne_ezhkar",
+        "name": "Ezhkar Kolson, Captain of the Valley Bows",
+        "given": "Ezhkar",
+        "office": "Captain of the Valley Bows",
+        "gender": "male",
+        "people": "men",
+        "born": 6782,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the valley's few bowmen at practice behind the charcoal yards, which the headman calls a waste of arrows and Ezhkar calls a habit worth keeping.",
+        "portrait": "A young charcoal-burner with a long bow and blackened hands.",
+        "canon": "P"
       }
     ],
     "commanders": [
@@ -1787,6 +1685,53 @@
         ],
         "role": "The lord's brother, who keeps the hall's walls and says that the vale's best defence is its marriages.",
         "portrait": "A tall man in mail under a wool mantle.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_yeldenne_stenulv",
+        "name": "Stenulv of the Pass",
+        "given": "Stenulv",
+        "office": "Watcher of the Ormolak Road",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer",
+          "ambusher"
+        ],
+        "role": "A herder who watches the Ormolak Pass road for the headman and has turned back two parties of curious southerners without either of them knowing they were watched.",
+        "portrait": "A quiet herder in a hooded grey coat with a crook and a bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_yeldenne_zenvar",
+        "name": "Zenvar Ezhson, Keeper of the Charcoal Yards",
+        "given": "Zenvar",
+        "office": "Keeper of the Charcoal Yards",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "type": "field_marshal",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "The headman's brother, who would lead the valley's men if anyone ever came up the road in arms and hopes that nobody does.",
+        "portrait": "A soot-streaked, heavy man with a woodsman's axe.",
         "canon": "P"
       }
     ],

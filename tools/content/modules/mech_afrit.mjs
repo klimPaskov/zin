@@ -306,8 +306,8 @@ on_actions = {
   loc.set('MAPMODE_ZIN_FOOTHOLDS_MAP_MODE_DESCRIPTION', 'Shows where a House of the First Light serves.');
   loc.set('zin_footholds_map_mode_tooltip', 'Houses of the First Light');
   loc.set('zin_footholds_map_mode_tooltip_delayed', 'Houses of the First Light');
-  sprites.use('GFX_mapmode_buttons_deselected_small_zin_footholds_map_mode', 'house_first_light');
-  sprites.use('GFX_mapmode_buttons_selected_small_zin_footholds_map_mode', 'house_first_light');
+  // The map-mode buttons (GFX_mapmode_buttons_(de)selected_small_zin_footholds_map_mode) have their own art in interface/zin_mapmodes.gfx,
+  // written by modules/ui.mjs with the Aoaz bar (UI lane W1).
   const ramp = [[0.80, 0.78, 0.70], [0.86, 0.80, 0.55], [0.88, 0.76, 0.40], [0.86, 0.70, 0.26], [0.80, 0.60, 0.14]];
   staged.text('common/map_modes/zin_footholds.txt', format(`${hdr(MOD, SPEC, 'The hub sees every depth, in a ramp from pale ivory to deep gold (suspicious courts pulse, capped courts are dark grey). Everyone else sees one warm colour where a House serves (footholds 2 or more) and nothing else.')}
 scripted_map_modes = {

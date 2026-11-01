@@ -16,7 +16,7 @@ import { buildAenor, resolveTags } from './modules/mech_aenor.mjs';
 import { buildAfrit, startFootholds } from './modules/mech_afrit.mjs';
 import { buildZol } from './modules/mech_zol.mjs';
 import { loadJson, paceDate, dateTrigger, secrecyLeaks, wordProblems, unknownCommands, format, dedent, call, takeArgs, Sprites, writeEvent, writeDecision, Loc } from './lib/mech_court_lib.mjs';
-import { Panel } from './lib/mech_court_gui.mjs';
+import { Panel, isPanelChrome, onGrid, BAR_PANELS, missingBarOpenings } from './lib/mech_court_gui.mjs';
 import { stanceCode, STANCES } from './lib/mech_aenor_script.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -308,7 +308,7 @@ test('Afrit: footholds at the start (R4)', async () => {
   assert.equal(f('Dondor'), 2);
   assert.equal(f('Mirolon'), 1);
   // Puvulan holds Volgan's seat, Khorvrath the Demon realm's, Zol's Mistake Zol's, Gala the Gala Elves' (roster of 24 October 2026).
-  for (const n of ['Puvulan', 'Khorvrath', 'Dolon', 'Nezer', "Zol's Mistake", 'Yeldenne']) assert.equal(f(n), 0, n);
+  for (const n of ['Puvulan', 'Khorvrath', 'Dolon', 'Nezer', "Zol's Mistake"]) assert.equal(f(n), 0, n);
   assert.equal(f('Gala'), 1);
   assert.equal(f('Goldoroth'), 0, 'orc realms of the Dark Lands start at 0');
   assert(afrit.footholds > 100, 'the start table gives many countries a House');
@@ -435,28 +435,29 @@ test('Zol: the host templates use the warfare slice\'s deathless battalions and 
 });
 
 // ------------------------------------------------------------------------------------------------ interface
-test('Panels: three windows inside 620 x 500, each with a close button on Escape, tabs, a launcher and no vanilla layout override', () => {
+test('Panels: three Chancery windows of 632 x 600 on the 4 px grid, each with a close button on Escape, tabs, opened from the Aoaz bar (no launcher of their own) and no vanilla layout override', () => {
   for (const [rel, win, flag] of [['interface/zin_aenor_court.gui', 'zin_court_window', 'zin_ui_court_open'], ['interface/zin_afrit_council.gui', 'zin_council_window', 'zin_ui_council_open'], ['interface/zin_zol_presence.gui', 'zin_mistake_window', 'zin_ui_mistake_open']]) {
     const g = text(rel);
-    assert(g.includes(`name = "${win}"`) && g.includes('size = { width = 620 height = 500 }'), win);
+    assert(g.includes(`name = "${win}"`) && g.includes('size = { width = 632 height = 600 }'), win);
+    assert(onGrid(g), `${win}: every position and size on the 4 px grid`);
     assert(g.includes('quadTextureSprite = "GFX_closebutton"') && g.includes('shortcut = "ESCAPE"'), `${win}: close button`);
     assert(g.includes('spriteType = "GFX_zin_frame"'));
-    assert(/_button_window"/.test(g));
-    for (const m of g.matchAll(/(?:spriteType|quadTextureSprite) = "(GFX_[A-Za-z0-9_]+)"/g)) assert(/^GFX_(zin_frame|zin_button|zin_rule|closebutton|zin_(court|council|mistake)_[a-z_]+)$/.test(m[1]), m[1]);
+    assert(!/_button_window"/.test(g), `${win}: no launcher window under the Aoaz bar`);
+    assert.equal(BAR_PANELS.get(win.replace(/^zin_|_window$/g, ''))?.flag, flag, `${win}: opened by the Aoaz bar's panel button`);
+    for (const m of g.matchAll(/(?:spriteType|quadTextureSprite) = "(GFX_[A-Za-z0-9_]+)"/g)) assert(isPanelChrome(m[1]) || /^GFX_zin_(court|council|mistake)_[a-z_]+$/.test(m[1]), m[1]);
   }
   assert(!files.some(f => /^interface\/(topbar|countrydecisionview)/.test(f)));
   const sg = text('common/scripted_guis/zin_afrit_council.txt');
   assert(sg.includes('zin_afrit_is_hub = yes') && sg.includes('has_country_flag = zin_ui_council_open') && sg.includes('ai_enabled = { always = no }'), 'the Council window opens for the hub only');
   assert(!/Afrit|Hidden Council/.test(text('common/scripted_guis/zin_afrit_council.txt')));
-  assert.equal(loc.get('ZIN_COUNCIL_BUTTON'), 'The Hermitage', 'the launcher wears the public face');
+  assert(!loc.has('ZIN_COUNCIL_BUTTON'), 'no launcher text: the Aoaz bar carries the Hermitage button (its public face)');
 });
 
 test('Panels: every sprite a window or script names is defined in a gfx file of this slice or is a ZIN base sprite', () => {
   const gfx = ['interface/zz_zin_aenor_court.gfx', 'interface/zz_zin_afrit.gfx', 'interface/zz_zin_zol.gfx'].map(f => text(f)).join('\n');
   const defined = new Set([...gfx.matchAll(/name = "(GFX_[A-Za-z0-9_]+)"/g)].map(m => m[1]));
-  const base = new Set(['GFX_zin_frame', 'GFX_zin_button', 'GFX_zin_rule', 'GFX_closebutton']);
   const used = new Set([...allScript.matchAll(/\bGFX_[A-Za-z0-9_]+/g)].map(m => m[0]));
-  const missing = [...used].filter(s => !defined.has(s) && !base.has(s) && !/^GFX_zin_(evt|news|portrait)_/.test(s));
+  const missing = [...used].filter(s => !defined.has(s) && !isPanelChrome(s) && !/^GFX_zin_(evt|news|portrait)_/.test(s));
   assert.deepEqual(missing, []);
   for (const m of gfx.matchAll(/texturefile = "gfx\/interface\/ideas\/zin\/([a-z_0-9]+)\.dds"/g)) assert(m[1].length > 2);
 });
@@ -469,13 +470,27 @@ test('Panels: every button has a click effect and every gated element a visibili
   }
 });
 
-test('Panels: a window cannot be made without a close button (builder check), and a gauge needs its marker sprite', () => {
-  const p = new Panel({ prefix: 'zin_x', gui: 'zin_x', window: 'zin_x_window', flag: 'zin_ui_x_open', title: 'X', titleKey: 'ZIN_X_T', launcher: 'X', launcherKey: 'ZIN_X_B', launcherTip: 'x', visible: 'always = yes', launcherVisible: 'always = yes', refresh: 'zin_x_ui_refresh', w: 620, h: 500, tabs: [{ key: 'ZIN_X_TAB', label: 'X' }] });
-  p.markerSprite = 'GFX_zin_x_marker';
-  p.gauge('g', 1, 100, 'zin_ui_g_x');
+test('Panels: the builder places a meter on its fill variable, refuses a value without a tooltip and a tab that runs past the body', () => {
+  const make = () => new Panel({ prefix: 'zin_x', gui: 'zin_x', window: 'zin_x_window', flag: 'zin_ui_x_open', title: 'X', titleKey: 'ZIN_X_T', launcher: 'X', launcherKey: 'ZIN_X_B', launcherTip: 'x', visible: 'always = yes', launcherVisible: 'always = yes', refresh: 'zin_x_ui_refresh', tabs: [{ key: 'ZIN_X_TAB', label: 'X' }] });
+  const p = make();
+  p.gauge('g', 1, 'ZIN_X_G', 'G: 1', 'The tooltip.', { fill: 'zin_ui_g_fill', marks: [30] });
   const r = p.render();
-  assert(r.gui.includes('shortcut = "ESCAPE"') && r.gui.includes('GFX_zin_x_marker'));
-  assert(r.scripted.includes('zin_ui_g_x'), 'the marker slides by its variable');
+  assert(r.gui.includes('shortcut = "ESCAPE"') && r.gui.includes('GFX_zin_meter_fill_chancery') && r.gui.includes('pdx_tooltip = "ZIN_X_G_tt"') && onGrid(r.gui));
+  assert(/zin_x_g_meter_fill = \{\s*x = zin_ui_g_fill/.test(r.scripted), 'the fill slides by its variable');
+  assert.throws(() => make().gauge('h', 1, 'ZIN_X_H', 'H', null, { fill: 'zin_ui_h_fill' }), /needs a tooltip/);
+  assert.throws(() => { const q = make(); for (let i = 0; i < 30; i++) q.text(`t${i}`, 1, `ZIN_X_${i}`, 'x'); }, /runs past the body/);
+});
+
+test('Panels: a panel opened from the Aoaz bar writes no launcher, and a bar without its button is reported', () => {
+  const p = new Panel({ prefix: 'zin_y', gui: 'zin_y', window: 'zin_y_window', flag: 'zin_ui_y_open', bar: 'y_test', title: 'Y', titleKey: 'ZIN_Y_T', launcher: 'Y', launcherKey: 'ZIN_Y_B', launcherTip: 'y', visible: 'always = yes', launcherVisible: 'always = yes', tabs: [{ key: 'ZIN_Y_TAB', label: 'Y' }] });
+  const r = p.render();
+  assert(!r.gui.includes('zin_y_button_window') && !r.scripted.includes('zin_y_launcher') && !p.loc.has('ZIN_Y_B'));
+  const bar = ok => `zin_aoaz_panel_y_test_click = {\n\tset_country_flag = ${ok ? 'zin_ui_y_open' : 'zin_ui_other_open'}\n}\nzin_aoaz_panel_z_click = {\n\tset_country_flag = zin_ui_y_open\n}`;
+  const others = [...BAR_PANELS.keys()].filter(k => k !== 'y_test').map(k => `zin_aoaz_panel_${k}_click = {\n\tset_country_flag = ${BAR_PANELS.get(k).flag}\n}`).join('\n');
+  assert.deepEqual(missingBarOpenings(`${bar(true)}\n${others}`), []);
+  assert.deepEqual(missingBarOpenings(`${bar(false)}\n${others}`), ['zin_y_window (Aoaz bar panel y_test)']);
+  assert(missingBarOpenings(undefined).includes('zin_y_window (Aoaz bar panel y_test)'), 'an unbuilt bar strands the panel');
+  BAR_PANELS.delete('y_test');
 });
 
 // ------------------------------------------------------------------------------------------------ helpers (negative)

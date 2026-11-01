@@ -14,6 +14,7 @@ import { buildElves } from './modules/mech_elves.mjs';
 import { buildLerendor } from './modules/mech_lerendor.mjs';
 import { buildVolgan } from './modules/mech_volgan.mjs';
 import { buildPowersUi } from './modules/mech_powers_ui.mjs';
+import { isPanelChrome, onGrid } from './lib/mech_court_gui.mjs';
 import { checkCommands } from './lib/mp_check.mjs';
 import { Kit, fmt, afterDateTrigger, paceDate } from './lib/mp_kit.mjs';
 import { readable, notCp1252, checkMods, loadCatalogKeys } from './lib/inst_util.mjs';
@@ -144,8 +145,8 @@ test('Localisation: every key the script names exists, nothing is empty, no bann
   const scripted = [...txtFiles].filter(([k]) => !k.includes('scripted_localisation')).map(([, v]) => v).join('\n');
   const wordNames = new Set([...text('common/scripted_localisation/zin_mech_powers.txt').matchAll(/^\tname = ([a-z0-9_]+)/gm)].map(m => m[1]));
   for (const m of scripted.matchAll(/\b(?:title|desc|name|text|localization_key) = ([A-Za-z0-9_.]+)/g)) if (/^zin_|^ZIN_/.test(m[1])) need.add(m[1]);
-  assert.equal(wordNames.size, 24, 'the scripted localisation names');
-  for (const w of wordNames) assert(text('interface/zin_mech_powers.gui').length > 0 && scriptFilesIncludeWord(w), `${w} is never shown`);
+  assert.equal(wordNames.size, 25, 'the scripted localisation names');
+  for (const w of wordNames) assert(text('interface/zin_mech_powers.gui').length > 0 && (scriptFilesIncludeWord(w) || text('common/scripted_guis/zin_mech_powers.txt').includes(`"[${w}]"`)), `${w} is never shown`);
   for (const m of text('interface/zin_mech_powers.gui').matchAll(/\b(?:text|buttonText|pdx_tooltip) = "([A-Za-z0-9_.]+)"/g)) need.add(m[1]);
   const lacking = [...need].filter(k => !(k in locEntries));
   assert.deepEqual(lacking, []);
@@ -354,10 +355,8 @@ test('Windows: the three panels exist under the interface spec\'s names; every e
   const names = new Set([...gui.matchAll(/name = "([a-z0-9_]+)"/g)].map(m => m[1]));
   for (const m of sg.matchAll(/^\t\t\t([a-z0-9_]+)_(visible|click|on_visible) = \{/gm)) { const base = m[1]; assert(names.has(base) || names.has(`${base}_on`) || names.has(base.replace(/_tab_(\d+)$/, '_tab_$1')), `${base} is no element of the windows`); }
   for (const m of sg.matchAll(/^\t\t\t([a-z0-9_]+) = \{\n\t\t\t\tx = /gm)) assert(names.has(m[1]), `${m[1]} property`);
-  const catalog = new Set(await loadCatalogKeys());
-  const own = new Set([...text('interface/zz_zin_mech_powers.gfx').matchAll(/name = "(GFX_[a-z_]+)"/g)].map(m => m[1]));
-  for (const s of gui.matchAll(/(?:spriteType|quadTextureSprite) = "(GFX_[A-Za-z_]+)"/g)) assert(own.has(s[1]) || ['GFX_zin_frame', 'GFX_zin_button', 'GFX_zin_rule', 'GFX_closebutton'].includes(s[1]), `${s[1]} is not defined`);
-  for (const art of text('interface/zz_zin_mech_powers.gfx').matchAll(/ideas\/zin\/([a-z_]+)\.dds/g)) assert(catalog.has(art[1]), art[1]);
+  for (const s of gui.matchAll(/(?:spriteType|quadTextureSprite) = "(GFX_[A-Za-z_]+)"/g)) assert(isPanelChrome(s[1]), `${s[1]} is not defined`);
+  assert(onGrid(gui), 'every position and size on the 4 px grid');
   assert(!/^(?:instantTextBox|icon|button)Type = \{[\s\S]*?\bx = -?\d{4}/m.test(gui), 'no element placed beyond the window');
   assert(sg.includes('ai_enabled = { always = no }') && !/(^|\s)ai_weights\s*=/.test(sg), 'the AI never opens a panel');
 });

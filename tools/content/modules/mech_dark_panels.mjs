@@ -1,90 +1,94 @@
 // The Horde panel (Goldoroth) and the Accord panel (the Dark Sea Accord's leader) of docs/specs/04_mechanics/dark_lands.md,
 // "Interface", under the names of docs/specs/07_interface/01_interface.md section 7a: windows zin_horde_window and zin_accord_window,
 // scripted GUIs zin_horde and zin_accord, open flags zin_ui_horde_open and zin_ui_accord_open. Both are read-only: they show the
-// mechanic's values and change nothing but their own open flag. Each opens from a small launcher button until the interface module's
-// Realm panel takes that place. They use only existing ZIN sprites (GFX_zin_frame, GFX_zin_button, GFX_zin_rule, GFX_closebutton)
-// and the vanilla fonts; the sway and member rows are dynamic lists over the arrays zin_dark_refresh_panel_rows keeps.
-// The interface module's themed panels (storm and sea frames, gauges, headers) replace these: pass `panels: false` to the builder.
-// Art needs (not generated here): GFX_zin_header_horde and GFX_zin_header_accord headers, gauge sprites, a launcher icon.
+// mechanic's values and change nothing but their own open flag and page. They are Chancery panels of the shared layout
+// (lib/mech_court_gui.mjs; design system sections 3 and 6.4): header picture, accent strip, one primary value per tab, meters with the
+// mechanic's thresholds as marks, fixed rows with pages for the halls and the members, a tooltip on every value. Every player-visible
+// text is in data/mech_regions_dark.json (keys zin_horde_* and zin_accord_*); the panel adds only the generated row, tab and page keys.
+// Each opens from a small launcher button until the Aoaz bar (lane W1) takes that place.
+//
+// Script: common/scripted_effects/zin_dark_panels.txt holds zin_dark_ui_meters, the meter fills and the page of rows of an open
+// window; zin_dark_refresh_panel_rows (mech_dark_content.mjs) rebuilds the arrays and calls it for every country with a window open,
+// on the monthly pulse and on every click of a window.
 import { HEADER } from '../lib/mech_kit.mjs';
+import { Panel, LAYOUT, FONT, sub, meterFill, fillRows } from '../lib/mech_court_gui.mjs';
+import { format } from '../lib/mech_court_lib.mjs';
 
 const SPEC = 'docs/specs/04_mechanics/dark_lands.md';
-const FONT = { small: 'hoi_16mbs', mid: 'hoi_18mbs', head: 'hoi_24header' };
-const WIDTH = 600, ROW = 22, LIST_W = 520;
-const blk = (name, body) => `${name} = {\n${body.split('\n').map(l => (l ? `\t${l}` : l)).join('\n')}\n}`;
-const textBox = (name, x, y, w, h, key, font = 'mid', format = 'left') => blk('instantTextBoxType', `name = "${name}"\nposition = { x = ${x} y = ${y} }\nfont = "${FONT[font]}"\ntext = "${key}"\nmaxWidth = ${w}\nmaxHeight = ${h}\nformat = ${format}\nfixedsize = yes`);
-const rule = (name, y) => blk('iconType', `name = "${name}"\nspriteType = "GFX_zin_rule"\nposition = { x = 40 y = ${y} }`);
+// Script text is indented from its braces (one tab per open brace), inside the file's top-level block.
+const indent = text => format(text).split('\n').map(l => (l ? `\t${l}` : l)).join('\n');
+const REFRESH = 'zin_dark_refresh_panel_rows';
 
-/**
- * One panel: rows of text (with optional elements shown under a trigger), an optional dynamic list, a title, a close button and a
- * launcher. Returns the gui text, the scripted GUI text and the element names it defines.
- */
-function panel(o, T) {
-  const P = o.prefix, els = [], triggers = [], extra = [];
-  let y = 70;
-  for (const r of o.rows) {
-    if (r.list) {
-      const h = r.list.rows * ROW;
-      els.push(textBox(`${P}_${r.name}_head`, 44, y, LIST_W, 24, T.use(r.key), 'mid'));
-      y += 28;
-      els.push(blk('containerWindowType', `name = "${P}_${r.name}_scroll"\nposition = { x = 44 y = ${y} }\nsize = { width = ${LIST_W} height = ${h} }\norientation = upper_left\nscroll_wheel_factor = 40\nsmooth_scrolling = yes\n${blk('gridBoxType', `name = "${P}_${r.name}"\nposition = { x = 0 y = 0 }\nsize = { width = ${LIST_W} height = ${h} }\norientation = upper_left\nslotsize = { width = ${LIST_W} height = ${ROW} }\nformat = "UPPER_LEFT"\nmax_slots_horizontal = 1`)}`));
-      extra.push(blk('containerWindowType', `name = "${P}_${r.name}_entry"\nposition = { x = 0 y = 0 }\nsize = { width = ${LIST_W} height = ${ROW} }\n${textBox(`${P}_${r.name}_entry_text`, 0, 0, LIST_W, ROW, T.use(r.list.key), 'small')}`));
-      r.list.id = `${P}_${r.name}`;
-      y += h + 8;
-      continue;
-    }
-    const h = r.h ?? 26;
-    els.push(textBox(`${P}_${r.name}`, 44, y, r.mark ? 400 : LIST_W, h, T.use(r.key), r.font ?? 'mid'));
-    if (r.mark) { els.push(textBox(`${P}_${r.name}_mark`, 450, y, 110, h, T.use(r.mark.key), 'small', 'right')); triggers.push(blk(`${P}_${r.name}_mark_visible`, r.mark.when)); }
-    y += h + 6;
-    if (r.rule) { els.push(rule(`${P}_${r.name}_rule`, y)); y += 10; }
-  }
-  const height = y + 40;
-  const gui = [
-    blk('containerWindowType', [`name = "${o.window}"`, `position = { x = ${-WIDTH / 2} y = ${-Math.round(height / 2)} }`, `size = { width = ${WIDTH} height = ${height} }`, 'orientation = center', 'moveable = yes',
-      blk('background', `name = "${P}_bg"\nspriteType = "GFX_zin_frame"`),
-      textBox(`${P}_title`, 40, 22, WIDTH - 80, 32, T.use(`${P}_title`), 'head', 'centre'),
-      blk('buttonType', `name = "${P}_close"\nposition = { x = ${WIDTH - 44} y = 14 }\nquadTextureSprite = "GFX_closebutton"\nshortcut = "ESCAPE"`),
-      rule(`${P}_rule_top`, 58), ...els].join('\n')),
-    blk('containerWindowType', `name = "${P}_button_window"\nposition = { x = 8 y = ${o.launcherY} }\nsize = { width = 132 height = 30 }\norientation = upper_left\n${blk('buttonType', `name = "${P}_open"\nposition = { x = 0 y = 0 }\nspriteType = "GFX_zin_button"\nbuttonText = "${T.use(`${P}_button`)}"\nbuttonFont = "${FONT.mid}"\npdx_tooltip = "${T.use(`${P}_button_tt`)}"`)}`),
-    ...extra,
-  ].join('\n');
-  const lists = o.rows.filter(r => r.list).map(r => blk(r.list.id, `array = ${r.list.array}\nvalue = v\nindex = i\nchange_scope = yes\nentry_container = "${P}_${r.name}_entry"`));
-  const scripted = [
-    blk(o.gui, ['context_type = player_context', `window_name = "${o.window}"`, blk('ai_enabled', 'always = no'), blk('visible', `${o.visible}\nhas_country_flag = ${o.flag}`),
-      blk('effects', blk(`${P}_close_click`, `clr_country_flag = ${o.flag}`)), triggers.length ? blk('triggers', triggers.join('\n')) : '', lists.length ? blk('dynamic_lists', lists.join('\n')) : ''].filter(Boolean).join('\n')),
-    blk(`${o.gui}_launcher`, ['context_type = player_context', `window_name = "${P}_button_window"`, blk('ai_enabled', 'always = no'), blk('visible', o.visible),
-      blk('effects', blk(`${P}_open_click`, `if = {\n\tlimit = { has_country_flag = ${o.flag} }\n\tclr_country_flag = ${o.flag}\n}\nelse = {\n${o.closeOthers.map(f => `\tclr_country_flag = ${f}`).join('\n')}\n\tzin_dark_refresh_panel_rows = yes\n\tset_country_flag = ${o.flag}\n}`))].join('\n')),
-  ].join('\n');
-  return { gui, scripted, window: { window: o.window, gui: o.gui, flag: o.flag, launcher: `${P}_button_window` } };
+// Registers the generated keys of a panel with the text table: data keys are marked used, the rest (row slots, the selected tab label,
+// the page line) are added with the panel's own text.
+function adopt(T, p) {
+  for (const [k, v] of p.loc) { if (!T.has(k)) T.map.set(k, v); T.use(k); }
 }
 
 /** Returns { files: Map, scriptedGuis: [], windows: [] }; the keys it needs are read from T. */
 export async function buildDarkPanels(c) {
   const { T, tags, BLOCS, N } = c;
   const { GOL } = tags;
-  const horde = panel({ prefix: 'zin_horde', gui: 'zin_horde', window: 'zin_horde_window', flag: 'zin_ui_horde_open', closeOthers: ['zin_ui_accord_open'], launcherY: 116, visible: `original_tag = ${GOL}`,
-    rows: [
-      { name: 'temper', key: 'zin_horde_temper' },
-      ...BLOCS.map(b => ({ name: `bloc_${b.key}`, key: `zin_horde_bloc_${b.key}`, h: 24, font: 'small', mark: { key: 'zin_horde_heir', when: `has_country_flag = zin_goldoroth_heir_${b.key}` } })),
-      { name: 'unity', key: 'zin_horde_unity', rule: true },
-      { name: 'border', key: 'zin_horde_border', rule: true },
-      { name: 'sway', key: 'zin_horde_sway_head', list: { array: 'global.zin_dark_sway_rows', key: 'zin_horde_sway_row', rows: N.panel_sway_rows } },
-      { name: 'foot', key: 'zin_horde_foot', h: 48, font: 'small' },
-    ] }, T);
-  const accord = panel({ prefix: 'zin_accord', gui: 'zin_accord', window: 'zin_accord_window', flag: 'zin_ui_accord_open', closeOthers: ['zin_ui_horde_open'], launcherY: 150, visible: 'zin_dark_is_accord_member = yes\nis_faction_leader = yes',
-    rows: [
-      { name: 'resolve', key: 'zin_accord_resolve' },
-      { name: 'border', key: 'zin_accord_border', rule: true },
-      { name: 'members', key: 'zin_accord_members', list: { array: 'global.zin_dark_accord_rows', key: 'zin_accord_member_row', rows: N.panel_member_rows } },
-      { name: 'foot', key: 'zin_accord_foot', h: 70, font: 'small' },
-    ] }, T);
-  const indentAll = t => t.split('\n').map(l => (l ? `\t${l}` : l)).join('\n');
+  const t = k => T.get(k), tip = k => T.get(sub(k, '_tt'));
+  const marks = { temper: [N.temper_settled, N.temper_restless, N.temper_blood], favour: [N.challenge_favour, N.sulk_favour, N.boon_favour], resolve: [N.resolve_fray, N.resolve_holds] };
+
+  // ============================================================================================ the Horde of Cocanoor
+  const horde = new Panel({ prefix: 'zin_horde', gui: 'zin_horde', window: 'zin_horde_window', flag: 'zin_ui_horde_open', bar: 'horde', title: t('zin_horde_title'), titleKey: 'zin_horde_title', accent: 'GFX_zin_accent_horde', header: 'GFX_zin_header_horde',
+    launcher: t('zin_horde_button'), launcherKey: 'zin_horde_button', launcherTip: tip('zin_horde_button'), launcherPos: [8, 124], toggle: true,
+    visible: `original_tag = ${GOL}`, launcherVisible: `original_tag = ${GOL}`, refresh: REFRESH,
+    tabs: [1, 2].map(i => ({ key: `zin_horde_tab_${i}`, label: t(`zin_horde_tab_${i}`), tip: tip(`zin_horde_tab_${i}`) })) });
+  horde.primary('temper', 1, 'zin_horde_temper', t('zin_horde_temper'), tip('zin_horde_temper'), { fill: 'zin_ui_temper_fill', marks: marks.temper });
+  horde.text('blocs', 1, 'zin_horde_blocs', t('zin_horde_blocs'), { font: 'small', gap: 4 });
+  for (const b of BLOCS) {
+    const k = `zin_horde_bloc_${b.key}`;
+    const y = horde.rowGauge(`bloc_${b.key}`, 1, k, t(k), tip(k), { fill: `zin_ui_favour_${b.key}_fill`, marks: marks.favour }, { w: 196 });
+    // the heir's mark sits between the name and the meter, in the bloc's own row
+    horde.els.push(['instantTextBoxType = {', `name = "zin_horde_bloc_${b.key}_mark"`, `position = { x = ${LAYOUT.x + 200} y = ${y + 4} }`, `font = "${FONT.small}"`, 'text = "zin_horde_heir"', 'maxWidth = 92', 'maxHeight = 20', 'format = left', 'fixedsize = yes', 'pdx_tooltip = "zin_horde_heir_tt"', '}'].join('\n'));
+    horde.gate(`zin_horde_bloc_${b.key}_mark`, 1, `has_country_flag = zin_goldoroth_heir_${b.key}`);
+  }
+  horde.loc.set('zin_horde_heir', t('zin_horde_heir')); horde.loc.set('zin_horde_heir_tt', tip('zin_horde_heir'));
+  horde.space(1, 4);
+  horde.gauge('unity', 1, 'zin_horde_unity', t('zin_horde_unity'), tip('zin_horde_unity'), { fill: 'zin_ui_unity_fill' });
+  horde.text('border', 1, 'zin_horde_border', t('zin_horde_border'), { tip: tip('zin_horde_border') });
+  horde.primary('sway', 2, 'zin_horde_sway_head', t('zin_horde_sway_head'), tip('zin_horde_sway_head'));
+  horde.rows('sway', 2, { key: 'zin_horde_sway_row', tip: tip('zin_horde_sway_row'), cols: [
+    { head: 'Hall', w: 280, text: n => `§Y[ROOT.zin_ui_row_${n}.GetNameDef]§!` },
+    { head: 'Sway', w: 80, text: n => `§Y[?ROOT.zin_ui_row_${n}.zin_goldoroth_sway|0]§!` },
+    { head: 'Band', w: 192, text: n => `[ROOT.zin_ui_row_${n}.zin_dark_sway_band_name]` }] });
+
+  // ============================================================================================ the Dark Sea Accord
+  const accord = new Panel({ prefix: 'zin_accord', gui: 'zin_accord', window: 'zin_accord_window', flag: 'zin_ui_accord_open', bar: 'accord',title: t('zin_accord_title'), titleKey: 'zin_accord_title', accent: 'GFX_zin_accent_accord', header: 'GFX_zin_header_accord',
+    launcher: t('zin_accord_button'), launcherKey: 'zin_accord_button', launcherTip: tip('zin_accord_button'), launcherPos: [8, 152], toggle: true,
+    visible: 'zin_dark_is_accord_member = yes\nis_faction_leader = yes', launcherVisible: 'zin_dark_is_accord_member = yes\nis_faction_leader = yes', refresh: REFRESH,
+    tabs: [{ key: 'zin_accord_tab_1', label: t('zin_accord_title') }] });
+  accord.primary('resolve', 1, 'zin_accord_resolve', t('zin_accord_resolve'), tip('zin_accord_resolve'), { fill: 'zin_ui_resolve_fill', marks: marks.resolve });
+  accord.text('border', 1, 'zin_accord_border', t('zin_accord_border'), { tip: tip('zin_accord_border'), gap: LAYOUT.gap });
+  accord.rows('members', 1, { key: 'zin_accord_member_row', tip: tip('zin_accord_member_row'), cols: [{ head: t('zin_accord_members'), headKey: 'zin_accord_members', w: LAYOUT.cw, text: n => `§Y[ROOT.zin_ui_row_${n}.GetNameDef]§!` }] });
+
+  const out = [horde, accord].map(p => { const r = p.render(); adopt(T, p); return r; });
   const files = new Map([
-    ['interface/zin_dark_panels.gui', `${HEADER('mech_dark_panels', SPEC)}\nguiTypes = {\n${indentAll([horde.gui, accord.gui].join('\n'))}\n}\n`],
-    ['common/scripted_guis/zin_dark_panels.txt', `${HEADER('mech_dark_panels', SPEC)}\nscripted_gui = {\n${indentAll([horde.scripted, accord.scripted].join('\n'))}\n}\n`],
+    ['interface/zin_dark_panels.gui', `${HEADER('mech_dark_panels', SPEC)}\nguiTypes = {\n${indent(out.map(o => o.gui).join('\n'))}\n}\n`],
+    ['common/scripted_guis/zin_dark_panels.txt', `${HEADER('mech_dark_panels', SPEC)}\nscripted_gui = {\n${indent(out.map(o => o.scripted).join('\n'))}\n}\n`],
   ]);
-  return { files, scriptedGuis: ['zin_horde', 'zin_horde_launcher', 'zin_accord', 'zin_accord_launcher'], windows: [horde.window, accord.window] };
+  return { files, scriptedGuis: ['zin_horde', 'zin_horde_launcher', 'zin_accord', 'zin_accord_launcher'], windows: [horde, accord].map(p => ({ window: p.o.window, gui: p.o.gui, flag: p.o.flag, launcher: `${p.o.prefix}_button_window` })) };
+}
+
+/**
+ * The scripted effect zin_dark_ui_meters (common/scripted_effects/zin_dark_panels.txt), written with or without the windows because
+ * zin_dark_refresh_panel_rows calls it: the meter fills and the page of rows of an open Horde or Accord window.
+ */
+export function darkPanelEffects(c) {
+  const { BLOCS } = c;
+  const meters = [
+    'zin_dark_ui_meters = {',
+    `# Scope: a country with the Horde or the Accord window open. Pure formatting: it never changes a mechanic variable.`,
+    'add_to_variable = { global.zin_ui_tick = 1 }',
+    'if = {', 'limit = { has_country_flag = zin_ui_horde_open }',
+    meterFill('zin_goldoroth_temper', 'zin_ui_temper_fill'), ...BLOCS.map(b => meterFill(`zin_goldoroth_favour_${b.key}`, `zin_ui_favour_${b.key}_fill`)), meterFill('zin_goldoroth_unity', 'zin_ui_unity_fill'),
+    fillRows('global.zin_dark_sway_rows'), '}',
+    'if = {', 'limit = { has_country_flag = zin_ui_accord_open }', meterFill('global.zin_dark_accord_resolve', 'zin_ui_resolve_fill'), fillRows('global.zin_dark_accord_rows'), '}',
+    '}'].join('\n');
+  return `${HEADER('mech_dark_panels', SPEC)}\n${format(meters)}\n`;
 }
 
 /**
@@ -94,6 +98,7 @@ export async function buildDarkPanels(c) {
 export function darkScriptedLocalisation(c) {
   const { T, tags, N } = c;
   const { GOL } = tags;
+  const blk = (name, body) => `${name} = {\n${body.split('\n').map(l => (l ? `\t${l}` : l)).join('\n')}\n}`;
   const definedText = (name, cases) => blk('defined_text', [`name = ${name}`, ...cases.map(([trigger, key]) => blk('text', `${trigger ? `${blk('trigger', trigger)}\n` : ''}localization_key = ${T.use(key)}`))].join('\n'));
   const scriptedLoc = [
     // The border band word: the tension band triggers of the mechanic.

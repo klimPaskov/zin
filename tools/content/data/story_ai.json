@@ -62,7 +62,8 @@
   { "effect": "zin_zol_ui_refresh", "when": "zin_is_zol" },
   { "effect": "zin_leren_ui_refresh", "when": "zin_is_lerendor" },
   { "effect": "zin_dominion_ui_refresh_volgan", "when": "zin_is_volgan" },
-  { "effect": "zin_dominion_ui_refresh_mirolon", "when": "zin_is_mirolon" }
+  { "effect": "zin_dominion_ui_refresh_mirolon", "when": "zin_is_mirolon" },
+  { "effect": "zin_aoaz_bar_refresh", "when": "zin_aoaz_bar_shown" }
  ],
  "widget": {
   "note": "The native world tension widget (topbar threat button and value, the world_tension_popup window) relabelled as the Gathering Dark (docs/specs/07_interface/01_interface.md; spec 05 'Replacing world tension'). Every value keeps its vanilla key's placeholders, colour and icon codes. The exact meter, its tier and its sources are the Aoaz bar's (interface owner); the native widget shows the engine tension that follows the meter. The two column labels of the popup (WORLD_TENSION_NAME, WORLD_TENSION_WARS) are short because its sort buttons are 100 pixels wide: the MCP render wrapped The Gathering Dark and Wars of the Living onto two lines.",

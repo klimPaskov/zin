@@ -379,13 +379,12 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     ...['zin_eindil_hunted'].map(f => L('if', `limit = { ${gflag(f)} }`, 'add_to_temp_variable = { eind_str = 1 }')),
     ...['zin_worshipdom_ships_ready', 'zin_worshipdom_hunters'].map(f => L('if', `limit = { ${countryFlagAnywhere(f)} }`, 'add_to_temp_variable = { eind_str = 1 }')),
     L('if', 'limit = { check_variable = { global.zin_afrit_seat_whispers > 3 } }', 'add_to_temp_variable = { eind_str = 1 }'),
-    ...['zin_eindil_elven_crew', 'zin_eindil_landing_guides', 'zin_yeldenne_beacon', 'zin_yeldenne_coast_watch', 'zin_yeldenne_guides', 'zin_afrit_sent_others'].map(f => L('if', `limit = { ${gflag(f)} }`, 'subtract_from_temp_variable = { eind_str = 1 }')),
+    ...['zin_eindil_elven_crew', 'zin_eindil_landing_guides', 'zin_pertolor_beacon', 'zin_pertolor_coast_watch', 'zin_pertolor_guides', 'zin_afrit_sent_others'].map(f => L('if', `limit = { ${gflag(f)} }`, 'subtract_from_temp_variable = { eind_str = 1 }')),
     'set_variable = { global.zin_eindil_ambush_strength = eind_str }',
     'log = "ZIN journey: ambush strength [?global.zin_eindil_ambush_strength]"');
   for (const f of ['zin_worshipdom_ships_ready', 'zin_worshipdom_hunters']) dep(f, 'country flag', 'tree worshipdom (read on any country, SL-20)');
   dep('zin_afrit_sent_others', 'global flag', 'afrit_hidden_council');
   dep('zin_afrit_seat_whispers', 'global variable', 'afrit_hidden_council');
-  for (const f of ['zin_yeldenne_beacon', 'zin_yeldenne_coast_watch', 'zin_yeldenne_guides']) dep(f, 'global flag', 'regional yeldenne tree');
   E('zin_eindil_ambush_resolved',
     '# Called by journey event .71 with zin_arg_value = the strength it computed (or by the pulse with its own computation): Afrit reached the hall first (strength 2 or more) or the heir did.',
     L('if', `limit = { ${notFlag('zin_eindil_ambush_done')} }`,

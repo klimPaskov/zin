@@ -1,5 +1,7 @@
 # Yeldenne focus tree
 
+**Retired (K56, 31 October 2026):** no realm Yeldenne exists, so this tree is removed from the build and its data file `docs/design/focus/regional_yeldenne.json` is deleted. The handoff `docs/plans/story/yeldenne_retirement_handoff.md` lists what was dropped and what remains open.
+
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6 (tier B). The tree may be built early in Phase 4, because the Glo system reads its flags.
 
 ## Purpose

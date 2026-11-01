@@ -1,0 +1,4970 @@
+{
+ "tool": "hoi4.gui_render 4.6.1",
+ "runtime": "C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v461/node_modules/hoi4-agent-tools",
+ "staged": "C:/Users/klimp/AppData/Local/Temp/claude/C--Users-klimp-OneDrive-Documents-Paradox-Interactive-Hearts-of-Iron-IV-mod-zin/6d26876d-fb43-42f0-9f17-1cf27cba23b2/scratchpad/tmp-w7b/zin-content-staged",
+ "renders": 56,
+ "errors": 0,
+ "thresholds": {
+  "contrastSmall": 4.5,
+  "contrastLarge": 3,
+  "largePx": 20,
+  "ground": 0.06
+ },
+ "totals": {
+  "texts": 716,
+  "contrast": 32,
+  "ground": 84,
+  "rawKeys": 429,
+  "overflow": 25,
+  "small": 0
+ },
+ "sheets": [
+  "zin_panels_a.png",
+  "zin_panels_b.png"
+ ],
+ "focus": [],
+ "results": [
+  {
+   "label": "z_accord_1280",
+   "window": "zin_accord_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "1d6d25451d63426ea093874c9ff17c147d6c3747b4671920e1e4201dc81f7322",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_accord_resolve",
+      "where": "mod:interface/zin_dark_panels.gui:998",
+      "text": "Resolve: [X] of 100"
+     },
+     {
+      "name": "zin_accord_border",
+      "where": "mod:interface/zin_dark_panels.gui:1050",
+      "text": "The border: [X], [dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_head_1",
+      "where": "mod:interface/zin_dark_panels.gui:1061",
+      "text": "Members of the Accord: [X]"
+     },
+     {
+      "name": "zin_accord_members_1_1",
+      "where": "mod:interface/zin_dark_panels.gui:1071",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_2_1",
+      "where": "mod:interface/zin_dark_panels.gui:1082",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_3_1",
+      "where": "mod:interface/zin_dark_panels.gui:1093",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_4_1",
+      "where": "mod:interface/zin_dark_panels.gui:1104",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_5_1",
+      "where": "mod:interface/zin_dark_panels.gui:1115",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_accord_1920",
+   "window": "zin_accord_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "58f39513865d2429cebfdb0bfa219bcfb20014c527e498316930e965629d2963",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_accord_resolve",
+      "where": "mod:interface/zin_dark_panels.gui:998",
+      "text": "Resolve: [X] of 100"
+     },
+     {
+      "name": "zin_accord_border",
+      "where": "mod:interface/zin_dark_panels.gui:1050",
+      "text": "The border: [X], [dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_head_1",
+      "where": "mod:interface/zin_dark_panels.gui:1061",
+      "text": "Members of the Accord: [X]"
+     },
+     {
+      "name": "zin_accord_members_1_1",
+      "where": "mod:interface/zin_dark_panels.gui:1071",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_2_1",
+      "where": "mod:interface/zin_dark_panels.gui:1082",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_3_1",
+      "where": "mod:interface/zin_dark_panels.gui:1093",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_4_1",
+      "where": "mod:interface/zin_dark_panels.gui:1104",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_5_1",
+      "where": "mod:interface/zin_dark_panels.gui:1115",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_accord_long",
+   "window": "zin_accord_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_VISIBLE_OVERLAP": 2,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "58f39513865d2429cebfdb0bfa219bcfb20014c527e498316930e965629d2963",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_accord_resolve",
+      "where": "mod:interface/zin_dark_panels.gui:998",
+      "text": "Resolve: [X] of 100"
+     },
+     {
+      "name": "zin_accord_border",
+      "where": "mod:interface/zin_dark_panels.gui:1050",
+      "text": "The border: [X], [dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_head_1",
+      "where": "mod:interface/zin_dark_panels.gui:1061",
+      "text": "Members of the Accord: [X]"
+     },
+     {
+      "name": "zin_accord_members_1_1",
+      "where": "mod:interface/zin_dark_panels.gui:1071",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_2_1",
+      "where": "mod:interface/zin_dark_panels.gui:1082",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_3_1",
+      "where": "mod:interface/zin_dark_panels.gui:1093",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_4_1",
+      "where": "mod:interface/zin_dark_panels.gui:1104",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_accord_members_5_1",
+      "where": "mod:interface/zin_dark_panels.gui:1115",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_aoaz_bar_1280",
+   "window": "zin_aoaz_bar_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "774bdc6cc647ed0cc46e6d20f97f01752753c7034457c11de5fab45b941e9e79",
+   "metrics": {
+    "texts": 18,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_aoaz_m1_court_gold",
+      "where": "mod:interface/zin_aoaz_bar.gui:133",
+      "text": "62",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_ruling_camp",
+      "where": "mod:interface/zin_aoaz_bar.gui:151",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_resolve",
+      "where": "mod:interface/zin_aoaz_bar.gui:313",
+      "text": "[?global.zin_dark_accord_resolve|0]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_sway",
+      "where": "mod:interface/zin_aoaz_bar.gui:331",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_loyalty",
+      "where": "mod:interface/zin_aoaz_bar.gui:349",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_leaning",
+      "where": "mod:interface/zin_aoaz_bar.gui:367",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m2_temple_favour",
+      "where": "mod:interface/zin_aoaz_bar.gui:385",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_hidden_hand",
+      "where": "mod:interface/zin_aoaz_bar.gui:403",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_renown",
+      "where": "mod:interface/zin_aoaz_bar.gui:529",
+      "text": "[?global.zin_eindil_renown|0]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_border",
+      "where": "mod:interface/zin_aoaz_bar.gui:547",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m3_concord",
+      "where": "mod:interface/zin_aoaz_bar.gui:583",
+      "text": "[dynamic_loc]",
+      "std": 0.108
+     },
+     {
+      "name": "zin_aoaz_m3_glo",
+      "where": "mod:interface/zin_aoaz_bar.gui:709",
+      "text": "[?global.zin_glo_power|0]",
+      "std": 0.108
+     },
+     {
+      "name": "zin_aoaz_m3_members",
+      "where": "mod:interface/zin_aoaz_bar.gui:727",
+      "text": "[?ROOT.zin_aoaz_members|0]",
+      "std": 0.108
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_aoaz_age",
+      "where": "mod:interface/zin_aoaz_bar.gui:24",
+      "text": "4A [X]"
+     },
+     {
+      "name": "zin_aoaz_m1_ruling_camp",
+      "where": "mod:interface/zin_aoaz_bar.gui:151",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]"
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]"
+     },
+     {
+      "name": "zin_aoaz_m1_sway",
+      "where": "mod:interface/zin_aoaz_bar.gui:331",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_loyalty",
+      "where": "mod:interface/zin_aoaz_bar.gui:349",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_leaning",
+      "where": "mod:interface/zin_aoaz_bar.gui:367",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_temple_favour",
+      "where": "mod:interface/zin_aoaz_bar.gui:385",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_hidden_hand",
+      "where": "mod:interface/zin_aoaz_bar.gui:403",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_border",
+      "where": "mod:interface/zin_aoaz_bar.gui:547",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]"
+     },
+     {
+      "name": "zin_aoaz_m3_concord",
+      "where": "mod:interface/zin_aoaz_bar.gui:583",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m1_resolve",
+      "where": "mod:interface/zin_aoaz_bar.gui:313",
+      "text": "[?global.zin_dark_accord_resolve|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m2_renown",
+      "where": "mod:interface/zin_aoaz_bar.gui:529",
+      "text": "[?global.zin_eindil_renown|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m3_glo",
+      "where": "mod:interface/zin_aoaz_bar.gui:709",
+      "text": "[?global.zin_glo_power|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m3_members",
+      "where": "mod:interface/zin_aoaz_bar.gui:727",
+      "text": "[?ROOT.zin_aoaz_members|0]",
+      "x": true,
+      "y": false
+     }
+    ],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_aoaz_bar_1920",
+   "window": "zin_aoaz_bar_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "e1d9b110d6d6d7f233edb0551e1887b68e5bfcfab4245ed73b326f35a81b4469",
+   "metrics": {
+    "texts": 18,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_aoaz_m1_court_gold",
+      "where": "mod:interface/zin_aoaz_bar.gui:133",
+      "text": "62",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_ruling_camp",
+      "where": "mod:interface/zin_aoaz_bar.gui:151",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_resolve",
+      "where": "mod:interface/zin_aoaz_bar.gui:313",
+      "text": "[?global.zin_dark_accord_resolve|0]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_sway",
+      "where": "mod:interface/zin_aoaz_bar.gui:331",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_loyalty",
+      "where": "mod:interface/zin_aoaz_bar.gui:349",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_leaning",
+      "where": "mod:interface/zin_aoaz_bar.gui:367",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m2_temple_favour",
+      "where": "mod:interface/zin_aoaz_bar.gui:385",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_hidden_hand",
+      "where": "mod:interface/zin_aoaz_bar.gui:403",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_renown",
+      "where": "mod:interface/zin_aoaz_bar.gui:529",
+      "text": "[?global.zin_eindil_renown|0]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_border",
+      "where": "mod:interface/zin_aoaz_bar.gui:547",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m3_concord",
+      "where": "mod:interface/zin_aoaz_bar.gui:583",
+      "text": "[dynamic_loc]",
+      "std": 0.108
+     },
+     {
+      "name": "zin_aoaz_m3_glo",
+      "where": "mod:interface/zin_aoaz_bar.gui:709",
+      "text": "[?global.zin_glo_power|0]",
+      "std": 0.108
+     },
+     {
+      "name": "zin_aoaz_m3_members",
+      "where": "mod:interface/zin_aoaz_bar.gui:727",
+      "text": "[?ROOT.zin_aoaz_members|0]",
+      "std": 0.108
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_aoaz_age",
+      "where": "mod:interface/zin_aoaz_bar.gui:24",
+      "text": "4A [X]"
+     },
+     {
+      "name": "zin_aoaz_m1_ruling_camp",
+      "where": "mod:interface/zin_aoaz_bar.gui:151",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]"
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]"
+     },
+     {
+      "name": "zin_aoaz_m1_sway",
+      "where": "mod:interface/zin_aoaz_bar.gui:331",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_loyalty",
+      "where": "mod:interface/zin_aoaz_bar.gui:349",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_leaning",
+      "where": "mod:interface/zin_aoaz_bar.gui:367",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_temple_favour",
+      "where": "mod:interface/zin_aoaz_bar.gui:385",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_hidden_hand",
+      "where": "mod:interface/zin_aoaz_bar.gui:403",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_border",
+      "where": "mod:interface/zin_aoaz_bar.gui:547",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]"
+     },
+     {
+      "name": "zin_aoaz_m3_concord",
+      "where": "mod:interface/zin_aoaz_bar.gui:583",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m1_resolve",
+      "where": "mod:interface/zin_aoaz_bar.gui:313",
+      "text": "[?global.zin_dark_accord_resolve|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m2_renown",
+      "where": "mod:interface/zin_aoaz_bar.gui:529",
+      "text": "[?global.zin_eindil_renown|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m3_glo",
+      "where": "mod:interface/zin_aoaz_bar.gui:709",
+      "text": "[?global.zin_glo_power|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m3_members",
+      "where": "mod:interface/zin_aoaz_bar.gui:727",
+      "text": "[?ROOT.zin_aoaz_members|0]",
+      "x": true,
+      "y": false
+     }
+    ],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_aoaz_bar_long",
+   "window": "zin_aoaz_bar_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_INVALID_SIZE": 2,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "e1d9b110d6d6d7f233edb0551e1887b68e5bfcfab4245ed73b326f35a81b4469",
+   "metrics": {
+    "texts": 18,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_aoaz_m1_court_gold",
+      "where": "mod:interface/zin_aoaz_bar.gui:133",
+      "text": "62",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_ruling_camp",
+      "where": "mod:interface/zin_aoaz_bar.gui:151",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_resolve",
+      "where": "mod:interface/zin_aoaz_bar.gui:313",
+      "text": "[?global.zin_dark_accord_resolve|0]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_sway",
+      "where": "mod:interface/zin_aoaz_bar.gui:331",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_loyalty",
+      "where": "mod:interface/zin_aoaz_bar.gui:349",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m1_leaning",
+      "where": "mod:interface/zin_aoaz_bar.gui:367",
+      "text": "[dynamic_loc]",
+      "std": 0.087
+     },
+     {
+      "name": "zin_aoaz_m2_temple_favour",
+      "where": "mod:interface/zin_aoaz_bar.gui:385",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_hidden_hand",
+      "where": "mod:interface/zin_aoaz_bar.gui:403",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_renown",
+      "where": "mod:interface/zin_aoaz_bar.gui:529",
+      "text": "[?global.zin_eindil_renown|0]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_border",
+      "where": "mod:interface/zin_aoaz_bar.gui:547",
+      "text": "[dynamic_loc]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]",
+      "std": 0.12
+     },
+     {
+      "name": "zin_aoaz_m3_concord",
+      "where": "mod:interface/zin_aoaz_bar.gui:583",
+      "text": "[dynamic_loc]",
+      "std": 0.108
+     },
+     {
+      "name": "zin_aoaz_m3_glo",
+      "where": "mod:interface/zin_aoaz_bar.gui:709",
+      "text": "[?global.zin_glo_power|0]",
+      "std": 0.108
+     },
+     {
+      "name": "zin_aoaz_m3_members",
+      "where": "mod:interface/zin_aoaz_bar.gui:727",
+      "text": "[?ROOT.zin_aoaz_members|0]",
+      "std": 0.108
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_aoaz_age",
+      "where": "mod:interface/zin_aoaz_bar.gui:24",
+      "text": "4A [X]"
+     },
+     {
+      "name": "zin_aoaz_m1_ruling_camp",
+      "where": "mod:interface/zin_aoaz_bar.gui:151",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]"
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]"
+     },
+     {
+      "name": "zin_aoaz_m1_sway",
+      "where": "mod:interface/zin_aoaz_bar.gui:331",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_loyalty",
+      "where": "mod:interface/zin_aoaz_bar.gui:349",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m1_leaning",
+      "where": "mod:interface/zin_aoaz_bar.gui:367",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_temple_favour",
+      "where": "mod:interface/zin_aoaz_bar.gui:385",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_hidden_hand",
+      "where": "mod:interface/zin_aoaz_bar.gui:403",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_border",
+      "where": "mod:interface/zin_aoaz_bar.gui:547",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]"
+     },
+     {
+      "name": "zin_aoaz_m3_concord",
+      "where": "mod:interface/zin_aoaz_bar.gui:583",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_aoaz_m1_stranger",
+      "where": "mod:interface/zin_aoaz_bar.gui:277",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m1_eindil",
+      "where": "mod:interface/zin_aoaz_bar.gui:295",
+      "text": "[ROOT.zin_aoaz_stage_name]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m1_resolve",
+      "where": "mod:interface/zin_aoaz_bar.gui:313",
+      "text": "[?global.zin_dark_accord_resolve|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m2_renown",
+      "where": "mod:interface/zin_aoaz_bar.gui:529",
+      "text": "[?global.zin_eindil_renown|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m2_charter",
+      "where": "mod:interface/zin_aoaz_bar.gui:565",
+      "text": "[ROOT.zin_court_charter_word]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m3_glo",
+      "where": "mod:interface/zin_aoaz_bar.gui:709",
+      "text": "[?global.zin_glo_power|0]",
+      "x": true,
+      "y": false
+     },
+     {
+      "name": "zin_aoaz_m3_members",
+      "where": "mod:interface/zin_aoaz_bar.gui:727",
+      "text": "[?ROOT.zin_aoaz_members|0]",
+      "x": true,
+      "y": false
+     }
+    ],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_council1_1280",
+   "window": "zin_council_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "eeb2635bc85af1d26ee81427cde76cd2f1f07f17c3c74fd2048faabd4b3e9c88",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "ratio": 2.48,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a9947a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "std": 0.268
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_plot",
+      "where": "mod:interface/zin_afrit_council.gui:217",
+      "text": "The King's end is prepared to [X] of 100."
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_council_veil",
+      "where": "mod:interface/zin_afrit_council.gui:170",
+      "text": "The Veil: [?global.zin_afrit_veil|0] of 100. Last month: [?global.zin_afrit_veil",
+      "x": false,
+      "y": true
+     }
+    ],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_council1_1920",
+   "window": "zin_council_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "169f4af43fb736fee5bce3208167f711afe586f28d30dc93c3c2dbef45c04fb4",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "ratio": 2.48,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a9947a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "std": 0.268
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_plot",
+      "where": "mod:interface/zin_afrit_council.gui:217",
+      "text": "The King's end is prepared to [X] of 100."
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_council_veil",
+      "where": "mod:interface/zin_afrit_council.gui:170",
+      "text": "The Veil: [?global.zin_afrit_veil|0] of 100. Last month: [?global.zin_afrit_veil",
+      "x": false,
+      "y": true
+     }
+    ],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_council1_2560",
+   "window": "zin_council_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "8b940dc4ce9472f58563e2cb85a3ffa5357ba971155573418d09eef77a80ec86",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "ratio": 2.48,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a9947a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "std": 0.268
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_plot",
+      "where": "mod:interface/zin_afrit_council.gui:217",
+      "text": "The King's end is prepared to [X] of 100."
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_council_veil",
+      "where": "mod:interface/zin_afrit_council.gui:170",
+      "text": "The Veil: [?global.zin_afrit_veil|0] of 100. Last month: [?global.zin_afrit_veil",
+      "x": false,
+      "y": true
+     }
+    ],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_council1_long",
+   "window": "zin_council_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "169f4af43fb736fee5bce3208167f711afe586f28d30dc93c3c2dbef45c04fb4",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "ratio": 2.48,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a9947a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_1_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:88",
+      "text": "The Veil",
+      "std": 0.268
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_plot",
+      "where": "mod:interface/zin_afrit_council.gui:217",
+      "text": "The King's end is prepared to [X] of 100."
+     }
+    ],
+    "overflow": [
+     {
+      "name": "zin_council_veil",
+      "where": "mod:interface/zin_afrit_council.gui:170",
+      "text": "The Veil: [?global.zin_afrit_veil|0] of 100. Last month: [?global.zin_afrit_veil",
+      "x": false,
+      "y": true
+     }
+    ],
+    "small": []
+   },
+   "seconds": 12
+  },
+  {
+   "label": "z_council2_1920",
+   "window": "zin_council_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "605a8cf9073712f3563dfcc9ec43f96a71ee7494c76d82f37b8562ca58980101",
+   "metrics": {
+    "texts": 10,
+    "contrast": [
+     {
+      "name": "zin_council_tab_2_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:112",
+      "text": "The Four Seats",
+      "ratio": 3.58,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#8c7862"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_2_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:112",
+      "text": "The Four Seats",
+      "std": 0.292
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_seats",
+      "where": "mod:interface/zin_afrit_council.gui:269",
+      "text": "The Four Seats: [X] of 20 levels"
+     },
+     {
+      "name": "zin_council_seat_seals",
+      "where": "mod:interface/zin_afrit_council.gui:280",
+      "text": "The Seat of Seals: level [X] of 5"
+     },
+     {
+      "name": "zin_council_seat_censers",
+      "where": "mod:interface/zin_afrit_council.gui:322",
+      "text": "The Seat of Censers: level [X] of 5"
+     },
+     {
+      "name": "zin_council_seat_whispers",
+      "where": "mod:interface/zin_afrit_council.gui:364",
+      "text": "The Seat of Whispers: level [X] of 5"
+     },
+     {
+      "name": "zin_council_seat_relics",
+      "where": "mod:interface/zin_afrit_council.gui:406",
+      "text": "The Seat of Relics: level [X] of 5"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_council3_1920",
+   "window": "zin_council_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "9f96551d650de4ddf81f07e3bdf07f245243afc4ff2e7518fee8cadb60456708",
+   "metrics": {
+    "texts": 10,
+    "contrast": [
+     {
+      "name": "zin_council_tab_3_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:136",
+      "text": "The Relics",
+      "ratio": 2.85,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9e8970"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_3_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:136",
+      "text": "The Relics",
+      "std": 0.283
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_graces",
+      "where": "mod:interface/zin_afrit_council.gui:448",
+      "text": "Artifacts held: [X] of 4"
+     },
+     {
+      "name": "zin_council_art_necklace_t",
+      "where": "mod:interface/zin_afrit_council.gui:459",
+      "text": "The Necklace of the Abyss: [dynamic_loc]"
+     },
+     {
+      "name": "zin_council_art_ring_t",
+      "where": "mod:interface/zin_afrit_council.gui:476",
+      "text": "The Ring of Doors: [dynamic_loc]"
+     },
+     {
+      "name": "zin_council_art_crown_t",
+      "where": "mod:interface/zin_afrit_council.gui:493",
+      "text": "The Crown of Witnesses: [dynamic_loc]"
+     },
+     {
+      "name": "zin_council_art_bracelet_t",
+      "where": "mod:interface/zin_afrit_council.gui:510",
+      "text": "The Bracelet of the First Seal: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_council4_1920",
+   "window": "zin_council_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "302513d4c38419ee4a9e38296a8a1ef43c5a02e89e7a5d38c43e57130a02ab84",
+   "metrics": {
+    "texts": 27,
+    "contrast": [
+     {
+      "name": "zin_council_tab_4_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:160",
+      "text": "The Houses",
+      "ratio": 2.96,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9b866e"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_council_tab_4_on_text",
+      "where": "mod:interface/zin_afrit_council.gui:160",
+      "text": "The Houses",
+      "std": 0.286
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_council_houses_n",
+      "where": "mod:interface/zin_afrit_council.gui:527",
+      "text": "The Houses: [X] realms"
+     },
+     {
+      "name": "zin_council_houses_1_1",
+      "where": "mod:interface/zin_afrit_council.gui:568",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_1_2",
+      "where": "mod:interface/zin_afrit_council.gui:579",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_council_houses_1_3",
+      "where": "mod:interface/zin_afrit_council.gui:590",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_2_1",
+      "where": "mod:interface/zin_afrit_council.gui:601",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_2_2",
+      "where": "mod:interface/zin_afrit_council.gui:612",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_council_houses_2_3",
+      "where": "mod:interface/zin_afrit_council.gui:623",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_3_1",
+      "where": "mod:interface/zin_afrit_council.gui:634",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_3_2",
+      "where": "mod:interface/zin_afrit_council.gui:645",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_council_houses_3_3",
+      "where": "mod:interface/zin_afrit_council.gui:656",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_4_1",
+      "where": "mod:interface/zin_afrit_council.gui:667",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_4_2",
+      "where": "mod:interface/zin_afrit_council.gui:678",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_council_houses_4_3",
+      "where": "mod:interface/zin_afrit_council.gui:689",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_5_1",
+      "where": "mod:interface/zin_afrit_council.gui:700",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_5_2",
+      "where": "mod:interface/zin_afrit_council.gui:711",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_council_houses_5_3",
+      "where": "mod:interface/zin_afrit_council.gui:722",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_6_1",
+      "where": "mod:interface/zin_afrit_council.gui:733",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_council_houses_6_2",
+      "where": "mod:interface/zin_afrit_council.gui:744",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_council_houses_6_3",
+      "where": "mod:interface/zin_afrit_council.gui:755",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_court1_1280",
+   "window": "zin_court_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "a918e4140215a40ea28e26a065c5d614f873ca87e24bb81a22179b748facbc02",
+   "metrics": {
+    "texts": 10,
+    "contrast": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "ratio": 2.68,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a38e75"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "std": 0.275
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_corr",
+      "where": "mod:interface/zin_aenor_court.gui:170",
+      "text": "The Golden Court: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_temple",
+      "where": "mod:interface/zin_aenor_court.gui:222",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_cause",
+      "where": "mod:interface/zin_aenor_court.gui:279",
+      "text": "The Lost Cause: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_health",
+      "where": "mod:interface/zin_aenor_court.gui:321",
+      "text": "The King's health: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_court1_1920",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "617ea4edf4d92f56ab365dccd663665c4dbeaa478db3ba3ef4159b49da189e02",
+   "metrics": {
+    "texts": 10,
+    "contrast": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "ratio": 2.68,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a38e75"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "std": 0.275
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_corr",
+      "where": "mod:interface/zin_aenor_court.gui:170",
+      "text": "The Golden Court: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_temple",
+      "where": "mod:interface/zin_aenor_court.gui:222",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_cause",
+      "where": "mod:interface/zin_aenor_court.gui:279",
+      "text": "The Lost Cause: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_health",
+      "where": "mod:interface/zin_aenor_court.gui:321",
+      "text": "The King's health: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_court1_2560",
+   "window": "zin_court_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "60b839d4f89fd95eb43f9163a93589c589e5878e3c43a1184eb6951307f14769",
+   "metrics": {
+    "texts": 10,
+    "contrast": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "ratio": 2.68,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a38e75"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "std": 0.275
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_corr",
+      "where": "mod:interface/zin_aenor_court.gui:170",
+      "text": "The Golden Court: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_temple",
+      "where": "mod:interface/zin_aenor_court.gui:222",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_cause",
+      "where": "mod:interface/zin_aenor_court.gui:279",
+      "text": "The Lost Cause: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_health",
+      "where": "mod:interface/zin_aenor_court.gui:321",
+      "text": "The King's health: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_court1_long",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "617ea4edf4d92f56ab365dccd663665c4dbeaa478db3ba3ef4159b49da189e02",
+   "metrics": {
+    "texts": 10,
+    "contrast": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "ratio": 2.68,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a38e75"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_1_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:88",
+      "text": "The Court",
+      "std": 0.275
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_corr",
+      "where": "mod:interface/zin_aenor_court.gui:170",
+      "text": "The Golden Court: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_temple",
+      "where": "mod:interface/zin_aenor_court.gui:222",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_cause",
+      "where": "mod:interface/zin_aenor_court.gui:279",
+      "text": "The Lost Cause: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_health",
+      "where": "mod:interface/zin_aenor_court.gui:321",
+      "text": "The King's health: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_court2_1280",
+   "window": "zin_court_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "c5445f70db0863fa7b113086da2114dc24b0b99c9279fa763ff9010258761b12",
+   "metrics": {
+    "texts": 42,
+    "contrast": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "ratio": 3.12,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#96826a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "std": 0.289
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_avg",
+      "where": "mod:interface/zin_aenor_court.gui:342",
+      "text": "The Concord: [X] mean loyalty"
+     },
+     {
+      "name": "zin_court_dominions_1_1",
+      "where": "mod:interface/zin_aenor_court.gui:383",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_2",
+      "where": "mod:interface/zin_aenor_court.gui:394",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_3",
+      "where": "mod:interface/zin_aenor_court.gui:405",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_1",
+      "where": "mod:interface/zin_aenor_court.gui:416",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_2",
+      "where": "mod:interface/zin_aenor_court.gui:427",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_3",
+      "where": "mod:interface/zin_aenor_court.gui:438",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_1",
+      "where": "mod:interface/zin_aenor_court.gui:449",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_2",
+      "where": "mod:interface/zin_aenor_court.gui:460",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_3",
+      "where": "mod:interface/zin_aenor_court.gui:471",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_1",
+      "where": "mod:interface/zin_aenor_court.gui:482",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_2",
+      "where": "mod:interface/zin_aenor_court.gui:493",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_3",
+      "where": "mod:interface/zin_aenor_court.gui:504",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_1",
+      "where": "mod:interface/zin_aenor_court.gui:515",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_2",
+      "where": "mod:interface/zin_aenor_court.gui:526",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_3",
+      "where": "mod:interface/zin_aenor_court.gui:537",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_1",
+      "where": "mod:interface/zin_aenor_court.gui:548",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_2",
+      "where": "mod:interface/zin_aenor_court.gui:559",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_3",
+      "where": "mod:interface/zin_aenor_court.gui:570",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_1",
+      "where": "mod:interface/zin_aenor_court.gui:581",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_2",
+      "where": "mod:interface/zin_aenor_court.gui:592",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_3",
+      "where": "mod:interface/zin_aenor_court.gui:603",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_1",
+      "where": "mod:interface/zin_aenor_court.gui:614",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_2",
+      "where": "mod:interface/zin_aenor_court.gui:625",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_3",
+      "where": "mod:interface/zin_aenor_court.gui:636",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_1",
+      "where": "mod:interface/zin_aenor_court.gui:647",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_2",
+      "where": "mod:interface/zin_aenor_court.gui:658",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_3",
+      "where": "mod:interface/zin_aenor_court.gui:669",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_1",
+      "where": "mod:interface/zin_aenor_court.gui:680",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_2",
+      "where": "mod:interface/zin_aenor_court.gui:691",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_3",
+      "where": "mod:interface/zin_aenor_court.gui:702",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_court2_1920",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "331ba153cd28824c9887cd8a86d4856fa15438da4b85044eea0696af72a124f9",
+   "metrics": {
+    "texts": 42,
+    "contrast": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "ratio": 3.12,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#96826a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "std": 0.289
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_avg",
+      "where": "mod:interface/zin_aenor_court.gui:342",
+      "text": "The Concord: [X] mean loyalty"
+     },
+     {
+      "name": "zin_court_dominions_1_1",
+      "where": "mod:interface/zin_aenor_court.gui:383",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_2",
+      "where": "mod:interface/zin_aenor_court.gui:394",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_3",
+      "where": "mod:interface/zin_aenor_court.gui:405",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_1",
+      "where": "mod:interface/zin_aenor_court.gui:416",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_2",
+      "where": "mod:interface/zin_aenor_court.gui:427",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_3",
+      "where": "mod:interface/zin_aenor_court.gui:438",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_1",
+      "where": "mod:interface/zin_aenor_court.gui:449",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_2",
+      "where": "mod:interface/zin_aenor_court.gui:460",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_3",
+      "where": "mod:interface/zin_aenor_court.gui:471",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_1",
+      "where": "mod:interface/zin_aenor_court.gui:482",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_2",
+      "where": "mod:interface/zin_aenor_court.gui:493",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_3",
+      "where": "mod:interface/zin_aenor_court.gui:504",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_1",
+      "where": "mod:interface/zin_aenor_court.gui:515",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_2",
+      "where": "mod:interface/zin_aenor_court.gui:526",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_3",
+      "where": "mod:interface/zin_aenor_court.gui:537",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_1",
+      "where": "mod:interface/zin_aenor_court.gui:548",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_2",
+      "where": "mod:interface/zin_aenor_court.gui:559",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_3",
+      "where": "mod:interface/zin_aenor_court.gui:570",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_1",
+      "where": "mod:interface/zin_aenor_court.gui:581",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_2",
+      "where": "mod:interface/zin_aenor_court.gui:592",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_3",
+      "where": "mod:interface/zin_aenor_court.gui:603",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_1",
+      "where": "mod:interface/zin_aenor_court.gui:614",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_2",
+      "where": "mod:interface/zin_aenor_court.gui:625",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_3",
+      "where": "mod:interface/zin_aenor_court.gui:636",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_1",
+      "where": "mod:interface/zin_aenor_court.gui:647",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_2",
+      "where": "mod:interface/zin_aenor_court.gui:658",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_3",
+      "where": "mod:interface/zin_aenor_court.gui:669",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_1",
+      "where": "mod:interface/zin_aenor_court.gui:680",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_2",
+      "where": "mod:interface/zin_aenor_court.gui:691",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_3",
+      "where": "mod:interface/zin_aenor_court.gui:702",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_court2_2560",
+   "window": "zin_court_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "b3d5457cc079fda8e2135d42950636e56aabbc3d44dbcbd26a6c029c0e0d9ac1",
+   "metrics": {
+    "texts": 42,
+    "contrast": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "ratio": 3.12,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#96826a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "std": 0.289
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_avg",
+      "where": "mod:interface/zin_aenor_court.gui:342",
+      "text": "The Concord: [X] mean loyalty"
+     },
+     {
+      "name": "zin_court_dominions_1_1",
+      "where": "mod:interface/zin_aenor_court.gui:383",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_2",
+      "where": "mod:interface/zin_aenor_court.gui:394",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_3",
+      "where": "mod:interface/zin_aenor_court.gui:405",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_1",
+      "where": "mod:interface/zin_aenor_court.gui:416",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_2",
+      "where": "mod:interface/zin_aenor_court.gui:427",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_3",
+      "where": "mod:interface/zin_aenor_court.gui:438",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_1",
+      "where": "mod:interface/zin_aenor_court.gui:449",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_2",
+      "where": "mod:interface/zin_aenor_court.gui:460",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_3",
+      "where": "mod:interface/zin_aenor_court.gui:471",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_1",
+      "where": "mod:interface/zin_aenor_court.gui:482",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_2",
+      "where": "mod:interface/zin_aenor_court.gui:493",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_3",
+      "where": "mod:interface/zin_aenor_court.gui:504",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_1",
+      "where": "mod:interface/zin_aenor_court.gui:515",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_2",
+      "where": "mod:interface/zin_aenor_court.gui:526",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_3",
+      "where": "mod:interface/zin_aenor_court.gui:537",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_1",
+      "where": "mod:interface/zin_aenor_court.gui:548",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_2",
+      "where": "mod:interface/zin_aenor_court.gui:559",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_3",
+      "where": "mod:interface/zin_aenor_court.gui:570",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_1",
+      "where": "mod:interface/zin_aenor_court.gui:581",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_2",
+      "where": "mod:interface/zin_aenor_court.gui:592",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_3",
+      "where": "mod:interface/zin_aenor_court.gui:603",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_1",
+      "where": "mod:interface/zin_aenor_court.gui:614",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_2",
+      "where": "mod:interface/zin_aenor_court.gui:625",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_3",
+      "where": "mod:interface/zin_aenor_court.gui:636",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_1",
+      "where": "mod:interface/zin_aenor_court.gui:647",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_2",
+      "where": "mod:interface/zin_aenor_court.gui:658",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_3",
+      "where": "mod:interface/zin_aenor_court.gui:669",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_1",
+      "where": "mod:interface/zin_aenor_court.gui:680",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_2",
+      "where": "mod:interface/zin_aenor_court.gui:691",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_3",
+      "where": "mod:interface/zin_aenor_court.gui:702",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 14
+  },
+  {
+   "label": "z_court2_long",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 3,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "331ba153cd28824c9887cd8a86d4856fa15438da4b85044eea0696af72a124f9",
+   "metrics": {
+    "texts": 42,
+    "contrast": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "ratio": 3.12,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#96826a"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_2_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:112",
+      "text": "The Concord",
+      "std": 0.289
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_avg",
+      "where": "mod:interface/zin_aenor_court.gui:342",
+      "text": "The Concord: [X] mean loyalty"
+     },
+     {
+      "name": "zin_court_dominions_1_1",
+      "where": "mod:interface/zin_aenor_court.gui:383",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_2",
+      "where": "mod:interface/zin_aenor_court.gui:394",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_1_3",
+      "where": "mod:interface/zin_aenor_court.gui:405",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_1",
+      "where": "mod:interface/zin_aenor_court.gui:416",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_2",
+      "where": "mod:interface/zin_aenor_court.gui:427",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_2_3",
+      "where": "mod:interface/zin_aenor_court.gui:438",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_1",
+      "where": "mod:interface/zin_aenor_court.gui:449",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_2",
+      "where": "mod:interface/zin_aenor_court.gui:460",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_3_3",
+      "where": "mod:interface/zin_aenor_court.gui:471",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_1",
+      "where": "mod:interface/zin_aenor_court.gui:482",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_2",
+      "where": "mod:interface/zin_aenor_court.gui:493",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_4_3",
+      "where": "mod:interface/zin_aenor_court.gui:504",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_1",
+      "where": "mod:interface/zin_aenor_court.gui:515",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_2",
+      "where": "mod:interface/zin_aenor_court.gui:526",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_5_3",
+      "where": "mod:interface/zin_aenor_court.gui:537",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_1",
+      "where": "mod:interface/zin_aenor_court.gui:548",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_2",
+      "where": "mod:interface/zin_aenor_court.gui:559",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_6_3",
+      "where": "mod:interface/zin_aenor_court.gui:570",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_1",
+      "where": "mod:interface/zin_aenor_court.gui:581",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_2",
+      "where": "mod:interface/zin_aenor_court.gui:592",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_7_3",
+      "where": "mod:interface/zin_aenor_court.gui:603",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_1",
+      "where": "mod:interface/zin_aenor_court.gui:614",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_2",
+      "where": "mod:interface/zin_aenor_court.gui:625",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_8_3",
+      "where": "mod:interface/zin_aenor_court.gui:636",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_1",
+      "where": "mod:interface/zin_aenor_court.gui:647",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_2",
+      "where": "mod:interface/zin_aenor_court.gui:658",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_9_3",
+      "where": "mod:interface/zin_aenor_court.gui:669",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_1",
+      "where": "mod:interface/zin_aenor_court.gui:680",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_2",
+      "where": "mod:interface/zin_aenor_court.gui:691",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_court_dominions_10_3",
+      "where": "mod:interface/zin_aenor_court.gui:702",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 15
+  },
+  {
+   "label": "z_court3_1280",
+   "window": "zin_court_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "eaae15b7a91016e4cc4ab6eccdfbc15f8dbb8f1019d7f9c4e71d0194d7819904",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_court_tab_3_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:136",
+      "text": "The Empty Throne",
+      "std": 0.288
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_ruling",
+      "where": "mod:interface/zin_aenor_court.gui:713",
+      "text": "The seals are held by [dynamic_loc]."
+     },
+     {
+      "name": "zin_court_c_court",
+      "where": "mod:interface/zin_aenor_court.gui:724",
+      "text": "The Golden Court: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_faithful",
+      "where": "mod:interface/zin_aenor_court.gui:776",
+      "text": "[dynamic_loc]: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_dominions",
+      "where": "mod:interface/zin_aenor_court.gui:828",
+      "text": "The Free Dominions: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_host",
+      "where": "mod:interface/zin_aenor_court.gui:880",
+      "text": "[dynamic_loc]: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_court3_1920",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "bcc278ecdffe67753dc768b81179db653a199197afb97c957dcd9c8e96ce78cd",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_court_tab_3_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:136",
+      "text": "The Empty Throne",
+      "std": 0.288
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_ruling",
+      "where": "mod:interface/zin_aenor_court.gui:713",
+      "text": "The seals are held by [dynamic_loc]."
+     },
+     {
+      "name": "zin_court_c_court",
+      "where": "mod:interface/zin_aenor_court.gui:724",
+      "text": "The Golden Court: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_faithful",
+      "where": "mod:interface/zin_aenor_court.gui:776",
+      "text": "[dynamic_loc]: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_dominions",
+      "where": "mod:interface/zin_aenor_court.gui:828",
+      "text": "The Free Dominions: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_host",
+      "where": "mod:interface/zin_aenor_court.gui:880",
+      "text": "[dynamic_loc]: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_court3_2560",
+   "window": "zin_court_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "8c1eb29d1d3a8a61a193f7350886593903314bd677ceff1d91abce49ddad0237",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_court_tab_3_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:136",
+      "text": "The Empty Throne",
+      "std": 0.288
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_ruling",
+      "where": "mod:interface/zin_aenor_court.gui:713",
+      "text": "The seals are held by [dynamic_loc]."
+     },
+     {
+      "name": "zin_court_c_court",
+      "where": "mod:interface/zin_aenor_court.gui:724",
+      "text": "The Golden Court: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_faithful",
+      "where": "mod:interface/zin_aenor_court.gui:776",
+      "text": "[dynamic_loc]: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_dominions",
+      "where": "mod:interface/zin_aenor_court.gui:828",
+      "text": "The Free Dominions: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_host",
+      "where": "mod:interface/zin_aenor_court.gui:880",
+      "text": "[dynamic_loc]: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_court3_long",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 3,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "bcc278ecdffe67753dc768b81179db653a199197afb97c957dcd9c8e96ce78cd",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [
+     {
+      "name": "zin_court_tab_3_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:136",
+      "text": "The Empty Throne",
+      "std": 0.288
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_ruling",
+      "where": "mod:interface/zin_aenor_court.gui:713",
+      "text": "The seals are held by [dynamic_loc]."
+     },
+     {
+      "name": "zin_court_c_court",
+      "where": "mod:interface/zin_aenor_court.gui:724",
+      "text": "The Golden Court: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_faithful",
+      "where": "mod:interface/zin_aenor_court.gui:776",
+      "text": "[dynamic_loc]: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_dominions",
+      "where": "mod:interface/zin_aenor_court.gui:828",
+      "text": "The Free Dominions: [X] of 100"
+     },
+     {
+      "name": "zin_court_c_host",
+      "where": "mod:interface/zin_aenor_court.gui:880",
+      "text": "[dynamic_loc]: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_court4_1280",
+   "window": "zin_court_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "7ba42c52fd9383d95b8a990f13b155b04d9d1670909db0e677dbc646a18dfa04",
+   "metrics": {
+    "texts": 11,
+    "contrast": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "ratio": 2.77,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a08b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "std": 0.28
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_crown_afrit_dead",
+      "where": "mod:interface/zin_aenor_court.gui:953",
+      "text": "The false god is dead: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_named",
+      "where": "mod:interface/zin_aenor_court.gui:964",
+      "text": "The stranger has a name: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_parim",
+      "where": "mod:interface/zin_aenor_court.gui:986",
+      "text": "This realm holds Parim: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_date",
+      "where": "mod:interface/zin_aenor_court.gui:997",
+      "text": "The day of the crowning has come: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_court4_1920",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "c80f3d76bfc875bdf90aa30d8167f876b736a500bbda7a59519e5563f61b80d5",
+   "metrics": {
+    "texts": 11,
+    "contrast": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "ratio": 2.77,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a08b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "std": 0.28
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_crown_afrit_dead",
+      "where": "mod:interface/zin_aenor_court.gui:953",
+      "text": "The false god is dead: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_named",
+      "where": "mod:interface/zin_aenor_court.gui:964",
+      "text": "The stranger has a name: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_parim",
+      "where": "mod:interface/zin_aenor_court.gui:986",
+      "text": "This realm holds Parim: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_date",
+      "where": "mod:interface/zin_aenor_court.gui:997",
+      "text": "The day of the crowning has come: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_court4_2560",
+   "window": "zin_court_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "864ef8095580f7e1b26dcffc57a92879b2df25c4653a9affe37a2396fd50f156",
+   "metrics": {
+    "texts": 11,
+    "contrast": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "ratio": 2.77,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a08b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "std": 0.28
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_crown_afrit_dead",
+      "where": "mod:interface/zin_aenor_court.gui:953",
+      "text": "The false god is dead: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_named",
+      "where": "mod:interface/zin_aenor_court.gui:964",
+      "text": "The stranger has a name: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_parim",
+      "where": "mod:interface/zin_aenor_court.gui:986",
+      "text": "This realm holds Parim: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_date",
+      "where": "mod:interface/zin_aenor_court.gui:997",
+      "text": "The day of the crowning has come: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_court4_long",
+   "window": "zin_court_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 3,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "c80f3d76bfc875bdf90aa30d8167f876b736a500bbda7a59519e5563f61b80d5",
+   "metrics": {
+    "texts": 11,
+    "contrast": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "ratio": 2.77,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a08b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_court_tab_4_on_text",
+      "where": "mod:interface/zin_aenor_court.gui:160",
+      "text": "The Crown",
+      "std": 0.28
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_court_crown_afrit_dead",
+      "where": "mod:interface/zin_aenor_court.gui:953",
+      "text": "The false god is dead: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_named",
+      "where": "mod:interface/zin_aenor_court.gui:964",
+      "text": "The stranger has a name: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_parim",
+      "where": "mod:interface/zin_aenor_court.gui:986",
+      "text": "This realm holds Parim: [dynamic_loc]"
+     },
+     {
+      "name": "zin_court_crown_date",
+      "where": "mod:interface/zin_aenor_court.gui:997",
+      "text": "The day of the crowning has come: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 12
+  },
+  {
+   "label": "z_dominion1_1280",
+   "window": "zin_dominion_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "273e77c1295fd6a9d2ad5191e0e8cbc24580e0a05895965ba1fadbb4a5d002ff",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_dominion_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:88",
+      "text": "The Hosts",
+      "ratio": 2.74,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a18c73"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_dominion_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:88",
+      "text": "The Hosts",
+      "std": 0.279
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_dominion_hosts",
+      "where": "mod:interface/zin_mech_powers.gui:122",
+      "text": "The Hosts: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_veil",
+      "where": "mod:interface/zin_mech_powers.gui:184",
+      "text": "The Veil of Storms: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_nether",
+      "where": "mod:interface/zin_mech_powers.gui:241",
+      "text": "The Nether pact: [X] of 100"
+     },
+     {
+      "name": "zin_dominion_musters",
+      "where": "mod:interface/zin_mech_powers.gui:293",
+      "text": "Grave musters held: [X]. [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_dominion1_1920",
+   "window": "zin_dominion_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "2ffb230d9544ac451e9060939bf4d1a441e6adb26fcc838ce20cff2244cc5b43",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_dominion_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:88",
+      "text": "The Hosts",
+      "ratio": 2.74,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a18c73"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_dominion_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:88",
+      "text": "The Hosts",
+      "std": 0.279
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_dominion_hosts",
+      "where": "mod:interface/zin_mech_powers.gui:122",
+      "text": "The Hosts: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_veil",
+      "where": "mod:interface/zin_mech_powers.gui:184",
+      "text": "The Veil of Storms: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_nether",
+      "where": "mod:interface/zin_mech_powers.gui:241",
+      "text": "The Nether pact: [X] of 100"
+     },
+     {
+      "name": "zin_dominion_musters",
+      "where": "mod:interface/zin_mech_powers.gui:293",
+      "text": "Grave musters held: [X]. [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_dominion1_long",
+   "window": "zin_dominion_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "2ffb230d9544ac451e9060939bf4d1a441e6adb26fcc838ce20cff2244cc5b43",
+   "metrics": {
+    "texts": 8,
+    "contrast": [
+     {
+      "name": "zin_dominion_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:88",
+      "text": "The Hosts",
+      "ratio": 2.74,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a18c73"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_dominion_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:88",
+      "text": "The Hosts",
+      "std": 0.279
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_dominion_hosts",
+      "where": "mod:interface/zin_mech_powers.gui:122",
+      "text": "The Hosts: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_veil",
+      "where": "mod:interface/zin_mech_powers.gui:184",
+      "text": "The Veil of Storms: [X] of 100. [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_nether",
+      "where": "mod:interface/zin_mech_powers.gui:241",
+      "text": "The Nether pact: [X] of 100"
+     },
+     {
+      "name": "zin_dominion_musters",
+      "where": "mod:interface/zin_mech_powers.gui:293",
+      "text": "Grave musters held: [X]. [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_dominion2_1920",
+   "window": "zin_dominion_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "f032bfbd44e780ff5a5bb62e11ba3142ac39210f7d96f2db91ea0cfef50ebb37",
+   "metrics": {
+    "texts": 12,
+    "contrast": [
+     {
+      "name": "zin_dominion_tab_2_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:112",
+      "text": "The Sworn",
+      "ratio": 2.76,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a08c72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_dominion_tab_2_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:112",
+      "text": "The Sworn",
+      "std": 0.28
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_dominion_oath_demon",
+      "where": "mod:interface/zin_mech_powers.gui:325",
+      "text": "Khorvrath: [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_oath_dolon",
+      "where": "mod:interface/zin_mech_powers.gui:336",
+      "text": "Dolon: [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_oath_nezer",
+      "where": "mod:interface/zin_mech_powers.gui:347",
+      "text": "Nezer: [dynamic_loc]"
+     },
+     {
+      "name": "zin_dominion_dark_1",
+      "where": "mod:interface/zin_mech_powers.gui:378",
+      "text": "Envoys received: [X]"
+     },
+     {
+      "name": "zin_dominion_dark_2",
+      "where": "mod:interface/zin_mech_powers.gui:389",
+      "text": "Pact of Spoils: [X]"
+     },
+     {
+      "name": "zin_dominion_dark_3",
+      "where": "mod:interface/zin_mech_powers.gui:400",
+      "text": "Sworn to Nafeher: [X] (at most three)"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_horde2_1920",
+   "window": "zin_horde_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "0986fcab1add85785687c481b62dba6db3aa49c1ae6237c706b9998b6065e3d2",
+   "metrics": {
+    "texts": 40,
+    "contrast": [
+     {
+      "name": "zin_horde_tab_2_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:113",
+      "text": "The Sway",
+      "ratio": 2.68,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a38e75"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_horde_tab_2_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:113",
+      "text": "The Sway",
+      "std": 0.276
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_horde_sway_1_1",
+      "where": "mod:interface/zin_dark_panels.gui:556",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_1_2",
+      "where": "mod:interface/zin_dark_panels.gui:567",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_1_3",
+      "where": "mod:interface/zin_dark_panels.gui:578",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_2_1",
+      "where": "mod:interface/zin_dark_panels.gui:589",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_2_2",
+      "where": "mod:interface/zin_dark_panels.gui:600",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_2_3",
+      "where": "mod:interface/zin_dark_panels.gui:611",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_3_1",
+      "where": "mod:interface/zin_dark_panels.gui:622",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_3_2",
+      "where": "mod:interface/zin_dark_panels.gui:633",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_3_3",
+      "where": "mod:interface/zin_dark_panels.gui:644",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_4_1",
+      "where": "mod:interface/zin_dark_panels.gui:655",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_4_2",
+      "where": "mod:interface/zin_dark_panels.gui:666",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_4_3",
+      "where": "mod:interface/zin_dark_panels.gui:677",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_5_1",
+      "where": "mod:interface/zin_dark_panels.gui:688",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_5_2",
+      "where": "mod:interface/zin_dark_panels.gui:699",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_5_3",
+      "where": "mod:interface/zin_dark_panels.gui:710",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_6_1",
+      "where": "mod:interface/zin_dark_panels.gui:721",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_6_2",
+      "where": "mod:interface/zin_dark_panels.gui:732",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_6_3",
+      "where": "mod:interface/zin_dark_panels.gui:743",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_7_1",
+      "where": "mod:interface/zin_dark_panels.gui:754",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_7_2",
+      "where": "mod:interface/zin_dark_panels.gui:765",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_7_3",
+      "where": "mod:interface/zin_dark_panels.gui:776",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_8_1",
+      "where": "mod:interface/zin_dark_panels.gui:787",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_8_2",
+      "where": "mod:interface/zin_dark_panels.gui:798",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_8_3",
+      "where": "mod:interface/zin_dark_panels.gui:809",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_9_1",
+      "where": "mod:interface/zin_dark_panels.gui:820",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_9_2",
+      "where": "mod:interface/zin_dark_panels.gui:831",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_9_3",
+      "where": "mod:interface/zin_dark_panels.gui:842",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_10_1",
+      "where": "mod:interface/zin_dark_panels.gui:853",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_horde_sway_10_2",
+      "where": "mod:interface/zin_dark_panels.gui:864",
+      "text": "[X]"
+     },
+     {
+      "name": "zin_horde_sway_10_3",
+      "where": "mod:interface/zin_dark_panels.gui:875",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_horde_1280",
+   "window": "zin_horde_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "56fbba7bdf3f966332724e84b796fffe250d669ca3692208eb1d9b754407666d",
+   "metrics": {
+    "texts": 15,
+    "contrast": [
+     {
+      "name": "zin_horde_tab_1_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:89",
+      "text": "The Horde",
+      "ratio": 2.8,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9f8b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_horde_tab_1_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:89",
+      "text": "The Horde",
+      "std": 0.282
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_horde_temper",
+      "where": "mod:interface/zin_dark_panels.gui:123",
+      "text": "Temper: [X] of 100"
+     },
+     {
+      "name": "zin_horde_bloc_volcano",
+      "where": "mod:interface/zin_dark_panels.gui:190",
+      "text": "Volcano Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_iron",
+      "where": "mod:interface/zin_dark_panels.gui:258",
+      "text": "Iron Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_war",
+      "where": "mod:interface/zin_dark_panels.gui:326",
+      "text": "War-Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_warrens",
+      "where": "mod:interface/zin_dark_panels.gui:394",
+      "text": "Goblin Warrens: [X]"
+     },
+     {
+      "name": "zin_horde_unity",
+      "where": "mod:interface/zin_dark_panels.gui:462",
+      "text": "Unity: [X] of 100 of the Dark Lands held"
+     },
+     {
+      "name": "zin_horde_border",
+      "where": "mod:interface/zin_dark_panels.gui:504",
+      "text": "The border: [X], [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_horde_1920",
+   "window": "zin_horde_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "5fbbe379e54026269c6431eec666b6119281982ca5444d0342d1afde8a3ca479",
+   "metrics": {
+    "texts": 15,
+    "contrast": [
+     {
+      "name": "zin_horde_tab_1_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:89",
+      "text": "The Horde",
+      "ratio": 2.8,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9f8b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_horde_tab_1_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:89",
+      "text": "The Horde",
+      "std": 0.282
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_horde_temper",
+      "where": "mod:interface/zin_dark_panels.gui:123",
+      "text": "Temper: [X] of 100"
+     },
+     {
+      "name": "zin_horde_bloc_volcano",
+      "where": "mod:interface/zin_dark_panels.gui:190",
+      "text": "Volcano Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_iron",
+      "where": "mod:interface/zin_dark_panels.gui:258",
+      "text": "Iron Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_war",
+      "where": "mod:interface/zin_dark_panels.gui:326",
+      "text": "War-Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_warrens",
+      "where": "mod:interface/zin_dark_panels.gui:394",
+      "text": "Goblin Warrens: [X]"
+     },
+     {
+      "name": "zin_horde_unity",
+      "where": "mod:interface/zin_dark_panels.gui:462",
+      "text": "Unity: [X] of 100 of the Dark Lands held"
+     },
+     {
+      "name": "zin_horde_border",
+      "where": "mod:interface/zin_dark_panels.gui:504",
+      "text": "The border: [X], [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_horde_long",
+   "window": "zin_horde_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "5fbbe379e54026269c6431eec666b6119281982ca5444d0342d1afde8a3ca479",
+   "metrics": {
+    "texts": 15,
+    "contrast": [
+     {
+      "name": "zin_horde_tab_1_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:89",
+      "text": "The Horde",
+      "ratio": 2.8,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9f8b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_horde_tab_1_on_text",
+      "where": "mod:interface/zin_dark_panels.gui:89",
+      "text": "The Horde",
+      "std": 0.282
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_horde_temper",
+      "where": "mod:interface/zin_dark_panels.gui:123",
+      "text": "Temper: [X] of 100"
+     },
+     {
+      "name": "zin_horde_bloc_volcano",
+      "where": "mod:interface/zin_dark_panels.gui:190",
+      "text": "Volcano Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_iron",
+      "where": "mod:interface/zin_dark_panels.gui:258",
+      "text": "Iron Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_war",
+      "where": "mod:interface/zin_dark_panels.gui:326",
+      "text": "War-Clans: [X]"
+     },
+     {
+      "name": "zin_horde_bloc_warrens",
+      "where": "mod:interface/zin_dark_panels.gui:394",
+      "text": "Goblin Warrens: [X]"
+     },
+     {
+      "name": "zin_horde_unity",
+      "where": "mod:interface/zin_dark_panels.gui:462",
+      "text": "Unity: [X] of 100 of the Dark Lands held"
+     },
+     {
+      "name": "zin_horde_border",
+      "where": "mod:interface/zin_dark_panels.gui:504",
+      "text": "The border: [X], [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 13
+  },
+  {
+   "label": "z_inlay_1280",
+   "window": "zin_interim_inlay_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chronicle",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SCRIPTED_CONTEXT_UNKNOWN": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14
+   },
+   "sha256": "8366fbcb5c0ad211b3022f0ff8ef27be1a0799d8c9f0f79ba426ec3508864531",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 6
+  },
+  {
+   "label": "z_inlay_1920",
+   "window": "zin_interim_inlay_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chronicle",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SCRIPTED_CONTEXT_UNKNOWN": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14
+   },
+   "sha256": "397d44367a8a781890ca2bc55c286a9b4f1f5d87c380f87d08bbe82d9d756820",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 6
+  },
+  {
+   "label": "z_inlay_long",
+   "window": "zin_interim_inlay_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chronicle",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SCRIPTED_CONTEXT_UNKNOWN": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "397d44367a8a781890ca2bc55c286a9b4f1f5d87c380f87d08bbe82d9d756820",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 5
+  },
+  {
+   "label": "z_mistake1_1280",
+   "window": "zin_mistake_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_UNRESOLVED_VISIBILITY_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "b38596f2b700139cecf6c732678f8fbd34e518c666e7b512cb18c58e15ad95bb",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_mistake_power",
+      "where": "mod:interface/zin_zol_presence.gui:74",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_mistake_bond_great",
+      "where": "mod:interface/zin_zol_presence.gui:146",
+      "text": "The Great Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_lesser",
+      "where": "mod:interface/zin_zol_presence.gui:188",
+      "text": "The Lesser Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_divine",
+      "where": "mod:interface/zin_zol_presence.gui:230",
+      "text": "The New Gods: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_isles",
+      "where": "mod:interface/zin_zol_presence.gui:272",
+      "text": "The black isles that stir: [X]. Hosts raised: [X] of [X]."
+     },
+     {
+      "name": "zin_mistake_conv",
+      "where": "mod:interface/zin_zol_presence.gui:283",
+      "text": "The Convergence: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_mistake1_1920",
+   "window": "zin_mistake_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_UNRESOLVED_VISIBILITY_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "99af756cddda845ad1f6a1f7bd951d3e8a3b60de33c1fd13865a195e65c1e079",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_mistake_power",
+      "where": "mod:interface/zin_zol_presence.gui:74",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_mistake_bond_great",
+      "where": "mod:interface/zin_zol_presence.gui:146",
+      "text": "The Great Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_lesser",
+      "where": "mod:interface/zin_zol_presence.gui:188",
+      "text": "The Lesser Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_divine",
+      "where": "mod:interface/zin_zol_presence.gui:230",
+      "text": "The New Gods: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_isles",
+      "where": "mod:interface/zin_zol_presence.gui:272",
+      "text": "The black isles that stir: [X]. Hosts raised: [X] of [X]."
+     },
+     {
+      "name": "zin_mistake_conv",
+      "where": "mod:interface/zin_zol_presence.gui:283",
+      "text": "The Convergence: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_mistake1_2560",
+   "window": "zin_mistake_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_UNRESOLVED_VISIBILITY_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "0c704c472ec54ded7e41415df5c403fe5bc506c12a385583e447655959d73ec5",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_mistake_power",
+      "where": "mod:interface/zin_zol_presence.gui:74",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_mistake_bond_great",
+      "where": "mod:interface/zin_zol_presence.gui:146",
+      "text": "The Great Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_lesser",
+      "where": "mod:interface/zin_zol_presence.gui:188",
+      "text": "The Lesser Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_divine",
+      "where": "mod:interface/zin_zol_presence.gui:230",
+      "text": "The New Gods: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_isles",
+      "where": "mod:interface/zin_zol_presence.gui:272",
+      "text": "The black isles that stir: [X]. Hosts raised: [X] of [X]."
+     },
+     {
+      "name": "zin_mistake_conv",
+      "where": "mod:interface/zin_zol_presence.gui:283",
+      "text": "The Convergence: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_mistake1_long",
+   "window": "zin_mistake_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_UNRESOLVED_VISIBILITY_OVERLAP": 2,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "99af756cddda845ad1f6a1f7bd951d3e8a3b60de33c1fd13865a195e65c1e079",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_mistake_power",
+      "where": "mod:interface/zin_zol_presence.gui:74",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_mistake_bond_great",
+      "where": "mod:interface/zin_zol_presence.gui:146",
+      "text": "The Great Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_lesser",
+      "where": "mod:interface/zin_zol_presence.gui:188",
+      "text": "The Lesser Spirits: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_bond_divine",
+      "where": "mod:interface/zin_zol_presence.gui:230",
+      "text": "The New Gods: bond [X] of 5"
+     },
+     {
+      "name": "zin_mistake_isles",
+      "where": "mod:interface/zin_zol_presence.gui:272",
+      "text": "The black isles that stir: [X]. Hosts raised: [X] of [X]."
+     },
+     {
+      "name": "zin_mistake_conv",
+      "where": "mod:interface/zin_zol_presence.gui:283",
+      "text": "The Convergence: [X] of 100"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_realm_1280",
+   "window": "zin_realm_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 4,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14
+   },
+   "sha256": "08e2d6db3ccc8f9e6d70ef6a95ebf3764031cf2b4fc751168810dbcfed2860c6",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_realm_title",
+      "where": "mod:interface/zin_realm.gui:12",
+      "text": "The Realm of [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people",
+      "where": "mod:interface/zin_realm.gui:34",
+      "text": "People: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people_desc",
+      "where": "mod:interface/zin_realm.gui:51",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_alignment",
+      "where": "mod:interface/zin_realm.gui:61",
+      "text": "Alignment: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance",
+      "where": "mod:interface/zin_realm.gui:72",
+      "text": "Rule: [dynamic_loc] under [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance_desc",
+      "where": "mod:interface/zin_realm.gui:83",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_realm_1920",
+   "window": "zin_realm_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 4,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14
+   },
+   "sha256": "341bf4a2b96bb5c23fd51ecc38002fb78eaf0d766569af7bdccd883dbc48193f",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_realm_title",
+      "where": "mod:interface/zin_realm.gui:12",
+      "text": "The Realm of [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people",
+      "where": "mod:interface/zin_realm.gui:34",
+      "text": "People: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people_desc",
+      "where": "mod:interface/zin_realm.gui:51",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_alignment",
+      "where": "mod:interface/zin_realm.gui:61",
+      "text": "Alignment: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance",
+      "where": "mod:interface/zin_realm.gui:72",
+      "text": "Rule: [dynamic_loc] under [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance_desc",
+      "where": "mod:interface/zin_realm.gui:83",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_realm_2560",
+   "window": "zin_realm_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 4,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14
+   },
+   "sha256": "d7300f9c1ca9510653fef9329d43fb8d0c26cb0eb6e7032b7fac6d916d08bb98",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_realm_title",
+      "where": "mod:interface/zin_realm.gui:12",
+      "text": "The Realm of [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people",
+      "where": "mod:interface/zin_realm.gui:34",
+      "text": "People: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people_desc",
+      "where": "mod:interface/zin_realm.gui:51",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_alignment",
+      "where": "mod:interface/zin_realm.gui:61",
+      "text": "Alignment: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance",
+      "where": "mod:interface/zin_realm.gui:72",
+      "text": "Rule: [dynamic_loc] under [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance_desc",
+      "where": "mod:interface/zin_realm.gui:83",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_realm_long",
+   "window": "zin_realm_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 5,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "341bf4a2b96bb5c23fd51ecc38002fb78eaf0d766569af7bdccd883dbc48193f",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_realm_title",
+      "where": "mod:interface/zin_realm.gui:12",
+      "text": "The Realm of [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people",
+      "where": "mod:interface/zin_realm.gui:34",
+      "text": "People: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_people_desc",
+      "where": "mod:interface/zin_realm.gui:51",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_alignment",
+      "where": "mod:interface/zin_realm.gui:61",
+      "text": "Alignment: [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance",
+      "where": "mod:interface/zin_realm.gui:72",
+      "text": "Rule: [dynamic_loc] under [dynamic_loc]"
+     },
+     {
+      "name": "zin_realm_stance_desc",
+      "where": "mod:interface/zin_realm.gui:83",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_strait1_1280",
+   "window": "zin_strait_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "5e7ebd9dc8813d68263e82b823918bbe28905f544b3af85f315b2987c84d7589",
+   "metrics": {
+    "texts": 9,
+    "contrast": [
+     {
+      "name": "zin_strait_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:744",
+      "text": "The Treaty",
+      "ratio": 2.87,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9d8970"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_strait_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:744",
+      "text": "The Treaty",
+      "std": 0.281
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_strait_standing",
+      "where": "mod:interface/zin_mech_powers.gui:802",
+      "text": "Strait standing: [X]"
+     },
+     {
+      "name": "zin_strait_band",
+      "where": "mod:interface/zin_mech_powers.gui:854",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_treaty",
+      "where": "mod:interface/zin_mech_powers.gui:865",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_route",
+      "where": "mod:interface/zin_mech_powers.gui:876",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_strait1_1920",
+   "window": "zin_strait_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "7b3b6d9d90f575f0912cf9f01384680575c7d870b2de3b49d9321e60c39f0a09",
+   "metrics": {
+    "texts": 9,
+    "contrast": [
+     {
+      "name": "zin_strait_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:744",
+      "text": "The Treaty",
+      "ratio": 2.87,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9d8970"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_strait_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:744",
+      "text": "The Treaty",
+      "std": 0.281
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_strait_standing",
+      "where": "mod:interface/zin_mech_powers.gui:802",
+      "text": "Strait standing: [X]"
+     },
+     {
+      "name": "zin_strait_band",
+      "where": "mod:interface/zin_mech_powers.gui:854",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_treaty",
+      "where": "mod:interface/zin_mech_powers.gui:865",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_route",
+      "where": "mod:interface/zin_mech_powers.gui:876",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_strait1_long",
+   "window": "zin_strait_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "7b3b6d9d90f575f0912cf9f01384680575c7d870b2de3b49d9321e60c39f0a09",
+   "metrics": {
+    "texts": 9,
+    "contrast": [
+     {
+      "name": "zin_strait_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:744",
+      "text": "The Treaty",
+      "ratio": 2.87,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#9d8970"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_strait_tab_1_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:744",
+      "text": "The Treaty",
+      "std": 0.281
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_strait_standing",
+      "where": "mod:interface/zin_mech_powers.gui:802",
+      "text": "Strait standing: [X]"
+     },
+     {
+      "name": "zin_strait_band",
+      "where": "mod:interface/zin_mech_powers.gui:854",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_treaty",
+      "where": "mod:interface/zin_mech_powers.gui:865",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_route",
+      "where": "mod:interface/zin_mech_powers.gui:876",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_strait2_1920",
+   "window": "zin_strait_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "f5aa7185671f70bcc0f998ac75d9444038c4c4e7864b2fd051d47cb3d9618941",
+   "metrics": {
+    "texts": 11,
+    "contrast": [
+     {
+      "name": "zin_strait_tab_2_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:768",
+      "text": "The Dues",
+      "ratio": 2.62,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a59076"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_strait_tab_2_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:768",
+      "text": "The Dues",
+      "std": 0.276
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_strait_due_0",
+      "where": "mod:interface/zin_mech_powers.gui:908",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_due_1",
+      "where": "mod:interface/zin_mech_powers.gui:919",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_due_2",
+      "where": "mod:interface/zin_mech_powers.gui:930",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_due_3",
+      "where": "mod:interface/zin_mech_powers.gui:941",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_due_4",
+      "where": "mod:interface/zin_mech_powers.gui:952",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_strait3_1920",
+   "window": "zin_strait_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_INVALID_SIZE": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "57f25404cc0b3cc8efd5c561d10970cc3c57e136681c9d443608710f86cd20fa",
+   "metrics": {
+    "texts": 13,
+    "contrast": [
+     {
+      "name": "zin_strait_tab_3_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:792",
+      "text": "The North",
+      "ratio": 2.77,
+      "need": 4.5,
+      "fg": "#f4ecdcff",
+      "bg": "#a08b72"
+     }
+    ],
+    "ground": [
+     {
+      "name": "zin_strait_tab_3_on_text",
+      "where": "mod:interface/zin_mech_powers.gui:792",
+      "text": "The North",
+      "std": 0.28
+     }
+    ],
+    "rawKeys": [
+     {
+      "name": "zin_strait_cohesion",
+      "where": "mod:interface/zin_mech_powers.gui:973",
+      "text": "Union of the two crowns: [X] of 100"
+     },
+     {
+      "name": "zin_strait_hegemony",
+      "where": "mod:interface/zin_mech_powers.gui:1020",
+      "text": "Lead over the North: [X] of 100. Compact crowns: [X]"
+     },
+     {
+      "name": "zin_strait_lean_eekedor",
+      "where": "mod:interface/zin_mech_powers.gui:1092",
+      "text": "Eekedor: [dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_lean_tolvael",
+      "where": "mod:interface/zin_mech_powers.gui:1103",
+      "text": "Tolvael: [dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_lean_molot",
+      "where": "mod:interface/zin_mech_powers.gui:1114",
+      "text": "Molot: [dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_lean_ren",
+      "where": "mod:interface/zin_mech_powers.gui:1125",
+      "text": "R'en: [dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_lean_mina",
+      "where": "mod:interface/zin_mech_powers.gui:1136",
+      "text": "Mina: [dynamic_loc]"
+     },
+     {
+      "name": "zin_strait_lean_hold",
+      "where": "mod:interface/zin_mech_powers.gui:1147",
+      "text": "Dolpar: [dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_watch1_1280",
+   "window": "zin_watch_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "1e25303952b58b1e827e9e921f6046eb44ace2107b56c94646889052efea6c59",
+   "metrics": {
+    "texts": 8,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_watch_proof",
+      "where": "mod:interface/zin_mech_powers.gui:484",
+      "text": "Proof: [X] of 100. Evidence that no court can laugh away."
+     },
+     {
+      "name": "zin_watch_passes",
+      "where": "mod:interface/zin_mech_powers.gui:541",
+      "text": "The passes: [X] of 100. Fort level [X] of 6."
+     },
+     {
+      "name": "zin_watch_south",
+      "where": "mod:interface/zin_mech_powers.gui:603",
+      "text": "The South: [dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_scout",
+      "where": "mod:interface/zin_mech_powers.gui:624",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_word",
+      "where": "mod:interface/zin_mech_powers.gui:635",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_forts",
+      "where": "mod:interface/zin_mech_powers.gui:646",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_watch1_1920",
+   "window": "zin_watch_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "2767ebbfcd0c9db33cc8bb7716c0667f25fa699f4eff5501c568f8e38f747e07",
+   "metrics": {
+    "texts": 8,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_watch_proof",
+      "where": "mod:interface/zin_mech_powers.gui:484",
+      "text": "Proof: [X] of 100. Evidence that no court can laugh away."
+     },
+     {
+      "name": "zin_watch_passes",
+      "where": "mod:interface/zin_mech_powers.gui:541",
+      "text": "The passes: [X] of 100. Fort level [X] of 6."
+     },
+     {
+      "name": "zin_watch_south",
+      "where": "mod:interface/zin_mech_powers.gui:603",
+      "text": "The South: [dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_scout",
+      "where": "mod:interface/zin_mech_powers.gui:624",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_word",
+      "where": "mod:interface/zin_mech_powers.gui:635",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_forts",
+      "where": "mod:interface/zin_mech_powers.gui:646",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_watch1_long",
+   "window": "zin_watch_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "chancery",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_BUTTON_TRIGGER_MISSING": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1,
+    "GUI_UNRESOLVED_DYNAMIC_VALUE": 1,
+    "GUI_VISIBLE_OVERLAP": 2,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "2767ebbfcd0c9db33cc8bb7716c0667f25fa699f4eff5501c568f8e38f747e07",
+   "metrics": {
+    "texts": 8,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "zin_watch_proof",
+      "where": "mod:interface/zin_mech_powers.gui:484",
+      "text": "Proof: [X] of 100. Evidence that no court can laugh away."
+     },
+     {
+      "name": "zin_watch_passes",
+      "where": "mod:interface/zin_mech_powers.gui:541",
+      "text": "The passes: [X] of 100. Fort level [X] of 6."
+     },
+     {
+      "name": "zin_watch_south",
+      "where": "mod:interface/zin_mech_powers.gui:603",
+      "text": "The South: [dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_scout",
+      "where": "mod:interface/zin_mech_powers.gui:624",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_word",
+      "where": "mod:interface/zin_mech_powers.gui:635",
+      "text": "[dynamic_loc]"
+     },
+     {
+      "name": "zin_watch_cd_forts",
+      "where": "mod:interface/zin_mech_powers.gui:646",
+      "text": "[dynamic_loc]"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  }
+ ]
+}

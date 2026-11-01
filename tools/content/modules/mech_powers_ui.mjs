@@ -6,23 +6,32 @@
 // Each window is one containerWindowType in interface/zin_mech_powers.gui with a scripted GUI in
 // common/scripted_guis/zin_mech_powers.txt (names, flags and windows as the interface spec lists them: zin_panel_dominion /
 // zin_dominion_window / zin_ui_dominion_open, zin_watch / zin_watch_window / zin_ui_watch_open, zin_strait / zin_strait_window /
-// zin_ui_strait_open). A launcher button sits beside the Realm button until the interface module's Aoaz bar takes its place. The
-// windows show; they decide nothing. Gauge positions are country variables that the mechanics' pulses compute
-// (zin_dominion_ui_refresh_volgan, zin_dominion_ui_refresh_mirolon, zin_leren_ui_refresh). Every picture is an existing ZIN sprite or
-// a catalog icon registered as a sprite in interface/zz_zin_mech_powers.gfx.
-import { Loc, loadCatalogKeys } from '../lib/inst_util.mjs';
-import { Panel, definedText } from '../lib/mp_gui.mjs';
-import { HEADER, fmt, ge, le, lt, gt } from '../lib/mp_kit.mjs';
+// zin_ui_strait_open). They are Chancery panels of the shared layout (lib/mech_court_gui.mjs, design system sections 3 and 6.4):
+// header picture, accent strip, tabs, one primary value per tab, meters with the mechanics' marks, a tooltip on every value. A
+// launcher button sits beside the Realm button until the Aoaz bar takes its place. The windows show; they decide nothing. Meter fills
+// are country variables that the mechanics' pulses compute (zin_dominion_ui_refresh_volgan, zin_dominion_ui_refresh_mirolon,
+// zin_leren_ui_refresh).
+import { Loc } from '../lib/inst_util.mjs';
+import { Panel, definedText, LAYOUT, FONT, sub } from '../lib/mech_court_gui.mjs';
+import { format } from '../lib/mech_court_lib.mjs';
+import { HEADER, ge, le, lt, gt } from '../lib/mp_kit.mjs';
+
+// The marks of each meter: the band edges the mechanics' triggers use (volgan_southern_dominion.md, lerendor_narrow_strait.md).
+const MARKS = { hosts: [30, 50, 70, 85], veil: [30, 50, 70], nether: [40, 70], proof: [25, 50, 75], passes: [20, 40, 60, 80], standing: [-40, 40], cohesion: [25], hegemony: [20, 40, 60, 80] };
+
+// A second text in the row of a text the panel placed (two columns), with its tooltip and tab gate.
+function textBoxAt(p, name, x, y, key, value, tip, tab) {
+  const id = p.id(name);
+  p.loc.set(key, value); p.loc.set(sub(key, '_tt'), tip); p.gate(id, tab);
+  return ['instantTextBoxType = {', `name = "${id}"`, `position = { x = ${x} y = ${y} }`, `font = "${FONT.mid}"`, `text = "${key}"`, `maxWidth = ${LAYOUT.cw / 2 - 8}`, 'maxHeight = 24', 'format = left', 'fixedsize = yes', `pdx_tooltip = "${sub(key, '_tt')}"`, '}'].join('\n');
+}
 
 export async function buildPowersUi(staged, ctx) {
   const { countries } = ctx;
   const tag = n => { const c = countries.find(x => x.name === n); if (!c) throw new Error(`Powers UI: country ${n} is not in the roster`); return c.tag; };
-  const catalog = new Set(await loadCatalogKeys());
   const loc = new Loc();
-  const sprites = new Map();
-  const reg = (name, art) => { if (!catalog.has(art)) throw new Error(`Powers UI: icon ${art} is not in the catalog`); sprites.set(name, art); return name; };
   const scriptedLoc = [];
-  const words = (name, cases) => scriptedLoc.push(definedText(name, cases, loc));
+  const words = (name, cases) => scriptedLoc.push(format(definedText(name, cases, loc)));
 
   // ============================================================================================ the Southern Dominion
   const VOL = tag('Puvulan'), MIR = tag('Mirolon'), LER = tag('Lerendor');
@@ -46,27 +55,28 @@ export async function buildPowersUi(staged, ctx) {
     [`${t} = { ${lt('zin_dominion_oath', 45)} }`, `ZIN_DOM_OATH_${k.toUpperCase()}_WARN`, `§O[?${t}.zin_dominion_oath|0]§! (uneasy)`],
     [null, `ZIN_DOM_OATH_${k.toUpperCase()}_OK`, `§Y[?${t}.zin_dominion_oath|0]§!`]], loc);
   members.forEach(oathWord);
-  const dom = new Panel({ prefix: 'zin_dominion', gui: 'zin_panel_dominion', window: 'zin_dominion_window', flag: 'zin_ui_dominion_open', title: 'The Southern Dominion', titleKey: 'ZIN_DOM_TITLE', launcher: 'The Dominion', launcherKey: 'ZIN_DOM_BUTTON',
-    launcherTip: 'Open the hosts, the veil, the Nether and the oaths of the Southern Dominion.', visible: 'zin_is_volgan = yes', launcherVisible: 'zin_is_volgan = yes', refresh: 'zin_dominion_ui_refresh_volgan', w: 620, h: 520,
-    tabs: [{ key: 'ZIN_DOM_TAB1', label: 'The Hosts' }, { key: 'ZIN_DOM_TAB2', label: 'The Sworn' }], markerSprite: reg('GFX_zin_dominion_marker', 'grave_host') });
-  dom.text('hosts', 1, 40, 118, 540, 24, 'ZIN_DOM_T1_HOSTS', 'The Hosts: §Y[?ROOT.zin_dominion_strength|0]§! of 100. [ROOT.zin_dominion_hosts_word]');
-  dom.gauge('hosts', 1, 156, 'zin_ui_hosts_x');
-  dom.text('hostmarks', 1, 40, 164, 540, 20, 'ZIN_DOM_T1_HOSTMARKS', 'Marks at 30 (Stirring), 50 (Ready), 70 (the Great Host) and 85.', { font: 'small' });
-  dom.text('veil', 1, 40, 200, 540, 24, 'ZIN_DOM_T1_VEIL', 'The Veil of Storms: §Y[?ROOT.zin_volgan_veil|0]§! of 100. [ROOT.zin_dominion_veil_word]');
-  dom.gauge('veil', 1, 238, 'zin_ui_veil_x');
-  dom.text('veilmarks', 1, 40, 246, 540, 20, 'ZIN_DOM_T1_VEILMARKS', 'Marks at 70, 50 and 30: each fall is told once to the world.', { font: 'small' });
-  dom.text('nether', 1, 40, 282, 540, 24, 'ZIN_DOM_T1_NETHER', 'The Nether pact: §Y[?ROOT.zin_nether_pact|0]§! of 100.');
-  dom.gauge('nether', 1, 320, 'zin_ui_nether_x');
-  dom.text('nethermarks', 1, 40, 328, 540, 20, 'ZIN_DOM_T1_NETHERMARKS', 'At 40 the Netherborn come to your companies. At 70 the gate may be opened in war.', { font: 'small' });
-  dom.text('musters', 1, 40, 366, 540, 48, 'ZIN_DOM_T1_MUSTERS', 'Grave musters held: §Y[?ROOT.zin_volgan_musters|0]§!. [ROOT.zin_dominion_muster_word]');
-  dom.text('closed', 1, 40, 440, 540, 48, 'ZIN_DOM_T1_BROKEN', 'What remains of the Lord of the Ember Lands is not known.', { font: 'small', when: 'has_global_flag = zin_volgan_body_destroyed' });
-  dom.text('sworn_head', 2, 40, 118, 540, 24, 'ZIN_DOM_T2_HEAD', 'The sworn realms and the strength of their oaths (0 to 100):');
-  members.forEach(([t, n, k], i) => dom.text(`oath_${k}`, 2, 60, 156 + i * 34, 500, 24, `ZIN_DOM_T2_${k.toUpperCase()}`, `${n}: [ROOT.zin_dominion_oath_${k}]`));
-  dom.text('oath_note', 2, 40, 262, 540, 40, 'ZIN_DOM_T2_NOTE', 'Below 25 a realm may seek its own road. Summon the Dominion to steady the oaths.', { font: 'small' });
-  dom.text('dark_head', 2, 40, 314, 540, 24, 'ZIN_DOM_T2_DARK', 'The free holds of the Dark Lands and their pacts with Nafeher:');
-  dom.text('dark_1', 2, 60, 352, 500, 24, 'ZIN_DOM_T2_DARK1', 'Envoys received: §Y[?ROOT.zin_ui_dark_1|0]§!');
-  dom.text('dark_2', 2, 60, 384, 500, 24, 'ZIN_DOM_T2_DARK2', 'Pact of Spoils: §Y[?ROOT.zin_ui_dark_2|0]§!');
-  dom.text('dark_3', 2, 60, 416, 500, 24, 'ZIN_DOM_T2_DARK3', 'Sworn to Nafeher: §Y[?ROOT.zin_ui_dark_3|0]§! (at most three)');
+  // The header picture: the broken-host variant once the Lord of the Ember Lands has lost his body (spec 01 section 7). The scripted
+  // localisation returns the sprite name; the window's property image reads it.
+  scriptedLoc.push(format(['defined_text = {', 'name = zin_dominion_header', 'text = {', 'trigger = {', 'has_global_flag = zin_volgan_body_destroyed', '}', 'localization_key = GFX_zin_header_dominion_broken', '}', 'text = { localization_key = GFX_zin_header_dominion }', '}'].join('\n')));
+  const dom = new Panel({ prefix: 'zin_dominion', gui: 'zin_panel_dominion', window: 'zin_dominion_window', flag: 'zin_ui_dominion_open', bar: 'dominion',title: 'The Southern Dominion', titleKey: 'ZIN_DOM_TITLE', launcher: 'The Dominion', launcherKey: 'ZIN_DOM_BUTTON',
+    launcherTip: 'Open the hosts, the veil, the Nether and the oaths of the Southern Dominion.', visible: 'zin_is_volgan = yes', launcherVisible: 'zin_is_volgan = yes', refresh: 'zin_dominion_ui_refresh_volgan',
+    accent: 'GFX_zin_accent_dominion', header: 'GFX_zin_header_dominion', headerImage: 'zin_dominion_header',
+    tabs: [{ key: 'ZIN_DOM_TAB1', label: 'The Hosts', tip: 'The hosts, the Veil of Storms, the Nether pact and the musters.' }, { key: 'ZIN_DOM_TAB2', label: 'The Sworn', tip: 'The sworn realms and the free holds of the Dark Lands.' }] });
+  dom.primary('hosts', 1, 'ZIN_DOM_T1_HOSTS', 'The Hosts: §Y[?ROOT.zin_dominion_strength|0]§! of 100. [ROOT.zin_dominion_hosts_word]', 'Marks at 30 (Stirring), 50 (Ready), 70 (the Great Host) and 85.', { fill: 'zin_ui_hosts_fill', marks: MARKS.hosts });
+  dom.gauge('veil', 1, 'ZIN_DOM_T1_VEIL', 'The Veil of Storms: §Y[?ROOT.zin_volgan_veil|0]§! of 100. [ROOT.zin_dominion_veil_word]', 'Marks at 70, 50 and 30: each fall is told once to the world.', { fill: 'zin_ui_veil_fill', marks: MARKS.veil });
+  dom.space(1, 4);
+  dom.gauge('nether', 1, 'ZIN_DOM_T1_NETHER', 'The Nether pact: §Y[?ROOT.zin_nether_pact|0]§! of 100', 'At 40 the Netherborn come to your companies. At 70 the gate may be opened in war.', { fill: 'zin_ui_nether_fill', marks: MARKS.nether });
+  dom.space(1, 4);
+  dom.text('musters', 1, 'ZIN_DOM_T1_MUSTERS', 'Grave musters held: §Y[?ROOT.zin_volgan_musters|0]§!. [ROOT.zin_dominion_muster_word]', { lines: 2, tip: 'A grave muster raises the hosts and keeps the Veil of Storms from mending for a month.', gap: LAYOUT.gap });
+  dom.text('closed', 1, 'ZIN_DOM_T1_BROKEN', 'What remains of the Lord of the Ember Lands is not known.', { font: 'small', when: 'has_global_flag = zin_volgan_body_destroyed' });
+  dom.primary('sworn_head', 2, 'ZIN_DOM_T2_HEAD', 'The sworn realms', 'The strength of each oath, from 0 to 100. Below 25 a realm may seek its own road. Summon the Dominion to steady the oaths.');
+  members.forEach(([, n, k]) => dom.text(`oath_${k}`, 2, `ZIN_DOM_T2_${k.toUpperCase()}`, `${n}: [ROOT.zin_dominion_oath_${k}]`, { tip: `The strength of ${n}'s oath to the Dominion.` }));
+  dom.space(2, 8);
+  dom.text('oath_note', 2, 'ZIN_DOM_T2_NOTE', 'Below 25 a realm may seek its own road. Summon the Dominion to steady the oaths.', { font: 'small', lines: 2, gap: LAYOUT.gap });
+  dom.text('dark_head', 2, 'ZIN_DOM_T2_DARK', 'The free holds of the Dark Lands and their pacts with Nafeher', { font: 'small', gap: 4 });
+  dom.text('dark_1', 2, 'ZIN_DOM_T2_DARK1', 'Envoys received: §Y[?ROOT.zin_ui_dark_1|0]§!', { tip: 'Holds of the Dark Lands that have received the envoys of Nafeher.' });
+  dom.text('dark_2', 2, 'ZIN_DOM_T2_DARK2', 'Pact of Spoils: §Y[?ROOT.zin_ui_dark_2|0]§!', { tip: 'Holds bound by the Pact of Spoils.' });
+  dom.text('dark_3', 2, 'ZIN_DOM_T2_DARK3', 'Sworn to Nafeher: §Y[?ROOT.zin_ui_dark_3|0]§! (at most three)', { tip: 'Holds sworn to Nafeher. No more than three may swear.' });
 
   // ============================================================================================ the Watch on the Passes
   words('zin_watch_south_word', [
@@ -77,18 +87,15 @@ export async function buildPowersUi(staged, ctx) {
   for (const [k, flagName, label] of [['scout', 'zin_dominion_cd_scout', 'Send Scouts South'], ['word', 'zin_dominion_cd_word', 'Send Word to Parim'], ['forts', 'zin_dominion_cd_forts', 'Raise the Pass Forts']]) {
     words(`zin_watch_cd_${k}`, [[`has_country_flag = ${flagName}`, `ZIN_WATCH_CD_${k.toUpperCase()}_WAIT`, `${label}: §Owaiting§!`], [null, `ZIN_WATCH_CD_${k.toUpperCase()}_READY`, `${label}: §Gready§!`]], loc);
   }
-  const watch = new Panel({ prefix: 'zin_watch', gui: 'zin_watch', window: 'zin_watch_window', flag: 'zin_ui_watch_open', title: 'The Watch on the Passes', titleKey: 'ZIN_WATCH_TITLE', launcher: 'The Watch', launcherKey: 'ZIN_WATCH_BUTTON',
-    launcherTip: 'Open the scouts\' reports and the forts of the passes.', visible: 'zin_is_mirolon = yes', launcherVisible: 'zin_is_mirolon = yes', refresh: 'zin_dominion_ui_refresh_mirolon', w: 620, h: 500,
-    tabs: [{ key: 'ZIN_WATCH_TAB1', label: 'The Passes' }], markerSprite: reg('GFX_zin_watch_marker', 'scout_lantern') });
-  watch.text('proof', 1, 40, 118, 540, 24, 'ZIN_WATCH_PROOF', 'Proof: §Y[?ROOT.zin_mirolon_proof|0]§! of 100. Evidence that no court can laugh away.');
-  watch.gauge('proof', 1, 156, 'zin_ui_proof_x');
-  watch.text('proofmarks', 1, 40, 164, 540, 36, 'ZIN_WATCH_PROOFMARKS', 'At 25 the free realms hear of it. At 50 Parim\'s heeding grows likelier. At 75 the world cannot look away.', { font: 'small' });
-  watch.text('passes', 1, 40, 214, 540, 24, 'ZIN_WATCH_PASSES', 'The passes: §Y[?ROOT.zin_mirolon_passes|0]§! of 100. Fort level §Y[?ROOT.zin_mirolon_fort_level|0]§! of 6.');
-  watch.gauge('passes', 1, 252, 'zin_ui_passes_x');
-  watch.text('passmarks', 1, 40, 260, 540, 36, 'ZIN_WATCH_PASSMARKS', 'Every twenty points raises one more level of stone in each pass. At 60 Mirolon cannot be caught unready; at 80, with proof, it holds.', { font: 'small' });
-  watch.text('south', 1, 40, 312, 540, 24, 'ZIN_WATCH_SOUTH', 'The South: [ROOT.zin_watch_south_word]');
-  watch.text('cd_head', 1, 40, 356, 540, 24, 'ZIN_WATCH_CDHEAD', 'The three orders of the Watch:');
-  for (const [i, k] of ['scout', 'word', 'forts'].entries()) watch.text(`cd_${k}`, 1, 60, 388 + i * 30, 500, 24, `ZIN_WATCH_CD_${k.toUpperCase()}`, `[ROOT.zin_watch_cd_${k}]`);
+  const watch = new Panel({ prefix: 'zin_watch', gui: 'zin_watch', window: 'zin_watch_window', flag: 'zin_ui_watch_open', bar: 'watch',title: 'The Watch on the Passes', titleKey: 'ZIN_WATCH_TITLE', launcher: 'The Watch', launcherKey: 'ZIN_WATCH_BUTTON',
+    launcherTip: 'Open the scouts\' reports and the forts of the passes.', visible: 'zin_is_mirolon = yes', launcherVisible: 'zin_is_mirolon = yes', refresh: 'zin_dominion_ui_refresh_mirolon',
+    accent: 'GFX_zin_accent_watch', header: 'GFX_zin_header_watch', tabs: [{ key: 'ZIN_WATCH_TAB1', label: 'The Passes' }] });
+  watch.primary('proof', 1, 'ZIN_WATCH_PROOF', 'Proof: §Y[?ROOT.zin_mirolon_proof|0]§! of 100. Evidence that no court can laugh away.', 'At 25 the free realms hear of it. At 50 Parim\'s heeding grows likelier. At 75 the world cannot look away.', { fill: 'zin_ui_proof_fill', marks: MARKS.proof });
+  watch.gauge('passes', 1, 'ZIN_WATCH_PASSES', 'The passes: §Y[?ROOT.zin_mirolon_passes|0]§! of 100. Fort level §Y[?ROOT.zin_mirolon_fort_level|0]§! of 6.', 'Every twenty points raises one more level of stone in each pass. At 60 Mirolon cannot be caught unready; at 80, with proof, it holds.', { fill: 'zin_ui_passes_fill', marks: MARKS.passes });
+  watch.space(1, 4);
+  watch.text('south', 1, 'ZIN_WATCH_SOUTH', 'The South: [ROOT.zin_watch_south_word]', { lines: 2, tip: 'What the scouts can tell of the Ember Lands beyond the passes.', gap: LAYOUT.gap });
+  watch.text('cd_head', 1, 'ZIN_WATCH_CDHEAD', 'The three orders of the Watch', { font: 'small', gap: 4 });
+  for (const k of ['scout', 'word', 'forts']) watch.text(`cd_${k}`, 1, `ZIN_WATCH_CD_${k.toUpperCase()}`, `[ROOT.zin_watch_cd_${k}]`, { tip: 'An order of the Watch is ready, or waits until its last use has passed.' });
 
   // ============================================================================================ the Narrow Strait
   words('zin_strait_band_word', [
@@ -104,39 +111,40 @@ export async function buildPowersUi(staged, ctx) {
     ['has_country_flag = zin_leren_route_supremacy', 'ZIN_STRAIT_ROUTE_SUPREMACY', 'Road chosen: Mastery of the Strait.'],
     [null, 'ZIN_STRAIT_ROUTE_NONE', 'No road chosen yet.']], loc);
   const dues = [['Free Passage', 'standing +0.3 a month'], ['The Treaty Toll', 'standing steady'], ['Leren Dues', 'standing -0.2 a month'], ['Full Strait Dues', 'standing -0.4 a month'], ['The Iron Toll', 'standing -0.6 a month; every northern crown loses lean']];
-  dues.forEach(([n, d], i) => words(`zin_strait_due_${i}`, [[`check_variable = { zin_leren_toll_level = ${i} }`, `ZIN_STRAIT_DUE_${i}_ON`, `§Y> ${i}  ${n}§! (${d})`], [null, `ZIN_STRAIT_DUE_${i}_OFF`, `${i}  ${n} (${d})`]], loc));
+  dues.forEach(([n, d], i) => words(`zin_strait_due_${i}`, [[`check_variable = { zin_leren_toll_level = ${i} }`, `ZIN_STRAIT_DUE_${i}_ON`, `§Y> ${i}  ${n}§! (${d})`], [null, `ZIN_STRAIT_DUE_${i}_OFF`, `§g${i}  ${n} (${d})§!`]], loc));
   const leans = [['Eekedor', 'eekedor'], ['Tolvael', 'tolvael'], ['Molot', 'molot'], ["R'en", 'ren'], ['Mina', 'mina'], ['Dolpar', 'hold']];
   leans.forEach(([n, k]) => { const t = tag(n); words(`zin_strait_lean_${k}`, [
     [`${t} = { ${ge('zin_leren_lean', 50)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_1`, '§Gwith Sonargur§!'], [`${t} = { ${ge('zin_leren_lean', 15)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_2`, 'leaning to Sonargur'],
     [`${t} = { ${gt('zin_leren_lean', -15)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_3`, 'neither'], [`${t} = { ${gt('zin_leren_lean', -50)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_4`, '§Oleaning to Parim§!'], [null, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_5`, '§Rwith Parim§!']], loc); });
-  const strait = new Panel({ prefix: 'zin_strait', gui: 'zin_strait', window: 'zin_strait_window', flag: 'zin_ui_strait_open', title: 'The Narrow Strait', titleKey: 'ZIN_STRAIT_TITLE', launcher: 'The Strait', launcherKey: 'ZIN_STRAIT_BUTTON',
-    launcherTip: 'Open the treaty, the dues and the lead of Sonargur over the North.', visible: 'zin_is_lerendor = yes', launcherVisible: 'zin_is_lerendor = yes', refresh: 'zin_leren_ui_refresh', w: 620, h: 520,
-    tabs: [{ key: 'ZIN_STRAIT_TAB1', label: 'The Treaty' }, { key: 'ZIN_STRAIT_TAB2', label: 'The Dues' }, { key: 'ZIN_STRAIT_TAB3', label: 'The North' }], markerSprite: reg('GFX_zin_strait_marker', 'strait_chain') });
-  strait.text('standing', 1, 40, 118, 540, 24, 'ZIN_STRAIT_T1_STANDING', 'Strait standing: §Y[?ROOT.zin_strait_standing|0]§! (from -100, bitter, to 100, trusted).');
-  strait.gauge('standing', 1, 156, 'zin_ui_standing_x');
-  strait.text('standmarks', 1, 40, 164, 540, 20, 'ZIN_STRAIT_T1_MARKS', 'Marks at -40 (broken faith) and 40 (trusted).', { font: 'small' });
-  strait.text('band', 1, 40, 200, 540, 40, 'ZIN_STRAIT_T1_BAND', '[ROOT.zin_strait_band_word]');
-  strait.text('treaty', 1, 40, 252, 540, 40, 'ZIN_STRAIT_T1_TREATY', '[ROOT.zin_strait_treaty_word]');
-  strait.text('route', 1, 40, 304, 540, 24, 'ZIN_STRAIT_T1_ROUTE', '[ROOT.zin_strait_route_word]');
-  strait.text('torn', 1, 40, 350, 540, 48, 'ZIN_STRAIT_T1_QUESTION', 'The Question of the Strait may be asked after the Golden King dies, or from 4A 1751, or when the standing is at either extreme.', { font: 'small' });
-  strait.text('dues_head', 2, 40, 118, 540, 24, 'ZIN_STRAIT_T2_HEAD', 'The dues at Sonargur (the current level is marked):');
-  dues.forEach((_, i) => strait.text(`due_${i}`, 2, 60, 156 + i * 38, 500, 28, `ZIN_STRAIT_T2_DUE${i}`, `[ROOT.zin_strait_due_${i}]`));
-  strait.text('dues_note', 2, 40, 360, 540, 60, 'ZIN_STRAIT_T2_NOTE', 'Level 3 needs Full Strait Dues, level 4 the Iron Toll. The higher dues fill the treasury and cost the treaty and the Compact.', { font: 'small' });
-  strait.text('cohesion', 3, 40, 118, 540, 24, 'ZIN_STRAIT_T3_COHESION', 'Union of the two crowns: §Y[?ROOT.zin_leren_union_cohesion|0]§! of 100 (the Lerendor\'s North Question may rise at 25).');
-  strait.gauge('cohesion', 3, 156, 'zin_ui_cohesion_x');
-  strait.text('hegemony', 3, 40, 190, 540, 24, 'ZIN_STRAIT_T3_HEGEMONY', 'Lead over the North: §Y[?ROOT.zin_leren_hegemony|0]§! of 100. Northern crowns in the Compact: §Y[?ROOT.zin_ui_compact_members|0]§!.');
-  strait.gauge('hegemony', 3, 228, 'zin_ui_hegemony_x');
-  strait.text('hegmarks', 3, 40, 236, 540, 36, 'ZIN_STRAIT_T3_HEGMARKS', 'At 20 the Compact levies are full; at 40 mastery may be chosen; at 60 protection may be offered; at 80 the Leren Hegemony.', { font: 'small' });
-  leans.forEach(([n, k], i) => strait.text(`lean_${k}`, 3, 60 + (i % 2) * 270, 290 + Math.floor(i / 2) * 36, 260, 28, `ZIN_STRAIT_T3_${k.toUpperCase()}`, `${n}: [ROOT.zin_strait_lean_${k}]`));
+  const strait = new Panel({ prefix: 'zin_strait', gui: 'zin_strait', window: 'zin_strait_window', flag: 'zin_ui_strait_open', bar: 'strait',title: 'The Narrow Strait', titleKey: 'ZIN_STRAIT_TITLE', launcher: 'The Strait', launcherKey: 'ZIN_STRAIT_BUTTON',
+    launcherTip: 'Open the treaty, the dues and the lead of Sonargur over the North.', visible: 'zin_is_lerendor = yes', launcherVisible: 'zin_is_lerendor = yes', refresh: 'zin_leren_ui_refresh',
+    accent: 'GFX_zin_accent_strait', header: 'GFX_zin_header_strait',
+    tabs: [{ key: 'ZIN_STRAIT_TAB1', label: 'The Treaty', tip: 'The standing of the treaty and the road chosen.' }, { key: 'ZIN_STRAIT_TAB2', label: 'The Dues', tip: 'The dues taken at Sonargur.' }, { key: 'ZIN_STRAIT_TAB3', label: 'The North', tip: 'The union of the two crowns and the lead over the North.' }] });
+  strait.primary('standing', 1, 'ZIN_STRAIT_T1_STANDING', 'Strait standing: §Y[?ROOT.zin_strait_standing|0]§!', 'From -100, bitter, to 100, trusted. Marks at -40 (broken faith) and 40 (trusted).', { fill: 'zin_ui_standing_fill', marks: MARKS.standing, scale: 'signed' });
+  strait.text('band', 1, 'ZIN_STRAIT_T1_BAND', '[ROOT.zin_strait_band_word]', { lines: 2, tip: 'How each side of the strait reads the old alliance.', gap: LAYOUT.gap });
+  strait.text('treaty', 1, 'ZIN_STRAIT_T1_TREATY', '[ROOT.zin_strait_treaty_word]', { lines: 2, tip: 'Whether the Treaty of the Narrow Strait is in force.', gap: LAYOUT.gap });
+  strait.text('route', 1, 'ZIN_STRAIT_T1_ROUTE', '[ROOT.zin_strait_route_word]', { tip: 'The road Lerendor has chosen on the question of the strait.', gap: LAYOUT.gap });
+  strait.text('torn', 1, 'ZIN_STRAIT_T1_QUESTION', 'The Question of the Strait may be asked after the Golden King dies, or from 4A 1751, or when the standing is at either extreme.', { font: 'small', lines: 3 });
+  strait.primary('dues_head', 2, 'ZIN_STRAIT_T2_HEAD', 'The dues at Sonargur', 'The current level is marked. Higher dues fill the treasury and cost the treaty and the Compact.');
+  dues.forEach((_, i) => strait.text(`due_${i}`, 2, `ZIN_STRAIT_T2_DUE${i}`, `[ROOT.zin_strait_due_${i}]`, { tip: 'One level of the dues and the monthly change to the standing it brings.', gap: 8 }));
+  strait.space(2, 4);
+  strait.text('dues_note', 2, 'ZIN_STRAIT_T2_NOTE', 'Level 3 needs Full Strait Dues, level 4 the Iron Toll. The higher dues fill the treasury and cost the treaty and the Compact.', { font: 'small', lines: 2 });
+  strait.primary('cohesion', 3, 'ZIN_STRAIT_T3_COHESION', 'Union of the two crowns: §Y[?ROOT.zin_leren_union_cohesion|0]§! of 100', 'Lerendor\'s North Question may rise at 25.', { fill: 'zin_ui_cohesion_fill', marks: MARKS.cohesion });
+  strait.gauge('hegemony', 3, 'ZIN_STRAIT_T3_HEGEMONY', 'Lead over the North: §Y[?ROOT.zin_leren_hegemony|0]§! of 100. Compact crowns: §Y[?ROOT.zin_ui_compact_members|0]§!', 'At 20 the Compact levies are full; at 40 mastery may be chosen; at 60 protection may be offered; at 80 the Leren Hegemony.', { fill: 'zin_ui_hegemony_fill', marks: MARKS.hegemony });
+  strait.space(3, 4);
+  strait.text('lean_head', 3, 'ZIN_STRAIT_T3_LEANS', 'Where the northern crowns lean', { font: 'small', gap: 4 });
+  for (let r = 0; r < leans.length; r += 2) {
+    const [n0, k0] = leans[r];
+    const y = strait.text(`lean_${k0}`, 3, `ZIN_STRAIT_T3_${k0.toUpperCase()}`, `${n0}: [ROOT.zin_strait_lean_${k0}]`, { w: LAYOUT.cw / 2 - 8, tip: `Whether ${n0} leans to Sonargur or to Parim.`, gap: 4 });
+    if (leans[r + 1]) { const [n, k] = leans[r + 1]; strait.els.push(textBoxAt(strait, `lean_${k}`, LAYOUT.x + LAYOUT.cw / 2, y, `ZIN_STRAIT_T3_${k.toUpperCase()}`, `${n}: [ROOT.zin_strait_lean_${k}]`, `Whether ${n} leans to Sonargur or to Parim.`, 3)); }
+  }
 
   // ============================================================================================ files
   const out = [dom, watch, strait].map(p => p.render());
-  staged.text('interface/zin_mech_powers.gui', `${fmt(`guiTypes = {\n${out.map(o => o.gui).join('\n')}\n}`)}\n`);
-  staged.text('common/scripted_guis/zin_mech_powers.txt', `${HEADER}\n${fmt(`scripted_gui = {\n${out.map(o => o.scripted).join('\n')}\n}`)}\n`);
+  staged.text('interface/zin_mech_powers.gui', `guiTypes = {\n${out.map(o => o.gui).join('\n')}\n}\n`);
+  staged.text('common/scripted_guis/zin_mech_powers.txt', `${HEADER}\n${format(`scripted_gui = {\n${out.map(o => o.scripted).join('\n')}\n}`)}\n`);
   staged.text('common/scripted_localisation/zin_mech_powers.txt', `${HEADER}\n${scriptedLoc.join('\n\n')}\n`);
   for (const p of [dom, watch, strait]) for (const [k, v] of p.loc) loc.set(k, v);
-  for (const [name, art] of [...dom.sprites, ...watch.sprites, ...strait.sprites]) sprites.set(name, art);
-  staged.text('interface/zz_zin_mech_powers.gfx', `${HEADER}\n# Marker sprites of the three windows: each shows a picture of the icon catalog until the art pass draws its own.\nspriteTypes = {\n${[...sprites].sort(([a], [b]) => a.localeCompare(b, 'en')).map(([n, a]) => `\tspriteType = {\n\t\tname = "${n}"\n\t\ttexturefile = "gfx/interface/ideas/zin/${a}.dds"\n\t}`).join('\n')}\n}\n`);
   staged.add('localisation/english/zin_mech_powers_l_english.yml', loc.bytes());
-  return { windows: out.length, locKeys: loc.size, sprites: sprites.size, tags: { VOL, MIR, LER } };
+  return { windows: out.length, locKeys: loc.size, sprites: 0, tags: { VOL, MIR, LER } };
 }

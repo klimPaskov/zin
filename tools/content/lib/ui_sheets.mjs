@@ -9,6 +9,10 @@
 // lum      the design luminance class of the cell (dark, mid, light), so a row picks a cell of its sprite's class
 import { STYLE_LINE, MATERIALS, PALETTE, LIGHTING, CLAUSE_A4, FORBIDDEN_MOTIFS, GROUND } from './ui_vocab.mjs';
 import { CHROME_SHEETS } from './ui_chrome_sheets.mjs';
+import { readFileSync } from 'node:fs';
+
+// The top bar sheets of UI overhaul lane W1 (the values whose sockets were empty, the count badges): their data files are the source.
+export const TOPBAR_W1_SHEETS = ['icons-topbar-values', 'icons-topbar-badges'].map(id => JSON.parse(readFileSync(new URL(`../data/ui/sheets/${id}.json`, import.meta.url), 'utf8')));
 
 // The family preamble: every sheet of a family shares it, so they match (spec section 5).
 export const PREAMBLES = {
@@ -42,6 +46,7 @@ const c = (key, subject, lum = 'dark', extra = {}) => ({ key, subject, lum, ...e
 export const FIXED_SHEETS = [
   // The chrome sheets (panels, bars, buttons, small controls) are the themed sheets of lib/ui_chrome_sheets.mjs (UI overhaul C1).
   ...CHROME_SHEETS,
+  ...TOPBAR_W1_SHEETS,
   { id: 'ui-sockets', family: 'chrome_controls', kind: 'grid', aspect: '1:1', grid: [6, 6], ground: 'black', matte: 'outline',
     note: 'Cells 1 to 12 are the dark sockets and may keep a dark recess. Cells 13 to 16 are mid-tone and cells 17 to 20 are light: in those eight the whole recess of the socket, not only its rim, is painted in the lit tone named for the cell (cells 13 to 16 a light caramel-tan of about #B08050 with a bright bronze rim, never dark brown or walnut; cells 17 to 20 a pale cream-gold), so that the cell reads as mid-tone or as light from rim to centre, with an average brightness well above the dark sockets, and no black or dark brown shows inside the socket. The black of the sheet is only the ground between the cells.',
     cells: [

@@ -1,15 +1,25 @@
 # Heraldry of Aoaz
 
-**Status:** Draft. **Date:** 24 October 2026. **Requirement:** R-92 (acceptance A-92) and rule F4. **Phase:** art, after the roster redesign (R-21 to R-27).
-**Data:** [tools/content/data/world/heraldry.json](../../../tools/content/data/world/heraldry.json) (schema `zin-heraldry/2`), written by [tools/content/heraldry/build_heraldry.mjs](../../../tools/content/heraldry/build_heraldry.mjs) and tested by [build_heraldry.test.mjs](../../../tools/content/heraldry/build_heraldry.test.mjs).
-**Companions:** [01_art_pipeline.md](01_art_pipeline.md), [05_asset_manifest.md](05_asset_manifest.md), [../02_lore/05_world_bible.md](../02_lore/05_world_bible.md), [../00_foundation/03_peoples.md](../00_foundation/03_peoples.md), [../INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) (A1 to A4, K1 to K8), [../../design/roster.md](../../design/roster.md).
+**Status:** Revised for the K65 rulings (owner decisions of 25 October 2026, with the lead's review of the same day): the realm devices are the generated K65 designs in `k65_designs.mjs`, drawn from each realm's own culture, and every flag is a full-bleed single image. **Date:** 25 October 2026 (K65 revision; K53 revision 25 October; original 24 October 2026). **Requirement:** R-92 (acceptance A-92) and rule F4. **Phase:** art, after the roster redesign (R-21 to R-27).
+**Data:** [tools/content/data/world/heraldry.json](../../../tools/content/data/world/heraldry.json) (schema `zin-heraldry/2`), written by [tools/content/heraldry/build_heraldry.mjs](../../../tools/content/heraldry/build_heraldry.mjs) from the realm overrides of [tools/content/heraldry/k65_designs.mjs](../../../tools/content/heraldry/k65_designs.mjs) and the culture vocabulary of [k53_vocabulary.mjs](../../../tools/content/heraldry/k53_vocabulary.mjs); tested by [build_heraldry.test.mjs](../../../tools/content/heraldry/build_heraldry.test.mjs).
+**Design table:** [docs/plans/zin-art/flags_k65_design_table.md](../../plans/zin-art/flags_k65_design_table.md) (one row per realm and one row per culture, with the lead's rulings applied).
+**Companions:** [01_art_pipeline.md](01_art_pipeline.md), [05_asset_manifest.md](05_asset_manifest.md), [../02_lore/05_world_bible.md](../02_lore/05_world_bible.md), [../02_lore/10_fallen_realms.md](../02_lore/10_fallen_realms.md) (K64, the heirs of the fallen realms), [../00_foundation/03_peoples.md](../00_foundation/03_peoples.md), [../INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md), [../../design/roster.md](../../design/roster.md).
 
 ## Purpose
 
-The owner rejected the first flags, generated on 19 October 2026: they were drawn from a regional motif list (palm trees across the whole East, a skull for every Dark Lands realm, snowy peaks for the Cold Lands) and an ideology palette, so they said nothing about who lives under them.
-This spec replaces that method with a heraldic system: every culture and people has a grammar (palette, lines of partition, divisions, stock of charges with their meanings, ornament, marks of rank and form, kinship), every realm has a design record that states what its arms mean, and the build turns records into image jobs and checks the results.
-The roster has been redesigned (roster.json of 24 October 2026: 156 realms with real tags, fewer and smaller elven realms, new realms of dwarves, small folk, goblins, giants, gnomes, the Baelim and others), and this revision gives every realm of it one design, written from its history entry and its dossier row.
-The designs are proposed and stay provisional until the owner reviews the sheets.
+The owner rejected the first flags (19 October 2026), which were drawn from a regional motif list and an ideology palette, and then the K53 sheets, which still read as region-based symbols and everyday objects.
+This spec now describes the K65 system: every realm of the roster has one device that its own culture gives it, and the build turns the records into single full-bleed image jobs and checks the designs.
+
+Each record answers the five questions of section 1.1 in order (people, culture, faith, political form, history).
+A culture gives its hand (how a device is cut and stitched), its hem (the border row) and its ground (the field habit), with at most four flat tinctures and one metal thread; the realm gives its device, which is a founder's or oath beast, a crown, a weapon held as a sign, a sacred object, a ship of a seafaring culture, a mythic creature or a strong abstract mark, drawn from its own founding, dynasty, oath, custom or deed (docs/specs/02_lore/10_fallen_realms.md for the realms that are heirs of a fallen realm).
+
+Regional signs are the exception and must be justified in full: only a charge that shows the region's landscape, local fauna or goods as such is regional. Ten realms carry one (SEL, KIL, ANR, MAG, MSH, AUT, SEI, NRS, KEA, MIR), each with its justification in `k65_designs.mjs`.
+Animals that a culture reveres (founder's, oath or sacred beasts such as the horse of the Konori, the bear of Tolvael, the hound of Dunelaeth) are culture signs, not regional ones.
+
+Utensils, tools, vessels and structures are not devices.
+Weapons are allowed as signs when the realm's history ties them to the realm (a sword, spear-head, crossbow, halberd, war-axe or war-hammer).
+Ships are limited to five in all: Lerendor, Blackton, Poloto, Soyano and Fineger.
+No star, cross, fleur-de-lis, crescent, battlement, roundel, disc on a plain field, fire, raised fist, clasped hands, knotwork or equal bands carrying the device appears on any flag.
 
 ## How the data is made
 
@@ -123,7 +133,7 @@ Look-alikes are caught twice: by the vocabulary scan of every record and prompt,
 
 ### 1.5 Canon guards
 
-- **The twelve gods.** The twelve have names and arms in `pantheon.json` (an open eye beneath a circlet for Glernaen, a white bowl brimming over for Sulethe, a lit lamp with one flame for Lumae, three wavy bars beneath a cloud for Maelwen, a ring with a rising shoot for Vaelei, an open gate with a road-staff for Rasthel, a tower on a mount for Kerun, a sheaf under falling rain for Aurlan, a white standing stone bound with a cord for Ailtal, a flaming anvil for Irumas, a furled grey sail for Gaelor, a six-rayed star for Naisa). No national flag names a god or reproduces a god's device; the build scans every charge drawing for the twelve devices. Lamps with an open flame are therefore gone from national arms (lanterns, which are enclosed, remain), Aenor's bowl-lamp became the great bell of the Concord, and the dwarves of Kunhrim show their rock-cut gate instead of an anvil.
+- **The twelve gods.** The twelve have names and arms in `pantheon.json` (an open eye beneath a circlet for Glernaen, a white bowl brimming over for Sulethe, a lit lamp with one flame for Lumae, three wavy bars beneath a cloud for Maelwen, a ring with a rising shoot for Vaelei, an open gate with a road-staff for Rasthel, a tower on a mount for Kerun, a sheaf under falling rain for Aurlan, a white standing stone bound with a cord for Ailtal, a flaming anvil for Irumas, a furled grey sail for Gaelor, a six-rayed star for Naisa). No national flag names a god or reproduces a god's device; the build scans every charge drawing for the twelve devices. Lamps with an open flame are therefore gone from national arms (lanterns, which are enclosed, remain), Aenor's bowl-lamp became the lamp-crown of the High Kingdom, and the dwarves of Kunhrim show their rock-cut gate instead of an anvil.
 - No figure of Zol, Volgan, Afrit, Elzon, Horos or any named person.
 - No Afrit or Hidden Council sign on the Worshipdom or Aenor public arms (deny-list below); Afrit's true nature never appears on public arms, so the Ashen Throne shows Aenor's bell cracked and nothing of the power behind it.
 - **Zol's servant.** Kusven (formerly Edvoid) never appears on any flag, nor his dwelling of the black oval or his beasts. Zol's Mistake shows only the sigil of its emblem leader, The Will of Zol (broken concentric rings on the void, the same sigil as its leader's portrait); no realm is named after its leader, and no flag shows a leader.
@@ -131,7 +141,7 @@ Look-alikes are caught twice: by the vocabulary scan of every record and prompt,
 - Glo, Horos's blue sword and its shards are reserved charges: owner approval and a story gate are required.
 - No device of Elzon's Order (the Pale Regency) on any living realm; Nezer, which holds Elzon's old seat, shows its galley and nothing of him.
 - Nothing of the wider world (Erdu, Dunda, Haven, Cerio, Lao and the small neighbouring continent).
-- The Great Wall of Aenor is drawn as peaks, passes, snowlines and the ringed vale: Kingson bears the Pass Charter's key under the snow peaks, the Klungori Guard a crossbow on the rising pass, Kunhrim a gate cut into the rock, never a rampart or a gate-tower.
+- The Great Wall of Aenor is drawn as peaks, passes, snowlines and the ringed vale: Kingson bears a sword upright on a plain snowline-white field for the watch-families who took the forts, the Klungori Guard a crossbow on the rising pass, Kunhrim the Deep King's crown of Gromatrak, never a rampart or a gate-tower.
 - The Worshipdom is Afrit's realm in secret. Its public arms show the hostel's charity (a hand offering a loaf, the pilgrim's staff) and must never show an eye, a chain, ash, a mask, a veil, a serpent, horns, a fire-bird, two figures, a hidden face, a key in a hand, a closed door, a lamp with an open flame, or a crown before the King of the East.
 - No ring or set of twelve stands for the gods (Q-01 is answered by the names, not by a device).
 - Gala and the Sunhot realms are kept visually unrelated (different lines, no shared sun), because their relation is open; the God Forest Keepers draw a line of their own and no sun, because their kin is open.
@@ -198,12 +208,12 @@ The saltire, every cross and the canton are not in the vocabulary.
 
 | Form | How it shows |
 | --- | --- |
-| High kingdom | Aenor alone: the lamp-crown over the great bell on lake blue and no label, because Aen's own realm needs no difference |
+| High kingdom | Aenor alone: the lamp-crown alone on lake blue and no label, because Aen's own realm needs no difference |
 | Kingdom | The culture's crown: a lamp-crown (Lake Aenorans), a white felt (Steppe Riders), an oar-crown (Isle Houses), a ship-crown (Leren), a crown worn at the beast's neck (Free Crowns), an iron band (Dondor), an icicle crown (Coldor), a tine crown (Holdon), a torc (Gunwyn), a well-crown (Noris), a sea-crown (Naamis), a river-diadem (the river-kings), a lantern-crown (Ostoroth), a leaf circlet (Herrodon), an endless circlet (Gala), a tusk crown (Goldoroth), a crown of bone charms (Dun), the grown crown (the hobgoblin king of Burrikkrit), the hall-crown (the King of Demons), a captain's ring (Nondondor). Kingdoms of peoples without crowns show rank by their charge: Hirolon and Nivaros by the cairn and the throne, the Troll Forest by the boulder, Mirolon by the heron of its High Warden |
 | City-state | No crown; a divided field, the trade or craft charge over all (guild cities are quartered in two guild colours) |
 | Council (elected realms, moots, leagues of speakers) | No crown; sylvan councils add a narrow engrailed silver border (the Magical Forest, Lccimio) |
 | Clan | No crown; the clan beast or token |
-| Confederation or league | The primary charge tripled, two above one (Noleksun's three ploughshares, Kvittumm's three antlered heads, Adel's three charts); a realm whose charge already counts its members (Dulundur's four fires, Wahatud's four wells) or whose field is divided between its crowns (Nezer) says so in a form note, and quartered guild leagues show the guild colours instead |
+| Confederation or league | The primary charge tripled, two above one (Noleksun's three geese, Kvittumm's three antlered heads, Adel's three charts); a realm whose charge already counts its members (Dulundur's four fires, Wahatud's four wells) or whose field is divided between its crowns (Nezer) says so in a form note, and quartered guild leagues show the guild colours instead |
 | Enclave | An orle (an inner frame) in a tincture of the surrounding realm: Olodor in Aenor's lake blue, Hoorunoron in Dondor's iron grey, the Mushroom Forest in the rift coast's teal |
 | Forest domain | Charges shown with their roots; the ents draw the rooted line, the Baelim the gnarled line |
 | Boss-warrens | The boss's iron ring round the charge (Mustnom) |
@@ -217,7 +227,7 @@ The saltire, every cross and the canton are not in the vocabulary.
 
 ### 2.4 Charge classes
 
-Every charge has one class for the regional share check: beast, bird, sea_creature, shell, insect, plant, tree, landform, water, celestial, fire, building, ship, tool, weapon, vessel, garment, token, body_part, crown, sigil.
+Every charge has one class for the regional share check: beast, bird, sea_creature, shell, insect, plant, tree, landform, water, celestial, fire, building, ship, tool, weapon, vessel, garment, token, body_part, crown, sigil. Only a charge marked regional (the ten K65 regional signs, each justified in full) counts as a regional sign; a culture animal keeps its class and counts only in the class share.
 
 ## 3. Families and kinship
 
@@ -282,6 +292,11 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `reed_swan` | a swan swimming | the reed-shore estates of the lake |
 | `honey_skep` | a straw skep | the honey of the lake meadows |
 | `golden_seal` | a hanging gold seal on a cord | the Golden Charter a town buys from the court |
+| `clasped_hands` | two hands clasped at the wrist | the Concord of Aen's joined kingdoms, sworn hand to hand |
+| `rod_of_office` | a long tapering sceptre with a flared head | the staff the Harbour-Master of Safeton holds over the ships of the charter |
+| `gold_disc` | a plain gold disc ringed by a thin band | the hanging seal of the Golden Charter, drawn as a disc of the court |
+| `glass_goblet` | a broad glass goblet on a tall foot | the glassmakers of Pazoma and their clear work for the Concord |
+| `glass_drops` | a ring of six glass drops round a bare centre | the glassmakers of Pazoma and their clear work for the Concord |
 
 *Ornament:* Clean straight partitions, charges drawn like guild seals: centred, upright, generous margins. The label sits in chief; a Concord dominion adds the charter border of lamp gold.
 
@@ -304,6 +319,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `oak_bough` (restoration) | an oak bough with acorns | the woods held through the Third Age |
 | `hunting_horn` | a curled hunting horn | the rangers' horn calls |
 | `arrow_quiver` | a quiver of arrows | the bowyers and the longbow levy the moots may refuse |
+| `longbow` | a longbow strung upright | the arm of the Quiet Law, the bow of the woodland moots |
 
 *Ornament:* Woodland charges drawn whole, roots and fletching visible; nothing gilded except hazel gold.
 
@@ -321,7 +337,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `horse_head` | a horse's head | the oath sworn on a horse and carried to the sky |
+| `horse_head` | a flat horse's head silhouette in black felt, outlined in gold, with one curl of mane | the riders kingdom and the ford of the Aenar |
 | `horsetail_standard` | a horse-tail standard on a pole | the standard of the summer Gathering |
 | `steppe_saddle` | a saddle | the bride's family gives the saddle, the groom's the mare |
 | `felt_tent` | a felt tent seen from the side | the tents of the oath at the Gathering |
@@ -349,6 +365,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `ox_yoke` | an ox-yoke | land divided among sons, worked in common |
 | `boundary_stone` (restoration) | a boundary stone | the moot that settles field-bounds |
 | `sling` | a sling | the sling-militia of the marches |
+| `linked_rings` | a row of three linked iron rings | the three leagues of free farmers, joined by their oath |
 
 *Ornament:* Farm tools drawn plainly; the beacon is the culture's honour charge.
 
@@ -368,6 +385,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | --- | --- | --- |
 | `isle_lighthouse` | a lighthouse with a red fire | the lighthouse-shrines where the tide-houses name their dead |
 | `tide_oar` (restoration) | an oar upright | the house boats and the tide-court |
+| `sea_fire` | three tongues of sea-fire rising from one base | the fire of the Borrak lighthouse-shrine, kept lit for every fleet from the West |
+| `isle_crown` | a low crown of five points | the crown of the queen the eldest women of the five Isle Houses choose for life |
 
 *Ornament:* Sea charges stand on a calm base; the sash red appears once, as the lighthouse fire or a sash.
 
@@ -395,6 +414,10 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `quay_bell` (restoration) | a quay bell | the Singing Quay of Sonargur |
 | `joined_oars` | two steering oars joined by one ring | two coast crowns steered as one |
 | `cape_watch` | a watch-house on a low cape | the forts on the strait cape that the first prince of R'en built and refused to pay for |
+| `salt_ring` | a ring of six white salt-stones set round a bare centre | the salt shared at the table, which binds both sides of a quarrel in the Arbitration Court |
+| `refused_gate` | a plain gateway of two posts and no lintel | the watch-house gate that the first prince of R'en built on the strait cape and refused to pay for |
+| `joined_crowns` | two low crowns joined by one ring | the double crown of Keredor and Hellekton, whose court crowns every heir twice |
+| `twin_rings` | two rings joined one through the other | the double crown of Keredor and Hellekton, whose court crowns every heir twice |
 
 *Ornament:* Silver rather than gold; ships high-prowed with one square sail; no anchors and no fouled anchors.
 
@@ -415,7 +438,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `north_bull` | a bull standing | the strong hand and the cattle-wealth of the hills |
 | `badger` | a badger | the hill-fort dug in and stubborn |
 | `grey_crane` | a crane standing | the marsh lowlands and a careful watch |
-| `brown_bear` | a bear walking | the great forest and the oldest crown of the hills |
+| `brown_bear` | a bear standing on its hind legs, forepaws raised | the bear of Tolvael, the first of the free crowns of the North |
 | `night_owl` | an owl | the arbiters' patience |
 | `ash_tree` | an ash tree | the ash of the moot hill (canting on the name) |
 | `grey_wolf_north` | a wolf walking | the winter raids it endured and returned |
@@ -434,6 +457,11 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `alder` | an alder tree | the wet valleys |
 | `red_fox` | a fox | cunning in feud |
 | `linked_crowns` (restoration) | two small crowns linked | the crown-sharing marriages that join neighbouring kingdoms |
+| `raised_wings` | a pair of wings raised high | the crane that watches over the marsh of Molot, and the fortress line that took the raiders |
+| `three_arch_bridge` | a bridge of three round arches | the toll-bridge at Sirtum, which keeps Tolhon at a distance from everyone else |
+| `hill_crown` | a small plain crown with a single point | the hill crown of Heodwa, Nuatax and Agniy under the Hill Pact |
+| `notched_crown` | a crown whose rim is cut with notches, like a mine stope | the crown that the king of Mina earns by working a season in the Delvings |
+| `lake_fires` | four fires set in a row | the four walled towns round the deep lake of Dolpar |
 
 *Ornament:* One beast or one tree, whole, walking or standing; the crown at its neck or in its branches; Aen's label in chief.
 
@@ -455,6 +483,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `feud_chain` | a chain of three links | the blood-price: a death paid in iron or in blood |
 | `hearth_iron` (restoration) | a forged bar with ring ends | the bar of iron kept at every hearth and passed to the eldest son |
 | `stockade_gate` | a timber gate | the high stockades of the forest holds |
+| `iron_fist` | a clenched iron fist | the Brute-Kings and the insult taken for a boast |
+| `sail_bar` | a single square sail hung from a bar | the harbour towns of Blackton and their black sail |
 
 *Ornament:* Heavy iron-bound charges, square and blunt.
 
@@ -556,6 +586,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `hearth_ring` (restoration) | a fire inside a ring of stones | the hearth-law: no feud may be carried past a shared fire |
 | `winter_wolf` | a wolf standing | the long winter hunts |
 | `winter_sheaf` | a sheaf of winter rye bound with a white cord | the crown granaries whose bread holds the clans through the long winters |
+| `rye_bundle` | a bundle of rye-stalks bound with a white cord | the crown granaries whose bread holds the clans through the long winters |
 
 *Ornament:* No snowflakes (a regional cliché); the hearth is the culture's honour charge.
 
@@ -565,7 +596,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 ### Ice Clans (`ice_clans`)
 
-*People:* men. *Family:* Boreal men. *Language:* coldic. *Faith:* winter_hearth. *Line:* indented. *Realms:* 11 (Horidor, Yeldenne, Fearno, Austklev, Worlond, Holdon, Xison, Pertolor, Omar, Portogalor, Orewele).
+*People:* men. *Family:* Boreal men. *Language:* coldic. *Faith:* winter_hearth. *Line:* indented. *Realms:* 10 (Horidor, Fearno, Austklev, Worlond, Holdon, Xison, Pertolor, Omar, Portogalor, Orewele).
 
 *Palette:* snow `#f0f2f2` (M); ice `#bcc6cf` (M); hide brown `#6b5a48` (C); fjord blue `#3f5870` (C); bone `#ddd3bd` (M); berry red `#8e3a3a` (C); lichen green `#6b7a52` (C); soot `#2e2f33` (C); amber `#c89a3a` (M).
 
@@ -601,10 +632,16 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `gap_cairn` | a cairn in a mountain gap | the cairns of the Neridor Gap road, where every western cart pays the cairn-due |
 | `road_loaf` | a round loaf set on a stone | the loaf left each Long Dark at the start of the Silent Road |
 | `waystation` | a turf waystation with a smoking roof | the forest stages of the Neck Road kept stocked with fodder and dry wood |
-| `fair_pole` | a tall fair-pole hung with pelts | the snowline fair at Fentene where men, yeti and goblins trade |
+| `fair_pole` | a tall pole with a crossbar, hung with three pelts | the fair-pole of Fentene, which keeps the snowline fair |
 | `vale_ewe` | a ewe standing | the one valley of the north where sheep do better than reindeer |
-| `iron_bloom` | a rough bloom of iron held in tongs | the bog-iron and rock-ore of the Orewell lowland |
+| `iron_bloom` | a bloom of raw iron set on a ring | the iron the Orewell lowland digs and sells by the cartload |
 | `amber_drop` | a drop of amber | the amber traded on the high road |
+| `gap_stones` | three stones piled one on another in a gap | the cairn of the Neridor Gap road |
+| `harpoon_bundle` | three harpoons bound together with one cord | the steadings that refused both Fannarn and Coldor and keep their own moot |
+| `turf_roof` | a turf roof with a smoke-hole in its crown | the turf waystation of the Neck Road, smoking on the ridge |
+| `wool_skein` | a skein of pale wool wound on a bar | the wool-market valley of the north |
+| `clenched_fist` | a clenched fist | the oath of the one clan that yields to nobody |
+| `ice_axe` | an ice-axe upright | the sealers of the Frozen Sea and the last raider of their line |
 
 *Ornament:* One clan beast or clan token, drawn heavy and dark against snow, or pale against hide; no snowflakes, no igloos.
 
@@ -623,10 +660,11 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
 | `stone_bridge` | a stone bridge of three arches | the bridge-towns and their water-gates |
-| `ford_stones` (restoration) | three stepping stones | the ford kept clear by the wardens |
+| `ford_stones` (restoration) | three stepping stones in a row across a ford | the stepping stones of the ford of Arligon |
 | `river_eel` | an eel | the river's keeper spirit is fed at the flood |
 | `warden_hat` | a wide-brimmed hat | the ford-wardens' wide hats |
 | `ferry_raft` | a ferry raft on its rope | the ferry-wardens who keep every crossing of the peninsula's rivers |
+| `ferry_ring` | a ring hung on a rope | the ferry-wardens' rope across the river |
 
 *Ornament:* Bridges and fords drawn from the side, water below.
 
@@ -656,6 +694,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `corded_bale_w` | a corded bale | the merchant-adventurers |
 | `guild_book` (restoration) | a book bound with a cord | contracts are sworn on the guild book, not on a god |
 | `paired_seals` | two wax seals hanging side by side from one cord | two consuls chosen each year by the great houses, who seal together |
+| `league_rings` | two rings linked on one cord | the league the towns of the Kulolo swore on their guild book |
+| `fuse_flame` | a flame at the end of a fuse-cord | the powder the workshops of Bolbin sell to any buyer |
 
 *Ornament:* Bright guild colours; one craft tool, drawn like a guild sign; never square-and-compasses, cogwheels or crossed tools (real-world emblems).
 
@@ -677,6 +717,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `war_drum` (restoration) | a war drum | the Unfurling and the Last Muster |
 | `sealed_contract` | a sealed roll | the contract-book |
 | `company_banner` | a square company banner on a halberd shaft | the Banner-Oath: the banner is the company's soul, and a fallen banner ends a company |
+| `seal_ring` | a signet ring set with a plain stone | the sealed contract-book of the companies |
 
 *Ornament:* The bordure compony (a border of alternating livery blocks) is the companies' mark.
 
@@ -698,19 +739,19 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `sounding_lead` | a sounding lead on its line | the soundings of every reef |
 | `coral_reef` | a branching coral | the reef-spirits that spared the first pilot |
 | `pilot_lantern` | a pilot's lantern | the harbour pilots |
-| `rolled_chart` | a rolled chart | the chart-house archives |
+| `rolled_chart` | a chart rolled and tied with a cord | the chart-houses that copy every chart in one house at Sanderz |
 | `astrolabe_ring` | a ring with a sighting rule across it | star-sighting |
 | `sand_glass` | a sand-glass | the watch kept at sea |
-| `reef_buoy` | a buoy | the marked channels |
+| `reef_buoy` | a ringed float on a pole | the buoy that marks the banks the broker-captains of Ese mediate |
 | `rope_coil` | a coil of rope | the rope-walks |
 | `seahorse` | a seahorse | the sheltered lagoons |
 | `green_turtle` | a turtle | the turtle beaches |
 | `flying_fish_t` | a flying fish | the open-water crossings |
-| `reading_lens` | a round lens of ground glass | the lens-grinders (canting on The Lens) |
+| `reading_lens` | a great round lens with rays | the great lens of the Lamp-House, which keeps the northern passages lit |
 | `chart_house` | a chart-house on stilts | the stilt harbours |
 | `tern` | a tern | the outer islets |
 | `sperm_whale` | a whale | the whale grounds |
-| `strongroom_key` | a great strong-room key | the strong-room where the chart-houses keep their treasury |
+| `strongroom_key` | a great ring with a single bit | the key of the strong-room where the chart-houses keep their treasury |
 | `shore_fire` | a fire on a shore rock | the shore-fires the wreck-lord may light or leave dark |
 
 *Ornament:* Navigation and reef charges drawn like chart vignettes; the chart-rose has sixteen thin points and never four (another military emblem).
@@ -738,7 +779,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `cormorant` | a cormorant with wings spread to dry | the diver that takes and returns |
 | `shark_tooth` | a shark's tooth | a raider's trophy |
 | `tide_bell_c` | a bell hung from a post in the surf | the tide-courts' bell |
-| `black_sail` | a ship under a black sail | the Black Flag Night |
+| `black_sail` | a black sail hung from a bar | the captain who took the strait-place harbour of Straton |
 | `boarding_pike` | a boarding pike | the boarding parties |
 | `open_shackle` | an open shackle | a captive released on ransom |
 | `masthead_lantern` | a masthead lantern | the night raids |
@@ -749,7 +790,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `coin_purse` | a purse spilling coins | tribute from the chart-islands |
 | `storm_sail_c` | a torn square sail blown out by the wind | the stormiest isles (canting on the Windy Lands) |
 | `fishing_kite` | a fishing kite on its line | the kite-fishers of the windward capes |
-| `mountain_cove` | a cove under a mountain | the coves no fleet can find without a Benan pilot |
+| `mountain_cove` | a cove-arch under a peak | the cove under the mountain that no fleet can find without a Benan pilot |
 
 *Ornament:* Black and red with ransom gold; no skull, no crossed bones, no cutlass or curved sabre (real pirate and regional clichés).
 
@@ -767,7 +808,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `well_head` (restoration) | a well-head with rope and bucket | a well is a promise from the earth; the king is chosen by the well-lords |
+| `well_head` (restoration) | a plain disc with seven rays fanning from its lower edge | the Seven Wells of Furvior |
 | `shared_bowl` | a bowl brimming with water | sharing water makes kin |
 | `sandgrouse` | a sandgrouse | the bird that carries water to its young |
 | `water_skin` | a water-skin | the Salt Road crossings |
@@ -795,19 +836,20 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
 | `honest_scale` (restoration) | a balance | an honest weight pleases the New Gods; a false weight is the worst crime |
-| `struck_coin` | a bronze coin stamped with a balance | the Pact's coinage |
+| `struck_coin` | a bronze disc with a plain rim | the bronze of the caravan cities |
 | `milestone` | a milestone | the caravan roads |
 | `wax_seal` | a hanging wax seal | contract law with written seals |
-| `nested_weights` | nested cup-weights | the weighing halls |
+| `nested_weights` | three rings nested one within another | the weights of the market of Mostok |
 | `measuring_rod` | a measuring rod | the ell of the cloth markets |
 | `corded_bale` | a corded bale | the caravans' loads |
 | `counting_frame` | a counting frame | the Treasurer's purse |
 | `toll_bar` | a toll bar across a road | the road tolls |
 | `colonnade` | a colonnade of three columns | the colonnaded market streets |
-| `furnace_cone` | a smoking mountain cone | the Drak Furnace, under which the forge-houses swore the Furnace Oath |
-| `powder_cask` | a bound powder cask | the black powder the East learned at Drak |
-| `tapped_trunk` | a tall hardwood trunk with a tapping cup | the hardwood and the jungle gum that seals casks and ships' seams |
-| `tithe_bowl` | a heaped tithe-bowl held up | the fire-tithe paid every year without fail |
+| `furnace_cone` | a cone-shaped furnace with a flame at its mouth | the smoking mountain cone of Drak |
+| `powder_cask` | a spark in a ring of powder | the powder cask of Drak |
+| `tapped_trunk` | a drop of resin on a bar | the tapping of the hardwood trunks of Obmi |
+| `tithe_bowl` | a heaped ring of grain-ears | the tithe of the caravan princes |
+| `bench_seal` | a banker's seal hung on a cord | the sealed bond of the bench of houses that built the Gold Road from the bronze mines to the sea |
 
 *Ornament:* Bronze charges drawn like market weights and seals; no coins with square holes, no images on coins.
 
@@ -833,9 +875,9 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `kingfisher` | a kingfisher | the river's bird |
 | `reed_bundle` | a bound bundle of reeds | the reed boats and mats |
 | `canal_sluice` | a canal sluice | the canal quays |
-| `shut_pass` | two mountains with a bar across the pass between them | the passes the mine-lords shut against Volgan's beaten soldiers in 2A 12 |
-| `ash_sheaf` | a sheaf of grain grown from black ash | the ash-grown grain of the Plutondo Vents |
-| `fair_horse` | a horse standing | the war-horses and the great horse-fair of Furtonlin |
+| `shut_pass` | two mountains with a bar across the pass between them | the pass of Erco that the river kings shut |
+| `ash_sheaf` | a sprout of grain rising from ash | the grain grown from black ash in the flood silt |
+| `fair_horse` | a horsehair pennant on a pole | the fair of Delbiz |
 
 *Ornament:* Every river-king's arms carry the king's river as a narrow wavy bendlet; no eyes, no lotus, no winged sun disc, no papyrus (real-world Egyptian marks).
 
@@ -853,7 +895,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `quay_lantern` (restoration) | a lantern on a pole | the lantern quays of the Lake Road |
+| `quay_lantern` (restoration) | a flame on a pole | the lantern of the lake quays |
 | `barbel` | a barbel | the lake fish |
 | `stilt_house_l` | a house on stilts | the stilt towns |
 | `fish_net_l` | a net | fishers and merchants pray together at the water |
@@ -862,7 +904,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `perch` | a perch | the lake's common fish |
 | `lake_skiff` | a skiff | the lake ferries |
 | `cattail` | a cattail | the reed shores |
-| `harvest_basket` | a basket heaped with grain | the three years of harvests that bought the towns' rights, and the granary of the East |
+| `harvest_basket` | a heap of grain in a ring | the harvests the fishers and farmers of Gonnois bought their rights with |
 | `market_gate` | a market gate | the walled market where the Lake Road crosses the Gold Road |
 
 *Ornament:* Silver and lantern amber; fish drawn by kind, never generic.
@@ -900,10 +942,10 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `wave_tally` (restoration) | a notched tally stick | each island counts its dead as waves on the reef |
+| `wave_tally` (restoration) | a spiral conch shell | the tally the caves of the south keep for the dead |
 | `stilt_house_s` | a thatched house on stilts | the stilt houses on the reef |
-| `fish_trap` | a woven fish trap | the reef fishing |
-| `shell_necklace` | a shell necklace | the necklaces of the feasts |
+| `fish_trap` | a weir of three stakes in a curve | the fish trap the villages lift only by day |
+| `shell_necklace` | a ring of carved shells | the shell the villages carve for the ring-council of the Yong lagoon |
 | `feast_bowl` | a carved feast bowl | land shared at feasts |
 | `net_float` | a net float | the lagoon nets |
 | `paddle` | a carved paddle | the island crossings |
@@ -920,8 +962,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `dolphin_s` | a dolphin | the companions of the boats |
 | `hermit_crab` | a hermit crab | a small island in a borrowed shell |
 | `wreck_house` | a long house on stilts with its door open | the house kept for the shipwrecked |
-| `rice_terrace` | three stepped rice terraces | the rice that grows on every slope that will hold it |
-| `storm_drum` | a tall slit drum | the drummers who carry the first warning of every storm |
+| `rice_terrace` | three stepped terraces on a rising slope | the terrace council of Kea, Agla and the Rice Islands |
+| `storm_drum` | three strokes of a slit drum, one above another | the drum that carries the first warning of every storm to the Great Isle |
 
 *Ornament:* No palm trees, no canoe over a rising sun over waves, no frigate bird over a sun, no stars (all real-world island flags); shell and reef work instead.
 
@@ -960,10 +1002,10 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
 | `song_bow` | a song-bow: a lyre of two curved horns with three strings | the Kindred Song: the world was sung and to listen well is a duty |
-| `living_tree` | a green-leaved tree with its roots | the cities woven into living trees |
+| `living_tree` | a flat heraldic tree of seven leaves in a fan on one straight trunk | the tree of the Singing Grove |
 | `willow_leaf` | a long willow-shaped leaf | the leaf of the Magical Forest |
 | `silver_bridge` | a filigree bridge | the silver bridges between the tree-cities |
-| `precedent_book` | a book of precedents bound in green | the council's book renewed each century |
+| `precedent_book` | a ring of seven small rings | the elected council of the Magical Forest and its precedents |
 | `seedling` (restoration) | a seedling with two leaves | a house, not a person, inherits |
 | `forest_heron` | a heron | the heron of the forest pools (canting on Heron) |
 
@@ -988,6 +1030,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `dragon_wing` | a single dragon wing | the dragons that guard the halls |
 | `dragon_egg` | a dragon egg | the brood of the roosts |
 | `hall_stair` (restoration) | a long stair cut into a hillside | halls cut into hillsides |
+| `hill_road` | a silver bar across the field | the road west to the lost kin, which the hill queens still remember |
 
 *Ornament:* Dragon parts (scale, wing, egg, roost), never a whole dragon passant (real-world Welsh and Bhutanese flags).
 
@@ -1026,7 +1069,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `mountain_pass` (restoration) | two peaks with a path between them | the Nolorim Passes |
+| `mountain_pass` (restoration) | a pass between two snow-capped points | the Nolorim East Pass kept by the pass-wardens |
 | `pass_token` | a carved pass-token on a cord | the token every courier shows at the gate |
 | `warden_bow` | a long bow | the wardens' bows |
 
@@ -1053,6 +1096,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `gannet` | a gannet diving | the sea fishing |
 | `rift_wave` | a breaking wave | the rift sea |
 | `archive_scroll` | a rolled scroll tied with a silver cord | the Archive: the names, letters and songs of the elves who died in the Alliance's wars |
+| `silver_circlet` | a silver circlet of five points | the Archive of the loremasters, which keeps the names and songs of the elves who died in the Alliance's wars |
 
 *Ornament:* Shore towers with lantern roofs; a league of house-towers triples its charge.
 
@@ -1132,10 +1176,11 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `pilgrim_staff_s` | a tall pilgrim's staff | the pilgrims' road |
 | `noon_flame` | a single tall flame | the flame that names the realm (canting on Flame) |
 | `sleeping_hound` | a hound asleep | rest and dreams for the visitor (canting on Dreamland) |
-| `spindle_skein` | a tall spindle wound with a skein | the weavers of the Cape of Elvana |
+| `spindle_skein` | a skein of thread wound on a ring | the weavers of the cape sanctuary of Elvana |
 | `shallows_crane` | a crane wading | the shrine of the shallows on Sun Lake and its cranes |
 | `seen_wings` | a pair of wings seen from below | the wings seen over the terraces on a still day, kept in the Roll of Wings |
 | `uncut_stones` | three standing stones of uneven height | the standing stones older than any Sunhot record, kept uncut among the quarries |
+| `shallows_reeds` | three reeds bound at the head | the shrine of the shallows on Sun Lake |
 
 *Ornament:* Tall, narrow charges; sanctuary things and the birds, beasts and plants of the sanctuary gardens; at most one sun disc in the culture; no weapons.
 
@@ -1170,7 +1215,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `pearl_comb` | a comb set with pearls | the pearl trade |
 | `silk_kite` | a silk kite | the festival kites |
 | `lagoon_skiff` | a lagoon skiff | the ferries between the isles |
-| `smoking_isle` | an island peak trailing smoke | Hol, whose Great Volcano threw ash over every island at once |
+| `smoking_isle` | a plume of smoke rising from one cone | Hol, whose Great Volcano threw ash over every island at once |
 | `white_ship` | a tall white ship | the white ships of the south and the hulls of Gala's court |
 
 *Ornament:* Sanctuaries on shore terraces; no sun over waves (a real island flag), no dragon of the eastern kind.
@@ -1195,6 +1240,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `challenge_ring` | a ring of upright stakes | the ring where a Warking is broken by a stronger challenger |
 | `war_horn_o` | a curved war-horn | the muster of the clans |
 | `cleft_ridge` | a black ridge split by a narrow gap | the dark gate in the ridge (canting on Dark Gate) |
+| `cleft_gate` | a gate split down its middle by a narrow gap | the only pass from the Goldoroth arm to the south, which the gate-hold tolls |
 
 *Ornament:* Black, red and ash; one skull at most in all the Dark Lands; no eye, no burning eye.
 
@@ -1215,7 +1261,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `anvil` (restoration) | an anvil | the forge in every gate |
 | `forge_tongs` | forge tongs holding a glowing bar | iron worked for Dondor and for sale |
 | `ingot_stack` | a stack of ingots | iron prices set at the Free Moot |
-| `forge_hammer` | a single forge hammer | the smith-chiefs |
+| `forge_hammer` | a war-hammer head upright, without its haft | the iron hills that Bredesk of the Brakgul made one hold |
 | `crucible` | a crucible pouring | the smelters |
 | `ore_pick` | an ore pick | the iron hills |
 | `iron_chain` | an iron chain | tolls and captives |
@@ -1224,6 +1270,9 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `fen_reeds` | a bundle of fen reeds | the reed-council of the fens |
 | `four_fires` | four flames rising from one hearth | the Four Fires lit in one hall at Lesderle |
 | `charcoal_clamp` | a smoking charcoal clamp | the charcoal of the Fonoor Forest |
+| `reed_knot` | three upright strokes bound together at the head | the reeds of the fens, where the reed-council lives on eels and peat |
+| `smoulder` | a low smouldering fire | the charcoal clamps of the Fonoor Forest |
+| `reed_crown` | a low crown of three pointed reeds | the reeds of the fens, where the reed-council lives on eels and peat |
 
 *Ornament:* Single smithing tools; no hammer crossed with any blade or sickle, no cogwheel.
 
@@ -1243,7 +1292,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | --- | --- | --- |
 | `bone_charm` | a bone charm on a cord | the luck of the hold |
 | `holed_stone` (restoration) | a holed stone | the lucky stones of each hold |
-| `casting_bones` | three casting bones | the Bone-Casting |
+| `casting_bones` | three casting bones on a cord | the bones that decide whose winter it is on the moor |
 | `swing_gate` | a gate hung to swing both ways | the toll-king who swings to whichever neighbour pays best |
 
 *Ornament:* Charms and luck, never priests' signs.
@@ -1287,6 +1336,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `warren_trap` | a spring trap | the trap-rooms of the warren |
 | `wolf_mount_head` | the head of a riding wolf | they ride wolves to move quickly on the surface (the card's word is under Q-14) |
 | `powder_pouch` | a bulging powder pouch with a smouldering cord | the best powder of the Dark Lands, sold to whoever pays most |
+| `warren_fuse` | a flame at the end of a fuse-cord | the powder the best powder-makers of the Dark Lands sell to whoever pays |
 
 *Ornament:* Lamps and gold in the dark; never a whole wolf-rider.
 
@@ -1304,7 +1354,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `boulder` | a great boulder | the stone that feeds them |
+| `boulder` | a great boulder | the great boulder of the troll king |
 | `troll_club` | a knotted club | the challenge that decides who leads |
 | `bog_pool` | a bog pool | the bogs where they lay their dead |
 | `border_heap` (restoration) | a heap of stones | the stone-heaps at the tribe borders |
@@ -1346,6 +1396,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | --- | --- | --- |
 | `ice_throne` | a throne of ice | the Ice-Throne of the Frost-King of Nivaros |
 | `frost_cairn` (restoration) | a cairn of ice blocks | the cold honoured as an old spirit of ice |
+| `ice_sun` | a sun with rays cut in ice | the Frost-King and the glacier that keeps its own time |
 
 *Ornament:* Huge, simple ice shapes.
 
@@ -1359,11 +1410,12 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* yeti white `#e6eef4` (M); hum blue `#8a9cb2` (M); rock slate `#3e4c5a` (C); dusk violet `#5e5476` (C).
 
-*Divisions:* base, per_chevron.
+*Divisions:* base, per_chevron, plain, bordure.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
 | `hum_cave` (restoration) | a dark cave mouth in a white peak | the Hum-Caves where the mountain's hum is answered at dusk |
+| `cave_arch` | a round-headed cave-mouth, dark within | the cave that answers the Eldest's song |
 
 *Ornament:* Three peaks; the hum is drawn as a cave answering, never as radiating arcs.
 
@@ -1443,6 +1495,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `obsidian_blade` | an obsidian blade | oaths of blood and ash |
 | `brine_cauldron` | a cauldron of brine over fire | salt and sulphur made into black powder |
 | `lava_galley` | a galley on a wave of fire | the galleys that cross the Sea of Lava, which only demons sail |
+| `maw_fire` | a fire rising from the sulphur of the Maw | the sulphur of the Maw that makes the Dominion's black powder |
+| `burning_gate` | a broken gate with fire through its arch | the broken Burning Gate on the coast of Nezer |
 
 *Ornament:* Original pact sigils; a pentagram only inside a demon sigil (owner, 24 October 2026, used once, by the Nether), never a cross or an inverted cross, never a goat in a star.
 
@@ -1468,6 +1522,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `crossbow` | a crossbow | the crossbows of the sworn pass companies |
 | `names_stone` | an upright stone with notches | the stone on which the dead of the passes are named |
 | `ringed_vale` | a ring of hills round a green vale | the ringed Kingson Vale, held through the whole Third Age under the Order's forts |
+| `vigil_flame` | a tall vigil flame between two pale points | the fire of the pass that is never let out |
+| `pass_spear` | a spear upright, its point crowned by a ring | the sworn pass companies and their watch on the South Pass |
 
 *Ornament:* Peaks, passes, snowlines and the ringed vale: the Great Wall of Aenor is a natural range, so the arms never show masonry, gate-towers, battlements or brick courses.
 
@@ -1514,6 +1570,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `toll_house` (restoration) | a squat toll-house on a quay | the toll-house the Order burned twice and never kept them out of |
 | `joined_rings` | two plain rings linked | the Leren captain and the Aenoran ferry-house married into one house |
 | `boathook` | a boathook | the ferrymen of the narrowest crossing |
+| `toll_ring` | a heavy toll-ring with a bar through it | the toll-ring that stretches across the narrow strait |
 
 *Ornament:* Charges of the crossing drawn fesswise, from shore to shore.
 
@@ -1531,7 +1588,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `plough_furrow` (restoration) | a ploughed furrow running across the field | the one fertile vale under the Herrodon rim, ploughed by the descendants of the Third Age refugees |
+| `plough_furrow` (restoration) | a furrow of three lines ploughed across the field | the one fertile vale under the Herrodon rim |
 | `reeve_staff` | a reeve's staff with a hooked head | the Reeve chosen at the harvest moot |
 | `oat_sheaf` | a sheaf of oats | the grain Teste sends to Herrodon and Andos Enda |
 | `ash_leaf` | a single ash leaf | the old ranger speech the valley still keeps |
@@ -1555,7 +1612,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `antlered_head` | a reindeer's head with full antlers | the herd, which is the clan's wealth |
 | `hide_tent` | a hide tent of the herd-camps | the camps that move with the herds between the giants' foothills and the Orewell lowland |
 | `herd_bell` | a herd bell | the lead reindeer of a clan's herd |
-| `moot_fire` (restoration) | a fire in a ring of turf | the winter moot at Esrom each Long Dark |
+| `moot_fire` (restoration) | a moot-fire in a plain ring | the winter moot fire of the reindeer clans at Esrom |
 | `ice_road_cairn` | a cairn on a frozen road | the old ice-roads the clans keep |
 
 *Ornament:* Herd charges, drawn whole and plain; nothing on the arms speaks of anything but herds, weather and the moot.
@@ -1621,6 +1678,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `stone_harbour` (restoration) | a stone harbour mole | the harbour at Nodoqood that every boat of the isle can use |
 | `fishing_skiff` | a fishing skiff | the boats of the fishing families |
 | `net_floats` | a net hung with floats | the families who chose one lord of the boats |
+| `net_ring` | a ring of net-floats strung on a cord | the cod the families of Orato sell to the Naamis ship-masters |
 
 *Ornament:* Plain fishing charges; nothing of what the fishermen say they saw among the northern islands.
 
@@ -1640,7 +1698,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `rift_ferry` | a flat ferry-boat with a square sail | the ferries the Alerhic boatmen ran across the Rift Narrows for centuries |
+| `rift_ferry` | a ferry-rope stretched between two posts | the ferry crossing between the two shores of the Rift Narrows |
 | `ferry_rope` | a ferry-rope drawn between two posts | the crossing itself |
 | `stilt_quay` (restoration) | a quay-house on stilts | the quay-houses whose heads sit as the port's council |
 | `pilot_pole` | a pilot's sounding pole | the pilots of the Narrows |
@@ -1683,7 +1741,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `four_wells` | four well-heads set in a ring | the four strings of wells round Biir-Raab, kept by the Well-Moot |
+| `four_wells` | four well-heads set in a ring | the Well-Moot that the clan-mothers swore at Biir-Raab |
 | `offered_cup` (restoration) | a cup held out | the water always offered to refugees |
 | `well_bucket` | a well-bucket on its rope | water sold by the skin to caravans that are not refugees |
 | `dune_staff` | a guide's staff | the guides who cross the dune sea without fear |
@@ -1709,6 +1767,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `kept_beech` | a beech in full leaf over a low grassed mound | the household that would not leave the forests where its dead lay |
 | `silver_road` | a silver road winding up to a pass between two hills | the road to the Kingson Pass that the household guides travellers on |
 | `guide_lantern` (restoration) | a guide's lantern on a staff | the guides of the Kingdom Forests |
+| `guide_flame` | a single flame standing on a plain base | the guide-lantern of the household that would not leave the forests |
 
 *Ornament:* Silver in every achievement; never a crowned tree (another fiction's white tree and crown).
 
@@ -1732,6 +1791,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `gift_scale` | a single shed dragon scale | the scales the dragons shed, which the keepers trade at Kingson |
 | `keeper_goat` | a goat standing | the dragon-shy goats the dragons are allowed to take |
 | `roost_ledge` | a shelter on a mountain ledge | the keepers' shelters on the slopes |
+| `roost_flame` | three flames rising in a row | the roosts of Dragon Mountain, where the keepers go up to listen |
 
 *Ornament:* Dragons are shown only by a scale or the mountain, never as a whole beast: a red dragon on green and white and a dragon on a diagonal bicolour are real-world flags.
 
@@ -1767,7 +1827,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* delving brown `#4a3b2f` (C); anvil gold `#c9973a` (M); stone grey `#8f8f8a` (C); black powder `#1e1c1c` (C); lamp white `#e6e0d2` (M).
 
-*Divisions:* chief, per_chevron, pile_reversed, per_fess, base.
+*Divisions:* plain, bordure, chief, per_chevron, pile_reversed, per_fess, base.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
@@ -1775,6 +1835,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `powder_horn` | a powder horn | the black powder the hold sells to the crown and nobody else |
 | `ore_basket` | a carrying basket heaped with ore | the iron that goes west, which the clans can withhold from any ruler in Parim |
 | `founders_stone` | a squared stone cut with plain notches | the founders' reckoning cut in stone in the deep hall |
+| `rock_arch` | a round-headed arch cut into a rock face | the Western Gate cut into the Lunhrim massif |
 
 *Ornament:* Rock-cut gates and squared charges: the Great Wall of Aenor is a natural range, so no masonry, battlements or brick courses. No flaming anvil (the arms of a named god).
 
@@ -1790,7 +1851,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* hold dark `#3d3a36` (C); rim gold `#c8a048` (M); forge red `#a33a2a` (C); ash white `#dcd6ca` (M); grey stone `#8a8680` (C); iron black `#222224` (C).
 
-*Divisions:* chief, per_fess, pile_reversed, per_chevron, base.
+*Divisions:* plain, bordure, chief, per_fess, pile_reversed, per_chevron, base.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
@@ -1817,7 +1878,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
 | `high_gate` (restoration) | a squared black gate in a snowline rock face | the High Gate, the only place where men are received |
-| `pact_hammer` | a war-hammer held upright | the Hill Pact, by which the hold comes down to any hill crown that is attacked |
+| `pact_hammer` | a war-hammer held upright | the Hill Pact of the dwarves and the hills |
 | `deck_bombard` | a bombard on a ship's carriage | the bombards that ride on Sonargur's ships |
 
 *Ornament:* A white peak and a black gate: the hall under the snows.
@@ -1836,7 +1897,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `famine_bread` | a basket of round loaves | the Famine Bread: the grain the small folk carried over the Ronbo passes to starving clansmen, who swore the Ronbo Oath to guard the passes for ever |
+| `famine_bread` | a ring of grain-ears set in a circle | the Famine Bread the small folk carried to starving clansmen |
 | `grain_ship` | a round-bellied grain ship with a patched square sail | the Aenoran grain ship that carried the first households of Tirlan south to the Hilorn mouth |
 | `harvest_stone` (restoration) | a rounded harvest stone | the harvest stone at the moot-hall and the harvest-share paid to the giants |
 | `apple_bough` | a young apple bough with fruit | the Orchard Gift of cuttings sent over the passes to Thenon |
@@ -1863,6 +1924,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `root_door` (restoration) | a small square door among the roots of a hill | the holts hidden under the hills, doors that look like roots |
 | `tally_rim` | the notched rim of a pot | the village king's tally of the pots |
 | `hidden_oak` | an old oak with a small square door in its trunk | houses inside trees |
+| `gold_torc` | a gold torc, a plain neck-ring with open ends | the gold of the holts, given freely and never taken |
 
 *Ornament:* One hidden detail in each design (the escartelly notch is the door); no pointed red cap, no rainbow, no clover.
 
@@ -1878,7 +1940,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* pack brown `#5a4a3a` (C); road moss `#7a8a4a` (C); trade brass `#c0a060` (M); salt white `#e0dcd0` (M); boss black `#262420` (C).
 
-*Divisions:* per_bend, per_bend_sinister, per_fess, chief.
+*Divisions:* per_bend, per_bend_sinister, per_fess, chief, plain.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
@@ -1886,6 +1948,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `news_horn` | a pedlar's horn | news of a landing carried faster than any courier |
 | `cave_market` (restoration) | a cave mouth hung with goods | the cave-markets of the southern hills |
 | `salt_pinch` | a pinch of salt on a flat stone | the spirits of the road, thanked with a pinch of salt |
+| `long_staff_ring` | a long staff with an iron ring at its head | the packmen of Mustnom and the news they carry faster than any courier |
 
 *Ornament:* Diagonal compositions: everything is on the road.
 
@@ -1899,7 +1962,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* deep moss `#4a5a2a` (C); pit black `#2a2a22` (C); salvage gold `#d0b050` (M); wurgh grey `#7a7468` (C); fire-pot orange `#c86a2a` (C).
 
-*Divisions:* base, per_fess, chief, pile_reversed.
+*Divisions:* plain, bordure, base, per_fess, chief, pile_reversed.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
@@ -1908,6 +1971,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `fire_pot` | a fire-pot with a burning fuse | the crude powder thrown in the tunnel fights |
 | `truce_lantern` (restoration) | a shuttered lantern | the Lamp Truce with the dwarves |
 | `salvage_heap` | a heap of salvage | the salvage traded at the edges of the range |
+| `truce_fire` | a small fire set in a plain circle | the Lamp Truce kept at the tunnel mouth of Burrikkrit |
 
 *Ornament:* Goblin ornament scaled up for the king's warrens: fewer, larger shapes.
 
@@ -1921,7 +1985,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* steam green `#5a7a5a` (C); warren dark `#3a3a2a` (C); lamp-fat yellow `#e8d070` (M); spring white `#e4e8e0` (M); hound brown `#6a5038` (C).
 
-*Divisions:* base, per_fess, chief.
+*Divisions:* plain, bordure, base, per_fess, chief.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
@@ -1929,6 +1993,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `fat_lantern` | a lantern burning rendered fat | the best lamps of the north, sold at the snowline fair |
 | `spring_snare` | a spring snare | the best traps of the north |
 | `bone_hound` | a shaggy bone-hound | the summer riders of the valleys |
+| `three_plumes` | three plumes of steam rising from one round spring | the steaming spring of Drikzig and its warm valleys |
 
 *Ornament:* Steam and snares; warm valleys under a cold sky.
 
@@ -2106,7 +2171,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 *Palette:* forge black `#2f2f33` (C); war red `#8a2a2a` (C); iron grey `#9a9aa0` (M); storm white `#dcdcd8` (M); gunmetal `#4a4c52` (C).
 
-*Divisions:* per_bend, per_fess, pile, per_chevron.
+*Divisions:* plain, bordure, per_bend, per_fess, pile, per_chevron.
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
@@ -2134,8 +2199,8 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `bellied_sail` | a ship under a bellied sail | ship-shares and the captains' council |
 | `wind_tower` (restoration) | a slender wind-tower hung with cords | the wind-towers of the Vindael headlands |
 | `storm_petrel` | a storm petrel | the bird that rides the storm |
-| `wind_knots` | a cord tied with three wind-knots | the wind-tokens bargained from the Storm Court |
-| `fur_bale` | a bale of furs bound with cord | the furs the Fandan carries down from the interior to the free port at its mouth |
+| `wind_knots` | three knots tied in one cord | the sailors' knots of the shares, tied by captains who keep their council by them |
+| `fur_bale` | a round bale of furs tied with cord | the fur the Fandan carries down to the free port at its mouth |
 
 *Ornament:* Bellied sails and wind-cords; no compass rose (the chart-islanders' charge), no weathercock.
 
@@ -2163,6 +2228,9 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `stone_granary` | a round stone granary with a conical roof | Branorn's granaries below the hills of Faennon, which fed every clan in the famine years |
 | `olive_tree` | an olive tree in fruit | the olives of the West's mildest corner |
 | `cape_lantern` | a lantern on a cape | the lanterns King Oslin set on the western capes to watch the old approaches |
+| `feud_blade` | a short broad blade with a ring at its hilt | the feud-clans of the old boar country, sworn to the Oath-Ring |
+| `peace_cup` | a bar balanced level on a point | the peace the lowland kingdom of Thenon bought with cattle and olives |
+| `sea_watch_flame` | a tall watch-flame on a cape-point | the lantern King Oslin first set on the western capes |
 
 *Ornament:* No tartan, no thistle, no heather and no gyronny of gold and black (all real-world Scottish marks); the clan sett is shown as two clan colours divided per pale.
 
@@ -2188,6 +2256,9 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 | `sun_hat` | a wide straw hat | the salt-pan workers under the sun |
 | `storm_house` | a low mud-brick house | houses built low against the storms |
 | `drag_net` | a drag net | the inshore fishing |
+| `salt_stones` | three white salt-stones in a row | the three salt-pans of the freeholds of the salt coast, paying one toll as one league |
+| `tolling_spear` | a spear with a hooked head | the warlord who takes its tolls in the Nan Mountains |
+| `holy_breeze_flame` | a flame standing alone on a cliff-top | the lantern the Holy Breeze kept lit on the cliffs of Olen for a whole winter |
 
 *Ornament:* Low, wide charges hugging the base; nothing names or shows the dead.
 
@@ -2552,241 +2623,240 @@ Every design was written from the realm's history entry (founding, dynasties, ev
 <!-- generated:countries:start -->
 | Region | Flags | Largest charge classes |
 | --- | ---: | --- |
-| Middle Lands | 23 | token 4, tree 4, tool 3 |
-| North Lands | 12 | beast 2, bird 2, building 2 |
-| Cold Lands | 20 | beast 3, building 3, token 3 |
-| West Lands | 14 | token 3, building 2, fire 2 |
-| Dark Lands | 17 | fire 3, landform 3, body_part 2 |
-| Ember Lands | 9 | bird 1, body_part 1, building 1 |
-| Zol's Mistake | 1 | sigil 1 |
-| Magical Lands | 11 | landform 3, building 2, ship 2 |
-| Lands of the Sun | 10 | building 2, bird 1, body_part 1 |
-| East Lands | 18 | building 3, fire 2, landform 2 |
-| South Lands | 2 | fire 1, water 1 |
-| Islands of the South | 8 | token 2, tool 2, building 1 |
-| Triton's Islands | 11 | tool 4, fire 2, landform 1 |
-| All | 156 | |
+| Middle Lands | 23 | token 6, beast 4, crown 4 |
+| North Lands | 12 | token 4, bird 2, sea_creature 2 |
+| Cold Lands | 19 | token 7, beast 3, sea_creature 2 |
+| West Lands | 14 | token 5, bird 2, landform 2 |
+| Dark Lands | 17 | token 5, beast 2, building 2 |
+| Ember Lands | 9 | bird 3, building 1, crown 1 |
+| Zol's Mistake | 1 | token 1 |
+| Magical Lands | 11 | bird 3, body_part 2, tree 2 |
+| Lands of the Sun | 10 | landform 2, beast 1, bird 1 |
+| East Lands | 18 | beast 4, weapon 3, bird 2 |
+| South Lands | 2 | beast 1, token 1 |
+| Islands of the South | 8 | token 3, building 2, insect 1 |
+| Triton's Islands | 11 | beast 2, sea_creature 2, token 2 |
+| All | 155 | |
 
 ### Middle Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| AEN | Aenor | lake_aenoran | plain, lake blue; a great bell in lamp gold [crown] | Aenor bears the great bell of the Concord, whose change-bells rang the formations of Aen's joined kingdoms, under the lamp-crown on lake blue and with no label, because the crown of Aen's own realm needs no difference. |
-| SFT | Safeton | lake_aenoran | base, Parim white and lake blue; a lake barge with a square sail in bell bronze [label, charter border] | Safeton's barge stands on the lake blue of the Safen mouth, where lake water meets the sea: the harbour republic of the ship-houses, whose Harbour-Master has more ships than the crown, sealed into the Concord by the charter border. |
-| FRE | Freshon | lake_aenoran | chief, lake blue and pale gold; a sheaf of barley in Parim white; a hanging gold seal on a cord in lamp gold [label, charter border] | Freshon bears the barley of its four states of spring country under a chief of pale gold, with the hanging gold seal of the Golden Charter it bought in 4A 1731: a proud spring-town whose loyalty the Golden Court holds by its debts. |
-| PAZ | Pazoma | lake_aenoran | per bend sinister, deep lake and pale gold; a lake-glass flask in Parim white; a quill in bell bronze [label, charter border] | Pazoma bears the flask of its lake-glass and the quill of its paper-makers and copyists: the guild-city of the deep bay that has never had a lord and makes the Concord's bells, glass, cloth, paper and books. |
-| ORH | Orohaf | isle_houses | base, foam white and sea grey; a lighthouse with a red fire in sash red [label, crown, charter border] | Orohaf bears the lighthouse-shrine of Borrak under the oar-crown of the queen the eldest women of the five Isle Houses choose for life: the harbour every fleet from the West must pass, where the dead are given to the tide. |
-| SEL | Selen | selen_ranger | plain, wood green; a hollow oak with its roots in birch white; three arrows, points down in hazel gold [label, charter border] | Selen bears the Moot Tree with the Three Arrows of the Quiet Law beneath it: the woodland moots that elect a First Warden under the oak, once hid a king for two winters and still write their own birth rolls inside the Concord. |
-| KIN | Kingson | vale_folk | per chevron, snowline white and vale slate; a large key in pass gold [label, charter border] | Kingson's key lies beneath the snow peaks of the Great Wall of Aenor: the Pass-Lord's charter over the only wheel road through the range, whose tolls are the elves' oldest complaint. |
-| KLU | Klungori Guard | vale_folk | pile reversed, lichen green and snowline white; a crossbow in granite [label, charter border] | The Klungori Guard bears the crossbow of its sworn watch on the rising peak of the South Pass: a garrison company that took land instead of pay to watch the goblin warrens for ever, and whose posts pass from parent to eldest child. |
-| HIR | Hirolon | hill_giants | base, Grano green and deep earth; a great cairn in chalk | Hirolon raises the Eldest Cairn on its arched hill over the green of the Grano that its Hilofrim tenants graze: a sovereign giants' kingdom that treats with Aenor under the Cairn Treaty from outside the Charters and asks only to be left alone. |
-| TIR | Tirlan | hearth_folk | base, harvest yellow and basin green; a round-bellied grain ship with a patched square sail in hearth brown [ward border] | Tirlan bears the grain ship that blew its first households south to the Hilorn mouth, riding above the double-arched hills of its three valleys, inside the cairn-brown border of the giants who guard every way in. |
-| KON | Konori | steppe_rider | plain, steppe red; a horse's head in black felt [label, crown, charter border] | Konori's horse's head rests on the white felt on which every king of the Hundreds is lifted at the ford of the Aenar: a riders' kingdom that breeds the Concord's remounts and is paid for them in titles. |
-| HNH | Hunhun | steppe_rider | per bend, felt white and steppe red; a horse-tail standard on a pole in black felt [label, host marks, charter border] | Hunhun bears the horse-tail standard of the midsummer Gathering where its Horse-Lord is chosen, with the hoof-marks of the host beneath it: the first riders to swear to the One Crown, and the largest horse fair in Aoaz. |
-| HER | Herez | march_folk | per chevron, chalk white and palisade brown; a beacon: a fire-basket on a pole in beacon red [label, charter border] | Herez lights the beacon of the march Edran set across the Grey Hills so that the remnants of Volgan's host could never again come up the southern road unseen: the realm that will feel the south first, and the only one that expects to. |
-| NOL | Noleksun | march_folk | base, field green and march ochre; ploughshare (three) in chalk white [label, charter border] | Noleksun's three ploughshares are the three leagues of free farmers whose eight market towns swore the Oath of Eight Hearths at Saelori: the richest of the frontier dominions, with a Chief Speaker chosen by every hearth. |
-| KIL | Kilinti | kilinti_ents | base, deep grove and bark umber; an ancient tree with spreading roots in moss pale [charter border] | Kilinti bears the Eldest with its roots spread over a rooted base: a forest whose ent-moot takes years to say a sentence, while the men of its edges keep its accounts and its charter with Parim. |
-| FOT | Fotan | strait_folk | per fess, quay white and toll blue; a chain stretched fesswise from edge to edge in chain red [label] | Fotan stretches its chain across the strait as Ostvar's house first did at the narrowest landing: a free toll-lordship that sealed no charter of Parim and can open or shut the shortest crossing between the North Lands and Aenor. |
-| KUN | Kunhrim | wall_delvers | chief, delving brown and stone grey; a squared gate cut into a rock face in anvil gold; a powder horn in lamp white [charter border] | Kunhrim bears the Western Gate cut into the Lunhrim massif under a dovetailed chief of the range's stone, with the horn of the black powder it sells to the crown and nobody else: the hold of the Iron Charter, which can starve any ruler in Parim of iron. |
-| BRR | Burrikkrit | king_warrens | base, deep moss and pit black; a tunnel mouth under a mountain peak in salvage gold; a fire-pot with a burning fuse in fire-pot orange [crown] | Burrikkrit bears the tunnel mouth under the peak, its hidden way through the range, under the too-small crown of its hobgoblin king, with the fire-pot of the tunnel fights: a warren-kingdom held to the Lamp Truce that sells its under-roads in war. |
-| OLO | Olodor | holt_gnomes | per fess, holt green and root brown; a pot brimming with gold in pot gold [enclave orle] | Olodor's pot of gold stands inside an orle of Aenor's lake blue: hidden holts within a day's walk of Parim, whose village-kings are crowned when their pots are full and whose luck goes to whoever brings them gold freely. |
-| DNL | Dunelaeth | kingdom_forest_elves | plain, kingdom green; a beech in full leaf over a low grassed mound in old silver; a silver road winding up to a pass between two hills in moon white | Dunelaeth bears the beech that kept its leaves over the road to the Kingson Pass: the one household that would not leave the forests where its dead lay when its kin went east, and still guides travellers on the wrong side of the mountains. |
-| ANR | Aenor Forest | baelim | base, dew silver and stand green; a tall fir whose roots spread as wide as its crown in deep shade | The Aenor Forest bears a fir whose roots spread as wide as its crown above a gnarled base: the uncut forest of the Baelim, who have never had a crown, never let a man build among them and never share a forest with the ents. |
-| CUR | Cursed Lands | veiled_folk | per fess, veil grey and char; a single loose knot in a cord, both ends hanging in undyed wool | The Cursed Lands bear a cord tied in one knot with its ends hanging free: the Veiled count their years by the ties of the eldest cord and keep every name in its mother's line, and no crown since Aen's has untied them. |
-| BLO | Bloody Forest | redbark_tribes | per pale, redbark and deep bark; a stag's antlers (attires) in antler bone; a beaded cord hanging in ochre | The Bloody Forest bears the antlers of the red deer with a beaded cord: the hunting clans of the red-oak forest whose bark bleeds when it is cut, ruled by cord-mothers in peace and by war-chiefs on raids, and never chartered by any king. |
+| AEN | Aenor | lake_aenoran | plain, lake blue; five-point lamp-crown in lamp gold | Aen joined the kingdoms under one crown, and the Concord keeps their union. |
+| SFT | Safeton | lake_aenoran | plain, deep lake; sturgeon in pale gold [charter border] | The sturgeon of the Safen mouth, the harbour beast of the charter ships. |
+| FRE | Freshon | lake_aenoran | plain, slate; kneeling ox in Parim white [charter border] | The drovers' ox that struck the spring: the beast and identity of the realm. |
+| PAZ | Pazoma | lake_aenoran | plain, Parim white; sword upright in deep lake [charter border] | The sword of the Peace: the swords sworn on the Peace were beaten into the guild bell, and the sword is the oath the guild keeps. |
+| ORH | Orohaf | isle_houses | plain, sea grey; seated woman at the steering-oar in foam white [charter border] | The eldest woman of the Water clan at the steering-oar through the Night of the Sea, the mother of the five houses of the isle. |
+| SEL | Selen | selen_ranger | plain, wood green; hollow oak of the Moot Tree in birch white [charter border] | The Moot Tree at the Selenar ford, where the Quiet Law was sworn. |
+| KIN | Kingson | vale_folk | per chevron, snowline white and vale slate; a tall vigil flame between two pale points in pass gold [charter border] | The Pass Vigil fire, the watch-families' oldest law, drawn as one flat flame. |
+| KLU | Klungori Guard | vale_folk | plain, pass gold; goblin war-helm inverted, set alone on the field with no backing shape in granite [charter border] | The helm taken in the Tunnel Fight and hung on the Accord tower. |
+| HIR | Hirolon | hill_giants | plain, Grano green; a single upright tapered standing stone, a flat solid block with straight sides and a flat top in chalk | The first stone of the Eldest Cairn, with the dike's tally-notch. |
+| TIR | Tirlan | hearth_folk | base, harvest yellow and basin green; wicker grain-pannier in harvest yellow [ward border] | The first harvest-share basket, the household's identity relic carried to every harvest. |
+| KON | Konori | steppe_rider | plain, steppe red; horse's head in black felt [charter border] | The Konori horse: each Hundred's horse-mark and the ford of the Aenar. |
+| HNH | Hunhun | steppe_rider | per bend, felt white and steppe red; mare courant in steppe red [host marks, charter border] | The banner-mare of the last battle, running with empty stirrups, the beast of the Horse-Oath. |
+| HER | Herez | march_folk | plain, palisade brown; sword upright, pommel down in march ochre [charter border] | The sword of Edran's march, raised by the captain who held the Kalioth road. |
+| NOL | Noleksun | march_folk | plain, march ochre; hare courant in chalk white [charter border] | The quick hare of the drained downs, for the eight towns. |
+| KIL | Kilinti | kilinti_ents | base, deep grove and bark umber; eldest tree with three root-strands in sap amber [charter border] | The eldest oak whose bough was the ents' answer, the regional tree. |
+| FOT | Fotan | strait_folk | plain, chain red; two iron chain-links hooked together in tar black | The Ostvar anchor-chain link hammered into the toll-post, the realm's mark. |
+| KUN | Kunhrim | wall_delvers | plain, delving brown; five-point deep-king crown in lamp white [charter border] | The Deep King's crown, drawn with five points so that no battlement shows. |
+| BRR | Burrikkrit | king_warrens | plain, deep moss; crown of bent iron in salvage gold | The hobgoblin king's crown of bent iron, which holds the throne by the lantern. |
+| OLO | Olodor | holt_gnomes | plain, bird red; five-point crown of pot gold in pot gold [enclave orle] | The crown beaten from the rim of the first king's pot. |
+| DNL | Dunelaeth | kingdom_forest_elves | plain, kingdom green; whole beech tree on a mound in old silver | The grave-beech the household keeps: the realm's grave, a whole tree on its mound. |
+| ANR | Aenor Forest | baelim | base, dew silver and stand green; gnarled tree of three trunks in deep shade | Graulvoa, the Baelim's regional tree, standing before the sea reached the coast. |
+| CUR | Cursed Lands | veiled_folk | plain, veil grey; straight cord hanging down with both ends loose, no knot in char | The Last Cord, hanging with both ends free and unknotted. |
+| BLO | Bloody Forest | redbark_tribes | plain, deep bark; raven with spread wings in antler bone | The raven of the Raven clan, one of the three clans of the Redbark raids. |
 
 ### North Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| LER | Lerendor | leren_sea_kings | plain, strait blue; two waves, one above the other in salt white [label, crown] | Lerendor bears two waves under the ship-crown: the High Crown of Lerendor and Lerendor's North, set on one head when Ostrik of the Sonarvik married Runild of Lerendor's North, and the strait dues that make it the North's counterweight to Parim. |
-| EEK | Eekedor | leren_sea_kings | per fess, salt white and strait blue; a salt cellar in deep strait [label] | Eekedor bears the salt cellar of its Arbitration Court, where salt shared at the table binds both sides of a quarrel: the council of counting houses that keeps the island's grain and money and holds its court open to any crown that pays. |
-| REN | R'en | leren_sea_kings | base, Leren silver and strait blue; a watch-house on a low cape in deep strait [label] | R'en bears the watch-house its first prince built on the strait cape and refused to pay for: a gateway principality that has lived between two masters ever since and leans to Parim. |
-| KER | Keredor-Hellekton | leren_sea_kings | per pale, strait blue and kelp green; two steering oars joined by one ring in clasp gold [label, crown] | Keredor-Hellekton impales its two coast crowns and joins their steering oars in one ring, as the Arbitration Court joined Vigda of Keredor and Helmund of Hellekton: a double crown whose court still crowns every heir twice. |
-| MOO | Molot | free_crowns_north | base, hearth red and peat black; a crane standing in fleece white [label] | Molot bears the crane that stands watch above the marsh: the margraves whose fortress line behind the marsh took the raiders of the Raiding Years, and who still balance Sonargur against Parim so that neither will ever own them. |
-| TLV | Tolvael | free_crowns_north | per fess, fleece white and fir green; a bear walking in earth brown [label, crown] | Tolvael's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told. |
-| TOL | Tolhon | free_crowns_north | per bend sinister, fir green and straw gold; an otter in peat black [label] | Tolhon bears the otter of its fisheries and its herring ban: an island principality of the Onp coast that lives by its toll-bridge at Sirtum and by its distance from everyone else. |
-| HEO | Heodwa Lands | free_crowns_north | plain, fleece white; rowan tree in berry (three) in fir green; a war-hammer held upright in hill grey [label] | The Heodwa Lands bear three rowans for the hill crowns of Heodwa, Nuatax and Agniy with the dwarves' hammer of the Hill Pact beneath them: a hill council that every crown of the North knows cannot be fought without fighting Hrakbrund. |
-| HRA | Hrakbrund | north_delvers | pile reversed, high slate and snow white; a squared black gate in a snowline rock face in gate black | Hrakbrund bears its black High Gate on the white peak above Ilmahrim: the dwarves of the High Mountains receive men only at the gate, sell them iron, gold and bombards there, and keep the Hill Pact with the hills below. |
-| MIA | Mina | free_crowns_north | per chevron, fleece white and hill grey; a miner's pick in earth brown; a mole in peat black [label, crown] | Mina bears the miner's pick under the crown its king earns by working a season in the Delvings, with the mole of Mine Din, the sister crown joined to it by marriage. |
-| DOL | Dolpar | free_crowns_north | base, straw gold and fir green; stork (three) in earth brown [label] | Dolpar bears three storks of Stork, one of the walled towns round its deep lake, above the lake-court's green: a lake league of four towns and the market of Parur that settles its own quarrels and competes with Eekedor for the North's. |
-| MUS | Mustnom | road_warrens | per bend, pack brown and road moss; a laden travel pack in trade brass; a pedlar's horn in salt white [boss ring] | Mustnom bears the laden pack inside the boss's iron ring, with the horn of the packmen who carry news of a landing faster than any courier: boss-warrens whose people are always half on the road. |
+| LER | Lerendor | leren_sea_kings | plain, strait blue; whale flukes rising from the sea in salt white | The strait-whale's flukes, the Leren's own beast under the Strait Litany. |
+| EEK | Eekedor | leren_sea_kings | plain, salt white; curved sword hung on a hook in strait blue | The raider's own sword hung on the weighing hook of 2A 1205. |
+| REN | R'en | leren_sea_kings | plain, Leren silver; black cormorant in deep strait | The cormorant, the sign's emblem. |
+| KER | Keredor-Hellekton | leren_sea_kings | plain, kelp green; open double torc of two gold bands, linked by a straight bar, with no rings in clasp gold | The double crown, silver above gold, the one crown the two coast halves share. |
+| MOO | Molot | free_crowns_north | plain, hearth red; a plain upright square-ended post, a flat solid bar with straight edges and no point in fleece white | The moved stake of Helmund's night, the margraves' own mark. |
+| TLV | Tolvael | free_crowns_north | plain, fir green; unsplit pine log with a broken axe-head lying across it, the axes of the envoys that broke on the Kerhil log in peat black | The unsplit pine log of the crowning, the vale's own timber. |
+| TOL | Tolhon | free_crowns_north | plain, straw gold; leaping herring in fir green | The herring, the beast of the Herring Peace. |
+| HEO | Heodwa Lands | free_crowns_north | plain, fleece white; great horn banded in gold in peat black | The horn of Pand, one horn for one council, with its three bands. |
+| HRA | Hrakbrund | north_delvers | pile reversed, high slate and snow white; stair descending from upper right to lower left in snow white | The Coming-Down Stair the dwarves took down to the valley. |
+| MIA | Mina | free_crowns_north | plain, earth brown; iron pick with a circlet on its haft in straw gold | The crowned pick of the Mina kings, the tool that buried a king who was crowned on it. |
+| DOL | Dolpar | free_crowns_north | plain, hill grey; four-oared boat seen from above in fleece white | The four-oared boat of the Mid-Lake Moot, one of the five ships allowed in Aoaz. |
+| MUS | Mustnom | road_warrens | plain, pack brown; magpie in salt white | The magpie of the packmen's roads, the thief-bird that trades and steals on the long road. |
 
 ### Cold Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| CLD | Coldor | winter_crown | per fess, frost white and winter blue; a sheaf of winter rye bound with a white cord in hearth red; a fire inside a ring of stones in deep night [crown] | Coldor bears the winter rye of its crown granaries under the icicle crown of the Winter Queen, with the clan fire of the clans that swore to her: the strongest crown of the north and the least warlike, whose power is the bread in the Frost-Hall. |
-| MLK | Melkgard | melkgard_warlords | per bend, forge black and war red; three spears bound in a sheaf in storm white; a storm cloud loosing three bolts in iron grey | Melkgard bears the bound spears of its oath-companies under the storm cloud of the Storm Court: a warlord's march of black forts that took no crown and left none, and whose men would rather go hungry than eat the queen's bread. |
-| HOR | Horidor | ice_clans | chief, fjord blue and snow; a cairn in a mountain gap in bone; a fire inside a ring of stones in snow | Horidor bears the cairn of the Neridor Gap road with Coldor's clan fire beneath it: the cairn moot that keeps the Gap open for every traveller who pays the due and has held the Northern Accord faithfully since the White Year. |
-| YEL | Yeldenne | ice_clans | plain, snow; an arch of two whale ribs in soot; a round loaf set on a stone in hide brown | Yeldenne bears the whale-rib arch of its valley door and the loaf it leaves each Long Dark at the start of the Silent Road: an ordinary herders' town that pays no tax, asks nothing of the castle above it and gives the traveller supper. |
-| FEA | Fearno | ice_clans | per chevron, ice and fjord blue; musk ox (three) in hide brown | Fearno's three musk oxen stand together as the herd stands against wolves: the Free Steadings that refused both Fandanar and Minnolomak in 4A 1304 and choose a first lord to speak for them for seven winters. |
-| AUT | Austklev | ice_clans | plain, fjord blue; a narwhal in snow | Austklev bears the spear-whale whose tusk it sells south and west: a jarldom of whalers that takes a tithe of every whale brought ashore at Vaestia, keeps the harbour boom and stays out of the Cold Rivalry. |
-| WRL | Worlond | ice_clans | per bend sinister, lichen green and soot; a turf waystation with a smoking roof in snow | Worlond bears the turf waystation of the Neck Road, its roof smoking with dry wood: the forest lordship the Neck Road Compact made to keep the stages stocked for both crowns. |
-| HLD | Holdon | ice_clans | per pale, fjord blue and berry red; a tall fair-pole hung with pelts in bone [crown] | Holdon bears the fair-pole of Fentene hung with pelts under the tine crown of the king who keeps the snowline fair's peace: a coast kingdom whose kings are judged by one thing, whether the fair was good. |
-| GLI | Glimkit | spring_warrens | base, steam green and warren dark; a round spring sending up three plumes of steam in spring white; a spring snare in lamp-fat yellow | Glimkit bears the steaming spring of Drikzig with a spring snare beneath it: goblin warrens in the warm valleys of the Coldor Mountains that make the best traps and lamps of the north and pay tax to no crown. |
-| XIS | Xison | ice_clans | chief, hide brown and snow; drop of amber (three) in amber | Xison bears three drops of amber for the upland clans of Xison, Rion and Yeneldmore, who swore a road league at Akahew to keep the high road stretch by stretch and share its tolls. |
-| PRT | Pertolor | ice_clans | per bend, snow and berry red; a ewe standing in soot | Pertolor bears the ewe of the one valley of the north where sheep do better than reindeer: a wool-market lordship whose lord is cousin to the Winter Queen and godfather to a Melkgard captain, and means to stay both. |
-| OMR | Omar | ice_clans | per fess, ice and hide brown; a wolverine in soot | Omar bears the wolverine that yields to nobody: one clan on one hill-fort above the border moor, owing Coldor for the Hill-Fort Winter and Melkgard for the White Year and paying neither. |
-| POT | Portogalor | ice_clans | per chevron, snow and soot; a walrus in bone | Portogalor bears the walrus whose ivory and fat it sells on the Frozen Sea: sealers descended from the last raider fleet that broke on Melkgard's forts, proud of their forebears and careful not to remind Melkgard of them. |
-| ORW | Orewele | ice_clans | base, snow and hide brown; a rough bloom of iron held in tongs in fjord blue | Orewele bears the bloom of iron it digs from the Orewell lowland and sells by the cartload to the western dwarves: a mining clan whose chief came home a lord from the dwarves' gate and keeps both crowns at arm's length. |
-| KVI | Kvittumm | reindeer_clans | plain, white hills; reindeer's head with full antlers (three) in hide red | Kvittumm bears three antlered heads for the reindeer clans of the white hills, who meet each Long Dark at Esrom and keep the toll-peace with the giants together. |
-| NIV | Nivaros | ice_giants | base, deep ice and rime white; a throne of ice in glacier blue | Nivaros bears the Ice-Throne of its Frost-King on the arched edge of the glacier: a few thousand giants who let the clans' herds pass for the toll and close their heights to any crown that comes in arms. |
-| YEI | Yeti Lands | yeti_clans | base, dusk violet and yeti white; a dark cave mouth in a white peak in yeti white | The Yeti Lands bear the cave that answers the Eldest's song: the shelf clans of Haruhu, who sang the hunting truce at Fentene, divide the seal-grounds with the coast and alone can vouch for an envoy to the heights. |
-| GHH | Ghaahu | height_yeti | per chevron, height white and deep rock; a pair of curved wild-herd horns in dusk blue | Ghaahu bears the horns of the wild herds its height clans follow among the Cold Mountains, above the three peaks of the yeti line: a land no crown can reach unless a shelf Eldest vouches for its envoy. |
-| VND | Vindael | vindael_seafarers | per bend sinister, sea teal and sail white; a ship under a bellied sail in tar brown | Vindael bears a ship under a bellied sail, owned by shares and sent south since the captains of Porideon first chose a Speaker to hold the harbour book: a council of whalers and sealers on the ice arm that keeps the coast watch. |
-| PLT | Poloto | vindael_seafarers | per fess, sail white and gale blue; a bale of furs bound with cord in amber | Poloto bears the bale of furs the Fandan carries down to the free port at its mouth: harbour men who kept Parim's old trading post for themselves, wrote their dues into a harbour book and swear to nobody. |
+| CLD | Coldor | winter_crown | plain, slate grey; curved aurochs horn bound in bronze in frost white | The Ember-Horn bound in bronze, the hearth-law's own relic. |
+| MLK | Melkgard | melkgard_warlords | plain, gunmetal; unworn iron crown hung from a hook in storm white | The unworn iron crown hung from its hook, the march's refusal of rule by birth. |
+| HOR | Horidor | ice_clans | plain, fjord blue; pole with a streaming rag in soot | The guide-pole with its red rag, the road-wardens' mark on the Neridor Gap. |
+| FEA | Fearno | ice_clans | plain, berry red; spear upright in ice | One spear of the Bound Spears, the oath each lord swears to the steadings. |
+| AUT | Austklev | ice_clans | plain, soot; spiral whale-tusk upright in snow | The white spiral whale-tusk, the founder's beast of the east coast. |
+| WRL | Worlond | ice_clans | plain, lichen green; two firs grown from one trunk in soot | The Twin Firs grown from one trunk, the forest's tree of the parting. |
+| HLD | Holdon | ice_clans | per fess, fjord blue and bone; seal lying on the ice in soot | The seal of the seal-grounds that the Hunting Truce divided. |
+| GLI | Glimkit | spring_warrens | plain, steam green; running hound in spring white | The bone-hounds that came over the ice with the warrens. |
+| XIS | Xison | ice_clans | plain, bone; row of three chain links in berry red | The Akahew Chain, forged from the riders' stirrups. |
+| PRT | Pertolor | ice_clans | plain, amber; black-faced ram in snow | The black-faced ram of the Mp'E flock, the vale's beast of the ram's due. |
+| OMR | Omar | ice_clans | plain, hide brown; reindeer skull with full antlers in ice | The Refusal Skull, the one skull the Cold Lands carry. |
+| POT | Portogalor | ice_clans | plain, ice; hull turned keel-up in soot | The Keel-Hall, the sealers' founding hull, one of the five ships allowed in Aoaz. |
+| ORW | Orewele | ice_clans | plain, snow; bog-iron bloom in amber | The bog-iron bloom, the first lump of the sky's iron laid back in the bog. |
+| KVI | Kvittumm | reindeer_clans | plain, fell grey; two reindeer bulls facing each other in white hills | The Moot-Fire Herd: two reindeer bulls at one fire, one voice at one moot. |
+| NIV | Nivaros | ice_giants | base, deep ice and rime white; stone-headed hammer in frost grey | The Frost-King's maul, the sign's emblem. |
+| YEI | Yeti Lands | yeti_clans | plain, hum blue; yeti footprint in yeti white | The Ice-Mark, a yeti footprint: the mark the shelf clans sing this ice for. |
+| GHH | Ghaahu | height_yeti | plain, deep rock; inward spiral with notched edges in height white | The Song-Whorl, the height clans' one song, a spiral that waits for each broken turn. |
+| VND | Vindael | vindael_seafarers | plain, storm grey; skua feather slanting upward in sail white | The Wind-Feather, the arm's token of the gales its crews survived. |
+| PLT | Poloto | vindael_seafarers | plain, gale blue; burned steering oar upright in sail white | The Burned Oar: the Harbour-Master's oar that pushed the Necromancer's ship away. |
 
 ### West Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| GNW | Gunwyn | gunwyn_clans | per pale, clan madder and clan green; a ring of standing stones in torc gold [crown] | Gunwyn bears the Oath-Ring of Bulligon under the torc-crown on its two clan colours: a king acclaimed at the stones for life and bound by the Lawspeaker, who signed the Truce of the Grey Ford over the war-thanes' grumbling. |
-| WER | Werlendor | gunwyn_clans | per fess, lime white and moor brown; a boar in clan madder [crown] | Werlendor bears the boar of the old feud-clans under a torc-crown of its own: the hill kingdom of Caer-Erg, where Emric had himself acclaimed at the Erg stone, whose kings still call themselves the heirs of Bulligon. |
-| LAB | Lambin | gunwyn_clans | chief, clan green and lime white; a round stone granary with a conical roof in torc gold | Lambin bears the round stone granary Branorn built below the hills to feed every clan in the famine years: the West's granary and its neutral ground, where courts that must talk without losing face send their envoys. |
-| THN | Thenon | gunwyn_clans | per bend, slate blue and torc gold; an olive tree in fruit in clan green [crown] | Thenon bears the olive tree of the West's mildest corner under the torc-crown: a quiet, rich lowland kingdom that bought its peace with cattle and olives and sends its men to the Ronbo Watch. |
-| VRN | Varnondor | gunwyn_clans | plain, clan green; a lantern on a cape in torc gold [crown] | Varnondor bears the lantern King Oslin first set on the western capes to watch the old approaches, under the torc-crown: the sea watch of the West and its natural staging port for any crossing. |
-| GIR | Girdon | girdon_wardens | per fess, river green and water blue; three stepping stones in ford stone | Girdon bears the stepping stones of the ford of Arligon, where the first wardens swore to keep every crossing and judge every quarrel on the river by one law: a commonwealth of wardens, each named for the ford he keeps. |
-| WEN | Wennarith | girdon_wardens | base, reed gold and water blue; a ferry raft on its rope in dark pool | Wennarith bears the ferry raft on its rope above the river: the ferry-wardens of Datidon and Pernogon, who keep every crossing of the peninsula's rivers on the model of Girdon's fords and are in no hurry to join anyone's war. |
-| SAO | Saopon | western_guilds | quarterly, guild green and ivory; a book bound with a cord in guild wine | Saopon bears the guild book on which the towns of the Kulolo swore their league and stopped paying Parim, on the quartered colours of a guild city: a league that weighs Aenoran gold against Aenoran tariffs every year. |
-| KRA | Kradlon | western_guilds | quarterly, guild wine and ivory; a pair of bellows in guild gold | Kradlon bears the bellows of the workshops that bought the dwarves' powder secret and make powder-pieces and bombards for anyone who pays: the first guild port of the West, the old settler harbour of Bolbin. |
-| CRG | Corogon | western_guilds | quarterly, guild blue and guild gold; two wax seals hanging side by side from one cord in vermilion | Corogon bears two seals hanging from one cord for the two consuls its great merchant houses choose each year: the consulate of Oslodon, the first Aenoran settlement of the western coast, which fears the corsairs and resents Parim's tariffs. |
-| BLD | Buldor | buldor_companies | bordure, steel blue and livery red; a square company banner on a halberd shaft in buff; a sealed roll in olive [bordure compony] | Buldor bears the company banner, which is a company's soul, within the livery border of its companies and above the sealed contract-book: a company state at the crossroads of Toples that hires its banners and gunners to the highest bidder. |
-| DOB | Dobbum | hearth_folk | base, basin green and hedge dark; a basket of round loaves in harvest yellow | Dobbum bears the basket of the Famine Bread above the double-arched hills of its green basin: the small folk who carried grain to starving clansmen and were given the Ronbo Watch in return, so that evil has not entered the basin since. |
-| BRU | Brundahrim | west_delvers | chief, hold dark and rim gold; a forge-flame on a hearth-stone in forge red | Brundahrim bears the forge-flame of Hrennost, the fire-hold, under a dovetailed chief of gold: dwarves of the Herlitz and Dusty Mountains who sell gold and powder-pieces at the Outer Gate to whoever wins their favour and keep the small folk's high passes shut. |
-| GRO | Gromkerm | west_delvers | per fess, grey stone and iron black; a squared outer gate in a rock face, shut in rim gold; a squat bombard on a timber bed in ash white | Gromkerm bears the shut Outer Gate above the Kulolo with a bombard beneath it: the old hold of Hrunost, whose gate-wardens sell iron and siege bombards and let no armed company within a bowshot of the gate. |
+| GNW | Gunwyn | gunwyn_clans | plain, clan madder; rook with a barley-ear in lime white | The rook and the barley-ear, the clan song's birds and grain. |
+| WER | Werlendor | gunwyn_clans | plain, moor brown; half torc with a jagged end in torc gold | The half torc the Erg claim keeps, the half Dyfan pressed into his younger son's hand. |
+| LAB | Lambin | gunwyn_clans | plain, clan green; standing stone in torc gold | The standing stone of the common field above Faennon, where no blood may be shed on sown ground. |
+| THN | Thenon | gunwyn_clans | plain, torc gold; an olive tree in fruit in moor brown | The Mother Olive, the eldest grafted tree the kings are acclaimed under. |
+| VRN | Varnondor | gunwyn_clans | plain, lime white; hawk in clan green | The hawk of the capes, watching the approaches the clans kept since the Settler Wars. |
+| GIR | Girdon | girdon_wardens | plain, river green; five stepping-stones in ford stone | The five stepping-stones of the wardens, each carried from his ford. |
+| WEN | Wennarith | girdon_wardens | plain, dark pool; uncut rope in an arc in reed gold | The uncut ferry-rope the wardens swore on. |
+| SAO | Saopon | western_guilds | plain, vermilion; leaping carp in ivory | The river carp of the Kulolo, the fish the boatmen followed down to the lagoon. |
+| KRA | Kradlon | western_guilds | plain, guild wine; crossbow upright in guild gold | The crossbow the walled settlers fought the clans with for two centuries. |
+| CRG | Corogon | western_guilds | plain, guild blue; unbroken lozenge seal-stamp in guild gold | The sealed claim of Oslodon, the letter of claim the merchant houses swore never to open, kept under two locks. |
+| BLD | Buldor | buldor_companies | bordure, steel blue and livery red; swallow-tailed pennon in buff [bordure compony] | The white swallow-tailed pennon, seamed by a black stitch, the company's own soul. |
+| DOB | Dobbum | hearth_folk | plain, basin green; oblong loaf with a score in loaf cream | The Famine Bread, the basin's loaf that the small folk carried over the passes. |
+| BRU | Brundahrim | west_delvers | plain, hold dark; badger in forge red | The badger that digs the deep roads of the dwarves and held the Sea-Door. |
+| GRO | Gromkerm | west_delvers | plain, grey stone; gate-bolt drawn back in iron black | The gate-bolt the hold keeps shut for its grudges and opens to a knock. |
 
 ### Dark Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| GOL | Goldoroth | volcano_clans | plain, obsidian; a fire-mountain with a plume of flame in lava red [crown] | Goldoroth bears the Fire-Mountain under the tusk crown of the Warking whom the moot of four clan blocs acclaims: the forge-kingdom of Cocanoor that wants the whole Dark Lands, casts bombards with goblin powder and binds its tributaries with the Iron Yoke. |
-| DRK | Dark Gate | volcano_clans | per chevron, ember orange and ash black; a black ridge split by a narrow gap in sulphur [yoke border] | The Dark Gate bears the cleft of the only pass from the Goldoroth arm to the south inside the raguly border of the Iron Yoke: a gate-hold that has tolled every caravan since Zugash built his fort at Doldes and pays its tribute to the Warking. |
-| DND | Dondor | dondor_brutes | plain, hold black; a bearded axe in ash; a forged bar with ring ends in bone [label, crown] | Dondor bears the bearded axe of its Brute-Kings above the hearth-iron, under the plain iron band: descendants of an Aenoran garrison who took their orc neighbours' insult for a boast and lead the Dark Sea Accord. |
-| BLK | Blackton | dondor_brutes | per fess, hold black and strait blue; high-prowed ship with one square sail (three) in bone [label] | Blackton bears three Leren cogs over Dondor's black and the strait's blue: five walled harbour towns of mixed Dondric and Leren blood that sell Dondor's iron to the North, want no king and argue about their charter. |
-| BLN | Belonton | sea_orcs | per fess, salt teal and tar; cone of salt (three) in salt white | Belonton bears three cones of the Salt Tithe: the sea-orc confederacy sworn at Notle so that its ships would raid others rather than each other, under a Sea-Chief chosen by the voyages he has won. |
-| BOR | Bordon | iron_clans | chief, coal and steel; a toll bar in forge orange | Bordon bears the toll-bar of the Black Road: a hold that turned the barracks of the Buried Wars into caravan inns, takes Volgan's gifts and Goldoroth's threats with the same grin and knows exactly where the Troll Forest begins. |
-| DRE | Dreson | iron_clans | base, slag green and coal; a bundle of fen reeds in steel | Dreson bears the reeds of the fens where the orcs who would not fight for the Necromancer built a hall on black piles: a fen-hold under a reed-council that lives on eels, peat and bog-iron and swallows the armies that come after it. |
-| DUL | Dulundur | iron_clans | plain, rust; four flames rising from one hearth in steel; a ring of iron set with nine studs in coal | Dulundur bears the four fires lit in one hall at Lesderle, with the ring of the Free Moot it hosts against the Iron Yoke: four valleys that each keep their own chief and their own fire, and burn them together. |
-| DAK | The Darks | iron_clans | per pale, coal and iron; a haunch of meat in ogre bone | The Darks bear the haunch of meat that Grimduth carried into the ogres' caves instead of spears in the hard winter of 4A 1222: one moot of the forest orc holds and the ogre clans at Notdertu. |
-| SKR | Skragdurg | iron_clans | pile reversed, slag green and steel; a smoking charcoal clamp in coal | Skragdurg bears the smoking charcoal clamp of the Fonoor Forest: the forest-hold that sells timber and charcoal to every shipwright on the straits, whatever master they serve. |
-| BRT | Britadon | iron_clans | per bend, slag green and coal; a single forge hammer in steel | Britadon bears the forge-hammer of the iron hills that Bredesk of the Brakgul made one hold with the headland of Beriath: a hold that sells its iron by sea, sits at the Free Moot and watches Goldoroth's border. |
-| DUN | Dun | wild_holds | plain, hide brown; a gate hung to swing both ways in bone [crown] | Dun bears a gate hung to swing both ways under the toll-king's crown of bone charms: the crown of the Dun Sea's mouth that swings to whichever neighbour pays best, which has made it the least trusted in the Dark Lands. |
-| WIL | Wild Lands | wild_holds | base, lucky ochre and peat; three casting bones in peat | The Wild Lands bear the casting bones that decide whose winter it is: a moor without a council where broken clans go when no hold will have them, held by whoever stays through a winter and contested by everyone else. |
-| TRO | Troll Forest | troll_tribes | per fess, troll moss and bog black; a great boulder in stone grey; a knotted club in bone | The Troll Forest bears the great boulder of its king above the club that smashes camps by night: the forest of the troll king of these trolls only, which leaves alone the realms that pay the troll silver. |
-| HOO | Hoorunoron | cairn_giants | base, giant-forest green and forest earth; a cairn of three great stones in lichen white [enclave orle] | Hoorunoron bears a cairn of three great stones inside an orle of Dondor's iron grey: a few hundred giants behind the Borderline of Giants who never attack first and carry trespassers back over the cairn-line, one under each arm. |
-| BUN | Burnikit | goblin_warrens | per fess, rust and cave black; a bulging powder pouch with a smouldering cord in hoard gold | Burnikit bears the powder pouch of the best powder-makers of the Dark Lands: free warrens under a Big Snik, the loudest and cleverest boss, chosen first to lie to the Necromancer's recruiters and since to sell to whoever pays most. |
-| VES | Veshazel | veshazel_court | plain, ash-hall black; an ash-grey flame in ash grey; a seal with a blank face in ember gold | Veshazel bears an ash-grey flame above a blank seal for the pact-name only its pact knows: a demon lordship on the Goldoroth Ash Fields, sworn to neither Volgan nor Goldoroth, shunned by its neighbours and courted by the Southern Dominion. |
+| GOL | Goldoroth | volcano_clans | plain, lava red; crown of broken blades in bone | The Crown of Broken Blades, beaten from the swords of every chief the Warking broke. |
+| DRK | Dark Gate | volcano_clans | plain, ember orange; three chain links in an arc in ash black [yoke border] | The Gate-Chain of Doldes, three arced links that made the pass free. |
+| DND | Dondor | dondor_brutes | plain, ember red; open garrison helm with a ridge-crest in iron grey | The garrison helm of Dondor, set on the head of every Brute-King in the crown's place. |
+| BLK | Blackton | dondor_brutes | plain, iron grey; high-backed empty seat in bone | The empty seat of the moot, sworn to stay empty so that no master rules. |
+| BLN | Belonton | sea_orcs | plain, salt teal; open shackle snapped at one side in salt white | The broken shackle of the rowers, the oath that no sea orc rows for a master again. |
+| BOR | Bordon | iron_clans | plain, rust; war-horn with two bands in coal | The horn of the Road-Peace, blown for every caravan in the gorge. |
+| DRE | Dreson | iron_clans | plain, iron; three upright piles in coal | The three piles driven at Dolido by the first path-elders. |
+| DUL | Dulundur | iron_clans | plain, coal; four flames rising side by side in forge orange | The Four Fires of Lesderle, the four valleys' oath. |
+| DAK | The Darks | iron_clans | per pale, coal and iron; spear grounded point down in steel | The grounded spear of the Meat Moot, point down. |
+| SKR | Skragdurg | iron_clans | plain, slag green; broad felling axe in steel | Grashdug's axe, the tool that felled the Old Black. |
+| BRT | Britadon | iron_clans | plain, steel; running boar in rust | The boar that led the hill clans out of the Hollow. |
+| DUN | Dun | wild_holds | plain, hide brown; crown of bone charms in bone | The crown of bone charms of the toll-kings, the crooked ancestor's own crown. |
+| WIL | Wild Lands | wild_holds | plain, lucky ochre; bare pole with three streaming strips in peat | The rag-pole of Zudertu, the moor's one rule and the winter's place. |
+| TRO | Troll Forest | troll_tribes | plain, bog black; crouched standing-stone troll in bone | The King-Stone, the form the trolls' kings take when they become stone. |
+| HOO | Hoorunoron | cairn_giants | plain, giant-forest green; tall stacked cairn in cairn grey [enclave orle] | The Dike-Cairn, the giants' line that holds back the sea. |
+| BUN | Burnikit | goblin_warrens | per fess, rust and cave black; flat flame in hoard gold | The Fire at the Door, the one lie that saved the warrens. |
+| VES | Veshazel | veshazel_court | plain, ash-hall black; three claw-scores in cinder red | The three claw-scores, the mark of the hall's bounds and of every thrall. |
 
 ### Ember Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| PUV | Puvulan | grave_hosts | plain, grave black; an arched gate standing open, dark within, with ember light at its threshold in bone; a ring of short notches in ember red | Puvulan shows the Gate of Nafeher within the ring of names its necromantic orders keep: the Dominion of the dust fields, whose arms show the gate and never the Great Spirit who raised it. |
-| MIR | Mirolon | mirolon_wardens | plain, night blue; a heron standing on one leg in heron white [label] | Mirolon bears the heron that stands watch on one leg by its lake: a free warden-realm whose High Warden is chosen for life, whose beacon towers are manned every night, and which alone takes the signs from the south seriously. |
-| KHO | Khorvrath | netherborn | pile, ash black and nether red; a single curved horn in ember gold [grave base] | Khorvrath bears the pact-horn of the horn-hold of Khorvazel on the grave-black ground of the Dominion: the horned court of the Southern Dominion, which keeps its oath to Nafeher while Volgan's strength stands and still demands the thralls who fled to Olen. |
-| DLN | Dolon | netherborn | per fess, obsidian and nether red; a cauldron of brine over fire in ember gold [grave base] | Dolon bears the brine cauldron over the fire where the salt of its coast and the sulphur of the Maw make the Dominion's black powder: the forge of the Southern Dominion, whose laws are written in salt so that the sea can wash away any oath its queen regrets. |
-| NEZ | Nezer | netherborn | per bend, nether red and ash black; a galley on a wave of fire in ash white [grave base] | Nezer bears the galley that crosses the Sea of Lava to the Nether on a field divided between its two crowns of one family, standing on the Dominion's grave-black ground: the largest of the sworn realms and the keeper of the broken Burning Gate on its coast. |
-| NET | Nether | nether_houses | per fess, hall black and lava red; a five-pointed figure drawn in one unbroken line inside a ring of flame in pact gold [crown] | The Nether bears the King of Demons' seal, a five-pointed figure drawn in one unbroken line inside a ring of fire, under the hall-crown: the court beneath the volcanic island whose pacts bind every house and which sells companies to Nafeher only by bargain. |
-| HAL | Halia | ember_freeholds | per fess, sand and sea teal; salt-pan with heaped salt (three) in tar black [label] | Halia bears three salt-pans for the freeholds of the salt coast that swore at Halon to pay one toll as one league, so that no freehold could be squeezed alone: salt-makers who pay Nafeher for silence and remember the thief only in their taverns. |
-| NAN | Nan | ember_freeholds | per bend, tar black and sand; a gaff hook in salt white [label] | Nan bears the gaff hook of the warlord who takes its tolls: the realm of the strongest captain of the Nan Mountains, who lends the Dominion its storm-pilots and sells the same pilots to anyone who pays more. |
-| OLE | Olen | ember_freeholds | chief, salt white and storm grey; a storm lantern in tar black | Olen bears the lantern that the Holy Breeze kept lit on its cliffs for a whole winter: a shrine-realm of lamp-keepers whose lights are the first a ship sees coming out of the storm belt, and who shelter whoever reaches them. |
+| PUV | Puvulan | grave_hosts | plain, grave black; Gate of Nafeher in bone | The Gate of Nafeher, the canon guard of Puvulan. |
+| MIR | Mirolon | mirolon_wardens | plain, night blue; heron standing on one leg in heron white | The heron of the swamp watch. |
+| KHO | Khorvrath | netherborn | plain, ash black; curved horn broken off at its tip in ember gold [grave base] | The broken horn of the first lord, the proof that the way back is closed. |
+| DLN | Dolon | netherborn | plain, obsidian; crown of salt crystals in ash white | The salt crown of the first queen, the realm's crown and law. |
+| NEZ | Nezer | netherborn | plain, nether red; two-oared galley hull in ember gold [grave base] | The two-oared galley, Nezer's canon identity and one of the five ships allowed in Aoaz. |
+| NET | Nether | nether_houses | plain, cinder ash; a flat plume of sulphur smoke rising from a low cone of the Nether in sulphur white | The King's seal with its one pentagram, the canon guard. |
+| HAL | Halia | ember_freeholds | plain, storm grey; grave-oar upright in tar black | The grave-oar of the freeholders, the league's only speech of the dead. |
+| NAN | Nan | ember_freeholds | plain, sand; storm-petrel skimming low in tar black | The petrel, the wayfinders' guide through the Tempest Reach. |
+| OLE | Olen | ember_freeholds | plain, salt white; windhover in tar black | The hovering kestrel of the Holy Breeze. |
 
 ### Zol's Mistake
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| ZOL | Zol's Mistake | zols_dead | plain, void black; a sigil of broken concentric rings in cold grey | Zol's Mistake shows only the sigil of its emblem leader, the Will of Zol: broken concentric rings on the void, which say nothing of who administers Furviatlon. |
+| ZOL | Zol's Mistake | zols_dead | plain, void black; straight bar snapped in two, the two ends apart on the field in cold grey | The Will of Zol: broken arcs, open to the north and never closed. |
 
 ### Magical Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| WOR | Worshipdom | zilin_pilgrims | plain, hostel white; a hand from the base offering a round loaf in bread brown; a pilgrim's staff in bread brown | The Worshipdom shows only its public charity: a hand offering a loaf above the pilgrim's staff, the hostels of the Deliverer that shelter pilgrims from every land and carry letters for every court. |
-| MAG | Magical Forest | forest_council_elves | per fess, leaf green and deep wood; a green-leaved tree with its roots in elven silver; a book of precedents bound in green in moon white [council border] | The Magical Forest bears the tree of the Singing Grove, which its houses say was sung before it grew, above the book of precedents its elected council keeps, inside the silver border of elected speakers: the oldest realm of the elves, never conquered and the keeper of the Refusal. |
-| HRR | Herrodon | hill_kingdom_elves | per bend, hill green and night slate; a long stair cut into a hillside in elven silver; a silver road winding up to a pass between two hills in scale gold [crown] | Herrodon bears the stair of the hall where each queen is acclaimed by the houses of the hills, under the leaf circlet, with the road west to the lost kin it still remembers: a hill queenship that keeps the Boundary Groves feud with Andos Enda alive by ceremony. |
-| ANE | Andos Enda | lake_elves | per fess, lake teal and deep blue; boat with a glass canopy (three) in water silver | Andos Enda bears three glass boats for the lake groves that swore the Weir Compact to share the water: a federation whose boats carry the letters between Sonargur and the elven realms and whose Water-Court judges at the weir. |
-| NLR | Nolorim | pass_wardens | per chevron, snow white and pass grey-green; two peaks with a path between them in pine | Nolorim bears the pass under the snow that its families have kept for centuries, each counting every pilgrim, merchant and stranger who crosses: the pass-wardenship sworn when Volgan's fires burned below the Nolorim East Pass, each family to one post, so that nothing of his would come up through the heights. |
-| LCC | Lccimio | rift_coast_elves | per bend, rift teal and night sea; a slender shore tower with a lantern roof in quay silver [council border] | Lccimio bears the lantern tower of its rift-coast quays inside the silver border of its council of elder houses: the elves who know the eastern courts better than any alive, and who will be the first to meet an eastern landing. |
-| ELD | Eldafaen | rift_coast_elves | plain, night sea; a rolled scroll tied with a silver cord in quay silver | Eldafaen bears the tied scroll of the Archive, where a house of loremasters keeps the names, letters and songs of the elves who died in the Alliance's wars so that no one will again ask the elves to march without reading them first. |
-| YAV | Yavieth | roost_keepers | plain, keeper silver; a mountain with three spurs in roost slate; a single shed dragon scale in dragon red | Yavieth bears the three spurs of Dragon Mountain with a shed dragon scale beneath them: a fellowship without a ruler whose roost-keepers go up to the roosts to listen rather than to command, and trade the shed scales at Kingson. |
-| TES | Teste | teste_valley_folk | chief, vale green and straw; a ploughed furrow running across the field in linen white [label, ward border] | Teste bears the ploughed furrow of the one fertile vale under the Herrodon rim, within the border of the hall that protects it: a commune of men descended from Third Age refugees, who feed Herrodon and Andos Enda and choose their Reeve at the harvest moot. |
-| LUV | Luv-zhise | quay_folk | per pale, narrows teal and quay silver; a flat ferry-boat with a square sail in ferry plum | Luv-zhise bears the ferry crossing between the two shores of the Rift Narrows, its far shore in the silver of the elves who chartered the quay-houses: a free port that lives on the crossing to the East and sides with whoever holds it. |
-| MSH | Mushroom Forest | mycid_rings | plain, spore purple; a ring of pale mushroom caps in cap cream [enclave orle] | The Mushroom Forest bears a ring of pale mushroom caps inside an orle of the rift coast's teal: the land of the mycids along the rift shore, a people that trades through Luv-zhise and whose ways of rule nobody outside the forest knows. |
+| WOR | Worshipdom | zilin_pilgrims | plain, hostel white; hand offering a round loaf in bread brown | The Worshipdom's canon loaf-hand, the one hand allowed on a banner. |
+| MAG | Magical Forest | forest_council_elves | plain, deep wood; fallen bough laid level in mist grey [council border] | The Speaking Bough laid level, the council's direct identity. |
+| HRR | Herrodon | hill_kingdom_elves | plain, night slate; white owl with wings raised in elven silver | The Hall-Owl that led the First Queen down into the hollow. |
+| ANE | Andos Enda | lake_elves | plain, lake teal; swan in pearl white | The swan of the Water-Court, which sits on open water so that no grove owns the ground. |
+| NLR | Nolorim | pass_wardens | plain, pass grey-green; curved war-horn with a split bell in dawn silver | The cracked horn of Ennaton, the warning that came too late. |
+| LCC | Lccimio | rift_coast_elves | plain, sea glass; round-headed tree on one trunk in night sea [council border] | The Pledge-Tree grown from the eastern seed. |
+| ELD | Eldafaen | rift_coast_elves | plain, night sea; two spear halves laid parallel in quay silver | The broken spears of the road's end, laid parallel and never crossed. |
+| YAV | Yavieth | roost_keepers | plain, slope green; shed dragon scale in keeper silver | The First Scale: the dragon itself is never drawn. |
+| TES | Teste | teste_valley_folk | chief, vale green and straw; swallow in loam brown [ward border] | The Dusk Swallow of Testebur. |
+| LUV | Luv-zhise | quay_folk | plain, narrows teal; half arch broken at its crown in quay ochre | The Western Gate, the arch broken at its crown, where the quay-masters are sworn. |
+| MSH | Mushroom Forest | mycid_rings | plain, spore purple; gilled dome in cap cream [enclave orle] | The bale-mark of the mycids, the pale cap rising from its root. |
 
 ### Lands of the Sun
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| GAA | Gala | gala_court | base, court white and shade green; a round pool rimmed in gold, with rain falling into it in rain blue [crown] | Gala bears the Mirror of First Rain under the endless circlet of King Lorien, above the green shore its Sunfolk villages farm: the oldest elven court of Aoaz, courteous to Aenor and distrustful of kings who turn victories into crowns. |
-| LIG | The Lands of Light | sunhot_light | per fess, sanctuary white and noon gold; a tall arched doorway with a sun disc resting in its arch in flame orange | The Lands of Light bear the noon-door that only they may bear: the sanctuaries of the eastern lowland that chose one Radiant Speaker to share out the water of Sun Lake in the drought of 1A 840, and that still chair the Noon Council. |
-| ELV | Elvana | sunhot_western | per fess, sanctuary white and shade blue; a tall spindle wound with a skein in deep red | Elvana bears the spindle of the weavers of its cape sanctuary: a small, gentle house of weavers and healers that chose its own Speaker rather than answer to Eldoga and keeps its one quarrel in the world with Igara. |
-| IGA | Igara | sunhot_western | per pale, sanctuary gold and sanctuary white; a crane wading in shade blue | Igara bears the crane of its shrine of the shallows on Sun Lake: the smallest sanctuary realm, which chose its own Speaker sixty-two years after Elvana and measures its standing at the Noon Council by how often it can outvote it. |
-| YEN | Yeni Alang | sunhot_western | pile reversed, sanctuary white and shade blue; a pair of wings seen from below in sanctuary white | Yeni Alang bears a pair of wings seen from below on its rising terrace: the house of sky-watchers founded when one of them saw wings over the terraces on a still day, which still adds a line to the Roll of Wings a few times in a good year. |
-| TOR | Tor Luni | sunhot_western | per bend, sanctuary gold and deep red; three standing stones of uneven height in sanctuary white | Tor Luni bears three standing stones of uneven height, older than any Sunhot record and kept uncut among the quarries: the sanctuary of the Keeper of the Stones, whose white stone builds half the realms of the region. |
-| IHU | Ihuy | sunhot_isles | per fess, isle gold and isle teal; an island peak trailing smoke in deep lagoon | Ihuy bears Hol, the isle whose Great Volcano threw ash over every island at once and made one council of the seven isle Speakers: a council of sailors, pearl-farmers and fishers that watches the smoke of Hol. |
-| SOY | Soyano | sunhot_isles | plain, isle teal; a tall white ship in terrace white | Soyano bears the white ship of its shipwrights: the Archipelago Council of the northern isles under a Tide-Speaker chosen at the turn of the tide, which builds the white ships of the south and the hulls of Gala's court. |
-| GOO | Goodin | goodin_sunfolk | plain, shade green; a broad-crowned shade tree in linen [patron chief] | Goodin bears the shade tree of its guest-towns under the rayonny chief of its Sunhot patrons: Sunfolk steadings that govern themselves under elders, raise levies freely and are the strongest arm of the Noon Council, where they sit as guests. |
-| GOF | God Forest | god_forest_keepers | base, god-wood green and shadow; a closed gate of woven branches in glade gold | The God Forest bears a closed gate of woven branches: the household of Keepers who were there when the first sanctuary was built, who close their wood to everyone and say nothing at all. |
+| GAA | Gala | gala_court | plain, deep harbour; silver hind in court white | The white hind of the First Rain. |
+| LIG | The Lands of Light | sunhot_light | plain, noon gold; tall doorway with the sun standing in it in sanctuary white | The noon-door with the one sun standing in it, the canon guard of the Lands of Light. |
+| ELV | Elvana | sunhot_western | plain, sanctuary white; silk-moth with broad wings spread in shade blue | The silk-moth of the cape, the healers' and weavers' thread-beast. |
+| IGA | Igara | sunhot_western | plain, sanctuary gold; sun-crane dancing with one leg lifted in deep red | The dancing crane of the Weavers' Judgement. |
+| YEN | Yeni Alang | sunhot_western | bordure, shade blue and sanctuary gold; raised wing in sanctuary white | The raised wing of the sighting the Roll of Wings records. |
+| TOR | Tor Luni | sunhot_western | bordure, deep red and sanctuary gold; uncut standing stone in sanctuary white | The uncut standing stone: the stones of the high places are not to be cut. |
+| IHU | Ihuy | sunhot_isles | plain, isle gold; cone with a rising ash plume in deep lagoon | The cone of Hol with its ash plume, the council's own mountain. |
+| SOY | Soyano | sunhot_isles | plain, isle teal; bare curved keel with stem and stern posts in terrace white | The Mother-Keel of Ileslia, from which every keel is measured, one of the five ships allowed in Aoaz. |
+| GOO | Goodin | goodin_sunfolk | plain, shade green; spear reversed with its point on the ground in sun yellow [patron chief] | The guests' reversed spear, the sign of guest-right. |
+| GOF | God Forest | god_forest_keepers | plain, god-wood green; winged seed with one long curved wing in glade gold | The Keepers' winged seed, their only word and the sign of the wood. |
 
 ### East Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| NRS | Noris | noris_riders | plain, indigo; a well-head with rope and bucket in well ochre; a camel kneeling in robe white [crown] | Noris bears the well of the Seven Wells of Furvior under the well-crown of the king the well-lords choose from one line, with the kneeling camel of the tribes he leads in war: the camel-kingship of the northern desert and the Salt Road. |
-| NAA | Naamis | naamis_sea_crown | per fess, coast white and naam blue; two harbour moles curving round one basin in sail ochre [crown] | Naamis bears the two harbour moles of Hacsen and Vigodor that one marriage joined under the sea-crown: a sea crown whose ships carry the Salt Road's goods to the rift and whose policy rests on the Noris Treaty. |
-| WOQ | Woqood | woqood_sealers | chief, seal water and snow coast; harpoon with its coiled line (three) in snow coast | Woqood bears three harpoons for the boat clans that swore the moot of Pehami to share the seal grounds without blood under a Harpoon-Speaker: sealers of the snow coast who stay out of every eastern coalition unless someone attacks them. |
-| ORA | Orato | orato_fishers | per pale, isle blue and boat brown; a cod swimming in net white | Orato impales its two isles of Orato and Fladev, joined by marriage, with the cod its families sell to the Naamis ship-masters: a lordship of the boats facing the Kusmeel under one lord who built the stone harbour at Nodoqood. |
-| STA | Stabilo | caravan_princes | plain, caravan red; a balance in linen | Stabilo bears the honest balance of its Prince of the Scales, first of the bench of houses that built the Gold Road from the bronze mines to the sea: the strongest military purse of the East and Noris's rival on the caravan roads. |
-| DRA | Drak | caravan_princes | per fess, bronze and caravan red; a smoking mountain cone in ink; a bound powder cask in linen | Drak bears the smoking cone of the Drak Furnace under which its forge-houses swore the Furnace Oath, with the powder cask whose recipe its forge-masters guard: the place where the East learned black powder. |
-| MOS | Mostok | caravan_princes | chief, market green and bronze; nested cup-weights in linen | Mostok bears the nested weights of the weighers who built the caravanserai of Cereosa to settle the caravans' quarrels: a junction city of inns and weigh-houses that knows its freedom lasts exactly as long as Noris and Stabilo distrust each other. |
-| AZA | Azano | caravan_princes | per bend, linen and market green; a bronze coin stamped with a balance in bronze | Azano bears the struck coin with which its house bought the charter of Ceralon outright: a city that takes its master's name, independent by charter rather than by arms, whose ledgers record loans to half the courts of the East. |
-| OBM | Obmi | caravan_princes | base, colonnade stone and market green; a tall hardwood trunk with a tapping cup in seal wax | Obmi bears the hardwood trunk tapped for the jungle gum that seals casks and ships' seams: the factors' city at the edge of the Obmi Jungle, which lives by the Stabilo Pact's need for casks and fears the jungle's fevers more than any army. |
-| PON | Pornivior | caravan_princes | quarterly, bronze and ink; a heaped tithe-bowl held up in linen | Pornivior bears the heaped tithe-bowl of the fire-tithe it pays the mountain every year without fail: the waystation city of Nerhuus below Mount Ergo, whose people say a devil once took a whole caravan and left only the scales. |
-| ALR | Alerhia | river_kings | plain, river gold; a temple stair of seven steps in lapis [crown, river bendlet] | Alerhia bears the stair-temple raised above the flood-line so that the River and the Kings Below would each have a place, under the river-diadem and over the river's band: an old crown in its own right at the end of the Gold Road, rich in grain and scribes. |
-| ERC | Erco | river_kings | per bend, lapis and linen white; two mountains with a bar across the pass between them in river gold [crown, river bendlet] | Erco bears the barred pass between two mountains that its mine-lords shut in 2A 12 against Volgan's beaten soldiers, under the river-diadem: a mountain kingdom of rich mines and seven manned forts that pays the fire-tithe to the mountain every spring. |
-| PLO | Plutondo | river_kings | base, flood silt and river blue; a sheaf of grain grown from black ash in linen white [river bendlet] | Plutondo bears the sheaf of grain grown in the ash of the Plutondo Vents: a princedom of the warm southern valley, rich in ash-grown grain and ore and deep in Stabilo's ledgers since the Vent Year. |
-| DLB | Delbiz | river_kings | per chevron, river gold and reed green; a horse standing in linen white [crown, river bendlet] | Delbiz bears a horse of the great fair at Furtonlin under the river-diadem: the grassland kingdom whose horse-lords swore to keep their horses and their grass for themselves when Alerhia could no longer pay them. |
-| OST | Ostoroth | lake_road_cities | per fess, deep water and lake silver-blue; a lantern on a pole in lantern amber [crown] | Ostoroth bears the lantern of the shrine on the water at Ohitus under the lantern-crown, because the highland lords made the lord of Ohitus king so that the shrine would always be in a king's keeping: the kingdom of the Lake Road that keeps the Lantern Peace with Mora. |
-| MOA | Mora | lake_road_cities | per fess, quay white and lake silver-blue; a basket heaped with grain in lantern amber; a perch in deep water | Mora bears the basket of harvests with which the fishers and farmers of Gonnois bought their lord's rights, and the perch of the fish-hall where their council meets: the granary of the East, which has no king and wants none. |
-| KRS | Kersian | lake_road_cities | plain, lake silver-blue; a market gate in quay white | Kersian bears the gate of the walled market that Aenoran exiles and Alerhic lake traders built where the Lake Road would cross the Gold Road: a free city, rich, small and anxious, kept free by the rivalry of two powers. |
-| RHA | Rhachia | red_lands_tribunes | per chevron, kiln ochre and red clay; a domed kiln with fire at its mouth in umber; a clay jar in slip white | Rhachia bears the kiln of the kiln-mothers who opened the gates of Pordoce in 4A 1719 and elected a tribune instead of a king, with a jar of the pots the caravan houses still buy: a poor, proud commonwealth watched by the deposed king's heir. |
+| NRS | Noris | noris_riders | plain, deep indigo; lance with a gourd hung beneath the blade in silver | The gourd-lance, the Khadi's standard and the Well-Oath's gourd. |
+| NAA | Naamis | naamis_sea_crown | plain, naam blue; double-prowed ship without mast or sail in harbour gold | The Returning Ship that rows out each year and comes back, one of the five ships allowed in Aoaz. |
+| WOQ | Woqood | woqood_sealers | plain, seal water; harpoon upright with a barbed toggle head in whalebone | The harpoon laid on the ice to treat with strangers, the moot's own. |
+| ORA | Orato | orato_fishers | plain, dark water; gull on the watch in net white | The gull of the heights, the watch kept on every headland through the Breaking, blown to call the boats home. |
+| STA | Stabilo | caravan_princes | plain, caravan red; crouching ox in bronze | The King's Measure, the bench's bronze ox, the weight of the old road. |
+| DRA | Drak | caravan_princes | plain, ink; open iron collar broken at its hinge in bronze | The open collar broken at its hinge, the forge houses' mark of the broken yoke. |
+| MOS | Mostok | caravan_princes | plain, colonnade stone; sheathed sword with a cord bound round the scabbard, no crossguard in bronze | The tied blade, the scabbard bound by a white cord that is never cut. |
+| AZA | Azano | caravan_princes | plain, seal wax; tortoise in bronze | The tortoise of the paymasters' creed: every debt is real until it is paid, and a debt outlives the debtor. |
+| OBM | Obmi | caravan_princes | plain, linen; hornbill with a great curved casque in ink | The hornbill, the cutters' bird of the high ground that led the town upslope. |
+| PON | Pornivior | caravan_princes | plain, bronze; cone-shaped mountain with three smoke-curls in ink | The Smoking Teeth, the mountain the tithe is paid to. |
+| ALR | Alerhia | river_kings | plain, river gold; stair of five steps with a narrow crown in lapis [river bendlet] | The stair and its crown, raised above the flood as the king's own. |
+| ERC | Erco | river_kings | plain, flood silt; walled diadem of seven points in lapis [river bendlet] | The walled diadem of seven points, the crown of the mine-lords who rule nobody. |
+| PLO | Plutondo | river_kings | plain, river blue; salamander of the vents in linen white [river bendlet] | The salamander of the vents, the breath of whatever sleeps beneath the East. |
+| DLB | Delbiz | river_kings | plain, reed green; horse's head in lapis [river bendlet] | The horse's head, the oath-capital cut from Qadurum. |
+| OST | Ostoroth | lake_road_cities | plain, deep water; highland conifer in quay white | The conifer of the highland clans, carried west to roof the halls of the march. |
+| MOA | Mora | lake_road_cities | plain, rush green; steam-eel rising in an S-curve in quay white | The steam-eel, the one fish that lives in the hottest water and kept the shore alive. |
+| KRS | Kersian | lake_road_cities | plain, lake silver-blue; leaping trout of the Vale rivers in quay white | The trout of the Vale rivers, the water the exiles carried out and poured into the cistern, sworn to be carried home. |
+| RHA | Rhachia | red_lands_tribunes | plain, slip white; seated armless clay mother-figure in red clay | The eldest clay mother, the relic carried through the villages each spring. |
 
 ### South Lands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| MIE | Miaed | miaed_pass_lords | per chevron, sand white and gorge red; a fire burning in a mountain pass in fire gold | Miaed bears the fire the pass-lords keep in the Hardtmuth passes for the spirits of the high road: a lordship of pass-forts that elects the Lord of Erdozan and sells passage to Noris and Stabilo alike. |
-| WAH | Wahatud | wahatud_oasis_folk | plain, oasis green; four well-heads set in a ring in dune | Wahatud bears the four wells of the Well-Moot that the surviving clan-mothers swore at Biir-Raab after the war of the poisoned wells: a league that never joins a war and always offers water to refugees. |
+| MIE | Miaed | miaed_pass_lords | plain, pass ochre; ibex with long horns swept back in night pass | The ibex, the gorge-mother's beast and the way through the Hardtmuth. |
+| WAH | Wahatud | wahatud_oasis_folk | plain, oasis green; single long feather upright in dune | The long feather the Well-Moot was sworn over, the league's direct identity relic. |
 
 ### Islands of the South
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| ENH | Enhis Is Rond | southern_islanders | plain, coral sand; a stone cairn on a reef in deep reef | Enhis Is Rond bears the shrine beneath the tide that the Rising Tide drowned, whose Priest-Elders rule the centre of the Great Isle and repeat in its rites a name they do not understand. |
-| HWN | Howan | southern_islanders | per fess, coral sand and lagoon turquoise; a long house on stilts with its door open in coral red | Howan bears the house on stilts kept open for the shipwrecked: a harbour moot of terrace-heads on the River Tich, the only river of note in the islands, whose divers sell pearls for iron. |
-| VER | Verde | southern_islanders | base, coral sand and frond green; a woven sail in lava black | Verde bears the woven sail of the canoes cut from its western hills and mangroves: a clan hall of timber-folk and navigators who sell hull-timber to Aenor Isle and pilots to anyone. |
-| NAR | Nara | southern_islanders | chief, deep reef and coral sand; a woven fish trap in coral sand | Nara bears the fish trap its villages lift only by day: an elders' moot of fishers on the long island Ancha who will not cross the Night Reef after dark for anyone. |
-| YON | Yongyong | southern_islanders | per chevron, coral sand and deep reef; a shell necklace in coral red | Yongyong bears a necklace of the shell its villages carve: the ring-council of the villages round the Yong lagoon, which all carry one name and burned three of their own in the Year of the Red Wind before they made peace round one ring. |
-| KAM | Kamu Lamo | southern_islanders | plain, deep reef; a notched tally stick in coral sand | Kamu Lamo bears the tally itself: the deep isle of the oldest tally-caves of the south, where the dead have been counted as waves on the cave walls since before any Aenoran sailor saw the arcs. |
-| KEA | Kea | southern_islanders | pile reversed, lagoon turquoise and coral sand; three stepped rice terraces in frond green | Kea bears three stepped rice terraces on the rising slope: the terrace council of Kea, Agla and the Rice Islands, which shares its scarce water by council and sends rice to any island in a bad year. |
-| SDE | Sidea | southern_islanders | per pale, lagoon turquoise and deep reef; a tall slit drum in coral sand | Sidea bears the slit drum on which its drummers carry the first warning of every storm to the Great Isle: a cluster of islets that chose one elder in the storm year that cut them off for a whole season. |
+| ENH | Enhis Is Rond | southern_islanders | plain, coral sand; cord hung down to a stone weight in deep reef | The diving cord the Priest-Elder carries down to the drowned shrine. |
+| HWN | Howan | southern_islanders | plain, coral red; saddle-backed roof with upswept ends in coral sand | The upswept roof of the house for the shipwrecked, with straight-cut ends. |
+| VER | Verde | southern_islanders | plain, deep reef; mangrove tree on arched stilt-roots in frond green | The mangrove, the first tree the clans asked and the realm's own tree. |
+| NAR | Nara | southern_islanders | per fess, coral sand and deep reef; quenched torch in coral sand | The quenched torch of the Day Rule oath, lit by no flame. |
+| YON | Yongyong | southern_islanders | plain, lagoon turquoise; spider in coral sand | The weaver's spider: all the villages are the children of one weaver, Yong. |
+| KAM | Kamu Lamo | southern_islanders | plain, frond green; three stacked waves in coral sand | Three waves carved below the first hands, every dead person counted as one wave. |
+| KEA | Kea | southern_islanders | plain, lava black; three stepped terraces on a rising slope in coral sand | The divider of the Tuwang cisterns: one stream dividing into two parallel channels. |
+| SDE | Sidea | southern_islanders | per pale, coral red and lagoon turquoise; upright slit-drum in deep reef | The drum of Yumbo, the islets' summons and their voice. |
 
 ### Triton's Islands
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| ADE | Adel | chart_islanders | per fess, chart paper and chart teal; rolled chart (three) in ink | Adel bears three rolled charts for the chart-houses that agreed in 4A 388 to copy every chart in one house at Sanderz: the chart-house league whose Chart Hall decides which crown gets the newest chart. |
-| RAE | Raerby | chart_islanders | chief, ink and chart paper; a buoy in reef coral | Raerby bears the buoy that marks the banks it mediates: the broker-captains of Ese, who grew rich lending ships and settling others' quarrels for a fee and who watch Nondondor's fleet more closely than anyone. |
-| PLL | Pollos | chart_islanders | plain, chart teal; a great strong-room key in sand gold | Pollos bears the key of the strong-room where the chart-houses keep their treasury: the market isle of Havnai, whose guild-masters wrote the market law every buyer and seller swears to, and who sell everything to everyone. |
-| FNG | Fineger | chart_islanders | base, chart paper and reef coral; a pilot's lantern in ink | Fineger bears the pilot's lantern of the cold northern isles, whose pilots know waters only they can read: kelp-farmers and shepherds through whom any fleet bound north must pass. |
-| HLN | Halenor | chart_islanders | pile reversed, chart teal and sand gold; a fire on a shore rock in reef coral | Halenor bears the fire on the shore rock that its wreck-lord chooses each gale season to light or leave dark: the storm isles of the outer south, where the chiefs swore in 3A 280 that whatever the storm brings to a shore belongs to its lord. |
-| SEI | Seite Islands | chart_islanders | per chevron, chart paper and chart teal; a turtle in ink | The Seite Islands bear the turtle of the banks their fathers fished: an isle moot that keeps the reef-shrines, refuses the sea-king every year and knows that its fishers alone cannot hold the banks against his fleet. |
-| LEN | The Lens | chart_islanders | per fess, ink and chart paper; a round lens of ground glass in sand gold | The Lens bears the great lens of the Lamp-House, the order of glass-blowers sworn after a royal ship was lost on the Cursed Square to keep the northern passages lit for every ship, whatever its flag. |
-| NND | Nondondor | corsair_lords | plain, corsair black; a short straight hanger sword in ransom gold [crown] | Nondondor bears the hanger of the captain who beat the corsair captains one by one, within the captain's ring of a sea-king: a kingdom of corsairs and fishers that grants writs or hangs corsairs as suits it and presses the banks claim when its fleet is stronger. |
-| WND | Windy Lands | corsair_lords | per bend, blood red and sea ink; fishing kite on its line (three) in bone | The Windy Lands bear three fishing kites for the cape-lords of the windward capes, who fish from kites and take what the storm drives onto their rocks: a league that pays tribute to strong fleets, raids weak ones and never agrees on anything quickly. |
-| SNT | Santon | corsair_lords | per fess, bone and sea ink; a ship under a black sail in corsair black | Santon bears the black sail of the captain who took the strait-place harbour of Straton: corsairs in the dead harbours of the outer western arc, who remember that Corogon has sworn to burn Straton again. |
-| BEN | Benan | corsair_lords | per pale, blood red and corsair black; a cove under a mountain in ransom gold | Benan bears the cove under the mountain that no fleet can find without a Benan pilot: the corsair haven of Torni, which takes tribute from the Charter, raids when it is late and keeps well away from the Cursed Square. |
+| ADE | Adel | chart_islanders | plain, chart paper; a sounding lead on its line in chart teal | The sounding lead, the chart-houses' oath that nothing is named until the lead has proved it. |
+| RAE | Raerby | chart_islanders | plain, ink; fish cut in two in chart paper | The cut fish, the banks-court's first fish, cut in two before both crews. |
+| PLL | Pollos | chart_islanders | plain, chart teal; hound of the strong-room in sand gold | The hound of the strong-room that guards the league's money. |
+| FNG | Fineger | chart_islanders | plain, reef coral; ram's head with heavy curled horns in chart paper | The ram of the first crossing to the Kile Islands, the pilots' own sign. |
+| HLN | Halenor | chart_islanders | per bend, sand gold and ink; brazier on tall legs with a flat flame in ink | The brazier of the wreck-lords on its tall legs, the choice of whether the shore is lit. |
+| SEI | Seite Islands | chart_islanders | plain, shallows; seal with its head raised in chart teal | The seal, the reef-spirits' messenger that spared the first pilots. |
+| LEN | The Lens | chart_islanders | plain, sand gold; gannet in ink | The one lamp of the Keepers' oath, blown in one breath at Lighon. |
+| NND | Nondondor | corsair_lords | plain, corsair black; crown twisted from an anchor cable in ransom gold | The cable crown twisted from Kusion's anchor rope. |
+| WND | Windy Lands | corsair_lords | plain, blood red; diamond-shaped kite with one tail in corsair black | The fishing kite of the capes, flown by the four cape-lords in every gale. |
+| SNT | Santon | corsair_lords | plain, sea ink; black sword upright in blood red | The black sword of the captaincy, the mark of the captains who came in under black sails. |
+| BEN | Benan | corsair_lords | plain, rust; hermit crab in a spiral shell in bone | The crab in a borrowed shell, Urai the Lame's saying and the haven's sign. |
 <!-- generated:countries:end -->
 
 ## 7. Dynamic tags
@@ -2966,7 +3036,7 @@ The results of the last build:
 | forbidden | 0 |
 | dynamic | 0 |
 
-The closest pair of designs is aenor and pollos at a distance of 4.66 (minimum 3).
+The closest pair of designs is konori and delbiz at a distance of 3.38 (minimum 3).
 <!-- generated:checks:end -->
 
 ## 9. What the rejected flags did wrong
@@ -3012,3 +3082,15 @@ These are proposals made while writing the designs for the new roster; each is r
 3. The image-level checks of 8.5 pass: palette fit, near-duplicates, real-world look-alikes, OCR, headers and coverage in three sizes.
 4. In the isolated Linux run, the country selection, diplomacy and map show the new flags at all three sizes, a scripted civil war shows its derived cosmetic flag, and no D-tag fallback appears.
 5. When the roster changes, the generator's design table gets a row for every new realm from its culture or people grammar, and the checks still pass.
+
+## K68 per-realm hem and mark overrides (31 October 2026)
+
+The lead ruled that a realm's hem may differ from its culture's hem, and that one grave-base mark stays in the lore but is not drawn on the banner. The tables are `K68_REALM_HEM`, `K68_REALM_HEM_TEXT` and `K68_MARK_WAIVED` in `tools/content/heraldry/k68_designs.mjs`, applied by `realmStyleText` and `markWaived` in `build_heraldry.mjs`. Dolon (DLN), Dondor (DND) and Kvittumm (KVI) take a plain sewn border instead of their culture's hem; the culture rows keep their hems for every other realm. Dolon draws no grave base, and the form check accepts this only through the waiver table. The waiver table is checked both ways: a waived mark drawn on the banner is a finding.
+
+## Lead rulings, round 6 (31 October 2026)
+
+No five-pointed star appears on any banner. Nether's seal is its sign element (a flat sulphur plume). Hirolon's device is the great cairn and Molot's the raised wings; Zol's Will is a non-circular broken bar; Mustnom's magpie stands alone on a plain field (the road_warrens grammar gains a plain division, and the boss ring is waived for Mustnom); Worshipdom's ground is plain (`K68_REALM_GROUND`); Kea's device is its three stepped rice terraces. Yeldenne is retired (K56) and is dropped from the generator's realms (`RETIRED_REALMS`), so the designs match the 155 realms.
+
+Round 6 results: HIR and MOO failed three generation attempts and are not served (their best image is kept, needs_user_review). Yeldenne's roster row still exists in `roster.json`; the country table reads that roster, so its removal is pending the owner.
+
+Round 7 (31 October 2026): Hirolon's device is a single upright tapered standing stone and Molot's a plain upright square-ended post; both realms carry the flat-solid hand override (`K68_REALM_HAND`), so no curl, scroll or volute can appear.

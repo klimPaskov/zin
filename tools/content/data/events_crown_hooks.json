@@ -13,7 +13,7 @@
     { "loop": "every_country", "limit": ["zin_aenor_is_concord_dominion"], "do": [ { "fire": "zin_reign.24", "days": 5 }, { "fire": "zin_reign.25", "days": 12 } ] },
     { "in": "parim", "do": [ { "loop": "every_country", "limit": [
         { "or": [ "is_major", { "opinion": "target:zin_aenor_parim_realm", "op": ">", "value": 24 }, { "and": ["zin_east_is_court", "var:zin_footholds>=2"] } ] },
-        "!zin_aenor_is_realm", "!tag:Lerendor", "!zin_is_volgan", "!subject_of:Puvulan", "!zin_is_zol", "!tag:Yeldenne", "!zin_aenor_is_concord_dominion" ],
+        "!zin_aenor_is_realm", "!tag:Lerendor", "!zin_is_volgan", "!subject_of:Puvulan", "!zin_is_zol", "!zin_aenor_is_concord_dominion" ],
       "do": [ { "fire": "zin_reign.21", "days": 7 } ] } ] }
    ]
   },
@@ -37,7 +37,7 @@
     { "fire": "zin_reign.40", "days": 2, "to": "parim" },
     { "in": "parim", "do": [ { "loop": "every_country", "limit": [
         { "or": [ "is_major", { "opinion": "target:zin_aenor_parim_realm", "op": ">", "value": -1 } ] },
-        "!zin_aenor_is_realm", "!zin_aenor_is_concord_dominion", "!zin_is_volgan", "!subject_of:Puvulan", "!zin_is_zol", "!tag:Yeldenne", "!tag:Lerendor", "!flag:zin_region_west_lands", "!zin_elves_is_wall_realm" ],
+        "!zin_aenor_is_realm", "!zin_aenor_is_concord_dominion", "!zin_is_volgan", "!subject_of:Puvulan", "!zin_is_zol", "!tag:Lerendor", "!flag:zin_region_west_lands", "!zin_elves_is_wall_realm" ],
       "do": [ { "fire": "zin_reign.41", "days": 7 } ] } ] },
     { "loop": "every_country", "limit": ["zin_aenor_is_concord_dominion"], "do": [ { "fire": "zin_reign.42", "days": 10 } ] },
     { "fire": "zin_reign.43", "days": 60, "to": "parim" },

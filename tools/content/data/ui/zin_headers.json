@@ -1,0 +1,119 @@
+{
+  "about": "Header illustrations of ZIN's own panels (UI overhaul lane W7; design system section 6.4: a 600 x 96 picture under the title band of each mechanic panel). One gpt-6-luna picture per header (requested 1536 x 1024, returned about 2172 x 724), painted as a wide band; tools/content/art/zin-header-jobs.mjs writes the jobs and, with --crop, the tracked band art/source/ui/headers/<id>.png (full width at the header aspect, from band.top, a fraction of the height). The build reads only the tracked band and fits it to 600 x 96 (cover, scale about 0.28). Subjects follow the lore vault and the mechanic specs; every subject is a place or still objects: no figure, no face, no lettering.",
+  "size": [
+    600,
+    96
+  ],
+  "generation": {
+    "size": "1536x1024",
+    "quality": "high",
+    "bandNote": "The model returns about 2172 x 724 for this request; the band is the full width at the header aspect (600:96), its top a fraction of the picture height."
+  },
+  "style": "Painted dark-fantasy strategy-game illustration in a consistent style: rich oil-paint texture, soft dramatic light, muted earthy palette, fine detail, calm composition.",
+  "composition": "A very wide panoramic banner picture. Everything that matters lies inside one horizontal band across the middle of the image, about one quarter of its height; the band reads as a complete, balanced scene from the left edge to the right edge with the main subject near the centre. Above and below the band the picture continues as plain sky, wall or ground of the same scene with nothing important in it, because the top and bottom will be cut away.",
+  "rules": "No people, no figure, no silhouette of a person, no face, no animal head, no skull, no bones, no demon, no crown, no sun disc, no text, no letters, no numbers, no runes, no signature, no frame or border, no user-interface element; no modern object.",
+  "headers": [
+    {
+      "id": "realm",
+      "panel": "zin_realm_window",
+      "sprite": "GFX_zin_header_realm",
+      "basis": "The Realm panel is every country's own overview (spec 01 section 3); a Chancery still life of the realm's records.",
+      "subject": "a long dark walnut chancery table seen from the front at eye level, an unrolled painted chart of hills, rivers and coasts without any writing, brass map weights, red wax seals, a bundle of sealed charters, a quill in a bronze inkwell and two candles in bronze holders, warm candlelight against a dark panelled wall",
+      "band": {
+        "top": 0.27
+      }
+    },
+    {
+      "id": "court",
+      "panel": "zin_court_window",
+      "sprite": "GFX_zin_header_court",
+      "basis": "The Golden Court of Parim: offices, titles and charters are bought in the palace district; seventeen centuries of habit (Aenor court spec, lore Middle Lands and Aenor, Golden King).",
+      "subject": "a long gilded gallery of the old royal palace of Parim: tall columns with worn gold leaf, deep red lacquered walls, a heavy table in the middle heaped with gold coins, open coffers and sealed charters with dangling ribbons and wax seals, faded splendour, soft golden light falling through high arched windows",
+      "band": {
+        "top": 0.3
+      }
+    },
+    {
+      "id": "council",
+      "panel": "zin_council_window",
+      "sprite": "GFX_zin_header_council",
+      "basis": "The Hermitage, public face of the Hidden Council: worship, relief networks, couriers and the recovery of relics (lore Afrit's Hidden Council; spec 01 section 6 theme hermitage: ivory and ash, a thin gold line, no demon imagery).",
+      "subject": "the quiet cloister of a hermitage at dusk: pale ivory and ash-grey stone arches, a long reading table with closed ledgers bound in pale leather, a censer trailing thin smoke, sealed letters tied with thin gold cord, a heavy grey curtain half drawn across a doorway, one thin line of gold light along the floor",
+      "band": {
+        "top": 0.47,
+        "note": "band below the horizon: the picture has a setting sun at the left edge, which the band leaves out (forbidden motif: sun disc)"
+      }
+    },
+    {
+      "id": "horde",
+      "panel": "zin_horde_window",
+      "sprite": "GFX_zin_header_horde",
+      "basis": "The Horde of Cocanoor: the four blocs (Volcano Clans, Iron Clans, War-Clans, Goblin Warrens) under the Warking (dark_lands spec; spec 01 section 12: a fire-lit moot hall, no faces).",
+      "subject": "the inside of a great fire-lit moot hall of rough black basalt and iron: a long central fire pit glowing orange, four clan war-standards of different colours on tall iron poles around it, plain cloth without any symbol, iron braziers, heavy timber roof beams, red light and drifting smoke, the far wall opening onto a glowing volcanic slope",
+      "band": {
+        "top": 0.3
+      }
+    },
+    {
+      "id": "accord",
+      "panel": "zin_accord_window",
+      "sprite": "GFX_zin_header_accord",
+      "basis": "The Dark Sea Accord led by Dondor from Notbuton against Goldoroth (lore Dark Lands; spec 01 section 12: dark ships under a cliff fort, no faces).",
+      "subject": "a grey stone fort on a high dark cliff above the Sea of Darkness at evening, a few watch lights in its walls, three dark-hulled ships with furled sails at anchor in the cove below, a chain of warning beacons along the headland, cold green-grey sea and low cloud",
+      "band": {
+        "top": 0.12,
+        "note": "band on the fort and the cliff; the ships at anchor lie below it"
+      }
+    },
+    {
+      "id": "dominion",
+      "panel": "zin_dominion_window",
+      "sprite": "GFX_zin_header_dominion",
+      "basis": "The Southern Dominion of the Ember Lands: Nafeher, the grave hosts, the Veil of Storms, the Nether (lore Volgan's Ember Lands; Volgan spec; spec 01 section 12 theme storm).",
+      "subject": "the Ember Lands seen from far away: a dark volcanic plain under a wall of storm clouds lit from below by ember-red light, rows upon rows of low grave mounds with thin mist rising from them, a distant black fortress of jagged towers on a ridge, glowing fissures in the ground, lightning inside the clouds",
+      "band": {
+        "top": 0.2
+      }
+    },
+    {
+      "id": "dominion_broken",
+      "panel": "zin_dominion_window",
+      "sprite": "GFX_zin_header_dominion_broken",
+      "basis": "The same plain after zin_volgan_body_destroyed: spec 01 section 7 names this broken-host variant; the text never says what became of Volgan.",
+      "subject": "the same dark volcanic plain of the Ember Lands after a great defeat: the storm wall breaking apart into grey rags of cloud, the distant black fortress on its ridge broken and collapsed, the fissures cooled to grey, the grave mounds sunken and still, cold ash light, quiet",
+      "band": {
+        "top": 0.2
+      }
+    },
+    {
+      "id": "watch",
+      "panel": "zin_watch_window",
+      "sprite": "GFX_zin_header_watch",
+      "basis": "The Watch on the Passes of Mirolon looking south at the Ember Lands; scouts, signal fires and the pass forts (Volgan spec; spec 01 section 7 theme stone).",
+      "subject": "a high mountain pass in weathered sandstone with a stone watch-fort and an iron-riveted gate across the narrow road, signal lanterns burning on its towers, a second small fort on the next ridge, and far beyond the pass to the south a dark land under a low line of storm cloud with a faint red glow",
+      "band": {
+        "top": 0.22
+      }
+    },
+    {
+      "id": "strait",
+      "panel": "zin_strait_window",
+      "sprite": "GFX_zin_header_strait",
+      "basis": "The Narrow Strait at Sonargur: the Treaty of 4A 512, the dues and tolls (lore Fourth Age register; Lerendor spec; spec 01 section 9 theme sea).",
+      "subject": "a narrow sea channel between two steep cliff shores, a tall stone toll tower on each side and a huge iron chain hanging low across the water between them, merchant ships with patched sails waiting to pass, sea-green water, grey northern sky, gulls far away",
+      "band": {
+        "top": 0.35
+      }
+    },
+    {
+      "id": "mistake",
+      "panel": "zin_mistake_window",
+      "sprite": "GFX_zin_header_mistake",
+      "basis": "The Presence of Zol's Mistake: a black barren northern land and the black isles of the Kusmeel; the realm should feel silent; no portraits, no figures (lore Zol's Mistake; spec 01 section 8 theme black).",
+      "subject": "a silent barren shore of black stone in the far north under a flat cold grey sky, a still dark grey sea with low black islets far off, a thin pale mist lying on the water, one distant cluster of tall black spires on a headland, no light, no colour but black, grey and a faint cold blue",
+      "band": {
+        "top": 0.25
+      }
+    }
+  ]
+}

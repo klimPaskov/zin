@@ -15,7 +15,7 @@ import { fmt, ind, call, HEADER, Texts, resolveCountries, dateTrigger, assertCle
 import { defaultPeople } from './peoples.mjs';
 import { IDEOLOGIES } from './ideologies.mjs';
 import { buildDarkContent } from './mech_dark_content.mjs';
-import { buildDarkPanels, darkScriptedLocalisation } from './mech_dark_panels.mjs';
+import { buildDarkPanels, darkScriptedLocalisation, darkPanelEffects } from './mech_dark_panels.mjs';
 
 const PANEL_TEXT = /^zin_(horde|accord)_/;
 
@@ -792,6 +792,8 @@ ${GOL} = { country_event = { id = zin_dark.10 } }`);
   const panels = ctx.panels === false ? { files: new Map(), scriptedGuis: [], windows: [] } : await buildDarkPanels({ ...ctxx, BLOCS });
   for (const [rel, text] of panels.files) put(rel, text);
   put('common/scripted_localisation/zin_dark.txt', darkScriptedLocalisation(ctxx));
+  put('common/scripted_effects/zin_dark_panels.txt', darkPanelEffects({ ...ctxx, BLOCS }));
+  defs.effects.push('zin_dark_ui_meters');
   defs.scriptedGuis.push(...panels.scriptedGuis);
   // Without the windows their own texts (zin_horde_*, zin_accord_*) stay in the data for the interface module to take.
   const unused = T.unused().filter(k => ctx.panels !== false || !PANEL_TEXT.test(k));

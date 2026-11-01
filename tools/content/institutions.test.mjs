@@ -151,7 +151,7 @@ test('Valour: three decisions with costs in Orders, stores and wear, and the sta
   for (const d of dec) { assert(child(d.v, 'days_re_enable') >= 180); assert(child(d.v, 'custom_cost_trigger')); assert(JSON.stringify(child(d.v, 'complete_effect')).includes('damage_units')); }
   const v = startValour(D, countries, new Map(countries.map(c => [c.tag, { people: c.name === DEAD || c.name === ZOL ? 'the_dead' : 'men' }])));
   const by = n => v.find(x => x.name === n);
-  assert.equal(by(ZOL).army, 0); assert.equal(by('Yeldenne').army, 0);
+  assert.equal(by(ZOL).army, 0); assert.equal(by('Yeldenne'), undefined, 'K56: Yeldenne is no realm and has no valour row');
   assert.equal(by(DEAD).army, 200); assert.equal(by('Aenor').army, 150); assert.equal(by('Aenor').navy, 100);
   assert.equal(v.find(x => x.name === 'Selen').army, 100);
   assert.equal(v.find(x => x.name === 'Freshon').army, 50);

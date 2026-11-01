@@ -211,7 +211,7 @@ export function roles(T) {
     { key: 'leren_crown', n: 7, name: 'The Leren crown', valid: 'has_country_flag = zin_region_north_lands', steps: k => [tagStep(k, T.lerendor), stateStep(k, site('zin_is_site_sonargur', T.sonargur), 'controller', `has_country_flag = zin_region_north_lands\n${notDark}`), best(k, `has_country_flag = zin_region_north_lands\n${notDark}`)],
       news: { title: 'A New Warden of the Strait', desc: 'The old crown that kept the Narrow Strait has fallen from its place. [zin_role_leren_crown.GetName] now holds the northern shore and with it the old quarrel over the strait, its tolls and its treaty.', ok: 'The strait has a new keeper.' } },
     { key: 'volgan_target', n: 8, name: 'The watch on the southern passes', valid: notDark, steps: k => [tagStep(k, T.mirolon), stateStep(k, site('zin_is_site_mirolon_passes', T.mirolonState), 'controller', notDark)] },
-    { key: 'hall_holder', n: 9, name: 'The keeper of the hall of Horos', valid: 'exists = yes', steps: k => [tagStep(k, T.yeldenne), stateStep(k, site('zin_is_site_yeldenne', T.yeldenneState), 'owner', 'exists = yes')] },
+    { key: 'hall_holder', n: 9, name: 'The keeper of the hall of Horos', valid: 'exists = yes', steps: k => [tagStep(k, T.keeper), stateStep(k, site('zin_is_site_yeldenne', T.hallState), 'owner', 'exists = yes')] },
     { key: 'stage8_host', n: 10, name: "The heir's shelter in the Middle Lands", mirror: 'zin_eindil_stage8_host', valid: 'NOT = { zin_afrit_rules_here = yes }', steps: k => [varStep(k, 'zin_eindil_stage8_host'), tagStep(k, T.selen, 'NOT = { zin_afrit_rules_here = yes }'), best(k, 'has_country_flag = zin_region_middle_lands\nNOT = { zin_afrit_rules_here = yes }')] },
     { key: 'alleria', n: 11, name: "Alleria's employer", valid: 'has_character = zin_alleria', steps: k => [best(k, 'has_character = zin_alleria'), `if = {\nlimit = {\nNOT = { has_event_target = zin_role_${k}_next }\nhas_event_target = zin_role_host\n}\nevent_target:zin_role_host = { save_global_event_target_as = zin_role_${k}_next }\n}`] },
     { key: 'dragon_keeper', n: 12, name: 'The keeper of Dragon Mountain', valid: 'zin_world_is_dragon_keeper = yes', steps: k => [best(k, 'zin_world_is_dragon_keeper = yes')] },
@@ -440,12 +440,14 @@ ${table.checkpoints.map(block).join('\n')}
 export async function buildHistoricalPath(staged, ctx) {
   const table = ctx.checkpoints ?? await loadCheckpoints();
   const roster = ctx.countries;
+  // K56: the hall is the castle's state; its owner is the keeper (data/mech_journey_glo.json hallState and keeper).
+  const glo = JSON.parse(await readFile(new URL('../data/mech_journey_glo.json', import.meta.url), 'utf8'));
   const byName = new Map(roster.map(c => [c.name, c]));
   const need = n => { const c = byName.get(n); if (!c) throw new Error(`historical_path: ${n} is not in the roster`); return c; };
   const T = { aenor: need('Aenor').tag, worshipdom: need('Worshipdom').tag, selen: need('Selen').tag, gala: need('Gala').tag, gunwyn: need('Gunwyn').tag, girdon: need('Girdon').tag,
-    lerendor: need('Lerendor').tag, mirolon: need('Mirolon').tag, yeldenne: need('Yeldenne').tag, howan: need('Howan').tag, nara: need('Nara').tag, verde: need('Verde').tag,
+    lerendor: need('Lerendor').tag, mirolon: need('Mirolon').tag, keeper: need('Pertolor').tag, howan: need('Howan').tag, nara: need('Nara').tag, verde: need('Verde').tag,
     volgan: need('Puvulan').tag, zol: need("Zol's Mistake").tag, parimState: need('Aenor').capitalState, sonargur: need('Lerendor').capitalState,
-    mirolonState: need('Mirolon').capitalState, yeldenneState: need('Yeldenne').capitalState,
+    mirolonState: need('Mirolon').capitalState, hallState: glo.hallState,
     floorWeight: 30, bands: [{ n: 0, from: 0, name: 'As the Chronicle Tells' }, { n: 1, from: 10, name: 'Another Telling' }, { n: 2, from: 30, name: 'A Different Age' }, { n: 3, from: 60, name: 'An Age Unwritten' }] };
   const R = rules(T);
   const { triggers, effects, roles: R_ } = pathScripts(table, R, T);

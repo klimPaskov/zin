@@ -57,8 +57,8 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 ### Cold Lands (31)
 
 - **Tier A:** Coldor.
-- **Tier B** (own tree `regional_<name>`): Fearno (`regional_fearno`), Yeti Lands (`regional_yeti_lands`), Horidor (`regional_horidor`), Isengard (`regional_isengard`), Windwaith (`regional_windwaith`), Titanos (`regional_titanos`), Yeldenne (`regional_yeldenne`).
-- **Tier C** (shared tree `shared_cold_lands`, 23 countries): Worlond, Omar, Londor, Felkond, Orewele, Portogalor, Xison, Naepu, Poloto, Radeon, Wonderland, Celen, Neridor, Rion, Hendair, Hozoson, Holdon, Pertolor, Gaadon, Greenle, Agoron, Belor, Yeneldmore.
+- **Tier B** (own tree `regional_<name>`): Fearno (`regional_fearno`), Yeti Lands (`regional_yeti_lands`), Horidor (`regional_horidor`), Isengard (`regional_isengard`), Windwaith (`regional_windwaith`), Titanos (`regional_titanos`), Pertolor (`regional_pertolor`).
+- **Tier C** (shared tree `shared_cold_lands`, 22 countries): Worlond, Omar, Londor, Felkond, Orewele, Portogalor, Xison, Naepu, Poloto, Radeon, Wonderland, Celen, Neridor, Rion, Hendair, Hozoson, Holdon, Gaadon, Greenle, Agoron, Belor, Yeneldmore.
 
 ### West Lands (21)
 

@@ -1,5 +1,7 @@
 # Yeldenne and Glo
 
+**Retirement (K56, 31 October 2026):** Yeldenne is a town in Pertolor's land, not a realm, so the realm Yeldenne is retired. Horos is story only and never a character. The hall is the castle's state; its owner is the keeper of Glo (`hallState` and `keeper` in `tools/content/data/mech_journey_glo.json`), and the Warden of Mp'E and the Yeldenne ruler are not built. The retirement handoff is `docs/plans/story/yeldenne_retirement_handoff.md`.
+
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. **Depends on** the calendar ([00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): the game still starts on 1936.1.1 until that spec is built. Dates below are Aoaz engine dates (`1753.3.1` is 1 Thaw 4A 1753).
 
 ## Purpose

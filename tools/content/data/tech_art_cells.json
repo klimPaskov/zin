@@ -1,0 +1,469 @@
+{
+  "source": "Layouts of the technology icon sheets (art store raw/technologies/<sheet>.png, generated with gpt-6-luna). Numbers and ids only; the builder reads this file and the accepted sheets. Every sheet is cut by detection (lib/sheets.mjs findRegionsAdaptive) and keeps its listed order; a sprite keeps the family unknown icon until its sheet is accepted.",
+  "complete": true,
+  "sheets": [
+    {
+      "sheet": "technology-01",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_courier_ciphers",
+        "zin_tech_watch_fires",
+        "zin_tech_written_law",
+        "zin_tech_scriptoria",
+        "zin_tech_libraries",
+        "zin_tech_bell_towers",
+        "zin_tech_wax_seals",
+        "zin_tech_horn_chains",
+        "zin_tech_lake_barges",
+        "zin_tech_universities",
+        "zin_tech_cipher_scripts",
+        "zin_tech_cipher_wheels"
+      ]
+    },
+    {
+      "sheet": "technology-02",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_letter_counts",
+        "zin_tech_scholars_conclaves",
+        "zin_tech_far_seeing_glass",
+        "zin_tech_crown_assizes",
+        "zin_tech_sealed_couriers",
+        "zin_tech_reading_rooms",
+        "zin_tech_great_library",
+        "zin_tech_glass_towers",
+        "zin_tech_chanceries",
+        "zin_tech_royal_academies",
+        "zin_tech_mirror_signals",
+        "zin_tech_refuge_granaries"
+      ]
+    },
+    {
+      "sheet": "technology-03",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_leaf_craft",
+        "zin_tech_quarry_songs",
+        "zin_tech_hall_delving",
+        "zin_tech_burrow_gardens",
+        "zin_tech_warren_tunnels",
+        "zin_tech_dressed_stone",
+        "zin_tech_crop_rotation",
+        "zin_tech_forge_pits",
+        "zin_tech_vent_forges",
+        "zin_tech_deep_forges",
+        "zin_tech_counting_houses",
+        "zin_tech_lime_mortar"
+      ]
+    },
+    {
+      "sheet": "technology-04",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_pit_props",
+        "zin_tech_water_wheels",
+        "zin_tech_slipways",
+        "zin_tech_arch_and_vault",
+        "zin_tech_quarry_wedges",
+        "zin_tech_seed_reserves",
+        "zin_tech_trip_hammers",
+        "zin_tech_wellspring_tapping",
+        "zin_tech_river_barges",
+        "zin_tech_hearth_watch",
+        "zin_tech_drainage_wheels",
+        "zin_tech_standard_patterns"
+      ]
+    },
+    {
+      "sheet": "technology-05",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_dry_docks",
+        "zin_tech_ley_stone_channels",
+        "zin_tech_tinkers_benches",
+        "zin_tech_tunnel_raids",
+        "zin_tech_great_halls",
+        "zin_tech_village_forges",
+        "zin_tech_masons_lodges",
+        "zin_tech_deep_shafts",
+        "zin_tech_irrigation_canals",
+        "zin_tech_vaulted_halls",
+        "zin_tech_roadside_smithies",
+        "zin_tech_hold_engineers"
+      ]
+    },
+    {
+      "sheet": "technology-06",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_hired_companies",
+        "zin_tech_division_of_labour",
+        "zin_tech_covered_yards",
+        "zin_tech_charcoal_leagues",
+        "zin_tech_phials_and_vials",
+        "zin_tech_scrap_forges",
+        "zin_tech_treadwheel_cranes",
+        "zin_tech_travelling_smiths",
+        "zin_tech_great_yards",
+        "zin_tech_great_scaffolds",
+        "zin_tech_pattern_books",
+        "zin_tech_masters_benches"
+      ]
+    },
+    {
+      "sheet": "technology-07",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_assayers_rolls",
+        "zin_tech_crown_foundries",
+        "zin_tech_steading_foundries",
+        "zin_tech_deep_wells",
+        "zin_tech_parish_granaries",
+        "zin_tech_royal_dockyards",
+        "zin_tech_bronze_fleets",
+        "zin_tech_royal_works",
+        "zin_tech_deep_adits",
+        "zin_tech_guild_charters",
+        "zin_tech_hedge_fighting",
+        "zin_tech_elven_arms"
+      ]
+    },
+    {
+      "sheet": "technology-08",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_clan_muster",
+        "zin_tech_iron_arms",
+        "zin_tech_hunting_bows",
+        "zin_tech_long_watch",
+        "zin_tech_forest_rangers",
+        "zin_tech_sun_guard",
+        "zin_tech_warband_iron",
+        "zin_tech_warlord_retinues",
+        "zin_tech_valley_wardens",
+        "zin_tech_mail",
+        "zin_tech_hand_guns",
+        "zin_tech_forged_steel"
+      ]
+    },
+    {
+      "sheet": "technology-09",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_plate_and_mail",
+        "zin_tech_composite_bows",
+        "zin_tech_matchlocks",
+        "zin_tech_shield_wall_drill",
+        "zin_tech_hill_companies",
+        "zin_tech_highland_charge",
+        "zin_tech_brute_ranks",
+        "zin_tech_ranger_craft",
+        "zin_tech_sea_soldiers",
+        "zin_tech_tempered_steel",
+        "zin_tech_war_longbows",
+        "zin_tech_leaf_steel"
+      ]
+    },
+    {
+      "sheet": "technology-10",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_pattern_welding",
+        "zin_tech_full_plate",
+        "zin_tech_long_matchlocks",
+        "zin_tech_blackened_iron",
+        "zin_tech_goblin_swarms",
+        "zin_tech_guild_companies",
+        "zin_tech_heavy_harness",
+        "zin_tech_light_harness",
+        "zin_tech_crossbows",
+        "zin_tech_pike_squares",
+        "zin_tech_sword_and_buckler",
+        "zin_tech_iron_tribute"
+      ]
+    },
+    {
+      "sheet": "technology-11",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_master_forges",
+        "zin_tech_tempered_plate",
+        "zin_tech_windlass_crossbows",
+        "zin_tech_arquebuses",
+        "zin_tech_elven_mastery",
+        "zin_tech_pike_and_shot",
+        "zin_tech_veteran_sergeants",
+        "zin_tech_mountain_steel",
+        "zin_tech_steel_bows",
+        "zin_tech_wheel_locks",
+        "zin_tech_moonsilver_arms",
+        "zin_tech_chieftains_iron"
+      ]
+    },
+    {
+      "sheet": "technology-12",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_masterwork_plate",
+        "zin_tech_free_companies",
+        "zin_tech_crown_steel",
+        "zin_tech_proofed_plate",
+        "zin_tech_firelocks",
+        "zin_tech_hidden_refuges",
+        "zin_tech_snow_craft",
+        "zin_tech_bark_and_hide",
+        "zin_tech_scouts",
+        "zin_tech_wagon_trains",
+        "zin_tech_sappers",
+        "zin_tech_reindeer_sledges"
+      ]
+    },
+    {
+      "sheet": "technology-13",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_heralds",
+        "zin_tech_supply_columns",
+        "zin_tech_quartermasters",
+        "zin_tech_ice_fishing",
+        "zin_tech_tree_paths",
+        "zin_tech_provosts",
+        "zin_tech_armourers",
+        "zin_tech_high_roads",
+        "zin_tech_winter_quarters",
+        "zin_tech_water_caravans",
+        "zin_tech_war_camps",
+        "zin_tech_woodland_ambush"
+      ]
+    },
+    {
+      "sheet": "technology-14",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_frost_wardens",
+        "zin_tech_field_kitchens",
+        "zin_tech_great_depots",
+        "zin_tech_post_roads",
+        "zin_tech_field_hospitals",
+        "zin_tech_crown_post",
+        "zin_tech_old_wall_craft",
+        "zin_tech_pass_forts",
+        "zin_tech_catapults",
+        "zin_tech_stone_forts",
+        "zin_tech_black_powder",
+        "zin_tech_torsion_engines"
+      ]
+    },
+    {
+      "sheet": "technology-15",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_cast_bombards",
+        "zin_tech_layered_walls",
+        "zin_tech_harbour_chains",
+        "zin_tech_warden_signals",
+        "zin_tech_trebuchets",
+        "zin_tech_corned_powder",
+        "zin_tech_wall_wardens",
+        "zin_tech_siege_towers",
+        "zin_tech_fire_pots",
+        "zin_tech_scorpions",
+        "zin_tech_culverins",
+        "zin_tech_bastions"
+      ]
+    },
+    {
+      "sheet": "technology-16",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_hold_the_pass",
+        "zin_tech_great_engines",
+        "zin_tech_curtain_walls",
+        "zin_tech_engine_corps",
+        "zin_tech_field_engine_trains",
+        "zin_tech_great_bombards",
+        "zin_tech_master_engines",
+        "zin_tech_field_culverins",
+        "zin_tech_star_forts",
+        "zin_tech_wardsong",
+        "zin_tech_grave_binding",
+        "zin_tech_nether_pacts"
+      ]
+    },
+    {
+      "sheet": "technology-17",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_rites_of_unbinding",
+        "zin_tech_field_healers",
+        "zin_tech_healers_rolls",
+        "zin_tech_anchor_stones",
+        "zin_tech_necromantic_orders",
+        "zin_tech_deathless_tide_1",
+        "zin_tech_lantern_wards",
+        "zin_tech_bound_demons",
+        "zin_tech_old_songs",
+        "zin_tech_hunt_songs",
+        "zin_tech_deeper_rites",
+        "zin_tech_nether_forges"
+      ]
+    },
+    {
+      "sheet": "technology-18",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_hallowed_arms",
+        "zin_tech_grave_riders",
+        "zin_tech_deathless_tide_2",
+        "zin_tech_wards_against_death",
+        "zin_tech_deathless_tide_3",
+        "zin_tech_ward_schools",
+        "zin_tech_grave_legions",
+        "zin_tech_old_horse_lines",
+        "zin_tech_elven_steeds",
+        "zin_tech_giant_kin",
+        "zin_tech_ent_moots",
+        "zin_tech_great_herds"
+      ]
+    },
+    {
+      "sheet": "technology-19",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_oasis_wells",
+        "zin_tech_riding_horses",
+        "zin_tech_troll_brood",
+        "zin_tech_yeti_hunts",
+        "zin_tech_camel_corps",
+        "zin_tech_raider_mounts",
+        "zin_tech_ogre_pacts",
+        "zin_tech_camel_breeding",
+        "zin_tech_war_horses",
+        "zin_tech_steppe_breeds",
+        "zin_tech_horn_bows",
+        "zin_tech_horse_archery"
+      ]
+    },
+    {
+      "sheet": "technology-20",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_war_elephants",
+        "zin_tech_salt_roads",
+        "zin_tech_great_studs",
+        "zin_tech_kin_harness",
+        "zin_tech_steppe_remounts",
+        "zin_tech_couched_lance",
+        "zin_tech_light_horse",
+        "zin_tech_towered_elephants",
+        "zin_tech_remount_depots",
+        "zin_tech_kin_mastery",
+        "zin_tech_plains_destriers",
+        "zin_tech_riding_horde"
+      ]
+    },
+    {
+      "sheet": "technology-21",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_crown_chargers",
+        "zin_tech_kin_lords",
+        "zin_tech_old_sea_roads",
+        "zin_tech_longships",
+        "zin_tech_reef_lore",
+        "zin_tech_oared_galleys",
+        "zin_tech_elven_hulls",
+        "zin_tech_merchant_cogs",
+        "zin_tech_triton_charts",
+        "zin_tech_harbour_works",
+        "zin_tech_sailing_warships",
+        "zin_tech_shield_rails"
+      ]
+    },
+    {
+      "sheet": "technology-22",
+      "method": "medallion",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_tech_outrigger_galleys",
+        "zin_tech_war_galleys",
+        "zin_tech_corsair_craft",
+        "zin_tech_high_castled_warships",
+        "zin_tech_boarding_parties",
+        "zin_tech_island_marines",
+        "zin_tech_fire_ships",
+        "zin_tech_bronze_rams",
+        "zin_tech_deep_water_hulls",
+        "zin_tech_bronze_sheathing",
+        "zin_tech_sea_king_raids",
+        "zin_tech_great_warships"
+      ]
+    },
+    {
+      "sheet": "technology-23",
+      "method": "medallion",
+      "cols": 5,
+      "rows": 3,
+      "keys": [
+        "zin_tech_warded_hulls",
+        "zin_tech_storm_rigging",
+        "zin_tech_corsair_havens",
+        "zin_tech_master_shipwrights",
+        "zin_tech_star_paths",
+        "zin_tech_galley_squadrons",
+        "zin_tech_ships_of_the_line",
+        "zin_tech_open_sea_charts",
+        "zin_tech_dragon_lore",
+        "zin_tech_eyries",
+        "zin_tech_griffin_harness",
+        "zin_tech_dragon_kinship",
+        "zin_tech_sky_lances",
+        "zin_tech_far_eyries",
+        "zin_tech_barded_griffins"
+      ]
+    }
+  ]
+}

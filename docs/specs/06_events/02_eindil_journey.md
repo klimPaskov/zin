@@ -187,7 +187,7 @@ Pictures `cold_shore` (`.70`–`.72`, gate `zin_eindil_named`); `.73` uses `glo_
 
 **Ambush strength (N9).** `.71`'s immediate block computes the temporary variable `zin_eindil_ambush_strength`:
 
-`5 + zin_eindil_ports_betrayed + 1 if zin_eindil_hunted + 1 if zin_worshipdom_ships_ready + 1 if zin_worshipdom_hunters + 1 if zin_afrit_seat_whispers ≥ 4 − 1 if zin_eindil_elven_crew − 1 each for zin_eindil_landing_guides, zin_yeldenne_beacon, zin_yeldenne_coast_watch, zin_yeldenne_guides − 1 if the hub chose Send others`
+`5 + zin_eindil_ports_betrayed + 1 if zin_eindil_hunted + 1 if zin_worshipdom_ships_ready + 1 if zin_worshipdom_hunters + 1 if zin_afrit_seat_whispers ≥ 4 − 1 if zin_eindil_elven_crew − 1 each for zin_eindil_landing_guides, zin_pertolor_beacon, zin_pertolor_coast_watch, zin_pertolor_guides − 1 if the hub chose Send others`
 
 and writes it with `log = "ZIN journey: ambush strength [?zin_eindil_ambush_strength]"`. Historical: 5 + 1 port − 1 elven crew − 1 coast watch = 4, plus any Afrit terms; never below 4 on the historical path.
 

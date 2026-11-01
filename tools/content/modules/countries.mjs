@@ -19,7 +19,7 @@ import { GUNPOWDER_FLAG } from '../lib/roster.mjs';
 
 // Defaults for a country without a stance of its own (a synthetic test row); every realm of the roster has one.
 const BY_NAME = {
-  Worshipdom: 'zin_shadow_worship', Yeldenne: 'zin_light_wardens', 'Magical Forest': 'zin_light_kinship',
+  Worshipdom: 'zin_shadow_worship', 'Magical Forest': 'zin_light_kinship',
   Puvulan: 'zin_shadow_dread', Khorvrath: 'zin_shadow_dread', Dolon: 'zin_shadow_dread', Nezer: 'zin_shadow_dread', "Zol's Mistake": 'zin_shadow_grave',
   Aenor: 'zin_dom_court', Goldoroth: 'zin_dom_conquest', Stabilo: 'zin_dom_crown', Noris: 'zin_dom_crown', Lerendor: 'zin_dom_crown', Coldor: 'zin_dom_crown', Dondor: 'zin_dom_warlord', Melkgard: 'zin_dom_warlord', Molot: 'zin_dom_warlord', Nan: 'zin_dom_warlord',
   Selen: 'zin_light_wardens', Hirolon: 'zin_light_wardens', Kilinti: 'zin_light_wardens', Mirolon: 'zin_light_wardens', 'Bloody Forest': 'zin_wild_tribes', 'Cursed Lands': 'zin_wild_seclusion', Nivaros: 'zin_wild_clans',

@@ -212,7 +212,7 @@ Lorien's ship sails north for 150 days (120 with Gala's `zin_gala_great_ship`) w
 
 **The ambush.** If Afrit's party waits at the approach (`zin_afrit_at_yeldenne`, Afrit not already in the hall), landfall fires the Afrit spec's private `zin_afrit.33` *The Ambush on the Shore* to the Worshipdom: **Spare none** (hist) or **Let them land**. With "Send others" the Council's agents wait instead (Afrit spec), with strength −1. Seven days after landfall, if the answer was "Spare none", `zin_eindil.71` *The Ambush* resolves with this strength (N9: the journey's base 5, plus 1 for each of the Afrit spec's terms):
 
-`5 + zin_eindil_ports_betrayed + 1 if zin_eindil_hunted + 1 if the Worshipdom has zin_worshipdom_ships_ready + 1 if it has zin_worshipdom_hunters + 1 if its Whispers seat (zin_afrit_seat_whispers) ≥ 4 − 1 if zin_eindil_elven_crew − 1 per guide flag (landing owner's guides, zin_yeldenne_coast_watch, zin_yeldenne_beacon, zin_yeldenne_guides) − 1 if Afrit sent others`
+`5 + zin_eindil_ports_betrayed + 1 if zin_eindil_hunted + 1 if the Worshipdom has zin_worshipdom_ships_ready + 1 if it has zin_worshipdom_hunters + 1 if its Whispers seat (zin_afrit_seat_whispers) ≥ 4 − 1 if zin_eindil_elven_crew − 1 per guide flag (landing owner's guides, zin_pertolor_coast_watch, zin_pertolor_beacon, zin_pertolor_guides) − 1 if Afrit sent others`
 
 | Strength | Outcome |
 | --- | --- |
@@ -229,7 +229,7 @@ On the historical path the strength is at least 4 (base 5, one betrayed port, el
 | Result | Journey effect |
 | --- | --- |
 | Glo given to Eindil (cases A, B1, B2; `zin_glo_with_eindil`) | trait `zin_eindil_bearer_of_glo`; renown +10; portrait E4; Eindil leaves with Glo and the blue sword |
-| Glo sealed in the empty hall (Horos slain before Eindil came: cases C2, D2) | the seal opens for him: `zin_glo.80` 30 days after he arrives (the same day with `zin_yeldenne_calls_heir`); he learns the family truth from Glo's vision; same journey effects |
+| Glo sealed in the empty hall (Horos slain before Eindil came: cases C2, D2) | the seal opens for him: `zin_glo.80` 30 days after he arrives (the same day with `zin_glo_calls_heir`); he learns the family truth from Glo's vision; same journey effects |
 | Horos endures (cases C1, D1) | when Eindil arrives, Horos tests and gives Glo (case B2) |
 | Glo dimmed (`zin_glo_dimmed`) | Eindil leaves without Glo; the journey continues; the New Gods' restoration later fails (*The Heir Does Not Rise*) |
 

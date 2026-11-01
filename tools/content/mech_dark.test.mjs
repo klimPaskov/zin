@@ -13,6 +13,7 @@ import { Staged } from './lib/core.mjs';
 import { parse, tokenize } from './lib/clausewitz.mjs';
 import { checkCommands } from './lib/mp_check.mjs';
 import { paceDate, PACES } from './lib/mech_kit.mjs';
+import { isPanelChrome, onGrid } from './lib/mech_court_gui.mjs';
 import { readable, notCp1252, checkMods } from './lib/inst_util.mjs';
 import { loadRuleSet, compileBanned, findBanned } from './lib/banned.mjs';
 import { loadGlossary } from './lib/text_engine.mjs';
@@ -156,7 +157,7 @@ function windowProblems(gui, sg) {
   for (const m of sg.matchAll(/entry_container = "([a-z0-9_]+)"/g)) if (!names.has(m[1])) out.push(`entry ${m[1]}`);
   const lists = parse(sg)[0].v.flatMap(g => g.v.filter(x => x.k === 'dynamic_lists').flatMap(x => x.v.map(l => l.k)));
   for (const l of lists) if (!names.has(l)) out.push(`list ${l}`);
-  for (const s of gui.matchAll(/(?:spriteType|quadTextureSprite) = "(GFX_[A-Za-z_]+)"/g)) if (!['GFX_zin_frame', 'GFX_zin_button', 'GFX_zin_rule', 'GFX_closebutton'].includes(s[1])) out.push(`sprite ${s[1]}`);
+  for (const s of gui.matchAll(/(?:spriteType|quadTextureSprite) = "(GFX_[A-Za-z_]+)"/g)) if (!isPanelChrome(s[1])) out.push(`sprite ${s[1]}`);
   return out;
 }
 // Section 2 to 9 decision tables: [cost, cooldown] (null: none). Variants carry the tree flag's numbers.
@@ -573,15 +574,19 @@ test('Windows: the Horde and Accord panels under the interface spec\'s names; ev
   for (const [w, g, flag, vis] of [['zin_horde_window', 'zin_horde', 'zin_ui_horde_open', `original_tag = ${GOL}`], ['zin_accord_window', 'zin_accord', 'zin_ui_accord_open', 'is_faction_leader = yes']]) {
     assert(gui.includes(`name = "${w}"`) && sg.includes(`\t${g} = {`) && sg.includes(`window_name = "${w}"`) && sg.includes(`has_country_flag = ${flag}`) && sg.includes(vis), w);
   }
-  assert(sg.includes('array = global.zin_dark_sway_rows') && sg.includes('array = global.zin_dark_accord_rows') && bodyOf(EF, 'zin_dark_refresh_panel_rows').includes('add_to_array'));
+  const meters = text('common/scripted_effects/zin_dark_panels.txt');
+  assert(meters.includes('global.zin_dark_sway_rows^zin_ui_at') && meters.includes('global.zin_dark_accord_rows^zin_ui_at') && bodyOf(EF, 'zin_dark_refresh_panel_rows').includes('add_to_array') && bodyOf(EF, 'zin_dark_refresh_panel_rows').includes('zin_dark_ui_meters = yes'), 'fixed rows filled from the arrays the pulse keeps');
+  assert(onGrid(gui), 'every position and size on the 4 px grid');
   for (const b of BLOCS) assert(gui.includes(`zin_horde_bloc_${b.key}_mark`) && sg.includes(`has_country_flag = zin_goldoroth_heir_${b.key}`), `the heir's mark on ${b.key}`);
-  assert.equal((sg.match(/ai_enabled = \{\n\t+always = no/g) ?? []).length, 4, 'the AI never opens a panel');
+  assert.equal((sg.match(/ai_enabled = \{\s*always = no/g) ?? []).length, 2, 'the AI never opens a panel');
+  assert(!gui.includes('zin_accord_button_window') && !sg.includes('zin_accord_launcher = {'), 'the Aoaz bar opens the Accord panel: no launcher of its own');
+  assert(!gui.includes('zin_horde_button_window') && !sg.includes('zin_horde_launcher = {'), 'the Aoaz bar opens the Horde panel: no launcher of its own');
   assert(!/(zin_volgan_pact|Nafeher)/.test(gui + Object.entries(loc).filter(([k]) => /^zin_(horde|accord)_/.test(k)).map(([, v]) => v).join(' ')), 'neither panel shows Volgan\'s pacts');
   const sway = text('common/scripted_localisation/zin_dark.txt');
   for (const k of ['zin_dark_sway_free', 'zin_dark_sway_courted', 'zin_dark_sway_pressed', 'zin_dark_sway_yoked']) assert(sway.includes(`localization_key = ${k}`));
   assert(sway.includes('zin_goldoroth_sway > 49.99') && sway.includes('zin_goldoroth_sway > 24.99'), 'the bands Free 0-24, Courted 25-49, Pressed 50-79');
   assert(windowProblems(gui.replace('name = "zin_horde_close"', 'name = "zin_horde_shut"'), sg).includes('element zin_horde_close'), 'negative: a renamed element is found');
-  assert(windowProblems(gui.replace('GFX_zin_rule', 'GFX_zin_no_sprite'), sg).some(p => p.startsWith('sprite')), 'negative: an unknown sprite is found');
+  assert(windowProblems(gui.replace('GFX_zin_frame', 'GFX_zin_no_sprite'), sg).some(p => p.startsWith('sprite')), 'negative: an unknown sprite is found');
 });
 
 test('Panels off: the builder can leave the windows to the interface module', async () => {
