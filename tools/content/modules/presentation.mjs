@@ -48,12 +48,9 @@ export const CHROME = [
 ];
 export const FALLBACK_ICON = 'generic';                // the compiler's missing-icon fallback key
 export const FALLBACK_PICTURE = 'generic_court';       // the fallback picture key
-// Integration decision A5: load_24 attempt 3 was reviewed "not accepted; kept in place as the best of three" because of
-// a faint mark in the lower-right corner, and A5 accepts it cropped to x 0-1400, y 0-1050 before the resize. The
-// decision covers exactly these bytes; a regenerated load_24 needs its own accepted review line.
-export const DECISIONS = {
-  'loadingscreens/load_24.png': { sha256: 'ab7ae1c4d3207a9d939c9e42087ee349828ecf3efcdf7252fe3954a4da210ec9', crop: { left: 0, top: 0, width: 1400, height: 1050 }, basis: 'docs/specs/INTEGRATION_DECISIONS.md A5' },
-};
+// Per-file review decisions that change how an accepted source is shipped, keyed by source and bound to its exact bytes.
+// Empty since 1 November 2026: decision A5's crop of load_24 covered astra bytes; the luna load_24 is accepted uncropped.
+export const DECISIONS = {};
 export const SPRITE = {
   focus: k => `GFX_focus_zin_${k}`, idea: k => `GFX_idea_zin_${k}`, evt: k => `GFX_zin_evt_${k}`, news: k => `GFX_zin_news_${k}`,
 };

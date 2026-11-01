@@ -1,2625 +1,1647 @@
 {
- "format": 1,
- "about": "Deliberate icon reuse (design system §4.3 and K69). Every texture that serves more than one concept must be covered by one entry here, or check 10 (icon.registry) reports it. Kinds: same_concept, tiers, family_badge, engine_fallback, general_focus. Hand-kept: add an entry with its reason before two concepts share a picture; general_focus entries are proposed by the lead from the rule below and confirmed by the owner.",
- "generalFocusRule": "A focus is genuinely general when two or more focus trees carry a focus with the same localised name and the same template slug (the id is <tree file stem>_<slug>); every copy is the same story branch, so one icon serves all of them. Nothing else shares a focus icon.",
- "targets": {
-  "focus": {
-   "rule": "one icon per focus; the general focus groups below share one icon each (K69)"
-  },
-  "spirit": {
-   "rule": "one picture per national spirit; a spirit granted by a same-named focus may reuse that focus art recut to the idea frame (same_concept, recorded as a share)"
-  },
-  "law": {
-   "rule": "one picture per law (economy, trade, mobilisation)"
-  },
-  "officer_spirit": {
-   "rule": "one picture per officer-corps spirit"
-  },
-  "decision": {
-   "rule": "one seal per decision or mission"
-  },
-  "decision_category": {
-   "rule": "one category icon per category"
-  },
-  "decision_category_picture": {
-   "rule": "one picture per category that has a picture"
-  },
-  "event": {
-   "rule": "one picture per visible event; events that show the same moment (a follow-up of one scene) may share it as same_concept, recorded per chain by lane I10"
-  },
-  "news_event": {
-   "rule": "one picture per news event"
-  },
-  "technology": {
-   "rule": "one picture per technology"
-  },
-  "equipment": {
-   "rule": "one picture per equipment type; marks of one line use the tiers rule (one base picture with a tier mark, own sprite per mark)"
-  },
-  "equipment_archetype": {
-   "rule": "one picture per archetype"
-  },
-  "subunit": {
-   "rule": "one unit icon per sub-unit, including the 20 without an icon today"
-  },
-  "trait": {
-   "rule": "one emblem per unit leader and country leader trait"
-  },
-  "special_project": {
-   "rule": "one picture per special project"
-  },
-  "operation": {
-   "rule": "one picture per operation"
-  },
-  "agency_upgrade": {
-   "rule": "one picture per agency upgrade"
-  },
-  "agency_logo": {
-   "rule": "one logo per agency"
-  },
-  "mio": {
-   "rule": "one emblem per organisation"
-  },
-  "mio_trait": {
-   "rule": "one icon per MIO trait"
-  },
-  "scholar_trait": {
-   "rule": "one icon per scholar trait"
-  },
-  "doctrine": {
-   "rule": "one plate per grand doctrine, track and sub-doctrine (own art exists, K51/K58)"
-  },
-  "faction": {
-   "rule": "one shield per faction template, in both engine sizes"
-  },
-  "map_mode": {
-   "rule": "one button per ZIN map mode, with distinct selected and deselected frames"
-  },
-  "resource": {
-   "rule": "one frame per resource in the engine strip"
-  },
-  "super_event": {
-   "rule": "one painted moment per super event"
-  }
- },
- "shares": [
-  {
-   "id": "general_focus:houses_of_healing",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Houses of Healing\" is the same focus of one story template in 11 trees (slug houses_of_healing); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_houses_of_healing",
-    "focus:zin_regional_alerhia_houses_of_healing",
-    "focus:zin_regional_avalon_houses_of_healing",
-    "focus:zin_regional_drak_houses_of_healing",
-    "focus:zin_regional_erco_houses_of_healing",
-    "focus:zin_regional_gondolin_houses_of_healing",
-    "focus:zin_regional_miaed_houses_of_healing",
-    "focus:zin_regional_ostoroth_houses_of_healing",
-    "focus:zin_regional_plutondo_houses_of_healing",
-    "focus:zin_shared_east_lands_houses_of_healing",
-    "focus:zin_shared_ember_lands_houses_of_healing"
-   ]
-  },
-  {
-   "id": "general_focus:question_of_the_east",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Question of the East\" is the same focus of one story template in 11 trees (slug question_of_the_east); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_question_of_the_east",
-    "focus:zin_regional_alerhia_question_of_the_east",
-    "focus:zin_regional_avalon_question_of_the_east",
-    "focus:zin_regional_drak_question_of_the_east",
-    "focus:zin_regional_erco_question_of_the_east",
-    "focus:zin_regional_gondolin_question_of_the_east",
-    "focus:zin_regional_miaed_question_of_the_east",
-    "focus:zin_regional_mora_question_of_the_east",
-    "focus:zin_regional_ostoroth_question_of_the_east",
-    "focus:zin_regional_plutondo_question_of_the_east",
-    "focus:zin_shared_east_lands_question_of_the_east"
-   ]
-  },
-  {
-   "id": "general_focus:when_the_king_falls",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"When the King Falls\" is the same focus of one story template in 11 trees (slug when_the_king_falls); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_when_the_king_falls",
-    "focus:zin_regional_alerhia_when_the_king_falls",
-    "focus:zin_regional_avalon_when_the_king_falls",
-    "focus:zin_regional_drak_when_the_king_falls",
-    "focus:zin_regional_erco_when_the_king_falls",
-    "focus:zin_regional_gondolin_when_the_king_falls",
-    "focus:zin_regional_miaed_when_the_king_falls",
-    "focus:zin_regional_mora_when_the_king_falls",
-    "focus:zin_regional_ostoroth_when_the_king_falls",
-    "focus:zin_regional_plutondo_when_the_king_falls",
-    "focus:zin_shared_east_lands_when_the_king_falls"
-   ]
-  },
-  {
-   "id": "general_focus:close_the_gates_to_the_host",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Close the Gates to the Host\" is the same focus of one story template in 10 trees (slug close_the_gates_to_the_host); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_close_the_gates_to_the_host",
-    "focus:zin_regional_avalon_close_the_gates_to_the_host",
-    "focus:zin_regional_drak_close_the_gates_to_the_host",
-    "focus:zin_regional_erco_close_the_gates_to_the_host",
-    "focus:zin_regional_gondolin_close_the_gates_to_the_host",
-    "focus:zin_regional_miaed_close_the_gates_to_the_host",
-    "focus:zin_regional_mora_close_the_gates_to_the_host",
-    "focus:zin_regional_ostoroth_close_the_gates_to_the_host",
-    "focus:zin_regional_plutondo_close_the_gates_to_the_host",
-    "focus:zin_shared_east_lands_close_the_gates_to_the_host"
-   ]
-  },
-  {
-   "id": "general_focus:count_the_temple_gold",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Count the Temple Gold\" is the same focus of one story template in 10 trees (slug count_the_temple_gold); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_count_the_temple_gold",
-    "focus:zin_regional_alerhia_count_the_temple_gold",
-    "focus:zin_regional_avalon_count_the_temple_gold",
-    "focus:zin_regional_drak_count_the_temple_gold",
-    "focus:zin_regional_erco_count_the_temple_gold",
-    "focus:zin_regional_gondolin_count_the_temple_gold",
-    "focus:zin_regional_miaed_count_the_temple_gold",
-    "focus:zin_regional_ostoroth_count_the_temple_gold",
-    "focus:zin_regional_plutondo_count_the_temple_gold",
-    "focus:zin_shared_east_lands_count_the_temple_gold"
-   ]
-  },
-  {
-   "id": "general_focus:faith_in_the_deliverers_friends",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Faith in the Deliverer's Friends\" is the same focus of one story template in 10 trees (slug faith_in_the_deliverers_friends); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_faith_in_the_deliverers_friends",
-    "focus:zin_regional_avalon_faith_in_the_deliverers_friends",
-    "focus:zin_regional_drak_faith_in_the_deliverers_friends",
-    "focus:zin_regional_erco_faith_in_the_deliverers_friends",
-    "focus:zin_regional_gondolin_faith_in_the_deliverers_friends",
-    "focus:zin_regional_miaed_faith_in_the_deliverers_friends",
-    "focus:zin_regional_mora_faith_in_the_deliverers_friends",
-    "focus:zin_regional_ostoroth_faith_in_the_deliverers_friends",
-    "focus:zin_regional_plutondo_faith_in_the_deliverers_friends",
-    "focus:zin_shared_east_lands_faith_in_the_deliverers_friends"
-   ]
-  },
-  {
-   "id": "general_focus:gifts_for_the_king",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Gifts for the King in the East\" is the same focus of one story template in 10 trees (slug gifts_for_the_king); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_gifts_for_the_king",
-    "focus:zin_regional_avalon_gifts_for_the_king",
-    "focus:zin_regional_drak_gifts_for_the_king",
-    "focus:zin_regional_erco_gifts_for_the_king",
-    "focus:zin_regional_gondolin_gifts_for_the_king",
-    "focus:zin_regional_miaed_gifts_for_the_king",
-    "focus:zin_regional_mora_gifts_for_the_king",
-    "focus:zin_regional_ostoroth_gifts_for_the_king",
-    "focus:zin_regional_plutondo_gifts_for_the_king",
-    "focus:zin_shared_east_lands_gifts_for_the_king"
-   ]
-  },
-  {
-   "id": "general_focus:keep_our_own_counsel",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Keep Our Own Counsel\" is the same focus of one story template in 10 trees (slug keep_our_own_counsel); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_keep_our_own_counsel",
-    "focus:zin_regional_avalon_keep_our_own_counsel",
-    "focus:zin_regional_drak_keep_our_own_counsel",
-    "focus:zin_regional_erco_keep_our_own_counsel",
-    "focus:zin_regional_gondolin_keep_our_own_counsel",
-    "focus:zin_regional_miaed_keep_our_own_counsel",
-    "focus:zin_regional_mora_keep_our_own_counsel",
-    "focus:zin_regional_ostoroth_keep_our_own_counsel",
-    "focus:zin_regional_plutondo_keep_our_own_counsel",
-    "focus:zin_shared_east_lands_keep_our_own_counsel"
-   ]
-  },
-  {
-   "id": "general_focus:levies_for_the_host",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Levies for the Host\" is the same focus of one story template in 10 trees (slug levies_for_the_host); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_levies_for_the_host",
-    "focus:zin_regional_avalon_levies_for_the_host",
-    "focus:zin_regional_drak_levies_for_the_host",
-    "focus:zin_regional_erco_levies_for_the_host",
-    "focus:zin_regional_gondolin_levies_for_the_host",
-    "focus:zin_regional_miaed_levies_for_the_host",
-    "focus:zin_regional_mora_levies_for_the_host",
-    "focus:zin_regional_ostoroth_levies_for_the_host",
-    "focus:zin_regional_plutondo_levies_for_the_host",
-    "focus:zin_shared_east_lands_levies_for_the_host"
-   ]
-  },
-  {
-   "id": "general_focus:our_court_kneels_to_no_god",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Our Court Kneels to No God\" is the same focus of one story template in 10 trees (slug our_court_kneels_to_no_god); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_our_court_kneels_to_no_god",
-    "focus:zin_regional_avalon_our_court_kneels_to_no_god",
-    "focus:zin_regional_drak_our_court_kneels_to_no_god",
-    "focus:zin_regional_erco_our_court_kneels_to_no_god",
-    "focus:zin_regional_gondolin_our_court_kneels_to_no_god",
-    "focus:zin_regional_miaed_our_court_kneels_to_no_god",
-    "focus:zin_regional_mora_our_court_kneels_to_no_god",
-    "focus:zin_regional_ostoroth_our_court_kneels_to_no_god",
-    "focus:zin_regional_plutondo_our_court_kneels_to_no_god",
-    "focus:zin_shared_east_lands_our_court_kneels_to_no_god"
-   ]
-  },
-  {
-   "id": "general_focus:stand_with_the_free_crowns",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Stand With the Free Crowns\" is the same focus of one story template in 10 trees (slug stand_with_the_free_crowns); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_stand_with_the_free_crowns",
-    "focus:zin_regional_avalon_stand_with_the_free_crowns",
-    "focus:zin_regional_drak_stand_with_the_free_crowns",
-    "focus:zin_regional_erco_stand_with_the_free_crowns",
-    "focus:zin_regional_gondolin_stand_with_the_free_crowns",
-    "focus:zin_regional_miaed_stand_with_the_free_crowns",
-    "focus:zin_regional_mora_stand_with_the_free_crowns",
-    "focus:zin_regional_ostoroth_stand_with_the_free_crowns",
-    "focus:zin_regional_plutondo_stand_with_the_free_crowns",
-    "focus:zin_shared_east_lands_stand_with_the_free_crowns"
-   ]
-  },
-  {
-   "id": "general_focus:the_crowns_vindicated",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Crowns Vindicated\" is the same focus of one story template in 10 trees (slug the_crowns_vindicated); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_the_crowns_vindicated",
-    "focus:zin_regional_avalon_the_crowns_vindicated",
-    "focus:zin_regional_drak_the_crowns_vindicated",
-    "focus:zin_regional_erco_the_crowns_vindicated",
-    "focus:zin_regional_gondolin_the_crowns_vindicated",
-    "focus:zin_regional_miaed_the_crowns_vindicated",
-    "focus:zin_regional_mora_the_crowns_vindicated",
-    "focus:zin_regional_ostoroth_the_crowns_vindicated",
-    "focus:zin_regional_plutondo_the_crowns_vindicated",
-    "focus:zin_shared_east_lands_the_crowns_vindicated"
-   ]
-  },
-  {
-   "id": "general_focus:wait_upon_events",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Wait Upon Events\" is the same focus of one story template in 10 trees (slug wait_upon_events); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_wait_upon_events",
-    "focus:zin_regional_avalon_wait_upon_events",
-    "focus:zin_regional_drak_wait_upon_events",
-    "focus:zin_regional_erco_wait_upon_events",
-    "focus:zin_regional_gondolin_wait_upon_events",
-    "focus:zin_regional_miaed_wait_upon_events",
-    "focus:zin_regional_mora_wait_upon_events",
-    "focus:zin_regional_ostoroth_wait_upon_events",
-    "focus:zin_regional_plutondo_wait_upon_events",
-    "focus:zin_shared_east_lands_wait_upon_events"
-   ]
-  },
-  {
-   "id": "general_focus:welcome_the_generous_friends",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Welcome the Generous Friends\" is the same focus of one story template in 10 trees (slug welcome_the_generous_friends); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_welcome_the_generous_friends",
-    "focus:zin_regional_alerhia_welcome_the_generous_friends",
-    "focus:zin_regional_avalon_welcome_the_generous_friends",
-    "focus:zin_regional_drak_welcome_the_generous_friends",
-    "focus:zin_regional_erco_welcome_the_generous_friends",
-    "focus:zin_regional_gondolin_welcome_the_generous_friends",
-    "focus:zin_regional_miaed_welcome_the_generous_friends",
-    "focus:zin_regional_ostoroth_welcome_the_generous_friends",
-    "focus:zin_regional_plutondo_welcome_the_generous_friends",
-    "focus:zin_shared_east_lands_welcome_the_generous_friends"
-   ]
-  },
-  {
-   "id": "general_focus:close_the_houses",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Close the Houses\" is the same focus of one story template in 9 trees (slug close_the_houses); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_close_the_houses",
-    "focus:zin_regional_avalon_close_the_houses",
-    "focus:zin_regional_drak_close_the_houses",
-    "focus:zin_regional_erco_close_the_houses",
-    "focus:zin_regional_gondolin_close_the_houses",
-    "focus:zin_regional_miaed_close_the_houses",
-    "focus:zin_regional_ostoroth_close_the_houses",
-    "focus:zin_regional_plutondo_close_the_houses",
-    "focus:zin_shared_east_lands_close_the_houses"
-   ]
-  },
-  {
-   "id": "general_focus:temples_of_the_deliverer",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Temples of the Deliverer\" is the same focus of one story template in 9 trees (slug temples_of_the_deliverer); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_temples_of_the_deliverer",
-    "focus:zin_regional_avalon_temples_of_the_deliverer",
-    "focus:zin_regional_drak_temples_of_the_deliverer",
-    "focus:zin_regional_erco_temples_of_the_deliverer",
-    "focus:zin_regional_gondolin_temples_of_the_deliverer",
-    "focus:zin_regional_miaed_temples_of_the_deliverer",
-    "focus:zin_regional_ostoroth_temples_of_the_deliverer",
-    "focus:zin_regional_plutondo_temples_of_the_deliverer",
-    "focus:zin_shared_east_lands_temples_of_the_deliverer"
-   ]
-  },
-  {
-   "id": "general_focus:watch_the_quays",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Watch the Quays\" is the same focus of one story template in 9 trees (slug watch_the_quays); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_watch_the_quays",
-    "focus:zin_regional_avalon_watch_the_quays",
-    "focus:zin_regional_drak_watch_the_quays",
-    "focus:zin_regional_erco_watch_the_quays",
-    "focus:zin_regional_gondolin_watch_the_quays",
-    "focus:zin_regional_miaed_watch_the_quays",
-    "focus:zin_regional_ostoroth_watch_the_quays",
-    "focus:zin_regional_plutondo_watch_the_quays",
-    "focus:zin_shared_east_lands_watch_the_quays"
-   ]
-  },
-  {
-   "id": "general_focus:a_courteous_distance",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Courteous Distance\" is the same focus of one story template in 7 trees (slug a_courteous_distance); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_a_courteous_distance",
-    "focus:zin_regional_godland_a_courteous_distance",
-    "focus:zin_regional_goodin_a_courteous_distance",
-    "focus:zin_regional_heaven_a_courteous_distance",
-    "focus:zin_regional_hengyang_a_courteous_distance",
-    "focus:zin_regional_the_lands_of_light_a_courteous_distance",
-    "focus:zin_shared_lands_of_the_sun_a_courteous_distance"
-   ]
-  },
-  {
-   "id": "general_focus:close_the_houses_under_the_sun",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Close the Houses Under the Sun\" is the same focus of one story template in 7 trees (slug close_the_houses_under_the_sun); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_close_the_houses_under_the_sun",
-    "focus:zin_regional_godland_close_the_houses_under_the_sun",
-    "focus:zin_regional_goodin_close_the_houses_under_the_sun",
-    "focus:zin_regional_heaven_close_the_houses_under_the_sun",
-    "focus:zin_regional_hengyang_close_the_houses_under_the_sun",
-    "focus:zin_regional_the_lands_of_light_close_the_houses_under_the_sun",
-    "focus:zin_shared_lands_of_the_sun_close_the_houses_under_the_sun"
-   ]
-  },
-  {
-   "id": "general_focus:priests_from_afar",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Priests From Afar\" is the same focus of one story template in 7 trees (slug priests_from_afar); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_priests_from_afar",
-    "focus:zin_regional_godland_priests_from_afar",
-    "focus:zin_regional_goodin_priests_from_afar",
-    "focus:zin_regional_heaven_priests_from_afar",
-    "focus:zin_regional_hengyang_priests_from_afar",
-    "focus:zin_regional_the_lands_of_light_priests_from_afar",
-    "focus:zin_shared_lands_of_the_sun_priests_from_afar"
-   ]
-  },
-  {
-   "id": "general_focus:reclaim_the_sunlit_fields",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Reclaim the Sunlit Fields\" is the same focus of one story template in 7 trees (slug reclaim_the_sunlit_fields); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_reclaim_the_sunlit_fields",
-    "focus:zin_regional_godland_reclaim_the_sunlit_fields",
-    "focus:zin_regional_goodin_reclaim_the_sunlit_fields",
-    "focus:zin_regional_heaven_reclaim_the_sunlit_fields",
-    "focus:zin_regional_hengyang_reclaim_the_sunlit_fields",
-    "focus:zin_regional_the_lands_of_light_reclaim_the_sunlit_fields",
-    "focus:zin_shared_lands_of_the_sun_reclaim_the_sunlit_fields"
-   ]
-  },
-  {
-   "id": "general_focus:the_great_war_at_sea",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The War at Sea\" is the same focus of one story template in 7 trees (slug the_great_war_at_sea); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_adel_the_great_war_at_sea",
-    "focus:zin_regional_halenor_the_great_war_at_sea",
-    "focus:zin_regional_nondondor_the_great_war_at_sea",
-    "focus:zin_regional_pollos_the_great_war_at_sea",
-    "focus:zin_regional_raerby_the_great_war_at_sea",
-    "focus:zin_regional_seite_islands_the_great_war_at_sea",
-    "focus:zin_shared_tritons_islands_the_great_war_at_sea"
-   ]
-  },
-  {
-   "id": "general_focus:the_old_strength",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Old Strength\" is the same focus of one story template in 7 trees (slug the_old_strength); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_the_old_strength",
-    "focus:zin_regional_godland_the_old_strength",
-    "focus:zin_regional_goodin_the_old_strength",
-    "focus:zin_regional_heaven_the_old_strength",
-    "focus:zin_regional_hengyang_the_old_strength",
-    "focus:zin_regional_the_lands_of_light_the_old_strength",
-    "focus:zin_shared_lands_of_the_sun_the_old_strength"
-   ]
-  },
-  {
-   "id": "general_focus:the_realms_close_ranks",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Realms Close Ranks\" is the same focus of one story template in 7 trees (slug the_realms_close_ranks); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_the_realms_close_ranks",
-    "focus:zin_regional_godland_the_realms_close_ranks",
-    "focus:zin_regional_goodin_the_realms_close_ranks",
-    "focus:zin_regional_heaven_the_realms_close_ranks",
-    "focus:zin_regional_hengyang_the_realms_close_ranks",
-    "focus:zin_regional_the_lands_of_light_the_realms_close_ranks",
-    "focus:zin_shared_lands_of_the_sun_the_realms_close_ranks"
-   ]
-  },
-  {
-   "id": "general_focus:walls_of_white_stone",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Walls of White Stone\" is the same focus of one story template in 7 trees (slug walls_of_white_stone); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_walls_of_white_stone",
-    "focus:zin_regional_godland_walls_of_white_stone",
-    "focus:zin_regional_goodin_walls_of_white_stone",
-    "focus:zin_regional_heaven_walls_of_white_stone",
-    "focus:zin_regional_hengyang_walls_of_white_stone",
-    "focus:zin_regional_the_lands_of_light_walls_of_white_stone",
-    "focus:zin_shared_lands_of_the_sun_walls_of_white_stone"
-   ]
-  },
-  {
-   "id": "general_focus:welcome_the_healing_houses",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Welcome the Healing Houses\" is the same focus of one story template in 7 trees (slug welcome_the_healing_houses); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_welcome_the_healing_houses",
-    "focus:zin_regional_godland_welcome_the_healing_houses",
-    "focus:zin_regional_goodin_welcome_the_healing_houses",
-    "focus:zin_regional_heaven_welcome_the_healing_houses",
-    "focus:zin_regional_hengyang_welcome_the_healing_houses",
-    "focus:zin_regional_the_lands_of_light_welcome_the_healing_houses",
-    "focus:zin_shared_lands_of_the_sun_welcome_the_healing_houses"
-   ]
-  },
-  {
-   "id": "general_focus:when_shadows_reach_the_sun",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"When Shadows Reach the Sun\" is the same focus of one story template in 7 trees (slug when_shadows_reach_the_sun); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_when_shadows_reach_the_sun",
-    "focus:zin_regional_godland_when_shadows_reach_the_sun",
-    "focus:zin_regional_goodin_when_shadows_reach_the_sun",
-    "focus:zin_regional_heaven_when_shadows_reach_the_sun",
-    "focus:zin_regional_hengyang_when_shadows_reach_the_sun",
-    "focus:zin_regional_the_lands_of_light_when_shadows_reach_the_sun",
-    "focus:zin_shared_lands_of_the_sun_when_shadows_reach_the_sun"
-   ]
-  },
-  {
-   "id": "general_focus:the_council_endures",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Council Endures\" is the same focus of one story template in 6 trees (slug the_council_endures); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_the_council_endures",
-    "focus:zin_regional_godland_the_council_endures",
-    "focus:zin_regional_heaven_the_council_endures",
-    "focus:zin_regional_hengyang_the_council_endures",
-    "focus:zin_regional_hiloron_the_council_endures",
-    "focus:zin_shared_lands_of_the_sun_the_council_endures"
-   ]
-  },
-  {
-   "id": "general_focus:a_seat_at_noon",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Seat at Noon\" is the same focus of one story template in 5 trees (slug a_seat_at_noon); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_a_seat_at_noon",
-    "focus:zin_regional_godland_a_seat_at_noon",
-    "focus:zin_regional_heaven_a_seat_at_noon",
-    "focus:zin_regional_hengyang_a_seat_at_noon",
-    "focus:zin_shared_lands_of_the_sun_a_seat_at_noon"
-   ]
-  },
-  {
-   "id": "general_focus:close_the_houses_of_the_isle",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Close the Houses of the Isle\" is the same focus of one story template in 5 trees (slug close_the_houses_of_the_isle); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_close_the_houses_of_the_isle",
-    "focus:zin_regional_howan_close_the_houses_of_the_isle",
-    "focus:zin_regional_nara_close_the_houses_of_the_isle",
-    "focus:zin_regional_verde_close_the_houses_of_the_isle",
-    "focus:zin_shared_islands_of_the_south_close_the_houses_of_the_isle"
-   ]
-  },
-  {
-   "id": "general_focus:far_from_the_kings_wars",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Far From the Kings' Wars\" is the same focus of one story template in 5 trees (slug far_from_the_kings_wars); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_far_from_the_kings_wars",
-    "focus:zin_regional_howan_far_from_the_kings_wars",
-    "focus:zin_regional_nara_far_from_the_kings_wars",
-    "focus:zin_regional_verde_far_from_the_kings_wars",
-    "focus:zin_shared_islands_of_the_south_far_from_the_kings_wars"
-   ]
-  },
-  {
-   "id": "general_focus:honour_the_president",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Honour the Chair\" is the same focus of one story template in 5 trees (slug honour_the_president); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_honour_the_president",
-    "focus:zin_regional_godland_honour_the_president",
-    "focus:zin_regional_heaven_honour_the_president",
-    "focus:zin_regional_hengyang_honour_the_president",
-    "focus:zin_shared_lands_of_the_sun_honour_the_president"
-   ]
-  },
-  {
-   "id": "general_focus:our_share_of_the_sun_guard",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Our Share of the Sun Guard\" is the same focus of one story template in 5 trees (slug our_share_of_the_sun_guard); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_our_share_of_the_sun_guard",
-    "focus:zin_regional_godland_our_share_of_the_sun_guard",
-    "focus:zin_regional_heaven_our_share_of_the_sun_guard",
-    "focus:zin_regional_hengyang_our_share_of_the_sun_guard",
-    "focus:zin_shared_lands_of_the_sun_our_share_of_the_sun_guard"
-   ]
-  },
-  {
-   "id": "general_focus:peace_among_the_realms",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Peace Among the Realms\" is the same focus of one story template in 5 trees (slug peace_among_the_realms); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_peace_among_the_realms",
-    "focus:zin_regional_godland_peace_among_the_realms",
-    "focus:zin_regional_heaven_peace_among_the_realms",
-    "focus:zin_regional_hengyang_peace_among_the_realms",
-    "focus:zin_shared_lands_of_the_sun_peace_among_the_realms"
-   ]
-  },
-  {
-   "id": "general_focus:priests_at_the_quays",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Priests at the Quays\" is the same focus of one story template in 5 trees (slug priests_at_the_quays); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_priests_at_the_quays",
-    "focus:zin_regional_howan_priests_at_the_quays",
-    "focus:zin_regional_nara_priests_at_the_quays",
-    "focus:zin_regional_verde_priests_at_the_quays",
-    "focus:zin_shared_islands_of_the_south_priests_at_the_quays"
-   ]
-  },
-  {
-   "id": "general_focus:ready_for_the_noon_league",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Ready for the Noon League\" is the same focus of one story template in 5 trees (slug ready_for_the_noon_league); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_ready_for_the_noon_league",
-    "focus:zin_regional_godland_ready_for_the_noon_league",
-    "focus:zin_regional_heaven_ready_for_the_noon_league",
-    "focus:zin_regional_hengyang_ready_for_the_noon_league",
-    "focus:zin_shared_lands_of_the_sun_ready_for_the_noon_league"
-   ]
-  },
-  {
-   "id": "general_focus:send_them_on_their_way",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Send Them on Their Way\" is the same focus of one story template in 5 trees (slug send_them_on_their_way); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_send_them_on_their_way",
-    "focus:zin_regional_howan_send_them_on_their_way",
-    "focus:zin_regional_nara_send_them_on_their_way",
-    "focus:zin_regional_verde_send_them_on_their_way",
-    "focus:zin_shared_islands_of_the_south_send_them_on_their_way"
-   ]
-  },
-  {
-   "id": "general_focus:ships_for_the_strangers_host",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Ships for the Gathering Host\" is the same focus of one story template in 5 trees (slug ships_for_the_strangers_host); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_ships_for_the_strangers_host",
-    "focus:zin_regional_howan_ships_for_the_strangers_host",
-    "focus:zin_regional_nara_ships_for_the_strangers_host",
-    "focus:zin_regional_verde_ships_for_the_strangers_host",
-    "focus:zin_shared_islands_of_the_south_ships_for_the_strangers_host"
-   ]
-  },
-  {
-   "id": "general_focus:the_isles_stand_together",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Isles Stand Together\" is the same focus of one story template in 5 trees (slug the_isles_stand_together); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_the_isles_stand_together",
-    "focus:zin_regional_howan_the_isles_stand_together",
-    "focus:zin_regional_nara_the_isles_stand_together",
-    "focus:zin_regional_verde_the_isles_stand_together",
-    "focus:zin_shared_islands_of_the_south_the_isles_stand_together"
-   ]
-  },
-  {
-   "id": "general_focus:the_storm_years",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Storm Years\" is the same focus of one story template in 5 trees (slug the_storm_years); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_the_storm_years",
-    "focus:zin_regional_howan_the_storm_years",
-    "focus:zin_regional_nara_the_storm_years",
-    "focus:zin_regional_verde_the_storm_years",
-    "focus:zin_shared_islands_of_the_south_the_storm_years"
-   ]
-  },
-  {
-   "id": "general_focus:watch_the_southern_waves",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Watch the Southern Waves\" is the same focus of one story template in 5 trees (slug watch_the_southern_waves); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_watch_the_southern_waves",
-    "focus:zin_regional_howan_watch_the_southern_waves",
-    "focus:zin_regional_nara_watch_the_southern_waves",
-    "focus:zin_regional_verde_watch_the_southern_waves",
-    "focus:zin_shared_islands_of_the_south_watch_the_southern_waves"
-   ]
-  },
-  {
-   "id": "general_focus:welcome_the_healers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Welcome the Healers\" is the same focus of one story template in 5 trees (slug welcome_the_healers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_welcome_the_healers",
-    "focus:zin_regional_howan_welcome_the_healers",
-    "focus:zin_regional_nara_welcome_the_healers",
-    "focus:zin_regional_verde_welcome_the_healers",
-    "focus:zin_shared_islands_of_the_south_welcome_the_healers"
-   ]
-  },
-  {
-   "id": "general_focus:against_the_deathless",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Against the Deathless\" is the same focus of one story template in 4 trees (slug against_the_deathless); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gunwaith_against_the_deathless",
-    "focus:zin_regional_kilinti_against_the_deathless",
-    "focus:zin_shared_concord_dominions_against_the_deathless",
-    "focus:zin_shared_north_lands_against_the_deathless"
-   ]
-  },
-  {
-   "id": "general_focus:carry_it_to_gala",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Carry It to Gala\" is the same focus of one story template in 4 trees (slug carry_it_to_gala); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gala_carry_it_to_gala",
-    "focus:zin_regional_nara_carry_it_to_gala",
-    "focus:zin_regional_verde_carry_it_to_gala",
-    "focus:zin_shared_islands_of_the_south_carry_it_to_gala"
-   ]
-  },
-  {
-   "id": "general_focus:into_the_deep_sand",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Into the Deep Sand\" is the same focus of one story template in 4 trees (slug into_the_deep_sand); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_into_the_deep_sand",
-    "focus:zin_regional_alerhia_into_the_deep_sand",
-    "focus:zin_regional_miaed_into_the_deep_sand",
-    "focus:zin_shared_east_lands_into_the_deep_sand"
-   ]
-  },
-  {
-   "id": "general_focus:stand_with_the_kindred",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Stand with the Kindred\" is the same focus of one story template in 4 trees (slug stand_with_the_kindred); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_andos_enda_stand_with_the_kindred",
-    "focus:zin_regional_herrodon_stand_with_the_kindred",
-    "focus:zin_regional_lccimio_stand_with_the_kindred",
-    "focus:zin_shared_magical_lands_stand_with_the_kindred"
-   ]
-  },
-  {
-   "id": "general_focus:the_fishing_fleets",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Fishing Fleets\" is the same focus of one story template in 4 trees (slug the_fishing_fleets); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_asgard_the_fishing_fleets",
-    "focus:zin_regional_enhis_is_rond_the_fishing_fleets",
-    "focus:zin_regional_gondolin_the_fishing_fleets",
-    "focus:zin_shared_islands_of_the_south_the_fishing_fleets"
-   ]
-  },
-  {
-   "id": "general_focus:a_house_of_healing",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A House of Healing\" is the same focus of one story template in 3 trees (slug a_house_of_healing); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_cold_lands_a_house_of_healing",
-    "focus:zin_shared_tritons_islands_a_house_of_healing",
-    "focus:zin_shared_west_lands_a_house_of_healing"
-   ]
-  },
-  {
-   "id": "general_focus:a_welcome_on_every_shore",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Welcome on Every Shore\" is the same focus of one story template in 3 trees (slug a_welcome_on_every_shore); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_a_welcome_on_every_shore",
-    "focus:zin_regional_verde_a_welcome_on_every_shore",
-    "focus:zin_shared_islands_of_the_south_a_welcome_on_every_shore"
-   ]
-  },
-  {
-   "id": "general_focus:answer_the_coalition",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Answer the Eastern Coalition\" is the same focus of one story template in 3 trees (slug answer_the_coalition); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_answer_the_coalition",
-    "focus:zin_shared_east_lands_answer_the_coalition",
-    "focus:zin_stabilo_answer_the_coalition"
-   ]
-  },
-  {
-   "id": "general_focus:answer_the_lost_cause",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Answer the Lost Cause\" is the same focus of one story template in 3 trees (slug answer_the_lost_cause); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gunwaith_answer_the_lost_cause",
-    "focus:zin_lerendor_answer_the_lost_cause",
-    "focus:zin_shared_west_lands_answer_the_lost_cause"
-   ]
-  },
-  {
-   "id": "general_focus:deep_shafts",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Deep Shafts\" is the same focus of one story template in 3 trees (slug deep_shafts); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_erco_deep_shafts",
-    "focus:zin_regional_isengard_deep_shafts",
-    "focus:zin_regional_mina_deep_shafts"
-   ]
-  },
-  {
-   "id": "general_focus:diggers_of_wells",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Diggers of Wells\" is the same focus of one story template in 3 trees (slug diggers_of_wells); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_diggers_of_wells",
-    "focus:zin_regional_miaed_diggers_of_wells",
-    "focus:zin_shared_east_lands_diggers_of_wells"
-   ]
-  },
-  {
-   "id": "general_focus:envoys_to_fandanar",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Envoys to Fandanar\" is the same focus of one story template in 3 trees (slug envoys_to_fandanar); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_fearno_envoys_to_fandanar",
-    "focus:zin_regional_yeldenne_envoys_to_fandanar",
-    "focus:zin_shared_cold_lands_envoys_to_fandanar"
-   ]
-  },
-  {
-   "id": "general_focus:eyes_on_the_south",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Eyes on the South\" is the same focus of one story template in 3 trees (slug eyes_on_the_south); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_eyes_on_the_south",
-    "focus:zin_regional_nolorim_eyes_on_the_south",
-    "focus:zin_regional_selen_eyes_on_the_south"
-   ]
-  },
-  {
-   "id": "general_focus:granaries_of_the_sun",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Granaries of the Sun\" is the same focus of one story template in 3 trees (slug granaries_of_the_sun); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_goodin_granaries_of_the_sun",
-    "focus:zin_regional_the_lands_of_light_granaries_of_the_sun",
-    "focus:zin_shared_lands_of_the_sun_granaries_of_the_sun"
-   ]
-  },
-  {
-   "id": "general_focus:harbour_for_strangers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Harbour for Strangers\" is the same focus of one story template in 3 trees (slug harbour_for_strangers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nondondor_harbour_for_strangers",
-    "focus:zin_regional_seite_islands_harbour_for_strangers",
-    "focus:zin_regional_windwaith_harbour_for_strangers"
-   ]
-  },
-  {
-   "id": "general_focus:heed_the_warning",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Heed the Warning\" is the same focus of one story template in 3 trees (slug heed_the_warning); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_magical_forest_heed_the_warning",
-    "focus:zin_regional_kradlon_heed_the_warning",
-    "focus:zin_regional_selen_heed_the_warning"
-   ]
-  },
-  {
-   "id": "general_focus:hill_companies",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hill Companies\" is the same focus of one story template in 3 trees (slug hill_companies); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_erco_hill_companies",
-    "focus:zin_regional_herez_hill_companies",
-    "focus:zin_regional_mina_hill_companies"
-   ]
-  },
-  {
-   "id": "general_focus:hill_wardens",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hill Wardens\" is the same focus of one story template in 3 trees (slug hill_wardens); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mina_hill_wardens",
-    "focus:zin_shared_cold_lands_hill_wardens",
-    "focus:zin_worshipdom_hill_wardens"
-   ]
-  },
-  {
-   "id": "general_focus:hulls_for_hire",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hulls for Hire\" is the same focus of one story template in 3 trees (slug hulls_for_hire); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_corogon_hulls_for_hire",
-    "focus:zin_regional_nara_hulls_for_hire",
-    "focus:zin_shared_islands_of_the_south_hulls_for_hire"
-   ]
-  },
-  {
-   "id": "general_focus:island_feasts",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Island Feasts\" is the same focus of one story template in 3 trees (slug island_feasts); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_island_feasts",
-    "focus:zin_regional_verde_island_feasts",
-    "focus:zin_shared_islands_of_the_south_island_feasts"
-   ]
-  },
-  {
-   "id": "general_focus:lamps_on_the_reefs",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Lamps on the Reefs\" is the same focus of one story template in 3 trees (slug lamps_on_the_reefs); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_lamps_on_the_reefs",
-    "focus:zin_regional_verde_lamps_on_the_reefs",
-    "focus:zin_shared_islands_of_the_south_lamps_on_the_reefs"
-   ]
-  },
-  {
-   "id": "general_focus:oasis_gardens",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Oasis Gardens\" is the same focus of one story template in 3 trees (slug oasis_gardens); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_oasis_gardens",
-    "focus:zin_regional_miaed_oasis_gardens",
-    "focus:zin_shared_east_lands_oasis_gardens"
-   ]
-  },
-  {
-   "id": "general_focus:oath_to_the_protector",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Oath to the Protector\" is the same focus of one story template in 3 trees (slug oath_to_the_protector); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_east_lands_oath_to_the_protector",
-    "focus:zin_shared_islands_of_the_south_oath_to_the_protector",
-    "focus:zin_shared_lands_of_the_sun_oath_to_the_protector"
-   ]
-  },
-  {
-   "id": "general_focus:orchards_and_vines",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Orchards and Vines\" is the same focus of one story template in 3 trees (slug orchards_and_vines); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_goodin_orchards_and_vines",
-    "focus:zin_regional_the_lands_of_light_orchards_and_vines",
-    "focus:zin_shared_lands_of_the_sun_orchards_and_vines"
-   ]
-  },
-  {
-   "id": "general_focus:ride_with_the_heir",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Ride with the Heir\" is the same focus of one story template in 3 trees (slug ride_with_the_heir); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_hunhun_ride_with_the_heir",
-    "focus:zin_regional_konori_ride_with_the_heir",
-    "focus:zin_regional_noleksun_ride_with_the_heir"
-   ]
-  },
-  {
-   "id": "general_focus:riders_of_the_dunes",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Riders of the Dunes\" is the same focus of one story template in 3 trees (slug riders_of_the_dunes); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_riders_of_the_dunes",
-    "focus:zin_regional_miaed_riders_of_the_dunes",
-    "focus:zin_shared_east_lands_riders_of_the_dunes"
-   ]
-  },
-  {
-   "id": "general_focus:salt_pans",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Salt Pans\" is the same focus of one story template in 3 trees (slug salt_pans); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_salt_pans",
-    "focus:zin_regional_enhis_is_rond_salt_pans",
-    "focus:zin_shared_islands_of_the_south_salt_pans"
-   ]
-  },
-  {
-   "id": "general_focus:sea_soldiers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Sea Soldiers\" is the same focus of one story template in 3 trees (slug sea_soldiers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_asgard_sea_soldiers",
-    "focus:zin_regional_windwaith_sea_soldiers",
-    "focus:zin_shared_tritons_islands_sea_soldiers"
-   ]
-  },
-  {
-   "id": "general_focus:shelter_for_the_wrecked",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Shelter for the Wrecked\" is the same focus of one story template in 3 trees (slug shelter_for_the_wrecked); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_shelter_for_the_wrecked",
-    "focus:zin_regional_verde_shelter_for_the_wrecked",
-    "focus:zin_shared_islands_of_the_south_shelter_for_the_wrecked"
-   ]
-  },
-  {
-   "id": "general_focus:songs_of_the_houseless_king",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Songs of the King Without a House\" is the same focus of one story template in 3 trees (slug songs_of_the_houseless_king); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gunwaith_songs_of_the_houseless_king",
-    "focus:zin_regional_fearno_songs_of_the_houseless_king",
-    "focus:zin_shared_cold_lands_songs_of_the_houseless_king"
-   ]
-  },
-  {
-   "id": "general_focus:stand_with_the_steward",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Stand with the Steward\" is the same focus of one story template in 3 trees (slug stand_with_the_steward); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_demon_stand_with_the_steward",
-    "focus:zin_regional_dolon_stand_with_the_steward",
-    "focus:zin_regional_nezer_stand_with_the_steward"
-   ]
-  },
-  {
-   "id": "general_focus:stone_of_the_high_places",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Stone of the High Places\" is the same focus of one story template in 3 trees (slug stone_of_the_high_places); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_goodin_stone_of_the_high_places",
-    "focus:zin_regional_the_lands_of_light_stone_of_the_high_places",
-    "focus:zin_shared_lands_of_the_sun_stone_of_the_high_places"
-   ]
-  },
-  {
-   "id": "general_focus:sun_terraces",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Sun Terraces\" is the same focus of one story template in 3 trees (slug sun_terraces); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_goodin_sun_terraces",
-    "focus:zin_regional_the_lands_of_light_sun_terraces",
-    "focus:zin_shared_lands_of_the_sun_sun_terraces"
-   ]
-  },
-  {
-   "id": "general_focus:the_dry_roads",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Dry Roads\" is the same focus of one story template in 3 trees (slug the_dry_roads); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_alerhia_the_dry_roads",
-    "focus:zin_regional_miaed_the_dry_roads",
-    "focus:zin_shared_east_lands_the_dry_roads"
-   ]
-  },
-  {
-   "id": "general_focus:the_guest_right",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Guest-Right\" is the same focus of one story template in 3 trees (slug the_guest_right); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_the_guest_right",
-    "focus:zin_regional_verde_the_guest_right",
-    "focus:zin_shared_islands_of_the_south_the_guest_right"
-   ]
-  },
-  {
-   "id": "general_focus:the_kin_answer",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Kin Answer\" is the same focus of one story template in 3 trees (slug the_kin_answer); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_andos_enda_the_kin_answer",
-    "focus:zin_regional_herrodon_the_kin_answer",
-    "focus:zin_shared_magical_lands_the_kin_answer"
-   ]
-  },
-  {
-   "id": "general_focus:the_long_memory",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Long Memory\" is the same focus of one story template in 3 trees (slug the_long_memory); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_hiloron_the_long_memory",
-    "focus:zin_regional_the_end_the_long_memory",
-    "focus:zin_shared_dark_lands_the_long_memory"
-   ]
-  },
-  {
-   "id": "general_focus:the_old_grudge",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Old Grudge\" is the same focus of one story template in 3 trees (slug the_old_grudge); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_varnondor_the_old_grudge",
-    "focus:zin_shared_delving_holds_the_old_grudge",
-    "focus:zin_shared_west_lands_the_old_grudge"
-   ]
-  },
-  {
-   "id": "general_focus:the_sea_watch",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Sea Watch\" is the same focus of one story template in 3 trees (slug the_sea_watch); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_asgard_the_sea_watch",
-    "focus:zin_regional_varnondor_the_sea_watch",
-    "focus:zin_shared_tritons_islands_the_sea_watch"
-   ]
-  },
-  {
-   "id": "general_focus:the_sun_markets",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Sun Markets\" is the same focus of one story template in 3 trees (slug the_sun_markets); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_goodin_the_sun_markets",
-    "focus:zin_regional_the_lands_of_light_the_sun_markets",
-    "focus:zin_shared_lands_of_the_sun_the_sun_markets"
-   ]
-  },
-  {
-   "id": "general_focus:under_the_leren_banner",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Under the Leren Banner\" is the same focus of one story template in 3 trees (slug under_the_leren_banner); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_blackton_under_the_leren_banner",
-    "focus:zin_regional_r_en_under_the_leren_banner",
-    "focus:zin_shared_north_lands_under_the_leren_banner"
-   ]
-  },
-  {
-   "id": "general_focus:a_delegate_to_the_ford",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Delegate to the Ford Council\" is the same focus of one story template in 2 trees (slug a_delegate_to_the_ford); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_girdon_a_delegate_to_the_ford",
-    "focus:zin_shared_west_lands_a_delegate_to_the_ford"
-   ]
-  },
-  {
-   "id": "general_focus:a_harbour_for_any_sail",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Harbour for Any Sail\" is the same focus of one story template in 2 trees (slug a_harbour_for_any_sail); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_adel_a_harbour_for_any_sail",
-    "focus:zin_shared_tritons_islands_a_harbour_for_any_sail"
-   ]
-  },
-  {
-   "id": "general_focus:a_league_of_councils",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A League of Councils\" is the same focus of one story template in 2 trees (slug a_league_of_councils); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_girdon_a_league_of_councils",
-    "focus:zin_shared_west_lands_a_league_of_councils"
-   ]
-  },
-  {
-   "id": "general_focus:a_seat_in_the_compact",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Seat in the Compact\" is the same focus of one story template in 2 trees (slug a_seat_in_the_compact); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mina_a_seat_in_the_compact",
-    "focus:zin_regional_tolvael_a_seat_in_the_compact"
-   ]
-  },
-  {
-   "id": "general_focus:a_voice_in_the_hall",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"A Voice in the Hall\" is the same focus of one story template in 2 trees (slug a_voice_in_the_hall); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_tritons_islands_a_voice_in_the_hall",
-    "focus:zin_shared_west_lands_a_voice_in_the_hall"
-   ]
-  },
-  {
-   "id": "general_focus:across_the_dark_straits",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Across the Dark Straits\" is the same focus of one story template in 2 trees (slug across_the_dark_straits); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_lerendor_across_the_dark_straits",
-    "focus:zin_shared_north_lands_across_the_dark_straits"
-   ]
-  },
-  {
-   "id": "general_focus:against_the_black_water",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Against the Black Water\" is the same focus of one story template in 2 trees (slug against_the_black_water); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_windwaith_against_the_black_water",
-    "focus:zin_shared_cold_lands_against_the_black_water"
-   ]
-  },
-  {
-   "id": "general_focus:answer_the_elder_moot",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Answer the Elder Moot\" is the same focus of one story template in 2 trees (slug answer_the_elder_moot); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_answer_the_elder_moot",
-    "focus:zin_shared_magical_lands_answer_the_elder_moot"
-   ]
-  },
-  {
-   "id": "general_focus:answer_the_moot",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Answer the Moot\" is the same focus of one story template in 2 trees (slug answer_the_moot); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_dreson_answer_the_moot",
-    "focus:zin_shared_dark_lands_answer_the_moot"
-   ]
-  },
-  {
-   "id": "general_focus:black_iron_seams",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Black Iron Seams\" is the same focus of one story template in 2 trees (slug black_iron_seams); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_black_iron_seams",
-    "focus:zin_shared_dark_lands_black_iron_seams"
-   ]
-  },
-  {
-   "id": "general_focus:boatwrights_of_the_isles",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Boatwrights of the Isles\" is the same focus of one story template in 2 trees (slug boatwrights_of_the_isles); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_boatwrights_of_the_isles",
-    "focus:zin_shared_islands_of_the_south_boatwrights_of_the_isles"
-   ]
-  },
-  {
-   "id": "general_focus:bows_of_the_east",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Bows of the East\" is the same focus of one story template in 2 trees (slug bows_of_the_east); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_bows_of_the_east",
-    "focus:zin_shared_east_lands_bows_of_the_east"
-   ]
-  },
-  {
-   "id": "general_focus:captains_of_the_court",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Captains of the Court\" is the same focus of one story template in 2 trees (slug captains_of_the_court); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_captains_of_the_court",
-    "focus:zin_shared_east_lands_captains_of_the_court"
-   ]
-  },
-  {
-   "id": "general_focus:caravan_inns",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Caravan Inns\" is the same focus of one story template in 2 trees (slug caravan_inns); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_bordon_caravan_inns",
-    "focus:zin_regional_kingson_caravan_inns"
-   ]
-  },
-  {
-   "id": "general_focus:charts_of_the_dark_sea",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Charts of the Dark Sea\" is the same focus of one story template in 2 trees (slug charts_of_the_dark_sea); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_charts_of_the_dark_sea",
-    "focus:zin_regional_blackton_charts_of_the_dark_sea"
-   ]
-  },
-  {
-   "id": "general_focus:charts_of_the_southern_seas",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Charts of the Southern Seas\" is the same focus of one story template in 2 trees (slug charts_of_the_southern_seas); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_charts_of_the_southern_seas",
-    "focus:zin_shared_islands_of_the_south_charts_of_the_southern_seas"
-   ]
-  },
-  {
-   "id": "general_focus:cistern_roads",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Cistern Roads\" is the same focus of one story template in 2 trees (slug cistern_roads); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_olen_cistern_roads",
-    "focus:zin_shared_ember_lands_cistern_roads"
-   ]
-  },
-  {
-   "id": "general_focus:coastal_watch",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Coastal Watch\" is the same focus of one story template in 2 trees (slug coastal_watch); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_coldor_coastal_watch",
-    "focus:zin_regional_plutondo_coastal_watch"
-   ]
-  },
-  {
-   "id": "general_focus:council_of_houses",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Council of Houses\" is the same focus of one story template in 2 trees (slug council_of_houses); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_magical_forest_council_of_houses",
-    "focus:zin_stabilo_council_of_houses"
-   ]
-  },
-  {
-   "id": "general_focus:custom_of_the_blood_price",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Custom of the Blood-Price\" is the same focus of one story template in 2 trees (slug custom_of_the_blood_price); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_custom_of_the_blood_price",
-    "focus:zin_regional_dondor_custom_of_the_blood_price"
-   ]
-  },
-  {
-   "id": "general_focus:customs_at_the_wall",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Customs at the Wall\" is the same focus of one story template in 2 trees (slug customs_at_the_wall); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_herrodon_customs_at_the_wall",
-    "focus:zin_shared_magical_lands_customs_at_the_wall"
-   ]
-  },
-  {
-   "id": "general_focus:dead_on_our_shore",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Dead on Our Shore\" is the same focus of one story template in 2 trees (slug dead_on_our_shore); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_blackton_dead_on_our_shore",
-    "focus:zin_shared_dark_lands_dead_on_our_shore"
-   ]
-  },
-  {
-   "id": "general_focus:denounce_the_impostor",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Denounce the Impostor\" is the same focus of one story template in 2 trees (slug denounce_the_impostor); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_aenor_denounce_the_impostor",
-    "focus:zin_worshipdom_denounce_the_impostor"
-   ]
-  },
-  {
-   "id": "general_focus:drill_the_levies",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Drill the Levies\" is the same focus of one story template in 2 trees (slug drill_the_levies); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_drill_the_levies",
-    "focus:zin_shared_east_lands_drill_the_levies"
-   ]
-  },
-  {
-   "id": "general_focus:envoys_to_parim",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Envoys to Parim\" is the same focus of one story template in 2 trees (slug envoys_to_parim); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_molot_envoys_to_parim",
-    "focus:zin_shared_north_lands_envoys_to_parim"
-   ]
-  },
-  {
-   "id": "general_focus:essence_workshops",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Essence Workshops\" is the same focus of one story template in 2 trees (slug essence_workshops); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_the_end_essence_workshops",
-    "focus:zin_shared_magical_lands_essence_workshops"
-   ]
-  },
-  {
-   "id": "general_focus:every_sail_welcome",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Every Sail Welcome\" is the same focus of one story template in 2 trees (slug every_sail_welcome); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_pollos_every_sail_welcome",
-    "focus:zin_regional_raerby_every_sail_welcome"
-   ]
-  },
-  {
-   "id": "general_focus:eyes_on_the_black_north",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Eyes on the Black North\" is the same focus of one story template in 2 trees (slug eyes_on_the_black_north); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_the_end_eyes_on_the_black_north",
-    "focus:zin_shared_magical_lands_eyes_on_the_black_north"
-   ]
-  },
-  {
-   "id": "general_focus:fire_breaks_their_shapes",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Fire Breaks Their Shapes\" is the same focus of one story template in 2 trees (slug fire_breaks_their_shapes); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_fire_breaks_their_shapes",
-    "focus:zin_regional_dondor_fire_breaks_their_shapes"
-   ]
-  },
-  {
-   "id": "general_focus:fire_on_the_beaches",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Fire on the Beaches\" is the same focus of one story template in 2 trees (slug fire_on_the_beaches); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_tolvael_fire_on_the_beaches",
-    "focus:zin_shared_dark_lands_fire_on_the_beaches"
-   ]
-  },
-  {
-   "id": "general_focus:fires_through_the_long_night",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Fires Through the Long Night\" is the same focus of one story template in 2 trees (slug fires_through_the_long_night); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_coldor_fires_through_the_long_night",
-    "focus:zin_shared_cold_lands_fires_through_the_long_night"
-   ]
-  },
-  {
-   "id": "general_focus:fishing_fleets",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Fishing Fleets\" is the same focus of one story template in 2 trees (slug fishing_fleets); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_cold_lands_fishing_fleets",
-    "focus:zin_shared_concord_dominions_fishing_fleets"
-   ]
-  },
-  {
-   "id": "general_focus:for_the_free_dominions",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"For the Free Dominions\" is the same focus of one story template in 2 trees (slug for_the_free_dominions); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_selen_for_the_free_dominions",
-    "focus:zin_shared_concord_dominions_for_the_free_dominions"
-   ]
-  },
-  {
-   "id": "general_focus:forges_of_dolon",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Forges of Dolon\" is the same focus of one story template in 2 trees (slug forges_of_dolon); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_dolon_forges_of_dolon",
-    "focus:zin_volgan_forges_of_dolon"
-   ]
-  },
-  {
-   "id": "general_focus:forts_on_the_marches",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Forts on the Marches\" is the same focus of one story template in 2 trees (slug forts_on_the_marches); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_forts_on_the_marches",
-    "focus:zin_shared_east_lands_forts_on_the_marches"
-   ]
-  },
-  {
-   "id": "general_focus:galleys_of_the_isles",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Galleys of the Isles\" is the same focus of one story template in 2 trees (slug galleys_of_the_isles); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_galleys_of_the_isles",
-    "focus:zin_shared_islands_of_the_south_galleys_of_the_isles"
-   ]
-  },
-  {
-   "id": "general_focus:grove_riders",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Grove Riders\" is the same focus of one story template in 2 trees (slug grove_riders); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_grove_riders",
-    "focus:zin_shared_magical_lands_grove_riders"
-   ]
-  },
-  {
-   "id": "general_focus:grove_roads",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Grove Roads\" is the same focus of one story template in 2 trees (slug grove_roads); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_andos_enda_grove_roads",
-    "focus:zin_shared_magical_lands_grove_roads"
-   ]
-  },
-  {
-   "id": "general_focus:guard_the_roosts",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Guard the Roosts\" is the same focus of one story template in 2 trees (slug guard_the_roosts); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_magical_forest_guard_the_roosts",
-    "focus:zin_shared_magical_lands_guard_the_roosts"
-   ]
-  },
-  {
-   "id": "general_focus:harbour_works",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Harbour Works\" is the same focus of one story template in 2 trees (slug harbour_works); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_concord_dominions_harbour_works",
-    "focus:zin_shared_north_lands_harbour_works"
-   ]
-  },
-  {
-   "id": "general_focus:harbours_on_the_sea_of_gods",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Harbours on the Sea of Gods\" is the same focus of one story template in 2 trees (slug harbours_on_the_sea_of_gods); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_harbours_on_the_sea_of_gods",
-    "focus:zin_shared_lands_of_the_sun_harbours_on_the_sea_of_gods"
-   ]
-  },
-  {
-   "id": "general_focus:hear_the_fishermen",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hear the Fishermen\" is the same focus of one story template in 2 trees (slug hear_the_fishermen); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_lerendor_hear_the_fishermen",
-    "focus:zin_regional_windwaith_hear_the_fishermen"
-   ]
-  },
-  {
-   "id": "general_focus:hearth_and_harbour",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hearth and Harbour\" is the same focus of one story template in 2 trees (slug hearth_and_harbour); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_north_lands_hearth_and_harbour",
-    "focus:zin_shared_tritons_islands_hearth_and_harbour"
-   ]
-  },
-  {
-   "id": "general_focus:hill_forts",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hill Forts\" is the same focus of one story template in 2 trees (slug hill_forts); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_dulundur_hill_forts",
-    "focus:zin_regional_horidor_hill_forts"
-   ]
-  },
-  {
-   "id": "general_focus:horse_and_camel",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Horse and Camel\" is the same focus of one story template in 2 trees (slug horse_and_camel); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_horse_and_camel",
-    "focus:zin_shared_east_lands_horse_and_camel"
-   ]
-  },
-  {
-   "id": "general_focus:houses_of_the_first_light",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Houses of the First Light\" is the same focus of one story template in 2 trees (slug houses_of_the_first_light); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_aenor_houses_of_the_first_light",
-    "focus:zin_worshipdom_houses_of_the_first_light"
-   ]
-  },
-  {
-   "id": "general_focus:hulls_for_the_west",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Hulls for the West\" is the same focus of one story template in 2 trees (slug hulls_for_the_west); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_howan_hulls_for_the_west",
-    "focus:zin_regional_windwaith_hulls_for_the_west"
-   ]
-  },
-  {
-   "id": "general_focus:iron_discipline",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Iron Discipline\" is the same focus of one story template in 2 trees (slug iron_discipline); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_iron_discipline",
-    "focus:zin_regional_molot_iron_discipline"
-   ]
-  },
-  {
-   "id": "general_focus:island_markets",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Island Markets\" is the same focus of one story template in 2 trees (slug island_markets); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_island_markets",
-    "focus:zin_shared_islands_of_the_south_island_markets"
-   ]
-  },
-  {
-   "id": "general_focus:island_navigators",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Island Navigators\" is the same focus of one story template in 2 trees (slug island_navigators); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_island_navigators",
-    "focus:zin_shared_islands_of_the_south_island_navigators"
-   ]
-  },
-  {
-   "id": "general_focus:island_pilots",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Island Steersmen\" is the same focus of one story template in 2 trees (slug island_pilots); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_north_lands_island_pilots",
-    "focus:zin_shared_tritons_islands_island_pilots"
-   ]
-  },
-  {
-   "id": "general_focus:keep_faith_with_parim",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Keep Faith with Parim\" is the same focus of one story template in 2 trees (slug keep_faith_with_parim); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_tolvael_keep_faith_with_parim",
-    "focus:zin_shared_north_lands_keep_faith_with_parim"
-   ]
-  },
-  {
-   "id": "general_focus:keep_the_old_quiet",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Keep the Old Quiet\" is the same focus of one story template in 2 trees (slug keep_the_old_quiet); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_olen_keep_the_old_quiet",
-    "focus:zin_shared_ember_lands_keep_the_old_quiet"
-   ]
-  },
-  {
-   "id": "general_focus:keep_the_roads_open",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Keep the Roads Open\" is the same focus of one story template in 2 trees (slug keep_the_roads_open); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_keep_the_roads_open",
-    "focus:zin_shared_magical_lands_keep_the_roads_open"
-   ]
-  },
-  {
-   "id": "general_focus:keepers_of_old_names",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Keepers of Old Names\" is the same focus of one story template in 2 trees (slug keepers_of_old_names); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_howan_keepers_of_old_names",
-    "focus:zin_shared_islands_of_the_south_keepers_of_old_names"
-   ]
-  },
-  {
-   "id": "general_focus:kin_of_herrodon",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Kin of Herrodon\" is the same focus of one story template in 2 trees (slug kin_of_herrodon); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_herrodon_kin_of_herrodon",
-    "focus:zin_shared_middle_free_kin_of_herrodon"
-   ]
-  },
-  {
-   "id": "general_focus:kin_of_the_north",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Kin of the North\" is the same focus of one story template in 2 trees (slug kin_of_the_north); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_coldor_kin_of_the_north",
-    "focus:zin_shared_north_lands_kin_of_the_north"
-   ]
-  },
-  {
-   "id": "general_focus:letters_to_parim",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Letters to Parim\" is the same focus of one story template in 2 trees (slug letters_to_parim); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gala_letters_to_parim",
-    "focus:zin_gunwaith_letters_to_parim"
-   ]
-  },
-  {
-   "id": "general_focus:masters_of_the_southern_seas",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Masters of the Southern Seas\" is the same focus of one story template in 2 trees (slug masters_of_the_southern_seas); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_masters_of_the_southern_seas",
-    "focus:zin_shared_islands_of_the_south_masters_of_the_southern_seas"
-   ]
-  },
-  {
-   "id": "general_focus:men_of_selen",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Men of Selen\" is the same focus of one story template in 2 trees (slug men_of_selen); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_aenor_men_of_selen",
-    "focus:zin_regional_selen_men_of_selen"
-   ]
-  },
-  {
-   "id": "general_focus:navigators_for_gala",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Navigators for Gala\" is the same focus of one story template in 2 trees (slug navigators_for_gala); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_navigators_for_gala",
-    "focus:zin_shared_islands_of_the_south_navigators_for_gala"
-   ]
-  },
-  {
-   "id": "general_focus:nets_and_boats",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Nets and Boats\" is the same focus of one story template in 2 trees (slug nets_and_boats); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_nets_and_boats",
-    "focus:zin_shared_islands_of_the_south_nets_and_boats"
-   ]
-  },
-  {
-   "id": "general_focus:neutral_waters",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Neutral Waters\" is the same focus of one story template in 2 trees (slug neutral_waters); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_neutral_waters",
-    "focus:zin_regional_r_en_neutral_waters"
-   ]
-  },
-  {
-   "id": "general_focus:northern_companies",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Northern Companies\" is the same focus of one story template in 2 trees (slug northern_companies); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_tolvael_northern_companies",
-    "focus:zin_shared_north_lands_northern_companies"
-   ]
-  },
-  {
-   "id": "general_focus:old_tales_of_the_isles",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Old Tales of the Isles\" is the same focus of one story template in 2 trees (slug old_tales_of_the_isles); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_howan_old_tales_of_the_isles",
-    "focus:zin_shared_islands_of_the_south_old_tales_of_the_isles"
-   ]
-  },
-  {
-   "id": "general_focus:one_moot_one_voice",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"One Moot, One Voice\" is the same focus of one story template in 2 trees (slug one_moot_one_voice); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_horidor_one_moot_one_voice",
-    "focus:zin_regional_noleksun_one_moot_one_voice"
-   ]
-  },
-  {
-   "id": "general_focus:pearl_divers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Pearl Divers\" is the same focus of one story template in 2 trees (slug pearl_divers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_pearl_divers",
-    "focus:zin_shared_islands_of_the_south_pearl_divers"
-   ]
-  },
-  {
-   "id": "general_focus:pilgrims_of_the_sea_of_gods",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Pilgrims of the Sea of Gods\" is the same focus of one story template in 2 trees (slug pilgrims_of_the_sea_of_gods); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_pilgrims_of_the_sea_of_gods",
-    "focus:zin_shared_lands_of_the_sun_pilgrims_of_the_sea_of_gods"
-   ]
-  },
-  {
-   "id": "general_focus:pilots_for_hire",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Wayfinders for Hire\" is the same focus of one story template in 2 trees (slug pilots_for_hire); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_halenor_pilots_for_hire",
-    "focus:zin_regional_nan_pilots_for_hire"
-   ]
-  },
-  {
-   "id": "general_focus:rangers_of_selen",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Rangers of Selen\" is the same focus of one story template in 2 trees (slug rangers_of_selen); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_aenor_rangers_of_selen",
-    "focus:zin_regional_selen_rangers_of_selen"
-   ]
-  },
-  {
-   "id": "general_focus:river_barges",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"River Barges\" is the same focus of one story template in 2 trees (slug river_barges); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_girdon_river_barges",
-    "focus:zin_regional_mina_river_barges"
-   ]
-  },
-  {
-   "id": "general_focus:ships_for_the_crossing",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Ships for the Crossing\" is the same focus of one story template in 2 trees (slug ships_for_the_crossing); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_raerby_ships_for_the_crossing",
-    "focus:zin_shared_tritons_islands_ships_for_the_crossing"
-   ]
-  },
-  {
-   "id": "general_focus:ships_for_the_isles",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Ships for the Isles\" is the same focus of one story template in 2 trees (slug ships_for_the_isles); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_ships_for_the_isles",
-    "focus:zin_shared_lands_of_the_sun_ships_for_the_isles"
-   ]
-  },
-  {
-   "id": "general_focus:shore_beacons",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Shore Beacons\" is the same focus of one story template in 2 trees (slug shore_beacons); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_andos_enda_shore_beacons",
-    "focus:zin_shared_magical_lands_shore_beacons"
-   ]
-  },
-  {
-   "id": "general_focus:shore_levies",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Shore Levies\" is the same focus of one story template in 2 trees (slug shore_levies); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_andos_enda_shore_levies",
-    "focus:zin_shared_magical_lands_shore_levies"
-   ]
-  },
-  {
-   "id": "general_focus:shore_wardens",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Shore Wardens\" is the same focus of one story template in 2 trees (slug shore_wardens); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_shore_wardens",
-    "focus:zin_regional_tolvael_shore_wardens"
-   ]
-  },
-  {
-   "id": "general_focus:slip_the_yoke",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Slip the Yoke\" is the same focus of one story template in 2 trees (slug slip_the_yoke); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_bordon_slip_the_yoke",
-    "focus:zin_shared_dark_lands_slip_the_yoke"
-   ]
-  },
-  {
-   "id": "general_focus:smithies",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Smithies\" is the same focus of one story template in 2 trees (slug smithies); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_cold_lands_smithies",
-    "focus:zin_shared_concord_dominions_smithies"
-   ]
-  },
-  {
-   "id": "general_focus:songs_for_strangers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Songs for Visitors\" is the same focus of one story template in 2 trees (slug songs_for_strangers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_howan_songs_for_strangers",
-    "focus:zin_shared_islands_of_the_south_songs_for_strangers"
-   ]
-  },
-  {
-   "id": "general_focus:stand_with_the_living",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Stand with the Living\" is the same focus of one story template in 2 trees (slug stand_with_the_living); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_dondor_stand_with_the_living",
-    "focus:zin_shared_middle_free_stand_with_the_living"
-   ]
-  },
-  {
-   "id": "general_focus:strangers_from_the_south",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Strangers from the South\" is the same focus of one story template in 2 trees (slug strangers_from_the_south); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_strangers_from_the_south",
-    "focus:zin_shared_dark_lands_strangers_from_the_south"
-   ]
-  },
-  {
-   "id": "general_focus:temples_and_almshouses",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Temples and Almshouses\" is the same focus of one story template in 2 trees (slug temples_and_almshouses); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_concord_dominions_temples_and_almshouses",
-    "focus:zin_shared_north_lands_temples_and_almshouses"
-   ]
-  },
-  {
-   "id": "general_focus:the_banks_accord_kept",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Banks Accord\" is the same focus of one story template in 2 trees (slug the_banks_accord_kept); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nondondor_the_banks_accord_kept",
-    "focus:zin_regional_seite_islands_the_banks_accord_kept"
-   ]
-  },
-  {
-   "id": "general_focus:the_blood_price",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Blood-Price\" is the same focus of one story template in 2 trees (slug the_blood_price); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_bloody_forest_the_blood_price",
-    "focus:zin_regional_girdon_the_blood_price"
-   ]
-  },
-  {
-   "id": "general_focus:the_clan_moot",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Clan Moot\" is the same focus of one story template in 2 trees (slug the_clan_moot); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_ostoroth_the_clan_moot",
-    "focus:zin_shared_delving_holds_the_clan_moot"
-   ]
-  },
-  {
-   "id": "general_focus:the_counting_houses",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Counting Houses\" is the same focus of one story template in 2 trees (slug the_counting_houses); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_eekedor_the_counting_houses",
-    "focus:zin_stabilo_the_counting_houses"
-   ]
-  },
-  {
-   "id": "general_focus:the_court_guard",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The [ROOT.GetAdjective] Guard\" is the same focus of one story template in 2 trees (slug the_court_guard); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_mora_the_court_guard",
-    "focus:zin_shared_east_lands_the_court_guard"
-   ]
-  },
-  {
-   "id": "general_focus:the_edge_of_the_woods",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Edge of the Woods\" is the same focus of one story template in 2 trees (slug the_edge_of_the_woods); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_the_end_the_edge_of_the_woods",
-    "focus:zin_shared_magical_lands_the_edge_of_the_woods"
-   ]
-  },
-  {
-   "id": "general_focus:the_eldest_speaks",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Eldest Speaks\" is the same focus of one story template in 2 trees (slug the_eldest_speaks); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nara_the_eldest_speaks",
-    "focus:zin_shared_middle_free_the_eldest_speaks"
-   ]
-  },
-  {
-   "id": "general_focus:the_feud_of_the_groves",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Feud of the Groves\" is the same focus of one story template in 2 trees (slug the_feud_of_the_groves); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_andos_enda_the_feud_of_the_groves",
-    "focus:zin_regional_herrodon_the_feud_of_the_groves"
-   ]
-  },
-  {
-   "id": "general_focus:the_forest_endures",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Forest Endures\" is the same focus of one story template in 2 trees (slug the_forest_endures); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_bloody_forest_the_forest_endures",
-    "focus:zin_regional_troll_forest_the_forest_endures"
-   ]
-  },
-  {
-   "id": "general_focus:the_forest_law",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Forest Law\" is the same focus of one story template in 2 trees (slug the_forest_law); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_troll_forest_the_forest_law",
-    "focus:zin_regional_verde_the_forest_law"
-   ]
-  },
-  {
-   "id": "general_focus:the_forest_wakes",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Forest Wakes\" is the same focus of one story template in 2 trees (slug the_forest_wakes); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_troll_forest_the_forest_wakes",
-    "focus:zin_shared_middle_free_the_forest_wakes"
-   ]
-  },
-  {
-   "id": "general_focus:the_free_council",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Free Council\" is the same focus of one story template in 2 trees (slug the_free_council); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_concord_dominions_the_free_council",
-    "focus:zin_shared_east_lands_the_free_council"
-   ]
-  },
-  {
-   "id": "general_focus:the_free_coves",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Free Coves\" is the same focus of one story template in 2 trees (slug the_free_coves); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_seite_islands_the_free_coves",
-    "focus:zin_shared_tritons_islands_the_free_coves"
-   ]
-  },
-  {
-   "id": "general_focus:the_free_north",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Free North\" is the same focus of one story template in 2 trees (slug the_free_north); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_lerendor_the_free_north",
-    "focus:zin_regional_isengard_the_free_north"
-   ]
-  },
-  {
-   "id": "general_focus:the_free_steadings",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Free Steadings\" is the same focus of one story template in 2 trees (slug the_free_steadings); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_fearno_the_free_steadings",
-    "focus:zin_shared_lands_of_the_sun_the_free_steadings"
-   ]
-  },
-  {
-   "id": "general_focus:the_freeholders_moot",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Freeholders' Moot\" is the same focus of one story template in 2 trees (slug the_freeholders_moot); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_ember_lands_the_freeholders_moot",
-    "focus:zin_shared_north_lands_the_freeholders_moot"
-   ]
-  },
-  {
-   "id": "general_focus:the_gate_market",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Gate Market\" is the same focus of one story template in 2 trees (slug the_gate_market); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_kingson_the_gate_market",
-    "focus:zin_shared_delving_holds_the_gate_market"
-   ]
-  },
-  {
-   "id": "general_focus:the_harbour_chain",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Harbour Chain\" is the same focus of one story template in 2 trees (slug the_harbour_chain); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_blackton_the_harbour_chain",
-    "focus:zin_regional_pollos_the_harbour_chain"
-   ]
-  },
-  {
-   "id": "general_focus:the_highland_crown",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Highland Crown\" is the same focus of one story template in 2 trees (slug the_highland_crown); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_horidor_the_highland_crown",
-    "focus:zin_regional_ostoroth_the_highland_crown"
-   ]
-  },
-  {
-   "id": "general_focus:the_houses_vote",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Houses Vote\" is the same focus of one story template in 2 trees (slug the_houses_vote); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_eekedor_the_houses_vote",
-    "focus:zin_stabilo_the_houses_vote"
-   ]
-  },
-  {
-   "id": "general_focus:the_iron_tithe",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Iron Tithe\" is the same focus of one story template in 2 trees (slug the_iron_tithe); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_drak_the_iron_tithe",
-    "focus:zin_shared_dark_lands_the_iron_tithe"
-   ]
-  },
-  {
-   "id": "general_focus:the_island_levy",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Island Levy\" is the same focus of one story template in 2 trees (slug the_island_levy); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_enhis_is_rond_the_island_levy",
-    "focus:zin_shared_tritons_islands_the_island_levy"
-   ]
-  },
-  {
-   "id": "general_focus:the_kings_peace",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The King's Peace\" is the same focus of one story template in 2 trees (slug the_kings_peace); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gunwaith_the_kings_peace",
-    "focus:zin_regional_dondor_the_kings_peace"
-   ]
-  },
-  {
-   "id": "general_focus:the_lamp_truce",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Lamp Truce\" is the same focus of one story template in 2 trees (slug the_lamp_truce); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_burrikkrit_the_lamp_truce",
-    "focus:zin_shared_delving_holds_the_lamp_truce"
-   ]
-  },
-  {
-   "id": "general_focus:the_light_in_the_north",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Light in the North\" is the same focus of one story template in 2 trees (slug the_light_in_the_north); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_titanos_the_light_in_the_north",
-    "focus:zin_regional_yeti_lands_the_light_in_the_north"
-   ]
-  },
-  {
-   "id": "general_focus:the_long_patrol",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Long Patrol\" is the same focus of one story template in 2 trees (slug the_long_patrol); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_raerby_the_long_patrol",
-    "focus:zin_regional_selen_the_long_patrol"
-   ]
-  },
-  {
-   "id": "general_focus:the_long_ride",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Long Ride\" is the same focus of one story template in 2 trees (slug the_long_ride); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_the_long_ride",
-    "focus:zin_regional_hunhun_the_long_ride"
-   ]
-  },
-  {
-   "id": "general_focus:the_long_watch",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Long Watch\" is the same focus of one story template in 2 trees (slug the_long_watch); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_lerendor_the_long_watch",
-    "focus:zin_regional_yeldenne_the_long_watch"
-   ]
-  },
-  {
-   "id": "general_focus:the_lords_moot",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Lords' Moot\" is the same focus of one story template in 2 trees (slug the_lords_moot); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_concord_dominions_the_lords_moot",
-    "focus:zin_shared_west_lands_the_lords_moot"
-   ]
-  },
-  {
-   "id": "general_focus:the_moot_of_mothers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Moot of Mothers\" is the same focus of one story template in 2 trees (slug the_moot_of_mothers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_bloody_forest_the_moot_of_mothers",
-    "focus:zin_regional_cursed_lands_the_moot_of_mothers"
-   ]
-  },
-  {
-   "id": "general_focus:the_moot_rides",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Moot Rides\" is the same focus of one story template in 2 trees (slug the_moot_rides); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_dulundur_the_moot_rides",
-    "focus:zin_shared_dark_lands_the_moot_rides"
-   ]
-  },
-  {
-   "id": "general_focus:the_moot_stone",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Moot Stone\" is the same focus of one story template in 2 trees (slug the_moot_stone); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_dulundur_the_moot_stone",
-    "focus:zin_regional_seite_islands_the_moot_stone"
-   ]
-  },
-  {
-   "id": "general_focus:the_open_assembly",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Open Assembly\" is the same focus of one story template in 2 trees (slug the_open_assembly); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_tritons_islands_the_open_assembly",
-    "focus:zin_shared_west_lands_the_open_assembly"
-   ]
-  },
-  {
-   "id": "general_focus:the_open_houses",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Open Houses\" is the same focus of one story template in 2 trees (slug the_open_houses); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_the_open_houses",
-    "focus:zin_shared_magical_lands_the_open_houses"
-   ]
-  },
-  {
-   "id": "general_focus:the_open_road",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Open Road\" is the same focus of one story template in 2 trees (slug the_open_road); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_fearno_the_open_road",
-    "focus:zin_shared_east_lands_the_open_road"
-   ]
-  },
-  {
-   "id": "general_focus:the_passes_held",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Passes Held\" is the same focus of one story template in 2 trees (slug the_passes_held); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_mirolon_the_passes_held",
-    "focus:zin_regional_ostoroth_the_passes_held"
-   ]
-  },
-  {
-   "id": "general_focus:the_pupor_question",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Pupor Question\" is the same focus of one story template in 2 trees (slug the_pupor_question); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_seite_islands_the_pupor_question",
-    "focus:zin_shared_tritons_islands_the_pupor_question"
-   ]
-  },
-  {
-   "id": "general_focus:the_queens_peace",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Queen's Peace\" is the same focus of one story template in 2 trees (slug the_queens_peace); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_asgard_the_queens_peace",
-    "focus:zin_regional_herrodon_the_queens_peace"
-   ]
-  },
-  {
-   "id": "general_focus:the_quiet_kept",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Quiet Kept\" is the same focus of one story template in 2 trees (slug the_quiet_kept); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_olen_the_quiet_kept",
-    "focus:zin_shared_ember_lands_the_quiet_kept"
-   ]
-  },
-  {
-   "id": "general_focus:the_reef_singers",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Reef Singers\" is the same focus of one story template in 2 trees (slug the_reef_singers); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_howan_the_reef_singers",
-    "focus:zin_shared_islands_of_the_south_the_reef_singers"
-   ]
-  },
-  {
-   "id": "general_focus:the_refusal_kept",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Refusal Kept\" is the same focus of one story template in 2 trees (slug the_refusal_kept); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_the_refusal_kept",
-    "focus:zin_shared_magical_lands_the_refusal_kept"
-   ]
-  },
-  {
-   "id": "general_focus:the_road_to_parim",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Road to Parim\" is the same focus of one story template in 2 trees (slug the_road_to_parim); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_noris_the_road_to_parim",
-    "focus:zin_stabilo_the_road_to_parim"
-   ]
-  },
-  {
-   "id": "general_focus:the_shore_holds",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Shore Holds\" is the same focus of one story template in 2 trees (slug the_shore_holds); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nether_the_shore_holds",
-    "focus:zin_regional_tolvael_the_shore_holds"
-   ]
-  },
-  {
-   "id": "general_focus:the_shore_watch",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Shore Watch\" is the same focus of one story template in 2 trees (slug the_shore_watch); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_shared_north_lands_the_shore_watch",
-    "focus:zin_shared_west_lands_the_shore_watch"
-   ]
-  },
-  {
-   "id": "general_focus:the_southern_ship",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Southern Ship\" is the same focus of one story template in 2 trees (slug the_southern_ship); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_adel_the_southern_ship",
-    "focus:zin_shared_tritons_islands_the_southern_ship"
-   ]
-  },
-  {
-   "id": "general_focus:the_speakers_hall",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Speaker's Hall\" is the same focus of one story template in 2 trees (slug the_speakers_hall); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_adel_the_speakers_hall",
-    "focus:zin_regional_mora_the_speakers_hall"
-   ]
-  },
-  {
-   "id": "general_focus:the_storm_shelters_us",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Storm Shelters Us\" is the same focus of one story template in 2 trees (slug the_storm_shelters_us); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_nan_the_storm_shelters_us",
-    "focus:zin_shared_ember_lands_the_storm_shelters_us"
-   ]
-  },
-  {
-   "id": "general_focus:the_wall_holds",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Wall Holds\" is the same focus of one story template in 2 trees (slug the_wall_holds); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_aenor_the_wall_holds",
-    "focus:zin_regional_kingson_the_wall_holds"
-   ]
-  },
-  {
-   "id": "general_focus:the_western_contracts",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"The Western Contracts\" is the same focus of one story template in 2 trees (slug the_western_contracts); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_coldor_the_western_contracts",
-    "focus:zin_regional_buldor_the_western_contracts"
-   ]
-  },
-  {
-   "id": "general_focus:timber_and_tar",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Timber and Tar\" is the same focus of one story template in 2 trees (slug timber_and_tar); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_tolvael_timber_and_tar",
-    "focus:zin_shared_west_lands_timber_and_tar"
-   ]
-  },
-  {
-   "id": "general_focus:timber_for_the_west",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Timber for the West\" is the same focus of one story template in 2 trees (slug timber_for_the_west); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_coldor_timber_for_the_west",
-    "focus:zin_regional_verde_timber_for_the_west"
-   ]
-  },
-  {
-   "id": "general_focus:toll_the_pilgrims",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Toll the Pilgrims\" is the same focus of one story template in 2 trees (slug toll_the_pilgrims); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_toll_the_pilgrims",
-    "focus:zin_shared_magical_lands_toll_the_pilgrims"
-   ]
-  },
-  {
-   "id": "general_focus:traders_to_the_west",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Traders to the West\" is the same focus of one story template in 2 trees (slug traders_to_the_west); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_howan_traders_to_the_west",
-    "focus:zin_shared_cold_lands_traders_to_the_west"
-   ]
-  },
-  {
-   "id": "general_focus:war_galleys",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"War Galleys\" is the same focus of one story template in 2 trees (slug war_galleys); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_gunwaith_war_galleys",
-    "focus:zin_regional_windwaith_war_galleys"
-   ]
-  },
-  {
-   "id": "general_focus:wardens_for_friends",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Wardens for Friends\" is the same focus of one story template in 2 trees (slug wardens_for_friends); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_lccimio_wardens_for_friends",
-    "focus:zin_shared_magical_lands_wardens_for_friends"
-   ]
-  },
-  {
-   "id": "general_focus:wardens_of_the_gate",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Wardens of the Gate\" is the same focus of one story template in 2 trees (slug wardens_of_the_gate); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_kingson_wardens_of_the_gate",
-    "focus:zin_regional_nezer_wardens_of_the_gate"
-   ]
-  },
-  {
-   "id": "general_focus:watchers_at_the_edge",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Watchers at the Edge\" is the same focus of one story template in 2 trees (slug watchers_at_the_edge); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_cursed_lands_watchers_at_the_edge",
-    "focus:zin_shared_middle_free_watchers_at_the_edge"
-   ]
-  },
-  {
-   "id": "general_focus:when_the_south_burns",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"When the South Burns\" is the same focus of one story template in 2 trees (slug when_the_south_burns); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_horidor_when_the_south_burns",
-    "focus:zin_regional_windwaith_when_the_south_burns"
-   ]
-  },
-  {
-   "id": "general_focus:when_the_south_falls_silent",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"When the South Falls Silent\" is the same focus of one story template in 2 trees (slug when_the_south_falls_silent); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_goldoroth_when_the_south_falls_silent",
-    "focus:zin_shared_dark_lands_when_the_south_falls_silent"
-   ]
-  },
-  {
-   "id": "general_focus:white_sails",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"White Sails\" is the same focus of one story template in 2 trees (slug white_sails); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_regional_elvana_white_sails",
-    "focus:zin_shared_lands_of_the_sun_white_sails"
-   ]
-  },
-  {
-   "id": "general_focus:winter_stores",
-   "kind": "general_focus",
-   "status": "proposed",
-   "reason": "\"Winter Stores\" is the same focus of one story template in 2 trees (slug winter_stores); one icon serves every copy (K69 general focus)",
-   "concepts": [
-    "focus:zin_coldor_winter_stores",
-    "focus:zin_shared_cold_lands_winter_stores"
-   ]
-  }
- ]
+  "format": 1,
+  "about": "Deliberate icon reuse (design system §4.3 and K69). Every texture that serves more than one concept must be covered by one entry here, or check 10 (icon.registry) reports it. Kinds: same_concept, tiers, family_badge, engine_fallback, general_focus. Hand-kept: add an entry with its reason before two concepts share a picture; general_focus entries are lead-accepted (lead decision for lane I4, 1 November 2026; the owner may overrule) from the rule below and confirmed by the owner.",
+  "generalFocusRule": "A focus is genuinely general when two or more focus trees carry a focus with the same localised name and the same template slug (the id is <tree file stem>_<slug>); every copy is the same story branch, so one icon serves all of them. Nothing else shares a focus icon.",
+  "targets": {
+    "focus": {
+      "rule": "one icon per focus; the 153 general groups below share one icon each (K69); rebuilt from the current focus JSON by lane I4"
+    },
+    "spirit": {
+      "rule": "one picture per national spirit; a spirit granted by a same-named focus may reuse that focus art recut to the idea frame (same_concept, recorded as a share)"
+    },
+    "law": {
+      "rule": "one picture per law (economy, trade, mobilisation)"
+    },
+    "officer_spirit": {
+      "rule": "one picture per officer-corps spirit"
+    },
+    "decision": {
+      "rule": "one seal per decision or mission"
+    },
+    "decision_category": {
+      "rule": "one category icon per category"
+    },
+    "decision_category_picture": {
+      "rule": "one picture per category that has a picture"
+    },
+    "event": {
+      "rule": "one picture per visible event; events that show the same moment (a follow-up of one scene) may share it as same_concept, recorded per chain by lane I10"
+    },
+    "news_event": {
+      "rule": "one picture per news event"
+    },
+    "technology": {
+      "rule": "one picture per technology"
+    },
+    "equipment": {
+      "rule": "one picture per equipment type; marks of one line use the tiers rule (one base picture with a tier mark, own sprite per mark)"
+    },
+    "equipment_archetype": {
+      "rule": "one picture per archetype"
+    },
+    "subunit": {
+      "rule": "one unit icon per sub-unit, including the 20 without an icon today"
+    },
+    "trait": {
+      "rule": "one emblem per unit leader and country leader trait"
+    },
+    "special_project": {
+      "rule": "one picture per special project"
+    },
+    "operation": {
+      "rule": "one picture per operation"
+    },
+    "agency_upgrade": {
+      "rule": "one picture per agency upgrade"
+    },
+    "agency_logo": {
+      "rule": "one logo per agency"
+    },
+    "mio": {
+      "rule": "one emblem per organisation"
+    },
+    "mio_trait": {
+      "rule": "one icon per MIO trait"
+    },
+    "scholar_trait": {
+      "rule": "one icon per scholar trait"
+    },
+    "doctrine": {
+      "rule": "one plate per grand doctrine, track and sub-doctrine (own art exists, K51/K58)"
+    },
+    "faction": {
+      "rule": "one shield per faction template, in both engine sizes"
+    },
+    "map_mode": {
+      "rule": "one button per ZIN map mode, with distinct selected and deselected frames"
+    },
+    "resource": {
+      "rule": "one frame per resource in the engine strip"
+    },
+    "super_event": {
+      "rule": "one painted moment per super event"
+    }
+  },
+  "shares": [
+    {
+      "id": "general_focus:the_great_war_at_sea",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The War at Sea\" is the same focus of one story template in 7 trees (slug the_great_war_at_sea); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_adel_the_great_war_at_sea",
+        "focus:zin_regional_halenor_the_great_war_at_sea",
+        "focus:zin_regional_nondondor_the_great_war_at_sea",
+        "focus:zin_regional_pollos_the_great_war_at_sea",
+        "focus:zin_regional_raerby_the_great_war_at_sea",
+        "focus:zin_regional_seite_islands_the_great_war_at_sea",
+        "focus:zin_shared_tritons_islands_the_great_war_at_sea"
+      ]
+    },
+    {
+      "id": "general_focus:against_the_deathless",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Against the Deathless\" is the same focus of one story template in 4 trees (slug against_the_deathless); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gunwaith_against_the_deathless",
+        "focus:zin_regional_kilinti_against_the_deathless",
+        "focus:zin_shared_concord_dominions_against_the_deathless",
+        "focus:zin_shared_north_lands_against_the_deathless"
+      ]
+    },
+    {
+      "id": "general_focus:stand_with_the_kindred",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Stand with the Kindred\" is the same focus of one story template in 4 trees (slug stand_with_the_kindred); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_andos_enda_stand_with_the_kindred",
+        "focus:zin_regional_herrodon_stand_with_the_kindred",
+        "focus:zin_regional_lccimio_stand_with_the_kindred",
+        "focus:zin_shared_magical_lands_stand_with_the_kindred"
+      ]
+    },
+    {
+      "id": "general_focus:a_house_of_healing",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A House of Healing\" is the same focus of one story template in 3 trees (slug a_house_of_healing); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_cold_lands_a_house_of_healing",
+        "focus:zin_shared_tritons_islands_a_house_of_healing",
+        "focus:zin_shared_west_lands_a_house_of_healing"
+      ]
+    },
+    {
+      "id": "general_focus:answer_the_coalition",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Answer the Eastern Coalition\" is the same focus of one story template in 3 trees (slug answer_the_coalition); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_answer_the_coalition",
+        "focus:zin_shared_east_lands_answer_the_coalition",
+        "focus:zin_stabilo_answer_the_coalition"
+      ]
+    },
+    {
+      "id": "general_focus:answer_the_lost_cause",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Answer the Lost Cause\" is the same focus of one story template in 3 trees (slug answer_the_lost_cause); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gunwaith_answer_the_lost_cause",
+        "focus:zin_lerendor_answer_the_lost_cause",
+        "focus:zin_shared_west_lands_answer_the_lost_cause"
+      ]
+    },
+    {
+      "id": "general_focus:deep_shafts",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Deep Shafts\" is the same focus of one story template in 3 trees (slug deep_shafts); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_erco_deep_shafts",
+        "focus:zin_regional_isengard_deep_shafts",
+        "focus:zin_regional_mina_deep_shafts"
+      ]
+    },
+    {
+      "id": "general_focus:eyes_on_the_south",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Eyes on the South\" is the same focus of one story template in 3 trees (slug eyes_on_the_south); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_eyes_on_the_south",
+        "focus:zin_regional_nolorim_eyes_on_the_south",
+        "focus:zin_regional_selen_eyes_on_the_south"
+      ]
+    },
+    {
+      "id": "general_focus:harbour_for_strangers",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A Harbour for Strangers\" is the same focus of one story template in 3 trees (slug harbour_for_strangers); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_nondondor_harbour_for_strangers",
+        "focus:zin_regional_seite_islands_harbour_for_strangers",
+        "focus:zin_regional_windwaith_harbour_for_strangers"
+      ]
+    },
+    {
+      "id": "general_focus:heed_the_warning",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Heed the Warning\" is the same focus of one story template in 3 trees (slug heed_the_warning); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_magical_forest_heed_the_warning",
+        "focus:zin_regional_kradlon_heed_the_warning",
+        "focus:zin_regional_selen_heed_the_warning"
+      ]
+    },
+    {
+      "id": "general_focus:hill_companies",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hill Companies\" is the same focus of one story template in 3 trees (slug hill_companies); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_erco_hill_companies",
+        "focus:zin_regional_herez_hill_companies",
+        "focus:zin_regional_mina_hill_companies"
+      ]
+    },
+    {
+      "id": "general_focus:hill_wardens",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hill Wardens\" is the same focus of one story template in 3 trees (slug hill_wardens); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_mina_hill_wardens",
+        "focus:zin_shared_cold_lands_hill_wardens",
+        "focus:zin_worshipdom_hill_wardens"
+      ]
+    },
+    {
+      "id": "general_focus:houses_of_healing",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Houses of Healing\" is the same focus of one story template in 3 trees (slug houses_of_healing); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_houses_of_healing",
+        "focus:zin_shared_east_lands_houses_of_healing",
+        "focus:zin_shared_ember_lands_houses_of_healing"
+      ]
+    },
+    {
+      "id": "general_focus:oath_to_the_protector",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Oath to the Protector\" is the same focus of one story template in 3 trees (slug oath_to_the_protector); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_east_lands_oath_to_the_protector",
+        "focus:zin_shared_islands_of_the_south_oath_to_the_protector",
+        "focus:zin_shared_lands_of_the_sun_oath_to_the_protector"
+      ]
+    },
+    {
+      "id": "general_focus:ride_with_the_heir",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Ride with the Heir\" is the same focus of one story template in 3 trees (slug ride_with_the_heir); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_hunhun_ride_with_the_heir",
+        "focus:zin_regional_konori_ride_with_the_heir",
+        "focus:zin_regional_noleksun_ride_with_the_heir"
+      ]
+    },
+    {
+      "id": "general_focus:sea_soldiers",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Sea Soldiers\" is the same focus of one story template in 3 trees (slug sea_soldiers); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_asgard_sea_soldiers",
+        "focus:zin_regional_windwaith_sea_soldiers",
+        "focus:zin_shared_tritons_islands_sea_soldiers"
+      ]
+    },
+    {
+      "id": "general_focus:songs_of_the_houseless_king",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Songs of the King Without a House\" is the same focus of one story template in 3 trees (slug songs_of_the_houseless_king); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gunwaith_songs_of_the_houseless_king",
+        "focus:zin_regional_fearno_songs_of_the_houseless_king",
+        "focus:zin_shared_cold_lands_songs_of_the_houseless_king"
+      ]
+    },
+    {
+      "id": "general_focus:stand_with_the_steward",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Stand with the Steward\" is the same focus of one story template in 3 trees (slug stand_with_the_steward); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_demon_stand_with_the_steward",
+        "focus:zin_regional_dolon_stand_with_the_steward",
+        "focus:zin_regional_nezer_stand_with_the_steward"
+      ]
+    },
+    {
+      "id": "general_focus:the_fishing_fleets",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Fishing Fleets\" is the same focus of one story template in 3 trees (slug the_fishing_fleets); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_asgard_the_fishing_fleets",
+        "focus:zin_regional_gondolin_the_fishing_fleets",
+        "focus:zin_shared_islands_of_the_south_the_fishing_fleets"
+      ]
+    },
+    {
+      "id": "general_focus:the_kin_answer",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Kin Answer\" is the same focus of one story template in 3 trees (slug the_kin_answer); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_andos_enda_the_kin_answer",
+        "focus:zin_regional_herrodon_the_kin_answer",
+        "focus:zin_shared_magical_lands_the_kin_answer"
+      ]
+    },
+    {
+      "id": "general_focus:the_long_memory",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Long Memory\" is the same focus of one story template in 3 trees (slug the_long_memory); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_hiloron_the_long_memory",
+        "focus:zin_regional_the_end_the_long_memory",
+        "focus:zin_shared_dark_lands_the_long_memory"
+      ]
+    },
+    {
+      "id": "general_focus:the_old_grudge",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Old Grudge\" is the same focus of one story template in 3 trees (slug the_old_grudge); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_varnondor_the_old_grudge",
+        "focus:zin_shared_delving_holds_the_old_grudge",
+        "focus:zin_shared_west_lands_the_old_grudge"
+      ]
+    },
+    {
+      "id": "general_focus:the_sea_watch",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Sea Watch\" is the same focus of one story template in 3 trees (slug the_sea_watch); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_asgard_the_sea_watch",
+        "focus:zin_regional_varnondor_the_sea_watch",
+        "focus:zin_shared_tritons_islands_the_sea_watch"
+      ]
+    },
+    {
+      "id": "general_focus:under_the_leren_banner",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Under the Leren Banner\" is the same focus of one story template in 3 trees (slug under_the_leren_banner); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_blackton_under_the_leren_banner",
+        "focus:zin_regional_r_en_under_the_leren_banner",
+        "focus:zin_shared_north_lands_under_the_leren_banner"
+      ]
+    },
+    {
+      "id": "general_focus:a_delegate_to_the_ford",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A Delegate to the Ford Council\" is the same focus of one story template in 2 trees (slug a_delegate_to_the_ford); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_girdon_a_delegate_to_the_ford",
+        "focus:zin_shared_west_lands_a_delegate_to_the_ford"
+      ]
+    },
+    {
+      "id": "general_focus:a_harbour_for_any_sail",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A Harbour for Any Sail\" is the same focus of one story template in 2 trees (slug a_harbour_for_any_sail); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_adel_a_harbour_for_any_sail",
+        "focus:zin_shared_tritons_islands_a_harbour_for_any_sail"
+      ]
+    },
+    {
+      "id": "general_focus:a_league_of_councils",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A League of Councils\" is the same focus of one story template in 2 trees (slug a_league_of_councils); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_girdon_a_league_of_councils",
+        "focus:zin_shared_west_lands_a_league_of_councils"
+      ]
+    },
+    {
+      "id": "general_focus:a_seat_in_the_compact",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A Seat in the Compact\" is the same focus of one story template in 2 trees (slug a_seat_in_the_compact); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_mina_a_seat_in_the_compact",
+        "focus:zin_regional_tolvael_a_seat_in_the_compact"
+      ]
+    },
+    {
+      "id": "general_focus:a_voice_in_the_hall",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"A Voice in the Hall\" is the same focus of one story template in 2 trees (slug a_voice_in_the_hall); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_tritons_islands_a_voice_in_the_hall",
+        "focus:zin_shared_west_lands_a_voice_in_the_hall"
+      ]
+    },
+    {
+      "id": "general_focus:across_the_dark_straits",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Across the Dark Straits\" is the same focus of one story template in 2 trees (slug across_the_dark_straits); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_lerendor_across_the_dark_straits",
+        "focus:zin_shared_north_lands_across_the_dark_straits"
+      ]
+    },
+    {
+      "id": "general_focus:against_the_black_water",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Against the Black Water\" is the same focus of one story template in 2 trees (slug against_the_black_water); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_windwaith_against_the_black_water",
+        "focus:zin_shared_cold_lands_against_the_black_water"
+      ]
+    },
+    {
+      "id": "general_focus:answer_the_elder_moot",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Answer the Elder Moot\" is the same focus of one story template in 2 trees (slug answer_the_elder_moot); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_answer_the_elder_moot",
+        "focus:zin_shared_magical_lands_answer_the_elder_moot"
+      ]
+    },
+    {
+      "id": "general_focus:answer_the_moot",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Answer the Moot\" is the same focus of one story template in 2 trees (slug answer_the_moot); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_dreson_answer_the_moot",
+        "focus:zin_shared_dark_lands_answer_the_moot"
+      ]
+    },
+    {
+      "id": "general_focus:black_iron_seams",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Black Iron Seams\" is the same focus of one story template in 2 trees (slug black_iron_seams); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_black_iron_seams",
+        "focus:zin_shared_dark_lands_black_iron_seams"
+      ]
+    },
+    {
+      "id": "general_focus:caravan_inns",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Caravan Inns\" is the same focus of one story template in 2 trees (slug caravan_inns); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_bordon_caravan_inns",
+        "focus:zin_regional_kingson_caravan_inns"
+      ]
+    },
+    {
+      "id": "general_focus:carry_it_to_gala",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Carry It to Gala\" is the same focus of one story template in 2 trees (slug carry_it_to_gala); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gala_carry_it_to_gala",
+        "focus:zin_shared_islands_of_the_south_carry_it_to_gala"
+      ]
+    },
+    {
+      "id": "general_focus:charts_of_the_dark_sea",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Charts of the Dark Sea\" is the same focus of one story template in 2 trees (slug charts_of_the_dark_sea); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_charts_of_the_dark_sea",
+        "focus:zin_regional_blackton_charts_of_the_dark_sea"
+      ]
+    },
+    {
+      "id": "general_focus:cistern_roads",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Cistern Roads\" is the same focus of one story template in 2 trees (slug cistern_roads); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_olen_cistern_roads",
+        "focus:zin_shared_ember_lands_cistern_roads"
+      ]
+    },
+    {
+      "id": "general_focus:coastal_watch",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Coastal Watch\" is the same focus of one story template in 2 trees (slug coastal_watch); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_coldor_coastal_watch",
+        "focus:zin_regional_plutondo_coastal_watch"
+      ]
+    },
+    {
+      "id": "general_focus:council_of_houses",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Council of Houses\" is the same focus of one story template in 2 trees (slug council_of_houses); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_magical_forest_council_of_houses",
+        "focus:zin_stabilo_council_of_houses"
+      ]
+    },
+    {
+      "id": "general_focus:count_the_temple_gold",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Count the Temple Gold\" is the same focus of one story template in 2 trees (slug count_the_temple_gold); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_count_the_temple_gold",
+        "focus:zin_shared_east_lands_count_the_temple_gold"
+      ]
+    },
+    {
+      "id": "general_focus:custom_of_the_blood_price",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Custom of the Blood-Price\" is the same focus of one story template in 2 trees (slug custom_of_the_blood_price); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_custom_of_the_blood_price",
+        "focus:zin_regional_dondor_custom_of_the_blood_price"
+      ]
+    },
+    {
+      "id": "general_focus:customs_at_the_wall",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Customs at the Wall\" is the same focus of one story template in 2 trees (slug customs_at_the_wall); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_herrodon_customs_at_the_wall",
+        "focus:zin_shared_magical_lands_customs_at_the_wall"
+      ]
+    },
+    {
+      "id": "general_focus:dead_on_our_shore",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Dead on Our Shore\" is the same focus of one story template in 2 trees (slug dead_on_our_shore); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_blackton_dead_on_our_shore",
+        "focus:zin_shared_dark_lands_dead_on_our_shore"
+      ]
+    },
+    {
+      "id": "general_focus:denounce_the_impostor",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Denounce the Impostor\" is the same focus of one story template in 2 trees (slug denounce_the_impostor); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_aenor_denounce_the_impostor",
+        "focus:zin_worshipdom_denounce_the_impostor"
+      ]
+    },
+    {
+      "id": "general_focus:envoys_to_fandanar",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Envoys to Fandanar\" is the same focus of one story template in 2 trees (slug envoys_to_fandanar); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_fearno_envoys_to_fandanar",
+        "focus:zin_shared_cold_lands_envoys_to_fandanar"
+      ]
+    },
+    {
+      "id": "general_focus:envoys_to_parim",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Envoys to Parim\" is the same focus of one story template in 2 trees (slug envoys_to_parim); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_molot_envoys_to_parim",
+        "focus:zin_shared_north_lands_envoys_to_parim"
+      ]
+    },
+    {
+      "id": "general_focus:essence_workshops",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Essence Workshops\" is the same focus of one story template in 2 trees (slug essence_workshops); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_the_end_essence_workshops",
+        "focus:zin_shared_magical_lands_essence_workshops"
+      ]
+    },
+    {
+      "id": "general_focus:every_sail_welcome",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Every Sail Welcome\" is the same focus of one story template in 2 trees (slug every_sail_welcome); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_pollos_every_sail_welcome",
+        "focus:zin_regional_raerby_every_sail_welcome"
+      ]
+    },
+    {
+      "id": "general_focus:eyes_on_the_black_north",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Eyes on the Black North\" is the same focus of one story template in 2 trees (slug eyes_on_the_black_north); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_the_end_eyes_on_the_black_north",
+        "focus:zin_shared_magical_lands_eyes_on_the_black_north"
+      ]
+    },
+    {
+      "id": "general_focus:fire_breaks_their_shapes",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Fire Breaks Their Shapes\" is the same focus of one story template in 2 trees (slug fire_breaks_their_shapes); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_fire_breaks_their_shapes",
+        "focus:zin_regional_dondor_fire_breaks_their_shapes"
+      ]
+    },
+    {
+      "id": "general_focus:fire_on_the_beaches",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Fire on the Beaches\" is the same focus of one story template in 2 trees (slug fire_on_the_beaches); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_tolvael_fire_on_the_beaches",
+        "focus:zin_shared_dark_lands_fire_on_the_beaches"
+      ]
+    },
+    {
+      "id": "general_focus:fires_through_the_long_night",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Fires Through the Long Night\" is the same focus of one story template in 2 trees (slug fires_through_the_long_night); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_coldor_fires_through_the_long_night",
+        "focus:zin_shared_cold_lands_fires_through_the_long_night"
+      ]
+    },
+    {
+      "id": "general_focus:fishing_fleets",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Fishing Fleets\" is the same focus of one story template in 2 trees (slug fishing_fleets); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_cold_lands_fishing_fleets",
+        "focus:zin_shared_concord_dominions_fishing_fleets"
+      ]
+    },
+    {
+      "id": "general_focus:for_the_free_dominions",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"For the Free Dominions\" is the same focus of one story template in 2 trees (slug for_the_free_dominions); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_selen_for_the_free_dominions",
+        "focus:zin_shared_concord_dominions_for_the_free_dominions"
+      ]
+    },
+    {
+      "id": "general_focus:forges_of_dolon",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Forges of Dolon\" is the same focus of one story template in 2 trees (slug forges_of_dolon); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_dolon_forges_of_dolon",
+        "focus:zin_volgan_forges_of_dolon"
+      ]
+    },
+    {
+      "id": "general_focus:grove_riders",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Grove Riders\" is the same focus of one story template in 2 trees (slug grove_riders); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_grove_riders",
+        "focus:zin_shared_magical_lands_grove_riders"
+      ]
+    },
+    {
+      "id": "general_focus:grove_roads",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Grove Roads\" is the same focus of one story template in 2 trees (slug grove_roads); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_andos_enda_grove_roads",
+        "focus:zin_shared_magical_lands_grove_roads"
+      ]
+    },
+    {
+      "id": "general_focus:guard_the_roosts",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Guard the Roosts\" is the same focus of one story template in 2 trees (slug guard_the_roosts); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_magical_forest_guard_the_roosts",
+        "focus:zin_shared_magical_lands_guard_the_roosts"
+      ]
+    },
+    {
+      "id": "general_focus:harbour_works",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Harbour Works\" is the same focus of one story template in 2 trees (slug harbour_works); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_concord_dominions_harbour_works",
+        "focus:zin_shared_north_lands_harbour_works"
+      ]
+    },
+    {
+      "id": "general_focus:hear_the_fishermen",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hear the Fishermen\" is the same focus of one story template in 2 trees (slug hear_the_fishermen); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_lerendor_hear_the_fishermen",
+        "focus:zin_regional_windwaith_hear_the_fishermen"
+      ]
+    },
+    {
+      "id": "general_focus:hearth_and_harbour",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hearth and Harbour\" is the same focus of one story template in 2 trees (slug hearth_and_harbour); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_north_lands_hearth_and_harbour",
+        "focus:zin_shared_tritons_islands_hearth_and_harbour"
+      ]
+    },
+    {
+      "id": "general_focus:hill_forts",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hill Forts\" is the same focus of one story template in 2 trees (slug hill_forts); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_dulundur_hill_forts",
+        "focus:zin_regional_horidor_hill_forts"
+      ]
+    },
+    {
+      "id": "general_focus:houses_of_the_first_light",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Houses of the First Light\" is the same focus of one story template in 2 trees (slug houses_of_the_first_light); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_aenor_houses_of_the_first_light",
+        "focus:zin_worshipdom_houses_of_the_first_light"
+      ]
+    },
+    {
+      "id": "general_focus:hulls_for_hire",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hulls for Hire\" is the same focus of one story template in 2 trees (slug hulls_for_hire); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_corogon_hulls_for_hire",
+        "focus:zin_shared_islands_of_the_south_hulls_for_hire"
+      ]
+    },
+    {
+      "id": "general_focus:hulls_for_the_west",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Hulls for the West\" is the same focus of one story template in 2 trees (slug hulls_for_the_west); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_howan_hulls_for_the_west",
+        "focus:zin_regional_windwaith_hulls_for_the_west"
+      ]
+    },
+    {
+      "id": "general_focus:into_the_deep_sand",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Into the Deep Sand\" is the same focus of one story template in 2 trees (slug into_the_deep_sand); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_into_the_deep_sand",
+        "focus:zin_shared_east_lands_into_the_deep_sand"
+      ]
+    },
+    {
+      "id": "general_focus:iron_discipline",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Iron Discipline\" is the same focus of one story template in 2 trees (slug iron_discipline); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_iron_discipline",
+        "focus:zin_regional_molot_iron_discipline"
+      ]
+    },
+    {
+      "id": "general_focus:island_pilots",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Island Steersmen\" is the same focus of one story template in 2 trees (slug island_pilots); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_north_lands_island_pilots",
+        "focus:zin_shared_tritons_islands_island_pilots"
+      ]
+    },
+    {
+      "id": "general_focus:keep_faith_with_parim",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Keep Faith with Parim\" is the same focus of one story template in 2 trees (slug keep_faith_with_parim); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_tolvael_keep_faith_with_parim",
+        "focus:zin_shared_north_lands_keep_faith_with_parim"
+      ]
+    },
+    {
+      "id": "general_focus:keep_the_old_quiet",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Keep the Old Quiet\" is the same focus of one story template in 2 trees (slug keep_the_old_quiet); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_olen_keep_the_old_quiet",
+        "focus:zin_shared_ember_lands_keep_the_old_quiet"
+      ]
+    },
+    {
+      "id": "general_focus:keep_the_roads_open",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Keep the Roads Open\" is the same focus of one story template in 2 trees (slug keep_the_roads_open); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_keep_the_roads_open",
+        "focus:zin_shared_magical_lands_keep_the_roads_open"
+      ]
+    },
+    {
+      "id": "general_focus:kin_of_herrodon",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Kin of Herrodon\" is the same focus of one story template in 2 trees (slug kin_of_herrodon); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_herrodon_kin_of_herrodon",
+        "focus:zin_shared_middle_free_kin_of_herrodon"
+      ]
+    },
+    {
+      "id": "general_focus:kin_of_the_north",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Kin of the North\" is the same focus of one story template in 2 trees (slug kin_of_the_north); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_coldor_kin_of_the_north",
+        "focus:zin_shared_north_lands_kin_of_the_north"
+      ]
+    },
+    {
+      "id": "general_focus:letters_to_parim",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Letters to Parim\" is the same focus of one story template in 2 trees (slug letters_to_parim); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gala_letters_to_parim",
+        "focus:zin_gunwaith_letters_to_parim"
+      ]
+    },
+    {
+      "id": "general_focus:men_of_selen",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Men of Selen\" is the same focus of one story template in 2 trees (slug men_of_selen); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_aenor_men_of_selen",
+        "focus:zin_regional_selen_men_of_selen"
+      ]
+    },
+    {
+      "id": "general_focus:neutral_waters",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Neutral Waters\" is the same focus of one story template in 2 trees (slug neutral_waters); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_mora_neutral_waters",
+        "focus:zin_regional_r_en_neutral_waters"
+      ]
+    },
+    {
+      "id": "general_focus:northern_companies",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Northern Companies\" is the same focus of one story template in 2 trees (slug northern_companies); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_tolvael_northern_companies",
+        "focus:zin_shared_north_lands_northern_companies"
+      ]
+    },
+    {
+      "id": "general_focus:one_moot_one_voice",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"One Moot, One Voice\" is the same focus of one story template in 2 trees (slug one_moot_one_voice); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_horidor_one_moot_one_voice",
+        "focus:zin_regional_noleksun_one_moot_one_voice"
+      ]
+    },
+    {
+      "id": "general_focus:pilots_for_hire",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Wayfinders for Hire\" is the same focus of one story template in 2 trees (slug pilots_for_hire); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_halenor_pilots_for_hire",
+        "focus:zin_regional_nan_pilots_for_hire"
+      ]
+    },
+    {
+      "id": "general_focus:question_of_the_east",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Question of the East\" is the same focus of one story template in 2 trees (slug question_of_the_east); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_question_of_the_east",
+        "focus:zin_shared_east_lands_question_of_the_east"
+      ]
+    },
+    {
+      "id": "general_focus:rangers_of_selen",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Rangers of Selen\" is the same focus of one story template in 2 trees (slug rangers_of_selen); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_aenor_rangers_of_selen",
+        "focus:zin_regional_selen_rangers_of_selen"
+      ]
+    },
+    {
+      "id": "general_focus:river_barges",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"River Barges\" is the same focus of one story template in 2 trees (slug river_barges); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_girdon_river_barges",
+        "focus:zin_regional_mina_river_barges"
+      ]
+    },
+    {
+      "id": "general_focus:salt_pans",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Salt Pans\" is the same focus of one story template in 2 trees (slug salt_pans); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_salt_pans",
+        "focus:zin_shared_islands_of_the_south_salt_pans"
+      ]
+    },
+    {
+      "id": "general_focus:ships_for_the_crossing",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Ships for the Crossing\" is the same focus of one story template in 2 trees (slug ships_for_the_crossing); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_raerby_ships_for_the_crossing",
+        "focus:zin_shared_tritons_islands_ships_for_the_crossing"
+      ]
+    },
+    {
+      "id": "general_focus:shore_beacons",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Shore Beacons\" is the same focus of one story template in 2 trees (slug shore_beacons); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_andos_enda_shore_beacons",
+        "focus:zin_shared_magical_lands_shore_beacons"
+      ]
+    },
+    {
+      "id": "general_focus:shore_levies",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Shore Levies\" is the same focus of one story template in 2 trees (slug shore_levies); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_andos_enda_shore_levies",
+        "focus:zin_shared_magical_lands_shore_levies"
+      ]
+    },
+    {
+      "id": "general_focus:shore_wardens",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Shore Wardens\" is the same focus of one story template in 2 trees (slug shore_wardens); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_shore_wardens",
+        "focus:zin_regional_tolvael_shore_wardens"
+      ]
+    },
+    {
+      "id": "general_focus:slip_the_yoke",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Slip the Yoke\" is the same focus of one story template in 2 trees (slug slip_the_yoke); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_bordon_slip_the_yoke",
+        "focus:zin_shared_dark_lands_slip_the_yoke"
+      ]
+    },
+    {
+      "id": "general_focus:smithies",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Smithies\" is the same focus of one story template in 2 trees (slug smithies); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_cold_lands_smithies",
+        "focus:zin_shared_concord_dominions_smithies"
+      ]
+    },
+    {
+      "id": "general_focus:stand_with_the_living",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Stand with the Living\" is the same focus of one story template in 2 trees (slug stand_with_the_living); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_dondor_stand_with_the_living",
+        "focus:zin_shared_middle_free_stand_with_the_living"
+      ]
+    },
+    {
+      "id": "general_focus:strangers_from_the_south",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Strangers from the South\" is the same focus of one story template in 2 trees (slug strangers_from_the_south); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_strangers_from_the_south",
+        "focus:zin_shared_dark_lands_strangers_from_the_south"
+      ]
+    },
+    {
+      "id": "general_focus:temples_and_almshouses",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Temples and Almshouses\" is the same focus of one story template in 2 trees (slug temples_and_almshouses); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_concord_dominions_temples_and_almshouses",
+        "focus:zin_shared_north_lands_temples_and_almshouses"
+      ]
+    },
+    {
+      "id": "general_focus:the_banks_accord_kept",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Banks Accord\" is the same focus of one story template in 2 trees (slug the_banks_accord_kept); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_nondondor_the_banks_accord_kept",
+        "focus:zin_regional_seite_islands_the_banks_accord_kept"
+      ]
+    },
+    {
+      "id": "general_focus:the_blood_price",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Blood-Price\" is the same focus of one story template in 2 trees (slug the_blood_price); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_bloody_forest_the_blood_price",
+        "focus:zin_regional_girdon_the_blood_price"
+      ]
+    },
+    {
+      "id": "general_focus:the_clan_moot",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Clan Moot\" is the same focus of one story template in 2 trees (slug the_clan_moot); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_ostoroth_the_clan_moot",
+        "focus:zin_shared_delving_holds_the_clan_moot"
+      ]
+    },
+    {
+      "id": "general_focus:the_council_endures",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Council Endures\" is the same focus of one story template in 2 trees (slug the_council_endures); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_hiloron_the_council_endures",
+        "focus:zin_shared_lands_of_the_sun_the_council_endures"
+      ]
+    },
+    {
+      "id": "general_focus:the_counting_houses",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Counting Houses\" is the same focus of one story template in 2 trees (slug the_counting_houses); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_eekedor_the_counting_houses",
+        "focus:zin_stabilo_the_counting_houses"
+      ]
+    },
+    {
+      "id": "general_focus:the_edge_of_the_woods",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Edge of the Woods\" is the same focus of one story template in 2 trees (slug the_edge_of_the_woods); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_the_end_the_edge_of_the_woods",
+        "focus:zin_shared_magical_lands_the_edge_of_the_woods"
+      ]
+    },
+    {
+      "id": "general_focus:the_eldest_speaks",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Eldest Speaks\" is the same focus of one story template in 2 trees (slug the_eldest_speaks); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_nara_the_eldest_speaks",
+        "focus:zin_shared_middle_free_the_eldest_speaks"
+      ]
+    },
+    {
+      "id": "general_focus:the_feud_of_the_groves",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Feud of the Groves\" is the same focus of one story template in 2 trees (slug the_feud_of_the_groves); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_andos_enda_the_feud_of_the_groves",
+        "focus:zin_regional_herrodon_the_feud_of_the_groves"
+      ]
+    },
+    {
+      "id": "general_focus:the_forest_endures",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Forest Endures\" is the same focus of one story template in 2 trees (slug the_forest_endures); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_bloody_forest_the_forest_endures",
+        "focus:zin_regional_troll_forest_the_forest_endures"
+      ]
+    },
+    {
+      "id": "general_focus:the_forest_law",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Forest Law\" is the same focus of one story template in 2 trees (slug the_forest_law); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_troll_forest_the_forest_law",
+        "focus:zin_regional_verde_the_forest_law"
+      ]
+    },
+    {
+      "id": "general_focus:the_forest_wakes",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Forest Wakes\" is the same focus of one story template in 2 trees (slug the_forest_wakes); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_troll_forest_the_forest_wakes",
+        "focus:zin_shared_middle_free_the_forest_wakes"
+      ]
+    },
+    {
+      "id": "general_focus:the_free_council",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Free Council\" is the same focus of one story template in 2 trees (slug the_free_council); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_concord_dominions_the_free_council",
+        "focus:zin_shared_east_lands_the_free_council"
+      ]
+    },
+    {
+      "id": "general_focus:the_free_coves",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Free Coves\" is the same focus of one story template in 2 trees (slug the_free_coves); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_seite_islands_the_free_coves",
+        "focus:zin_shared_tritons_islands_the_free_coves"
+      ]
+    },
+    {
+      "id": "general_focus:the_free_north",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Free North\" is the same focus of one story template in 2 trees (slug the_free_north); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_lerendor_the_free_north",
+        "focus:zin_regional_isengard_the_free_north"
+      ]
+    },
+    {
+      "id": "general_focus:the_free_steadings",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Free Steadings\" is the same focus of one story template in 2 trees (slug the_free_steadings); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_fearno_the_free_steadings",
+        "focus:zin_shared_lands_of_the_sun_the_free_steadings"
+      ]
+    },
+    {
+      "id": "general_focus:the_freeholders_moot",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Freeholders' Moot\" is the same focus of one story template in 2 trees (slug the_freeholders_moot); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_ember_lands_the_freeholders_moot",
+        "focus:zin_shared_north_lands_the_freeholders_moot"
+      ]
+    },
+    {
+      "id": "general_focus:the_gate_market",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Gate Market\" is the same focus of one story template in 2 trees (slug the_gate_market); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_kingson_the_gate_market",
+        "focus:zin_shared_delving_holds_the_gate_market"
+      ]
+    },
+    {
+      "id": "general_focus:the_harbour_chain",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Harbour Chain\" is the same focus of one story template in 2 trees (slug the_harbour_chain); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_blackton_the_harbour_chain",
+        "focus:zin_regional_pollos_the_harbour_chain"
+      ]
+    },
+    {
+      "id": "general_focus:the_highland_crown",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Highland Crown\" is the same focus of one story template in 2 trees (slug the_highland_crown); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_horidor_the_highland_crown",
+        "focus:zin_regional_ostoroth_the_highland_crown"
+      ]
+    },
+    {
+      "id": "general_focus:the_houses_vote",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Houses Vote\" is the same focus of one story template in 2 trees (slug the_houses_vote); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_eekedor_the_houses_vote",
+        "focus:zin_stabilo_the_houses_vote"
+      ]
+    },
+    {
+      "id": "general_focus:the_iron_tithe",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Iron Tithe\" is the same focus of one story template in 2 trees (slug the_iron_tithe); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_drak_the_iron_tithe",
+        "focus:zin_shared_dark_lands_the_iron_tithe"
+      ]
+    },
+    {
+      "id": "general_focus:the_island_levy",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Island Levy\" is the same focus of one story template in 2 trees (slug the_island_levy); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_enhis_is_rond_the_island_levy",
+        "focus:zin_shared_tritons_islands_the_island_levy"
+      ]
+    },
+    {
+      "id": "general_focus:the_kings_peace",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The King's Peace\" is the same focus of one story template in 2 trees (slug the_kings_peace); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gunwaith_the_kings_peace",
+        "focus:zin_regional_dondor_the_kings_peace"
+      ]
+    },
+    {
+      "id": "general_focus:the_lamp_truce",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Lamp Truce\" is the same focus of one story template in 2 trees (slug the_lamp_truce); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_burrikkrit_the_lamp_truce",
+        "focus:zin_shared_delving_holds_the_lamp_truce"
+      ]
+    },
+    {
+      "id": "general_focus:the_light_in_the_north",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Light in the North\" is the same focus of one story template in 2 trees (slug the_light_in_the_north); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_titanos_the_light_in_the_north",
+        "focus:zin_regional_yeti_lands_the_light_in_the_north"
+      ]
+    },
+    {
+      "id": "general_focus:the_long_patrol",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Long Patrol\" is the same focus of one story template in 2 trees (slug the_long_patrol); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_raerby_the_long_patrol",
+        "focus:zin_regional_selen_the_long_patrol"
+      ]
+    },
+    {
+      "id": "general_focus:the_long_ride",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Long Ride\" is the same focus of one story template in 2 trees (slug the_long_ride); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_the_long_ride",
+        "focus:zin_regional_hunhun_the_long_ride"
+      ]
+    },
+    {
+      "id": "general_focus:the_lords_moot",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Lords' Moot\" is the same focus of one story template in 2 trees (slug the_lords_moot); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_concord_dominions_the_lords_moot",
+        "focus:zin_shared_west_lands_the_lords_moot"
+      ]
+    },
+    {
+      "id": "general_focus:the_moot_of_mothers",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Moot of Mothers\" is the same focus of one story template in 2 trees (slug the_moot_of_mothers); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_bloody_forest_the_moot_of_mothers",
+        "focus:zin_regional_cursed_lands_the_moot_of_mothers"
+      ]
+    },
+    {
+      "id": "general_focus:the_moot_rides",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Moot Rides\" is the same focus of one story template in 2 trees (slug the_moot_rides); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_dulundur_the_moot_rides",
+        "focus:zin_shared_dark_lands_the_moot_rides"
+      ]
+    },
+    {
+      "id": "general_focus:the_moot_stone",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Moot Stone\" is the same focus of one story template in 2 trees (slug the_moot_stone); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_dulundur_the_moot_stone",
+        "focus:zin_regional_seite_islands_the_moot_stone"
+      ]
+    },
+    {
+      "id": "general_focus:the_open_assembly",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Open Assembly\" is the same focus of one story template in 2 trees (slug the_open_assembly); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_tritons_islands_the_open_assembly",
+        "focus:zin_shared_west_lands_the_open_assembly"
+      ]
+    },
+    {
+      "id": "general_focus:the_open_houses",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Open Houses\" is the same focus of one story template in 2 trees (slug the_open_houses); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_the_open_houses",
+        "focus:zin_shared_magical_lands_the_open_houses"
+      ]
+    },
+    {
+      "id": "general_focus:the_open_road",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Open Road\" is the same focus of one story template in 2 trees (slug the_open_road); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_fearno_the_open_road",
+        "focus:zin_shared_east_lands_the_open_road"
+      ]
+    },
+    {
+      "id": "general_focus:the_passes_held",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Passes Held\" is the same focus of one story template in 2 trees (slug the_passes_held); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_mirolon_the_passes_held",
+        "focus:zin_regional_ostoroth_the_passes_held"
+      ]
+    },
+    {
+      "id": "general_focus:the_pupor_question",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Pupor Question\" is the same focus of one story template in 2 trees (slug the_pupor_question); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_seite_islands_the_pupor_question",
+        "focus:zin_shared_tritons_islands_the_pupor_question"
+      ]
+    },
+    {
+      "id": "general_focus:the_queens_peace",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Queen's Peace\" is the same focus of one story template in 2 trees (slug the_queens_peace); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_asgard_the_queens_peace",
+        "focus:zin_regional_herrodon_the_queens_peace"
+      ]
+    },
+    {
+      "id": "general_focus:the_quiet_kept",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Quiet Kept\" is the same focus of one story template in 2 trees (slug the_quiet_kept); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_olen_the_quiet_kept",
+        "focus:zin_shared_ember_lands_the_quiet_kept"
+      ]
+    },
+    {
+      "id": "general_focus:the_refusal_kept",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Refusal Kept\" is the same focus of one story template in 2 trees (slug the_refusal_kept); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_the_refusal_kept",
+        "focus:zin_shared_magical_lands_the_refusal_kept"
+      ]
+    },
+    {
+      "id": "general_focus:the_road_to_parim",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Road to Parim\" is the same focus of one story template in 2 trees (slug the_road_to_parim); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_the_road_to_parim",
+        "focus:zin_stabilo_the_road_to_parim"
+      ]
+    },
+    {
+      "id": "general_focus:the_shore_holds",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Shore Holds\" is the same focus of one story template in 2 trees (slug the_shore_holds); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_nether_the_shore_holds",
+        "focus:zin_regional_tolvael_the_shore_holds"
+      ]
+    },
+    {
+      "id": "general_focus:the_shore_watch",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Shore Watch\" is the same focus of one story template in 2 trees (slug the_shore_watch); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_shared_north_lands_the_shore_watch",
+        "focus:zin_shared_west_lands_the_shore_watch"
+      ]
+    },
+    {
+      "id": "general_focus:the_southern_ship",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Southern Ship\" is the same focus of one story template in 2 trees (slug the_southern_ship); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_adel_the_southern_ship",
+        "focus:zin_shared_tritons_islands_the_southern_ship"
+      ]
+    },
+    {
+      "id": "general_focus:the_speakers_hall",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Speaker's Hall\" is the same focus of one story template in 2 trees (slug the_speakers_hall); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_adel_the_speakers_hall",
+        "focus:zin_regional_mora_the_speakers_hall"
+      ]
+    },
+    {
+      "id": "general_focus:the_storm_shelters_us",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Storm Shelters Us\" is the same focus of one story template in 2 trees (slug the_storm_shelters_us); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_nan_the_storm_shelters_us",
+        "focus:zin_shared_ember_lands_the_storm_shelters_us"
+      ]
+    },
+    {
+      "id": "general_focus:the_wall_holds",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Wall Holds\" is the same focus of one story template in 2 trees (slug the_wall_holds); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_aenor_the_wall_holds",
+        "focus:zin_regional_kingson_the_wall_holds"
+      ]
+    },
+    {
+      "id": "general_focus:the_western_contracts",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"The Western Contracts\" is the same focus of one story template in 2 trees (slug the_western_contracts); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_coldor_the_western_contracts",
+        "focus:zin_regional_buldor_the_western_contracts"
+      ]
+    },
+    {
+      "id": "general_focus:timber_and_tar",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Timber and Tar\" is the same focus of one story template in 2 trees (slug timber_and_tar); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_tolvael_timber_and_tar",
+        "focus:zin_shared_west_lands_timber_and_tar"
+      ]
+    },
+    {
+      "id": "general_focus:timber_for_the_west",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Timber for the West\" is the same focus of one story template in 2 trees (slug timber_for_the_west); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_coldor_timber_for_the_west",
+        "focus:zin_regional_verde_timber_for_the_west"
+      ]
+    },
+    {
+      "id": "general_focus:toll_the_pilgrims",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Toll the Pilgrims\" is the same focus of one story template in 2 trees (slug toll_the_pilgrims); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_toll_the_pilgrims",
+        "focus:zin_shared_magical_lands_toll_the_pilgrims"
+      ]
+    },
+    {
+      "id": "general_focus:traders_to_the_west",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Traders to the West\" is the same focus of one story template in 2 trees (slug traders_to_the_west); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_howan_traders_to_the_west",
+        "focus:zin_shared_cold_lands_traders_to_the_west"
+      ]
+    },
+    {
+      "id": "general_focus:war_galleys",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"War Galleys\" is the same focus of one story template in 2 trees (slug war_galleys); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_gunwaith_war_galleys",
+        "focus:zin_regional_windwaith_war_galleys"
+      ]
+    },
+    {
+      "id": "general_focus:wardens_for_friends",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Wardens for Friends\" is the same focus of one story template in 2 trees (slug wardens_for_friends); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_lccimio_wardens_for_friends",
+        "focus:zin_shared_magical_lands_wardens_for_friends"
+      ]
+    },
+    {
+      "id": "general_focus:wardens_of_the_gate",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Wardens of the Gate\" is the same focus of one story template in 2 trees (slug wardens_of_the_gate); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_kingson_wardens_of_the_gate",
+        "focus:zin_regional_nezer_wardens_of_the_gate"
+      ]
+    },
+    {
+      "id": "general_focus:watchers_at_the_edge",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Watchers at the Edge\" is the same focus of one story template in 2 trees (slug watchers_at_the_edge); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_cursed_lands_watchers_at_the_edge",
+        "focus:zin_shared_middle_free_watchers_at_the_edge"
+      ]
+    },
+    {
+      "id": "general_focus:welcome_the_generous_friends",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Welcome the Generous Friends\" is the same focus of one story template in 2 trees (slug welcome_the_generous_friends); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_welcome_the_generous_friends",
+        "focus:zin_shared_east_lands_welcome_the_generous_friends"
+      ]
+    },
+    {
+      "id": "general_focus:when_the_king_falls",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"When the King Falls\" is the same focus of one story template in 2 trees (slug when_the_king_falls); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_noris_when_the_king_falls",
+        "focus:zin_shared_east_lands_when_the_king_falls"
+      ]
+    },
+    {
+      "id": "general_focus:when_the_south_burns",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"When the South Burns\" is the same focus of one story template in 2 trees (slug when_the_south_burns); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_regional_horidor_when_the_south_burns",
+        "focus:zin_regional_windwaith_when_the_south_burns"
+      ]
+    },
+    {
+      "id": "general_focus:when_the_south_falls_silent",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"When the South Falls Silent\" is the same focus of one story template in 2 trees (slug when_the_south_falls_silent); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_goldoroth_when_the_south_falls_silent",
+        "focus:zin_shared_dark_lands_when_the_south_falls_silent"
+      ]
+    },
+    {
+      "id": "general_focus:winter_stores",
+      "kind": "general_focus",
+      "status": "lead-accepted",
+      "reason": "\"Winter Stores\" is the same focus of one story template in 2 trees (slug winter_stores); one icon serves every copy (K69 general focus, rebuilt from docs/design/focus on 1 November 2026: the earlier 226 groups held stale ids)",
+      "concepts": [
+        "focus:zin_coldor_winter_stores",
+        "focus:zin_shared_cold_lands_winter_stores"
+      ]
+    }
+  ]
 }

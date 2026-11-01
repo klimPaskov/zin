@@ -189,7 +189,7 @@ test('every shipped image is in the manifest with an accepted, staged source', (
     assert.equal(sha(src), e.sourceSha256);
     assert(acceptance(prov, e.source.replace('art/source/', ''), src).ok, `${e.source}: not accepted`);
   }
-  assert.deepEqual(m.decisions.map(d => d.source), ['art/source/loadingscreens/load_24.png']);
+  assert.deepEqual(m.decisions.map(d => d.source), []);
 });
 
 test('no vanilla pixels: no shipped file equals the installed file at the same path', { skip: !existsSync(GAME) && 'game not installed' }, () => {
@@ -232,8 +232,8 @@ test('negative: acceptance needs a review line for the exact bytes; A5 covers on
   assert.equal(acceptance([{ id: 'x', sha256: h, accepted: true }], 'x.png', bytes).ok, false, 'a generation line is not a review');
   assert.equal(acceptance([{ id: 'x', sha256: h, accepted: true, reviewer: 'agent' }], 'x.png', bytes).ok, true);
   assert.equal(acceptance([{ id: 'x', sha256: h, accepted: true, reviewer: 'agent' }, { id: 'x', sha256: h, accepted: false, reviewer: 'owner' }], 'x.png', bytes).ok, false, 'the last review decides');
-  assert.equal(acceptance([], 'loadingscreens/load_24.png', bytes).ok, false, 'A5 does not cover other bytes');
-  assert.equal(DECISIONS['loadingscreens/load_24.png'].crop.width, 1400);
+  assert.equal(acceptance([], 'loadingscreens/load_24.png', bytes).ok, false, 'no review line, no acceptance');
+  assert.deepEqual(Object.keys(DECISIONS), [], 'no per-file decision is in force');
 });
 
 test('negative: an unaccepted source is not shipped and its keys fall back; an unaccepted fallback stops the build', async () => {

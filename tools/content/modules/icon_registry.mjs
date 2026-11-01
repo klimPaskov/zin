@@ -155,7 +155,8 @@ export function extractConcepts(files, { sprites, game = GAME } = {}) {
   // Focuses (focus, shared_focus, joint_focus blocks).
   for (const { file, text: t } of under(f, 'common/national_focus/')) for (const b of blocks(t, /\b(?:focus|shared_focus|joint_focus)\s*=\s*\{/)) {
     const id = /\bid\s*=\s*([\w.]+)/.exec(b.body)?.[1], icons = [...b.body.matchAll(/\bicon\s*=\s*([\w.]+)/g)].map(x => x[1]);
-    if (id) add('focus', id, icons[icons.length - 1] ?? icons[0] ?? null, file);
+    // Only ZIN's own focuses (lane I4, lead decision): vanilla trees left in the staged tree are not shipped art and are not counted.
+    if (id && /^zin_/.test(id)) add('focus', id, icons[icons.length - 1] ?? icons[0] ?? null, file);
   }
   // Ideas: national spirits, laws, officer-corps spirits; hidden ideas are not shown and are left out.
   for (const { file, text: t } of under(f, 'common/ideas/')) for (const cat of blocks(t, /\bideas\s*=\s*\{/)) for (const grp of blocks(cat.body, /\b([\w]+)\s*=\s*\{/)) {

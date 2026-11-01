@@ -2,8 +2,11 @@
 // shown once per game to every human player, with its own picture, an in-world quote and a licensed recording (Q-08).
 //
 // buildSuperEvents(staged) writes the whole package from tools/content/data/super_events.json:
-//   interface/zin_super_events.gui                        the window (a full-screen backdrop and a centred presentation panel)
-//   interface/zin_super_events.gfx                        one picture sprite per super event (gfx/event_pictures/zin/super_events/, pending art)
+//   interface/zin_super_events.gui                        the window (a generated full-screen backdrop and the centred Chancery panel, UI lane W8)
+//   interface/zin_super_events.gfx                        the backdrop, the picture moulding, the close button and one picture sprite per super event
+//   gfx/event_pictures/zin/super_events/zin_se_<key>.dds  the pictures, from the tracked art/source/events/super/zin_se_<key>.png
+//                                                         (gpt-6-luna, art/super-event-jobs.mjs), shipped when their bytes carry an accepted review
+//   gfx/interface/zin/super_events/*.dds                  the backdrop plate and the two chrome sprites (data window.chrome)
 //   common/scripted_guis/zin_super_events.txt             visibility, the continue and music buttons, the dynamic picture
 //   common/scripted_triggers/zin_super_events.txt         zin_se_audience_<name>, who hears of each moment (K61)
 //   common/scripted_effects/zin_super_events.txt          zin_super_event_<key> (once per game, the human players of its audience, the
@@ -17,8 +20,14 @@
 // hookSuperEvents(staged) runs over the finished script tree and calls zin_super_event_<key> right after every place that sets the hook flag
 // of a super event, so the owning modules keep their own moments and the presentation follows them wherever they are set.
 import { readFile } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ZIN, provenanceFile } from '../lib/paths.mjs';
+import { loadImage } from '../lib/fit.mjs';
+import { dds, fromRaw } from '../lib/raster.mjs';
+import { buildDialogSprites } from './ui_dialogs.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_FILE = path.join(here, '../data/super_events.json');
@@ -75,41 +84,49 @@ export const musicFile = (data, e) => `zin_se_${e.key}.${data.window.music.forma
 const locKey = (e, f) => `zin_se_${e.key}_${f}`;
 
 // ---- the window --------------------------------------------------------------------------------------------------------------------
-// Panel-relative layout, measured on the ZIN frame (GFX_zin_frame, 32 px corners), the rule (520 x 12), the ZIN button (132 x 30) and the
-// reskinned vanilla wide button GFX_button_359x34. The picture column is the picture plus its frame; the text column holds the description,
-// the quote and the continue button. The numbers are the reference mapping of the spec (section 5) and the MCP previews.
+// Panel-relative layout, every position and size on the 4 px grid (design system check 18) (design system sections 5, 6.4 and 7: a Chancery level-0 window, the display face for the title, the reading face
+// on vellum for the moment's text). The panel fits a 1280 x 720 screen with a 20 px margin; the backdrop fills the rest. Left: the picture
+// in its bronze moulding; right: the reading page, the quote in a dark well and the close button; under the picture the music toggle and
+// the queue line. The numbers are checked by the MCP previews at 1280, 1920 and 2560 (docs/plans/ui_overhaul/handoffs/W8.md).
 export function layout(data) {
   const P = data.window.panel, pic = data.window.picture;
-  const margin = 30, frameBorder = 8, gap = 24;
-  const top = 112;
-  const frame = { x: margin, y: top, w: pic.width + 2 * frameBorder, h: pic.height + 2 * frameBorder };
-  const picture = { x: frame.x + frameBorder, y: frame.y + frameBorder };
-  const colX = frame.x + frame.w + gap, colW = P.width - colX - margin;
+  const rim = 16, margin = 24, gap = 24, mould = 8, top = 104;
+  const frame = { x: margin, y: top, w: pic.width + 2 * mould, h: pic.height + 2 * mould };
+  const colX = frame.x + frame.w + gap, colW = P.width - colX - margin, bottom = frame.y + frame.h;
+  const close = { x: colX, y: bottom - 40, w: colW, h: 40 };
+  const quote = { x: colX, y: close.y - 12 - 136, w: colW, h: 136 };
+  const page = { x: colX, y: top, w: colW, h: quote.y - 12 - top };
   return {
-    panel: P, title: { x: 40, y: 22, w: P.width - 80, h: 44 }, date: { x: 40, y: 66, w: P.width - 80, h: 20 },
-    ruleTop: { x: Math.round((P.width - 520) / 2), y: 92 }, frame, picture,
-    desc: { x: colX, y: top, w: colW, h: 272 }, ruleMid: { x: colX, y: top + 284, scale: Math.floor((colW / 520) * 1e4) / 1e4 },
-    quote: { x: colX, y: top + 302, w: colW, h: 160 },
-    close: { x: colX + Math.round((colW - 359) / 2), y: frame.y + frame.h - 10 }, music: { x: margin, y: frame.y + frame.h + 12 },
-    queue: { x: margin + 132 + 16, y: frame.y + frame.h + 18, w: frame.w - 132 - 16, h: 20 },
+    panel: P, rim,
+    band: { x: rim, y: rim, w: P.width - 2 * rim, h: 56 }, title: { x: 40, y: 8, w: P.width - 2 * rim - 80, h: 44 },
+    date: { x: 40, y: 80, w: P.width - 80, h: 20 },
+    frame, picture: { x: frame.x + mould, y: frame.y + mould },
+    page, desc: { x: 16, y: 16, w: colW - 32, h: page.h - 32 },
+    quote, quoteText: { x: 16, y: 12, w: colW - 32, h: 136 - 24 },
+    close,
+    music: { x: margin, y: bottom + 12 }, queue: { x: margin + 132 + 16, y: bottom + 20, w: frame.w - 132 - 16, h: 20 },
   };
 }
 
 function guiText(data) {
-  const L = layout(data), first = data.events[0];
-  const text = (name, b, font, key, format = 'left') => `\t\t\tinstantTextBoxType = {\n\t\t\t\tname = "${name}"\n\t\t\t\tposition = { x = ${b.x} y = ${b.y} }\n\t\t\t\tfont = "${font}"\n\t\t\t\ttext = "${key}"\n\t\t\t\tmaxWidth = ${b.w}\n\t\t\t\tmaxHeight = ${b.h}\n\t\t\t\tformat = ${format}\n\t\t\t\tfixedsize = yes\n\t\t\t}\n`;
-  const button = (name, b, spr, key, font, tip, extra = '') => `\t\t\tbuttonType = {\n\t\t\t\tname = "${name}"\n\t\t\t\tposition = { x = ${b.x} y = ${b.y} }\n\t\t\t\tspriteType = "${spr}"\n\t\t\t\tbuttonText = "${key}"\n\t\t\t\tbuttonFont = "${font}"\n${tip ? `\t\t\t\tpdx_tooltip = "${tip}"\n` : ''}${extra}\t\t\t}\n`;
-  return `${HEAD}# The super-event window: a full-screen backdrop (the ZIN frame, so the map cannot be clicked while a great moment is told) and the centred
-# presentation panel. Visible while the player's country has zin_se_open (common/scripted_guis/zin_super_events.txt).
+  const L = layout(data), first = data.events[0], bd = data.window.backdrop;
+  const text = (name, b, font, key, { format = 'left', color, ind = '\t\t\t' } = {}) => `${ind}instantTextBoxType = {\n${ind}\tname = "${name}"\n${ind}\tposition = { x = ${b.x} y = ${b.y} }\n${ind}\tfont = "${font}"\n${color ? `${ind}\ttext_color_code = "${color}"\n` : ''}${ind}\tborderSize = { x = 0 y = 0 }\n${ind}\ttext = "${key}"\n${ind}\tmaxWidth = ${b.w}\n${ind}\tmaxHeight = ${b.h}\n${ind}\tformat = ${format}\n${ind}\tfixedsize = yes\n${ind}}\n`;
+  const button = (name, b, spr, key, font, tip, extra = '') => `\t\t\tbuttonType = {\n\t\t\t\tname = "${name}"\n\t\t\t\tposition = { x = ${b.x} y = ${b.y} }\n\t\t\t\tspriteType = "${spr}"\n\t\t\t\tbuttonText = "${key}"\n\t\t\t\tbuttonFont = "${font}"\n\t\t\t\tclicksound = click_default\n${tip ? `\t\t\t\tpdx_tooltip = "${tip}"\n` : ''}${extra}\t\t\t}\n`;
+  const box = (name, b, spr, body) => `\t\t\tcontainerWindowType = {\n\t\t\t\tname = "${name}"\n\t\t\t\tposition = { x = ${b.x} y = ${b.y} }\n\t\t\t\tsize = { width = ${b.w} height = ${b.h} }\n\t\t\t\tclipping = no\n\t\t\t\tbackground = {\n\t\t\t\t\tname = "${name}_bg"\n\t\t\t\t\tquadTextureSprite = "${spr}"\n\t\t\t\t}\n${body}\t\t\t}\n`;
+  return `${HEAD}# The super-event window (UI lane W8; design system section 7: Chancery). A full-screen backdrop, its own generated plate, so the map cannot
+# be clicked while a great moment is told; the centred panel holds the title, the date, the moment's picture, its text on a vellum page,
+# the sourced quote, the close button, the music toggle and the queue line. Visible while the player's country has zin_se_open
+# (common/scripted_guis/zin_super_events.txt).
 guiTypes = {
 	containerWindowType = {
 		name = "zin_super_event_window"
 		position = { x = 0 y = 0 }
 		size = { width = 100%% height = 100%% }
 		moveable = no
+		show_sound = event_popup
 		background = {
 			name = "zin_se_backdrop"
-			spriteType = "GFX_zin_frame"
+			quadTextureSprite = "${bd.sprite}"
 		}
 		containerWindowType = {
 			name = "zin_se_panel"
@@ -119,41 +136,67 @@ guiTypes = {
 			moveable = no
 			background = {
 				name = "zin_se_panel_bg"
-				spriteType = "GFX_zin_frame"
+				quadTextureSprite = "GFX_zin_event_window"
 			}
-${text('zin_se_title', L.title, 'hoi_36header', 'zin_se_window_title', 'centre')}${text('zin_se_date', L.date, 'hoi_16mbs', 'zin_se_window_date', 'centre')}			iconType = {
-				name = "zin_se_rule_top"
-				spriteType = "GFX_zin_rule"
-				position = { x = ${L.ruleTop.x} y = ${L.ruleTop.y} }
-			}
-			containerWindowType = {
-				name = "zin_se_picture_frame"
-				position = { x = ${L.frame.x} y = ${L.frame.y} }
-				size = { width = ${L.frame.w} height = ${L.frame.h} }
-				background = {
-					name = "zin_se_picture_frame_bg"
-					spriteType = "GFX_zin_frame"
-				}
-			}
-			iconType = {
+${box('zin_se_band', L.band, 'GFX_zin_event_title', text('zin_se_title', L.title, 'hoi_36header', 'zin_se_window_title', { format: 'centre', color: 'T', ind: '\t\t\t\t' }))}${text('zin_se_date', L.date, 'hoi_16mbs', 'zin_se_window_date', { format: 'centre', color: 'H' })}			iconType = {
 				name = "zin_se_picture"
 				spriteType = "${sprite(first)}"
 				position = { x = ${L.picture.x} y = ${L.picture.y} }
+				alwaystransparent = yes
 			}
-${text('zin_se_desc', L.desc, 'hoi_16mbs', 'zin_se_window_desc')}			iconType = {
-				name = "zin_se_rule_mid"
-				spriteType = "GFX_zin_rule"
-				position = { x = ${L.ruleMid.x} y = ${L.ruleMid.y} }
-				scale = ${L.ruleMid.scale}
+			iconType = {
+				name = "zin_se_picture_frame"
+				spriteType = "GFX_zin_se_picture_frame"
+				position = { x = ${L.frame.x} y = ${L.frame.y} }
+				alwaystransparent = yes
 			}
-${text('zin_se_quote', L.quote, 'hoi_16mbs', 'zin_se_window_quote')}${text('zin_se_queue', L.queue, 'hoi_16mbs', 'zin_se_window_queue')}${button('zin_se_close', L.close, 'GFX_button_359x34', 'zin_se_window_button', 'hoi_18mbs', 'zin_se_window_button_tip', '\t\t\t\tshortcut = "ESCAPE"\n')}${button('zin_se_music_on', L.music, 'GFX_zin_button', 'zin_se_music_on', 'hoi_16mbs', 'zin_se_music_on_tip')}${button('zin_se_music_off', L.music, 'GFX_zin_button', 'zin_se_music_off', 'hoi_16mbs', 'zin_se_music_off_tip')}		}
+${box('zin_se_page', L.page, 'GFX_zin_event_reading', text('zin_se_desc', L.desc, 'hoi4_typewriter16', 'zin_se_window_desc', { color: 'b', ind: '\t\t\t\t' }))}${box('zin_se_quote_well', L.quote, 'GFX_zin_event_well', text('zin_se_quote', L.quoteText, 'hoi_16mbs', 'zin_se_window_quote', { ind: '\t\t\t\t' }))}${button('zin_se_close', L.close, 'GFX_zin_se_button', 'zin_se_window_button', 'hoi_18mbs', 'zin_se_window_button_tip', '\t\t\t\tshortcut = "ESCAPE"\n')}${button('zin_se_music_on', L.music, 'GFX_zin_button', 'zin_se_music_on', 'hoi_16mbs', 'zin_se_music_on_tip')}${button('zin_se_music_off', L.music, 'GFX_zin_button', 'zin_se_music_off', 'hoi_16mbs', 'zin_se_music_off_tip')}${text('zin_se_queue', L.queue, 'hoi_16mbs', 'zin_se_window_queue')}		}
 	}
 }
 `;
 }
 
-function gfxText(data) {
-  return `spriteTypes = {\n${data.events.map(e => `\tspriteType = {\n\t\tname = "${sprite(e)}"\n\t\ttexturefile = "${pictureFile(data, e)}"\n\t}\n`).join('')}}\n`;
+function gfxText(data, chrome) {
+  const bd = data.window.backdrop;
+  const blocks = [
+    `\tcorneredTileSpriteType = {\n\t\tname = "${bd.sprite}"\n\t\tsize = { x = ${bd.width} y = ${bd.height} }\n\t\ttexturefile = "${bd.texture}"\n\t\tborderSize = { x = 0 y = 0 }\n\t\ttilingCenter = no\n\t}\n`,
+    ...chrome.map(c => `\tspriteType = {\n\t\tname = "${c.name}"\n\t\ttexturefile = "${c.texture}"\n${c.kind === 'button' ? `\t\tnoOfFrames = ${c.frames}\n\t\teffectFile = "gfx/FX/buttonstate.lua"\n` : ''}\t}\n`),
+    ...data.events.map(e => `\tspriteType = {\n\t\tname = "${sprite(e)}"\n\t\ttexturefile = "${pictureFile(data, e)}"\n\t}\n`),
+  ];
+  return `spriteTypes = {\n${blocks.join('')}}\n`;
+}
+
+// ---- the pictures ------------------------------------------------------------------------------------------------------------------
+// The tracked pictures (art/source/events/super/zin_se_<key>.png at the window's picture size, the backdrop at its plate size) are
+// written by art/super-event-jobs.mjs --track from the gpt-6-luna generations. A picture ships only when the last agent or owner review
+// line naming its tracked bytes (trackedSha256) accepts it; the build then converts it to DDS and stages the source beside it for the
+// asset provenance check. Code only resizes (in the job script) and converts (here).
+export const MANIFEST = "art/source/super_events_manifest.json";
+export const trackedPicture = key => `art/source/events/super/zin_se_${key}.png`;
+const sha256 = b => createHash('sha256').update(b).digest('hex');
+export function pictureAccepted(lines, bytes) {
+  const sha = sha256(bytes), last = lines.filter(l => l.reviewer && (l.trackedSha256 === sha || l.sha256 === sha)).at(-1);
+  return { ok: last?.accepted === true, sha, why: last ? (last.accepted ? '' : 'review rejected') : 'no review line' };
+}
+export async function stagePictures(staged, data, { provenance, root = ZIN } = {}) {
+  const lines = provenance ?? (existsSync(provenanceFile()) ? readFileSync(provenanceFile(), 'utf8') : '').split('\n').filter(Boolean).map(l => JSON.parse(l));
+  const shipped = [], missing = [], manifest = [];
+  const one = async (key, out, w, h) => {
+    const rel = trackedPicture(key), file = `${root}/${rel}`;
+    if (!existsSync(file)) { missing.push(`${key}: not generated`); return; }
+    const bytes = readFileSync(file), acc = pictureAccepted(lines, bytes);
+    if (!acc.ok) { missing.push(`${key}: ${acc.why}`); return; }
+    const img = await loadImage(bytes);
+    if (img.w !== w || img.h !== h) throw new Error(`super events: ${rel} is ${img.w}x${img.h}, the window draws ${w}x${h}`);
+    const ddsBytes = dds(fromRaw(img.data, img.w, img.h));
+    staged.add(out, ddsBytes);
+    staged.add(rel, bytes);
+    manifest.push({ out, source: rel, sourceSha256: acc.sha, ops: [`lanczos3 cover ${w}x${h} (art/super-event-jobs.mjs --track)`, "dds a8r8g8b8"], sha256: sha256(ddsBytes) });
+    shipped.push(key);
+  };
+  for (const e of data.events) await one(e.key, pictureFile(data, e), data.window.picture.width, data.window.picture.height);
+  await one('backdrop', data.window.backdrop.texture, data.window.backdrop.width, data.window.backdrop.height);
+  return { shipped, missing, manifest };
 }
 
 function scriptedGuiText() {
@@ -386,10 +429,21 @@ export function locEntries(data) {
   return out;
 }
 
-export async function buildSuperEvents(staged, { data } = {}) {
+export async function buildSuperEvents(staged, { data, provenance } = {}) {
   data ??= await loadSuperEvents();
+  const spec = { ...data.window.chrome, plates: {} };
+  const { sprites: chrome } = await buildDialogSprites({ spec, provenance });
+  const lines = [];
+  for (const c of chrome) {
+    const bytes = dds(fromRaw(c.img.data, c.img.w, c.img.h));
+    staged.add(c.texture, bytes);
+    lines.push({ out: c.texture, source: c.source, sourceSha256: c.sourceSha256, cells: [...new Set(c.cellKeys)].sort(), sheets: [c.sheetId], ops: [...c.ops, "dds a8r8g8b8"], sha256: sha256(bytes) });
+  }
+  const pictures = await stagePictures(staged, data, { provenance });
+  // The lineage of every texture this module ships (read by the asset provenance check, lib/asset_sources.mjs).
+  staged.add(MANIFEST, Buffer.from(JSON.stringify({ generator: "tools/content/modules/super_events.mjs", files: [...lines, ...pictures.manifest].sort((a, b) => (a.out < b.out ? -1 : 1)) }, null, 1) + '\n'));
   staged.text(FILES.gui, guiText(data));
-  staged.text(FILES.gfx, `${HEAD}# The super-event pictures (700 x 500). Pending art: docs/plans/zin-art/pending_from_integration.md, section Super-event pictures.\n${gfxText(data)}`);
+  staged.text(FILES.gfx, `${HEAD}# The super-event window's backdrop plate and chrome, and one picture per super event (${data.window.picture.width} x ${data.window.picture.height}, gpt-6-luna).\n${gfxText(data, chrome)}`);
   staged.text(FILES.sgui, scriptedGuiText());
   staged.text(FILES.triggers, triggersText(data));
   staged.text(FILES.effects, effectsText(data));
@@ -398,7 +452,8 @@ export async function buildSuperEvents(staged, { data } = {}) {
   staged.text(FILES.events, eventsText(data));
   staged.text(FILES.music, musicText(data));
   staged.loc('zin_super_events', locEntries(data));
-  return { data, counts: { superEvents: data.events.length, sprites: data.events.length, songs: data.events.length } };
+  if (pictures.missing.length) process.stderr.write(`super events: ${pictures.missing.length} pictures not shipped (${pictures.missing.join('; ')})\n`);
+  return { data, pictures, chrome: chrome.map(c => ({ name: c.name, texture: c.texture, ops: c.ops, source: c.source, sourceSha256: c.sourceSha256 })), counts: { superEvents: data.events.length, sprites: data.events.length + chrome.length + 1, pictures: pictures.shipped.length, songs: data.events.length } };
 }
 
 // ---- the hooks ---------------------------------------------------------------------------------------------------------------------

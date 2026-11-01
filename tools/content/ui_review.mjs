@@ -207,7 +207,7 @@ async function main() {
             const fullFile = full && artifactFile(storage, full), layFile = lay && artifactFile(storage, lay);
             if (fullFile) { res.sha256 = full.sha256; copyFileSync(fullFile, path.join(pngDir, `${t.label}-full.png`)); }
             if (fullFile && layFile) {
-              const layout = JSON.parse(readFileSync(layFile, 'utf8')), img = await sharp(fullFile).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+              const layout = JSON.parse(readFileSync(layFile, 'utf8')), img = await sharp(readFileSync(fullFile)).removeAlpha().raw().toBuffer({ resolveWithObject: true });
               res.metrics = textMetrics(layout, { data: img.data, width: img.info.width, height: img.info.height, channels: img.info.channels });
               if (o.keepPng) { mkdirSync(path.join(out, 'png'), { recursive: true }); copyFileSync(fullFile, path.join(out, 'png', `${t.label}-full.png`)); copyFileSync(layFile, path.join(out, 'png', `${t.label}-layout.json`)); }
             }

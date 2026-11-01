@@ -17,6 +17,7 @@ import {
   assertClean, checkCoverage, checkLayoutRefresh, checkTrees, codesFor, exclusiveClosure, gateWarnings,
   loadArgCodes, loadCatalog, loadRegistry, loadRetired, problem, scanStaged, spiritIcon, LAYOUT_ACTIONS,
 } from '../checks/focus_checks.mjs';
+import { buildFocusArt, focusArtAccepted, focusIconKey, focusSpriteName, noteFocusPlate, resetFocusPlates } from './focus_art.mjs';
 
 export const TREE_DIR = `${ZIN}/docs/design/focus`;
 export const TIERS_SPEC = `${ZIN}/docs/specs/05_focus_trees/01_tiers_and_coverage.md`;
@@ -224,7 +225,13 @@ function focusLines(f, closure, C) {
   const tree = C.tree, id = focusId(tree, f.key);
   C.owner = { id, nameKey: id, tipBase: id, tips: 0 };
   const L = [`id = ${id}`];
-  if (typeof f.icon === 'string') L.push(`icon = ${SPRITE.focus(f.icon)}`);
+  // A focus whose plate is accepted (lane I4, modules/focus_art.mjs) names its own sprite; any other focus keeps its catalogue icon.
+  if (focusArtAccepted(tree, f.key) && typeof f.icon !== 'object') {
+    const plate = focusIconKey(tree, f.key);
+    noteFocusPlate(plate);
+    L.push(`icon = ${focusSpriteName(plate)}`);
+  }
+  else if (typeof f.icon === 'string') L.push(`icon = ${SPRITE.focus(f.icon)}`);
   else {
     L.push(...block('icon', [...flat((f.icon.after ?? []).map(a => block(SPRITE.focus(a.icon), [`has_global_flag = ${a.global_flag}`]))), `${SPRITE.focus(f.icon.default)} = yes`]), 'dynamic = yes');
   }
@@ -432,6 +439,7 @@ export async function buildFocusTrees(staged, opts = {}) {
 `));
   const entries = await readTreeFiles(opts.dir ?? TREE_DIR);
   if (!entries.length) return { trees: 0, focuses: 0, spirits: 0, events: 0, raw: 0, files: 0, warnings: 0 };
+  resetFocusPlates();
   const a = await analyseTrees(entries, staged, opts);
   assertClean(a.problems);
   if (!a.complete) warn(`${a.list.length} of ${a.expected.length || '?'} trees present; the check that every country has a tree waits for the rest`);
@@ -445,5 +453,7 @@ export async function buildFocusTrees(staged, opts = {}) {
     if (out.stats.raw) warn(`${tree.id}: ${out.stats.raw} raw block${out.stats.raw === 1 ? '' : 's'}`);
   }
   staged.text(LAYOUT_FILE, a.layout); total.files++;
+  // Focus plates of the accepted sheets (lane I4): the sprites that the icon lines above name.
+  await buildFocusArt(staged, { warn });
   return total;
 }

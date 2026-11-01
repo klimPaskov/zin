@@ -16,6 +16,7 @@ import { validateTree } from './lib/focus_schema.mjs';
 import { absolutePositions } from './lib/focus_model.mjs';
 import { PEOPLES } from './modules/peoples.mjs';
 import { analyseTrees, buildFocusTrees, compileTree, expectedTreeIds, layoutFile, paceDate, prepareTrees, LAYOUT_FILE } from './modules/focus_compiler.mjs';
+import { focusArtAcceptedKeys } from './modules/focus_art.mjs';
 import {
   Registry, assertClean, checkCoverage, checkLayoutRefresh, codesFor, exclusiveClosure, gateWarnings, isValidModifier, loadArgCodes,
   loadCatalog, loadRetired, parseRetired, scanStaged, spiritIcon,
@@ -194,10 +195,12 @@ test('Localisation is UTF-8 with a BOM and holds every focus, spirit, event and 
 test('Every compiled icon and picture is a catalog key and no file uses <= or >=', async () => {
   const { staged } = await compileFixtures();
   const catalog = await loadCatalog();
+  // A focus whose plate is accepted names its own picture (lane I4, modules/focus_art.mjs); every other icon is a catalogue key.
+  const plates = focusArtAcceptedKeys();
   for (const [rel, bytes] of staged.files) {
     const text = bytes.toString('utf8');
     assert.doesNotMatch(text, /<=|>=/, rel);
-    for (const [, key] of text.matchAll(/GFX_focus_zin_([a-z0-9_]+)/g)) assert(catalog.icons.has(key), `${rel}: ${key}`);
+    for (const [, key] of text.matchAll(/GFX_focus_zin_([a-z0-9_]+)/g)) assert(catalog.icons.has(key) || plates.has(key), `${rel}: ${key}`);
     for (const [, key] of text.matchAll(/GFX_zin_(?:evt|news)_([a-z0-9_]+)/g)) assert(catalog.events.has(key), `${rel}: ${key}`);
     for (const [, key] of text.matchAll(/picture = zin_([a-z0-9_]+)/g)) assert(catalog.icons.has(key), `${rel}: ${key}`);
   }

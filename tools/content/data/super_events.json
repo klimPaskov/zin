@@ -4,8 +4,18 @@
  "spec": "docs/specs/06_events/06_super_events.md",
  "note": "The super events of owner decision K52 (25 October 2026). Every text is ZIN-proposed and follows the accepted voice (docs/specs/02_lore/09_voice_and_style.md) and the knowledge layers (docs/lore/references/knowledge_layers.md) at the moment the flag is set. Ids are stable: never reuse an id for another moment. The hook flag is the global flag the owning module sets at the moment; the builder calls the super event right after every place that sets it.",
  "window": {
-  "panel": { "width": 1180, "height": 680 },
-  "picture": { "width": 700, "height": 500, "folder": "gfx/event_pictures/zin/super_events" },
+  "panel": { "width": 1240, "height": 696 },
+  "picture": { "width": 768, "height": 512, "folder": "gfx/event_pictures/zin/super_events", "tracked": "art/source/events/super" },
+  "backdrop": { "width": 1536, "height": 864, "texture": "gfx/interface/zin/super_events/backdrop.dds", "sprite": "GFX_zin_se_backdrop", "about": "The full-screen plate behind the window (design system section 5 rule 5): a generated Chancery hall, dark in the middle; the engine stretches it to the screen." },
+  "chrome": {
+   "about": "Chancery chrome of the window (design system sections 1.3, 6.1, 7; UI lane W8). The panel, title band, reading page and quote well are lane W5's event sprites (GFX_zin_event_window, GFX_zin_event_title, GFX_zin_event_reading, GFX_zin_event_well), so the super event is one family with the event and news windows. The two sprites below are cut by lib/fit.mjs from the accepted chrome sheets through modules/ui_dialogs.mjs buildDialogSprites: code crops, reduces and repeats generated pixels and clears the inside of the moulding; nothing is painted.",
+   "dir": "gfx/interface/zin/super_events",
+   "sheets": ["ui-chrome-chancery", "ui-buttons-neutral"],
+   "sprites": [
+    { "name": "GFX_zin_se_picture_frame", "theme": "chancery", "kind": "sprite", "texture": "picture_frame.dds", "size": [784, 528], "sheet": "ui-chrome-chancery", "cells": ["window"], "fit": "frame_tile", "frame": 8, "hollow": true, "about": "Bronze moulding round the 768 x 512 picture (drawn at an 8 px offset)." },
+    { "name": "GFX_zin_se_button", "theme": "neutral", "kind": "button", "texture": "button.dds", "size": [384, 40], "sheet": "ui-buttons-neutral", "cells": ["iron_normal", "iron_hover", "bronze_pressed"], "fit": "frame_tile", "frame": 6, "about": "The close button: the neutral iron plate, normal and hover, and the bronze face when pressed (design system 6.1, 6.2): at 384 px the iron pressed cell differs from normal by only 2.1 percent, under the 3 percent of check 17; the bronze face differs by 10.3." }
+   ]
+  },
   "music": { "folder": "music", "asset": "music/zin_super_events.asset", "volume": 0.8, "format": "ogg" }
  },
  "retired": [

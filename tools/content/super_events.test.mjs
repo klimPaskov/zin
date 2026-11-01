@@ -39,6 +39,7 @@ test('The data registers the great moments with stable ids (live and retired tog
 test('The module writes every file of the package; scripts parse, have balanced braces and no <= or >=; the text has its BOM', () => {
   for (const rel of Object.values(FILES)) assert(staged.files.has(rel), rel);
   for (const [rel, bytes] of staged.files) {
+    if (/\.(dds|png)$/.test(rel)) continue; // the pictures and chrome textures are binary
     if (rel.endsWith('.yml')) { assert.deepEqual([...bytes.subarray(0, 3)], [0xef, 0xbb, 0xbf], rel); continue; }
     const t = bytes.toString('utf8').replace(/#.*$/gm, '').replace(/"[^"]*"/g, '""');
     assert.equal((t.match(/\{/g) ?? []).length, (t.match(/\}/g) ?? []).length, `${rel}: braces`);
@@ -106,9 +107,27 @@ test('The window is wired to its scripted GUI: visibility, dynamic picture, cont
     if (b.w) assert(b.x + b.w <= P.width, `${k} right edge`);
     if (b.h) assert(b.y + b.h <= P.height, `${k} bottom edge`);
   }
-  assert(L.close.y + 34 <= P.height - 12 && L.music.y + 30 <= P.height - 8, 'buttons clear the bottom border');
-  assert(L.quote.y > L.ruleMid.y && L.ruleMid.y > L.desc.y + L.desc.h - 1 - 12, 'description, rule and quote in order');
+  assert(L.close.y + L.close.h <= P.height - L.rim && L.music.y + 30 <= P.height - L.rim, 'buttons clear the bottom border');
+  assert(L.page.y + L.page.h < L.quote.y && L.quote.y + L.quote.h < L.close.y, 'reading page, quote and close button in order');
+  assert(L.desc.x + L.desc.w <= L.page.w && L.desc.y + L.desc.h <= L.page.h && L.quoteText.x + L.quoteText.w <= L.quote.w, 'texts inside their page and well');
+  assert(L.frame.w === data.window.picture.width + 16 && L.frame.h === data.window.picture.height + 16, 'the moulding fits the picture');
   assert(P.height <= 700 && P.width <= 1240, 'the panel fits a 1280 x 720 screen');
+  // Design system section 5 rule 5 and section 7: the backdrop is its own generated plate, not a stretched panel texture; Chancery chrome.
+  assert(!gui.includes('GFX_zin_frame'), 'no stretched panel frame');
+  assert(gui.includes(`quadTextureSprite = "${data.window.backdrop.sprite}"`) && gui.includes('quadTextureSprite = "GFX_zin_event_window"'), 'backdrop plate and Chancery window');
+  for (const c of data.window.chrome.sprites) assert(gui.includes(`"${c.name}"`) && text(FILES.gfx).includes(`name = "${c.name}"`), c.name);
+});
+
+test('Every super event ships its own reviewed picture, and the backdrop ships', () => {
+  assert.deepEqual(built.pictures.missing, [], 'every picture tracked and accepted');
+  assert.equal(built.pictures.shipped.length, EV.length + 1);
+  const { width: w, height: h } = data.window.picture;
+  for (const e of EV) {
+    const dds = staged.files.get(pictureFile(data, e));
+    assert(dds && dds.readUInt32LE(12) === h && dds.readUInt32LE(16) === w, `${e.key}: ${w} x ${h} picture`);
+  }
+  const shas = new Set(EV.map(e => staged.files.get(`art/source/events/super/zin_se_${e.key}.png`).toString('base64')));
+  assert.equal(shas.size, EV.length, 'no picture reused');
 });
 
 test('The voice and the knowledge layers: no sealed name, no ungated secret, no quoted forbidden voice', () => {
@@ -140,12 +159,12 @@ test('The spec, the pending-art list, the baseline and the art and audio briefs 
   const pending = read('docs/plans/zin-art/pending_from_integration.md');
   const baseline = JSON.parse(read('docs/design/validation/asset_baseline.json')).findings.map(f => f.key);
   for (const e of EV) {
-    assert(pending.includes(sprite(e)) && pending.includes(pictureFile(data, e)), `pending art: ${e.key}`);
+    // The pictures ship (lane W8): their pending rows and baseline entries are gone; the recordings stay pending for the audio lane.
+    assert(!pending.includes(`| SE${String(e.id).padStart(2, '0')} |`), `picture row dropped: ${e.key}`);
     assert(pending.includes(`music/zin_se_${e.key}.ogg`), `pending audio: ${e.key}`);
-    assert(baseline.includes(`SPRITE_TEXTURE_MISSING|${FILES.gfx}|${sprite(e)}:${pictureFile(data, e)}`), `baseline picture: ${e.key}`);
+    assert(!baseline.includes(`SPRITE_TEXTURE_MISSING|${FILES.gfx}|${sprite(e)}:${pictureFile(data, e)}`), `baseline picture dropped: ${e.key}`);
     // The asset check does not read the mod's own music/*.asset files, so a pending song is recorded only in the pending list (row SA<id>).
     assert(pending.includes(`| SA${String(e.id).padStart(2, '0')} | Song ${song(e)}:`), `pending song row: ${e.key}`);
-    assert(pending.includes(`| SE${String(e.id).padStart(2, '0')} | ${sprite(e)}:`), `pending picture row: ${e.key}`);
   }
   const art = JSON.parse(read('docs/plans/super_events/art_briefs.json')), audio = JSON.parse(read('docs/plans/super_events/audio_briefs.json'));
   assert.deepEqual(art.briefs.map(b => b.key), EV.map(e => e.key));
