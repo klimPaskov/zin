@@ -19,6 +19,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { cw, yml, assertModifiers } from '../lib/core.mjs';
+import { buildFactionArt, factionTexture, miniatureTexture } from './faction_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DIPLOMACY_DATA_DIR = path.join(here, '../data');
@@ -230,16 +231,22 @@ export async function buildDiplomacy(staged, ctx = {}) {
 
   // ------------------------------------------------------------------------------------------------ icons (sprites)
   const iconKeys = [...base.factions.map(f => f.key), ...Array.from({ length: base.spareIcons ?? SPARE_COUNT }, (_, i) => `spare_${i + 1}`)];
+  // League emblems (UI lane W2 / icon lane I9): generated Chancery shields cut by modules/faction_art.mjs; a key whose sheet is not
+  // accepted keeps an interim vanilla logo.
   const logoDir = 'gfx/interface/factions/faction_logos';
+  const stagedBefore = new Set(staged.files.keys());
+  const emblems = ctx.factionArt === false ? new Set() : await buildFactionArt(staged, { provenance: ctx.provenance });
+  for (const rel of staged.files.keys()) if (!stagedBefore.has(rel)) files.push(rel);
   const sprites = [];
   iconKeys.forEach((k, i) => {
-    const n = INTERIM_LOGOS[i % INTERIM_LOGOS.length];
-    sprites.push(L('spriteType', `name = "GFX_zin_faction_${k}"`, `texturefile = "${logoDir}/faction_logo_generic_${n}.dds"`, 'noOfFrames = 2'));
-    sprites.push(L('spriteType', `name = "GFX_zin_faction_${k}_miniature"`, `texturefile = "${logoDir}/faction_logo_generic_${n}_miniature.dds"`));
+    const n = INTERIM_LOGOS[i % INTERIM_LOGOS.length], own = emblems.has(k);
+    sprites.push(L('spriteType', `name = "GFX_zin_faction_${k}"`, `texturefile = "${own ? factionTexture(k) : `${logoDir}/faction_logo_generic_${n}.dds`}"`, 'noOfFrames = 2'));
+    sprites.push(L('spriteType', `name = "GFX_zin_faction_${k}_miniature"`, `texturefile = "${own ? miniatureTexture(k) : `${logoDir}/faction_logo_generic_${n}_miniature.dds`}"`));
     defs.icons.push(`GFX_zin_faction_${k}`);
   });
   for (const a of subjects.autonomy.filter(x => x.icon)) sprites.push(L('spriteType', `name = "GFX_${a.id}_icon"`, `textureFile = "gfx/interface/autonomy/${a.icon}.dds"`));
-  put('interface/zin_diplomacy.gfx', fileText(comment('Interim sprites: the league emblems and autonomy icons below point at textures of the installed game so that every ZIN definition resolves.\nThe art stage replaces the texturefile lines (and may supersede the sprites in interface/zin_factions.gfx). No texture is copied into the mod.'), render(L('spriteTypes', sprites))));
+  const interim = iconKeys.filter(k => !emblems.has(k)).length;
+  put('interface/zin_diplomacy.gfx', fileText(comment(`League emblems: generated Chancery shields (modules/faction_art.mjs, gfx/interface/factions/zin/)${interim ? `; ${interim} key(s) still on an interim vanilla logo` : ''}.\nAutonomy icons point at textures of the installed game so that every ZIN definition resolves; no vanilla texture is copied into the mod.`), render(L('spriteTypes', sprites))));
   put('common/factions/icons/zin_factions.txt', fileText(render(L('faction_icon_pool', L('icons', defs.icons)))));
 
   // --------------------------------------------------------------------------------------------------------- rules

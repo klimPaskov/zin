@@ -1,0 +1,29 @@
+{
+ "id": "ui-focus-board",
+ "family": "focus",
+ "theme": "chronicle",
+ "kind": "grid",
+ "aspect": "2:3",
+ "grid": [
+  1,
+  1
+ ],
+ "ground": "black",
+ "matte": "none",
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The Chronicle: the illuminated record of the age. Smooth carved blue-grey slate (#2D353A) with a very fine even grain, an inlaid bronze line (#78664C, lit edge #CAB289) with small diamond studs at the corners, vellum leaves (#E2D1B5), rubric red cloth (#5C1714).",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "The single cell fills the whole image edge to edge: one flat plate seen straight on, with no black ground visible anywhere.",
+ "cells": [
+  {
+   "key": "board",
+   "subject": "a focus tree board: smooth dark blue-grey slate with a very fine even grain, a narrow carved slate border with one thin inlaid bronze line along all four edges and a small square of simple interlaced bronze knotwork in each corner; inside the border one plain, even slate surface with no motif",
+   "border": 0.05,
+   "lum": "dark",
+   "luma": 51.1
+  }
+ ],
+ "tranche": 7
+}

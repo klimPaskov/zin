@@ -6,12 +6,17 @@
 // Everything else of the installed file (the info windows, the line and XOR items, the stat lists) stays.
 // Without this file every technology logs "Found no grid box for tech" and no ZIN folder can be opened (Linux run integ_r3b: 213 lines).
 //
-//   techTreeGui(installed, { folders, layout, tabSprite, blankIcon })   -> the .gui text
+//   techTreeGui(installed, { folders, layout, tabSprite, blankIcon, board })   -> the .gui text
 //     installed   the installed countrytechtreeview.gui (latin1 text)
 //     folders     the technology folders in tab order: [{ key }] (the ZIN folders and the kept industry_folder, electronics_folder)
 //     layout      model.layout.folders of the technology module: { <folder>: { tiles, gridboxes, rows, width, height } }
-//     tabSprite   folder key -> the sprite of its tab
+//     tabSprite   folder key -> the sprite of its tab (every folder, the kept ones too: two frames, frame 1 selected)
 //     blankIcon   the sprite that replaces the engine fallback GFX_technology_medium in the item templates
+//     board       the sprite of the folder board (default: the vanilla GFX_tiled_window_2b_border)
+//
+// Layout (UI overhaul lane W3, design system §2.1, §3, K69): the tabs are pictures (the folder's engraved emblem on a Chronicle tab
+// plate, 91 x 61 per frame as the vanilla tabs) on a 92 px step, so nine tabs fit 1280 px and none overlaps its neighbour; the folder's
+// name is the tab's tooltip and the folder window's title, in the window title face below the tab row; row captions use the body face.
 //   TECH_TREE_FOLDER_ITEM   the installed small item container every folder's small item is cloned from
 //   TECH_TREE_LARGE_ITEM    the installed large equipment item container every ZIN folder's regular item is cloned from
 //
@@ -22,7 +27,11 @@ export const TECH_TREE_FOLDER_ITEM = 'techtree_infantry_folder_small_item';
 export const TECH_TREE_LARGE_ITEM = 'techtree_infantry_folder_item';
 // The kept folders keep their vanilla tab sprites and tutorial highlights.
 const KEPT_TABS = { industry_folder: { sprite: 'GFX_industry_folder_tab', highlight: 'highlight_industry_folder', click: 'ui_research_tab_industry' }, electronics_folder: { sprite: 'GFX_techtree_engineering_tab', highlight: 'highlight_engineering_folder', click: 'ui_research_tab_engineering' } };
-const TAB_X0 = 22, TAB_STEP = 89;
+export const TAB_X0 = 24, TAB_STEP = 92;
+// The folder title sits below the 61 px tabs, which overlap the top of the folder window (vanilla places both at the same heights).
+export const TITLE_Y = 28;
+// The nearest position on the 4 px grid at or after v (design system §3).
+const grid = v => Math.ceil(v / 4) * 4;
 
 // The child blocks `key = { ... }` directly inside text[from, to): [{ key, start, end, name }] (end is after the closing brace).
 export function childBlocks(text, from, to) {
@@ -67,31 +76,30 @@ function childLess(body) {
 const find = (blocks, name, what) => blocks.find(b => b.name === name) ?? (() => { throw new Error(`tech tree gui: the installed file has no ${what} ${name}`); })();
 
 const T = n => '\t'.repeat(n);
-const folderTitle = (f, d) => [`${T(d)}instantTextBoxType = {`, `${T(d + 1)}name = "${f}_title"`, `${T(d + 1)}position = { x = ${ORIGIN.x} y = 12 }`, `${T(d + 1)}font = "hoi_36header"`, `${T(d + 1)}text = "${f}"`, `${T(d + 1)}maxWidth = 900`, `${T(d + 1)}maxHeight = 40`, `${T(d + 1)}format = left`, `${T(d)}}`];
+const folderTitle = (f, d) => [`${T(d)}instantTextBoxType = {`, `${T(d + 1)}name = "${f}_title"`, `${T(d + 1)}position = { x = ${grid(ORIGIN.x)} y = ${TITLE_Y} }`, `${T(d + 1)}font = "hoi_24header"`, `${T(d + 1)}text = "${f}"`, `${T(d + 1)}maxWidth = 900`, `${T(d + 1)}maxHeight = 32`, `${T(d + 1)}format = left`, `${T(d)}}`];
 // A row caption sits in the left gutter beside its row (the band keys of data/technologies.json: zin_techtree_year_<row>): an era name
 // for the Third Age and the early Fourth Age, Fourth Age years after that. Two lines fit beside a row; the gutter ends before the left
 // wing of a large tile at column 0 (lib/tech_layout.mjs ITEM).
-export const CAPTION_WIDTH = ORIGIN.x - 80;
-const caption = (f, { y, band }, d) => [`${T(d)}instantTextBoxType = {`, `${T(d + 1)}name = "${f}_year_${band}"`, `${T(d + 1)}position = { x = 12 y = ${ORIGIN.y + y * SLOT + 10} }`, `${T(d + 1)}font = "hoi_20b"`, `${T(d + 1)}text = "zin_techtree_year_${band}"`, `${T(d + 1)}maxWidth = ${CAPTION_WIDTH}`, `${T(d + 1)}maxHeight = 50`, `${T(d + 1)}format = left`, `${T(d)}}`];
+export const CAPTION_WIDTH = Math.floor((ORIGIN.x - 80) / 4) * 4;
+const caption = (f, { y, band }, d) => [`${T(d)}instantTextBoxType = {`, `${T(d + 1)}name = "${f}_year_${band}"`, `${T(d + 1)}position = { x = 12 y = ${ORIGIN.y + y * SLOT + 10} }`, `${T(d + 1)}font = "hoi_18mbs"`, `${T(d + 1)}text = "zin_techtree_year_${band}"`, `${T(d + 1)}maxWidth = ${CAPTION_WIDTH}`, `${T(d + 1)}maxHeight = 50`, `${T(d + 1)}format = left`, `${T(d)}}`];
 // A gridbox per root, every one at the folder origin and as large as the folder: a tile's slot is the same in every gridbox, so the
 // connector from a second path parent in another gridbox lands where the slots say.
 function gridbox(g, d) {
   return [`${T(d)}gridboxtype = {`, `${T(d + 1)}name = "${g.name}"`, `${T(d + 1)}position = { x = ${g.px} y = ${g.py} }`, `${T(d + 1)}size = { width = ${g.width} height = ${g.height} }`, `${T(d + 1)}slotsize = { width = ${g.slotsize} height = ${g.slotsize} }`, `${T(d + 1)}format = "${g.format}"`, `${T(d)}}`];
 }
-export function folderWindow(f, l) {
+export function folderWindow(f, l, board = 'GFX_tiled_window_2b_border') {
   const d = 2;
   return [`${T(d)}containerWindowType = {`, `${T(d + 1)}name = "${f}"`, `${T(d + 1)}position = { x=0 y=47 }`, `${T(d + 1)}size = { width = 100%% height = 100%% }`, `${T(d + 1)}margin = { top = 13 left = 13 bottom = 24 right = 25 }`,
     `${T(d + 1)}drag_scroll = { left middle }`, `${T(d + 1)}verticalScrollbar = "right_vertical_slider"`, `${T(d + 1)}horizontalScrollbar = "bottom_horizontal_slider"`, `${T(d + 1)}scroll_wheel_factor = 40`, '',
-    `${T(d + 1)}background = {`, `${T(d + 2)}name = "Background"`, `${T(d + 2)}quadTextureSprite ="GFX_tiled_window_2b_border"`, `${T(d + 1)}}`, '',
-    // The size filler gives the window its scroll extent; the board art of the folder is pending (docs/plans/zin-art/pending_from_integration.md).
+    `${T(d + 1)}background = {`, `${T(d + 2)}name = "Background"`, `${T(d + 2)}quadTextureSprite ="${board}"`, `${T(d + 1)}}`, '',
+    // The size filler gives the window its scroll extent.
     `${T(d + 1)}containerWindowType = {`, `${T(d + 2)}name = "${f}_size_filler"`, `${T(d + 2)}position = { x=0 y=0 }`, `${T(d + 2)}size = { width = ${l.width} height = ${l.height} min = { width = 100%% height = 100%% } }`, `${T(d + 1)}}`, '',
     ...folderTitle(f, d + 1), ...l.rows.flatMap(r => caption(f, r, d + 1)), '', ...l.gridboxes.flatMap(g => gridbox(g, d + 1)), `${T(d)}}`].join('\n');
 }
 function tabButton(f, i, sprite) {
   const kept = KEPT_TABS[f], x = TAB_X0 + TAB_STEP * i, d = 3;
-  const L = [`${T(d)}buttonType = {`, `${T(d + 1)}name = "${f}_tab"`, `${T(d + 1)}position = { x = ${x} y = 0 }`, `${T(d + 1)}quadTextureSprite = "${kept ? kept.sprite : sprite}"`, `${T(d + 1)}frame = 1`];
-  // A ZIN tab has no drawn label yet (its tab art is pending): the button says the folder's name.
-  if (!kept) L.push(`${T(d + 1)}buttonText = "${f}"`, `${T(d + 1)}buttonFont = "hoi_18mbs"`);
+  const L = [`${T(d)}buttonType = {`, `${T(d + 1)}name = "${f}_tab"`, `${T(d + 1)}position = { x = ${x} y = 0 }`, `${T(d + 1)}quadTextureSprite = "${sprite ?? kept?.sprite}"`, `${T(d + 1)}frame = 1`, `${T(d + 1)}pdx_tooltip = "${f}"`];
+  // Every tab, the kept ones too, is the folder's own picture tab; its tooltip is the folder's name (the folder key is its name key).
   L.push(`${T(d + 1)}clicksound = ${kept ? kept.click : 'click_default'}`, `${T(d)}}`);
   if (kept) L.push(`${T(d)}iconType = {`, `${T(d + 1)}name = "${kept.highlight}"`, `${T(d + 1)}spriteType = "GFX_tutorial_research_folder_icon_glow"`, `${T(d + 1)}position = { x = ${x} y = 0 }`, `${T(d + 1)}hide = yes`, `${T(d + 1)}alwaystransparent = yes`, `${T(d)}}`);
   return L.join('\n');
@@ -122,7 +130,7 @@ export function droppedVanillaText(installed) {
   return [...v.vanillaFolders, ...v.tabChildren, ...v.items].map(b => text.slice(b.start, b.end)).join('\n');
 }
 
-export function techTreeGui(installed, { folders, layout, tabSprite, blankIcon = null }) {
+export function techTreeGui(installed, { folders, layout, tabSprite, blankIcon = null, board }) {
   let text = installed.replace(/^﻿/, '');
   const { top, vanillaFolders, tabs, tabChildren, template, largeTemplate, items } = vanillaParts(text);
   let topBlocks;
@@ -130,7 +138,7 @@ export function techTreeGui(installed, { folders, layout, tabSprite, blankIcon =
   const cuts = [...vanillaFolders, ...tabChildren, ...items].sort((a, b) => b.start - a.start);
   // New text: the folder windows go where the first vanilla folder window stood, the tabs at the start of folder_tabs, the items at the end.
   const firstFolder = Math.min(...vanillaFolders.map(b => b.start));
-  const windows = folders.map(f => { const l = layout[f.key]; if (!l) throw new Error(`tech tree gui: the layout has no folder ${f.key}`); return folderWindow(f.key, l); }).join('\n\n');
+  const windows = folders.map(f => { const l = layout[f.key]; if (!l) throw new Error(`tech tree gui: the layout has no folder ${f.key}`); return folderWindow(f.key, l, board); }).join('\n\n');
   const tabText = folders.map((f, i) => tabButton(f.key, i, tabSprite(f.key))).join('\n\n');
   // Every folder gets a small item (a technology that unlocks no equipment); a ZIN folder also gets the large equipment item, which the
   // engine gives a technology that unlocks equipment. The kept folders keep their installed regular items.

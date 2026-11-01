@@ -1,6 +1,7 @@
 {
  "id": "ui-research",
  "family": "research_production",
+ "theme": "chronicle",
  "kind": "grid",
  "aspect": "1:1",
  "grid": [
@@ -9,60 +10,66 @@
  ],
  "ground": "black",
  "matte": "none",
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The Chronicle: the illuminated record of the age. Smooth carved blue-grey slate (#2D353A) with a very fine even grain, an inlaid bronze line (#78664C, lit edge #CAB289) with small diamond studs at the corners, vellum leaves (#E2D1B5), rubric red cloth (#5C1714).",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Every cell is one flat rectangular piece seen straight on, filling its own cell edge to edge as a full-bleed swatch, all cells the same size, separated by narrow black gutters. Any line or rim of a plate runs straight along its four sides at an even width; the body inside it is one plain, uniform surface with no motif.",
  "cells": [
   {
    "key": "item_available",
-   "subject": "a technology item plate, available: walnut with a bronze rim, empty",
+   "subject": "a technology item plate, available: dark blue-grey slate with an inlaid bronze line along its edge and a small bronze diamond stud at each corner, empty",
    "lum": "dark",
-   "luma": 46.2
+   "luma": 62
   },
   {
    "key": "item_researched",
-   "subject": "a technology item plate, researched: walnut with a gilt rim and a verdigris inlay",
+   "subject": "a technology item plate, researched: dark slate with a verdigris enamel line inside a gilt line along its edge, empty",
    "lum": "dark",
-   "luma": 53.7
+   "luma": 65
   },
   {
    "key": "item_unavailable",
-   "subject": "a technology item plate, unavailable: dull iron, matte",
+   "subject": "a technology item plate, unavailable: very dark matte slate with one dull grey line along its edge, no bronze",
    "lum": "dark",
-   "luma": 47.8
+   "luma": 42.7
   },
   {
    "key": "folder_tab",
-   "subject": "a folder tab: bronze with a dark inset, empty",
+   "subject": "a folder tab plate: slate with a thin bronze line along its edge, empty",
    "lum": "dark",
-   "luma": 48.5
+   "luma": 57.7
   },
   {
    "key": "line_plate",
-   "subject": "a long research line plate: walnut with a thin bronze border",
+   "subject": "a long research line plate: dark slate with a thin inlaid bronze line along its edge",
    "lum": "dark",
-   "luma": 43.8
+   "luma": 59.1
   },
   {
    "key": "stripes",
-   "subject": "faint vertical walnut stripes on a plain ground",
+   "subject": "faint broad vertical bands of slightly lighter and slightly darker blue-grey slate, very low contrast, plain",
    "lum": "dark",
-   "luma": 40.5
+   "luma": 46.5
   },
   {
    "key": "bonus_plate",
-   "subject": "a small bonus plate: parchment with a bronze rim",
+   "subject": "a small bonus plate: pale vellum with a thin bronze line along its edge",
    "lum": "light",
-   "luma": 186.3
+   "luma": 201.8
   },
   {
    "key": "queue_plate",
-   "subject": "a production queue plate: walnut with a bronze edge",
+   "subject": "a queue plate: dark slate with a thin bronze line along its edge, empty",
    "lum": "dark",
-   "luma": 45.2
+   "luma": 57.8
   },
   {
    "key": "slot_glow",
-   "subject": "a soft gold glow on black",
+   "subject": "a soft warm gold glow, round and even, on black",
    "lum": "dark",
-   "luma": 45.9,
+   "luma": 82.5,
    "design": "light"
   }
  ],

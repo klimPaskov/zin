@@ -7016,6 +7016,382 @@
    "message": "spriteType at line 205 names the engine fallback sprite GFX_leader_unknown; a fallback must never stand where a real picture should be.",
    "key": "FALLBACK_HIT|interface/eventwindow.gui|GFX_leader_unknown",
    "reason": "UI lane W5: the leader button of EventWindow_leader is an engine slot that the game fills with the event leader portrait at runtime; vanilla interface/eventwindow.gui names the same sprite there. No fallback picture is ever shown in its place (handoff docs/plans/ui_overhaul/handoffs/W5.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydecisionview.gui",
+   "message": "spriteType at line 427 names the engine fallback sprite GFX_decision_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydecisionview.gui|GFX_decision_unknown",
+   "reason": "UI lane W2: interface/countrydecisionview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_decision_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "spriteType at line 318 names the engine fallback sprite GFX_goal_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydiplomacyview.gui|GFX_goal_unknown",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_goal_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "quadTextureSprite at line 2186 names the engine fallback sprite GFX_idea_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydiplomacyview.gui|GFX_idea_unknown",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_idea_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "spriteType at line 51 names the engine fallback sprite GFX_ideology_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydiplomacyview.gui|GFX_ideology_unknown",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_ideology_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "spriteType at line 230 names the engine fallback sprite GFX_leader_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydiplomacyview.gui|GFX_leader_unknown",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_leader_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "quadTextureSprite at line 4514 names the engine fallback sprite GFX_relation_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydiplomacyview.gui|GFX_relation_unknown",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_relation_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "spriteType at line 3986 names the engine fallback sprite GFX_technology_medium; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrydiplomacyview.gui|GFX_technology_medium",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_technology_medium marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "spriteType at line 476 names the engine fallback sprite GFX_goal_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrypoliticsview.gui|GFX_goal_unknown",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_goal_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "spriteType at line 576 names the engine fallback sprite GFX_leader_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/countrypoliticsview.gui|GFX_leader_unknown",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_leader_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "spriteType at line 1136 names the engine fallback sprite GFX_goal_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/popupwindow.gui|GFX_goal_unknown",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_goal_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "spriteType at line 74 names the engine fallback sprite GFX_leader_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/popupwindow.gui|GFX_leader_unknown",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_leader_unknown marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "spriteType at line 328 names the engine fallback sprite GFX_technology_medium; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/popupwindow.gui|GFX_technology_medium",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). GFX_technology_medium marks an engine slot that the game fills at runtime with the real picture (leader portrait, goal, idea, decision, relation, ideology or equipment picture), as vanilla names it there; no fallback picture is shown in its place (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 61 names the key Germanian, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|Germanian",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Germanian is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 967 names the key Maus, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|Maus",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Maus is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 4899 names the key Perkele-tankki, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|Perkele-tankki",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Perkele-tankki is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 780 names the key Player, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|Player",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Player is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 1190 names the key REPLYTEXT, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|REPLYTEXT",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). REPLYTEXT is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 1098 names the key category, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|category",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). category is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 4107 names the key desc, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|desc",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). desc is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 296 names the key elections, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|elections",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). elections is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 3762 names the key filter, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|filter",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). filter is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 287 names the key ideology, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|ideology",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). ideology is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 3785 names the key invasion, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|invasion",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). invasion is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrydiplomacyview.gui",
+   "message": "Window text at line 277 names the key party, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrydiplomacyview.gui|party",
+   "reason": "UI lane W2: interface/countrydiplomacyview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). party is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "Window text at line 763 names the key Government, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrypoliticsview.gui|Government",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Government is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "Window text at line 347 names the key autonomy, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrypoliticsview.gui|autonomy",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). autonomy is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "Window text at line 124 names the key elections, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrypoliticsview.gui|elections",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). elections is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "Window text at line 115 names the key ideology, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrypoliticsview.gui|ideology",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). ideology is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "Window text at line 590 names the key leader_name, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrypoliticsview.gui|leader_name",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). leader_name is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/countrypoliticsview.gui",
+   "message": "Window text at line 1094 names the key name, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/countrypoliticsview.gui|name",
+   "reason": "UI lane W2: interface/countrypoliticsview.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). name is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/peaceconferencewindow.gui",
+   "message": "Window text at line 875 names the key Country, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/peaceconferencewindow.gui|Country",
+   "reason": "UI lane W2: interface/peaceconferencewindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Country is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/peaceconferencewindow.gui",
+   "message": "Window text at line 45 names the key PEACE_PEACE_CONFERENCE, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/peaceconferencewindow.gui|PEACE_PEACE_CONFERENCE",
+   "reason": "UI lane W2: interface/peaceconferencewindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). PEACE_PEACE_CONFERENCE is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/peaceconferencewindow.gui",
+   "message": "Window text at line 467 names the key Score, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/peaceconferencewindow.gui|Score",
+   "reason": "UI lane W2: interface/peaceconferencewindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Score is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/peaceconferencewindow.gui",
+   "message": "Window text at line 457 names the key USSR, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/peaceconferencewindow.gui|USSR",
+   "reason": "UI lane W2: interface/peaceconferencewindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). USSR is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/peaceconferencewindow.gui",
+   "message": "Window text at line 484 names the key tension, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/peaceconferencewindow.gui|tension",
+   "reason": "UI lane W2: interface/peaceconferencewindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). tension is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "Window text at line 348 names the key Maus, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/popupwindow.gui|Maus",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Maus is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "Window text at line 1112 names the key OK, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/popupwindow.gui|OK",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). OK is the button text of a vanilla confirmation popup; it has no value in vanilla either and reads as the literal word OK, exactly as in vanilla (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "Window text at line 35 names the key Title, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/popupwindow.gui|Title",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). Title is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/popupwindow.gui",
+   "message": "Window text at line 475 names the key desc, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/popupwindow.gui|desc",
+   "reason": "UI lane W2: interface/popupwindow.gui is the installed vanilla file with only its chrome sprite names swapped (modules/ui_chancery.mjs). desc is vanilla placeholder text in an engine-filled text box (names, values, ideology, elections, titles); the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "SPRITE_UNDEFINED",
+   "severity": "error",
+   "path": "interface/countrydecisionview.gui",
+   "message": "spriteType at line 334 names GFX_category_end_bg, which no shipped or kept vanilla .gfx file defines.",
+   "key": "SPRITE_UNDEFINED|interface/countrydecisionview.gui|GFX_category_end_bg",
+   "reason": "UI lane W2: vanilla 1.19.3 interface/countrydecisionview.gui names GFX_category_end_bg and no installed .gfx file defines it, so the engine draws nothing there in vanilla as in ZIN; the element is kept because the override keeps every vanilla element (handoff docs/plans/ui_overhaul/handoffs/W2.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/frontendgamesetupview.gui",
+   "message": "quadTextureSprite at line 53 names the engine fallback sprite GFX_idea_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/frontendgamesetupview.gui|GFX_idea_unknown",
+   "reason": "UI lane W6: interface/frontendgamesetupview.gui is the installed vanilla file with some windows patched (modules/ui_frontend.mjs). GFX_idea_unknown is the default of the spirit_idea_entry template, an engine slot the game fills with each bookmark entry's starting spirit; every bookmark spirit is a defined ZIN idea (modules/frontend.mjs checks it), so no fallback is shown (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
+  },
+  {
+   "code": "FALLBACK_HIT",
+   "severity": "error",
+   "path": "interface/frontendgamesetupview.gui",
+   "message": "quadTextureSprite at line 134 names the engine fallback sprite GFX_leader_unknown; a fallback must never stand where a real picture should be.",
+   "key": "FALLBACK_HIT|interface/frontendgamesetupview.gui|GFX_leader_unknown",
+   "reason": "UI lane W6: the country_leader button of the country_entry template is an engine slot the game fills with the realm's ruler portrait; vanilla names the same sprite there (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/frontendgamesetupview.gui",
+   "message": "Window text at line 38 names the key FE_BOOKMARK_DATE, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/frontendgamesetupview.gui|FE_BOOKMARK_DATE",
+   "reason": "UI lane W6: FE_BOOKMARK_DATE is a key of the installed vanilla interface/frontendgamesetupview.gui that has no English value in vanilla either; the engine fills or ignores the element (bookmark date line, pick-random tooltips) and the override keeps the vanilla element unchanged (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/frontendgamesetupview.gui",
+   "message": "Window text at line 1317 names the key FE_INTERESTING_MAJORS_TOOLTIP, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/frontendgamesetupview.gui|FE_INTERESTING_MAJORS_TOOLTIP",
+   "reason": "UI lane W6: FE_INTERESTING_MAJORS_TOOLTIP is a key of the installed vanilla interface/frontendgamesetupview.gui that has no English value in vanilla either; the engine fills or ignores the element (bookmark date line, pick-random tooltips) and the override keeps the vanilla element unchanged (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/frontendgamesetupview.gui",
+   "message": "Window text at line 1336 names the key FE_INTERESTING_MINORS_TOOLTIP, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/frontendgamesetupview.gui|FE_INTERESTING_MINORS_TOOLTIP",
+   "reason": "UI lane W6: FE_INTERESTING_MINORS_TOOLTIP is a key of the installed vanilla interface/frontendgamesetupview.gui that has no English value in vanilla either; the engine fills or ignores the element (bookmark date line, pick-random tooltips) and the override keeps the vanilla element unchanged (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/frontendgamesetupview.gui",
+   "message": "Window text at line 1355 names the key FE_OTHER_COUNTRIES_TOOLTIP, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/frontendgamesetupview.gui|FE_OTHER_COUNTRIES_TOOLTIP",
+   "reason": "UI lane W6: FE_OTHER_COUNTRIES_TOOLTIP is a key of the installed vanilla interface/frontendgamesetupview.gui that has no English value in vanilla either; the engine fills or ignores the element (bookmark date line, pick-random tooltips) and the override keeps the vanilla element unchanged (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
+  },
+  {
+   "code": "LOC_KEY_MISSING",
+   "severity": "error",
+   "path": "interface/frontendmainview.gui",
+   "message": "Window text at line 460 names the key ALPHA, which has no value in the English set.",
+   "key": "LOC_KEY_MISSING|interface/frontendmainview.gui|ALPHA",
+   "reason": "UI lane W6: ALPHA is the vanilla placeholder of version_label in interface/frontendmainview.gui; the engine writes the game version into it at runtime (handoff docs/plans/ui_overhaul/handoffs/W6.md)."
   }
  ]
 }

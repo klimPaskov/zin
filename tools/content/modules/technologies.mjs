@@ -13,16 +13,16 @@
 //
 // Everything is deterministic: rows are sorted, numbers are rounded to three places, and no clock or random source is read.
 import { readFile, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { GAME, ZIN } from '../lib/paths.mjs';
+import { GAME } from '../lib/paths.mjs';
 import { yml } from '../lib/core.mjs';
 import { START_SHOWN } from '../lib/calendar.mjs';
 import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { layoutFolders, bandY, ruleCost, clauseAdmits, whoAdmits, whoCovered, SLOT, ORIGIN } from '../lib/tech_layout.mjs';
 import { defaultPeople, PEOPLES } from './peoples.mjs';
 import { techTreeGui } from '../lib/tech_tree_gui.mjs';
+import { buildResearchUi, tabSprite } from './ui_research.mjs';
 import { ADVANCED_CATEGORY, DEVELOPMENT_EFFECTS, prepareWays, gameCultures, prepareDevelopment, developmentAi, wayAndTierTriggers, writeDevelopment } from '../lib/tech_development.mjs';
 import { buildDoctrineArt, doctrineTexture, loadDoctrineArtCells, assertDoctrineArtComplete } from './doctrine_art.mjs';
 import { buildTechnologyArt, loadTechnologyArtCells, assertTechnologyArtComplete, techTexture, BLANK_TEXTURE } from './technology_art.mjs';
@@ -897,7 +897,6 @@ function spriteFile(title, entries) {
   L.push('}');
   return L.join('\n');
 }
-const textureFor = (dir, key) => existsSync(`${ZIN}/${dir}/${key}.dds`) ? `${dir}/${key}.dds` : FALLBACK_TEXTURE;
 
 export function technologyIconKeys(model) { return model.techs.filter(t => !t.grantOnly).map(t => `GFX_${t.key}_medium`).sort(); }
 export function doctrineIconKeys(model) {
@@ -965,19 +964,19 @@ export async function buildTechnologies(staged, ctx) {
   staged.text(DOCTRINE_FILES.grand, grandDoctrines(model));
   for (const f of ['land', 'naval', 'air', 'special_forces']) staged.text(DOCTRINE_FILES[f], subdoctrines(model, f));
   // sprites
-  // The tabs of the ZIN folders (GFX_<folder>_tab; their art is pending, the tab says the folder's name until then). The kept folders keep
-  // their vanilla tabs.
-  const zinFolders = Object.keys(FOLDER_FILES).filter(f => !KEPT_FOLDERS.has(f));
   // Technology art (modules/technology_art.mjs): an accepted sheet ships its own DDS per sprite; any other sprite keeps the unknown icon.
   const techCells = await loadTechnologyArtCells();
   const techShipped = await buildTechnologyArt(staged, { warn: msg => process.stderr.write(`technology art: ${msg}\n`) });
   assertTechnologyArtComplete(techCells, techShipped);
   const techTex = key => techShipped.has(key) ? techTexture(key) : FALLBACK_TEXTURE;
-  staged.text('interface/zin_technologies.gfx', spriteFile('Technology tile icons, GFX_<technology>_medium, and the tabs of the ZIN folders, GFX_<folder>_tab.', [...model.techs.filter(t => !t.grantOnly).map(t => [`GFX_${t.key}_medium`, techTex(t.key)]), ...zinFolders.map(f => [`GFX_${f}_tab`, textureFor('gfx/interface/techtree/zin', `${f}_tab`)]), ['GFX_zin_technology_blank', BLANK_TEXTURE]].sort(([a], [b]) => a.localeCompare(b, 'en'))));
+  staged.text('interface/zin_technologies.gfx', spriteFile('Technology tile icons, GFX_<technology>_medium.', [...model.techs.filter(t => !t.grantOnly).map(t => [`GFX_${t.key}_medium`, techTex(t.key)]), ['GFX_zin_technology_blank', BLANK_TEXTURE]].sort(([a], [b]) => a.localeCompare(b, 'en'))));
   // The technology tree window (spec section 5.8): generated from the installed file with one window per folder and a gridbox for every
   // root, so no technology is without its grid box ("Found no grid box for tech").
   const installedGui = await readFile(`${GAME}/interface/countrytechtreeview.gui`, 'latin1');
-  staged.add('interface/countrytechtreeview.gui', Buffer.from(techTreeGui(installedGui, { folders: Object.keys(FOLDER_FILES).map(key => ({ key })), layout: model.layout.folders, tabSprite: f => `GFX_${f}_tab`, blankIcon: 'GFX_zin_technology_blank' }), 'latin1'));
+  staged.add('interface/countrytechtreeview.gui', Buffer.from(techTreeGui(installedGui, { folders: Object.keys(FOLDER_FILES).map(key => ({ key })), layout: model.layout.folders, tabSprite, blankIcon: 'GFX_zin_technology_blank', board: 'GFX_zin_techtree_board' }), 'latin1'));
+  // The tree window's folder tabs, board and Sealed Works medallions, and the Chronicle overrides of the focus and research windows
+  // (modules/ui_research.mjs, UI overhaul lane W3).
+  await buildResearchUi(staged, { folders: Object.keys(FOLDER_FILES), gates: model.gates });
   // Doctrine art (modules/doctrine_art.mjs): an accepted sheet ships its own DDS per sprite; any other sprite keeps the frame.
   const doctrineCells = await loadDoctrineArtCells();
   const doctrineShipped = await buildDoctrineArt(staged, { warn: msg => process.stderr.write(`doctrine art: ${msg}\n`) });

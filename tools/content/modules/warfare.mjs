@@ -24,6 +24,7 @@ import { GAME, ZIN } from '../lib/paths.mjs';
 import { placeNames, buildNames } from './names.mjs';
 import { compileBanned, findBanned, allowanceCovers } from '../lib/banned.mjs';
 import { cultureRows, gamePeopleOf } from '../lib/roster.mjs';
+import { buildEquipmentArt, equipmentTexture, loadEquipmentArtCells, assertEquipmentArtComplete, EQUIP_FRAME } from './equipment_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -875,17 +876,15 @@ function writeSprites(staged, model) {
     unitSprites.push(sprite(`GFX_unit_${id}_icon_small`, textureFor('gfx/interface/counters/zin_small', id)));
   }
   staged.text('interface/zin_units.gfx', `${HEADER}\n# Counters of the ZIN sub-units. A counter without generated art points at the ZIN frame until the art arrives.\nspriteTypes = {\n${unitSprites.join('\n')}\n}\n`);
+  // Equipment pictures (equipment_art.mjs, lane I2): one per archetype and one per type, 151 sprites. A sprite whose picture has not
+  // shipped points at the family unknown icon. The vanilla names convoy, train_equipment and motorized_equipment are ZIN's own pictures now.
+  const eqTex = (kind, key) => ({ file: model.equipmentArt.has(key) ? equipmentTexture(kind, key) : EQUIP_FRAME, frames: 1 });
   const eq = [];
   for (const a of model.archById.values()) {
-    eq.push(sprite(`GFX_archetype_${a.id}_medium`, textureFor('gfx/interface/archetypes/zin', a.id, 1)));
-    for (const v of a.variants) eq.push(sprite(`GFX_${a.logistics || a.slots ? `${a.id}_${v.n}` : variantId(a, v)}_medium`, textureFor('gfx/interface/equipment/zin', a.logistics || a.slots ? `${a.id}_${v.n}` : variantId(a, v), 1)));
+    eq.push(sprite(`GFX_archetype_${a.id}_medium`, eqTex('archetype', a.id)));
+    for (const v of a.variants) { const key = a.logistics || a.slots ? `${a.id}_${v.n}` : variantId(a, v); eq.push(sprite(`GFX_${key}_medium`, eqTex('type', key))); }
   }
-  // The kept keys convoy, train_equipment and motorized_equipment have sprites in the vanilla interface/Technologies.gfx, which stays loaded
-  // (the technology slice keeps it): defining them again logs a duplicate, so those names are left to that file until the art pass.
-  const vanillaSprites = new Set();
-  for (const f of readdirSync(`${GAME}/interface`).filter(f => f.endsWith('.gfx'))) for (const m of readFileSync(`${GAME}/interface/${f}`, 'utf8').matchAll(/name\s*=\s*"([^"]+)"/g)) vanillaSprites.add(m[1]);
-  const eqKept = eq.filter(s => !vanillaSprites.has(/name\s*=\s*"([^"]+)"/.exec(s)?.[1]));
-  staged.text('interface/zin_equipment.gfx', `${HEADER}\n# Equipment pictures (146x54). An equipment without generated art points at the ZIN frame.\nspriteTypes = {\n${eqKept.join('\n')}\n}\n`);
+  staged.text('interface/zin_equipment.gfx', `${HEADER}\n# Equipment pictures (146x54). A picture that has not shipped points at the ZIN unknown icon.\nspriteTypes = {\n${eq.join('\n')}\n}\n`);
 }
 
 const STATES = [
@@ -1017,6 +1016,10 @@ export async function buildWarfare(staged, ctx = {}) {
   writeGroupsAndTags(staged, model);
   writeTactics(staged, model);
   buildNameFiles(staged, model, ctx);
+  // Equipment pictures (lane I2): an accepted sheet ships its own DDS per sprite; any other sprite keeps the family unknown icon.
+  const eqCells = await loadEquipmentArtCells();
+  model.equipmentArt = await buildEquipmentArt(staged, { warn: msg => process.stderr.write(`equipment art: ${msg}\n`) });
+  assertEquipmentArtComplete(eqCells, model.equipmentArt);
   writeSprites(staged, model);
   writeEntities(staged, model);
   writeDragons(staged, model);

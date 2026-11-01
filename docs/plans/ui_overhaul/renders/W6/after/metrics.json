@@ -1,0 +1,1983 @@
+{
+ "tool": "hoi4.gui_render 4.6.1",
+ "runtime": "C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v461/node_modules/hoi4-agent-tools",
+ "staged": "C:/Users/klimp/AppData/Local/Temp/claude/C--Users-klimp-OneDrive-Documents-Paradox-Interactive-Hearts-of-Iron-IV-mod-zin/6d26876d-fb43-42f0-9f17-1cf27cba23b2/scratchpad/tmp-w6b/zin-content-staged",
+ "renders": 51,
+ "errors": 2,
+ "thresholds": {
+  "contrastSmall": 4.5,
+  "contrastLarge": 3,
+  "largePx": 20,
+  "ground": 0.06
+ },
+ "totals": {
+  "texts": 304,
+  "contrast": 6,
+  "ground": 9,
+  "rawKeys": 7,
+  "overflow": 0,
+  "small": 66
+ },
+ "sheets": [
+  "vanilla_frontend_menus.png",
+  "w6_frontend.png"
+ ],
+ "focus": [],
+ "results": [
+  {
+   "label": "v_frontend_background_1280",
+   "window": "frontend_background",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 19,
+    "MCP_INLINE_FILES_TRUNCATED": 1
+   },
+   "sha256": "56a8936a5c0991db58c5a2f76eaae80e17c9386c50d69d2676814fb91b0cc4b1",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "v_frontend_background_1920",
+   "window": "frontend_background",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 19,
+    "MCP_INLINE_FILES_TRUNCATED": 1
+   },
+   "sha256": "0422ca973f80292d5b24aa0f94813466eb5c8f2ffc596b496665de036c38e37d",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "v_frontend_background_long",
+   "window": "frontend_background",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 19,
+    "MCP_INLINE_FILES_TRUNCATED": 1
+   },
+   "sha256": "0422ca973f80292d5b24aa0f94813466eb5c8f2ffc596b496665de036c38e37d",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 13
+  },
+  {
+   "label": "v_frontendgamesetupview_1280",
+   "window": "frontendgamesetupview",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 9,
+    "GUI_MISSING_LOCALISATION": 2,
+    "GUI_CONFLICTING_CLICK_REGIONS": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 5
+   },
+   "sha256": "3bb1076ddd3c314340106f88387b180d7ebbde4cb02d5087e3bbe992ca17dff9",
+   "metrics": {
+    "texts": 2,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_frontendgamesetupview_1920",
+   "window": "frontendgamesetupview",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 9,
+    "GUI_MISSING_LOCALISATION": 2,
+    "GUI_CONFLICTING_CLICK_REGIONS": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 5
+   },
+   "sha256": "97f747aaf85054c0b375dc1b7d6cac2669ddec08d67083f9c2043d3b09f2bb7b",
+   "metrics": {
+    "texts": 2,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_frontendgamesetupview_long",
+   "window": "frontendgamesetupview",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 9,
+    "GUI_MISSING_LOCALISATION": 2,
+    "GUI_CONFLICTING_CLICK_REGIONS": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 5
+   },
+   "sha256": "97f747aaf85054c0b375dc1b7d6cac2669ddec08d67083f9c2043d3b09f2bb7b",
+   "metrics": {
+    "texts": 2,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "v_game_rule_window_1280",
+   "window": "game_rule_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "dc52ff8038130ea3a2d6af1a9b66783d7e60cf1e54959408b641bb11dbdc92ef",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "v_game_rule_window_1920",
+   "window": "game_rule_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "ece077970870bd8fd08f65b0a29c5fd3016ab76657893632362f9c6fd6400e43",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 13
+  },
+  {
+   "label": "v_game_rule_window_long",
+   "window": "game_rule_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "ece077970870bd8fd08f65b0a29c5fd3016ab76657893632362f9c6fd6400e43",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_gamesetup_country_details_1280",
+   "window": "gamesetup_country_details",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "GUI_MISSING_SPRITE": 1,
+    "GUI_SPRITE_MISSING": 1
+   },
+   "sha256": "3d21e75b84f4b4a66bc1f582d2d889a15c8b7460544026b0f02dc98c47962f7f",
+   "metrics": {
+    "texts": 5,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_gamesetup_country_details_1920",
+   "window": "gamesetup_country_details",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "GUI_MISSING_SPRITE": 1,
+    "GUI_SPRITE_MISSING": 1
+   },
+   "sha256": "33eb19d1735a812da9cabf459593ff1aaa95caadb24f9e60d6522709b3870eb1",
+   "metrics": {
+    "texts": 5,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_gamesetup_country_details_long",
+   "window": "gamesetup_country_details",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "GUI_MISSING_SPRITE": 1,
+    "GUI_SPRITE_MISSING": 1
+   },
+   "sha256": "33eb19d1735a812da9cabf459593ff1aaa95caadb24f9e60d6522709b3870eb1",
+   "metrics": {
+    "texts": 5,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_ingamemenu_1280",
+   "window": "ingamemenu",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 8,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 10
+   },
+   "sha256": "aaa2e78cfac1bc90efc0174502f9384b3dea29468a6025c58d6d7c2b9743e194",
+   "metrics": {
+    "texts": 6,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "v_ingamemenu_1920",
+   "window": "ingamemenu",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 8,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 10
+   },
+   "sha256": "3d9f4e7464c2c88b2a19e98ac9f7d2014734a9d30b368a3b4023e2fe499cd0bd",
+   "metrics": {
+    "texts": 6,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "v_ingamemenu_long",
+   "window": "ingamemenu",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 8,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 10
+   },
+   "sha256": "3d9f4e7464c2c88b2a19e98ac9f7d2014734a9d30b368a3b4023e2fe499cd0bd",
+   "metrics": {
+    "texts": 6,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "v_load_screen_1280",
+   "window": "load_screen",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14,
+    "GUI_SPRITE_DECLARED_SIZE_MISMATCH": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1
+   },
+   "sha256": "211ab952ec9b1c3b1290307775ef2b51a7b742ada0c6668acbb2776f31094dd1",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "v_load_screen_1920",
+   "window": "load_screen",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 14,
+    "GUI_SPRITE_DECLARED_SIZE_MISMATCH": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1
+   },
+   "sha256": "00c9a9b386be57fdb605050f72ff041724e46ab64cf77e8565219dca41e9094e",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "v_load_screen_long",
+   "window": "load_screen",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13,
+    "GUI_SPRITE_DECLARED_SIZE_MISMATCH": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 2,
+    "GUI_CHILD_OUTSIDE_CLIPPED_PARENT": 1
+   },
+   "sha256": "00c9a9b386be57fdb605050f72ff041724e46ab64cf77e8565219dca41e9094e",
+   "metrics": {
+    "texts": 0,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_mainmenu_panel_bottom_1280",
+   "window": "mainmenu_panel_bottom",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "5bb46fda97ab247a91c13715eb3f485eaf793d4540ea190c99f4e72f3d077582",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "v_mainmenu_panel_bottom_1920",
+   "window": "mainmenu_panel_bottom",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "1a8a8532a0ecc76afa59cfc7a5762e28f0ab7fe347f28e1082d30c3ae804ca31",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "v_mainmenu_panel_bottom_long",
+   "window": "mainmenu_panel_bottom",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "1a8a8532a0ecc76afa59cfc7a5762e28f0ab7fe347f28e1082d30c3ae804ca31",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "v_mainmenu_single_player_1280",
+   "window": "mainmenu_single_player",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "340db9ae20b6c2276e92dfd68dc7afafb78e4d4102aba0c85fc6e1c53d7aed55",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 6
+  },
+  {
+   "label": "v_mainmenu_single_player_1920",
+   "window": "mainmenu_single_player",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "40349095b8bcb5eb97eeba7113de09338b2063d7cea5842f6ba68b737bd07d9b",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 6
+  },
+  {
+   "label": "v_mainmenu_single_player_long",
+   "window": "mainmenu_single_player",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 2,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "40349095b8bcb5eb97eeba7113de09338b2063d7cea5842f6ba68b737bd07d9b",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "v_menu_settings_1280",
+   "window": "menu_settings",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "neutral",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_CONFLICTING_CLICK_REGIONS": 19
+   },
+   "sha256": "e88d716a89c9ada290b5c19dbba2b8a809d35f209927ef4fda30e8468af8f5b4",
+   "metrics": {
+    "texts": 31,
+    "contrast": [
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "ratio": 4.24,
+      "need": 4.5,
+      "fg": "#000000ff",
+      "bg": "#856c4d"
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "ratio": 4.19,
+      "need": 4.5,
+      "fg": "#000000ff",
+      "bg": "#846b4d"
+     }
+    ],
+    "ground": [
+     {
+      "name": "accessibility_stt_shortcut_label",
+      "where": "mod:interface/settings.gui:687",
+      "text": "Speech To Text Toggle Shortcut",
+      "std": 0.133
+     },
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "std": 0.063
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "std": 0.066
+     }
+    ],
+    "rawKeys": [],
+    "overflow": [],
+    "small": [
+     {
+      "name": "gamesettings_label",
+      "where": "mod:interface/settings.gui:74",
+      "text": "Game",
+      "px": 14
+     },
+     {
+      "name": "videosettings_label",
+      "where": "mod:interface/settings.gui:86",
+      "text": "Video",
+      "px": 14
+     },
+     {
+      "name": "audiosettings_label",
+      "where": "mod:interface/settings.gui:98",
+      "text": "Audio",
+      "px": 14
+     },
+     {
+      "name": "controlssettings_label",
+      "where": "mod:interface/settings.gui:110",
+      "text": "Controls",
+      "px": 14
+     },
+     {
+      "name": "mastervolume_label",
+      "where": "mod:interface/settings.gui:130",
+      "text": "Master Volume",
+      "px": 14
+     },
+     {
+      "name": "effectvolume_label",
+      "where": "mod:interface/settings.gui:192",
+      "text": "Effect Volume",
+      "px": 14
+     },
+     {
+      "name": "musicvolume_label",
+      "where": "mod:interface/settings.gui:252",
+      "text": "Music Volume",
+      "px": 14
+     },
+     {
+      "name": "ambient_label",
+      "where": "mod:interface/settings.gui:314",
+      "text": "Ambient Objects",
+      "px": 14
+     },
+     {
+      "name": "voicevolume_label",
+      "where": "mod:interface/settings.gui:398",
+      "text": "Voice Volume",
+      "px": 14
+     },
+     {
+      "name": "scrollspeed_label",
+      "where": "mod:interface/settings.gui:469",
+      "text": "Scroll Speed",
+      "px": 14
+     },
+     {
+      "name": "zoomspeed_label",
+      "where": "mod:interface/settings.gui:531",
+      "text": "Zoom Speed",
+      "px": 14
+     },
+     {
+      "name": "resolution_label",
+      "where": "mod:interface/settings.gui:759",
+      "text": "Resolution",
+      "px": 14
+     },
+     {
+      "name": "refreshrate_label",
+      "where": "mod:interface/settings.gui:803",
+      "text": "Refresh Rate",
+      "px": 14
+     },
+     {
+      "name": "multisample_label",
+      "where": "mod:interface/settings.gui:848",
+      "text": "Multisample Level",
+      "px": 14
+     },
+     {
+      "name": "gamma_label",
+      "where": "mod:interface/settings.gui:893",
+      "text": "Gamma",
+      "px": 14
+     },
+     {
+      "name": "trees_label",
+      "where": "mod:interface/settings.gui:990",
+      "text": "3D Trees",
+      "px": 14
+     },
+     {
+      "name": "fullscreen_label",
+      "where": "mod:interface/settings.gui:1014",
+      "text": "Fullscreen",
+      "px": 14
+     },
+     {
+      "name": "borderless_label",
+      "where": "mod:interface/settings.gui:1038",
+      "text": "Borderless",
+      "px": 14
+     },
+     {
+      "name": "autosave_label",
+      "where": "mod:interface/settings.gui:1059",
+      "text": "Autosave Interval",
+      "px": 14
+     },
+     {
+      "name": "skip_setup_label",
+      "where": "mod:interface/settings.gui:1123",
+      "text": "Skip simple setup",
+      "px": 14
+     },
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "px": 14
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "px": 14
+     }
+    ]
+   },
+   "seconds": 9
+  },
+  {
+   "label": "v_menu_settings_1920",
+   "window": "menu_settings",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "neutral",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_CONFLICTING_CLICK_REGIONS": 19
+   },
+   "sha256": "4ffba924c82de431cd4cdc2c1fc7d8cc740e5a2073b31cf5034e332327a9ad42",
+   "metrics": {
+    "texts": 31,
+    "contrast": [
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "ratio": 4.24,
+      "need": 4.5,
+      "fg": "#000000ff",
+      "bg": "#856c4d"
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "ratio": 4.19,
+      "need": 4.5,
+      "fg": "#000000ff",
+      "bg": "#846b4d"
+     }
+    ],
+    "ground": [
+     {
+      "name": "accessibility_stt_shortcut_label",
+      "where": "mod:interface/settings.gui:687",
+      "text": "Speech To Text Toggle Shortcut",
+      "std": 0.133
+     },
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "std": 0.063
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "std": 0.066
+     }
+    ],
+    "rawKeys": [],
+    "overflow": [],
+    "small": [
+     {
+      "name": "gamesettings_label",
+      "where": "mod:interface/settings.gui:74",
+      "text": "Game",
+      "px": 14
+     },
+     {
+      "name": "videosettings_label",
+      "where": "mod:interface/settings.gui:86",
+      "text": "Video",
+      "px": 14
+     },
+     {
+      "name": "audiosettings_label",
+      "where": "mod:interface/settings.gui:98",
+      "text": "Audio",
+      "px": 14
+     },
+     {
+      "name": "controlssettings_label",
+      "where": "mod:interface/settings.gui:110",
+      "text": "Controls",
+      "px": 14
+     },
+     {
+      "name": "mastervolume_label",
+      "where": "mod:interface/settings.gui:130",
+      "text": "Master Volume",
+      "px": 14
+     },
+     {
+      "name": "effectvolume_label",
+      "where": "mod:interface/settings.gui:192",
+      "text": "Effect Volume",
+      "px": 14
+     },
+     {
+      "name": "musicvolume_label",
+      "where": "mod:interface/settings.gui:252",
+      "text": "Music Volume",
+      "px": 14
+     },
+     {
+      "name": "ambient_label",
+      "where": "mod:interface/settings.gui:314",
+      "text": "Ambient Objects",
+      "px": 14
+     },
+     {
+      "name": "voicevolume_label",
+      "where": "mod:interface/settings.gui:398",
+      "text": "Voice Volume",
+      "px": 14
+     },
+     {
+      "name": "scrollspeed_label",
+      "where": "mod:interface/settings.gui:469",
+      "text": "Scroll Speed",
+      "px": 14
+     },
+     {
+      "name": "zoomspeed_label",
+      "where": "mod:interface/settings.gui:531",
+      "text": "Zoom Speed",
+      "px": 14
+     },
+     {
+      "name": "resolution_label",
+      "where": "mod:interface/settings.gui:759",
+      "text": "Resolution",
+      "px": 14
+     },
+     {
+      "name": "refreshrate_label",
+      "where": "mod:interface/settings.gui:803",
+      "text": "Refresh Rate",
+      "px": 14
+     },
+     {
+      "name": "multisample_label",
+      "where": "mod:interface/settings.gui:848",
+      "text": "Multisample Level",
+      "px": 14
+     },
+     {
+      "name": "gamma_label",
+      "where": "mod:interface/settings.gui:893",
+      "text": "Gamma",
+      "px": 14
+     },
+     {
+      "name": "trees_label",
+      "where": "mod:interface/settings.gui:990",
+      "text": "3D Trees",
+      "px": 14
+     },
+     {
+      "name": "fullscreen_label",
+      "where": "mod:interface/settings.gui:1014",
+      "text": "Fullscreen",
+      "px": 14
+     },
+     {
+      "name": "borderless_label",
+      "where": "mod:interface/settings.gui:1038",
+      "text": "Borderless",
+      "px": 14
+     },
+     {
+      "name": "autosave_label",
+      "where": "mod:interface/settings.gui:1059",
+      "text": "Autosave Interval",
+      "px": 14
+     },
+     {
+      "name": "skip_setup_label",
+      "where": "mod:interface/settings.gui:1123",
+      "text": "Skip simple setup",
+      "px": 14
+     },
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "px": 14
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "px": 14
+     }
+    ]
+   },
+   "seconds": 13
+  },
+  {
+   "label": "v_menu_settings_long",
+   "window": "menu_settings",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "neutral",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_CONFLICTING_CLICK_REGIONS": 19
+   },
+   "sha256": "4ffba924c82de431cd4cdc2c1fc7d8cc740e5a2073b31cf5034e332327a9ad42",
+   "metrics": {
+    "texts": 31,
+    "contrast": [
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "ratio": 4.24,
+      "need": 4.5,
+      "fg": "#000000ff",
+      "bg": "#856c4d"
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "ratio": 4.19,
+      "need": 4.5,
+      "fg": "#000000ff",
+      "bg": "#846b4d"
+     }
+    ],
+    "ground": [
+     {
+      "name": "accessibility_stt_shortcut_label",
+      "where": "mod:interface/settings.gui:687",
+      "text": "Speech To Text Toggle Shortcut",
+      "std": 0.133
+     },
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "std": 0.063
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "std": 0.066
+     }
+    ],
+    "rawKeys": [],
+    "overflow": [],
+    "small": [
+     {
+      "name": "gamesettings_label",
+      "where": "mod:interface/settings.gui:74",
+      "text": "Game",
+      "px": 14
+     },
+     {
+      "name": "videosettings_label",
+      "where": "mod:interface/settings.gui:86",
+      "text": "Video",
+      "px": 14
+     },
+     {
+      "name": "audiosettings_label",
+      "where": "mod:interface/settings.gui:98",
+      "text": "Audio",
+      "px": 14
+     },
+     {
+      "name": "controlssettings_label",
+      "where": "mod:interface/settings.gui:110",
+      "text": "Controls",
+      "px": 14
+     },
+     {
+      "name": "mastervolume_label",
+      "where": "mod:interface/settings.gui:130",
+      "text": "Master Volume",
+      "px": 14
+     },
+     {
+      "name": "effectvolume_label",
+      "where": "mod:interface/settings.gui:192",
+      "text": "Effect Volume",
+      "px": 14
+     },
+     {
+      "name": "musicvolume_label",
+      "where": "mod:interface/settings.gui:252",
+      "text": "Music Volume",
+      "px": 14
+     },
+     {
+      "name": "ambient_label",
+      "where": "mod:interface/settings.gui:314",
+      "text": "Ambient Objects",
+      "px": 14
+     },
+     {
+      "name": "voicevolume_label",
+      "where": "mod:interface/settings.gui:398",
+      "text": "Voice Volume",
+      "px": 14
+     },
+     {
+      "name": "scrollspeed_label",
+      "where": "mod:interface/settings.gui:469",
+      "text": "Scroll Speed",
+      "px": 14
+     },
+     {
+      "name": "zoomspeed_label",
+      "where": "mod:interface/settings.gui:531",
+      "text": "Zoom Speed",
+      "px": 14
+     },
+     {
+      "name": "resolution_label",
+      "where": "mod:interface/settings.gui:759",
+      "text": "Resolution",
+      "px": 14
+     },
+     {
+      "name": "refreshrate_label",
+      "where": "mod:interface/settings.gui:803",
+      "text": "Refresh Rate",
+      "px": 14
+     },
+     {
+      "name": "multisample_label",
+      "where": "mod:interface/settings.gui:848",
+      "text": "Multisample Level",
+      "px": 14
+     },
+     {
+      "name": "gamma_label",
+      "where": "mod:interface/settings.gui:893",
+      "text": "Gamma",
+      "px": 14
+     },
+     {
+      "name": "trees_label",
+      "where": "mod:interface/settings.gui:990",
+      "text": "3D Trees",
+      "px": 14
+     },
+     {
+      "name": "fullscreen_label",
+      "where": "mod:interface/settings.gui:1014",
+      "text": "Fullscreen",
+      "px": 14
+     },
+     {
+      "name": "borderless_label",
+      "where": "mod:interface/settings.gui:1038",
+      "text": "Borderless",
+      "px": 14
+     },
+     {
+      "name": "autosave_label",
+      "where": "mod:interface/settings.gui:1059",
+      "text": "Autosave Interval",
+      "px": 14
+     },
+     {
+      "name": "skip_setup_label",
+      "where": "mod:interface/settings.gui:1123",
+      "text": "Skip simple setup",
+      "px": 14
+     },
+     {
+      "name": "ApplyButton",
+      "where": "mod:interface/settings.gui:1143",
+      "text": "Apply",
+      "px": 14
+     },
+     {
+      "name": "BackButton",
+      "where": "mod:interface/settings.gui:1154",
+      "text": "Back",
+      "px": 14
+     }
+    ]
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_w6_menu_bottom_1280",
+   "window": "mainmenu_panel_bottom",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "5bb46fda97ab247a91c13715eb3f485eaf793d4540ea190c99f4e72f3d077582",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_menu_bottom_1920",
+   "window": "mainmenu_panel_bottom",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "1a8a8532a0ecc76afa59cfc7a5762e28f0ab7fe347f28e1082d30c3ae804ca31",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_menu_bottom_2560",
+   "window": "mainmenu_panel_bottom",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "8d871d8920729b75f7ca13f739e33e5767e695b977bcfd8a9f620788d0267e28",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  },
+  {
+   "label": "z_w6_menu_bottom_long",
+   "window": "mainmenu_panel_bottom",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "GUI_MISSING_LOCALISATION": 2,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_ACCIDENTAL_CLIPPING": 1,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "1a8a8532a0ecc76afa59cfc7a5762e28f0ab7fe347f28e1082d30c3ae804ca31",
+   "metrics": {
+    "texts": 7,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [
+     {
+      "name": "version_label",
+      "where": "mod:interface/frontendmainview.gui:454",
+      "text": "ALPHA"
+     }
+    ],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 9
+  },
+  {
+   "label": "z_w6_menu_single_1280",
+   "window": "mainmenu_single_player",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "340db9ae20b6c2276e92dfd68dc7afafb78e4d4102aba0c85fc6e1c53d7aed55",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_menu_single_1920",
+   "window": "mainmenu_single_player",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "40349095b8bcb5eb97eeba7113de09338b2063d7cea5842f6ba68b737bd07d9b",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_menu_single_2560",
+   "window": "mainmenu_single_player",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 1,
+    "GUI_STATE_COVERAGE_MISSING": 13
+   },
+   "sha256": "4055d73901b06ced15cbf9cc53f852b6d58af577b474a63f06d82993559b4195",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_menu_single_long",
+   "window": "mainmenu_single_player",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": "banner_hall",
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 3,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_SPRITE_RENDER_PARTIAL": 1,
+    "GUI_VISIBLE_OVERLAP": 2,
+    "GUI_STATE_COVERAGE_MISSING": 12
+   },
+   "sha256": "40349095b8bcb5eb97eeba7113de09338b2063d7cea5842f6ba68b737bd07d9b",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 18
+  },
+  {
+   "label": "z_w6_menu_upperleft_1280",
+   "window": "mainmenu_panel_upperleft",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 2
+   },
+   "sha256": "05e72020bc7e045d380bb73f5257cc05d6d55f780e126ade8fea5e204b5f5f03",
+   "metrics": {
+    "texts": 3,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 6
+  },
+  {
+   "label": "z_w6_menu_upperleft_1920",
+   "window": "mainmenu_panel_upperleft",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 2
+   },
+   "sha256": "3b581de62dde58b5c8cfcf465dd1e30c581828b286d91839b0fcaa07f3648638",
+   "metrics": {
+    "texts": 3,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_menu_upperleft_2560",
+   "window": "mainmenu_panel_upperleft",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 2
+   },
+   "sha256": "ab0789fe6125545252ed338068180851a3460122540d7801976c7ede63db0e68",
+   "metrics": {
+    "texts": 3,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_menu_upperleft_long",
+   "window": "mainmenu_panel_upperleft",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "GUI_REFERENCE_UNRESOLVED": 17,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 2
+   },
+   "sha256": "3b581de62dde58b5c8cfcf465dd1e30c581828b286d91839b0fcaa07f3648638",
+   "metrics": {
+    "texts": 3,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_rules_1280",
+   "window": "gamesetup_gameplay_settings_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 14,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 4
+   },
+   "sha256": "5a171a9c88934abb56104f6fc0997aed1f074a477f86e41aff10b4bb8e1217d6",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_rules_1920",
+   "window": "gamesetup_gameplay_settings_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 14,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 4
+   },
+   "sha256": "e9f9c4d65aa8884b7bc7a60e4997d0b7822981002a3d0bb4afbc8058368e9b97",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_rules_2560",
+   "window": "gamesetup_gameplay_settings_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": null,
+   "status": "error",
+   "code": "ARTIFACT_NOT_FOUND",
+   "isError": true,
+   "diagnostics": {},
+   "seconds": 9
+  },
+  {
+   "label": "z_w6_rules_long",
+   "window": "gamesetup_gameplay_settings_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 14,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 4
+   },
+   "sha256": "e9f9c4d65aa8884b7bc7a60e4997d0b7822981002a3d0bb4afbc8058368e9b97",
+   "metrics": {
+    "texts": 9,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_scenario_1280",
+   "window": "gamesetup_scenario_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "a0004b387e0107c364e3a8512e1ee0125cc6736a893bb39905756ba7c160fb14",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 7
+  },
+  {
+   "label": "z_w6_scenario_1920",
+   "window": "gamesetup_scenario_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "8bceaa74439c2ca6d2cb7e5cbcae0820753294f03d59e5db87bee9632b12f941",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_scenario_2560",
+   "window": "gamesetup_scenario_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": null,
+   "status": "error",
+   "code": "ARTIFACT_NOT_FOUND",
+   "isError": true,
+   "diagnostics": {},
+   "seconds": 9
+  },
+  {
+   "label": "z_w6_scenario_long",
+   "window": "gamesetup_scenario_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "8bceaa74439c2ca6d2cb7e5cbcae0820753294f03d59e5db87bee9632b12f941",
+   "metrics": {
+    "texts": 4,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 8
+  },
+  {
+   "label": "z_w6_selection_1280",
+   "window": "gamesetup_interesting_countries_window",
+   "width": 1280,
+   "height": 720,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "5437b67a2e5a7e00892f41bafcf7b581cc2bdb47878effd86f9b8601fc706e2c",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 14
+  },
+  {
+   "label": "z_w6_selection_1920",
+   "window": "gamesetup_interesting_countries_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "d2af78e788573d68c5d001a6e991104a508e700356209b37ecc78c227e282d7e",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 27
+  },
+  {
+   "label": "z_w6_selection_2560",
+   "window": "gamesetup_interesting_countries_window",
+   "width": 2560,
+   "height": 1440,
+   "states": [],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "165de5f773cc623c7f0c66881a29be3f80b79ad629d39735a9fc124d01158fa6",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 11
+  },
+  {
+   "label": "z_w6_selection_long",
+   "window": "gamesetup_interesting_countries_window",
+   "width": 1920,
+   "height": 1080,
+   "states": [
+    "long-text"
+   ],
+   "theme": null,
+   "status": "ok",
+   "code": "GUI_RENDERED",
+   "isError": false,
+   "diagnostics": {
+    "MCP_INLINE_COLLECTIONS_TRUNCATED": 1,
+    "GUI_REFERENCE_UNRESOLVED": 12,
+    "MCP_INLINE_FILES_TRUNCATED": 1,
+    "GUI_STATE_COVERAGE_MISSING": 6
+   },
+   "sha256": "d2af78e788573d68c5d001a6e991104a508e700356209b37ecc78c227e282d7e",
+   "metrics": {
+    "texts": 11,
+    "contrast": [],
+    "ground": [],
+    "rawKeys": [],
+    "overflow": [],
+    "small": []
+   },
+   "seconds": 10
+  }
+ ]
+}

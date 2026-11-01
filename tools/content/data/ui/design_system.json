@@ -106,7 +106,7 @@
   "section": ["hoi_20bs", "hoi_20b"],
   "body": ["hoi_18mbs"],
   "label": ["hoi_16mbs"],
-  "reading": ["garamond_16", "garamond_14_bold", "garamond_24"],
+  "reading": ["garamond_16", "garamond_14_bold", "garamond_24", "hoi4_typewriter16", "hoi4_typewriter22_inverted"],
   "tooltip": ["cg_16b"],
   "allowed_small": ["garamond_14", "hoi_16mbs"],
   "minimumSize": 16,
@@ -137,14 +137,14 @@
   "mio_trait": { "size": [48, 48], "frames": 1, "from": "vanilla GFX_mio_* trait size" },
   "scholar_trait": { "size": [24, 33], "frames": 1, "from": "vanilla GFX_scientist_trait_* size" },
   "doctrine": { "size": [64, 64], "frames": 1, "from": "ZIN doctrine art (K51, K58)" },
-  "faction": { "size": [200, 100], "frames": 2, "from": "vanilla faction logo strip" },
+  "faction": { "size": [100, 100], "frames": 2, "from": "vanilla faction logo strip: 200 x 100, two frames of 100 x 100 (size is per frame)" },
   "map_mode": { "size": [44, 21], "frames": 2, "from": "vanilla small map-mode button; lane I11 confirms" }
  },
  "acceptedChromeSheets": {
-  "note": "Sheet ids accepted as the level-0 chrome of each theme (check 13 chrome.family). Empty until phase 1 (lane C1) delivers the themed chrome sheets; every level-0 window texture is a finding until then. ui-zin-chrome (lane C3, sha256 e01f2235, gpt-6-luna) holds the three themed ZIN window frames; accepted by the lane on review against design system 1.2 to 1.4 under the phase 1 authorization (handoff C3.md); Lane C1 (31 October 2026) adds the themed vanilla chrome sheets ui-chrome-banner-hall, ui-chrome-chancery, ui-chrome-chronicle and the neutral ui-chrome-neutral, ui-buttons-neutral and ui-controls-small (lib/ui_chrome_sheets.mjs; theme of each texture from data/ui/chrome_themes.json; reviews in art/source/provenance.jsonl; handoff C1.md).",
+  "note": "Sheet ids accepted as the level-0 chrome of each theme (check 13 chrome.family). Empty until phase 1 (lane C1) delivers the themed chrome sheets; every level-0 window texture is a finding until then. ui-zin-chrome (lane C3, sha256 e01f2235, gpt-6-luna) holds the three themed ZIN window frames; accepted by the lane on review against design system 1.2 to 1.4 under the phase 1 authorization (handoff C3.md); Lane C1 (31 October 2026) adds the themed vanilla chrome sheets ui-chrome-banner-hall, ui-chrome-chancery, ui-chrome-chronicle and the neutral ui-chrome-neutral, ui-buttons-neutral and ui-controls-small (lib/ui_chrome_sheets.mjs; theme of each texture from data/ui/chrome_themes.json; reviews in art/source/provenance.jsonl; handoff C1.md). Lane W3 (1 November 2026) adds the regenerated Chronicle focus and research sheets ui-focus, ui-focus-board and ui-research (lib/ui_sheets.mjs; reviews in art/source/provenance.jsonl; handoff W3.md).",
   "banner_hall": ["ui-zin-chrome", "ui-chrome-banner-hall"],
   "chancery": ["ui-zin-chrome", "ui-chrome-chancery"],
-  "chronicle": ["ui-zin-chrome", "ui-chrome-chronicle"],
+  "chronicle": ["ui-zin-chrome", "ui-chrome-chronicle", "ui-focus", "ui-focus-board", "ui-research"],
   "neutral": ["ui-chrome-neutral", "ui-buttons-neutral", "ui-controls-small"]
  },
  "placeholderTextures": [

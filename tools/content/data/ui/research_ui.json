@@ -1,0 +1,58 @@
+{
+ "format": 1,
+ "about": "Sprites and overrides of the focus tree, research, technology tree and doctrine windows (UI overhaul lane W3, docs/plans/ui_overhaul/02_plan.md phase 2; design system docs/specs/07_interface/07_design_system.md sections 1.4, 2.1, 4.2, 5.2, 7; K69, K70: these windows are Chronicle). modules/ui_research.mjs builds every texture from generated art only: the chrome sprites are cut from the accepted lane C1 sheet ui-chrome-chronicle, the folder tabs place one engraved emblem of research-emblems-02 on the C1 tab plates, the Sealed Works medallions are the last seven cells of the same sheet, and the technology tree board is research-board-techtree. Code crops, reduces, repeats, masks round and places generated pixels; it never paints.",
+ "dir": "gfx/interface/zin/research",
+ "chromeSheet": "ui-chrome-chronicle",
+ "chrome": [
+  { "name": "GFX_zin_research_window", "kind": "cornered", "texture": "research_window.dds", "size": [192, 192], "border": 32, "cells": ["window"], "frame": 16, "about": "The Chronicle window frame of the research panel (replaces the shared Banner Hall tiled_window2_1b_border in countrytechnologyview)." },
+  { "name": "GFX_zin_research_title", "kind": "sprite", "texture": "research_title.dds", "size": [543, 41], "cells": ["title"], "frame": 6, "about": "The rubric title cloth of the research panel at the size of the vanilla header_bg it replaces (an iconType draws it at its own size; the shared header_bg is Chancery)." },
+  { "name": "GFX_zin_research_body", "kind": "cornered", "texture": "research_body.dds", "size": [192, 192], "border": 4, "cells": ["body"], "frame": 2, "about": "Plain slate behind lists (replaces the shared Banner Hall tiled_plain_bg, tiled_generic_overlay_bg1 and tiled_bg in the Chronicle windows)." },
+  { "name": "GFX_zin_research_strip", "kind": "sprite", "texture": "research_strip.dds", "size": [548, 138], "cells": ["inset"], "frame": 6, "about": "The bonus strip of the research panel at the size of the vanilla research_top_win it replaces (a background, drawn at the window's size): a quiet inset, so the bonus labels sit on an even ground." },
+  { "name": "GFX_zin_research_tab", "kind": "button", "texture": "research_tab.dds", "size": [258, 42], "cells": ["tab_selected", "tab"], "frame": 4, "about": "The two tabs of the research panel (vanilla tab_large, 516 x 42, two frames): frame 1 the selected tab (rubric), frame 2 the other (slate); vanilla gives the default tab frame 1." },
+  { "name": "GFX_zin_research_section", "kind": "cornered", "texture": "research_section.dds", "size": [192, 192], "border": 12, "cells": ["section"], "frame": 6, "about": "A section plate (replaces the shared Banner Hall tiled_window_transparent in the Chronicle windows)." }
+ ],
+ "emblems": {
+  "sheet": "research-emblems-02",
+  "cols": 4,
+  "rows": 4,
+  "keys": ["zin_arms_folder", "zin_mounts_folder", "zin_engines_folder", "zin_lore_folder", "zin_camp_folder", "zin_naval_folder", "zin_skies_folder", "industry_folder", "electronics_folder", "gate_rocket_site", "gate_mega_gun", "gate_nuclear_reactor", "gate_nuclear_reactor_heavy_water", "gate_commercial_reactor", "gate_fuel_silo", "gate_synthetic_refinery"],
+  "subjects": {
+   "zin_arms_folder": "a plain kite shield with a sword behind it (Arms and Armour)",
+   "zin_mounts_folder": "a riding saddle and stirrup (Mounts and Kin)",
+   "zin_engines_folder": "a trebuchet (Engines and Walls)",
+   "zin_lore_folder": "a warding staff with healing herbs (Lore and Wards)",
+   "zin_camp_folder": "a covered supply wagon (Camp and Road)",
+   "zin_naval_folder": "an oared galley with a square sail (Galleys and Warships)",
+   "zin_skies_folder": "a great wing over a crag (Eyries)",
+   "industry_folder": "an anvil and hammer (Craft and Works)",
+   "electronics_folder": "a beacon tower (Letters and Beacons)",
+   "gate_rocket_site": "a barred door closed by a wax seal (the First Sealed Work)",
+   "gate_mega_gun": "a chained and padlocked coffer (the Second Sealed Work)",
+   "gate_nuclear_reactor": "a well capped by a chained stone lid (the Third Sealed Work)",
+   "gate_nuclear_reactor_heavy_water": "a jar stopped with wax and cord (the Fourth Sealed Work)",
+   "gate_commercial_reactor": "a gateway with its portcullis lowered (the Fifth Sealed Work)",
+   "gate_fuel_silo": "a book bound shut with straps and a lock (the Sixth Sealed Work)",
+   "gate_synthetic_refinery": "an arch walled up with stone (the Seventh Sealed Work)"
+  }
+ },
+ "tabs": { "frameSize": [91, 61], "plates": ["tab_selected", "tab"], "frame": 4, "emblem": 44, "about": "A technology folder tab: two frames, frame 1 the selected tab (rubric with a bright bronze line) and frame 2 the others (slate); the vanilla files give the default tab frame 1 (countrytechnologyview research_slots_tab), and the vanilla tab textures draw frame 1 lit. The folder's engraved emblem sits in the middle of both frames." },
+ "gate": { "size": 64, "about": "A Sealed Work (grant-only gate technology, never shown): its own engraved medallion, the technology family size (design system 4.2)." },
+ "boards": [{ "name": "GFX_zin_techtree_board", "texture": "techtree_board.dds", "source": "research_ui/research-board-techtree.png", "size": [512, 512], "border": 24, "cellBorder": 40, "frame": 24, "about": "The technology tree board of every folder window (design system 5.2 rule 5: its own generated plate): the plate's bronze-lined rim at 24 px and its plain slate body, tiled by the engine (tilingCenter)." },
+  { "name": "GFX_zin_focus_board", "texture": "focus_board.dds", "source": "ui/reskin/ui-focus-board.png", "size": [512, 512], "border": 24, "cellBorder": 48, "frame": 24, "about": "The focus tree board (the accepted ui-focus-board plate, also cut for GFX_tiled_focus_bg): its bronze-lined rim at 24 px and its slate body tiled by the engine. The focus window draws it instead of GFX_tiled_focus_bg, whose 495 px vanilla corners stretch a one-pixel middle into streaks." }],
+ "overrides": {
+  "interface/nationalfocusview.gui": {
+   "windows": ["nationalfocusview"],
+   "sprites": { "GFX_tiled_bg": "GFX_zin_research_body", "GFX_tiled_focus_bg": "GFX_zin_focus_board", "GFX_tiled_window_transparent": "GFX_zin_research_section" },
+   "fonts": { "national_focus_title": { "font": "hoi_24header", "maxHeight": 28 } },
+   "placeholderTexts": ["NATIONAL_FOCUS_TITLE", "Description"],
+   "templateSprites": { "GFX_goal_unknown": "GFX_zin_technology_blank" },
+   "about": "The focus tree window draws its own Chronicle textures where vanilla shares Banner Hall ones (the board under the focus tree, the filter panels); the title takes the window title face (design system 2.1). Every element name and position is vanilla."
+  },
+  "interface/countrytechnologyview.gui": {
+   "windows": ["countrytechnologyview"],
+   "sprites": { "GFX_research_top_win": "GFX_zin_research_strip", "GFX_tab_large": "GFX_zin_research_tab", "GFX_tiled_window2_1b_border": "GFX_zin_research_window", "GFX_header_bg": "GFX_zin_research_title", "GFX_tiled_plain_bg": "GFX_zin_research_body", "GFX_tiled_generic_overlay_bg1": "GFX_zin_research_body", "GFX_tiled_window_transparent": "GFX_zin_research_section" },
+   "fonts": { "research_title": { "font": "hoi_24header", "maxHeight": 28 } },
+   "about": "The research panel draws its own Chronicle frame, title cloth and plates where vanilla shares Banner Hall and Chancery textures; the title takes the window title face. Every element name and position is vanilla."
+  }
+ }
+}

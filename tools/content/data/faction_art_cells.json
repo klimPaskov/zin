@@ -1,0 +1,10 @@
+{
+ "source": "Layouts of the league emblem sheets (art store raw/factions/<sheet>.png, generated with gpt-6-luna by UI lane W2, job file jobs/ui-w2-factions-jobs.json). Each sheet is a 3 x 3 grid of Chancery faction shields on black (design system section 4.2: faction, 200 x 100 with 2 frames, the league's own sign). Keys are the faction keys of data/diplomacy.json and the ten spare emblems of the icon pool. The builder cuts each shield on its own outline (lib/sheets.mjs, outline matte) and keeps this order; a league keeps its interim vanilla logo until its sheet is accepted.",
+ "complete": true,
+ "sheets": [
+  { "sheet": "factions-01", "cols": 3, "rows": 3, "keys": ["concord", "leren_compact", "northern_accord", "noris_treaty", "stabilo_pact", "dark_sea_accord", "southern_dominion", "western_crossing", "free_crowns"] },
+  { "sheet": "factions-02", "cols": 3, "rows": 3, "keys": ["kindred", "noon_league", "pupor_charter", "free_north", "warden_league", "free_steadings", "free_dominions", "lost_cause", "spare_1"] },
+  { "sheet": "factions-03", "cols": 3, "rows": 3, "keys": ["spare_2", null, "spare_4", "spare_5", "spare_6", "spare_7", "spare_8", "spare_9", "spare_10"] },
+  { "sheet": "factions-04", "cols": 1, "rows": 1, "keys": ["spare_3"] }
+ ]
+}

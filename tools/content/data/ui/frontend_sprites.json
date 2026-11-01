@@ -1,0 +1,10 @@
+{
+ "format": 1,
+ "about": "The sprites of the main menu and the country selection (UI overhaul lane W6; docs/specs/07_interface/03_main_menu_and_frontend.md sections 2.2 and 4; design system 07_design_system.md sections 1.2 and 7: the frontend is Banner Hall, K70). Every texture is cut by modules/ui_frontend.mjs through the lane W5 cutter (modules/ui_dialogs.mjs buildDialogSprites) from the accepted lane C1 sheet ui-chrome-banner-hall (art/source/ui/reskin/ui-chrome-banner-hall.png): code only crops, reduces, repeats and places generated pixels.",
+ "dir": "gfx/interface/zin/frontend",
+ "sheets": ["ui-chrome-banner-hall"],
+ "sprites": [
+  { "name": "GFX_zin_frontend_title_plate", "theme": "banner_hall", "kind": "cornered", "texture": "title_plate.dds", "size": [192, 112], "border": 16, "sheet": "ui-chrome-banner-hall", "cells": ["title"], "fit": "frame_tile", "frame": 8, "about": "Woad plate under the menu title, subtitle and version (spec 03 section 2.2), so the light text reads over any of the four backgrounds." },
+  { "name": "GFX_zin_frontend_filter", "theme": "banner_hall", "kind": "button", "texture": "filter.dds", "size": [104, 33], "sheet": "ui-chrome-banner-hall", "cells": ["tab", "tab_selected"], "fit": "frame_tile", "frame": 4, "about": "Filter button of the lands (normal, selected): ten lands fit the 1181 px filter row, where the vanilla 149 px button fits seven." }
+ ]
+}

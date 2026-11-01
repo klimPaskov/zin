@@ -1,0 +1,336 @@
+{
+  "source": "Layouts of the equipment picture sheets (art store raw/equipment/<sheet>.png, generated with gpt-6-luna on a magenta ground). Numbers and ids only: the builder reads this file and the accepted sheets. kind archetype = GFX_archetype_<key>_medium on gfx/interface/archetypes/zin/<key>.dds; kind type = GFX_<key>_medium on gfx/interface/equipment/zin/<key>.dds; kind designer = the ship designer pictures of gfx/interface/equipmentdesigner/zin/<key>.dds with the sizes listed per key. A sprite keeps the family unknown icon until its sheet is accepted.",
+  "size": [
+    146,
+    54
+  ],
+  "method": "grid",
+  "complete": true,
+  "sheets": [
+    {
+      "sheet": "equipment-a01",
+      "kind": "archetype",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_arms_equipment",
+        "zin_bows_equipment",
+        "zin_handgun_equipment",
+        "zin_armour_equipment",
+        "zin_mounts_equipment",
+        "zin_elephant_equipment",
+        "zin_elven_arms_equipment",
+        "zin_camp_equipment",
+        "zin_ward_equipment",
+        "zin_catapult_equipment",
+        "zin_trebuchet_equipment",
+        "zin_ballista_equipment"
+      ]
+    },
+    {
+      "sheet": "equipment-a02",
+      "kind": "archetype",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_scorpion_equipment",
+        "zin_bombard_equipment",
+        "zin_troll_gear_equipment",
+        "zin_giant_gear_equipment",
+        "zin_ent_grove_equipment",
+        "zin_yeti_gear_equipment",
+        "zin_ogre_gear_equipment",
+        "zin_grave_arms_equipment",
+        "zin_nether_arms_equipment",
+        "zin_deathless_equipment",
+        "zin_shachihata_equipment",
+        "zin_glo_blade_equipment"
+      ]
+    },
+    {
+      "sheet": "equipment-a03",
+      "kind": "archetype",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_volgan_presence_equipment",
+        "zin_great_spirit_equipment",
+        "zin_griffin_equipment",
+        "zin_dragon_equipment",
+        "motorized_equipment",
+        "train_equipment",
+        "convoy",
+        "zin_hull_galley",
+        "zin_hull_warship",
+        "zin_hull_great_warship",
+        "zin_hull_raider"
+      ]
+    },
+    {
+      "sheet": "equipment-t01",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_arms_equipment_0",
+        "zin_arms_equipment_1",
+        "zin_arms_equipment_2",
+        "zin_arms_equipment_3",
+        "zin_arms_equipment_4",
+        "zin_arms_equipment_5",
+        "zin_arms_equipment_6",
+        "zin_bows_equipment_0",
+        "zin_bows_equipment_1",
+        "zin_bows_equipment_2",
+        "zin_bows_equipment_3",
+        "zin_bows_equipment_4"
+      ]
+    },
+    {
+      "sheet": "equipment-t02",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_bows_equipment_5",
+        "zin_handgun_equipment_0",
+        "zin_handgun_equipment_1",
+        "zin_handgun_equipment_2",
+        "zin_handgun_equipment_3",
+        "zin_handgun_equipment_4",
+        "zin_handgun_equipment_5",
+        "zin_armour_equipment_0",
+        "zin_armour_equipment_1",
+        "zin_armour_equipment_2",
+        "zin_armour_equipment_3",
+        "zin_armour_equipment_4"
+      ]
+    },
+    {
+      "sheet": "equipment-t03",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_armour_equipment_5",
+        "zin_mounts_equipment_0",
+        "zin_mounts_equipment_1",
+        "zin_mounts_equipment_2",
+        "zin_mounts_equipment_3",
+        "zin_mounts_equipment_4",
+        "zin_elephant_equipment_0",
+        "zin_elephant_equipment_1",
+        "zin_elven_arms_equipment_0",
+        "zin_elven_arms_equipment_1",
+        "zin_elven_arms_equipment_2",
+        "zin_elven_arms_equipment_3"
+      ]
+    },
+    {
+      "sheet": "equipment-t04",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_elven_arms_equipment_4",
+        "zin_camp_equipment_0",
+        "zin_ward_equipment_0",
+        "zin_ward_equipment_1",
+        "zin_ward_equipment_2",
+        "zin_ward_equipment_3",
+        "zin_catapult_equipment_0",
+        "zin_catapult_equipment_1",
+        "zin_catapult_equipment_2",
+        "zin_catapult_equipment_3",
+        "zin_trebuchet_equipment_0",
+        "zin_trebuchet_equipment_1"
+      ]
+    },
+    {
+      "sheet": "equipment-t05",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_trebuchet_equipment_2",
+        "zin_ballista_equipment_0",
+        "zin_ballista_equipment_1",
+        "zin_ballista_equipment_2",
+        "zin_scorpion_equipment_0",
+        "zin_scorpion_equipment_1",
+        "zin_bombard_equipment_0",
+        "zin_bombard_equipment_1",
+        "zin_bombard_equipment_2",
+        "zin_bombard_equipment_3",
+        "zin_bombard_equipment_4",
+        "zin_bombard_equipment_5"
+      ]
+    },
+    {
+      "sheet": "equipment-t06",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_troll_gear_equipment_0",
+        "zin_troll_gear_equipment_1",
+        "zin_troll_gear_equipment_2",
+        "zin_troll_gear_equipment_3",
+        "zin_giant_gear_equipment_0",
+        "zin_giant_gear_equipment_1",
+        "zin_giant_gear_equipment_2",
+        "zin_giant_gear_equipment_3",
+        "zin_ent_grove_equipment_0",
+        "zin_ent_grove_equipment_1",
+        "zin_ent_grove_equipment_2",
+        "zin_ent_grove_equipment_3"
+      ]
+    },
+    {
+      "sheet": "equipment-t07",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_yeti_gear_equipment_0",
+        "zin_yeti_gear_equipment_1",
+        "zin_yeti_gear_equipment_2",
+        "zin_yeti_gear_equipment_3",
+        "zin_ogre_gear_equipment_0",
+        "zin_ogre_gear_equipment_1",
+        "zin_ogre_gear_equipment_2",
+        "zin_ogre_gear_equipment_3",
+        "zin_grave_arms_equipment_0",
+        "zin_grave_arms_equipment_1",
+        "zin_grave_arms_equipment_2",
+        "zin_nether_arms_equipment_0"
+      ]
+    },
+    {
+      "sheet": "equipment-t08",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_nether_arms_equipment_1",
+        "zin_nether_arms_equipment_2",
+        "zin_deathless_equipment_0",
+        "zin_deathless_equipment_1",
+        "zin_deathless_equipment_2",
+        "zin_shachihata_equipment_0",
+        "zin_glo_blade_equipment_0",
+        "zin_glo_blade_equipment_shard",
+        "zin_volgan_presence_equipment_0",
+        "zin_great_spirit_equipment_0",
+        "zin_griffin_equipment_0",
+        "zin_griffin_equipment_1"
+      ]
+    },
+    {
+      "sheet": "equipment-t09",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_griffin_equipment_2",
+        "zin_griffin_equipment_3",
+        "zin_dragon_equipment_0",
+        "motorized_equipment_0",
+        "motorized_equipment_1",
+        "motorized_equipment_2",
+        "motorized_equipment_3",
+        "train_equipment_0",
+        "train_equipment_1",
+        "convoy_1",
+        "zin_hull_galley_0",
+        "zin_hull_galley_1"
+      ]
+    },
+    {
+      "sheet": "equipment-t10",
+      "kind": "type",
+      "cols": 4,
+      "rows": 3,
+      "keys": [
+        "zin_hull_galley_2",
+        "zin_hull_warship_0",
+        "zin_hull_warship_1",
+        "zin_hull_warship_2",
+        "zin_hull_great_warship_0",
+        "zin_hull_great_warship_1",
+        "zin_hull_raider_0",
+        "zin_hull_raider_1"
+      ]
+    },
+    {
+      "sheet": "equipment-d01",
+      "kind": "designer",
+      "cols": 4,
+      "rows": 3,
+      "sizes": {
+        "zin_hull_galley_designer": [
+          512,
+          260
+        ],
+        "zin_hull_warship_designer": [
+          512,
+          260
+        ],
+        "zin_hull_great_warship_designer": [
+          512,
+          260
+        ],
+        "zin_hull_raider_designer": [
+          512,
+          260
+        ],
+        "slot_zin_propulsion": [
+          47,
+          76
+        ],
+        "slot_zin_armament": [
+          47,
+          76
+        ],
+        "slot_zin_protection": [
+          47,
+          76
+        ],
+        "slot_zin_crew": [
+          47,
+          76
+        ],
+        "slot_zin_propulsion_highlight": [
+          47,
+          76
+        ],
+        "slot_zin_armament_highlight": [
+          47,
+          76
+        ],
+        "slot_zin_protection_highlight": [
+          47,
+          76
+        ],
+        "slot_zin_crew_highlight": [
+          47,
+          76
+        ]
+      },
+      "keys": [
+        "zin_hull_galley_designer",
+        "zin_hull_warship_designer",
+        "zin_hull_great_warship_designer",
+        "zin_hull_raider_designer",
+        "slot_zin_propulsion",
+        "slot_zin_armament",
+        "slot_zin_protection",
+        "slot_zin_crew",
+        "slot_zin_propulsion_highlight",
+        "slot_zin_armament_highlight",
+        "slot_zin_protection_highlight",
+        "slot_zin_crew_highlight"
+      ]
+    }
+  ]
+}

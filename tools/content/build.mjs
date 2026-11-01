@@ -104,6 +104,14 @@ const ui = await buildReskin(staged, { inventory: uiInventory, reskin: uiReskin,
 publishUiData(staged, { reskin: uiReskin, sheets: uiSheets });
 // Event, news, pause-menu, options and Gathering Dark windows (UI overhaul lane W5): own sprites and the .gui overrides of those windows.
 const uiDialogs = await (await import('./modules/ui_dialogs.mjs')).buildDialogs(staged, { sheets: uiSheets, provenance });
+// Frontend (UI lane W6, modules/frontend.mjs and modules/ui_frontend.mjs): the menu and difficulty text, the main-menu and country-selection layouts.
+const frontendMod = await import('./modules/frontend.mjs');
+const frontendText = await frontendMod.buildFrontendText(staged);
+const uiFrontend = await (await import('./modules/ui_frontend.mjs')).buildUiFrontend(staged, { sheets: uiSheets, provenance });
+// Politics, diplomacy, decisions, the peace conference and the diplomatic popup (UI overhaul lane W2): own Chancery sprites, the .gui
+// sprite swaps of those windows, and the realm's roots and sign in the politics view.
+const uiChancery = await (await import('./modules/ui_chancery.mjs')).buildChancery(staged, { countries, sheets: uiSheets, provenance });
+void uiChancery;
 const peopleStartup = await buildPeoples(staged, countries, assignment, art);
 // Cultures, faiths and the per-state culture data (docs/design/stage2/cultures.md): after buildPeoples, whose on_startup block it joins.
 const cultures = await buildCultures(staged, { countries });
@@ -246,6 +254,9 @@ const bridgeCounts = Object.fromEntries([...bridges.triggers.map(b => 'trigger')
 const focusTrees = await buildFocusTrees(staged, { countries });
 // Regional decisions come after the compiler: they name spirits the Buldor tree writes, which the C3 scan above cannot see.
 const decisionsRegional = await buildDecisionsRegional(staged, { countries });
+// The bookmark (modules/frontend.mjs): after the compiled trees and every startup spirit, which its entries name and the build checks.
+const bookmark = await frontendMod.buildBookmark(staged, { countries, table });
+console.error(`bookmark: ${bookmark.great} great realms, ${bookmark.minors} in the list, ${bookmark.labels} lands`);
 // Characters brought into play during play (modules/late_characters.mjs): over the finished script tree, before the final reference pass.
 // The game recruits a character only in history, so each waits there without a role in its home realm, and the effect that brings it in
 // moves it (set_nationality), gives it its roles and sets its flag of entry, which every presence test also asks.

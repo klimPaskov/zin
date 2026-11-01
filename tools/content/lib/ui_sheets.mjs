@@ -8,7 +8,7 @@
 //          'outline' every cell is one isolated object on black; its own outline is the alpha (decision A3)
 // lum      the design luminance class of the cell (dark, mid, light), so a row picks a cell of its sprite's class
 import { STYLE_LINE, MATERIALS, PALETTE, LIGHTING, CLAUSE_A4, FORBIDDEN_MOTIFS, GROUND } from './ui_vocab.mjs';
-import { CHROME_SHEETS } from './ui_chrome_sheets.mjs';
+import { CHROME_SHEETS, STYLE as CHROME_STYLE, TAIL as CHROME_TAIL, THEME_MATERIALS, DIRECTION_REFS } from './ui_chrome_sheets.mjs';
 import { readFileSync } from 'node:fs';
 
 // The top bar sheets of UI overhaul lane W1 (the values whose sockets were empty, the count badges): their data files are the source.
@@ -41,6 +41,9 @@ export const FAMILY_TRANCHE = {
 };
 
 const c = (key, subject, lum = 'dark', extra = {}) => ({ key, subject, lum, ...extra });
+// The Chronicle prompt of the themed chrome sheets (lib/ui_chrome_sheets.mjs) for the focus and research sheets (lane W3).
+const CHRONICLE_PROMPT = { references: [DIRECTION_REFS.chronicle], preamble: `${CHROME_STYLE} ${THEME_MATERIALS.chronicle}`, tail: CHROME_TAIL,
+  layoutNote: 'Every cell is one flat rectangular piece seen straight on, filling its own cell edge to edge as a full-bleed swatch, all cells the same size, separated by narrow black gutters. Any line or rim of a plate runs straight along its four sides at an even width; the body inside it is one plain, uniform surface with no motif.' };
 
 // Fixed chrome sheets. Panels: the cell's painted border is a fraction of the cell's shorter side.
 export const FIXED_SHEETS = [
@@ -84,19 +87,26 @@ export const FIXED_SHEETS = [
   { id: 'ui-news', family: 'events', kind: 'grid', aspect: '2:3', grid: [1, 2], ground: 'black', matte: 'none', cells: [
     c('broadsheet', 'a parchment broadsheet on a walnut board, no masthead, no lettering, plain', 'light', { border: 0.1 }), c('inner_frame', 'a thin bronze inner frame with a plain dark centre', 'mid', { border: 0.1 }),
   ] },
-  { id: 'ui-focus', family: 'focus', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none',
-    note: 'The whole sheet background and every gutter between the tiles is flat pure black (#000000) with nothing painted on it: no backdrop, no lit or tinted panel behind a tile, no glow, no halo, no vignette, no gradient, no light spilling out of a tile. Each of the 9 tiles is a flat full-bleed swatch of its material that runs to its own edges with no margin of ground inside the tile and no frame drawn around it, so a crop of the tile holds only the material. The three wire cells are not thin lines: each is a thick bar of braided cord that fills the full width and most of the height of its cell.',
+  // The focus tree and research surfaces are Chronicle (design system §1.4, §7, K70; UI overhaul lane W3): carved slate, inlaid bronze
+  // lines, verdigris and rubric enamel, vellum. Same cell keys and luminance classes as before, so every focus and research row keeps its cell.
+  { id: 'ui-focus', family: 'focus', theme: 'chronicle', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', ...CHRONICLE_PROMPT,
+    note: 'The three link cells are not thin lines: each is a thick straight horizontal band that fills the full width and most of the height of its cell.',
     cells: [
-    c('board_tile', 'a seamless walnut board tile, plain even grain, edge to edge', 'dark'), c('title_unavailable', 'a title bar in dull iron, no gilt, matte', 'dark'),
-    c('title_can_start', 'a title bar in bronze', 'mid'), c('title_completed', 'a title bar in gilt with a verdigris enamel inlay', 'mid'),
-    c('ongoing_plate', 'a wide ongoing-focus plate: walnut with a gilt edge, empty', 'dark'), c('link_bronze', 'a thick horizontal bar of braided bronze wire filling the whole cell edge to edge, no glow', 'dark'),
-    c('link_gilt', 'a thick horizontal bar of braided gilt wire filling the whole cell edge to edge, no glow', 'dark'), c('link_wax', 'a thick horizontal bar of twisted red wax cord filling the whole cell edge to edge, no glow', 'dark'), c('selection_plate', 'a walnut selection plate with a gold edge', 'dark'),
+    c('board_tile', 'a seamless tile of smooth dark blue-grey slate, plain even surface, edge to edge, with no border and no line', 'dark'), c('title_unavailable', 'a focus title plate of dark matte slate with one thin dull grey line along its edge, no bronze, no gilt', 'dark'),
+    c('title_can_start', 'a focus title plate of polished mid-tone bronze with one thin darker bronze line along its edge', 'mid'), c('title_completed', 'a focus title plate of verdigris green enamel with one thin gilt line along its edge', 'mid'),
+    c('ongoing_plate', 'a wide ongoing-focus plate of dark slate with a bright bronze line along its edge and a thin verdigris line just inside it, empty', 'dark'), c('link_bronze', 'a thick straight horizontal band of dark aged bronze, a flat inlaid band with one fine engraved line along its middle, filling the whole cell edge to edge', 'dark'),
+    c('link_gilt', 'a thick straight horizontal band of dull dark gilt, a flat inlaid band with one fine engraved line along its middle, filling the whole cell edge to edge', 'dark'), c('link_wax', 'a thick straight horizontal band of deep rubric red enamel with a thin dark bronze edge on both sides, filling the whole cell edge to edge', 'dark'), c('selection_plate', 'a selection plate of dark slate with a bright gilt line along its edge', 'dark'),
   ] },
-  { id: 'ui-research', family: 'research_production', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
-    c('item_available', 'a technology item plate, available: walnut with a bronze rim, empty', 'dark'), c('item_researched', 'a technology item plate, researched: walnut with a gilt rim and a verdigris inlay', 'dark'),
-    c('item_unavailable', 'a technology item plate, unavailable: dull iron, matte', 'dark'), c('folder_tab', 'a folder tab: bronze with a dark inset, empty', 'dark'),
-    c('line_plate', 'a long research line plate: walnut with a thin bronze border', 'dark'), c('stripes', 'faint vertical walnut stripes on a plain ground', 'dark'),
-    c('bonus_plate', 'a small bonus plate: parchment with a bronze rim', 'light'), c('queue_plate', 'a production queue plate: walnut with a bronze edge', 'dark'), c('slot_glow', 'a soft gold glow on black', 'light'),
+  // The focus tree board (GFX_tiled_focus_bg, 988 x 1031, drawn behind the whole tree): one generated Chronicle plate per full-screen view
+  // (design system §5.2 rule 5), never a stretched panel cell; cut opaque so the vanilla torn outline is not kept.
+  { id: 'ui-focus-board', family: 'focus', theme: 'chronicle', kind: 'grid', aspect: '2:3', grid: [1, 1], ground: 'black', matte: 'none', ...CHRONICLE_PROMPT,
+    layoutNote: 'The single cell fills the whole image edge to edge: one flat plate seen straight on, with no black ground visible anywhere.',
+    cells: [c('board', 'a focus tree board: smooth dark blue-grey slate with a very fine even grain, a narrow carved slate border with one thin inlaid bronze line along all four edges and a small square of simple interlaced bronze knotwork in each corner; inside the border one plain, even slate surface with no motif', 'dark', { border: 0.05 })] },
+  { id: 'ui-research', family: 'research_production', theme: 'chronicle', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', ...CHRONICLE_PROMPT, cells: [
+    c('item_available', 'a technology item plate, available: dark blue-grey slate with an inlaid bronze line along its edge and a small bronze diamond stud at each corner, empty', 'dark'), c('item_researched', 'a technology item plate, researched: dark slate with a verdigris enamel line inside a gilt line along its edge, empty', 'dark'),
+    c('item_unavailable', 'a technology item plate, unavailable: very dark matte slate with one dull grey line along its edge, no bronze', 'dark'), c('folder_tab', 'a folder tab plate: slate with a thin bronze line along its edge, empty', 'dark'),
+    c('line_plate', 'a long research line plate: dark slate with a thin inlaid bronze line along its edge', 'dark'), c('stripes', 'faint broad vertical bands of slightly lighter and slightly darker blue-grey slate, very low contrast, plain', 'dark'),
+    c('bonus_plate', 'a small bonus plate: pale vellum with a thin bronze line along its edge', 'light'), c('queue_plate', 'a queue plate: dark slate with a thin bronze line along its edge, empty', 'dark'), c('slot_glow', 'a soft warm gold glow, round and even, on black', 'light'),
   ] },
   { id: 'ui-military', family: 'military', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
     c('counter_plate', 'a unit counter bar in a muted vanilla-green palette with a thin bronze rim, empty', 'mid'), c('counter_plate_selected', 'the same counter bar with a gold edge, brighter', 'mid'),

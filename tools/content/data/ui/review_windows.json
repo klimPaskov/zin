@@ -13,7 +13,7 @@
   "long": { "width": 1920, "height": 1080, "uiScale": 1, "states": ["long-text"] }
  },
  "skip": [
-  "^z_(?!(realm|realm_btn|court1|court2|court3|court4|court_btn|council1|mistake1|se1)_2560$).*_2560$",
+  "^z_(?!(realm|realm_btn|court1|court2|court3|court4|court_btn|council1|mistake1|se1|w6_menu_upperleft|w6_menu_bottom|w6_menu_single|w6_selection|w6_scenario|w6_rules)_2560$).*_2560$",
   "^z_(council[234]|horde2|dominion2|strait[23])_(long|1280)$"
  ],
  "vanilla": [
@@ -50,7 +50,13 @@
   { "label": "z_se1", "window": "zin_super_event_window", "scenario": { "closedFlags": true, "flags": { "zin_se_open": true }, "variables": { "zin_se_id": 1, "zin_se_queue^num": 0 }, "values": { "GetDateText": "1 Thaw 4A 1748", "?zin_se_queue^num|0": "0" } } },
   { "label": "z_se5", "window": "zin_super_event_window", "scenario": { "closedFlags": true, "flags": { "zin_se_open": true }, "variables": { "zin_se_id": 5, "zin_se_queue^num": 2 }, "values": { "GetDateText": "11 Gaelor 4A 1750", "?zin_se_queue^num|0": "2" } } },
   { "label": "z_inlay", "window": "zin_interim_inlay_window", "scenario": { "visibility": { "zin_interim_inlay_window": true } } },
-  { "label": "z_techtree", "window": "countrytechtreeview", "scenario": {} }
+  { "label": "z_techtree", "window": "countrytechtreeview", "scenario": {} },
+  { "label": "z_w6_menu_upperleft", "window": "mainmenu_panel_upperleft", "scenario": {} },
+  { "label": "z_w6_menu_bottom", "window": "mainmenu_panel_bottom", "scenario": {} },
+  { "label": "z_w6_menu_single", "window": "mainmenu_single_player", "scenario": {} },
+  { "label": "z_w6_selection", "window": "gamesetup_interesting_countries_window", "scenario": { "visibility": { "gamesetup_interesting_countries_window": true } } },
+  { "label": "z_w6_scenario", "window": "gamesetup_scenario_window", "scenario": { "visibility": { "gamesetup_scenario_window": true } } },
+  { "label": "z_w6_rules", "window": "gamesetup_gameplay_settings_window", "scenario": { "visibility": { "gamesetup_gameplay_settings_window": true } } }
  ],
  "sheets": {
   "vanilla_frontend_menus": { "kind": "vanilla", "rows": ["frontend_background", "mainmenu_panel_bottom", "mainmenu_single_player", "frontendgamesetupview", "gamesetup_country_details", "game_rule_window", "load_screen", "ingamemenu", "menu_settings"] },
@@ -59,6 +65,7 @@
   "vanilla_focus_research": { "kind": "vanilla", "rows": ["nationalfocusview", "countrytechnologyview", "countrytechtreeview", "countrydoctrineview"] },
   "vanilla_economy": { "kind": "vanilla", "rows": ["countryproductionlineview", "countryconstructionsview", "countrytradeview", "countrylogisticsview", "countrydeploymentview", "countrystateview"] },
   "vanilla_military_intel": { "kind": "vanilla", "rows": ["countryarmyview", "naviesview_window", "strategicairview", "theatre_selection_window", "landcombatview", "navalcombatview", "unitleaderwindow", "countryintelligenceagencyview", "countryintelledger"] },
+  "w6_frontend": { "kind": "zin", "rows": ["z_w6_menu_upperleft", "z_w6_menu_bottom", "z_w6_menu_single", "z_w6_selection", "z_w6_scenario", "z_w6_rules"] },
   "vanilla_events": { "kind": "vanilla", "rows": ["EventWindow", "EventWindow_News"] },
   "zin_panels_a": { "kind": "zin", "rows": ["z_aoaz_bar", "z_realm", "z_court1", "z_court2", "z_court3", "z_court4", "z_council1", "z_council2", "z_council3", "z_council4"] },
   "zin_panels_b": { "kind": "zin", "rows": ["z_horde", "z_horde2", "z_accord", "z_dominion1", "z_dominion2", "z_watch1", "z_strait1", "z_strait2", "z_strait3", "z_mistake1", "z_se1", "z_se5", "z_inlay", "z_techtree"] }

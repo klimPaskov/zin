@@ -156,6 +156,15 @@ export const OVERRIDE_FILES = [
   'interface/navytraittreewindow.gui', 'interface/career_profile/playthrough_overview_window.gui',
   // UI overhaul lane W5 (K69: layouts may be rebuilt; modules/ui_dialogs.mjs): the event and news windows, the Gathering Dark history, the options.
   'interface/eventwindow.gui', 'interface/worldtensionwindowpopup.gui', 'interface/settings.gui',
+  // UI overhaul lane W6 (modules/ui_frontend.mjs): the country selection; frontendmainview.gui is listed above (spec 03 section 2.2).
+  'interface/frontendgamesetupview.gui',
+  // UI overhaul lane W2 (K69, K70; modules/ui_chancery.mjs): politics, diplomacy, decisions, the peace conference and the standard
+  // diplomatic popup draw their own Chancery sprites (sprite names swapped; every element name and position is vanilla).
+  'interface/countrypoliticsview.gui', 'interface/countrydiplomacyview.gui', 'interface/countrydecisionview.gui', 'interface/peaceconferencewindow.gui',
+  'interface/popupwindow.gui',
+  // UI overhaul lane W3 (K69, K70; modules/ui_research.mjs): the focus tree and research windows draw their own Chronicle sprites (sprite
+  // names swapped, titles in the window title face; every element name and position is vanilla).
+  'interface/nationalfocusview.gui', 'interface/countrytechnologyview.gui',
 ];
 export const WRITERS = ['reskin', 'presentation', 'cursors', 'minimap'];
 export const MINIMAP_TEXTURES = new Set(['gfx/minimap/minimap.dds', 'gfx/interface/minimap.dds']);
@@ -332,8 +341,11 @@ export const SOFT_COVERAGE = 0.05;   // below this share of pixels at alpha 128 
 // Tooltip plates (design system §6.3, UI overhaul lane W5): an opaque neutral plate whose own 1 px bronze rim is its edge. The vanilla
 // outline of these textures has a transparent margin that would cut the generated rim away.
 export const TOOLTIP_TEXTURES = new Set(['gfx/interface/tiles/tiles_dialog.dds', 'gfx/interface/tooltip_tile.dds', 'gfx/interface/small_tiles_dialog.dds', 'gfx/interface/tiles/tiled_mini_dialog.dds']);
+// The focus tree board is one opaque Chronicle plate (UI overhaul lane W3): the vanilla outline of tiled_focus_bg.dds (torn corners round
+// an empty middle) is not kept.
+export const BOARD_TEXTURES = new Set(['gfx/interface/tiles/tiled_focus_bg.dds']);
 export function alphaPolicy(s) {
-  if (TOOLTIP_TEXTURES.has(String(s.texture ?? '').toLowerCase())) return 'opaque';
+  if (TOOLTIP_TEXTURES.has(String(s.texture ?? '').toLowerCase()) || BOARD_TEXTURES.has(String(s.texture ?? '').toLowerCase())) return 'opaque';
   const a = s.alpha ?? 'opaque';
   if (a === 'opaque' || a === 'unknown' || a === 'none') return 'opaque';
   if (a.startsWith('uniform:')) return a;
@@ -394,16 +406,20 @@ const SPECIFIC = [
   [/^gfx\/interface\/(?:event_pic_clip|clip)\.dds$|^gfx\/interface\/events\/clip\.dds$/, 'events', 'ui-events', 'picture_clamp', 'cover'],
   [/^gfx\/interface\/event_news_bg\.dds$/, 'events', 'ui-news', 'broadsheet', 'cover'],
   [/^gfx\/interface\/event_news_pic_overlay\.dds$/, 'events', 'ui-news', 'inner_frame', 'same_shape', 'shape'],
-  [/^gfx\/interface\/tiles\/tiled_focus_bg\.dds$/, 'focus', 'ui-focus', 'board_tile', 'cover'],
+  [/^gfx\/interface\/tiles\/tiled_focus_bg\.dds$/, 'focus', 'ui-focus-board', 'board', 'cover'],
   [/^gfx\/interface\/focusview\/titlebar\/focus_unavailable_bg\.dds$/, 'focus', 'ui-focus', 'title_unavailable', 'cover'],
-  [/^gfx\/interface\/focusview\/titlebar\/focus_can_start_bg\.dds$/, 'focus', 'ui-focus', 'title_can_start', 'cover'],
+  // A focus that can start: dark slate with a bright gilt line (the vanilla plate is dark; the unavailable plate has a grey line).
+  [/^gfx\/interface\/focusview\/titlebar\/focus_can_start_bg\.dds$/, 'focus', 'ui-focus', 'selection_plate', 'cover'],
   [/^gfx\/interface\/focusview\/titlebar\/focus_completed_bg\.dds$/, 'focus', 'ui-focus', 'title_completed', 'cover'],
   [/^gfx\/interface\/(?:ongoing_focus_goal|ongoing_focus_goal_polview|search_current_focus|ongoing_generic_glow_yellow)\.dds$/, 'focus', 'ui-focus', 'ongoing_plate', 'cover'],
+  // The available technology tile is a mid-tone plate in vanilla; the research sheet's plates are dark, so it takes the Chronicle mid slate
+  // plate with its bronze line (lane W3).
+  [/^gfx\/interface\/techtree\/technology_available_item_bg\.dds$/, 'research_production', 'ui-chrome-chronicle', 'plate_mid', 'cover'],
   [/^gfx\/interface\/techtree\/technology_(available|researched|unavailable)_item_bg\.dds$/, 'research_production', 'ui-research', m => `item_${m[1]}`, 'cover'],
   [/^gfx\/interface\/techtree\/subtechnology_(available|researched|unavailable)_item_bg\.dds$/, 'research_production', 'ui-research', m => `item_${m[1]}`, 'cover'],
   [/^gfx\/interface\/techtree\/techtree_stripes\.dds$/, 'research_production', 'ui-research', 'stripes', 'cover'],
   [/^gfx\/interface\/research_line_bg\.dds$/, 'research_production', 'ui-research', 'line_plate', 'cover'],
-  [/^gfx\/interface\/tech_bonus\.dds$/, 'research_production', 'ui-research', 'bonus_plate', 'cover'],
+  [/^gfx\/interface\/tech_bonus\.dds$/, 'research_production', 'ui-research', 'queue_plate', 'cover'],
   [/^gfx\/interface\/empty_research_slot_glow\.dds$/, 'research_production', 'ui-research', 'slot_glow', 'cover'],
   [/^gfx\/interface\/onmap_unit_counter(_empty)?\.dds$/, 'military', 'ui-military', 'counter_plate', 'cover'],
   [/^gfx\/interface\/onmap_unit_counter_selected\.dds$/, 'military', 'ui-military', 'counter_plate_selected', 'cover'],
@@ -463,9 +479,11 @@ function chromeRole(s) {
   if (s.kind === 'masked_shield' || /flag.*(overlay|frame)|(overlay|frame).*flag|shield_(thin|medium|small)|golden_frame/.test(tag)) {
     return { family: 'chrome_panels', ...strip('ui-chrome-small', repeatFrames(/gold|gilt|golden/.test(tag) ? 'flag_bezel_gilt' : 'flag_bezel'), 'same_shape', { alpha: shapeOf(s) }) };
   }
-  // Connector lines of the focus and technology trees: bronze wire, gilt when completed, red wax when exclusive; the vanilla outline keeps the shape.
+  // Connector lines of the focus and technology trees (Chronicle bands, lane W3): rubric when exclusive; on the technology tree bronze, and
+  // rubric for a researched line (a rubricated line marks what is done); the focus links gilt, the mid tone of their vanilla files. The
+  // vanilla outline keeps the shape.
   if (/(^|_)(techline|focus_link|focuslink|exlusive_link|exclusive_link|link_line)/.test(stem)) {
-    const cell = /exclusive|exlusive/.test(tag) ? 'link_wax' : /researched|completed|done/.test(tag) ? 'link_gilt' : 'link_bronze';
+    const cell = /exclusive|exlusive/.test(tag) ? 'link_wax' : /researched|completed|done/.test(tag) ? 'link_wax' : /techline/.test(stem) ? 'link_bronze' : 'link_gilt';
     return { family: 'focus', ...strip('ui-focus', repeatFrames(cell), 'same_shape', { alpha: shapeOf(s) }) };
   }
   // Glows.
@@ -494,7 +512,9 @@ function chromeRole(s) {
   // Buttons.
   if (/button|btn|_sort|sort_|(^|_)tabs?(_|$)|toggle|dropdown/.test(stem) || /button|btn/.test(name)) {
     const isTab = /(^|_)tabs?(_|\d|$)/.test(stem);
-    if (isTab) return { family: 'chrome_controls', ...bars(f === 1 ? ['tab_body'] : Array.from({ length: f }, (_, i) => (i === 0 ? 'tab_body' : 'tab_selected')), 'cover') };
+    // Vanilla's selected tab is frame 1: countrytechnologyview.gui gives the open research_slots_tab frame = 1, and every vanilla tab
+    // texture draws frame 1 as the plate that blends with the window body (tab_large.dds luma 17 against 42).
+    if (isTab) return { family: 'chrome_controls', ...bars(f === 1 ? ['tab_body'] : Array.from({ length: f }, (_, i) => (i === 0 ? 'tab_selected' : 'tab_body')), 'cover') };
     if (ar < 2.4 && Math.max(fw, h) <= 80) return iconSocket();   // a small square button is a socket of its shape and class
     const row = lum === 'mid' ? 'grey' : /alt|2$/.test(stem) ? 'alternate' : /light/.test(stem) ? 'light' : /gray|grey|disabled/.test(stem) ? 'grey' : 'standard';
     const state = i => ['normal', 'hover', 'pressed'][Math.min(i, 2)];
@@ -714,6 +734,12 @@ function emblemRule(s, em, reachable = false) {
     const k = stem.replace('_group', '');
     const subject = { democratic: 'Light: a white stone lamp with a clear steady flame, not a sun and not a veil', fascism: 'Dominion: a bronze crown resting on a sword\'s crossguard', communism: 'Shadow: a black iron circlet set with one dark stone, no face, no skull, no sigil', neutrality: 'Wild: an antler and an oak sprig bound with cord', unknown: 'a plain bronze disc with an empty socket' }[k];
     return { ...base, family: 'politics_diplomacy', group: 'ideologies', keys: [reg('ideologies', `ideology_${k}`, `an ideology emblem, ${subject}`, 'mid')] };
+  }
+  // The ruling ideology's emblem in the politics view (UI lane W2): the engine picks the frame in the vanilla order fascism, communism,
+  // democratic, neutrality; each frame is the group's emblem above (Dominion, Shadow, Light, Wild), never an empty socket.
+  if (p === 'gfx/interface/pol_factions_strip.dds' && f === 4) {
+    const order = ['fascism', 'communism', 'democratic', 'neutrality'];
+    return { ...base, family: 'politics_diplomacy', group: 'ideologies', keys: order.map(k => em.add('ideologies', `ideology_${k}`, null, 'mid')) };
   }
   // Focus filters (generic set only).
   if (/^gfx\/interface\/focusview\/filter\/[a-z_]+\.dds$/.test(p) && s.width === 27 && !isCountryName(stem)) {

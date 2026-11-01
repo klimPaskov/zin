@@ -620,11 +620,17 @@ test('check 1: inventory freshness detects a patched game and lists the changed 
 
 // ---------------------------------------------------------------------------------------------------- jobs
 test('jobs: one imagegen job per sheet, with the layout check and the family preamble', () => {
-  const sheet = FIXED_SHEETS.find(s => s.id === 'ui-research'), job = sheetJob(sheet, '/art/raw');
-  assert.equal(job.id, 'reskin-ui-research'); assert.equal(job.out, '/art/raw/ui/reskin/ui-research.png'); assert.equal(job.size, '1024x1024');
+  const sheet = FIXED_SHEETS.find(s => s.id === 'ui-military'), job = sheetJob(sheet, '/art/raw');
+  assert.equal(job.id, 'reskin-ui-military'); assert.equal(job.out, '/art/raw/ui/reskin/ui-military.png'); assert.equal(job.size, '1024x1024');
   assert.equal(job.check.expected, 9); assert.equal(job.check.cols, 3); assert.equal(job.check.rows, 3);
   assert.ok(job.prompt.includes('exact grid of 3 columns and 3 rows') && job.prompt.includes('Row 3, left to right: 7.'));
   assert.ok(job.prompt.includes('solid flat pure black (#000000)') && job.prompt.includes('no lettering') && job.prompt.includes('#D9B562'));
+  // The focus and research sheets are Chronicle (UI overhaul W3): the Chronicle chrome preamble and direction picture, not the family preamble.
+  for (const id of ['ui-focus', 'ui-research', 'ui-focus-board']) {
+    const j = sheetJob(FIXED_SHEETS.find(s => s.id === id), '/art/raw');
+    assert.ok(j.prompt.includes('#2D353A') && !j.prompt.includes('#D9B562') && /no text/.test(j.prompt), id);
+    assert.ok(j.references.every(r => /directions\/direction_c_components\.png$/.test(r)), id);
+  }
   // The themed chrome sheets (UI overhaul C1) carry their own quiet preamble and the direction picture of their theme as a reference.
   const buttons = sheetJob(FIXED_SHEETS.find(s => s.id === 'ui-buttons-neutral'), '/art/raw');
   assert.equal(buttons.check.expected, 15); assert.ok(buttons.prompt.includes('exact grid of 5 columns and 3 rows') && buttons.prompt.includes('#282B2C') && /no text/.test(buttons.prompt));

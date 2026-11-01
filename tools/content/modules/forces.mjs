@@ -25,6 +25,7 @@ import { loadCountryTable } from './countries.mjs';
 import { prepareModel as prepareTech, technologyPackages, startFor } from './technologies.mjs';
 import { cultureRows, GUNPOWDER_FLAG } from '../lib/roster.mjs';
 import { shipModuleRows } from './warfare.mjs';
+import { shippedEquipment } from './equipment_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -764,7 +765,7 @@ function designerGui(model) {
   return out.join('\n');
 }
 function designerGfx(model) {
-  const sprite = (name, dir, key) => { const f = `${dir}/${key}.dds`; const have = existsSyncSafe(path.join(ZIN, f)); return `\tspriteType = {\n\t\tname = "${name}"\n\t\ttexturefile = "${have ? f : FALLBACK_TEXTURE}"\n\t\tnoOfFrames = 1\n\t}`; };
+  const sprite = (name, dir, key) => { const f = `${dir}/${key}.dds`; const have = shippedEquipment.has(key); return `\tspriteType = {\n\t\tname = "${name}"\n\t\ttexturefile = "${have ? f : FALLBACK_TEXTURE}"\n\t\tnoOfFrames = 1\n\t}`; };
   const L = [`${HEADER}\n# Pictures of the ship designer. A picture that is not drawn yet is the ZIN frame.`, 'spriteTypes = {'];
   for (const h of model.raw.naval.hulls) L.push(sprite(`GFX_${h.id}_designer`, 'gfx/interface/equipmentdesigner/zin', `${h.id}_designer`));
   for (const cat of Object.keys(model.raw.naval.categories)) { L.push(sprite(`GFX_zin_designer_slot_${cat}`, 'gfx/interface/equipmentdesigner/zin', `slot_${cat}`)); L.push(sprite(`GFX_zin_designer_slot_${cat}_highlight`, 'gfx/interface/equipmentdesigner/zin', `slot_${cat}_highlight`)); }

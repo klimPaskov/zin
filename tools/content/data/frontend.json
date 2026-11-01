@@ -1,0 +1,62 @@
+{
+ "format": 1,
+ "about": "Source of the frontend content (docs/specs/07_interface/03_main_menu_and_frontend.md sections 2 to 6; UI overhaul lane W6). Read by tools/content/modules/frontend.mjs, which writes common/bookmarks/world.txt, localisation/english/zin_frontend_l_english.yml and localisation/replace/zin_frontend_replace_l_english.yml. Realms are named by roster key, so a tag change never orphans a text. Each realm's description is its 4A 1748 situation (`today`), its founding date and its banner (`sign.device`, K68) from tools/content/data/world/history/<region>.json; `descriptionOverride` replaces the situation only where the history text names a secret the frontend may not show.",
+ "bookmark": {
+  "name": "The Fourth Age",
+  "desc": "Aoaz has known peace for more than seventeen centuries. In Parim the Golden King feasts while his offices are sold, the temples of the Deliverer are full, and trade crosses the wide central sea. In the north fishermen tell of black ships among the isles; in the south Mirolon's scouts watch the storms. Nobody who matters is at war. Not yet.\n\nEvery realm on the map can be played. Under the rule The Shape of the Age the start may differ a little from the chronicle: a ruler's temper, an old feud, a disputed valley.",
+  "defaultCountry": "aenor",
+  "weatherSeed": 22345,
+  "other": "Choose any of the crowns, dominions, clans, temple-states and island lordships of Aoaz on the map. Every realm can be played."
+ },
+ "description": { "maxChars": 600, "bannerLabel": "Banner", "foundedLabel": "Founded" },
+ "great": [
+  { "key": "aenor", "focuses": ["the_golden_court", "middle_kingdom_concord", "temples_of_the_deliverer"] },
+  { "key": "lerendor", "focuses": ["strait_treasury", "two_crowns", "the_leren_compact"] },
+  { "key": "magical_forest", "focuses": ["council_of_houses", "wall_accord", "elder_kinship"] },
+  { "key": "worshipdom", "focuses": ["zilin_hermitage", "pilgrim_roads", "houses_of_the_first_light"] },
+  { "key": "mirolon", "focuses": ["lake_and_coast", "watch_on_the_passes", "voices_to_the_north"] },
+  { "key": "goldoroth", "focuses": ["warking_of_cocanoor", "forge_pits", "the_armed_peace"] },
+  { "key": "puvulan", "focuses": ["court_of_nafeher", "patient_lord", "southern_dominion"], "descriptionOverride": "In 4A 1748, in the Musters that the Dominion counts instead of months, Volgan rules the plateau, the Demonic Mountains, the Abyss's rim, Unlo and the isle of Exhoros from Nafeher, with some 300,000 living subjects among orcs, ogres, goblins and men of the plateau oases, and the dead uncounted. Behind the Veil of Storms the Dominion has spent a century filling its musters again, which only Mirolon's scouts believe." },
+  { "key": "zols_mistake", "focuses": ["silence_of_the_north", "the_black_islands", "the_dead_of_zol"] }
+ ],
+ "majorsInList": [
+  { "key": "coldor", "focuses": ["winter_crown", "iron_and_furs", "northern_accord"] },
+  { "key": "noris", "focuses": ["desert_throne", "salt_road", "noris_treaty"] },
+  { "key": "stabilo", "focuses": ["the_merchant_houses", "ledger_of_the_east", "stabilo_pact"] },
+  { "key": "gala", "focuses": ["kings_audiences", "kings_ships", "sun_realms"] },
+  { "key": "gunwyn", "focuses": ["clan_halls", "the_grey_ford", "lawspeakers_rock"] }
+ ],
+ "minorRule": "Every realm with a regional focus tree (docs/design/focus/regional_*.json), ordered by label then name; its three focuses are the first three of its tree (by row, then column) whose default name is plain public text.",
+ "descriptionOverrides": {
+  "nether": "The Nether lies below the rim of the Abyss, a realm of demon houses that keep their own counsel and their own old quarrels. Its lords swear to no crown of the surface, trade little and travel less, and the few envoys who come back from its halls speak of courts older than any above."
+ },
+ "labels": [
+  { "id": "middle_lands", "name": "Middle Lands", "regions": ["middle_lands"] },
+  { "id": "north_lands", "name": "North Lands", "regions": ["north_lands"] },
+  { "id": "cold_lands", "name": "Cold Lands", "regions": ["cold_lands"] },
+  { "id": "west_lands", "name": "West Lands", "regions": ["west_lands"] },
+  { "id": "east_lands", "name": "East Lands", "regions": ["east_lands"] },
+  { "id": "dark_lands", "name": "Dark Lands", "regions": ["dark_lands"] },
+  { "id": "ember_lands", "name": "Ember Lands", "regions": ["ember_lands", "south_lands"] },
+  { "id": "lands_of_the_sun", "name": "Lands of the Sun", "regions": ["lands_of_the_sun"] },
+  { "id": "magical_lands", "name": "Magical Lands", "regions": ["magical_lands"] },
+  { "id": "islands", "name": "The Isles", "regions": ["tritons_islands", "islands_of_the_south", "zols_mistake"] }
+ ],
+ "menu": {
+  "title": "ZIN",
+  "subtitle": "The Fourth Age of Aoaz",
+  "versionPrefix": "Version"
+ },
+ "difficultyNote": "FE_DIFFICULTY_HARD is not replaced: the vanilla label already reads Veteran, the glossary term (a copied vanilla value fails check C5); only its tooltip is ZIN's.",
+ "difficulty": {
+  "FE_DIFFICULTY_VERY_EASY": "Burgher",
+  "FE_DIFFICULTY_VERY_EASY_TOOLTIP": "§L\"The walls are high and the granaries full.\"§!",
+  "FE_DIFFICULTY_EASY": "Pilgrim",
+  "FE_DIFFICULTY_EASY_TOOLTIP": "§L\"Every road has a shrine, and every shrine a welcome.\"§!",
+  "FE_DIFFICULTY_NORMAL": "Man-at-arms",
+  "FE_DIFFICULTY_NORMAL_TOOLTIP": "§L\"Keep your blade oiled and your banner dry.\"§!",
+  "FE_DIFFICULTY_HARD_TOOLTIP": "§L\"The old soldiers say peace is only a long muster.\"§!",
+  "FE_DIFFICULTY_VERY_HARD": "Champion",
+  "FE_DIFFICULTY_VERY_HARD_TOOLTIP": "§L\"Kings fall, and so may you.\"§!"
+ }
+}
