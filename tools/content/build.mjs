@@ -111,6 +111,8 @@ const uiFrontend = await (await import('./modules/ui_frontend.mjs')).buildUiFron
 // Politics, diplomacy, decisions, the peace conference and the diplomatic popup (UI overhaul lane W2): own Chancery sprites, the .gui
 // sprite swaps of those windows, and the realm's roots and sign in the politics view.
 const uiChancery = await (await import('./modules/ui_chancery.mjs')).buildChancery(staged, { countries, sheets: uiSheets, provenance });
+// UI lane W4: the intelligence windows draw the Chancery sprites above (modules/ui_military.mjs).
+const uiMilitary = (await import('./modules/ui_military.mjs')).buildMilitaryUi(staged);
 void uiChancery;
 const peopleStartup = await buildPeoples(staged, countries, assignment, art);
 // Cultures, faiths and the per-state culture data (docs/design/stage2/cultures.md): after buildPeoples, whose on_startup block it joins.

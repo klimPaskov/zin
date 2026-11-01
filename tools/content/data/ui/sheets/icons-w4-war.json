@@ -1,0 +1,241 @@
+{
+ "id": "icons-w4-war",
+ "family": "military",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  6,
+  6
+ ],
+ "ground": "black",
+ "matte": "outline",
+ "group": "w4_icons",
+ "needs": [],
+ "note": "UI overhaul lane W4 (production, construction, trade, logistics, military and intelligence windows): emblems for the icon sprites whose sockets were empty. The same painted style as the attached small interface icon sheet: each item one free-standing object or emblem in aged bronze, dark iron, oak and enamel, lit from the upper left, crisp silhouette that reads at 24 pixels, no plaque or frame behind it unless the item names one.",
+ "references": [
+  "ui/reskin/icons-text-1.png"
+ ],
+ "cells": [
+  {
+   "key": "hit_ours",
+   "subject": "a red sword striking down with a red slash mark",
+   "luma": 57.1,
+   "lum": "dark"
+  },
+  {
+   "key": "rout_ours",
+   "subject": "a red banner snapped at the pole",
+   "luma": 63.6,
+   "lum": "dark"
+  },
+  {
+   "key": "hit_theirs",
+   "subject": "a shield struck by a sword with a green slash mark",
+   "luma": 75.8,
+   "lum": "dark"
+  },
+  {
+   "key": "rout_theirs",
+   "subject": "a green-edged torn banner",
+   "luma": 69.2,
+   "lum": "dark"
+  },
+  {
+   "key": "fallen",
+   "subject": "an empty helmet lying on its side",
+   "luma": 70.8,
+   "lum": "dark"
+  },
+  {
+   "key": "assist",
+   "subject": "two gauntlets gripping one spear",
+   "luma": 76.2,
+   "lum": "dark"
+  },
+  {
+   "key": "soft",
+   "subject": "a short sword",
+   "luma": 103.4,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "hard",
+   "subject": "a war hammer",
+   "luma": 75,
+   "lum": "dark"
+  },
+  {
+   "key": "breach",
+   "subject": "a battering ram head",
+   "luma": 62.9,
+   "lum": "dark"
+  },
+  {
+   "key": "stratagem",
+   "subject": "a war banner with three arrows painted on it",
+   "luma": 80.2,
+   "lum": "dark"
+  },
+  {
+   "key": "halt",
+   "subject": "a raised armoured gauntlet, palm forward",
+   "luma": 78.7,
+   "lum": "dark"
+  },
+  {
+   "key": "home_harbour",
+   "subject": "an anchor inside a ring of harbour wall",
+   "luma": 60.3,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_pride",
+   "subject": "a gilded ship figurehead of a leaping dolphin",
+   "luma": 90.1,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_reserve",
+   "subject": "a furled sail tied on a yard",
+   "luma": 99.4,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "fleet_fighting",
+   "subject": "a flaming arrow over waves",
+   "luma": 58.1,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_closing",
+   "subject": "a ship bow with a bronze arrow ahead of it",
+   "luma": 71.6,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_split",
+   "subject": "two small ships drawn apart by a dividing line",
+   "luma": 61.2,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_merge",
+   "subject": "two small ships joined by a curved arrow",
+   "luma": 52.5,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_disband",
+   "subject": "a torn ship pennant",
+   "luma": 81.5,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_refit",
+   "subject": "a ship with a bronze upward arrow over it",
+   "luma": 85.2,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_mend",
+   "subject": "a ship with a mallet over its hull",
+   "luma": 62.3,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_fill",
+   "subject": "a ship with a small plus mark above it",
+   "luma": 81.1,
+   "lum": "dark"
+  },
+  {
+   "key": "beacon",
+   "subject": "a harbour beacon fire on a stone pillar",
+   "luma": 69.5,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_plan",
+   "subject": "a ship plan drawn on parchment",
+   "luma": 141.5,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "signal_flags",
+   "subject": "three signal flags on one line",
+   "luma": 73.7,
+   "lum": "dark"
+  },
+  {
+   "key": "fleet_save",
+   "subject": "a sealed scroll with a small ship drawn on it",
+   "luma": 79.6,
+   "lum": "dark"
+  },
+  {
+   "key": "reset",
+   "subject": "a bronze circular arrow",
+   "luma": 69.7,
+   "lum": "dark"
+  },
+  {
+   "key": "sunk",
+   "subject": "a broken mast sinking under waves",
+   "luma": 64.9,
+   "lum": "dark"
+  },
+  {
+   "key": "admiralty",
+   "subject": "a lighthouse tower with a pennant",
+   "luma": 71.2,
+   "lum": "dark"
+  },
+  {
+   "key": "seal_broken",
+   "subject": "a wax seal broken in two",
+   "luma": 57.9,
+   "lum": "dark"
+  },
+  {
+   "key": "seal_key",
+   "subject": "a bronze key laid across a wax seal",
+   "luma": 65.4,
+   "lum": "dark"
+  },
+  {
+   "key": "whisper_master",
+   "subject": "a black velvet half-mask hanging on a cloak pin",
+   "luma": 35.7,
+   "lum": "dark"
+  },
+  {
+   "key": "agents",
+   "subject": "three hooded cloaks hanging side by side, empty",
+   "luma": 33.2,
+   "lum": "dark"
+  },
+  {
+   "key": "captured",
+   "subject": "a pair of iron manacles",
+   "luma": 48.7,
+   "lum": "dark"
+  },
+  {
+   "key": "lost_agent",
+   "subject": "a snuffed candle with a thin trail of smoke",
+   "luma": 99.6,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "web",
+   "subject": "a web of silver threads with a small knot at its centre",
+   "luma": 39.2,
+   "lum": "dark"
+  }
+ ],
+ "tranche": 9
+}

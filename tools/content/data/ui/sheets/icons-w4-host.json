@@ -1,0 +1,252 @@
+{
+ "id": "icons-w4-host",
+ "family": "military",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  6,
+  6
+ ],
+ "ground": "black",
+ "matte": "outline",
+ "group": "w4_icons",
+ "needs": [],
+ "note": "UI overhaul lane W4 (production, construction, trade, logistics, military and intelligence windows): emblems for the icon sprites whose sockets were empty. The same painted style as the attached small interface icon sheet: each item one free-standing object or emblem in aged bronze, dark iron, oak and enamel, lit from the upper left, crisp silhouette that reads at 24 pixels, no plaque or frame behind it unless the item names one.",
+ "references": [
+  "ui/reskin/icons-text-1.png"
+ ],
+ "cells": [
+  {
+   "key": "reinforce",
+   "subject": "a column of three spear tips behind a small banner, a plus mark above",
+   "luma": 75.7,
+   "lum": "dark"
+  },
+  {
+   "key": "muster_roll",
+   "subject": "a rolled muster list with a ribbon",
+   "luma": 119.3,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "roll_stale",
+   "subject": "a cracked rolled muster list with a small red warning notch",
+   "luma": 117.5,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "sf_no",
+   "subject": "a winged badge with a small red cross over it",
+   "luma": 94,
+   "lum": "dark"
+  },
+  {
+   "key": "sf_yes",
+   "subject": "a winged badge with a small green tick",
+   "luma": 96.6,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "sf_plain",
+   "subject": "a plain winged badge",
+   "luma": 98,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "hq_no",
+   "subject": "a war-camp tent pennant with a small red cross",
+   "luma": 96.9,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "hq_yes",
+   "subject": "a war-camp tent pennant with a small green tick",
+   "luma": 99.7,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "hq_plain",
+   "subject": "a plain war-camp tent pennant",
+   "luma": 100.7,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "drop_no",
+   "subject": "a griffin rider's cloak spread like wings, with a small red cross",
+   "luma": 58.4,
+   "lum": "dark"
+  },
+  {
+   "key": "drop_yes",
+   "subject": "a griffin rider's cloak spread like wings, with a small green tick",
+   "luma": 57.9,
+   "lum": "dark"
+  },
+  {
+   "key": "gear_ok",
+   "subject": "a closed wooden arms chest",
+   "luma": 69.3,
+   "lum": "dark"
+  },
+  {
+   "key": "gear_short",
+   "subject": "an open arms chest with a red warning mark",
+   "luma": 60.1,
+   "lum": "dark"
+  },
+  {
+   "key": "roll_delete",
+   "subject": "a muster list torn in two",
+   "luma": 134.6,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "foreign_rolls",
+   "subject": "a muster list under a foreign striped pennant",
+   "luma": 111.6,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "frontage",
+   "subject": "two shields side by side with a double-headed arrow under them",
+   "luma": 70.2,
+   "lum": "dark"
+  },
+  {
+   "key": "baton",
+   "subject": "a commander's gilded baton",
+   "luma": 88.4,
+   "lum": "dark"
+  },
+  {
+   "key": "en_route",
+   "subject": "a galloping rider carrying a banner",
+   "luma": 48.4,
+   "lum": "dark"
+  },
+  {
+   "key": "camp_badge",
+   "subject": "a war-camp tent with a pennant on top",
+   "luma": 100.3,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "border_war",
+   "subject": "two spears crossed over a boundary stone",
+   "luma": 67.2,
+   "lum": "dark"
+  },
+  {
+   "key": "tr_attack",
+   "subject": "an upright sword",
+   "luma": 102.3,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "tr_defence",
+   "subject": "a round shield with a boss",
+   "luma": 69.5,
+   "lum": "dark"
+  },
+  {
+   "key": "tr_planning",
+   "subject": "an unrolled map with a pair of dividers",
+   "luma": 131.3,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "tr_logistics",
+   "subject": "a wagon wheel",
+   "luma": 51.8,
+   "lum": "dark"
+  },
+  {
+   "key": "tr_maneuver",
+   "subject": "a galloping horse head",
+   "luma": 60.2,
+   "lum": "dark"
+  },
+  {
+   "key": "tr_coordination",
+   "subject": "a curved war horn with a ribbon",
+   "luma": 65.4,
+   "lum": "dark"
+  },
+  {
+   "key": "skill",
+   "subject": "a small eight-pointed rank star",
+   "luma": 107.3,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "adviser",
+   "subject": "a quill crossed over a wax seal",
+   "luma": 94.5,
+   "lum": "dark"
+  },
+  {
+   "key": "supply_cask",
+   "subject": "a supply cask on a sack of grain",
+   "luma": 84.3,
+   "lum": "dark"
+  },
+  {
+   "key": "regions",
+   "subject": "a small map with three pins",
+   "luma": 136.8,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "mastery",
+   "subject": "a sword inside a laurel wreath",
+   "luma": 69.6,
+   "lum": "dark"
+  },
+  {
+   "key": "members",
+   "subject": "three small banners side by side",
+   "luma": 84.6,
+   "lum": "dark"
+  },
+  {
+   "key": "theatre_settings",
+   "subject": "a brass compass rose",
+   "luma": 79.4,
+   "lum": "dark"
+  },
+  {
+   "key": "battle_log",
+   "subject": "a scroll with crossed swords drawn on it",
+   "luma": 144.8,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "battle_here",
+   "subject": "two crossed swords with a small spark where they meet",
+   "luma": 95.5,
+   "lum": "dark"
+  },
+  {
+   "key": "drill_stop",
+   "subject": "a sand-glass with a bar across it",
+   "luma": 79.2,
+   "lum": "dark"
+  }
+ ],
+ "tranche": 9
+}

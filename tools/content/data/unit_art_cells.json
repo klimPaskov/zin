@@ -1,0 +1,386 @@
+{
+ "source": "Layouts of the sub-unit picture sheets (art store raw/units/<sheet>.png, generated with gpt-6-luna on a black ground). Numbers and ids only. kind large: GFX_unit_<id>_icon_medium on gfx/interface/counters/divisions_large/zin/<id>.dds (152 x 42, two frames: the bare symbol, then the plate). kind map: GFX_unit_<id>_icon_medium_white on <dir>/zin/<id>.dds (60 x 12, two frames; dir divisions_small, or air_small for aircraft), and the inline text icon GFX_unit_<id>_icon_small on gfx/interface/counters/zin_small/<id>.dds for land units (the same map art); kind ship: GFX_unit_<id>_icon_medium_white on gfx/interface/counters/ships_small/zin/<id>.dds (30 x 12, one frame, vanilla naval form; its text icon is the same file). Map and aircraft pictures take two cells per unit (the bare symbol, then the plate); ship cells take one. A sprite keeps the family unknown icon until its sheet is accepted.",
+ "complete": true,
+ "sheets": [
+  {
+   "sheet": "unit-large-01-r2",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_men_levy",
+    "zin_men_infantry",
+    "zin_men_archers",
+    "zin_men_handgunners",
+    "zin_men_heavy_infantry",
+    "zin_men_hill_companies"
+   ],
+   "fresh": true
+  },
+  {
+   "sheet": "unit-large-02-r2",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_men_sea_soldiers",
+    "zin_men_rangers",
+    "zin_men_cavalry",
+    "zin_men_horse_archers",
+    "zin_men_knights",
+    "zin_men_camel_riders"
+   ],
+   "fresh": true
+  },
+  {
+   "sheet": "unit-large-03",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_men_war_elephants",
+    "zin_men_temple_wardens",
+    "zin_elves_warden",
+    "zin_elves_archers",
+    "zin_elves_riders",
+    "zin_elves_rangers"
+   ],
+   "fresh": false
+  },
+  {
+   "sheet": "unit-large-04",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_sun_elves_guard",
+    "zin_sun_elves_bowmen",
+    "zin_orcs_warrior",
+    "zin_orcs_goblins",
+    "zin_orcs_raiders",
+    "zin_ogres_brutes"
+   ],
+   "fresh": false
+  },
+  {
+   "sheet": "unit-large-05",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_abyss_folk",
+    "zin_trolls_brute",
+    "zin_giants_host",
+    "zin_giants_hurlers",
+    "zin_ents_grove",
+    "zin_yeti_band"
+   ],
+   "fresh": false
+  },
+  {
+   "sheet": "unit-large-06",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_demons_netherborn",
+    "zin_demons_shachihata",
+    "zin_demons_bound",
+    "zin_the_dead_revenant",
+    "zin_dead_grave_riders",
+    "zin_dead_necromancers"
+   ],
+   "fresh": false
+  },
+  {
+   "sheet": "unit-large-07-r2",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_zol_deathless",
+    "zin_zol_deathless_crews",
+    "zin_siege_catapult",
+    "zin_siege_trebuchet",
+    "zin_siege_bombard",
+    "zin_support_catapults"
+   ],
+   "fresh": true
+  },
+  {
+   "sheet": "unit-large-08-r2",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_support_bombards",
+    "zin_support_ballistae",
+    "zin_support_scorpions",
+    "zin_support_scouts",
+    "zin_support_sappers",
+    "zin_support_healers"
+   ],
+   "fresh": true
+  },
+  {
+   "sheet": "unit-large-09-r2",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_support_heralds",
+    "zin_support_quartermasters",
+    "zin_support_provosts",
+    "zin_support_armourers",
+    "zin_support_wardens",
+    "zin_elves_wardsingers"
+   ],
+   "fresh": true
+  },
+  {
+   "sheet": "unit-large-10",
+   "kind": "large",
+   "cols": 2,
+   "rows": 6,
+   "units": [
+    "zin_support_pack_train",
+    "zin_glo_bearer",
+    "zin_volgan_presence",
+    "zin_great_spirit",
+    "zin_ship_galley",
+    "zin_ship_warship"
+   ],
+   "fresh": false
+  },
+  {
+   "sheet": "unit-large-11",
+   "kind": "large",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_ship_great_warship",
+    "zin_ship_raider",
+    "zin_air_griffin_riders",
+    "zin_air_dragon_flight"
+   ],
+   "fresh": false
+  },
+  {
+   "sheet": "unit-mapl-01",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_men_levy",
+    "zin_men_infantry",
+    "zin_men_archers",
+    "zin_men_handgunners"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-02",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_men_heavy_infantry",
+    "zin_men_hill_companies",
+    "zin_men_sea_soldiers",
+    "zin_men_rangers"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-03",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_men_cavalry",
+    "zin_men_horse_archers",
+    "zin_men_knights",
+    "zin_men_camel_riders"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-04",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_men_war_elephants",
+    "zin_men_temple_wardens",
+    "zin_elves_warden",
+    "zin_elves_archers"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-05",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_elves_riders",
+    "zin_elves_rangers",
+    "zin_sun_elves_guard",
+    "zin_sun_elves_bowmen"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-06",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_orcs_warrior",
+    "zin_orcs_goblins",
+    "zin_orcs_raiders",
+    "zin_ogres_brutes"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-07",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_abyss_folk",
+    "zin_trolls_brute",
+    "zin_giants_host",
+    "zin_giants_hurlers"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-08",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_ents_grove",
+    "zin_yeti_band",
+    "zin_demons_netherborn",
+    "zin_demons_shachihata"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-09",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_demons_bound",
+    "zin_the_dead_revenant",
+    "zin_dead_grave_riders",
+    "zin_dead_necromancers"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-10",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_zol_deathless",
+    "zin_zol_deathless_crews",
+    "zin_siege_catapult",
+    "zin_siege_trebuchet"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-11",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_siege_bombard",
+    "zin_support_catapults",
+    "zin_support_bombards",
+    "zin_support_ballistae"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-12",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_support_scorpions",
+    "zin_support_scouts",
+    "zin_support_sappers",
+    "zin_support_healers"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-13",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_support_heralds",
+    "zin_support_quartermasters",
+    "zin_support_provosts",
+    "zin_support_armourers"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-14",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 4,
+   "units": [
+    "zin_support_wardens",
+    "zin_elves_wardsingers",
+    "zin_support_pack_train",
+    "zin_glo_bearer"
+   ]
+  },
+  {
+   "sheet": "unit-mapl-15",
+   "kind": "map",
+   "dir": "divisions_small",
+   "cols": 2,
+   "rows": 2,
+   "units": [
+    "zin_volgan_presence",
+    "zin_great_spirit"
+   ]
+  },
+  {
+   "sheet": "unit-mapa-01",
+   "kind": "map",
+   "dir": "air_small",
+   "cols": 2,
+   "rows": 2,
+   "units": [
+    "zin_air_griffin_riders",
+    "zin_air_dragon_flight"
+   ]
+  },
+  {
+   "sheet": "unit-ship-01",
+   "kind": "ship",
+   "dir": "ships_small",
+   "cols": 1,
+   "rows": 4,
+   "units": [
+    "zin_ship_galley",
+    "zin_ship_warship",
+    "zin_ship_great_warship",
+    "zin_ship_raider"
+   ]
+  }
+ ]
+}

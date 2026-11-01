@@ -14,6 +14,8 @@ import { FIXED_SHEETS, LEGACY_CHROME_SHEETS, FAMILY_TRANCHE, SHEET_ASPECTS, vali
 import { LUMA } from './image_codec.mjs';
 import { THEME_SHEET, BUTTON_SHEET, CONTROL_SHEET, CHROME_THEMES } from './ui_chrome_sheets.mjs';
 import { readFileSync } from 'node:fs';
+// UI lane W4: the economy, military and intelligence icon map (texture -> emblem cells).
+const W4_ICONS = JSON.parse(readFileSync(new URL('../data/ui/w4_icons.json', import.meta.url), 'utf8'));
 import { TEXTICON_SUBJECTS, CHARGES, FOLDER_EMBLEMS, RESOURCE_EMBLEMS, GATHERING_TIERS, TOOLBAR_EMBLEMS, VALUE_EMBLEMS, cursorGlyph, humanize } from './ui_vocab.mjs';
 
 export const DISPOSITIONS = ['R', 'Z', 'O', 'D', 'E', 'H', 'U'];
@@ -165,6 +167,9 @@ export const OVERRIDE_FILES = [
   // UI overhaul lane W3 (K69, K70; modules/ui_research.mjs): the focus tree and research windows draw their own Chronicle sprites (sprite
   // names swapped, titles in the window title face; every element name and position is vanilla).
   'interface/nationalfocusview.gui', 'interface/countrytechnologyview.gui',
+  // UI overhaul lane W4 (K70 lead mapping: intelligence is Chancery; modules/ui_military.mjs): the intelligence windows draw the Chancery
+  // sprites of lane W2 (sprite names swapped, two section titles in the heading colour; every element name and position is vanilla).
+  'interface/countryintelligenceagencyview.gui', 'interface/countryintelledger.gui',
 ];
 export const WRITERS = ['reskin', 'presentation', 'cursors', 'minimap'];
 export const MINIMAP_TEXTURES = new Set(['gfx/minimap/minimap.dds', 'gfx/interface/minimap.dds']);
@@ -331,6 +336,17 @@ function barCell(role, lum) {
   const c = best(found, lum);
   return { sheet: c.sheet, key: c.cell.key };
 }
+// Controls of one size that are different controls get different sockets (the same size and the same cell give the same bytes, so the
+// asset check reports them as one group). Keyed by the lower-case texture name; the controls of a group are listed in one place so the
+// sockets of the sheet stay distinct from each other (UI overhaul lane W4 follow-up: the endgame, market, sort and minimap controls).
+const SOCKET_ALLOC = {
+  boost_building_button: 'socket_round_lit', button_left: 'socket_round', button_right: 'socket_round_dull', minimap_ping_defensive: 'socket_round_gilt',
+  endgame_convoys_button: 'socket_round_lit', endgame_manpower_button: 'socket_round', endgame_province_button: 'socket_round_dull', endgame_score_button: 'socket_round_gilt',
+  exiled_unit_icon: 'socket_round_gilt', mapicon_air_training: 'socket_round_lit', support_ship_value_icon: 'socket_round_dull',
+  market_subsidy_several_countries: 'socket_round_lit', market_subsidy_trigger: 'socket_round',
+  sort_amount: 'socket_tall', sort_cost: 'socket_tall_lit', commander_filter_fm: 'socket_tall_dull', commander_filter_admiral: 'socket_tall_gilt',
+  commander_filter_all: 'socket_tall_iron', commander_sort_blue: 'socket_tall_rivet', commander_sort_green: 'chip_tall',
+};
 // The neutral socket of a shape in the class: every variant of the shape competes.
 function socketCell(shape, lum) {
   const keys = [`socket_${shape}`, `socket_${shape}_mid`, `socket_${shape}_light`, `socket_${shape}_lit`, `socket_${shape}_dull`];
@@ -392,6 +408,13 @@ const SPECIFIC = [
     'factions/ui/topbar_faction': 'tv_faction', 'factions/ui/topbar_faction_empty': 'tv_faction_empty', 'topbar/nuke_icon': 'tv_wildfire', 'topbar/achievements_button': 'tv_deeds',
     'topbar/show_dismissed_alerts_icon': 'tv_dismissed_alerts', attacker_speed_icon: 'tv_attacker_speed' }).map(([stem, cell]) => [new RegExp(`^gfx/interface/${stem}\\.dds$`), 'topbar', 'icons-topbar-values', cell, 'contain', 'cell', { luma: 'free' }]),
   [/^gfx\/interface\/topbar\/armyoverview_buttons_bg\.dds$/, 'topbar', 'ui-topbar', 'overview_tray', 'cover'],
+  // The icon sprites of the economy, military and intelligence windows whose sockets were empty (UI lane W4): one emblem cell per frame from
+  // data/ui/w4_icons.json (generated sheets icons-w4-*, or a reused cell of the same concept), cut by their own outline (luma free).
+  ...Object.entries(W4_ICONS.textures).map(([tex, r]) => [new RegExp(`^${tex.toLowerCase().replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}$`), r.family, r.sheet, r.cells, 'contain', 'cell', { luma: 'free' }]),
+  // The fuel, supply and convoy bars of the top bar and the logistics view (UI lane W4): a gilt fill over a dark groove, so the two parts of
+  // the bar read apart (both were dark cells; the engine tints the fill with the bar's colours).
+  [/^gfx\/interface\/fuel_bar\.dds$/, 'research_production', 'ui-chrome-banner-hall', 'plate_mid', 'frame_tile', 'opaque'],
+  [/^gfx\/interface\/(?:fuel_bar_bg|logistics_status_fuel_bar_bg|logistics_status_progressbar_bg)\.dds$/, 'research_production', 'ui-chrome-banner-hall', 'groove', 'frame_tile', 'opaque'],
   [/^gfx\/interface\/ingameclock_bg\.dds$/, 'map_interface', 'ui-map', 'clock_plate', 'cover'],
   [/^gfx\/interface\/mapmode\/mapmode_(main|bottom)_bg\.dds$/, 'map_interface', 'ui-map', 'map_tray', 'cover'],
   [/^gfx\/minimap\/border\.dds$/, 'map_interface', 'ui-map', 'minimap_frame', 'same_shape', 'shape'],   // 'shape' here means the vanilla outline; a translucent file takes 'soft' (shapeOf)
@@ -443,7 +466,9 @@ function chromeRole(s) {
   const repeatFrames = (cell, n = f) => Array.from({ length: n }, () => cell);
   const iconSocket = () => {
     const shape = ar > 1.6 ? 'wide' : ar < 0.62 ? 'tall' : Math.abs(ar - 1) < 0.2 ? 'round' : 'square';
-    const cell = socketCell(shape, lum);
+    // Selected and deselected big map-mode buttons are two states of one control: the selected one is a bright socket, the deselected one dull iron.
+    const mapmodeBig = /^mapmode_buttons_(deselected|selected)_big$/.exec(stem);
+    const cell = mapmodeBig ? (mapmodeBig[1] === 'selected' ? 'socket_round_mid' : 'socket_round_dull') : (SOCKET_ALLOC[stem] ?? socketCell(shape, lum));
     return { family: surfaceFamily(p, 'chrome_controls'), ...strip('ui-sockets', repeatFrames(cell), 'contain', { alpha: 'cell' }) };
   };
   // Bands: one role per frame, each resolved to a cell of the sprite's luminance class (the cells may sit in two sheets).

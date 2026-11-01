@@ -25,6 +25,7 @@ import { placeNames, buildNames } from './names.mjs';
 import { compileBanned, findBanned, allowanceCovers } from '../lib/banned.mjs';
 import { cultureRows, gamePeopleOf } from '../lib/roster.mjs';
 import { buildEquipmentArt, equipmentTexture, loadEquipmentArtCells, assertEquipmentArtComplete, EQUIP_FRAME } from './equipment_art.mjs';
+import { buildUnitArt, assertUnitArtComplete, largeTexture, UNIT_FRAME, CELLS_FILE as UNIT_CELLS_FILE } from './unit_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -870,10 +871,12 @@ const sprite = (name, t) => `\tspriteType = {\n\t\tname = "${name}"\n\t\ttexture
 
 function writeSprites(staged, model) {
   const unitSprites = [];
+  // Sub-unit pictures (unit_art.mjs, lane I3): a shipped unit points at its own two-frame DDS; any other sprite at the unknown icon.
+  const shipped = model.unitArt ?? { large: new Set(), map: new Map(), text: new Map() }, unknown = { file: UNIT_FRAME, frames: 1 };
   for (const id of model.unitById.keys()) {
-    unitSprites.push(sprite(`GFX_unit_${id}_icon_medium`, textureFor('gfx/interface/counters/divisions_large/zin', id)));
-    unitSprites.push(sprite(`GFX_unit_${id}_icon_medium_white`, textureFor('gfx/interface/counters/divisions_small/zin', id)));
-    unitSprites.push(sprite(`GFX_unit_${id}_icon_small`, textureFor('gfx/interface/counters/zin_small', id)));
+    unitSprites.push(sprite(`GFX_unit_${id}_icon_medium`, shipped.large.has(id) ? { file: largeTexture(id), frames: 2 } : unknown));
+    unitSprites.push(sprite(`GFX_unit_${id}_icon_medium_white`, shipped.map.get(id) ?? unknown));
+    unitSprites.push(sprite(`GFX_unit_${id}_icon_small`, shipped.text.get(id) ?? unknown));
   }
   staged.text('interface/zin_units.gfx', `${HEADER}\n# Counters of the ZIN sub-units. A counter without generated art points at the ZIN frame until the art arrives.\nspriteTypes = {\n${unitSprites.join('\n')}\n}\n`);
   // Equipment pictures (equipment_art.mjs, lane I2): one per archetype and one per type, 151 sprites. A sprite whose picture has not
@@ -1020,6 +1023,10 @@ export async function buildWarfare(staged, ctx = {}) {
   const eqCells = await loadEquipmentArtCells();
   model.equipmentArt = await buildEquipmentArt(staged, { warn: msg => process.stderr.write(`equipment art: ${msg}\n`) });
   assertEquipmentArtComplete(eqCells, model.equipmentArt);
+  // Sub-unit pictures (lane I3): an accepted sheet ships the large, map and text sprites of each unit; any other keeps the unknown icon.
+  const unitCells = JSON.parse(readFileSync(UNIT_CELLS_FILE, 'utf8'));
+  model.unitArt = await buildUnitArt(staged, { warn: msg => process.stderr.write(`unit art: ${msg}\n`) });
+  assertUnitArtComplete(unitCells, model.unitArt);
   writeSprites(staged, model);
   writeEntities(staged, model);
   writeDragons(staged, model);

@@ -9,127 +9,183 @@
  ],
  "ground": "black",
  "matte": "outline",
- "note": "Cells 1 to 12 are the dark sockets and may keep a dark recess. Cells 13 to 16 are mid-tone and cells 17 to 20 are light: in those eight the whole recess of the socket, not only its rim, is painted in the lit tone named for the cell (cells 13 to 16 a light caramel-tan of about #B08050 with a bright bronze rim, never dark brown or walnut; cells 17 to 20 a pale cream-gold), so that the cell reads as mid-tone or as light from rim to centre, with an average brightness well above the dark sockets, and no black or dark brown shows inside the socket. The black of the sheet is only the ground between the cells.",
+ "note": "Cells 1 to 21 are the dark sockets and studs and may keep a dark recess. Cells 22 to 25 are mid-tone and cells 26 to 29 are light: in those eight the whole recess of the socket, not only its rim, is painted in the lit tone named for the cell (cells 22 to 25 a light caramel-tan of about #B08050 with a bright bronze rim, never dark brown or walnut; cells 26 to 29 a pale cream-gold), so that the cell reads as mid-tone or as light from rim to centre, with an average brightness well above the dark sockets, and no black or dark brown shows inside the socket. Every socket of the sheet differs in its rim, its finish or its shape, so that no two controls of the interface need the same picture. The black of the sheet is only the ground between the cells.",
  "cells": [
   {
    "key": "socket_round",
    "subject": "an empty round bronze socket with a dark recess and a thin gilt ring",
    "lum": "dark",
-   "luma": 65.7
-  },
-  {
-   "key": "socket_square",
-   "subject": "an empty square bronze socket with a dark recess",
-   "lum": "dark",
-   "luma": 61.5
-  },
-  {
-   "key": "socket_wide",
-   "subject": "an empty wide bronze socket, about twice as wide as tall",
-   "lum": "dark",
-   "luma": 57.9
-  },
-  {
-   "key": "socket_tall",
-   "subject": "an empty tall bronze socket, about twice as tall as wide",
-   "lum": "dark",
-   "luma": 60.3
-  },
-  {
-   "key": "chip_wide",
-   "subject": "a small wide bronze chip with a dark centre",
-   "lum": "dark",
-   "luma": 64.1
-  },
-  {
-   "key": "chip_tall",
-   "subject": "a small tall bronze chip with a dark centre",
-   "lum": "dark",
-   "luma": 59.4
-  },
-  {
-   "key": "badge_shield",
-   "subject": "an empty bronze heater shield with a dark field",
-   "lum": "dark",
-   "luma": 59.9
-  },
-  {
-   "key": "pip_round",
-   "subject": "a tiny round bronze stud",
-   "lum": "dark",
-   "luma": 84.2
-  },
-  {
-   "key": "pip_square",
-   "subject": "a tiny square bronze stud",
-   "lum": "dark",
-   "luma": 91.1
+   "luma": 43.4
   },
   {
    "key": "socket_round_lit",
    "subject": "the round bronze socket with a gilt ring, brighter",
    "lum": "dark",
-   "luma": 70.5
-  },
-  {
-   "key": "socket_square_lit",
-   "subject": "the square bronze socket with a gilt edge, brighter",
-   "lum": "dark",
-   "luma": 72.7
+   "luma": 51.4
   },
   {
    "key": "socket_round_dull",
    "subject": "the round socket in dull iron, no gilt, matte",
    "lum": "dark",
-   "luma": 48.6
+   "luma": 47
   },
   {
-   "key": "socket_square_mid",
-   "subject": "an empty square socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black",
-   "lum": "mid",
-   "luma": 127.3
+   "key": "socket_round_gilt",
+   "subject": "an empty round bronze socket with a thick gilt rim, the widest gilt ring of the sheet, and a dark recess",
+   "lum": "dark",
+   "luma": 63.9
+  },
+  {
+   "key": "socket_square",
+   "subject": "an empty square bronze socket with a dark recess",
+   "lum": "dark",
+   "luma": 45.4
+  },
+  {
+   "key": "socket_square_lit",
+   "subject": "the square bronze socket with a gilt edge, brighter",
+   "lum": "dark",
+   "luma": 59.2
+  },
+  {
+   "key": "socket_square_dull",
+   "subject": "the square socket in dull iron, no gilt, matte",
+   "lum": "dark",
+   "luma": 49
+  },
+  {
+   "key": "socket_wide",
+   "subject": "an empty wide bronze socket, about twice as wide as tall",
+   "lum": "dark",
+   "luma": 46.2
+  },
+  {
+   "key": "socket_wide_lit",
+   "subject": "the wide bronze socket with a bright gilt edge, brighter",
+   "lum": "dark",
+   "luma": 57.6
+  },
+  {
+   "key": "socket_wide_dull",
+   "subject": "the wide socket in dull iron, no gilt, matte",
+   "lum": "dark",
+   "luma": 47.2
+  },
+  {
+   "key": "chip_wide",
+   "subject": "a small wide bronze chip with a dark centre",
+   "lum": "dark",
+   "luma": 44.6
+  },
+  {
+   "key": "socket_tall",
+   "subject": "an empty tall bronze socket, about twice as tall as wide",
+   "lum": "dark",
+   "luma": 51.1
+  },
+  {
+   "key": "socket_tall_lit",
+   "subject": "the tall bronze socket with a bright gilt edge, brighter",
+   "lum": "dark",
+   "luma": 59.6
+  },
+  {
+   "key": "socket_tall_dull",
+   "subject": "the tall socket in dull iron, no gilt, matte",
+   "lum": "dark",
+   "luma": 47.7
+  },
+  {
+   "key": "socket_tall_gilt",
+   "subject": "an empty tall bronze socket with a thick gilt rim and a dark recess",
+   "lum": "dark",
+   "luma": 68.7
+  },
+  {
+   "key": "socket_tall_iron",
+   "subject": "an empty tall socket in blackened iron with a dull pewter rim, no gold",
+   "lum": "dark",
+   "luma": 47.4
+  },
+  {
+   "key": "socket_tall_rivet",
+   "subject": "an empty tall bronze socket with a row of small rivets along its gilt rim and a dark recess",
+   "lum": "dark",
+   "luma": 59.2
+  },
+  {
+   "key": "chip_tall",
+   "subject": "a small tall bronze chip with a dark centre",
+   "lum": "dark",
+   "luma": 54
+  },
+  {
+   "key": "badge_shield",
+   "subject": "an empty bronze heater shield with a dark field",
+   "lum": "dark",
+   "luma": 51.8
+  },
+  {
+   "key": "pip_round",
+   "subject": "a tiny round bronze stud",
+   "lum": "dark",
+   "luma": 76.6
+  },
+  {
+   "key": "pip_square",
+   "subject": "a tiny square bronze stud",
+   "lum": "dark",
+   "luma": 86.9
   },
   {
    "key": "socket_round_mid",
    "subject": "an empty round socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black",
    "lum": "mid",
-   "luma": 126.4
+   "luma": 116.8
+  },
+  {
+   "key": "socket_square_mid",
+   "subject": "an empty square socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black",
+   "lum": "mid",
+   "luma": 111.3
   },
   {
    "key": "socket_wide_mid",
    "subject": "an empty wide socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black",
    "lum": "mid",
-   "luma": 126.7
+   "luma": 112.5
   },
   {
    "key": "socket_tall_mid",
    "subject": "an empty tall socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black",
    "lum": "mid",
-   "luma": 124.4
+   "luma": 115.9
   },
   {
    "key": "socket_round_light",
    "subject": "an empty round socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre",
    "lum": "light",
-   "luma": 171.8
+   "luma": 166
   },
   {
    "key": "socket_square_light",
    "subject": "an empty square socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre",
-   "lum": "light",
-   "luma": 169
+   "lum": "mid",
+   "luma": 159.7,
+   "design": "light"
   },
   {
    "key": "socket_wide_light",
    "subject": "an empty wide socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre",
    "lum": "light",
-   "luma": 173.5
+   "luma": 160.2
   },
   {
    "key": "socket_tall_light",
    "subject": "an empty tall socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre",
-   "lum": "light",
-   "luma": 166
+   "lum": "mid",
+   "luma": 156.2,
+   "design": "light"
   }
  ],
  "tranche": 3

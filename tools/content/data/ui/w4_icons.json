@@ -1,0 +1,1112 @@
+{
+ "about": "UI overhaul lane W4: vanilla icon textures of the production, construction, trade, logistics, deployment, army, navy, air, combat, leader and intelligence windows that the planner left as empty sockets, mapped to emblem cells (one per frame). Read by lib/ui_plan.mjs (SPECIFIC rules, luma free). Sheets icons-w4-* are generated (gpt-6-luna); the other sheets named here are reused cells of the same concept.",
+ "textures": {
+  "gfx/interface/add_prod_aircraft_line.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_fliers",
+    "line_fliers",
+    "line_fliers"
+   ]
+  },
+  "gfx/interface/add_prod_armour_line.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_mounts",
+    "line_mounts",
+    "line_mounts"
+   ]
+  },
+  "gfx/interface/add_prod_inf_art_line.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_foot",
+    "line_foot",
+    "line_foot"
+   ]
+  },
+  "gfx/interface/add_prod_naval_line.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_ships",
+    "line_ships",
+    "line_ships"
+   ]
+  },
+  "gfx/interface/allow_as_hq_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "hq_no",
+    "hq_yes",
+    "hq_plain"
+   ]
+  },
+  "gfx/interface/army_width.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "frontage"
+   ]
+  },
+  "gfx/interface/assisted_kill_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "assist"
+   ]
+  },
+  "gfx/interface/attacker_damage_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "hit_ours"
+   ]
+  },
+  "gfx/interface/attacker_org_damage_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "rout_ours"
+   ]
+  },
+  "gfx/interface/backhoe_icon_small.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "works_crew"
+   ]
+  },
+  "gfx/interface/balance_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "scales"
+   ]
+  },
+  "gfx/interface/breakthrough_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "breach",
+    "breach"
+   ]
+  },
+  "gfx/interface/building_repair.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "building_mend",
+    "building_mend"
+   ]
+  },
+  "gfx/interface/can_paradrop_icon_small.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "drop_no",
+    "drop_yes"
+   ]
+  },
+  "gfx/interface/combat_width_change_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "frontage"
+   ]
+  },
+  "gfx/interface/construction/civ_factory_output_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-text-1",
+   "cells": [
+    "tx_civ_factory_output"
+   ]
+  },
+  "gfx/interface/construction/ongoing_market_contract_icon.dds": {
+   "family": "focus",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "market_contract"
+   ]
+  },
+  "gfx/interface/consumer_goods_icon.dds": {
+   "family": "military",
+   "sheet": "icons-text-1",
+   "cells": [
+    "tx_consumer_goods_texticon"
+   ]
+  },
+  "gfx/interface/convert_ic_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "convert_craft"
+   ]
+  },
+  "gfx/interface/create_variants_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "pattern_draft",
+    "pattern_draft",
+    "pattern_draft",
+    "pattern_draft",
+    "pattern_draft"
+   ]
+  },
+  "gfx/interface/crypto/counter_intelligence_icon.dds": {
+   "family": "military",
+   "sheet": "icons-text-1",
+   "cells": [
+    "tx_counter_intelligence"
+   ]
+  },
+  "gfx/interface/crypto/cracking_done_small.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "seal_broken"
+   ]
+  },
+  "gfx/interface/crypto/decryption_activate_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "seal_key"
+   ]
+  },
+  "gfx/interface/crypto/decryption_done_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "seal_broken"
+   ]
+  },
+  "gfx/interface/crypto/defense_level_icon.dds": {
+   "family": "military",
+   "sheet": "icons-text-1",
+   "cells": [
+    "tx_crypto_defense"
+   ]
+  },
+  "gfx/interface/defender_damage_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "hit_theirs"
+   ]
+  },
+  "gfx/interface/defender_org_damage_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "rout_theirs"
+   ]
+  },
+  "gfx/interface/delete_template_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "roll_delete"
+   ]
+  },
+  "gfx/interface/deploy_conveyor_button.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "deploy_wagon"
+   ]
+  },
+  "gfx/interface/deploy_line_button.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "deploy_line"
+   ]
+  },
+  "gfx/interface/division_template_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "muster_roll"
+   ]
+  },
+  "gfx/interface/dockyard_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "shipwright"
+   ]
+  },
+  "gfx/interface/dockyard_icon_with_wrench.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "shipwright_mend"
+   ]
+  },
+  "gfx/interface/efficiency_cap_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "workmanship_cap"
+   ]
+  },
+  "gfx/interface/efficiency_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "workmanship"
+   ]
+  },
+  "gfx/interface/endgame_air_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_fliers"
+   ]
+  },
+  "gfx/interface/endgame_army_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_foot"
+   ]
+  },
+  "gfx/interface/endgame_civ_industry_button.dds": {
+   "family": "military",
+   "sheet": "icons-text-1",
+   "cells": [
+    "tx_civ_factory"
+   ]
+  },
+  "gfx/interface/endgame_industry_button.dds": {
+   "family": "military",
+   "sheet": "icons-text-2",
+   "cells": [
+    "tx_mil_factory"
+   ]
+  },
+  "gfx/interface/endgame_naval_industry_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "shipwright"
+   ]
+  },
+  "gfx/interface/endgame_navy_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_ships"
+   ]
+  },
+  "gfx/interface/equip_overview_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "gear_rack"
+   ]
+  },
+  "gfx/interface/equipment_state_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "gear_ok",
+    "gear_short"
+   ]
+  },
+  "gfx/interface/exercise_icon_stop_at_max_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "drill_stop"
+   ]
+  },
+  "gfx/interface/factions/ui/faction_members_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "members"
+   ]
+  },
+  "gfx/interface/factions/ui/sort_assigned_countries.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "members",
+    "members",
+    "members"
+   ]
+  },
+  "gfx/interface/factions/ui/sort_mastery.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "mastery",
+    "mastery",
+    "mastery"
+   ]
+  },
+  "gfx/interface/factions/ui/sort_navy_supply.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "home_harbour",
+    "home_harbour",
+    "home_harbour"
+   ]
+  },
+  "gfx/interface/factions/ui/sort_regions.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "regions",
+    "regions",
+    "regions"
+   ]
+  },
+  "gfx/interface/factions/ui/sort_supply.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "supply_cask",
+    "supply_cask",
+    "supply_cask"
+   ]
+  },
+  "gfx/interface/factory_bombing_defence_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "raid_ward"
+   ]
+  },
+  "gfx/interface/factory_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-pips",
+   "cells": [
+    "arm_green_1",
+    "arm_green_2",
+    "arm_green_3",
+    "arm_pale_1",
+    "arm_pale_2",
+    "arm_pale_3",
+    "arm_red_1",
+    "arm_red_2",
+    "arm_red_3",
+    "arm_dark_1",
+    "arm_dark_2",
+    "arm_dark_3",
+    "arm_tan_1",
+    "arm_tan_2",
+    "arm_tan_3"
+   ]
+  },
+  "gfx/interface/factory_wrench_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "workshop_mend"
+   ]
+  },
+  "gfx/interface/foreign_templates_dropdown_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "foreign_rolls",
+    "foreign_rolls",
+    "foreign_rolls"
+   ]
+  },
+  "gfx/interface/fuel_logistics_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "essence_store"
+   ]
+  },
+  "gfx/interface/hard_attack_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "hard",
+    "hard"
+   ]
+  },
+  "gfx/interface/hold_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "halt"
+   ]
+  },
+  "gfx/interface/home_base_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "home_harbour"
+   ]
+  },
+  "gfx/interface/in_stock_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "in_store"
+   ]
+  },
+  "gfx/interface/intel_ledger/air_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_fliers"
+   ]
+  },
+  "gfx/interface/intel_ledger/armor_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_mounts"
+   ]
+  },
+  "gfx/interface/intel_ledger/capital_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_pride"
+   ]
+  },
+  "gfx/interface/intel_ledger/eq_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_foot"
+   ]
+  },
+  "gfx/interface/intel_ledger/navy_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_ships"
+   ]
+  },
+  "gfx/interface/intel_ledger/other_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-pips",
+   "cells": [
+    "pt_store"
+   ]
+  },
+  "gfx/interface/intel_ledger/train_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-text-2",
+   "cells": [
+    "tx_train_texticon"
+   ]
+  },
+  "gfx/interface/intel_ledger/truck_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "deploy_wagon"
+   ]
+  },
+  "gfx/interface/killed_units_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fallen"
+   ]
+  },
+  "gfx/interface/leader_en_route.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "en_route"
+   ]
+  },
+  "gfx/interface/logistic_fuel_types.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "line_foot",
+    "line_ships",
+    "line_fliers",
+    "essence_store"
+   ]
+  },
+  "gfx/interface/military_factory_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-text-2",
+   "cells": [
+    "tx_mil_factory"
+   ]
+  },
+  "gfx/interface/military_industrial_organization/Industrial_manufacturer_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "guild_maker"
+   ]
+  },
+  "gfx/interface/military_industrial_organization/attach_manufacturer.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "guild_seal"
+   ]
+  },
+  "gfx/interface/naval_factory_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-pips",
+   "cells": [
+    "ship_green_1",
+    "ship_green_2",
+    "ship_green_3",
+    "ship_pale_1",
+    "ship_pale_2",
+    "ship_pale_3",
+    "ship_red_1",
+    "ship_red_2",
+    "ship_red_3",
+    "ship_dark_1",
+    "ship_dark_2",
+    "ship_dark_3",
+    "ship_tan_1",
+    "ship_tan_2",
+    "ship_tan_3"
+   ]
+  },
+  "gfx/interface/naval_headquarters_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "admiralty"
+   ]
+  },
+  "gfx/interface/naviesview/btn_base.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "beacon"
+   ]
+  },
+  "gfx/interface/naviesview/btn_composition_editor.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_plan"
+   ]
+  },
+  "gfx/interface/naviesview/btn_delete.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_disband"
+   ]
+  },
+  "gfx/interface/naviesview/btn_merge.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_merge"
+   ]
+  },
+  "gfx/interface/naviesview/btn_refit_ship.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_refit",
+    "fleet_refit",
+    "fleet_refit"
+   ]
+  },
+  "gfx/interface/naviesview/btn_reinforce.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_fill",
+    "fleet_fill"
+   ]
+  },
+  "gfx/interface/naviesview/btn_repair_now.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_mend",
+    "fleet_mend",
+    "fleet_mend"
+   ]
+  },
+  "gfx/interface/naviesview/btn_repair_now_small.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_mend",
+    "fleet_mend"
+   ]
+  },
+  "gfx/interface/naviesview/btn_reset.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "reset"
+   ]
+  },
+  "gfx/interface/naviesview/btn_save_template.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_save"
+   ]
+  },
+  "gfx/interface/naviesview/btn_split_in_half.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_split"
+   ]
+  },
+  "gfx/interface/naviesview/btn_taskforce_o_matic.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "signal_flags"
+   ]
+  },
+  "gfx/interface/naviesview/btn_upgrade.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_refit"
+   ]
+  },
+  "gfx/interface/naviesview/icn_in_combat.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_fighting"
+   ]
+  },
+  "gfx/interface/naviesview/icn_moving_to_combat.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_closing"
+   ]
+  },
+  "gfx/interface/naviesview/icn_reserve_fleet.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_reserve"
+   ]
+  },
+  "gfx/interface/naviesview/pride_of_the_fleet_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_pride"
+   ]
+  },
+  "gfx/interface/naviesview/pride_of_the_fleet_icon_small.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_pride"
+   ]
+  },
+  "gfx/interface/naviesview/repair_symbol.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_mend",
+    "fleet_mend"
+   ]
+  },
+  "gfx/interface/need_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "want"
+   ]
+  },
+  "gfx/interface/non_available_factory_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "workshop_idle"
+   ]
+  },
+  "gfx/interface/obsolete_template_warning.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "roll_stale"
+   ]
+  },
+  "gfx/interface/operations/network_strength.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "web"
+   ]
+  },
+  "gfx/interface/operations/operation_ready_countdown_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-pips",
+   "cells": [
+    "pc_timer"
+   ]
+  },
+  "gfx/interface/operations/operatives_required.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "agents"
+   ]
+  },
+  "gfx/interface/operatives/arrested_operatives.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "captured"
+   ]
+  },
+  "gfx/interface/operatives/dead_operatives.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "lost_agent"
+   ]
+  },
+  "gfx/interface/operatives/spymaster_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "whisper_master"
+   ]
+  },
+  "gfx/interface/operatives/total_operatives.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "agents"
+   ]
+  },
+  "gfx/interface/priority_strip.dds": {
+   "family": "military",
+   "sheet": "ui-controls-small",
+   "cells": [
+    "lamp_off",
+    "lamp_red",
+    "lamp_amber",
+    "lamp_green"
+   ]
+  },
+  "gfx/interface/prod_line_target_strip.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-pips",
+   "cells": [
+    "pt_store",
+    "pt_upgrade",
+    "pt_mend",
+    "pt_store_host",
+    "pt_store"
+   ]
+  },
+  "gfx/interface/producing_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "producing"
+   ]
+  },
+  "gfx/interface/production_efficiency_loss_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "workmanship_loss"
+   ]
+  },
+  "gfx/interface/production_line_convert.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-pips",
+   "cells": [
+    "pc_timer",
+    "pc_convert"
+   ]
+  },
+  "gfx/interface/production_output_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "craft_output"
+   ]
+  },
+  "gfx/interface/projects_factories_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "great_works"
+   ]
+  },
+  "gfx/interface/province_constructions.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "works_province"
+   ]
+  },
+  "gfx/interface/reinforcements_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "reinforce"
+   ]
+  },
+  "gfx/interface/repair_ships_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "fleet_mend"
+   ]
+  },
+  "gfx/interface/set_need_amount_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "set_want"
+   ]
+  },
+  "gfx/interface/shared_constructions.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "works_shared"
+   ]
+  },
+  "gfx/interface/soft_attack_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "soft",
+    "soft"
+   ]
+  },
+  "gfx/interface/special_forces_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "sf_no",
+    "sf_yes",
+    "sf_plain"
+   ]
+  },
+  "gfx/interface/special_project/facility_constructions.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "works_facility"
+   ]
+  },
+  "gfx/interface/state_constructions.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "works_state"
+   ]
+  },
+  "gfx/interface/sunk_ships_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "sunk"
+   ]
+  },
+  "gfx/interface/tactics_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-war",
+   "cells": [
+    "stratagem"
+   ]
+  },
+  "gfx/interface/theater/theater_group_settings_btn.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "theatre_settings"
+   ]
+  },
+  "gfx/interface/theatre_battle_indicator.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "battle_here",
+    "battle_here"
+   ]
+  },
+  "gfx/interface/theatre_combat_logs_icon.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "battle_log",
+    "battle_log"
+   ]
+  },
+  "gfx/interface/toggle_obsolete_button.dds": {
+   "family": "military",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "hide_old",
+    "hide_old"
+   ]
+  },
+  "gfx/interface/tradeview/traded_factories_icon.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-craft",
+   "cells": [
+    "hired_workshops"
+   ]
+  },
+  "gfx/interface/unitcontrol/border_war_theatre_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "border_war"
+   ]
+  },
+  "gfx/interface/unitcontrol/hq_badge.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "camp_badge"
+   ]
+  },
+  "gfx/interface/unitcontrol/leader_details_icon.dds": {
+   "family": "politics_diplomacy",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "baton"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_adviser.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "adviser",
+    "adviser",
+    "adviser"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_attack_trait.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_attack",
+    "tr_attack",
+    "tr_attack"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_coordination_trait.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_coordination",
+    "tr_coordination",
+    "tr_coordination"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_defense_trait.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_defence",
+    "tr_defence",
+    "tr_defence"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_maneuvering_trait.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_maneuver",
+    "tr_maneuver",
+    "tr_maneuver"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_planning_trait.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_planning",
+    "tr_planning",
+    "tr_planning"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_skill.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "skill",
+    "skill",
+    "skill"
+   ]
+  },
+  "gfx/interface/unitcontrol/sort_supply_trait.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_logistics",
+    "tr_logistics",
+    "tr_logistics"
+   ]
+  },
+  "gfx/interface/unitcontrol/trait_attack.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_attack"
+   ]
+  },
+  "gfx/interface/unitcontrol/trait_coordination.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_coordination"
+   ]
+  },
+  "gfx/interface/unitcontrol/trait_defense.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_defence"
+   ]
+  },
+  "gfx/interface/unitcontrol/trait_logistics.dds": {
+   "family": "research_production",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_logistics"
+   ]
+  },
+  "gfx/interface/unitcontrol/trait_maneuvering.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_maneuver"
+   ]
+  },
+  "gfx/interface/unitcontrol/trait_planning.dds": {
+   "family": "military",
+   "sheet": "icons-w4-host",
+   "cells": [
+    "tr_planning"
+   ]
+  }
+ }
+}
