@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "docs/specs/07_interface/05_text_sweep.md",
-  "game": "1.19.3.0",
+  "game": "1.19.4.1",
   "note": "The 23 key families of the vanilla text sweep (spec section 3): which installed English localisation files each one sweeps, who writes it, whether its text is drawn with a country in scope (the people modifier is allowed only then), and how strictly the scan gates it. gate: off = no data yet, the scan only measures; report = ZIN text is scanned for banned words and the rest is measured; banned = additionally fails on a reachable key that still shows a vanilla value holding an error-class banned word; strict = fails on every reachable key that is neither replaced, structural, neutral nor owned elsewhere. A family moves to the next gate when its author marks it so.",
   "tagWords": [
     "CAN",
@@ -12,6 +12,7 @@
       "files": [
         "core",
         "topbar",
+        "keybinds",
         "state",
         "terrain",
         "province_names",

@@ -9464,6 +9464,22 @@
    "message": "Window text at line 274 names the key xxxxx, which has no value in the English set.",
    "key": "LOC_KEY_MISSING|interface/countryintelligenceagencyview.gui|xxxxx",
    "reason": "UI lane W4: interface/countryintelligenceagencyview.gui is the installed vanilla file with only its chrome sprite names swapped and two title colours set (modules/ui_military.mjs). xxxxx is vanilla placeholder text in an engine-filled text box or a hidden element; the engine replaces it at runtime and the player never sees it (handoff docs/plans/ui_overhaul/handoffs/W4.md)."
+  },
+  {
+   "code": "UNIQ_EVENT_PICTURE_CAP",
+   "severity": "error",
+   "path": "events/zin_ending.txt",
+   "message": "Picture GFX_zin_evt_grave_muster is used by 10 events; the cap is 8.",
+   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_ending.txt|GFX_zin_evt_grave_muster",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0023. (Re-keyed 2 November 2026: lane I10 gave Eindil beats their own pictures, so fewer events share it.)"
+  },
+  {
+   "code": "UNIQ_EVENT_PICTURE_CAP",
+   "severity": "error",
+   "path": "events/zin_gala.txt",
+   "message": "Picture GFX_zin_evt_gala_court is used by 18 events; the cap is 8.",
+   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_gala.txt|GFX_zin_evt_gala_court",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0022. (Re-keyed 2 November 2026: lane I10 gave Eindil beats their own pictures, so fewer events share it.)"
   }
  ]
 }

@@ -15,7 +15,7 @@
   },
   "geography": {
    "path": "tools/content/data/geography/import/aoaz.geography.json",
-   "sha256": "59a905c9d829c3b319df3ff483abce510f490c227cde013a70c462e07affadcb"
+   "sha256": "db1a0addc59ffa4eff71120040625a80b6a5039ebdb61090126c806917085ec1"
   },
   "repaired": {
    "path": "tools/content/data/geography/aoaz.repaired.json",
@@ -23,11 +23,11 @@
   },
   "assignment": {
    "path": "tools/content/data/world/state_assignment.json",
-   "sha256": "ecf56b6fbf12044640d58546bb21e595b152e3d2e58aba120efbe76d92f51234"
+   "sha256": "45c953dcdf043d52abacea3b33db2c29e2ab0f04534ca57262de613bbd31d7b0"
   },
   "stateCentres": {
    "path": "tools/content/data/forces_geography.json",
-   "sha256": "cd3dfabf9316a07aa589f04853d88e2b735f78ac7d6a8545204d090eb0888303"
+   "sha256": "f531c076949c887ee14028a743596f490bd61564a785280bc654989637d1aa94"
   },
   "sheets": {
    "path": "tools/content/data/geography/import/aoaz.sheets.json",
@@ -653,11 +653,11 @@
  "summary": {
   "realms": 155,
   "capitalsByMethod": {
-   "site": 61,
+   "site": 59,
+   "drawn label": 48,
    "model feature": 15,
    "old capital": 6,
    "dossier text": 5,
-   "drawn label": 46,
    "model area": 11,
    "model land": 11
   },
@@ -696,11 +696,6 @@
     "tag": "GAA",
     "site": "site_gala",
     "movedPx": 2
-   },
-   {
-    "tag": "HNH",
-    "site": "site_hunhun",
-    "movedPx": 15.5
    },
    {
     "tag": "HER",
@@ -758,11 +753,6 @@
     "movedPx": 6.4
    },
    {
-    "tag": "MOA",
-    "site": "site_mora",
-    "movedPx": 9.4
-   },
-   {
     "tag": "NAR",
     "site": "site_nara",
     "movedPx": 109.8
@@ -808,7 +798,7 @@
     "movedPx": 72.9
    }
   ],
-  "seeds": 6,
+  "seeds": 12,
   "realmsWithClaims": [
    "ZOL",
    "KIN",
@@ -1038,14 +1028,13 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 2,
-    "targetStates": 8,
+    "value": 5.25,
+    "targetStates": 21,
     "basis": "old map state count"
    },
    "overlord": null,
    "conflicts": [
-    "The capital site site_sonargur (2975, 1023) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.1 px away.",
-    "1 old state(s) of this realm fall on a land that already holds DND, DUL, BLK, TRO, HOO, DAK, SKR, DUN; no seed added there."
+    "The capital site site_sonargur (2975, 1023) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.1 px away."
    ],
    "proposed": [
     "Seed: Lerendor's North (former Lerenwaith) is part of Lerendor (decision K49; roster extent)."
@@ -1084,8 +1073,8 @@
     }
    ],
    "weight": {
-    "value": 11,
-    "targetStates": 44,
+    "value": 5.5,
+    "targetStates": 22,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1125,8 +1114,8 @@
     }
    ],
    "weight": {
-    "value": 9.75,
-    "targetStates": 39,
+    "value": 20.75,
+    "targetStates": 83,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1166,8 +1155,8 @@
     }
    ],
    "weight": {
-    "value": 9.5,
-    "targetStates": 38,
+    "value": 13,
+    "targetStates": 52,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1196,12 +1185,12 @@
    "seeds": [
     {
      "point": [
-      2570,
-      1196
+      2571,
+      1197
      ],
      "method": "old states",
-     "source": "old state 243 (1 old state(s) on this land)",
-     "snapPx": 2,
+     "source": "old state 662 (4 old state(s) on this land)",
+     "snapPx": 4.1,
      "status": "proposed",
      "land": "land_island_016"
     }
@@ -1209,8 +1198,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 2,
+    "targetStates": 8,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1241,8 +1230,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 0.75,
+    "targetStates": 3,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1306,8 +1295,8 @@
     }
    ],
    "weight": {
-    "value": 1.75,
-    "targetStates": 7,
+    "value": 4.75,
+    "targetStates": 19,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1341,12 +1330,12 @@
    "seeds": [
     {
      "point": [
-      3697,
-      641
+      3700,
+      654
      ],
      "method": "old states",
-     "source": "old state 1097 (1 old state(s) on this land)",
-     "snapPx": 29.1,
+     "source": "old state 2571 (2 old state(s) on this land)",
+     "snapPx": 0,
      "status": "proposed",
      "land": "land_island_015"
     }
@@ -1360,12 +1349,39 @@
    ],
    "exclude": [],
    "weight": {
-    "value": 26,
-    "targetStates": 104,
+    "value": 26.75,
+    "targetStates": 107,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "Old state 5 projects to (3444, 740), 569 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 20 projects to (3390, 771), 631 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 33 projects to (3775, 771), 371 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 43 projects to (3623, 785), 463 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 47 projects to (3490, 802), 569 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 48 projects to (4108, 812), 425 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 64 projects to (3571, 805), 513 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 65 projects to (3556, 808), 525 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 92 projects to (4386, 860), 633 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 104 projects to (4557, 876), 777 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 105 projects to (3866, 866), 439 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 109 projects to (3586, 880), 561 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 131 projects to (3493, 896), 633 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 132 projects to (3598, 893), 565 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 145 projects to (4359, 887), 633 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 164 projects to (4359, 887), 633 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2546 projects to (3414, 575), 527 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2547 projects to (3416, 575), 525 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2562 projects to (4450, 600), 556 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2569 projects to (3262, 629), 688 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2570 projects to (3270, 625), 680 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2585 projects to (3674, 669), 344 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2597 projects to (4408, 689), 552 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2598 projects to (3675, 682), 352 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2608 projects to (4198, 711), 395 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2655 projects to (3534, 759), 508 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+   ],
    "proposed": []
   },
   {
@@ -1412,14 +1428,13 @@
     }
    ],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 2.25,
+    "targetStates": 9,
     "basis": "old map state count"
    },
    "overlord": null,
    "conflicts": [
-    "The capital site site_mirolon (3397, 1961) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 10 px away.",
-    "1 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
+    "The capital site site_mirolon (3397, 1961) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 10 px away."
    ],
    "proposed": [
     "Seed: The Great Swamp of Mirolon (roster extent)."
@@ -1457,8 +1472,8 @@
     }
    ],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 6,
+    "targetStates": 24,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1580,8 +1595,8 @@
     }
    ],
    "weight": {
-    "value": 3,
-    "targetStates": 12,
+    "value": 7.75,
+    "targetStates": 31,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1770,8 +1785,8 @@
     }
    ],
    "weight": {
-    "value": 3,
-    "targetStates": 12,
+    "value": 2.25,
+    "targetStates": 9,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1806,8 +1821,8 @@
     }
    ],
    "weight": {
-    "value": 5.5,
-    "targetStates": 22,
+    "value": 4,
+    "targetStates": 16,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1852,8 +1867,8 @@
     }
    ],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -1912,13 +1927,18 @@
    "capital": {
     "name": "Ulrono",
     "point": [
-     3153,
-     1590
+     3193,
+     1585
     ],
-    "method": "site",
-    "source": "site_hunhun",
-    "snapPx": 15.5,
-    "status": "canon",
+    "method": "drawn label",
+    "source": "world (3193, 1585)",
+    "anchor": [
+     3193,
+     1585
+    ],
+    "snapPx": 0,
+    "basis": "Ulrono, the moot-ground of the Hunhun Downs (site_hunhun): the site stands 9 px from the Great Lake shore, so the seat moves 40 px east onto dry land 31 px from the water (middle_lands.md 10).",
+    "status": "proposed",
     "zone": "middle_lands",
     "land": "land_central_mainland"
    },
@@ -1943,10 +1963,10 @@
     "tag": "AEN",
     "subjectType": "chartered dominion"
    },
-   "conflicts": [
-    "The capital site site_hunhun (3138, 1586) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 15.5 px away."
-   ],
-   "proposed": []
+   "conflicts": [],
+   "proposed": [
+    "Capital Ulrono: Ulrono, the moot-ground of the Hunhun Downs (site_hunhun): the site stands 9 px from the Great Lake shore, so the seat moves 40 px east onto dry land 31 px from the water (middle_lands.md 10)."
+   ]
   },
   {
    "tag": "KLU",
@@ -2059,14 +2079,14 @@
    "capital": {
     "name": "Saelori",
     "point": [
-     3247,
-     1757
+     3237,
+     1771
     ],
     "method": "old capital",
-    "source": "old state 1291 at (3214, 1755) moved by the displacement field",
+    "source": "old state 1608 at (3246, 1766) moved by the displacement field",
     "anchor": [
-     3247,
-     1757
+     3237,
+     1771
     ],
     "snapPx": 0,
     "basis": "Saelori, the crossing of the south-eastern roads; the old map's Noleksun seat (middle_lands.md 10).",
@@ -2198,16 +2218,16 @@
    "capital": {
     "name": "Hordorton",
     "point": [
-     3155,
-     1730
+     3148,
+     1740
     ],
     "method": "old capital",
-    "source": "old state 19 at (3111, 1721) moved by the displacement field",
+    "source": "old state 1635 at (3155, 1734) moved by the displacement field",
     "anchor": [
-     3155,
-     1730
+     3146,
+     1740
     ],
-    "snapPx": 0,
+    "snapPx": 2,
     "basis": "Hordorton, a spring where the lake road meets the south road; the old map's Freshon seat (middle_lands.md 10).",
     "status": "proposed",
     "zone": "middle_lands",
@@ -2382,9 +2402,7 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds LER, EEK, REN, MOO, KER, TLV, HEO, HRA, MIA, DOL, MUS; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Deoreh: Deoreh, the narrowest crossing of the Leren Sea on the Middle Lands side: the Middle Lands end of the Narrow Strait (middle_lands.md 10)."
    ]
@@ -2746,8 +2764,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 4,
+    "targetStates": 16,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -2777,8 +2795,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -2815,8 +2833,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1,
-    "targetStates": 4,
+    "value": 3,
+    "targetStates": 12,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -2891,8 +2909,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 2.75,
-    "targetStates": 11,
+    "value": 4.25,
+    "targetStates": 17,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -2929,8 +2947,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -2967,8 +2985,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 1.5,
+    "targetStates": 6,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3005,8 +3023,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 1.5,
+    "targetStates": 6,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3043,8 +3061,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.75,
-    "targetStates": 7,
+    "value": 4.75,
+    "targetStates": 19,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3081,8 +3099,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 2.75,
+    "targetStates": 11,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3119,8 +3137,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3162,8 +3180,8 @@
     }
    ],
    "weight": {
-    "value": 8.25,
-    "targetStates": 33,
+    "value": 7,
+    "targetStates": 28,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3205,8 +3223,8 @@
     }
    ],
    "weight": {
-    "value": 2,
-    "targetStates": 8,
+    "value": 1.75,
+    "targetStates": 7,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3248,8 +3266,8 @@
     }
    ],
    "weight": {
-    "value": 5.25,
-    "targetStates": 21,
+    "value": 7,
+    "targetStates": 28,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3420,8 +3438,8 @@
     }
    ],
    "weight": {
-    "value": 4.25,
-    "targetStates": 17,
+    "value": 2.25,
+    "targetStates": 9,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3456,7 +3474,19 @@
     "zone": "cold_lands",
     "land": "land_western_mainland"
    },
-   "seeds": [],
+   "seeds": [
+    {
+     "point": [
+      962,
+      238
+     ],
+     "method": "drawn label",
+     "source": "world (962, 238)",
+     "snapPx": 0,
+     "basis": "The Castle of Yeldenne at Mp'E, in the high valley between the Yeldenne Heights and the Isengar Mountains (site_yeldenne; decision K56).",
+     "status": "proposed"
+    }
+   ],
    "claim": [],
    "exclude": [
     {
@@ -3465,14 +3495,15 @@
     }
    ],
    "weight": {
-    "value": 4.5,
-    "targetStates": 18,
+    "value": 2.75,
+    "targetStates": 11,
     "basis": "old map state count"
    },
    "overlord": null,
    "conflicts": [],
    "proposed": [
-    "Capital Minsentia: The drawn labels Pertogor and Londor (Faaennar): the sheep vale east of Melkgard."
+    "Capital Minsentia: The drawn labels Pertogor and Londor (Faaennar): the sheep vale east of Melkgard.",
+    "Seed: The Castle of Yeldenne at Mp'E, in the high valley between the Yeldenne Heights and the Isengar Mountains (site_yeldenne; decision K56)."
    ]
   },
   {
@@ -3508,8 +3539,8 @@
     }
    ],
    "weight": {
-    "value": 3.25,
-    "targetStates": 13,
+    "value": 2.25,
+    "targetStates": 9,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3551,8 +3582,8 @@
     }
    ],
    "weight": {
-    "value": 2.25,
-    "targetStates": 9,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3594,8 +3625,8 @@
     }
    ],
    "weight": {
-    "value": 4.75,
-    "targetStates": 19,
+    "value": 3.5,
+    "targetStates": 14,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3637,8 +3668,8 @@
     }
    ],
    "weight": {
-    "value": 2.5,
-    "targetStates": 10,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3680,8 +3711,8 @@
     }
    ],
    "weight": {
-    "value": 2,
-    "targetStates": 8,
+    "value": 1.75,
+    "targetStates": 7,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3723,8 +3754,8 @@
     }
    ],
    "weight": {
-    "value": 3.5,
-    "targetStates": 14,
+    "value": 5.25,
+    "targetStates": 21,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3766,8 +3797,8 @@
     }
    ],
    "weight": {
-    "value": 2,
-    "targetStates": 8,
+    "value": 4.75,
+    "targetStates": 19,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3815,8 +3846,8 @@
     }
    ],
    "weight": {
-    "value": 3,
-    "targetStates": 12,
+    "value": 2.75,
+    "targetStates": 11,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3858,8 +3889,8 @@
     }
    ],
    "weight": {
-    "value": 1.75,
-    "targetStates": 7,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3901,8 +3932,8 @@
     }
    ],
    "weight": {
-    "value": 2.25,
-    "targetStates": 9,
+    "value": 5.75,
+    "targetStates": 23,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3944,8 +3975,8 @@
     }
    ],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 2,
+    "targetStates": 8,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -3987,8 +4018,8 @@
     }
    ],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 3.25,
+    "targetStates": 13,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4030,8 +4061,8 @@
     }
    ],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 1.75,
+    "targetStates": 7,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4073,8 +4104,8 @@
     }
    ],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4116,8 +4147,8 @@
     }
    ],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4164,8 +4195,8 @@
     }
    ],
    "weight": {
-    "value": 2,
-    "targetStates": 8,
+    "value": 8.25,
+    "targetStates": 33,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4202,8 +4233,8 @@
     }
    ],
    "weight": {
-    "value": 1,
-    "targetStates": 4,
+    "value": 4,
+    "targetStates": 16,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4245,8 +4276,8 @@
     }
    ],
    "weight": {
-    "value": 2.25,
-    "targetStates": 9,
+    "value": 4.5,
+    "targetStates": 18,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4283,14 +4314,13 @@
     }
    ],
    "weight": {
-    "value": 1.75,
-    "targetStates": 7,
+    "value": 5.5,
+    "targetStates": 22,
     "basis": "old map state count"
    },
    "overlord": null,
    "conflicts": [
-    "The capital site site_varnondor_staging (1364, 1537) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.2 px away.",
-    "2 old state(s) of this realm fall on a land that already holds CLD, GNW, MLK, HOR, GIR, KRA, FEA, AUT, WRL, PLT, HLD, GLI, XIS, PRT, OMR, POT, KVI, ORW, NIV, YEI, GHH, WER, LAB, THN, DOB, BRU, GRO, SAO, BLD, CRG; no seed added there."
+    "The capital site site_varnondor_staging (1364, 1537) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 7.2 px away."
    ],
    "proposed": []
   },
@@ -4327,8 +4357,8 @@
     }
    ],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 6.25,
+    "targetStates": 25,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4406,8 +4436,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 0.5,
+    "targetStates": 2,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4444,14 +4474,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 0.25,
+    "targetStates": 1,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds DND, DUL, BLK, TRO, HOO, DAK, SKR, DUN; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Ozmath-Vesh: The drawn Goldoroth Dead Lands, renamed the Goldoroth Ash Fields, facing the Sea of Dolon."
    ]
@@ -4484,8 +4512,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1,
-    "targetStates": 4,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4522,8 +4550,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 1.25,
+    "targetStates": 5,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4556,8 +4584,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 0.5,
+    "targetStates": 2,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4590,8 +4618,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 0.5,
+    "targetStates": 2,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4624,8 +4652,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1,
-    "targetStates": 4,
+    "value": 0.75,
+    "targetStates": 3,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4663,14 +4691,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds GOL, BOR, DRE, DRK, BUN, VES, BLN, BRT, WIL; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Holos: Holos, Smash's great cave in the Troll Forest's heart."
    ]
@@ -4703,8 +4729,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 0.75,
+    "targetStates": 3,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4742,8 +4768,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 2.75,
+    "targetStates": 11,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4780,8 +4806,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 2,
+    "targetStates": 8,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4818,12 +4844,14 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1,
-    "targetStates": 4,
+    "value": 2.25,
+    "targetStates": 9,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "2 old state(s) of this realm fall on a land that already holds GOL, BOR, DRE, DRK, BUN, VES, BLN, BRT, WIL; no seed added there."
+   ],
    "proposed": [
     "Capital Dobudo: The drawn labels Dun and Dunbulinor: Dobudo on the Dun Sea."
    ]
@@ -4856,8 +4884,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -4894,8 +4922,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5085,9 +5113,7 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds PUV, DLN, NEZ, KHO; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": []
   },
   {
@@ -5132,9 +5158,7 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [
-    "4 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Halon: Halon, the salt pans of the peninsula's Veleeda coast: the south shore of the arm of the Mirolon peninsula east of Miherta's tongue (the tongue is too narrow for both seats); the model puts the lowland further east on the eastern mainland."
    ]
@@ -5223,9 +5247,7 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [
-    "4 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Gelbus: The drawn labels Gelbus and Luminor east of the Great Swamp: the shrine-town of the isle of the Holy Breeze."
    ]
@@ -5259,8 +5281,8 @@
     }
    ],
    "weight": {
-    "value": 6.5,
-    "targetStates": 26,
+    "value": 6,
+    "targetStates": 24,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5300,8 +5322,8 @@
     }
    ],
    "weight": {
-    "value": 5,
-    "targetStates": 20,
+    "value": 8,
+    "targetStates": 32,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5346,8 +5368,8 @@
     }
    ],
    "weight": {
-    "value": 2.75,
-    "targetStates": 11,
+    "value": 5.5,
+    "targetStates": 22,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5384,8 +5406,8 @@
     }
    ],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5401,14 +5423,14 @@
    "capital": {
     "name": "Atonto",
     "point": [
-     4736,
-     2419
+     4744,
+     2411
     ],
     "method": "old capital",
-    "source": "old state 531 at (4702, 2430) moved by the displacement field",
+    "source": "old state 2301 at (4742, 2413) moved by the displacement field",
     "anchor": [
-     4736,
-     2419
+     4744,
+     2411
     ],
     "snapPx": 0,
     "basis": "Atonto on its river in the southern mountains; the old map's Erco seat (the drawing's Morodor lies beyond the frame).",
@@ -5425,8 +5447,8 @@
     }
    ],
    "weight": {
-    "value": 4,
-    "targetStates": 16,
+    "value": 6,
+    "targetStates": 24,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5468,8 +5490,8 @@
     }
    ],
    "weight": {
-    "value": 4,
-    "targetStates": 16,
+    "value": 4.75,
+    "targetStates": 19,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5506,8 +5528,8 @@
     }
    ],
    "weight": {
-    "value": 8,
-    "targetStates": 32,
+    "value": 16,
+    "targetStates": 64,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5523,13 +5545,18 @@
    "capital": {
     "name": "Gonnois",
     "point": [
-     4722,
-     1653
+     4745,
+     1631
     ],
-    "method": "site",
-    "source": "site_mora",
-    "snapPx": 9.4,
-    "status": "canon",
+    "method": "drawn label",
+    "source": "world (4745, 1631)",
+    "anchor": [
+     4745,
+     1631
+    ],
+    "snapPx": 0,
+    "basis": "Gonnois, the lake city of the Hot Lake's east shore (site_mora): the site stands 8 px from the water, so the seat moves 23 px inland onto dry land 31 px from the shore (lake towns, middle_lands.md 10).",
+    "status": "proposed",
     "zone": "east_lands",
     "land": "land_eastern_mainland"
    },
@@ -5542,15 +5569,15 @@
     }
    ],
    "weight": {
-    "value": 3.5,
-    "targetStates": 14,
+    "value": 7.75,
+    "targetStates": 31,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "The capital site site_mora (4714, 1658) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 9.4 px away."
-   ],
-   "proposed": []
+   "conflicts": [],
+   "proposed": [
+    "Capital Gonnois: Gonnois, the lake city of the Hot Lake's east shore (site_mora): the site stands 8 px from the water, so the seat moves 23 px inland onto dry land 31 px from the shore (lake towns, middle_lands.md 10)."
+   ]
   },
   {
    "tag": "DLB",
@@ -5585,8 +5612,8 @@
     }
    ],
    "weight": {
-    "value": 6.75,
-    "targetStates": 27,
+    "value": 18.5,
+    "targetStates": 74,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5628,8 +5655,8 @@
     }
    ],
    "weight": {
-    "value": 2.5,
-    "targetStates": 10,
+    "value": 5.5,
+    "targetStates": 22,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5671,8 +5698,8 @@
     }
    ],
    "weight": {
-    "value": 3,
-    "targetStates": 12,
+    "value": 5,
+    "targetStates": 20,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5714,8 +5741,8 @@
     }
    ],
    "weight": {
-    "value": 2.75,
-    "targetStates": 11,
+    "value": 1.75,
+    "targetStates": 7,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5757,8 +5784,8 @@
     }
    ],
    "weight": {
-    "value": 1.75,
-    "targetStates": 7,
+    "value": 4.5,
+    "targetStates": 18,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5776,14 +5803,14 @@
    "capital": {
     "name": "Nerhuus",
     "point": [
-     4307,
-     2403
+     4312,
+     2411
     ],
     "method": "old capital",
-    "source": "old state 462 at (4288, 2406) moved by the displacement field",
+    "source": "old state 2368 at (4308, 2409) moved by the displacement field",
     "anchor": [
-     4307,
-     2403
+     4312,
+     2411
     ],
     "snapPx": 0,
     "basis": "No canon anchor; the old map's capital state, moved into the new frame.",
@@ -5801,8 +5828,8 @@
     }
    ],
    "weight": {
-    "value": 2.25,
-    "targetStates": 9,
+    "value": 1.75,
+    "targetStates": 7,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5844,8 +5871,8 @@
     }
    ],
    "weight": {
-    "value": 5.25,
-    "targetStates": 21,
+    "value": 9.75,
+    "targetStates": 39,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5887,8 +5914,8 @@
     }
    ],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 5.25,
+    "targetStates": 21,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -5995,16 +6022,44 @@
     "zone": "islands_south",
     "land": "land_island_007"
    },
-   "seeds": [],
+   "seeds": [
+    {
+     "point": [
+      1476,
+      2305
+     ],
+     "method": "old states",
+     "source": "old state 2380 (7 old state(s) on this land)",
+     "snapPx": 2,
+     "status": "proposed",
+     "land": "land_island_030"
+    },
+    {
+     "point": [
+      1366,
+      2327
+     ],
+     "method": "old states",
+     "source": "old state 2445 (11 old state(s) on this land)",
+     "snapPx": 0,
+     "status": "proposed",
+     "land": "land_island_031"
+    }
+   ],
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 12.75,
+    "targetStates": 51,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [],
+   "conflicts": [
+    "Old state 2384 projects to (1478, 2326), 323 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2385 projects to (1478, 2331), 327 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2387 projects to (1478, 2332), 328 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 2388 projects to (1478, 2332), 328 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+   ],
    "proposed": []
   },
   {
@@ -6030,14 +6085,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 3.75,
+    "targetStates": 15,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 861 projects to (1299, 2028), 393 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": []
   },
   {
@@ -6063,8 +6116,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 8,
+    "targetStates": 32,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6094,8 +6147,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 6.5,
+    "targetStates": 26,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6132,8 +6185,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 10.5,
+    "targetStates": 42,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6172,8 +6225,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 1.5,
+    "targetStates": 6,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6210,14 +6263,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.5,
-    "targetStates": 6,
+    "value": 2.75,
+    "targetStates": 11,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 302 projects to (736, 1859), 436 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Tuwang: Tuwang, the terrace town of the rice isles, next along the western arc (land_island_034)."
    ]
@@ -6250,14 +6301,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1,
-    "targetStates": 4,
+    "value": 3,
+    "targetStates": 12,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 863 projects to (1295, 2033), 489 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Ponwan: Ponwan at the end of the western arc: its westernmost island (land_island_027)."
    ]
@@ -6291,8 +6340,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "The capital site site_adel (302, 1407) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 28.3 px away.",
-    "1 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
+    "The capital site site_adel (302, 1407) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 28.3 px away."
    ],
    "proposed": []
   },
@@ -6319,8 +6367,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 2,
+    "targetStates": 8,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6350,15 +6398,13 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 1.25,
+    "targetStates": 5,
     "basis": "old map state count"
    },
    "overlord": null,
    "conflicts": [
-    "The capital site site_pollos (569, 1487) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5.7 px away.",
-    "1 old state(s) of this realm fall on a land that already holds ADE, SEI, LEN; no seed added there.",
-    "2 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
+    "The capital site site_pollos (569, 1487) is not on the land the import reads (or within 8 px of its coast); the nearest acceptable land is 5.7 px away."
    ],
    "proposed": []
   },
@@ -6385,8 +6431,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.5,
-    "targetStates": 2,
+    "value": 2,
+    "targetStates": 8,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6423,14 +6469,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 2,
+    "targetStates": 8,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "2 old state(s) of this realm fall on a land that already holds ADE, SEI, LEN; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Kapai: Kapai, the pilots' harbour of the northern isles: the northernmost Triton island (land_island_022)."
    ]
@@ -6463,8 +6507,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.75,
-    "targetStates": 7,
+    "value": 2.25,
+    "targetStates": 9,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6497,12 +6541,24 @@
     "zone": "tritons_islands",
     "land": "land_island_005"
    },
-   "seeds": [],
+   "seeds": [
+    {
+     "point": [
+      484,
+      1824
+     ],
+     "method": "old states",
+     "source": "old state 1709 (7 old state(s) on this land)",
+     "snapPx": 0,
+     "status": "proposed",
+     "land": "land_island_019"
+    }
+   ],
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 3.5,
+    "targetStates": 14,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6539,13 +6595,13 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 1.25,
-    "targetStates": 5,
+    "value": 2.5,
+    "targetStates": 10,
     "basis": "old map state count"
    },
    "overlord": null,
    "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
+    "5 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
    ],
    "proposed": [
     "Capital Vesko: Vesko, the moot isle of the four Seite isles: the long isle under the drawn Seite Islands label (land_island_029)."
@@ -6579,15 +6635,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 1,
+    "targetStates": 4,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds ADE, SEI, LEN; no seed added there.",
-    "1 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Straton: Straton on the outer western arc facing the Santon Sea (land_island_014)."
    ]
@@ -6620,14 +6673,12 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.75,
-    "targetStates": 3,
+    "value": 0.5,
+    "targetStates": 2,
     "basis": "old map state count"
    },
    "overlord": null,
-   "conflicts": [
-    "1 old state(s) of this realm fall on a land that already holds RAE, NND, WND; no seed added there."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Torni: Torni, a cove under the Benan Mountains (the model's range_benan)."
    ]
@@ -6641,16 +6692,16 @@
    "capital": {
     "name": "Lighon",
     "point": [
-     355,
-     1437
+     367,
+     1451
     ],
     "method": "old capital",
-    "source": "old state 1169 at (199, 1387) moved by the displacement field",
+    "source": "old state 1191 at (364, 1440) moved by the displacement field",
     "anchor": [
-     397,
-     1401
+     378,
+     1444
     ],
-    "snapPx": 55.3,
+    "snapPx": 13,
     "basis": "No canon anchor; the old map's capital state, moved into the new frame.",
     "status": "proposed",
     "zone": "tritons_islands",
@@ -6660,8 +6711,8 @@
    "claim": [],
    "exclude": [],
    "weight": {
-    "value": 0.25,
-    "targetStates": 1,
+    "value": 1.25,
+    "targetStates": 5,
     "basis": "old map state count"
    },
    "overlord": null,
@@ -6703,20 +6754,7 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 199 projects to (3793, 2471), 3245 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 201 projects to (3849, 2471), 3301 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 209 projects to (3843, 2213), 3297 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 210 projects to (3895, 2299), 3346 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 211 projects to (3763, 2275), 3214 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 212 projects to (3764, 2392), 3214 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 258 projects to (3821, 2157), 3278 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 399 projects to (3662, 2385), 3112 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 400 projects to (3574, 2440), 3025 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 933 projects to (3901, 2383), 3351 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 979 projects to (3838, 2078), 3301 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 980 projects to (3886, 2141), 3344 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Eldoga: Eldoga, the largest valley of the eastern lowland and the Sun Grasslands."
    ]
@@ -6883,11 +6921,7 @@
    },
    "overlord": null,
    "conflicts": [
-    "Old state 141 projects to (1382, 2084), 801 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 250 projects to (1466, 2332), 981 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 381 projects to (1296, 2034), 704 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 890 projects to (1372, 2075), 789 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 1159 projects to (2715, 1249), 2174 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
+    "2 old state(s) fall on a land where SOY has 6; the island goes to SOY (one owner)."
    ],
    "proposed": [
     "Capital Holang: Holang, the harbour of Hol under the Great Volcano."
@@ -6917,7 +6951,30 @@
     "zone": "lands_sun",
     "land": "land_island_023"
    },
-   "seeds": [],
+   "seeds": [
+    {
+     "point": [
+      888,
+      1813
+     ],
+     "method": "old states",
+     "source": "old state 1728 (3 old state(s) on this land)",
+     "snapPx": 2.2,
+     "status": "proposed",
+     "land": "land_island_040"
+    },
+    {
+     "point": [
+      767,
+      1846
+     ],
+     "method": "old states",
+     "source": "old state 1755 (6 old state(s) on this land)",
+     "snapPx": 0,
+     "status": "proposed",
+     "land": "land_island_018"
+    }
+   ],
    "claim": [],
    "exclude": [],
    "weight": {
@@ -6926,10 +6983,7 @@
     "basis": "roster extent"
    },
    "overlord": null,
-   "conflicts": [
-    "Old state 1147 projects to (2875, 1303), 2131 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added.",
-    "Old state 1157 projects to (2839, 1262), 2105 px from the capital, beyond 320 px; the old map's land there does not match the drawing, so no seed is added."
-   ],
+   "conflicts": [],
    "proposed": [
     "Capital Ileslia: Ileslia, the main harbour of the northern isles: the northernmost island of the Sun group (land_island_023)."
    ]
@@ -7141,14 +7195,14 @@
    "capital": {
     "name": "Hidirim",
     "point": [
-     3750,
-     1351
+     3746,
+     1363
     ],
     "method": "old capital",
-    "source": "old state 708 at (3699, 1409) moved by the displacement field",
+    "source": "old state 966 at (3742, 1355) moved by the displacement field",
     "anchor": [
-     3750,
-     1351
+     3746,
+     1363
     ],
     "snapPx": 0,
     "basis": "Hidirim, the best harbour of the northern rift shore; the old map's Lccimio seat (the drawing labels Lccimio there).",

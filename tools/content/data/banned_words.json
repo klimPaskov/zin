@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "docs/specs/07_interface/05_text_sweep.md",
-  "game": "1.19.3.0",
+  "game": "1.19.4.1",
   "note": "Data for tools/content/checks/text_scan.mjs. A rule is a regular expression without delimiters. Matching is on the text a player reads: the value after glossary expansion, with colour codes, icon codes, $VARIABLE$ placeholders, [calls] and \\n removed, split on whole words. Rules are case-insensitive unless caseSensitive is true. Severity error fails the build. Severity review is reported and must be reworded or carry an allowance before the stage-4 gate.",
   "matching": {
     "normalise": "NFKC; remove colour codes (a section sign and one character); remove icon codes (a pound sign, the name and an optional frame); remove $...$ and [...]; replace \\n with a space; keep apostrophes inside words; a hyphen separates words",

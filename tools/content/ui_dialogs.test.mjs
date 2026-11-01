@@ -39,7 +39,7 @@ test('Dialogs: a frame is hollowed inside its rim and nowhere else', () => {
 test('Dialogs: the ZIN layouts sit on the 4 px grid and use only role fonts', () => {
   const text = `guiTypes = {\n${Object.values(ZIN_BLOCKS).join('\n')}\n}\n`;
   const r = checkLayoutGrid({ files: new Map([['interface/zin_w5_layouts.gui', Buffer.from(text)]]), design });
-  // the reading and event-title faces are the lane C2 Garamond aliases (1.19.3 has no bitmap font named garamond_16)
+  // the reading and event-title faces are the lane C2 Garamond aliases (1.19.4.1 has no bitmap font named garamond_16)
   const alias = /font hoi4_typewriter(16|22_inverted) has no role/;
   assert.deepEqual(r.problems.filter(p => !alias.test(p.message)).map(p => p.message), []);
   // design system §2.1: titles in the window-title face, reading text in Garamond with ink, options in the label face

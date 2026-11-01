@@ -675,7 +675,7 @@ every_state = {
 }
 ${COL} = { zin_cold_update_reach = yes }
 zin_cold_schedule_seasons = yes`, 'zin_cold.1 on Coldor (section "The situation on 1 Thaw 4A 1748").');
-  put('common/scripted_effects/zin_cold.txt', `${HEADER('mech_cold', SPEC)}\n# Scripted effects take no parameters in 1.19.3 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# winner: coldor 1, isengard 2 (zin_cold_end_march_war).\n\n${eff.join('\n\n')}`);
+  put('common/scripted_effects/zin_cold.txt', `${HEADER('mech_cold', SPEC)}\n# Scripted effects take no parameters in 1.19.4.1 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# winner: coldor 1, isengard 2 (zin_cold_end_march_war).\n\n${eff.join('\n\n')}`);
 
   // ------------------------------------------------------------------------------------------------ ideas and modifiers
   const ideaList = [

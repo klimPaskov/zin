@@ -5,6 +5,7 @@ import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseJsonPositions, applyEdits, removalRange } from './json_edit.mjs';
+import { loadMap } from '../content/lib/map_features.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const run = script => JSON.parse(execFileSync(process.execPath, [path.join(here, script)], { encoding: 'utf8', maxBuffer: 1 << 26 }));
@@ -43,6 +44,6 @@ test('The migration is applied: a dry run over the repository finds nothing left
 test('The state assignment is applied: a dry run writes the same file', () => {
   const r = run('roster_state_assignment.mjs');
   assert.equal(r.changed, false);
-  assert.equal(r.counts.states, 1332);
+  assert.equal(r.counts.states, loadMap().states.filter(s => s.owner).length);
   assert.equal(r.counts.landless, 0);
 });

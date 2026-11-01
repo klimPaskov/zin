@@ -36,6 +36,8 @@ function createShared(data) {
 function ensureShared() { return (shared ??= createShared(loadNamingData())); }
 // Forget the shared generator (a test or a second build in one process starts from an empty registry).
 export function resetNaming() { shared = null; }
+// The shared generator and its world registry, for the steps that must keep their own names out of the generated ones (modules/world_names.mjs).
+export function sharedNaming() { return ensureShared(); }
 
 // ------------------------------------------------------------------------------------------------- the pools
 function blendPool(state, seed, kind, n) {

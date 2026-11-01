@@ -1,0 +1,640 @@
+{
+ "schema": 1,
+ "owner": "tools/migrations/roster_state_assignment.mjs (frozen record; never regenerated)",
+ "note": "How many states each realm held, by former row, in the 19 October assignment of the retired old map (1,332 states). The old states are gone with the old map; the loader uses these counts only to pick a merged realm's main former row (lib/roster.mjs). Keys are realm keys, then former tags.",
+ "realms": {
+  "horidor": {
+   "Y03": 15,
+   "Y22": 7
+  },
+  "poloto": {
+   "Y23": 8
+  },
+  "heodwa_lands": {
+   "Y2V": 3,
+   "Y2W": 2
+  },
+  "lerendor": {
+   "Y0G": 6,
+   "Y32": 1,
+   "Y2U": 1
+  },
+  "mustnom": {
+   "Y31": 1
+  },
+  "ren": {
+   "Y0J": 3
+  },
+  "eldafaen": {
+   "Y82": 10,
+   "Y81": 3,
+   "Y7Y": 8
+  },
+  "zols_mistake": {
+   "Y0U": 104
+  },
+  "aenor": {
+   "Y0L": 17,
+   "Y50": 2,
+   "Y4X": 1,
+   "Y4P": 1,
+   "Y4S": 2
+  },
+  "freshon": {
+   "Y51": 4
+  },
+  "portogalor": {
+   "Y1N": 9
+  },
+  "ostoroth": {
+   "Y5D": 5,
+   "Y5F": 8,
+   "Y5B": 10,
+   "Y11": 9
+  },
+  "woqood": {
+   "Y5G": 3,
+   "Y56": 8,
+   "Y5C": 10
+  },
+  "mora": {
+   "Y13": 5,
+   "Y5E": 9
+  },
+  "erco": {
+   "Y5P": 16
+  },
+  "plutondo": {
+   "Y5V": 16
+  },
+  "mushroom_forest": {
+   "Y82": 3
+  },
+  "lccimio": {
+   "Y83": 14,
+   "Y85": 9,
+   "Y86": 1
+  },
+  "luv_zhise": {
+   "Y84": 10
+  },
+  "noris": {
+   "Y14": 24,
+   "Y5K": 11,
+   "Y5H": 4
+  },
+  "mostok": {
+   "Y5L": 12
+  },
+  "drak": {
+   "Y15": 11
+  },
+  "alerhia": {
+   "Y5W": 26
+  },
+  "andos_enda": {
+   "Y0W": 5,
+   "Y88": 4,
+   "Y89": 7
+  },
+  "herrodon": {
+   "Y0V": 6,
+   "Y7W": 2,
+   "Y7V": 2
+  },
+  "orato": {
+   "Y5A": 5,
+   "Y59": 1
+  },
+  "lands_of_light": {
+   "Y77": 2,
+   "Y7A": 2,
+   "Y75": 1,
+   "Y7L": 4,
+   "Y6U": 15,
+   "Y78": 1,
+   "Y72": 1,
+   "Y7B": 1,
+   "Y79": 1,
+   "Y7F": 2,
+   "Y76": 1,
+   "Y7H": 3,
+   "Y6Y": 1,
+   "Y7G": 1
+  },
+  "tor_luni": {
+   "Y7C": 3,
+   "Y74": 3,
+   "Y6W": 1,
+   "Y7D": 3,
+   "Y7E": 3
+  },
+  "goodin": {
+   "Y71": 1,
+   "Y6Z": 1,
+   "Y70": 1
+  },
+  "god_forest": {
+   "Y7D": 1
+  },
+  "herez": {
+   "Y55": 5,
+   "Y52": 2
+  },
+  "halia": {
+   "Y7M": 1,
+   "Y7S": 1,
+   "Y7N": 2,
+   "Y7P": 1,
+   "Y7Q": 1
+  },
+  "mirolon": {
+   "Y0Y": 6
+  },
+  "coldor": {
+   "Y01": 24,
+   "Y1U": 6,
+   "Y1Q": 3,
+   "Y1P": 11
+  },
+  "naamis": {
+   "Y12": 6,
+   "Y58": 8,
+   "Y57": 6
+  },
+  "delbiz": {
+   "Y5I": 10,
+   "Y5J": 17
+  },
+  "stabilo": {
+   "Y5O": 6,
+   "Y5Q": 7,
+   "Y5U": 5,
+   "Y5T": 6,
+   "Y16": 14
+  },
+  "rhachia": {
+   "Y17": 3
+  },
+  "obmi": {
+   "Y5R": 7
+  },
+  "corogon": {
+   "Y2F": 3,
+   "Y0A": 5,
+   "Y2H": 1
+  },
+  "kvittumm": {
+   "Y1K": 8,
+   "Y1I": 7,
+   "Y1M": 4
+  },
+  "orewele": {
+   "Y1L": 10
+  },
+  "xison": {
+   "Y1T": 9,
+   "Y1S": 7,
+   "Y1R": 1
+  },
+  "omar": {
+   "Y1O": 13
+  },
+  "pertolor": {
+   "Y1Z": 12,
+   "Y1Y": 5,
+   "Y8H": 1
+  },
+  "keredor_hellekton": {
+   "Y2O": 3,
+   "Y2N": 1
+  },
+  "mina": {
+   "Y35": 2,
+   "Y34": 4,
+   "Y33": 1
+  },
+  "howan": {
+   "Y63": 1,
+   "Y1D": 1
+  },
+  "enhis_is_rond": {
+   "Y62": 1,
+   "Y61": 1,
+   "Y5Z": 1
+  },
+  "lambin": {
+   "Y27": 9
+  },
+  "gromkerm": {
+   "Y27": 1
+  },
+  "buldor": {
+   "Y2B": 6,
+   "Y2C": 1,
+   "Y2D": 1
+  },
+  "bloody_forest": {
+   "Y8E": 3
+  },
+  "aenor_forest": {
+   "Y0M": 2,
+   "Y4R": 1
+  },
+  "dunelaeth": {
+   "Y80": 7
+  },
+  "konori": {
+   "Y0N": 5
+  },
+  "ihuy": {
+   "Y6M": 1,
+   "Y6N": 2,
+   "Y6K": 1,
+   "Y6I": 1,
+   "Y6L": 2,
+   "Y6J": 1,
+   "Y6R": 1
+  },
+  "ghaahu": {
+   "Y1X": 8
+  },
+  "nether": {
+   "Y8D": 2
+  },
+  "magical_forest": {
+   "Y8F": 17,
+   "Y8A": 2,
+   "Y8B": 4
+  },
+  "yavieth": {
+   "Y87": 3
+  },
+  "kunhrim": {
+   "Y4V": 3
+  },
+  "fearno": {
+   "Y21": 25,
+   "Y20": 8
+  },
+  "dondor": {
+   "Y19": 1
+  },
+  "yeni_alang": {
+   "Y7I": 1,
+   "Y7K": 2,
+   "Y7J": 1
+  },
+  "worlond": {
+   "Y24": 15,
+   "Y25": 6
+  },
+  "gunwyn": {
+   "Y07": 12
+  },
+  "austklev": {
+   "Y06": 8
+  },
+  "orohaf": {
+   "Y0T": 1
+  },
+  "nivaros": {
+   "Y1J": 8
+  },
+  "miaed": {
+   "Y18": 15
+  },
+  "selen": {
+   "Y0M": 5,
+   "Y4R": 1,
+   "Y4O": 2,
+   "Y4N": 1
+  },
+  "glimkit": {
+   "Y1V": 2,
+   "Y1W": 2
+  },
+  "kilinti": {
+   "Y0O": 4
+  },
+  "klungori_guard": {
+   "Y4U": 2
+  },
+  "hunhun": {
+   "Y4W": 3,
+   "Y4Z": 2
+  },
+  "vindael": {
+   "Y04": 12
+  },
+  "halenor": {
+   "Y3U": 4,
+   "Y3S": 1,
+   "Y3V": 1,
+   "Y3T": 1
+  },
+  "pollos": {
+   "Y0D": 1,
+   "Y3J": 1,
+   "Y3K": 1
+  },
+  "benan": {
+   "Y3N": 1,
+   "Y3M": 1,
+   "Y3O": 1
+  },
+  "fineger": {
+   "Y3B": 2,
+   "Y39": 2,
+   "Y3I": 1
+  },
+  "olodor": {
+   "Y0L": 1
+  },
+  "hirolon": {
+   "Y0Q": 1,
+   "Y4T": 1
+  },
+  "goldoroth": {
+   "Y1A": 3,
+   "Y4C": 1,
+   "Y48": 1,
+   "Y4A": 1
+  },
+  "raerby": {
+   "Y3W": 1,
+   "Y3X": 1,
+   "Y0F": 1
+  },
+  "windy_lands": {
+   "Y42": 1,
+   "Y3Z": 1,
+   "Y40": 1,
+   "Y41": 1,
+   "Y3Y": 1
+  },
+  "sidea": {
+   "Y6C": 2,
+   "Y6D": 1,
+   "Y69": 1
+  },
+  "tolvael": {
+   "Y2Q": 7,
+   "Y2P": 3,
+   "Y2R": 1
+  },
+  "kradlon": {
+   "Y09": 4
+  },
+  "brundahrim": {
+   "Y09": 2
+  },
+  "wennarith": {
+   "Y2I": 4,
+   "Y2J": 2
+  },
+  "kea": {
+   "Y6A": 3,
+   "Y6B": 3
+  },
+  "puvulan": {
+   "Y8D": 7
+  },
+  "tolhon": {
+   "Y2S": 1,
+   "Y2T": 1,
+   "Y0K": 1
+  },
+  "soyano": {
+   "Y1F": 3,
+   "Y6O": 5,
+   "Y6E": 1,
+   "Y6G": 1,
+   "Y6Q": 1,
+   "Y6F": 1,
+   "Y6H": 1,
+   "Y6T": 1,
+   "Y6P": 1,
+   "Y6S": 1
+  },
+  "thenon": {
+   "Y28": 5
+  },
+  "adel": {
+   "Y0C": 2,
+   "Y3D": 1,
+   "Y3F": 1,
+   "Y3C": 2,
+   "Y3E": 2
+  },
+  "olen": {
+   "Y7R": 3,
+   "Y7O": 1
+  },
+  "santon": {
+   "Y3Q": 1,
+   "Y3P": 1,
+   "Y3R": 1
+  },
+  "veshazel": {
+   "Y1A": 2
+  },
+  "azano": {
+   "Y5N": 11
+  },
+  "kamu_lamo": {
+   "Y5X": 1,
+   "Y5Y": 1
+  },
+  "seite_islands": {
+   "Y3G": 4,
+   "Y3H": 1
+  },
+  "yongyong": {
+   "Y68": 1,
+   "Y64": 1,
+   "Y66": 1,
+   "Y67": 1,
+   "Y65": 1
+  },
+  "nara": {
+   "Y1E": 1
+  },
+  "gala": {
+   "Y6V": 1,
+   "Y6X": 1,
+   "Y73": 1
+  },
+  "kersian": {
+   "Y5M": 10
+  },
+  "worshipdom": {
+   "Y8G": 3
+  },
+  "melkgard": {
+   "Y02": 12
+  },
+  "blackton": {
+   "Y4I": 4
+  },
+  "hoorunoron": {
+   "Y4K": 1,
+   "Y4I": 1
+  },
+  "dulundur": {
+   "Y4H": 4
+  },
+  "skragdurg": {
+   "Y4J": 3,
+   "Y8C": 3
+  },
+  "nolorim": {
+   "Y7Z": 5,
+   "Y0X": 2
+  },
+  "pornivior": {
+   "Y5S": 9
+  },
+  "molot": {
+   "Y0H": 2,
+   "Y2M": 2
+  },
+  "britadon": {
+   "Y4D": 1,
+   "Y4F": 1
+  },
+  "belonton": {
+   "Y1B": 1,
+   "Y4G": 1,
+   "Y4E": 1
+  },
+  "wild_lands": {
+   "Y46": 1,
+   "Y47": 1
+  },
+  "dark_gate": {
+   "Y49": 2,
+   "Y4B": 2
+  },
+  "wahatud": {
+   "Y18": 4
+  },
+  "saopon": {
+   "Y2E": 3,
+   "Y2G": 2
+  },
+  "holdon": {
+   "Y05": 5
+  },
+  "werlendor": {
+   "Y26": 7
+  },
+  "yeti_lands": {
+   "Y1X": 14
+  },
+  "varnondor": {
+   "Y0B": 4,
+   "Y2L": 1,
+   "Y2K": 2
+  },
+  "girdon": {
+   "Y2A": 4,
+   "Y08": 2
+  },
+  "dobbum": {
+   "Y29": 5
+  },
+  "noleksun": {
+   "Y0S": 7
+  },
+  "kingson": {
+   "Y0P": 4,
+   "Y4Q": 2
+  },
+  "the_darks": {
+   "Y4K": 3
+  },
+  "dun": {
+   "Y4L": 3,
+   "Y1C": 1
+  },
+  "dolpar": {
+   "Y30": 3,
+   "Y2Z": 1,
+   "Y2X": 1,
+   "Y2Y": 1
+  },
+  "eekedor": {
+   "Y37": 3,
+   "Y38": 1,
+   "Y36": 1,
+   "Y0I": 1
+  },
+  "fotan": {
+   "Y4M": 1
+  },
+  "safeton": {
+   "Y4Y": 1,
+   "Y0R": 2
+  },
+  "tirlan": {
+   "Y0Q": 1
+  },
+  "teste": {
+   "Y7X": 3
+  },
+  "elvana": {
+   "Y1G": 1
+  },
+  "igara": {
+   "Y1H": 1
+  },
+  "cursed_lands": {
+   "Y54": 1
+  },
+  "verde": {
+   "Y60": 1
+  },
+  "pazoma": {
+   "Y53": 4
+  },
+  "nondondor": {
+   "Y3L": 1,
+   "Y0E": 1
+  },
+  "khorvrath": {
+   "Y7T": 1
+  },
+  "dolon": {
+   "Y7U": 1
+  },
+  "nezer": {
+   "Y10": 2
+  },
+  "nan": {
+   "Y0Z": 1
+  },
+  "hrakbrund": {
+   "Y2X": 2
+  },
+  "troll_forest": {
+   "Y45": 1
+  },
+  "burnikit": {
+   "Y1A": 1
+  },
+  "bordon": {
+   "Y43": 1
+  },
+  "dreson": {
+   "Y44": 1
+  },
+  "the_lens": {
+   "Y3A": 1
+  },
+  "burrikkrit": {
+   "Y8B": 1,
+   "Y0S": 1
+  }
+ }
+}

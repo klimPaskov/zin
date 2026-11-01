@@ -104,6 +104,10 @@ export const CAPITAL_ANCHORS = Object.freeze({
   KLU: { feature: 'pass_south_gate', offset: [-36, -4], basis: 'Hungohon, the garrison town at the western foot of the South Pass (middle_lands.md 10, 11).' },
   NOL: { old: true, basis: 'Saelori, the crossing of the south-eastern roads; the old map\'s Noleksun seat (middle_lands.md 10).' },
   FRE: { old: true, basis: 'Hordorton, a spring where the lake road meets the south road; the old map\'s Freshon seat (middle_lands.md 10).' },
+  // Lakeside sites moved onto the dry land of the same seat (the site stands 8 to 9 px from the lake shore on the import, so the seat
+  // takes the nearest point 31 px from the water that the realm owns).
+  HNH: { at: [3193, 1585], overridesSite: true, basis: 'Ulrono, the moot-ground of the Hunhun Downs (site_hunhun): the site stands 9 px from the Great Lake shore, so the seat moves 40 px east onto dry land 31 px from the water (middle_lands.md 10).' },
+  MOA: { at: [4745, 1631], overridesSite: true, basis: 'Gonnois, the lake city of the Hot Lake\x27s east shore (site_mora): the site stands 8 px from the water, so the seat moves 23 px inland onto dry land 31 px from the shore (lake towns, middle_lands.md 10).' },
   PAZ: { method: 'dossier text', at: [3172, 1652], basis: 'Horlomon, a lake town on a deep bay (middle_lands.md 10): the Great Lake\'s south-east bay between the Hunhun Downs and the Saeton reeds, since Parim, Silesire, Dolepar and Grafas hold the north, east, south and west lobes.' },
   FOT: { feature: 'strait_narrow', end: 0, basis: 'Deoreh, the narrowest crossing of the Leren Sea on the Middle Lands side: the Middle Lands end of the Narrow Strait (middle_lands.md 10).' },
   // At the ridge's south end the throne-cave shared a province with Yavieth's seat (map write of 31 October 2026,
@@ -220,6 +224,8 @@ export const SEED_ANCHORS = Object.freeze({
   LER: [{ area: 'ice_lerenwaith', basis: 'Lerendor\'s North (former Lerenwaith) is part of Lerendor (decision K49; roster extent).' }],
   PUV: [{ land: 'land_island_033', side: 'centre', basis: 'The isle of Exhoros (drawn Vez) off Volgan\'s coast (roster extent).' }, { land: 'land_island_060', side: 'centre', basis: 'Unlo, an isle of Volgan\'s coast (ember_lands.md 2, 11).' }],
   MIR: [{ area: 'marsh_mirolon', basis: 'The Great Swamp of Mirolon (roster extent).' }],
+  // K56: the Castle of Yeldenne and its valley are Pertolor's land. The valley is no model feature a claim can name (only its ranges and pass are), so the castle is a seed; Omar keeps its seat state and its northern and foothill states.
+  PRT: [{ at: [962, 238], basis: 'The Castle of Yeldenne at Mp\x27E, in the high valley between the Yeldenne Heights and the Isengar Mountains (site_yeldenne; decision K56).' }],
 });
 
 // Claims: land the canon gives to one realm whole.

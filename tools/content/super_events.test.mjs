@@ -39,7 +39,7 @@ test('The data registers the great moments with stable ids (live and retired tog
 test('The module writes every file of the package; scripts parse, have balanced braces and no <= or >=; the text has its BOM', () => {
   for (const rel of Object.values(FILES)) assert(staged.files.has(rel), rel);
   for (const [rel, bytes] of staged.files) {
-    if (/\.(dds|png)$/.test(rel)) continue; // the pictures and chrome textures are binary
+    if (/\.(dds|png|ogg)$/.test(rel)) continue; // the pictures, chrome textures and recordings are binary
     if (rel.endsWith('.yml')) { assert.deepEqual([...bytes.subarray(0, 3)], [0xef, 0xbb, 0xbf], rel); continue; }
     const t = bytes.toString('utf8').replace(/#.*$/gm, '').replace(/"[^"]*"/g, '""');
     assert.equal((t.match(/\{/g) ?? []).length, (t.match(/\}/g) ?? []).length, `${rel}: braces`);

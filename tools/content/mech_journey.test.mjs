@@ -24,6 +24,7 @@ const countries = countryTable();
 const tagOf = n => { const c = countries.find(x => x.name === n); assert(c, `${n} is not in the roster`); return c.tag; };
 const ZOL = tagOf("Zol's Mistake"), VOL = tagOf('Puvulan'), WOR = tagOf('Worshipdom'), KRA = tagOf('Kradlon'), GUN = tagOf('Gunwyn');
 const readData = async n => JSON.parse(await readFile(path.join(here, 'data', n), 'utf8'));
+import { siteState } from './lib/map_features.mjs';
 const eindilData = await readData('mech_journey_eindil.json'), gloData = await readData('mech_journey_glo.json'), westData = await readData('mech_journey_west.json');
 const clone = o => structuredClone(o);
 
@@ -320,11 +321,11 @@ test('Hall outcomes: the cases A, B1, B2, C and D and the effects common to a de
   for (const s of ['zin_horos_dead', 'zin_yeldenne_the_empty_throne', 'zin_world_add_gathering_dark', 'news_event = { id = zin_glo.30 }']) assert(falls.includes(s), s);
   // K56: no warden is installed and no character is retired; the hall's owner (the keeper of the castle's state) takes the empty throne.
   assert(!falls.includes('zin_yeldenne_install_warden') && !falls.includes('retire_character'), 'K56: Horos is no character');
-  assert(falls.includes(`${gloData.hallState} = {`), 'the empty throne is the hall owner\'s');
+  assert(falls.includes(`${siteState(gloData.hallSite)} = {`), 'the empty throne is the hall owner\'s');
   assert.match(text('common/on_actions/zin_glo.txt'), /on_declare_war[\s\S]*zin_glo_conqueror/);
 });
 test('Glo\'s startup and ai: wards 50, power 0, state 0, the conquer block', () => {
-  const s = text('common/on_actions/zin_glo.txt'); assert.match(s, /zin_glo_state = 0/); assert.match(s, /zin_yeldenne_wards = constant:zin_glo\.wards_start/); assert.match(s, new RegExp(`${gloData.hallState} = \\{[\\s\\S]*owner = \\{[\\s\\S]*country_event = \\{ id = zin_glo\\.1`), 'the startup event goes to the hall owner');
+  const s = text('common/on_actions/zin_glo.txt'); assert.match(s, /zin_glo_state = 0/); assert.match(s, /zin_yeldenne_wards = constant:zin_glo\.wards_start/); assert.match(s, new RegExp(`${siteState(gloData.hallSite)} = \\{[\\s\\S]*owner = \\{[\\s\\S]*country_event = \\{ id = zin_glo\\.1`), 'the startup event goes to the hall owner');
   assert.equal(gloData.countries.keeper, 'Pertolor', 'K56: the keeper of the castle is the owner of its state, Pertolor');
   assert.match(text('common/ai_strategy/zin_glo.txt'), /type = conquer[\s\S]*value = -500/);
   assert.match(text('common/dynamic_modifiers/zin_glo.txt'), /zin_yeldenne_hall_wards[\s\S]*enemy_attrition = 0\.2/);
@@ -383,7 +384,7 @@ test('Gunwyn gets its start spirit from zin_west.1 and the host template is made
 });
 test('The geography file is the one the module reads: ports, shore, isle and strategic regions', async () => {
   const g = await readData('mech_journey_geography.json');
-  assert.equal(g.shore.length, 5); assert.equal(g.isle.length, 1); assert(g.ports.length > 20 && g.mainland.length > 50 && g.strategicRegions.length > 5);
+  assert.equal(g.shore.length, 5); assert.equal(g.isle.length, 11, 'the Aenor Isle realm holds 11 states on the new map (the old map gave it 1)'); assert(g.ports.length > 20 && g.mainland.length > 50 && g.strategicRegions.length > 5);
   assert.match(text('common/ai_areas/zin_west.txt'), /zin_area_middle_lands/);
   assert(text('common/scripted_triggers/zin_west.txt').includes(`states = { ${g.mainland[0]} `));
 });

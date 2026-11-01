@@ -576,14 +576,15 @@ test('The registry reads the names that earlier modules stage', async () => {
 test('The shipped registry data and catalog load', async () => {
   const catalog = await loadCatalog();
   assert.equal(catalog.icons.size, 175);
-  assert.equal(catalog.events.size, 52);
+  // 52 catalogue event keys plus the 50 Eindil beat keys of lane I10 (tools/content/data/event_beats.json).
+  assert.equal(catalog.events.size, 102);
   assert.equal(catalog.events.get('unmasking').gate, 'zin_afrit_revealed');
   const prepared = prepareTrees(Object.entries(BASE).map(([name, data]) => ({ name, data })), ROSTER);
   assert.equal(prepared.problems.length, 0);
   assert.equal(prepared.trees.get('regional_northmark').focuses.length, 4);
 });
 
-test('clear_flag compiles to clr_country_flag, the 1.19.3 effect (clear_country_flag does not exist)', async () => {
+test('clear_flag compiles to clr_country_flag, the 1.19.4.1 effect (clear_country_flag does not exist)', async () => {
   const { staged } = await compileFixtures();
   const text = [...staged.files].filter(([k]) => /^(common|events)\/.*\.txt$/.test(k)).map(([, v]) => v.toString('utf8')).join('\n');
   assert.match(text, /clr_country_flag = zin_testland_rich/);

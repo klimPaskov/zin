@@ -31,7 +31,8 @@ export async function readStates(dir = path.join(ZIN, 'history/states')) {
     const id = Number(/\bid\s*=\s*(\d+)/.exec(t)?.[1]), owner = /\bowner\s*=\s*([A-Za-z0-9]+)/.exec(t)?.[1];
     const provinces = (/\bprovinces\s*=\s*\{([^}]*)\}/.exec(t)?.[1] ?? '').trim().split(/\s+/).filter(Boolean).map(Number);
     const vps = [...t.matchAll(/victory_points\s*=\s*\{\s*(\d+)\s+(\d+)\s*\}/g)].map(m => ({ province: Number(m[1]), value: Number(m[2]) }));
-    if (!Number.isInteger(id) || !owner || !provinces.length) throw new Error(`State file ${f} has no id, owner or provinces`);
+    if (!Number.isInteger(id) || !provinces.length) throw new Error(`State file ${f} has no id or provinces`);
+    if (!owner) continue; // unowned land on purpose (state_assignment.json `unowned`): no realm holds it, so it has no garrison or port
     if (!owners.has(id)) throw new Error(`State ${id} has no owner in data/world/state_assignment.json`);
     states.push({ id, owner: owners.get(id), mapOwner: owner, provinces, vps });
   }

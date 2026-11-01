@@ -1454,7 +1454,7 @@ ${Object.entries(R.leans).map(([n, v]) => `  ${tag(n)} = { set_variable = { zin_
 
   const ctxx = { found, others, east, realms, statesTotal, N, R, T, tags, put, defs, E_, ROADS, roadSwitch, inf, tag, powers, ge, report: data.report };
   const content = await buildEastContent({ ...ctxx, countries: ctx.countries });
-  put('common/scripted_effects/zin_east.txt', `${HEADER('mech_east', EAST_SPEC)}\n# Integration note: ${EAST_NOTE}.\n# Scripted effects take no parameters in 1.19.3 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# road: salt 1, gold 2, rift 3, lake 4, sand 5.\n\n${eff.join('\n\n')}`);
+  put('common/scripted_effects/zin_east.txt', `${HEADER('mech_east', EAST_SPEC)}\n# Integration note: ${EAST_NOTE}.\n# Scripted effects take no parameters in 1.19.4.1 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# road: salt 1, gold 2, rift 3, lake 4, sand 5.\n\n${eff.join('\n\n')}`);
   const unused = T.unused();
   if (unused.length) throw new Error(`mech_east: the data file holds text nothing uses: ${unused.join(', ')}`);
   const entries = T.entries();

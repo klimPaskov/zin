@@ -8,6 +8,7 @@ import { loadRoster, countryTable, successor, cultureRows, stateOwners, gamePeop
 import { checkTags } from './lib/tags.mjs';
 import { assignStates } from '../migrations/roster_state_assignment.mjs';
 import { loadCharacterData } from './modules/characters.mjs';
+import { loadMap } from './lib/map_features.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ZIN = path.resolve(here, '../..');
@@ -55,16 +56,17 @@ test('Every old row has a fate, and successor() resolves tags and names to the r
   assert.equal(successor('Nowhere'), null);
 });
 
-test('The state assignment gives every state of the old map to a realm, every realm land and a capital in its own states', () => {
+test('The state assignment gives every owned state of the map to a realm, every realm land and a capital in its own states', () => {
   const owners = stateOwners();
-  assert.equal(owners.size, 1332);
+  const owned = loadMap().states.filter(s => s.owner).length;
+  assert.equal(owners.size, owned);
   for (const c of countries) {
     assert.ok(c.states > 0, `${c.name} has no state`);
     assert.ok(c.stateIds.includes(c.capitalState), `${c.name}'s capital ${c.capitalState} is not its own state`);
   }
   const a = R.assignment;
   for (const s of a.states) assert.ok(s.rule && s.reason, `state ${s.id} has no rule or reason`);
-  assert.equal(countries.reduce((n, c) => n + c.states, 0), 1332);
+  assert.equal(countries.reduce((n, c) => n + c.states, 0), owned);
 });
 
 test('The state assignment file is what the assignment script writes (deterministic)', () => {
@@ -104,7 +106,7 @@ test('Every realm has one court; character ids are unique and rulers carry the r
 
 test('No old debug tag is left in the builder data or the focus designs (records excepted)', () => {
   const old = new Set(R.migration.map(m => m.oldTag));
-  const RECORDS = /world[\\/](roster|legacy_countries|state_assignment|heraldry)\.json$|[\\/]history[\\/]|[\\/]characters[\\/]|flags-cells\.json$|geography[\\/]|vanilla[\\/]|ui[\\/]/;
+  const RECORDS = /world[\\/](roster|legacy_countries|state_assignment|heraldry|former_states)\.json$|[\\/]history[\\/]|[\\/]characters[\\/]|flags-cells\.json$|geography[\\/]|vanilla[\\/]|ui[\\/]/;
   const hits = [];
   const walk = d => { for (const e of readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (p.endsWith('.json') && !RECORDS.test(p)) { const t = readFileSync(p, 'utf8'); for (const m of t.matchAll(/(?<![§A-Za-z0-9_])Y[0-9A-Z]{2}(?![A-Za-z0-9_])/g)) if (old.has(m[0])) hits.push(`${path.relative(ZIN, p)}: ${m[0]}`); } } };
   walk(path.join(here, 'data')); walk(path.join(ZIN, 'docs/design/focus'));

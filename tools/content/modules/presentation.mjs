@@ -335,7 +335,7 @@ export async function buildPresentation(staged, { warn = msg => process.stderr.w
     const meta = await sharp(s.file).metadata();
     if (e.crop !== 'news') {
       let img = sharp(s.file), ops = [`lanczos3 cover ${EVENT.w}x${EVENT.h}`];
-      if (e.crop === 'both') { const w = Math.round(meta.height * EVENT.w / EVENT.h), crop = { left: Math.floor((meta.width - w) / 2), top: 0, width: w, height: meta.height }; img = img.extract(crop); ops = [`centre crop ${w}x${meta.height}`, `lanczos3 ${EVENT.w}x${EVENT.h}`]; }
+      if (e.crop === 'both') { const w = Math.min(meta.width, Math.round(meta.height * EVENT.w / EVENT.h)), crop = { left: Math.floor((meta.width - w) / 2), top: 0, width: w, height: meta.height }; img = img.extract(crop); ops = [`centre crop ${w}x${meta.height}`, `lanczos3 ${EVENT.w}x${EVENT.h}`]; }
       ship(`gfx/event_pictures/zin/zin_evt_${e.key}.dds`, ddsOf(await rgba(img.resize(EVENT.w, EVENT.h, { fit: 'cover', position: 'centre', kernel: 'lanczos3' }), EVENT.w, EVENT.h), EVENT.w, EVENT.h), { rel, sha: s.sha }, [...ops, 'dds a8r8g8b8']);
       evtFile.set(e.key, e.key);
     }

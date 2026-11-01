@@ -138,14 +138,16 @@ test('all 175 catalog keys have focus, shine and idea sprites, the fallback gene
 
 test('the 52 picture keys have event and news sprites per their crop', async () => {
   const { events } = await loadCells();
-  assert.equal(events.length, 52); assert.equal(new Set(events.map(e => e.key)).size, 52);
+  // 52 catalogue keys plus the 50 Eindil beat keys of lane I10 (tools/content/data/event_beats.json).
+  assert.equal(events.length, 102); assert.equal(new Set(events.map(e => e.key)).size, 102);
   const s = new Set(sprites('interface/zin_event_pictures.gfx'));
   for (const e of events) {
     assert.equal(s.has(SPRITE.evt(e.key)), e.crop !== 'news', e.key);
     assert.equal(s.has(SPRITE.news(e.key)), e.crop !== 'standard', e.key);
   }
   assert(s.has(SPRITE.evt(FALLBACK_PICTURE)) && s.has(SPRITE.news(FALLBACK_PICTURE)));
-  assert.equal(result.counts.eventPictures, 43); assert.equal(result.counts.newsPictures, 28);
+  // 43 catalogue event pictures plus 50 Eindil beat pictures; 28 catalogue news pictures plus 5 beat pictures with news events.
+  assert.equal(result.counts.eventPictures, 93); assert.equal(result.counts.newsPictures, 33);
 });
 
 test('the tracked cell copy matches the art working copies', async () => {

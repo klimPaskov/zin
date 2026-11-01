@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "docs/specs/07_interface/05_text_sweep.md",
-  "game": "1.19.3.0",
+  "game": "1.19.4.1",
   "note": "Master glossary of the ZIN text sweep: every engine concept that vanilla text names, its Aoaz term, per-people variants, forbidden words, grammar and capitalisation. Read by tools/content/lib/text_engine.mjs and by every module that writes player text. Terms are proposals unless status is D (decided by a Ready spec or an integration decision) or K (the vanilla word is plain English and stays). No vanilla sentence is stored here; the engine words listed under engine.words are single words and short phrases the scan must not let through.",
   "statusCodes": {
     "D": "Decided by a Ready spec, an integration decision or an adopted proposal",

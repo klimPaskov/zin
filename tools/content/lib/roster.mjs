@@ -82,6 +82,7 @@ export function loadRoster() {
   const cultures = readJson(path.join(WORLD, 'cultures.json')).cultures;
   const stances = loadStances();
   const assignment = stateAssignment();
+  const formerStates = readJson(path.join(WORLD, 'former_states.json')).realms;
   const byKeyRealm = new Map(roster.realms.map(r => [r.key, r]));
   const formerOf = new Map(roster.realms.map(r => [r.key, roster.migration.filter(m => m.into.includes(r.key))]));
   const statesOf = new Map(), capitalOf = new Map();
@@ -96,7 +97,7 @@ export function loadRoster() {
     // The row a realm continues: the row it keeps or renames, or the split row whose capital it keeps. A realm made only of merged rows
     // takes the one that gave it the most states as its main row (its old flag and start setup); a realm with no old row has none.
     const continued = former.find(m => m.fate === 'kept' || m.fate === 'renamed') ?? former.find(m => m.fate === 'split' && m.into[0] === r.key) ?? null;
-    const oldStates = t => (assignment?.states ?? []).filter(s => s.oldOwner === t && s.realm === r.key).length;
+    const oldStates = t => formerStates[r.key]?.[t] ?? 0;
     const main = continued ?? [...former].filter(m => m.fate === 'merged').sort((a, b) => oldStates(b.oldTag) - oldStates(a.oldTag) || (a.oldTag < b.oldTag ? -1 : 1))[0] ?? null;
     const overlord = r.overlord ? byKeyRealm.get(r.overlord) : null;
     if (r.overlord && !overlord) throw new Error(`roster: ${r.key} names an unknown overlord ${r.overlord}`);

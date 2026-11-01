@@ -6,7 +6,7 @@
   {
    "id": 10,
    "title": "The Man in the Ice",
-   "picture": "man_in_ice",
+   "picture": "beat_man_ice",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -84,7 +84,7 @@
   {
    "id": 150,
    "title": "Old Siula's Tale",
-   "picture": "black_ships_tale",
+   "picture": "beat_man_ice_b",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -116,7 +116,7 @@
   {
    "id": 151,
    "title": "The Man from the Ice Learns Our Words",
-   "picture": "generic_wilds",
+   "picture": "beat_man_ice_b",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -143,7 +143,7 @@
   {
    "id": 11,
    "title": "Talk of a Man from the Ice",
-   "picture": "generic_court",
+   "picture": "beat_man_ice",
    "to": "Coldor, Isengard",
    "hist": "Sowing 1749",
    "fired_by": "zin_eindil.150",
@@ -241,7 +241,7 @@
   {
    "id": 12,
    "title": "The Traders' Road South",
-   "picture": "traders_road_south",
+   "picture": "beat_traders_road",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -300,7 +300,7 @@
   {
    "id": 152,
    "title": "Traders Bring a Stranger",
-   "picture": "generic_peace",
+   "picture": "beat_traders_road_b",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -319,7 +319,7 @@
   {
    "id": 20,
    "title": "The Bridge of the Three Oaths",
-   "picture": "traders_road_south",
+   "picture": "beat_traders_road",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -378,7 +378,7 @@
   {
    "id": 153,
    "title": "The Bread Counted",
-   "picture": "grey_ford_truce",
+   "picture": "beat_traders_road_b",
    "requires": [],
    "to": "the other lordship, if different from the host",
    "hist": "Emberleaf 1749",
@@ -397,7 +397,7 @@
   {
    "id": 21,
    "title": "Girdon's Winter Ford",
-   "picture": "grey_ford_truce",
+   "picture": "beat_grey_ford",
    "to": "owner of zin_is_site_winter_ford (Girdon)",
    "hist": "Longnight 1749",
    "fired_by": "zin_eindil.20",
@@ -442,7 +442,7 @@
   {
    "id": 154,
    "title": "The Refugees Settle",
-   "picture": "generic_peace",
+   "picture": "beat_grey_ford_b",
    "to": "Girdon or the ford's owner",
    "hist": "Deepwinter 1750",
    "fired_by": "zin_eindil.21",
@@ -460,7 +460,7 @@
   {
    "id": 22,
    "title": "Judgment in Gunwaith",
-   "picture": "generic_court",
+   "picture": "beat_grey_ford",
    "to": "Gunwaith, or the owner of its former capital",
    "hist": "Ironfrost 1750",
    "fired_by": "zin_eindil.20",
@@ -523,7 +523,7 @@
   {
    "id": 155,
    "title": "The Lawspeaker's Ruling",
-   "picture": "generic_peace",
+   "picture": "beat_grey_ford_b",
    "to": "Gunwyn",
    "hist": "Ironfrost 1750",
    "fired_by": "zin_eindil.22",
@@ -552,7 +552,7 @@
   {
    "id": 23,
    "title": "The King Without a House",
-   "picture": "war_king",
+   "picture": "beat_king_without_house",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -585,7 +585,7 @@
   {
    "id": 30,
    "title": "The Grey Ford Breaks",
-   "picture": "war_king",
+   "picture": "beat_king_without_house",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -606,7 +606,7 @@
   {
    "id": 31,
    "title": "Feud on the Grey Ford",
-   "picture": "grey_ford_truce",
+   "picture": "beat_king_without_house",
    "requires": [],
    "to": "leader of the Grey Ford Confederation",
    "hist": "none: fallback on 1 Fallowing 1750",
@@ -625,7 +625,7 @@
   {
    "id": 32,
    "title": "A Crown Offered",
-   "picture": "concord_council",
+   "picture": "beat_crown_offered",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -720,7 +720,7 @@
   {
    "id": 156,
    "title": "The Confederation Gathers",
-   "picture": "war_king",
+   "picture": "beat_crown_offered_b",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -754,7 +754,7 @@
   {
    "id": 33,
    "title": "The War-King's Terms",
-   "picture": "grey_ford_truce",
+   "picture": "beat_war_king_terms",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -811,7 +811,7 @@
   {
    "id": 157,
    "title": "A Feast at the Ford",
-   "picture": "war_king",
+   "picture": "beat_war_king_terms_b",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -850,7 +850,7 @@
   {
    "id": 34,
    "title": "The Crown Laid Down",
-   "picture": "war_king",
+   "picture": "beat_crown_laid_down",
    "requires": [
     "zin_eindil_awake"
    ],
@@ -905,7 +905,7 @@
    "id": 35,
    "title": "The War-King Lays Down His Crown",
    "news": true,
-   "picture": "generic_peace",
+   "picture": "beat_crown_laid_down",
    "to": "news: every country",
    "hist": "Harvest 1750",
    "fired_by": "zin_eindil.34",

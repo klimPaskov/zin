@@ -3,7 +3,7 @@
 // The table: people, ruling ideology and stance per realm. The realms come from the roster (lib/roster.mjs): each realm's game people
 // (the people whose kit the builder ships; see GAME_PEOPLE there) and its stance (tools/content/data/world/characters/<region>.json).
 // The owner-editable docs/design/countries.csv, which the builder also writes, may override a realm's people and stance: a row counts
-// when its tag and name are those of a realm of the roster, so the rows of the retired debug-tag table (Y01 ...) are ignored.
+// when its tag and name are those of a realm of the roster, so the rows of the retired debug-tag table (the old Y-tags) are ignored.
 //
 // The package (buildCountryPackage, requirements R-20 to R-29): the tag table, each realm's country file, its history (capital, start
 // setup, politics, the court recruited at the start, its subjects and its league) and the realm names; the bookmark is modules/frontend.mjs. The map

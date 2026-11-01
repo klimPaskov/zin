@@ -583,12 +583,12 @@ test('report: findings are sorted and cut at 80 characters', async () => {
 });
 
 // ------------------------------------------------------------------------------------------------ the real data
-test('data: the family table lists the 95 swept files in 23 families, each data file parses', async () => {
+test('data: the family table lists the 96 swept files in 23 families, each data file parses', async () => {
   const table = await loadFamilyTable();
   assert.equal(Object.keys(table.families).length, 23);
   const files = Object.values(table.families).flatMap(f => f.files);
-  assert.equal(files.length, 95);
-  assert.equal(new Set(files).size, 95);
+  assert.equal(files.length, 96);
+  assert.equal(new Set(files).size, 96);
   for (const [name, def] of Object.entries(table.families)) assert(['off', 'report', 'banned', 'strict'].includes(def.gate), `${name}: ${def.gate}`);
   const { loadFamilyDef } = await import('./modules/text_sweep.mjs');
   for (const name of Object.keys(table.families)) {
@@ -596,7 +596,7 @@ test('data: the family table lists the 95 swept files in 23 families, each data 
     if (table.families[name].gate !== 'off') assert(d, `${name} has gate ${table.families[name].gate} and no data`);
     if (d) assert(Object.keys(d.lit).length + d.rows.length + d.neutral.length > 0, name);
   }
-  assert.equal(table.game, '1.19.3.0');
+  assert.equal(table.game, '1.19.4.1');
 });
 
 test('data: every glossary id the family files use exists, and the people terms compile', async () => {
@@ -623,7 +623,7 @@ test('real game: the sweep builds, the scan passes and the families in effect sh
   assert(summary.entries > 1500, `${summary.entries} entries`);
   assert.equal(summary.languages, 10);
   const scan = await runTextScan(staged, { gameDir: GAME });
-  assert.equal(scan.totals.keys, 39038, 'the swept families hold 39,038 keys');
+  assert.equal(scan.totals.keys, 39346, 'the swept families hold 39,346 keys');
   for (const [name, f] of Object.entries(scan.families)) if (['banned', 'strict'].includes(f.gate)) assert.equal(f.vanillaBanned, 0, `${name} shows installed banned text`);
   const mine = scan.findings.filter(f => f.severity === 'error' && ['core', 'tooltips', 'alerts', 'mapmodes', 'rules', 'difficulty', 'ranks'].includes(f.family));
   assert.deepEqual(mine.map(f => `${f.check} ${f.key}`), []);

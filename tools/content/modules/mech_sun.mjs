@@ -497,7 +497,7 @@ ${ind(3, call('zin_sun_add_concord', { value: N.concord_rally }))}
     }
   }
 }`);
-  put('common/scripted_effects/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\n# Scripted effects take no parameters in 1.19.3 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# sight codes: north 1, south 2, seas 3, east 4, centre 5, any 0.\n\n${eff.join('\n\n')}`);
+  put('common/scripted_effects/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\n# Scripted effects take no parameters in 1.19.4.1 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# sight codes: north 1, south 2, seas 3, east 4, centre 5, any 0.\n\n${eff.join('\n\n')}`);
 
   // ------------------------------------------------------------------------------------------------ ideas
   // Spirits: every modifier value and picture is a data row (spec, "Ideas").

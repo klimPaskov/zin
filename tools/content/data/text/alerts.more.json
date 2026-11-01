@@ -4,6 +4,7 @@
   "lit": {
     "alert_no_research_instant": "§YA Seat for {research} Stands Empty§!",
     "alert_no_research_delayed": "$COUNT|Y$ seat(s) for {research} stand empty.",
+    "alert_no_research_shift_click": "§GShift + Click§! to open an empty seat and choose its next {research:lc}",
     "alert_no_goal_instant": "§HNo Goal Set§!",
     "alert_no_goal_delayed": "§TYou may choose a goal.§!",
     "alert_decision_new_instant": "§HDecisions Await§!",
@@ -26,7 +27,7 @@
     "alert_can_play_observed_instant": "You can take up the rule of $COUNTRY$; click here to do so.",
     "alert_port_strike_results_instant": "§HUnread Results of Harbour Raids§!",
     "alert_port_strike_results_delayed_list": "Harbour raids with unread results in:\n$LIST$",
-    "alert_port_strike_results_delayed_click": "§GClick to centre the map on the next result.\nClick the £mapicon_port_strike_result_text icon in the region to read the report.\n§!",
+    "alert_port_strike_results_delayed_click": "§GClick§! to centre the map on the next result.\n§GClick§! the £mapicon_port_strike_result_text icon in the region to read the report.\n",
     "alert_is_at_war_instant": "War is upon us!",
     "alert_is_at_war_delayed_list": "We are at war with: $COUNTRY_LIST$",
     "alert_is_at_war_delayed_majors": "We are at war with $NUM_MAJORS|Y$ great powers: $COUNTRY_LIST$",

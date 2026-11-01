@@ -187,7 +187,7 @@ const SPEC_SWAY = { Dondor: 0, Belonton: 5, Blackton: 0, Dulundur: 15, Bordon: 2
 function startProblems(ef) {
   const st = bodyOf(ef, 'zin_dark_startup'), out = [];
   if (!st) return ['no startup effect'];
-  for (const s of ['global.zin_dark_border_tension = 35', 'global.zin_dark_accord_resolve = 40', 'zin_goldoroth_temper = 55', 'zin_goldoroth_favour_volcano = 55', 'zin_goldoroth_favour_iron = 50', 'zin_goldoroth_favour_war = 60', 'zin_goldoroth_favour_warrens = 35', 'global.zin_dark_states_total = 47', 'global.zin_dark_raid_dark_added = 0']) if (!st.includes(`set_variable = { ${s} }`)) out.push(s);
+  for (const s of ['global.zin_dark_border_tension = 35', 'global.zin_dark_accord_resolve = 40', 'zin_goldoroth_temper = 55', 'zin_goldoroth_favour_volcano = 55', 'zin_goldoroth_favour_iron = 50', 'zin_goldoroth_favour_war = 60', 'zin_goldoroth_favour_warrens = 35', 'global.zin_dark_states_total = 83', 'global.zin_dark_raid_dark_added = 0']) if (!st.includes(`set_variable = { ${s} }`)) out.push(s);
   for (const c of countries.filter(x => x.scan === 'Dark Lands' && x.name !== 'Goldoroth')) {
     const block = bodyOf(st.replace(/^\t/gm, ''), c.tag) ?? '';
     const v = SPEC_SWAY[c.name] ?? 20;
@@ -360,7 +360,7 @@ test('Start values: tension, resolve, temper, favours, sway with the border bonu
 test('Roster: the module refuses a missing or misplaced country and a wrong state count (Acceptance 15)', async () => {
   await assert.rejects(buildWith(d => { d.roster.other_holds.push('Nowhere Hold'); }), /not in the roster/);
   await assert.rejects(buildWith(d => { d.roster.other_holds.push('Lerendor'); }), /the roster puts it in/);
-  await assert.rejects(buildWith(d => { d.roster.expectedStates = 48; }), /hold 47 states, the data expects 48/);
+  await assert.rejects(buildWith(d => { d.roster.expectedStates = 84; }), /hold 83 states, the data expects 84/);
   await assert.rejects(buildWith(d => { d.roster.other_holds = d.roster.other_holds.filter(n => n !== 'Skragdurg'); }), /missing from the data: Skragdurg/);
   await assert.rejects(buildWith(d => { d.text.zin_dark_unused_line = 'A line nobody reads.'; }), /holds text nothing uses/);
 });

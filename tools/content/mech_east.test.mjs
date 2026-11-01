@@ -111,7 +111,7 @@ test('Counts: the staged content matches the spec tables', () => {
   assert.equal(c.events, 26, 'twenty-one visible events and five hidden runners');
   assert.equal(c.aiStrategies, 2 + 2 * MAGICAL.length, 'free crowns, Aenor, and conquest plus front request toward each Magical Lands realm'); assert(MAGICAL.length > 5);
   assert.equal(c.scriptedLocs, 6);
-  assert.equal(east.statesTotal, 337, 'the East Lands hold 337 states at start');
+  assert.equal(east.statesTotal, 607, 'the East Lands hold 607 states at start (the new map)');
   assert.equal(countries.filter(x => x.scan === 'South-Earth').length, D.roster.expectedCountries);
 });
 
@@ -740,7 +740,7 @@ test('Negative: the raw-date check flags a date test outside the story-pace trig
 // ------------------------------------------------------------------------------------------------ the roster
 test('Negative: the module refuses a roster that does not match its data', async () => {
   let d = fresh(); d.roster.expectedCountries = 34; await assert.rejects(() => build(d), /expects 34/);
-  d = fresh(); d.roster.expectedStates = 300; await assert.rejects(() => build(d), /expects 300/);
+  d = fresh(); d.roster.expectedStates = 600; await assert.rejects(() => build(d), /expects 600/);
   d = fresh(); d.roster.leans['Nowhere Land'] = 5; await assert.rejects(() => build(d), /not in the roster/);
   d = fresh(); d.roster.great = ['Aenor']; await assert.rejects(() => build(d), /as a South-Earth country/);
   d = fresh(); delete d.report; await assert.rejects(() => build(d), /report needs a head/);

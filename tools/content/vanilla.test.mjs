@@ -52,6 +52,7 @@ test('Negative C1: a folder with no disposition fails (a new game version adds o
 // ------------------------------------------------------------------------------------------------------- C2
 test('C2: descriptor.mod carries the stage-1 replace_path lines and every replaced folder ships a ZIN definition', async () => {
   const descriptor = await read('descriptor.mod'), paths = V.replacePathsOf(descriptor);
+  assert.match(descriptor, /^supported_version="1\.19\.\*"$/m, 'the descriptor declares the 1.19 patches (K73: ZIN targets 1.19.4.1)');
   for (const p of ['common/decisions/categories', 'common/national_focus', 'common/continuous_focus', 'common/focus_inlay_windows', 'common/ai_focuses', 'common/ideas', 'common/characters', 'common/scripted_effects', 'common/scripted_triggers', 'common/scripted_localisation', 'common/scripted_guis', 'common/dynamic_modifiers', 'common/opinion_modifiers', 'common/script_constants', 'common/collections', 'common/mtth', 'common/ai_faction_theaters', 'history/general'])
     assert(paths.includes(p), p);
   assert.equal(paths.length, V.replacedFolders(disp).length); assert(paths.length >= 34, 'the 34 lines of stage 1 plus the stage 2 slices wired so far');

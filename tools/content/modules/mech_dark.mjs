@@ -788,7 +788,7 @@ if = {
 }
 ${GOL} = { country_event = { id = zin_dark.10 } }`);
   const content = await buildDarkContent({ ...ctxx, E_, BLOCS, blocSwitch, assignment: ctx.assignment });
-  put('common/scripted_effects/zin_dark.txt', `${HEADER('mech_dark', DARK_SPEC)}\n# Scripted effects take no parameters in 1.19.3 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# bloc: volcano 1, iron 2, war 3, warrens 4; kind: march 1, hold 2, corsair 3; strait: north 1, south 2; target: bordering -1, holds -2;\n# answer: beacons 1, blood-price 2, in kind 3; result: won 1, lost 2, cancelled 3.\n\n${eff.join('\n\n')}`);
+  put('common/scripted_effects/zin_dark.txt', `${HEADER('mech_dark', DARK_SPEC)}\n# Scripted effects take no parameters in 1.19.4.1 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# bloc: volcano 1, iron 2, war 3, warrens 4; kind: march 1, hold 2, corsair 3; strait: north 1, south 2; target: bordering -1, holds -2;\n# answer: beacons 1, blood-price 2, in kind 3; result: won 1, lost 2, cancelled 3.\n\n${eff.join('\n\n')}`);
   const panels = ctx.panels === false ? { files: new Map(), scriptedGuis: [], windows: [] } : await buildDarkPanels({ ...ctxx, BLOCS });
   for (const [rel, text] of panels.files) put(rel, text);
   put('common/scripted_localisation/zin_dark.txt', darkScriptedLocalisation(ctxx));

@@ -241,7 +241,7 @@ test('Kinds: a name written as a trigger is a scripted trigger in the register, 
   for (const e of summary.used.effects) { const row = register.names.get(e); if (row) assert(/effect/i.test(row.kind), `${e} is called as an effect but is "${row.kind}"`); }
 });
 
-test('Engine: every key of the staged scripts is an effect, trigger or argument of 1.19.3 or a ZIN name', async () => {
+test('Engine: every key of the staged scripts is an effect, trigger or argument of 1.19.4.1 or a ZIN name', async () => {
   const own = new Set([...summary.definitions.effects, ...summary.definitions.triggers, ...Object.keys(data.hooks.opinion_modifiers), ...Object.keys(data.hooks.ideas), 'zin_arg_ending', 'zin_t_ending', 'zin_t_deep', 'zin_t_weak', 'zin_t_weak_code', 'zin_t_best', 'zin_t_best_code', 'zin_t_camp_1', 'zin_t_camp_2', 'zin_t_camp_3', 'zin_t_camp_4', 'zin_story_tick_guard', 'zin_ending_volgan_near', 'zin_ending_cp11_known', 'zin_ending_cp11_early', 'zin_ending_cp11_late']);
   assert.deepEqual(await checkEngine(summary.scripts, register, own, specNames), []);
   // a planted bad key is caught

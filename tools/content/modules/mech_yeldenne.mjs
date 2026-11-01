@@ -11,6 +11,7 @@
 // Returns { counts, definitions, scripts, dependencies, files, localisation, startup, tags, hallState }. `scripts` lists every
 // script text written (for the vocabulary check); `dependencies` lists names this module uses and another module owns.
 import { cw, raw } from '../lib/core.mjs';
+import { siteState } from '../lib/map_features.mjs';
 import { HEADER, L, render, fileText, comment, readJson, makeRoster, Loc, ScriptSet, eventLines, num, dateAfter } from '../lib/mech_journey_lib.mjs';
 
 const EVT = k => `GFX_zin_evt_${k}`;
@@ -22,8 +23,9 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   const opt = ctx.glo ?? {};
   const roster = makeRoster(ctx.countries);
   const TAG = Object.fromEntries(Object.entries(data.countries).map(([k, name]) => [k, roster.tag(name)]));
-  // K56: Yeldenne is a place in Pertolor's land. The hall is the castle's state (data hallState); its owner is the keeper.
-  const HALL = data.hallState;
+  // K56: Yeldenne is a place in Pertolor's land. The hall is the castle's state (data hallSite, resolved on the map); its owner is the keeper.
+  const HALL = siteState(data.hallSite);
+  if (HALL === null) throw new Error(`mech_yeldenne: the hall site ${data.hallSite} lies on no state of the map`);
   const C = data.constants, ev = data.events;
   const loc = new Loc('zin_glo');
   const scripts = new ScriptSet();

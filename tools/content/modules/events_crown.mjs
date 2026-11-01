@@ -264,7 +264,7 @@ export async function checkEngine(files, register, own, spec) {
         if (e.k) {
           if (e.k.startsWith('zin_') || e.k.startsWith('GFX_') || e.k.startsWith('event_target:') || e.k.startsWith('global.') || /^[A-Z]{3}$/.test(e.k) || /^Y[0-9A-Z]{2}$/.test(e.k) || /^(ROOT|THIS|PREV|FROM)$/.test(e.k) || /^\d/.test(e.k) || e.k.startsWith('var:')) {
             if (e.k.startsWith('zin_') && !zinOk(e.k) && !/^zin_(reign|ending|world)\./.test(e.k) && !seenWords.has(e.k)) { seenWords.add(e.k); problems.push(`${rel}:${e.line}: ${e.k} is not a known ZIN name`); }
-          } else if (!engine.has(e.k) && !seenWords.has(e.k) && !/^(zin_[a-z0-9_]+)$/.test(e.k)) { seenWords.add(e.k); problems.push(`${rel}:${e.line}: ${e.k} is not an engine effect or trigger of 1.19.3`); }
+          } else if (!engine.has(e.k) && !seenWords.has(e.k) && !/^(zin_[a-z0-9_]+)$/.test(e.k)) { seenWords.add(e.k); problems.push(`${rel}:${e.line}: ${e.k} is not an engine effect or trigger of 1.19.4.1`); }
         }
         if (Array.isArray(e.v)) walkEntries(e.v, e.k);
         else if (typeof e.v === 'string' && /^zin_[a-z0-9_]+$/.test(e.v) && e.k && !['name', 'text', 'localization_key', 'title', 'desc', 'id', 'idea', 'picture', 'modifier', 'flag', 'effect'].includes(e.k) && !zinOk(e.v) && !seenWords.has(e.v)) { seenWords.add(e.v); problems.push(`${rel}:${e.line}: ${e.v} is not a known ZIN name`); }

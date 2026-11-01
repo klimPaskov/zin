@@ -134,6 +134,9 @@ const technologies = await buildTechnologies(staged, { countries, assignment, ex
 const warfare = await buildWarfare(staged, { countries, pools });
 // Starting forces, AI templates and designs, generic AI strategies, designer pieces (docs/design/stage2/forces.md): after warfare (names) and technologies (start packages).
 const forces = await buildForces(staged, { countries, assignment, table });
+// Natural names for the states, victory points and strategic regions the map tool left with formula names (modules/world_names.mjs):
+// after warfare, the last user of the shared name registry, so no earlier module's names move.
+const worldNames = await (await import('./modules/world_names.mjs')).buildWorldNames(staged);
 // script_enums.txt and the tokens file list the archetypes and types warfare staged; every equipment type the workshops of the
 // institutions slice name must be among them (otherwise a workshop bonus is silently ignored).
 const economy = await buildEconomy(staged, { countries });
@@ -261,6 +264,8 @@ const bridgeCounts = Object.fromEntries([...bridges.triggers.map(b => 'trigger')
 const focusTrees = await buildFocusTrees(staged, { countries });
 // Regional decisions come after the compiler: they name spirits the Buldor tree writes, which the C3 scan above cannot see.
 const decisionsRegional = await buildDecisionsRegional(staged, { countries });
+// Idea pictures (lane I5, modules/idea_art.mjs): after every idea writer, so each accepted national spirit names its own picture.
+const ideaArt = await (await import('./modules/idea_art.mjs')).applyIdeaArt(staged, { warn: msg => console.error(`idea art: ${msg}`) });
 // The bookmark (modules/frontend.mjs): after the compiled trees and every startup spirit, which its entries name and the build checks.
 const bookmark = await frontendMod.buildBookmark(staged, { countries, table });
 console.error(`bookmark: ${bookmark.great} great realms, ${bookmark.minors} in the list, ${bookmark.labels} lands`);

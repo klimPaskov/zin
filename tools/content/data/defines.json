@@ -1,7 +1,7 @@
 {
  "version": 1,
  "spec": "docs/specs/00_foundation/05_defines_and_rules.md",
- "note": "Every row is a define the installed 1.19.3 common/defines/00_defines.lua holds under the same category (the build checks it: the engine ignores an unknown define silently). fromStage is the vanilla-removal stage in which the row takes effect; for one key, the row with the highest fromStage not above the current stage wins. Other specs add their own blocks to this table (economy, warfare).",
+ "note": "Every row is a define the installed 1.19.4.1 common/defines/00_defines.lua holds under the same category (the build checks it: the engine ignores an unknown define silently). fromStage is the vanilla-removal stage in which the row takes effect; for one key, the row with the highest fromStage not above the current stage wins. Other specs add their own blocks to this table (economy, warfare).",
  "rows": [
   { "category": "NGame", "key": "START_DATE", "value": "$START_DATE", "owner": "00_foundation/01_start_and_calendar.md", "fromStage": 1, "why": "1 Lumae 4A 1748" },
   { "category": "NGame", "key": "END_DATE", "value": "$END_DATE", "owner": "00_foundation/01_start_and_calendar.md", "fromStage": 1, "why": "40 years of sandbox after the historical end (V3)" },

@@ -18,6 +18,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { Loc, hdr, format, blk, list, num, writeEvent, secrecyLeaks, wordProblems, notCp1252 } from '../lib/mech_court_lib.mjs';
+import { siteState } from '../lib/map_features.mjs';
 import { paceDate, addDays, dayBefore, shiftDays, compareDates, PACES, paceTest, afterDate } from '../lib/story_dates.mjs';
 
 const SPEC = 'docs/specs/03_gameplay/06_historical_path_and_ai.md';
@@ -440,14 +441,14 @@ ${table.checkpoints.map(block).join('\n')}
 export async function buildHistoricalPath(staged, ctx) {
   const table = ctx.checkpoints ?? await loadCheckpoints();
   const roster = ctx.countries;
-  // K56: the hall is the castle's state; its owner is the keeper (data/mech_journey_glo.json hallState and keeper).
+  // K56: the hall is the castle's state (data/mech_journey_glo.json hallSite, resolved on the map); its owner is the keeper.
   const glo = JSON.parse(await readFile(new URL('../data/mech_journey_glo.json', import.meta.url), 'utf8'));
   const byName = new Map(roster.map(c => [c.name, c]));
   const need = n => { const c = byName.get(n); if (!c) throw new Error(`historical_path: ${n} is not in the roster`); return c; };
   const T = { aenor: need('Aenor').tag, worshipdom: need('Worshipdom').tag, selen: need('Selen').tag, gala: need('Gala').tag, gunwyn: need('Gunwyn').tag, girdon: need('Girdon').tag,
     lerendor: need('Lerendor').tag, mirolon: need('Mirolon').tag, keeper: need('Pertolor').tag, howan: need('Howan').tag, nara: need('Nara').tag, verde: need('Verde').tag,
     volgan: need('Puvulan').tag, zol: need("Zol's Mistake").tag, parimState: need('Aenor').capitalState, sonargur: need('Lerendor').capitalState,
-    mirolonState: need('Mirolon').capitalState, hallState: glo.hallState,
+    mirolonState: need('Mirolon').capitalState, hallState: siteState(glo.hallSite),
     floorWeight: 30, bands: [{ n: 0, from: 0, name: 'As the Chronicle Tells' }, { n: 1, from: 10, name: 'Another Telling' }, { n: 2, from: 30, name: 'A Different Age' }, { n: 3, from: 60, name: 'An Age Unwritten' }] };
   const R = rules(T);
   const { triggers, effects, roles: R_ } = pathScripts(table, R, T);

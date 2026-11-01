@@ -135,7 +135,7 @@ test('Pictures: every key exists, news events use news crops, gated keys follow 
     const key = pic.replace(/^GFX_zin_(evt|news)_/, '');
     assert(pictures.has(key), `${key} is not in presentation-cells.json`);
   }
-  assert.equal(evOf('zin_eindil', 52).picture, 'gala_court');
+  assert.equal(evOf('zin_eindil', 52).picture, 'beat_lorien_gift_b');
   assert.equal(evOf('zin_eindil', 90).news, true);
 });
 
@@ -248,7 +248,7 @@ const ownNames = new Set();
 for (const t of [...staged.files.values()].map(b => b.toString('utf8'))) { for (const m of t.matchAll(/^	*(zin_[a-z0-9_]+) = {/gm)) ownNames.add(m[1]); for (const m of t.matchAll(/set_temp_variable = { (zin_[a-z0-9_]+)/g)) ownNames.add(m[1]); }
 const eventBodies = () => NAMESPACES.flatMap(ns => parsedEvents(ns).map(e => ({ id: child(e.v, 'id'), body: e.v })));
 
-test('Engine vocabulary: every effect and trigger an event uses is in the 1.19.3 documentation or a registered ZIN name', () => {
+test('Engine vocabulary: every effect and trigger an event uses is in the 1.19.4.1 documentation or a registered ZIN name', () => {
   const bad = new Map();
   for (const { id, body } of eventBodies()) {
     const found = new Set();
@@ -309,7 +309,8 @@ test('Retired names: no staged file or text uses a name from the register\'s ret
 
 // ------------------------------------------------------------------------------------- the journey (spec 02)
 test('Journey: stage chain, hosts and checkpoints follow the table', () => {
-  const stage = { 10: 'man_in_ice', 12: 'traders_road_south', 20: 'traders_road_south', 21: 'grey_ford_truce', 22: 'generic_court', 23: 'war_king', 30: 'war_king', 31: 'grey_ford_truce', 40: 'generic_sea', 41: 'storm_wreck', 50: 'gala_court', 52: 'gala_court', 70: 'cold_shore', 73: 'glo_given' };
+  // The Eindil beats (tools/content/data/event_beats.json): one picture per beat, shared by the beat's events.
+  const stage = { 10: 'beat_man_ice', 12: 'beat_traders_road', 20: 'beat_traders_road', 21: 'beat_grey_ford', 22: 'beat_grey_ford', 23: 'beat_king_without_house', 30: 'beat_king_without_house', 31: 'beat_king_without_house', 40: 'beat_west_sea', 41: 'beat_west_sea_b', 50: 'beat_gala_stranger', 52: 'beat_lorien_gift_b', 70: 'beat_landfall', 73: 'beat_glo_bearer' };
   for (const [id, pic] of Object.entries(stage)) assert.equal(evOf('zin_eindil', +id).picture, pic, `zin_eindil.${id}`);
   const checkpoints = Object.fromEntries(eventsOf(data, 'zin_eindil').filter(e => e.checkpoint).map(e => [e.id, e.checkpoint]));
   assert.deepEqual(checkpoints, { 32: 4, 50: 8, 82: 10, 88: 19 });
@@ -379,7 +380,7 @@ test('Journey: this module writes no clock, no pulse and no stage logic; the eng
 });
 
 test('Journey: the stage 8 warnings and the Host of Eindil follow the spec', () => {
-  assert.equal(evOf('zin_eindil', 83).picture, 'southern_warning');
+  assert.equal(evOf('zin_eindil', 83).picture, 'beat_impostor_b');
   const heed = evOf('zin_eindil', 83).options[0];
   // Hiloron is Hirolon and the Gala Elves are the realm Gala (roster of 24 October 2026).
   assert.deepEqual(heed.hist, [{ names: ['Selen', 'Mirolon', 'Kingson', 'Hirolon', 'Magical Forest', 'Gala'] }]);
@@ -396,7 +397,8 @@ test('Journey: the stage 8 warnings and the Host of Eindil follow the spec', () 
   assert(!evOf('zin_eindil', 130).options.some(o => (o.effects ?? []).some(x => String(x).includes('zin_aenor_crown_eindil'))), 'the coronation is zin_aenor.400');
   assert.equal(evOf('zin_eindil', 132).options[0].name, 'Take it back.');
   // 122 and 125 follow 121 and 124 directly and take the false god's hall, so no two events one step apart share a picture.
-  for (const id of range(120, 127)) assert.equal(evOf('zin_eindil', id).picture, [122, 125].includes(id) ? 'golden_court' : 'generic_war', 'the palace picture waits for its gate to admit the stand-in route');
+  const palace = { 120: 'beat_seals', 121: 'beat_seals', 122: 'beat_seals_b', 123: 'beat_golbran', 124: 'beat_golbran', 125: 'beat_golbran_b', 126: 'beat_golbran', 127: 'beat_golbran' };
+  for (const [id, pic] of Object.entries(palace)) assert.equal(evOf('zin_eindil', +id).picture, pic, `zin_eindil.${id}: the Eindil beat picture`);
 });
 
 // ------------------------------------------------------------------------------------- the war (spec 03)
@@ -575,7 +577,8 @@ test('Negative: Afrit outside a hub text, Eindil before the naming and a closed 
 });
 
 test('Negative: a gated picture without its flag, a news-only picture in a country event and a missing picture are refused', () => {
-  const d = clone(); evOf('zin_eindil', 52); d.sets.find(s => s.namespace === 'zin_eindil').events.find(e => e.id === 10).requires = [];
+  // A gated catalogue picture (traders_road_south is gated on zin_eindil_awake) on an event that does not require the flag.
+  const d = clone(); evOf('zin_eindil', 52); const gated10 = d.sets.find(s => s.namespace === 'zin_eindil').events.find(e => e.id === 10); gated10.requires = []; gated10.picture = 'traders_road_south';
   assert(structureProblems(d, pictures).some(p => p.includes('gated on zin_eindil_awake')));
   const d2 = clone(); d2.sets.find(s => s.namespace === 'zin_eindil').events.find(e => e.id === 12).picture = 'last_crowns';
   assert(structureProblems(d2, pictures).some(p => p.includes('news-only')));

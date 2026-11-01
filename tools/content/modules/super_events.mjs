@@ -31,6 +31,9 @@ import { buildDialogSprites } from './ui_dialogs.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_FILE = path.join(here, '../data/super_events.json');
+// The licensed recording of each moment (owner decisions Q-08, K72): title, credit, licence and the sha256 of the source under
+// audio/source/super_events/ (docs/plans/super_events/audio_provenance.md, CREDITS_music.md).
+export const MUSIC_FILE = path.join(here, '../data/super_event_music.json');
 export const FILES = {
   gui: 'interface/zin_super_events.gui', gfx: 'interface/zin_super_events.gfx', sgui: 'common/scripted_guis/zin_super_events.txt',
   effects: 'common/scripted_effects/zin_super_events.txt', triggers: 'common/scripted_triggers/zin_super_events.txt', sloc: 'common/scripted_localisation/zin_super_events.txt',
@@ -399,7 +402,7 @@ function constantsText(data) {
 function musicText(data) {
   const vol = data.window.music.volume;
   return `${HEAD}# One song per super event, played by zin_super_event_play (scoped_play_song) for each human player. The recordings are licensed
-# (owner answer Q-08) and pending the audio specialist: docs/plans/super_events/audio_briefs.json.
+# (owner answers Q-08 and K72); titles, credits and licences: data/super_event_music.json and docs/plans/super_events/CREDITS_music.md.
 ${data.events.map(e => `music = {\n\tname = "${song(e)}"\n\tfile = "${musicFile(data, e)}"\n\tvolume = ${vol}\n}\n`).join('')}`;
 }
 
@@ -418,8 +421,14 @@ export function locEntries(data) {
     zin_se_music_off_tip: 'The great moments of the age play no music for you. Click to hear this one and those still to come.',
   };
   for (const e of data.events) {
-    // The song's title in the music player (vanilla keys a song title by the song name); the recording's own title replaces it when it ships.
-    out[song(e)] = e.title;
+    // The song's title in the music player (vanilla keys a song title by the song name): the recording's own title and composer.
+    const rec = data.music?.[e.key];
+    // The game fonts carry Latin scripts only: a bracketed original-script title (the credits keep it) is left out of the player's view.
+    // The game fonts carry the Windows-1252 letters, so other Latin letters fold to their base letter (Sabā becomes Saba).
+    const CP1252 = /[\u0000-ÿŒœŠšŸŽžƒˆ˜–—‘-„†-•…‰‹›€™]/;
+    const shown = rec?.title.replace(/\s*\([^)]*[^\u0000-ɏ‘-”–—][^)]*\)/g, '')
+      .replace(/./gu, ch => (CP1252.test(ch) ? ch : ch.normalize('NFD').replace(/[̀-ͯ]/g, '')));
+    out[song(e)] = rec ? `${shown} (${rec.by.split(/[;(]/)[0].trim()})` : e.title;
     out[locKey(e, 't')] = e.title;
     out[locKey(e, 'd')] = e.desc.join('\n\n');
     out[locKey(e, 'q')] = `${e.quote}\n- ${e.attribution}`;
@@ -450,6 +459,15 @@ export async function buildSuperEvents(staged, { data, provenance } = {}) {
   staged.text(FILES.sloc, scriptedLocText(data));
   staged.text(FILES.constants, constantsText(data));
   staged.text(FILES.events, eventsText(data));
+  // Every moment ships its licensed recording; a missing source or one whose bytes differ from the credited record stops the build.
+  data.music = JSON.parse(readFileSync(MUSIC_FILE, 'utf8'));
+  for (const e of data.events) {
+    const rec = data.music[e.key];
+    if (!rec) throw new Error(`super events: ${e.key} has no recording in data/super_event_music.json`);
+    const bytes = readFileSync(path.join(ZIN, rec.source));
+    if (sha256(bytes) !== rec.sha256) throw new Error(`super events: ${rec.source} does not match its credited sha256`);
+    staged.add(`music/${musicFile(data, e)}`, bytes);
+  }
   staged.text(FILES.music, musicText(data));
   staged.loc('zin_super_events', locEntries(data));
   if (pictures.missing.length) process.stderr.write(`super events: ${pictures.missing.length} pictures not shipped (${pictures.missing.join('; ')})\n`);

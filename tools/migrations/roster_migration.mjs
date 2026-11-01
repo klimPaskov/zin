@@ -149,8 +149,10 @@ function applyIdRenames() {
     const text = read(f);
     let t = text;
     for (const x of ID_RENAMES) {
-      const n = t.split(x.from).length - 1;
-      if (n) { t = t.split(x.from).join(x.to); report.renames.push({ where: f, from: x.from, to: x.to, count: n }); }
+      // A whole id only: an idea id that contains a renamed culture id inside it is not that culture.
+      const re = new RegExp(`(?<![A-Za-z0-9_])${escRe(x.from)}(?![A-Za-z0-9_])`, 'g');
+      const n = (t.match(re) || []).length;
+      if (n) { t = t.replace(re, x.to); report.renames.push({ where: f, from: x.from, to: x.to, count: n }); }
     }
     if (t !== text) put(f, t);
   }
@@ -159,7 +161,8 @@ function applyIdRenames() {
 // --------------------------------------------------------------------------------------------- 2. country references
 const SKIP = [
   `${WORLD}/roster.json`, `${WORLD}/history/`, `${WORLD}/characters/`, `${WORLD}/languages_new.json`, `${WORLD}/cultures_new.json`,
-  `${WORLD}/legacy_countries.json`, `${WORLD}/state_assignment.json`, `${WORLD}/country_cultures.json`, `${DATA}/countries.json`,
+  // former_states.json is the frozen per-former-tag record of the retired map, keyed by the former tags on purpose.
+  `${WORLD}/legacy_countries.json`, `${WORLD}/former_states.json`, `${WORLD}/state_assignment.json`, `${WORLD}/country_cultures.json`, `${DATA}/countries.json`,
   `${DATA}/geography/`, `${DATA}/labels.json`, `${DATA}/vanilla/`, `${DATA}/ui/`, `${WORLD}/reserved_names.json`, `${WORLD}/heraldry.json`,
   // The languages' established names are records of drawn and vault names, and stay reserved as they are.
   `${WORLD}/languages.json`,

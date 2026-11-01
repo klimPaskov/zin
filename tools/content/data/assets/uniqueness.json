@@ -3,7 +3,8 @@
   "note": "Uniqueness rules per family (05_asset_manifest.md section 5). Thresholds are Hamming distances of the 64-bit hashes (the larger of dHash and aHash); two assets of one group closer than the threshold are NEAR_DUPLICATE. Caps are design targets; the report prints the real histogram.",
   "exact_everywhere": true,
   "aliases": [
-    { "paths": ["gfx/interface/bookmarks/zin_fourth_age.dds", "gfx/interface/select_date_1936.dds", "gfx/interface/select_date_1939.dds"], "reason": "the engine's select_date pictures show the bookmark picture (integration decision A5)" }
+    { "paths": ["gfx/interface/bookmarks/zin_fourth_age.dds", "gfx/interface/select_date_1936.dds", "gfx/interface/select_date_1939.dds"], "reason": "the engine's select_date pictures show the bookmark picture (integration decision A5)" },
+    { "paths": ["gfx/interface/alerts/global_alert_counter.dds", "gfx/interface/small_box1.dds"], "reason": "both are 22 by 20 pixel counter boxes, cut by the interface reskin from the same lit socket cell (ui-sockets socket_round_lit); the alert counter is new in 1.19.4.1" }
   ],
   "stub_files": ["bridge", "interim", "pending"],
   "groups": {

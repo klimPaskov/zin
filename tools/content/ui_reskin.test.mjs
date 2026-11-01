@@ -661,7 +661,7 @@ test('the committed reskin table, sheets and inventory agree with each other', (
   const problems = validateReskin({ inventory: inv, reskin: table, sheets });
   assert.equal(problems.length, 0, JSON.stringify(problems.slice(0, 5)));
   assert.equal(table.rows.length, inv.sprites.length); assert.equal(inv.header.counts.sprites, inv.sprites.length);
-  assert.equal(inv.header.game.version, '1.19.3.0'); assert.ok(inv.sprites.length > 30000);
+  assert.equal(inv.header.game.version, '1.19.4.1'); assert.ok(inv.sprites.length > 30000);
   const d = summarize(table).dispositions; assert.ok(d.R > 3000 && d.U > 20000 && d.O === 13 && !d.D && !d.Z);
   for (const [id, s] of sheets) assert.deepEqual(validateSheet(s), [], id);
   const used = new Set(table.rows.filter(r => r.disposition === 'R').flatMap(r => [].concat(r.sheet ?? []))); assert.deepEqual([...used].filter(x => !sheets.has(x)), [], 'every used sheet exists');
@@ -687,7 +687,7 @@ test('alert_frames.json names the meaning of every alert cell; its twin layer wi
   const cell = (sheet, key) => sheets.get(sheet).cells.find(c => c.key === key).subject;
   assert.match(cell('icons-alerts-1', 'alert_01'), /a bell for a new letter$/);
   assert.match(cell('icons-alerts-bare-1', 'alert_01_bare'), /a bell for a new letter$/);
-  assert.match(cell('icons-diplorequests', 'request_01'), /a raised hand$/);
+  assert.match(cell('icons-diplorequests-1', 'request_01'), /a raised hand$/);
   assert.match(cell('icons-alerts-1', 'alert_03'), /meaning per alert_frames\.json$/, 'frames with no entry keep the pending note');
 });
 
