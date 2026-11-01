@@ -1,0 +1,18 @@
+state = {
+	id = 888
+	name = "STATE_888"
+	manpower = 3000
+	state_category = town
+	history = {
+		owner = BLD
+		add_core_of = BLD
+		victory_points = { 7162 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			7162 = { naval_base = 2 }
+		}
+	}
+	provinces = { 7162 }
+}

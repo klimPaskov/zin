@@ -1,0 +1,20 @@
+state = {
+	id = 52
+	name = "STATE_52"
+	manpower = 134000
+	state_category = large_town
+	history = {
+		owner = TLV
+		add_core_of = TLV
+		victory_points = { 3632 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			3756 = { naval_base = 3 }
+		}
+	}
+	provinces = { 3632 3640 3647 3692 3708 3756 3764 }
+}

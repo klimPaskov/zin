@@ -1,0 +1,18 @@
+state = {
+	id = 2024
+	name = "STATE_2024"
+	manpower = 8000
+	state_category = town
+	history = {
+		owner = VER
+		add_core_of = VER
+		victory_points = { 13830 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			13822 = { naval_base = 2 }
+		}
+	}
+	provinces = { 13822 13830 }
+}

@@ -1,0 +1,18 @@
+state = {
+	id = 280
+	name = "STATE_280"
+	manpower = 1000
+	state_category = town
+	history = {
+		owner = GRO
+		add_core_of = GRO
+		victory_points = { 4424 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			4424 = { naval_base = 1 }
+		}
+	}
+	provinces = { 4424 }
+}

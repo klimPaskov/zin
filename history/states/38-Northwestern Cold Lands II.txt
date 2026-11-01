@@ -1,0 +1,20 @@
+state = {
+	id = 38
+	name = "STATE_38"
+	manpower = 398000
+	state_category = rural
+	resources = {
+		steel = 14
+	}
+	history = {
+		owner = KVI
+		add_core_of = KVI
+		victory_points = { 384 5 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			383 = { naval_base = 2 }
+		}
+	}
+	provinces = { 383 384 385 386 404 423 464 504 516 524 545 }
+}

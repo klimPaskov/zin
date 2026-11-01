@@ -1,0 +1,21 @@
+state = {
+	id = 1284
+	name = "STATE_1284"
+	manpower = 82000
+	state_category = metropolis
+	history = {
+		owner = ORH
+		add_core_of = ORH
+		victory_points = { 9170 12 }
+		victory_points = { 9008 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 2
+			dockyard = 1
+			air_base = 2
+			9008 = { naval_base = 3 }
+		}
+	}
+	provinces = { 9008 9009 9170 }
+}

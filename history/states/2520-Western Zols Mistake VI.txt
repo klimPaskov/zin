@@ -1,0 +1,18 @@
+state = {
+	id = 2520
+	name = "STATE_2520"
+	manpower = 1000
+	state_category = town
+	history = {
+		owner = MOO
+		add_core_of = MOO
+		victory_points = { 2212 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			2212 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2212 }
+}

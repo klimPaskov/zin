@@ -1,0 +1,17 @@
+state = {
+	id = 54
+	name = "STATE_54"
+	manpower = 13000
+	state_category = pastoral
+	history = {
+		owner = TLV
+		add_core_of = TLV
+		victory_points = { 3868 1 }
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			3868 = { naval_base = 3 }
+		}
+	}
+	provinces = { 3742 3774 3845 3868 }
+}

@@ -1,0 +1,18 @@
+state = {
+	id = 90
+	name = "STATE_90"
+	manpower = 6000
+	state_category = town
+	history = {
+		owner = WRL
+		add_core_of = WRL
+		victory_points = { 3530 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			3530 = { naval_base = 2 }
+		}
+	}
+	provinces = { 3530 }
+}

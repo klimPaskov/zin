@@ -1,1 +1,1321 @@
-# No straits or canals in this world yet.
+# Generated from the geography model: one rule for every named strait and canal.
+
+# The Inner Sea
+adjacency_rule =
+{
+	name = "STRAIT_AENOR_ISLE"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 8697 8714 8941 }
+
+	icon = 8697
+	offset = { 0 0 0 }
+}
+
+# Pollos Passage
+adjacency_rule =
+{
+	name = "STRAIT_COLD_NECK_ICE"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 10445 10675 10834 }
+
+	icon = 10675
+	offset = { 0 0 0 }
+}
+
+# Corogon Narrows
+adjacency_rule =
+{
+	name = "STRAIT_COROGON"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9851 9914 10109 }
+
+	icon = 9851
+	offset = { 0 0 0 }
+}
+
+# Northern Dark Strait
+adjacency_rule =
+{
+	name = "STRAIT_DARK_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 4658 4728 4985 }
+
+	icon = 4728
+	offset = { 0 0 0 }
+}
+
+# Southern Dark Strait
+adjacency_rule =
+{
+	name = "STRAIT_DARK_SOUTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 6907 6973 7770 }
+
+	icon = 6973
+	offset = { 0 0 0 }
+}
+
+# Dark Channel
+adjacency_rule =
+{
+	name = "STRAIT_DONDOR_GOLDOROTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 4841 4889 4994 }
+
+	icon = 4841
+	offset = { 0 0 0 }
+}
+
+# Ember Narrows
+adjacency_rule =
+{
+	name = "STRAIT_EMBER_NARROWS"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 15898 15968 16048 }
+
+	icon = 15968
+	offset = { 0 0 0 }
+}
+
+# The Austoklevo Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_AUSTOKLEVO_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 8722 8938 9289 }
+
+	icon = 8722
+	offset = { 0 0 0 }
+}
+
+# The Benan Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_BENAN_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9944 9984 10020 }
+
+	icon = 9944
+	offset = { 0 0 0 }
+}
+
+# The Deelor Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_DEELOR_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 3573 3764 3903 }
+
+	icon = 3573
+	offset = { 0 0 0 }
+}
+
+# The Deelor Sound North
+adjacency_rule =
+{
+	name = "STRAIT_GAP_DEELOR_SOUND_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 4372 4432 4542 }
+
+	icon = 4372
+	offset = { 0 0 0 }
+}
+
+# The Dolgarunon Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_DOLGARUNON_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 13162 13170 13283 }
+
+	icon = 13162
+	offset = { 0 0 0 }
+}
+
+# The Dolgdoal Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_DOLGDOAL_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 5892 5923 6138 }
+
+	icon = 5923
+	offset = { 0 0 0 }
+}
+
+# The Dolgdoal Sound North
+adjacency_rule =
+{
+	name = "STRAIT_GAP_DOLGDOAL_SOUND_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 6244 6337 6346 }
+
+	icon = 6346
+	offset = { 0 0 0 }
+}
+
+# The Dumgil Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_DUMGIL_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 7298 7352 7702 }
+
+	icon = 7298
+	offset = { 0 0 0 }
+}
+
+# The Fornia Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_FORNIA_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 15513 15593 15691 }
+
+	icon = 15513
+	offset = { 0 0 0 }
+}
+
+# The Goldoroth Arm Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_GOLDOROTH_ARM_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 7052 7179 7299 }
+
+	icon = 7179
+	offset = { 0 0 0 }
+}
+
+# The Kim Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_KIM_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 11321 11476 11555 }
+
+	icon = 11321
+	offset = { 0 0 0 }
+}
+
+# The Kim Sound North
+adjacency_rule =
+{
+	name = "STRAIT_GAP_KIM_SOUND_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 11624 11705 11746 }
+
+	icon = 11705
+	offset = { 0 0 0 }
+}
+
+# The Margolohu Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_MARGOLOHU_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9365 9467 9774 }
+
+	icon = 9365
+	offset = { 0 0 0 }
+}
+
+# The Mialia Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_MIALIA_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 12989 13060 13066 }
+
+	icon = 12989
+	offset = { 0 0 0 }
+}
+
+# The Sang Tilu Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_SANG_TILU_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 11581 11719 11746 }
+
+	icon = 11581
+	offset = { 0 0 0 }
+}
+
+# The Sterrotumai Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_STERROTUMAI_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9141 9892 9994 }
+
+	icon = 9141
+	offset = { 0 0 0 }
+}
+
+# The Sterrotumai Sound North
+adjacency_rule =
+{
+	name = "STRAIT_GAP_STERROTUMAI_SOUND_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9997 10047 10126 }
+
+	icon = 9997
+	offset = { 0 0 0 }
+}
+
+# The Sudowaitos Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_SUDOWAITOS_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 6527 6551 6701 }
+
+	icon = 6527
+	offset = { 0 0 0 }
+}
+
+# The Uelo Yavi Sound
+adjacency_rule =
+{
+	name = "STRAIT_GAP_UELO_YAVI_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 12491 12526 12596 }
+
+	icon = 12491
+	offset = { 0 0 0 }
+}
+
+# The Uelo Yavi Sound North
+adjacency_rule =
+{
+	name = "STRAIT_GAP_UELO_YAVI_SOUND_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 12491 12681 12726 }
+
+	icon = 12491
+	offset = { 0 0 0 }
+}
+
+# Leren Mouth
+adjacency_rule =
+{
+	name = "STRAIT_LEREN_MOUTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 4846 4847 6068 }
+
+	icon = 4847
+	offset = { 0 0 0 }
+}
+
+# Mirolon Sound
+adjacency_rule =
+{
+	name = "STRAIT_MIROLON"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 11902 13535 13685 }
+
+	icon = 13535
+	offset = { 0 0 0 }
+}
+
+# The Narrow Strait
+adjacency_rule =
+{
+	name = "STRAIT_NARROW"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 4922 5142 5534 }
+
+	icon = 5142
+	offset = { 0 0 0 }
+}
+
+# Nether Sound
+adjacency_rule =
+{
+	name = "STRAIT_NETHER_SOUND"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 15280 15343 15442 }
+
+	icon = 15280
+	offset = { 0 0 0 }
+}
+
+# The Rift Narrows
+adjacency_rule =
+{
+	name = "STRAIT_RIFT_NARROWS"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9664 9720 10044 }
+
+	icon = 9664
+	offset = { 0 0 0 }
+}
+
+# North Mouth of the Rift
+adjacency_rule =
+{
+	name = "STRAIT_RIFT_NORTH"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 5331 5389 6707 }
+
+	icon = 5331
+	offset = { 0 0 0 }
+}

@@ -1,0 +1,20 @@
+state = {
+	id = 1774
+	name = "STATE_1774"
+	manpower = 37000
+	state_category = metropolis
+	history = {
+		owner = HWN
+		add_core_of = HWN
+		victory_points = { 12630 25 }
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 6
+			arms_factory = 3
+			dockyard = 1
+			air_base = 2
+			12636 = { naval_base = 2 }
+		}
+	}
+	provinces = { 12630 12636 }
+}

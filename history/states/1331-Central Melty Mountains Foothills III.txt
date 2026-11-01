@@ -1,0 +1,20 @@
+state = {
+	id = 1331
+	name = "STATE_1331"
+	manpower = 32000
+	state_category = rural
+	resources = {
+		steel = 28
+	}
+	history = {
+		owner = OST
+		add_core_of = OST
+		victory_points = { 10568 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10568 = { naval_base = 2 }
+		}
+	}
+	provinces = { 10409 10431 10568 }
+}

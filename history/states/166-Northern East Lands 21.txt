@@ -1,0 +1,18 @@
+state = {
+	id = 166
+	name = "STATE_166"
+	manpower = 1000
+	state_category = town
+	history = {
+		owner = WOQ
+		add_core_of = WOQ
+		victory_points = { 3850 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			3850 = { naval_base = 1 }
+		}
+	}
+	provinces = { 3850 }
+}

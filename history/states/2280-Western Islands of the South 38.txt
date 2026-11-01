@@ -1,0 +1,18 @@
+state = {
+	id = 2280
+	name = "STATE_2280"
+	manpower = 10000
+	state_category = town
+	history = {
+		owner = SDE
+		add_core_of = SDE
+		victory_points = { 14880 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			14880 = { naval_base = 1 }
+		}
+	}
+	provinces = { 14879 14880 }
+}

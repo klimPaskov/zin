@@ -1,0 +1,19 @@
+state = {
+	id = 2049
+	name = "STATE_2049"
+	manpower = 336000
+	state_category = town
+	history = {
+		owner = PLO
+		add_core_of = PLO
+		victory_points = { 14575 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 2
+			14616 = { naval_base = 3 }
+		}
+	}
+	provinces = { 14271 14424 14451 14469 14575 14616 14691 14807 }
+}

@@ -1,0 +1,18 @@
+state = {
+	id = 9
+	name = "STATE_9"
+	manpower = 40000
+	state_category = rural
+	history = {
+		owner = YEI
+		add_core_of = YEI
+		victory_points = { 3174 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			3174 = { naval_base = 3 }
+		}
+	}
+	provinces = { 3044 3066 3101 3124 3136 3145 3166 3174 }
+}

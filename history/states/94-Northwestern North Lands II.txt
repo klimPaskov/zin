@@ -1,0 +1,18 @@
+state = {
+	id = 94
+	name = "STATE_94"
+	manpower = 3000
+	state_category = town
+	history = {
+		owner = TLV
+		add_core_of = TLV
+		victory_points = { 3587 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			3587 = { naval_base = 2 }
+		}
+	}
+	provinces = { 3587 }
+}

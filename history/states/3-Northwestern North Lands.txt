@@ -1,0 +1,18 @@
+state = {
+	id = 3
+	name = "STATE_3"
+	manpower = 18000
+	state_category = town
+	history = {
+		owner = LER
+		add_core_of = LER
+		victory_points = { 2982 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			2982 = { naval_base = 2 }
+		}
+	}
+	provinces = { 2949 2950 2951 2982 }
+}

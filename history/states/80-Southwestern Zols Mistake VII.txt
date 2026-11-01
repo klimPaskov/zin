@@ -1,0 +1,18 @@
+state = {
+	id = 80
+	name = "STATE_80"
+	manpower = 1000
+	state_category = town
+	history = {
+		owner = HRR
+		add_core_of = HRR
+		victory_points = { 3484 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			3484 = { naval_base = 2 }
+		}
+	}
+	provinces = { 3484 }
+}

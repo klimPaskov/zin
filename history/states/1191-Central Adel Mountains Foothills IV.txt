@@ -1,0 +1,23 @@
+state = {
+	id = 1191
+	name = "STATE_1191"
+	manpower = 49000
+	state_category = large_town
+	resources = {
+		steel = 14
+	}
+	history = {
+		owner = LEN
+		add_core_of = LEN
+		victory_points = { 8889 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			8889 = { naval_base = 3 }
+		}
+	}
+	provinces = { 8889 8902 }
+}

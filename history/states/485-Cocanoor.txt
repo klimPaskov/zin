@@ -1,0 +1,23 @@
+state = {
+	id = 485
+	name = "STATE_485"
+	manpower = 416000
+	state_category = large_city
+	resources = {
+		steel = 21
+	}
+	history = {
+		owner = GOL
+		add_core_of = GOL
+		victory_points = { 6146 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 2
+			dockyard = 1
+			air_base = 2
+			6220 = { naval_base = 4 }
+		}
+	}
+	provinces = { 5922 5957 5968 6137 6146 6220 6269 6337 }
+}

@@ -1,0 +1,22 @@
+state = {
+	id = 392
+	name = "STATE_392"
+	manpower = 312000
+	state_category = town
+	resources = {
+		steel = 28
+	}
+	history = {
+		owner = THN
+		add_core_of = THN
+		victory_points = { 6430 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 2
+			6430 = { naval_base = 3 }
+		}
+	}
+	provinces = { 5709 5890 6021 6058 6210 6430 }
+}

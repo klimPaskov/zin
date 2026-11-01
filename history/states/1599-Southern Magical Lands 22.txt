@@ -1,0 +1,18 @@
+state = {
+	id = 1599
+	name = "STATE_1599"
+	manpower = 21000
+	state_category = rural
+	history = {
+		owner = HAL
+		add_core_of = HAL
+		victory_points = { 12543 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			12543 = { naval_base = 3 }
+		}
+	}
+	provinces = { 12543 }
+}

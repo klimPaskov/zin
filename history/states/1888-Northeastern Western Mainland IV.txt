@@ -1,0 +1,18 @@
+state = {
+	id = 1888
+	name = "STATE_1888"
+	manpower = 7000
+	state_category = town
+	history = {
+		owner = FEA
+		add_core_of = FEA
+		victory_points = { 1338 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			1338 = { naval_base = 2 }
+		}
+	}
+	provinces = { 1338 }
+}

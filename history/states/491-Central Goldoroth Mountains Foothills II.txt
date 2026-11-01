@@ -1,0 +1,22 @@
+state = {
+	id = 491
+	name = "STATE_491"
+	manpower = 120000
+	state_category = rural
+	resources = {
+		steel = 7
+	}
+	history = {
+		owner = VES
+		add_core_of = VES
+		victory_points = { 6603 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 2
+			6516 = { naval_base = 3 }
+		}
+	}
+	provinces = { 6493 6516 6603 6767 }
+}

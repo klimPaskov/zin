@@ -1,0 +1,23 @@
+state = {
+	id = 914
+	name = "STATE_914"
+	manpower = 226000
+	state_category = metropolis
+	resources = {
+		steel = 21
+	}
+	history = {
+		owner = KRA
+		add_core_of = KRA
+		victory_points = { 9726 25 }
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 3
+			dockyard = 1
+			air_base = 2
+			9726 = { naval_base = 3 }
+		}
+	}
+	provinces = { 9468 9623 9726 9727 9970 10091 }
+}

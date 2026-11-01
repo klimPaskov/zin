@@ -1,0 +1,20 @@
+state = {
+	id = 1365
+	name = "STATE_1365"
+	manpower = 24000
+	state_category = rural
+	resources = {
+		steel = 7
+	}
+	history = {
+		owner = NND
+		add_core_of = NND
+		victory_points = { 10370 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10370 = { naval_base = 2 }
+		}
+	}
+	provinces = { 10370 10533 10651 }
+}
