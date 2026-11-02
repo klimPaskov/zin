@@ -94,6 +94,8 @@ PY
 start)
   [[ -f "$zin_runtime/profile/mod/zin/map/provinces.bmp" ]]
   if pgrep -x hoi4 >/dev/null; then echo 'Linux HOI4 already running; leaving it untouched'; exit 1; fi
+  # Owner rule: never start the game while Steam or steamcmd is active (an update or a sign-in in progress).
+  if pgrep -f 'steamcmd|steamwebhelper|/steam\.sh|ubuntu12_32/steam' >/dev/null; then echo 'Steam or steamcmd is running; refusing to start'; exit 1; fi
   if xwininfo -root >/dev/null 2>&1; then echo 'Display :96 occupied'; exit 1; fi
   (set -o noclobber; printf '%s\n' "$zin_lease" > /tmp/hoi4_wsl.lock) || { echo 'Shared game lease unavailable'; exit 1; }
   nohup Xvfb :96 -screen 0 1600x900x24 -nolisten tcp -noreset >"$zin_runtime/xvfb.log" 2>&1 </dev/null &
@@ -101,7 +103,12 @@ start)
   for i in $(seq 1 50); do xwininfo -root >/dev/null 2>&1 && break; sleep .1; done
   glxinfo -B >"$zin_runtime/renderer.txt" 2>&1 || true
   cd "$zin_game"
-  nohup ./hoi4 -debug -nofilewatcher -userdir="$zin_runtime/profile" >"$zin_runtime/hoi4.stdout.log" 2>&1 </dev/null &
+  # Owner rule: Steam must never see the game run or the owner as active. The Steam API finds its client through
+  # $HOME/.steam (steamclient.so, steam.pid); an empty private HOME and no Steam variables leave it nothing to attach to,
+  # so the game runs offline. Its data stays in the explicit -userdir profile.
+  nosteam_home="$zin_runtime/nosteam-home"; rm -rf "$nosteam_home"; mkdir -p "$nosteam_home"
+  nohup env -u SteamAppId -u SteamGameId -u STEAM_COMPAT_CLIENT_INSTALL_PATH -u SteamClientLaunch HOME="$nosteam_home" \
+    ./hoi4 -debug -nofilewatcher -userdir="$zin_runtime/profile" >"$zin_runtime/hoi4.stdout.log" 2>&1 </dev/null &
   echo $! >"$zin_runtime/hoi4.pid"
   printf 'Started ZIN PID %s, profile %s\n' "$(cat "$zin_runtime/hoi4.pid")" "$zin_runtime/profile"
   ;;
