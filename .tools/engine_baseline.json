@@ -1,0 +1,1379 @@
+{
+  "schema": "hoi4-engine-baseline/1",
+  "findings": [
+    {
+      "fingerprint": "00de59cfd2c797dde1a824af",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_berlin_reichstag"
+    },
+    {
+      "fingerprint": "09b04ceb61fa9e4239cdb824",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_berlin_volkshalle"
+    },
+    {
+      "fingerprint": "0f17d9c3344bf98a27832584",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_statue_of_liberty"
+    },
+    {
+      "fingerprint": "2c699cf7b85142c1fad956c0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_kremlin"
+    },
+    {
+      "fingerprint": "34a936f392e6170e26f1aeb4",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_nanjing_presidential_palace_gen"
+    },
+    {
+      "fingerprint": "35ae69a96f292d20743f0a87",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_cristo_redentor"
+    },
+    {
+      "fingerprint": "55c09b7cd2b82c026c17a508",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_eiffel_tower"
+    },
+    {
+      "fingerprint": "662d0c1fb5f68644d413566f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_hofburg_palace"
+    },
+    {
+      "fingerprint": "6b9a71b2b702796673b8b4a6",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_bojnice_castle"
+    },
+    {
+      "fingerprint": "6cd38a8a9744367d19cbaaea",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_forbidden_city"
+    },
+    {
+      "fingerprint": "7c63b775f5c8e82d144beb48",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_big_ben"
+    },
+    {
+      "fingerprint": "7cd472579af2c2dc3b9976d6",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_hakko_ichiu"
+    },
+    {
+      "fingerprint": "827a76e2f9e2a3c8d2c1929e",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_sadabad_complex"
+    },
+    {
+      "fingerprint": "8e5dc6d3639cecc3b9dbaf8b",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_nanjing_presidential_palace_prc"
+    },
+    {
+      "fingerprint": "9ddc5ec1d211d9c848bb62dd",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_prague_castle"
+    },
+    {
+      "fingerprint": "a299287de1f35cba2d17ddc4",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_great_wall_section"
+    },
+    {
+      "fingerprint": "a665212ebf6ba3dbb09516c5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_nanjing_presidential_palace"
+    },
+    {
+      "fingerprint": "b8b6869b0aa228975e6cdffb",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_colosseum"
+    },
+    {
+      "fingerprint": "dd5144c14b76fe1dc1d6d15c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_national_diet"
+    },
+    {
+      "fingerprint": "e505998cb099a4c0f56f9e39",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_hagia_sophia"
+    },
+    {
+      "fingerprint": "f1a78c34f84172f3907f373e",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_tokyo_imperial_palace"
+    },
+    {
+      "fingerprint": "f6fb636964139d40a321170b",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/buildings/01_landmark_buildings.txt",
+      "subject": "building:landmark_taj_mahal"
+    },
+    {
+      "fingerprint": "06209b09b31f5792e801d28d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/combat_tactics.txt",
+      "subject": "combat_tactic:tactic_grand_banzai_charge"
+    },
+    {
+      "fingerprint": "1dde7dab9fdd2b286dae7c68",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/combat_tactics.txt",
+      "subject": "combat_tactic:tactic_banzai_charge"
+    },
+    {
+      "fingerprint": "268d1ae7b07e93242e3fb2f5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/combat_tactics.txt",
+      "subject": "combat_tactic:tactic_masterful_blitz"
+    },
+    {
+      "fingerprint": "5165af3915e7529df0dca84f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/combat_tactics.txt",
+      "subject": "combat_tactic:tactic_masterful_delay"
+    },
+    {
+      "fingerprint": "82c244e3f6f1196eda08ccf4",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/combat_tactics.txt",
+      "subject": "combat_tactic:tactic_sf_armor_supported_assault"
+    },
+    {
+      "fingerprint": "0371277a7c4359f6d34d305f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SPA"
+    },
+    {
+      "fingerprint": "0f2d75c540171f80208d1079",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:BUF"
+    },
+    {
+      "fingerprint": "246bc2c5578f3cfd72e7ff35",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:BUZ"
+    },
+    {
+      "fingerprint": "255f2b1914068e927615650d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SPD"
+    },
+    {
+      "fingerprint": "29fa0223268244e1ca359a97",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SOS"
+    },
+    {
+      "fingerprint": "429e8d721cf1de81414137a2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SB4"
+    },
+    {
+      "fingerprint": "453dbaac5846870123da939f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:FGR"
+    },
+    {
+      "fingerprint": "656e9073d9937e33d4f268a5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SB1"
+    },
+    {
+      "fingerprint": "83804716f3eac162ba51d586",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SOP"
+    },
+    {
+      "fingerprint": "a30c716e017ab0c6dc39daf9",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:RDS"
+    },
+    {
+      "fingerprint": "a98df3bad8485b21fd560683",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SOU"
+    },
+    {
+      "fingerprint": "b040680c72e6dccb7f525b88",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:FNO"
+    },
+    {
+      "fingerprint": "b3d17ca6d52e88e1924d800a",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SPC"
+    },
+    {
+      "fingerprint": "bc918e29d36998a1b1615f30",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:MOT"
+    },
+    {
+      "fingerprint": "ce608f883b1106b7bf5f18db",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:RSI"
+    },
+    {
+      "fingerprint": "d762ca7234f4ad7957069d5d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SB2"
+    },
+    {
+      "fingerprint": "e84c3f5fa42ff370daa02ea0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SOT"
+    },
+    {
+      "fingerprint": "e914101ffabe001728c79210",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SB3"
+    },
+    {
+      "fingerprint": "ec25c2f5f52317fd74eca047",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:VIC"
+    },
+    {
+      "fingerprint": "f1bce666f1f638dfa8c219d3",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SPB"
+    },
+    {
+      "fingerprint": "f2f82544ef9cd71fbc815440",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/country_tag_aliases/tag_aliases.txt",
+      "subject": "country_tag:SOB"
+    },
+    {
+      "fingerprint": "3931c5d688fefdc1942dddbd",
+      "code": "LINT_UNKNOWN_MODIFIER",
+      "path": "common/ideas/zin_mistake.txt",
+      "subject": "targeted_modifier"
+    },
+    {
+      "fingerprint": "bf571ef63de1b3e38b701969",
+      "code": "LINT_UNKNOWN_MODIFIER",
+      "path": "common/ideas/zin_mistake.txt",
+      "subject": "targeted_modifier"
+    },
+    {
+      "fingerprint": "c5b5bec3548ed1e07006810f",
+      "code": "LINT_UNKNOWN_MODIFIER",
+      "path": "common/ideas/zin_mistake.txt",
+      "subject": "targeted_modifier"
+    },
+    {
+      "fingerprint": "044844d6e6264a729d961751",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_caretaker"
+    },
+    {
+      "fingerprint": "1b421991e28c6f655a2b5130",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_strong_nation"
+    },
+    {
+      "fingerprint": "38cf0d8a5e91e5f14c442324",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_concerning_support_for_socialists"
+    },
+    {
+      "fingerprint": "48ce854fd27e373c1d2e9ae0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_realist_conservative"
+    },
+    {
+      "fingerprint": "5ac4fb4c11552eff6df8ce48",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_forgotten_finno_karelians"
+    },
+    {
+      "fingerprint": "5ba9aa190d66e8982d6c09e7",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_divided_proletariat"
+    },
+    {
+      "fingerprint": "6ee04500d046bf914b879efd",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_finnish_sovereignty_threatened"
+    },
+    {
+      "fingerprint": "7865c443324a04f323e726ff",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_reliable_leader"
+    },
+    {
+      "fingerprint": "931d0fc9a672e69161a49034",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_united_nation"
+    },
+    {
+      "fingerprint": "9d850a75b556b6a8c05f7a37",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_appointed_regent"
+    },
+    {
+      "fingerprint": "b6fc48dea112cb9c84e7353f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_eradicate_socialism"
+    },
+    {
+      "fingerprint": "bab632fbb6ea51a4b01146e6",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_concerning_support_for_extremists"
+    },
+    {
+      "fingerprint": "cf7e47dff708be99606a15d6",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_obliterated_european_fascism"
+    },
+    {
+      "fingerprint": "d8ae5a926552526f2f942a62",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_dream_of_greater_finland"
+    },
+    {
+      "fingerprint": "e13c50980244312e96e3c0d9",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_eradicate_extremists"
+    },
+    {
+      "fingerprint": "e54328e2aa37aa5169f83afd",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_a_solar_system_of_organizations"
+    },
+    {
+      "fingerprint": "f9325127311d068b4f5dbee2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+      "subject": "static_modifier:FIN_bop_modifier_anti_fascist_crusade"
+    },
+    {
+      "fingerprint": "01d5aa5fd10cd3ecc9e38b1a",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ETH_increase_anarchist_power_balance"
+    },
+    {
+      "fingerprint": "0c34d3f4fc38fe6aafc00953",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ITA_power_balance_lost_core_1"
+    },
+    {
+      "fingerprint": "294d00c3e133b29706ed725c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_guisan_power_balance"
+    },
+    {
+      "fingerprint": "6457a7176189492c1bcd2523",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_DEBUG_all_cantons"
+    },
+    {
+      "fingerprint": "85b7b374c23d4c39311e20b0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ITA_power_balance_lost_core_2"
+    },
+    {
+      "fingerprint": "897d265b46817a89a16b73ee",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ETH_withdraw_priviliges_power_balance"
+    },
+    {
+      "fingerprint": "99b5c0db4ace32a5a8432154",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ITA_power_balance_lost_core_5"
+    },
+    {
+      "fingerprint": "9d06524e7c45482a72c6de29",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_guiding_principles_council"
+    },
+    {
+      "fingerprint": "a654d9a7f738a64f08f73efc",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_aktion_nationaler_widerstand_mod"
+    },
+    {
+      "fingerprint": "ab7030c2a2c355801b2fed8a",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ITA_power_balance_lost_core_4"
+    },
+    {
+      "fingerprint": "bc8f739d51a5f4d15228b43b",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ITA_power_balance_lost_core_3"
+    },
+    {
+      "fingerprint": "c9954e06f6d74bcc0422b4fa",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ETH_BoP_spanish_exiles_modifier"
+    },
+    {
+      "fingerprint": "ced9f01b89c50d164c258c09",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_guiding_principles_cantons"
+    },
+    {
+      "fingerprint": "d39976ad7ec896b76756b51f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_romansh"
+    },
+    {
+      "fingerprint": "da9813e5ae58fa597c4342ac",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:SWI_DEBUG_all_council"
+    },
+    {
+      "fingerprint": "dc904530417654ffa1ce87ea",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ETH_increase_communist_power_balance"
+    },
+    {
+      "fingerprint": "ef2152c2650bbe275dc885e7",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+      "subject": "static_modifier:ETH_increase_priviliges_power_balance"
+    },
+    {
+      "fingerprint": "d6cfe6acf3484160be299cb0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/modifiers/MUN_power_balance_modifiers.txt",
+      "subject": "static_modifier:CZE_bop_modifier_czech_sovereignty_is_threatened"
+    },
+    {
+      "fingerprint": "022184c7081c7f5871dcc36e",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_effects/zin_aenor_court.txt",
+      "subject": "character:zin_aenor_camp_faithful"
+    },
+    {
+      "fingerprint": "0665a2915e7875d496a825c0",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_effects/zin_aenor_court.txt",
+      "subject": "character:zin_aenor_camp_host"
+    },
+    {
+      "fingerprint": "350b03091e69678983282d89",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_effects/zin_aenor_court.txt",
+      "subject": "character:zin_aenor_camp_court"
+    },
+    {
+      "fingerprint": "41cfa17754bc35823a435d43",
+      "code": "REF_UNKNOWN_EFFECT",
+      "path": "common/scripted_effects/zin_gunwaith.txt",
+      "subject": "reverse_remove_opinion_modifier"
+    },
+    {
+      "fingerprint": "5ebb18673863398cfa12b8d0",
+      "code": "REF_UNKNOWN_EFFECT",
+      "path": "common/scripted_effects/zin_gunwaith.txt",
+      "subject": "reverse_remove_opinion_modifier"
+    },
+    {
+      "fingerprint": "359fbce8c28c11544c643575",
+      "code": "REF_UNKNOWN_TRIGGER",
+      "path": "common/scripted_effects/zin_magical_forest.txt",
+      "subject": "has_global_event_target"
+    },
+    {
+      "fingerprint": "a9cd4fe868e762d9e3c841b5",
+      "code": "REF_UNKNOWN_TRIGGER",
+      "path": "common/scripted_effects/zin_magical_forest.txt",
+      "subject": "has_global_event_target"
+    },
+    {
+      "fingerprint": "db45b6af3d3737fc20a289da",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_effects/zin_path.txt",
+      "subject": "global:zin_aenor_regency_endures"
+    },
+    {
+      "fingerprint": "561ad48bc14eb0af537f561c",
+      "code": "REF_UNKNOWN_EFFECT",
+      "path": "common/scripted_effects/zin_regional_dondor.txt",
+      "subject": "clear_country_flag"
+    },
+    {
+      "fingerprint": "128feb6b18ed805f8a9bf1c8",
+      "code": "REF_UNKNOWN_EFFECT",
+      "path": "common/scripted_effects/zin_regional_nolorim.txt",
+      "subject": "clear_country_flag"
+    },
+    {
+      "fingerprint": "02fece4a4f17aeddbe9af893",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_pass_vigil"
+    },
+    {
+      "fingerprint": "036a59842059e97c47729ebf",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_tide_charts"
+    },
+    {
+      "fingerprint": "063756bcb011f3d2a798f50a",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_deliverer"
+    },
+    {
+      "fingerprint": "07a19fcd26761bf908f39200",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_warden_vigil"
+    },
+    {
+      "fingerprint": "0aa85d801dd5fdd5c7e86c16",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_ent_slow"
+    },
+    {
+      "fingerprint": "113656bf1d691ae803f2546f",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_old_knots"
+    },
+    {
+      "fingerprint": "1bb966f04f76cdc0f685c97f",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_scale_creed"
+    },
+    {
+      "fingerprint": "250e58da7fb955844b613523",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_hearth_iron"
+    },
+    {
+      "fingerprint": "264bc52272aa8d2b78f4db24",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_winter_hearth"
+    },
+    {
+      "fingerprint": "3df9a9618aaf9be817ced05c",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_storm_court"
+    },
+    {
+      "fingerprint": "4474ed0aaa11f963f928f18a",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_yeti_hum"
+    },
+    {
+      "fingerprint": "4a508ff2ad55b4858c14a974",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_green_lords"
+    },
+    {
+      "fingerprint": "5803397e46dca6e8b349781c",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_lake_litany"
+    },
+    {
+      "fingerprint": "5c61dad847ee6052d047edfb",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_well_oath"
+    },
+    {
+      "fingerprint": "661627d02d0363d19b42ac1d",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_grave_cult"
+    },
+    {
+      "fingerprint": "712714673905f80d1e65d1c3",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_strait_litany"
+    },
+    {
+      "fingerprint": "9343a113801f513b002578ce",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_horse_oath"
+    },
+    {
+      "fingerprint": "93e296cdd2f1b230bb1b9ad2",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_skull_fire"
+    },
+    {
+      "fingerprint": "a881e7ecb92ac426c0b4b069",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_guild_hall"
+    },
+    {
+      "fingerprint": "a94f9ad0d6758d6ac78c8c43",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_flood_stair"
+    },
+    {
+      "fingerprint": "b8f09dce452de1e17bc4c212",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_noon_pilgrimage"
+    },
+    {
+      "fingerprint": "c3c7a64cf921f5f0496ca4d8",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_river_wardens"
+    },
+    {
+      "fingerprint": "c765dfca9779c4bfebae0cca",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_giant_cairn"
+    },
+    {
+      "fingerprint": "cbdcfbb3c7baf26eef4a034a",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_rain_mirror"
+    },
+    {
+      "fingerprint": "d737778b873bbbb1236edf17",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_wave_tally"
+    },
+    {
+      "fingerprint": "dffd00602767e8cfc9acff43",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_kindred_song"
+    },
+    {
+      "fingerprint": "e1c14814c693cc3cece617ba",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_stone_hunger"
+    },
+    {
+      "fingerprint": "e7dd00595f3e580d1c4dad8c",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_clan_stones"
+    },
+    {
+      "fingerprint": "f1dc0d84d0b7c66bf7e4dca0",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_red_hearth"
+    },
+    {
+      "fingerprint": "f249ee940e5b6a15350a02e4",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_isle_tide"
+    },
+    {
+      "fingerprint": "f92f700be603f06bd986f2e0",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_faiths.txt",
+      "subject": "state:zin_holy_site_pact_rite"
+    },
+    {
+      "fingerprint": "8603d0f0faa18b8f2b80a0d1",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_path.txt",
+      "subject": "global:zin_aenor_regency_endures"
+    },
+    {
+      "fingerprint": "f8644cdf60178be23bf52b61",
+      "code": "LINT_FLAG_NEVER_SET",
+      "path": "common/scripted_triggers/zin_world_tension.txt",
+      "subject": "global:zin_aenor_regency_endures"
+    },
+    {
+      "fingerprint": "001a2afa36c87584a129eeb2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:JAP_royal_lineage"
+    },
+    {
+      "fingerprint": "04e3fd73657837719b53bcf7",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:cruiser_officer"
+    },
+    {
+      "fingerprint": "058ac4ed89c91613c6601c16",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:lancer"
+    },
+    {
+      "fingerprint": "06c92f0ed3ab60a4038f58a0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:destroyer_leader"
+    },
+    {
+      "fingerprint": "0a2406d3709c5ff966901f21",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:mine_craft"
+    },
+    {
+      "fingerprint": "0ddeafd902b5949ca2757ea2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:loyalty_to_india"
+    },
+    {
+      "fingerprint": "14dca4a38e23a73c58408334",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:militias_officer"
+    },
+    {
+      "fingerprint": "150b7f18ac0bb89391b72d31",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:aviation_enthusiast"
+    },
+    {
+      "fingerprint": "1772af3e2f5b133f3927b58d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_SPR_republican_loyalties"
+    },
+    {
+      "fingerprint": "1d5020a97c7bff384629bdb3",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:ascari_officer"
+    },
+    {
+      "fingerprint": "1ecd1584d86a0cbf764a9712",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:cruiser_captain"
+    },
+    {
+      "fingerprint": "2117b8516f0f68a8c006f57a",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:JAP_IJA_loyalist"
+    },
+    {
+      "fingerprint": "22acacf748447f23b2091a33",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:fly_swatter"
+    },
+    {
+      "fingerprint": "2fa0b6c033da433406600f49",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:CHI_dubious_loyalty"
+    },
+    {
+      "fingerprint": "349fe7f829eedb16addc13b5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:INS_loyalty_to_indonesia"
+    },
+    {
+      "fingerprint": "390d8259752b1a8455db66c1",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:panzer_expert"
+    },
+    {
+      "fingerprint": "3c3b03050a9159b3b6420f5d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:hidden_sympathies"
+    },
+    {
+      "fingerprint": "3ca3e352fc98f3dfee5a4b89",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:loyalty_to_britain"
+    },
+    {
+      "fingerprint": "43225d867c3cc4285de6712f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:silent_hunter"
+    },
+    {
+      "fingerprint": "440cb67b7020545f2b11e43e",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:SIC_dubious_loyalty"
+    },
+    {
+      "fingerprint": "4d516f8faed41f0168a896d1",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_BUL_zveno_member"
+    },
+    {
+      "fingerprint": "4f257b88a53dee87bc71b1ea",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_SPA_falangist_loyalties"
+    },
+    {
+      "fingerprint": "5101bcb71357e1569fe05d58",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_SPA_nationalist_sympathies"
+    },
+    {
+      "fingerprint": "5a7f019bd09dab84012c4012",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:flight_deck_manager"
+    },
+    {
+      "fingerprint": "5ad6a54d036632449668a0ea",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:JAP_government_supporter"
+    },
+    {
+      "fingerprint": "5f1a84926ca87aa606d7cdf4",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_HUN_vitez"
+    },
+    {
+      "fingerprint": "5f28edec1188be6db66fa1d8",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_BUL_ff_sympathizer"
+    },
+    {
+      "fingerprint": "61dcbc7eda0600cda8e6c60d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:armor_officer"
+    },
+    {
+      "fingerprint": "62d6f753b075b7c6cace1822",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:irregulars_officer"
+    },
+    {
+      "fingerprint": "660c0f2e8a4866f09c085718",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_SPR_stalinist_loyalties"
+    },
+    {
+      "fingerprint": "6cbf97bf0db6ce350ca8839f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:carrier_officer"
+    },
+    {
+      "fingerprint": "70fb08ea57273af0c27123e2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:jaeger"
+    },
+    {
+      "fingerprint": "72f6a8aa59eb922cc49b580c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:bearer_of_artillery"
+    },
+    {
+      "fingerprint": "76683bf47fbbb0a2f578d5a4",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_GRE_marxist_acolyte"
+    },
+    {
+      "fingerprint": "7c5a79b71d0af3abf9b021ca",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:IRQ_golden_square_member"
+    },
+    {
+      "fingerprint": "7f8bda67a034367375f55ba0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:combined_arms_expert"
+    },
+    {
+      "fingerprint": "80e10f71590736a335cf4d30",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:expeditionary_leader_trait"
+    },
+    {
+      "fingerprint": "89c4654b23eee7fe62a8b1fe",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:paratrooper"
+    },
+    {
+      "fingerprint": "8b9324cd3523d5c62700ccd5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_TUR_kemalist_champion"
+    },
+    {
+      "fingerprint": "91ef9632f0adc4fb50edecb2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:loading_drill_master"
+    },
+    {
+      "fingerprint": "9322f50acfa19ee6d8ed2b05",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:panzer_leader"
+    },
+    {
+      "fingerprint": "936ed09e790bcfd6d50a31c2",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:PRC_survivor_of_the_long_march"
+    },
+    {
+      "fingerprint": "94a3c47d266f4c87b90e9823",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:submarine_officer"
+    },
+    {
+      "fingerprint": "94dfc87ae8e4f14a187d5ba8",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_HUN_fascist_sympathies"
+    },
+    {
+      "fingerprint": "956a620eb27ab5f8699e290c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:heavy_ship_officer"
+    },
+    {
+      "fingerprint": "9806be2fdcc28c2afbeddc7e",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_BUL_tsar_loyalist"
+    },
+    {
+      "fingerprint": "99212439d1b6b2e858984001",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:INS_loyalty_to_netherlands"
+    },
+    {
+      "fingerprint": "9d701a063fc83b5700f6651d",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:torpedo_expert"
+    },
+    {
+      "fingerprint": "9f81106be4b7737f58a8714f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:air_controller"
+    },
+    {
+      "fingerprint": "a05aa2c9f472fa533872f15c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:CHI_watched_officer"
+    },
+    {
+      "fingerprint": "a909d98ed73942dc3925965a",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_SPA_carlist_loyalties"
+    },
+    {
+      "fingerprint": "aa8e82f468ba86ab7a31fc3c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_GRE_stauch_monarchist"
+    },
+    {
+      "fingerprint": "aee7104e19b2958354678d00",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_GRE_venezelist_loyalist"
+    },
+    {
+      "fingerprint": "b1f91c3335ea86934defd034",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:camouflage_expert"
+    },
+    {
+      "fingerprint": "b76d667eb589472e0fc420c4",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:seawolf"
+    },
+    {
+      "fingerprint": "b9a6e8c9781bf3965d4a3c99",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:destroyer_officer"
+    },
+    {
+      "fingerprint": "c0a2fe57869f06316dcd37de",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:inspirational_bagpiper"
+    },
+    {
+      "fingerprint": "c1e179294f67e964fc3e48aa",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:torpedo_bomber"
+    },
+    {
+      "fingerprint": "c7e295336c3516e2cf6de2c1",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:YUN_dubious_loyalty"
+    },
+    {
+      "fingerprint": "cf44e5f57562cbfc09d02ad9",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_SPR_anti_stalinist_loyalties"
+    },
+    {
+      "fingerprint": "d0c95ea11cd5aa508a5f17d5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:substance_addict"
+    },
+    {
+      "fingerprint": "d10d835ee9a8af8041d70325",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:JAP_tohokai_sympathies"
+    },
+    {
+      "fingerprint": "d3476990d931df7d2b305a22",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:substance_abuser"
+    },
+    {
+      "fingerprint": "d71efde26d4030ec227d23f5",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:loyalty_to_pakistan"
+    },
+    {
+      "fingerprint": "dbccf4bfe2aeacd454f90953",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:XSM_dubious_loyalty"
+    },
+    {
+      "fingerprint": "ecd78408f0a0968fdf57b756",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:JAP_kamikaze_proponent"
+    },
+    {
+      "fingerprint": "ef0ee1fdf821579a424d8f55",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_GRE_fascist_sympathizer"
+    },
+    {
+      "fingerprint": "f308b480ee79781393c00f8f",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:fighter_director"
+    },
+    {
+      "fingerprint": "f3f75d99832582a23290bd78",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:promoted_from_the_ranks"
+    },
+    {
+      "fingerprint": "f64fb3d1f3c358006394aa75",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:dive_bomber"
+    },
+    {
+      "fingerprint": "f85afc4b763c8804bc5dd177",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:trait_JAP_kodoha_sympathizer"
+    },
+    {
+      "fingerprint": "fcd3c5b1d8160dfa66f79373",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:hunter_killer"
+    },
+    {
+      "fingerprint": "fdd8ac626208aea9a427bfb6",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/00_traits.txt",
+      "subject": "unit_leader_trait:INS_secret_commander"
+    },
+    {
+      "fingerprint": "960d9b3b60e72b347853086c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/ETH_traits.txt",
+      "subject": "unit_leader_trait:ETH_hero_of_ethiopia"
+    },
+    {
+      "fingerprint": "5458b04089123989b3044370",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/JAP_traits.txt",
+      "subject": "unit_leader_trait:JAP_samurai_lineage"
+    },
+    {
+      "fingerprint": "ebddb4b2604fd6d27ecf2e36",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/JAP_traits.txt",
+      "subject": "unit_leader_trait:JAP_communist_sympathizer"
+    },
+    {
+      "fingerprint": "0c45a5adcf364809bb454ed0",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_stalinist"
+    },
+    {
+      "fingerprint": "2d5a73c1eb8fb3a9cafa0e42",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_trotskyist"
+    },
+    {
+      "fingerprint": "3236aa029fd1555150854e8e",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:POL_sanation_left_leader"
+    },
+    {
+      "fingerprint": "394b7f19b213a96a97df4481",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:peasant_sympathiser"
+    },
+    {
+      "fingerprint": "42a61774de1b0e44bd1ac09a",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_monarchist_sympathizer"
+    },
+    {
+      "fingerprint": "4750932fad2dce306b0c54ad",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:BALTIC_anti_bolshevik"
+    },
+    {
+      "fingerprint": "527926691cef25902ccbf688",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_foreign_military_advisor"
+    },
+    {
+      "fingerprint": "5a5607eff81481cd7ce76d60",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_determined"
+    },
+    {
+      "fingerprint": "9086fcffe56bb4682ffcde6c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:POL_sanation_right_leader"
+    },
+    {
+      "fingerprint": "940e351feb96d69aa86d3b34",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_bukharinist"
+    },
+    {
+      "fingerprint": "b9b9c35aac7c570cfe95285c",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:BALTIC_ex_russian"
+    },
+    {
+      "fingerprint": "d866943d675f162cd5df7b71",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:communist_sympathizer"
+    },
+    {
+      "fingerprint": "e78b07f582d4f8d81fa05a34",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_cowed_by_stalin_army"
+    },
+    {
+      "fingerprint": "fc15ceb9ca7f9e57e6460fdd",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/NSB_traits.txt",
+      "subject": "unit_leader_trait:trait_SOV_cowed_by_stalin_navy"
+    },
+    {
+      "fingerprint": "191b86ade319ae88539690c3",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/SWE_traits.txt",
+      "subject": "unit_leader_trait:SWE_promoted_away_from_power"
+    },
+    {
+      "fingerprint": "6984f54ad58246c97c2b36fa",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/SWE_traits.txt",
+      "subject": "unit_leader_trait:SWE_disillusioned_with_the_government"
+    },
+    {
+      "fingerprint": "a29081420129f6e7f963aa20",
+      "code": "OVERRIDE_DROPS_DEFINITION",
+      "path": "common/unit_leader/SWE_traits.txt",
+      "subject": "unit_leader_trait:SWE_wounded_in_protests"
+    },
+    {
+      "fingerprint": "490d06ea9996aa3993fe5fe0",
+      "code": "OVERRIDE_REPLACE_PATH_EMPTY",
+      "path": "descriptor.mod",
+      "subject": "map/supplyareas"
+    },
+    {
+      "fingerprint": "3f5d1279ac801c2c1980600a",
+      "code": "REF_MISSING_LOCALISATION_KEY",
+      "path": "events/zin_glo.txt",
+      "subject": "undefined"
+    },
+    {
+      "fingerprint": "8a294534450e5fc50e29d24b",
+      "code": "REF_MISSING_LOCALISATION_KEY",
+      "path": "events/zin_glo.txt",
+      "subject": "undefined"
+    },
+    {
+      "fingerprint": "a4b916080243865f64c5754a",
+      "code": "REF_MISSING_LOCALISATION_KEY",
+      "path": "events/zin_glo.txt",
+      "subject": "undefined"
+    },
+    {
+      "fingerprint": "cf44df68e17871bc242c30a2",
+      "code": "REF_MISSING_LOCALISATION_KEY",
+      "path": "events/zin_glo.txt",
+      "subject": "undefined"
+    },
+    {
+      "fingerprint": "dfb9455ec7ad0c839fe8da1d",
+      "code": "REF_MISSING_LOCALISATION_KEY",
+      "path": "events/zin_glo.txt",
+      "subject": "undefined"
+    },
+    {
+      "fingerprint": "172e59f55292a52bf6f9639d",
+      "code": "LINT_EVENT_LOC_KEY_REUSED",
+      "path": "events/zin_goldoroth.txt",
+      "subject": "zin_goldoroth.2.d"
+    }
+  ]
+}
