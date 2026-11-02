@@ -327,16 +327,22 @@ zin_deep_low_country = {
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_mound_reach
 				OR = {
-					var:global.zin_deep_site_mothers_mound_shore = {
-						is_owned_by = ROOT
+					AND = {
+						has_variable = global.zin_deep_site_mothers_mound_shore
+						var:global.zin_deep_site_mothers_mound_shore = {
+							is_owned_by = ROOT
+						}
 					}
 					has_country_flag = zin_deep_shared_tide
 				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_mound_base
-				var:global.zin_deep_site_mothers_mound_shore = {
-					any_province_building_level = { province = { all_provinces = yes } building = naval_base level > 1 }
+				AND = {
+					has_variable = global.zin_deep_site_mothers_mound_shore
+					var:global.zin_deep_site_mothers_mound_shore = {
+						any_province_building_level = { province = { all_provinces = yes } building = naval_base level > 1 }
+					}
 				}
 			}
 			NOT = {
@@ -364,8 +370,11 @@ zin_deep_low_country = {
 			modifier = {
 				factor = 0
 				NOT = {
-					var:global.zin_deep_site_mothers_mound_shore = {
-						is_owned_by = ROOT
+					AND = {
+						has_variable = global.zin_deep_site_mothers_mound_shore
+						var:global.zin_deep_site_mothers_mound_shore = {
+							is_owned_by = ROOT
+						}
 					}
 				}
 			}
@@ -422,16 +431,22 @@ zin_deep_low_country = {
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_mound_reach
 				OR = {
-					var:global.zin_deep_site_mothers_mound_shore = {
-						is_owned_by = ROOT
+					AND = {
+						has_variable = global.zin_deep_site_mothers_mound_shore
+						var:global.zin_deep_site_mothers_mound_shore = {
+							is_owned_by = ROOT
+						}
 					}
 					has_country_flag = zin_deep_shared_tide
 				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_mound_base
-				var:global.zin_deep_site_mothers_mound_shore = {
-					any_province_building_level = { province = { all_provinces = yes } building = naval_base level > 1 }
+				AND = {
+					has_variable = global.zin_deep_site_mothers_mound_shore
+					var:global.zin_deep_site_mothers_mound_shore = {
+						any_province_building_level = { province = { all_provinces = yes } building = naval_base level > 1 }
+					}
 				}
 			}
 			NOT = {
@@ -459,8 +474,11 @@ zin_deep_low_country = {
 			modifier = {
 				factor = 0
 				NOT = {
-					var:global.zin_deep_site_mothers_mound_shore = {
-						is_owned_by = ROOT
+					AND = {
+						has_variable = global.zin_deep_site_mothers_mound_shore
+						var:global.zin_deep_site_mothers_mound_shore = {
+							is_owned_by = ROOT
+						}
 					}
 				}
 			}
@@ -960,18 +978,24 @@ zin_deep_two_shores = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_gates_held
-				var:global.zin_deep_site_gate_west = {
-					OR = {
-						is_owned_by = ROOT
-						owner = { is_subject_of = ROOT }
-						owner = { is_in_faction_with = ROOT }
+				AND = {
+					has_variable = global.zin_deep_site_gate_west
+					var:global.zin_deep_site_gate_west = {
+						OR = {
+							is_owned_by = ROOT
+							owner = { is_subject_of = ROOT }
+							owner = { is_in_faction_with = ROOT }
+						}
 					}
 				}
-				var:global.zin_deep_site_gate_east = {
-					OR = {
-						is_owned_by = ROOT
-						owner = { is_subject_of = ROOT }
-						owner = { is_in_faction_with = ROOT }
+				AND = {
+					has_variable = global.zin_deep_site_gate_east
+					var:global.zin_deep_site_gate_east = {
+						OR = {
+							is_owned_by = ROOT
+							owner = { is_subject_of = ROOT }
+							owner = { is_in_faction_with = ROOT }
+						}
 					}
 				}
 			}
@@ -1048,16 +1072,22 @@ zin_deep_two_shores = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_gates_owned
-				var:global.zin_deep_site_gate_west = {
-					OR = {
-						is_owned_by = ROOT
-						owner = { is_subject_of = ROOT }
+				AND = {
+					has_variable = global.zin_deep_site_gate_west
+					var:global.zin_deep_site_gate_west = {
+						OR = {
+							is_owned_by = ROOT
+							owner = { is_subject_of = ROOT }
+						}
 					}
 				}
-				var:global.zin_deep_site_gate_east = {
-					OR = {
-						is_owned_by = ROOT
-						owner = { is_subject_of = ROOT }
+				AND = {
+					has_variable = global.zin_deep_site_gate_east
+					var:global.zin_deep_site_gate_east = {
+						OR = {
+							is_owned_by = ROOT
+							owner = { is_subject_of = ROOT }
+						}
 					}
 				}
 			}
@@ -1139,8 +1169,11 @@ zin_deep_kalioth = {
 					NOT = {
 						original_tag = ERC
 					}
-					var:global.zin_deep_site_kalioth_halls = {
-						is_owned_by = ROOT
+					AND = {
+						has_variable = global.zin_deep_site_kalioth_halls
+						var:global.zin_deep_site_kalioth_halls = {
+							is_owned_by = ROOT
+						}
 					}
 				}
 			}
@@ -1155,8 +1188,11 @@ zin_deep_kalioth = {
 			}
 		}
 		available = {
-			var:global.zin_deep_site_kalioth_halls = {
-				is_owned_by = ROOT
+			AND = {
+				has_variable = global.zin_deep_site_kalioth_halls
+				var:global.zin_deep_site_kalioth_halls = {
+					is_owned_by = ROOT
+				}
 			}
 			has_manpower > 2999
 			has_equipment = { zin_arms_equipment > 299 }
@@ -1842,8 +1878,11 @@ zin_deep_sea_roads = {
 				zin_deep_square_open_to = yes
 			}
 			country_exists = BEN
-			var:global.zin_deep_site_cursed_square_shore = {
-				is_owned_by = BEN
+			AND = {
+				has_variable = global.zin_deep_site_cursed_square_shore
+				var:global.zin_deep_site_cursed_square_shore = {
+					is_owned_by = BEN
+				}
 			}
 		}
 		available = {
@@ -1999,8 +2038,11 @@ zin_deep_sea_roads = {
 			zin_deep_square_open_to = yes
 			custom_trigger_tooltip = {
 				tooltip = zin_deep_tt_square_base
-				var:global.zin_deep_site_cursed_square_shore = {
-					any_province_building_level = { province = { all_provinces = yes } building = naval_base level > 0 }
+				AND = {
+					has_variable = global.zin_deep_site_cursed_square_shore
+					var:global.zin_deep_site_cursed_square_shore = {
+						any_province_building_level = { province = { all_provinces = yes } building = naval_base level > 0 }
+					}
 				}
 			}
 			navy_experience > 59

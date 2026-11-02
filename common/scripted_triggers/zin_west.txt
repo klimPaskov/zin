@@ -61,12 +61,12 @@ zin_west_controls_parim = {
 	}
 }
 zin_west_holds_aenor_states = {
-	any_state = {
-		owner = {
-			zin_aenor_is_realm = yes
-		}
-		controller = {
-			zin_west_in_crossing = yes
+	any_country = {
+		zin_aenor_is_realm = yes
+		any_owned_state = {
+			controller = {
+				zin_west_in_crossing = yes
+			}
 		}
 	}
 }

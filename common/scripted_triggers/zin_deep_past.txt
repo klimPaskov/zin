@@ -55,8 +55,11 @@ zin_deep_charter_member = {
 zin_deep_halls_opened = {
 	# The realm owns the Kalioth state and has opened its shafts.
 	has_country_flag = zin_deep_kalioth_shafts
-	var:global.zin_deep_site_kalioth_halls = {
-		is_owned_by = ROOT
+	AND = {
+		has_variable = global.zin_deep_site_kalioth_halls
+		var:global.zin_deep_site_kalioth_halls = {
+			is_owned_by = ROOT
+		}
 	}
 }
 zin_deep_has_cord = {
@@ -201,8 +204,11 @@ zin_deep_square_open_to = {
 	# The Cursed Square's shore is ours, held by us, or opened to us by sale or the Charter.
 	OR = {
 		has_country_flag = zin_deep_square_open
-		var:global.zin_deep_site_cursed_square_shore = {
-			is_controlled_by = ROOT
+		AND = {
+			has_variable = global.zin_deep_site_cursed_square_shore
+			var:global.zin_deep_site_cursed_square_shore = {
+				is_controlled_by = ROOT
+			}
 		}
 	}
 }

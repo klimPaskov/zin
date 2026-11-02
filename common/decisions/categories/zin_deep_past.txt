@@ -33,8 +33,11 @@ zin_deep_kalioth = {
 				NOT = {
 					original_tag = ERC
 				}
-				var:global.zin_deep_site_kalioth_halls = {
-					is_owned_by = ROOT
+				AND = {
+					has_variable = global.zin_deep_site_kalioth_halls
+					var:global.zin_deep_site_kalioth_halls = {
+						is_owned_by = ROOT
+					}
 				}
 			}
 		}

@@ -1727,12 +1727,15 @@ zin_story_tick_deep = {
 			NOT = {
 				has_global_flag = zin_deep_last_cord_hidden
 			}
-			var:global.zin_deep_site_eldest_barrow = {
-				NOT = {
-					is_controlled_by = CUR
-				}
-				controller = {
-					has_war_with = CUR
+			AND = {
+				has_variable = global.zin_deep_site_eldest_barrow
+				var:global.zin_deep_site_eldest_barrow = {
+					NOT = {
+						is_controlled_by = CUR
+					}
+					controller = {
+						has_war_with = CUR
+					}
 				}
 			}
 		}
@@ -1824,12 +1827,15 @@ zin_story_tick_deep = {
 			NOT = {
 				has_global_flag = zin_deep_count_scattered
 			}
-			var:global.zin_deep_site_eldest_cairn = {
-				NOT = {
-					is_controlled_by = HIR
-				}
-				controller = {
-					has_war_with = HIR
+			AND = {
+				has_variable = global.zin_deep_site_eldest_cairn
+				var:global.zin_deep_site_eldest_cairn = {
+					NOT = {
+						is_controlled_by = HIR
+					}
+					controller = {
+						has_war_with = HIR
+					}
 				}
 			}
 		}
