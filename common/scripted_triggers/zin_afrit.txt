@@ -85,6 +85,15 @@ zin_afrit_holds_parim = {
 zin_afrit_is_hub = {
 	original_tag = WOR
 }
+zin_afrit_may_hunt = {
+	# Scope: a country. It hunts the false god: it stands, is not his and has not been bought by him this year.
+	exists = yes
+	has_capitulated = no
+	NOT = { zin_afrit_is_hub = yes }
+	NOT = { zin_afrit_rules_here = yes }
+	NOT = { has_country_flag = zin_afrit_eastern_client }
+	NOT = { has_country_flag = zin_afrit_hunter_bought }
+}
 zin_afrit_pulse_here = {
 	OR = {
 		tag = WOR

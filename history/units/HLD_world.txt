@@ -30,14 +30,14 @@ division_template = {
 	}
 }
 units = {
-	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 2351 division_template = "Line Host" start_experience_factor = 0.1 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 2351 division_template = "Levy Garrison" start_experience_factor = 0.03 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 2701 division_template = "Line Host" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 2701 division_template = "Levy Garrison" start_experience_factor = 0.03 start_equipment_factor = 1 }
 	fleet = {
 		name = "Holdon Fleet"
-		naval_base = 2407
+		naval_base = 2879
 		task_force = {
 			name = "Holdon Squadron"
-			location = 2407
+			location = 2879
 			ship = { name = "Slakvaennar" definition = zin_ship_galley equipment = { zin_hull_galley_0 = { amount = 1 owner = HLD version_name = "Oared Galley" } } }
 			ship = { name = "Hotmarg" definition = zin_ship_galley equipment = { zin_hull_galley_0 = { amount = 1 owner = HLD version_name = "Oared Galley" } } }
 		}

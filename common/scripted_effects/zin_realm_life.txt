@@ -37,14 +37,17 @@ zin_realm_accept_terms = {
 	event_target:zin_realm_terms_from = { country_event = { id = zin_realm.41 } }
 }
 zin_realm_age_ruler = {
-	# G1: the vigour falls by the people rate, more at war and more again when the war goes badly; at the floor the ruler dies, and below the
-	# frail line the ruler may die any month (mtth zin_realm_frail_death, in hundredths).
-	set_temp_variable = { zin_t_wear = zin_ruler_rate }
+	# G1, K55 (Q-85): rulers age by the year. The vigour counts years of a man's life and falls each month by the people rate over the
+	# months of a year, half as much again at war and again when the war goes badly; at the floor the ruler dies, and below the frail line
+	# the ruler may die any month (mtth zin_realm_frail_death, in hundredths, times the people rate, so the long-lived linger).
+	set_temp_variable = { zin_t_wear = 1 }
 	if = {
 		limit = { has_war = yes }
 		add_to_temp_variable = { zin_t_wear = constant:zin_realm.war_wear }
 		if = { limit = { surrender_progress > 0.3 } add_to_temp_variable = { zin_t_wear = constant:zin_realm.losing_wear } }
 	}
+	multiply_temp_variable = { zin_t_wear = zin_ruler_rate }
+	divide_temp_variable = { zin_t_wear = constant:zin_realm.months_per_year }
 	subtract_from_variable = { zin_ruler_vigour = zin_t_wear }
 	clamp_variable = { var = zin_ruler_vigour min = 0 max = constant:zin_realm.vigour_max }
 	set_temp_variable = { zin_t_floor = constant:zin_realm.vigour_floor }
@@ -56,6 +59,7 @@ zin_realm_age_ruler = {
 	else_if = {
 		limit = { check_variable = { zin_ruler_vigour < zin_t_frail } }
 		set_temp_variable = { zin_t_chance = mtth:zin_realm_frail_death }
+		multiply_temp_variable = { zin_t_chance = zin_ruler_rate }
 		set_temp_variable_to_random = { var = zin_t_roll min = 0 max = 100 }
 		if = { limit = { check_variable = { zin_t_roll < zin_t_chance } } zin_realm_succeed = yes }
 	}
@@ -67,6 +71,14 @@ zin_realm_aid_kin = {
 		add_political_power = 50
 		add_opinion_modifier = { target = PREV modifier = zin_realm_kin_answered }
 	}
+}
+zin_realm_announce_heir = {
+	# G2: the court hears how the heir took the crown (zin_realm.11 for a child, zin_realm.10 otherwise).
+	if = {
+		limit = { check_variable = { zin_realm_succession_way = 2 } }
+		country_event = { id = zin_realm.11 }
+	}
+	else = { country_event = { id = zin_realm.10 } }
 }
 zin_realm_answer_raid = {
 	# G8, scope: the raided realm (zin_realm.70). Argument zin_arg_way: 1 ride out after them (a cause of war for a year), 2 pay them,
@@ -120,6 +132,12 @@ zin_realm_calm_captain = {
 		clr_character_flag = zin_char_ambitious
 	}
 }
+zin_realm_captain_takes_crown = {
+	# Q-87 (zin_realm.16 d): while the court quarrels the captain-general takes the crown (way 4) and the heir is set aside.
+	clr_country_flag = zin_realm_heir_disputed
+	set_temp_variable = { zin_arg_way = 4 }
+	zin_realm_settle_crisis = yes
+}
 zin_realm_check_ambition = {
 	# G4: an unsettled realm (calm below the line) may breed an ambitious captain (mtth zin_realm_ambition_chance, in hundredths).
 	if = {
@@ -166,6 +184,19 @@ zin_realm_check_exiles = {
 		}
 	}
 }
+zin_realm_check_heir = {
+	# Q-87: the waiting heir may die before the ruler (mtth zin_realm_heir_death, in hundredths a month, times the people rate);
+	# then no heir can be determined until another is named (zin_realm.17).
+	set_temp_variable = { zin_t_chance = mtth:zin_realm_heir_death }
+	multiply_temp_variable = { zin_t_chance = zin_ruler_rate }
+	set_temp_variable_to_random = { var = zin_t_roll min = 0 max = 100 }
+	if = {
+		limit = { check_variable = { zin_t_roll < zin_t_chance } }
+		zin_realm_remove_heir = yes
+		set_country_flag = zin_realm_heir_lost
+		country_event = { id = zin_realm.17 }
+	}
+}
 zin_realm_check_kinship = {
 	# G7: our kin is gone (the bond ends), at war with us (the bond ends), or fighting a defensive war that we have no part in (zin_realm.63).
 	if = {
@@ -204,8 +235,9 @@ zin_realm_check_kinship = {
 	}
 }
 zin_realm_check_raid = {
-	# G8: a raiding realm at peace rides now and then (mtth zin_realm_raid_chance, in hundredths) into a neighbour, or, when it has no land
-	# neighbour to raid, into a coastal realm of its own land; never into a great power before the War of the Last Crowns.
+	# G8, Q-89: a raiding realm at peace rides now and then (mtth zin_realm_raid_chance, in hundredths) into a neighbour, or, when it has
+	# no land neighbour to raid, into a coastal realm of its own land; never into a great power before the War of the Last Crowns. The corsairs
+	# raid by sea: a coastal neighbour first, else a coastal realm of their own land. The steppe riders raid by land only, into a neighbour.
 	if = {
 		limit = {
 			NOT = { has_country_flag = zin_realm_raid_cd }
@@ -218,211 +250,907 @@ zin_realm_check_raid = {
 			limit = { check_variable = { zin_t_roll < zin_t_chance } }
 			set_temp_variable = { zin_t_found = 0 }
 			if = {
-				limit = { any_neighbor_country = {
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+				limit = { zin_realm_is_corsair = yes }
+				if = {
+					limit = { any_neighbor_country = {
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						} }
+					random_neighbor_country = {
+						limit = {
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
-					} }
-				random_neighbor_country = {
-					limit = {
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
-						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
 					}
-					save_event_target_as = zin_realm_raid_victim
-					set_temp_variable = { zin_t_found = 1 }
 				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = zin_realm_land_cold_lands
-					any_country = {
+				else_if = {
+					limit = {
 						has_country_flag = zin_realm_land_cold_lands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+						any_country = {
+							has_country_flag = zin_realm_land_cold_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
 					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_cold_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
 				}
-				random_country = {
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_dark_lands
+						any_country = {
+							has_country_flag = zin_realm_land_dark_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_dark_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_east_lands
+						any_country = {
+							has_country_flag = zin_realm_land_east_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_east_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_ember_lands
+						any_country = {
+							has_country_flag = zin_realm_land_ember_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_ember_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_middle_lands
+						any_country = {
+							has_country_flag = zin_realm_land_middle_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_middle_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_tritons_islands
+						any_country = {
+							has_country_flag = zin_realm_land_tritons_islands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_tritons_islands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+			}
+			else_if = {
+				limit = { zin_realm_is_steppe_rider = yes }
+				if = {
+					limit = { any_neighbor_country = {
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+						} }
+					random_neighbor_country = {
+						limit = {
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = { any_neighbor_country = {
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+						} }
+					random_neighbor_country = {
+						limit = {
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
 					limit = {
 						has_country_flag = zin_realm_land_cold_lands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+						any_country = {
+							has_country_flag = zin_realm_land_cold_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
 					}
-					save_event_target_as = zin_realm_raid_victim
-					set_temp_variable = { zin_t_found = 1 }
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = zin_realm_land_dark_lands
-					any_country = {
-						has_country_flag = zin_realm_land_dark_lands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_cold_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
 					}
 				}
-				random_country = {
+				else_if = {
 					limit = {
 						has_country_flag = zin_realm_land_dark_lands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+						any_country = {
+							has_country_flag = zin_realm_land_dark_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
 					}
-					save_event_target_as = zin_realm_raid_victim
-					set_temp_variable = { zin_t_found = 1 }
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = zin_realm_land_ember_lands
-					any_country = {
-						has_country_flag = zin_realm_land_ember_lands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_dark_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
 					}
 				}
-				random_country = {
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_east_lands
+						any_country = {
+							has_country_flag = zin_realm_land_east_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_east_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
 					limit = {
 						has_country_flag = zin_realm_land_ember_lands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+						any_country = {
+							has_country_flag = zin_realm_land_ember_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
 					}
-					save_event_target_as = zin_realm_raid_victim
-					set_temp_variable = { zin_t_found = 1 }
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = zin_realm_land_tritons_islands
-					any_country = {
-						has_country_flag = zin_realm_land_tritons_islands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_ember_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
 					}
 				}
-				random_country = {
+				else_if = {
+					limit = {
+						has_country_flag = zin_realm_land_middle_lands
+						any_country = {
+							has_country_flag = zin_realm_land_middle_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_middle_lands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
+				}
+				else_if = {
 					limit = {
 						has_country_flag = zin_realm_land_tritons_islands
-						any_owned_state = { is_coastal = yes }
-						NOT = { tag = PREV }
-						exists = yes
-						has_capitulated = no
-						NOT = { is_in_faction_with = PREV }
-						NOT = { is_subject_of = PREV }
-						NOT = { PREV = { is_subject_of = PREV } }
-						NOT = { has_country_flag = zin_realm_raided_recently }
-						NOT = { original_tag = PUV }
-						NOT = { original_tag = ZOL }
-						OR = {
-							has_global_flag = zin_war_of_last_crowns
-							NOT = { zin_realm_tier_a = yes }
+						any_country = {
+							has_country_flag = zin_realm_land_tritons_islands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
 						}
 					}
-					save_event_target_as = zin_realm_raid_victim
-					set_temp_variable = { zin_t_found = 1 }
+					random_country = {
+						limit = {
+							has_country_flag = zin_realm_land_tritons_islands
+							NOT = { tag = PREV }
+							exists = yes
+							has_capitulated = no
+							NOT = { is_in_faction_with = PREV }
+							NOT = { is_subject_of = PREV }
+							NOT = { PREV = { is_subject_of = PREV } }
+							NOT = { has_country_flag = zin_realm_raided_recently }
+							NOT = { original_tag = PUV }
+							NOT = { original_tag = ZOL }
+							OR = {
+								has_global_flag = zin_war_of_last_crowns
+								NOT = { zin_realm_tier_a = yes }
+							}
+							NOT = {
+								AND = {
+									PREV = { zin_aenor_is_concord_dominion = yes }
+									OR = {
+										zin_aenor_is_realm = yes
+										zin_aenor_is_concord_dominion = yes
+									}
+								}
+							}
+							any_owned_state = { is_coastal = yes }
+						}
+						save_event_target_as = zin_realm_raid_victim
+						set_temp_variable = { zin_t_found = 1 }
+					}
 				}
 			}
 			if = {
@@ -805,7 +1533,7 @@ zin_realm_crown_captain = {
 	}
 }
 zin_realm_crown_heir = {
-	# G2: the named heir of THIS realm is promoted to lead (generated from data/world/characters).
+	# G2: the named heir of THIS realm is promoted to lead (generated from data/world/characters and data/world/heirs.json).
 	if = {
 		limit = {
 			original_tag = LER
@@ -816,9 +1544,9 @@ zin_realm_crown_heir = {
 	else_if = {
 		limit = {
 			original_tag = CLD
-			has_character = zin_coldor_ilvessa
+			has_character = zin_coldor_alddok
 		}
-		promote_character = zin_coldor_ilvessa
+		promote_character = zin_coldor_alddok
 	}
 	else_if = {
 		limit = {
@@ -836,10 +1564,66 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
-			original_tag = KIN
-			has_character = zin_regional_kingson_merwen
+			original_tag = DND
+			has_character = zin_heir_dondor
 		}
-		promote_character = zin_regional_kingson_merwen
+		promote_character = zin_heir_dondor
+	}
+	else_if = {
+		limit = {
+			original_tag = MAG
+			has_character = zin_heir_magical_forest
+		}
+		promote_character = zin_heir_magical_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = GNW
+			has_character = zin_heir_gunwyn
+		}
+		promote_character = zin_heir_gunwyn
+	}
+	else_if = {
+		limit = {
+			original_tag = SEL
+			has_character = zin_heir_selen
+		}
+		promote_character = zin_heir_selen
+	}
+	else_if = {
+		limit = {
+			original_tag = KIN
+			has_character = zin_regional_kingson_aldewen
+		}
+		promote_character = zin_regional_kingson_aldewen
+	}
+	else_if = {
+		limit = {
+			original_tag = HIR
+			has_character = zin_heir_hirolon
+		}
+		promote_character = zin_heir_hirolon
+	}
+	else_if = {
+		limit = {
+			original_tag = MLK
+			has_character = zin_heir_melkgard
+		}
+		promote_character = zin_heir_melkgard
+	}
+	else_if = {
+		limit = {
+			original_tag = HOR
+			has_character = zin_heir_horidor
+		}
+		promote_character = zin_heir_horidor
+	}
+	else_if = {
+		limit = {
+			original_tag = GIR
+			has_character = zin_heir_girdon
+		}
+		promote_character = zin_heir_girdon
 	}
 	else_if = {
 		limit = {
@@ -851,16 +1635,65 @@ zin_realm_crown_heir = {
 	else_if = {
 		limit = {
 			original_tag = HNH
-			has_character = zin_regional_hunhun_belwen
+			has_character = zin_regional_hunhun_alderic
 		}
-		promote_character = zin_regional_hunhun_belwen
+		promote_character = zin_regional_hunhun_alderic
+	}
+	else_if = {
+		limit = {
+			original_tag = KLU
+			has_character = zin_heir_klungori_guard
+		}
+		promote_character = zin_heir_klungori_guard
 	}
 	else_if = {
 		limit = {
 			original_tag = HER
-			has_character = zin_regional_herez_ilia
+			has_character = zin_regional_herez_aldan
 		}
-		promote_character = zin_regional_herez_ilia
+		promote_character = zin_regional_herez_aldan
+	}
+	else_if = {
+		limit = {
+			original_tag = NOL
+			has_character = zin_heir_noleksun
+		}
+		promote_character = zin_heir_noleksun
+	}
+	else_if = {
+		limit = {
+			original_tag = KIL
+			has_character = zin_heir_kilinti
+		}
+		promote_character = zin_heir_kilinti
+	}
+	else_if = {
+		limit = {
+			original_tag = SFT
+			has_character = zin_heir_safeton
+		}
+		promote_character = zin_heir_safeton
+	}
+	else_if = {
+		limit = {
+			original_tag = FRE
+			has_character = zin_heir_freshon
+		}
+		promote_character = zin_heir_freshon
+	}
+	else_if = {
+		limit = {
+			original_tag = PAZ
+			has_character = zin_heir_pazoma
+		}
+		promote_character = zin_heir_pazoma
+	}
+	else_if = {
+		limit = {
+			original_tag = ORH
+			has_character = zin_heir_orohaf
+		}
+		promote_character = zin_heir_orohaf
 	}
 	else_if = {
 		limit = {
@@ -868,6 +1701,62 @@ zin_realm_crown_heir = {
 			has_character = zin_fotan_ostric
 		}
 		promote_character = zin_fotan_ostric
+	}
+	else_if = {
+		limit = {
+			original_tag = KUN
+			has_character = zin_heir_kunhrim
+		}
+		promote_character = zin_heir_kunhrim
+	}
+	else_if = {
+		limit = {
+			original_tag = BRR
+			has_character = zin_heir_burrikkrit
+		}
+		promote_character = zin_heir_burrikkrit
+	}
+	else_if = {
+		limit = {
+			original_tag = OLO
+			has_character = zin_heir_olodor
+		}
+		promote_character = zin_heir_olodor
+	}
+	else_if = {
+		limit = {
+			original_tag = DNL
+			has_character = zin_heir_dunelaeth
+		}
+		promote_character = zin_heir_dunelaeth
+	}
+	else_if = {
+		limit = {
+			original_tag = ANR
+			has_character = zin_heir_aenor_forest
+		}
+		promote_character = zin_heir_aenor_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = CUR
+			has_character = zin_heir_cursed_lands
+		}
+		promote_character = zin_heir_cursed_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = BLO
+			has_character = zin_heir_bloody_forest
+		}
+		promote_character = zin_heir_bloody_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = EEK
+			has_character = zin_heir_eekedor
+		}
+		promote_character = zin_heir_eekedor
 	}
 	else_if = {
 		limit = {
@@ -879,9 +1768,9 @@ zin_realm_crown_heir = {
 	else_if = {
 		limit = {
 			original_tag = MOO
-			has_character = zin_regional_molot_elda
+			has_character = zin_regional_molot_agnek
 		}
-		promote_character = zin_regional_molot_elda
+		promote_character = zin_regional_molot_agnek
 	}
 	else_if = {
 		limit = {
@@ -906,24 +1795,66 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
-			original_tag = MIA
-			has_character = zin_regional_mina_agnid
+			original_tag = HEO
+			has_character = zin_heir_heodwa_lands
 		}
-		promote_character = zin_regional_mina_agnid
+		promote_character = zin_heir_heodwa_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = HRA
+			has_character = zin_heir_hrakbrund
+		}
+		promote_character = zin_heir_hrakbrund
+	}
+	else_if = {
+		limit = {
+			original_tag = MIA
+			has_character = zin_regional_mina_agnmund
+		}
+		promote_character = zin_regional_mina_agnmund
+	}
+	else_if = {
+		limit = {
+			original_tag = DOL
+			has_character = zin_heir_dolpar
+		}
+		promote_character = zin_heir_dolpar
+	}
+	else_if = {
+		limit = {
+			original_tag = MUS
+			has_character = zin_heir_mustnom
+		}
+		promote_character = zin_heir_mustnom
+	}
+	else_if = {
+		limit = {
+			original_tag = FEA
+			has_character = zin_heir_fearno
+		}
+		promote_character = zin_heir_fearno
 	}
 	else_if = {
 		limit = {
 			original_tag = AUT
-			has_character = zin_austklev_sigra
+			has_character = zin_austklev_alddok
 		}
-		promote_character = zin_austklev_sigra
+		promote_character = zin_austklev_alddok
 	}
 	else_if = {
 		limit = {
 			original_tag = WRL
-			has_character = zin_worlond_essild
+			has_character = zin_worlond_alddok
 		}
-		promote_character = zin_worlond_essild
+		promote_character = zin_worlond_alddok
+	}
+	else_if = {
+		limit = {
+			original_tag = PLT
+			has_character = zin_heir_poloto
+		}
+		promote_character = zin_heir_poloto
 	}
 	else_if = {
 		limit = {
@@ -934,17 +1865,150 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
-			original_tag = PRT
-			has_character = zin_pertolor_ilvia
+			original_tag = GLI
+			has_character = zin_heir_glimkit
 		}
-		promote_character = zin_pertolor_ilvia
+		promote_character = zin_heir_glimkit
+	}
+	else_if = {
+		limit = {
+			original_tag = XIS
+			has_character = zin_heir_xison
+		}
+		promote_character = zin_heir_xison
+	}
+	else_if = {
+		limit = {
+			original_tag = PRT
+			has_character = zin_pertolor_alddok
+		}
+		promote_character = zin_pertolor_alddok
+	}
+	else_if = {
+		limit = {
+			original_tag = OMR
+			has_character = zin_heir_omar
+		}
+		promote_character = zin_heir_omar
+	}
+	else_if = {
+		limit = {
+			original_tag = POT
+			has_character = zin_heir_portogalor
+		}
+		promote_character = zin_heir_portogalor
+	}
+	else_if = {
+		limit = {
+			original_tag = KVI
+			has_character = zin_heir_kvittumm
+		}
+		promote_character = zin_heir_kvittumm
+	}
+	else_if = {
+		limit = {
+			original_tag = ORW
+			has_character = zin_heir_orewele
+		}
+		promote_character = zin_heir_orewele
+	}
+	else_if = {
+		limit = {
+			original_tag = NIV
+			has_character = zin_heir_nivaros
+		}
+		promote_character = zin_heir_nivaros
+	}
+	else_if = {
+		limit = {
+			original_tag = YEI
+			has_character = zin_heir_yeti_lands
+		}
+		promote_character = zin_heir_yeti_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = GHH
+			has_character = zin_heir_ghaahu
+		}
+		promote_character = zin_heir_ghaahu
+	}
+	else_if = {
+		limit = {
+			original_tag = VND
+			has_character = zin_heir_vindael
+		}
+		promote_character = zin_heir_vindael
+	}
+	else_if = {
+		limit = {
+			original_tag = WER
+			has_character = zin_heir_werlendor
+		}
+		promote_character = zin_heir_werlendor
 	}
 	else_if = {
 		limit = {
 			original_tag = LAB
-			has_character = zin_regional_lambin_eirawen
+			has_character = zin_regional_lambin_branlic
 		}
-		promote_character = zin_regional_lambin_eirawen
+		promote_character = zin_regional_lambin_branlic
+	}
+	else_if = {
+		limit = {
+			original_tag = THN
+			has_character = zin_heir_thenon
+		}
+		promote_character = zin_heir_thenon
+	}
+	else_if = {
+		limit = {
+			original_tag = DOB
+			has_character = zin_heir_dobbum
+		}
+		promote_character = zin_heir_dobbum
+	}
+	else_if = {
+		limit = {
+			original_tag = BRU
+			has_character = zin_heir_brundahrim
+		}
+		promote_character = zin_heir_brundahrim
+	}
+	else_if = {
+		limit = {
+			original_tag = GRO
+			has_character = zin_heir_gromkerm
+		}
+		promote_character = zin_heir_gromkerm
+	}
+	else_if = {
+		limit = {
+			original_tag = SAO
+			has_character = zin_heir_saopon
+		}
+		promote_character = zin_heir_saopon
+	}
+	else_if = {
+		limit = {
+			original_tag = BLD
+			has_character = zin_heir_buldor
+		}
+		promote_character = zin_heir_buldor
+	}
+	else_if = {
+		limit = {
+			original_tag = KRA
+			has_character = zin_heir_kradlon
+		}
+		promote_character = zin_heir_kradlon
+	}
+	else_if = {
+		limit = {
+			original_tag = CRG
+			has_character = zin_heir_corogon
+		}
+		promote_character = zin_heir_corogon
 	}
 	else_if = {
 		limit = {
@@ -955,6 +2019,132 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
+			original_tag = WEN
+			has_character = zin_heir_wennarith
+		}
+		promote_character = zin_heir_wennarith
+	}
+	else_if = {
+		limit = {
+			original_tag = DRK
+			has_character = zin_heir_dark_gate
+		}
+		promote_character = zin_heir_dark_gate
+	}
+	else_if = {
+		limit = {
+			original_tag = BUN
+			has_character = zin_heir_burnikit
+		}
+		promote_character = zin_heir_burnikit
+	}
+	else_if = {
+		limit = {
+			original_tag = VES
+			has_character = zin_heir_veshazel
+		}
+		promote_character = zin_heir_veshazel
+	}
+	else_if = {
+		limit = {
+			original_tag = BLK
+			has_character = zin_heir_blackton
+		}
+		promote_character = zin_heir_blackton
+	}
+	else_if = {
+		limit = {
+			original_tag = BLN
+			has_character = zin_heir_belonton
+		}
+		promote_character = zin_heir_belonton
+	}
+	else_if = {
+		limit = {
+			original_tag = BOR
+			has_character = zin_heir_bordon
+		}
+		promote_character = zin_heir_bordon
+	}
+	else_if = {
+		limit = {
+			original_tag = DRE
+			has_character = zin_heir_dreson
+		}
+		promote_character = zin_heir_dreson
+	}
+	else_if = {
+		limit = {
+			original_tag = DUL
+			has_character = zin_heir_dulundur
+		}
+		promote_character = zin_heir_dulundur
+	}
+	else_if = {
+		limit = {
+			original_tag = TRO
+			has_character = zin_heir_troll_forest
+		}
+		promote_character = zin_heir_troll_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = HOO
+			has_character = zin_heir_hoorunoron
+		}
+		promote_character = zin_heir_hoorunoron
+	}
+	else_if = {
+		limit = {
+			original_tag = DAK
+			has_character = zin_heir_the_darks
+		}
+		promote_character = zin_heir_the_darks
+	}
+	else_if = {
+		limit = {
+			original_tag = SKR
+			has_character = zin_heir_skragdurg
+		}
+		promote_character = zin_heir_skragdurg
+	}
+	else_if = {
+		limit = {
+			original_tag = DUN
+			has_character = zin_heir_dun
+		}
+		promote_character = zin_heir_dun
+	}
+	else_if = {
+		limit = {
+			original_tag = BRT
+			has_character = zin_heir_britadon
+		}
+		promote_character = zin_heir_britadon
+	}
+	else_if = {
+		limit = {
+			original_tag = WIL
+			has_character = zin_heir_wild_lands
+		}
+		promote_character = zin_heir_wild_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = KHO
+			has_character = zin_heir_khorvrath
+		}
+		promote_character = zin_heir_khorvrath
+	}
+	else_if = {
+		limit = {
+			original_tag = DLN
+			has_character = zin_heir_dolon
+		}
+		promote_character = zin_heir_dolon
+	}
+	else_if = {
+		limit = {
 			original_tag = NEZ
 			has_character = zin_regional_nezer_zeruath
 		}
@@ -962,10 +2152,24 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
+			original_tag = HAL
+			has_character = zin_heir_halia
+		}
+		promote_character = zin_heir_halia
+	}
+	else_if = {
+		limit = {
 			original_tag = NAN
 			has_character = zin_regional_nan_ferell
 		}
 		promote_character = zin_regional_nan_ferell
+	}
+	else_if = {
+		limit = {
+			original_tag = OLE
+			has_character = zin_heir_olen
+		}
+		promote_character = zin_heir_olen
 	}
 	else_if = {
 		limit = {
@@ -977,9 +2181,9 @@ zin_realm_crown_heir = {
 	else_if = {
 		limit = {
 			original_tag = NAA
-			has_character = zin_regional_gondolin_zahun
+			has_character = zin_regional_gondolin_alod
 		}
-		promote_character = zin_regional_gondolin_zahun
+		promote_character = zin_regional_gondolin_alod
 	}
 	else_if = {
 		limit = {
@@ -987,6 +2191,13 @@ zin_realm_crown_heir = {
 			has_character = zin_regional_drak_corino
 		}
 		promote_character = zin_regional_drak_corino
+	}
+	else_if = {
+		limit = {
+			original_tag = RHA
+			has_character = zin_heir_rhachia
+		}
+		promote_character = zin_heir_rhachia
 	}
 	else_if = {
 		limit = {
@@ -1011,6 +2222,13 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
+			original_tag = MOA
+			has_character = zin_heir_mora
+		}
+		promote_character = zin_heir_mora
+	}
+	else_if = {
+		limit = {
 			original_tag = DLB
 			has_character = zin_delbiz_fosian
 		}
@@ -1018,10 +2236,45 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
+			original_tag = KRS
+			has_character = zin_heir_kersian
+		}
+		promote_character = zin_heir_kersian
+	}
+	else_if = {
+		limit = {
+			original_tag = MOS
+			has_character = zin_heir_mostok
+		}
+		promote_character = zin_heir_mostok
+	}
+	else_if = {
+		limit = {
 			original_tag = AZA
 			has_character = zin_azano_myleo
 		}
 		promote_character = zin_azano_myleo
+	}
+	else_if = {
+		limit = {
+			original_tag = OBM
+			has_character = zin_heir_obmi
+		}
+		promote_character = zin_heir_obmi
+	}
+	else_if = {
+		limit = {
+			original_tag = PON
+			has_character = zin_heir_pornivior
+		}
+		promote_character = zin_heir_pornivior
+	}
+	else_if = {
+		limit = {
+			original_tag = WOQ
+			has_character = zin_heir_woqood
+		}
+		promote_character = zin_heir_woqood
 	}
 	else_if = {
 		limit = {
@@ -1039,24 +2292,262 @@ zin_realm_crown_heir = {
 	}
 	else_if = {
 		limit = {
-			original_tag = NND
-			has_character = zin_regional_nondondor_lusaia
+			original_tag = WAH
+			has_character = zin_heir_wahatud
 		}
-		promote_character = zin_regional_nondondor_lusaia
+		promote_character = zin_heir_wahatud
+	}
+	else_if = {
+		limit = {
+			original_tag = ENH
+			has_character = zin_heir_enhis_is_rond
+		}
+		promote_character = zin_heir_enhis_is_rond
+	}
+	else_if = {
+		limit = {
+			original_tag = HWN
+			has_character = zin_heir_howan
+		}
+		promote_character = zin_heir_howan
+	}
+	else_if = {
+		limit = {
+			original_tag = VER
+			has_character = zin_heir_verde
+		}
+		promote_character = zin_heir_verde
+	}
+	else_if = {
+		limit = {
+			original_tag = NAR
+			has_character = zin_heir_nara
+		}
+		promote_character = zin_heir_nara
+	}
+	else_if = {
+		limit = {
+			original_tag = YON
+			has_character = zin_heir_yongyong
+		}
+		promote_character = zin_heir_yongyong
+	}
+	else_if = {
+		limit = {
+			original_tag = KAM
+			has_character = zin_heir_kamu_lamo
+		}
+		promote_character = zin_heir_kamu_lamo
+	}
+	else_if = {
+		limit = {
+			original_tag = KEA
+			has_character = zin_heir_kea
+		}
+		promote_character = zin_heir_kea
+	}
+	else_if = {
+		limit = {
+			original_tag = SDE
+			has_character = zin_heir_sidea
+		}
+		promote_character = zin_heir_sidea
+	}
+	else_if = {
+		limit = {
+			original_tag = ADE
+			has_character = zin_heir_adel
+		}
+		promote_character = zin_heir_adel
+	}
+	else_if = {
+		limit = {
+			original_tag = RAE
+			has_character = zin_heir_raerby
+		}
+		promote_character = zin_heir_raerby
+	}
+	else_if = {
+		limit = {
+			original_tag = PLL
+			has_character = zin_heir_pollos
+		}
+		promote_character = zin_heir_pollos
+	}
+	else_if = {
+		limit = {
+			original_tag = NND
+			has_character = zin_regional_nondondor_arai
+		}
+		promote_character = zin_regional_nondondor_arai
+	}
+	else_if = {
+		limit = {
+			original_tag = FNG
+			has_character = zin_heir_fineger
+		}
+		promote_character = zin_heir_fineger
 	}
 	else_if = {
 		limit = {
 			original_tag = HLN
-			has_character = zin_regional_halenor_seina
+			has_character = zin_regional_halenor_arai
 		}
-		promote_character = zin_regional_halenor_seina
+		promote_character = zin_regional_halenor_arai
+	}
+	else_if = {
+		limit = {
+			original_tag = WND
+			has_character = zin_heir_windy_lands
+		}
+		promote_character = zin_heir_windy_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = SEI
+			has_character = zin_heir_seite_islands
+		}
+		promote_character = zin_heir_seite_islands
+	}
+	else_if = {
+		limit = {
+			original_tag = SNT
+			has_character = zin_heir_santon
+		}
+		promote_character = zin_heir_santon
+	}
+	else_if = {
+		limit = {
+			original_tag = BEN
+			has_character = zin_heir_benan
+		}
+		promote_character = zin_heir_benan
+	}
+	else_if = {
+		limit = {
+			original_tag = LEN
+			has_character = zin_heir_the_lens
+		}
+		promote_character = zin_heir_the_lens
+	}
+	else_if = {
+		limit = {
+			original_tag = LIG
+			has_character = zin_heir_lands_of_light
+		}
+		promote_character = zin_heir_lands_of_light
+	}
+	else_if = {
+		limit = {
+			original_tag = ELV
+			has_character = zin_heir_elvana
+		}
+		promote_character = zin_heir_elvana
+	}
+	else_if = {
+		limit = {
+			original_tag = IGA
+			has_character = zin_heir_igara
+		}
+		promote_character = zin_heir_igara
+	}
+	else_if = {
+		limit = {
+			original_tag = YEN
+			has_character = zin_heir_yeni_alang
+		}
+		promote_character = zin_heir_yeni_alang
+	}
+	else_if = {
+		limit = {
+			original_tag = TOR
+			has_character = zin_heir_tor_luni
+		}
+		promote_character = zin_heir_tor_luni
+	}
+	else_if = {
+		limit = {
+			original_tag = IHU
+			has_character = zin_heir_ihuy
+		}
+		promote_character = zin_heir_ihuy
+	}
+	else_if = {
+		limit = {
+			original_tag = SOY
+			has_character = zin_heir_soyano
+		}
+		promote_character = zin_heir_soyano
+	}
+	else_if = {
+		limit = {
+			original_tag = GOO
+			has_character = zin_heir_goodin
+		}
+		promote_character = zin_heir_goodin
 	}
 	else_if = {
 		limit = {
 			original_tag = HRR
-			has_character = zin_regional_herrodon_lyriel
+			has_character = zin_regional_herrodon_aeniel
 		}
-		promote_character = zin_regional_herrodon_lyriel
+		promote_character = zin_regional_herrodon_aeniel
+	}
+	else_if = {
+		limit = {
+			original_tag = ANE
+			has_character = zin_heir_andos_enda
+		}
+		promote_character = zin_heir_andos_enda
+	}
+	else_if = {
+		limit = {
+			original_tag = NLR
+			has_character = zin_heir_nolorim
+		}
+		promote_character = zin_heir_nolorim
+	}
+	else_if = {
+		limit = {
+			original_tag = LCC
+			has_character = zin_heir_lccimio
+		}
+		promote_character = zin_heir_lccimio
+	}
+	else_if = {
+		limit = {
+			original_tag = ELD
+			has_character = zin_heir_eldafaen
+		}
+		promote_character = zin_heir_eldafaen
+	}
+	else_if = {
+		limit = {
+			original_tag = YAV
+			has_character = zin_heir_yavieth
+		}
+		promote_character = zin_heir_yavieth
+	}
+	else_if = {
+		limit = {
+			original_tag = TES
+			has_character = zin_heir_teste
+		}
+		promote_character = zin_heir_teste
+	}
+	else_if = {
+		limit = {
+			original_tag = LUV
+			has_character = zin_heir_luv_zhise
+		}
+		promote_character = zin_heir_luv_zhise
+	}
+	else_if = {
+		limit = {
+			original_tag = TIR
+			has_character = zin_heir_tirlan
+		}
+		promote_character = zin_heir_tirlan
 	}
 }
 zin_realm_dismiss_captain = {
@@ -1074,6 +2565,12 @@ zin_realm_fail_kin = {
 	# G7 (zin_realm.63): we do not answer; the kin take it ill and the bond ends.
 	event_target:zin_realm_kin = { add_opinion_modifier = { target = PREV modifier = zin_realm_kin_failed } }
 	zin_realm_break_match = yes
+}
+zin_realm_fight_for_heir = {
+	# Q-87 (zin_realm.16 c): the heir is crowned and the rival raises a banner: a contested crown (zin_realm_settle_crisis, way 2).
+	zin_realm_seat_heir = yes
+	set_temp_variable = { zin_arg_way = 2 }
+	zin_realm_settle_crisis = yes
 }
 zin_realm_found_exile_court = {
 	# G9: the court of THIS fallen realm (its ruler lives) looks for a shelter: an ally still in the field, the house it married into, a
@@ -1180,6 +2677,15 @@ zin_realm_found_exile_court = {
 		else = { set_country_flag = zin_realm_court_dispersed }
 	}
 }
+zin_realm_hold_disputed_crown = {
+	# Q-87 (zin_realm.16 a): the court crowns the heir over the rival's protests; the crown sits uneasily for a year (zin_realm_disputed_crown).
+	zin_realm_seat_heir = yes
+	add_timed_idea = { idea = zin_realm_disputed_crown days = 365 }
+	if = {
+		limit = { check_variable = { zin_realm_succession_way = 2 } }
+		country_event = { id = zin_realm.11 }
+	}
+}
 zin_realm_house_golden_king = {
 	# G9 for the Golden King (SL-25, owner question Q-65 default: he keeps a court in exile that can return): once zin_golden_king_exiled is
 	# set, his court goes to the first shelter of data/realm_life.json that still stands, has not capitulated, does not hold Parim and is not
@@ -1193,7 +2699,7 @@ zin_realm_house_golden_king = {
 				LER = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1209,7 +2715,7 @@ zin_realm_house_golden_king = {
 				SEL = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1225,7 +2731,7 @@ zin_realm_house_golden_king = {
 				KIN = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1241,7 +2747,7 @@ zin_realm_house_golden_king = {
 				KON = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1257,7 +2763,7 @@ zin_realm_house_golden_king = {
 				HNH = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1273,7 +2779,7 @@ zin_realm_house_golden_king = {
 				HER = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1289,7 +2795,7 @@ zin_realm_house_golden_king = {
 				NOL = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1305,7 +2811,7 @@ zin_realm_house_golden_king = {
 				ORH = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1321,7 +2827,7 @@ zin_realm_house_golden_king = {
 				KUN = {
 					exists = yes
 					has_capitulated = no
-					NOT = { owns_state = 238 }
+					NOT = { owns_state = 1019 }
 					NOT = { original_tag = WOR }
 					NOT = { has_variable = zin_realm_exile_court }
 					NOT = { has_war_with = AEN }
@@ -1380,8 +2886,9 @@ zin_realm_mark_captain = {
 	}
 }
 zin_realm_note_ruler = {
-	# G1: a ruler the pulse has not seen (a successor of any kind, a usurper, a ruler a focus or a story owner raised) gets a fresh vigour,
-	# and, when the start variety is not off, a temper (zin_variety_temper_new_ruler).
+	# G1: a ruler the pulse has not seen (a successor of any kind, a usurper, a ruler a focus or a story owner raised) gets a fresh vigour
+	# in years (K55, Q-85), unless the crowned heir's own years gave it (zin_realm_vigour_given), and, when the start variety is not off, a temper
+	# (zin_variety_temper_new_ruler).
 	set_temp_variable = { zin_t_new = 0 }
 	random_character = {
 		limit = {
@@ -1398,8 +2905,14 @@ zin_realm_note_ruler = {
 				NOT = { has_variable = zin_ruler_vigour }
 			}
 		}
-		set_temp_variable_to_random = { var = zin_t_v min = 60 max = 100 integer = yes }
-		set_variable = { zin_ruler_vigour = zin_t_v }
+		if = {
+			limit = { has_country_flag = zin_realm_vigour_given }
+			clr_country_flag = zin_realm_vigour_given
+		}
+		else = {
+			set_temp_variable_to_random = { var = zin_t_v min = 15 max = 40 integer = yes }
+			set_variable = { zin_ruler_vigour = zin_t_v }
+		}
 		if = { limit = { NOT = { has_variable = zin_ruler_rate } } set_variable = { zin_ruler_rate = constant:zin_realm.rate_default } }
 		if = {
 			limit = {
@@ -1457,6 +2970,13 @@ zin_realm_open_crisis = {
 	add_timed_idea = { idea = zin_realm_crisis days = 365 }
 	country_event = { id = zin_realm.12 }
 }
+zin_realm_pass_over_heir = {
+	# Q-87 (zin_realm.16 b): the court passes the heir over; the custom chooses another and zin_realm.10 tells it (way 6).
+	zin_realm_remove_heir = yes
+	add_stability = -0.03
+	set_variable = { zin_realm_succession_way = 6 }
+	country_event = { id = zin_realm.10 }
+}
 zin_realm_pledge_to_kin = {
 	# G7 (zin_realm.61): a guarantee of the new kin.
 	event_target:zin_realm_match_answer = { PREV = { give_guarantee = PREV } }
@@ -1465,6 +2985,13 @@ zin_realm_pulse = {
 	# The monthly pulse of one realm (THIS; ROOT is the world runner).
 	zin_realm_note_ruler = yes
 	if = { limit = { zin_realm_mortal = yes } zin_realm_age_ruler = yes }
+	if = {
+		limit = {
+			zin_realm_mortal = yes
+			zin_realm_has_named_heir = yes
+		}
+		zin_realm_check_heir = yes
+	}
 	zin_realm_tick_regency = yes
 	if = {
 		limit = {
@@ -1488,9 +3015,12 @@ zin_realm_pulse = {
 	if = { limit = { has_variable = zin_realm_exile_court } zin_realm_check_exiles = yes }
 }
 zin_realm_raid = {
-	# G8: THIS realm raids event_target:zin_realm_raid_victim (zin_realm.70 to the victim).
+	# G8: THIS realm raids event_target:zin_realm_raid_victim (zin_realm.70 to the victim). Corsairs come home with sea craft, steppe
+	# riders with the craft of the saddle (Q-89).
 	set_country_flag = { flag = zin_realm_raid_cd days = 365 }
 	save_event_target_as = zin_realm_raider
+	if = { limit = { zin_realm_is_corsair = yes } navy_experience = 5 }
+	if = { limit = { zin_realm_is_steppe_rider = yes } army_experience = 5 }
 	event_target:zin_realm_raid_victim = {
 		set_country_flag = { flag = zin_realm_raided_recently days = 365 }
 		set_variable = { zin_realm_last_raider = PREV }
@@ -1531,6 +3061,1026 @@ zin_realm_refuse_terms = {
 	}
 	save_event_target_as = zin_realm_terms_to
 	event_target:zin_realm_terms_from = { country_event = { id = zin_realm.41 } }
+}
+zin_realm_remove_heir = {
+	# Q-87: the named heir of THIS realm leaves the succession (passed over, or dead before the ruler): he is retired.
+	if = {
+		limit = {
+			original_tag = LER
+			has_character = zin_lerendor_helmar
+		}
+		retire_character = zin_lerendor_helmar
+	}
+	else_if = {
+		limit = {
+			original_tag = CLD
+			has_character = zin_coldor_alddok
+		}
+		retire_character = zin_coldor_alddok
+	}
+	else_if = {
+		limit = {
+			original_tag = NRS
+			has_character = zin_noris_zarud
+		}
+		retire_character = zin_noris_zarud
+	}
+	else_if = {
+		limit = {
+			original_tag = STA
+			has_character = zin_stabilo_demano
+		}
+		retire_character = zin_stabilo_demano
+	}
+	else_if = {
+		limit = {
+			original_tag = DND
+			has_character = zin_heir_dondor
+		}
+		retire_character = zin_heir_dondor
+	}
+	else_if = {
+		limit = {
+			original_tag = MAG
+			has_character = zin_heir_magical_forest
+		}
+		retire_character = zin_heir_magical_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = GNW
+			has_character = zin_heir_gunwyn
+		}
+		retire_character = zin_heir_gunwyn
+	}
+	else_if = {
+		limit = {
+			original_tag = SEL
+			has_character = zin_heir_selen
+		}
+		retire_character = zin_heir_selen
+	}
+	else_if = {
+		limit = {
+			original_tag = KIN
+			has_character = zin_regional_kingson_aldewen
+		}
+		retire_character = zin_regional_kingson_aldewen
+	}
+	else_if = {
+		limit = {
+			original_tag = HIR
+			has_character = zin_heir_hirolon
+		}
+		retire_character = zin_heir_hirolon
+	}
+	else_if = {
+		limit = {
+			original_tag = MLK
+			has_character = zin_heir_melkgard
+		}
+		retire_character = zin_heir_melkgard
+	}
+	else_if = {
+		limit = {
+			original_tag = HOR
+			has_character = zin_heir_horidor
+		}
+		retire_character = zin_heir_horidor
+	}
+	else_if = {
+		limit = {
+			original_tag = GIR
+			has_character = zin_heir_girdon
+		}
+		retire_character = zin_heir_girdon
+	}
+	else_if = {
+		limit = {
+			original_tag = KON
+			has_character = zin_regional_konori_tanric
+		}
+		retire_character = zin_regional_konori_tanric
+	}
+	else_if = {
+		limit = {
+			original_tag = HNH
+			has_character = zin_regional_hunhun_alderic
+		}
+		retire_character = zin_regional_hunhun_alderic
+	}
+	else_if = {
+		limit = {
+			original_tag = KLU
+			has_character = zin_heir_klungori_guard
+		}
+		retire_character = zin_heir_klungori_guard
+	}
+	else_if = {
+		limit = {
+			original_tag = HER
+			has_character = zin_regional_herez_aldan
+		}
+		retire_character = zin_regional_herez_aldan
+	}
+	else_if = {
+		limit = {
+			original_tag = NOL
+			has_character = zin_heir_noleksun
+		}
+		retire_character = zin_heir_noleksun
+	}
+	else_if = {
+		limit = {
+			original_tag = KIL
+			has_character = zin_heir_kilinti
+		}
+		retire_character = zin_heir_kilinti
+	}
+	else_if = {
+		limit = {
+			original_tag = SFT
+			has_character = zin_heir_safeton
+		}
+		retire_character = zin_heir_safeton
+	}
+	else_if = {
+		limit = {
+			original_tag = FRE
+			has_character = zin_heir_freshon
+		}
+		retire_character = zin_heir_freshon
+	}
+	else_if = {
+		limit = {
+			original_tag = PAZ
+			has_character = zin_heir_pazoma
+		}
+		retire_character = zin_heir_pazoma
+	}
+	else_if = {
+		limit = {
+			original_tag = ORH
+			has_character = zin_heir_orohaf
+		}
+		retire_character = zin_heir_orohaf
+	}
+	else_if = {
+		limit = {
+			original_tag = FOT
+			has_character = zin_fotan_ostric
+		}
+		retire_character = zin_fotan_ostric
+	}
+	else_if = {
+		limit = {
+			original_tag = KUN
+			has_character = zin_heir_kunhrim
+		}
+		retire_character = zin_heir_kunhrim
+	}
+	else_if = {
+		limit = {
+			original_tag = BRR
+			has_character = zin_heir_burrikkrit
+		}
+		retire_character = zin_heir_burrikkrit
+	}
+	else_if = {
+		limit = {
+			original_tag = OLO
+			has_character = zin_heir_olodor
+		}
+		retire_character = zin_heir_olodor
+	}
+	else_if = {
+		limit = {
+			original_tag = DNL
+			has_character = zin_heir_dunelaeth
+		}
+		retire_character = zin_heir_dunelaeth
+	}
+	else_if = {
+		limit = {
+			original_tag = ANR
+			has_character = zin_heir_aenor_forest
+		}
+		retire_character = zin_heir_aenor_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = CUR
+			has_character = zin_heir_cursed_lands
+		}
+		retire_character = zin_heir_cursed_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = BLO
+			has_character = zin_heir_bloody_forest
+		}
+		retire_character = zin_heir_bloody_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = EEK
+			has_character = zin_heir_eekedor
+		}
+		retire_character = zin_heir_eekedor
+	}
+	else_if = {
+		limit = {
+			original_tag = REN
+			has_character = zin_regional_r_en_sigolf
+		}
+		retire_character = zin_regional_r_en_sigolf
+	}
+	else_if = {
+		limit = {
+			original_tag = MOO
+			has_character = zin_regional_molot_agnek
+		}
+		retire_character = zin_regional_molot_agnek
+	}
+	else_if = {
+		limit = {
+			original_tag = KER
+			has_character = zin_keredor_hellekton_helvarik
+		}
+		retire_character = zin_keredor_hellekton_helvarik
+	}
+	else_if = {
+		limit = {
+			original_tag = TLV
+			has_character = zin_regional_tolvael_tormik
+		}
+		retire_character = zin_regional_tolvael_tormik
+	}
+	else_if = {
+		limit = {
+			original_tag = TOL
+			has_character = zin_tolhon_holvik
+		}
+		retire_character = zin_tolhon_holvik
+	}
+	else_if = {
+		limit = {
+			original_tag = HEO
+			has_character = zin_heir_heodwa_lands
+		}
+		retire_character = zin_heir_heodwa_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = HRA
+			has_character = zin_heir_hrakbrund
+		}
+		retire_character = zin_heir_hrakbrund
+	}
+	else_if = {
+		limit = {
+			original_tag = MIA
+			has_character = zin_regional_mina_agnmund
+		}
+		retire_character = zin_regional_mina_agnmund
+	}
+	else_if = {
+		limit = {
+			original_tag = DOL
+			has_character = zin_heir_dolpar
+		}
+		retire_character = zin_heir_dolpar
+	}
+	else_if = {
+		limit = {
+			original_tag = MUS
+			has_character = zin_heir_mustnom
+		}
+		retire_character = zin_heir_mustnom
+	}
+	else_if = {
+		limit = {
+			original_tag = FEA
+			has_character = zin_heir_fearno
+		}
+		retire_character = zin_heir_fearno
+	}
+	else_if = {
+		limit = {
+			original_tag = AUT
+			has_character = zin_austklev_alddok
+		}
+		retire_character = zin_austklev_alddok
+	}
+	else_if = {
+		limit = {
+			original_tag = WRL
+			has_character = zin_worlond_alddok
+		}
+		retire_character = zin_worlond_alddok
+	}
+	else_if = {
+		limit = {
+			original_tag = PLT
+			has_character = zin_heir_poloto
+		}
+		retire_character = zin_heir_poloto
+	}
+	else_if = {
+		limit = {
+			original_tag = HLD
+			has_character = zin_holdon_ulvaren
+		}
+		retire_character = zin_holdon_ulvaren
+	}
+	else_if = {
+		limit = {
+			original_tag = GLI
+			has_character = zin_heir_glimkit
+		}
+		retire_character = zin_heir_glimkit
+	}
+	else_if = {
+		limit = {
+			original_tag = XIS
+			has_character = zin_heir_xison
+		}
+		retire_character = zin_heir_xison
+	}
+	else_if = {
+		limit = {
+			original_tag = PRT
+			has_character = zin_pertolor_alddok
+		}
+		retire_character = zin_pertolor_alddok
+	}
+	else_if = {
+		limit = {
+			original_tag = OMR
+			has_character = zin_heir_omar
+		}
+		retire_character = zin_heir_omar
+	}
+	else_if = {
+		limit = {
+			original_tag = POT
+			has_character = zin_heir_portogalor
+		}
+		retire_character = zin_heir_portogalor
+	}
+	else_if = {
+		limit = {
+			original_tag = KVI
+			has_character = zin_heir_kvittumm
+		}
+		retire_character = zin_heir_kvittumm
+	}
+	else_if = {
+		limit = {
+			original_tag = ORW
+			has_character = zin_heir_orewele
+		}
+		retire_character = zin_heir_orewele
+	}
+	else_if = {
+		limit = {
+			original_tag = NIV
+			has_character = zin_heir_nivaros
+		}
+		retire_character = zin_heir_nivaros
+	}
+	else_if = {
+		limit = {
+			original_tag = YEI
+			has_character = zin_heir_yeti_lands
+		}
+		retire_character = zin_heir_yeti_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = GHH
+			has_character = zin_heir_ghaahu
+		}
+		retire_character = zin_heir_ghaahu
+	}
+	else_if = {
+		limit = {
+			original_tag = VND
+			has_character = zin_heir_vindael
+		}
+		retire_character = zin_heir_vindael
+	}
+	else_if = {
+		limit = {
+			original_tag = WER
+			has_character = zin_heir_werlendor
+		}
+		retire_character = zin_heir_werlendor
+	}
+	else_if = {
+		limit = {
+			original_tag = LAB
+			has_character = zin_regional_lambin_branlic
+		}
+		retire_character = zin_regional_lambin_branlic
+	}
+	else_if = {
+		limit = {
+			original_tag = THN
+			has_character = zin_heir_thenon
+		}
+		retire_character = zin_heir_thenon
+	}
+	else_if = {
+		limit = {
+			original_tag = DOB
+			has_character = zin_heir_dobbum
+		}
+		retire_character = zin_heir_dobbum
+	}
+	else_if = {
+		limit = {
+			original_tag = BRU
+			has_character = zin_heir_brundahrim
+		}
+		retire_character = zin_heir_brundahrim
+	}
+	else_if = {
+		limit = {
+			original_tag = GRO
+			has_character = zin_heir_gromkerm
+		}
+		retire_character = zin_heir_gromkerm
+	}
+	else_if = {
+		limit = {
+			original_tag = SAO
+			has_character = zin_heir_saopon
+		}
+		retire_character = zin_heir_saopon
+	}
+	else_if = {
+		limit = {
+			original_tag = BLD
+			has_character = zin_heir_buldor
+		}
+		retire_character = zin_heir_buldor
+	}
+	else_if = {
+		limit = {
+			original_tag = KRA
+			has_character = zin_heir_kradlon
+		}
+		retire_character = zin_heir_kradlon
+	}
+	else_if = {
+		limit = {
+			original_tag = CRG
+			has_character = zin_heir_corogon
+		}
+		retire_character = zin_heir_corogon
+	}
+	else_if = {
+		limit = {
+			original_tag = VRN
+			has_character = zin_regional_varnondor_herwyn
+		}
+		retire_character = zin_regional_varnondor_herwyn
+	}
+	else_if = {
+		limit = {
+			original_tag = WEN
+			has_character = zin_heir_wennarith
+		}
+		retire_character = zin_heir_wennarith
+	}
+	else_if = {
+		limit = {
+			original_tag = DRK
+			has_character = zin_heir_dark_gate
+		}
+		retire_character = zin_heir_dark_gate
+	}
+	else_if = {
+		limit = {
+			original_tag = BUN
+			has_character = zin_heir_burnikit
+		}
+		retire_character = zin_heir_burnikit
+	}
+	else_if = {
+		limit = {
+			original_tag = VES
+			has_character = zin_heir_veshazel
+		}
+		retire_character = zin_heir_veshazel
+	}
+	else_if = {
+		limit = {
+			original_tag = BLK
+			has_character = zin_heir_blackton
+		}
+		retire_character = zin_heir_blackton
+	}
+	else_if = {
+		limit = {
+			original_tag = BLN
+			has_character = zin_heir_belonton
+		}
+		retire_character = zin_heir_belonton
+	}
+	else_if = {
+		limit = {
+			original_tag = BOR
+			has_character = zin_heir_bordon
+		}
+		retire_character = zin_heir_bordon
+	}
+	else_if = {
+		limit = {
+			original_tag = DRE
+			has_character = zin_heir_dreson
+		}
+		retire_character = zin_heir_dreson
+	}
+	else_if = {
+		limit = {
+			original_tag = DUL
+			has_character = zin_heir_dulundur
+		}
+		retire_character = zin_heir_dulundur
+	}
+	else_if = {
+		limit = {
+			original_tag = TRO
+			has_character = zin_heir_troll_forest
+		}
+		retire_character = zin_heir_troll_forest
+	}
+	else_if = {
+		limit = {
+			original_tag = HOO
+			has_character = zin_heir_hoorunoron
+		}
+		retire_character = zin_heir_hoorunoron
+	}
+	else_if = {
+		limit = {
+			original_tag = DAK
+			has_character = zin_heir_the_darks
+		}
+		retire_character = zin_heir_the_darks
+	}
+	else_if = {
+		limit = {
+			original_tag = SKR
+			has_character = zin_heir_skragdurg
+		}
+		retire_character = zin_heir_skragdurg
+	}
+	else_if = {
+		limit = {
+			original_tag = DUN
+			has_character = zin_heir_dun
+		}
+		retire_character = zin_heir_dun
+	}
+	else_if = {
+		limit = {
+			original_tag = BRT
+			has_character = zin_heir_britadon
+		}
+		retire_character = zin_heir_britadon
+	}
+	else_if = {
+		limit = {
+			original_tag = WIL
+			has_character = zin_heir_wild_lands
+		}
+		retire_character = zin_heir_wild_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = KHO
+			has_character = zin_heir_khorvrath
+		}
+		retire_character = zin_heir_khorvrath
+	}
+	else_if = {
+		limit = {
+			original_tag = DLN
+			has_character = zin_heir_dolon
+		}
+		retire_character = zin_heir_dolon
+	}
+	else_if = {
+		limit = {
+			original_tag = NEZ
+			has_character = zin_regional_nezer_zeruath
+		}
+		retire_character = zin_regional_nezer_zeruath
+	}
+	else_if = {
+		limit = {
+			original_tag = HAL
+			has_character = zin_heir_halia
+		}
+		retire_character = zin_heir_halia
+	}
+	else_if = {
+		limit = {
+			original_tag = NAN
+			has_character = zin_regional_nan_ferell
+		}
+		retire_character = zin_regional_nan_ferell
+	}
+	else_if = {
+		limit = {
+			original_tag = OLE
+			has_character = zin_heir_olen
+		}
+		retire_character = zin_heir_olen
+	}
+	else_if = {
+		limit = {
+			original_tag = ALR
+			has_character = zin_regional_alerhia_kerseion
+		}
+		retire_character = zin_regional_alerhia_kerseion
+	}
+	else_if = {
+		limit = {
+			original_tag = NAA
+			has_character = zin_regional_gondolin_alod
+		}
+		retire_character = zin_regional_gondolin_alod
+	}
+	else_if = {
+		limit = {
+			original_tag = DRA
+			has_character = zin_regional_drak_corino
+		}
+		retire_character = zin_regional_drak_corino
+	}
+	else_if = {
+		limit = {
+			original_tag = RHA
+			has_character = zin_heir_rhachia
+		}
+		retire_character = zin_heir_rhachia
+	}
+	else_if = {
+		limit = {
+			original_tag = ERC
+			has_character = zin_regional_erco_kerios
+		}
+		retire_character = zin_regional_erco_kerios
+	}
+	else_if = {
+		limit = {
+			original_tag = PLO
+			has_character = zin_regional_plutondo_alerheus
+		}
+		retire_character = zin_regional_plutondo_alerheus
+	}
+	else_if = {
+		limit = {
+			original_tag = OST
+			has_character = zin_regional_ostoroth_kersion
+		}
+		retire_character = zin_regional_ostoroth_kersion
+	}
+	else_if = {
+		limit = {
+			original_tag = MOA
+			has_character = zin_heir_mora
+		}
+		retire_character = zin_heir_mora
+	}
+	else_if = {
+		limit = {
+			original_tag = DLB
+			has_character = zin_delbiz_fosian
+		}
+		retire_character = zin_delbiz_fosian
+	}
+	else_if = {
+		limit = {
+			original_tag = KRS
+			has_character = zin_heir_kersian
+		}
+		retire_character = zin_heir_kersian
+	}
+	else_if = {
+		limit = {
+			original_tag = MOS
+			has_character = zin_heir_mostok
+		}
+		retire_character = zin_heir_mostok
+	}
+	else_if = {
+		limit = {
+			original_tag = AZA
+			has_character = zin_azano_myleo
+		}
+		retire_character = zin_azano_myleo
+	}
+	else_if = {
+		limit = {
+			original_tag = OBM
+			has_character = zin_heir_obmi
+		}
+		retire_character = zin_heir_obmi
+	}
+	else_if = {
+		limit = {
+			original_tag = PON
+			has_character = zin_heir_pornivior
+		}
+		retire_character = zin_heir_pornivior
+	}
+	else_if = {
+		limit = {
+			original_tag = WOQ
+			has_character = zin_heir_woqood
+		}
+		retire_character = zin_heir_woqood
+	}
+	else_if = {
+		limit = {
+			original_tag = ORA
+			has_character = zin_orato_yaqud
+		}
+		retire_character = zin_orato_yaqud
+	}
+	else_if = {
+		limit = {
+			original_tag = MIE
+			has_character = zin_regional_miaed_esiuroth
+		}
+		retire_character = zin_regional_miaed_esiuroth
+	}
+	else_if = {
+		limit = {
+			original_tag = WAH
+			has_character = zin_heir_wahatud
+		}
+		retire_character = zin_heir_wahatud
+	}
+	else_if = {
+		limit = {
+			original_tag = ENH
+			has_character = zin_heir_enhis_is_rond
+		}
+		retire_character = zin_heir_enhis_is_rond
+	}
+	else_if = {
+		limit = {
+			original_tag = HWN
+			has_character = zin_heir_howan
+		}
+		retire_character = zin_heir_howan
+	}
+	else_if = {
+		limit = {
+			original_tag = VER
+			has_character = zin_heir_verde
+		}
+		retire_character = zin_heir_verde
+	}
+	else_if = {
+		limit = {
+			original_tag = NAR
+			has_character = zin_heir_nara
+		}
+		retire_character = zin_heir_nara
+	}
+	else_if = {
+		limit = {
+			original_tag = YON
+			has_character = zin_heir_yongyong
+		}
+		retire_character = zin_heir_yongyong
+	}
+	else_if = {
+		limit = {
+			original_tag = KAM
+			has_character = zin_heir_kamu_lamo
+		}
+		retire_character = zin_heir_kamu_lamo
+	}
+	else_if = {
+		limit = {
+			original_tag = KEA
+			has_character = zin_heir_kea
+		}
+		retire_character = zin_heir_kea
+	}
+	else_if = {
+		limit = {
+			original_tag = SDE
+			has_character = zin_heir_sidea
+		}
+		retire_character = zin_heir_sidea
+	}
+	else_if = {
+		limit = {
+			original_tag = ADE
+			has_character = zin_heir_adel
+		}
+		retire_character = zin_heir_adel
+	}
+	else_if = {
+		limit = {
+			original_tag = RAE
+			has_character = zin_heir_raerby
+		}
+		retire_character = zin_heir_raerby
+	}
+	else_if = {
+		limit = {
+			original_tag = PLL
+			has_character = zin_heir_pollos
+		}
+		retire_character = zin_heir_pollos
+	}
+	else_if = {
+		limit = {
+			original_tag = NND
+			has_character = zin_regional_nondondor_arai
+		}
+		retire_character = zin_regional_nondondor_arai
+	}
+	else_if = {
+		limit = {
+			original_tag = FNG
+			has_character = zin_heir_fineger
+		}
+		retire_character = zin_heir_fineger
+	}
+	else_if = {
+		limit = {
+			original_tag = HLN
+			has_character = zin_regional_halenor_arai
+		}
+		retire_character = zin_regional_halenor_arai
+	}
+	else_if = {
+		limit = {
+			original_tag = WND
+			has_character = zin_heir_windy_lands
+		}
+		retire_character = zin_heir_windy_lands
+	}
+	else_if = {
+		limit = {
+			original_tag = SEI
+			has_character = zin_heir_seite_islands
+		}
+		retire_character = zin_heir_seite_islands
+	}
+	else_if = {
+		limit = {
+			original_tag = SNT
+			has_character = zin_heir_santon
+		}
+		retire_character = zin_heir_santon
+	}
+	else_if = {
+		limit = {
+			original_tag = BEN
+			has_character = zin_heir_benan
+		}
+		retire_character = zin_heir_benan
+	}
+	else_if = {
+		limit = {
+			original_tag = LEN
+			has_character = zin_heir_the_lens
+		}
+		retire_character = zin_heir_the_lens
+	}
+	else_if = {
+		limit = {
+			original_tag = LIG
+			has_character = zin_heir_lands_of_light
+		}
+		retire_character = zin_heir_lands_of_light
+	}
+	else_if = {
+		limit = {
+			original_tag = ELV
+			has_character = zin_heir_elvana
+		}
+		retire_character = zin_heir_elvana
+	}
+	else_if = {
+		limit = {
+			original_tag = IGA
+			has_character = zin_heir_igara
+		}
+		retire_character = zin_heir_igara
+	}
+	else_if = {
+		limit = {
+			original_tag = YEN
+			has_character = zin_heir_yeni_alang
+		}
+		retire_character = zin_heir_yeni_alang
+	}
+	else_if = {
+		limit = {
+			original_tag = TOR
+			has_character = zin_heir_tor_luni
+		}
+		retire_character = zin_heir_tor_luni
+	}
+	else_if = {
+		limit = {
+			original_tag = IHU
+			has_character = zin_heir_ihuy
+		}
+		retire_character = zin_heir_ihuy
+	}
+	else_if = {
+		limit = {
+			original_tag = SOY
+			has_character = zin_heir_soyano
+		}
+		retire_character = zin_heir_soyano
+	}
+	else_if = {
+		limit = {
+			original_tag = GOO
+			has_character = zin_heir_goodin
+		}
+		retire_character = zin_heir_goodin
+	}
+	else_if = {
+		limit = {
+			original_tag = HRR
+			has_character = zin_regional_herrodon_aeniel
+		}
+		retire_character = zin_regional_herrodon_aeniel
+	}
+	else_if = {
+		limit = {
+			original_tag = ANE
+			has_character = zin_heir_andos_enda
+		}
+		retire_character = zin_heir_andos_enda
+	}
+	else_if = {
+		limit = {
+			original_tag = NLR
+			has_character = zin_heir_nolorim
+		}
+		retire_character = zin_heir_nolorim
+	}
+	else_if = {
+		limit = {
+			original_tag = LCC
+			has_character = zin_heir_lccimio
+		}
+		retire_character = zin_heir_lccimio
+	}
+	else_if = {
+		limit = {
+			original_tag = ELD
+			has_character = zin_heir_eldafaen
+		}
+		retire_character = zin_heir_eldafaen
+	}
+	else_if = {
+		limit = {
+			original_tag = YAV
+			has_character = zin_heir_yavieth
+		}
+		retire_character = zin_heir_yavieth
+	}
+	else_if = {
+		limit = {
+			original_tag = TES
+			has_character = zin_heir_teste
+		}
+		retire_character = zin_heir_teste
+	}
+	else_if = {
+		limit = {
+			original_tag = LUV
+			has_character = zin_heir_luv_zhise
+		}
+		retire_character = zin_heir_luv_zhise
+	}
+	else_if = {
+		limit = {
+			original_tag = TIR
+			has_character = zin_heir_tirlan
+		}
+		retire_character = zin_heir_tirlan
+	}
+	clear_variable = zin_realm_heir_born
+	clr_country_flag = zin_realm_heir_disputed
 }
 zin_realm_restore_exiles = {
 	# G9, scope: the shelter (zin_realm.51). Argument zin_arg_way: 1 release the fallen realm and set it free, 2 release it as our sworn realm,
@@ -1595,6 +4145,44 @@ zin_realm_run_batch = {
 		zin_realm_pulse = yes
 	}
 }
+zin_realm_seat_heir = {
+	# G2, Q-87: the waiting named heir of THIS realm takes the crown (the old ruler is already gone). A child (younger than the adult
+	# age by zin_realm_heir_born against global.year) reigns through zin_realm_regency until grown, two to five years (way 2); a grown heir
+	# rules at once (way 1). An heir whose year of birth and span are known gets his vigour from his own years (zin_realm_vigour_given).
+	set_temp_variable = { zin_t_age = global.year }
+	add_to_temp_variable = { zin_t_age = constant:zin_realm.count_offset }
+	subtract_from_temp_variable = { zin_t_age = zin_realm_heir_born }
+	set_temp_variable = { zin_t_adult = constant:zin_realm.adult_age }
+	zin_realm_crown_heir = yes
+	clr_country_flag = zin_realm_heir_disputed
+	if = {
+		limit = {
+			has_variable = zin_realm_heir_born
+			has_variable = zin_realm_heir_life
+		}
+		set_temp_variable = { zin_t_left = zin_realm_heir_life }
+		subtract_from_temp_variable = { zin_t_left = zin_t_age }
+		multiply_temp_variable = { zin_t_left = zin_ruler_rate }
+		clamp_temp_variable = { var = zin_t_left min = constant:zin_realm.start_years_left_min max = constant:zin_realm.vigour_max }
+		set_variable = { zin_ruler_vigour = zin_t_left }
+		set_country_flag = zin_realm_vigour_given
+	}
+	if = {
+		limit = {
+			has_variable = zin_realm_heir_born
+			check_variable = { zin_t_age < zin_t_adult }
+		}
+		set_temp_variable = { zin_t_days = zin_t_adult }
+		subtract_from_temp_variable = { zin_t_days = zin_t_age }
+		multiply_temp_variable = { zin_t_days = constant:zin_realm.days_per_year }
+		clamp_temp_variable = { var = zin_t_days min = constant:zin_realm.regency_min_days max = constant:zin_realm.regency_max_days }
+		add_timed_idea = { idea = zin_realm_regency days = zin_t_days }
+		set_country_flag = zin_realm_in_regency
+		set_variable = { zin_realm_succession_way = 2 }
+	}
+	else = { set_variable = { zin_realm_succession_way = 1 } }
+	clear_variable = zin_realm_heir_born
+}
 zin_realm_settle_crisis = {
 	# G3: the crisis ends. Argument zin_arg_way: 1 the council elects, 2 the claimants fight for it (a contested crown), 3 a prince of the house
 	# we married into takes it (a sworn realm of that house when the course of the age is free, its guarantee otherwise), 4 the captain-general
@@ -1610,37 +4198,30 @@ zin_realm_settle_crisis = {
 	country_event = { id = zin_realm.15 }
 }
 zin_realm_succeed = {
-	# G1 to G3: the ruler of THIS realm has died. A named heir takes the crown (a child through a regency that lasts until the heir is grown,
-	# clamped to two to five years); a kinsman named by Name an Heir takes it quietly; a crown that passes by blood or by combat with no heir
-	# falls into crisis when it may; a realm that chooses by its own custom chooses; any other realm takes the successor the engine names.
+	# G1 to G3, Q-87: the ruler of THIS realm has died, and the succession is dynamic. A waiting named heir may be disputed
+	# (mtth zin_realm_succession_dispute, in hundredths, when the crown may fall into crisis): zin_realm.16 asks who rules. Otherwise he
+	# is seated (zin_realm_seat_heir: a child reigns through a regency of two to five years). A kinsman named by Name an Heir takes the
+	# crown quietly; a crown that passes in a line or by combat with no heir falls into crisis when it may; a realm that chooses may
+	# fail to agree (mtth zin_realm_election_dispute) and fall into crisis, or chooses (the engine names the successor); a realm whose
+	# custom men are not told takes the engine's successor.
 	set_variable = { zin_realm_succession_way = 0 }
 	if = {
 		limit = { zin_realm_has_named_heir = yes }
-		set_temp_variable = { zin_t_age = global.year }
-		add_to_temp_variable = { zin_t_age = constant:zin_realm.count_offset }
-		subtract_from_temp_variable = { zin_t_age = zin_realm_heir_born }
-		set_temp_variable = { zin_t_adult = constant:zin_realm.adult_age }
+		set_temp_variable = { zin_t_chance = mtth:zin_realm_succession_dispute }
+		set_temp_variable_to_random = { var = zin_t_roll min = 0 max = 100 }
 		kill_country_leader = yes
-		zin_realm_crown_heir = yes
 		if = {
 			limit = {
-				has_variable = zin_realm_heir_born
-				check_variable = { zin_t_age < zin_t_adult }
+				check_variable = { zin_t_roll < zin_t_chance }
+				zin_realm_crisis_allowed = yes
 			}
-			set_temp_variable = { zin_t_days = zin_t_adult }
-			subtract_from_temp_variable = { zin_t_days = zin_t_age }
-			multiply_temp_variable = { zin_t_days = constant:zin_realm.days_per_year }
-			clamp_temp_variable = { var = zin_t_days min = constant:zin_realm.regency_min_days max = constant:zin_realm.regency_max_days }
-			add_timed_idea = { idea = zin_realm_regency days = zin_t_days }
-			set_country_flag = zin_realm_in_regency
-			set_variable = { zin_realm_succession_way = 2 }
-			country_event = { id = zin_realm.11 }
+			set_country_flag = zin_realm_heir_disputed
+			country_event = { id = zin_realm.16 }
 		}
 		else = {
-			set_variable = { zin_realm_succession_way = 1 }
-			country_event = { id = zin_realm.10 }
+			zin_realm_seat_heir = yes
+			zin_realm_announce_heir = yes
 		}
-		clear_variable = zin_realm_heir_born
 	}
 	else_if = {
 		limit = { has_country_flag = zin_realm_heir_named }
@@ -1661,14 +4242,21 @@ zin_realm_succeed = {
 		zin_realm_open_crisis = yes
 	}
 	else_if = {
-		limit = {
-			NOT = { zin_realm_inherits = yes }
-			NOT = { zin_realm_contested_custom = yes }
-			NOT = { zin_realm_open_custom = yes }
-		}
+		limit = { zin_realm_elective_custom = yes }
+		set_temp_variable = { zin_t_chance = mtth:zin_realm_election_dispute }
+		set_temp_variable_to_random = { var = zin_t_roll min = 0 max = 100 }
 		kill_country_leader = yes
-		set_variable = { zin_realm_succession_way = 4 }
-		country_event = { id = zin_realm.10 }
+		if = {
+			limit = {
+				check_variable = { zin_t_roll < zin_t_chance }
+				zin_realm_crisis_allowed = yes
+			}
+			zin_realm_open_crisis = yes
+		}
+		else = {
+			set_variable = { zin_realm_succession_way = 4 }
+			country_event = { id = zin_realm.10 }
+		}
 	}
 	else = {
 		kill_country_leader = yes

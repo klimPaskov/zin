@@ -1165,4 +1165,33 @@ focus_tree = {
 			remove_ideas = zin_regional_herez_marcher_resistance
 		}
 	}
+	focus = {
+		id = zin_regional_herez_the_eastern_forts
+		icon = GFX_focus_zin_palace_wards
+		x = 2
+		y = 4
+		prerequisite = {
+			focus = zin_regional_herez_forts_of_the_marches
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_eastern_forts
+			add_ideas = zin_regional_herez_eastern_forts_spirit
+			capital_scope = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_victory_point = yes
+					}
+				}
+			}
+		}
+	}
 }

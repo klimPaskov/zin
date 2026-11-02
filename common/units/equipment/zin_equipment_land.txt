@@ -116,6 +116,20 @@ equipments = {
 		build_cost_ic = 0.66
 	}
 
+	zin_arms_equipment_6 = {
+		year = 1786
+		archetype = zin_arms_equipment
+		parent = zin_arms_equipment_5
+		priority = 16
+		visual_level = 6
+		soft_attack = 12.6
+		hard_attack = 2.25
+		defense = 30.8
+		breakthrough = 5.25
+		ap_attack = 7.5
+		build_cost_ic = 0.7
+	}
+
 	zin_bows_equipment = {
 		year = 1600
 		is_archetype = yes
@@ -212,6 +226,20 @@ equipments = {
 		build_cost_ic = 0.558
 	}
 
+	zin_bows_equipment_5 = {
+		year = 1772
+		archetype = zin_bows_equipment
+		parent = zin_bows_equipment_4
+		priority = 15
+		visual_level = 5
+		soft_attack = 16.34
+		hard_attack = 0.9
+		defense = 13.92
+		breakthrough = 2.8
+		ap_attack = 5.2
+		build_cost_ic = 0.594
+	}
+
 	zin_handgun_equipment = {
 		year = 1650
 		is_archetype = yes
@@ -289,6 +317,34 @@ equipments = {
 		breakthrough = 3
 		ap_attack = 11
 		build_cost_ic = 0.696
+	}
+
+	zin_handgun_equipment_4 = {
+		year = 1772
+		archetype = zin_handgun_equipment
+		parent = zin_handgun_equipment_3
+		priority = 14
+		visual_level = 4
+		soft_attack = 15.95
+		hard_attack = 2.4
+		defense = 11.2
+		breakthrough = 3.25
+		ap_attack = 12
+		build_cost_ic = 0.744
+	}
+
+	zin_handgun_equipment_5 = {
+		year = 1788
+		archetype = zin_handgun_equipment
+		parent = zin_handgun_equipment_4
+		priority = 15
+		visual_level = 5
+		soft_attack = 17.6
+		hard_attack = 2.7
+		defense = 11.6
+		breakthrough = 3.5
+		ap_attack = 13
+		build_cost_ic = 0.792
 	}
 
 	zin_armour_equipment = {
@@ -388,6 +444,22 @@ equipments = {
 		}
 	}
 
+	zin_armour_equipment_5 = {
+		year = 1788
+		archetype = zin_armour_equipment
+		parent = zin_armour_equipment_4
+		priority = 15
+		visual_level = 5
+		defense = 45.6
+		breakthrough = 4.8
+		armor_value = 16
+		build_cost_ic = 3.96
+		resources = {
+			steel = 2
+			chromium = 1
+		}
+	}
+
 	zin_mounts_equipment = {
 		year = 1600
 		is_archetype = yes
@@ -466,6 +538,74 @@ equipments = {
 		defense = 14.4
 		breakthrough = 9.6
 		build_cost_ic = 3.48
+	}
+
+	zin_mounts_equipment_4 = {
+		year = 1782
+		archetype = zin_mounts_equipment
+		parent = zin_mounts_equipment_3
+		priority = 14
+		visual_level = 4
+		soft_attack = 6.5
+		hard_attack = 1.95
+		defense = 15.6
+		breakthrough = 10.4
+		build_cost_ic = 3.72
+	}
+
+	zin_elephant_equipment = {
+		year = 1730
+		is_archetype = yes
+		is_buildable = no
+		picture = archetype_zin_elephant_equipment
+		type = support
+		group_by = archetype
+		interface_category = interface_category_land
+		can_be_produced = {
+			OR = {
+				has_country_flag = zin_culture_noris_riders
+				has_country_flag = zin_culture_naamis_sea_crown
+				has_country_flag = zin_culture_miaed_pass_lords
+				has_country_flag = zin_culture_wahatud_oasis_folk
+			}
+		}
+		reliability = 0.8
+		maximum_speed = 4
+		defense = 8
+		breakthrough = 20
+		hardness = 0.9
+		armor_value = 12
+		soft_attack = 12
+		hard_attack = 5
+		ap_attack = 6
+		air_attack = 0
+		lend_lease_cost = 1
+		build_cost_ic = 6
+		resources = {
+			rubber = 2
+		}
+		fuel_consumption = 0
+	}
+
+	zin_elephant_equipment_0 = {
+		year = 1730
+		archetype = zin_elephant_equipment
+		priority = 10
+		visual_level = 0
+	}
+
+	zin_elephant_equipment_1 = {
+		year = 1758
+		archetype = zin_elephant_equipment
+		parent = zin_elephant_equipment_0
+		priority = 11
+		visual_level = 1
+		soft_attack = 13.44
+		hard_attack = 5.5
+		defense = 8.8
+		breakthrough = 22.4
+		armor_value = 14
+		build_cost_ic = 6.48
 	}
 
 	zin_elven_arms_equipment = {
@@ -551,6 +691,21 @@ equipments = {
 		ap_attack = 9.2
 		armor_value = 4
 		build_cost_ic = 0.928
+	}
+
+	zin_elven_arms_equipment_4 = {
+		year = 1774
+		archetype = zin_elven_arms_equipment
+		parent = zin_elven_arms_equipment_3
+		priority = 14
+		visual_level = 4
+		soft_attack = 14.4
+		hard_attack = 2.4
+		defense = 29.76
+		breakthrough = 6.8
+		ap_attack = 9.8
+		armor_value = 4.5
+		build_cost_ic = 0.992
 	}
 
 	zin_camp_equipment = {
@@ -1032,6 +1187,20 @@ equipments = {
 		build_cost_ic = 8.68
 	}
 
+	zin_bombard_equipment_5 = {
+		year = 1780
+		archetype = zin_bombard_equipment
+		parent = zin_bombard_equipment_4
+		priority = 15
+		visual_level = 5
+		soft_attack = 44.4
+		hard_attack = 9.6
+		defense = 4.8
+		breakthrough = 3.96
+		ap_attack = 18
+		build_cost_ic = 9.24
+	}
+
 	zin_troll_gear_equipment = {
 		year = 1600
 		is_archetype = yes
@@ -1096,6 +1265,21 @@ equipments = {
 		ap_attack = 16
 		armor_value = 26
 		build_cost_ic = 1.392
+	}
+
+	zin_troll_gear_equipment_3 = {
+		year = 1784
+		archetype = zin_troll_gear_equipment
+		parent = zin_troll_gear_equipment_2
+		priority = 13
+		visual_level = 3
+		soft_attack = 19.04
+		hard_attack = 10.88
+		defense = 18.88
+		breakthrough = 20.8
+		ap_attack = 17
+		armor_value = 28
+		build_cost_ic = 1.488
 	}
 
 	zin_giant_gear_equipment = {
@@ -1164,6 +1348,21 @@ equipments = {
 		build_cost_ic = 2.088
 	}
 
+	zin_giant_gear_equipment_3 = {
+		year = 1784
+		archetype = zin_giant_gear_equipment
+		parent = zin_giant_gear_equipment_2
+		priority = 13
+		visual_level = 3
+		soft_attack = 19.04
+		hard_attack = 13.6
+		defense = 28.32
+		breakthrough = 18.2
+		ap_attack = 21
+		armor_value = 26
+		build_cost_ic = 2.232
+	}
+
 	zin_ent_grove_equipment = {
 		year = 1500
 		is_archetype = yes
@@ -1225,6 +1424,21 @@ equipments = {
 		ap_attack = 22
 		armor_value = 34
 		build_cost_ic = 1.16
+	}
+
+	zin_ent_grove_equipment_3 = {
+		year = 1784
+		archetype = zin_ent_grove_equipment
+		parent = zin_ent_grove_equipment_2
+		priority = 13
+		visual_level = 3
+		soft_attack = 13
+		hard_attack = 15.6
+		defense = 46
+		breakthrough = 10.4
+		ap_attack = 23
+		armor_value = 36
+		build_cost_ic = 1.24
 	}
 
 	zin_yeti_gear_equipment = {
@@ -1291,6 +1505,21 @@ equipments = {
 		ap_attack = 7.6
 		armor_value = 9
 		build_cost_ic = 0.928
+	}
+
+	zin_yeti_gear_equipment_3 = {
+		year = 1784
+		archetype = zin_yeti_gear_equipment
+		parent = zin_yeti_gear_equipment_2
+		priority = 13
+		visual_level = 3
+		soft_attack = 13.6
+		hard_attack = 4.08
+		defense = 23.6
+		breakthrough = 13
+		ap_attack = 8.4
+		armor_value = 10.5
+		build_cost_ic = 0.992
 	}
 
 	zin_ogre_gear_equipment = {
@@ -1360,6 +1589,21 @@ equipments = {
 		ap_attack = 12
 		armor_value = 19
 		build_cost_ic = 1.392
+	}
+
+	zin_ogre_gear_equipment_3 = {
+		year = 1784
+		archetype = zin_ogre_gear_equipment
+		parent = zin_ogre_gear_equipment_2
+		priority = 13
+		visual_level = 3
+		soft_attack = 16.32
+		hard_attack = 8.16
+		defense = 16.52
+		breakthrough = 18.2
+		ap_attack = 13
+		armor_value = 21
+		build_cost_ic = 1.488
 	}
 
 	zin_grave_arms_equipment = {
@@ -1542,6 +1786,14 @@ equipments = {
 		parent = motorized_equipment_1
 		priority = 12
 		reliability = 0.9
+	}
+
+	motorized_equipment_3 = {
+		year = 1782
+		archetype = motorized_equipment
+		parent = motorized_equipment_2
+		priority = 13
+		reliability = 0.95
 	}
 
 	train_equipment = {

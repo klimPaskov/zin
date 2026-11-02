@@ -107,6 +107,7 @@ news_event = {
 	picture = GFX_zin_news_zol_rising
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_black_north_marches } } # super event 7 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {
@@ -147,6 +148,7 @@ country_event = {
 		give_military_access = PUV
 		PUV = { give_military_access = ZOL }
 		set_global_flag = zin_black_compact
+		zin_super_event_black_compact = yes # super event 30 (modules/super_events.mjs)
 		PUV = { country_event = { id = zin_dominion.15 } }
 	}
 
@@ -173,6 +175,7 @@ news_event = {
 	picture = GFX_zin_news_vast_shadow
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_kusven_forth } } # super event 15 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {

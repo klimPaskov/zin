@@ -708,6 +708,30 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = zin_regional_alerhia_read_the_first_stair
+		icon = GFX_focus_zin_abyss_stair
+		x = 1
+		y = 4
+		prerequisite = {
+			focus = zin_regional_alerhia_the_greatest_court_of_the_east
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 15
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			zin_deep_read_first_stair = yes
+			add_tech_bonus = { name = zin_regional_alerhia_read_the_first_stair bonus = 0.5 uses = 1 technology = zin_tech_stair_builders_measure }
+			set_country_flag = zin_deep_dig_ready
+			set_country_flag = zin_deep_archive_ask_ready
+		}
+	}
+	focus = {
 		id = zin_regional_alerhia_the_dry_roads
 		icon = GFX_focus_zin_traders_road
 		x = 15

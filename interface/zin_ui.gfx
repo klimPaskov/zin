@@ -1,20 +1,160 @@
 spriteTypes = {
 	corneredTileSpriteType = {
 		name = "GFX_zin_frame"
-		size = { x = 128 y = 128 }
-		texturefile = "gfx/interface/zin/frame.dds"
+		size = { x = 232 y = 232 }
+		texturefile = "gfx/interface/zin/chrome/frame_chancery.dds"
 		borderSize = { x = 32 y = 32 }
-		tilingCenter = yes
+		tilingCenter = no
+	}
+	corneredTileSpriteType = {
+		name = "GFX_zin_frame_chancery"
+		size = { x = 232 y = 232 }
+		texturefile = "gfx/interface/zin/chrome/frame_chancery.dds"
+		borderSize = { x = 32 y = 32 }
+		tilingCenter = no
+	}
+	corneredTileSpriteType = {
+		name = "GFX_zin_frame_banner_hall"
+		size = { x = 232 y = 232 }
+		texturefile = "gfx/interface/zin/chrome/frame_banner_hall.dds"
+		borderSize = { x = 32 y = 32 }
+		tilingCenter = no
+	}
+	corneredTileSpriteType = {
+		name = "GFX_zin_frame_chronicle"
+		size = { x = 232 y = 232 }
+		texturefile = "gfx/interface/zin/chrome/frame_chronicle.dds"
+		borderSize = { x = 32 y = 32 }
+		tilingCenter = no
 	}
 	spriteType = {
 		name = "GFX_zin_button"
-		texturefile = "gfx/interface/zin/button.dds"
+		texturefile = "gfx/interface/zin/chrome/button.dds"
 		noOfFrames = 3
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
 		name = "GFX_zin_rule"
-		texturefile = "gfx/interface/zin/rule.dds"
+		texturefile = "gfx/interface/zin/chrome/rule_chancery.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_rule_banner_hall"
+		texturefile = "gfx/interface/zin/chrome/rule_banner_hall.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_rule_chronicle"
+		texturefile = "gfx/interface/zin/chrome/rule_chronicle.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_tab_banner_hall"
+		texturefile = "gfx/interface/zin/chrome/tab_banner_hall.dds"
+		noOfFrames = 3
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_zin_tab_chancery"
+		texturefile = "gfx/interface/zin/chrome/tab_chancery.dds"
+		noOfFrames = 3
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_zin_tab_chronicle"
+		texturefile = "gfx/interface/zin/chrome/tab_chronicle.dds"
+		noOfFrames = 3
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_zin_row"
+		texturefile = "gfx/interface/zin/chrome/row.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_zin_meter_groove_banner_hall"
+		texturefile = "gfx/interface/zin/chrome/meter_groove_banner_hall.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_groove_chancery"
+		texturefile = "gfx/interface/zin/chrome/meter_groove_chancery.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_groove_chronicle"
+		texturefile = "gfx/interface/zin/chrome/meter_groove_chronicle.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_fill_banner_hall"
+		texturefile = "gfx/interface/zin/chrome/meter_fill_banner_hall.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_fill_chancery"
+		texturefile = "gfx/interface/zin/chrome/meter_fill_chancery.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_fill_chronicle"
+		texturefile = "gfx/interface/zin/chrome/meter_fill_chronicle.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_mark_banner_hall"
+		texturefile = "gfx/interface/zin/chrome/meter_mark_banner_hall.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_mark_chancery"
+		texturefile = "gfx/interface/zin/chrome/meter_mark_chancery.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_meter_mark_chronicle"
+		texturefile = "gfx/interface/zin/chrome/meter_mark_chronicle.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_court"
+		texturefile = "gfx/interface/zin/chrome/accent_court.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_council"
+		texturefile = "gfx/interface/zin/chrome/accent_council.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_dominion"
+		texturefile = "gfx/interface/zin/chrome/accent_dominion.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_watch"
+		texturefile = "gfx/interface/zin/chrome/accent_watch.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_strait"
+		texturefile = "gfx/interface/zin/chrome/accent_strait.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_presence"
+		texturefile = "gfx/interface/zin/chrome/accent_presence.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_horde"
+		texturefile = "gfx/interface/zin/chrome/accent_horde.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_accord"
+		texturefile = "gfx/interface/zin/chrome/accent_accord.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_accent_journey"
+		texturefile = "gfx/interface/zin/chrome/accent_journey.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_unknown_technology"
+		texturefile = "gfx/interface/zin/unknown/technology.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_unknown_doctrine"
+		texturefile = "gfx/interface/zin/unknown/doctrine.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_unknown_unit"
+		texturefile = "gfx/interface/zin/unknown/unit.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_unknown_equipment"
+		texturefile = "gfx/interface/zin/unknown/equipment.dds"
 	}
 	spriteType = {
 		name = "GFX_zin_people_strip"

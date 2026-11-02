@@ -1493,7 +1493,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = zin_cold_hall_respected
 			diplomatic_relation = {
-				country = YEL
+				country = PRT
 				relation = non_aggression_pact
 				active = yes
 			}
@@ -1595,7 +1595,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			YEL = {
+			PRT = {
 				country_event = zin_cold.61
 			}
 		}
@@ -1635,13 +1635,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		cost = 5
 		available = {
-			country_exists = YEL
+			country_exists = PRT
 		}
 		ai_will_do = {
 			factor = 15
 		}
 		completion_reward = {
-			give_guarantee = YEL
+			give_guarantee = PRT
 			add_stability = 0.03
 		}
 	}
@@ -2270,6 +2270,134 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = zin_coldor_songs_of_the_long_dark
+		icon = GFX_focus_zin_hymn_choir
+		x = 7
+		y = 7
+		prerequisite = {
+			focus = zin_coldor_high_crown_of_the_north
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			zin_deep_open_ice = yes
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = zin_coldor_ice_walkers
+		icon = GFX_focus_zin_ice_cavern
+		x = 7
+		y = 8
+		prerequisite = {
+			focus = zin_coldor_songs_of_the_long_dark
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_walkers_trained
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = zin_coldor_kin_over_the_neck
+		icon = GFX_focus_zin_courier_pilgrim
+		x = 6
+		y = 9
+		prerequisite = {
+			focus = zin_coldor_ice_walkers
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			country_exists = GNW
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_kin_neck
+			add_opinion_modifier = {
+				target = GNW
+				modifier = zin_coldor_kin_neck_opinion
+			}
+			reverse_add_opinion_modifier = {
+				target = GNW
+				modifier = zin_coldor_kin_neck_opinion
+			}
+		}
+	}
+	focus = {
+		id = zin_coldor_kin_over_the_sea
+		icon = GFX_focus_zin_island_shrine
+		x = 8
+		y = 9
+		prerequisite = {
+			focus = zin_coldor_ice_walkers
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			country_exists = ADE
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_kin_sea
+			add_opinion_modifier = {
+				target = ADE
+				modifier = zin_coldor_kin_sea_opinion
+			}
+			reverse_add_opinion_modifier = {
+				target = ADE
+				modifier = zin_coldor_kin_sea_opinion
+			}
+		}
+	}
+	focus = {
+		id = zin_coldor_the_sun_crown
+		icon = GFX_focus_zin_crown_radiant
+		x = 7
+		y = 10
+		prerequisite = {
+			focus = zin_coldor_kin_over_the_neck
+		}
+		prerequisite = {
+			focus = zin_coldor_kin_over_the_sea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		cost = 15
+		available = {
+			zin_deep_holds_hearth_stone = yes
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_sun_crown_route
+			add_political_power = 50
 		}
 	}
 }

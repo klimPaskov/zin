@@ -21,7 +21,6 @@ on_actions = {
 			HIR = { add_ideas = zin_people_giants set_country_flag = zin_people_giants }
 			MLK = { add_ideas = zin_people_men set_country_flag = zin_people_men }
 			HOR = { add_ideas = zin_people_men set_country_flag = zin_people_men }
-			YEL = { add_ideas = zin_people_men set_country_flag = zin_people_men }
 			GIR = { add_ideas = zin_people_men set_country_flag = zin_people_men }
 			KON = { add_ideas = zin_people_men set_country_flag = zin_people_men set_country_flag = zin_tradition_middle_kingdom }
 			HNH = { add_ideas = zin_people_men set_country_flag = zin_people_men set_country_flag = zin_tradition_middle_kingdom }
@@ -177,7 +176,6 @@ on_actions = {
 			HIR = { add_ideas = { zin_culture_hill_giants zin_culture2_hilofrim_herders zin_faith_giant_cairn } set_country_flag = zin_culture_hill_giants set_variable = { zin_culture_id = 47 } set_country_flag = zin_culture2_hilofrim_herders set_variable = { zin_culture2_id = 66 } set_country_flag = zin_language_gigantic set_variable = { zin_language_id = 18 } set_country_flag = zin_faith_giant_cairn set_variable = { zin_faith_id = 31 } }
 			MLK = { add_ideas = { zin_culture_melkgard_warlords zin_faith_storm_court } set_country_flag = zin_culture_melkgard_warlords set_variable = { zin_culture_id = 16 } set_country_flag = zin_language_coldic set_variable = { zin_language_id = 9 } set_country_flag = zin_faith_storm_court set_variable = { zin_faith_id = 10 } }
 			HOR = { add_ideas = { zin_culture_ice_clans zin_faith_winter_hearth } set_country_flag = zin_culture_ice_clans set_variable = { zin_culture_id = 15 } set_country_flag = zin_language_coldic set_variable = { zin_language_id = 9 } set_country_flag = zin_faith_winter_hearth set_variable = { zin_faith_id = 9 } }
-			YEL = { add_ideas = { zin_culture_ice_clans zin_faith_winter_hearth } set_country_flag = zin_culture_ice_clans set_variable = { zin_culture_id = 15 } set_country_flag = zin_language_coldic set_variable = { zin_language_id = 9 } set_country_flag = zin_faith_winter_hearth set_variable = { zin_faith_id = 9 } }
 			GIR = { add_ideas = { zin_culture_girdon_wardens zin_faith_river_wardens } set_country_flag = zin_culture_girdon_wardens set_variable = { zin_culture_id = 19 } set_country_flag = zin_language_gunwaithic set_variable = { zin_language_id = 10 } set_country_flag = zin_faith_river_wardens set_variable = { zin_faith_id = 12 } }
 			KON = { add_ideas = { zin_culture_steppe_rider zin_faith_horse_oath } set_country_flag = zin_culture_steppe_rider set_variable = { zin_culture_id = 3 } set_country_flag = zin_language_aenoran set_variable = { zin_language_id = 1 } set_country_flag = zin_faith_horse_oath set_variable = { zin_faith_id = 4 } }
 			HNH = { add_ideas = { zin_culture_steppe_rider zin_faith_horse_oath } set_country_flag = zin_culture_steppe_rider set_variable = { zin_culture_id = 3 } set_country_flag = zin_language_aenoran set_variable = { zin_language_id = 1 } set_country_flag = zin_faith_horse_oath set_variable = { zin_faith_id = 4 } }
@@ -324,6 +322,7 @@ on_actions = {
 			every_country = { limit = { has_country_flag = zin_people_orcs } set_variable = { zin_people_frame = 8 } }
 			every_country = { limit = { has_country_flag = zin_people_the_dead } set_variable = { zin_people_frame = 9 } }
 			every_country = { limit = { has_country_flag = zin_people_demons } set_variable = { zin_people_frame = 10 } }
+			every_country = { limit = { is_ai = no } zin_aoaz_bar_refresh = yes }
 		}
 	}
 }

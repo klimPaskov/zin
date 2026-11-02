@@ -2733,4 +2733,35 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = zin_gunwaith_kin_in_the_ice
+		icon = GFX_focus_zin_frozen_gate
+		x = 4
+		y = 6
+		prerequisite = {
+			focus = zin_gunwaith_western_forges
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_kin_in_ice
+			if = {
+				limit = {
+					country_exists = CLD
+				}
+				add_opinion_modifier = {
+					target = CLD
+					modifier = zin_gunwaith_ice_kin_opinion
+				}
+				reverse_add_opinion_modifier = {
+					target = CLD
+					modifier = zin_gunwaith_ice_kin_opinion
+				}
+			}
+			add_stability = 0.02
+		}
+	}
 }

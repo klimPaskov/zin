@@ -386,6 +386,7 @@ zin_eindil_name_him = {
 	if = {
 		limit = { NOT = { has_global_flag = zin_eindil_named } }
 		set_global_flag = zin_eindil_named
+		zin_super_event_heir_of_aen = yes # super event 4 (modules/super_events.mjs)
 		set_character_name = { character = zin_eindil name = zin_eindil_name_named }
 		zin_eindil = {
 			add_unit_leader_trait = zin_eindil_heir_of_aen
@@ -449,6 +450,7 @@ zin_eindil_lose_heir = {
 	if = {
 		limit = { NOT = { has_global_flag = zin_eindil_lost } }
 		set_global_flag = zin_eindil_lost
+		zin_super_event_without_the_heir = yes # super event 32 (modules/super_events.mjs)
 		every_country = {
 			limit = { is_ai = no }
 			news_event = { id = zin_eindil.140 }
@@ -530,7 +532,7 @@ zin_eindil_enter_2 = {
 		}
 	}
 	clear_variable = global.zin_eindil_trial_host
-	572 = {
+	274 = {
 		owner = {
 			set_variable = { global.zin_eindil_trial_host = THIS }
 		}
@@ -682,7 +684,7 @@ zin_eindil_pick_gala_host = {
 	}
 	if = {
 		limit = { NOT = { has_variable = global.zin_eindil_gala_host } }
-		786 = {
+		2253 = {
 			owner = {
 				set_variable = { global.zin_eindil_gala_host = THIS }
 			}
@@ -836,6 +838,7 @@ zin_eindil_pick_battlefield = {
 zin_eindil_enter_9 = {
 	# The return: the flag, the battlefield, the world is told. The Host is raised by journey event .92 (or by the pulse after 14 days).
 	set_global_flag = zin_eindil_returned
+	zin_super_event_heir_returns = yes # super event 12 (modules/super_events.mjs)
 	if = {
 		limit = { NOT = { has_global_flag = zin_war_of_last_crowns } }
 		set_global_flag = zin_eindil_quiet_return
@@ -1059,15 +1062,15 @@ zin_eindil_compute_ambush = {
 		subtract_from_temp_variable = { eind_str = 1 }
 	}
 	if = {
-		limit = { has_global_flag = zin_yeldenne_beacon }
+		limit = { has_global_flag = zin_pertolor_beacon }
 		subtract_from_temp_variable = { eind_str = 1 }
 	}
 	if = {
-		limit = { has_global_flag = zin_yeldenne_coast_watch }
+		limit = { has_global_flag = zin_pertolor_coast_watch }
 		subtract_from_temp_variable = { eind_str = 1 }
 	}
 	if = {
-		limit = { has_global_flag = zin_yeldenne_guides }
+		limit = { has_global_flag = zin_pertolor_guides }
 		subtract_from_temp_variable = { eind_str = 1 }
 	}
 	if = {

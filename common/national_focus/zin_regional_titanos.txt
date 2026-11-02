@@ -636,4 +636,22 @@ focus_tree = {
 			zin_eindil_join_coalition = yes
 		}
 	}
+	focus = {
+		id = zin_regional_titanos_the_snows_long_breath
+		icon = GFX_focus_zin_storm_veil
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = zin_regional_titanos_memory_of_the_giants
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_global_flag = zin_deep_snow_breath
+			add_stability = 0.03
+		}
+	}
 }

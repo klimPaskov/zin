@@ -22,6 +22,16 @@ ideas = {
 				political_power_gain = -0.25
 			}
 		}
+		zin_realm_disputed_crown = {
+			picture = zin_empty_throne
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				political_power_gain = -0.15
+			}
+		}
 		zin_realm_usurper_rule = {
 			picture = zin_crown_iron
 			allowed = { always = no }

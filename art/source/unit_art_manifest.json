@@ -1,0 +1,1665 @@
+{
+ "generator": "tools/content/modules/unit_art.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/counters/air_small/zin/zin_air_dragon_flight.dds",
+   "source": "art/source/units/unit-mapa-01.png",
+   "sourceSha256": "3a5a6fbd37de11d41f2639696377dd2fbcdacb93d9388a0abe17d39d48c6c324",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "395cb4c8839a4a19f55095b11d11cf1c407bafd746a09e3925ca8d0d739a7f7e"
+  },
+  {
+   "out": "gfx/interface/counters/air_small/zin/zin_air_griffin_riders.dds",
+   "source": "art/source/units/unit-mapa-01.png",
+   "sourceSha256": "3a5a6fbd37de11d41f2639696377dd2fbcdacb93d9388a0abe17d39d48c6c324",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "80a5132c224f7a20e45cfa7197f34cf9adaaf1aa699e8acd47ba76b18b4f4377"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_abyss_folk.dds",
+   "source": "art/source/units/unit-large-05.png",
+   "sourceSha256": "f33f3be587c6490452be70ce40573c060f2a11c23623b552213c9e2851835b6f",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "f803e9e59bd853b03aa99df6dd8373337bb12272a3a331f12794678c7d40ea47"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_air_dragon_flight.dds",
+   "source": "art/source/units/unit-large-11.png",
+   "sourceSha256": "a4970726bdb3c785d777bc278e0d1432880f4b2228f8cb62dedf1ebedb83d77a",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e6448bd934d149f67bb006f41d55ace4c94b73c26d4c8c1bb948dd3bf5ecdb7d"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_air_griffin_riders.dds",
+   "source": "art/source/units/unit-large-11.png",
+   "sourceSha256": "a4970726bdb3c785d777bc278e0d1432880f4b2228f8cb62dedf1ebedb83d77a",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "1319377cb8be402248ff873ac7231198062e1ef322468b9735a93effe519053e"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_dead_grave_riders.dds",
+   "source": "art/source/units/unit-large-06.png",
+   "sourceSha256": "337d2d3e0cc9551ff490e0a29cd2ef4667e1e1f121170ece72dce1dc6fb563ec",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "dcc0eae8a2cc65fade08f97192c1d4ff5448e169d5bc3f5c0588b24e1910ee16"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_dead_necromancers.dds",
+   "source": "art/source/units/unit-large-06.png",
+   "sourceSha256": "337d2d3e0cc9551ff490e0a29cd2ef4667e1e1f121170ece72dce1dc6fb563ec",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "eab74205ebbf0f8d1d4bc4f4b45421467303e3e2360d3826b21ce381aae55a1e"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_demons_bound.dds",
+   "source": "art/source/units/unit-large-06.png",
+   "sourceSha256": "337d2d3e0cc9551ff490e0a29cd2ef4667e1e1f121170ece72dce1dc6fb563ec",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "5fa9494698635e7f41c7376abc22fad8da44f6529695aec511a237172477daf2"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_demons_netherborn.dds",
+   "source": "art/source/units/unit-large-06.png",
+   "sourceSha256": "337d2d3e0cc9551ff490e0a29cd2ef4667e1e1f121170ece72dce1dc6fb563ec",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "11574a094d9f4f64166d67f3c3fc06482450ae6df48798f413f3d9ef95404b29"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_demons_shachihata.dds",
+   "source": "art/source/units/unit-large-06.png",
+   "sourceSha256": "337d2d3e0cc9551ff490e0a29cd2ef4667e1e1f121170ece72dce1dc6fb563ec",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "42e8edff6038f7e57aeaf020ee8dafa806361ef9d4ab4ed705bac63e00d22bf5"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_elves_archers.dds",
+   "source": "art/source/units/unit-large-03.png",
+   "sourceSha256": "8f22f8d1299a1e6d5a92030151dce11157179526ccd18b0829cd01a35d5d7574",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "50b63ed277a97813039881a8ef3049706ca7e4c766baadf0342dc3e0ba3f04e2"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_elves_rangers.dds",
+   "source": "art/source/units/unit-large-03.png",
+   "sourceSha256": "8f22f8d1299a1e6d5a92030151dce11157179526ccd18b0829cd01a35d5d7574",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "49ef78ef1c87627be6df3c744809f810cec3dfa763c65836793ad4371701832c"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_elves_riders.dds",
+   "source": "art/source/units/unit-large-03.png",
+   "sourceSha256": "8f22f8d1299a1e6d5a92030151dce11157179526ccd18b0829cd01a35d5d7574",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "9e989adde04c67bd3974c13319769f26624a083e99604447974af6e443762000"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_elves_warden.dds",
+   "source": "art/source/units/unit-large-03.png",
+   "sourceSha256": "8f22f8d1299a1e6d5a92030151dce11157179526ccd18b0829cd01a35d5d7574",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "a3a3266ff7aca7756f272f5b828a94b4fdb0eb14c6b4282d8a8e94d611b71540"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_elves_wardsingers.dds",
+   "source": "art/source/units/unit-large-09-r2.png",
+   "sourceSha256": "7434cd1dd67c3abc66b59aa6592a8c8f2d998c4a2422686405337f6c21e58fb4",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "928a2970a3e1556d3ffe2e619a2097eed8c96ce8e50f1452836ce0c0a12db01f"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_ents_grove.dds",
+   "source": "art/source/units/unit-large-05.png",
+   "sourceSha256": "f33f3be587c6490452be70ce40573c060f2a11c23623b552213c9e2851835b6f",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "fedd8337d184ea03c5b9fd9982f5e2fdb70d476de9cd01b2fcf2b8439910d145"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_giants_host.dds",
+   "source": "art/source/units/unit-large-05.png",
+   "sourceSha256": "f33f3be587c6490452be70ce40573c060f2a11c23623b552213c9e2851835b6f",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "1c20af001150ea1ae5c3bf3805a22b6493366ec82228dd0e5eaeb3dd17b002c3"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_giants_hurlers.dds",
+   "source": "art/source/units/unit-large-05.png",
+   "sourceSha256": "f33f3be587c6490452be70ce40573c060f2a11c23623b552213c9e2851835b6f",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "2e80f5f14f95d59eab9555f083b5485bc7a7b0c5860a7b4fe24687d88d8cdf91"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_glo_bearer.dds",
+   "source": "art/source/units/unit-large-10.png",
+   "sourceSha256": "d6b03cb7abe27efc183528f0f343055bcd3069ad0b62b22910e63b7ea10add7a",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "900985520da1edb091c87d67e2cbf75acf51c45b08910b04c60770ac3c60b1ee"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_great_spirit.dds",
+   "source": "art/source/units/unit-large-10.png",
+   "sourceSha256": "d6b03cb7abe27efc183528f0f343055bcd3069ad0b62b22910e63b7ea10add7a",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "d99785d1b52fda5a2ceaab27dd53fa1b36eccc8463e5241a3087df4f550ab6c5"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_archers.dds",
+   "source": "art/source/units/unit-large-01-r2.png",
+   "sourceSha256": "b4331097795b8bfb8d06d7af26d40955ca85473bda47ef755caf13a97fd33b91",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "419453c7628e323a0a5c71ee7f48d7b3a6ba56d450edc8a2db31598ed00bbd23"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_camel_riders.dds",
+   "source": "art/source/units/unit-large-02-r2.png",
+   "sourceSha256": "1a845daa68137dabbf96947503da6c1c5cdf4a0737ee6c96e7c52d5e9447d8d9",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8d5fdba9807b3c99714ee020941b6e46c7f6059a12725268d48b0f59370a6873"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_cavalry.dds",
+   "source": "art/source/units/unit-large-02-r2.png",
+   "sourceSha256": "1a845daa68137dabbf96947503da6c1c5cdf4a0737ee6c96e7c52d5e9447d8d9",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "90f95a4da0a2c532e51a85f0f8b6a2f22649ed80a23142ea08d0047ad65da17a"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_handgunners.dds",
+   "source": "art/source/units/unit-large-01-r2.png",
+   "sourceSha256": "b4331097795b8bfb8d06d7af26d40955ca85473bda47ef755caf13a97fd33b91",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "ec7322f168abe023c0e2e2a693f39b547ffa026da9d165d2be5f0376c901113a"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_heavy_infantry.dds",
+   "source": "art/source/units/unit-large-01-r2.png",
+   "sourceSha256": "b4331097795b8bfb8d06d7af26d40955ca85473bda47ef755caf13a97fd33b91",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e5f3d465d267d3b75ab45d42cd985313ac2a046b2433ff8645413f2bb02552e4"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_hill_companies.dds",
+   "source": "art/source/units/unit-large-01-r2.png",
+   "sourceSha256": "b4331097795b8bfb8d06d7af26d40955ca85473bda47ef755caf13a97fd33b91",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "46253211c89077f63169ffe00c8d14db56f583e319ffb172b12b6b715c9a8d4d"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_horse_archers.dds",
+   "source": "art/source/units/unit-large-02-r2.png",
+   "sourceSha256": "1a845daa68137dabbf96947503da6c1c5cdf4a0737ee6c96e7c52d5e9447d8d9",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "eba0d97eb09cc2411eb37c9de9a7a7581647ab9b6bfaa9b68c851c49b0916ab6"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_infantry.dds",
+   "source": "art/source/units/unit-large-01-r2.png",
+   "sourceSha256": "b4331097795b8bfb8d06d7af26d40955ca85473bda47ef755caf13a97fd33b91",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "65612e7b1d033fc82c9dd1a865ed13edb32d6a7d69f06711ac9a5d777ec9f8c5"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_knights.dds",
+   "source": "art/source/units/unit-large-02-r2.png",
+   "sourceSha256": "1a845daa68137dabbf96947503da6c1c5cdf4a0737ee6c96e7c52d5e9447d8d9",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "ece8e46186dd9bc54b2186618a16ee1b73e114f8d4ad3d36996fb8ce9f6fb915"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_levy.dds",
+   "source": "art/source/units/unit-large-01-r2.png",
+   "sourceSha256": "b4331097795b8bfb8d06d7af26d40955ca85473bda47ef755caf13a97fd33b91",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e4ec6f1af9a9159491f7ae9186360a2aa9b1d9c148ef3cb718a92077d4bcf8c8"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_rangers.dds",
+   "source": "art/source/units/unit-large-02-r2.png",
+   "sourceSha256": "1a845daa68137dabbf96947503da6c1c5cdf4a0737ee6c96e7c52d5e9447d8d9",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "d316b50c13af9e2bb809fad1502195b679251f873eae7e3fd474606515b095dc"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_sea_soldiers.dds",
+   "source": "art/source/units/unit-large-02-r2.png",
+   "sourceSha256": "1a845daa68137dabbf96947503da6c1c5cdf4a0737ee6c96e7c52d5e9447d8d9",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "2030602f1a158a3739e5eb97c4d7d745bab0f862764ea05f133f31a2ee2fcc7d"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_temple_wardens.dds",
+   "source": "art/source/units/unit-large-03.png",
+   "sourceSha256": "8f22f8d1299a1e6d5a92030151dce11157179526ccd18b0829cd01a35d5d7574",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "5ecb4304c6a88282b758c1fe8304a9ea144643c299ad9a381b1fb6ca36d37ff2"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_men_war_elephants.dds",
+   "source": "art/source/units/unit-large-03.png",
+   "sourceSha256": "8f22f8d1299a1e6d5a92030151dce11157179526ccd18b0829cd01a35d5d7574",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "2bdd4931341f26de7205894c5e020230faeec6a454ef95f8941ab066c2e7301a"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_ogres_brutes.dds",
+   "source": "art/source/units/unit-large-04.png",
+   "sourceSha256": "7bebffcc19471dc3b096bd003b1cfcd0190a1a9c87271ce9a576ba8288cbd9ee",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b2efcc9a3fb83718eef3ef5a8c562a14fc978f0e3743f8a0594dc0f55ebbcbac"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_orcs_goblins.dds",
+   "source": "art/source/units/unit-large-04.png",
+   "sourceSha256": "7bebffcc19471dc3b096bd003b1cfcd0190a1a9c87271ce9a576ba8288cbd9ee",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e697faf5ffa790bc8c068ad24c0ffe11adbfb37537729a1a9c96c15a3f911336"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_orcs_raiders.dds",
+   "source": "art/source/units/unit-large-04.png",
+   "sourceSha256": "7bebffcc19471dc3b096bd003b1cfcd0190a1a9c87271ce9a576ba8288cbd9ee",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "d1c63a213d53c1b20af4d736209cf1ddf53b3f4172ef964b31d39f08b40d66fc"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_orcs_warrior.dds",
+   "source": "art/source/units/unit-large-04.png",
+   "sourceSha256": "7bebffcc19471dc3b096bd003b1cfcd0190a1a9c87271ce9a576ba8288cbd9ee",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "9a32aed6dc7f7f467e1c7f877552fa827e927a91d7f2625d7be67f25bf649194"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_ship_galley.dds",
+   "source": "art/source/units/unit-large-10.png",
+   "sourceSha256": "d6b03cb7abe27efc183528f0f343055bcd3069ad0b62b22910e63b7ea10add7a",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "fa7f07e4fb3fddba4046002339adb92455c44ea769d4cbb6404b562419fe1d28"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_ship_great_warship.dds",
+   "source": "art/source/units/unit-large-11.png",
+   "sourceSha256": "a4970726bdb3c785d777bc278e0d1432880f4b2228f8cb62dedf1ebedb83d77a",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "7e544bb114eb5ff51bdb60c65acd3e3af9529f07c50ec0fc60b2b506dbceb07b"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_ship_raider.dds",
+   "source": "art/source/units/unit-large-11.png",
+   "sourceSha256": "a4970726bdb3c785d777bc278e0d1432880f4b2228f8cb62dedf1ebedb83d77a",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "7a33f0cd940ae8dc782be4ae4b1307e90c7000e4c6f61608c0f4063747f43e12"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_ship_warship.dds",
+   "source": "art/source/units/unit-large-10.png",
+   "sourceSha256": "d6b03cb7abe27efc183528f0f343055bcd3069ad0b62b22910e63b7ea10add7a",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "dd9db19730a9eafa6638f1c0b9a8797ed5c59e7b7706d0c35a2aa678b74845a5"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_siege_bombard.dds",
+   "source": "art/source/units/unit-large-07-r2.png",
+   "sourceSha256": "187fcbaaa8aa2de70004575b9401e86d5f5aff406deb54765d7d03af94b176db",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e734f8b498b6c7fe84433a8c05e67b534cf71a7838d5de0b6aaf8c06222f15f4"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_siege_catapult.dds",
+   "source": "art/source/units/unit-large-07-r2.png",
+   "sourceSha256": "187fcbaaa8aa2de70004575b9401e86d5f5aff406deb54765d7d03af94b176db",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "76f012b70ff153aab7c46f4a6f6b79bda785fd19a5c2c65afffdcea0073db400"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_siege_trebuchet.dds",
+   "source": "art/source/units/unit-large-07-r2.png",
+   "sourceSha256": "187fcbaaa8aa2de70004575b9401e86d5f5aff406deb54765d7d03af94b176db",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "932abfabdb41b373a4e6ed3112e997e199a71ac111a1c436b493da79fbc6933f"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_sun_elves_bowmen.dds",
+   "source": "art/source/units/unit-large-04.png",
+   "sourceSha256": "7bebffcc19471dc3b096bd003b1cfcd0190a1a9c87271ce9a576ba8288cbd9ee",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8f44e58034120c41f4368d74237ebf9a670a0c96d28dd01fd3af75f558d90aa2"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_sun_elves_guard.dds",
+   "source": "art/source/units/unit-large-04.png",
+   "sourceSha256": "7bebffcc19471dc3b096bd003b1cfcd0190a1a9c87271ce9a576ba8288cbd9ee",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8ce873f871be8ae71ba954114d6b126fbfd6d5fa849b3136a7860f5399f231f9"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_armourers.dds",
+   "source": "art/source/units/unit-large-09-r2.png",
+   "sourceSha256": "7434cd1dd67c3abc66b59aa6592a8c8f2d998c4a2422686405337f6c21e58fb4",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "734fc0f737aa85660f9832b3bb5975238c064f00a4e87cacaedc4a385bb1fef4"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_ballistae.dds",
+   "source": "art/source/units/unit-large-08-r2.png",
+   "sourceSha256": "75738e12270e407ee856ac0642c0ccd7f1b28020f42b1e879acf4dc4f1b5cac0",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "a022323a246fb0a44d9502662076423d2d7a52869a9831f754b007c4070289bc"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_bombards.dds",
+   "source": "art/source/units/unit-large-08-r2.png",
+   "sourceSha256": "75738e12270e407ee856ac0642c0ccd7f1b28020f42b1e879acf4dc4f1b5cac0",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "628d16a156089b74b1f715720fa8c6e9cb954f364560643b2de6e42d15213b49"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_catapults.dds",
+   "source": "art/source/units/unit-large-07-r2.png",
+   "sourceSha256": "187fcbaaa8aa2de70004575b9401e86d5f5aff406deb54765d7d03af94b176db",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8f57685d10f11c50e9c0ef9d4ba9a9f9c95cdd837f754674cff9cf59cd5cf5e5"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_healers.dds",
+   "source": "art/source/units/unit-large-08-r2.png",
+   "sourceSha256": "75738e12270e407ee856ac0642c0ccd7f1b28020f42b1e879acf4dc4f1b5cac0",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "566833b9c7db9c4992a4304085062b60fbf9efc4d17a1b4ee7449506937b2fef"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_heralds.dds",
+   "source": "art/source/units/unit-large-09-r2.png",
+   "sourceSha256": "7434cd1dd67c3abc66b59aa6592a8c8f2d998c4a2422686405337f6c21e58fb4",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "421a5338029ef7ec4b2441b2f539115aff8b2b7dc07c26b149bb2507fa3f58bf"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_pack_train.dds",
+   "source": "art/source/units/unit-large-10.png",
+   "sourceSha256": "d6b03cb7abe27efc183528f0f343055bcd3069ad0b62b22910e63b7ea10add7a",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "1d973d9a75373e064d41a8da2303b454cf992c1f42f6e0c6699b82f496eaad80"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_provosts.dds",
+   "source": "art/source/units/unit-large-09-r2.png",
+   "sourceSha256": "7434cd1dd67c3abc66b59aa6592a8c8f2d998c4a2422686405337f6c21e58fb4",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "5f40111d99482cfff20ce77a93b2fb6e807d990e13e85a8d97793a8166f6e0ba"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_quartermasters.dds",
+   "source": "art/source/units/unit-large-09-r2.png",
+   "sourceSha256": "7434cd1dd67c3abc66b59aa6592a8c8f2d998c4a2422686405337f6c21e58fb4",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "48c3906a647e4e941985d9bd2b0a4f2ce4f1f758dcaf65468ab4c97a6b0f8d6e"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_sappers.dds",
+   "source": "art/source/units/unit-large-08-r2.png",
+   "sourceSha256": "75738e12270e407ee856ac0642c0ccd7f1b28020f42b1e879acf4dc4f1b5cac0",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "711621decd1b816613ff2d12465715bbe943099fb9aa6ac1f2c4c554d0a29fa6"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_scorpions.dds",
+   "source": "art/source/units/unit-large-08-r2.png",
+   "sourceSha256": "75738e12270e407ee856ac0642c0ccd7f1b28020f42b1e879acf4dc4f1b5cac0",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "39ea44868e08087605cf1f8e8f009002ca6be5f39387d5cfbdb1e9e09836ed57"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_scouts.dds",
+   "source": "art/source/units/unit-large-08-r2.png",
+   "sourceSha256": "75738e12270e407ee856ac0642c0ccd7f1b28020f42b1e879acf4dc4f1b5cac0",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "6f11c96d810ad2ccf9407abcde9d478e8a95eb380704e6da3d5330c357fb7eec"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_support_wardens.dds",
+   "source": "art/source/units/unit-large-09-r2.png",
+   "sourceSha256": "7434cd1dd67c3abc66b59aa6592a8c8f2d998c4a2422686405337f6c21e58fb4",
+   "cell": 4,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "155d453424aa55740868375f94987ff99c2591ab8ae1cd8b25d4bb5139331916"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_the_dead_revenant.dds",
+   "source": "art/source/units/unit-large-06.png",
+   "sourceSha256": "337d2d3e0cc9551ff490e0a29cd2ef4667e1e1f121170ece72dce1dc6fb563ec",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "9dd88925ab3705fe6110e8b4d769b13018e9713ccb6ef29adf7c229e0602c6ca"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_trolls_brute.dds",
+   "source": "art/source/units/unit-large-05.png",
+   "sourceSha256": "f33f3be587c6490452be70ce40573c060f2a11c23623b552213c9e2851835b6f",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "62b24894db5238c2181309efcf070791d4cff64244564bcbed1e7165722922b0"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_volgan_presence.dds",
+   "source": "art/source/units/unit-large-10.png",
+   "sourceSha256": "d6b03cb7abe27efc183528f0f343055bcd3069ad0b62b22910e63b7ea10add7a",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "f92a830fb4ccec57b8658096b6c81c39c011ae7494718dff7c48f96f2164654a"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_yeti_band.dds",
+   "source": "art/source/units/unit-large-05.png",
+   "sourceSha256": "f33f3be587c6490452be70ce40573c060f2a11c23623b552213c9e2851835b6f",
+   "cell": 5,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "cb2dd4936de6b0b32fb0cb92ba83e58b8dd1a495747fc6d66bd2740825697015"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_zol_deathless_crews.dds",
+   "source": "art/source/units/unit-large-07-r2.png",
+   "sourceSha256": "187fcbaaa8aa2de70004575b9401e86d5f5aff406deb54765d7d03af94b176db",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "85893c4cb417bb835b0a7a0cda34df46d0dac825252f8aba5ab506f37dba8580"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_large/zin/zin_zol_deathless.dds",
+   "source": "art/source/units/unit-large-07-r2.png",
+   "sourceSha256": "187fcbaaa8aa2de70004575b9401e86d5f5aff406deb54765d7d03af94b176db",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 76x42 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b27b51be112d5a40873ad2aeb79315216e73d310d82ae7a0b5337e188c803bb2"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_abyss_folk.dds",
+   "source": "art/source/units/unit-mapl-07.png",
+   "sourceSha256": "e646e76043e0a41dc4f1ca89135f1206be3406b269d7d3b560f7dbd9016adacc",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "30a64c97f8eff70fd4927b2c9f053f1193a28aa24d35b5884f89deb3fbcdb236"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_dead_grave_riders.dds",
+   "source": "art/source/units/unit-mapl-09.png",
+   "sourceSha256": "ec066537c3245458bd44c6a1d06270eda27ffaefd5f6d4b80be23352b1e5e03b",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "745216b656b95dee99f65566f560307e276bed17630fa436177257c570eb7111"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_dead_necromancers.dds",
+   "source": "art/source/units/unit-mapl-09.png",
+   "sourceSha256": "ec066537c3245458bd44c6a1d06270eda27ffaefd5f6d4b80be23352b1e5e03b",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "3b088caaa5da25bcea4ad7c27efd5ce84cb03b3ede2b788f53fad53f420cd2f0"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_demons_bound.dds",
+   "source": "art/source/units/unit-mapl-09.png",
+   "sourceSha256": "ec066537c3245458bd44c6a1d06270eda27ffaefd5f6d4b80be23352b1e5e03b",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b2b231713684b4e65b2f5723de9531fd4d30b2b6fa9531d13e98835b20e382a3"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_demons_netherborn.dds",
+   "source": "art/source/units/unit-mapl-08.png",
+   "sourceSha256": "f041efada49bd2d73bd594acaab7602d0865f04ff9eddf097dcfd7be333c06b5",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "ac0bebcc1c20ae98862ddebfd8ace0849a892c26a8d72d93a8be1c7a15238dfd"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_demons_shachihata.dds",
+   "source": "art/source/units/unit-mapl-08.png",
+   "sourceSha256": "f041efada49bd2d73bd594acaab7602d0865f04ff9eddf097dcfd7be333c06b5",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "9aba6fdf95afa4f5cd7335ac2dbaecee88c2bfd431d46263ba6840953ecbd955"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_elves_archers.dds",
+   "source": "art/source/units/unit-mapl-04.png",
+   "sourceSha256": "31741b85078bb78bf0bd6ea6a71f4b86100e1d59ac0c42b8da2808cee2e5ea95",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "5a83782f7707cb469c2f2c53c4f3d67b522bbc3fbda70fdf05f1611cf665b065"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_elves_rangers.dds",
+   "source": "art/source/units/unit-mapl-05.png",
+   "sourceSha256": "ff6ead26e453186080acf90b5ce02bfd0206752152dec43dc182f7407cb80148",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "98ef7de22de36e0648d5fc29e7f7c5ef57102f5973986355360e136ffbbbfe18"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_elves_riders.dds",
+   "source": "art/source/units/unit-mapl-05.png",
+   "sourceSha256": "ff6ead26e453186080acf90b5ce02bfd0206752152dec43dc182f7407cb80148",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e7249c12da6f469f6e0afde1730d6a3916ec3357832f7a346ba986dd8588586b"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_elves_warden.dds",
+   "source": "art/source/units/unit-mapl-04.png",
+   "sourceSha256": "31741b85078bb78bf0bd6ea6a71f4b86100e1d59ac0c42b8da2808cee2e5ea95",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "aa5f484dcb4a987c9d1a72a5b9d27f946e4a9dca10e7c01d9ca4c048d4670911"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_elves_wardsingers.dds",
+   "source": "art/source/units/unit-mapl-14.png",
+   "sourceSha256": "fd52757a834f46b231805203790fbf12404879c996dd7cf2d03e633b810802b1",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "73905486b9ee62cca5bbe9c958f02cc4692e428c7581fa351df45a305d05b164"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_ents_grove.dds",
+   "source": "art/source/units/unit-mapl-08.png",
+   "sourceSha256": "f041efada49bd2d73bd594acaab7602d0865f04ff9eddf097dcfd7be333c06b5",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "fa6e5ef60e14224404a1e2ea5da4902fb2bdcf535927f0163df8569e7db33933"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_giants_host.dds",
+   "source": "art/source/units/unit-mapl-07.png",
+   "sourceSha256": "e646e76043e0a41dc4f1ca89135f1206be3406b269d7d3b560f7dbd9016adacc",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "c1fdca6a489756bed2a6010f59249bf4a20a5c9a20c34ba30a7dad0d52a6e1a1"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_giants_hurlers.dds",
+   "source": "art/source/units/unit-mapl-07.png",
+   "sourceSha256": "e646e76043e0a41dc4f1ca89135f1206be3406b269d7d3b560f7dbd9016adacc",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "66cd3eff0bf95a3e585bb5b7ccf1886f3f26c6c8f18fc49835c3a1435eac08ea"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_glo_bearer.dds",
+   "source": "art/source/units/unit-mapl-14.png",
+   "sourceSha256": "fd52757a834f46b231805203790fbf12404879c996dd7cf2d03e633b810802b1",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "4527f32f6787b653f2197355150c277af57a7d5f44d07efbd6ffc6643b03c017"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_great_spirit.dds",
+   "source": "art/source/units/unit-mapl-15.png",
+   "sourceSha256": "c232007cbcb3ad083cd20e4c818b9f891b4ccf26a9afca6c890df27afa4689f2",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "530ecf13dc412326ea417e659332991d73edbed4a7f79aa76058c04c69aa765e"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_archers.dds",
+   "source": "art/source/units/unit-mapl-01.png",
+   "sourceSha256": "d697968ea241fad547a7c342efcd90909c75d1e573979edace6a32727960b5d1",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "f913a1ecddbe40095743b98610928b60918f413b8d7ba96d3a703b02dcb41619"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_camel_riders.dds",
+   "source": "art/source/units/unit-mapl-03.png",
+   "sourceSha256": "cdecb64868e2a2141ebce0c926b3a9e1d7fddc12186d11dc4b31881d9f9aec92",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8826af1d0d696cbfbfa06a1d11cc1ef5ea3ac0cb89fdcf4c315017ad4ea67ffc"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_cavalry.dds",
+   "source": "art/source/units/unit-mapl-03.png",
+   "sourceSha256": "cdecb64868e2a2141ebce0c926b3a9e1d7fddc12186d11dc4b31881d9f9aec92",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "2cee99871d9bcb56c82923b7e29e441a5822bf5d36233a393de9ffb5d0ca4fba"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_handgunners.dds",
+   "source": "art/source/units/unit-mapl-01.png",
+   "sourceSha256": "d697968ea241fad547a7c342efcd90909c75d1e573979edace6a32727960b5d1",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "672b3432c1195edbf62a6bb6b9b345ace06346b17aa8cce2377d523c10c9e020"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_heavy_infantry.dds",
+   "source": "art/source/units/unit-mapl-02.png",
+   "sourceSha256": "f4ae351d37799186fec9682b27877804c33321328b8d286a46301f388d08f6e5",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "2a36ff8ebaf2efc980c883be561c9aec70941d22367c76ca393e6f9c212dbde4"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_hill_companies.dds",
+   "source": "art/source/units/unit-mapl-02.png",
+   "sourceSha256": "f4ae351d37799186fec9682b27877804c33321328b8d286a46301f388d08f6e5",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "f4072f9194bf98808cd4dd1547e80c0eaeae3a9ffb366991acd0303b9a909e31"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_horse_archers.dds",
+   "source": "art/source/units/unit-mapl-03.png",
+   "sourceSha256": "cdecb64868e2a2141ebce0c926b3a9e1d7fddc12186d11dc4b31881d9f9aec92",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "0a7c1d9bb5f58badc115a818925d9422e6dedabc68f9bb25d11b0ba96b52fd05"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_infantry.dds",
+   "source": "art/source/units/unit-mapl-01.png",
+   "sourceSha256": "d697968ea241fad547a7c342efcd90909c75d1e573979edace6a32727960b5d1",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "d849b7fda0fbc181ff70b0e6005b47da516c7eb98a242f4f44e9e3f2a53e606b"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_knights.dds",
+   "source": "art/source/units/unit-mapl-03.png",
+   "sourceSha256": "cdecb64868e2a2141ebce0c926b3a9e1d7fddc12186d11dc4b31881d9f9aec92",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "df7584f50ae1169aafb046657e8eea3058d7e1def5a02b4f43182ee27a173f38"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_levy.dds",
+   "source": "art/source/units/unit-mapl-01.png",
+   "sourceSha256": "d697968ea241fad547a7c342efcd90909c75d1e573979edace6a32727960b5d1",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "665085ef937e042aa3f629cc81bb6946b0637b91a8ace459acdf5fb56679bdaa"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_rangers.dds",
+   "source": "art/source/units/unit-mapl-02.png",
+   "sourceSha256": "f4ae351d37799186fec9682b27877804c33321328b8d286a46301f388d08f6e5",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b5e39c16c12a1d30280b1510ac7c41e36a03feadae97d6c199f65cd117868380"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_sea_soldiers.dds",
+   "source": "art/source/units/unit-mapl-02.png",
+   "sourceSha256": "f4ae351d37799186fec9682b27877804c33321328b8d286a46301f388d08f6e5",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "61aed90c5cbb366248e5b0358ee8238d4214f1ece7143e1cfede1b310e242825"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_temple_wardens.dds",
+   "source": "art/source/units/unit-mapl-04.png",
+   "sourceSha256": "31741b85078bb78bf0bd6ea6a71f4b86100e1d59ac0c42b8da2808cee2e5ea95",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "c57fc72b9e4454c3c42df37aecaa3c5198ca261ff20cf2250cc04ab0c3ceb155"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_men_war_elephants.dds",
+   "source": "art/source/units/unit-mapl-04.png",
+   "sourceSha256": "31741b85078bb78bf0bd6ea6a71f4b86100e1d59ac0c42b8da2808cee2e5ea95",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "6d58b8deeea4830bd9f5ec10e2936981ca99e73ad5889e9d4b51e1e17423a2f6"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_ogres_brutes.dds",
+   "source": "art/source/units/unit-mapl-06.png",
+   "sourceSha256": "a3dde2c19d2229e0844feb74a77f73ddda3c87c5def7ec128aba3f8e59dca396",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "f904ca732ff25547600eabcf2b0758922f35b53c22b007cde4d542cf1993a27d"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_orcs_goblins.dds",
+   "source": "art/source/units/unit-mapl-06.png",
+   "sourceSha256": "a3dde2c19d2229e0844feb74a77f73ddda3c87c5def7ec128aba3f8e59dca396",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "fa137a4473c6dd7e1e137138a211553f22474c8a8ed5a8b58707d59d8e950f57"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_orcs_raiders.dds",
+   "source": "art/source/units/unit-mapl-06.png",
+   "sourceSha256": "a3dde2c19d2229e0844feb74a77f73ddda3c87c5def7ec128aba3f8e59dca396",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "cd2c18c723e9ca9f17740520e692529e8bd9ac94ac4156f2a46f3adad88659a5"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_orcs_warrior.dds",
+   "source": "art/source/units/unit-mapl-06.png",
+   "sourceSha256": "a3dde2c19d2229e0844feb74a77f73ddda3c87c5def7ec128aba3f8e59dca396",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8b75f733f6d290cc776424f1a91f2b88cb14cd2950334f51ff64def08c50ab21"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_siege_bombard.dds",
+   "source": "art/source/units/unit-mapl-11.png",
+   "sourceSha256": "b2cca493f035eaf0daa4567a261d926ff2d8cc00ae3489b21557e1b7dad08203",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b3e8e15275afedecd871e9281d29efd0118860d0d1b5e1f40bc2f5f979e8a533"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_siege_catapult.dds",
+   "source": "art/source/units/unit-mapl-10.png",
+   "sourceSha256": "ea766ec5ccd602fd5d9a03cbdd8f72f784d8834d4880ebbc41d308cd4348dde6",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "9b946f80a6fd4843a2948a1eab8203988a0cd28f33fad0ee5fcaa55c1be091f8"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_siege_trebuchet.dds",
+   "source": "art/source/units/unit-mapl-10.png",
+   "sourceSha256": "ea766ec5ccd602fd5d9a03cbdd8f72f784d8834d4880ebbc41d308cd4348dde6",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "80f19d25d1a31ec10a5a037912d582df136eba8ecbc28036ca9bf7ba6a887ebc"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_sun_elves_bowmen.dds",
+   "source": "art/source/units/unit-mapl-05.png",
+   "sourceSha256": "ff6ead26e453186080acf90b5ce02bfd0206752152dec43dc182f7407cb80148",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "62969b3245e494ba574787239556af6cbd46d74baaf14f32477f1bc2d88b1f16"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_sun_elves_guard.dds",
+   "source": "art/source/units/unit-mapl-05.png",
+   "sourceSha256": "ff6ead26e453186080acf90b5ce02bfd0206752152dec43dc182f7407cb80148",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "d9b53a755a3eca4ba62d5e400ae8f0113541d6505702dcad9099077b0b54d128"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_armourers.dds",
+   "source": "art/source/units/unit-mapl-13.png",
+   "sourceSha256": "1fbc17f3770a195b8a7a8920512ca9178424f25d398cf533c52692c8f2404a9c",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "99f78e619f252687f72ed6ddffcd29dffb79af813d4c8d82f89330d0ade6fef7"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_ballistae.dds",
+   "source": "art/source/units/unit-mapl-11.png",
+   "sourceSha256": "b2cca493f035eaf0daa4567a261d926ff2d8cc00ae3489b21557e1b7dad08203",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "92c71a667e0b48c63ecf15b0ee494866fcf14e02e28447fd97e0662d3007cbb9"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_bombards.dds",
+   "source": "art/source/units/unit-mapl-11.png",
+   "sourceSha256": "b2cca493f035eaf0daa4567a261d926ff2d8cc00ae3489b21557e1b7dad08203",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "e835758890480760a38119b91646ff2723466ed742376ee60e09541438bdd0ae"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_catapults.dds",
+   "source": "art/source/units/unit-mapl-11.png",
+   "sourceSha256": "b2cca493f035eaf0daa4567a261d926ff2d8cc00ae3489b21557e1b7dad08203",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "61d497424a910342808e7901c7d5140c51352e10db84fb36298b6825451e12c0"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_healers.dds",
+   "source": "art/source/units/unit-mapl-12.png",
+   "sourceSha256": "1233aa29dbd1efeba09b6a6dfd3867c802247025af47cded21a7c706b244ff6c",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "6ccb8eadad6d6c3f675943f593b9e5241d605fa2242ac36a25815fea21d41ac0"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_heralds.dds",
+   "source": "art/source/units/unit-mapl-13.png",
+   "sourceSha256": "1fbc17f3770a195b8a7a8920512ca9178424f25d398cf533c52692c8f2404a9c",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "fdff270a683aaacad1c56e1251c14971407530383bed3d998c157c89347d560a"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_pack_train.dds",
+   "source": "art/source/units/unit-mapl-14.png",
+   "sourceSha256": "fd52757a834f46b231805203790fbf12404879c996dd7cf2d03e633b810802b1",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "8b123056130c87c04b1d47779bd300a3c4e77d55d1a120193d6e35e5089e4f62"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_provosts.dds",
+   "source": "art/source/units/unit-mapl-13.png",
+   "sourceSha256": "1fbc17f3770a195b8a7a8920512ca9178424f25d398cf533c52692c8f2404a9c",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b77ec102519437c724606bb54ced7fb595f9a925b8897d509bdb0273a6ea6b0d"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_quartermasters.dds",
+   "source": "art/source/units/unit-mapl-13.png",
+   "sourceSha256": "1fbc17f3770a195b8a7a8920512ca9178424f25d398cf533c52692c8f2404a9c",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "b51327f85c0be9c4da3c7a631cae09181aba9b975428cc3c9043d6effd5f97a1"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_sappers.dds",
+   "source": "art/source/units/unit-mapl-12.png",
+   "sourceSha256": "1233aa29dbd1efeba09b6a6dfd3867c802247025af47cded21a7c706b244ff6c",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "4e613861e524c233646012056226e823da6db7f326419b102ede12e21f7908d1"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_scorpions.dds",
+   "source": "art/source/units/unit-mapl-12.png",
+   "sourceSha256": "1233aa29dbd1efeba09b6a6dfd3867c802247025af47cded21a7c706b244ff6c",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "6ca789fdbc8743951bb414bd6aff0f637c3d8bd3a924a455c21a38d35df22969"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_scouts.dds",
+   "source": "art/source/units/unit-mapl-12.png",
+   "sourceSha256": "1233aa29dbd1efeba09b6a6dfd3867c802247025af47cded21a7c706b244ff6c",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "4b3d43d3efc4eca695be68664d3047f77b8fac27d43915311d2504bfd2a3c399"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_support_wardens.dds",
+   "source": "art/source/units/unit-mapl-14.png",
+   "sourceSha256": "fd52757a834f46b231805203790fbf12404879c996dd7cf2d03e633b810802b1",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "ec8d09175003b7a2a379cbe010701791765e547537a0d5ba89e6aad6b866e551"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_the_dead_revenant.dds",
+   "source": "art/source/units/unit-mapl-09.png",
+   "sourceSha256": "ec066537c3245458bd44c6a1d06270eda27ffaefd5f6d4b80be23352b1e5e03b",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "897bc9d3bf556c16640abbc10c159960850562f8b45f1fd78152e373b1e6070f"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_trolls_brute.dds",
+   "source": "art/source/units/unit-mapl-07.png",
+   "sourceSha256": "e646e76043e0a41dc4f1ca89135f1206be3406b269d7d3b560f7dbd9016adacc",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "baa3cb568c5bdbf0d4fadd3d4042de8b1fe11de58d9bdfd2aebf42f937f58e02"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_volgan_presence.dds",
+   "source": "art/source/units/unit-mapl-15.png",
+   "sourceSha256": "c232007cbcb3ad083cd20e4c818b9f891b4ccf26a9afca6c890df27afa4689f2",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "501376252fd1d4f431d56e686cd39bfd08bf90abdd1f3f6a989bb2bd30f61463"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_yeti_band.dds",
+   "source": "art/source/units/unit-mapl-08.png",
+   "sourceSha256": "f041efada49bd2d73bd594acaab7602d0865f04ff9eddf097dcfd7be333c06b5",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "9e86122025616ea1df82196e504207c7a8109fe80d588e94b888d6dd228284f6"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_zol_deathless_crews.dds",
+   "source": "art/source/units/unit-mapl-10.png",
+   "sourceSha256": "ea766ec5ccd602fd5d9a03cbdd8f72f784d8834d4880ebbc41d308cd4348dde6",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "2352d87b2d8185f2e673d316db110cea79343298e90f4cb757ab7ea5c00360df"
+  },
+  {
+   "out": "gfx/interface/counters/divisions_small/zin/zin_zol_deathless.dds",
+   "source": "art/source/units/unit-mapl-10.png",
+   "sourceSha256": "ea766ec5ccd602fd5d9a03cbdd8f72f784d8834d4880ebbc41d308cd4348dde6",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12 per frame",
+    "frames side by side"
+   ],
+   "sha256": "a5fa997daf68cba1f571dcf79e7bd82676f2405e12831561d0a8c60a13992840"
+  },
+  {
+   "out": "gfx/interface/counters/ships_small/zin/zin_ship_galley.dds",
+   "source": "art/source/units/unit-ship-01.png",
+   "sourceSha256": "9c6a870a7e82043a9dc012cbaeffc03a638fa74fde2542fa01234db9b1a4086a",
+   "cell": 0,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12"
+   ],
+   "sha256": "580c2fefcc1ed72c4cbb1a240d2677e5e08f844b09c34d81c20048f99a1d74b5"
+  },
+  {
+   "out": "gfx/interface/counters/ships_small/zin/zin_ship_great_warship.dds",
+   "source": "art/source/units/unit-ship-01.png",
+   "sourceSha256": "9c6a870a7e82043a9dc012cbaeffc03a638fa74fde2542fa01234db9b1a4086a",
+   "cell": 2,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12"
+   ],
+   "sha256": "eaad25f8f978f32d6cacaa2fcc9c7ebd54e39d28e07a335d521ad3a5cb3d618c"
+  },
+  {
+   "out": "gfx/interface/counters/ships_small/zin/zin_ship_raider.dds",
+   "source": "art/source/units/unit-ship-01.png",
+   "sourceSha256": "9c6a870a7e82043a9dc012cbaeffc03a638fa74fde2542fa01234db9b1a4086a",
+   "cell": 3,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12"
+   ],
+   "sha256": "d758a3c82fd0899574379cc674f01d56b22d5d8445a03805d80b33e6fc8c5bad"
+  },
+  {
+   "out": "gfx/interface/counters/ships_small/zin/zin_ship_warship.dds",
+   "source": "art/source/units/unit-ship-01.png",
+   "sourceSha256": "9c6a870a7e82043a9dc012cbaeffc03a638fa74fde2542fa01234db9b1a4086a",
+   "cell": 1,
+   "ops": [
+    "key black ground",
+    "crop to the picture",
+    "contain 30x12"
+   ],
+   "sha256": "daac283eef484328368ba8e2e78c9c5ea8765a4912a0d1ca0b6012a2bf643c74"
+  }
+ ]
+}

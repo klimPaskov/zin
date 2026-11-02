@@ -1336,4 +1336,23 @@ focus_tree = {
 			add_ideas = zin_shared_magical_lands_house_wardens_spirit
 		}
 	}
+	focus = {
+		id = zin_shared_magical_lands_ferries_over_the_drowned_road
+		icon = GFX_focus_zin_river_ford
+		x = 27
+		y = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		allow_branch = {
+			original_tag = LUV
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_two_shores = yes
+			set_country_flag = zin_deep_ferry_leave
+			add_political_power = 25
+		}
+	}
 }

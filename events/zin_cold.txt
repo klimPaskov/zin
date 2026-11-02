@@ -239,6 +239,10 @@ country_event = {
 	}
 	mean_time_to_happen = {
 		days = 365
+		modifier = {
+			factor = 3
+			zin_rules_ai_plausible_cold = yes
+		}
 	}
 	timeout_days = 30
 	option = {

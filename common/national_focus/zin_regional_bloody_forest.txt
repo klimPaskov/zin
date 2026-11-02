@@ -811,6 +811,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = zin_regional_bloody_forest_the_old_defiance
+			focus = zin_regional_bloody_forest_river_names_spoken
 		}
 		cost = 5
 		available = {
@@ -1197,6 +1198,107 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			remove_ideas = zin_regional_bloody_forest_woods_closed
+		}
+	}
+	focus = {
+		id = zin_regional_bloody_forest_the_red_cords
+		icon = GFX_focus_zin_bracelet_seal
+		x = 11
+		y = 3
+		prerequisite = {
+			focus = zin_regional_bloody_forest_words_with_the_veiled
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_red_cords = yes
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_bloody_forest_one_tongue_in_two_woods
+		icon = GFX_focus_zin_hymn_choir
+		x = 11
+		y = 4
+		prerequisite = {
+			focus = zin_regional_bloody_forest_the_red_cords
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			country_exists = CUR
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_cord_gift_asked = yes
+			add_opinion_modifier = {
+				target = CUR
+				modifier = zin_regional_bloody_forest_one_tongue
+			}
+			reverse_add_opinion_modifier = {
+				target = CUR
+				modifier = zin_regional_bloody_forest_one_tongue
+			}
+		}
+	}
+	focus = {
+		id = zin_regional_bloody_forest_river_names_spoken
+		icon = GFX_focus_zin_river_ford
+		x = 10
+		y = 5
+		prerequisite = {
+			focus = zin_regional_bloody_forest_one_tongue_in_two_woods
+		}
+		mutually_exclusive = {
+			focus = zin_regional_bloody_forest_a_truce_with_parim
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
+		cost = 10
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				OR = {
+					has_global_flag = zin_war_of_last_crowns
+					has_global_flag = zin_golden_king_exiled
+				}
+			}
+		}
+		completion_reward = {
+			zin_deep_speak_river_names = yes
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = zin_regional_bloody_forest_the_moot_of_mothers
+		icon = GFX_focus_zin_crown_witnesses
+		x = 12
+		y = 5
+		prerequisite = {
+			focus = zin_regional_bloody_forest_one_tongue_in_two_woods
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		cost = 15
+		available = {
+			NOT = {
+				has_global_flag = zin_deep_cord_burned
+			}
+		}
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_moot_route
+			add_political_power = 50
 		}
 	}
 }

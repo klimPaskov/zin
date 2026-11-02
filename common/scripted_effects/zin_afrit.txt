@@ -164,7 +164,6 @@ zin_afrit_compute_cap = {
 				tag = DLN
 				tag = NEZ
 				tag = ZOL
-				tag = YEL
 				has_country_flag = zin_people_the_dead
 			}
 		}
@@ -261,6 +260,7 @@ zin_afrit_crown_aurevan = {
 	# The Faithful's seals pass to the Deliverer. Scope: any (the hub's event).
 	hidden_effect = {
 		set_global_flag = zin_aurevan_crowned
+		zin_super_event_deliverer_crowned = yes # super event 3 (modules/super_events.mjs)
 		random_country = {
 			limit = {
 				zin_aenor_is_realm = yes
@@ -361,6 +361,7 @@ zin_afrit_die = {
 		if = {
 			limit = { NOT = { has_global_flag = zin_afrit_dead } }
 			set_global_flag = zin_afrit_dead
+			zin_super_event_afrit_dead = yes # super event 17 (modules/super_events.mjs)
 			every_country = {
 				limit = { zin_afrit_rules_here = yes }
 				kill_country_leader = yes
@@ -420,7 +421,7 @@ zin_afrit_flee_east = {
 			if = {
 				limit = { NOT = { country_exists = WOR } }
 				every_state = {
-					limit = { state = 1034 }
+					limit = { state = 1600 }
 					owner = {
 						release = WOR
 					}
@@ -683,6 +684,67 @@ zin_afrit_historical_kneel = {
 		}
 	}
 }
+zin_afrit_hunt_bribe = {
+	# K59 (Q-66), zin_afrit.78 b: the hunter (THIS) takes the false god's gold and lets him go; it hunts him no more for a year, and the hunt
+	# starts again from the beginning.
+	add_political_power = 150
+	hidden_effect = {
+		set_country_flag = { flag = zin_afrit_hunter_bought days = 365 }
+		set_variable = { global.zin_afrit_hunt = 0 }
+	}
+}
+zin_afrit_hunt_kill = {
+	# K59 (Q-66), zin_afrit.78 a: the hunter (THIS) kills the false god outside the palace. zin_afrit_die does the rest; every country
+	# hears zin_afrit.79.
+	hidden_effect = {
+		set_global_flag = zin_afrit_slain_by_hunter
+		set_global_flag = zin_afrit_death_told
+		save_global_event_target_as = zin_afrit_slayer
+	}
+	zin_afrit_die = yes
+	hidden_effect = { news_event = { id = zin_afrit.79 } }
+}
+zin_afrit_hunt_month = {
+	# K59 (Q-66): one month of the hunt for the false god in hiding. The hunter is the realm that holds the land where he was last seen,
+	# else the heir's host.
+	add_to_variable = { global.zin_afrit_hunt = 3 }
+	clear_global_event_target = zin_afrit_hunter
+	if = {
+		limit = {
+			has_variable = global.zin_afrit_hide_state
+			var:global.zin_afrit_hide_state = { controller = { zin_afrit_may_hunt = yes } }
+		}
+		add_to_variable = { global.zin_afrit_hunt = 4 }
+		var:global.zin_afrit_hide_state = { controller = { save_global_event_target_as = zin_afrit_hunter } }
+	}
+	if = {
+		limit = {
+			any_country = {
+				AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
+				zin_afrit_may_hunt = yes
+			}
+		}
+		add_to_variable = { global.zin_afrit_hunt = 5 }
+		if = {
+			limit = { NOT = { has_event_target = zin_afrit_hunter } }
+			random_country = {
+				limit = {
+					AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
+					zin_afrit_may_hunt = yes
+				}
+				save_global_event_target_as = zin_afrit_hunter
+			}
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { global.zin_afrit_hunt > 99.99 }
+			has_event_target = zin_afrit_hunter
+		}
+		set_variable = { global.zin_afrit_hunt = 0 }
+		event_target:zin_afrit_hunter = { country_event = { id = zin_afrit.78 } }
+	}
+}
 zin_afrit_kneel = {
 	# A court kneels to the King of the East. Scope: the court.
 	hidden_effect = {
@@ -817,6 +879,8 @@ zin_afrit_lose_realm = {
 		every_country = {
 			limit = { has_character = zin_aurevan }
 			set_country_flag = zin_afrit_lost_seat_mark
+			# K59 (Q-66): where he was last seen, for the hunt
+			capital_scope = { set_variable = { global.zin_afrit_hide_state = THIS } }
 			remove_country_leader_role = { character = zin_aurevan ideology = zin_shadow_worship }
 			remove_country_leader_role = { character = zin_aurevan ideology = zin_light_sanctuary }
 		}
@@ -860,6 +924,7 @@ zin_afrit_lose_realm = {
 		}
 		else = {
 			set_global_flag = zin_afrit_hidden
+			set_variable = { global.zin_afrit_hunt = 0 }
 			news_event = { id = zin_afrit.77 }
 		}
 		zin_afrit_resolve_seat = yes
@@ -878,6 +943,13 @@ zin_afrit_monthly = {
 				NOT = { any_country = { has_character = zin_aurevan } }
 			}
 			zin_afrit_lose_realm = yes
+		}
+		if = {
+			limit = {
+				has_global_flag = zin_afrit_hidden
+				NOT = { has_global_flag = zin_afrit_dead }
+			}
+			zin_afrit_hunt_month = yes
 		}
 		zin_afrit_word_of_the_heir = yes
 		set_variable = { global.zin_afrit_veil_last_change = global.zin_afrit_veil_month }
@@ -1258,6 +1330,7 @@ zin_afrit_proclaim_king_of_east = {
 		if = {
 			limit = { NOT = { has_global_flag = zin_afrit_king_of_east } }
 			set_global_flag = zin_afrit_king_of_east
+			zin_super_event_king_of_the_east = yes # super event 10 (modules/super_events.mjs)
 			if = {
 				limit = { country_exists = WOR }
 				WOR = {
@@ -1672,6 +1745,7 @@ zin_afrit_reveal = {
 		limit = { zin_afrit_secret_kept = yes }
 		hidden_effect = {
 			set_global_flag = zin_afrit_revealed
+			zin_super_event_name_of_the_deliverer = yes # super event 9 (modules/super_events.mjs)
 			if = {
 				limit = { NOT = { has_global_flag = zin_aurevan_crowned } }
 				set_global_flag = zin_afrit_unmasked_early
@@ -1974,12 +2048,29 @@ zin_afrit_wound = {
 zin_afrit_ui_refresh = {
 	# Recomputes what the Hidden Council panel shows for the hub. Pure formatting: it never changes a mechanic variable.
 	add_to_variable = { zin_ui_tick = 1 }
-	set_variable = { zin_ui_veil_x = global.zin_afrit_veil }
-	multiply_variable = { zin_ui_veil_x = 5.2 }
-	add_to_variable = { zin_ui_veil_x = 27 }
-	set_variable = { zin_ui_plot_x = global.zin_afrit_regicide_plot }
-	multiply_variable = { zin_ui_plot_x = 5.2 }
-	add_to_variable = { zin_ui_plot_x = 27 }
+	set_variable = { zin_ui_veil_fill = global.zin_afrit_veil }
+	multiply_variable = { zin_ui_veil_fill = 2.32 }
+	clamp_variable = { var = zin_ui_veil_fill min = 0 max = 232 }
+	set_variable = { zin_ui_plot_fill = global.zin_afrit_regicide_plot }
+	multiply_variable = { zin_ui_plot_fill = 2.32 }
+	clamp_variable = { var = zin_ui_plot_fill min = 0 max = 232 }
+	set_variable = { zin_ui_seats_total = 0 }
+	set_variable = { zin_ui_seat_seals_fill = global.zin_afrit_seat_seals }
+	multiply_variable = { zin_ui_seat_seals_fill = 46.4 }
+	clamp_variable = { var = zin_ui_seat_seals_fill min = 0 max = 232 }
+	add_to_variable = { zin_ui_seats_total = global.zin_afrit_seat_seals }
+	set_variable = { zin_ui_seat_censers_fill = global.zin_afrit_seat_censers }
+	multiply_variable = { zin_ui_seat_censers_fill = 46.4 }
+	clamp_variable = { var = zin_ui_seat_censers_fill min = 0 max = 232 }
+	add_to_variable = { zin_ui_seats_total = global.zin_afrit_seat_censers }
+	set_variable = { zin_ui_seat_whispers_fill = global.zin_afrit_seat_whispers }
+	multiply_variable = { zin_ui_seat_whispers_fill = 46.4 }
+	clamp_variable = { var = zin_ui_seat_whispers_fill min = 0 max = 232 }
+	add_to_variable = { zin_ui_seats_total = global.zin_afrit_seat_whispers }
+	set_variable = { zin_ui_seat_relics_fill = global.zin_afrit_seat_relics }
+	multiply_variable = { zin_ui_seat_relics_fill = 46.4 }
+	clamp_variable = { var = zin_ui_seat_relics_fill min = 0 max = 232 }
+	add_to_variable = { zin_ui_seats_total = global.zin_afrit_seat_relics }
 	if = {
 		limit = { has_country_flag = zin_ui_council_open }
 		set_variable = { zin_ui_h1 = 0 }
@@ -1987,10 +2078,12 @@ zin_afrit_ui_refresh = {
 		set_variable = { zin_ui_h3 = 0 }
 		set_variable = { zin_ui_h4 = 0 }
 		set_variable = { zin_ui_h5 = 0 }
+		set_variable = { zin_ui_houses = 0 }
 		clear_array = zin_afrit_houses_list
 		set_temp_variable = { zin_nl = 0 }
 		every_country = {
 			limit = { check_variable = { zin_footholds > 0 } }
+			PREV = { add_to_variable = { zin_ui_houses = 1 } }
 			if = {
 				limit = { check_variable = { zin_footholds = 1 } }
 				PREV = { add_to_variable = { zin_ui_h1 = 1 } }
@@ -2018,6 +2111,87 @@ zin_afrit_ui_refresh = {
 				PREV = { add_to_array = { zin_afrit_houses_list = PREV } }
 				add_to_temp_variable = { zin_nl = 1 }
 			}
+		}
+		set_variable = { zin_ui_rows_total = zin_afrit_houses_list^num }
+		set_variable = { zin_ui_pages = 0 }
+		set_temp_variable = { zin_ui_left = zin_ui_rows_total }
+		while_loop_effect = {
+			limit = { check_variable = { zin_ui_left > 0 } }
+			add_to_variable = { zin_ui_pages = 1 }
+			subtract_from_temp_variable = { zin_ui_left = 10 }
+		}
+		if = {
+			limit = { check_variable = { zin_ui_page > zin_ui_pages } }
+			set_variable = { zin_ui_page = zin_ui_pages }
+			subtract_from_variable = { zin_ui_page = 1 }
+		}
+		clamp_variable = { var = zin_ui_page min = 0 }
+		set_variable = { zin_ui_page_shown = zin_ui_page }
+		add_to_variable = { zin_ui_page_shown = 1 }
+		set_temp_variable = { zin_ui_first = zin_ui_page }
+		multiply_temp_variable = { zin_ui_first = 10 }
+		set_variable = { zin_ui_rows_shown = zin_ui_rows_total }
+		subtract_from_variable = { zin_ui_rows_shown = zin_ui_first }
+		clamp_variable = { var = zin_ui_rows_shown min = 0 max = 10 }
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 0 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_1 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 1 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_2 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 2 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_3 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 3 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_4 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 4 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_5 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 5 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_6 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 6 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_7 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 7 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_8 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 8 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_9 = zin_afrit_houses_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 9 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_10 = zin_afrit_houses_list^zin_ui_at }
 		}
 	}
 }

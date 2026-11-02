@@ -5,7 +5,7 @@ zin_glo_seekers = {
 		allowed = { always = yes }
 		visible = {
 			zin_horos_alive = yes
-			NOT = { original_tag = YEL }
+			NOT = { original_tag = PRT }
 			NOT = { zin_afrit_is_hub = yes }
 			NOT = { has_country_flag = zin_glo_petitioned }
 		}
@@ -46,7 +46,11 @@ zin_glo_seekers = {
 		days_re_enable = 180
 		complete_effect = {
 			set_variable = { global.zin_glo_watch_sender = THIS }
-			YEL = { country_event = { id = zin_glo.60 } }
+			1663 = {
+				owner = {
+					country_event = { id = zin_glo.60 }
+				}
+			}
 		}
 		ai_will_do = {
 			base = 0
@@ -72,7 +76,7 @@ zin_glo_seekers = {
 		complete_effect = {
 			set_country_flag = zin_glo_hunt_sent
 			country_event = { id = zin_glo.40 }
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.41 days = 180 }
 				}
@@ -127,7 +131,7 @@ zin_glo_seekers = {
 		available = {
 			zin_glo_dark_power = yes
 			check_variable = { global.zin_glo_state = 2 }
-			controls_state = 1063
+			controls_state = 1663
 			NOT = { has_global_flag = zin_glo_defiling }
 		}
 		cost = 200
@@ -137,7 +141,7 @@ zin_glo_seekers = {
 			set_variable = { global.zin_glo_defiler = THIS }
 			set_variable = { global.zin_glo_defile_end = global.num_days }
 			if = {
-				limit = { has_global_flag = zin_yeldenne_seal_warded }
+				limit = { has_global_flag = zin_glo_seal_warded }
 				add_to_variable = { global.zin_glo_defile_end = constant:zin_glo.defile_days_warded }
 			}
 			else = {
@@ -147,7 +151,7 @@ zin_glo_seekers = {
 		}
 		cancel_trigger = {
 			OR = {
-				NOT = { controls_state = 1063 }
+				NOT = { controls_state = 1663 }
 				NOT = { has_global_flag = zin_glo_defiling }
 			}
 		}
@@ -171,7 +175,7 @@ zin_glo_seekers = {
 		allowed = { always = yes }
 		visible = {
 			has_global_flag = zin_eindil_lost
-			NOT = { has_global_flag = zin_yeldenne_calls_bearer }
+			NOT = { has_global_flag = zin_glo_calls_bearer }
 			OR = {
 				check_variable = { global.zin_glo_state = 0 }
 				check_variable = { global.zin_glo_state = 2 }
@@ -203,7 +207,7 @@ zin_glo_seekers = {
 		allowed = { always = yes }
 		visible = {
 			has_global_flag = zin_eindil_lost
-			has_global_flag = zin_yeldenne_calls_bearer
+			has_global_flag = zin_glo_calls_bearer
 			OR = {
 				check_variable = { global.zin_glo_state = 0 }
 				check_variable = { global.zin_glo_state = 2 }

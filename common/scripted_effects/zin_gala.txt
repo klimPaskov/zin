@@ -4,9 +4,9 @@ zin_gala_recruit = {
 	if = {
 		limit = {
 			check_variable = { zin_arg_character = 1 }
-			NOT = { has_character = zin_gala_heveneya }
+			NOT = { has_character = zin_gala_caleon }
 		}
-		if = { limit = { NOT = { has_character = zin_gala_heveneya } } zin_gala_heveneya = { set_nationality = PREV } }
+		if = { limit = { NOT = { has_character = zin_gala_caleon } } zin_gala_caleon = { set_nationality = PREV } }
 	}
 	if = {
 		limit = {

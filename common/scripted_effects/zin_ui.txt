@@ -29,4 +29,8 @@ zin_ui_refresh = {
 		limit = { zin_is_mirolon = yes }
 		zin_dominion_ui_refresh_mirolon = yes
 	}
+	if = {
+		limit = { zin_aoaz_bar_shown = yes }
+		zin_aoaz_bar_refresh = yes
+	}
 }

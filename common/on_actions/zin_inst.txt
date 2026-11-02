@@ -491,15 +491,6 @@ on_actions = {
 					navy_experience = 50
 				}
 			}
-			YEL = {
-				if = {
-					limit = { is_ai = yes }
-					activate_advisor = zin_cmd_army_yeldenne_adv
-					activate_advisor = zin_cmd_master_yeldenne_adv
-				}
-				set_temp_variable = { zin_arg_rite = 1 }
-				zin_inst_grant_scholar = yes
-			}
 			GIR = {
 				if = {
 					limit = { is_ai = yes }

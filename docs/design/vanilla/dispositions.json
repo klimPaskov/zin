@@ -1,7 +1,7 @@
 {
  "version": 1,
  "spec": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
- "gameVersion": "1.19.3",
+ "gameVersion": "1.19.4.1",
  "measured": "2026-10-18",
  "currentStage": 1,
  "note": "Source of truth for section 3 of the spec. stage is the stage in which the action takes effect (0 = in effect before stage 1). The builder writes a replace_path line for every replace row with stage <= currentStage and the overrides of every override row in effect. A row with stub names the interim file C4 removes once the owner ships content; emptyAllowed records why a replaced folder may ship no file.",

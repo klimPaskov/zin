@@ -4,7 +4,7 @@ country_event = {
 	id = zin_afrit.10
 	title = zin_afrit.10.t
 	desc = zin_afrit.10.desc
-	picture = GFX_zin_evt_hermitage
+	picture = GFX_zin_evt_beat_veil_verdict
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -17,7 +17,7 @@ country_event = {
 	id = zin_afrit.11
 	title = zin_afrit.11.t
 	desc = zin_afrit.11.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_night
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -28,6 +28,10 @@ country_event = {
 			modifier = {
 				add = 100
 				zin_rules_ai_branch_afrit_historical = yes
+			}
+			modifier = {
+				factor = 3
+				zin_rules_ai_plausible_afrit = yes
 			}
 		}
 		set_country_flag = zin_worshipdom_instrument_physician
@@ -72,7 +76,7 @@ country_event = {
 	id = zin_afrit.14
 	title = zin_afrit.14.t
 	desc = zin_afrit.14.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_night
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -89,7 +93,7 @@ country_event = {
 	id = zin_afrit.15
 	title = zin_afrit.15.t
 	desc = zin_afrit.15.desc
-	picture = GFX_zin_evt_hermitage
+	picture = GFX_zin_evt_beat_veil_choose_night
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -125,6 +129,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				has_game_rule = { rule = zin_rule_golden_king_death option = NO_AI_PLOT }
+			}
+			modifier = {
+				factor = 3
+				zin_rules_ai_plausible_afrit = yes
 			}
 		}
 		zin_afrit_ready_regicide = yes
@@ -172,7 +180,7 @@ country_event = {
 	id = zin_afrit.16
 	title = zin_afrit.16.t
 	desc = zin_afrit.16.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_night
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -185,8 +193,16 @@ news_event = {
 	id = zin_afrit.17
 	title = zin_afrit.17.t
 	desc = zin_afrit.17.desc
-	picture = GFX_zin_news_golden_court
+	picture = GFX_zin_news_beat_veil_golden_news
 	major = yes
+	# K61: shown to the lands where it happens and the realms it involves (data/news_reach.json).
+	show_major = {
+		OR = {
+			zin_hears_in_middle_lands = yes
+			zin_aenor_is_concord_dominion = yes
+			zin_afrit_is_hub = yes
+		}
+	}
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -199,7 +215,7 @@ country_event = {
 	id = zin_afrit.20
 	title = zin_afrit.20.t
 	desc = zin_afrit.20.desc
-	picture = GFX_zin_evt_golden_court
+	picture = GFX_zin_evt_beat_veil_palace_seals
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -233,6 +249,10 @@ country_event = {
 			modifier = {
 				add = 100
 				zin_rules_ai_branch_afrit_ashen = yes
+			}
+			modifier = {
+				factor = 3
+				zin_rules_ai_plausible_afrit = yes
 			}
 		}
 		zin_afrit_crown_aurevan = yes
@@ -278,9 +298,10 @@ news_event = {
 	id = zin_afrit.21
 	title = zin_afrit.21.t
 	desc = zin_afrit.21.desc
-	picture = GFX_zin_news_coronation
+	picture = GFX_zin_news_beat_veil_coronation_news
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_deliverer_crowned } } # super event 3 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {
@@ -292,7 +313,7 @@ country_event = {
 	id = zin_afrit.22
 	title = zin_afrit.22.t
 	desc = zin_afrit.22.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_verdict
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -303,6 +324,10 @@ country_event = {
 			modifier = {
 				add = 100
 				zin_rules_ai_branch_afrit_historical = yes
+			}
+			modifier = {
+				factor = 3
+				zin_rules_ai_plausible_afrit = yes
 			}
 		}
 		set_temp_variable = { zin_arg_value = -5 }
@@ -347,7 +372,7 @@ news_event = {
 	id = zin_afrit.23
 	title = zin_afrit.23.t
 	desc = zin_afrit.23.desc
-	picture = GFX_zin_news_coronation
+	picture = GFX_zin_news_beat_veil_coronation_news
 	major = yes
 	is_triggered_only = yes
 	timeout_days = 30
@@ -369,7 +394,7 @@ country_event = {
 	id = zin_afrit.31
 	title = zin_afrit.31.t
 	desc = zin_afrit.31.desc
-	picture = GFX_zin_evt_cold_shore
+	picture = GFX_zin_evt_beat_veil_shore
 	is_triggered_only = yes
 	timeout_days = 30
 	immediate = {
@@ -397,6 +422,10 @@ country_event = {
 			modifier = {
 				add = 100
 				zin_rules_ai_branch_afrit_historical = yes
+			}
+			modifier = {
+				factor = 3
+				zin_rules_ai_plausible_afrit = yes
 			}
 		}
 		zin_afrit_northern_voyage = yes
@@ -439,7 +468,7 @@ country_event = {
 	id = zin_afrit.32
 	title = zin_afrit.32.t
 	desc = zin_afrit.32.desc
-	picture = GFX_zin_evt_cold_shore
+	picture = GFX_zin_evt_beat_veil_shore
 	is_triggered_only = yes
 	timeout_days = 30
 	immediate = {
@@ -462,7 +491,7 @@ country_event = {
 	id = zin_afrit.33
 	title = zin_afrit.33.t
 	desc = zin_afrit.33.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_ambush
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -475,7 +504,13 @@ country_event = {
 
 	option = {
 		name = zin_afrit.33.b
-		ai_chance = { base = 100 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 3
+				zin_rules_ai_plausible_afrit = yes
+			}
+		}
 		custom_effect_tooltip = zin_afrit.33.b.tt
 	}
 }
@@ -483,7 +518,7 @@ country_event = {
 	id = zin_afrit.34
 	title = zin_afrit.34.t
 	desc = zin_afrit.34.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_ambush
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -514,9 +549,10 @@ news_event = {
 	desc = {
 		text = zin_afrit.43.desc1
 	}
-	picture = GFX_zin_news_unmasking
+	picture = GFX_zin_news_beat_veil_unmasking_news
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_name_of_the_deliverer } } # super event 9 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {
@@ -528,7 +564,7 @@ country_event = {
 	id = zin_afrit.45
 	title = zin_afrit.45.t
 	desc = zin_afrit.45.desc
-	picture = GFX_zin_evt_houses
+	picture = GFX_zin_evt_beat_veil_houses
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -551,7 +587,7 @@ country_event = {
 	id = zin_afrit.51
 	title = zin_afrit.51.t
 	desc = zin_afrit.51.desc
-	picture = GFX_zin_evt_eastern_court
+	picture = GFX_zin_evt_beat_veil_east
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -650,7 +686,7 @@ news_event = {
 	id = zin_afrit.52
 	title = zin_afrit.52.t
 	desc = zin_afrit.52.desc
-	picture = GFX_zin_news_eastern_court
+	picture = GFX_zin_news_beat_veil_east_news
 	major = yes
 	is_triggered_only = yes
 	timeout_days = 30
@@ -664,7 +700,7 @@ country_event = {
 	id = zin_afrit.53
 	title = zin_afrit.53.t
 	desc = zin_afrit.53.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_verdict
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -702,7 +738,7 @@ country_event = {
 	desc = {
 		text = zin_afrit.60.desc1
 	}
-	picture = GFX_zin_evt_eastern_court
+	picture = GFX_zin_evt_beat_veil_east
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -715,7 +751,7 @@ country_event = {
 	id = zin_afrit.61
 	title = zin_afrit.61.t
 	desc = zin_afrit.61.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_brother
 	is_triggered_only = yes
 	timeout_days = 30
 	immediate = {
@@ -745,7 +781,7 @@ news_event = {
 	id = zin_afrit.62
 	title = zin_afrit.62.t
 	desc = zin_afrit.62.desc
-	picture = GFX_zin_news_golden_court
+	picture = GFX_zin_news_beat_veil_golden_news
 	major = yes
 	is_triggered_only = yes
 	timeout_days = 30
@@ -765,7 +801,7 @@ country_event = {
 	id = zin_afrit.70
 	title = zin_afrit.70.t
 	desc = zin_afrit.70.desc
-	picture = GFX_zin_evt_hermitage
+	picture = GFX_zin_evt_beat_veil_palace_seals
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -779,7 +815,7 @@ country_event = {
 	id = zin_afrit.71
 	title = zin_afrit.71.t
 	desc = zin_afrit.71.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_artifacts
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -840,7 +876,7 @@ country_event = {
 	id = zin_afrit.72
 	title = zin_afrit.72.t
 	desc = zin_afrit.72.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_artifacts
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -886,7 +922,7 @@ country_event = {
 	id = zin_afrit.73
 	title = zin_afrit.73.t
 	desc = zin_afrit.73.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_artifacts
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -932,7 +968,7 @@ country_event = {
 	id = zin_afrit.74
 	title = zin_afrit.74.t
 	desc = zin_afrit.74.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_artifacts
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -971,7 +1007,7 @@ news_event = {
 	desc = {
 		text = zin_afrit.75.desc1
 	}
-	picture = GFX_zin_news_generic_war
+	picture = GFX_zin_news_beat_veil_false_god_news
 	major = yes
 	is_triggered_only = yes
 	timeout_days = 30
@@ -1002,7 +1038,7 @@ country_event = {
 	id = zin_afrit.76
 	title = zin_afrit.76.t
 	desc = zin_afrit.76.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_palace_seals
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -1035,13 +1071,74 @@ news_event = {
 	desc = {
 		text = zin_afrit.77.desc1
 	}
-	picture = GFX_zin_news_generic_war
+	picture = GFX_zin_news_beat_veil_false_god_news
 	major = yes
 	is_triggered_only = yes
 	timeout_days = 30
 
 	option = {
 		name = zin_afrit.77.a
+		ai_chance = { base = 100 }
+	}
+}
+country_event = {
+	id = zin_afrit.78
+	title = zin_afrit.78.t
+	desc = {
+		text = zin_afrit.78.desc
+		trigger = {
+			AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
+		}
+	}
+	desc = {
+		text = zin_afrit.78.desc1
+	}
+	picture = GFX_zin_evt_beat_veil_false_god
+	is_triggered_only = yes
+	timeout_days = 30
+
+	option = {
+		name = zin_afrit.78.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				add = 100
+				AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
+			}
+		}
+		custom_effect_tooltip = zin_afrit.78.a.tt
+		zin_afrit_hunt_kill = yes
+	}
+
+	option = {
+		name = zin_afrit.78.b
+		trigger = {
+			NOT = { AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil } }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				zin_rules_is_historical = yes
+			}
+		}
+		custom_effect_tooltip = zin_afrit.78.b.tt
+		zin_afrit_hunt_bribe = yes
+	}
+}
+news_event = {
+	id = zin_afrit.79
+	title = zin_afrit.79.t
+	desc = {
+		text = zin_afrit.79.desc
+	}
+	picture = GFX_zin_news_beat_veil_false_god_news
+	major = yes
+	is_triggered_only = yes
+	timeout_days = 30
+
+	option = {
+		name = zin_afrit.79.a
 		ai_chance = { base = 100 }
 	}
 }

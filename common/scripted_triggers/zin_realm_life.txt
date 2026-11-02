@@ -30,22 +30,22 @@ zin_realm_bond_owned = {
 	}
 }
 zin_realm_contested_custom = {
-	# G3: realms whose custom settles the crown by combat (the heir notes of data/world/characters).
+	# G3: realms whose custom settles the crown by combat (custom contested).
 	OR = {
 		original_tag = GOL
+		original_tag = DND
 		original_tag = BRR
 		original_tag = MUS
+		original_tag = GLI
 		original_tag = DRK
 		original_tag = BUN
 		original_tag = BOR
-		original_tag = DRE
 		original_tag = TRO
 		original_tag = SKR
 		original_tag = DUN
 		original_tag = BRT
 		original_tag = WIL
 		original_tag = KHO
-		original_tag = YON
 		original_tag = SNT
 	}
 }
@@ -108,6 +108,12 @@ zin_realm_crown_may_be_contested = {
 	has_civil_war = no
 	check_variable = { global.zin_realm_contested_crowns < 12 }
 }
+zin_realm_elective_custom = {
+	# Q-87: realms that choose their ruler (a moot, a council, a guild); the heir is the favoured candidate.
+	NOT = { zin_realm_inherits = yes }
+	NOT = { zin_realm_contested_custom = yes }
+	NOT = { zin_realm_open_custom = yes }
+}
 zin_realm_has_captain = {
 	# G3, G4: the realm has a captain-general to take the crown.
 	any_army_leader = { skill > 0 }
@@ -129,8 +135,8 @@ zin_realm_has_named_heir = {
 		}
 		AND = {
 			original_tag = CLD
-			has_character = zin_coldor_ilvessa
-			NOT = { has_country_leader = { character = zin_coldor_ilvessa ruling_only = no } }
+			has_character = zin_coldor_alddok
+			NOT = { has_country_leader = { character = zin_coldor_alddok ruling_only = no } }
 		}
 		AND = {
 			original_tag = NRS
@@ -143,9 +149,49 @@ zin_realm_has_named_heir = {
 			NOT = { has_country_leader = { character = zin_stabilo_demano ruling_only = no } }
 		}
 		AND = {
+			original_tag = DND
+			has_character = zin_heir_dondor
+			NOT = { has_country_leader = { character = zin_heir_dondor ruling_only = no } }
+		}
+		AND = {
+			original_tag = MAG
+			has_character = zin_heir_magical_forest
+			NOT = { has_country_leader = { character = zin_heir_magical_forest ruling_only = no } }
+		}
+		AND = {
+			original_tag = GNW
+			has_character = zin_heir_gunwyn
+			NOT = { has_country_leader = { character = zin_heir_gunwyn ruling_only = no } }
+		}
+		AND = {
+			original_tag = SEL
+			has_character = zin_heir_selen
+			NOT = { has_country_leader = { character = zin_heir_selen ruling_only = no } }
+		}
+		AND = {
 			original_tag = KIN
-			has_character = zin_regional_kingson_merwen
-			NOT = { has_country_leader = { character = zin_regional_kingson_merwen ruling_only = no } }
+			has_character = zin_regional_kingson_aldewen
+			NOT = { has_country_leader = { character = zin_regional_kingson_aldewen ruling_only = no } }
+		}
+		AND = {
+			original_tag = HIR
+			has_character = zin_heir_hirolon
+			NOT = { has_country_leader = { character = zin_heir_hirolon ruling_only = no } }
+		}
+		AND = {
+			original_tag = MLK
+			has_character = zin_heir_melkgard
+			NOT = { has_country_leader = { character = zin_heir_melkgard ruling_only = no } }
+		}
+		AND = {
+			original_tag = HOR
+			has_character = zin_heir_horidor
+			NOT = { has_country_leader = { character = zin_heir_horidor ruling_only = no } }
+		}
+		AND = {
+			original_tag = GIR
+			has_character = zin_heir_girdon
+			NOT = { has_country_leader = { character = zin_heir_girdon ruling_only = no } }
 		}
 		AND = {
 			original_tag = KON
@@ -154,18 +200,93 @@ zin_realm_has_named_heir = {
 		}
 		AND = {
 			original_tag = HNH
-			has_character = zin_regional_hunhun_belwen
-			NOT = { has_country_leader = { character = zin_regional_hunhun_belwen ruling_only = no } }
+			has_character = zin_regional_hunhun_alderic
+			NOT = { has_country_leader = { character = zin_regional_hunhun_alderic ruling_only = no } }
+		}
+		AND = {
+			original_tag = KLU
+			has_character = zin_heir_klungori_guard
+			NOT = { has_country_leader = { character = zin_heir_klungori_guard ruling_only = no } }
 		}
 		AND = {
 			original_tag = HER
-			has_character = zin_regional_herez_ilia
-			NOT = { has_country_leader = { character = zin_regional_herez_ilia ruling_only = no } }
+			has_character = zin_regional_herez_aldan
+			NOT = { has_country_leader = { character = zin_regional_herez_aldan ruling_only = no } }
+		}
+		AND = {
+			original_tag = NOL
+			has_character = zin_heir_noleksun
+			NOT = { has_country_leader = { character = zin_heir_noleksun ruling_only = no } }
+		}
+		AND = {
+			original_tag = KIL
+			has_character = zin_heir_kilinti
+			NOT = { has_country_leader = { character = zin_heir_kilinti ruling_only = no } }
+		}
+		AND = {
+			original_tag = SFT
+			has_character = zin_heir_safeton
+			NOT = { has_country_leader = { character = zin_heir_safeton ruling_only = no } }
+		}
+		AND = {
+			original_tag = FRE
+			has_character = zin_heir_freshon
+			NOT = { has_country_leader = { character = zin_heir_freshon ruling_only = no } }
+		}
+		AND = {
+			original_tag = PAZ
+			has_character = zin_heir_pazoma
+			NOT = { has_country_leader = { character = zin_heir_pazoma ruling_only = no } }
+		}
+		AND = {
+			original_tag = ORH
+			has_character = zin_heir_orohaf
+			NOT = { has_country_leader = { character = zin_heir_orohaf ruling_only = no } }
 		}
 		AND = {
 			original_tag = FOT
 			has_character = zin_fotan_ostric
 			NOT = { has_country_leader = { character = zin_fotan_ostric ruling_only = no } }
+		}
+		AND = {
+			original_tag = KUN
+			has_character = zin_heir_kunhrim
+			NOT = { has_country_leader = { character = zin_heir_kunhrim ruling_only = no } }
+		}
+		AND = {
+			original_tag = BRR
+			has_character = zin_heir_burrikkrit
+			NOT = { has_country_leader = { character = zin_heir_burrikkrit ruling_only = no } }
+		}
+		AND = {
+			original_tag = OLO
+			has_character = zin_heir_olodor
+			NOT = { has_country_leader = { character = zin_heir_olodor ruling_only = no } }
+		}
+		AND = {
+			original_tag = DNL
+			has_character = zin_heir_dunelaeth
+			NOT = { has_country_leader = { character = zin_heir_dunelaeth ruling_only = no } }
+		}
+		AND = {
+			original_tag = ANR
+			has_character = zin_heir_aenor_forest
+			NOT = { has_country_leader = { character = zin_heir_aenor_forest ruling_only = no } }
+		}
+		AND = {
+			original_tag = CUR
+			has_character = zin_heir_cursed_lands
+			NOT = { has_country_leader = { character = zin_heir_cursed_lands ruling_only = no } }
+		}
+		AND = {
+			original_tag = BLO
+			has_character = zin_heir_bloody_forest
+			NOT = { has_country_leader = { character = zin_heir_bloody_forest ruling_only = no } }
+		}
+		AND = {
+			original_tag = EEK
+			has_character = zin_heir_eekedor
+			NOT = { has_country_leader = { character = zin_heir_eekedor ruling_only = no } }
 		}
 		AND = {
 			original_tag = REN
@@ -174,8 +295,8 @@ zin_realm_has_named_heir = {
 		}
 		AND = {
 			original_tag = MOO
-			has_character = zin_regional_molot_elda
-			NOT = { has_country_leader = { character = zin_regional_molot_elda ruling_only = no } }
+			has_character = zin_regional_molot_agnek
+			NOT = { has_country_leader = { character = zin_regional_molot_agnek ruling_only = no } }
 		}
 		AND = {
 			original_tag = KER
@@ -193,19 +314,49 @@ zin_realm_has_named_heir = {
 			NOT = { has_country_leader = { character = zin_tolhon_holvik ruling_only = no } }
 		}
 		AND = {
+			original_tag = HEO
+			has_character = zin_heir_heodwa_lands
+			NOT = { has_country_leader = { character = zin_heir_heodwa_lands ruling_only = no } }
+		}
+		AND = {
+			original_tag = HRA
+			has_character = zin_heir_hrakbrund
+			NOT = { has_country_leader = { character = zin_heir_hrakbrund ruling_only = no } }
+		}
+		AND = {
 			original_tag = MIA
-			has_character = zin_regional_mina_agnid
-			NOT = { has_country_leader = { character = zin_regional_mina_agnid ruling_only = no } }
+			has_character = zin_regional_mina_agnmund
+			NOT = { has_country_leader = { character = zin_regional_mina_agnmund ruling_only = no } }
+		}
+		AND = {
+			original_tag = DOL
+			has_character = zin_heir_dolpar
+			NOT = { has_country_leader = { character = zin_heir_dolpar ruling_only = no } }
+		}
+		AND = {
+			original_tag = MUS
+			has_character = zin_heir_mustnom
+			NOT = { has_country_leader = { character = zin_heir_mustnom ruling_only = no } }
+		}
+		AND = {
+			original_tag = FEA
+			has_character = zin_heir_fearno
+			NOT = { has_country_leader = { character = zin_heir_fearno ruling_only = no } }
 		}
 		AND = {
 			original_tag = AUT
-			has_character = zin_austklev_sigra
-			NOT = { has_country_leader = { character = zin_austklev_sigra ruling_only = no } }
+			has_character = zin_austklev_alddok
+			NOT = { has_country_leader = { character = zin_austklev_alddok ruling_only = no } }
 		}
 		AND = {
 			original_tag = WRL
-			has_character = zin_worlond_essild
-			NOT = { has_country_leader = { character = zin_worlond_essild ruling_only = no } }
+			has_character = zin_worlond_alddok
+			NOT = { has_country_leader = { character = zin_worlond_alddok ruling_only = no } }
+		}
+		AND = {
+			original_tag = PLT
+			has_character = zin_heir_poloto
+			NOT = { has_country_leader = { character = zin_heir_poloto ruling_only = no } }
 		}
 		AND = {
 			original_tag = HLD
@@ -213,14 +364,109 @@ zin_realm_has_named_heir = {
 			NOT = { has_country_leader = { character = zin_holdon_ulvaren ruling_only = no } }
 		}
 		AND = {
+			original_tag = GLI
+			has_character = zin_heir_glimkit
+			NOT = { has_country_leader = { character = zin_heir_glimkit ruling_only = no } }
+		}
+		AND = {
+			original_tag = XIS
+			has_character = zin_heir_xison
+			NOT = { has_country_leader = { character = zin_heir_xison ruling_only = no } }
+		}
+		AND = {
 			original_tag = PRT
-			has_character = zin_pertolor_ilvia
-			NOT = { has_country_leader = { character = zin_pertolor_ilvia ruling_only = no } }
+			has_character = zin_pertolor_alddok
+			NOT = { has_country_leader = { character = zin_pertolor_alddok ruling_only = no } }
+		}
+		AND = {
+			original_tag = OMR
+			has_character = zin_heir_omar
+			NOT = { has_country_leader = { character = zin_heir_omar ruling_only = no } }
+		}
+		AND = {
+			original_tag = POT
+			has_character = zin_heir_portogalor
+			NOT = { has_country_leader = { character = zin_heir_portogalor ruling_only = no } }
+		}
+		AND = {
+			original_tag = KVI
+			has_character = zin_heir_kvittumm
+			NOT = { has_country_leader = { character = zin_heir_kvittumm ruling_only = no } }
+		}
+		AND = {
+			original_tag = ORW
+			has_character = zin_heir_orewele
+			NOT = { has_country_leader = { character = zin_heir_orewele ruling_only = no } }
+		}
+		AND = {
+			original_tag = NIV
+			has_character = zin_heir_nivaros
+			NOT = { has_country_leader = { character = zin_heir_nivaros ruling_only = no } }
+		}
+		AND = {
+			original_tag = YEI
+			has_character = zin_heir_yeti_lands
+			NOT = { has_country_leader = { character = zin_heir_yeti_lands ruling_only = no } }
+		}
+		AND = {
+			original_tag = GHH
+			has_character = zin_heir_ghaahu
+			NOT = { has_country_leader = { character = zin_heir_ghaahu ruling_only = no } }
+		}
+		AND = {
+			original_tag = VND
+			has_character = zin_heir_vindael
+			NOT = { has_country_leader = { character = zin_heir_vindael ruling_only = no } }
+		}
+		AND = {
+			original_tag = WER
+			has_character = zin_heir_werlendor
+			NOT = { has_country_leader = { character = zin_heir_werlendor ruling_only = no } }
 		}
 		AND = {
 			original_tag = LAB
-			has_character = zin_regional_lambin_eirawen
-			NOT = { has_country_leader = { character = zin_regional_lambin_eirawen ruling_only = no } }
+			has_character = zin_regional_lambin_branlic
+			NOT = { has_country_leader = { character = zin_regional_lambin_branlic ruling_only = no } }
+		}
+		AND = {
+			original_tag = THN
+			has_character = zin_heir_thenon
+			NOT = { has_country_leader = { character = zin_heir_thenon ruling_only = no } }
+		}
+		AND = {
+			original_tag = DOB
+			has_character = zin_heir_dobbum
+			NOT = { has_country_leader = { character = zin_heir_dobbum ruling_only = no } }
+		}
+		AND = {
+			original_tag = BRU
+			has_character = zin_heir_brundahrim
+			NOT = { has_country_leader = { character = zin_heir_brundahrim ruling_only = no } }
+		}
+		AND = {
+			original_tag = GRO
+			has_character = zin_heir_gromkerm
+			NOT = { has_country_leader = { character = zin_heir_gromkerm ruling_only = no } }
+		}
+		AND = {
+			original_tag = SAO
+			has_character = zin_heir_saopon
+			NOT = { has_country_leader = { character = zin_heir_saopon ruling_only = no } }
+		}
+		AND = {
+			original_tag = BLD
+			has_character = zin_heir_buldor
+			NOT = { has_country_leader = { character = zin_heir_buldor ruling_only = no } }
+		}
+		AND = {
+			original_tag = KRA
+			has_character = zin_heir_kradlon
+			NOT = { has_country_leader = { character = zin_heir_kradlon ruling_only = no } }
+		}
+		AND = {
+			original_tag = CRG
+			has_character = zin_heir_corogon
+			NOT = { has_country_leader = { character = zin_heir_corogon ruling_only = no } }
 		}
 		AND = {
 			original_tag = VRN
@@ -228,14 +474,114 @@ zin_realm_has_named_heir = {
 			NOT = { has_country_leader = { character = zin_regional_varnondor_herwyn ruling_only = no } }
 		}
 		AND = {
+			original_tag = WEN
+			has_character = zin_heir_wennarith
+			NOT = { has_country_leader = { character = zin_heir_wennarith ruling_only = no } }
+		}
+		AND = {
+			original_tag = DRK
+			has_character = zin_heir_dark_gate
+			NOT = { has_country_leader = { character = zin_heir_dark_gate ruling_only = no } }
+		}
+		AND = {
+			original_tag = BUN
+			has_character = zin_heir_burnikit
+			NOT = { has_country_leader = { character = zin_heir_burnikit ruling_only = no } }
+		}
+		AND = {
+			original_tag = VES
+			has_character = zin_heir_veshazel
+			NOT = { has_country_leader = { character = zin_heir_veshazel ruling_only = no } }
+		}
+		AND = {
+			original_tag = BLK
+			has_character = zin_heir_blackton
+			NOT = { has_country_leader = { character = zin_heir_blackton ruling_only = no } }
+		}
+		AND = {
+			original_tag = BLN
+			has_character = zin_heir_belonton
+			NOT = { has_country_leader = { character = zin_heir_belonton ruling_only = no } }
+		}
+		AND = {
+			original_tag = BOR
+			has_character = zin_heir_bordon
+			NOT = { has_country_leader = { character = zin_heir_bordon ruling_only = no } }
+		}
+		AND = {
+			original_tag = DRE
+			has_character = zin_heir_dreson
+			NOT = { has_country_leader = { character = zin_heir_dreson ruling_only = no } }
+		}
+		AND = {
+			original_tag = DUL
+			has_character = zin_heir_dulundur
+			NOT = { has_country_leader = { character = zin_heir_dulundur ruling_only = no } }
+		}
+		AND = {
+			original_tag = TRO
+			has_character = zin_heir_troll_forest
+			NOT = { has_country_leader = { character = zin_heir_troll_forest ruling_only = no } }
+		}
+		AND = {
+			original_tag = HOO
+			has_character = zin_heir_hoorunoron
+			NOT = { has_country_leader = { character = zin_heir_hoorunoron ruling_only = no } }
+		}
+		AND = {
+			original_tag = DAK
+			has_character = zin_heir_the_darks
+			NOT = { has_country_leader = { character = zin_heir_the_darks ruling_only = no } }
+		}
+		AND = {
+			original_tag = SKR
+			has_character = zin_heir_skragdurg
+			NOT = { has_country_leader = { character = zin_heir_skragdurg ruling_only = no } }
+		}
+		AND = {
+			original_tag = DUN
+			has_character = zin_heir_dun
+			NOT = { has_country_leader = { character = zin_heir_dun ruling_only = no } }
+		}
+		AND = {
+			original_tag = BRT
+			has_character = zin_heir_britadon
+			NOT = { has_country_leader = { character = zin_heir_britadon ruling_only = no } }
+		}
+		AND = {
+			original_tag = WIL
+			has_character = zin_heir_wild_lands
+			NOT = { has_country_leader = { character = zin_heir_wild_lands ruling_only = no } }
+		}
+		AND = {
+			original_tag = KHO
+			has_character = zin_heir_khorvrath
+			NOT = { has_country_leader = { character = zin_heir_khorvrath ruling_only = no } }
+		}
+		AND = {
+			original_tag = DLN
+			has_character = zin_heir_dolon
+			NOT = { has_country_leader = { character = zin_heir_dolon ruling_only = no } }
+		}
+		AND = {
 			original_tag = NEZ
 			has_character = zin_regional_nezer_zeruath
 			NOT = { has_country_leader = { character = zin_regional_nezer_zeruath ruling_only = no } }
 		}
 		AND = {
+			original_tag = HAL
+			has_character = zin_heir_halia
+			NOT = { has_country_leader = { character = zin_heir_halia ruling_only = no } }
+		}
+		AND = {
 			original_tag = NAN
 			has_character = zin_regional_nan_ferell
 			NOT = { has_country_leader = { character = zin_regional_nan_ferell ruling_only = no } }
+		}
+		AND = {
+			original_tag = OLE
+			has_character = zin_heir_olen
+			NOT = { has_country_leader = { character = zin_heir_olen ruling_only = no } }
 		}
 		AND = {
 			original_tag = ALR
@@ -244,13 +590,18 @@ zin_realm_has_named_heir = {
 		}
 		AND = {
 			original_tag = NAA
-			has_character = zin_regional_gondolin_zahun
-			NOT = { has_country_leader = { character = zin_regional_gondolin_zahun ruling_only = no } }
+			has_character = zin_regional_gondolin_alod
+			NOT = { has_country_leader = { character = zin_regional_gondolin_alod ruling_only = no } }
 		}
 		AND = {
 			original_tag = DRA
 			has_character = zin_regional_drak_corino
 			NOT = { has_country_leader = { character = zin_regional_drak_corino ruling_only = no } }
+		}
+		AND = {
+			original_tag = RHA
+			has_character = zin_heir_rhachia
+			NOT = { has_country_leader = { character = zin_heir_rhachia ruling_only = no } }
 		}
 		AND = {
 			original_tag = ERC
@@ -268,14 +619,44 @@ zin_realm_has_named_heir = {
 			NOT = { has_country_leader = { character = zin_regional_ostoroth_kersion ruling_only = no } }
 		}
 		AND = {
+			original_tag = MOA
+			has_character = zin_heir_mora
+			NOT = { has_country_leader = { character = zin_heir_mora ruling_only = no } }
+		}
+		AND = {
 			original_tag = DLB
 			has_character = zin_delbiz_fosian
 			NOT = { has_country_leader = { character = zin_delbiz_fosian ruling_only = no } }
 		}
 		AND = {
+			original_tag = KRS
+			has_character = zin_heir_kersian
+			NOT = { has_country_leader = { character = zin_heir_kersian ruling_only = no } }
+		}
+		AND = {
+			original_tag = MOS
+			has_character = zin_heir_mostok
+			NOT = { has_country_leader = { character = zin_heir_mostok ruling_only = no } }
+		}
+		AND = {
 			original_tag = AZA
 			has_character = zin_azano_myleo
 			NOT = { has_country_leader = { character = zin_azano_myleo ruling_only = no } }
+		}
+		AND = {
+			original_tag = OBM
+			has_character = zin_heir_obmi
+			NOT = { has_country_leader = { character = zin_heir_obmi ruling_only = no } }
+		}
+		AND = {
+			original_tag = PON
+			has_character = zin_heir_pornivior
+			NOT = { has_country_leader = { character = zin_heir_pornivior ruling_only = no } }
+		}
+		AND = {
+			original_tag = WOQ
+			has_character = zin_heir_woqood
+			NOT = { has_country_leader = { character = zin_heir_woqood ruling_only = no } }
 		}
 		AND = {
 			original_tag = ORA
@@ -288,36 +669,204 @@ zin_realm_has_named_heir = {
 			NOT = { has_country_leader = { character = zin_regional_miaed_esiuroth ruling_only = no } }
 		}
 		AND = {
+			original_tag = WAH
+			has_character = zin_heir_wahatud
+			NOT = { has_country_leader = { character = zin_heir_wahatud ruling_only = no } }
+		}
+		AND = {
+			original_tag = ENH
+			has_character = zin_heir_enhis_is_rond
+			NOT = { has_country_leader = { character = zin_heir_enhis_is_rond ruling_only = no } }
+		}
+		AND = {
+			original_tag = HWN
+			has_character = zin_heir_howan
+			NOT = { has_country_leader = { character = zin_heir_howan ruling_only = no } }
+		}
+		AND = {
+			original_tag = VER
+			has_character = zin_heir_verde
+			NOT = { has_country_leader = { character = zin_heir_verde ruling_only = no } }
+		}
+		AND = {
+			original_tag = NAR
+			has_character = zin_heir_nara
+			NOT = { has_country_leader = { character = zin_heir_nara ruling_only = no } }
+		}
+		AND = {
+			original_tag = YON
+			has_character = zin_heir_yongyong
+			NOT = { has_country_leader = { character = zin_heir_yongyong ruling_only = no } }
+		}
+		AND = {
+			original_tag = KAM
+			has_character = zin_heir_kamu_lamo
+			NOT = { has_country_leader = { character = zin_heir_kamu_lamo ruling_only = no } }
+		}
+		AND = {
+			original_tag = KEA
+			has_character = zin_heir_kea
+			NOT = { has_country_leader = { character = zin_heir_kea ruling_only = no } }
+		}
+		AND = {
+			original_tag = SDE
+			has_character = zin_heir_sidea
+			NOT = { has_country_leader = { character = zin_heir_sidea ruling_only = no } }
+		}
+		AND = {
+			original_tag = ADE
+			has_character = zin_heir_adel
+			NOT = { has_country_leader = { character = zin_heir_adel ruling_only = no } }
+		}
+		AND = {
+			original_tag = RAE
+			has_character = zin_heir_raerby
+			NOT = { has_country_leader = { character = zin_heir_raerby ruling_only = no } }
+		}
+		AND = {
+			original_tag = PLL
+			has_character = zin_heir_pollos
+			NOT = { has_country_leader = { character = zin_heir_pollos ruling_only = no } }
+		}
+		AND = {
 			original_tag = NND
-			has_character = zin_regional_nondondor_lusaia
-			NOT = { has_country_leader = { character = zin_regional_nondondor_lusaia ruling_only = no } }
+			has_character = zin_regional_nondondor_arai
+			NOT = { has_country_leader = { character = zin_regional_nondondor_arai ruling_only = no } }
+		}
+		AND = {
+			original_tag = FNG
+			has_character = zin_heir_fineger
+			NOT = { has_country_leader = { character = zin_heir_fineger ruling_only = no } }
 		}
 		AND = {
 			original_tag = HLN
-			has_character = zin_regional_halenor_seina
-			NOT = { has_country_leader = { character = zin_regional_halenor_seina ruling_only = no } }
+			has_character = zin_regional_halenor_arai
+			NOT = { has_country_leader = { character = zin_regional_halenor_arai ruling_only = no } }
+		}
+		AND = {
+			original_tag = WND
+			has_character = zin_heir_windy_lands
+			NOT = { has_country_leader = { character = zin_heir_windy_lands ruling_only = no } }
+		}
+		AND = {
+			original_tag = SEI
+			has_character = zin_heir_seite_islands
+			NOT = { has_country_leader = { character = zin_heir_seite_islands ruling_only = no } }
+		}
+		AND = {
+			original_tag = SNT
+			has_character = zin_heir_santon
+			NOT = { has_country_leader = { character = zin_heir_santon ruling_only = no } }
+		}
+		AND = {
+			original_tag = BEN
+			has_character = zin_heir_benan
+			NOT = { has_country_leader = { character = zin_heir_benan ruling_only = no } }
+		}
+		AND = {
+			original_tag = LEN
+			has_character = zin_heir_the_lens
+			NOT = { has_country_leader = { character = zin_heir_the_lens ruling_only = no } }
+		}
+		AND = {
+			original_tag = LIG
+			has_character = zin_heir_lands_of_light
+			NOT = { has_country_leader = { character = zin_heir_lands_of_light ruling_only = no } }
+		}
+		AND = {
+			original_tag = ELV
+			has_character = zin_heir_elvana
+			NOT = { has_country_leader = { character = zin_heir_elvana ruling_only = no } }
+		}
+		AND = {
+			original_tag = IGA
+			has_character = zin_heir_igara
+			NOT = { has_country_leader = { character = zin_heir_igara ruling_only = no } }
+		}
+		AND = {
+			original_tag = YEN
+			has_character = zin_heir_yeni_alang
+			NOT = { has_country_leader = { character = zin_heir_yeni_alang ruling_only = no } }
+		}
+		AND = {
+			original_tag = TOR
+			has_character = zin_heir_tor_luni
+			NOT = { has_country_leader = { character = zin_heir_tor_luni ruling_only = no } }
+		}
+		AND = {
+			original_tag = IHU
+			has_character = zin_heir_ihuy
+			NOT = { has_country_leader = { character = zin_heir_ihuy ruling_only = no } }
+		}
+		AND = {
+			original_tag = SOY
+			has_character = zin_heir_soyano
+			NOT = { has_country_leader = { character = zin_heir_soyano ruling_only = no } }
+		}
+		AND = {
+			original_tag = GOO
+			has_character = zin_heir_goodin
+			NOT = { has_country_leader = { character = zin_heir_goodin ruling_only = no } }
 		}
 		AND = {
 			original_tag = HRR
-			has_character = zin_regional_herrodon_lyriel
-			NOT = { has_country_leader = { character = zin_regional_herrodon_lyriel ruling_only = no } }
+			has_character = zin_regional_herrodon_aeniel
+			NOT = { has_country_leader = { character = zin_regional_herrodon_aeniel ruling_only = no } }
+		}
+		AND = {
+			original_tag = ANE
+			has_character = zin_heir_andos_enda
+			NOT = { has_country_leader = { character = zin_heir_andos_enda ruling_only = no } }
+		}
+		AND = {
+			original_tag = NLR
+			has_character = zin_heir_nolorim
+			NOT = { has_country_leader = { character = zin_heir_nolorim ruling_only = no } }
+		}
+		AND = {
+			original_tag = LCC
+			has_character = zin_heir_lccimio
+			NOT = { has_country_leader = { character = zin_heir_lccimio ruling_only = no } }
+		}
+		AND = {
+			original_tag = ELD
+			has_character = zin_heir_eldafaen
+			NOT = { has_country_leader = { character = zin_heir_eldafaen ruling_only = no } }
+		}
+		AND = {
+			original_tag = YAV
+			has_character = zin_heir_yavieth
+			NOT = { has_country_leader = { character = zin_heir_yavieth ruling_only = no } }
+		}
+		AND = {
+			original_tag = TES
+			has_character = zin_heir_teste
+			NOT = { has_country_leader = { character = zin_heir_teste ruling_only = no } }
+		}
+		AND = {
+			original_tag = LUV
+			has_character = zin_heir_luv_zhise
+			NOT = { has_country_leader = { character = zin_heir_luv_zhise ruling_only = no } }
+		}
+		AND = {
+			original_tag = TIR
+			has_character = zin_heir_tirlan
+			NOT = { has_country_leader = { character = zin_heir_tirlan ruling_only = no } }
 		}
 	}
 }
 zin_realm_inherits = {
-	# G2: realms whose crown passes through a named heir (data/world/characters).
+	# G2, Q-87: realms whose crown passes in an ordered line (by blood, age or pact; custom blood of data/world/heirs.json and the courts).
 	OR = {
 		original_tag = AEN
 		original_tag = LER
 		original_tag = CLD
 		original_tag = NRS
-		original_tag = STA
 		original_tag = MIR
-		original_tag = KIN
 		original_tag = KON
-		original_tag = HNH
 		original_tag = HER
 		original_tag = FOT
+		original_tag = ANR
 		original_tag = REN
 		original_tag = MOO
 		original_tag = KER
@@ -330,8 +879,8 @@ zin_realm_inherits = {
 		original_tag = PRT
 		original_tag = LAB
 		original_tag = VRN
+		original_tag = HOO
 		original_tag = NEZ
-		original_tag = NAN
 		original_tag = ALR
 		original_tag = NAA
 		original_tag = DRA
@@ -341,10 +890,22 @@ zin_realm_inherits = {
 		original_tag = DLB
 		original_tag = AZA
 		original_tag = ORA
-		original_tag = MIE
+		original_tag = NAR
 		original_tag = NND
 		original_tag = HLN
-		original_tag = HRR
+		original_tag = YEN
+		original_tag = YAV
+	}
+}
+zin_realm_is_corsair = {
+	# G8, Q-89: the corsair realms, who raid by sea (data/realm_life.json raiders.styles.corsair).
+	OR = {
+		original_tag = BLN
+		original_tag = HLN
+		original_tag = SNT
+		original_tag = BEN
+		original_tag = NND
+		original_tag = WND
 	}
 }
 zin_realm_is_monarchy = {
@@ -366,7 +927,6 @@ zin_realm_is_monarchy = {
 		original_tag = KIN
 		original_tag = HIR
 		original_tag = MLK
-		original_tag = YEL
 		original_tag = KON
 		original_tag = HER
 		original_tag = ORH
@@ -448,27 +1008,39 @@ zin_realm_is_raider = {
 		original_tag = GLI
 		original_tag = OMR
 		original_tag = ORW
+		original_tag = NND
+		original_tag = WND
+		original_tag = KON
+		original_tag = HNH
+		original_tag = NRS
+		original_tag = DLB
+	}
+}
+zin_realm_is_steppe_rider = {
+	# G8, Q-89: the steppe-rider realms, who raid by land and often (raiders.styles.steppe).
+	OR = {
+		original_tag = KON
+		original_tag = HNH
+		original_tag = NRS
+		original_tag = DLB
 	}
 }
 zin_realm_is_story_ruler = {
 	# G1 to G4 exemption: a canon figure or a story ruler leads, or the realm's rulers are a story mechanic's (the Aenor court, the Worshipdom,
-	# Volgan, Zol, Yeldenne).
+	# Volgan, Zol).
 	OR = {
 		has_country_leader = { character = AEN_zin_ruler ruling_only = yes }
 		has_country_leader = { character = zin_aurevan ruling_only = yes }
 		has_country_leader = { character = zin_lorien ruling_only = yes }
 		has_country_leader = { character = zin_volgan ruling_only = yes }
-		has_country_leader = { character = zin_horos ruling_only = yes }
 		has_country_leader = { character = zin_zol_will ruling_only = yes }
 		has_country_leader = { character = NET_zin_ruler ruling_only = yes }
 		has_country_leader = { character = zin_eindil ruling_only = yes }
 		has_country_leader_with_trait = zin_trait_ancient_king
-		has_country_leader_with_trait = zin_yeldenne_warden_trait
 		zin_aenor_is_realm = yes
 		original_tag = WOR
 		original_tag = PUV
 		original_tag = ZOL
-		original_tag = YEL
 	}
 }
 zin_realm_match_may_reign = {
@@ -523,7 +1095,7 @@ zin_realm_mortal = {
 	}
 }
 zin_realm_open_custom = {
-	# Realms whose custom of succession nobody knows: the engine names a successor and nothing more is told.
+	# Realms whose custom of succession men are not told (custom open): the heir takes it quietly, or the engine names a successor.
 	OR = {
 		original_tag = ZOL
 		original_tag = GAA
@@ -558,7 +1130,6 @@ zin_realm_story_court = {
 	OR = {
 		original_tag = SEL
 		original_tag = GIR
-		original_tag = YEL
 	}
 }
 zin_realm_story_pending = {
@@ -580,7 +1151,7 @@ zin_realm_story_pending = {
 }
 zin_realm_story_war_side = {
 	# G6: a party whose wars a story owner ends (the court of Aenor, the Deliverer's seat, the dark powers and their sworn realms, Mirolon,
-	# Gala, Selen, the Grey Ford pair, Lerendor, Yeldenne, the heir's host, and the clients of the East while the false god lives).
+	# Gala, Selen, the Grey Ford pair, Lerendor, the heir's host, and the clients of the East while the false god lives).
 	OR = {
 		zin_aenor_is_realm = yes
 		original_tag = WOR
@@ -592,7 +1163,6 @@ zin_realm_story_war_side = {
 		original_tag = GNW
 		original_tag = GIR
 		original_tag = LER
-		original_tag = YEL
 		is_subject_of = PUV
 		is_subject_of = ZOL
 		AND = { has_character = zin_eindil has_global_flag = zin_in_play_eindil }
@@ -629,7 +1199,6 @@ zin_realm_tier_b = {
 		original_tag = HIR
 		original_tag = MLK
 		original_tag = HOR
-		original_tag = YEL
 		original_tag = GIR
 		original_tag = KON
 		original_tag = HNH
@@ -646,6 +1215,7 @@ zin_realm_tier_b = {
 		original_tag = TLV
 		original_tag = MIA
 		original_tag = FEA
+		original_tag = PRT
 		original_tag = NIV
 		original_tag = YEI
 		original_tag = VND

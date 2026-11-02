@@ -8,6 +8,7 @@ news_event = {
 	picture = GFX_zin_news_ending_lost_cause
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_lost_cause } } # super event 18 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.100.opt1
@@ -46,6 +47,7 @@ news_event = {
 	picture = GFX_zin_news_ending_children_of_volgan
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_children_of_volgan } } # super event 19 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.101.opt1
@@ -84,6 +86,7 @@ news_event = {
 	picture = GFX_zin_news_ending_ashen_throne
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_ashen_throne } } # super event 20 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.102.opt1
@@ -122,6 +125,7 @@ news_event = {
 	picture = GFX_zin_news_ending_golden_court
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_golden_court } } # super event 21 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.103.opt1
@@ -160,6 +164,7 @@ news_event = {
 	picture = GFX_zin_news_ending_western_crown
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_western_crown } } # super event 22 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.104.opt1
@@ -202,6 +207,7 @@ news_event = {
 	picture = GFX_zin_news_ending_strait_master
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_strait_master } } # super event 23 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.105.opt1
@@ -248,6 +254,7 @@ news_event = {
 	picture = GFX_zin_news_ending_eastern_king
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_eastern_king } } # super event 24 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.106.opt1
@@ -286,6 +293,7 @@ news_event = {
 	picture = GFX_zin_news_ending_unfinished
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_ending_unfinished } } # super event 25 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_world.107.opt1

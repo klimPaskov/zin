@@ -35,7 +35,7 @@ country_event = {
 			create_unit = {
 				division = "name = \"The Hermitage Guard\" division_template = \"Hermitage Guard\" start_experience_factor = 0.3 start_equipment_factor = 1"
 				owner = WOR
-				prioritize_location = 5368
+				prioritize_location = 12261
 				count = 2
 			}
 		}
@@ -185,7 +185,7 @@ country_event = {
 	id = zin_afrit.3
 	title = zin_afrit.3.t
 	desc = zin_afrit.3.desc
-	picture = GFX_zin_evt_houses
+	picture = GFX_zin_evt_beat_veil_houses
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -197,7 +197,7 @@ country_event = {
 	id = zin_afrit.4
 	title = zin_afrit.4.t
 	desc = zin_afrit.4.desc
-	picture = GFX_zin_evt_houses
+	picture = GFX_zin_evt_beat_veil_houses
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -229,7 +229,7 @@ country_event = {
 	id = zin_afrit.5
 	title = zin_afrit.5.t
 	desc = zin_afrit.5.desc
-	picture = GFX_zin_evt_houses
+	picture = GFX_zin_evt_beat_veil_houses
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -241,7 +241,7 @@ country_event = {
 	id = zin_afrit.6
 	title = zin_afrit.6.t
 	desc = zin_afrit.6.desc
-	picture = GFX_zin_evt_houses
+	picture = GFX_zin_evt_beat_veil_houses
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -269,7 +269,7 @@ country_event = {
 	id = zin_afrit.7
 	title = zin_afrit.7.t
 	desc = zin_afrit.7.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_confessors
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -314,7 +314,7 @@ country_event = {
 	id = zin_afrit.41
 	title = zin_afrit.41.t
 	desc = zin_afrit.41.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_night
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -326,7 +326,7 @@ country_event = {
 	id = zin_afrit.42
 	title = zin_afrit.42.t
 	desc = zin_afrit.42.desc
-	picture = GFX_zin_evt_unmasking
+	picture = GFX_zin_evt_beat_veil_unmasking
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -338,7 +338,7 @@ country_event = {
 	id = zin_afrit.44
 	title = zin_afrit.44.t
 	desc = zin_afrit.44.desc
-	picture = GFX_zin_evt_unmasking
+	picture = GFX_zin_evt_beat_veil_unmasking
 	is_triggered_only = yes
 	timeout_days = 30
 
@@ -350,7 +350,7 @@ country_event = {
 	id = zin_afrit.54
 	title = zin_afrit.54.t
 	desc = zin_afrit.54.desc
-	picture = GFX_zin_evt_eastern_court
+	picture = GFX_zin_evt_beat_veil_east
 	is_triggered_only = yes
 	timeout_days = 30
 	immediate = {
@@ -370,7 +370,7 @@ country_event = {
 	id = zin_afrit.90
 	title = zin_afrit.90.t
 	desc = zin_afrit.90.desc
-	picture = GFX_zin_evt_houses
+	picture = GFX_zin_evt_beat_veil_houses
 	trigger = {
 		check_variable = { zin_footholds > 1 }
 		zin_afrit_secret_kept = yes
@@ -390,7 +390,7 @@ country_event = {
 	id = zin_afrit.91
 	title = zin_afrit.91.t
 	desc = zin_afrit.91.desc
-	picture = GFX_zin_evt_hermitage
+	picture = GFX_zin_evt_beat_veil_confessors
 	trigger = {
 		zin_afrit_is_hub = yes
 		NOT = { has_global_flag = zin_afrit_dead }
@@ -409,7 +409,7 @@ country_event = {
 	id = zin_afrit.92
 	title = zin_afrit.92.t
 	desc = zin_afrit.92.desc
-	picture = GFX_zin_evt_council_chamber
+	picture = GFX_zin_evt_beat_veil_artifacts
 	trigger = {
 		zin_afrit_is_hub = yes
 		AND = { has_character = zin_sevrin has_global_flag = zin_in_play_sevrin }

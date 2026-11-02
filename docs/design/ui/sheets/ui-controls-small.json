@@ -1,6 +1,7 @@
 {
  "id": "ui-controls-small",
  "family": "chrome_controls",
+ "theme": "neutral",
  "kind": "grid",
  "aspect": "1:1",
  "grid": [
@@ -9,219 +10,233 @@
  ],
  "ground": "black",
  "matte": "outline",
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_a_components.png",
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. Small controls of blackened iron (#282B2C) with thin muted-bronze rims (#CAB289); gilt (#EBCA80) only where named.",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Each item is one isolated object of about the same size, centred in its own cell, with wide black gutters between items, flat front view. Where a row names the same control in several states, the objects are identical in shape and size and differ only as described.",
  "cells": [
   {
    "key": "check_off",
-   "subject": "an empty bronze socket for a checkbox, square, with a dark recess",
+   "subject": "an empty square iron checkbox socket with a bronze rim and a dark recess",
    "lum": "dark",
-   "luma": 64.7
+   "luma": 59.5
+  },
+  {
+   "key": "check_off_hover",
+   "subject": "the same empty checkbox socket with a brighter rim and a lighter recess",
+   "lum": "dark",
+   "luma": 69.6
   },
   {
    "key": "check_on",
-   "subject": "the same bronze socket with a gilt tick-mark shape (a stroke, not a letter)",
+   "subject": "the same square checkbox socket holding a bold gilt tick stroke",
    "lum": "dark",
-   "luma": 73.3
+   "luma": 65.9
+  },
+  {
+   "key": "check_on_hover",
+   "subject": "the same checked socket, brighter, the tick and rim catching more light",
+   "lum": "dark",
+   "luma": 89.8
   },
   {
    "key": "radio_off",
-   "subject": "an empty round bronze socket for a radio button",
+   "subject": "an empty round iron socket with a bronze rim",
    "lum": "dark",
-   "luma": 58.7
+   "luma": 62.2
   },
   {
    "key": "radio_on",
-   "subject": "the same round socket with a gilt dot",
+   "subject": "the same round socket holding a gilt dot",
    "lum": "dark",
-   "luma": 67.5
+   "luma": 76.8
   },
   {
-   "key": "close_stud",
-   "subject": "an iron stud with a bronze cross-bar (two crossed bars, not the letter X)",
+   "key": "close",
+   "subject": "a square iron button with a bronze rim carrying two crossed bronze bars (a saltire of two bars, not a letter)",
    "lum": "dark",
-   "luma": 59.8
+   "luma": 70.8
   },
   {
-   "key": "close_stud_small",
-   "subject": "a smaller iron stud with a bronze cross-bar",
+   "key": "close_hover",
+   "subject": "the same close button, brighter, the bars catching more light",
    "lum": "dark",
-   "luma": 63.8
+   "luma": 95.7
   },
   {
-   "key": "scroll_arrow",
-   "subject": "a small gilded-iron arrow pointing up on an iron square button",
+   "key": "close_pressed",
+   "subject": "the same close button, darker and pressed in",
    "lum": "dark",
-   "luma": 63.5
+   "luma": 64.8
   },
   {
-   "key": "scroll_knob",
-   "subject": "a bronze round drag knob on an iron rail piece",
+   "key": "arrow",
+   "subject": "a small square iron button with a bronze arrowhead pointing up",
    "lum": "dark",
-   "luma": 66.6
+   "luma": 80.9
   },
   {
-   "key": "scroll_track",
-   "subject": "a short vertical iron rail segment with a bronze edge, plain",
+   "key": "arrow_hover",
+   "subject": "the same arrow button, brighter",
+   "lum": "dark",
+   "luma": 91.5
+  },
+  {
+   "key": "arrow_pressed",
+   "subject": "the same arrow button, darker and pressed in",
+   "lum": "dark",
+   "luma": 62.5
+  },
+  {
+   "key": "plus",
+   "subject": "a round iron stud with a bronze rim carrying a gilt plus shape of two crossed bars",
+   "lum": "dark",
+   "luma": 76.6
+  },
+  {
+   "key": "plus_hover",
+   "subject": "the same plus stud, brighter",
+   "lum": "dark",
+   "luma": 90.8
+  },
+  {
+   "key": "plus_pressed",
+   "subject": "the same plus stud, darker and pressed in",
+   "lum": "dark",
+   "luma": 69.1
+  },
+  {
+   "key": "minus",
+   "subject": "a round iron stud with a bronze rim carrying one gilt bar",
+   "lum": "dark",
+   "luma": 73.8
+  },
+  {
+   "key": "minus_hover",
+   "subject": "the same minus stud, brighter",
+   "lum": "dark",
+   "luma": 86.8
+  },
+  {
+   "key": "minus_pressed",
+   "subject": "the same minus stud, darker and pressed in",
    "lum": "dark",
    "luma": 63.1
   },
   {
-   "key": "plus_stud",
-   "subject": "a raised iron stud with a gilt plus shape (two crossed bars)",
-   "lum": "dark",
-   "luma": 62.9
+   "key": "knob",
+   "subject": "a round bronze drag knob",
+   "lum": "mid",
+   "luma": 106.5,
+   "design": "dark"
   },
   {
-   "key": "minus_stud",
-   "subject": "a sunken iron stud with a gilt minus shape (one bar)",
+   "key": "knob_hover",
+   "subject": "the same drag knob, brighter",
+   "lum": "mid",
+   "luma": 131.6,
+   "design": "dark"
+  },
+  {
+   "key": "track",
+   "subject": "a short vertical iron rail with a thin bronze edge, plain",
    "lum": "dark",
-   "luma": 62.1
+   "luma": 67.9
+  },
+  {
+   "key": "slider_knob",
+   "subject": "a bronze slider knob wider than tall with a gilt line across it",
+   "lum": "mid",
+   "luma": 117.2,
+   "design": "dark"
+  },
+  {
+   "key": "slider_track",
+   "subject": "a thin horizontal iron rail with a bronze edge",
+   "lum": "dark",
+   "luma": 61.1
+  },
+  {
+   "key": "expand",
+   "subject": "a small iron stud with a bronze triangle pointing right",
+   "lum": "dark",
+   "luma": 73.6
+  },
+  {
+   "key": "expand_hover",
+   "subject": "the same expand stud, brighter",
+   "lum": "dark",
+   "luma": 91.3
+  },
+  {
+   "key": "lamp_off",
+   "subject": "an unlit dark enamel lamp in a bronze ring",
+   "lum": "dark",
+   "luma": 54.7
+  },
+  {
+   "key": "lamp_green",
+   "subject": "a lit verdigris green enamel lamp in a bronze ring",
+   "lum": "dark",
+   "luma": 81.5
+  },
+  {
+   "key": "lamp_amber",
+   "subject": "a lit amber enamel lamp in a bronze ring",
+   "lum": "mid",
+   "luma": 101.5,
+   "design": "dark"
+  },
+  {
+   "key": "lamp_red",
+   "subject": "a lit cinnabar red enamel lamp in a bronze ring",
+   "lum": "dark",
+   "luma": 62.4
+  },
+  {
+   "key": "lock",
+   "subject": "a closed bronze padlock on a small iron plate",
+   "lum": "dark",
+   "luma": 75.4
+  },
+  {
+   "key": "unlock",
+   "subject": "an open bronze padlock on a small iron plate",
+   "lum": "dark",
+   "luma": 76.9
   },
   {
    "key": "pips_two",
    "subject": "an iron stud carrying two bronze dots",
    "lum": "dark",
-   "luma": 59.3
+   "luma": 64.7
   },
   {
    "key": "pips_three",
    "subject": "an iron stud carrying three bronze dots",
    "lum": "dark",
-   "luma": 61.3
-  },
-  {
-   "key": "expand_arrow",
-   "subject": "a small bronze triangle pointing right on an iron stud",
-   "lum": "dark",
-   "luma": 65.2
-  },
-  {
-   "key": "tick_mark",
-   "subject": "a gilt tick-mark shape on a transparent-looking black ground",
-   "lum": "mid",
-   "luma": 139,
-   "design": "dark"
-  },
-  {
-   "key": "cross_mark",
-   "subject": "a cinnabar cross-mark shape made of two crossed bars (not a letter)",
-   "lum": "dark",
-   "luma": 74.2
-  },
-  {
-   "key": "arrow_gold",
-   "subject": "a larger gilt arrow pointing right on an iron button",
-   "lum": "dark",
-   "luma": 65
+   "luma": 67.4
   },
   {
    "key": "stud_round",
    "subject": "a plain round iron stud with a bronze rim",
    "lum": "dark",
-   "luma": 58.2
+   "luma": 61.6
   },
   {
    "key": "stud_square",
    "subject": "a plain square iron stud with a bronze rim",
    "lum": "dark",
-   "luma": 57.3
+   "luma": 66.6
   },
   {
-   "key": "slider_knob",
-   "subject": "a bronze slider knob with a gilt line, wider than tall",
+   "key": "check_disabled",
+   "subject": "an empty square checkbox socket in flat dull grey, no colour, no gilt",
    "lum": "dark",
-   "luma": 77.9
-  },
-  {
-   "key": "slider_track",
-   "subject": "a thin horizontal iron slider rail with a bronze edge",
-   "lum": "dark",
-   "luma": 68.3
-  },
-  {
-   "key": "toggle_off",
-   "subject": "a small switch plate, the slider to the left, iron and bronze",
-   "lum": "dark",
-   "luma": 60.4
-  },
-  {
-   "key": "toggle_on",
-   "subject": "a small switch plate, the slider to the right, iron and gilt",
-   "lum": "mid",
-   "luma": 103.1,
-   "design": "dark"
-  },
-  {
-   "key": "lamp_off",
-   "subject": "an unlit enamel lamp in a bronze ring",
-   "lum": "dark",
-   "luma": 46.6
-  },
-  {
-   "key": "lamp_green",
-   "subject": "a verdigris enamel lamp in a bronze ring",
-   "lum": "dark",
-   "luma": 71.7
-  },
-  {
-   "key": "lamp_amber",
-   "subject": "an amber enamel lamp in a bronze ring",
-   "lum": "dark",
-   "luma": 95.3
-  },
-  {
-   "key": "lamp_red",
-   "subject": "a cinnabar enamel lamp in a bronze ring",
-   "lum": "dark",
-   "luma": 69.6
-  },
-  {
-   "key": "lock_plate",
-   "subject": "a sealed padlock plate: a bronze padlock on an iron plate",
-   "lum": "dark",
-   "luma": 65.7
-  },
-  {
-   "key": "unlock_plate",
-   "subject": "an open bronze padlock on an iron plate",
-   "lum": "dark",
-   "luma": 61.4
-  },
-  {
-   "key": "bar_stud",
-   "subject": "a wide iron bar stud with a bronze rim",
-   "lum": "dark",
-   "luma": 54.1
-  },
-  {
-   "key": "corner_stud",
-   "subject": "a small bronze corner stud",
-   "lum": "dark",
-   "luma": 79.3
-  },
-  {
-   "key": "wax_seal",
-   "subject": "a plain red wax seal without any imprint",
-   "lum": "dark",
-   "luma": 65.4
-  },
-  {
-   "key": "wax_seal_green",
-   "subject": "a plain verdigris wax seal without any imprint",
-   "lum": "dark",
-   "luma": 77.4
-  },
-  {
-   "key": "wax_seal_amber",
-   "subject": "a plain amber wax seal without any imprint",
-   "lum": "mid",
-   "luma": 107.1,
-   "design": "dark"
-  },
-  {
-   "key": "wax_seal_grey",
-   "subject": "a plain grey wax seal without any imprint",
-   "lum": "dark",
-   "luma": 69.3
+   "luma": 74.9
   }
  ],
  "tranche": 3

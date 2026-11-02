@@ -95,6 +95,7 @@ news_event = {
 	picture = GFX_zin_news_last_crowns
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_last_crowns } } # super event 5 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {

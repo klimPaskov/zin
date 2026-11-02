@@ -29,14 +29,6 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_YEL = {
-		effect = {
-			if = {
-				limit = { zin_cold_is_runner = yes }
-				zin_cold_monthly = yes
-			}
-		}
-	}
 	on_monthly_FEA = {
 		effect = {
 			if = {

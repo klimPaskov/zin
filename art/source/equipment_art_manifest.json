@@ -1,0 +1,3265 @@
+{
+ "generator": "tools/content/modules/equipment_art.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/archetypes/zin/convoy.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 6,
+   "bbox": [
+    331,
+    312
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4556e5914687b6109d9e05e1ca43c97f30bcc289308cd64ad8971c8c5298cf47"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/motorized_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 4,
+   "bbox": [
+    336,
+    266
+   ],
+   "scale": 0.188,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.188",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "41b622901356e42abe4460f0f1d2f22f5c5d1092075ddf3d4ad94f162753f5d5"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/train_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 5,
+   "bbox": [
+    323,
+    269
+   ],
+   "scale": 0.186,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.186",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e7ff863511c04077bcea52f962350b7acd964efe7b346c78afb8f9507b511c76"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_armour_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 3,
+   "bbox": [
+    224,
+    307
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "849ffe1c8757f5075856085a254c5abd6dfcae297cd23997946d35693bf6950a"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_arms_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 0,
+   "bbox": [
+    294,
+    303
+   ],
+   "scale": 0.165,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.165",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f23a366ecb186034b7aa693c7e15c78ac839776c875dccb0469030d8a6dd3a01"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_ballista_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 11,
+   "bbox": [
+    359,
+    269
+   ],
+   "scale": 0.186,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.186",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c601332b54cbf390f878665f5245ca434bf66629a21dcad9fded25fdd6eb458f"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_bombard_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 1,
+   "bbox": [
+    334,
+    269
+   ],
+   "scale": 0.186,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.186",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3103f690a54a56b3688792027de9295212770f123260eb3b12c853bcad6f93f9"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_bows_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 1,
+   "bbox": [
+    197,
+    311
+   ],
+   "scale": 0.161,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.161",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "08713afc457f6a367b6e8e9e3e4a594d2e620beffb5333db591c7b612fe60a6f"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_camp_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 7,
+   "bbox": [
+    335,
+    274
+   ],
+   "scale": 0.182,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.182",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "22ab99cf215c2656a1e3f606d051e2c2c308629bb043d0b5a89a28664b5b83d4"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_catapult_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 9,
+   "bbox": [
+    351,
+    302
+   ],
+   "scale": 0.166,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.166",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9b4529983d4d2f34e1242f1d33f0358de602d9b04dc547cd241fe22542915479"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_deathless_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 9,
+   "bbox": [
+    271,
+    336
+   ],
+   "scale": 0.149,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.149",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9903db8516e8d67ee388f3f50955af514e1fca25c346c30e042ddf037cd22bac"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_dragon_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 3,
+   "bbox": [
+    337,
+    294
+   ],
+   "scale": 0.17,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.17",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9424f949fbe4e3fb0198311bae1c14b1be5a514feeaeaba2d746477f5d89deaa"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_elephant_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 5,
+   "bbox": [
+    352,
+    323
+   ],
+   "scale": 0.155,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.155",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "77db90f148c3a383f85aae25f6592eae70bd0d811ca75229a2aa1963cd969793"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_elven_arms_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 6,
+   "bbox": [
+    317,
+    283
+   ],
+   "scale": 0.177,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.177",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "79917e6a8b21c3d1bf06f9186832825b8174c76387a2afb88cf8e3f383779a08"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_ent_grove_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 4,
+   "bbox": [
+    323,
+    293
+   ],
+   "scale": 0.171,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.171",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "835bcb911966c9c11ed9c462de75eb8f872215cc9b4c5b0c8fde2d1df1d56a8b"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_giant_gear_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 3,
+   "bbox": [
+    336,
+    296
+   ],
+   "scale": 0.169,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.169",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ac2770c08eea051f991761e13fa35235f298b957122faf328c794a52184fbf98"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_glo_blade_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 11,
+   "bbox": [
+    329,
+    316
+   ],
+   "scale": 0.158,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.158",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4fbc3329e68fe9fff0c731ee6baf3726c6fe70329129aeff5579aacd1eba1539"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_grave_arms_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 7,
+   "bbox": [
+    338,
+    294
+   ],
+   "scale": 0.17,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.17",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b455ec2419933194edf55fcef4ff25f53d1eaaad3ac5e82081aebcc0ff4d235b"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_great_spirit_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 1,
+   "bbox": [
+    317,
+    308
+   ],
+   "scale": 0.162,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.162",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3993bf064981b9d23a4393ff32eba8e70fd51bcc5916179eeab5adb4f425ba97"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_griffin_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 2,
+   "bbox": [
+    322,
+    302
+   ],
+   "scale": 0.166,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.166",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "eaeee66f3ea21426cde9db310b70702dc758514e5ccb0e04082638035b49f92f"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_handgun_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 2,
+   "bbox": [
+    334,
+    267
+   ],
+   "scale": 0.187,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.187",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "20d53aac88fdf8aee3fe1cda4fb246c0f2c21a8f5bca0bc97e29e3eed8e689df"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_hull_galley.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 7,
+   "bbox": [
+    354,
+    305
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8363dd77f28f945dc13ff8f5dcf068adb214bdaca9c88750014c544a8a01a3e2"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_hull_great_warship.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 9,
+   "bbox": [
+    350,
+    335
+   ],
+   "scale": 0.149,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.149",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4f69d4ccad8e520928c19bb4f6130a617a75cdd1ba2e29cf610c44be4f9f54e9"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_hull_raider.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 10,
+   "bbox": [
+    346,
+    289
+   ],
+   "scale": 0.173,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.173",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5e98bfd22c14b39c0f5876af4ec8c408c4d3a227c9b31644f98ce84ee0fada3e"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_hull_warship.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 8,
+   "bbox": [
+    347,
+    318
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "358df2b7ab33aa997003a8650226cbdcc25999c9a4ef4b58eee4de762968279f"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_mounts_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 4,
+   "bbox": [
+    328,
+    320
+   ],
+   "scale": 0.156,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.156",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6bce0d58ea586b95854d97941655284d11c3e51da29c6a8d845ffa498289e24e"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_nether_arms_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 8,
+   "bbox": [
+    335,
+    327
+   ],
+   "scale": 0.153,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.153",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1ee38978a66aba801917c0c9c9602c09ef3dce35a87621e5fd8973b90cf14c5a"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_ogre_gear_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 6,
+   "bbox": [
+    357,
+    304
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f511b7e2578bbd366d997a8c2c5889798dc4a8c515f11d009c65bf072db11945"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_scorpion_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 0,
+   "bbox": [
+    319,
+    294
+   ],
+   "scale": 0.17,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.17",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "98667aa6683e2bc420c0f50f69aa5c4d9e3fbaa423629854a0918d5c7067bc91"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_shachihata_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 10,
+   "bbox": [
+    314,
+    338
+   ],
+   "scale": 0.148,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.148",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8c84eaaa76999090fe2d5fb98d5edecbd21e20aaa5052f3bdfa76eabd964e411"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_trebuchet_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 10,
+   "bbox": [
+    341,
+    302
+   ],
+   "scale": 0.166,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.166",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "139b6c1af51b7fe25bedadf447630f9e8cea475d1a443f8ac78e6a9375dd3c78"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_troll_gear_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 2,
+   "bbox": [
+    338,
+    276
+   ],
+   "scale": 0.181,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.181",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2c05c9c3128aec78d5f6f88772a573999c3c0c708f4c3d69da351ac46b57778d"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_volgan_presence_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a03.png",
+   "sourceSha256": "4ec4387c5507b155ca243e8e4630a989d5035112cdeabe7cf5cb589afedf4b91",
+   "cell": 0,
+   "bbox": [
+    340,
+    279
+   ],
+   "scale": 0.179,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.179",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4f0203ab029f1dbe81466ddb4d1889c68b5efb3eae9f89ea6cb07499daafd04e"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_ward_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a01.png",
+   "sourceSha256": "f3cf207d2bee176d745967260d615a568af0f286b78116cfad3bfb614ca3e17b",
+   "cell": 8,
+   "bbox": [
+    184,
+    305
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0be4393beca54ad5276531ccdf6493e7a1817bcbad71551d43448509e326ab83"
+  },
+  {
+   "out": "gfx/interface/archetypes/zin/zin_yeti_gear_equipment.dds",
+   "kind": "archetype",
+   "source": "art/source/equipment/equipment-a02.png",
+   "sourceSha256": "0de8b761f9efad4b9c7347ed7ed000615b0f143509f27b138f68f5172add084f",
+   "cell": 5,
+   "bbox": [
+    352,
+    293
+   ],
+   "scale": 0.171,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.171",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cccf405b9719be00513099ec88f3840ff0312759fad08d3607c081f2009c90f5"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/convoy_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 9,
+   "bbox": [
+    322,
+    312
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bd3e7830b10003c2d14ed12d246748ecae44f989af8635a25a91d155c862773f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/motorized_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 3,
+   "bbox": [
+    328,
+    307
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cc019b846ae623e4352cb5ae98f7b2274f543b7038ef02e463066bcb2d2f19d8"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/motorized_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 4,
+   "bbox": [
+    339,
+    206
+   ],
+   "scale": 0.243,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.243",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d913fe01563be0bd4554437a6780d74abb1ff329dea4f04c6fe4b97bc438c8f2"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/motorized_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 5,
+   "bbox": [
+    337,
+    293
+   ],
+   "scale": 0.171,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.171",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5070a877937aaddc2d02ae83d7451cf3ffa0acf3f929420db3f3a4c4e500e8ea"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/motorized_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 6,
+   "bbox": [
+    348,
+    243
+   ],
+   "scale": 0.206,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.206",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a431d1ff3eceefb704910922ccb63eec3202cd292d00485611b9d2621580eae5"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/train_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 7,
+   "bbox": [
+    346,
+    224
+   ],
+   "scale": 0.223,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.223",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3cfaa102d1d9c8c706dea3210794d3c5c4446e3ac2be93e35aa55382cf010a64"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/train_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 8,
+   "bbox": [
+    351,
+    236
+   ],
+   "scale": 0.212,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.212",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cec15e32d746834a88110e9851260dd03c8754ed01cb6bb53950c63ecc79b914"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_armour_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 7,
+   "bbox": [
+    361,
+    188
+   ],
+   "scale": 0.266,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.266",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e323553615cc6f4d0078f2fdb6e8a3955d43edfbeed665ee39ef46ecde96e489"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_armour_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 8,
+   "bbox": [
+    294,
+    359
+   ],
+   "scale": 0.139,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.139",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5ec1f38c7188d9025fdb6b8c1d717b5ec111bbbb421b12f6a8ba5612809116e2"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_armour_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 9,
+   "bbox": [
+    296,
+    318
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "69db517929809f8f045abfccbd77d220aeefb0d6d699e97f35540cc8130a2096"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_armour_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 10,
+   "bbox": [
+    254,
+    335
+   ],
+   "scale": 0.149,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.149",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "13c327d26261a1c50e376cc080eaedfc90bbc6b33aa5a6e3cf30d23a29197e53"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_armour_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 11,
+   "bbox": [
+    350,
+    336
+   ],
+   "scale": 0.149,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.149",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "43d2d85b8a992f330332d943bf4df0eed63f3d8a0b0e4299e5e7f032e99284e8"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_armour_equipment_5.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 0,
+   "bbox": [
+    326,
+    250
+   ],
+   "scale": 0.2,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.2",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fedba8dc01606bfa15675fe5ce13d545d4f0124aea464c66ea6c2661359fa0c7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 0,
+   "bbox": [
+    303,
+    279
+   ],
+   "scale": 0.179,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.179",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "588453b77b12b03f6008517ac3033e66f3a80658d9f79d1b6de48da4e2646afb"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 1,
+   "bbox": [
+    252,
+    220
+   ],
+   "scale": 0.227,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.227",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bb8b06d4f33847947840a7fef54b4ce533eb3056bfa47abbf28dc111a87c6834"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 2,
+   "bbox": [
+    307,
+    275
+   ],
+   "scale": 0.182,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.182",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d1ea377aef421f3bd5ac83a02ec712ae873f26f83ad8106bafd63133973e890e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 3,
+   "bbox": [
+    308,
+    282
+   ],
+   "scale": 0.177,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.177",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "56605cf7fb96cc50b07c36c007ffb61878ea5b76cf772e1ec773c5f2eaa06b6c"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 4,
+   "bbox": [
+    313,
+    293
+   ],
+   "scale": 0.171,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.171",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b734ea09fda8e99ce9a158118f323009b51899cdbe9ba1873fec3564eb499e9d"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_5.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 5,
+   "bbox": [
+    294,
+    304
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7e324aee34525e54b5d882477693610c48b0cc2b600eb2fe8a3e90613b699031"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_arms_equipment_6.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 6,
+   "bbox": [
+    306,
+    304
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4e5a0056b69da638c3f2f591d7d4908925b28860f6352846922b0e2c23f501e3"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ballista_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 1,
+   "bbox": [
+    352,
+    252
+   ],
+   "scale": 0.198,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.198",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "14c87778ed4e80f8f5c3a85927a091d562eb4d12f65b0c626e0ada74f5c13a8b"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ballista_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 2,
+   "bbox": [
+    344,
+    272
+   ],
+   "scale": 0.184,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.184",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "32a6de71989473783dad96cc55238d79e0bcd7ad746b47c68299385c0fb9045c"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ballista_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 3,
+   "bbox": [
+    357,
+    289
+   ],
+   "scale": 0.173,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.173",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a10e4b64a386d64f5eec14d6560201e368671206fd09e145ece018f43fa399ea"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bombard_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 6,
+   "bbox": [
+    337,
+    266
+   ],
+   "scale": 0.188,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.188",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7d68e808223925430b720b25447403aab7b6231d825b4674db04d7f36c2856b6"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bombard_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 7,
+   "bbox": [
+    315,
+    245
+   ],
+   "scale": 0.204,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.204",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "afdd370c050b41109a8dbb70fda650c47484490cb42950158834623e68a62a4d"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bombard_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 8,
+   "bbox": [
+    354,
+    255
+   ],
+   "scale": 0.196,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.196",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cc80f4b701de9d0ad7234e0daf0320f9c003d02e84c1a087c9b3abb29f139e66"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bombard_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 9,
+   "bbox": [
+    349,
+    259
+   ],
+   "scale": 0.193,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.193",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "815de007fd5332f452e8e4dddaf57101a2e74a815a68680a1e2e6966ae1921a6"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bombard_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 10,
+   "bbox": [
+    402,
+    312
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2bd2e695ea2c767199d08505ee3d2fea1dd0d1918149a671249ef299706d2cf7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bombard_equipment_5.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 11,
+   "bbox": [
+    352,
+    276
+   ],
+   "scale": 0.181,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.181",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "de9e3f3796ddc4bd6e548128ba4914e265e83b98ee2dfb3aac12da06fd5c3f2d"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bows_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 7,
+   "bbox": [
+    313,
+    307
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1ef748955a192a877af06070b3528d70a3b2a4d25c280deda0cca1a934df0a27"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bows_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 8,
+   "bbox": [
+    292,
+    302
+   ],
+   "scale": 0.166,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.166",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b4a50ce271ceacd9b6618db5770dbcdd2db89077783461722cc0bac6ea82c847"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bows_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 9,
+   "bbox": [
+    256,
+    337
+   ],
+   "scale": 0.148,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.148",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ec1b552108fa2de0eb9bbe85ba388efe41210720294b31dacff42c6ccd3a404"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bows_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 10,
+   "bbox": [
+    323,
+    275
+   ],
+   "scale": 0.182,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.182",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "077c2f21cc8aef9620a4806aea561f0dbea7c88786dd4988db5bc8fcacfaf1b0"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bows_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t01.png",
+   "sourceSha256": "cac2c0b6b5b7cf7157ed1bfe97f59edb621374b708b1855dce8cbacaf7320bcc",
+   "cell": 11,
+   "bbox": [
+    319,
+    307
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3f5ae5719569ca90297025d4e21589bfa47cd9349a141376ec1316f8068b053a"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_bows_equipment_5.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 0,
+   "bbox": [
+    336,
+    227
+   ],
+   "scale": 0.22,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.22",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "01a03c47740579046928186fdf76f10410e9b371f5b9f06d8840c39f9b182cf2"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_camp_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 1,
+   "bbox": [
+    335,
+    313
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "474f6ad4956977b8e4ec5ca2612c9dd3bb39c66a38c9f5707edb9f5d756119f2"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_catapult_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 6,
+   "bbox": [
+    341,
+    282
+   ],
+   "scale": 0.177,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.177",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2c178285867fc5af1f5bdd5d97d5ffbaed8f84c0c8dc32911a7a6c5315b54bdc"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_catapult_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 7,
+   "bbox": [
+    336,
+    259
+   ],
+   "scale": 0.193,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.193",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3436ff433e2f3f974adc6e97475a42ccc507150bfe912a4512184e909c869615"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_catapult_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 8,
+   "bbox": [
+    357,
+    299
+   ],
+   "scale": 0.167,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.167",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a88632ddd38f401d790b1f7eed6f5ee508611b19d0b4ed9a5cafbd2002b6bfc6"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_catapult_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 9,
+   "bbox": [
+    341,
+    303
+   ],
+   "scale": 0.165,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.165",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "00811e3409f40261668c04ab76dd31490d4f6b4646da62d90de74535d2e2ca82"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_deathless_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 2,
+   "bbox": [
+    275,
+    288
+   ],
+   "scale": 0.174,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.174",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4779e0266ecfb35bba0abf01224973089bc0149aa3b1124346e5ebae80259c5f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_deathless_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 3,
+   "bbox": [
+    222,
+    228
+   ],
+   "scale": 0.219,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.219",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a9a72397a8bd06bcfa28ff9adc9c2d1cee0f9944e4dfeda6ab48deba6c5e1e05"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_deathless_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 4,
+   "bbox": [
+    331,
+    107
+   ],
+   "scale": 0.429,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.429",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d7f68b07a699feff314a23d0a614d890a98c35c0ed203725cfd535fd2e45dd89"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_dragon_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 2,
+   "bbox": [
+    338,
+    305
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f588714ebc8cf5a401b6f6368a0ac3393542d7f8552743e06c1a80c44a10829e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elephant_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 6,
+   "bbox": [
+    367,
+    310
+   ],
+   "scale": 0.161,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.161",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1c1b967718bef3ffadc1596408d0eb5dabf123066495e8ca91adcb2907eb1b7f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elephant_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 7,
+   "bbox": [
+    353,
+    325
+   ],
+   "scale": 0.154,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.154",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5ca195ae6b0269aae773239ddf52fa1ac66b33022352807cca3128d6754a9332"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elven_arms_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 8,
+   "bbox": [
+    331,
+    287
+   ],
+   "scale": 0.174,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.174",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1fd034bb7e198915e44fc9f95d991000dd4ff4589684abaf230fe5ba4b60de78"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elven_arms_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 9,
+   "bbox": [
+    312,
+    306
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "82348cec39f072e49f6123e18c03997c2209fb6e706a903bcd79b044a5d924bc"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elven_arms_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 10,
+   "bbox": [
+    333,
+    284
+   ],
+   "scale": 0.176,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.176",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d56fa6d815124f149e75a59aacf73fc8c54e87900ad9db1544af915a6c3534e6"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elven_arms_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 11,
+   "bbox": [
+    338,
+    287
+   ],
+   "scale": 0.174,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.174",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f568d3a3e1e1dfbe35a3244bb0dba3aac13775ff1c1765cfc2094bb68b72b3e7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_elven_arms_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 0,
+   "bbox": [
+    344,
+    306
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c5d4ea72bd46b381b52da238ef9a765c705017c01102190ca3339011b5f64036"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ent_grove_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 8,
+   "bbox": [
+    320,
+    329
+   ],
+   "scale": 0.152,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.152",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0319087feb16c9c5212baa9593d2697b330f07b10c5fcf934ade47c3e0a987c2"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ent_grove_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 9,
+   "bbox": [
+    343,
+    321
+   ],
+   "scale": 0.156,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.156",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f171b6bf3ece6e5da2f38c156d9d371f5076b50e658f71d28e8faa2825db7e2f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ent_grove_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 10,
+   "bbox": [
+    320,
+    329
+   ],
+   "scale": 0.152,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.152",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d7be0957e8049b684f00532b741266f7ddd7c1523f7ad502c77e18dd0cf782b6"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ent_grove_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 11,
+   "bbox": [
+    305,
+    326
+   ],
+   "scale": 0.153,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.153",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bd04cff5d5f737121f427cf1cdeaafd32bb1b445a97305d9d0689f4dc50f47d7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_giant_gear_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 4,
+   "bbox": [
+    359,
+    319
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ac5c739d8072944b78c6897e490845c935f285ab3bbc57e0e1051dcf27b7829c"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_giant_gear_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 5,
+   "bbox": [
+    296,
+    312
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "259e3747ab5f28cbf53e29752c1eeba26e3f90b6e2b9ee51ca7489e4a27b7b71"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_giant_gear_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 6,
+   "bbox": [
+    329,
+    314
+   ],
+   "scale": 0.159,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.159",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "724d3816ee1179189156791d6a658a17fb47051ac7dfadb595f1259b4734f3d7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_giant_gear_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 7,
+   "bbox": [
+    352,
+    324
+   ],
+   "scale": 0.154,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.154",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a873efdee1b372b46de851a012d214c0363abb31f0bf7694c559b7e363271fbc"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_glo_blade_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 6,
+   "bbox": [
+    295,
+    284
+   ],
+   "scale": 0.176,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.176",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "873b60181e5666fe7b9fc14beeb899e1736b6c87ac3983d651022389e532ff5f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_glo_blade_equipment_shard.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 7,
+   "bbox": [
+    263,
+    276
+   ],
+   "scale": 0.181,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.181",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2d0bed17c72844253f072dd222d53d124d461fea625de644694c47247b4a553f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_grave_arms_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 8,
+   "bbox": [
+    344,
+    304
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ed3f9dacbcd3c979738b99a245626b9f06bf5e01bdadb29b14fba0e16aed7b7e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_grave_arms_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 9,
+   "bbox": [
+    319,
+    306
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6ad7164b7f06b2efb45f0b2dd978d8711caed6871d0def4a8030e410dc05e1a7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_grave_arms_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 10,
+   "bbox": [
+    316,
+    322
+   ],
+   "scale": 0.155,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.155",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "86bec3658388aefe7544350a92d9b0530bb38556f7f17bccfb96892fc50df1a7"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_great_spirit_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 9,
+   "bbox": [
+    311,
+    336
+   ],
+   "scale": 0.149,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.149",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f61fb3260a61deedba749f02baf57e7f0183f15efb13367b891e2b065d7ecd08"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_griffin_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 10,
+   "bbox": [
+    312,
+    319
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1159b1bd1ec2cab5e80271338d15efe9ec80ed6e4598e439d25e641c958ed604"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_griffin_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 11,
+   "bbox": [
+    340,
+    319
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a7d914fb05a6fa787b9ee87209f8cc09edfa737ccca08abc0c2caf84fdd32497"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_griffin_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 0,
+   "bbox": [
+    354,
+    276
+   ],
+   "scale": 0.181,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.181",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f525204c4fef04af3f0f672568ff64ee766028abf2fe2655e6fe3c6db9019086"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_griffin_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 1,
+   "bbox": [
+    334,
+    298
+   ],
+   "scale": 0.168,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.168",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "080a70573049234ab924e757efb9872e46e8d300506dd254e11924ce78afba8f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_handgun_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 1,
+   "bbox": [
+    323,
+    226
+   ],
+   "scale": 0.221,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.221",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "03d39d43083a9554471395e950e712e4571425a3055c780f0bb3d2ce4fd556b5"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_handgun_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 2,
+   "bbox": [
+    355,
+    231
+   ],
+   "scale": 0.216,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.216",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "133391ba19845ed7c36feaa734bb57bad7f31aab03383229a7d1e061739a6842"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_handgun_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 3,
+   "bbox": [
+    362,
+    237
+   ],
+   "scale": 0.211,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.211",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9a0604c8c480b2902475fdc9b16b22b1d083959f8296dd4b39c99b1f58be68c0"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_handgun_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 4,
+   "bbox": [
+    348,
+    360
+   ],
+   "scale": 0.139,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.139",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "beab5cdab699f52e7ce3020f9b8091f71b21c2c0ee676a7b587312984b1af4ce"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_handgun_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 5,
+   "bbox": [
+    356,
+    319
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9d0f2522b295ee9d3c7e1e754f2e9d955f1da5833902fd6cecb9752599c5664a"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_handgun_equipment_5.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t02.png",
+   "sourceSha256": "b8366f4d031bf0a57c8c0db672a4036323e9ff6242e32c4bb34ff3c5bda830fd",
+   "cell": 6,
+   "bbox": [
+    354,
+    194
+   ],
+   "scale": 0.258,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.258",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9206beced5798aec1a2003a10c047b41ba89f3ea1a2c5b9a4efab29d87f52b22"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_galley_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 10,
+   "bbox": [
+    381,
+    283
+   ],
+   "scale": 0.177,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.177",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "acb19a5b22ff2ee2bdf3f4316a7f29b37c014d351cb8b0cbaa5a6c6d2cea964d"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_galley_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t09.png",
+   "sourceSha256": "bb8a79980c5b86888705a466efa6c9a3b365685033a087a157303d5e324b2368",
+   "cell": 11,
+   "bbox": [
+    368,
+    315
+   ],
+   "scale": 0.159,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.159",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ffcd1f601da436a61aae0ba18a9b963e3b52ff955733e60310cb3d96c764cac1"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_galley_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 0,
+   "bbox": [
+    352,
+    344
+   ],
+   "scale": 0.145,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.145",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "61f588e4bedd0544ffd3291fb7e111e5a93a90a417b6d34ac46ba5fab303a5fa"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_great_warship_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 4,
+   "bbox": [
+    364,
+    353
+   ],
+   "scale": 0.142,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.142",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "23f2341067d708b096404b97769a25ad88f5e437e59085d9776c1d9339bf4788"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_great_warship_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 5,
+   "bbox": [
+    349,
+    358
+   ],
+   "scale": 0.14,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.14",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3061441c1f306293bc3b0ebe3d668afd8c25f20d3ac922dbd9587e359bc9efff"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_raider_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 6,
+   "bbox": [
+    348,
+    310
+   ],
+   "scale": 0.161,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.161",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "291acb8c37dedee2be69c37157e923278c50bc961792804d9715d48ffa36d783"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_raider_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 7,
+   "bbox": [
+    338,
+    342
+   ],
+   "scale": 0.146,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.146",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1855c1f40e50e9b1a5f220d32613847207eb17feff5cf6f5f231722311bc018e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_warship_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 1,
+   "bbox": [
+    363,
+    363
+   ],
+   "scale": 0.138,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.138",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f8cdef581cf02263060d69655371f19db9b2a4723295b3d349b2a0ee96e07844"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_warship_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 2,
+   "bbox": [
+    348,
+    360
+   ],
+   "scale": 0.139,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.139",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1e85bfbb45f0cfa9a81e8070996c02cde7c17e4f177faa77c68340982937b942"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_hull_warship_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t10.png",
+   "sourceSha256": "5596721da1c6bcb4a1944e84c805f899f6c48557cd7cd5aa59b23a8f5823da76",
+   "cell": 3,
+   "bbox": [
+    354,
+    365
+   ],
+   "scale": 0.137,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.137",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f2a973f095f83056d706a4e621cfcf71fe0d0701111d6844116ef063ba5d83f8"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_mounts_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 1,
+   "bbox": [
+    353,
+    305
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9de1e276990e0ac8e726c368beb0c9a5ec1a56b1822b0f8825ad56bdb9889e91"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_mounts_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 2,
+   "bbox": [
+    299,
+    318
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a517ec19faedde90932d43bd65e79a88fd80c60e9b8c62fbb843835c570eb7df"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_mounts_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 3,
+   "bbox": [
+    341,
+    311
+   ],
+   "scale": 0.161,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.161",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ffa0471d38e1a4bf1cb0cb3547aa94015a2c315ba7c1b425825ecb930215bcad"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_mounts_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 4,
+   "bbox": [
+    335,
+    301
+   ],
+   "scale": 0.166,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.166",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a3c6d659b5b2c9c5b595c11473f0afc9f07ed64c98e983493204b357ed73f1b8"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_mounts_equipment_4.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t03.png",
+   "sourceSha256": "f9fbcb19cfa0680a27e7b5801b01089b3e267024337442b6577982774689b480",
+   "cell": 5,
+   "bbox": [
+    314,
+    313
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "32cfe34def9a20b723b0d03d4dc250e12374bb2b49c09f9d8423a333a0b2020d"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_nether_arms_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 11,
+   "bbox": [
+    305,
+    302
+   ],
+   "scale": 0.166,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.166",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2aed372393d75f07baacec66f7dd84d0978211e412891b0af4eb1c40161e9846"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_nether_arms_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 0,
+   "bbox": [
+    263,
+    291
+   ],
+   "scale": 0.172,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.172",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e3d691cdf1d18c8d167d014b9b6fa7ece3ec5d9ecb554b540a1a25170eb36218"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_nether_arms_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 1,
+   "bbox": [
+    321,
+    283
+   ],
+   "scale": 0.177,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.177",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "55c0561d5885ca5cd7a81e3bc2abe86f5368520d2de187dbbbf5b309cd946f41"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ogre_gear_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 4,
+   "bbox": [
+    329,
+    303
+   ],
+   "scale": 0.165,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.165",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bc8b00c0b584e7a04bcae133e813c7e9193640922b2a29f0f61b50ac7ff2252c"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ogre_gear_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 5,
+   "bbox": [
+    338,
+    335
+   ],
+   "scale": 0.149,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.149",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e0e135234cfa7bd964138c059b0b0f33b6bd7d01e30fe186a42068f26e13b1e2"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ogre_gear_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 6,
+   "bbox": [
+    326,
+    323
+   ],
+   "scale": 0.155,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.155",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a1386dd6c252f4ac0efa2a48e69491e0c328a267d82adf413d392d20fd92256e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ogre_gear_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 7,
+   "bbox": [
+    289,
+    318
+   ],
+   "scale": 0.157,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.157",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "352fd5550ed31112fc47726069c4ff4084d42253bcdbb420dd267d8a3b08e88e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_scorpion_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 4,
+   "bbox": [
+    285,
+    279
+   ],
+   "scale": 0.179,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.179",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "26aa667237c96e898d8e32f727dfe99a4dab17957bef1c4e8feeac7bc2add598"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_scorpion_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 5,
+   "bbox": [
+    356,
+    246
+   ],
+   "scale": 0.203,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.203",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c54fb4e93a7d438633fa78babee73c37136eb4ccdc83c57f203846d0f52a3380"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_shachihata_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 5,
+   "bbox": [
+    266,
+    306
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7d451927bb9d5d078c8979894419e5e501383288a837096f2b31cc54eac27b0e"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_trebuchet_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 10,
+   "bbox": [
+    333,
+    313
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "13c08d1b4d294159e29e048b9c5fec076dc58e88c1eb79ab8384e52e10b09292"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_trebuchet_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 11,
+   "bbox": [
+    343,
+    308
+   ],
+   "scale": 0.162,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.162",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "18f8c2ef372cfe6ab1a29ded5f720433ca34c7c30df236882a70c637386e92d3"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_trebuchet_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t05.png",
+   "sourceSha256": "2076bc6d718f528d244ab53a7426ad7ae794b3ae72423fbcf762867ca5a39d09",
+   "cell": 0,
+   "bbox": [
+    327,
+    283
+   ],
+   "scale": 0.177,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.177",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8da66b81ee57485fb286c4baec67fc369798d4b34cd6521eca4baef0565b3e33"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_troll_gear_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 0,
+   "bbox": [
+    331,
+    289
+   ],
+   "scale": 0.173,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.173",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3e4430b1b5540fe4d1957d8ebf18b2c9881827124c377e4e38cf77eb50201a1b"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_troll_gear_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 1,
+   "bbox": [
+    251,
+    305
+   ],
+   "scale": 0.164,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.164",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "69802444c3dd077925d358d3474c1edf1fe0bb3b005001dda359c7ef9a5c9e1b"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_troll_gear_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 2,
+   "bbox": [
+    230,
+    314
+   ],
+   "scale": 0.159,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.159",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "72b376a208fb2dbc3853574057c11ceef4f9d6273c4175725a5130eddee2ee79"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_troll_gear_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t06.png",
+   "sourceSha256": "9bdf1e8765579edffe6013f5687e97e0c063b0ff7143d536943c1d1ec83b182a",
+   "cell": 3,
+   "bbox": [
+    326,
+    290
+   ],
+   "scale": 0.172,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.172",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cba9d1c2677ccc62993060fcd4dc4d25928e925bdf12f1fc631895a81b5c2bbe"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_volgan_presence_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t08.png",
+   "sourceSha256": "d5f8b902c2fb50b3311b71ad5328e5662d56ec3f8e23a1988f493c216fcbf276",
+   "cell": 8,
+   "bbox": [
+    326,
+    320
+   ],
+   "scale": 0.156,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.156",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e2a29030e03668c9a4767bdf1723bb3419248f31c4fe56edb55b0f34c40d662f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ward_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 2,
+   "bbox": [
+    188,
+    315
+   ],
+   "scale": 0.159,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.159",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3eac6d07f2d085820f35ca2d1443da4b337d823c3eb88b385db4dfb2cb65e55f"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ward_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 3,
+   "bbox": [
+    279,
+    268
+   ],
+   "scale": 0.187,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.187",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c4ab204bd12617d45dbc3b942f0163202d275dc31d88744bb04cbb17adc477c5"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ward_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 4,
+   "bbox": [
+    332,
+    238
+   ],
+   "scale": 0.21,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.21",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b160ad3a16d3c4e36455362b25384621289b3a8d6de31cbc11ffdc54e5a10c50"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_ward_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t04.png",
+   "sourceSha256": "dcd326cc668add1a542ea052385eda9f8d2bdadf914fb0cb59fb7bac25cf589c",
+   "cell": 5,
+   "bbox": [
+    174,
+    313
+   ],
+   "scale": 0.16,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.16",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ea9ac614f661bab66b2573c208deb6de6ab859e0488d9ab5e4952006082447bc"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_yeti_gear_equipment_0.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 0,
+   "bbox": [
+    256,
+    320
+   ],
+   "scale": 0.156,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.156",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d020fcf253498a38a2ce2e3199d4510bb416ad3d180a36e85dd18ac983ba36ee"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_yeti_gear_equipment_1.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 1,
+   "bbox": [
+    276,
+    326
+   ],
+   "scale": 0.153,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.153",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "caff74a9ad6b7c7f21d8c8d267488c8d313f8daf18a80cb4d3e314837d690b03"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_yeti_gear_equipment_2.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 2,
+   "bbox": [
+    301,
+    307
+   ],
+   "scale": 0.163,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.163",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b9172c2dc92159fe46610fe31eb9ee2ae7ae7168205507e14ff00d51b8a08296"
+  },
+  {
+   "out": "gfx/interface/equipment/zin/zin_yeti_gear_equipment_3.dds",
+   "kind": "type",
+   "source": "art/source/equipment/equipment-t07.png",
+   "sourceSha256": "1d9eaee0e0ba3d02dc08720babbc3ce2fd04d8a8c60a80513ec1399dbeb79e5f",
+   "cell": 3,
+   "bbox": [
+    289,
+    325
+   ],
+   "scale": 0.154,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.154",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a36b3280ff94b8f7cd3e836af51367c24f149e55c695aaa7721eb73376f9cff5"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_armament_highlight.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 9,
+   "bbox": [
+    343,
+    191
+   ],
+   "scale": 0.125,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.125",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ea5034fdccf0e66ae335f4ecdc9894e2af0a281b8d7f22ff05fea8bce0ff9e6a"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_armament.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 5,
+   "bbox": [
+    344,
+    189
+   ],
+   "scale": 0.125,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.125",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "58a2070aac610fd6257c0678eed1e8078a258777648d1a6a6349efa913787d86"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_crew_highlight.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 11,
+   "bbox": [
+    275,
+    271
+   ],
+   "scale": 0.156,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.156",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "14d3affa952a7d19e0ab19b5a4b8a11494af45701a6fff01fc5064189b7eaaef"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_crew.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 7,
+   "bbox": [
+    277,
+    269
+   ],
+   "scale": 0.155,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.155",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0cff4984c5f7e0abfc54c424922d4d5877c7546fe21b138a361dc531681a522a"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_propulsion_highlight.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 8,
+   "bbox": [
+    301,
+    260
+   ],
+   "scale": 0.143,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.143",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d3bef8704b3802d5e4d4a0965c70caa9c825662cdb3be8ef48cecbecaa746fc0"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_propulsion.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 4,
+   "bbox": [
+    301,
+    260
+   ],
+   "scale": 0.143,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.143",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c3c33eba7557f54204331c4cf4abdfb7530bf9bb86f9ae928b6601487fca58ed"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_protection_highlight.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 10,
+   "bbox": [
+    261,
+    258
+   ],
+   "scale": 0.165,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.165",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e227daa93f020a050bd6a108d59c1122fe4cc11ae80b9a8eebfb0fc707258820"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/slot_zin_protection.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 6,
+   "bbox": [
+    258,
+    255
+   ],
+   "scale": 0.167,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 0.167",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2a6541e0749770116b245ca486986f6b9bf6d636d427fd25767c309b03f118ba"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/zin_hull_galley_designer.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 0,
+   "bbox": [
+    366,
+    122
+   ],
+   "scale": 1.388,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 1.388",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a00fd9bceee3ba000e2e0ed6ca07a58b4afae32d51a51f4fa258e85bb596dd65"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/zin_hull_great_warship_designer.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 2,
+   "bbox": [
+    348,
+    179
+   ],
+   "scale": 1.43,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 1.43",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1a6d69aeeef6cf5e75d5d4048ed9a33f9573b2de281fb9f584a580c0746641fe"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/zin_hull_raider_designer.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 3,
+   "bbox": [
+    352,
+    107
+   ],
+   "scale": 1.443,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 1.443",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e1795362e469c448941c207d1f9baa0eb9e63aa674f035990214f1bae5e26cde"
+  },
+  {
+   "out": "gfx/interface/equipmentdesigner/zin/zin_hull_warship_designer.dds",
+   "kind": "designer",
+   "source": "art/source/equipment/equipment-d01.png",
+   "sourceSha256": "86f523da5fe64004873648c4eee75f643047a12e93d1cafd977ce68adcc9fabc",
+   "cell": 1,
+   "bbox": [
+    330,
+    136
+   ],
+   "scale": 1.539,
+   "ops": [
+    "black ground keyed to alpha",
+    "join parts within 6 px, one picture per connected region",
+    "lanczos3 scale 1.539",
+    "centre on 146x54",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "992aadb2c7cffe22cdc87cbd5656ffcd7ad12d3577fd231a9f0acaecd4760758"
+  }
+ ]
+}

@@ -22,3 +22,13 @@ defined_text = {
 	}
 	text = { localization_key = ZIN_MISTAKE_BAND_GATHERED }
 }
+defined_text = {
+	name = zin_mistake_power_line
+	text = {
+		trigger = {
+			has_country_flag = zin_zol_presence_lapsed
+		}
+		localization_key = ZIN_MISTAKE_LAPSED
+	}
+	text = { localization_key = ZIN_MISTAKE_POWER_BAND }
+}

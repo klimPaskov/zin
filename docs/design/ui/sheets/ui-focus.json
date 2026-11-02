@@ -1,6 +1,7 @@
 {
  "id": "ui-focus",
  "family": "focus",
+ "theme": "chronicle",
  "kind": "grid",
  "aspect": "1:1",
  "grid": [
@@ -9,62 +10,69 @@
  ],
  "ground": "black",
  "matte": "none",
- "note": "The whole sheet background and every gutter between the tiles is flat pure black (#000000) with nothing painted on it: no backdrop, no lit or tinted panel behind a tile, no glow, no halo, no vignette, no gradient, no light spilling out of a tile. Each of the 9 tiles is a flat full-bleed swatch of its material that runs to its own edges with no margin of ground inside the tile and no frame drawn around it, so a crop of the tile holds only the material. The three wire cells are not thin lines: each is a thick bar of braided cord that fills the full width and most of the height of its cell.",
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The Chronicle: the illuminated record of the age. Smooth carved blue-grey slate (#2D353A) with a very fine even grain, an inlaid bronze line (#78664C, lit edge #CAB289) with small diamond studs at the corners, vellum leaves (#E2D1B5), rubric red cloth (#5C1714).",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Every cell is one flat rectangular piece seen straight on, filling its own cell edge to edge as a full-bleed swatch, all cells the same size, separated by narrow black gutters. Any line or rim of a plate runs straight along its four sides at an even width; the body inside it is one plain, uniform surface with no motif.",
+ "note": "The three link cells are not thin lines: each is a thick straight horizontal band that fills the full width and most of the height of its cell.",
  "cells": [
   {
    "key": "board_tile",
-   "subject": "a seamless walnut board tile, plain even grain, edge to edge",
+   "subject": "a seamless tile of smooth dark blue-grey slate, plain even surface, edge to edge, with no border and no line",
    "lum": "dark",
-   "luma": 41.5
+   "luma": 47.7
   },
   {
    "key": "title_unavailable",
-   "subject": "a title bar in dull iron, no gilt, matte",
+   "subject": "a focus title plate of dark matte slate with one thin dull grey line along its edge, no bronze, no gilt",
    "lum": "dark",
-   "luma": 45
+   "luma": 49.5
   },
   {
    "key": "title_can_start",
-   "subject": "a title bar in bronze",
-   "lum": "dark",
-   "luma": 76.3,
-   "design": "mid"
+   "subject": "a focus title plate of polished mid-tone bronze with one thin darker bronze line along its edge",
+   "lum": "mid",
+   "luma": 127.3
   },
   {
    "key": "title_completed",
-   "subject": "a title bar in gilt with a verdigris enamel inlay",
-   "lum": "mid",
-   "luma": 98.1
+   "subject": "a focus title plate of verdigris green enamel with one thin gilt line along its edge",
+   "lum": "dark",
+   "luma": 87.5,
+   "design": "mid"
   },
   {
    "key": "ongoing_plate",
-   "subject": "a wide ongoing-focus plate: walnut with a gilt edge, empty",
+   "subject": "a wide ongoing-focus plate of dark slate with a bright bronze line along its edge and a thin verdigris line just inside it, empty",
    "lum": "dark",
-   "luma": 37.5
+   "luma": 50.1
   },
   {
    "key": "link_bronze",
-   "subject": "a thick horizontal bar of braided bronze wire filling the whole cell edge to edge, no glow",
+   "subject": "a thick straight horizontal band of dark aged bronze, a flat inlaid band with one fine engraved line along its middle, filling the whole cell edge to edge",
    "lum": "dark",
-   "luma": 55.6
+   "luma": 71.1
   },
   {
    "key": "link_gilt",
-   "subject": "a thick horizontal bar of braided gilt wire filling the whole cell edge to edge, no glow",
-   "lum": "dark",
-   "luma": 90.9
+   "subject": "a thick straight horizontal band of dull dark gilt, a flat inlaid band with one fine engraved line along its middle, filling the whole cell edge to edge",
+   "lum": "mid",
+   "luma": 128.7,
+   "design": "dark"
   },
   {
    "key": "link_wax",
-   "subject": "a thick horizontal bar of twisted red wax cord filling the whole cell edge to edge, no glow",
+   "subject": "a thick straight horizontal band of deep rubric red enamel with a thin dark bronze edge on both sides, filling the whole cell edge to edge",
    "lum": "dark",
-   "luma": 48.4
+   "luma": 43.4
   },
   {
    "key": "selection_plate",
-   "subject": "a walnut selection plate with a gold edge",
+   "subject": "a selection plate of dark slate with a bright gilt line along its edge",
    "lum": "dark",
-   "luma": 41.3
+   "luma": 49.1
   }
  ],
  "tranche": 7

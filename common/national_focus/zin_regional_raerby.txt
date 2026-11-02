@@ -901,4 +901,22 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = zin_regional_raerby_the_banks_court_remembered
+		icon = GFX_focus_zin_regency_seals
+		x = 4
+		y = 4
+		prerequisite = {
+			focus = zin_regional_raerby_peace_of_the_pupor
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_banks_court
+			add_political_power = 25
+		}
+	}
 }

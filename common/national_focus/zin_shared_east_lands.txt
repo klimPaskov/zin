@@ -1803,4 +1803,70 @@ focus_tree = {
 			custom_effect_tooltip = zin_shared_east_lands_serve_the_strangers_coalition_tip_1
 		}
 	}
+	focus = {
+		id = zin_shared_east_lands_the_pillars_of_the_fair
+		icon = GFX_focus_zin_herds
+		x = 28
+		y = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		allow_branch = {
+			original_tag = DLB
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_two_shores = yes
+			set_country_flag = zin_deep_fair_consent
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_shared_east_lands_horses_from_the_bridge
+		icon = GFX_focus_zin_river_ford
+		x = 28
+		y = 6
+		prerequisite = {
+			focus = zin_shared_east_lands_the_pillars_of_the_fair
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		cost = 10
+		allow_branch = {
+			original_tag = DLB
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_horse_oath
+			if = {
+				limit = {
+					country_exists = HNH
+				}
+				add_opinion_modifier = {
+					target = HNH
+					modifier = zin_shared_east_lands_horse_oath
+				}
+				reverse_add_opinion_modifier = {
+					target = HNH
+					modifier = zin_shared_east_lands_horse_oath
+				}
+			}
+			if = {
+				limit = {
+					country_exists = KON
+				}
+				add_opinion_modifier = {
+					target = KON
+					modifier = zin_shared_east_lands_horse_oath
+				}
+				reverse_add_opinion_modifier = {
+					target = KON
+					modifier = zin_shared_east_lands_horse_oath
+				}
+			}
+			army_experience = 10
+		}
+	}
 }

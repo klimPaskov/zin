@@ -1,0 +1,479 @@
+{
+ "generator": "tools/content/modules/ui_dialogs.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/zin/dialogs/dialog_window.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 24 at 109 (step 0.013)",
+    "repeat y 24 at 41 (step 0.014)",
+    "scale 0.94",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8f2618576f38ecc65dcc1ad03ef22ffa961922ba0854972b6d3de990a07f3601"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_minimize.dds",
+   "source": "art/source/ui/reskin/ui-controls-small.png",
+   "sourceSha256": "587afc67ae800e88b03cf17e68e1b40945220fe44fdbffd266603dd3b5c1bd58",
+   "cells": [
+    "minus",
+    "minus_hover",
+    "minus_pressed"
+   ],
+   "sheets": [
+    "ui-controls-small"
+   ],
+   "ops": [
+    "strip 3 frames of 28x28",
+    "contain 26x26",
+    "pad 1",
+    "scale 0.21",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1be8b2996cd2744e92fe021deb13614a4a0750929d5d2598af0c357cce143637"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_option.dds",
+   "source": "art/source/ui/reskin/ui-buttons-neutral.png",
+   "sourceSha256": "347f799c5aacf410e576ccbe46123243aa67c0562b18d0671eac0f0806e168bb",
+   "cells": [
+    "iron_normal"
+   ],
+   "sheets": [
+    "ui-buttons-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.316 to 81x37",
+    "rim 6x6",
+    "repeat x 24 at 27 (step 0.006)",
+    "repeat y 24 at 7 (step 0.008)",
+    "scale 0.32",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6cd10143f5b346f55d5dd94d5e4d4d5faeb14f5548b005b70753b7ccb6cdb656"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_picture_frame.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "window"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.32 to 115x73",
+    "rim 8x8",
+    "repeat x 68 at 25 (step 0.009)",
+    "repeat y 35 at 16 (step 0.010)",
+    "scale 0.32",
+    "alpha opaque",
+    "hollow inside 8 px",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "86b7cffb1aeec39da3e5d8a1112a05153aa4d548ddbb1b2d755000ba47108cbf"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_reading.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "reading"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.5 to 179x123",
+    "rim 6x6",
+    "repeat x 56 at 54 (step 0.009)",
+    "repeat y 24 at 50 (step 0.009)",
+    "scale 0.5",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2362fa5b12e1a999ca71ed26173c2634480087923610cfc2df3f3f5f8fc921ef"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_title.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "title"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.4 to 143x74",
+    "rim 6x6",
+    "repeat x 32 at 8 (step 0.009)",
+    "repeat y 24 at 18 (step 0.009)",
+    "scale 0.4",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1e5bddcaa422d822b73e69e14150dd69fdd07dde2d3fb308aa14aae8c52b0db5"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_well.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.545 to 196x124",
+    "rim 6x6",
+    "repeat x 24 at 142 (step 0.010)",
+    "repeat y 24 at 78 (step 0.009)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fa5b59f396b348454a2edcd1024388403d27b4092361b39062881a1627b160b9"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/event_window.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "window"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.64 to 229x146",
+    "rim 16x16",
+    "repeat x 32 at 107 (step 0.013)",
+    "repeat y 32 at 38 (step 0.013)",
+    "scale 0.64",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "310564572fe51bc266cffcd3bb1d9a6f80ef33887e47440627109248d8aba0fa"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/leader_picture_frame.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "window"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.32 to 115x73",
+    "rim 8x8",
+    "repeat x 68 at 25 (step 0.009)",
+    "repeat y 35 at 16 (step 0.010)",
+    "scale 0.32",
+    "alpha opaque",
+    "hollow inside 8 px",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d746991387ff0855bf89fd6ad3b4a320a36b0c4892a24cb19f0add101b8a3a3e"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_button.dds",
+   "source": "art/source/ui/reskin/ui-buttons-neutral.png",
+   "sourceSha256": "347f799c5aacf410e576ccbe46123243aa67c0562b18d0671eac0f0806e168bb",
+   "cells": [
+    "iron_hover",
+    "iron_normal",
+    "iron_pressed"
+   ],
+   "sheets": [
+    "ui-buttons-neutral"
+   ],
+   "ops": [
+    "strip 3 frames of 288x36",
+    "frame_tile reduce 0.316 to 81x37",
+    "rim 6x6",
+    "repeat x 45 at 7 (step 0.005)",
+    "repeat y 12 at 15 (step 0.006)",
+    "scale 0.32",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "135878119889f4efb3459bd955a1fa686ec85bfc062d78f5f58181dd2bd6c7a5"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_load_bottom.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 239 at 62 (step 0.012)",
+    "repeat y 107 at 46 (step 0.015)",
+    "scale 0.94",
+    "alpha opaque",
+    "crop 346x64 at 1,427 of the load plate",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9ba6991427036cf163014d3626bc7cafc9b172a322d5aee0e555934c3c6684b1"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_load_list.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 239 at 62 (step 0.012)",
+    "repeat y 107 at 46 (step 0.015)",
+    "scale 0.94",
+    "alpha opaque",
+    "crop 350x370 at 0,63 of the load plate",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "16fbb68840e878b00160dd404bcd0993bbf78db09b456e6f95157a40685205c8"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_load_top.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 239 at 62 (step 0.012)",
+    "repeat y 107 at 46 (step 0.015)",
+    "scale 0.94",
+    "alpha opaque",
+    "crop 346x69 at 1,0 of the load plate",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "735a966d85cbedb3751830d6880b30b6600337e2d7728df78b8f181a0b210ee7"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_save_bottom.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 239 at 62 (step 0.012)",
+    "repeat y 107 at 46 (step 0.015)",
+    "scale 0.94",
+    "alpha opaque",
+    "crop 346x109 at 1,386 of the save plate",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "280566b916609aba878e13e8ec3f5a6884fa25e96c1e3029f0041371d4a8ea99"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_save_list.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 239 at 62 (step 0.012)",
+    "repeat y 107 at 46 (step 0.015)",
+    "scale 0.94",
+    "alpha opaque",
+    "crop 350x320 at 0,66 of the save plate",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "58a9c46ffa646ab3690f6d1fa1e35dac05b6c44cf3b9fffd195e31814e9beb19"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/menu_save_top.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.941 to 329x201",
+    "rim 16x16",
+    "repeat x 239 at 62 (step 0.012)",
+    "repeat y 107 at 46 (step 0.015)",
+    "scale 0.94",
+    "alpha opaque",
+    "crop 346x69 at 1,0 of the save plate",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "352cc90dd9882c437010ca22534818a99dffacdb74a4aabdaf8ed6286ac40b50"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/news_picture_frame.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "window"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.32 to 115x73",
+    "rim 8x8",
+    "repeat x 68 at 25 (step 0.009)",
+    "repeat y 35 at 16 (step 0.010)",
+    "scale 0.32",
+    "alpha opaque",
+    "hollow inside 8 px",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7dc9bc16d1448f4bc0d21b26fa86298d4537139f3fea1b68ca8e89adaacf968b"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/settings_panel.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "mini_dialog"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.615 to 215x132",
+    "rim 8x8",
+    "repeat x 80 at 61 (step 0.009)",
+    "repeat y 32 at 71 (step 0.010)",
+    "scale 0.62",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fea708c3b5303e5aa7920cdf4fddcb3cc9da4cf585601089ddca1af67e33af5c"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/settings_row.dds",
+   "source": "art/source/ui/reskin/ui-chrome-neutral.png",
+   "sourceSha256": "7670c86eb90dff58556d2b29af600a28af28b664e1271aefc14f2de0da872e67",
+   "cells": [
+    "body"
+   ],
+   "sheets": [
+    "ui-chrome-neutral"
+   ],
+   "ops": [
+    "frame_tile reduce 0.286 to 99x65",
+    "rim 2x2",
+    "repeat x 65 at 22 (step 0.006)",
+    "repeat y 32 at 27 (step 0.006)",
+    "scale 0.29",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3ebed61efe2fa83f54a95a765f9359a126ceb5c507bc5bfd11c2d2af402dab7d"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/tension_list.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chronicle"
+   ],
+   "ops": [
+    "frame_tile reduce 0.6 to 209x121",
+    "rim 6x6",
+    "repeat x 42 at 124 (step 0.011)",
+    "repeat y 24 at 60 (step 0.011)",
+    "scale 0.6",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "385e0909d1ead67b667a3081c00fb9d480b0a30b82864331739f35ba9a38a030"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/tension_title.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "title"
+   ],
+   "sheets": [
+    "ui-chrome-chronicle"
+   ],
+   "ops": [
+    "frame_tile reduce 0.375 to 129x77",
+    "rim 6x6",
+    "repeat x 58 at 33 (step 0.007)",
+    "repeat y 24 at 21 (step 0.008)",
+    "scale 0.38",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "60df48c6c07fa3eb4e1cb0bf05ef5246d4c89d7389fbeb3fe6df0cfd3df0e936"
+  },
+  {
+   "out": "gfx/interface/zin/dialogs/tension_window.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "window"
+   ],
+   "sheets": [
+    "ui-chrome-chronicle"
+   ],
+   "ops": [
+    "frame_tile reduce 0.727 to 250x147",
+    "rim 16x16",
+    "repeat x 32 at 110 (step 0.013)",
+    "repeat y 32 at 72 (step 0.015)",
+    "scale 0.73",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e6e03521c3348a5542421ff7fd8c68108711326b73f5019201f236b939f930cf"
+  }
+ ]
+}

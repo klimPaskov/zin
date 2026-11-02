@@ -3,112 +3,377 @@ scripted_gui = {
 	zin_horde = {
 		context_type = player_context
 		window_name = "zin_horde_window"
-		ai_enabled = {
-			always = no
-		}
+		dirty = zin_ui_tick
+		ai_enabled = { always = no }
 		visible = {
 			original_tag = GOL
 			has_country_flag = zin_ui_horde_open
 		}
 		effects = {
+			zin_horde_page_prev_click = {
+				if = {
+					limit = { check_variable = { zin_ui_page > 0 } }
+					subtract_from_variable = { zin_ui_page = 1 }
+				}
+				zin_dark_refresh_panel_rows = yes
+			}
+			zin_horde_page_next_click = {
+				set_temp_variable = { zin_ui_last = zin_ui_pages }
+				subtract_from_temp_variable = { zin_ui_last = 1 }
+				if = {
+					limit = { check_variable = { zin_ui_page < zin_ui_last } }
+					add_to_variable = { zin_ui_page = 1 }
+				}
+				zin_dark_refresh_panel_rows = yes
+			}
+			zin_horde_tab_1_click = {
+				set_variable = { zin_ui_tab = 1 }
+				set_variable = { zin_ui_page = 0 }
+				zin_dark_refresh_panel_rows = yes
+			}
+			zin_horde_tab_2_click = {
+				set_variable = { zin_ui_tab = 2 }
+				set_variable = { zin_ui_page = 0 }
+				zin_dark_refresh_panel_rows = yes
+			}
 			zin_horde_close_click = {
 				clr_country_flag = zin_ui_horde_open
 			}
 		}
 		triggers = {
+			zin_horde_temper_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_temper_meter_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_blocs_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_bloc_volcano_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_bloc_volcano_meter_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
 			zin_horde_bloc_volcano_mark_visible = {
+				check_variable = { zin_ui_tab = 1 }
 				has_country_flag = zin_goldoroth_heir_volcano
 			}
+			zin_horde_bloc_iron_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_bloc_iron_meter_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
 			zin_horde_bloc_iron_mark_visible = {
+				check_variable = { zin_ui_tab = 1 }
 				has_country_flag = zin_goldoroth_heir_iron
 			}
+			zin_horde_bloc_war_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_bloc_war_meter_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
 			zin_horde_bloc_war_mark_visible = {
+				check_variable = { zin_ui_tab = 1 }
 				has_country_flag = zin_goldoroth_heir_war
 			}
+			zin_horde_bloc_warrens_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_bloc_warrens_meter_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
 			zin_horde_bloc_warrens_mark_visible = {
+				check_variable = { zin_ui_tab = 1 }
 				has_country_flag = zin_goldoroth_heir_warrens
 			}
-		}
-		dynamic_lists = {
-			zin_horde_sway = {
-				array = global.zin_dark_sway_rows
-				value = v
-				index = i
-				change_scope = yes
-				entry_container = "zin_horde_sway_entry"
+			zin_horde_unity_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_unity_meter_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_border_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_sway_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
+			zin_horde_sway_head_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
+			zin_horde_sway_head_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
+			zin_horde_sway_head_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
+			zin_horde_sway_1_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 0 }
+			}
+			zin_horde_sway_1_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 0 }
+			}
+			zin_horde_sway_1_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 0 }
+			}
+			zin_horde_sway_2_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 1 }
+			}
+			zin_horde_sway_2_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 1 }
+			}
+			zin_horde_sway_2_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 1 }
+			}
+			zin_horde_sway_3_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 2 }
+			}
+			zin_horde_sway_3_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 2 }
+			}
+			zin_horde_sway_3_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 2 }
+			}
+			zin_horde_sway_4_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 3 }
+			}
+			zin_horde_sway_4_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 3 }
+			}
+			zin_horde_sway_4_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 3 }
+			}
+			zin_horde_sway_5_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 4 }
+			}
+			zin_horde_sway_5_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 4 }
+			}
+			zin_horde_sway_5_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 4 }
+			}
+			zin_horde_sway_6_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 5 }
+			}
+			zin_horde_sway_6_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 5 }
+			}
+			zin_horde_sway_6_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 5 }
+			}
+			zin_horde_sway_7_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 6 }
+			}
+			zin_horde_sway_7_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 6 }
+			}
+			zin_horde_sway_7_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 6 }
+			}
+			zin_horde_sway_8_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 7 }
+			}
+			zin_horde_sway_8_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 7 }
+			}
+			zin_horde_sway_8_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 7 }
+			}
+			zin_horde_sway_9_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 8 }
+			}
+			zin_horde_sway_9_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 8 }
+			}
+			zin_horde_sway_9_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 8 }
+			}
+			zin_horde_sway_10_1_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 9 }
+			}
+			zin_horde_sway_10_2_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 9 }
+			}
+			zin_horde_sway_10_3_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_rows_shown > 9 }
+			}
+			zin_horde_page_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_pages > 1 }
+			}
+			zin_horde_page_prev_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_pages > 1 }
+			}
+			zin_horde_page_next_visible = {
+				check_variable = { zin_ui_tab = 2 }
+				check_variable = { zin_ui_pages > 1 }
+			}
+			zin_horde_page_prev_click_enabled = {
+				check_variable = { zin_ui_page > 0 }
+			}
+			zin_horde_page_next_click_enabled = {
+				set_temp_variable = { zin_ui_last = zin_ui_pages }
+				subtract_from_temp_variable = { zin_ui_last = 1 }
+				check_variable = { zin_ui_page < zin_ui_last }
+			}
+			zin_horde_tab_1_visible = {
+				NOT = { check_variable = { zin_ui_tab = 1 } }
+			}
+			zin_horde_tab_1_on_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_tab_1_on_text_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_horde_tab_2_visible = {
+				NOT = { check_variable = { zin_ui_tab = 2 } }
+			}
+			zin_horde_tab_2_on_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
+			zin_horde_tab_2_on_text_visible = {
+				check_variable = { zin_ui_tab = 2 }
 			}
 		}
-	}
-	zin_horde_launcher = {
-		context_type = player_context
-		window_name = "zin_horde_button_window"
-		ai_enabled = {
-			always = no
-		}
-		visible = {
-			original_tag = GOL
-		}
-		effects = {
-			zin_horde_open_click = {
-				if = {
-					limit = { has_country_flag = zin_ui_horde_open }
-					clr_country_flag = zin_ui_horde_open
-				}
-				else = {
-					clr_country_flag = zin_ui_accord_open
-					zin_dark_refresh_panel_rows = yes
-					set_country_flag = zin_ui_horde_open
-				}
+		properties = {
+			zin_horde_temper_meter_fill = {
+				x = zin_ui_temper_fill
+			}
+			zin_horde_bloc_volcano_meter_fill = {
+				x = zin_ui_favour_volcano_fill
+			}
+			zin_horde_bloc_iron_meter_fill = {
+				x = zin_ui_favour_iron_fill
+			}
+			zin_horde_bloc_war_meter_fill = {
+				x = zin_ui_favour_war_fill
+			}
+			zin_horde_bloc_warrens_meter_fill = {
+				x = zin_ui_favour_warrens_fill
+			}
+			zin_horde_unity_meter_fill = {
+				x = zin_ui_unity_fill
 			}
 		}
 	}
 	zin_accord = {
 		context_type = player_context
 		window_name = "zin_accord_window"
-		ai_enabled = {
-			always = no
-		}
+		dirty = zin_ui_tick
+		ai_enabled = { always = no }
 		visible = {
 			zin_dark_is_accord_member = yes
 			is_faction_leader = yes
 			has_country_flag = zin_ui_accord_open
 		}
 		effects = {
+			zin_accord_page_prev_click = {
+				if = {
+					limit = { check_variable = { zin_ui_page > 0 } }
+					subtract_from_variable = { zin_ui_page = 1 }
+				}
+				zin_dark_refresh_panel_rows = yes
+			}
+			zin_accord_page_next_click = {
+				set_temp_variable = { zin_ui_last = zin_ui_pages }
+				subtract_from_temp_variable = { zin_ui_last = 1 }
+				if = {
+					limit = { check_variable = { zin_ui_page < zin_ui_last } }
+					add_to_variable = { zin_ui_page = 1 }
+				}
+				zin_dark_refresh_panel_rows = yes
+			}
 			zin_accord_close_click = {
 				clr_country_flag = zin_ui_accord_open
 			}
 		}
-		dynamic_lists = {
-			zin_accord_members = {
-				array = global.zin_dark_accord_rows
-				value = v
-				index = i
-				change_scope = yes
-				entry_container = "zin_accord_members_entry"
+		triggers = {
+			zin_accord_members_1_1_visible = {
+				check_variable = { zin_ui_rows_shown > 0 }
+			}
+			zin_accord_members_2_1_visible = {
+				check_variable = { zin_ui_rows_shown > 1 }
+			}
+			zin_accord_members_3_1_visible = {
+				check_variable = { zin_ui_rows_shown > 2 }
+			}
+			zin_accord_members_4_1_visible = {
+				check_variable = { zin_ui_rows_shown > 3 }
+			}
+			zin_accord_members_5_1_visible = {
+				check_variable = { zin_ui_rows_shown > 4 }
+			}
+			zin_accord_members_6_1_visible = {
+				check_variable = { zin_ui_rows_shown > 5 }
+			}
+			zin_accord_members_7_1_visible = {
+				check_variable = { zin_ui_rows_shown > 6 }
+			}
+			zin_accord_members_8_1_visible = {
+				check_variable = { zin_ui_rows_shown > 7 }
+			}
+			zin_accord_members_9_1_visible = {
+				check_variable = { zin_ui_rows_shown > 8 }
+			}
+			zin_accord_members_10_1_visible = {
+				check_variable = { zin_ui_rows_shown > 9 }
+			}
+			zin_accord_page_visible = {
+				check_variable = { zin_ui_pages > 1 }
+			}
+			zin_accord_page_prev_visible = {
+				check_variable = { zin_ui_pages > 1 }
+			}
+			zin_accord_page_next_visible = {
+				check_variable = { zin_ui_pages > 1 }
+			}
+			zin_accord_page_prev_click_enabled = {
+				check_variable = { zin_ui_page > 0 }
+			}
+			zin_accord_page_next_click_enabled = {
+				set_temp_variable = { zin_ui_last = zin_ui_pages }
+				subtract_from_temp_variable = { zin_ui_last = 1 }
+				check_variable = { zin_ui_page < zin_ui_last }
 			}
 		}
-	}
-	zin_accord_launcher = {
-		context_type = player_context
-		window_name = "zin_accord_button_window"
-		ai_enabled = {
-			always = no
-		}
-		visible = {
-			zin_dark_is_accord_member = yes
-			is_faction_leader = yes
-		}
-		effects = {
-			zin_accord_open_click = {
-				if = {
-					limit = { has_country_flag = zin_ui_accord_open }
-					clr_country_flag = zin_ui_accord_open
-				}
-				else = {
-					clr_country_flag = zin_ui_horde_open
-					zin_dark_refresh_panel_rows = yes
-					set_country_flag = zin_ui_accord_open
-				}
+		properties = {
+			zin_accord_resolve_meter_fill = {
+				x = zin_ui_resolve_fill
 			}
 		}
 	}

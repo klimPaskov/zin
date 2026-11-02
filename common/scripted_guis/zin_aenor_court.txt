@@ -9,6 +9,22 @@ zin_court = {
 		has_country_flag = zin_ui_court_open
 	}
 	effects = {
+		zin_court_page_prev_click = {
+			if = {
+				limit = { check_variable = { zin_ui_page > 0 } }
+				subtract_from_variable = { zin_ui_page = 1 }
+			}
+			zin_aenor_ui_refresh = yes
+		}
+		zin_court_page_next_click = {
+			set_temp_variable = { zin_ui_last = zin_ui_pages }
+			subtract_from_temp_variable = { zin_ui_last = 1 }
+			if = {
+				limit = { check_variable = { zin_ui_page < zin_ui_last } }
+				add_to_variable = { zin_ui_page = 1 }
+			}
+			zin_aenor_ui_refresh = yes
+		}
 		zin_court_tab_1_click = {
 			set_variable = { zin_ui_tab = 1 }
 			set_variable = { zin_ui_page = 0 }
@@ -37,33 +53,19 @@ zin_court = {
 		zin_court_corr_visible = {
 			check_variable = { zin_ui_tab = 1 }
 		}
-		zin_court_corr_rule_visible = {
-			check_variable = { zin_ui_tab = 1 }
-		}
-		zin_court_corr_mark_visible = {
+		zin_court_corr_meter_visible = {
 			check_variable = { zin_ui_tab = 1 }
 		}
 		zin_court_temple_visible = {
 			check_variable = { zin_ui_tab = 1 }
-			NOT = { zin_aenor_hand_known = yes }
 		}
-		zin_court_hand_visible = {
-			check_variable = { zin_ui_tab = 1 }
-			zin_aenor_hand_known = yes
-		}
-		zin_court_temple_rule_visible = {
-			check_variable = { zin_ui_tab = 1 }
-		}
-		zin_court_temple_mark_visible = {
+		zin_court_temple_meter_visible = {
 			check_variable = { zin_ui_tab = 1 }
 		}
 		zin_court_cause_visible = {
 			check_variable = { zin_ui_tab = 1 }
 		}
-		zin_court_cause_rule_visible = {
-			check_variable = { zin_ui_tab = 1 }
-		}
-		zin_court_cause_mark_visible = {
+		zin_court_cause_meter_visible = {
 			check_variable = { zin_ui_tab = 1 }
 		}
 		zin_court_health_visible = {
@@ -77,11 +79,134 @@ zin_court = {
 		zin_court_avg_visible = {
 			check_variable = { zin_ui_tab = 2 }
 		}
-		zin_court_dominions_scroll_visible = {
+		zin_court_dominions_head_1_visible = {
 			check_variable = { zin_ui_tab = 2 }
 		}
-		zin_court_scroll_visible = {
+		zin_court_dominions_head_2_visible = {
 			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_court_dominions_head_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_court_dominions_1_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 0 }
+		}
+		zin_court_dominions_1_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 0 }
+		}
+		zin_court_dominions_1_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 0 }
+		}
+		zin_court_dominions_2_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 1 }
+		}
+		zin_court_dominions_2_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 1 }
+		}
+		zin_court_dominions_2_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 1 }
+		}
+		zin_court_dominions_3_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 2 }
+		}
+		zin_court_dominions_3_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 2 }
+		}
+		zin_court_dominions_3_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 2 }
+		}
+		zin_court_dominions_4_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 3 }
+		}
+		zin_court_dominions_4_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 3 }
+		}
+		zin_court_dominions_4_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 3 }
+		}
+		zin_court_dominions_5_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 4 }
+		}
+		zin_court_dominions_5_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 4 }
+		}
+		zin_court_dominions_5_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 4 }
+		}
+		zin_court_dominions_6_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 5 }
+		}
+		zin_court_dominions_6_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 5 }
+		}
+		zin_court_dominions_6_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 5 }
+		}
+		zin_court_dominions_7_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 6 }
+		}
+		zin_court_dominions_7_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 6 }
+		}
+		zin_court_dominions_7_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 6 }
+		}
+		zin_court_dominions_8_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 7 }
+		}
+		zin_court_dominions_8_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 7 }
+		}
+		zin_court_dominions_8_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 7 }
+		}
+		zin_court_dominions_9_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 8 }
+		}
+		zin_court_dominions_9_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 8 }
+		}
+		zin_court_dominions_9_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 8 }
+		}
+		zin_court_dominions_10_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 9 }
+		}
+		zin_court_dominions_10_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 9 }
+		}
+		zin_court_dominions_10_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_rows_shown > 9 }
 		}
 		zin_court_ruling_visible = {
 			check_variable = { zin_ui_tab = 3 }
@@ -89,39 +214,26 @@ zin_court = {
 		zin_court_c_court_visible = {
 			check_variable = { zin_ui_tab = 3 }
 		}
-		zin_court_c_court_rule_visible = {
-			check_variable = { zin_ui_tab = 3 }
-		}
-		zin_court_c_court_mark_visible = {
+		zin_court_c_court_meter_visible = {
 			check_variable = { zin_ui_tab = 3 }
 		}
 		zin_court_c_faithful_visible = {
 			check_variable = { zin_ui_tab = 3 }
 		}
-		zin_court_c_faithful_rule_visible = {
-			check_variable = { zin_ui_tab = 3 }
-		}
-		zin_court_c_faithful_mark_visible = {
+		zin_court_c_faithful_meter_visible = {
 			check_variable = { zin_ui_tab = 3 }
 		}
 		zin_court_c_dominions_visible = {
 			check_variable = { zin_ui_tab = 3 }
 		}
-		zin_court_c_dominions_rule_visible = {
-			check_variable = { zin_ui_tab = 3 }
-		}
-		zin_court_c_dominions_mark_visible = {
+		zin_court_c_dominions_meter_visible = {
 			check_variable = { zin_ui_tab = 3 }
 		}
 		zin_court_c_host_visible = {
 			check_variable = { zin_ui_tab = 3 }
 			zin_aenor_host_available = yes
 		}
-		zin_court_c_host_rule_visible = {
-			check_variable = { zin_ui_tab = 3 }
-			zin_aenor_host_available = yes
-		}
-		zin_court_c_host_mark_visible = {
+		zin_court_c_host_meter_visible = {
 			check_variable = { zin_ui_tab = 3 }
 			zin_aenor_host_available = yes
 		}
@@ -147,76 +259,90 @@ zin_court = {
 		zin_court_crown_date_visible = {
 			check_variable = { zin_ui_tab = 4 }
 		}
+		zin_court_page_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_pages > 1 }
+		}
+		zin_court_page_prev_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_pages > 1 }
+		}
+		zin_court_page_next_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { zin_ui_pages > 1 }
+		}
+		zin_court_page_prev_click_enabled = {
+			check_variable = { zin_ui_page > 0 }
+		}
+		zin_court_page_next_click_enabled = {
+			set_temp_variable = { zin_ui_last = zin_ui_pages }
+			subtract_from_temp_variable = { zin_ui_last = 1 }
+			check_variable = { zin_ui_page < zin_ui_last }
+		}
+		zin_court_tab_1_visible = {
+			NOT = { check_variable = { zin_ui_tab = 1 } }
+		}
 		zin_court_tab_1_on_visible = {
 			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_court_tab_1_on_text_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_court_tab_2_visible = {
+			NOT = { check_variable = { zin_ui_tab = 2 } }
 		}
 		zin_court_tab_2_on_visible = {
 			check_variable = { zin_ui_tab = 2 }
 		}
+		zin_court_tab_2_on_text_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
 		zin_court_tab_3_visible = {
+			NOT = { check_variable = { zin_ui_tab = 3 } }
 			has_global_flag = zin_golden_king_dead
 		}
 		zin_court_tab_3_on_visible = {
 			check_variable = { zin_ui_tab = 3 }
+			has_global_flag = zin_golden_king_dead
+		}
+		zin_court_tab_3_on_text_visible = {
+			check_variable = { zin_ui_tab = 3 }
+			has_global_flag = zin_golden_king_dead
 		}
 		zin_court_tab_4_visible = {
+			NOT = { check_variable = { zin_ui_tab = 4 } }
 			has_global_flag = zin_eindil_returned
 		}
 		zin_court_tab_4_on_visible = {
 			check_variable = { zin_ui_tab = 4 }
+			has_global_flag = zin_eindil_returned
+		}
+		zin_court_tab_4_on_text_visible = {
+			check_variable = { zin_ui_tab = 4 }
+			has_global_flag = zin_eindil_returned
 		}
 	}
 	properties = {
-		zin_court_corr_mark = {
-			x = zin_ui_corr_x
+		zin_court_corr_meter_fill = {
+			x = zin_ui_corr_fill
 		}
-		zin_court_temple_mark = {
-			x = zin_ui_temple_x
+		zin_court_temple_meter_fill = {
+			x = zin_ui_temple_fill
 		}
-		zin_court_cause_mark = {
-			x = zin_ui_cause_x
+		zin_court_cause_meter_fill = {
+			x = zin_ui_cause_fill
 		}
-		zin_court_c_court_mark = {
-			x = zin_ui_court_x
+		zin_court_c_court_meter_fill = {
+			x = zin_ui_court_fill
 		}
-		zin_court_c_faithful_mark = {
-			x = zin_ui_faithful_x
+		zin_court_c_faithful_meter_fill = {
+			x = zin_ui_faithful_fill
 		}
-		zin_court_c_dominions_mark = {
-			x = zin_ui_dominions_x
+		zin_court_c_dominions_meter_fill = {
+			x = zin_ui_dominions_fill
 		}
-		zin_court_c_host_mark = {
-			x = zin_ui_host_x
-		}
-	}
-	dynamic_lists = {
-		zin_court_dominions = {
-			array = zin_aenor_dominion_list
-			value = v
-			index = i
-			change_scope = yes
-			entry_container = "zin_court_dominion_row"
-		}
-	}
-}
-zin_court_launcher = {
-	context_type = player_context
-	window_name = "zin_court_button_window"
-	dirty = zin_ui_tick
-	ai_enabled = { always = no }
-	visible = {
-		zin_aenor_is_realm = yes
-	}
-	effects = {
-		zin_court_open_click = {
-			clr_country_flag = zin_ui_court_open
-			clr_country_flag = zin_ui_council_open
-			clr_country_flag = zin_ui_mistake_open
-			clr_country_flag = zin_realm_open
-			set_country_flag = zin_ui_court_open
-			set_variable = { zin_ui_tab = 1 }
-			set_variable = { zin_ui_page = 0 }
-			zin_aenor_ui_refresh = yes
+		zin_court_c_host_meter_fill = {
+			x = zin_ui_host_fill
 		}
 	}
 }

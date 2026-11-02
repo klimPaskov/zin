@@ -397,6 +397,56 @@ sub_units = {
 		}
 	}
 
+	zin_men_war_elephants = {
+		abbreviation = "ELE"
+		sprite = zin_men_war_elephants
+		map_icon_category = armored
+		priority = 640
+		ai_priority = 100
+		active = no
+		type = { armor }
+		group = armor
+		categories = { category_tanks category_all_armor category_front_line category_army }
+		combat_width = 3
+		max_strength = 30
+		max_organisation = 40
+		default_morale = 0.2
+		manpower = 400
+		training_time = 200
+		suppression = 2.5
+		weight = 1.5
+		supply_consumption = 0.12
+		maximum_speed = 0.5
+		soft_attack = 0.333
+		hard_attack = 1
+		defense = -0.522
+		breakthrough = 1.347
+		ap_attack = 0.488
+		armor_value = 1.732
+		need = {
+			zin_elephant_equipment = 24
+			zin_arms_equipment = 40
+		}
+		desert = {
+			attack = 0.15
+		}
+		plains = {
+			attack = 0.1
+		}
+		forest = {
+			attack = -0.3
+		}
+		marsh = {
+			attack = -0.3
+		}
+		mountain = {
+			attack = -0.3
+		}
+		urban = {
+			attack = -0.2
+		}
+	}
+
 	zin_men_temple_wardens = {
 		abbreviation = "VWD"
 		sprite = zin_men_temple_wardens

@@ -31,6 +31,53 @@ zin_world_peace_holds = {
 	check_variable = { global.zin_gathering_dark < 25 }
 	NOT = { zin_world_great_war_exists = yes }
 }
+zin_world_player_front_open = {
+	# Q-80: under HISTORICAL a player's own front opens the War of the Last Crowns early (the owners of data/world_tension.json war.playerFronts).
+	OR = {
+		AND = {
+			has_global_flag = zin_leren_withdrawal
+			any_country = {
+				is_ai = no
+				zin_is_lerendor = yes
+			}
+		}
+		AND = {
+			has_global_flag = zin_western_crossing
+			any_country = {
+				is_ai = no
+				zin_west_is_leader = yes
+			}
+		}
+		AND = {
+			has_global_flag = zin_eastern_invasion
+			any_country = {
+				is_ai = no
+				has_country_flag = zin_east_coalition_leader
+			}
+		}
+		AND = {
+			has_global_flag = zin_mirolon_fallen
+			any_country = {
+				is_ai = no
+				zin_is_volgan = yes
+			}
+		}
+		AND = {
+			has_global_flag = zin_volgan_marches
+			any_country = {
+				is_ai = no
+				zin_is_volgan = yes
+			}
+		}
+		AND = {
+			has_global_flag = zin_zol_rising
+			any_country = {
+				is_ai = no
+				zin_is_zol = yes
+			}
+		}
+	}
+}
 zin_world_dark_war = {
 	# A dark power at war with a major that is not a dark power (the PLAUSIBLE and FREE start of the War of the Last Crowns).
 	any_country = {
@@ -68,12 +115,13 @@ zin_world_judgement_open = {
 }
 zin_world_golden_court_holds = {
 	# Outcome 4 (SL-25, E-04): an Aenor realm controls Parim, and the Golden King rules it or the Regency of Gold does. A King who went into exile
-	# when his realm fell (zin_golden_king_exiled) rules no court.
+	# when his realm fell (zin_golden_king_exiled) rules no court. A King who died of old age after surviving the Council
+	# (zin_golden_king_old_age, K59, Q-86) is dead like any other: the outcome then holds only through the Regency of Gold (owner, 25 October 2026).
 	NOT = { has_global_flag = zin_golden_king_exiled }
 	any_state = {
 		OR = {
 			zin_is_site_parim = yes
-			state = 238
+			state = 1019
 		}
 		controller = { zin_aenor_is_realm = yes }
 	}
@@ -91,7 +139,7 @@ zin_world_western_crown_holds = {
 			any_state = {
 				OR = {
 					zin_is_site_parim = yes
-					state = 238
+					state = 1019
 				}
 				controller = { has_country_flag = zin_region_west_lands }
 			}

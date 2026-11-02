@@ -962,4 +962,22 @@ focus_tree = {
 			add_stability = 0.02
 		}
 	}
+	focus = {
+		id = zin_regional_seite_islands_the_fathers_fished_under_the_league
+		icon = GFX_focus_zin_heir_rolls
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = zin_regional_seite_islands_the_moot_stone
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_fathers_refuse
+			add_stability = 0.03
+		}
+	}
 }

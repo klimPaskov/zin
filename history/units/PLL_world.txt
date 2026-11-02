@@ -26,15 +26,15 @@ division_template = {
 	}
 }
 units = {
-	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 4286 division_template = "Line Host" start_experience_factor = 0.13 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 4286 division_template = "Line Host" start_experience_factor = 0.08 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 3 } location = 4286 division_template = "Levy Garrison" start_experience_factor = 0.06 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 9564 division_template = "Line Host" start_experience_factor = 0.13 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 9564 division_template = "Line Host" start_experience_factor = 0.08 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 3 } location = 9564 division_template = "Levy Garrison" start_experience_factor = 0.06 start_equipment_factor = 1 }
 	fleet = {
 		name = "Pollos Fleet"
-		naval_base = 4286
+		naval_base = 9732
 		task_force = {
 			name = "Pollos Squadron"
-			location = 4286
+			location = 9732
 			ship = { name = "Sulewaith" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = PLL version_name = "Banked Galley" } } }
 			ship = { name = "Norrowatai" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = PLL version_name = "Banked Galley" } } }
 			ship = { name = "Ruvowennaros" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = PLL version_name = "Banked Galley" } } }

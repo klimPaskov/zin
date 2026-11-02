@@ -1,0 +1,1104 @@
+{
+ "generator": "tools/content/modules/doctrine_art.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/doctrines/zin/air_ledger.dds",
+   "source": "art/source/doctrines/doctrine-track-02.png",
+   "sourceSha256": "ec5cb01ec61108b4f51cd6ad88213f67706c8068f41da3507c132e4290f1f217",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "d91283e8ae0aeab429dfc815722e8cc4f9d50d79c4ea0275131c631c34cbd2e8"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/air_tab.dds",
+   "source": "art/source/doctrines/doctrine-tab-01.png",
+   "sourceSha256": "2b9adfe19656ec7a307fb3cac139432bb708e1ca4a875b9325b4b491f1376a04",
+   "cell": 2,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 182x61",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5834574234b95de85536843ce2c56ae68bb4118dcd187b44def3f50336702386"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/decor_air.dds",
+   "source": "art/source/doctrines/doctrine-decor-01.png",
+   "sourceSha256": "69935a557443ccc2de154375221eae712cead87ab790f5325f7438207c16f036",
+   "cell": 2,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 764x82",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2725f3cbb17d9a24c4be1726ac650923809cf59f354fcec6b1c036dbfed122bb"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/decor_land.dds",
+   "source": "art/source/doctrines/doctrine-decor-01.png",
+   "sourceSha256": "69935a557443ccc2de154375221eae712cead87ab790f5325f7438207c16f036",
+   "cell": 0,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 764x82",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "822bea8746e1cb33769d2b7c58c38929040085901ca0c243e7463af2e53d6a8e"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/decor_naval.dds",
+   "source": "art/source/doctrines/doctrine-decor-01.png",
+   "sourceSha256": "69935a557443ccc2de154375221eae712cead87ab790f5325f7438207c16f036",
+   "cell": 1,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 764x82",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "141a5fed7e6d8cfd52785b6e5d26935fc3b28894e6c2d4b94826ecdee9b0c439"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/decor_special_forces.dds",
+   "source": "art/source/doctrines/doctrine-decor-01.png",
+   "sourceSha256": "69935a557443ccc2de154375221eae712cead87ab790f5325f7438207c16f036",
+   "cell": 3,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 764x82",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b9add653fb7b5423dd418f6bded23961bb5dbe9e9fd76667c6ecd3a4e2bf1d95"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/land_ledger.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 11,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e6f5c9836623666ef80db25dcdb8900c9efed8359f2867a07a0d181a47de0f18"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/land_tab.dds",
+   "source": "art/source/doctrines/doctrine-tab-01.png",
+   "sourceSha256": "2b9adfe19656ec7a307fb3cac139432bb708e1ca4a875b9325b4b491f1376a04",
+   "cell": 0,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 182x61",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ebf8beaba726678bb94c41e7eaf3da0d48bfcc2205334edb31d47ccae8f70411"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/naval_ledger.dds",
+   "source": "art/source/doctrines/doctrine-track-02.png",
+   "sourceSha256": "ec5cb01ec61108b4f51cd6ad88213f67706c8068f41da3507c132e4290f1f217",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "b58059a06c886d2e7da44cc15e630fdfb1aafde996b2ec8b7d09ac258d4e4219"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/naval_tab.dds",
+   "source": "art/source/doctrines/doctrine-tab-01.png",
+   "sourceSha256": "2b9adfe19656ec7a307fb3cac139432bb708e1ca4a875b9325b4b491f1376a04",
+   "cell": 1,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 182x61",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4768b737211d780d66dd62b4c79bb276f1f5d4548e2f7433e912fd55074860f8"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/special_forces_ledger.dds",
+   "source": "art/source/doctrines/doctrine-track-02.png",
+   "sourceSha256": "ec5cb01ec61108b4f51cd6ad88213f67706c8068f41da3507c132e4290f1f217",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "177f83ef086acd1f2ca94d02c40ea06bd1b3d37db2789cfec63f8f3027b072ea"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/special_forces_tab.dds",
+   "source": "art/source/doctrines/doctrine-tab-01.png",
+   "sourceSha256": "2b9adfe19656ec7a307fb3cac139432bb708e1ca4a875b9325b4b491f1376a04",
+   "cell": 3,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 182x61",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1e2ba17a4bcd96bd143cce538d0947b3281b9b0bb94b1db59db2f2da82271f60"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_command_of_the_sea.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 10,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "aa0a03c07065ed7ef9e8cac6ed6baa4df11d28d5f3e7e61ed0d9422a05774271"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_corsair_fleets.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "c6ebd35db7d64142ec6cc65f29b45651051cf66b8a329f8a75f31a286acb784b"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_deathless_tide.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 9,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "d9621ac53b6e5964ad2cacb71c7bf28cc4f4d298c6d19d65e830c6d2e930055f"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_grave_muster.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 8,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e9f97decdef1979e876a8963ea457f4819f329f0188dd1af666c4b24cd85955f"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_great_muster.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e5a70f2aa4a14b34537844e7190acd3e30457fe32d1f14831e44d81bd1518de7"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_griffin_eyries.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "fb8d9cc6e869c2437cfb5c47ffcc9599b80e988e590b9a90b73a8fcc08c6251d"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_horse_and_lance.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "12d56eedf25464be5fd9927414292af5bdec1274a3bd7319efc189379a199259"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_nether_fury.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 7,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e3f6289e134de72d583cee5d291fd2bd07aea4e9f207f652f343c92adbcfd940"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_oar_and_ram.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 11,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "14b557648761cf519ef5a365e1cd5ce42ad515c4c3979731977bebacf012e22c"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_old_ways.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 3,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "1f1f8c353211b6d6efefc7a3f23a9ebc6768d16a6c71aef3e322ed4510911b6d"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_shield_wall.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "ccaaba7c3766114e69673a0896a0046e521d6a2cc26bac4dc5e4a9a81a051d94"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_strength_of_the_wild.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 6,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "27cabc328d07fbf8d5750aa5bf9eb606ef074ddf7c1474f950a4283453af24c0"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_sun_guard.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 4,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "256d79656f434b2231210352178ebc52544b0b305f48d21ae60c3fbcb68e5779"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_warband.dds",
+   "source": "art/source/doctrines/doctrine-medium-01.png",
+   "sourceSha256": "436c161300b129cdf428b976307ea2e66f77f9f87d01f424e40d19f4d5b67448",
+   "cell": 5,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e128ab8ac23f73fd3c47ac68ad2d86cdb6e21b724a35c648d0bb58428ba737f7"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_gd_wings_of_the_mountain.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "53687ce79b8f263e539586b47a120bc85494493dbccce22d1d5b3e59b6f673b6"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_ambush_and_raid.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 9,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "2ecf0e9f950566c51236c12f5143816f7f3479b5e6616b3d3be56ef3b5150ef1"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_archer_screens.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 4,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "3b26cbb44c83f5509c8b435e05bfb2b488db1ba153fe56da5b0ff9f0ae2f8cd1"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_ballista_decks.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 3,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "8d063d6ae8a1fa07b17b5d4fff85cbfa82590d87dcec3fc56f01f182ce40e52f"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_bolt_walls.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "319a767c84a7754eb6cb1e5044f9dca634bd72d379734af35f61aafb67c20f9d"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_coastal_watch.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "acd834d369316c9f97020c31e0264f42b2d0153694a915116a77545680a2c721"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_cog_escorts.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 8,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "f7eb4760b4a6e7a9d2ec6dfb34753d876eb42ea7ddd36c986aa6187437ee7816"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_corsair_packs.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 6,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "71577305cf759e2a444ac6654d4fa2cb36712af57338f08bea94a248bcf95a5f"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_dread_ships.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 7,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "5ae864318729b2729779c297c59cbf5311ccc208bf912b4448b942240e05279c"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_dread.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 10,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "8db3401525f9fed1a1b8100dff69b3717591e2253fa5c0243a2b9fde6f94aea5"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_eyrie_scouts.dds",
+   "source": "art/source/doctrines/doctrine-medium-05.png",
+   "sourceSha256": "ae684d632bce972d75414334b6ceddcaf3c4e2cf9ce51406b403038a50530cb8",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "9a765a1b5d5d98396db6dcc10d95fc1976a0c6c595225e353dcd358f394a0ce5"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_field_engines.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 11,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "c2a9cdcaeb1d8eb4dc7044b86fcd5b446baae4beea8b029e58d3dbcce131e1cf"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_fire_from_above.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 11,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "97ea6c2e7a01e55b100aba56b52f5eeb32643d93ac678fdce516614b20c52899"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_forest_ways.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 8,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "ed9db1e4d21affa261ba01199c29aaae5599fd151a7d8db087a74b3c11257708"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_grave_ranks.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 9,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "ed61e43d96e4cf63b66e1dc3a882f3ed3cccf9173dec9ecdeb65e6e9636a8d8b"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_harbour_works.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 9,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "ee6ba2fcdc7412f896ec9f29dcd9a689af2abe82479eaba5d48f08b67ef0e796"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_heavy_charge.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "6489a680ea8fe769efc36aec143303eb91b8edf4bd6c57a2173b84aaae75444d"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_hidden_special_forces.dds",
+   "source": "art/source/doctrines/doctrine-medium-05.png",
+   "sourceSha256": "ae684d632bce972d75414334b6ceddcaf3c4e2cf9ce51406b403038a50530cb8",
+   "cell": 3,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "3238a1ea1074112d0b5aa09d3c1b8f300224efb6fc28358df15fae20eddb5492"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_hold_the_line.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 7,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "af0bc90565aa631d9aa9b92607ec7a866e0d7a6292d52d1c287d3372b7bed667"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_horse_archery.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 4,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e12db1e3edff0b02f9731a72a12ffb7ac41bee51d2c0b8a312568e3697fc1bbd"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_kin_handling.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 5,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "d481668b9b68d7354d8d103770a1cb02b03874eb865245a386c06a6a6b554d71"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_lance_wings.dds",
+   "source": "art/source/doctrines/doctrine-medium-05.png",
+   "sourceSha256": "ae684d632bce972d75414334b6ceddcaf3c4e2cf9ce51406b403038a50530cb8",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "cc9327a922553c1d040e7414045e0eb741de3d3439608c854cb257332cf4962b"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_levy_drill.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 5,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "c5cf4f3cf998b4a7921453fea48f3a4a691ea3b760e31e75c0da4dc35e604eb1"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_line_of_battle.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "29d106fbf66e9d0e28b4a831782887c4af321f39481ad42e01226b8c533bcc0b"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_long_marches.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 8,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "4f51d801e9b1bdccd30c1a47ae39fed419204aea2b29f1f5853bbc995cfe1a96"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_night_raiders.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 5,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "7efdc8a78d9229c5ef78d86ba54b6b2411ea163f08218d9b0ea19d52f96d02c5"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_oar_squadrons.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "797f9c11e1b6d6edfee5bf9ee46e5e4a8cd6ab3a06f6a43bc6f56184da7872ca"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_ocean_pilots.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 10,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "60a0f7d023dce495ef2d7807ee5f00373c17277de4b52b7e44e162f2ac2568bb"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_raiding_riders.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 3,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "50217cbee5cc7d674e7c1c8dfa35db38c98b85d086c747ae6c739b963dae0c58"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_ram_and_grapple.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 11,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "f31c6618cb966cacc9cc6f3b4ca232c38fa273ee1a9e44a1550710fe5111d32e"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_sappers_craft.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "8f1e0a2ce29aa18c5a885f07f057424e073f612eb7845d36e55984301089ec71"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_sea_castles.dds",
+   "source": "art/source/doctrines/doctrine-medium-04.png",
+   "sourceSha256": "f75e101d2902b6ca673cb56098cef10a9b03d29cde9c8a96f3c746913231ae6a",
+   "cell": 4,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "db74cfc2794f3c182422838c169a4c9f3b0be147c0b243bc053cbdfe2a8f6e7c"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_shield_and_spear.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 3,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "d59a13c410ce29b918c01a3e04f74c02e6c15ed00933b7148a4fb7d90f31ccde"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_siege_trains.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 10,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "f07740d9a5e4e65ba37f14e525aa91ca530bd1981ed4a8055a7d35ec0f03fdf7"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_skirmish_lines.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 6,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "8405f09718df8d2152f47aef2f3cf3bbd1dc74a9cecb1b5b4bd4084e206e7516"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_storm_riders.dds",
+   "source": "art/source/doctrines/doctrine-medium-05.png",
+   "sourceSha256": "ae684d632bce972d75414334b6ceddcaf3c4e2cf9ce51406b403038a50530cb8",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "fab4c3fb7f1ab379710b83b452707d401c67c8080ca12a1e9002490876f5d3f3"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_war_councils.dds",
+   "source": "art/source/doctrines/doctrine-medium-03.png",
+   "sourceSha256": "6f9152c5d4f99a0ff43658300462a38b5c282431ae1f07fed2d50f0596fb78fe",
+   "cell": 6,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "0d6847054a22d02c7762fa3ae43d6f5167759cccdd9cbf5f934bbd8f5acd71f3"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_sub_warband_rush.dds",
+   "source": "art/source/doctrines/doctrine-medium-02.png",
+   "sourceSha256": "d05b90b95ec92b4fd80f9ae39b35169ad2e140c744b2f565e3373b49dcae972a",
+   "cell": 7,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "ea1996e7e28abb724a85d6f88c071ea1ed3d940491773c565daf8a5ca5049001"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_command_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-02.png",
+   "sourceSha256": "1da1c7458f0f32e281e4617f3701104cc71e1494f266cec274dcb3d4a699f794",
+   "cell": 0,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "acd1e55332f04de8893ba252ef801e7b247883e80d254ca36c3213e93b9c0938"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_command_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 3,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "a673dbbefd9a448329824e420a45383559bfb3e31c89025b45d815fc3da85e82"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_dragons_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-03.png",
+   "sourceSha256": "8404f57bca05af860e2da4b54b196634e39597df5e390c810eb818fcc6f21a18",
+   "cell": 2,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6cdf3c3553d0e066ecb0cabaf2fe8f8c3ff0c16bbfe5c05045ea674f3a0bce85"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_dragons_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 8,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "f34b7c810fc03664b5adc2c9e81b007c2315e400d74972e74c3887a679f210ec"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_foot_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-01.png",
+   "sourceSha256": "050896522f96e8ab870d0f8a88391d4a51b60dd078a0d057f81dae1f11057320",
+   "cell": 0,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4e56ca7f067152a66153e4ecbb03baaf9ee530dbaa363248634880989d58e8bd"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_foot_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 0,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "48af138bcaec23f7c54be0a69a6a7ee5fec31190b08dd2a4f07f9ad563644c8c"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_galleys_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-02.png",
+   "sourceSha256": "1da1c7458f0f32e281e4617f3701104cc71e1494f266cec274dcb3d4a699f794",
+   "cell": 1,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d77e29a80da0eda5f5c9963cf1d80811f5b0d7647112e4a75fe4ae6fd6fd8d0b"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_galleys_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 4,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "e8f4b903505d054677e5a6a2cf6e1a0b61ed00319c1ea7c52bdf0d503387d010"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_griffins_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-04.png",
+   "sourceSha256": "4cd60154a4ec36a69f966f680f3a9963ec1ec1c065cfb66929be79793e0bf73c",
+   "cell": 0,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a2eada1fe9471993aaadb27cfc3472efe3dd52a5ea241c84662fce997b45a811"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_griffins_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 9,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "7ce63bd9662d34072f6fa479c86c2cc1aa53466f0e9b8d9c300ee4832b39eefd"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_hidden_special_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-04.png",
+   "sourceSha256": "4cd60154a4ec36a69f966f680f3a9963ec1ec1c065cfb66929be79793e0bf73c",
+   "cell": 1,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "81df6213960a8b7fd536ff00b6b3c38e329c5bce8c158fac1a78776021980315"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_hidden_special_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 10,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "dccb7ceb87c128c70c2672eb550c434f58ec2de20a3a5db55d6778ccf679769a"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_mounted_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-01.png",
+   "sourceSha256": "050896522f96e8ab870d0f8a88391d4a51b60dd078a0d057f81dae1f11057320",
+   "cell": 2,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cfa8b7ec28baffbde062521e40e731c73ae534bd381d4669384bccf7947f89f6"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_mounted_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 2,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "ab88d621298cd4dadb199ae24c06b6a8314981656abe521bb76ea6aeb86acf4e"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_raiders_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-03.png",
+   "sourceSha256": "8404f57bca05af860e2da4b54b196634e39597df5e390c810eb818fcc6f21a18",
+   "cell": 0,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c7f20e88d9d5b22722347340329c013a72fd5c77128023573fd5af76d566f1a9"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_raiders_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 6,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "684ed9fc7b8d849737393ce5e0b74d77e64a4cacae94680bf1e5d53cdef0315b"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_sea_lanes_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-03.png",
+   "sourceSha256": "8404f57bca05af860e2da4b54b196634e39597df5e390c810eb818fcc6f21a18",
+   "cell": 1,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "008be2797214dbede7bfa9e463fedb0c415b8f089a09c03ceeabafaaaf1226f6"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_sea_lanes_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 7,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "7fdb24795de68a6b1d181d8c5cc1de2340966551bb6b5d9e92e11515ce704e10"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_siege_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-01.png",
+   "sourceSha256": "050896522f96e8ab870d0f8a88391d4a51b60dd078a0d057f81dae1f11057320",
+   "cell": 1,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1c22821ce30b825d2cdcfc9d352526cc98de1cc0c4d983b9463c37d21a781de7"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_siege_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 1,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "1c80b10ccc931fec8e712e0ced3c6c46ece7693bc8e129aa3eab174f94400a33"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_warships_bg.dds",
+   "source": "art/source/doctrines/doctrine-bg-02.png",
+   "sourceSha256": "1da1c7458f0f32e281e4617f3701104cc71e1494f266cec274dcb3d4a699f794",
+   "cell": 2,
+   "ops": [
+    "equal grid cell, 3% inset",
+    "cover 360x660",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f3e8a165c0efe61dfd1e5cc1315339a958fea4e39a54141d0d9171809cd728ce"
+  },
+  {
+   "out": "gfx/interface/doctrines/zin/zin_track_warships_icon.dds",
+   "source": "art/source/doctrines/doctrine-track-01.png",
+   "sourceSha256": "2401f4134656f8d37e22c38e3f2ea6803b589a5c57643115bb82d351ebc1d045",
+   "cell": 5,
+   "ops": [
+    "detect medallion",
+    "cut 4px inset",
+    "lanczos3 64x64",
+    "circle alpha"
+   ],
+   "sha256": "9050b5be91184b594794fc301e13079d6313180f1809e9b8a1fa282a2844ca05"
+  }
+ ]
+}

@@ -551,6 +551,144 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = zin_regional_erco_under_the_seven_forts
+		icon = GFX_focus_zin_palace_wards
+		x = 22
+		y = 5
+		prerequisite = {
+			focus = zin_regional_erco_the_mountains_keep_their_own
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 10
+		available = {
+			has_completed_focus = zin_regional_erco_deep_shafts
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_kalioth = yes
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_erco_the_wall_nobody_strikes
+		icon = GFX_focus_zin_frozen_gate
+		x = 22
+		y = 6
+		prerequisite = {
+			focus = zin_regional_erco_under_the_seven_forts
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			zin_deep_halls_opened = yes
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_political_power = 25
+			custom_effect_tooltip = zin_regional_erco_the_wall_nobody_strikes_tip_1
+		}
+	}
+	focus = {
+		id = zin_regional_erco_wall_it_up_again
+		icon = GFX_focus_zin_bracelet_seal
+		x = 24
+		y = 7
+		prerequisite = {
+			focus = zin_regional_erco_the_wall_nobody_strikes
+		}
+		mutually_exclusive = {
+			focus = zin_regional_erco_melt_the_diadem
+			focus = zin_regional_erco_wear_the_diadem
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		cost = 5
+		ai_will_do = {
+			factor = 70
+		}
+		completion_reward = {
+			set_temp_variable = { zin_arg_way = 1 }
+			zin_deep_diadem_fate = yes
+		}
+	}
+	focus = {
+		id = zin_regional_erco_melt_the_diadem
+		icon = GFX_focus_zin_crown_broken
+		x = 22
+		y = 7
+		prerequisite = {
+			focus = zin_regional_erco_the_wall_nobody_strikes
+		}
+		mutually_exclusive = {
+			focus = zin_regional_erco_wall_it_up_again
+			focus = zin_regional_erco_wear_the_diadem
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 5
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				add = 25
+				has_opinion = { target = ALR value > 49 }
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { zin_arg_way = 2 }
+			zin_deep_diadem_fate = yes
+		}
+	}
+	focus = {
+		id = zin_regional_erco_wear_the_diadem
+		icon = GFX_focus_zin_eastern_throne
+		x = 20
+		y = 7
+		prerequisite = {
+			focus = zin_regional_erco_the_wall_nobody_strikes
+		}
+		mutually_exclusive = {
+			focus = zin_regional_erco_wall_it_up_again
+			focus = zin_regional_erco_melt_the_diadem
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		cost = 5
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 5
+				has_government = fascism
+				check_variable = { global.zin_gathering_dark > 60 }
+				NOT = {
+					has_war_with = PUV
+				}
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { zin_arg_way = 3 }
+			zin_deep_diadem_fate = yes
+		}
+	}
+	focus = {
+		id = zin_regional_erco_the_glacier_road
+		icon = GFX_focus_zin_footprints_snow
+		x = 20
+		y = 8
+		prerequisite = {
+			focus = zin_regional_erco_wear_the_diadem
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_glacier_road = yes
+			army_experience = 10
+		}
+	}
+	focus = {
 		id = zin_regional_erco_temples_of_the_deliverer
 		icon = GFX_focus_zin_censer
 		x = 14

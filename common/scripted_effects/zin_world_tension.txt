@@ -533,6 +533,7 @@ zin_world_start_last_crowns = {
 	if = {
 		limit = { NOT = { has_global_flag = zin_war_of_last_crowns } }
 		set_global_flag = zin_war_of_last_crowns
+		zin_super_event_last_crowns = yes # super event 5 (modules/super_events.mjs)
 		log = "ZIN world: the War of the Last Crowns begins"
 		random_country = { news_event = { id = zin_world.20 } }
 	}
@@ -540,12 +541,20 @@ zin_world_start_last_crowns = {
 zin_world_check_last_crowns = {
 	# Spec, "The War of the Last Crowns": HISTORICAL on its date; PLAUSIBLE on the first of the meter at 65 after its date, a dark war, or
 	# the latest date; FREE on the first two. Outside HISTORICAL the first front of the war that comes on its own sets the flag piecemeal (B18 D3).
+	# Under HISTORICAL the AI's fronts keep the date, but a front a player's realm opens starts the war early, piecemeal (owner answer Q-80,
+	# K59): zin_world_player_front_open.
 	if = {
 		limit = { NOT = { has_global_flag = zin_war_of_last_crowns } }
 		if = {
 			limit = { zin_rules_is_historical = yes }
 			if = {
 				limit = { zin_world_date_last_crowns = yes }
+				zin_world_start_last_crowns = yes
+			}
+			else_if = {
+				limit = { zin_world_player_front_open = yes }
+				set_global_flag = zin_war_piecemeal
+				set_global_flag = zin_war_opened_by_player
 				zin_world_start_last_crowns = yes
 			}
 		}
@@ -617,6 +626,7 @@ zin_world_reach_ending = {
 		if = {
 			limit = { check_variable = { zin_end = 1 } }
 			set_global_flag = zin_ending_lost_cause
+			zin_super_event_ending_lost_cause = yes # super event 18 (modules/super_events.mjs)
 			if = {
 				limit = { NOT = { has_global_flag = zin_lost_cause_with_eindil } }
 				set_global_flag = zin_lost_cause_with_eindil
@@ -626,36 +636,43 @@ zin_world_reach_ending = {
 		else_if = {
 			limit = { check_variable = { zin_end = 2 } }
 			set_global_flag = zin_ending_children_of_volgan
+			zin_super_event_ending_children_of_volgan = yes # super event 19 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.101 days = 1 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_end = 3 } }
 			set_global_flag = zin_ending_ashen_throne
+			zin_super_event_ending_ashen_throne = yes # super event 20 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.102 days = 1 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_end = 4 } }
 			set_global_flag = zin_ending_golden_court
+			zin_super_event_ending_golden_court = yes # super event 21 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.103 days = 1 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_end = 5 } }
 			set_global_flag = zin_ending_western_crown
+			zin_super_event_ending_western_crown = yes # super event 22 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.104 days = 1 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_end = 6 } }
 			set_global_flag = zin_ending_strait_master
+			zin_super_event_ending_strait_master = yes # super event 23 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.105 days = 1 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_end = 7 } }
 			set_global_flag = zin_ending_eastern_king
+			zin_super_event_ending_eastern_king = yes # super event 24 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.106 days = 1 } }
 		}
 		else_if = {
 			limit = { check_variable = { zin_end = 8 } }
 			set_global_flag = zin_ending_unfinished
+			zin_super_event_ending_unfinished = yes # super event 25 (modules/super_events.mjs)
 			random_country = { news_event = { id = zin_world.107 days = 1 } }
 		}
 		log = "ZIN world: ending [?global.zin_world_ending|0] reached"
@@ -811,6 +828,7 @@ zin_world_tick = {
 		every_country = {
 			limit = { is_ai = no }
 			zin_ui_refresh = yes
+			zin_chr_count_unread = yes
 		}
 		zin_world_schedule_tick = yes
 	}

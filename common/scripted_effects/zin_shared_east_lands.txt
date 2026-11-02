@@ -86,3 +86,27 @@ zin_shared_east_lands_own_laws = {
 		localization = zin_shared_east_lands_seek_more_freedom
 	}
 }
+
+# Arguments: zin_arg_who (country), zin_arg_modifier (1-based position in the opinion_modifiers block), zin_arg_both (1 for both ways).
+zin_shared_east_lands_opinion = {
+	if = {
+		limit = {
+			check_variable = { zin_arg_modifier = 1 }
+		}
+		var:zin_arg_who = {
+			reverse_add_opinion_modifier = {
+				target = PREV
+				modifier = zin_shared_east_lands_horse_oath
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_shared_east_lands_horse_oath
+				}
+			}
+		}
+	}
+}

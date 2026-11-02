@@ -8,13 +8,17 @@ division_template = {
 		zin_men_temple_wardens = { x = 0 y = 2 }
 		zin_men_temple_wardens = { x = 1 y = 0 }
 	}
+	support = {
+		zin_support_healers = { x = 0 y = 0 }
+	}
 }
 units = {
-	division = { name = "First Valley Wardens" location = 5338 division_template = "Valley Wardens" start_experience_factor = 0.05 start_equipment_factor = 1 }
+	division = { name = "First Valley Wardens" location = 12314 division_template = "Valley Wardens" start_experience_factor = 0.05 start_equipment_factor = 1 }
 }
 instant_effect = {
 	add_equipment_to_stockpile = { type = zin_armour_equipment_0 amount = 100 producer = WOR }
 	add_equipment_to_stockpile = { type = zin_arms_equipment_1 amount = 390 producer = WOR }
+	add_equipment_to_stockpile = { type = zin_camp_equipment_0 amount = 30 producer = WOR }
 	add_equipment_to_stockpile = { type = train_equipment_0 amount = 30 producer = WOR }
 	add_equipment_to_stockpile = { type = convoy_1 amount = 10 producer = WOR }
 	add_equipment_production = { equipment = { type = zin_arms_equipment_1 creator = WOR } requested_factories = 1 progress = 0.5 efficiency = 50 }

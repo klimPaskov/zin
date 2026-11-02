@@ -422,6 +422,7 @@ news_event = {
 	picture = GFX_zin_news_western_crossing
 	major = no
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_western_crossing } } # super event 6 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_west.41.a
@@ -564,6 +565,7 @@ news_event = {
 	picture = GFX_zin_news_generic_war
 	major = no
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_parim_taken } } # super event 11 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_west.56.a
@@ -766,205 +768,355 @@ country_event = {
 		# The boats come in: every seven days the armies standing in an evacuation port sail home.
 		if = {
 			limit = { has_global_flag = zin_west_evacuation NOT = { has_global_flag = zin_west_evacuated } }
-			1328 = {
+			1081 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			1329 = {
+			685 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			725 = {
+			680 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			727 = {
+			686 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			968 = {
+			679 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			241 = {
+			1389 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			724 = {
+			687 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			749 = {
+			684 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			668 = {
+			1483 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			1281 = {
+			683 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			748 = {
+			689 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			751 = {
+			688 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			1277 = {
+			695 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			750 = {
+			694 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			17 = {
+			690 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			1278 = {
+			682 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			753 = {
+			693 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			666 = {
+			1468 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			755 = {
+			1469 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			202 = {
+			691 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			744 = {
+			1471 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			18 = {
+			1688 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			19 = {
+			1472 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			133 = {
+			1474 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			756 = {
+			555 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			131 = {
+			1478 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			675 = {
+			553 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			878 = {
+			551 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			1291 = {
+			1479 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			130 = {
+			550 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			78 = {
+			1642 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			324 = {
+			1689 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			73 = {
+			568 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
 				}
 			}
-			812 = {
+			1690 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1645 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			571 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1707 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			569 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1644 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			419 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1646 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			430 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			426 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1563 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			423 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1556 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			420 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1557 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			422 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1620 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			427 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			425 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			300 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			428 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1615 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			468 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			1616 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			349 = {
+				if = {
+					limit = { has_state_flag = zin_west_evacuation_port }
+					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
+				}
+			}
+			348 = {
 				if = {
 					limit = { has_state_flag = zin_west_evacuation_port }
 					teleport_armies = { limit = { has_country_flag = zin_west_pledged } }
@@ -1101,34 +1253,34 @@ country_event = {
 	}
 	option = {
 		name = zin_west.90.b
-		1328 = {
+		1081 = {
 			if = {
 				limit = { is_owned_by = ROOT }
-				add_building_construction = { type = coastal_bunker province = 3963 level = 2 instant_build = yes }
+				add_building_construction = { type = coastal_bunker province = 8048 level = 2 instant_build = yes }
 			}
 		}
-		1329 = {
+		685 = {
 			if = {
 				limit = { is_owned_by = ROOT }
-				add_building_construction = { type = coastal_bunker province = 4035 level = 2 instant_build = yes }
+				add_building_construction = { type = coastal_bunker province = 7975 level = 2 instant_build = yes }
 			}
 		}
-		725 = {
+		680 = {
 			if = {
 				limit = { is_owned_by = ROOT }
-				add_building_construction = { type = coastal_bunker province = 3822 level = 2 instant_build = yes }
+				add_building_construction = { type = coastal_bunker province = 7897 level = 2 instant_build = yes }
 			}
 		}
-		727 = {
+		686 = {
 			if = {
 				limit = { is_owned_by = ROOT }
-				add_building_construction = { type = coastal_bunker province = 4277 level = 2 instant_build = yes }
+				add_building_construction = { type = coastal_bunker province = 8970 level = 2 instant_build = yes }
 			}
 		}
-		968 = {
+		679 = {
 			if = {
 				limit = { is_owned_by = ROOT }
-				add_building_construction = { type = coastal_bunker province = 4425 level = 2 instant_build = yes }
+				add_building_construction = { type = coastal_bunker province = 7769 level = 2 instant_build = yes }
 			}
 		}
 		add_political_power = -75

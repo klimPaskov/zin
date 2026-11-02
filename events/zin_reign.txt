@@ -2404,7 +2404,7 @@ country_event = {
 	timeout_days = 30
 	trigger = {
 		zin_aenor_is_realm = yes
-		has_character = zin_ilsabet
+		has_character = zin_aldovan
 	}
 	option = {
 		name = zin_reign.44.opt1
@@ -3024,6 +3024,13 @@ news_event = {
 	desc = zin_reign.72.d
 	picture = GFX_zin_news_generic_war
 	major = yes
+	# K61: shown to the lands where it happens and the realms it involves (data/news_reach.json).
+	show_major = {
+		OR = {
+			zin_hears_in_middle_lands = yes
+			zin_aenor_is_concord_dominion = yes
+		}
+	}
 	is_triggered_only = yes
 	timeout_days = 30
 	trigger = {

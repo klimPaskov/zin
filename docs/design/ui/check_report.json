@@ -6,11 +6,13 @@
   6,
   7
  ],
+ "release": false,
  "checks": [
   {
    "id": 1,
    "name": "inventory freshness",
    "status": "pass",
+   "problemCount": 0,
    "problems": [],
    "pending": 0,
    "notes": {
@@ -22,28 +24,36 @@
    "id": 2,
    "name": "coverage",
    "status": "pass",
+   "problemCount": 0,
    "problems": [],
    "pending": 0,
    "notes": {
-    "rows": 31561,
-    "sprites": 31561
+    "rows": 31611,
+    "sprites": 31611
    }
   },
   {
    "id": 3,
    "name": "shape",
    "status": "pending",
+   "problemCount": 0,
    "problems": [],
-   "pending": 202,
+   "pending": 107,
    "notes": {
-    "checked": 3476
+    "checked": 3483
    }
   },
   {
    "id": 4,
    "name": "reachability",
    "status": "fail",
+   "problemCount": 254,
    "problems": [
+    {
+     "code": "reach.reachable",
+     "name": "GFX_BPT_area_defense_setting_tick",
+     "message": "GFX_BPT_area_defense_setting_tick is H (hidden_dlc) but is reached from a loaded script or text icon"
+    },
     {
      "code": "reach.reachable",
      "name": "GFX_FOCUS_FILTER_AIR_XP",
@@ -271,6 +281,11 @@
     },
     {
      "code": "reach.reachable",
+     "name": "GFX_cryptology_add_new_country",
+     "message": "GFX_cryptology_add_new_country is U (country_mechanic) but is reached from a loaded script or text icon"
+    },
+    {
+     "code": "reach.reachable",
      "name": "GFX_dam_icon",
      "message": "GFX_dam_icon is U (content_landmark) but is reached from a loaded script or text icon"
     },
@@ -386,173 +401,8 @@
     },
     {
      "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_10",
-     "message": "GFX_faction_logo_generic_10 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_10_miniature",
-     "message": "GFX_faction_logo_generic_10_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_11",
-     "message": "GFX_faction_logo_generic_11 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_11_miniature",
-     "message": "GFX_faction_logo_generic_11_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_12",
-     "message": "GFX_faction_logo_generic_12 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_12_miniature",
-     "message": "GFX_faction_logo_generic_12_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_13",
-     "message": "GFX_faction_logo_generic_13 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_13_miniature",
-     "message": "GFX_faction_logo_generic_13_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_14",
-     "message": "GFX_faction_logo_generic_14 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_14_miniature",
-     "message": "GFX_faction_logo_generic_14_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_15",
-     "message": "GFX_faction_logo_generic_15 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_15_miniature",
-     "message": "GFX_faction_logo_generic_15_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_17",
-     "message": "GFX_faction_logo_generic_17 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_17_miniature",
-     "message": "GFX_faction_logo_generic_17_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_18",
-     "message": "GFX_faction_logo_generic_18 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_18_miniature",
-     "message": "GFX_faction_logo_generic_18_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_19",
-     "message": "GFX_faction_logo_generic_19 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_19_miniature",
-     "message": "GFX_faction_logo_generic_19_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_2",
-     "message": "GFX_faction_logo_generic_2 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_2_miniature",
-     "message": "GFX_faction_logo_generic_2_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_3",
-     "message": "GFX_faction_logo_generic_3 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_3_miniature",
-     "message": "GFX_faction_logo_generic_3_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_4",
-     "message": "GFX_faction_logo_generic_4 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_4_miniature",
-     "message": "GFX_faction_logo_generic_4_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_5",
-     "message": "GFX_faction_logo_generic_5 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_5_miniature",
-     "message": "GFX_faction_logo_generic_5_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_6",
-     "message": "GFX_faction_logo_generic_6 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_6_miniature",
-     "message": "GFX_faction_logo_generic_6_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_7",
-     "message": "GFX_faction_logo_generic_7 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_7_miniature",
-     "message": "GFX_faction_logo_generic_7_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_8",
-     "message": "GFX_faction_logo_generic_8 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_8_miniature",
-     "message": "GFX_faction_logo_generic_8_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_9",
-     "message": "GFX_faction_logo_generic_9 is U (content_faction_logo) but is reached from a loaded script or text icon"
-    },
-    {
-     "code": "reach.reachable",
-     "name": "GFX_faction_logo_generic_9_miniature",
-     "message": "GFX_faction_logo_generic_9_miniature is U (content_faction_logo) but is reached from a loaded script or text icon"
+     "name": "GFX_faction_initiative_texticon",
+     "message": "GFX_faction_initiative_texticon is U (content_texticon) but is reached from a loaded script or text icon"
     },
     {
      "code": "reach.reachable",
@@ -608,6 +458,11 @@
      "code": "reach.reachable",
      "name": "GFX_focus_usa_honor_the_confederacy",
      "message": "GFX_focus_usa_honor_the_confederacy is U (content_focus_icon) but is reached from a loaded script or text icon"
+    },
+    {
+     "code": "reach.reachable",
+     "name": "GFX_frontend_banner_dlc018",
+     "message": "GFX_frontend_banner_dlc018 is H (hidden_dlc) but is reached from a loaded script or text icon"
     },
     {
      "code": "reach.reachable",
@@ -683,6 +538,11 @@
      "code": "reach.reachable",
      "name": "GFX_idea_free_trade",
      "message": "GFX_idea_free_trade is U (content_idea_picture) but is reached from a loaded script or text icon"
+    },
+    {
+     "code": "reach.reachable",
+     "name": "GFX_idea_henschel",
+     "message": "GFX_idea_henschel is U (content_idea_picture) but is reached from a loaded script or text icon"
     },
     {
      "code": "reach.reachable",
@@ -823,6 +683,16 @@
      "code": "reach.reachable",
      "name": "GFX_prod_eff_cap",
      "message": "GFX_prod_eff_cap is U (content_texticon) but is reached from a loaded script or text icon"
+    },
+    {
+     "code": "reach.reachable",
+     "name": "GFX_project_paper_clip",
+     "message": "GFX_project_paper_clip is U (special_project) but is reached from a loaded script or text icon"
+    },
+    {
+     "code": "reach.reachable",
+     "name": "GFX_project_progress_info_bg",
+     "message": "GFX_project_progress_info_bg is U (special_project) but is reached from a loaded script or text icon"
     },
     {
      "code": "reach.reachable",
@@ -1443,6 +1313,11 @@
      "code": "reach.reachable",
      "name": "GFX_weather",
      "message": "GFX_weather is U (content_texticon) but is reached from a loaded script or text icon"
+    },
+    {
+     "code": "reach.reachable",
+     "name": "GFX_youtube_button",
+     "message": "GFX_youtube_button is H (hidden_dlc) but is reached from a loaded script or text icon"
     }
    ],
    "pending": 0,
@@ -1452,40 +1327,2680 @@
    "id": 5,
    "name": "no vanilla pixels",
    "status": "pending",
+   "problemCount": 0,
    "problems": [],
-   "pending": 203,
+   "pending": 108,
    "notes": {
-    "compared": 2549,
-    "inconclusive": 596
+    "compared": 2594,
+    "inconclusive": 653
    }
   },
   {
    "id": 6,
    "name": "provenance",
    "status": "pending",
+   "problemCount": 0,
    "problems": [],
-   "pending": 202,
+   "pending": 107,
    "notes": {}
   },
   {
    "id": 7,
    "name": "luminance",
    "status": "pending",
+   "problemCount": 0,
    "problems": [],
-   "pending": 202,
+   "pending": 107,
    "notes": {
-    "free": 564
+    "free": 719
    }
   },
   {
    "id": 8,
    "name": "overrides",
    "status": "pass",
+   "problemCount": 0,
    "problems": [],
    "pending": 0,
    "notes": {
-    "checked": 4
+    "checked": 19
+   }
+  },
+  {
+   "id": 10,
+   "name": "icon.registry",
+   "status": "fail",
+   "problemCount": 432,
+   "problems": [
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_battles.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_battles.dds serves 3 concepts (event: event:zin_eindil.96, event:zin_eindil.98, event:zin_eindil.100) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_crowns_dragon.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_crowns_dragon.dds serves 3 concepts (event: event:zin_lastwar.70, event:zin_lastwar.71, event:zin_lastwar.72) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_crowns_field.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_crowns_field.dds serves 3 concepts (event: event:zin_lastwar.61, event:zin_lastwar.62, event:zin_lastwar.80) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_crowns_houses.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_crowns_houses.dds serves 2 concepts (event: event:zin_lastwar.51, event:zin_lastwar.110) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_crowns_levies.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_crowns_levies.dds serves 2 concepts (event: event:zin_lastwar.12, event:zin_lastwar.50) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_crowns_warnings.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_crowns_warnings.dds serves 2 concepts (event: event:zin_lastwar.10, event:zin_lastwar.11) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_crowns_western_quay.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_crowns_western_quay.dds serves 3 concepts (event: event:zin_lastwar.20, event:zin_lastwar.21, event:zin_lastwar.60) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_dragon_pact.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_dragon_pact.dds serves 2 concepts (event: event:zin_eindil.88, event:zin_eindil.169) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_forest_bearer.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_forest_bearer.dds serves 2 concepts (event: event:zin_eindil.86, event:zin_eindil.168) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_glo_bearer.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_glo_bearer.dds serves 2 concepts (event: event:zin_eindil.73, event:zin_eindil.163) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_golbran.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_golbran.dds serves 4 concepts (event: event:zin_eindil.123, event:zin_eindil.124, event:zin_eindil.126, event:zin_eindil.127) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_grey_ford.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_grey_ford.dds serves 2 concepts (event: event:zin_eindil.21, event:zin_eindil.22) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_grey_ford_b.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_grey_ford_b.dds serves 2 concepts (event: event:zin_eindil.154, event:zin_eindil.155) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_heir_struck.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_heir_struck.dds serves 2 concepts (event: event:zin_eindil.101, event:zin_eindil.102) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_impostor_chains.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_impostor_chains.dds serves 2 concepts (event: event:zin_eindil.85, event:zin_eindil.167) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_king_without_house.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_king_without_house.dds serves 3 concepts (event: event:zin_eindil.23, event:zin_eindil.30, event:zin_eindil.31) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_landfall.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_landfall.dds serves 2 concepts (event: event:zin_eindil.70, event:zin_eindil.72) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_lorien_gift.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_lorien_gift.dds serves 2 concepts (event: event:zin_eindil.54, event:zin_eindil.160) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_lorien_gift_b.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_lorien_gift_b.dds serves 2 concepts (event: event:zin_eindil.52, event:zin_eindil.161) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_lorien_north.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_lorien_north.dds serves 2 concepts (event: event:zin_eindil.60, event:zin_eindil.61) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_man_ice.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_man_ice.dds serves 2 concepts (event: event:zin_eindil.10, event:zin_eindil.11) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_man_ice_b.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_man_ice_b.dds serves 2 concepts (event: event:zin_eindil.150, event:zin_eindil.151) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_parim_crown.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_parim_crown.dds serves 3 concepts (event: event:zin_eindil.130, event:zin_eindil.131, event:zin_eindil.132) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_raise_host.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_raise_host.dds serves 4 concepts (event: event:zin_eindil.92, event:zin_eindil.93, event:zin_eindil.94, event:zin_eindil.95) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_reef_shrine.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_reef_shrine.dds serves 2 concepts (event: event:zin_eindil.42, event:zin_eindil.43) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_seals.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_seals.dds serves 2 concepts (event: event:zin_eindil.120, event:zin_eindil.121) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_selen_shore.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_selen_shore.dds serves 2 concepts (event: event:zin_eindil.80, event:zin_eindil.164) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_selen_shore_b.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_selen_shore_b.dds serves 2 concepts (event: event:zin_eindil.81, event:zin_eindil.165) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_stay_and_rule.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_stay_and_rule.dds serves 3 concepts (event: event:zin_eindil.44, event:zin_eindil.45, event:zin_eindil.46) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_traders_road.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_traders_road.dds serves 2 concepts (event: event:zin_eindil.12, event:zin_eindil.20) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_traders_road_b.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_traders_road_b.dds serves 2 concepts (event: event:zin_eindil.152, event:zin_eindil.153) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_ambush.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_ambush.dds serves 2 concepts (event: event:zin_afrit.33, event:zin_afrit.34) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_artifacts.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_artifacts.dds serves 5 concepts (event: event:zin_afrit.92, event:zin_afrit.71, event:zin_afrit.72, event:zin_afrit.73, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_confessors.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_confessors.dds serves 2 concepts (event: event:zin_afrit.7, event:zin_afrit.91) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_east.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_east.dds serves 3 concepts (event: event:zin_afrit.54, event:zin_afrit.51, event:zin_afrit.60) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_houses.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_houses.dds serves 6 concepts (event: event:zin_afrit.3, event:zin_afrit.4, event:zin_afrit.5, event:zin_afrit.6, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_night.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_night.dds serves 4 concepts (event: event:zin_afrit.41, event:zin_afrit.11, event:zin_afrit.14, event:zin_afrit.16) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_palace_seals.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_palace_seals.dds serves 3 concepts (event: event:zin_afrit.20, event:zin_afrit.70, event:zin_afrit.76) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_shore.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_shore.dds serves 2 concepts (event: event:zin_afrit.31, event:zin_afrit.32) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_unmasking.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_unmasking.dds serves 2 concepts (event: event:zin_afrit.42, event:zin_afrit.44) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_veil_verdict.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_veil_verdict.dds serves 3 concepts (event: event:zin_afrit.10, event:zin_afrit.22, event:zin_afrit.53) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_beat_west_sea.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_beat_west_sea.dds serves 2 concepts (event: event:zin_eindil.40, event:zin_eindil.158) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_black_isles_lights.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_black_isles_lights.dds serves 18 concepts (event: event:zin_lore.5, event:zin_mistake.3, event:zin_mistake.4, event:zin_mistake.5, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_black_ships_tale.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_black_ships_tale.dds serves 11 concepts (event: event:zin_aenor.507, event:zin_aenor.152, event:zin_leren.50, event:zin_lore.180, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_chronicle.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_chronicle.dds serves 2 concepts (event: event:zin_world.110, event:zin_world.112) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_cold_shore.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_cold_shore.dds serves 2 concepts (event: event:zin_glo.11, event:zin_super_event.127) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_concord_council.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_concord_council.dds serves 42 concepts (event: event:zin_aenor.503, event:zin_aenor.515, event:zin_aenor.101, event:zin_aenor.102, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_coronation.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_coronation.dds serves 6 concepts (event: event:zin_aenor.400, event:zin_lore.401, event:zin_reign.40, event:zin_reign.41, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_council_chamber.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_council_chamber.dds serves 14 concepts (event: event:zin_east.31, event:zin_ending.41, event:zin_lore.2, event:zin_lore.220, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_court_feast.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_court_feast.dds serves 7 concepts (event: event:zin_aenor.500, event:zin_aenor.10, event:zin_ending.40, event:zin_lore.101, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_crown_of_aen.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_crown_of_aen.dds serves 4 concepts (event: event:zin_aenor.517, event:zin_ending.10, event:zin_ending.13, event:zin_ending.14) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_dragon_return.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_dragon_return.dds serves 5 concepts (event: event:zin_aenor.331, event:zin_aenor.460, event:zin_aenor.320, event:zin_aenor.321, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_ember_lands_storm.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_ember_lands_storm.dds serves 46 concepts (event: event:zin_dominion.2, event:zin_dominion.8, event:zin_dominion.21, event:zin_dominion.25, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_gala_court.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_gala_court.dds serves 18 concepts (event: event:zin_gala.1, event:zin_gala.3, event:zin_gala.4, event:zin_gala.6, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_generic_court.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_generic_court.dds serves 231 concepts (event: event:zin_aenor.504, event:zin_aenor.509, event:zin_aenor.512, event:zin_aenor.103, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_generic_peace.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_generic_peace.dds serves 90 concepts (event: event:zin_aenor.502, event:zin_aenor.516, event:zin_cold.70, event:zin_dark.18, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_generic_sea.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_generic_sea.dds serves 90 concepts (event: event:zin_cold.71, event:zin_dark.13, event:zin_deep.1, event:zin_deep.2, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_generic_war.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_generic_war.dds serves 85 concepts (event: event:zin_aenor.513, event:zin_aenor.518, event:zin_aenor.519, event:zin_aenor.260, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_generic_wilds.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_generic_wilds.dds serves 140 concepts (event: event:zin_aenor.506, event:zin_cold.11, event:zin_cold.12, event:zin_cold.51, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_glo_given.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_glo_given.dds serves 4 concepts (event: event:zin_glo.21, event:zin_glo.22, event:zin_glo.23, event:zin_glo.80) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_golden_court.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_golden_court.dds serves 21 concepts (event: event:zin_aenor.501, event:zin_aenor.11, event:zin_aenor.12, event:zin_aenor.20, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_grave_muster.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_grave_muster.dds serves 10 concepts (event: event:zin_ending.3, event:zin_ending.21, event:zin_mirolon.2, event:zin_regional_burrikkrit.7, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_grey_ford_truce.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_grey_ford_truce.dds serves 10 concepts (event: event:zin_east.21, event:zin_goldoroth.18, event:zin_lore.11, event:zin_lore.140, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_hermitage.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_hermitage.dds serves 24 concepts (event: event:zin_deep.22, event:zin_deep.23, event:zin_deep.25, event:zin_deep.26, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_houses.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_houses.dds serves 38 concepts (event: event:zin_aenor.510, event:zin_aenor.21, event:zin_deep.28, event:zin_deep.29, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_king_is_dead.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_king_is_dead.dds serves 5 concepts (event: event:zin_lore.400, event:zin_reign.20, event:zin_reign.21, event:zin_reign.22, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_leren_envoys.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_leren_envoys.dds serves 21 concepts (event: event:zin_dark.31, event:zin_leren.11, event:zin_leren.72, event:zin_leren.31, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_lost_cause_triumph.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_lost_cause_triumph.dds serves 12 concepts (event: event:zin_aenor.505, event:zin_aenor.150, event:zin_diplo.23, event:zin_ending.80, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_mirolon_passes.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_mirolon_passes.dds serves 27 concepts (event: event:zin_aenor.514, event:zin_aenor.151, event:zin_dark.21, event:zin_dominion.6, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_southern_warning.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_southern_warning.dds serves 19 concepts (event: event:zin_aenor.508, event:zin_dark.50, event:zin_dark.85, event:zin_deep.105, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_strait_toll.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_strait_toll.dds serves 13 concepts (event: event:zin_ending.60, event:zin_ending.61, event:zin_goldoroth.16, event:zin_leren.10, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_thirty_days.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_thirty_days.dds serves 6 concepts (event: event:zin_aenor.511, event:zin_aenor.201, event:zin_reign.30, event:zin_reign.33, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_unmasking.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_unmasking.dds serves 8 concepts (event: event:zin_deep.20, event:zin_elves.60, event:zin_ending.4, event:zin_ending.30, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_vast_shadow.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_vast_shadow.dds serves 3 concepts (event: event:zin_mistake.21, event:zin_super_event.128, event:zin_zol.9) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_volgan_broken.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_volgan_broken.dds serves 7 concepts (event: event:zin_dark.82, event:zin_deep.108, event:zin_dominion.26, event:zin_goldoroth.15, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_war_king.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_war_king.dds serves 3 concepts (event: event:zin_lore.402, event:zin_west.72, event:zin_world.45) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_western_crossing.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_western_crossing.dds serves 3 concepts (event: event:zin_west.31, event:zin_west.40, event:zin_west.60) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_yeldenne_hall.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_yeldenne_hall.dds serves 8 concepts (event: event:zin_cold.61, event:zin_glo.20, event:zin_glo.24, event:zin_glo.25, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_evt_zol_rising.dds",
+     "message": "gfx/event_pictures/zin/zin_evt_zol_rising.dds serves 4 concepts (event: event:zin_dark.80, event:zin_goldoroth.17, event:zin_lore.406, event:zin_zol.6) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_beat_heir_lost.dds",
+     "message": "gfx/event_pictures/zin/zin_news_beat_heir_lost.dds serves 2 concepts (news_event: news_event:zin_eindil.140, news_event:zin_eindil.170) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_beat_veil_coronation_news.dds",
+     "message": "gfx/event_pictures/zin/zin_news_beat_veil_coronation_news.dds serves 2 concepts (news_event: news_event:zin_afrit.21, news_event:zin_afrit.23) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_beat_veil_false_god_news.dds",
+     "message": "gfx/event_pictures/zin/zin_news_beat_veil_false_god_news.dds serves 3 concepts (news_event: news_event:zin_afrit.75, news_event:zin_afrit.77, news_event:zin_afrit.79) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_beat_veil_golden_news.dds",
+     "message": "gfx/event_pictures/zin/zin_news_beat_veil_golden_news.dds serves 2 concepts (news_event: news_event:zin_afrit.17, news_event:zin_afrit.62) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_ember_lands_storm.dds",
+     "message": "gfx/event_pictures/zin/zin_news_ember_lands_storm.dds serves 7 concepts (news_event: news_event:zin_dominion.4, news_event:zin_dominion.27, news_event:zin_dominion.11, news_event:zin_dominion.12, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_generic_court.dds",
+     "message": "gfx/event_pictures/zin/zin_news_generic_court.dds serves 5 concepts (news_event: news_event:zin_aenor.210, news_event:zin_east.80, news_event:zin_elves.10, news_event:zin_glo.70, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_generic_peace.dds",
+     "message": "gfx/event_pictures/zin/zin_news_generic_peace.dds serves 5 concepts (news_event: news_event:zin_east.24, news_event:zin_east.27, news_event:zin_glo.30, news_event:zin_west.26, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_generic_sea.dds",
+     "message": "gfx/event_pictures/zin/zin_news_generic_sea.dds serves 3 concepts (news_event: news_event:zin_east.43, news_event:zin_west.51, news_event:zin_west.66) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_generic_war.dds",
+     "message": "gfx/event_pictures/zin/zin_news_generic_war.dds serves 22 concepts (news_event: news_event:zin_aenor.211, news_event:zin_aenor.212, news_event:zin_aenor.213, news_event:zin_aenor.214, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_strait_toll.dds",
+     "message": "gfx/event_pictures/zin/zin_news_strait_toll.dds serves 4 concepts (news_event: news_event:zin_leren.55, news_event:zin_leren.60, news_event:zin_leren.32, news_event:zin_leren.33) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_vast_shadow.dds",
+     "message": "gfx/event_pictures/zin/zin_news_vast_shadow.dds serves 4 concepts (news_event: news_event:zin_mistake.20, news_event:zin_mistake.23, news_event:zin_mistake.24, news_event:zin_sun.40) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/event_pictures/zin/zin_news_zol_rising.dds",
+     "message": "gfx/event_pictures/zin/zin_news_zol_rising.dds serves 3 concepts (news_event: news_event:zin_mistake.30, news_event:zin_mistake.11, news_event:zin_mistake.25) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/abyss_stair.dds",
+     "message": "gfx/interface/goals/zin/abyss_stair.dds serves 5 concepts (focus: focus:zin_regional_alerhia_read_the_first_stair, focus:zin_regional_nan_tales_of_the_stair, focus:zin_volgan_descend_into_the_abyss, focus:zin_volgan_empty_setting, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/alliance_rings.dds",
+     "message": "gfx/interface/goals/zin/alliance_rings.dds serves 70 concepts (focus: focus:zin_aenor_concord_reborn, focus:zin_aenor_common_defence, focus:zin_aenor_the_last_alliance, focus:zin_coldor_northern_accord, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/alms_bread.dds",
+     "message": "gfx/interface/goals/zin/alms_bread.dds serves 17 concepts (focus: focus:zin_aenor_royal_almoners, focus:zin_aenor_deliverers_relief, focus:zin_noris_welcome_the_generous_friends, focus:zin_regional_heaven_houses_for_pilgrims, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/anchor_rope.dds",
+     "message": "gfx/interface/goals/zin/anchor_rope.dds serves 40 concepts (focus: focus:zin_aenor_hold_the_western_shore, focus:zin_coldor_close_the_ports_to_war, focus:zin_gala_fleet_of_sun, focus:zin_gunwaith_the_river_mouths, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/ashen_waste.dds",
+     "message": "gfx/interface/goals/zin/ashen_waste.dds serves 6 concepts (focus: focus:zin_regional_nether_devils_of_the_burning_shore, focus:zin_zol_silence_of_the_north, focus:zin_zol_sodoloro, focus:zin_zol_the_black_wastes, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/banner_black.dds",
+     "message": "gfx/interface/goals/zin/banner_black.dds serves 29 concepts (focus: focus:zin_goldoroth_blood_contests, focus:zin_goldoroth_the_long_grudge, focus:zin_goldoroth_the_great_warband, focus:zin_goldoroth_fire_through_the_holds, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/banner_laid_down.dds",
+     "message": "gfx/interface/goals/zin/banner_laid_down.dds serves 15 concepts (focus: focus:zin_gunwaith_accept_the_surrenders, focus:zin_magical_forest_remember_edrans_folly, focus:zin_noris_bring_the_riders_home, focus:zin_regional_drak_yield_the_old_seat, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/banner_league.dds",
+     "message": "gfx/interface/goals/zin/banner_league.dds serves 127 concepts (focus: focus:zin_aenor_peoples_of_the_concord, focus:zin_aenor_kings_league, focus:zin_aenor_league_of_free_crowns, focus:zin_coldor_open_the_accord, ...) without one deliberate share entry"
+    },
+    {
+     "code": "icon.unexplained_share",
+     "name": "gfx/interface/goals/zin/banner_plain.dds",
+     "message": "gfx/interface/goals/zin/banner_plain.dds serves 110 concepts (focus: focus:zin_aenor_lost_cause_reborn, focus:zin_aenor_the_people_choose, focus:zin_coldor_queens_progress, focus:zin_coldor_one_banner_of_the_ice, ...) without one deliberate share entry"
+    }
+   ],
+   "pending": 0,
+   "notes": {
+    "textures": 1299,
+    "sharedTextures": 432,
+    "unexplainedTextures": 432,
+    "conceptsOnUnexplained": 7974,
+    "explainedTextures": 0
+   }
+  },
+  {
+   "id": 11,
+   "name": "icon.placeholder",
+   "status": "fail",
+   "problemCount": 11,
+   "problems": [
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_decision_cat_picture_zin_dev_learning",
+     "message": "GFX_decision_cat_picture_zin_dev_learning (interface/zin_development.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_decision_category_zin_dev_learning",
+     "message": "GFX_decision_category_zin_dev_learning (interface/zin_development.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_decision_zin_dev_endow_learning",
+     "message": "GFX_decision_zin_dev_endow_learning (interface/zin_development.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_decision_zin_dev_send_scholars",
+     "message": "GFX_decision_zin_dev_send_scholars (interface/zin_development.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_development_modifier",
+     "message": "GFX_zin_development_modifier (interface/zin_development.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_tech_cord_reckoning_medium",
+     "message": "GFX_zin_tech_cord_reckoning_medium (interface/zin_technologies.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_tech_deep_road_shoring_medium",
+     "message": "GFX_zin_tech_deep_road_shoring_medium (interface/zin_technologies.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_tech_dike_craft_medium",
+     "message": "GFX_zin_tech_dike_craft_medium (interface/zin_technologies.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_tech_kalioth_forge_medium",
+     "message": "GFX_zin_tech_kalioth_forge_medium (interface/zin_technologies.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_tech_stair_builders_measure_medium",
+     "message": "GFX_zin_tech_stair_builders_measure_medium (interface/zin_technologies.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    },
+    {
+     "code": "icon.placeholder",
+     "name": "GFX_zin_tech_sunfields_hull_craft_medium",
+     "message": "GFX_zin_tech_sunfields_hull_craft_medium (interface/zin_technologies.gfx) draws the placeholder gfx/interface/zin/unknown/technology.dds"
+    }
+   ],
+   "pending": 0,
+   "notes": {
+    "placeholders": [
+     "gfx/interface/zin/frame.dds",
+     "gfx/interface/zin/unknown/technology.dds",
+     "gfx/interface/zin/unknown/doctrine.dds",
+     "gfx/interface/zin/unknown/unit.dds",
+     "gfx/interface/zin/unknown/equipment.dds"
+    ],
+    "byTexture": {
+     "gfx/interface/zin/unknown/technology.dds": 11
+    }
+   }
+  },
+  {
+   "id": 12,
+   "name": "icon.family_size",
+   "status": "fail",
+   "problemCount": 455,
+   "problems": [
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ledger_coins.dds",
+     "message": "decision_category zin_aenor_cat_court: gfx/interface/ideas/zin/ledger_coins.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/palace_parim.dds",
+     "message": "decision_category_picture zin_aenor_cat_court: gfx/interface/ideas/zin/palace_parim.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/concord_circle.dds",
+     "message": "decision_category zin_aenor_cat_concord: gfx/interface/ideas/zin/concord_circle.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/charter_old.dds",
+     "message": "decision_category_picture zin_aenor_cat_concord: gfx/interface/ideas/zin/charter_old.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/banner_league.dds",
+     "message": "decision_category zin_aenor_cat_lost_cause: gfx/interface/ideas/zin/banner_league.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/banner_league.dds",
+     "message": "decision_category_picture zin_aenor_cat_lost_cause: gfx/interface/ideas/zin/banner_league.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/healer_herbs.dds",
+     "message": "decision_category zin_aenor_cat_kings_health: gfx/interface/ideas/zin/healer_herbs.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/empty_throne.dds",
+     "message": "decision_category zin_aenor_cat_empty_throne: gfx/interface/ideas/zin/empty_throne.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/throne_gold.dds",
+     "message": "decision_category_picture zin_aenor_cat_empty_throne: gfx/interface/ideas/zin/throne_gold.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/house_first_light.dds",
+     "message": "decision_category zin_afrit_council: gfx/interface/ideas/zin/house_first_light.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/war_drums.dds",
+     "message": "decision_category zin_cold_isengard: gfx/interface/ideas/zin/war_drums.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/timber_mill.dds",
+     "message": "decision_category zin_cold_trade: gfx/interface/ideas/zin/timber_mill.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/corsair_raider.dds",
+     "message": "decision_category zin_dark_raids: gfx/interface/ideas/zin/corsair_raider.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/tribute_chest.dds",
+     "message": "decision_category zin_dark_sway: gfx/interface/ideas/zin/tribute_chest.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/strait_chain.dds",
+     "message": "decision_category zin_dark_straits: gfx/interface/ideas/zin/strait_chain.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/glyph_fading.dds",
+     "message": "decision_category zin_deep_low_country: gfx/interface/ideas/zin/glyph_fading.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/bridge_oaths.dds",
+     "message": "decision_category zin_deep_two_shores: gfx/interface/ideas/zin/bridge_oaths.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/mine_cart.dds",
+     "message": "decision_category zin_deep_kalioth: gfx/interface/ideas/zin/mine_cart.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ring_doors.dds",
+     "message": "decision_category zin_deep_sea_doors: gfx/interface/ideas/zin/ring_doors.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/shipwreck.dds",
+     "message": "decision_category zin_deep_sea_roads: gfx/interface/ideas/zin/shipwreck.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ice_cavern.dds",
+     "message": "decision_category zin_deep_ice: gfx/interface/ideas/zin/ice_cavern.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/zin/unknown/technology.dds",
+     "message": "decision_category zin_dev_learning: gfx/interface/zin/unknown/technology.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/zin/unknown/technology.dds",
+     "message": "decision_category_picture zin_dev_learning: gfx/interface/zin/unknown/technology.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/grave_host.dds",
+     "message": "decision_category zin_dominion_grave_musters: gfx/interface/ideas/zin/grave_host.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/grave_host.dds",
+     "message": "decision_category_picture zin_dominion_grave_musters: gfx/interface/ideas/zin/grave_host.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/banner_black.dds",
+     "message": "decision_category zin_dominion_court: gfx/interface/ideas/zin/banner_black.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/banner_black.dds",
+     "message": "decision_category_picture zin_dominion_court: gfx/interface/ideas/zin/banner_black.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/scout_lantern.dds",
+     "message": "decision_category zin_dominion_mirolon_watch: gfx/interface/ideas/zin/scout_lantern.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/scout_lantern.dds",
+     "message": "decision_category_picture zin_dominion_mirolon_watch: gfx/interface/ideas/zin/scout_lantern.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/caravan.dds",
+     "message": "decision_category zin_east_roads: gfx/interface/ideas/zin/caravan.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/granary.dds",
+     "message": "decision_category zin_east_desert: gfx/interface/ideas/zin/granary.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/envoy.dds",
+     "message": "decision_category zin_east_courts: gfx/interface/ideas/zin/envoy.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/footprints_snow.dds",
+     "message": "decision_category zin_eindil_guest: gfx/interface/ideas/zin/footprints_snow.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/crown_hailed.dds",
+     "message": "decision_category zin_eindil_host: gfx/interface/ideas/zin/crown_hailed.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/palace_wards.dds",
+     "message": "decision_category zin_eindil_palace: gfx/interface/ideas/zin/palace_wards.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/elven_council.dds",
+     "message": "decision_category zin_elves_kin: gfx/interface/ideas/zin/elven_council.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/elven_council.dds",
+     "message": "decision_category_picture zin_elves_kin: gfx/interface/ideas/zin/elven_council.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/healer_herbs.dds",
+     "message": "decision_category_picture zin_elves_wanderers: gfx/interface/ideas/zin/healer_herbs.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/dragon_mountain.dds",
+     "message": "decision_category zin_elves_roosts: gfx/interface/ideas/zin/dragon_mountain.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/dragon_mountain.dds",
+     "message": "decision_category_picture zin_elves_roosts: gfx/interface/ideas/zin/dragon_mountain.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/crystal_green.dds",
+     "message": "decision_category zin_glo_seekers: gfx/interface/ideas/zin/crystal_green.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/new_gods_light.dds",
+     "message": "decision_category zin_glo_cat_bearer: gfx/interface/ideas/zin/new_gods_light.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/levy_muster.dds",
+     "message": "decision_category zin_inst_valour: gfx/interface/ideas/zin/levy_muster.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/levy_muster.dds",
+     "message": "decision_category_picture zin_inst_valour: gfx/interface/ideas/zin/levy_muster.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/strait_chain.dds",
+     "message": "decision_category_picture zin_leren_strait: gfx/interface/ideas/zin/strait_chain.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/alliance_rings.dds",
+     "message": "decision_category zin_leren_compact: gfx/interface/ideas/zin/alliance_rings.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/alliance_rings.dds",
+     "message": "decision_category_picture zin_leren_compact: gfx/interface/ideas/zin/alliance_rings.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/zol_sigil.dds",
+     "message": "decision_category zin_mistake_presence: gfx/interface/ideas/zin/zol_sigil.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/black_isles.dds",
+     "message": "decision_category_picture zin_mistake_presence: gfx/interface/ideas/zin/black_isles.dds is 64x64 with 1 frame(s); the family is 114x101 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/crown_iron.dds",
+     "message": "decision_category zin_realm_court: gfx/interface/ideas/zin/crown_iron.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/gala_sun.dds",
+     "message": "decision_category zin_sun_counsel: gfx/interface/ideas/zin/gala_sun.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/mirror_rain.dds",
+     "message": "decision_category zin_sun_mirror: gfx/interface/ideas/zin/mirror_rain.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/grey_ford.dds",
+     "message": "decision_category zin_west_council: gfx/interface/ideas/zin/grey_ford.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ship_voyage.dds",
+     "message": "decision_category zin_west_crossing: gfx/interface/ideas/zin/ship_voyage.dds is 64x64 with 1 frame(s); the family is 52x40 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ledger_coins.dds",
+     "message": "decision zin_aenor_court_audit: gfx/interface/ideas/zin/ledger_coins.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/feast_table.dds",
+     "message": "decision zin_aenor_court_feast_of_offices: gfx/interface/ideas/zin/feast_table.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/seal_royal.dds",
+     "message": "decision zin_aenor_court_dismiss_favourites: gfx/interface/ideas/zin/seal_royal.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/charter_old.dds",
+     "message": "decision zin_aenor_reissue_charter_old: gfx/interface/ideas/zin/charter_old.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/charter_golden.dds",
+     "message": "decision zin_aenor_reissue_charter_golden: gfx/interface/ideas/zin/charter_golden.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/charter_shield.dds",
+     "message": "decision zin_aenor_reissue_charter_shield: gfx/interface/ideas/zin/charter_shield.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/charter_free.dds",
+     "message": "decision zin_aenor_reissue_charter_free: gfx/interface/ideas/zin/charter_free.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/charter_wall.dds",
+     "message": "decision zin_aenor_reissue_charter_wall: gfx/interface/ideas/zin/charter_wall.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/concord_circle.dds",
+     "message": "decision zin_aenor_concord_council: gfx/interface/ideas/zin/concord_circle.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/levy_muster.dds",
+     "message": "decision zin_aenor_concord_levy: gfx/interface/ideas/zin/levy_muster.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/chain_broken.dds",
+     "message": "decision zin_aenor_restore_charter: gfx/interface/ideas/zin/chain_broken.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ranger_cloak.dds",
+     "message": "decision zin_aenor_frontier_company: gfx/interface/ideas/zin/ranger_cloak.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/handshake_oath.dds",
+     "message": "decision zin_aenor_invite_to_shield: gfx/interface/ideas/zin/handshake_oath.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/healer_herbs.dds",
+     "message": "decision zin_aenor_question_physicians: gfx/interface/ideas/zin/healer_herbs.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/coin_chest.dds",
+     "message": "decision zin_aenor_open_treasury: gfx/interface/ideas/zin/coin_chest.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/hymn_choir.dds",
+     "message": "decision zin_aenor_temples_speak: gfx/interface/ideas/zin/hymn_choir.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/banner_plain.dds",
+     "message": "decision zin_aenor_strangers_word: gfx/interface/ideas/zin/banner_plain.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/seal_wax.dds",
+     "message": "decision zin_aenor_silence_dissenters: gfx/interface/ideas/zin/seal_wax.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/house_first_light.dds",
+     "message": "decision zin_afrit_open_house: gfx/interface/ideas/zin/house_first_light.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/confessional.dds",
+     "message": "decision zin_afrit_hear_confession: gfx/interface/ideas/zin/confessional.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/seal_chancellor.dds",
+     "message": "decision zin_afrit_steer_the_court: gfx/interface/ideas/zin/seal_chancellor.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/scroll_sealed.dds",
+     "message": "decision zin_afrit_edict_of_arms: gfx/interface/ideas/zin/scroll_sealed.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/granary.dds",
+     "message": "decision zin_afrit_open_famine_stores: gfx/interface/ideas/zin/granary.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/necklace_deep.dds",
+     "message": "decision zin_afrit_draw_on_necklace: gfx/interface/ideas/zin/necklace_deep.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/scout_lantern.dds",
+     "message": "decision zin_afrit_send_the_thief: gfx/interface/ideas/zin/scout_lantern.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/fort_wall.dds",
+     "message": "decision zin_afrit_close_houses: gfx/interface/ideas/zin/fort_wall.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/envoy.dds",
+     "message": "decision zin_cold_send_envoys: gfx/interface/ideas/zin/envoy.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/alms_bread.dds",
+     "message": "decision zin_cold_feed_the_steadings: gfx/interface/ideas/zin/alms_bread.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/pass_fort.dds",
+     "message": "decision zin_cold_offer_protection: gfx/interface/ideas/zin/pass_fort.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/tribute_chest.dds",
+     "message": "decision zin_cold_winter_gifts: gfx/interface/ideas/zin/tribute_chest.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/timber_mill.dds",
+     "message": "decision zin_cold_sell_timber_west: gfx/interface/ideas/zin/timber_mill.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/yeti_claw.dds",
+     "message": "decision zin_cold_renew_old_pact: gfx/interface/ideas/zin/yeti_claw.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/orc_axe.dds",
+     "message": "decision zin_dark_raid_marches: gfx/interface/ideas/zin/orc_axe.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/goblin_raiders.dds",
+     "message": "decision zin_dark_raid_hold: gfx/interface/ideas/zin/goblin_raiders.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/corsair_raider.dds",
+     "message": "decision zin_dark_corsair_raid: gfx/interface/ideas/zin/corsair_raider.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/council_table.dds",
+     "message": "decision zin_dark_great_moot: gfx/interface/ideas/zin/council_table.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/spear_levy.dds",
+     "message": "decision zin_dark_blood_contest: gfx/interface/ideas/zin/spear_levy.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/crown_iron.dds",
+     "message": "decision zin_dark_one_fire: gfx/interface/ideas/zin/crown_iron.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/eye_watchful.dds",
+     "message": "decision zin_dark_hunt_envoys: gfx/interface/ideas/zin/eye_watchful.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/beacon.dds",
+     "message": "decision zin_dark_light_beacons: gfx/interface/ideas/zin/beacon.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/scroll_treaty.dds",
+     "message": "decision zin_dark_petition_parim: gfx/interface/ideas/zin/scroll_treaty.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/ship_voyage.dds",
+     "message": "decision zin_dark_call_on_the_north: gfx/interface/ideas/zin/ship_voyage.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/troll_club.dds",
+     "message": "decision zin_dark_hire_troll_kin: gfx/interface/ideas/zin/troll_club.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/toll_house.dds",
+     "message": "decision zin_dark_levy_shore_tolls: gfx/interface/ideas/zin/toll_house.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/strait_chain.dds",
+     "message": "decision zin_dark_close_strait: gfx/interface/ideas/zin/strait_chain.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    },
+    {
+     "code": "family.size",
+     "name": "gfx/interface/ideas/zin/birth_rolls.dds",
+     "message": "decision zin_deep_ask_cord_mothers: gfx/interface/ideas/zin/birth_rolls.dds is 64x64 with 1 frame(s); the family is 32x32 with 1"
+    }
+   ],
+   "pending": 0,
+   "notes": {
+    "checked": 1511,
+    "vanilla": 22
+   }
+  },
+  {
+   "id": 13,
+   "name": "chrome.family",
+   "status": "fail",
+   "problemCount": 1,
+   "problems": [
+    {
+     "code": "chrome.sheet",
+     "name": "gfx/interface/event_report_tileable_midsection.dds",
+     "message": "GFX_event_report_tileable_bottom_section (gfx/interface/event_report_tileable_midsection.dds) is cut from ui-events, not an accepted chrome sheet"
+    }
+   ],
+   "pending": 0,
+   "notes": {
+    "accepted": 10,
+    "level0": 116
+   }
+  },
+  {
+   "id": 14,
+   "name": "texture.noise",
+   "status": "fail",
+   "problemCount": 3,
+   "problems": [
+    {
+     "code": "texture.noise",
+     "name": "gfx/interface/placeholder_bordered2.dds",
+     "message": "gfx/interface/placeholder_bordered2.dds: body luminance deviation 0.073 (limit 0.05)"
+    },
+    {
+     "code": "texture.noise",
+     "name": "gfx/interface/tiles/tiled_window_small_selectable.dds",
+     "message": "gfx/interface/tiles/tiled_window_small_selectable.dds: body luminance deviation 0.095 (limit 0.05)"
+    },
+    {
+     "code": "texture.noise",
+     "name": "gfx/interface/tiles/tiling_sort_button_2frames.dds",
+     "message": "gfx/interface/tiles/tiling_sort_button_2frames.dds: body luminance deviation 0.101 (limit 0.05)"
+    }
+   ],
+   "pending": 2,
+   "notes": {
+    "checked": 108
+   }
+  },
+  {
+   "id": 15,
+   "name": "texture.seam",
+   "status": "fail",
+   "problemCount": 53,
+   "problems": [
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/unitcontrol/air_priorities_tiled_bg.dds",
+     "message": "gfx/interface/unitcontrol/air_priorities_tiled_bg.dds: seam step 0.027 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/deploy_priority_icon_bg.dds",
+     "message": "gfx/interface/deploy_priority_icon_bg.dds: seam step 0.030 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/deployment_item_bg.dds",
+     "message": "gfx/interface/deployment_item_bg.dds: seam step 0.025 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/divisiondesigner/division_icon_bg_transp.dds",
+     "message": "gfx/interface/divisiondesigner/division_icon_bg_transp.dds: seam step 0.031 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_insignia_window.dds",
+     "message": "gfx/interface/tiles/tiled_insignia_window.dds: seam step 0.024 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/minimap/focus_minimap_bg.dds",
+     "message": "gfx/minimap/focus_minimap_bg.dds: seam step 0.028 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_thin_border2.dds",
+     "message": "gfx/interface/tiles/tiled_window_thin_border2.dds: seam step 0.024 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/generic_box.dds",
+     "message": "gfx/interface/generic_box.dds: seam step 0.024 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/generic_bg2.dds",
+     "message": "gfx/interface/generic_bg2.dds: seam step 0.029 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/decisionview/on_map_cost_bg.dds",
+     "message": "gfx/interface/decisionview/on_map_cost_bg.dds: seam step 0.030 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/navalcombat/tiled_fex_bg.dds",
+     "message": "gfx/interface/navalcombat/tiled_fex_bg.dds: seam step 0.030 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/no_frame_bg.dds",
+     "message": "gfx/interface/no_frame_bg.dds: seam step 0.031 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/no_frame_special_bg.dds",
+     "message": "gfx/interface/no_frame_special_bg.dds: seam step 0.030 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/placeholder_pink.dds",
+     "message": "gfx/interface/placeholder_pink.dds: seam step 0.021 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/placeholder_bg.dds",
+     "message": "gfx/interface/placeholder_bg.dds: seam step 0.058 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/placeholder_bordered.dds",
+     "message": "gfx/interface/placeholder_bordered.dds: seam step 0.043 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/placeholder_bordered2.dds",
+     "message": "gfx/interface/placeholder_bordered2.dds: seam step 0.028 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/placeholder_checked.dds",
+     "message": "gfx/interface/placeholder_checked.dds: seam step 0.023 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/popup_window/popup_window_corners_bd_x79_y119.dds",
+     "message": "gfx/interface/popup_window/popup_window_corners_bd_x79_y119.dds: seam step 0.031 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/popup_window/popup_window_texture_bd_x12_y12.dds",
+     "message": "gfx/interface/popup_window/popup_window_texture_bd_x12_y12.dds: seam step 0.021 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/popup_window/popup_window_top_bottom_bd_x20_y80.dds",
+     "message": "gfx/interface/popup_window/popup_window_top_bottom_bd_x20_y80.dds: seam step 0.021 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/raids_filter_tiled_bg.dds",
+     "message": "gfx/interface/tiles/raids_filter_tiled_bg.dds: seam step 0.032 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/scroll_track.dds",
+     "message": "gfx/interface/scroll_track.dds: seam step 0.025 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/officer_corp/spirit_banner_decoration_air.dds",
+     "message": "gfx/interface/officer_corp/spirit_banner_decoration_air.dds: seam step 0.052 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/officer_corp/spirit_banner_decoration_army.dds",
+     "message": "gfx/interface/officer_corp/spirit_banner_decoration_army.dds: seam step 0.029 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/officer_corp/spirit_banner_decoration_navy.dds",
+     "message": "gfx/interface/officer_corp/spirit_banner_decoration_navy.dds: seam step 0.040 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_bg.dds",
+     "message": "gfx/interface/tiles/tiled_bg.dds: seam step 0.029 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_bg_1_scrollbar.dds",
+     "message": "gfx/interface/tiles/tiled_bg_1_scrollbar.dds: seam step 0.031 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_frontend_upper_bar.dds",
+     "message": "gfx/interface/tiles/tiled_frontend_upper_bar.dds: seam step 0.020 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_generic_overlay_bg1.dds",
+     "message": "gfx/interface/tiles/tiled_generic_overlay_bg1.dds: seam step 0.023 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/officer_corp/officer_corp_bg.dds",
+     "message": "gfx/interface/officer_corp/officer_corp_bg.dds: seam step 0.031 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_paper_flat_bg.dds",
+     "message": "gfx/interface/tiles/tiled_paper_flat_bg.dds: seam step 0.022 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_paper_w_frame_one_border.dds",
+     "message": "gfx/interface/tiles/tiled_paper_w_frame_one_border.dds: seam step 0.060 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_paper_w_frame_one_border_2.dds",
+     "message": "gfx/interface/tiles/tiled_paper_w_frame_one_border_2.dds: seam step 0.049 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_plain_bg.dds",
+     "message": "gfx/interface/tiles/tiled_plain_bg.dds: seam step 0.028 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_plain_bg2.dds",
+     "message": "gfx/interface/tiles/tiled_plain_bg2.dds: seam step 0.022 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_plain_bg_small.dds",
+     "message": "gfx/interface/tiles/tiled_plain_bg_small.dds: seam step 0.030 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_progress_bar_color.dds",
+     "message": "gfx/interface/tiles/tiled_progress_bar_color.dds: seam step 0.021 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_special_cut_bg.dds",
+     "message": "gfx/interface/tiles/tiled_special_cut_bg.dds: seam step 0.033 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window2_1b_border.dds",
+     "message": "gfx/interface/tiles/tiled_window2_1b_border.dds: seam step 0.022 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window2_2b_border.dds",
+     "message": "gfx/interface/tiles/tiled_window2_2b_border.dds: seam step 0.023 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_1_scrollbar.dds",
+     "message": "gfx/interface/tiles/tiled_window_1_scrollbar.dds: seam step 0.020 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_1_scrollbar_glow.dds",
+     "message": "gfx/interface/tiles/tiled_window_1_scrollbar_glow.dds: seam step 0.044 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_1b_border.dds",
+     "message": "gfx/interface/tiles/tiled_window_1b_border.dds: seam step 0.024 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_1b_thin_border.dds",
+     "message": "gfx/interface/tiles/tiled_window_1b_thin_border.dds: seam step 0.035 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_small_selectable.dds",
+     "message": "gfx/interface/tiles/tiled_window_small_selectable.dds: seam step 0.034 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_thin_border.dds",
+     "message": "gfx/interface/tiles/tiled_window_thin_border.dds: seam step 0.040 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiled_window_w_close.dds",
+     "message": "gfx/interface/tiles/tiled_window_w_close.dds: seam step 0.021 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiling_sort_button.dds",
+     "message": "gfx/interface/tiles/tiling_sort_button.dds: seam step 0.062 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiling_sort_button_2frames.dds",
+     "message": "gfx/interface/tiles/tiling_sort_button_2frames.dds: seam step 0.034 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/tiles/tiling_sort_button_thin.dds",
+     "message": "gfx/interface/tiles/tiling_sort_button_thin.dds: seam step 0.033 where the engine tiling joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/topbar/background.dds",
+     "message": "gfx/interface/topbar/background.dds: seam step 0.200 where the repeat joins (limit 0.02)"
+    },
+    {
+     "code": "texture.seam",
+     "name": "gfx/interface/topbar/background_extended.dds",
+     "message": "gfx/interface/topbar/background_extended.dds: seam step 0.114 where the repeat joins (limit 0.02)"
+    }
+   ],
+   "pending": 4,
+   "notes": {
+    "checked": 110
+   }
+  },
+  {
+   "id": 16,
+   "name": "fit.scale",
+   "status": "fail",
+   "problemCount": 2,
+   "problems": [
+    {
+     "code": "fit.scale",
+     "name": "gfx/interface/research_line_bg.dds",
+     "message": "gfx/interface/research_line_bg.dds: its cell is enlarged 1.06 times (limit 1)"
+    },
+    {
+     "code": "fit.scale",
+     "name": "gfx/interface/topbar/background.dds",
+     "message": "gfx/interface/topbar/background.dds: its cell is enlarged 1.12 times (limit 1)"
+    }
+   ],
+   "pending": 0,
+   "notes": {
+    "entries": 3241
+   }
+  },
+  {
+   "id": 17,
+   "name": "button.states",
+   "status": "fail",
+   "problemCount": 678,
+   "problems": [
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/divisiondesigner/2d_3d.dds",
+     "message": "gfx/interface/divisiondesigner/2d_3d.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/cohesion_balanced.dds",
+     "message": "gfx/interface/unitcontrol/cohesion_balanced.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/cohesion_immobile.dds",
+     "message": "gfx/interface/unitcontrol/cohesion_immobile.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/cohesion_loose.dds",
+     "message": "gfx/interface/unitcontrol/cohesion_loose.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/cohesion_strict.dds",
+     "message": "gfx/interface/unitcontrol/cohesion_strict.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/plan_cohesion_small.dds",
+     "message": "gfx/interface/unitcontrol/plan_cohesion_small.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/plan_cohesion_small.dds",
+     "message": "gfx/interface/unitcontrol/plan_cohesion_small.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/plan_cohesion_small.dds",
+     "message": "gfx/interface/unitcontrol/plan_cohesion_small.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/execute_fast.dds",
+     "message": "gfx/interface/unitcontrol/execute_fast.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/execute_mid.dds",
+     "message": "gfx/interface/unitcontrol/execute_mid.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/execute_slow.dds",
+     "message": "gfx/interface/unitcontrol/execute_slow.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/plan_execution_small.dds",
+     "message": "gfx/interface/unitcontrol/plan_execution_small.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/plan_execution_small.dds",
+     "message": "gfx/interface/unitcontrol/plan_execution_small.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/plan_execution_small.dds",
+     "message": "gfx/interface/unitcontrol/plan_execution_small.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_area_defense_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_area_defense_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_assign_units_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_assign_units_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_delete_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_delete_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_draw_blitz_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_draw_blitz_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_draw_defence_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_draw_defence_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_draw_fallback_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_draw_fallback_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_draw_naval_inv_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_draw_naval_inv_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_draw_offence_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_draw_offence_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_draw_paradrop_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_draw_paradrop_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_reshape_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_reshape_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/order_unassign_units_btn.dds",
+     "message": "gfx/interface/unitcontrol/order_unassign_units_btn.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/proximity_far.dds",
+     "message": "gfx/interface/unitcontrol/proximity_far.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/proximity_free_control.dds",
+     "message": "gfx/interface/unitcontrol/proximity_free_control.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/proximity_frontline.dds",
+     "message": "gfx/interface/unitcontrol/proximity_frontline.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/proximity_medium.dds",
+     "message": "gfx/interface/unitcontrol/proximity_medium.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/proximity_mixed.dds",
+     "message": "gfx/interface/unitcontrol/proximity_mixed.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/focusview/filter/icon_bg.dds",
+     "message": "gfx/interface/focusview/filter/icon_bg.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/army_end_bg.dds",
+     "message": "gfx/interface/unitcontrol/army_end_bg.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/leader_army_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_army_group_frame.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/leader_army_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_army_group_frame.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/leader_army_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_army_group_frame.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/army_mid_bg.dds",
+     "message": "gfx/interface/unitcontrol/army_mid_bg.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/leader_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_group_frame.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/leader_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_group_frame.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/unitcontrol/leader_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_group_frame.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.disabled_colour",
+     "name": "gfx/interface/unitcontrol/leader_group_frame.dds",
+     "message": "gfx/interface/unitcontrol/leader_group_frame.dds: the disabled frame has saturation 69% (at most 15%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_active.dds",
+     "message": "gfx/interface/naviesview/btn_active.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_active.dds",
+     "message": "gfx/interface/naviesview/btn_active.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_active.dds",
+     "message": "gfx/interface/naviesview/btn_active.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_base_partial_toggle.dds",
+     "message": "gfx/interface/naviesview/btn_base_partial_toggle.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_convoy_escort.dds",
+     "message": "gfx/interface/naviesview/btn_convoy_escort.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_convoy_escort.dds",
+     "message": "gfx/interface/naviesview/btn_convoy_escort.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_convoy_escort.dds",
+     "message": "gfx/interface/naviesview/btn_convoy_escort.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_convoy_raid.dds",
+     "message": "gfx/interface/naviesview/btn_convoy_raid.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_convoy_raid.dds",
+     "message": "gfx/interface/naviesview/btn_convoy_raid.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_convoy_raid.dds",
+     "message": "gfx/interface/naviesview/btn_convoy_raid.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_hold_small.dds",
+     "message": "gfx/interface/naviesview/btn_hold_small.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_hold_small.dds",
+     "message": "gfx/interface/naviesview/btn_hold_small.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_hold_small.dds",
+     "message": "gfx/interface/naviesview/btn_hold_small.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_invasion.dds",
+     "message": "gfx/interface/naviesview/btn_invasion.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_invasion.dds",
+     "message": "gfx/interface/naviesview/btn_invasion.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_invasion.dds",
+     "message": "gfx/interface/naviesview/btn_invasion.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mines_planting.dds",
+     "message": "gfx/interface/naviesview/btn_mines_planting.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mines_planting.dds",
+     "message": "gfx/interface/naviesview/btn_mines_planting.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mines_planting.dds",
+     "message": "gfx/interface/naviesview/btn_mines_planting.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mines_sweeping.dds",
+     "message": "gfx/interface/naviesview/btn_mines_sweeping.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mines_sweeping.dds",
+     "message": "gfx/interface/naviesview/btn_mines_sweeping.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mines_sweeping.dds",
+     "message": "gfx/interface/naviesview/btn_mines_sweeping.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_mode.dds",
+     "message": "gfx/interface/naviesview/btn_mode.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_patrol.dds",
+     "message": "gfx/interface/naviesview/btn_patrol.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_patrol.dds",
+     "message": "gfx/interface/naviesview/btn_patrol.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_patrol.dds",
+     "message": "gfx/interface/naviesview/btn_patrol.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_pride.dds",
+     "message": "gfx/interface/naviesview/btn_pride.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_pride.dds",
+     "message": "gfx/interface/naviesview/btn_pride.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_pride.dds",
+     "message": "gfx/interface/naviesview/btn_pride.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_refit_ship.dds",
+     "message": "gfx/interface/naviesview/btn_refit_ship.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_refit_ship.dds",
+     "message": "gfx/interface/naviesview/btn_refit_ship.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_refit_ship.dds",
+     "message": "gfx/interface/naviesview/btn_refit_ship.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_reinforce.dds",
+     "message": "gfx/interface/naviesview/btn_reinforce.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_now.dds",
+     "message": "gfx/interface/naviesview/btn_repair_now.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_now.dds",
+     "message": "gfx/interface/naviesview/btn_repair_now.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_now.dds",
+     "message": "gfx/interface/naviesview/btn_repair_now.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_now_small.dds",
+     "message": "gfx/interface/naviesview/btn_repair_now_small.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_priority.dds",
+     "message": "gfx/interface/naviesview/btn_repair_priority.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_priority.dds",
+     "message": "gfx/interface/naviesview/btn_repair_priority.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_priority.dds",
+     "message": "gfx/interface/naviesview/btn_repair_priority.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.disabled_colour",
+     "name": "gfx/interface/naviesview/btn_repair_priority.dds",
+     "message": "gfx/interface/naviesview/btn_repair_priority.dds: the disabled frame has saturation 67% (at most 15%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_repair_split.dds",
+     "message": "gfx/interface/naviesview/btn_repair_split.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/repair_symbol.dds",
+     "message": "gfx/interface/naviesview/repair_symbol.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_select.dds",
+     "message": "gfx/interface/naviesview/btn_select.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_strike_force.dds",
+     "message": "gfx/interface/naviesview/btn_strike_force.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_strike_force.dds",
+     "message": "gfx/interface/naviesview/btn_strike_force.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_strike_force.dds",
+     "message": "gfx/interface/naviesview/btn_strike_force.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_toggle_day_night.dds",
+     "message": "gfx/interface/naviesview/btn_toggle_day_night.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_toggle_day_night.dds",
+     "message": "gfx/interface/naviesview/btn_toggle_day_night.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_toggle_day_night.dds",
+     "message": "gfx/interface/naviesview/btn_toggle_day_night.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_toggle_split_for_repair.dds",
+     "message": "gfx/interface/naviesview/btn_toggle_split_for_repair.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_training.dds",
+     "message": "gfx/interface/naviesview/btn_training.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_training.dds",
+     "message": "gfx/interface/naviesview/btn_training.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/btn_training.dds",
+     "message": "gfx/interface/naviesview/btn_training.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/NV_btn_underway_replenishment.dds",
+     "message": "gfx/interface/naviesview/NV_btn_underway_replenishment.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/naviesview/split_for_repair_icons.dds",
+     "message": "gfx/interface/naviesview/split_for_repair_icons.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/accept_decline_icon.dds",
+     "message": "gfx/interface/accept_decline_icon.dds: normal and hover differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/accept_decline_icon.dds",
+     "message": "gfx/interface/accept_decline_icon.dds: normal and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/accept_decline_icon.dds",
+     "message": "gfx/interface/accept_decline_icon.dds: hover and pressed differ by 0.0% (at least 3%)"
+    },
+    {
+     "code": "button.same_frames",
+     "name": "gfx/interface/mic_btn_frames.dds",
+     "message": "gfx/interface/mic_btn_frames.dds: normal and hover differ by 0.0% (at least 3%)"
+    }
+   ],
+   "pending": 66,
+   "notes": {
+    "checked": 643
+   }
+  },
+  {
+   "id": 18,
+   "name": "layout.grid",
+   "status": "fail",
+   "problemCount": 788,
+   "problems": [
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:special_project_tech_icon_offset",
+     "message": "interface/countrytechtreeview.gui special_project_tech_icon_offset: position.x = -10 is off the 4 px grid (line 4)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:special_project_tech_icon_offset",
+     "message": "interface/countrytechtreeview.gui special_project_tech_icon_offset: position.y = -10 is off the 4 px grid (line 4)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:subunit_icon_entry",
+     "message": "interface/countrytechtreeview.gui subunit_icon_entry: size.width = 30 is off the 4 px grid (line 10)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:subunit_icon_entry",
+     "message": "interface/countrytechtreeview.gui subunit_icon_entry: size.height = 30 is off the 4 px grid (line 10)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:subunit_label",
+     "message": "interface/countrytechtreeview.gui subunit_label: position.y = 5 is off the 4 px grid (line 19)"
+    },
+    {
+     "code": "layout.font",
+     "name": "interface/countrytechtreeview.gui:subunit_label",
+     "message": "interface/countrytechtreeview.gui subunit_label: font hoi_33 has no role in the design system (line 20)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:countrytechtreeview",
+     "message": "interface/countrytechtreeview.gui countrytechtreeview: position.x = -3 is off the 4 px grid (line 31)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:countrytechtreeview",
+     "message": "interface/countrytechtreeview.gui countrytechtreeview: position.y = 78 is off the 4 px grid (line 31)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_arms_folder",
+     "message": "interface/countrytechtreeview.gui zin_arms_folder: position.y = 47 is off the 4 px grid (line 41)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_arms_folder_size_filler",
+     "message": "interface/countrytechtreeview.gui zin_arms_folder_size_filler: size.width = 3150 is off the 4 px grid (line 57)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hedge_fighting_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hedge_fighting_tree: position.x = 210 is off the 4 px grid (line 207)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hedge_fighting_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hedge_fighting_tree: position.y = 70 is off the 4 px grid (line 207)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hedge_fighting_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hedge_fighting_tree: size.height = 2170 is off the 4 px grid (line 208)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_elven_arms_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_elven_arms_tree: position.x = 210 is off the 4 px grid (line 214)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_elven_arms_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_elven_arms_tree: position.y = 70 is off the 4 px grid (line 214)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_elven_arms_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_elven_arms_tree: size.height = 2170 is off the 4 px grid (line 215)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_clan_muster_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_clan_muster_tree: position.x = 210 is off the 4 px grid (line 221)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_clan_muster_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_clan_muster_tree: position.y = 70 is off the 4 px grid (line 221)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_clan_muster_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_clan_muster_tree: size.height = 2170 is off the 4 px grid (line 222)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_iron_arms_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_iron_arms_tree: position.x = 210 is off the 4 px grid (line 228)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_iron_arms_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_iron_arms_tree: position.y = 70 is off the 4 px grid (line 228)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_iron_arms_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_iron_arms_tree: size.height = 2170 is off the 4 px grid (line 229)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hunting_bows_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hunting_bows_tree: position.x = 210 is off the 4 px grid (line 235)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hunting_bows_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hunting_bows_tree: position.y = 70 is off the 4 px grid (line 235)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hunting_bows_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hunting_bows_tree: size.height = 2170 is off the 4 px grid (line 236)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_warband_iron_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_warband_iron_tree: position.x = 210 is off the 4 px grid (line 242)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_warband_iron_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_warband_iron_tree: position.y = 70 is off the 4 px grid (line 242)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_warband_iron_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_warband_iron_tree: size.height = 2170 is off the 4 px grid (line 243)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_warlord_retinues_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_warlord_retinues_tree: position.x = 210 is off the 4 px grid (line 249)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_warlord_retinues_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_warlord_retinues_tree: position.y = 70 is off the 4 px grid (line 249)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_warlord_retinues_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_warlord_retinues_tree: size.height = 2170 is off the 4 px grid (line 250)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_valley_wardens_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_valley_wardens_tree: position.x = 210 is off the 4 px grid (line 256)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_valley_wardens_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_valley_wardens_tree: position.y = 70 is off the 4 px grid (line 256)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_valley_wardens_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_valley_wardens_tree: size.height = 2170 is off the 4 px grid (line 257)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hand_guns_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hand_guns_tree: position.x = 210 is off the 4 px grid (line 263)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hand_guns_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hand_guns_tree: position.y = 70 is off the 4 px grid (line 263)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hand_guns_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hand_guns_tree: size.height = 2170 is off the 4 px grid (line 264)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_shield_wall_drill_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_shield_wall_drill_tree: position.x = 210 is off the 4 px grid (line 270)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_shield_wall_drill_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_shield_wall_drill_tree: position.y = 70 is off the 4 px grid (line 270)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_shield_wall_drill_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_shield_wall_drill_tree: size.height = 2170 is off the 4 px grid (line 271)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hill_companies_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hill_companies_tree: position.x = 210 is off the 4 px grid (line 277)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hill_companies_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hill_companies_tree: position.y = 70 is off the 4 px grid (line 277)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_hill_companies_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_hill_companies_tree: size.height = 2170 is off the 4 px grid (line 278)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ranger_craft_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ranger_craft_tree: position.x = 210 is off the 4 px grid (line 284)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ranger_craft_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ranger_craft_tree: position.y = 70 is off the 4 px grid (line 284)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ranger_craft_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ranger_craft_tree: size.height = 2170 is off the 4 px grid (line 285)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_sea_soldiers_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_sea_soldiers_tree: position.x = 210 is off the 4 px grid (line 291)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_sea_soldiers_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_sea_soldiers_tree: position.y = 70 is off the 4 px grid (line 291)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_sea_soldiers_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_sea_soldiers_tree: size.height = 2170 is off the 4 px grid (line 292)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_kalioth_forge_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_kalioth_forge_tree: position.x = 210 is off the 4 px grid (line 298)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_kalioth_forge_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_kalioth_forge_tree: position.y = 70 is off the 4 px grid (line 298)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_kalioth_forge_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_kalioth_forge_tree: size.height = 2170 is off the 4 px grid (line 299)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_mounts_folder",
+     "message": "interface/countrytechtreeview.gui zin_mounts_folder: position.y = 47 is off the 4 px grid (line 307)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_mounts_folder_size_filler",
+     "message": "interface/countrytechtreeview.gui zin_mounts_folder_size_filler: size.width = 2170 is off the 4 px grid (line 323)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_old_horse_lines_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_old_horse_lines_tree: position.x = 210 is off the 4 px grid (line 455)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_old_horse_lines_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_old_horse_lines_tree: position.y = 70 is off the 4 px grid (line 455)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_old_horse_lines_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_old_horse_lines_tree: size.height = 1890 is off the 4 px grid (line 456)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_elven_steeds_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_elven_steeds_tree: position.x = 210 is off the 4 px grid (line 462)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_elven_steeds_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_elven_steeds_tree: position.y = 70 is off the 4 px grid (line 462)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_elven_steeds_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_elven_steeds_tree: size.height = 1890 is off the 4 px grid (line 463)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_giant_kin_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_giant_kin_tree: position.x = 210 is off the 4 px grid (line 469)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_giant_kin_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_giant_kin_tree: position.y = 70 is off the 4 px grid (line 469)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_giant_kin_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_giant_kin_tree: size.height = 1890 is off the 4 px grid (line 470)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ent_moots_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ent_moots_tree: position.x = 210 is off the 4 px grid (line 476)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ent_moots_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ent_moots_tree: position.y = 70 is off the 4 px grid (line 476)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ent_moots_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ent_moots_tree: size.height = 1890 is off the 4 px grid (line 477)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_great_herds_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_great_herds_tree: position.x = 210 is off the 4 px grid (line 483)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_great_herds_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_great_herds_tree: position.y = 70 is off the 4 px grid (line 483)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_great_herds_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_great_herds_tree: size.height = 1890 is off the 4 px grid (line 484)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_oasis_wells_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_oasis_wells_tree: position.x = 210 is off the 4 px grid (line 490)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_oasis_wells_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_oasis_wells_tree: position.y = 70 is off the 4 px grid (line 490)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_oasis_wells_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_oasis_wells_tree: size.height = 1890 is off the 4 px grid (line 491)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_riding_horses_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_riding_horses_tree: position.x = 210 is off the 4 px grid (line 497)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_riding_horses_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_riding_horses_tree: position.y = 70 is off the 4 px grid (line 497)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_riding_horses_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_riding_horses_tree: size.height = 1890 is off the 4 px grid (line 498)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_troll_brood_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_troll_brood_tree: position.x = 210 is off the 4 px grid (line 504)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_troll_brood_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_troll_brood_tree: position.y = 70 is off the 4 px grid (line 504)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_troll_brood_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_troll_brood_tree: size.height = 1890 is off the 4 px grid (line 505)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_yeti_hunts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_yeti_hunts_tree: position.x = 210 is off the 4 px grid (line 511)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_yeti_hunts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_yeti_hunts_tree: position.y = 70 is off the 4 px grid (line 511)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_yeti_hunts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_yeti_hunts_tree: size.height = 1890 is off the 4 px grid (line 512)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_raider_mounts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_raider_mounts_tree: position.x = 210 is off the 4 px grid (line 518)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_raider_mounts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_raider_mounts_tree: position.y = 70 is off the 4 px grid (line 518)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_raider_mounts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_raider_mounts_tree: size.height = 1890 is off the 4 px grid (line 519)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ogre_pacts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ogre_pacts_tree: position.x = 210 is off the 4 px grid (line 525)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ogre_pacts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ogre_pacts_tree: position.y = 70 is off the 4 px grid (line 525)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_ogre_pacts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_ogre_pacts_tree: size.height = 1890 is off the 4 px grid (line 526)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_kin_harness_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_kin_harness_tree: position.x = 210 is off the 4 px grid (line 532)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_kin_harness_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_kin_harness_tree: position.y = 70 is off the 4 px grid (line 532)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_kin_harness_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_kin_harness_tree: size.height = 1890 is off the 4 px grid (line 533)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_engines_folder",
+     "message": "interface/countrytechtreeview.gui zin_engines_folder: position.y = 47 is off the 4 px grid (line 541)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_engines_folder_size_filler",
+     "message": "interface/countrytechtreeview.gui zin_engines_folder_size_filler: size.width = 1890 is off the 4 px grid (line 557)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_old_wall_craft_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_old_wall_craft_tree: position.x = 210 is off the 4 px grid (line 689)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_old_wall_craft_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_old_wall_craft_tree: position.y = 70 is off the 4 px grid (line 689)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_old_wall_craft_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_old_wall_craft_tree: size.height = 1890 is off the 4 px grid (line 690)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_pass_forts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_pass_forts_tree: position.x = 210 is off the 4 px grid (line 696)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_pass_forts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_pass_forts_tree: position.y = 70 is off the 4 px grid (line 696)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_pass_forts_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_pass_forts_tree: size.height = 1890 is off the 4 px grid (line 697)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_catapults_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_catapults_tree: position.x = 210 is off the 4 px grid (line 703)"
+    },
+    {
+     "code": "layout.grid",
+     "name": "interface/countrytechtreeview.gui:zin_tech_catapults_tree",
+     "message": "interface/countrytechtreeview.gui zin_tech_catapults_tree: position.y = 70 is off the 4 px grid (line 703)"
+    }
+   ],
+   "pending": 0,
+   "notes": {
+    "files": 12,
+    "byFile": {
+     "interface/countrytechtreeview.gui": 782,
+     "interface/zin_chronicle.gui": 4,
+     "interface/zin_interim_inlay.gui": 2
+    }
    }
   }
- ]
+ ],
+ "iconRegistry": {
+  "focus": {
+   "concepts": 4801,
+   "textures": 178,
+   "onShared": 4774,
+   "max": 155
+  },
+  "spirit": {
+   "concepts": 1608,
+   "textures": 318,
+   "onShared": 1441,
+   "max": 53
+  },
+  "law": {
+   "concepts": 18,
+   "textures": 18,
+   "onShared": 0,
+   "max": 1
+  },
+  "officer_spirit": {
+   "concepts": 27,
+   "textures": 26,
+   "onShared": 2,
+   "max": 2
+  },
+  "decision": {
+   "concepts": 249,
+   "textures": 105,
+   "onShared": 203,
+   "max": 12
+  },
+  "decision_category": {
+   "concepts": 50,
+   "textures": 39,
+   "onShared": 19,
+   "max": 3
+  },
+  "decision_category_picture": {
+   "concepts": 15,
+   "textures": 15,
+   "onShared": 0,
+   "max": 1
+  },
+  "event": {
+   "concepts": 1205,
+   "textures": 120,
+   "onShared": 1164,
+   "max": 231
+  },
+  "news_event": {
+   "concepts": 84,
+   "textures": 34,
+   "onShared": 62,
+   "max": 22
+  },
+  "technology": {
+   "concepts": 292,
+   "textures": 287,
+   "onShared": 6,
+   "max": 6
+  },
+  "equipment": {
+   "concepts": 116,
+   "textures": 116,
+   "onShared": 0,
+   "max": 1
+  },
+  "equipment_archetype": {
+   "concepts": 35,
+   "textures": 35,
+   "onShared": 0,
+   "max": 1
+  },
+  "subunit": {
+   "concepts": 85,
+   "textures": 65,
+   "onShared": 0,
+   "max": 1
+  },
+  "trait": {
+   "concepts": 304,
+   "textures": 0,
+   "onShared": 0,
+   "max": 0
+  },
+  "special_project": {
+   "concepts": 9,
+   "textures": 9,
+   "onShared": 0,
+   "max": 1
+  },
+  "operation": {
+   "concepts": 20,
+   "textures": 19,
+   "onShared": 2,
+   "max": 2
+  },
+  "agency_upgrade": {
+   "concepts": 21,
+   "textures": 20,
+   "onShared": 2,
+   "max": 2
+  },
+  "agency_logo": {
+   "concepts": 15,
+   "textures": 15,
+   "onShared": 0,
+   "max": 1
+  },
+  "mio": {
+   "concepts": 9,
+   "textures": 9,
+   "onShared": 0,
+   "max": 1
+  },
+  "mio_trait": {
+   "concepts": 90,
+   "textures": 14,
+   "onShared": 88,
+   "max": 18
+  },
+  "scholar_trait": {
+   "concepts": 9,
+   "textures": 9,
+   "onShared": 0,
+   "max": 1
+  },
+  "doctrine": {
+   "concepts": 63,
+   "textures": 63,
+   "onShared": 0,
+   "max": 1
+  },
+  "faction": {
+   "concepts": 18,
+   "textures": 18,
+   "onShared": 0,
+   "max": 1
+  },
+  "map_mode": {
+   "concepts": 1,
+   "textures": 1,
+   "onShared": 0,
+   "max": 1
+  },
+  "resource": {
+   "concepts": 7,
+   "textures": 7,
+   "onShared": 0,
+   "max": 1
+  },
+  "super_event": {
+   "concepts": 34,
+   "textures": 34,
+   "onShared": 0,
+   "max": 1
+  }
+ }
 }

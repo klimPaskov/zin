@@ -1318,4 +1318,115 @@ focus_tree = {
 			remove_ideas = zin_regional_asgard_isle_spared
 		}
 	}
+	focus = {
+		id = zin_regional_asgard_the_tide_chambers_opened
+		icon = GFX_focus_zin_ring_doors
+		x = 1
+		y = 5
+		prerequisite = {
+			focus = zin_regional_asgard_one_isle_one_queen
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_tide_chambers = yes
+			navy_experience = 10
+		}
+	}
+	focus = {
+		id = zin_regional_asgard_nets_of_field_stone_kept
+		icon = GFX_focus_zin_glyph_fading
+		x = 0
+		y = 6
+		prerequisite = {
+			focus = zin_regional_asgard_the_tide_chambers_opened
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_nets_kept
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = zin_regional_asgard_the_queens_rite
+		icon = GFX_focus_zin_regency_seals
+		x = 2
+		y = 6
+		prerequisite = {
+			focus = zin_regional_asgard_the_tide_chambers_opened
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_queens_rite = yes
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = zin_regional_asgard_divers_of_borrak
+		icon = GFX_focus_zin_necklace_deep
+		x = 1
+		y = 7
+		prerequisite = {
+			focus = zin_regional_asgard_nets_of_field_stone_kept
+		}
+		prerequisite = {
+			focus = zin_regional_asgard_the_queens_rite
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_divers_of_borrak
+			navy_experience = 25
+			capital_scope = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = zin_regional_asgard_the_mound_at_low_water
+		icon = GFX_focus_zin_shipwreck
+		x = 1
+		y = 8
+		prerequisite = {
+			focus = zin_regional_asgard_divers_of_borrak
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		cost = 15
+		available = {
+			has_country_flag = zin_deep_keeps_tide
+		}
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_mound_own_name
+			navy_experience = 15
+		}
+	}
 }

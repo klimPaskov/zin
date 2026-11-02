@@ -6,12 +6,11 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		# Yeldenne is a guarded hall: the wards on Mp'E, the guardian's spirit and trait, and the weekly pulse.
-		1063 = {
+		1663 = {
 			add_dynamic_modifier = { modifier = zin_yeldenne_hall_wards }
 		}
 		add_ideas = zin_yeldenne_guardian_of_glo
-		add_country_leader_trait = zin_horos_guardian
-		1063 = {
+		1663 = {
 			owner = {
 				country_event = { id = zin_glo.2 days = 7 }
 			}
@@ -23,7 +22,7 @@ country_event = {
 	hidden = yes
 	is_triggered_only = yes
 	immediate = {
-		1063 = {
+		1663 = {
 			owner = {
 				country_event = { id = zin_glo.2 days = 7 }
 			}
@@ -49,7 +48,7 @@ country_event = {
 			clr_global_flag = zin_glo_heir_in_hall
 			zin_glo_horos_falls = yes
 			zin_glo_give_to_heir = yes
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.22 }
 				}
@@ -302,6 +301,7 @@ news_event = {
 	picture = GFX_zin_news_generic_peace
 	major = no
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_hall_of_horos } } # super event 27 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 	option = {
 		name = zin_glo.30.a
@@ -438,14 +438,14 @@ country_event = {
 		name = zin_glo.61.a
 		if = {
 			limit = { OR = { has_government = democratic has_government = neutrality has_country_flag = zin_cold_hall_respected } }
-			1063 = {
+			1663 = {
 				owner = {
 					add_opinion_modifier = { target = ROOT modifier = zin_glo_friend_of_the_hall }
 				}
 			}
 		}
 		else = {
-			1063 = {
+			1663 = {
 				owner = {
 					add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked }
 				}
@@ -498,7 +498,11 @@ country_event = {
 	}
 	option = {
 		name = zin_glo.64.a
-		YEL = { country_event = { id = zin_glo.60 days = 1 } }
+		1663 = {
+			owner = {
+				country_event = { id = zin_glo.60 days = 1 }
+			}
+		}
 		ai_chance = {
 			base = 60
 			modifier = {
@@ -513,7 +517,11 @@ country_event = {
 	}
 	option = {
 		name = zin_glo.64.b
-		YEL = { add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked } }
+		1663 = {
+			owner = {
+				add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked }
+			}
+		}
 		ai_chance = {
 			base = 40
 		}

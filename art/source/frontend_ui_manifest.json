@@ -1,0 +1,49 @@
+{
+ "generator": "tools/content/modules/ui_frontend.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/zin/frontend/filter.dds",
+   "source": "art/source/ui/reskin/ui-chrome-banner-hall.png",
+   "sourceSha256": "acbda7032ce7fdb26a066d5fddcd9fe5d28d72bbf32446580aebe7453d75c007",
+   "cells": [
+    "tab",
+    "tab_selected"
+   ],
+   "sheets": [
+    "ui-chrome-banner-hall"
+   ],
+   "ops": [
+    "strip 2 frames of 104x33",
+    "frame_tile reduce 0.267 to 94x55",
+    "rim 4x4",
+    "repeat x 45 at 44 (step 0.005)",
+    "repeat y 28 at 6 (step 0.006)",
+    "scale 0.27",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "10aaf85845f5d69baa271ccd8eee35c3128e6f4eec15c802e3ae2fe7e021bcf6"
+  },
+  {
+   "out": "gfx/interface/zin/frontend/title_plate.dds",
+   "source": "art/source/ui/reskin/ui-chrome-banner-hall.png",
+   "sourceSha256": "acbda7032ce7fdb26a066d5fddcd9fe5d28d72bbf32446580aebe7453d75c007",
+   "cells": [
+    "title"
+   ],
+   "sheets": [
+    "ui-chrome-banner-hall"
+   ],
+   "ops": [
+    "frame_tile reduce 0.471 to 167x99",
+    "rim 8x8",
+    "repeat x 40 at 69 (step 0.010)",
+    "repeat y 40 at 47 (step 0.012)",
+    "scale 0.47",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "df3c39ed40b72162d864d4ff51c508898abbc8fb217135f28c5820125107dedb"
+  }
+ ]
+}

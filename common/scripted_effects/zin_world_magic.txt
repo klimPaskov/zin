@@ -77,10 +77,10 @@ zin_world_give_dragon = {
 	}
 }
 zin_world_storm_pulse = {
-	# The storm belt (data/storm_seas.json, sea regions 248, 252): every week a fleet of a realm outside the Ember Lands loses strength
+	# The storm belt (data/storm_seas.json, sea regions 655, 662, 663, 669, 672, 674, 676, 677, 678, 682, 686, 689): every week a fleet of a realm outside the Ember Lands loses strength
 	# and organisation there; storm rigging halves the loss.
 	damage_units = {
-		region = 248
+		region = 655
 		navy = yes
 		str_damage = 0.04
 		org_damage = 0.1
@@ -91,7 +91,7 @@ zin_world_storm_pulse = {
 		}
 	}
 	damage_units = {
-		region = 252
+		region = 662
 		navy = yes
 		str_damage = 0.04
 		org_damage = 0.1
@@ -102,7 +102,117 @@ zin_world_storm_pulse = {
 		}
 	}
 	damage_units = {
-		region = 248
+		region = 663
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 669
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 672
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 674
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 676
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 677
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 678
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 682
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 686
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 689
+		navy = yes
+		str_damage = 0.04
+		org_damage = 0.1
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			NOT = { has_tech = zin_tech_storm_rigging }
+		}
+	}
+	damage_units = {
+		region = 655
 		navy = yes
 		str_damage = 0.02
 		org_damage = 0.05
@@ -113,7 +223,117 @@ zin_world_storm_pulse = {
 		}
 	}
 	damage_units = {
-		region = 252
+		region = 662
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 663
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 669
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 672
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 674
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 676
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 677
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 678
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 682
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 686
+		navy = yes
+		str_damage = 0.02
+		org_damage = 0.05
+		ratio = yes
+		limit = {
+			NOT = { zin_world_storm_spared = yes }
+			has_tech = zin_tech_storm_rigging
+		}
+	}
+	damage_units = {
+		region = 689
 		navy = yes
 		str_damage = 0.02
 		org_damage = 0.05
@@ -130,13 +350,13 @@ zin_world_mountain_pulse = {
 	if = {
 		limit = { NOT = { zin_world_roosts_free = yes } }
 		damage_units = {
-			state = 149
+			state = 1361
 			army = yes
 			str_damage = 0.05
 			ratio = yes
 			limit = { NOT = { has_country_flag = zin_people_elves } }
 		}
-		149 = {
+		1361 = {
 			owner = {
 				if = {
 					limit = { NOT = { has_country_flag = zin_world_mountain_woke } }

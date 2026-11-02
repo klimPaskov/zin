@@ -1,0 +1,135 @@
+{
+ "id": "ui-chrome-chronicle",
+ "family": "chrome_panels",
+ "theme": "chronicle",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  4,
+  4
+ ],
+ "ground": "black",
+ "matte": "none",
+ "cellBorder": 0.06,
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The Chronicle: the illuminated record of the age. Smooth carved blue-grey slate (#2D353A) with a very fine even grain, an inlaid bronze line (#78664C, lit edge #CAB289) with small diamond studs at the corners, vellum leaves (#E2D1B5), rubric red cloth (#5C1714).",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Every cell is one flat rectangular plate seen straight on, filling its own cell edge to edge as a full-bleed square swatch, all cells the same size, separated by narrow black gutters. Any rim or frame of a plate runs straight along its four sides at an even width, with its corner ornament kept inside the rim width; the body inside the rim is one plain, uniform, seamless surface with no motif, so it can be tiled.",
+ "cells": [
+  {
+   "key": "window",
+   "subject": "a window plate: carved blue-grey slate body inside a slate frame with an inlaid bronze line along all four sides and a small bronze diamond stud at each corner",
+   "border": 0.11,
+   "lum": "dark",
+   "luma": 54.5
+  },
+  {
+   "key": "section",
+   "subject": "a section plate: slate a little lighter than the window body, with one thin inlaid bronze line along its edge",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 74.4
+  },
+  {
+   "key": "inset",
+   "subject": "an inset well: very dark slate set slightly lower, with a thin dark recessed edge",
+   "border": 0.05,
+   "lum": "dark",
+   "luma": 43.9
+  },
+  {
+   "key": "body",
+   "subject": "a plain swatch of dark blue-grey slate, uniform, with no border and no line at all",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 49.2
+  },
+  {
+   "key": "title",
+   "subject": "a title cloth: rubric red cloth with an inlaid bronze line along its top and bottom edges and along its sides",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 46.8
+  },
+  {
+   "key": "entry_selected",
+   "subject": "a selected row plate: slate with a bright polished bronze line all around",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 62.8
+  },
+  {
+   "key": "tab",
+   "subject": "a tab plate: slate with a thin bronze line all around",
+   "border": 0.07,
+   "lum": "dark",
+   "luma": 58
+  },
+  {
+   "key": "tab_selected",
+   "subject": "a selected tab plate: deep rubric red cloth with a bright bronze line all around",
+   "border": 0.07,
+   "lum": "dark",
+   "luma": 51.3
+  },
+  {
+   "key": "reading",
+   "subject": "a reading plate: pale vellum leaf, smooth and clean, with a thin inlaid bronze line edge",
+   "border": 0.05,
+   "lum": "light",
+   "luma": 187.3
+  },
+  {
+   "key": "reading_selected",
+   "subject": "a selected reading plate: pale vellum with a bright bronze edge",
+   "border": 0.06,
+   "lum": "light",
+   "luma": 190.2
+  },
+  {
+   "key": "reading_plain",
+   "subject": "a plain swatch of pale vellum, uniform, with no edge at all",
+   "border": 0.03,
+   "lum": "light",
+   "luma": 210
+  },
+  {
+   "key": "plate_mid",
+   "subject": "a mid-tone plate: pale blue-grey slate (#76838A) with a thin inlaid bronze line edge",
+   "border": 0.07,
+   "lum": "mid",
+   "luma": 104.5
+  },
+  {
+   "key": "plate_mid_lit",
+   "subject": "a lighter mid-tone plate: light grey slate (#939EA3) with a bright bronze line edge",
+   "border": 0.07,
+   "lum": "mid",
+   "luma": 134.7
+  },
+  {
+   "key": "groove",
+   "subject": "an empty meter groove: a dark slate channel with a thin bronze edge",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 50.4
+  },
+  {
+   "key": "fill_mid",
+   "subject": "a meter fill: bright verdigris enamel (#4F8A6E), plain, smooth",
+   "border": 0.03,
+   "lum": "mid",
+   "luma": 109.1
+  },
+  {
+   "key": "fill_dark",
+   "subject": "a meter fill: deep verdigris enamel (#2F5A46), plain, smooth",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 66.1
+  }
+ ],
+ "tranche": 3
+}

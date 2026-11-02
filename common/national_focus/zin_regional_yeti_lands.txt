@@ -250,14 +250,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		cost = 5
 		available = {
-			country_exists = YEL
+			country_exists = PRT
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = YEL
+				country = PRT
 				relation = non_aggression_pact
 				active = yes
 			}

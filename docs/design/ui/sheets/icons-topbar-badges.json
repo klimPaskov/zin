@@ -1,0 +1,45 @@
+{
+ "id": "icons-topbar-badges",
+ "family": "topbar",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  2,
+  2
+ ],
+ "ground": "black",
+ "matte": "outline",
+ "group": "topbar_badges",
+ "needs": [],
+ "note": "UI overhaul lane W1: the small round count badges that sit on the top bar buttons (decisions, operations, contracts). Four badges of exactly the same size and shape, each a flat round boss of dark blackened iron with a calm, even, slightly lighter centre where a white number will be printed, and a thick bright coloured enamel ring around it; they differ only in the colour of the ring, so a number stays readable on every one. Match the walnut, bronze and enamel of the attached top bar icon sheet.",
+ "references": [
+  "ui/reskin/icons-topbar.png"
+ ],
+ "cells": [
+  {
+   "key": "badge_neutral",
+   "subject": "the round count badge with a pale grey-silver ring (a plain count)",
+   "luma": 75.5,
+   "lum": "dark"
+  },
+  {
+   "key": "badge_timeout",
+   "subject": "the same round count badge with a bright cinnabar red ring (something runs out)",
+   "luma": 56,
+   "lum": "dark"
+  },
+  {
+   "key": "badge_pending",
+   "subject": "the same round count badge with a bright amber gold ring (something waits to be taken)",
+   "luma": 74.5,
+   "lum": "dark"
+  },
+  {
+   "key": "badge_done",
+   "subject": "the same round count badge with a bright verdigris green ring (something is ready)",
+   "luma": 59.5,
+   "lum": "dark"
+  }
+ ],
+ "tranche": 5
+}

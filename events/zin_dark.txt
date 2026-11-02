@@ -1530,6 +1530,10 @@ news_event = {
 	desc = zin_dark.61.d
 	picture = GFX_zin_news_generic_war
 	major = yes
+	# K61: shown to the lands where it happens and the realms it involves (data/news_reach.json).
+	show_major = {
+		zin_hears_in_dark_lands = yes
+	}
 	is_triggered_only = yes
 	timeout_days = 30
 	option = {
@@ -1543,6 +1547,13 @@ news_event = {
 	desc = zin_dark.62.d
 	picture = GFX_zin_news_generic_war
 	major = yes
+	# K61: shown to the lands where it happens and the realms it involves (data/news_reach.json).
+	show_major = {
+		OR = {
+			zin_hears_in_dark_lands = yes
+			zin_hears_in_ember_lands = yes
+		}
+	}
 	is_triggered_only = yes
 	timeout_days = 30
 	option = {

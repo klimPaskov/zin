@@ -34,11 +34,11 @@ country_event = {
 		ai_chance = { base = 40 }
 		custom_effect_tooltip = zin_sun.42.a.tt
 		if = {
-			limit = { NOT = { has_character = zin_gala_heveneya } }
-			if = { limit = { NOT = { has_character = zin_gala_heveneya } } zin_gala_heveneya = { set_nationality = PREV } }
+			limit = { NOT = { has_character = zin_gala_caleon } }
+			if = { limit = { NOT = { has_character = zin_gala_caleon } } zin_gala_caleon = { set_nationality = PREV } }
 		}
 		add_country_leader_role = {
-			character = zin_gala_heveneya
+			character = zin_gala_caleon
 			promote_leader = yes
 			country_leader = {
 				ideology = zin_light_kinship

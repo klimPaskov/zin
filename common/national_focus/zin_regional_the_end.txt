@@ -1354,4 +1354,71 @@ focus_tree = {
 			remove_ideas = zin_regional_the_end_the_end_holds
 		}
 	}
+	focus = {
+		id = zin_regional_the_end_rolls_of_the_two_shores
+		icon = GFX_focus_zin_glyph_fading
+		x = 7
+		y = 4
+		prerequisite = {
+			focus = zin_regional_the_end_first_age_rolls
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_two_shores = yes
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_the_end_the_treaty_opened
+		icon = GFX_focus_zin_bridge_oaths
+		x = 6
+		y = 5
+		prerequisite = {
+			focus = zin_regional_the_end_rolls_of_the_two_shores
+		}
+		mutually_exclusive = {
+			focus = zin_regional_the_end_the_treaty_kept_shut
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0.2
+				has_global_flag = zin_eastern_invasion
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_treaty_willing
+		}
+	}
+	focus = {
+		id = zin_regional_the_end_the_treaty_kept_shut
+		icon = GFX_focus_zin_mask_veiled
+		x = 8
+		y = 5
+		prerequisite = {
+			focus = zin_regional_the_end_rolls_of_the_two_shores
+		}
+		mutually_exclusive = {
+			focus = zin_regional_the_end_the_treaty_opened
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = 20
+				has_global_flag = zin_eastern_invasion
+			}
+		}
+		completion_reward = {
+			set_global_flag = zin_deep_treaty_kept_shut
+			add_stability = 0.03
+		}
+	}
 }

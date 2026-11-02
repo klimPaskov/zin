@@ -461,6 +461,24 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = zin_regional_miaed_water_sold_to_the_kalioth
+		icon = GFX_focus_zin_ember_desert
+		x = 1
+		y = 4
+		prerequisite = {
+			focus = zin_regional_miaed_gatekeeper_of_the_south
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_water_price
+			add_political_power = 25
+		}
+	}
+	focus = {
 		id = zin_regional_miaed_the_dry_roads
 		icon = GFX_focus_zin_traders_road
 		x = 10

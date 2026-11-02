@@ -32,11 +32,17 @@ country_event = {
 	desc = {
 		text = zin_realm.10.desc2
 		trigger = {
-			check_variable = { zin_realm_succession_way = 4 }
+			check_variable = { zin_realm_succession_way = 6 }
 		}
 	}
 	desc = {
 		text = zin_realm.10.desc3
+		trigger = {
+			check_variable = { zin_realm_succession_way = 4 }
+		}
+	}
+	desc = {
+		text = zin_realm.10.desc4
 	}
 	picture = GFX_zin_evt_generic_court
 	is_triggered_only = yes
@@ -120,7 +126,15 @@ country_event = {
 country_event = {
 	id = zin_realm.12
 	title = zin_realm.12.t
-	desc = zin_realm.12.desc
+	desc = {
+		text = zin_realm.12.desc
+		trigger = {
+			zin_realm_elective_custom = yes
+		}
+	}
+	desc = {
+		text = zin_realm.12.desc1
+	}
 	picture = GFX_zin_evt_concord_council
 	is_triggered_only = yes
 	timeout_days = 30
@@ -328,6 +342,171 @@ country_event = {
 	option = {
 		name = zin_realm.15.a
 		ai_chance = { base = 1 }
+	}
+}
+country_event = {
+	id = zin_realm.16
+	title = zin_realm.16.t
+	desc = {
+		text = zin_realm.16.desc
+		trigger = {
+			zin_realm_contested_custom = yes
+		}
+	}
+	desc = {
+		text = zin_realm.16.desc1
+		trigger = {
+			zin_realm_elective_custom = yes
+		}
+	}
+	desc = {
+		text = zin_realm.16.desc2
+	}
+	picture = GFX_zin_evt_generic_war
+	is_triggered_only = yes
+	timeout_days = 30
+
+	option = {
+		name = zin_realm.16.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 20
+				zin_realm_inherits = yes
+			}
+			modifier = {
+				add = 20
+				has_stability > 0.6
+			}
+			modifier = {
+				add = 20
+				has_country_leader_with_trait = zin_trait_temper_just
+			}
+			modifier = {
+				add = 40
+				zin_rules_is_historical = yes
+			}
+		}
+		custom_effect_tooltip = zin_realm.16.a.tt
+		zin_realm_hold_disputed_crown = yes
+	}
+
+	option = {
+		name = zin_realm.16.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 30
+				zin_realm_elective_custom = yes
+			}
+			modifier = {
+				add = 20
+				has_stability < 0.3
+			}
+		}
+		custom_effect_tooltip = zin_realm.16.b.tt
+		zin_realm_pass_over_heir = yes
+	}
+
+	option = {
+		name = zin_realm.16.c
+		trigger = {
+			zin_realm_crisis_may_turn = yes
+			zin_realm_crown_may_be_contested = yes
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 40
+				zin_realm_contested_custom = yes
+			}
+			modifier = {
+				add = 20
+				has_country_leader_with_trait = zin_trait_temper_bold
+			}
+			modifier = {
+				factor = 0
+				zin_rules_is_historical = yes
+			}
+		}
+		custom_effect_tooltip = zin_realm.16.c.tt
+		zin_realm_fight_for_heir = yes
+	}
+
+	option = {
+		name = zin_realm.16.d
+		trigger = {
+			zin_realm_crisis_may_turn = yes
+			zin_realm_has_captain = yes
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 25
+				any_army_leader = { has_character_flag = zin_char_ambitious }
+			}
+			modifier = {
+				add = 10
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				zin_rules_is_historical = yes
+			}
+		}
+		custom_effect_tooltip = zin_realm.16.d.tt
+		zin_realm_captain_takes_crown = yes
+	}
+}
+country_event = {
+	id = zin_realm.17
+	title = zin_realm.17.t
+	desc = {
+		text = zin_realm.17.desc
+		trigger = {
+			has_war = yes
+		}
+	}
+	desc = {
+		text = zin_realm.17.desc1
+	}
+	picture = GFX_zin_evt_generic_court
+	is_triggered_only = yes
+	timeout_days = 30
+
+	option = {
+		name = zin_realm.17.a
+		trigger = {
+			OR = {
+				zin_realm_inherits = yes
+				zin_realm_contested_custom = yes
+			}
+			has_political_power > 49
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				add = 20
+				has_political_power > 150
+			}
+		}
+		custom_effect_tooltip = zin_realm.17.a.tt
+		add_political_power = -50
+		set_country_flag = zin_realm_heir_named
+		clr_country_flag = zin_realm_heir_lost
+	}
+
+	option = {
+		name = zin_realm.17.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 40
+				zin_realm_elective_custom = yes
+			}
+		}
+		custom_effect_tooltip = zin_realm.17.b.tt
+		add_stability = -0.02
 	}
 }
 country_event = {
@@ -1085,7 +1264,21 @@ country_event = {
 country_event = {
 	id = zin_realm.70
 	title = zin_realm.70.t
-	desc = zin_realm.70.desc
+	desc = {
+		text = zin_realm.70.desc
+		trigger = {
+			event_target:zin_realm_raider = { zin_realm_is_corsair = yes }
+		}
+	}
+	desc = {
+		text = zin_realm.70.desc1
+		trigger = {
+			event_target:zin_realm_raider = { zin_realm_is_steppe_rider = yes }
+		}
+	}
+	desc = {
+		text = zin_realm.70.desc2
+	}
 	picture = GFX_zin_evt_generic_wilds
 	is_triggered_only = yes
 	timeout_days = 30
@@ -1154,16 +1347,23 @@ country_event = {
 		text = zin_realm.71.desc
 		trigger = {
 			check_variable = { zin_realm_raid_answer = 1 }
+			zin_realm_is_corsair = yes
 		}
 	}
 	desc = {
 		text = zin_realm.71.desc1
 		trigger = {
-			check_variable = { zin_realm_raid_answer = 2 }
+			check_variable = { zin_realm_raid_answer = 1 }
 		}
 	}
 	desc = {
 		text = zin_realm.71.desc2
+		trigger = {
+			check_variable = { zin_realm_raid_answer = 2 }
+		}
+	}
+	desc = {
+		text = zin_realm.71.desc3
 	}
 	picture = GFX_zin_evt_generic_war
 	is_triggered_only = yes

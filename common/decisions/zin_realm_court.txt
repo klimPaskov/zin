@@ -21,17 +21,24 @@ zin_realm_court = {
 		complete_effect = {
 			custom_effect_tooltip = zin_realm_name_heir_tt
 			add_stability = 0.02
-			hidden_effect = { set_country_flag = zin_realm_heir_named }
+			hidden_effect = {
+				set_country_flag = zin_realm_heir_named
+				clr_country_flag = zin_realm_heir_lost
+			}
 		}
 		ai_will_do = {
 			base = 0
 			modifier = {
 				add = 10
-				check_variable = { zin_ruler_vigour < 40 }
+				check_variable = { zin_ruler_vigour < 10 }
 			}
 			modifier = {
 				add = 20
-				check_variable = { zin_ruler_vigour < 20 }
+				check_variable = { zin_ruler_vigour < 5 }
+			}
+			modifier = {
+				add = 10
+				has_country_flag = zin_realm_heir_lost
 			}
 			modifier = {
 				factor = 0

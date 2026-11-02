@@ -1,8 +1,8 @@
 guiTypes = {
 containerWindowType = {
 	name = "zin_court_window"
-	position = { x = -310 y = -250 }
-	size = { width = 620 height = 500 }
+	position = { x = -316 y = -300 }
+	size = { width = 632 height = 600 }
 	orientation = center
 	moveable = yes
 	background = {
@@ -11,390 +11,1024 @@ containerWindowType = {
 	}
 	instantTextBoxType = {
 		name = "zin_court_title"
-		position = { x = 40 y = 20 }
+		position = { x = 48 y = 20 }
 		font = "hoi_24header"
 		text = "ZIN_COURT_TITLE"
-		maxWidth = 540
+		maxWidth = 536
 		maxHeight = 32
 		format = centre
 		fixedsize = yes
 	}
 	buttonType = {
 		name = "zin_court_close"
-		position = { x = 576 y = 14 }
+		position = { x = 596 y = 8 }
 		quadTextureSprite = "GFX_closebutton"
 		shortcut = "ESCAPE"
+		pdx_tooltip = "ZIN_COURT_TITLE_CLOSE_tt"
+	}
+	containerWindowType = {
+		name = "zin_court_accent"
+		position = { x = 16 y = 56 }
+		size = { width = 600 height = 4 }
+		clipping = yes
+		background = {
+			name = "zin_court_accent_bg"
+			spriteType = "GFX_blank_leader_portrait"
+		}
+		iconType = {
+			name = "zin_court_accent_1"
+			spriteType = "GFX_zin_accent_court"
+			position = { x = 0 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_court_accent_2"
+			spriteType = "GFX_zin_accent_court"
+			position = { x = 128 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_court_accent_3"
+			spriteType = "GFX_zin_accent_court"
+			position = { x = 256 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_court_accent_4"
+			spriteType = "GFX_zin_accent_court"
+			position = { x = 384 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_court_accent_5"
+			spriteType = "GFX_zin_accent_court"
+			position = { x = 512 y = 0 }
+			alwaystransparent = yes
+		}
+	}
+	iconType = {
+		name = "zin_court_header"
+		spriteType = "GFX_zin_header_court"
+		position = { x = 16 y = 60 }
 	}
 	buttonType = {
 		name = "zin_court_tab_1"
-		position = { x = 30 y = 62 }
-		spriteType = "GFX_zin_button"
+		position = { x = 32 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
 		buttonText = "ZIN_COURT_TAB1"
 		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_COURT_TAB1_tt"
 	}
 	iconType = {
 		name = "zin_court_tab_1_on"
-		spriteType = "GFX_zin_rule"
-		position = { x = 26 y = 96 }
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 32 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_court_tab_1_on_text"
+		position = { x = 32 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_TAB1_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
 	}
 	buttonType = {
 		name = "zin_court_tab_2"
-		position = { x = 178 y = 62 }
-		spriteType = "GFX_zin_button"
+		position = { x = 168 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
 		buttonText = "ZIN_COURT_TAB2"
 		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_COURT_TAB2_tt"
 	}
 	iconType = {
 		name = "zin_court_tab_2_on"
-		spriteType = "GFX_zin_rule"
-		position = { x = 174 y = 96 }
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 168 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_court_tab_2_on_text"
+		position = { x = 168 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_TAB2_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
 	}
 	buttonType = {
 		name = "zin_court_tab_3"
-		position = { x = 326 y = 62 }
-		spriteType = "GFX_zin_button"
+		position = { x = 304 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
 		buttonText = "ZIN_COURT_TAB3"
 		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_COURT_TAB3_tt"
 	}
 	iconType = {
 		name = "zin_court_tab_3_on"
-		spriteType = "GFX_zin_rule"
-		position = { x = 322 y = 96 }
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 304 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_court_tab_3_on_text"
+		position = { x = 304 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_TAB3_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
 	}
 	buttonType = {
 		name = "zin_court_tab_4"
-		position = { x = 474 y = 62 }
-		spriteType = "GFX_zin_button"
+		position = { x = 440 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
 		buttonText = "ZIN_COURT_TAB4"
 		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_COURT_TAB4_tt"
 	}
 	iconType = {
 		name = "zin_court_tab_4_on"
-		spriteType = "GFX_zin_rule"
-		position = { x = 470 y = 96 }
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 440 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_court_tab_4_on_text"
+		position = { x = 440 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_TAB4_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
 	}
 	instantTextBoxType = {
 		name = "zin_court_corr"
-		position = { x = 40 y = 118 }
-		font = "hoi_18mbs"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
 		text = "ZIN_COURT_T1_CORR"
-		maxWidth = 540
-		maxHeight = 24
+		maxWidth = 568
+		maxHeight = 28
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T1_CORR_tt"
 	}
-	iconType = {
-		name = "zin_court_corr_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 156 }
-	}
-	iconType = {
-		name = "zin_court_corr_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 144 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_corr_meter"
+		position = { x = 32 y = 240 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_corr_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_corr_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_corr_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_corr_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_corr_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_court_corr_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_corr_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 188 y = 0 }
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_temple"
-		position = { x = 40 y = 186 }
+		position = { x = 32 y = 268 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T1_TEMPLE"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T1_TEMPLE_tt"
 	}
-	instantTextBoxType = {
-		name = "zin_court_hand"
-		position = { x = 40 y = 186 }
-		font = "hoi_18mbs"
-		text = "ZIN_COURT_T1_HAND"
-		maxWidth = 540
-		maxHeight = 24
-		format = left
-		fixedsize = yes
-	}
-	iconType = {
-		name = "zin_court_temple_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 224 }
-	}
-	iconType = {
-		name = "zin_court_temple_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 212 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_temple_meter"
+		position = { x = 32 y = 296 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_temple_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_temple_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_temple_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_temple_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_temple_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_court_temple_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 40 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_temple_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 84 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_temple_meter_mark_3"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 168 y = 0 }
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_cause"
-		position = { x = 40 y = 254 }
+		position = { x = 32 y = 332 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T1_CAUSE"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T1_CAUSE_tt"
 	}
-	iconType = {
-		name = "zin_court_cause_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 292 }
-	}
-	iconType = {
-		name = "zin_court_cause_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 280 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_cause_meter"
+		position = { x = 32 y = 360 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_cause_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_cause_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_cause_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_cause_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_cause_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_health"
-		position = { x = 40 y = 320 }
+		position = { x = 32 y = 396 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T1_HEALTH"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T1_HEALTH_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_note"
-		position = { x = 40 y = 372 }
+		position = { x = 32 y = 432 }
 		font = "hoi_16mbs"
 		text = "ZIN_COURT_T1_NOTE"
-		maxWidth = 540
-		maxHeight = 80
+		maxWidth = 568
+		maxHeight = 60
 		format = left
 		fixedsize = yes
 	}
 	instantTextBoxType = {
 		name = "zin_court_avg"
-		position = { x = 40 y = 118 }
-		font = "hoi_16mbs"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
 		text = "ZIN_COURT_T2_AVG"
-		maxWidth = 540
-		maxHeight = 24
+		maxWidth = 568
+		maxHeight = 28
 		format = left
 		fixedsize = yes
-	}
-	containerWindowType = {
-		name = "zin_court_dominions_scroll"
-		position = { x = 40 y = 150 }
-		size = { width = 540 height = 300 }
-		Orientation = upper_left
-		scroll_wheel_factor = 40
-		smooth_scrolling = yes
-		gridBoxType = {
-			name = "zin_court_dominions"
-			position = { x = 0 y = 0 }
-			size = { width = 540 height = 300 }
-			Orientation = upper_left
-			slotsize = { width = 540 height = 22 }
-			format = "UPPER_LEFT"
-			max_slots_horizontal = 1
-		}
+		pdx_tooltip = "ZIN_COURT_T2_AVG_tt"
 	}
 	instantTextBoxType = {
-		name = "zin_court_scroll"
-		position = { x = 40 y = 456 }
+		name = "zin_court_dominions_head_1"
+		position = { x = 32 y = 248 }
 		font = "hoi_16mbs"
-		text = "ZIN_COURT_T2_SCROLL"
-		maxWidth = 540
+		text = "ZIN_COURT_ROW_HEAD_1"
+		maxWidth = 248
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_head_2"
+		position = { x = 288 y = 248 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_HEAD_2"
+		maxWidth = 148
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_head_3"
+		position = { x = 444 y = 248 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_HEAD_3"
+		maxWidth = 156
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_1_1"
+		position = { x = 32 y = 272 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_1_1"
+		maxWidth = 248
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_1_2"
+		position = { x = 288 y = 272 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_1_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_1_3"
+		position = { x = 444 y = 272 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_1_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_2_1"
+		position = { x = 32 y = 296 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_2_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_2_2"
+		position = { x = 288 y = 296 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_2_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_2_3"
+		position = { x = 444 y = 296 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_2_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_3_1"
+		position = { x = 32 y = 320 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_3_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_3_2"
+		position = { x = 288 y = 320 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_3_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_3_3"
+		position = { x = 444 y = 320 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_3_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_4_1"
+		position = { x = 32 y = 344 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_4_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_4_2"
+		position = { x = 288 y = 344 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_4_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_4_3"
+		position = { x = 444 y = 344 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_4_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_5_1"
+		position = { x = 32 y = 368 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_5_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_5_2"
+		position = { x = 288 y = 368 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_5_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_5_3"
+		position = { x = 444 y = 368 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_5_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_6_1"
+		position = { x = 32 y = 392 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_6_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_6_2"
+		position = { x = 288 y = 392 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_6_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_6_3"
+		position = { x = 444 y = 392 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_6_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_7_1"
+		position = { x = 32 y = 416 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_7_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_7_2"
+		position = { x = 288 y = 416 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_7_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_7_3"
+		position = { x = 444 y = 416 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_7_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_8_1"
+		position = { x = 32 y = 440 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_8_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_8_2"
+		position = { x = 288 y = 440 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_8_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_8_3"
+		position = { x = 444 y = 440 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_8_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_9_1"
+		position = { x = 32 y = 464 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_9_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_9_2"
+		position = { x = 288 y = 464 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_9_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_9_3"
+		position = { x = 444 y = 464 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_9_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_10_1"
+		position = { x = 32 y = 488 }
+		font = "hoi_18mbs"
+		text = "ZIN_COURT_ROW_10_1"
+		maxWidth = 248
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_10_2"
+		position = { x = 288 y = 488 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_10_2"
+		maxWidth = 148
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_court_dominions_10_3"
+		position = { x = 444 y = 488 }
+		font = "hoi_16mbs"
+		text = "ZIN_COURT_ROW_10_3"
+		maxWidth = 156
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_ROW_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_ruling"
-		position = { x = 40 y = 118 }
-		font = "hoi_18mbs"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
 		text = "ZIN_COURT_T3_RULING"
-		maxWidth = 540
-		maxHeight = 24
+		maxWidth = 568
+		maxHeight = 28
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T3_RULING_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_c_court"
-		position = { x = 40 y = 156 }
+		position = { x = 32 y = 248 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T3_COURT"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T3_COURT_tt"
 	}
-	iconType = {
-		name = "zin_court_c_court_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 194 }
-	}
-	iconType = {
-		name = "zin_court_c_court_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 182 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_c_court_meter"
+		position = { x = 32 y = 276 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_c_court_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_c_court_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_c_court_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_c_court_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_c_court_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_court_c_court_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_c_court_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_c_faithful"
-		position = { x = 40 y = 214 }
+		position = { x = 32 y = 304 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T3_FAITHFUL"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T3_FAITHFUL_tt"
 	}
-	iconType = {
-		name = "zin_court_c_faithful_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 252 }
-	}
-	iconType = {
-		name = "zin_court_c_faithful_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 240 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_c_faithful_meter"
+		position = { x = 32 y = 332 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_c_faithful_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_c_faithful_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_c_faithful_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_c_faithful_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_c_faithful_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_court_c_faithful_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_c_faithful_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_c_dominions"
-		position = { x = 40 y = 272 }
+		position = { x = 32 y = 360 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T3_DOMINIONS"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T3_DOMINIONS_tt"
 	}
-	iconType = {
-		name = "zin_court_c_dominions_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 310 }
-	}
-	iconType = {
-		name = "zin_court_c_dominions_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 298 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_c_dominions_meter"
+		position = { x = 32 y = 388 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_c_dominions_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_c_dominions_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_c_dominions_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_c_dominions_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_c_dominions_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_court_c_dominions_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_c_dominions_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_c_host"
-		position = { x = 40 y = 330 }
+		position = { x = 32 y = 416 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T3_HOST"
-		maxWidth = 540
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T3_HOST_tt"
 	}
-	iconType = {
-		name = "zin_court_c_host_rule"
-		spriteType = "GFX_zin_rule"
-		position = { x = 40 y = 368 }
-	}
-	iconType = {
-		name = "zin_court_c_host_mark"
-		spriteType = "GFX_zin_court_marker"
-		position = { x = 40 y = 356 }
-		scale = 0.4
+	containerWindowType = {
+		name = "zin_court_c_host_meter"
+		position = { x = 32 y = 444 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_court_c_host_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_court_c_host_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_court_c_host_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_court_c_host_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_court_c_host_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_court_c_host_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_court_c_host_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
 	}
 	instantTextBoxType = {
 		name = "zin_court_thirty"
-		position = { x = 40 y = 392 }
+		position = { x = 32 y = 472 }
 		font = "hoi_16mbs"
 		text = "ZIN_COURT_T3_THIRTY"
-		maxWidth = 540
-		maxHeight = 48
+		maxWidth = 568
+		maxHeight = 40
 		format = left
 		fixedsize = yes
 	}
 	instantTextBoxType = {
 		name = "zin_court_crown_head"
-		position = { x = 40 y = 118 }
-		font = "hoi_18mbs"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
 		text = "ZIN_COURT_T4_HEAD"
-		maxWidth = 540
-		maxHeight = 24
+		maxWidth = 568
+		maxHeight = 28
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T4_HEAD_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_crown_afrit_dead"
-		position = { x = 60 y = 160 }
+		position = { x = 32 y = 248 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T4_AFRIT_DEAD"
-		maxWidth = 500
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T4_AFRIT_DEAD_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_crown_named"
-		position = { x = 60 y = 194 }
+		position = { x = 32 y = 276 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T4_NAMED"
-		maxWidth = 500
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T4_NAMED_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_crown_returned"
-		position = { x = 60 y = 228 }
+		position = { x = 32 y = 304 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T4_RETURNED"
-		maxWidth = 500
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T4_RETURNED_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_crown_parim"
-		position = { x = 60 y = 262 }
+		position = { x = 32 y = 332 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T4_PARIM"
-		maxWidth = 500
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T4_PARIM_tt"
 	}
 	instantTextBoxType = {
 		name = "zin_court_crown_date"
-		position = { x = 60 y = 296 }
+		position = { x = 32 y = 360 }
 		font = "hoi_18mbs"
 		text = "ZIN_COURT_T4_DATE"
-		maxWidth = 500
+		maxWidth = 568
 		maxHeight = 24
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_T4_DATE_tt"
 	}
-}
-containerWindowType = {
-	name = "zin_court_button_window"
-	position = { x = 148 y = 86 }
-	size = { width = 132 height = 30 }
-	orientation = upper_left
-	buttonType = {
-		name = "zin_court_open"
-		position = { x = 0 y = 0 }
-		spriteType = "GFX_zin_button"
-		buttonText = "ZIN_COURT_BUTTON"
-		buttonFont = "hoi_18mbs"
-		pdx_tooltip = "ZIN_COURT_BUTTON_tt"
-	}
-}
-containerWindowType = {
-	name = "zin_court_dominion_row"
-	position = { x = 0 y = 0 }
-	size = { width = 540 height = 22 }
 	instantTextBoxType = {
-		name = "zin_court_row_text"
-		position = { x = 0 y = 0 }
+		name = "zin_court_page"
+		position = { x = 32 y = 548 }
 		font = "hoi_16mbs"
-		text = "ZIN_COURT_ROW"
-		maxWidth = 540
-		maxHeight = 22
+		text = "ZIN_COURT_TITLE_PAGE"
+		maxWidth = 240
+		maxHeight = 20
 		format = left
 		fixedsize = yes
+		pdx_tooltip = "ZIN_COURT_TITLE_PAGE_tt"
+	}
+	buttonType = {
+		name = "zin_court_page_prev"
+		position = { x = 328 y = 540 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COURT_TITLE_PREV"
+		buttonFont = "hoi_16mbs"
+	}
+	buttonType = {
+		name = "zin_court_page_next"
+		position = { x = 468 y = 540 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COURT_TITLE_NEXT"
+		buttonFont = "hoi_16mbs"
 	}
 }
 }

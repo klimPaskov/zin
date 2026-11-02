@@ -585,6 +585,7 @@ zin_dominion_mirolon_falls = {
 	if = {
 		limit = { NOT = { has_global_flag = zin_mirolon_fallen } }
 		set_global_flag = zin_mirolon_fallen
+		zin_super_event_mirolon_falls = yes # super event 28 (modules/super_events.mjs)
 		if = {
 			limit = { country_exists = PUV }
 			PUV = {
@@ -679,6 +680,7 @@ zin_volgan_begin_march = {
 		limit = { country_exists = PUV }
 		PUV = {
 			set_global_flag = zin_volgan_marches
+			zin_super_event_volgan_marches = yes # super event 8 (modules/super_events.mjs)
 			set_temp_variable = { zin_arg_value = -100 }
 			zin_volgan_add_veil = yes
 			set_temp_variable = { zin_arg_value = 10 }
@@ -909,6 +911,7 @@ zin_volgan_destroy_body = {
 	if = {
 		limit = { NOT = { has_global_flag = zin_volgan_body_destroyed } }
 		set_global_flag = zin_volgan_body_destroyed
+		zin_super_event_volgan_broken = yes # super event 14 (modules/super_events.mjs)
 		every_country = {
 			limit = { is_ai = no }
 			news_event = { id = zin_dominion.17 }
@@ -1037,6 +1040,7 @@ zin_volgan_withdraws_south = {
 			NOT = { has_global_flag = zin_volgan_body_destroyed }
 		}
 		set_global_flag = zin_volgan_withdrawn_south
+		zin_super_event_nafeher_falls = yes # super event 26 (modules/super_events.mjs)
 		zin_dominion_end_compact = yes
 		if = {
 			limit = { country_exists = KHO }

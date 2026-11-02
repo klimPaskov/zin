@@ -53,6 +53,13 @@ news_event = {
 	desc = zin_leren.33.desc
 	picture = GFX_zin_news_strait_toll
 	major = yes
+	# K61: shown to the lands where it happens and the realms it involves (data/news_reach.json).
+	show_major = {
+		OR = {
+			zin_hears_in_north_lands = yes
+			zin_hears_in_middle_lands = yes
+		}
+	}
 	is_triggered_only = yes
 	timeout_days = 30
 

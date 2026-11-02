@@ -1,0 +1,511 @@
+{
+ "generator": "tools/content/modules/ui_research.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/zin/research/focus_board.dds",
+   "sprite": "GFX_zin_focus_board",
+   "source": "art/source/ui/reskin/ui-focus-board.png",
+   "sourceSha256": "b54be3e17a796096163ac19719ada725a327d3b7607d2bea5d4d57aeb25e137b",
+   "cells": [
+    "plate"
+   ],
+   "ops": [
+    "frame_tile reduce 0.5 to 627x627",
+    "rim 24x24",
+    "repeat x 58 at 459 (step 0.009)",
+    "repeat y 58 at 280 (step 0.009)",
+    "scale 0.5"
+   ],
+   "size": [
+    512,
+    512
+   ],
+   "sha256": "1508b7ef8ba46c38eea2391b596a14b6e3c6c71d46e7ff031680b50c8c58cd1e"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_commercial_reactor.dds",
+   "sprite": "GFX_zin_tech_gate_commercial_reactor_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "13"
+   ],
+   "ops": [
+    "cell 13 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "4c390b0c20a3268c17561762bc2f42520156b24a120d354eee4b083ffda101dd"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_fuel_silo.dds",
+   "sprite": "GFX_zin_tech_gate_fuel_silo_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "14"
+   ],
+   "ops": [
+    "cell 14 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "fd47298e87b909039a73da1be48c1d7368581843cda87a20cb0c1604f9b40475"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_mega_gun.dds",
+   "sprite": "GFX_zin_tech_gate_mega_gun_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "10"
+   ],
+   "ops": [
+    "cell 10 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "664b74fd083fd5cec4d9ae41d538880a03b316dabd98d8683f61c0b08e710833"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_nuclear_reactor_heavy_water.dds",
+   "sprite": "GFX_zin_tech_gate_nuclear_reactor_heavy_water_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "12"
+   ],
+   "ops": [
+    "cell 12 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "95d217de301fb872626418f13ee62862634cf8669424119af1f98930d2b0e510"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_nuclear_reactor.dds",
+   "sprite": "GFX_zin_tech_gate_nuclear_reactor_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "11"
+   ],
+   "ops": [
+    "cell 11 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "2edffe9319080760201b65fb884854551177994d0c9ac4aa00352a476187c66c"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_rocket_site.dds",
+   "sprite": "GFX_zin_tech_gate_rocket_site_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "9"
+   ],
+   "ops": [
+    "cell 9 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "6611c6477bb4af919d85ebd77aa180f385f8560951e4b5177f0d2b9e40068bac"
+  },
+  {
+   "out": "gfx/interface/zin/research/gate_synthetic_refinery.dds",
+   "sprite": "GFX_zin_tech_gate_synthetic_refinery_medium",
+   "source": "art/source/research_ui/research-emblems-02.png",
+   "sourceSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "cells": [
+    "15"
+   ],
+   "ops": [
+    "cell 15 cut 4px inside",
+    "lanczos3 64x64",
+    "round matte"
+   ],
+   "size": [
+    64,
+    64
+   ],
+   "sha256": "b6f7b48096b04e53005d1617975b77d4543a8bb34fef6c05e8bc6f697be60f5a"
+  },
+  {
+   "out": "gfx/interface/zin/research/research_body.dds",
+   "sprite": "GFX_zin_research_body",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "body"
+   ],
+   "ops": [
+    "frame_tile reduce 0.333 to 115x67",
+    "rim 2x2",
+    "repeat x 46 at 66 (step 0.006)",
+    "repeat y 46 at 15 (step 0.010)",
+    "scale 0.33"
+   ],
+   "size": [
+    192,
+    192
+   ],
+   "sha256": "271c17c9db3a4009b7ce9215802f6b72d6d7dd6875627a310af1071976c18936"
+  },
+  {
+   "out": "gfx/interface/zin/research/research_section.dds",
+   "sprite": "GFX_zin_research_section",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "section"
+   ],
+   "ops": [
+    "frame_tile reduce 0.5 to 174x101",
+    "rim 6x6",
+    "repeat x 24 at 80 (step 0.014)",
+    "repeat y 28 at 34 (step 0.018)",
+    "scale 0.5"
+   ],
+   "size": [
+    192,
+    192
+   ],
+   "sha256": "643836b6523aa7675885d5ca2d68bb5ad5f0422796c98acdf552bdedcde6f96a"
+  },
+  {
+   "out": "gfx/interface/zin/research/research_strip.dds",
+   "sprite": "GFX_zin_research_strip",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "inset"
+   ],
+   "ops": [
+    "frame_tile reduce 0.6 to 209x121",
+    "rim 6x6",
+    "repeat x 151 at 28 (step 0.010)",
+    "repeat y 72 at 9 (step 0.012)",
+    "scale 0.6"
+   ],
+   "size": [
+    548,
+    138
+   ],
+   "sha256": "36c3a6929280b6e2746b01980f3fabdd3ad73f9e131d4d5b0f124b17efab0b48"
+  },
+  {
+   "out": "gfx/interface/zin/research/research_tab.dds",
+   "sprite": "GFX_zin_research_tab",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29"
+   ],
+   "size": [
+    516,
+    42
+   ],
+   "sha256": "839d70d613c0947b7de926dc1c9aad999090afd456c56f15ed24fd8340b8ed37"
+  },
+  {
+   "out": "gfx/interface/zin/research/research_title.dds",
+   "sprite": "GFX_zin_research_title",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "title"
+   ],
+   "ops": [
+    "frame_tile reduce 0.375 to 129x77",
+    "rim 6x6",
+    "repeat x 85 at 10 (step 0.006)",
+    "repeat y 37 at 25 (step 0.007)",
+    "scale 0.38"
+   ],
+   "size": [
+    543,
+    41
+   ],
+   "sha256": "d3cd6202657a94028b78b45452b0be30f5f0d2958064b1bae833b16b50b7e799"
+  },
+  {
+   "out": "gfx/interface/zin/research/research_window.dds",
+   "sprite": "GFX_zin_research_window",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "window"
+   ],
+   "ops": [
+    "frame_tile reduce 0.727 to 250x147",
+    "rim 16x16",
+    "repeat x 32 at 110 (step 0.013)",
+    "repeat y 32 at 72 (step 0.015)",
+    "scale 0.73"
+   ],
+   "size": [
+    192,
+    192
+   ],
+   "sha256": "5ba97fb8d4c28e25d2dce97e08040b96f30ca460e78f2024def4304195e5b20c"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_electronics_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_electronics_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 8,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 8 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "c9d44cf8af806cdf95419d0c44aead199bc7e73f31788f1d064fc220234f80a4"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_industry_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_industry_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 7,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 7 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "05166e9cc97e684d4ffcd9d01120bd4b5aab089687a8f8cea4b90d4fe67a1cde"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_arms_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_arms_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 0,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 0 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "ec9e3c8891566421a6d68fffb970537e492d67e201ad47213761fb32c7938829"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_camp_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_camp_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 4,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 4 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "1fb0c524c90e3fdb071a2b90f3ad7a435660e388e7d77815bb1fb3c06f4f1825"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_engines_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_engines_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 2,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 2 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "015b4cec4d89000fe70fa201c5bf163ac893a55d5f22d34c6a6d3d3b47275ebe"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_lore_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_lore_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 3,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 3 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "5a5ae3c3877f5c1173c504a2f805f71cdb1c8a58e65b4c407d4f4a8336eab722"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_mounts_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_mounts_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 1,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 1 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "b389ffe47458f0c8010d6f27b8e42946bdff08dcb93c6adbf112d348f8c86820"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_naval_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_naval_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 5,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 5 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "e384c25b385d86da34036bbf3acba48ab25e8d293ea6c00d58b73ae427471ed2"
+  },
+  {
+   "out": "gfx/interface/zin/research/tab_zin_skies_folder.dds",
+   "sprite": "GFX_zin_techtree_tab_zin_skies_folder",
+   "source": "art/source/ui/reskin/ui-chrome-chronicle.png",
+   "sourceSha256": "7d4dfa3c30f942ba58bdb08c97f8a3f960b15b48355b2b6d45781cb7686ec562",
+   "cells": [
+    "tab_selected",
+    "tab"
+   ],
+   "emblemSource": "art/source/research_ui/research-emblems-02.png",
+   "emblemSha256": "2a3438be4997e73bfa2a11d83002a608c26dc09874058a4fccce59a9ab08c268",
+   "emblemCell": 6,
+   "ops": [
+    "frame 1 tab_selected: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 49 at 30 (step 0.005); repeat y 34 at 12 (step 0.005); scale 0.29",
+    "frame 2 tab: frame_tile reduce 0.286 to 98x59; rim 4x4; repeat x 45 at 25 (step 0.007); repeat y 33 at 7 (step 0.007); scale 0.29",
+    "emblem cell 6 cut 4px inside, lanczos3 44x44, round matte, placed at 24,9"
+   ],
+   "size": [
+    182,
+    61
+   ],
+   "sha256": "2ce01a53f7f176564d3106455c5e87d3e661a82ccb0c4bc48e847f054244db69"
+  },
+  {
+   "out": "gfx/interface/zin/research/techtree_board.dds",
+   "sprite": "GFX_zin_techtree_board",
+   "source": "art/source/research_ui/research-board-techtree.png",
+   "sourceSha256": "2975759c557ebd18999d836b88ecc5bf7303f612c91ab43be6730a5a84386cfe",
+   "cells": [
+    "plate"
+   ],
+   "ops": [
+    "frame_tile reduce 0.6 to 922x614",
+    "rim 24x24",
+    "repeat x 58 at 50 (step 0.009)",
+    "repeat y 116 at 412 (step 0.008)",
+    "scale 0.6"
+   ],
+   "size": [
+    512,
+    512
+   ],
+   "sha256": "8a3a1ef3246269a985464a9309bb380e297f53fafa2e8616e4cc66d5ba26d2db"
+  }
+ ]
+}

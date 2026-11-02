@@ -2584,23 +2584,6 @@ zin_path_peace_yei = {
 		value = -50
 	}
 }
-zin_path_peace_yel = {
-	# Seeming Peace (the Gathering Dark below 25): no preparing for war against YEL without a cause.
-	allowed = { always = yes }
-	enable = {
-		check_variable = { global.zin_gathering_dark < 25 }
-		NOT = { tag = YEL }
-		country_exists = YEL
-		NOT = { has_war_with = YEL }
-		NOT = { has_wargoal_against = YEL }
-	}
-	abort = { always = no }
-	ai_strategy = {
-		type = prepare_for_war
-		id = YEL
-		value = -50
-	}
-}
 zin_path_peace_yen = {
 	# Seeming Peace (the Gathering Dark below 25): no preparing for war against YEN without a cause.
 	allowed = { always = yes }
@@ -2709,7 +2692,7 @@ zin_path_afrit_parim_aen = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = AEN }
 		}
@@ -2735,7 +2718,7 @@ zin_path_afrit_parim_gnw = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = GNW }
 		}
@@ -2761,7 +2744,7 @@ zin_path_afrit_parim_gir = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = GIR }
 		}
@@ -2787,7 +2770,7 @@ zin_path_afrit_parim_sel = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = SEL }
 		}
@@ -2813,7 +2796,7 @@ zin_path_afrit_parim_kin = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = KIN }
 		}
@@ -2839,7 +2822,7 @@ zin_path_afrit_parim_her = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = HER }
 		}
@@ -2865,7 +2848,7 @@ zin_path_afrit_parim_puv = {
 		any_state = {
 			OR = {
 				zin_is_site_parim = yes
-				state = 238
+				state = 1019
 			}
 			controller = { tag = PUV }
 		}

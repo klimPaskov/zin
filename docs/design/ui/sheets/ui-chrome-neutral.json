@@ -1,0 +1,139 @@
+{
+ "id": "ui-chrome-neutral",
+ "family": "chrome_panels",
+ "theme": "neutral",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  4,
+  4
+ ],
+ "ground": "black",
+ "matte": "none",
+ "cellBorder": 0.06,
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_a_components.png",
+  "docs/plans/ui_overhaul/directions/direction_c_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The neutral family used in every window: blackened iron plate (#282B2C) with a thin muted-bronze rim (#CAB289) and four tiny corner studs, smooth and matte.",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Cells 1 to 4, 14, 15 and 16 are flat rectangular plates; cells 5 to 13 are as described. Every plate seen straight on, filling its own cell edge to edge as a full-bleed square swatch, all cells the same size, separated by narrow black gutters. Any rim or frame of a plate runs straight along its four sides at an even width, with its corner ornament kept inside the rim width; the body inside the rim is one plain, uniform, seamless surface with no motif, so it can be tiled.",
+ "cells": [
+  {
+   "key": "tooltip",
+   "subject": "a tooltip plate: smooth dark iron-grey plate (#242422) with a one-pixel-thin muted bronze rim (#CAB289) along all four sides",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 40.6
+  },
+  {
+   "key": "dialog",
+   "subject": "a dialog window plate: blackened iron (#282B2C) with a thin muted-bronze rim along all four sides and a tiny round stud at each corner inside the rim",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 39.4
+  },
+  {
+   "key": "mini_dialog",
+   "subject": "a small panel plate: blackened iron a step lighter (#323434) with a thin bronze line along its edge",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 54.4
+  },
+  {
+   "key": "mini_dialog_grey",
+   "subject": "a small panel plate: dull dark grey iron (#3E3C3A), matte, with a thin darker edge",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 70.6
+  },
+  {
+   "key": "selection_line",
+   "subject": "a thin bright gilt rectangular outline line on the black ground, one clean line of even width with a small diamond at each corner, the inside left black",
+   "border": 0.1,
+   "lum": "dark",
+   "luma": 13,
+   "design": "mid"
+  },
+  {
+   "key": "flag_bezel",
+   "subject": "a rectangular bezel of blackened iron with a thin bronze rim and a plain flat dark centre, the frame about one eighth of the width",
+   "border": 0.14,
+   "lum": "dark",
+   "luma": 42.3
+  },
+  {
+   "key": "flag_bezel_gilt",
+   "subject": "a rectangular gilt-bronze bezel with a plain flat dark centre, the frame about one eighth of the width",
+   "border": 0.14,
+   "lum": "dark",
+   "luma": 62.7,
+   "design": "mid"
+  },
+  {
+   "key": "separator",
+   "subject": "a horizontal bronze rule across the whole cell: a thin muted bronze bar with a small diamond in the middle, on black",
+   "border": 0.1,
+   "lum": "dark",
+   "luma": 38.9,
+   "design": "mid"
+  },
+  {
+   "key": "glow_red",
+   "subject": "a soft horizontal glow of cinnabar red light (#DE5240) on black, brightest in the middle, fading evenly to black",
+   "lum": "dark",
+   "luma": 49.5,
+   "design": "mid"
+  },
+  {
+   "key": "glow_amber",
+   "subject": "a soft horizontal glow of amber light (#E28C34) on black, brightest in the middle, fading evenly to black",
+   "lum": "dark",
+   "luma": 64.2,
+   "design": "mid"
+  },
+  {
+   "key": "glow_green",
+   "subject": "a soft horizontal glow of verdigris green light (#76B262) on black, brightest in the middle, fading evenly to black",
+   "lum": "dark",
+   "luma": 74.5,
+   "design": "mid"
+  },
+  {
+   "key": "glow_gold",
+   "subject": "a soft horizontal glow of warm gold light (#EBCA80) on black, brightest in the middle, fading evenly to black",
+   "lum": "dark",
+   "luma": 88.2,
+   "design": "mid"
+  },
+  {
+   "key": "shine",
+   "subject": "a soft diagonal glint of pale light on black, brightest along one thin band",
+   "lum": "dark",
+   "luma": 23.9,
+   "design": "light"
+  },
+  {
+   "key": "plate_light",
+   "subject": "a pale plate: smooth pale stone-grey enamel (#D3CCC0) with a thin muted bronze rim",
+   "border": 0.06,
+   "lum": "light",
+   "luma": 196.2
+  },
+  {
+   "key": "plate_mid",
+   "subject": "a mid-tone plate: matte muted bronze (#8C7A5C) with a thin darker rim",
+   "border": 0.06,
+   "lum": "mid",
+   "luma": 109.9
+  },
+  {
+   "key": "body",
+   "subject": "a plain swatch of blackened iron (#282B2C), smooth and uniform, with no rim at all",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 42.6
+  }
+ ],
+ "tranche": 3
+}

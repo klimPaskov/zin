@@ -91,6 +91,7 @@ news_event = {
 	picture = GFX_zin_news_generic_sea
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_east_crosses_the_rift } } # super event 29 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {

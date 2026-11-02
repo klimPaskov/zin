@@ -21,12 +21,6 @@ zin_glo_on_sword_broken = {
 		set_variable = { global.zin_glo_power = constant:zin_glo.power_broken }
 	}
 }
-zin_glo_clear_seal_keepers = {
-	# Glo has left the hall (or dimmed): the regional tree's seal-keepers spirit has nothing left to keep.
-	YEL = {
-		if = { limit = { has_idea = zin_regional_yeldenne_seal_keepers } remove_ideas = zin_regional_yeldenne_seal_keepers }
-	}
-}
 zin_glo_follow_bearer = {
 	# Glernaen's Light rests on the host that employs the bearer, and moves with him.
 	every_country = { limit = { has_idea = zin_glo_glernaens_light } remove_ideas = zin_glo_glernaens_light }
@@ -48,7 +42,7 @@ zin_glo_follow_bearer = {
 	}
 }
 zin_yeldenne_set_hall_modifier = {
-	1063 = {
+	1663 = {
 		if = { limit = { has_dynamic_modifier = { modifier = zin_yeldenne_hall_wards } } remove_dynamic_modifier = { modifier = zin_yeldenne_hall_wards } }
 		if = { limit = { has_dynamic_modifier = { modifier = zin_yeldenne_sealed_hall } } remove_dynamic_modifier = { modifier = zin_yeldenne_sealed_hall } }
 		if = { limit = { has_dynamic_modifier = { modifier = zin_yeldenne_empty_hall } } remove_dynamic_modifier = { modifier = zin_yeldenne_empty_hall } }
@@ -158,7 +152,6 @@ zin_glo_transfer = {
 		set_variable = { global.zin_glo_state = 1 }
 		set_global_flag = zin_glo_with_eindil
 		set_variable = { global.zin_glo_power = constant:zin_glo.power_max }
-		zin_glo_clear_seal_keepers = yes
 		zin_glo_follow_bearer = yes
 	}
 	else_if = {
@@ -166,7 +159,6 @@ zin_glo_transfer = {
 		set_variable = { global.zin_glo_state = 4 }
 		set_variable = { global.zin_glo_power = constant:zin_glo.power_max }
 		zin_glo_pick_second_bearer = yes
-		zin_glo_clear_seal_keepers = yes
 		zin_glo_follow_bearer = yes
 	}
 	else = {
@@ -178,7 +170,7 @@ zin_glo_transfer = {
 }
 zin_glo_hall_wards_tick = {
 	# Every pulse the wards harm an enemy army that holds or stands in Mp'E; the band follows the wards.
-	1063 = {
+	1663 = {
 		if = {
 			limit = { check_variable = { global.zin_yeldenne_wards < constant:zin_glo.wards_mid } }
 			damage_units = {
@@ -215,7 +207,7 @@ zin_glo_hall_wards_tick = {
 }
 zin_glo_hall_occupation_tick = {
 	# After 28 days of enemy control the hall expels the intruders and its owner holds Mp'E again.
-	1063 = {
+	1663 = {
 		if = {
 			limit = { NOT = { is_controlled_by = ROOT } }
 			if = {
@@ -278,7 +270,6 @@ zin_glo_defile_check = {
 		set_variable = { global.zin_glo_defile_end = 0 }
 		set_variable = { global.zin_glo_state = 3 }
 		set_global_flag = zin_glo_dimmed
-		zin_glo_clear_seal_keepers = yes
 		zin_yeldenne_set_hall_modifier = yes
 		set_temp_variable = { zin_arg_value = constant:zin_glo.dark_glo_dims }
 		zin_world_add_gathering_dark = yes
@@ -382,40 +373,12 @@ zin_glo_wave_decided = {
 		zin_glo_wave = yes
 	}
 }
-zin_yeldenne_install_warden = {
-	# Horos is dust: the Warden of Mp'E rules for the hall. The wards spirits of the regional tree stay only while the crystal lies sealed.
-	YEL = {
-		if = {
-			limit = { exists = yes }
-			if = { limit = { NOT = { has_character = zin_yeldenne_warden } } zin_yeldenne_warden = { set_nationality = PREV } } if = { limit = { NOT = { has_global_flag = zin_in_play_yeldenne_warden } } set_global_flag = zin_in_play_yeldenne_warden }
-			add_country_leader_role = { character = zin_yeldenne_warden promote_leader = yes country_leader = { ideology = zin_light_wardens expire = "2000.1.1.1" traits = { zin_yeldenne_warden_trait } } }
-			if = {
-				limit = { NOT = { check_variable = { global.zin_glo_state = 2 } } }
-				if = { limit = { has_idea = zin_regional_yeldenne_glernaens_wards } remove_ideas = zin_regional_yeldenne_glernaens_wards }
-				if = { limit = { has_idea = zin_regional_yeldenne_glernaens_wards_2 } remove_ideas = zin_regional_yeldenne_glernaens_wards_2 }
-			}
-		}
-	}
-}
-zin_glo_request_northern_watch = {
-	# From Yeldenne's focus: the Lost Cause's leader is asked to send a company to the gate.
-	every_country = {
-		limit = { zin_glo_lost_cause_leader = yes }
-		set_variable = { global.zin_glo_watch_sender = THIS }
-		country_event = { id = zin_glo.64 }
-	}
-}
 zin_glo_horos_falls = {
-	# Horos is dust. Wardens keep the hall; the guard stands down; the world hears of it.
+	# Horos is dust (story only, never a character). The hall keeps its owner; the guard stands down; the world hears of it.
 	set_global_flag = zin_horos_dead
-	every_country = {
-		limit = { has_character = zin_horos }
-		retire_character = zin_horos
-	}
-	zin_yeldenne_install_warden = yes
-	YEL = {
-		if = {
-			limit = { exists = yes }
+	zin_super_event_hall_of_horos = yes # super event 27 (modules/super_events.mjs)
+	1663 = {
+		owner = {
 			if = { limit = { has_idea = zin_yeldenne_guardian_of_glo } remove_ideas = zin_yeldenne_guardian_of_glo }
 			add_timed_idea = { idea = zin_yeldenne_the_empty_throne days = 365 }
 		}
@@ -450,7 +413,7 @@ zin_glo_score = {
 		add_to_temp_variable = { glo_score = constant:zin_glo.hall_forewarned }
 	}
 	if = {
-		limit = { has_global_flag = zin_yeldenne_hall_unyielding }
+		limit = { has_global_flag = zin_glo_hall_unyielding }
 		add_to_temp_variable = { glo_score = constant:zin_glo.hall_unyielding }
 	}
 	set_temp_variable_to_random = { var = glo_roll min = -10 max = 11 integer = yes }
@@ -468,13 +431,13 @@ zin_glo_score = {
 }
 zin_glo_show_hall = {
 	# The scene in the hall, to its owner and to the party that came (the Worshipdom in cases 1, 2 and 4). The outcome follows a day later.
-	1063 = {
+	1663 = {
 		owner = {
 			country_event = { id = zin_glo.20 }
 		}
 	}
 	every_country = {
-		limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1063 } NOT = { check_variable = { global.zin_glo_hall_case = 3 } } NOT = { check_variable = { global.zin_glo_hall_case = 5 } } }
+		limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1663 } NOT = { check_variable = { global.zin_glo_hall_case = 3 } } NOT = { check_variable = { global.zin_glo_hall_case = 5 } } }
 		country_event = { id = zin_glo.20 }
 	}
 }
@@ -486,7 +449,7 @@ zin_glo_resolve_hall = {
 		zin_glo_horos_falls = yes
 		zin_afrit_wound = yes
 		zin_glo_give_to_heir = yes
-		1063 = {
+		1663 = {
 			owner = {
 				country_event = { id = zin_glo.21 days = 1 }
 			}
@@ -498,13 +461,13 @@ zin_glo_resolve_hall = {
 		zin_glo_horos_falls = yes
 		zin_afrit_wound = yes
 		zin_glo_give_to_heir = yes
-		1063 = {
+		1663 = {
 			owner = {
 				country_event = { id = zin_glo.23 days = 1 }
 			}
 		}
 		every_country = {
-			limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1063 }  }
+			limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1663 }  }
 			country_event = { id = zin_glo.23 days = 1 }
 		}
 		zin_glo_show_hall = yes
@@ -513,15 +476,15 @@ zin_glo_resolve_hall = {
 		limit = { check_variable = { zin_arg_case = 3 } }
 		set_global_flag = zin_glo_heir_in_hall
 		if = {
-			limit = { has_global_flag = zin_yeldenne_awaits_heir }
-			1063 = {
+			limit = { has_global_flag = zin_glo_awaits_heir }
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.3 days = 30 }
 				}
 			}
 		}
 		else = {
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.3 days = 60 }
 				}
@@ -536,13 +499,13 @@ zin_glo_resolve_hall = {
 			limit = { check_variable = { global.zin_glo_hall_score > 49 } }
 			zin_glo_hall_holds = yes
 			zin_afrit_wound = yes
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.24 days = 1 }
 				}
 			}
 			every_country = {
-				limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1063 }  }
+				limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1663 }  }
 				country_event = { id = zin_glo.24 days = 1 }
 			}
 		}
@@ -550,13 +513,13 @@ zin_glo_resolve_hall = {
 			zin_glo_horos_falls = yes
 			set_temp_variable = { zin_arg_to = 3 }
 			zin_glo_transfer = yes
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.25 days = 1 }
 				}
 			}
 			every_country = {
-				limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1063 }  }
+				limit = { zin_afrit_is_hub = yes NOT = { owns_state = 1663 }  }
 				country_event = { id = zin_glo.25 days = 1 }
 			}
 		}
@@ -571,7 +534,7 @@ zin_glo_resolve_hall = {
 				add_timed_idea = { idea = zin_glo_wound_of_yeldenne days = 365 }
 				country_event = { id = zin_glo.24 days = 1 }
 			}
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.24 days = 1 }
 				}
@@ -584,7 +547,7 @@ zin_glo_resolve_hall = {
 			PUV = {
 				country_event = { id = zin_glo.25 days = 1 }
 			}
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.25 days = 1 }
 				}
@@ -618,17 +581,17 @@ zin_glo_heir_arrives = {
 	if = {
 		limit = { check_variable = { global.zin_glo_state = 2 } }
 		if = {
-			limit = { has_global_flag = zin_yeldenne_calls_heir }
+			limit = { has_global_flag = zin_glo_calls_heir }
 			set_temp_variable = { zin_arg_value = 10 }
 			zin_eindil_add_renown = yes
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.80 }
 				}
 			}
 		}
 		else = {
-			1063 = {
+			1663 = {
 				owner = {
 					country_event = { id = zin_glo.80 days = 30 }
 				}

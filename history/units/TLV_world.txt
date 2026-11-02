@@ -76,21 +76,21 @@ division_template = {
 	}
 }
 units = {
-	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 2043 division_template = "Line Host" start_experience_factor = 0.07 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 2119 division_template = "Line Host" start_experience_factor = 0.07 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 3 } location = 2153 division_template = "Line Host" start_experience_factor = 0.07 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 4 } location = 2043 division_template = "Riders" start_experience_factor = 0.11 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 5 } location = 2119 division_template = "Knight Host" start_experience_factor = 0.1 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 6 } location = 2153 division_template = "Siege Park" start_experience_factor = 0.07 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 7 } location = 2043 division_template = "Levy Garrison" start_experience_factor = 0.03 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 8 } location = 2119 division_template = "Levy Garrison" start_experience_factor = 0.05 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 9 } location = 2153 division_template = "Levy Garrison" start_experience_factor = 0.05 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 3632 division_template = "Line Host" start_experience_factor = 0.07 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 3441 division_template = "Line Host" start_experience_factor = 0.07 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 3 } location = 2859 division_template = "Line Host" start_experience_factor = 0.07 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 4 } location = 3632 division_template = "Riders" start_experience_factor = 0.11 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 5 } location = 3441 division_template = "Knight Host" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 6 } location = 2859 division_template = "Siege Park" start_experience_factor = 0.07 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 7 } location = 3632 division_template = "Levy Garrison" start_experience_factor = 0.03 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 8 } location = 3441 division_template = "Levy Garrison" start_experience_factor = 0.05 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 9 } location = 2859 division_template = "Levy Garrison" start_experience_factor = 0.05 start_equipment_factor = 1 }
 	fleet = {
 		name = "Tolvael Fleet"
-		naval_base = 2272
+		naval_base = 3764
 		task_force = {
 			name = "Tolvael Squadron"
-			location = 2272
+			location = 3764
 			ship = { name = "Koursul" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = TLV version_name = "Banked Galley" } } }
 			ship = { name = "Thelwae" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = TLV version_name = "Banked Galley" } } }
 			ship = { name = "Tolimewaith" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = TLV version_name = "Banked Galley" } } }

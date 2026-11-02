@@ -11,15 +11,15 @@ zin_has_potent_magic = {
 }
 zin_world_dragon_mountain_state = {
 	# State scope: Dragon Mountain, the capital state of Yavieth in the roster (the map gives it to the nearest elven realm, K2).
-	state = 149
+	state = 1361
 }
 zin_world_is_dragon_keeper = {
 	# The Keeper: the realm that owns the Dragon Mountain state.
-	owns_state = 149
+	owns_state = 1361
 }
 zin_world_roosts_free = {
 	# The pool is open only while an elven realm owns Dragon Mountain; under anyone else it freezes ("The Mountain Wakes").
-	149 = {
+	1361 = {
 		owner = { has_country_flag = zin_people_elves }
 	}
 }

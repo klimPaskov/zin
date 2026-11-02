@@ -1649,34 +1649,6 @@ characters = {
 			}
 		}
 	}
-	zin_cmd_army_yeldenne = {
-		name = zin_cmd_army_yeldenne
-		gender = male
-		advisor = {
-			slot = army_chief
-			idea_token = zin_cmd_army_yeldenne_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_spear_1 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	zin_cmd_master_yeldenne = {
-		name = zin_cmd_master_yeldenne
-		gender = male
-		advisor = {
-			slot = theorist
-			idea_token = zin_cmd_master_yeldenne_adv
-			ledger = army
-			cost = 150
-			traits = { zin_chief_lore_2 }
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
 	zin_cmd_army_lambin = {
 		name = zin_cmd_army_lambin
 		gender = male

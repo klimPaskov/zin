@@ -10,54 +10,60 @@ on_actions = {
 				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 92 }
+				set_variable = { zin_ruler_vigour = 35 }
 				set_country_flag = zin_realm_kin_men
 			}
 			LER = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_north_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 21 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6794 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			CLD = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_cold_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 26 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6799 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			NRS = {
 				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_east_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 25 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6778 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			STA = {
 				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_east_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 21 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6772 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			GOL = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_dark_lands
 				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 14.3 }
 				set_country_flag = zin_realm_kin_orcs
 			}
 			DND = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_dark_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 21 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			PUV = {
 				set_variable = { zin_realm_slot = 3 }
@@ -71,1051 +77,1226 @@ on_actions = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_ember_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_men
 			}
 			WOR = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 80 }
+				set_variable = { zin_ruler_vigour = 28 }
 				set_country_flag = zin_realm_kin_men
 			}
 			MAG = {
 				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 72 }
+				set_variable = { zin_ruler_vigour = 23 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			GAA = {
 				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 93 }
+				set_variable = { zin_ruler_vigour = 36 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			GNW = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_west_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 19 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			SEL = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 22 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6791 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			KIN = {
 				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 29 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6784 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			HIR = {
 				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 0.5 }
-				set_variable = { zin_ruler_vigour = 97 }
+				set_variable = { zin_ruler_vigour = 38 }
 				set_country_flag = zin_realm_kin_giants
 			}
 			MLK = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_cold_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 24 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6789 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			HOR = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_cold_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 19 }
 				set_country_flag = zin_realm_kin_men
-			}
-			YEL = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 66 }
-				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			GIR = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_west_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 22 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			KON = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 33 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6797 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			HNH = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 24 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6782 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			KLU = {
-				set_variable = { zin_realm_slot = 3 }
+				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 26 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6786 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			HER = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 27 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6797 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			NOL = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 25 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6783 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			KIL = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 72 }
+				set_variable = { zin_ruler_vigour = 23 }
 			}
 			SFT = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_middle_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 19 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			FRE = {
 				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 23 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6785 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			FRE = {
+			PAZ = {
 				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 27 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6788 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			PAZ = {
+			ORH = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6795 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			ORH = {
+			FOT = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			FOT = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_middle_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 24 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6795 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			KUN = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 0.6 }
-				set_variable = { zin_ruler_vigour = 66 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_dwarves
 			}
 			BRR = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 47 }
+				set_variable = { zin_ruler_vigour = 3.9 }
 				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 55 }
 			}
 			OLO = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 0.8 }
-				set_variable = { zin_ruler_vigour = 75 }
+				set_variable = { zin_ruler_vigour = 25 }
 				set_country_flag = zin_realm_kin_men
 			}
 			DNL = {
-				set_variable = { zin_realm_slot = 3 }
+				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 60 }
+				set_variable = { zin_ruler_vigour = 16 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			ANR = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 73 }
+				set_variable = { zin_ruler_vigour = 24 }
 			}
 			CUR = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			BLO = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_middle_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			EEK = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			REN = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6792 }
-			}
-			MOO = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6793 }
-			}
-			KER = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 72 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6783 }
-			}
-			TLV = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6795 }
-			}
-			TOL = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6801 }
-			}
-			HEO = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			HRA = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 0.6 }
-				set_variable = { zin_ruler_vigour = 98 }
-				set_country_flag = zin_realm_kin_dwarves
-			}
-			MIA = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6796 }
-			}
-			DOL = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			MUS = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_north_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 74 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			FEA = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			AUT = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6790 }
-			}
-			WRL = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6795 }
-			}
-			PLT = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			HLD = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6794 }
-			}
-			GLI = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			XIS = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			PRT = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6793 }
-			}
-			OMR = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			POT = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			KVI = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			ORW = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			NIV = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 0.5 }
-				set_variable = { zin_ruler_vigour = 69 }
-				set_country_flag = zin_realm_kin_giants
-			}
-			YEI = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 0.5 }
-				set_variable = { zin_ruler_vigour = 67 }
-				set_country_flag = zin_realm_kin_giants
-			}
-			GHH = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 0.5 }
-				set_variable = { zin_ruler_vigour = 98 }
-				set_country_flag = zin_realm_kin_giants
-			}
-			VND = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_cold_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			WER = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			LAB = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6792 }
-			}
-			THN = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			DOB = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 66 }
-				set_country_flag = zin_realm_kin_men
-			}
-			BRU = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 0.6 }
-				set_variable = { zin_ruler_vigour = 97 }
-				set_country_flag = zin_realm_kin_dwarves
-			}
-			GRO = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 0.6 }
-				set_variable = { zin_ruler_vigour = 83 }
-				set_country_flag = zin_realm_kin_dwarves
-			}
-			SAO = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			BLD = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			KRA = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			CRG = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			VRN = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6790 }
-			}
-			WEN = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_west_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			DRK = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			BUN = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			VES = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 90 }
-			}
-			BLK = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			BLN = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			BOR = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			DRE = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 78 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			DUL = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			TRO = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 90 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			HOO = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 0.5 }
-				set_variable = { zin_ruler_vigour = 53 }
-				set_country_flag = zin_realm_kin_giants
-			}
-			DAK = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			SKR = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			DUN = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			BRT = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			WIL = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_dark_lands
-				set_variable = { zin_ruler_rate = 1.3 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_orcs
-			}
-			KHO = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 52 }
-			}
-			DLN = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 88 }
-			}
-			NEZ = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 51 }
-			}
-			NET = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 96 }
-			}
-			HAL = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			NAN = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6776 }
-			}
-			OLE = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_ember_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			ALR = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6801 }
-			}
-			NAA = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6797 }
-			}
-			DRA = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6796 }
-			}
-			RHA = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			ERC = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6799 }
-			}
-			PLO = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6786 }
-			}
-			OST = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6798 }
-			}
-			MOA = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			DLB = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6800 }
-			}
-			KRS = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			MOS = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			AZA = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6785 }
-			}
-			OBM = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			PON = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			WOQ = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			ORA = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_east_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-				set_variable = { zin_realm_heir_born = 6796 }
-			}
-			MIE = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_south_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 16 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6788 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			WAH = {
+			BLO = {
 				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_south_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			ENH = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_islands_of_the_south
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			HWN = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_islands_of_the_south
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			VER = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_islands_of_the_south
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			NAR = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_islands_of_the_south
+				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
 				set_variable = { zin_ruler_vigour = 36 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			YON = {
+			EEK = {
 				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_islands_of_the_south
+				set_country_flag = zin_realm_land_north_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 17 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6784 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			KAM = {
+			REN = {
 				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_islands_of_the_south
+				set_country_flag = zin_realm_land_north_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 96 }
-				set_country_flag = zin_realm_kin_men
-			}
-			KEA = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_islands_of_the_south
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			SDE = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_islands_of_the_south
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			ADE = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_tritons_islands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			RAE = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_tritons_islands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			PLL = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_tritons_islands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			NND = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_tritons_islands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			FNG = {
-				set_variable = { zin_realm_slot = 2 }
-				set_country_flag = zin_realm_land_tritons_islands
+			MOO = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_north_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			HLN = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_tritons_islands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 19 }
 				set_country_flag = zin_realm_kin_men
 				set_variable = { zin_realm_heir_born = 6793 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			WND = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_tritons_islands
+			KER = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_north_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 6 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6783 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			TLV = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 24 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6795 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			TOL = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 30 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6801 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			HEO = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 18 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6779 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			HRA = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 0.6 }
+				set_variable = { zin_ruler_vigour = 39 }
+				set_country_flag = zin_realm_kin_dwarves
+			}
+			MIA = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6796 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			DOL = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 23 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6782 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			MUS = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_north_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 24 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			FEA = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 18 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6784 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			AUT = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 17 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			WRL = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 23 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6795 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			PLT = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 16 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6783 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			HLD = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 25 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6794 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			GLI = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 20.8 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6791 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			XIS = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6787 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			PRT = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 20 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6793 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			OMR = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 27 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6793 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			POT = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 21 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6794 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			KVI = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 16 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6788 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			ORW = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 19 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6791 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			NIV = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 0.5 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_giants
+			}
+			YEI = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 0.5 }
+				set_variable = { zin_ruler_vigour = 20 }
+				set_country_flag = zin_realm_kin_giants
+			}
+			GHH = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 0.5 }
+				set_variable = { zin_ruler_vigour = 39 }
+				set_country_flag = zin_realm_kin_giants
+			}
+			VND = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_cold_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 28 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6789 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			WER = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 24 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6804 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			LAB = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 16 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			THN = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 27 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6806 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			DOB = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_men
 			}
-			SEI = {
+			BRU = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 0.6 }
+				set_variable = { zin_ruler_vigour = 38 }
+				set_country_flag = zin_realm_kin_dwarves
+			}
+			GRO = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 0.6 }
+				set_variable = { zin_ruler_vigour = 30 }
+				set_country_flag = zin_realm_kin_dwarves
+			}
+			SAO = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 21 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6785 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			BLD = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 18 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6786 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			KRA = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 20 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6787 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			CRG = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 26 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6789 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			VRN = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 17 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			WEN = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_west_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 23 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6787 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			DRK = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 18.2 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6795 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			BUN = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 18.2 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6798 }
+				set_variable = { zin_realm_heir_life = 50 }
+			}
+			VES = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 0.05 }
+				set_variable = { zin_ruler_vigour = 34 }
+			}
+			BLK = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 25 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6785 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			BLN = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 13 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			BOR = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 9.1 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6794 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			DRE = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 6.5 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6793 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			DUL = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 10.4 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6788 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			TRO = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 34 }
+				set_country_flag = zin_realm_kin_orcs
+			}
+			HOO = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 0.5 }
+				set_variable = { zin_ruler_vigour = 12 }
+				set_country_flag = zin_realm_kin_giants
+			}
+			DAK = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 11.7 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6791 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			SKR = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 9.1 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6795 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			DUN = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 15.6 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6801 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			BRT = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 10.4 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			WIL = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_dark_lands
+				set_variable = { zin_ruler_rate = 1.3 }
+				set_variable = { zin_ruler_vigour = 20.8 }
+				set_country_flag = zin_realm_kin_orcs
+				set_variable = { zin_realm_heir_born = 6794 }
+				set_variable = { zin_realm_heir_life = 55 }
+			}
+			KHO = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 0.05 }
+				set_variable = { zin_ruler_vigour = 11 }
+			}
+			DLN = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 0.05 }
+				set_variable = { zin_ruler_vigour = 33 }
+			}
+			NEZ = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 0.05 }
+				set_variable = { zin_ruler_vigour = 11 }
+			}
+			NET = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 0.05 }
+				set_variable = { zin_ruler_vigour = 37 }
+			}
+			HAL = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 25 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6783 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			NAN = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 34 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6776 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			OLE = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_ember_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6781 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			ALR = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 33 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6801 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			NAA = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 29 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6797 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			DRA = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 24 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6796 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			RHA = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 25 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6782 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			ERC = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 30 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6799 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			PLO = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 36 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6786 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			OST = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 27 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6798 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			MOA = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 24 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6781 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			DLB = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 32 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6800 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			KRS = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 31 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6786 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			MOS = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6787 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			AZA = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 35 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6785 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			OBM = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 19 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6780 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			PON = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 26 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6784 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			WOQ = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 33 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6804 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			ORA = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_east_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 24 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6796 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			MIE = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_south_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 23 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6788 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			WAH = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_south_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 26 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6788 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			ENH = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 12 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6774 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			HWN = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 21 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6782 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			VER = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 19 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			NAR = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 3 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6751 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			YON = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 20 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6779 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			KAM = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 8 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6766 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			KEA = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6784 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			SDE = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_islands_of_the_south
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 14 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6778 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			ADE = {
 				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_tritons_islands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 19 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6787 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			SNT = {
+			RAE = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_tritons_islands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 17 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6789 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			BEN = {
+			PLL = {
 				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_tritons_islands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
-			LEN = {
+			NND = {
 				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_tritons_islands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 18 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			FNG = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 16 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6789 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			HLN = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 23 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6793 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			WND = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 22 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6786 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			SEI = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 18 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6785 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			SNT = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 26 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6792 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			BEN = {
+				set_variable = { zin_realm_slot = 2 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 20 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			LEN = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_tritons_islands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 15 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6784 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			LIG = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 76 }
+				set_variable = { zin_ruler_vigour = 26 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			ELV = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 61 }
+				set_variable = { zin_ruler_vigour = 17 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			IGA = {
-				set_variable = { zin_realm_slot = 3 }
+				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 67 }
+				set_variable = { zin_ruler_vigour = 20 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			YEN = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 71 }
+				set_variable = { zin_ruler_vigour = 22 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			TOR = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 99 }
+				set_variable = { zin_ruler_vigour = 39 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			IHU = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 88 }
+				set_variable = { zin_ruler_vigour = 33 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			SOY = {
-				set_variable = { zin_realm_slot = 3 }
+				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 53 }
+				set_variable = { zin_ruler_vigour = 12 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			GOO = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
+				set_variable = { zin_ruler_vigour = 18 }
 				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6779 }
+				set_variable = { zin_realm_heir_life = 70 }
 			}
 			GOF = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_lands_of_the_sun
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 91 }
+				set_variable = { zin_ruler_vigour = 34 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			HRR = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 87 }
+				set_variable = { zin_ruler_vigour = 32 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			ANE = {
-				set_variable = { zin_realm_slot = 3 }
+				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 96 }
+				set_variable = { zin_ruler_vigour = 38 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			NLR = {
-				set_variable = { zin_realm_slot = 0 }
+				set_variable = { zin_realm_slot = 3 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 79 }
+				set_variable = { zin_ruler_vigour = 28 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			LCC = {
-				set_variable = { zin_realm_slot = 1 }
+				set_variable = { zin_realm_slot = 0 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 53 }
+				set_variable = { zin_ruler_vigour = 12 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			ELD = {
-				set_variable = { zin_realm_slot = 2 }
+				set_variable = { zin_realm_slot = 1 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 61 }
+				set_variable = { zin_ruler_vigour = 16 }
 				set_country_flag = zin_realm_kin_elves
 			}
 			YAV = {
-				set_variable = { zin_realm_slot = 3 }
-				set_country_flag = zin_realm_land_magical_lands
-				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 81 }
-				set_country_flag = zin_realm_kin_elves
-			}
-			TES = {
-				set_variable = { zin_realm_slot = 0 }
-				set_country_flag = zin_realm_land_magical_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			LUV = {
-				set_variable = { zin_realm_slot = 1 }
-				set_country_flag = zin_realm_land_magical_lands
-				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 100 }
-				set_country_flag = zin_realm_kin_men
-			}
-			MSH = {
 				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_magical_lands
 				set_variable = { zin_ruler_rate = 0.05 }
-				set_variable = { zin_ruler_vigour = 59 }
+				set_variable = { zin_ruler_vigour = 29 }
+				set_country_flag = zin_realm_kin_elves
+			}
+			TES = {
+				set_variable = { zin_realm_slot = 3 }
+				set_country_flag = zin_realm_land_magical_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 33 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6790 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			LUV = {
+				set_variable = { zin_realm_slot = 0 }
+				set_country_flag = zin_realm_land_magical_lands
+				set_variable = { zin_ruler_rate = 1 }
+				set_variable = { zin_ruler_vigour = 26 }
+				set_country_flag = zin_realm_kin_men
+				set_variable = { zin_realm_heir_born = 6778 }
+				set_variable = { zin_realm_heir_life = 70 }
+			}
+			MSH = {
+				set_variable = { zin_realm_slot = 1 }
+				set_country_flag = zin_realm_land_magical_lands
+				set_variable = { zin_ruler_rate = 0.05 }
+				set_variable = { zin_ruler_vigour = 15 }
 			}
 			TIR = {
-				set_variable = { zin_realm_slot = 3 }
+				set_variable = { zin_realm_slot = 2 }
 				set_country_flag = zin_realm_land_middle_lands
 				set_variable = { zin_ruler_rate = 1 }
-				set_variable = { zin_ruler_vigour = 94 }
+				set_variable = { zin_ruler_vigour = 36 }
 				set_country_flag = zin_realm_kin_men
 			}
 			every_country = {

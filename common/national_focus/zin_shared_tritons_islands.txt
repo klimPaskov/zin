@@ -1075,4 +1075,52 @@ focus_tree = {
 			add_stability = 0.05
 		}
 	}
+	focus = {
+		id = zin_shared_tritons_islands_the_square_belongs_to_nobody
+		icon = GFX_focus_zin_black_hulls
+		x = 18
+		y = 3
+		prerequisite = {
+			focus = zin_shared_tritons_islands_the_chart_makers_guild
+		}
+		mutually_exclusive = {
+			focus = zin_shared_tritons_islands_sell_the_square
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		allow_branch = {
+			original_tag = BEN
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_square_nobodys
+			add_war_support = 0.03
+		}
+	}
+	focus = {
+		id = zin_shared_tritons_islands_sell_the_square
+		icon = GFX_focus_zin_bracelet_seal
+		x = 20
+		y = 3
+		prerequisite = {
+			focus = zin_shared_tritons_islands_the_chart_makers_guild
+		}
+		mutually_exclusive = {
+			focus = zin_shared_tritons_islands_the_square_belongs_to_nobody
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		allow_branch = {
+			original_tag = BEN
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_square_for_sale
+			add_political_power = 50
+		}
+	}
 }

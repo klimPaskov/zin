@@ -58,17 +58,17 @@ zin_dominion_startup = {
 	}
 }
 
-# Scope: Volgan. Positions of the gauge markers of the Southern Dominion panel.
+# Scope: Volgan. Meter fills of the Southern Dominion panel.
 zin_dominion_ui_refresh_volgan = {
-	set_variable = { zin_ui_hosts_x = zin_dominion_strength }
-	multiply_variable = { zin_ui_hosts_x = 5.2 }
-	add_to_variable = { zin_ui_hosts_x = 27 }
-	set_variable = { zin_ui_veil_x = zin_volgan_veil }
-	multiply_variable = { zin_ui_veil_x = 5.2 }
-	add_to_variable = { zin_ui_veil_x = 27 }
-	set_variable = { zin_ui_nether_x = zin_nether_pact }
-	multiply_variable = { zin_ui_nether_x = 5.2 }
-	add_to_variable = { zin_ui_nether_x = 27 }
+	set_variable = { zin_ui_hosts_fill = zin_dominion_strength }
+	multiply_variable = { zin_ui_hosts_fill = 2.32 }
+	clamp_variable = { var = zin_ui_hosts_fill min = 0 max = 232 }
+	set_variable = { zin_ui_veil_fill = zin_volgan_veil }
+	multiply_variable = { zin_ui_veil_fill = 2.32 }
+	clamp_variable = { var = zin_ui_veil_fill min = 0 max = 232 }
+	set_variable = { zin_ui_nether_fill = zin_nether_pact }
+	multiply_variable = { zin_ui_nether_fill = 2.32 }
+	clamp_variable = { var = zin_ui_nether_fill min = 0 max = 232 }
 	set_variable = { zin_ui_dark_1 = 0 }
 	set_variable = { zin_ui_dark_2 = 0 }
 	set_variable = { zin_ui_dark_3 = 0 }
@@ -87,14 +87,14 @@ zin_dominion_ui_refresh_volgan = {
 	add_to_variable = { global.zin_ui_tick = 1 }
 }
 
-# Scope: Mirolon. Positions of the gauge markers of the Watch panel.
+# Scope: Mirolon. Meter fills of the Watch panel.
 zin_dominion_ui_refresh_mirolon = {
-	set_variable = { zin_ui_proof_x = zin_mirolon_proof }
-	multiply_variable = { zin_ui_proof_x = 5.2 }
-	add_to_variable = { zin_ui_proof_x = 27 }
-	set_variable = { zin_ui_passes_x = zin_mirolon_passes }
-	multiply_variable = { zin_ui_passes_x = 5.2 }
-	add_to_variable = { zin_ui_passes_x = 27 }
+	set_variable = { zin_ui_proof_fill = zin_mirolon_proof }
+	multiply_variable = { zin_ui_proof_fill = 2.32 }
+	clamp_variable = { var = zin_ui_proof_fill min = 0 max = 232 }
+	set_variable = { zin_ui_passes_fill = zin_mirolon_passes }
+	multiply_variable = { zin_ui_passes_fill = 2.32 }
+	clamp_variable = { var = zin_ui_passes_fill min = 0 max = 232 }
 	add_to_variable = { global.zin_ui_tick = 1 }
 }
 

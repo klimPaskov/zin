@@ -1000,4 +1000,186 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = zin_regional_cursed_lands_what_the_cords_count
+		icon = GFX_focus_zin_birth_rolls
+		x = 7
+		y = 2
+		prerequisite = {
+			focus = zin_regional_cursed_lands_the_old_tallies
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			zin_deep_cords_counted = yes
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_cursed_lands_the_last_cord_shown
+		icon = GFX_focus_zin_necklace_deep
+		x = 8
+		y = 4
+		prerequisite = {
+			focus = zin_regional_cursed_lands_what_the_cords_count
+		}
+		mutually_exclusive = {
+			focus = zin_regional_cursed_lands_the_last_cord_hidden
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			has_completed_focus = zin_regional_cursed_lands_a_crack_in_the_veil
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_completed_focus = zin_regional_cursed_lands_words_with_the_redbarks
+			}
+			modifier = {
+				factor = 0.2
+				OR = {
+					has_war_with = AEN
+					has_completed_focus = zin_regional_cursed_lands_tax_men_turned_back
+				}
+			}
+		}
+		completion_reward = {
+			zin_deep_show_last_cord = yes
+		}
+	}
+	focus = {
+		id = zin_regional_cursed_lands_the_last_cord_hidden
+		icon = GFX_focus_zin_mask_veiled
+		x = 6
+		y = 4
+		prerequisite = {
+			focus = zin_regional_cursed_lands_what_the_cords_count
+		}
+		mutually_exclusive = {
+			focus = zin_regional_cursed_lands_the_last_cord_shown
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		cost = 10
+		available = {
+			has_completed_focus = zin_regional_cursed_lands_the_veil_holds
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 3
+				OR = {
+					has_war_with = AEN
+					has_completed_focus = zin_regional_cursed_lands_tax_men_turned_back
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_completed_focus = zin_regional_cursed_lands_words_with_the_redbarks
+				NOT = {
+					has_war_with = AEN
+				}
+			}
+		}
+		completion_reward = {
+			zin_deep_hide_last_cord = yes
+		}
+	}
+	focus = {
+		id = zin_regional_cursed_lands_words_with_the_stone_counters
+		icon = GFX_focus_zin_giant_hammer
+		x = 7
+		y = 5
+		prerequisite = {
+			focus = zin_regional_cursed_lands_the_last_cord_shown
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			country_exists = HIR
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_words_stone
+			add_opinion_modifier = {
+				target = HIR
+				modifier = zin_regional_cursed_lands_cairn_words
+			}
+			reverse_add_opinion_modifier = {
+				target = HIR
+				modifier = zin_regional_cursed_lands_cairn_words
+			}
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_cursed_lands_words_with_the_tide_queens
+		icon = GFX_focus_zin_island_shrine
+		x = 9
+		y = 5
+		prerequisite = {
+			focus = zin_regional_cursed_lands_the_last_cord_shown
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		available = {
+			country_exists = ORH
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_words_tide
+			add_opinion_modifier = {
+				target = ORH
+				modifier = zin_regional_cursed_lands_tide_words
+			}
+			reverse_add_opinion_modifier = {
+				target = ORH
+				modifier = zin_regional_cursed_lands_tide_words
+			}
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_cursed_lands_the_moot_of_mothers
+		icon = GFX_focus_zin_crown_witnesses
+		x = 9
+		y = 6
+		prerequisite = {
+			focus = zin_regional_cursed_lands_words_with_the_stone_counters
+		}
+		prerequisite = {
+			focus = zin_regional_cursed_lands_words_with_the_tide_queens
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		cost = 15
+		available = {
+			zin_deep_two_counts_done = yes
+			NOT = {
+				has_global_flag = zin_deep_cord_burned
+			}
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_moot_route
+			add_political_power = 75
+		}
+	}
 }

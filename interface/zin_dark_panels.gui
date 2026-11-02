@@ -2,8 +2,8 @@
 guiTypes = {
 	containerWindowType = {
 		name = "zin_horde_window"
-		position = { x = -300 y = -350 }
-		size = { width = 600 height = 700 }
+		position = { x = -316 y = -300 }
+		size = { width = 632 height = 600 }
 		orientation = center
 		moveable = yes
 		background = {
@@ -12,216 +12,907 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "zin_horde_title"
-			position = { x = 40 y = 22 }
+			position = { x = 48 y = 20 }
 			font = "hoi_24header"
 			text = "zin_horde_title"
-			maxWidth = 520
+			maxWidth = 536
 			maxHeight = 32
 			format = centre
 			fixedsize = yes
 		}
 		buttonType = {
 			name = "zin_horde_close"
-			position = { x = 556 y = 14 }
+			position = { x = 596 y = 8 }
 			quadTextureSprite = "GFX_closebutton"
 			shortcut = "ESCAPE"
+			pdx_tooltip = "zin_horde_title_CLOSE_tt"
+		}
+		containerWindowType = {
+			name = "zin_horde_accent"
+			position = { x = 16 y = 56 }
+			size = { width = 600 height = 4 }
+			clipping = yes
+			background = {
+				name = "zin_horde_accent_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			iconType = {
+				name = "zin_horde_accent_1"
+				spriteType = "GFX_zin_accent_horde"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_horde_accent_2"
+				spriteType = "GFX_zin_accent_horde"
+				position = { x = 128 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_horde_accent_3"
+				spriteType = "GFX_zin_accent_horde"
+				position = { x = 256 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_horde_accent_4"
+				spriteType = "GFX_zin_accent_horde"
+				position = { x = 384 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_horde_accent_5"
+				spriteType = "GFX_zin_accent_horde"
+				position = { x = 512 y = 0 }
+				alwaystransparent = yes
+			}
 		}
 		iconType = {
-			name = "zin_horde_rule_top"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 58 }
+			name = "zin_horde_header"
+			spriteType = "GFX_zin_header_horde"
+			position = { x = 16 y = 60 }
+		}
+		buttonType = {
+			name = "zin_horde_tab_1"
+			position = { x = 32 y = 164 }
+			spriteType = "GFX_zin_tab_chancery"
+			buttonText = "zin_horde_tab_1"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "zin_horde_tab_1_tt"
+		}
+		iconType = {
+			name = "zin_horde_tab_1_on"
+			spriteType = "GFX_zin_tab_chancery"
+			frame = 3
+			position = { x = 32 y = 164 }
+		}
+		instantTextBoxType = {
+			name = "zin_horde_tab_1_on_text"
+			position = { x = 32 y = 172 }
+			font = "hoi_16mbs"
+			text = "zin_horde_tab_1_ON"
+			maxWidth = 128
+			maxHeight = 20
+			format = centre
+			fixedsize = yes
+		}
+		buttonType = {
+			name = "zin_horde_tab_2"
+			position = { x = 168 y = 164 }
+			spriteType = "GFX_zin_tab_chancery"
+			buttonText = "zin_horde_tab_2"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "zin_horde_tab_2_tt"
+		}
+		iconType = {
+			name = "zin_horde_tab_2_on"
+			spriteType = "GFX_zin_tab_chancery"
+			frame = 3
+			position = { x = 168 y = 164 }
+		}
+		instantTextBoxType = {
+			name = "zin_horde_tab_2_on_text"
+			position = { x = 168 y = 172 }
+			font = "hoi_16mbs"
+			text = "zin_horde_tab_2_ON"
+			maxWidth = 128
+			maxHeight = 20
+			format = centre
+			fixedsize = yes
 		}
 		instantTextBoxType = {
 			name = "zin_horde_temper"
-			position = { x = 44 y = 70 }
-			font = "hoi_18mbs"
+			position = { x = 32 y = 208 }
+			font = "hoi_20bs"
 			text = "zin_horde_temper"
-			maxWidth = 520
-			maxHeight = 26
+			maxWidth = 568
+			maxHeight = 28
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_temper_tt"
+		}
+		containerWindowType = {
+			name = "zin_horde_temper_meter"
+			position = { x = 32 y = 240 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_horde_temper_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
+				position = { x = 0 y = 0 }
+			}
+			containerWindowType = {
+				name = "zin_horde_temper_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_horde_temper_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_horde_temper_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_horde_temper_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+			iconType = {
+				name = "zin_horde_temper_meter_mark_1"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 64 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_temper_meter_mark_2"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 168 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_temper_meter_mark_3"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 212 y = 0 }
+			}
+		}
+		instantTextBoxType = {
+			name = "zin_horde_blocs"
+			position = { x = 32 y = 268 }
+			font = "hoi_16mbs"
+			text = "zin_horde_blocs"
+			maxWidth = 568
+			maxHeight = 20
 			format = left
 			fixedsize = yes
 		}
 		instantTextBoxType = {
 			name = "zin_horde_bloc_volcano"
-			position = { x = 44 y = 102 }
-			font = "hoi_16mbs"
+			position = { x = 32 y = 292 }
+			font = "hoi_18mbs"
 			text = "zin_horde_bloc_volcano"
-			maxWidth = 400
+			maxWidth = 196
 			maxHeight = 24
 			format = left
 			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_volcano_mark"
-			position = { x = 450 y = 102 }
-			font = "hoi_16mbs"
-			text = "zin_horde_heir"
-			maxWidth = 110
-			maxHeight = 24
-			format = right
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_iron"
-			position = { x = 44 y = 132 }
-			font = "hoi_16mbs"
-			text = "zin_horde_bloc_iron"
-			maxWidth = 400
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_iron_mark"
-			position = { x = 450 y = 132 }
-			font = "hoi_16mbs"
-			text = "zin_horde_heir"
-			maxWidth = 110
-			maxHeight = 24
-			format = right
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_war"
-			position = { x = 44 y = 162 }
-			font = "hoi_16mbs"
-			text = "zin_horde_bloc_war"
-			maxWidth = 400
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_war_mark"
-			position = { x = 450 y = 162 }
-			font = "hoi_16mbs"
-			text = "zin_horde_heir"
-			maxWidth = 110
-			maxHeight = 24
-			format = right
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_warrens"
-			position = { x = 44 y = 192 }
-			font = "hoi_16mbs"
-			text = "zin_horde_bloc_warrens"
-			maxWidth = 400
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_bloc_warrens_mark"
-			position = { x = 450 y = 192 }
-			font = "hoi_16mbs"
-			text = "zin_horde_heir"
-			maxWidth = 110
-			maxHeight = 24
-			format = right
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_horde_unity"
-			position = { x = 44 y = 222 }
-			font = "hoi_18mbs"
-			text = "zin_horde_unity"
-			maxWidth = 520
-			maxHeight = 26
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_horde_unity_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 254 }
-		}
-		instantTextBoxType = {
-			name = "zin_horde_border"
-			position = { x = 44 y = 264 }
-			font = "hoi_18mbs"
-			text = "zin_horde_border"
-			maxWidth = 520
-			maxHeight = 26
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_horde_border_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 296 }
-		}
-		instantTextBoxType = {
-			name = "zin_horde_sway_head"
-			position = { x = 44 y = 306 }
-			font = "hoi_18mbs"
-			text = "zin_horde_sway_head"
-			maxWidth = 520
-			maxHeight = 24
-			format = left
-			fixedsize = yes
+			pdx_tooltip = "zin_horde_bloc_volcano_tt"
 		}
 		containerWindowType = {
-			name = "zin_horde_sway_scroll"
-			position = { x = 44 y = 334 }
-			size = { width = 520 height = 264 }
-			orientation = upper_left
-			scroll_wheel_factor = 40
-			smooth_scrolling = yes
-			gridBoxType = {
-				name = "zin_horde_sway"
+			name = "zin_horde_bloc_volcano_meter"
+			position = { x = 344 y = 296 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_horde_bloc_volcano_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
 				position = { x = 0 y = 0 }
-				size = { width = 520 height = 264 }
-				orientation = upper_left
-				slotsize = { width = 520 height = 22 }
-				format = "UPPER_LEFT"
-				max_slots_horizontal = 1
+			}
+			containerWindowType = {
+				name = "zin_horde_bloc_volcano_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_horde_bloc_volcano_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_horde_bloc_volcano_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_horde_bloc_volcano_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+			iconType = {
+				name = "zin_horde_bloc_volcano_meter_mark_1"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 28 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_volcano_meter_mark_2"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 64 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_volcano_meter_mark_3"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 180 y = 0 }
 			}
 		}
 		instantTextBoxType = {
-			name = "zin_horde_foot"
-			position = { x = 44 y = 606 }
+			name = "zin_horde_bloc_volcano_mark"
+			position = { x = 232 y = 296 }
 			font = "hoi_16mbs"
-			text = "zin_horde_foot"
-			maxWidth = 520
-			maxHeight = 48
+			text = "zin_horde_heir"
+			maxWidth = 92
+			maxHeight = 20
 			format = left
 			fixedsize = yes
+			pdx_tooltip = "zin_horde_heir_tt"
 		}
-	}
-	containerWindowType = {
-		name = "zin_horde_button_window"
-		position = { x = 8 y = 116 }
-		size = { width = 132 height = 30 }
-		orientation = upper_left
-		buttonType = {
-			name = "zin_horde_open"
-			position = { x = 0 y = 0 }
-			spriteType = "GFX_zin_button"
-			buttonText = "zin_horde_button"
-			buttonFont = "hoi_18mbs"
-			pdx_tooltip = "zin_horde_button_tt"
-		}
-	}
-	containerWindowType = {
-		name = "zin_horde_sway_entry"
-		position = { x = 0 y = 0 }
-		size = { width = 520 height = 22 }
 		instantTextBoxType = {
-			name = "zin_horde_sway_entry_text"
-			position = { x = 0 y = 0 }
-			font = "hoi_16mbs"
-			text = "zin_horde_sway_row"
-			maxWidth = 520
-			maxHeight = 22
+			name = "zin_horde_bloc_iron"
+			position = { x = 32 y = 324 }
+			font = "hoi_18mbs"
+			text = "zin_horde_bloc_iron"
+			maxWidth = 196
+			maxHeight = 24
 			format = left
 			fixedsize = yes
+			pdx_tooltip = "zin_horde_bloc_iron_tt"
+		}
+		containerWindowType = {
+			name = "zin_horde_bloc_iron_meter"
+			position = { x = 344 y = 328 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_horde_bloc_iron_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
+				position = { x = 0 y = 0 }
+			}
+			containerWindowType = {
+				name = "zin_horde_bloc_iron_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_horde_bloc_iron_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_horde_bloc_iron_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_horde_bloc_iron_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+			iconType = {
+				name = "zin_horde_bloc_iron_meter_mark_1"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 28 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_iron_meter_mark_2"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 64 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_iron_meter_mark_3"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 180 y = 0 }
+			}
+		}
+		instantTextBoxType = {
+			name = "zin_horde_bloc_iron_mark"
+			position = { x = 232 y = 328 }
+			font = "hoi_16mbs"
+			text = "zin_horde_heir"
+			maxWidth = 92
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_heir_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_bloc_war"
+			position = { x = 32 y = 356 }
+			font = "hoi_18mbs"
+			text = "zin_horde_bloc_war"
+			maxWidth = 196
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_bloc_war_tt"
+		}
+		containerWindowType = {
+			name = "zin_horde_bloc_war_meter"
+			position = { x = 344 y = 360 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_horde_bloc_war_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
+				position = { x = 0 y = 0 }
+			}
+			containerWindowType = {
+				name = "zin_horde_bloc_war_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_horde_bloc_war_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_horde_bloc_war_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_horde_bloc_war_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+			iconType = {
+				name = "zin_horde_bloc_war_meter_mark_1"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 28 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_war_meter_mark_2"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 64 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_war_meter_mark_3"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 180 y = 0 }
+			}
+		}
+		instantTextBoxType = {
+			name = "zin_horde_bloc_war_mark"
+			position = { x = 232 y = 360 }
+			font = "hoi_16mbs"
+			text = "zin_horde_heir"
+			maxWidth = 92
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_heir_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_bloc_warrens"
+			position = { x = 32 y = 388 }
+			font = "hoi_18mbs"
+			text = "zin_horde_bloc_warrens"
+			maxWidth = 196
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_bloc_warrens_tt"
+		}
+		containerWindowType = {
+			name = "zin_horde_bloc_warrens_meter"
+			position = { x = 344 y = 392 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_horde_bloc_warrens_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
+				position = { x = 0 y = 0 }
+			}
+			containerWindowType = {
+				name = "zin_horde_bloc_warrens_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_horde_bloc_warrens_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_horde_bloc_warrens_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_horde_bloc_warrens_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+			iconType = {
+				name = "zin_horde_bloc_warrens_meter_mark_1"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 28 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_warrens_meter_mark_2"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 64 y = 0 }
+			}
+			iconType = {
+				name = "zin_horde_bloc_warrens_meter_mark_3"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 180 y = 0 }
+			}
+		}
+		instantTextBoxType = {
+			name = "zin_horde_bloc_warrens_mark"
+			position = { x = 232 y = 392 }
+			font = "hoi_16mbs"
+			text = "zin_horde_heir"
+			maxWidth = 92
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_heir_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_unity"
+			position = { x = 32 y = 424 }
+			font = "hoi_18mbs"
+			text = "zin_horde_unity"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_unity_tt"
+		}
+		containerWindowType = {
+			name = "zin_horde_unity_meter"
+			position = { x = 32 y = 452 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_horde_unity_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
+				position = { x = 0 y = 0 }
+			}
+			containerWindowType = {
+				name = "zin_horde_unity_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_horde_unity_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_horde_unity_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_horde_unity_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+		}
+		instantTextBoxType = {
+			name = "zin_horde_border"
+			position = { x = 32 y = 480 }
+			font = "hoi_18mbs"
+			text = "zin_horde_border"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_border_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway"
+			position = { x = 32 y = 208 }
+			font = "hoi_20bs"
+			text = "zin_horde_sway_head"
+			maxWidth = 568
+			maxHeight = 28
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_head_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_head_1"
+			position = { x = 32 y = 248 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_HEAD_1"
+			maxWidth = 280
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_head_2"
+			position = { x = 320 y = 248 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_HEAD_2"
+			maxWidth = 80
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_head_3"
+			position = { x = 408 y = 248 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_HEAD_3"
+			maxWidth = 192
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_1_1"
+			position = { x = 32 y = 272 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_1_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_1_2"
+			position = { x = 320 y = 272 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_1_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_1_3"
+			position = { x = 408 y = 272 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_1_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_2_1"
+			position = { x = 32 y = 296 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_2_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_2_2"
+			position = { x = 320 y = 296 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_2_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_2_3"
+			position = { x = 408 y = 296 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_2_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_3_1"
+			position = { x = 32 y = 320 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_3_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_3_2"
+			position = { x = 320 y = 320 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_3_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_3_3"
+			position = { x = 408 y = 320 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_3_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_4_1"
+			position = { x = 32 y = 344 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_4_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_4_2"
+			position = { x = 320 y = 344 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_4_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_4_3"
+			position = { x = 408 y = 344 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_4_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_5_1"
+			position = { x = 32 y = 368 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_5_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_5_2"
+			position = { x = 320 y = 368 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_5_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_5_3"
+			position = { x = 408 y = 368 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_5_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_6_1"
+			position = { x = 32 y = 392 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_6_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_6_2"
+			position = { x = 320 y = 392 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_6_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_6_3"
+			position = { x = 408 y = 392 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_6_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_7_1"
+			position = { x = 32 y = 416 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_7_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_7_2"
+			position = { x = 320 y = 416 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_7_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_7_3"
+			position = { x = 408 y = 416 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_7_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_8_1"
+			position = { x = 32 y = 440 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_8_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_8_2"
+			position = { x = 320 y = 440 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_8_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_8_3"
+			position = { x = 408 y = 440 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_8_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_9_1"
+			position = { x = 32 y = 464 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_9_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_9_2"
+			position = { x = 320 y = 464 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_9_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_9_3"
+			position = { x = 408 y = 464 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_9_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_10_1"
+			position = { x = 32 y = 488 }
+			font = "hoi_18mbs"
+			text = "zin_horde_sway_row_10_1"
+			maxWidth = 280
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_10_2"
+			position = { x = 320 y = 488 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_10_2"
+			maxWidth = 80
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_sway_10_3"
+			position = { x = 408 y = 488 }
+			font = "hoi_16mbs"
+			text = "zin_horde_sway_row_10_3"
+			maxWidth = 192
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_sway_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_horde_page"
+			position = { x = 32 y = 548 }
+			font = "hoi_16mbs"
+			text = "zin_horde_title_PAGE"
+			maxWidth = 240
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_horde_title_PAGE_tt"
+		}
+		buttonType = {
+			name = "zin_horde_page_prev"
+			position = { x = 328 y = 540 }
+			spriteType = "GFX_zin_button"
+			buttonText = "zin_horde_title_PREV"
+			buttonFont = "hoi_16mbs"
+		}
+		buttonType = {
+			name = "zin_horde_page_next"
+			position = { x = 468 y = 540 }
+			spriteType = "GFX_zin_button"
+			buttonText = "zin_horde_title_NEXT"
+			buttonFont = "hoi_16mbs"
 		}
 	}
 	containerWindowType = {
 		name = "zin_accord_window"
-		position = { x = -300 y = -236 }
-		size = { width = 600 height = 472 }
+		position = { x = -316 y = -300 }
+		size = { width = 632 height = 600 }
 		orientation = center
 		moveable = yes
 		background = {
@@ -230,115 +921,273 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "zin_accord_title"
-			position = { x = 40 y = 22 }
+			position = { x = 48 y = 20 }
 			font = "hoi_24header"
 			text = "zin_accord_title"
-			maxWidth = 520
+			maxWidth = 536
 			maxHeight = 32
 			format = centre
 			fixedsize = yes
 		}
 		buttonType = {
 			name = "zin_accord_close"
-			position = { x = 556 y = 14 }
+			position = { x = 596 y = 8 }
 			quadTextureSprite = "GFX_closebutton"
 			shortcut = "ESCAPE"
+			pdx_tooltip = "zin_accord_title_CLOSE_tt"
+		}
+		containerWindowType = {
+			name = "zin_accord_accent"
+			position = { x = 16 y = 56 }
+			size = { width = 600 height = 4 }
+			clipping = yes
+			background = {
+				name = "zin_accord_accent_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			iconType = {
+				name = "zin_accord_accent_1"
+				spriteType = "GFX_zin_accent_accord"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_accord_accent_2"
+				spriteType = "GFX_zin_accent_accord"
+				position = { x = 128 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_accord_accent_3"
+				spriteType = "GFX_zin_accent_accord"
+				position = { x = 256 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_accord_accent_4"
+				spriteType = "GFX_zin_accent_accord"
+				position = { x = 384 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "zin_accord_accent_5"
+				spriteType = "GFX_zin_accent_accord"
+				position = { x = 512 y = 0 }
+				alwaystransparent = yes
+			}
 		}
 		iconType = {
-			name = "zin_accord_rule_top"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 58 }
+			name = "zin_accord_header"
+			spriteType = "GFX_zin_header_accord"
+			position = { x = 16 y = 60 }
 		}
 		instantTextBoxType = {
 			name = "zin_accord_resolve"
-			position = { x = 44 y = 70 }
-			font = "hoi_18mbs"
+			position = { x = 32 y = 164 }
+			font = "hoi_20bs"
 			text = "zin_accord_resolve"
-			maxWidth = 520
-			maxHeight = 26
+			maxWidth = 568
+			maxHeight = 28
 			format = left
 			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_accord_border"
-			position = { x = 44 y = 102 }
-			font = "hoi_18mbs"
-			text = "zin_accord_border"
-			maxWidth = 520
-			maxHeight = 26
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_accord_border_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 134 }
-		}
-		instantTextBoxType = {
-			name = "zin_accord_members_head"
-			position = { x = 44 y = 144 }
-			font = "hoi_18mbs"
-			text = "zin_accord_members"
-			maxWidth = 520
-			maxHeight = 24
-			format = left
-			fixedsize = yes
+			pdx_tooltip = "zin_accord_resolve_tt"
 		}
 		containerWindowType = {
-			name = "zin_accord_members_scroll"
-			position = { x = 44 y = 172 }
-			size = { width = 520 height = 176 }
-			orientation = upper_left
-			scroll_wheel_factor = 40
-			smooth_scrolling = yes
-			gridBoxType = {
-				name = "zin_accord_members"
+			name = "zin_accord_resolve_meter"
+			position = { x = 32 y = 196 }
+			size = { width = 256 height = 16 }
+			iconType = {
+				name = "zin_accord_resolve_meter_groove"
+				spriteType = "GFX_zin_meter_groove_chancery"
 				position = { x = 0 y = 0 }
-				size = { width = 520 height = 176 }
-				orientation = upper_left
-				slotsize = { width = 520 height = 22 }
-				format = "UPPER_LEFT"
-				max_slots_horizontal = 1
+			}
+			containerWindowType = {
+				name = "zin_accord_resolve_meter_well"
+				position = { x = 12 y = 4 }
+				size = { width = 232 height = 8 }
+				clipping = yes
+				background = {
+					name = "zin_accord_resolve_meter_well_bg"
+					spriteType = "GFX_blank_leader_portrait"
+				}
+				containerWindowType = {
+					name = "zin_accord_resolve_meter_strip"
+					position = { x = -232 y = 0 }
+					size = { width = 464 height = 8 }
+					clipping = no
+					iconType = {
+						name = "zin_accord_resolve_meter_fill"
+						spriteType = "GFX_zin_meter_fill_chancery"
+						position = { x = 0 y = 0 }
+					}
+				}
+			}
+			iconType = {
+				name = "zin_accord_resolve_meter_mark_1"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 52 y = 0 }
+			}
+			iconType = {
+				name = "zin_accord_resolve_meter_mark_2"
+				spriteType = "GFX_zin_meter_mark_chancery"
+				position = { x = 144 y = 0 }
 			}
 		}
 		instantTextBoxType = {
-			name = "zin_accord_foot"
-			position = { x = 44 y = 356 }
-			font = "hoi_16mbs"
-			text = "zin_accord_foot"
-			maxWidth = 520
-			maxHeight = 70
+			name = "zin_accord_border"
+			position = { x = 32 y = 224 }
+			font = "hoi_18mbs"
+			text = "zin_accord_border"
+			maxWidth = 568
+			maxHeight = 24
 			format = left
 			fixedsize = yes
+			pdx_tooltip = "zin_accord_border_tt"
 		}
-	}
-	containerWindowType = {
-		name = "zin_accord_button_window"
-		position = { x = 8 y = 150 }
-		size = { width = 132 height = 30 }
-		orientation = upper_left
-		buttonType = {
-			name = "zin_accord_open"
-			position = { x = 0 y = 0 }
-			spriteType = "GFX_zin_button"
-			buttonText = "zin_accord_button"
-			buttonFont = "hoi_18mbs"
-			pdx_tooltip = "zin_accord_button_tt"
-		}
-	}
-	containerWindowType = {
-		name = "zin_accord_members_entry"
-		position = { x = 0 y = 0 }
-		size = { width = 520 height = 22 }
 		instantTextBoxType = {
-			name = "zin_accord_members_entry_text"
-			position = { x = 0 y = 0 }
+			name = "zin_accord_members_head_1"
+			position = { x = 32 y = 260 }
 			font = "hoi_16mbs"
-			text = "zin_accord_member_row"
-			maxWidth = 520
-			maxHeight = 22
+			text = "zin_accord_members"
+			maxWidth = 568
+			maxHeight = 20
 			format = left
 			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_1_1"
+			position = { x = 32 y = 284 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_1_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_2_1"
+			position = { x = 32 y = 308 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_2_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_3_1"
+			position = { x = 32 y = 332 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_3_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_4_1"
+			position = { x = 32 y = 356 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_4_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_5_1"
+			position = { x = 32 y = 380 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_5_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_6_1"
+			position = { x = 32 y = 404 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_6_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_7_1"
+			position = { x = 32 y = 428 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_7_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_8_1"
+			position = { x = 32 y = 452 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_8_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_9_1"
+			position = { x = 32 y = 476 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_9_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_members_10_1"
+			position = { x = 32 y = 500 }
+			font = "hoi_18mbs"
+			text = "zin_accord_member_row_10_1"
+			maxWidth = 568
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_member_row_tt"
+		}
+		instantTextBoxType = {
+			name = "zin_accord_page"
+			position = { x = 32 y = 548 }
+			font = "hoi_16mbs"
+			text = "zin_accord_title_PAGE"
+			maxWidth = 240
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+			pdx_tooltip = "zin_accord_title_PAGE_tt"
+		}
+		buttonType = {
+			name = "zin_accord_page_prev"
+			position = { x = 328 y = 540 }
+			spriteType = "GFX_zin_button"
+			buttonText = "zin_accord_title_PREV"
+			buttonFont = "hoi_16mbs"
+		}
+		buttonType = {
+			name = "zin_accord_page_next"
+			position = { x = 468 y = 540 }
+			spriteType = "GFX_zin_button"
+			buttonText = "zin_accord_title_NEXT"
+			buttonFont = "hoi_16mbs"
 		}
 	}
 }

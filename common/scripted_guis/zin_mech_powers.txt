@@ -12,10 +12,12 @@ scripted_gui = {
 		effects = {
 			zin_dominion_tab_1_click = {
 				set_variable = { zin_ui_tab = 1 }
+				set_variable = { zin_ui_page = 0 }
 				zin_dominion_ui_refresh_volgan = yes
 			}
 			zin_dominion_tab_2_click = {
 				set_variable = { zin_ui_tab = 2 }
+				set_variable = { zin_ui_page = 0 }
 				zin_dominion_ui_refresh_volgan = yes
 			}
 			zin_dominion_close_click = {
@@ -26,37 +28,19 @@ scripted_gui = {
 			zin_dominion_hosts_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
-			zin_dominion_hosts_rule_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_dominion_hosts_mark_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_dominion_hostmarks_visible = {
+			zin_dominion_hosts_meter_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
 			zin_dominion_veil_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
-			zin_dominion_veil_rule_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_dominion_veil_mark_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_dominion_veilmarks_visible = {
+			zin_dominion_veil_meter_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
 			zin_dominion_nether_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
-			zin_dominion_nether_rule_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_dominion_nether_mark_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_dominion_nethermarks_visible = {
+			zin_dominion_nether_meter_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
 			zin_dominion_musters_visible = {
@@ -93,39 +77,37 @@ scripted_gui = {
 			zin_dominion_dark_3_visible = {
 				check_variable = { zin_ui_tab = 2 }
 			}
+			zin_dominion_tab_1_visible = {
+				NOT = { check_variable = { zin_ui_tab = 1 } }
+			}
 			zin_dominion_tab_1_on_visible = {
 				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_dominion_tab_1_on_text_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_dominion_tab_2_visible = {
+				NOT = { check_variable = { zin_ui_tab = 2 } }
 			}
 			zin_dominion_tab_2_on_visible = {
 				check_variable = { zin_ui_tab = 2 }
 			}
+			zin_dominion_tab_2_on_text_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
 		}
 		properties = {
-			zin_dominion_hosts_mark = {
-				x = zin_ui_hosts_x
+			zin_dominion_hosts_meter_fill = {
+				x = zin_ui_hosts_fill
 			}
-			zin_dominion_veil_mark = {
-				x = zin_ui_veil_x
+			zin_dominion_veil_meter_fill = {
+				x = zin_ui_veil_fill
 			}
-			zin_dominion_nether_mark = {
-				x = zin_ui_nether_x
+			zin_dominion_nether_meter_fill = {
+				x = zin_ui_nether_fill
 			}
-		}
-	}
-	zin_panel_dominion_launcher = {
-		context_type = player_context
-		window_name = "zin_dominion_button_window"
-		dirty = zin_ui_tick
-		ai_enabled = { always = no }
-		visible = {
-			zin_is_volgan = yes
-		}
-		effects = {
-			zin_dominion_open_click = {
-				clr_country_flag = zin_realm_open
-				set_country_flag = zin_ui_dominion_open
-				set_variable = { zin_ui_tab = 1 }
-				zin_dominion_ui_refresh_volgan = yes
+			zin_dominion_header = {
+				image = "[zin_dominion_header]"
 			}
 		}
 	}
@@ -139,81 +121,16 @@ scripted_gui = {
 			has_country_flag = zin_ui_watch_open
 		}
 		effects = {
-			zin_watch_tab_1_click = {
-				set_variable = { zin_ui_tab = 1 }
-				zin_dominion_ui_refresh_mirolon = yes
-			}
 			zin_watch_close_click = {
 				clr_country_flag = zin_ui_watch_open
 			}
 		}
-		triggers = {
-			zin_watch_proof_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_proof_rule_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_proof_mark_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_proofmarks_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_passes_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_passes_rule_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_passes_mark_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_passmarks_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_south_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_cd_head_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_cd_scout_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_cd_word_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_cd_forts_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_watch_tab_1_on_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-		}
 		properties = {
-			zin_watch_proof_mark = {
-				x = zin_ui_proof_x
+			zin_watch_proof_meter_fill = {
+				x = zin_ui_proof_fill
 			}
-			zin_watch_passes_mark = {
-				x = zin_ui_passes_x
-			}
-		}
-	}
-	zin_watch_launcher = {
-		context_type = player_context
-		window_name = "zin_watch_button_window"
-		dirty = zin_ui_tick
-		ai_enabled = { always = no }
-		visible = {
-			zin_is_mirolon = yes
-		}
-		effects = {
-			zin_watch_open_click = {
-				clr_country_flag = zin_realm_open
-				set_country_flag = zin_ui_watch_open
-				set_variable = { zin_ui_tab = 1 }
-				zin_dominion_ui_refresh_mirolon = yes
+			zin_watch_passes_meter_fill = {
+				x = zin_ui_passes_fill
 			}
 		}
 	}
@@ -229,14 +146,17 @@ scripted_gui = {
 		effects = {
 			zin_strait_tab_1_click = {
 				set_variable = { zin_ui_tab = 1 }
+				set_variable = { zin_ui_page = 0 }
 				zin_leren_ui_refresh = yes
 			}
 			zin_strait_tab_2_click = {
 				set_variable = { zin_ui_tab = 2 }
+				set_variable = { zin_ui_page = 0 }
 				zin_leren_ui_refresh = yes
 			}
 			zin_strait_tab_3_click = {
 				set_variable = { zin_ui_tab = 3 }
+				set_variable = { zin_ui_page = 0 }
 				zin_leren_ui_refresh = yes
 			}
 			zin_strait_close_click = {
@@ -247,13 +167,7 @@ scripted_gui = {
 			zin_strait_standing_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
-			zin_strait_standing_rule_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_strait_standing_mark_visible = {
-				check_variable = { zin_ui_tab = 1 }
-			}
-			zin_strait_standmarks_visible = {
+			zin_strait_standing_meter_visible = {
 				check_variable = { zin_ui_tab = 1 }
 			}
 			zin_strait_band_visible = {
@@ -292,22 +206,16 @@ scripted_gui = {
 			zin_strait_cohesion_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
-			zin_strait_cohesion_rule_visible = {
-				check_variable = { zin_ui_tab = 3 }
-			}
-			zin_strait_cohesion_mark_visible = {
+			zin_strait_cohesion_meter_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
 			zin_strait_hegemony_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
-			zin_strait_hegemony_rule_visible = {
+			zin_strait_hegemony_meter_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
-			zin_strait_hegemony_mark_visible = {
-				check_variable = { zin_ui_tab = 3 }
-			}
-			zin_strait_hegmarks_visible = {
+			zin_strait_lean_head_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
 			zin_strait_lean_eekedor_visible = {
@@ -328,42 +236,43 @@ scripted_gui = {
 			zin_strait_lean_hold_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
+			zin_strait_tab_1_visible = {
+				NOT = { check_variable = { zin_ui_tab = 1 } }
+			}
 			zin_strait_tab_1_on_visible = {
 				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_strait_tab_1_on_text_visible = {
+				check_variable = { zin_ui_tab = 1 }
+			}
+			zin_strait_tab_2_visible = {
+				NOT = { check_variable = { zin_ui_tab = 2 } }
 			}
 			zin_strait_tab_2_on_visible = {
 				check_variable = { zin_ui_tab = 2 }
 			}
+			zin_strait_tab_2_on_text_visible = {
+				check_variable = { zin_ui_tab = 2 }
+			}
+			zin_strait_tab_3_visible = {
+				NOT = { check_variable = { zin_ui_tab = 3 } }
+			}
 			zin_strait_tab_3_on_visible = {
+				check_variable = { zin_ui_tab = 3 }
+			}
+			zin_strait_tab_3_on_text_visible = {
 				check_variable = { zin_ui_tab = 3 }
 			}
 		}
 		properties = {
-			zin_strait_standing_mark = {
-				x = zin_ui_standing_x
+			zin_strait_standing_meter_fill = {
+				x = zin_ui_standing_fill
 			}
-			zin_strait_cohesion_mark = {
-				x = zin_ui_cohesion_x
+			zin_strait_cohesion_meter_fill = {
+				x = zin_ui_cohesion_fill
 			}
-			zin_strait_hegemony_mark = {
-				x = zin_ui_hegemony_x
-			}
-		}
-	}
-	zin_strait_launcher = {
-		context_type = player_context
-		window_name = "zin_strait_button_window"
-		dirty = zin_ui_tick
-		ai_enabled = { always = no }
-		visible = {
-			zin_is_lerendor = yes
-		}
-		effects = {
-			zin_strait_open_click = {
-				clr_country_flag = zin_realm_open
-				set_country_flag = zin_ui_strait_open
-				set_variable = { zin_ui_tab = 1 }
-				zin_leren_ui_refresh = yes
+			zin_strait_hegemony_meter_fill = {
+				x = zin_ui_hegemony_fill
 			}
 		}
 	}

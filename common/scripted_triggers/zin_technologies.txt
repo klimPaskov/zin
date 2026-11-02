@@ -54,3 +54,126 @@ zin_tech_people_the_dead = {
 zin_tech_people_demons = {
 	has_country_flag = zin_people_demons
 }
+
+zin_way_steppe = {
+	OR = {
+		zin_is_culture_steppe_rider = yes
+	}
+}
+
+zin_way_desert = {
+	OR = {
+		zin_is_culture_noris_riders = yes
+		zin_is_culture_naamis_sea_crown = yes
+		zin_is_culture_miaed_pass_lords = yes
+		zin_is_culture_wahatud_oasis_folk = yes
+	}
+}
+
+zin_way_merchants = {
+	OR = {
+		zin_is_culture_caravan_princes = yes
+		zin_is_culture_river_kings = yes
+		zin_is_culture_lake_road_cities = yes
+		zin_is_culture_red_lands_tribunes = yes
+		zin_is_culture_quay_folk = yes
+	}
+}
+
+zin_way_north_sea = {
+	OR = {
+		zin_is_culture_leren_sea_kings = yes
+		zin_is_culture_free_crowns_north = yes
+	}
+}
+
+zin_way_islands = {
+	OR = {
+		zin_is_culture_chart_islanders = yes
+		zin_is_culture_corsair_lords = yes
+		zin_is_culture_southern_islanders = yes
+		zin_is_culture_orato_fishers = yes
+	}
+}
+
+zin_way_winter = {
+	OR = {
+		zin_is_culture_winter_crown = yes
+		zin_is_culture_ice_clans = yes
+		zin_is_culture_vindael_seafarers = yes
+		zin_is_culture_reindeer_clans = yes
+		zin_is_culture_woqood_sealers = yes
+	}
+}
+
+zin_way_forest = {
+	OR = {
+		zin_is_culture_veiled_folk = yes
+		zin_is_culture_redbark_tribes = yes
+		zin_is_culture_selen_ranger = yes
+	}
+}
+
+zin_way_western = {
+	OR = {
+		zin_is_culture_gunwyn_clans = yes
+		zin_is_culture_girdon_wardens = yes
+		zin_is_culture_western_guilds = yes
+		zin_is_culture_buldor_companies = yes
+	}
+}
+
+zin_way_warlords = {
+	OR = {
+		zin_is_culture_dondor_brutes = yes
+		zin_is_culture_melkgard_warlords = yes
+	}
+}
+
+zin_way_wardens = {
+	OR = {
+		zin_is_culture_mirolon_wardens = yes
+		zin_is_culture_ember_freeholds = yes
+	}
+}
+
+zin_way_lake_crowns = {
+	OR = {
+		zin_is_culture_lake_aenoran = yes
+		zin_is_culture_vale_folk = yes
+		zin_is_culture_march_folk = yes
+		zin_is_culture_isle_houses = yes
+		zin_is_culture_zilin_pilgrims = yes
+		zin_is_culture_strait_folk = yes
+		zin_is_culture_hilofrim_herders = yes
+		zin_is_culture_teste_valley_folk = yes
+	}
+}
+
+zin_way_hearth = {
+	OR = {
+		zin_is_culture_hearth_folk = yes
+		zin_is_culture_holt_gnomes = yes
+	}
+}
+
+zin_way_warrens = {
+	OR = {
+		zin_is_culture_goblin_warrens = yes
+		zin_is_culture_road_warrens = yes
+		zin_is_culture_king_warrens = yes
+		zin_is_culture_spring_warrens = yes
+	}
+}
+
+zin_development_learned = {
+	check_variable = { zin_dev_tier = 1 }
+}
+
+zin_development_settled = {
+	check_variable = { zin_dev_tier = 2 }
+}
+
+zin_development_customary = {
+	check_variable = { zin_dev_tier = 3 }
+}

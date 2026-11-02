@@ -1227,4 +1227,89 @@ focus_tree = {
 			remove_ideas = zin_regional_hiloron_giants_wake
 		}
 	}
+	focus = {
+		id = zin_regional_hiloron_the_eldest_cairn
+		icon = GFX_focus_zin_glyph_fading
+		x = 7
+		y = 2
+		prerequisite = {
+			focus = zin_regional_hiloron_keepers_of_the_old_ways
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_eldest_cairn = yes
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = zin_regional_hiloron_stone_for_stone
+		icon = GFX_focus_zin_canal_lock
+		x = 7
+		y = 3
+		prerequisite = {
+			focus = zin_regional_hiloron_the_eldest_cairn
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_cairn_terms
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_hiloron_speak_the_count
+		icon = GFX_focus_zin_birth_rolls
+		x = 6
+		y = 5
+		prerequisite = {
+			focus = zin_regional_hiloron_stone_for_stone
+		}
+		mutually_exclusive = {
+			focus = zin_regional_hiloron_keep_the_silence
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 30
+				zin_deep_cairn_oath_kept = yes
+			}
+		}
+		completion_reward = {
+			zin_deep_speak_count = yes
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = zin_regional_hiloron_keep_the_silence
+		icon = GFX_focus_zin_seal_chancellor
+		x = 8
+		y = 5
+		prerequisite = {
+			focus = zin_regional_hiloron_stone_for_stone
+		}
+		mutually_exclusive = {
+			focus = zin_regional_hiloron_speak_the_count
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0.05
+				zin_deep_cairn_oath_kept = yes
+			}
+		}
+		completion_reward = {
+			zin_deep_keep_silence = yes
+		}
+	}
 }

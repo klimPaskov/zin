@@ -569,8 +569,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			if = {
-				limit = { NOT = { has_character = zin_burrikkrit_zigka } }
-				if = { limit = { NOT = { has_character = zin_burrikkrit_zigka } } zin_burrikkrit_zigka = { set_nationality = PREV } }
+				limit = { NOT = { has_character = zin_burrikkrit_blikip } }
+				if = { limit = { NOT = { has_character = zin_burrikkrit_blikip } } zin_burrikkrit_blikip = { set_nationality = PREV } }
 			}
 		}
 	}

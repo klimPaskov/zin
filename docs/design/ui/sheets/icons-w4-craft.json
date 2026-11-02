@@ -1,0 +1,240 @@
+{
+ "id": "icons-w4-craft",
+ "family": "research_production",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  6,
+  6
+ ],
+ "ground": "black",
+ "matte": "outline",
+ "group": "w4_icons",
+ "needs": [],
+ "note": "UI overhaul lane W4 (production, construction, trade, logistics, military and intelligence windows): emblems for the icon sprites whose sockets were empty. The same painted style as the attached small interface icon sheet: each item one free-standing object or emblem in aged bronze, dark iron, oak and enamel, lit from the upper left, crisp silhouette that reads at 24 pixels, no plaque or frame behind it unless the item names one.",
+ "references": [
+  "ui/reskin/icons-text-1.png"
+ ],
+ "cells": [
+  {
+   "key": "shipwright",
+   "subject": "a ship hull on wooden building stocks with a shipwright's adze leaning on it",
+   "luma": 71.3,
+   "lum": "dark"
+  },
+  {
+   "key": "shipwright_mend",
+   "subject": "a ship hull on stocks with a crossed mallet and clamp over it",
+   "luma": 66.8,
+   "lum": "dark"
+  },
+  {
+   "key": "workshop_idle",
+   "subject": "a stone guild workshop with a cold chimney and a shut door, greyed",
+   "luma": 70.4,
+   "lum": "dark"
+  },
+  {
+   "key": "workshop_mend",
+   "subject": "a stone guild workshop with a mallet and chisel crossed before it",
+   "luma": 77.7,
+   "lum": "dark"
+  },
+  {
+   "key": "craft_output",
+   "subject": "a hammer striking a glowing bar on an anvil, with sparks",
+   "luma": 68.7,
+   "lum": "dark"
+  },
+  {
+   "key": "workmanship",
+   "subject": "a mason's bronze square and a hanging plumb bob",
+   "luma": 71.9,
+   "lum": "dark"
+  },
+  {
+   "key": "workmanship_cap",
+   "subject": "a mason's bronze square under a flat iron bar",
+   "luma": 83.7,
+   "lum": "dark"
+  },
+  {
+   "key": "workmanship_loss",
+   "subject": "a cracked mason's square with a falling chip",
+   "luma": 93.3,
+   "lum": "dark"
+  },
+  {
+   "key": "raid_ward",
+   "subject": "a kite shield held over the roof of a small workshop",
+   "luma": 72.2,
+   "lum": "dark"
+  },
+  {
+   "key": "line_foot",
+   "subject": "a sword crossed over a crossbow",
+   "luma": 67.1,
+   "lum": "dark"
+  },
+  {
+   "key": "line_mounts",
+   "subject": "a barded war-horse head beside a lance",
+   "luma": 68,
+   "lum": "dark"
+  },
+  {
+   "key": "line_fliers",
+   "subject": "a griffin with spread wings seen from the side",
+   "luma": 76.5,
+   "lum": "dark"
+  },
+  {
+   "key": "line_ships",
+   "subject": "a single-masted cog ship under a square sail",
+   "luma": 94.2,
+   "lum": "dark"
+  },
+  {
+   "key": "producing",
+   "subject": "a workshop chimney with rising smoke and a small hammer",
+   "luma": 76,
+   "lum": "dark"
+  },
+  {
+   "key": "hired_workshops",
+   "subject": "a stone workshop with a coin purse tied at its door",
+   "luma": 84.6,
+   "lum": "dark"
+  },
+  {
+   "key": "great_works",
+   "subject": "a tall stone tower wrapped in timber scaffolding",
+   "luma": 69.3,
+   "lum": "dark"
+  },
+  {
+   "key": "convert_craft",
+   "subject": "an anvil inside a circle of two bronze arrows",
+   "luma": 65.1,
+   "lum": "dark"
+  },
+  {
+   "key": "guild_seal",
+   "subject": "a red wax seal stamped with a hammer",
+   "luma": 64.6,
+   "lum": "dark"
+  },
+  {
+   "key": "guild_maker",
+   "subject": "a small hanging guild banner with a hammer device",
+   "luma": 76.5,
+   "lum": "dark"
+  },
+  {
+   "key": "in_store",
+   "subject": "a closed wooden crate bound with iron",
+   "luma": 77.2,
+   "lum": "dark"
+  },
+  {
+   "key": "want",
+   "subject": "an open empty crate with a bronze arrow pointing into it",
+   "luma": 72.1,
+   "lum": "dark"
+  },
+  {
+   "key": "set_want",
+   "subject": "a balance scale with a crate on one pan",
+   "luma": 55.9,
+   "lum": "dark"
+  },
+  {
+   "key": "works_state",
+   "subject": "a stone keep with timber scaffolding on one side",
+   "luma": 85.3,
+   "lum": "dark"
+  },
+  {
+   "key": "works_shared",
+   "subject": "two small banners over a scaffold",
+   "luma": 56.1,
+   "lum": "dark"
+  },
+  {
+   "key": "works_province",
+   "subject": "a wooden watchtower on a small hill",
+   "luma": 64.2,
+   "lum": "dark"
+  },
+  {
+   "key": "works_facility",
+   "subject": "a slender stone spire inside scaffolding, a faint blue light at its top",
+   "luma": 69.5,
+   "lum": "dark"
+  },
+  {
+   "key": "works_crew",
+   "subject": "a pick and a shovel crossed",
+   "luma": 67.4,
+   "lum": "dark"
+  },
+  {
+   "key": "building_mend",
+   "subject": "a mason's mallet over a cracked stone block",
+   "luma": 95.4,
+   "lum": "dark"
+  },
+  {
+   "key": "market_contract",
+   "subject": "a sealed contract scroll with three stacked coins",
+   "luma": 125.5,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "gear_rack",
+   "subject": "a wooden weapon rack holding spears and a shield",
+   "luma": 65.7,
+   "lum": "dark"
+  },
+  {
+   "key": "pattern_draft",
+   "subject": "a parchment pattern sheet with a pair of brass dividers",
+   "luma": 147,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "deploy_line",
+   "subject": "a war banner on a pole moving forward with motion lines",
+   "luma": 58.7,
+   "lum": "dark"
+  },
+  {
+   "key": "deploy_wagon",
+   "subject": "a covered supply wagon with a small banner",
+   "luma": 76.6,
+   "lum": "dark"
+  },
+  {
+   "key": "hide_old",
+   "subject": "a faded rolled pattern sheet tied with string",
+   "luma": 120.1,
+   "design": "dark",
+   "lum": "mid"
+  },
+  {
+   "key": "scales",
+   "subject": "a bronze balance scale held level",
+   "luma": 50.1,
+   "lum": "dark"
+  },
+  {
+   "key": "essence_store",
+   "subject": "a sealed clay amphora with a faint glowing blue seal",
+   "luma": 80.5,
+   "lum": "dark"
+  }
+ ],
+ "tranche": 8
+}

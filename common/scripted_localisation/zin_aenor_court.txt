@@ -17,6 +17,16 @@ defined_text = {
 	text = { localization_key = ZIN_COURT_CORR_MID }
 }
 defined_text = {
+	name = zin_court_temple_line
+	text = {
+		trigger = {
+			zin_aenor_hand_known = yes
+		}
+		localization_key = ZIN_COURT_T1_HAND
+	}
+	text = { localization_key = ZIN_COURT_T1_TEMPLE_FAVOUR }
+}
+defined_text = {
 	name = zin_court_cause_path
 	text = {
 		trigger = {

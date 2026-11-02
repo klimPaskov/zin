@@ -104,4 +104,24 @@ zin_gunwaith_opinion = {
 			}
 		}
 	}
+	if = {
+		limit = {
+			check_variable = { zin_arg_modifier = 3 }
+		}
+		var:zin_arg_who = {
+			reverse_add_opinion_modifier = {
+				target = PREV
+				modifier = zin_gunwaith_ice_kin_opinion
+			}
+			if = {
+				limit = {
+					check_variable = { zin_arg_both = 1 }
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = zin_gunwaith_ice_kin_opinion
+				}
+			}
+		}
+	}
 }

@@ -1,0 +1,136 @@
+{
+ "id": "ui-chrome-banner-hall",
+ "family": "chrome_panels",
+ "theme": "banner_hall",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  4,
+  4
+ ],
+ "ground": "black",
+ "matte": "none",
+ "cellBorder": 0.06,
+ "references": [
+  "docs/plans/ui_overhaul/directions/direction_b_components.png"
+ ],
+ "preamble": "Clean, quiet game-interface texture art for a fantasy grand-strategy game, painted but restrained: matte surfaces, very fine and low-contrast material texture visible only at close view, flat even diffuse light, every plate lit uniformly from edge to edge with no vignette, no gradient, no glare, no darker or lighter corners, no wear marks, no stains. The Banner Hall: hand-made cloth like a realm banner. Dyed wool in woad-black (#141E25), woad blue (#13283F) and madder red (#811F14, deep #6B0C0D); undyed linen (#CEBCA6) as the reading cloth; couched gold cord (#B28339, lit edge #FAEC98) on every hem and frame. Very fine, tight weave, almost smooth at normal view. No metal.",
+ "tail": "No cast shadows outside the plates, no text, no letters, no numbers, no runes, no figures, no faces, no animal heads, no crosses, no sun discs, no skulls, no crowns, no modern objects. No signature or maker's mark. The corners and the bottom edge of the image hold only the plain black ground.",
+ "layoutNote": "Every cell is one flat rectangular plate seen straight on, filling its own cell edge to edge as a full-bleed square swatch, all cells the same size, separated by narrow black gutters. Any rim or frame of a plate runs straight along its four sides at an even width, with its corner ornament kept inside the rim width; the body inside the rim is one plain, uniform, seamless surface with no motif, so it can be tiled.",
+ "cells": [
+  {
+   "key": "window",
+   "subject": "a window plate: woad-black dyed wool body with a border of thick couched gold cord along all four sides and a small knotted cord diamond at each corner inside the border",
+   "border": 0.11,
+   "lum": "dark",
+   "luma": 41.2
+  },
+  {
+   "key": "section",
+   "subject": "a section plate: deep woad blue wool with one thin couched gold cord line along its edge",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 32.8
+  },
+  {
+   "key": "inset",
+   "subject": "an inset well: very dark woad wool set slightly lower, with a thin dark stitched hem along its edge",
+   "border": 0.05,
+   "lum": "dark",
+   "luma": 24
+  },
+  {
+   "key": "body",
+   "subject": "a plain swatch of woad-black dyed wool, uniform, with no border and no hem at all",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 23.9
+  },
+  {
+   "key": "title",
+   "subject": "a title cloth: madder red wool with a couched gold cord hem along its top and bottom edges and a thinner cord along its sides",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 63.3
+  },
+  {
+   "key": "entry_selected",
+   "subject": "a selected row plate: woad-black wool with a bright, doubled gold cord edge all around",
+   "border": 0.06,
+   "lum": "dark",
+   "luma": 38.7
+  },
+  {
+   "key": "tab",
+   "subject": "a tab plate: woad blue wool with a thin gold cord edge all around",
+   "border": 0.07,
+   "lum": "dark",
+   "luma": 34.5
+  },
+  {
+   "key": "tab_selected",
+   "subject": "a selected tab plate: deep madder red wool with a bright gold cord edge all around",
+   "border": 0.07,
+   "lum": "dark",
+   "luma": 42.4
+  },
+  {
+   "key": "reading",
+   "subject": "a reading plate: pale undyed linen, very fine even weave, with a thin gold cord edge",
+   "border": 0.05,
+   "lum": "light",
+   "luma": 186.3
+  },
+  {
+   "key": "reading_selected",
+   "subject": "a selected reading plate: pale undyed linen with a bright doubled gold cord edge",
+   "border": 0.06,
+   "lum": "light",
+   "luma": 180.9
+  },
+  {
+   "key": "reading_plain",
+   "subject": "a plain swatch of pale undyed linen, uniform, with no edge at all",
+   "border": 0.03,
+   "lum": "light",
+   "luma": 187.7
+  },
+  {
+   "key": "plate_mid",
+   "subject": "a mid-tone plate: ochre-dyed wool (#9A7B4A) with a thin gold cord edge",
+   "border": 0.07,
+   "lum": "mid",
+   "luma": 105.2
+  },
+  {
+   "key": "plate_mid_lit",
+   "subject": "a lighter mid-tone plate: light ochre wool (#B39462) with a bright gold cord edge",
+   "border": 0.07,
+   "lum": "mid",
+   "luma": 132
+  },
+  {
+   "key": "groove",
+   "subject": "an empty meter groove: a dark woad wool channel inside a thin gold cord hem",
+   "border": 0.08,
+   "lum": "dark",
+   "luma": 27.2
+  },
+  {
+   "key": "fill_mid",
+   "subject": "a meter fill: bright madder-scarlet wool (#C04A30), plain, with a fine gold cord along its top edge",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 92.6,
+   "design": "mid"
+  },
+  {
+   "key": "fill_dark",
+   "subject": "a meter fill: deep madder red wool (#760A0C), plain",
+   "border": 0.03,
+   "lum": "dark",
+   "luma": 35.4
+  }
+ ],
+ "tranche": 3
+}

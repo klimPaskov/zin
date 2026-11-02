@@ -1144,7 +1144,7 @@ zin_path_role_leren_crown = {
 				limit = {
 					OR = {
 						zin_is_site_sonargur = yes
-						state = 6
+						state = 112
 					}
 					controller = {
 						has_country_flag = zin_region_north_lands
@@ -1237,7 +1237,7 @@ zin_path_role_volgan_target = {
 				limit = {
 					OR = {
 						zin_is_site_mirolon_passes = yes
-						state = 76
+						state = 1840
 					}
 					controller = {
 						NOT = { zin_diplo_is_dark_power = yes }
@@ -1291,12 +1291,12 @@ zin_path_role_hall_holder = {
 		set_temp_variable = { zin_role_passed = 0 }
 		if = {
 			limit = {
-				country_exists = YEL
-				YEL = {
+				country_exists = PRT
+				PRT = {
 					exists = yes
 				}
 			}
-			YEL = { save_global_event_target_as = zin_role_hall_holder_next }
+			PRT = { save_global_event_target_as = zin_role_hall_holder_next }
 		}
 		if = {
 			limit = { NOT = { has_event_target = zin_role_hall_holder_next } }
@@ -1304,7 +1304,7 @@ zin_path_role_hall_holder = {
 				limit = {
 					OR = {
 						zin_is_site_yeldenne = yes
-						state = 1063
+						state = 1663
 					}
 					owner = {
 						exists = yes
@@ -1630,7 +1630,7 @@ zin_path_role_parim_holder = {
 						any_controlled_state = {
 							OR = {
 								zin_is_site_parim = yes
-								state = 238
+								state = 1019
 							}
 						}
 					}
@@ -1648,7 +1648,7 @@ zin_path_role_parim_holder = {
 						any_controlled_state = {
 							OR = {
 								zin_is_site_parim = yes
-								state = 238
+								state = 1019
 							}
 						}
 					}
@@ -1662,7 +1662,7 @@ zin_path_role_parim_holder = {
 				limit = {
 					OR = {
 						zin_is_site_parim = yes
-						state = 238
+						state = 1019
 					}
 					controller = {
 						exists = yes

@@ -1,0 +1,83 @@
+guiTypes = {
+	containerWindowType = {
+		name = "zin_politics_realm_window"
+		position = { x = 300 y = 8 }
+		size = { width = 148 height = 28 }
+		clipping = no
+
+		buttonType = {
+			name = "zin_politics_realm_toggle"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_zin_cha_lore_button"
+			buttonText = "zin_politics_realm_button"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "zin_politics_realm_button_desc"
+			clicksound = click_default
+		}
+	}
+
+	containerWindowType = {
+		name = "zin_politics_realm_page_window"
+		position = { x = 0 y = 428 }
+		size = { width = 548 height = 100%% }
+		clipping = yes
+
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_zin_cha_window"
+		}
+		containerWindowType = {
+			name = "zin_politics_realm_title_band"
+			position = { x = 16 y = 16 }
+			size = { width = 516 height = 40 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_zin_cha_title"
+			}
+			instantTextboxType = {
+				name = "zin_politics_realm_title"
+				position = { x = 12 y = 8 }
+				font = "hoi_24header"
+				text = "zin_politics_realm_title"
+				maxWidth = 440
+				maxHeight = 24
+				fixedsize = yes
+				format = left
+			}
+			buttonType = {
+				name = "zin_politics_realm_close"
+				position = { x = 476 y = 4 }
+				quadTextureSprite = "GFX_closebutton"
+				pdx_tooltip = "CLOSE"
+				clicksound = click_close
+			}
+		}
+
+		containerWindowType = {
+			name = "zin_politics_realm_text_window"
+			position = { x = 16 y = 64 }
+			size = { width = 516 height = 100%% }
+			margin = { top = 0 bottom = 16 }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_zin_cha_reading"
+			}
+			instantTextboxType = {
+				name = "zin_politics_realm_text"
+				position = { x = 20 y = 16 }
+				font = "hoi4_typewriter16"
+				text_color_code = "b"
+				text = "zin_politics_realm_text"
+				maxWidth = 464
+				maxHeight = 1200
+				format = left
+			}
+		}
+	}
+}

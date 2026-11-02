@@ -47,22 +47,22 @@ division_template = {
 	}
 }
 units = {
-	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 2785 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 2785 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 3 } location = 2785 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 4 } location = 2785 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 5 } location = 2785 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 6 } location = 2785 division_template = "Line Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 7 } location = 2785 division_template = "Line Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 8 } location = 2785 division_template = "Line Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 9 } location = 2785 division_template = "Levy Garrison" start_experience_factor = 0.15 start_equipment_factor = 1 }
-	division = { division_name = { is_name_ordered = yes name_order = 10 } location = 2785 division_template = "Levy Garrison" start_experience_factor = 0.15 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 4937 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 2 } location = 4958 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 3 } location = 4843 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 4 } location = 4882 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 5 } location = 4937 division_template = "Heavy Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 6 } location = 4958 division_template = "Line Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 7 } location = 4843 division_template = "Line Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 8 } location = 4882 division_template = "Line Host" start_experience_factor = 0.3 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 9 } location = 4937 division_template = "Levy Garrison" start_experience_factor = 0.15 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 10 } location = 4958 division_template = "Levy Garrison" start_experience_factor = 0.15 start_equipment_factor = 1 }
 	fleet = {
 		name = "Dondor Fleet"
-		naval_base = 2785
+		naval_base = 4958
 		task_force = {
 			name = "Dondor Squadron"
-			location = 2785
+			location = 4958
 			ship = { name = "Gelwoa" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = DND version_name = "Banked Galley" } } }
 			ship = { name = "Baelwae" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = DND version_name = "Banked Galley" } } }
 			ship = { name = "Zelzul" definition = zin_ship_galley equipment = { zin_hull_galley_1 = { amount = 1 owner = DND version_name = "Banked Galley" } } }

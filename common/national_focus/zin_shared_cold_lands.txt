@@ -41,10 +41,6 @@ focus_tree = {
 		}
 		modifier = {
 			add = 10
-			original_tag = PRT
-		}
-		modifier = {
-			add = 10
 			original_tag = WRL
 		}
 		modifier = {
@@ -1102,14 +1098,14 @@ focus_tree = {
 		}
 		cost = 5
 		available = {
-			country_exists = YEL
+			country_exists = PRT
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		completion_reward = {
 			diplomatic_relation = {
-				country = YEL
+				country = PRT
 				relation = non_aggression_pact
 				active = yes
 			}

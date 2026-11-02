@@ -917,4 +917,62 @@ focus_tree = {
 			zin_eindil_add_regard = yes
 		}
 	}
+	focus = {
+		id = zin_regional_adel_the_leagues_oldest_charts
+		icon = GFX_focus_zin_shipwreck
+		x = 5
+		y = 4
+		prerequisite = {
+			focus = zin_regional_adel_the_great_chart
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_read_league_charts = yes
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_adel_whose_square
+		icon = GFX_focus_zin_corsair_raider
+		x = 5
+		y = 5
+		prerequisite = {
+			focus = zin_regional_adel_the_leagues_oldest_charts
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_square_question
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = zin_regional_adel_the_sea_roads_rejoined
+		icon = GFX_focus_zin_lantern_chain
+		x = 5
+		y = 6
+		prerequisite = {
+			focus = zin_regional_adel_whose_square
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
+		cost = 15
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_sea_roads_route
+			navy_experience = 25
+		}
+	}
 }

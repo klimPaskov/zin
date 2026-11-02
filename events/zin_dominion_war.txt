@@ -43,6 +43,7 @@ news_event = {
 	picture = GFX_zin_news_ember_lands_storm
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_mirolon_falls } } # super event 28 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {
@@ -58,6 +59,7 @@ news_event = {
 	picture = GFX_zin_news_ember_lands_storm
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_volgan_marches } } # super event 8 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {
@@ -156,6 +158,7 @@ news_event = {
 	picture = GFX_zin_news_volgan_broken
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_volgan_broken } } # super event 14 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {
@@ -248,6 +251,7 @@ news_event = {
 	picture = GFX_zin_news_ember_lands_storm
 	major = yes
 	is_triggered_only = yes
+	trigger = { NOT = { has_country_flag = zin_se_saw_nafeher_falls } } # super event 26 replaces this news for the players who saw it (K60, modules/super_events.mjs)
 	timeout_days = 30
 
 	option = {

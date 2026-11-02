@@ -1,0 +1,393 @@
+{
+ "generator": "tools/content/modules/ui_chancery.mjs",
+ "files": [
+  {
+   "out": "gfx/interface/zin/chancery/body.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "body"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.286 to 102x66",
+    "rim 2x2",
+    "repeat x 61 at 36 (step 0.008)",
+    "repeat y 61 at 3 (step 0.021)",
+    "scale 0.29",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e4dd3bae7b25f19389219847356ccf9749e2e64b7682c6af02eaf6d8a75d043e"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/box.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.273 to 98x62",
+    "rim 3x3",
+    "repeat x 57 at 20 (step 0.007)",
+    "repeat y 40 at 5 (step 0.007)",
+    "scale 0.27",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "31e16ec08a2fef8a39c2a2903833fe4e83a9936a7b9d84d0438745adfd3274d0"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/idea_entry.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "entry_selected",
+    "section"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "strip 2 frames of 231x74",
+    "frame_tile reduce 0.429 to 153x99",
+    "rim 6x6",
+    "repeat x 118 at 17 (step 0.013)",
+    "repeat y 47 at 24 (step 0.011)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1ecf16a641daf6bda7cdbd33d333846fff5558ef205162032209ffb749169f7c"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/inset.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.545 to 196x124",
+    "rim 6x6",
+    "repeat x 109 at 41 (step 0.011)",
+    "repeat y 109 at 7 (step 0.012)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "be295f1a869b2d393f6fd251ce5e4e250d6a30badd0626bcb148e0e058abfb7b"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/inset_small.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.545 to 196x124",
+    "rim 6x6",
+    "repeat x 24 at 142 (step 0.010)",
+    "repeat y 24 at 78 (step 0.009)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4cbd0a9183d2d417e3d158c047a01fab8f6aa402d70f8981b6282e2d9e6e3c9e"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/lend_lease_entry.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.545 to 196x124",
+    "rim 6x6",
+    "repeat x 92 at 57 (step 0.011)",
+    "repeat y 111 at 6 (step 0.009)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8dfc2240f81c2e0b9b2d53054fa9c3c1702aafab99aa3781c9a495d61691e046"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/lend_lease_header.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "title"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.4 to 143x74",
+    "rim 6x6",
+    "repeat x 99 at 18 (step 0.009)",
+    "repeat y 53 at 10 (step 0.008)",
+    "scale 0.4",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "509729c7595676412f5268ecb9997ac81064e02d44a5067d36abf159bffc8040"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/lend_lease_panel.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "section"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.857 to 307x197",
+    "rim 12x12",
+    "repeat x 254 at 15 (step 0.018)",
+    "repeat y 121 at 58 (step 0.014)",
+    "scale 0.86",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "05d56c7f0abd3d91cf7a62caa8a158451bda809c7319c95a6042bced74d2e546"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/lend_lease_slot.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "entry_selected",
+    "inset",
+    "section"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "strip 3 frames of 336x71",
+    "frame_tile reduce 0.545 to 196x124",
+    "rim 6x6",
+    "repeat x 92 at 57 (step 0.011)",
+    "repeat y 111 at 6 (step 0.009)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4214175b4ce1b8d65627a8f32bedd6623319daf1afdbb082ebf10a6c60a3f529"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/lore_button.dds",
+   "source": "art/source/ui/reskin/ui-buttons-neutral.png",
+   "sourceSha256": "347f799c5aacf410e576ccbe46123243aa67c0562b18d0671eac0f0806e168bb",
+   "cells": [
+    "iron_hover",
+    "iron_normal",
+    "iron_pressed"
+   ],
+   "sheets": [
+    "ui-buttons-neutral"
+   ],
+   "ops": [
+    "strip 3 frames of 148x28",
+    "frame_tile reduce 0.211 to 54x25",
+    "rim 4x4",
+    "repeat x 40 at 4 (step 0.004)",
+    "repeat y 8 at 10 (step 0.005)",
+    "scale 0.21",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "99735bf64e2e1fe660658ace2d70979f3abdb8903c4c4ccd8b5c70b9c3eb3d1c"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/peace_header.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "entry_selected",
+    "section"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "strip 2 frames of 312x54",
+    "frame_tile reduce 0.429 to 153x99",
+    "rim 6x6",
+    "repeat x 118 at 17 (step 0.013)",
+    "repeat y 47 at 24 (step 0.011)",
+    "scale 0.55",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a5a297bc4e04d5a70468731ebe6dc9f23b95f1a65af3437a8251220311f52656"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/peace_lobby.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.273 to 98x62",
+    "rim 3x3",
+    "repeat x 57 at 20 (step 0.007)",
+    "repeat y 40 at 5 (step 0.007)",
+    "scale 0.27",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "21dbaaadc3cbe257fd02a7d62d731347c013ef7b22bee4e69207609bc92a687c"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/peace_panel.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "section"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.857 to 307x197",
+    "rim 12x12",
+    "repeat x 254 at 15 (step 0.018)",
+    "repeat y 121 at 58 (step 0.014)",
+    "scale 0.86",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7d10a011e0940853985906759c0dcb5af1804c18f9b12f1a61e761fad5c120e2"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/plate.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "plate_mid"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.353 to 126x87",
+    "rim 6x6",
+    "repeat x 73 at 14 (step 0.010)",
+    "repeat y 73 at 6 (step 0.069)",
+    "scale 0.35",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a53b4ea3492b473bb0f9b1c8c8a534817777deb3ea26e829d13e0ba9e5b711dc"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/reading.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "reading"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.5 to 179x123",
+    "rim 6x6",
+    "repeat x 109 at 34 (step 0.009)",
+    "repeat y 109 at 8 (step 0.016)",
+    "scale 0.5",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3dfe3eb742375a1ae059cf0abfe9df743e86f0bb58678e3357a459423b9f0c94"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/section.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "section"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.857 to 307x197",
+    "rim 12x12",
+    "repeat x 173 at 81 (step 0.019)",
+    "repeat y 173 at 12 (step 0.026)",
+    "scale 0.86",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "685ea8b64c90a08cddbb9edf7a5e93d277d69d2e56cb667fa31fe7797a2e7e21"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/title.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "title"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.4 to 143x74",
+    "rim 6x6",
+    "repeat x 32 at 8 (step 0.009)",
+    "repeat y 24 at 18 (step 0.009)",
+    "scale 0.4",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9d5ffe25fa21ded3ef2c121abc4d86212b228fe45e3ca06eb0eaa32813d21d4b"
+  },
+  {
+   "out": "gfx/interface/zin/chancery/window.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "window"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.64 to 229x146",
+    "rim 16x16",
+    "repeat x 113 at 67 (step 0.015)",
+    "repeat y 113 at 16 (step 0.036)",
+    "scale 0.64",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d699700daa85cb3de3315c956eea6c7be9490a68d388aa394c5ac4ce37fca5f9"
+  }
+ ]
+}

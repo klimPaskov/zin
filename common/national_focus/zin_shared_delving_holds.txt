@@ -2105,4 +2105,21 @@ focus_tree = {
 			add_political_power = 50
 		}
 	}
+	focus = {
+		id = zin_shared_delving_holds_read_the_names_on_the_door
+		icon = GFX_focus_zin_ring_doors
+		x = 12
+		y = 5
+		prerequisite = {
+			focus = zin_shared_delving_holds_the_halls_below_the_halls
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			zin_deep_read_door = yes
+		}
+	}
 }

@@ -259,6 +259,28 @@ zin_aenor_check_camps_rival = {
 		}
 	}
 }
+zin_aenor_check_old_age = {
+	# K59 (Q-86): the surviving Golden King (zin_golden_king_survives) may die of old age: a monthly chance in hundredths, 0.25
+	# and 0.1 more for every year since he survived, at most 3. His death is the ordinary death of the King
+	# (zin_aenor.200, which opens the succession; zin_golden_king_old_age), after which the Golden Court Endures holds only through the
+	# Regency of Gold (owner, 25 October 2026). Scope: the original Aenor.
+	if = {
+		limit = { NOT = { has_variable = zin_aenor_survived_year } }
+		set_variable = { zin_aenor_survived_year = global.year }
+	}
+	set_temp_variable = { zin_oa_chance = global.year }
+	subtract_from_temp_variable = { zin_oa_chance = zin_aenor_survived_year }
+	multiply_temp_variable = { zin_oa_chance = 0.1 }
+	add_to_temp_variable = { zin_oa_chance = 0.25 }
+	clamp_temp_variable = { var = zin_oa_chance max = 3 }
+	set_temp_variable_to_random = { var = zin_oa_roll min = 0 max = 100 }
+	if = {
+		limit = { check_variable = { zin_oa_roll < zin_oa_chance } }
+		set_country_flag = zin_aenor_death_scheduled
+		set_global_flag = zin_golden_king_old_age
+		news_event = { id = zin_aenor.200 }
+	}
+}
 zin_aenor_check_royal_health = {
 	# The only omen: with the royal physicians questioned, the King's health is told in words (zin_aenor.240 reads the variable).
 	if = {
@@ -749,6 +771,16 @@ zin_aenor_monthly_pulse = {
 		}
 		zin_aenor_check_royal_health = yes
 	}
+	# K59 (Q-86): a King who survived the Council grows old, and may die of it before the judgement.
+	if = {
+		limit = {
+			tag = AEN
+			zin_aenor_king_alive = yes
+			has_global_flag = zin_golden_king_survives
+			NOT = { has_country_flag = zin_aenor_death_scheduled }
+		}
+		zin_aenor_check_old_age = yes
+	}
 	zin_aenor_check_camps_rival = yes
 	if = {
 		limit = {
@@ -783,6 +815,7 @@ zin_aenor_monthly_pulse = {
 zin_aenor_open_succession = {
 	# Body of zin_aenor.200 The King Is Dead. Scope: the Aenor realm (the original country).
 	set_global_flag = zin_golden_king_dead
+	zin_super_event_golden_king_dead = yes # super event 2 (modules/super_events.mjs)
 	set_country_flag = zin_aenor_succession_open
 	retire_character = AEN_zin_ruler
 	add_ideas = zin_aenor_interregnum
@@ -1832,27 +1865,27 @@ zin_aenor_ui_refresh = {
 	add_to_variable = { zin_ui_tick = 1 }
 	if = {
 		limit = { zin_aenor_is_realm = yes }
-		set_variable = { zin_ui_corr_x = zin_court_corruption }
-		multiply_variable = { zin_ui_corr_x = 5.2 }
-		add_to_variable = { zin_ui_corr_x = 27 }
-		set_variable = { zin_ui_temple_x = zin_council_influence }
-		multiply_variable = { zin_ui_temple_x = 5.2 }
-		add_to_variable = { zin_ui_temple_x = 27 }
-		set_variable = { zin_ui_cause_x = zin_aenor_lost_cause }
-		multiply_variable = { zin_ui_cause_x = 5.2 }
-		add_to_variable = { zin_ui_cause_x = 27 }
-		set_variable = { zin_ui_court_x = zin_aenor_camp_court }
-		multiply_variable = { zin_ui_court_x = 5.2 }
-		add_to_variable = { zin_ui_court_x = 27 }
-		set_variable = { zin_ui_faithful_x = zin_aenor_camp_faithful }
-		multiply_variable = { zin_ui_faithful_x = 5.2 }
-		add_to_variable = { zin_ui_faithful_x = 27 }
-		set_variable = { zin_ui_dominions_x = zin_aenor_camp_dominions }
-		multiply_variable = { zin_ui_dominions_x = 5.2 }
-		add_to_variable = { zin_ui_dominions_x = 27 }
-		set_variable = { zin_ui_host_x = zin_aenor_camp_host }
-		multiply_variable = { zin_ui_host_x = 5.2 }
-		add_to_variable = { zin_ui_host_x = 27 }
+		set_variable = { zin_ui_corr_fill = zin_court_corruption }
+		multiply_variable = { zin_ui_corr_fill = 2.32 }
+		clamp_variable = { var = zin_ui_corr_fill min = 0 max = 232 }
+		set_variable = { zin_ui_temple_fill = zin_council_influence }
+		multiply_variable = { zin_ui_temple_fill = 2.32 }
+		clamp_variable = { var = zin_ui_temple_fill min = 0 max = 232 }
+		set_variable = { zin_ui_cause_fill = zin_aenor_lost_cause }
+		multiply_variable = { zin_ui_cause_fill = 2.32 }
+		clamp_variable = { var = zin_ui_cause_fill min = 0 max = 232 }
+		set_variable = { zin_ui_court_fill = zin_aenor_camp_court }
+		multiply_variable = { zin_ui_court_fill = 2.32 }
+		clamp_variable = { var = zin_ui_court_fill min = 0 max = 232 }
+		set_variable = { zin_ui_faithful_fill = zin_aenor_camp_faithful }
+		multiply_variable = { zin_ui_faithful_fill = 2.32 }
+		clamp_variable = { var = zin_ui_faithful_fill min = 0 max = 232 }
+		set_variable = { zin_ui_dominions_fill = zin_aenor_camp_dominions }
+		multiply_variable = { zin_ui_dominions_fill = 2.32 }
+		clamp_variable = { var = zin_ui_dominions_fill min = 0 max = 232 }
+		set_variable = { zin_ui_host_fill = zin_aenor_camp_host }
+		multiply_variable = { zin_ui_host_fill = 2.32 }
+		clamp_variable = { var = zin_ui_host_fill min = 0 max = 232 }
 		clear_array = zin_aenor_dominion_list
 		set_variable = { zin_ui_n_steadfast = 0 }
 		set_variable = { zin_ui_n_loyal = 0 }
@@ -1876,6 +1909,87 @@ zin_aenor_ui_refresh = {
 				PREV = { add_to_variable = { zin_ui_n_defiant = 1 } }
 			}
 			PREV = { add_to_array = { zin_aenor_dominion_list = PREV } }
+		}
+		set_variable = { zin_ui_rows_total = zin_aenor_dominion_list^num }
+		set_variable = { zin_ui_pages = 0 }
+		set_temp_variable = { zin_ui_left = zin_ui_rows_total }
+		while_loop_effect = {
+			limit = { check_variable = { zin_ui_left > 0 } }
+			add_to_variable = { zin_ui_pages = 1 }
+			subtract_from_temp_variable = { zin_ui_left = 10 }
+		}
+		if = {
+			limit = { check_variable = { zin_ui_page > zin_ui_pages } }
+			set_variable = { zin_ui_page = zin_ui_pages }
+			subtract_from_variable = { zin_ui_page = 1 }
+		}
+		clamp_variable = { var = zin_ui_page min = 0 }
+		set_variable = { zin_ui_page_shown = zin_ui_page }
+		add_to_variable = { zin_ui_page_shown = 1 }
+		set_temp_variable = { zin_ui_first = zin_ui_page }
+		multiply_temp_variable = { zin_ui_first = 10 }
+		set_variable = { zin_ui_rows_shown = zin_ui_rows_total }
+		subtract_from_variable = { zin_ui_rows_shown = zin_ui_first }
+		clamp_variable = { var = zin_ui_rows_shown min = 0 max = 10 }
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 0 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_1 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 1 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_2 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 2 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_3 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 3 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_4 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 4 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_5 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 5 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_6 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 6 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_7 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 7 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_8 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 8 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_9 = zin_aenor_dominion_list^zin_ui_at }
+		}
+		set_temp_variable = { zin_ui_at = zin_ui_first }
+		add_to_temp_variable = { zin_ui_at = 9 }
+		if = {
+			limit = { check_variable = { zin_ui_at < zin_ui_rows_total } }
+			set_variable = { zin_ui_row_10 = zin_aenor_dominion_list^zin_ui_at }
 		}
 	}
 }

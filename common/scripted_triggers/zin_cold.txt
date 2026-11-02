@@ -5,14 +5,13 @@ zin_cold_is_cold = {
 	has_country_flag = zin_region_cold_lands
 }
 
-# Every lean-holding Cold Lands country: the clans, Horidor, Holdon, Fearno, Windwaith, the Yeti Lands and Titanos; never Coldor, Isengard or Yeldenne.
+# Every lean-holding Cold Lands country: the clans, Horidor, Holdon, Fearno, Windwaith, the Yeti Lands and Titanos; never Coldor or Isengard.
 zin_cold_is_clan_realm = {
 	zin_cold_is_cold = yes
 	has_variable = zin_cold_lean
 	NOT = {
 		original_tag = CLD
 		original_tag = MLK
-		original_tag = YEL
 	}
 }
 

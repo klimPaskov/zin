@@ -1,765 +1,1159 @@
 guiTypes = {
+containerWindowType = {
+	name = "zin_dominion_window"
+	position = { x = -316 y = -300 }
+	size = { width = 632 height = 600 }
+	orientation = center
+	moveable = yes
+	background = {
+		name = "zin_dominion_bg"
+		spriteType = "GFX_zin_frame"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_title"
+		position = { x = 48 y = 20 }
+		font = "hoi_24header"
+		text = "ZIN_DOM_TITLE"
+		maxWidth = 536
+		maxHeight = 32
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_dominion_close"
+		position = { x = 596 y = 8 }
+		quadTextureSprite = "GFX_closebutton"
+		shortcut = "ESCAPE"
+		pdx_tooltip = "ZIN_DOM_TITLE_CLOSE_tt"
+	}
 	containerWindowType = {
-		name = "zin_dominion_window"
-		position = { x = -310 y = -260 }
-		size = { width = 620 height = 520 }
-		orientation = center
-		moveable = yes
+		name = "zin_dominion_accent"
+		position = { x = 16 y = 56 }
+		size = { width = 600 height = 4 }
+		clipping = yes
 		background = {
-			name = "zin_dominion_bg"
-			spriteType = "GFX_zin_frame"
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_title"
-			position = { x = 40 y = 20 }
-			font = "hoi_24header"
-			text = "ZIN_DOM_TITLE"
-			maxWidth = 540
-			maxHeight = 32
-			format = centre
-			fixedsize = yes
-		}
-		buttonType = {
-			name = "zin_dominion_close"
-			position = { x = 576 y = 14 }
-			quadTextureSprite = "GFX_closebutton"
-			shortcut = "ESCAPE"
-		}
-		buttonType = {
-			name = "zin_dominion_tab_1"
-			position = { x = 30 y = 62 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_DOM_TAB1"
-			buttonFont = "hoi_16mbs"
+			name = "zin_dominion_accent_bg"
+			spriteType = "GFX_blank_leader_portrait"
 		}
 		iconType = {
-			name = "zin_dominion_tab_1_on"
-			spriteType = "GFX_zin_rule"
-			position = { x = 30 y = 92 }
-		}
-		buttonType = {
-			name = "zin_dominion_tab_2"
-			position = { x = 178 y = 62 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_DOM_TAB2"
-			buttonFont = "hoi_16mbs"
-		}
-		iconType = {
-			name = "zin_dominion_tab_2_on"
-			spriteType = "GFX_zin_rule"
-			position = { x = 178 y = 92 }
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_hosts"
-			position = { x = 40 y = 118 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T1_HOSTS"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_dominion_hosts_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 156 }
-		}
-		iconType = {
-			name = "zin_dominion_hosts_mark"
-			spriteType = "GFX_zin_dominion_marker"
-			position = { x = 40 y = 144 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_hostmarks"
-			position = { x = 40 y = 164 }
-			font = "hoi_16mbs"
-			text = "ZIN_DOM_T1_HOSTMARKS"
-			maxWidth = 540
-			maxHeight = 20
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_veil"
-			position = { x = 40 y = 200 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T1_VEIL"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_dominion_veil_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 238 }
-		}
-		iconType = {
-			name = "zin_dominion_veil_mark"
-			spriteType = "GFX_zin_dominion_marker"
-			position = { x = 40 y = 226 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_veilmarks"
-			position = { x = 40 y = 246 }
-			font = "hoi_16mbs"
-			text = "ZIN_DOM_T1_VEILMARKS"
-			maxWidth = 540
-			maxHeight = 20
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_nether"
-			position = { x = 40 y = 282 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T1_NETHER"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_dominion_nether_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 320 }
-		}
-		iconType = {
-			name = "zin_dominion_nether_mark"
-			spriteType = "GFX_zin_dominion_marker"
-			position = { x = 40 y = 308 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_nethermarks"
-			position = { x = 40 y = 328 }
-			font = "hoi_16mbs"
-			text = "ZIN_DOM_T1_NETHERMARKS"
-			maxWidth = 540
-			maxHeight = 20
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_musters"
-			position = { x = 40 y = 366 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T1_MUSTERS"
-			maxWidth = 540
-			maxHeight = 48
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_closed"
-			position = { x = 40 y = 440 }
-			font = "hoi_16mbs"
-			text = "ZIN_DOM_T1_BROKEN"
-			maxWidth = 540
-			maxHeight = 48
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_sworn_head"
-			position = { x = 40 y = 118 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_HEAD"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_oath_demon"
-			position = { x = 60 y = 156 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_DEMON"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_oath_dolon"
-			position = { x = 60 y = 190 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_DOLON"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_oath_nezer"
-			position = { x = 60 y = 224 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_NEZER"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_oath_note"
-			position = { x = 40 y = 262 }
-			font = "hoi_16mbs"
-			text = "ZIN_DOM_T2_NOTE"
-			maxWidth = 540
-			maxHeight = 40
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_dark_head"
-			position = { x = 40 y = 314 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_DARK"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_dark_1"
-			position = { x = 60 y = 352 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_DARK1"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_dark_2"
-			position = { x = 60 y = 384 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_DARK2"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_dominion_dark_3"
-			position = { x = 60 y = 416 }
-			font = "hoi_18mbs"
-			text = "ZIN_DOM_T2_DARK3"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-	}
-	containerWindowType = {
-		name = "zin_dominion_button_window"
-		position = { x = 148 y = 86 }
-		size = { width = 132 height = 30 }
-		orientation = upper_left
-		buttonType = {
-			name = "zin_dominion_open"
+			name = "zin_dominion_accent_1"
+			spriteType = "GFX_zin_accent_dominion"
 			position = { x = 0 y = 0 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_DOM_BUTTON"
-			buttonFont = "hoi_18mbs"
-			pdx_tooltip = "ZIN_DOM_BUTTON_tt"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_dominion_accent_2"
+			spriteType = "GFX_zin_accent_dominion"
+			position = { x = 128 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_dominion_accent_3"
+			spriteType = "GFX_zin_accent_dominion"
+			position = { x = 256 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_dominion_accent_4"
+			spriteType = "GFX_zin_accent_dominion"
+			position = { x = 384 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_dominion_accent_5"
+			spriteType = "GFX_zin_accent_dominion"
+			position = { x = 512 y = 0 }
+			alwaystransparent = yes
 		}
 	}
+	iconType = {
+		name = "zin_dominion_header"
+		spriteType = "GFX_zin_header_dominion"
+		position = { x = 16 y = 60 }
+	}
+	buttonType = {
+		name = "zin_dominion_tab_1"
+		position = { x = 32 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
+		buttonText = "ZIN_DOM_TAB1"
+		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_DOM_TAB1_tt"
+	}
+	iconType = {
+		name = "zin_dominion_tab_1_on"
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 32 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_tab_1_on_text"
+		position = { x = 32 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_DOM_TAB1_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_dominion_tab_2"
+		position = { x = 168 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
+		buttonText = "ZIN_DOM_TAB2"
+		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_DOM_TAB2_tt"
+	}
+	iconType = {
+		name = "zin_dominion_tab_2_on"
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 168 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_tab_2_on_text"
+		position = { x = 168 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_DOM_TAB2_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_hosts"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
+		text = "ZIN_DOM_T1_HOSTS"
+		maxWidth = 568
+		maxHeight = 28
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T1_HOSTS_tt"
+	}
 	containerWindowType = {
-		name = "zin_watch_window"
-		position = { x = -310 y = -250 }
-		size = { width = 620 height = 500 }
-		orientation = center
-		moveable = yes
+		name = "zin_dominion_hosts_meter"
+		position = { x = 32 y = 240 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_dominion_hosts_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_dominion_hosts_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_dominion_hosts_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_dominion_hosts_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_dominion_hosts_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_dominion_hosts_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_dominion_hosts_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
+		iconType = {
+			name = "zin_dominion_hosts_meter_mark_3"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 168 y = 0 }
+		}
+		iconType = {
+			name = "zin_dominion_hosts_meter_mark_4"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 200 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_veil"
+		position = { x = 32 y = 268 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T1_VEIL"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T1_VEIL_tt"
+	}
+	containerWindowType = {
+		name = "zin_dominion_veil_meter"
+		position = { x = 32 y = 296 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_dominion_veil_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_dominion_veil_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_dominion_veil_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_dominion_veil_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_dominion_veil_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_dominion_veil_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_dominion_veil_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
+		iconType = {
+			name = "zin_dominion_veil_meter_mark_3"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 168 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_nether"
+		position = { x = 32 y = 328 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T1_NETHER"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T1_NETHER_tt"
+	}
+	containerWindowType = {
+		name = "zin_dominion_nether_meter"
+		position = { x = 32 y = 356 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_dominion_nether_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_dominion_nether_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_dominion_nether_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_dominion_nether_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_dominion_nether_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_dominion_nether_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 96 y = 0 }
+		}
+		iconType = {
+			name = "zin_dominion_nether_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 168 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_musters"
+		position = { x = 32 y = 388 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T1_MUSTERS"
+		maxWidth = 568
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T1_MUSTERS_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_closed"
+		position = { x = 32 y = 448 }
+		font = "hoi_16mbs"
+		text = "ZIN_DOM_T1_BROKEN"
+		maxWidth = 568
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_sworn_head"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
+		text = "ZIN_DOM_T2_HEAD"
+		maxWidth = 568
+		maxHeight = 28
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_HEAD_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_oath_demon"
+		position = { x = 32 y = 248 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T2_DEMON"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_DEMON_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_oath_dolon"
+		position = { x = 32 y = 276 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T2_DOLON"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_DOLON_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_oath_nezer"
+		position = { x = 32 y = 304 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T2_NEZER"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_NEZER_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_oath_note"
+		position = { x = 32 y = 340 }
+		font = "hoi_16mbs"
+		text = "ZIN_DOM_T2_NOTE"
+		maxWidth = 568
+		maxHeight = 40
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_dark_head"
+		position = { x = 32 y = 392 }
+		font = "hoi_16mbs"
+		text = "ZIN_DOM_T2_DARK"
+		maxWidth = 568
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_dark_1"
+		position = { x = 32 y = 416 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T2_DARK1"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_DARK1_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_dark_2"
+		position = { x = 32 y = 444 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T2_DARK2"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_DARK2_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_dominion_dark_3"
+		position = { x = 32 y = 472 }
+		font = "hoi_18mbs"
+		text = "ZIN_DOM_T2_DARK3"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_DOM_T2_DARK3_tt"
+	}
+}
+containerWindowType = {
+	name = "zin_watch_window"
+	position = { x = -316 y = -300 }
+	size = { width = 632 height = 600 }
+	orientation = center
+	moveable = yes
+	background = {
+		name = "zin_watch_bg"
+		spriteType = "GFX_zin_frame"
+	}
+	instantTextBoxType = {
+		name = "zin_watch_title"
+		position = { x = 48 y = 20 }
+		font = "hoi_24header"
+		text = "ZIN_WATCH_TITLE"
+		maxWidth = 536
+		maxHeight = 32
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_watch_close"
+		position = { x = 596 y = 8 }
+		quadTextureSprite = "GFX_closebutton"
+		shortcut = "ESCAPE"
+		pdx_tooltip = "ZIN_WATCH_TITLE_CLOSE_tt"
+	}
+	containerWindowType = {
+		name = "zin_watch_accent"
+		position = { x = 16 y = 56 }
+		size = { width = 600 height = 4 }
+		clipping = yes
 		background = {
-			name = "zin_watch_bg"
-			spriteType = "GFX_zin_frame"
-		}
-		instantTextBoxType = {
-			name = "zin_watch_title"
-			position = { x = 40 y = 20 }
-			font = "hoi_24header"
-			text = "ZIN_WATCH_TITLE"
-			maxWidth = 540
-			maxHeight = 32
-			format = centre
-			fixedsize = yes
-		}
-		buttonType = {
-			name = "zin_watch_close"
-			position = { x = 576 y = 14 }
-			quadTextureSprite = "GFX_closebutton"
-			shortcut = "ESCAPE"
-		}
-		buttonType = {
-			name = "zin_watch_tab_1"
-			position = { x = 30 y = 62 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_WATCH_TAB1"
-			buttonFont = "hoi_16mbs"
+			name = "zin_watch_accent_bg"
+			spriteType = "GFX_blank_leader_portrait"
 		}
 		iconType = {
-			name = "zin_watch_tab_1_on"
-			spriteType = "GFX_zin_rule"
-			position = { x = 30 y = 92 }
-		}
-		instantTextBoxType = {
-			name = "zin_watch_proof"
-			position = { x = 40 y = 118 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_PROOF"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_watch_proof_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 156 }
-		}
-		iconType = {
-			name = "zin_watch_proof_mark"
-			spriteType = "GFX_zin_watch_marker"
-			position = { x = 40 y = 144 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_watch_proofmarks"
-			position = { x = 40 y = 164 }
-			font = "hoi_16mbs"
-			text = "ZIN_WATCH_PROOFMARKS"
-			maxWidth = 540
-			maxHeight = 36
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_watch_passes"
-			position = { x = 40 y = 214 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_PASSES"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_watch_passes_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 252 }
-		}
-		iconType = {
-			name = "zin_watch_passes_mark"
-			spriteType = "GFX_zin_watch_marker"
-			position = { x = 40 y = 240 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_watch_passmarks"
-			position = { x = 40 y = 260 }
-			font = "hoi_16mbs"
-			text = "ZIN_WATCH_PASSMARKS"
-			maxWidth = 540
-			maxHeight = 36
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_watch_south"
-			position = { x = 40 y = 312 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_SOUTH"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_watch_cd_head"
-			position = { x = 40 y = 356 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_CDHEAD"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_watch_cd_scout"
-			position = { x = 60 y = 388 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_CD_SCOUT"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_watch_cd_word"
-			position = { x = 60 y = 418 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_CD_WORD"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_watch_cd_forts"
-			position = { x = 60 y = 448 }
-			font = "hoi_18mbs"
-			text = "ZIN_WATCH_CD_FORTS"
-			maxWidth = 500
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-	}
-	containerWindowType = {
-		name = "zin_watch_button_window"
-		position = { x = 148 y = 86 }
-		size = { width = 132 height = 30 }
-		orientation = upper_left
-		buttonType = {
-			name = "zin_watch_open"
+			name = "zin_watch_accent_1"
+			spriteType = "GFX_zin_accent_watch"
 			position = { x = 0 y = 0 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_WATCH_BUTTON"
-			buttonFont = "hoi_18mbs"
-			pdx_tooltip = "ZIN_WATCH_BUTTON_tt"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_watch_accent_2"
+			spriteType = "GFX_zin_accent_watch"
+			position = { x = 128 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_watch_accent_3"
+			spriteType = "GFX_zin_accent_watch"
+			position = { x = 256 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_watch_accent_4"
+			spriteType = "GFX_zin_accent_watch"
+			position = { x = 384 y = 0 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "zin_watch_accent_5"
+			spriteType = "GFX_zin_accent_watch"
+			position = { x = 512 y = 0 }
+			alwaystransparent = yes
 		}
 	}
+	iconType = {
+		name = "zin_watch_header"
+		spriteType = "GFX_zin_header_watch"
+		position = { x = 16 y = 60 }
+	}
+	instantTextBoxType = {
+		name = "zin_watch_proof"
+		position = { x = 32 y = 164 }
+		font = "hoi_20bs"
+		text = "ZIN_WATCH_PROOF"
+		maxWidth = 568
+		maxHeight = 28
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_WATCH_PROOF_tt"
+	}
 	containerWindowType = {
-		name = "zin_strait_window"
-		position = { x = -310 y = -260 }
-		size = { width = 620 height = 520 }
-		orientation = center
-		moveable = yes
+		name = "zin_watch_proof_meter"
+		position = { x = 32 y = 196 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_watch_proof_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_watch_proof_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_watch_proof_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_watch_proof_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_watch_proof_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_watch_proof_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 64 y = 0 }
+		}
+		iconType = {
+			name = "zin_watch_proof_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 120 y = 0 }
+		}
+		iconType = {
+			name = "zin_watch_proof_meter_mark_3"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 180 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_watch_passes"
+		position = { x = 32 y = 224 }
+		font = "hoi_18mbs"
+		text = "ZIN_WATCH_PASSES"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_WATCH_PASSES_tt"
+	}
+	containerWindowType = {
+		name = "zin_watch_passes_meter"
+		position = { x = 32 y = 252 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_watch_passes_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_watch_passes_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_watch_passes_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_watch_passes_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_watch_passes_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_watch_passes_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 52 y = 0 }
+		}
+		iconType = {
+			name = "zin_watch_passes_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 96 y = 0 }
+		}
+		iconType = {
+			name = "zin_watch_passes_meter_mark_3"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 144 y = 0 }
+		}
+		iconType = {
+			name = "zin_watch_passes_meter_mark_4"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 188 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_watch_south"
+		position = { x = 32 y = 284 }
+		font = "hoi_18mbs"
+		text = "ZIN_WATCH_SOUTH"
+		maxWidth = 568
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_WATCH_SOUTH_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_watch_cd_head"
+		position = { x = 32 y = 344 }
+		font = "hoi_16mbs"
+		text = "ZIN_WATCH_CDHEAD"
+		maxWidth = 568
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_watch_cd_scout"
+		position = { x = 32 y = 368 }
+		font = "hoi_18mbs"
+		text = "ZIN_WATCH_CD_SCOUT"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_WATCH_CD_SCOUT_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_watch_cd_word"
+		position = { x = 32 y = 396 }
+		font = "hoi_18mbs"
+		text = "ZIN_WATCH_CD_WORD"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_WATCH_CD_WORD_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_watch_cd_forts"
+		position = { x = 32 y = 424 }
+		font = "hoi_18mbs"
+		text = "ZIN_WATCH_CD_FORTS"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_WATCH_CD_FORTS_tt"
+	}
+}
+containerWindowType = {
+	name = "zin_strait_window"
+	position = { x = -316 y = -300 }
+	size = { width = 632 height = 600 }
+	orientation = center
+	moveable = yes
+	background = {
+		name = "zin_strait_bg"
+		spriteType = "GFX_zin_frame"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_title"
+		position = { x = 48 y = 20 }
+		font = "hoi_24header"
+		text = "ZIN_STRAIT_TITLE"
+		maxWidth = 536
+		maxHeight = 32
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_strait_close"
+		position = { x = 596 y = 8 }
+		quadTextureSprite = "GFX_closebutton"
+		shortcut = "ESCAPE"
+		pdx_tooltip = "ZIN_STRAIT_TITLE_CLOSE_tt"
+	}
+	containerWindowType = {
+		name = "zin_strait_accent"
+		position = { x = 16 y = 56 }
+		size = { width = 600 height = 4 }
+		clipping = yes
 		background = {
-			name = "zin_strait_bg"
-			spriteType = "GFX_zin_frame"
-		}
-		instantTextBoxType = {
-			name = "zin_strait_title"
-			position = { x = 40 y = 20 }
-			font = "hoi_24header"
-			text = "ZIN_STRAIT_TITLE"
-			maxWidth = 540
-			maxHeight = 32
-			format = centre
-			fixedsize = yes
-		}
-		buttonType = {
-			name = "zin_strait_close"
-			position = { x = 576 y = 14 }
-			quadTextureSprite = "GFX_closebutton"
-			shortcut = "ESCAPE"
-		}
-		buttonType = {
-			name = "zin_strait_tab_1"
-			position = { x = 30 y = 62 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_STRAIT_TAB1"
-			buttonFont = "hoi_16mbs"
+			name = "zin_strait_accent_bg"
+			spriteType = "GFX_blank_leader_portrait"
 		}
 		iconType = {
-			name = "zin_strait_tab_1_on"
-			spriteType = "GFX_zin_rule"
-			position = { x = 30 y = 92 }
-		}
-		buttonType = {
-			name = "zin_strait_tab_2"
-			position = { x = 178 y = 62 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_STRAIT_TAB2"
-			buttonFont = "hoi_16mbs"
+			name = "zin_strait_accent_1"
+			spriteType = "GFX_zin_accent_strait"
+			position = { x = 0 y = 0 }
+			alwaystransparent = yes
 		}
 		iconType = {
-			name = "zin_strait_tab_2_on"
-			spriteType = "GFX_zin_rule"
-			position = { x = 178 y = 92 }
-		}
-		buttonType = {
-			name = "zin_strait_tab_3"
-			position = { x = 326 y = 62 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_STRAIT_TAB3"
-			buttonFont = "hoi_16mbs"
+			name = "zin_strait_accent_2"
+			spriteType = "GFX_zin_accent_strait"
+			position = { x = 128 y = 0 }
+			alwaystransparent = yes
 		}
 		iconType = {
-			name = "zin_strait_tab_3_on"
-			spriteType = "GFX_zin_rule"
-			position = { x = 326 y = 92 }
-		}
-		instantTextBoxType = {
-			name = "zin_strait_standing"
-			position = { x = 40 y = 118 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T1_STANDING"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
+			name = "zin_strait_accent_3"
+			spriteType = "GFX_zin_accent_strait"
+			position = { x = 256 y = 0 }
+			alwaystransparent = yes
 		}
 		iconType = {
-			name = "zin_strait_standing_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 156 }
+			name = "zin_strait_accent_4"
+			spriteType = "GFX_zin_accent_strait"
+			position = { x = 384 y = 0 }
+			alwaystransparent = yes
 		}
 		iconType = {
-			name = "zin_strait_standing_mark"
-			spriteType = "GFX_zin_strait_marker"
-			position = { x = 40 y = 144 }
-			scale = 0.4
+			name = "zin_strait_accent_5"
+			spriteType = "GFX_zin_accent_strait"
+			position = { x = 512 y = 0 }
+			alwaystransparent = yes
 		}
-		instantTextBoxType = {
-			name = "zin_strait_standmarks"
-			position = { x = 40 y = 164 }
-			font = "hoi_16mbs"
-			text = "ZIN_STRAIT_T1_MARKS"
-			maxWidth = 540
-			maxHeight = 20
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_band"
-			position = { x = 40 y = 200 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T1_BAND"
-			maxWidth = 540
-			maxHeight = 40
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_treaty"
-			position = { x = 40 y = 252 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T1_TREATY"
-			maxWidth = 540
-			maxHeight = 40
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_route"
-			position = { x = 40 y = 304 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T1_ROUTE"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_torn"
-			position = { x = 40 y = 350 }
-			font = "hoi_16mbs"
-			text = "ZIN_STRAIT_T1_QUESTION"
-			maxWidth = 540
-			maxHeight = 48
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_dues_head"
-			position = { x = 40 y = 118 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T2_HEAD"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_due_0"
-			position = { x = 60 y = 156 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T2_DUE0"
-			maxWidth = 500
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_due_1"
-			position = { x = 60 y = 194 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T2_DUE1"
-			maxWidth = 500
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_due_2"
-			position = { x = 60 y = 232 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T2_DUE2"
-			maxWidth = 500
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_due_3"
-			position = { x = 60 y = 270 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T2_DUE3"
-			maxWidth = 500
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_due_4"
-			position = { x = 60 y = 308 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T2_DUE4"
-			maxWidth = 500
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_dues_note"
-			position = { x = 40 y = 360 }
-			font = "hoi_16mbs"
-			text = "ZIN_STRAIT_T2_NOTE"
-			maxWidth = 540
-			maxHeight = 60
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_cohesion"
-			position = { x = 40 y = 118 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_COHESION"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_strait_cohesion_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 156 }
-		}
-		iconType = {
-			name = "zin_strait_cohesion_mark"
-			spriteType = "GFX_zin_strait_marker"
-			position = { x = 40 y = 144 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_strait_hegemony"
-			position = { x = 40 y = 190 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_HEGEMONY"
-			maxWidth = 540
-			maxHeight = 24
-			format = left
-			fixedsize = yes
-		}
-		iconType = {
-			name = "zin_strait_hegemony_rule"
-			spriteType = "GFX_zin_rule"
-			position = { x = 40 y = 228 }
-		}
-		iconType = {
-			name = "zin_strait_hegemony_mark"
-			spriteType = "GFX_zin_strait_marker"
-			position = { x = 40 y = 216 }
-			scale = 0.4
-		}
-		instantTextBoxType = {
-			name = "zin_strait_hegmarks"
-			position = { x = 40 y = 236 }
-			font = "hoi_16mbs"
-			text = "ZIN_STRAIT_T3_HEGMARKS"
-			maxWidth = 540
-			maxHeight = 36
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_lean_eekedor"
-			position = { x = 60 y = 290 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_EEKEDOR"
-			maxWidth = 260
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_lean_tolvael"
-			position = { x = 330 y = 290 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_TOLVAEL"
-			maxWidth = 260
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_lean_molot"
-			position = { x = 60 y = 326 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_MOLOT"
-			maxWidth = 260
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_lean_ren"
-			position = { x = 330 y = 326 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_REN"
-			maxWidth = 260
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_lean_mina"
-			position = { x = 60 y = 362 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_MINA"
-			maxWidth = 260
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
-		instantTextBoxType = {
-			name = "zin_strait_lean_hold"
-			position = { x = 330 y = 362 }
-			font = "hoi_18mbs"
-			text = "ZIN_STRAIT_T3_HOLD"
-			maxWidth = 260
-			maxHeight = 28
-			format = left
-			fixedsize = yes
-		}
+	}
+	iconType = {
+		name = "zin_strait_header"
+		spriteType = "GFX_zin_header_strait"
+		position = { x = 16 y = 60 }
+	}
+	buttonType = {
+		name = "zin_strait_tab_1"
+		position = { x = 32 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
+		buttonText = "ZIN_STRAIT_TAB1"
+		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_STRAIT_TAB1_tt"
+	}
+	iconType = {
+		name = "zin_strait_tab_1_on"
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 32 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_strait_tab_1_on_text"
+		position = { x = 32 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_STRAIT_TAB1_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_strait_tab_2"
+		position = { x = 168 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
+		buttonText = "ZIN_STRAIT_TAB2"
+		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_STRAIT_TAB2_tt"
+	}
+	iconType = {
+		name = "zin_strait_tab_2_on"
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 168 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_strait_tab_2_on_text"
+		position = { x = 168 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_STRAIT_TAB2_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_strait_tab_3"
+		position = { x = 304 y = 164 }
+		spriteType = "GFX_zin_tab_chancery"
+		buttonText = "ZIN_STRAIT_TAB3"
+		buttonFont = "hoi_16mbs"
+		pdx_tooltip = "ZIN_STRAIT_TAB3_tt"
+	}
+	iconType = {
+		name = "zin_strait_tab_3_on"
+		spriteType = "GFX_zin_tab_chancery"
+		frame = 3
+		position = { x = 304 y = 164 }
+	}
+	instantTextBoxType = {
+		name = "zin_strait_tab_3_on_text"
+		position = { x = 304 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_STRAIT_TAB3_ON"
+		maxWidth = 128
+		maxHeight = 20
+		format = centre
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_strait_standing"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
+		text = "ZIN_STRAIT_T1_STANDING"
+		maxWidth = 568
+		maxHeight = 28
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T1_STANDING_tt"
 	}
 	containerWindowType = {
-		name = "zin_strait_button_window"
-		position = { x = 148 y = 86 }
-		size = { width = 132 height = 30 }
-		orientation = upper_left
-		buttonType = {
-			name = "zin_strait_open"
+		name = "zin_strait_standing_meter"
+		position = { x = 32 y = 240 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_strait_standing_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
 			position = { x = 0 y = 0 }
-			spriteType = "GFX_zin_button"
-			buttonText = "ZIN_STRAIT_BUTTON"
-			buttonFont = "hoi_18mbs"
-			pdx_tooltip = "ZIN_STRAIT_BUTTON_tt"
+		}
+		containerWindowType = {
+			name = "zin_strait_standing_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_strait_standing_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_strait_standing_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_strait_standing_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_strait_standing_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 72 y = 0 }
+		}
+		iconType = {
+			name = "zin_strait_standing_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 168 y = 0 }
 		}
 	}
+	instantTextBoxType = {
+		name = "zin_strait_band"
+		position = { x = 32 y = 268 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T1_BAND"
+		maxWidth = 568
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T1_BAND_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_treaty"
+		position = { x = 32 y = 328 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T1_TREATY"
+		maxWidth = 568
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T1_TREATY_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_route"
+		position = { x = 32 y = 388 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T1_ROUTE"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T1_ROUTE_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_torn"
+		position = { x = 32 y = 424 }
+		font = "hoi_16mbs"
+		text = "ZIN_STRAIT_T1_QUESTION"
+		maxWidth = 568
+		maxHeight = 60
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_strait_dues_head"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
+		text = "ZIN_STRAIT_T2_HEAD"
+		maxWidth = 568
+		maxHeight = 28
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T2_HEAD_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_due_0"
+		position = { x = 32 y = 248 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T2_DUE0"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T2_DUE0_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_due_1"
+		position = { x = 32 y = 280 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T2_DUE1"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T2_DUE1_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_due_2"
+		position = { x = 32 y = 312 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T2_DUE2"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T2_DUE2_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_due_3"
+		position = { x = 32 y = 344 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T2_DUE3"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T2_DUE3_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_due_4"
+		position = { x = 32 y = 376 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T2_DUE4"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T2_DUE4_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_dues_note"
+		position = { x = 32 y = 412 }
+		font = "hoi_16mbs"
+		text = "ZIN_STRAIT_T2_NOTE"
+		maxWidth = 568
+		maxHeight = 40
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_strait_cohesion"
+		position = { x = 32 y = 208 }
+		font = "hoi_20bs"
+		text = "ZIN_STRAIT_T3_COHESION"
+		maxWidth = 568
+		maxHeight = 28
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_COHESION_tt"
+	}
+	containerWindowType = {
+		name = "zin_strait_cohesion_meter"
+		position = { x = 32 y = 240 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_strait_cohesion_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_strait_cohesion_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_strait_cohesion_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_strait_cohesion_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_strait_cohesion_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_strait_cohesion_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 64 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_strait_hegemony"
+		position = { x = 32 y = 268 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_HEGEMONY"
+		maxWidth = 568
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_HEGEMONY_tt"
+	}
+	containerWindowType = {
+		name = "zin_strait_hegemony_meter"
+		position = { x = 32 y = 296 }
+		size = { width = 256 height = 16 }
+		iconType = {
+			name = "zin_strait_hegemony_meter_groove"
+			spriteType = "GFX_zin_meter_groove_chancery"
+			position = { x = 0 y = 0 }
+		}
+		containerWindowType = {
+			name = "zin_strait_hegemony_meter_well"
+			position = { x = 12 y = 4 }
+			size = { width = 232 height = 8 }
+			clipping = yes
+			background = {
+				name = "zin_strait_hegemony_meter_well_bg"
+				spriteType = "GFX_blank_leader_portrait"
+			}
+			containerWindowType = {
+				name = "zin_strait_hegemony_meter_strip"
+				position = { x = -232 y = 0 }
+				size = { width = 464 height = 8 }
+				clipping = no
+				iconType = {
+					name = "zin_strait_hegemony_meter_fill"
+					spriteType = "GFX_zin_meter_fill_chancery"
+					position = { x = 0 y = 0 }
+				}
+			}
+		}
+		iconType = {
+			name = "zin_strait_hegemony_meter_mark_1"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 52 y = 0 }
+		}
+		iconType = {
+			name = "zin_strait_hegemony_meter_mark_2"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 96 y = 0 }
+		}
+		iconType = {
+			name = "zin_strait_hegemony_meter_mark_3"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 144 y = 0 }
+		}
+		iconType = {
+			name = "zin_strait_hegemony_meter_mark_4"
+			spriteType = "GFX_zin_meter_mark_chancery"
+			position = { x = 188 y = 0 }
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_head"
+		position = { x = 32 y = 328 }
+		font = "hoi_16mbs"
+		text = "ZIN_STRAIT_T3_LEANS"
+		maxWidth = 568
+		maxHeight = 20
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_eekedor"
+		position = { x = 32 y = 352 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_EEKEDOR"
+		maxWidth = 276
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_EEKEDOR_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_tolvael"
+		position = { x = 316 y = 352 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_TOLVAEL"
+		maxWidth = 276
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_TOLVAEL_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_molot"
+		position = { x = 32 y = 380 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_MOLOT"
+		maxWidth = 276
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_MOLOT_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_ren"
+		position = { x = 316 y = 380 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_REN"
+		maxWidth = 276
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_REN_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_mina"
+		position = { x = 32 y = 408 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_MINA"
+		maxWidth = 276
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_MINA_tt"
+	}
+	instantTextBoxType = {
+		name = "zin_strait_lean_hold"
+		position = { x = 316 y = 408 }
+		font = "hoi_18mbs"
+		text = "ZIN_STRAIT_T3_HOLD"
+		maxWidth = 276
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+		pdx_tooltip = "ZIN_STRAIT_T3_HOLD_tt"
+	}
+}
 }

@@ -601,6 +601,7 @@ zin_zol_rise = {
 		if = {
 			limit = { NOT = { has_global_flag = zin_zol_rising } }
 			set_global_flag = zin_zol_rising
+			zin_super_event_black_north_marches = yes # super event 7 (modules/super_events.mjs)
 			zin_zol_after_rise_common = yes
 			if = {
 				limit = { has_country_flag = zin_zol_greater_hour }
@@ -683,6 +684,7 @@ zin_zol_send_kusven = {
 		if = {
 			limit = { zin_kusven_can_come_forth = yes }
 			set_global_flag = zin_kusven_forth
+			zin_super_event_kusven_forth = yes # super event 15 (modules/super_events.mjs)
 			set_temp_variable = { zin_arg_value = -25 }
 			zin_zol_add_mistake_power = yes
 			set_variable = { zin_zol_convergence = 0 }
@@ -985,12 +987,21 @@ zin_zol_weekly_manifest = {
 zin_zol_ui_refresh = {
 	# Recomputes what the Presence panel shows. Pure formatting: it never changes a mechanic variable.
 	add_to_variable = { zin_ui_tick = 1 }
-	set_variable = { zin_ui_power_x = zin_mistake_power }
-	multiply_variable = { zin_ui_power_x = 5.2 }
-	add_to_variable = { zin_ui_power_x = 27 }
-	set_variable = { zin_ui_conv_x = zin_zol_convergence }
-	multiply_variable = { zin_ui_conv_x = 5.2 }
-	add_to_variable = { zin_ui_conv_x = 27 }
+	set_variable = { zin_ui_power_fill = zin_mistake_power }
+	multiply_variable = { zin_ui_power_fill = 2.32 }
+	clamp_variable = { var = zin_ui_power_fill min = 0 max = 232 }
+	set_variable = { zin_ui_conv_fill = zin_zol_convergence }
+	multiply_variable = { zin_ui_conv_fill = 2.32 }
+	clamp_variable = { var = zin_ui_conv_fill min = 0 max = 232 }
+	set_variable = { zin_ui_bond_great_fill = zin_zol_bond_great }
+	multiply_variable = { zin_ui_bond_great_fill = 46.4 }
+	clamp_variable = { var = zin_ui_bond_great_fill min = 0 max = 232 }
+	set_variable = { zin_ui_bond_lesser_fill = zin_zol_bond_lesser }
+	multiply_variable = { zin_ui_bond_lesser_fill = 46.4 }
+	clamp_variable = { var = zin_ui_bond_lesser_fill min = 0 max = 232 }
+	set_variable = { zin_ui_bond_divine_fill = zin_zol_bond_divine }
+	multiply_variable = { zin_ui_bond_divine_fill = 46.4 }
+	clamp_variable = { var = zin_ui_bond_divine_fill min = 0 max = 232 }
 	set_variable = { zin_zol_host_cap = zin_mistake_power }
 	divide_variable = { zin_zol_host_cap = 4 }
 	round_variable = zin_zol_host_cap

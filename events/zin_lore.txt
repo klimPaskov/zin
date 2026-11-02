@@ -281,26 +281,6 @@ country_event = {
 	}
 }
 
-# The Year 1748
-# to: Yeldenne (human player); hist: 1 Thaw 1748
-country_event = {
-	id = zin_lore.15
-	title = zin_lore.15.t
-	desc = zin_lore.15.d
-	picture = GFX_zin_evt_yeldenne_hall
-	is_triggered_only = yes
-	timeout_days = 30
-	immediate = {
-		set_country_flag = zin_lore_seen_15
-	}
-	option = {
-		name = zin_lore.15.a
-		ai_chance = {
-			base = 100
-		}
-	}
-}
-
 # (hidden)
 # to: any one country, once, when the game rule zin_rule_debug_checks is on; hist: 1 Thaw 1748, three hours after the start
 country_event = {

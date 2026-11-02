@@ -114,6 +114,17 @@ defined_text = {
 }
 
 defined_text = {
+	name = zin_dominion_header
+	text = {
+		trigger = {
+			has_global_flag = zin_volgan_body_destroyed
+		}
+		localization_key = GFX_zin_header_dominion_broken
+	}
+	text = { localization_key = GFX_zin_header_dominion }
+}
+
+defined_text = {
 	name = zin_watch_south_word
 	text = {
 		trigger = {

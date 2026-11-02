@@ -273,18 +273,18 @@ zin_leren_declare_supremacy = {
 	}
 }
 
-# Scope: Lerendor. Positions of the gauge markers of the Narrow Strait panel and the count of Compact crowns.
+# Scope: Lerendor. Meter fills of the Narrow Strait panel and the count of Compact crowns.
 zin_leren_ui_refresh = {
-	set_variable = { zin_ui_standing_x = zin_strait_standing }
-	add_to_variable = { zin_ui_standing_x = 100 }
-	multiply_variable = { zin_ui_standing_x = 2.6 }
-	add_to_variable = { zin_ui_standing_x = 27 }
-	set_variable = { zin_ui_cohesion_x = zin_leren_union_cohesion }
-	multiply_variable = { zin_ui_cohesion_x = 5.2 }
-	add_to_variable = { zin_ui_cohesion_x = 27 }
-	set_variable = { zin_ui_hegemony_x = zin_leren_hegemony }
-	multiply_variable = { zin_ui_hegemony_x = 5.2 }
-	add_to_variable = { zin_ui_hegemony_x = 27 }
+	set_variable = { zin_ui_standing_fill = zin_strait_standing }
+	add_to_variable = { zin_ui_standing_fill = 100 }
+	multiply_variable = { zin_ui_standing_fill = 1.16 }
+	clamp_variable = { var = zin_ui_standing_fill min = 0 max = 232 }
+	set_variable = { zin_ui_cohesion_fill = zin_leren_union_cohesion }
+	multiply_variable = { zin_ui_cohesion_fill = 2.32 }
+	clamp_variable = { var = zin_ui_cohesion_fill min = 0 max = 232 }
+	set_variable = { zin_ui_hegemony_fill = zin_leren_hegemony }
+	multiply_variable = { zin_ui_hegemony_fill = 2.32 }
+	clamp_variable = { var = zin_ui_hegemony_fill min = 0 max = 232 }
 	set_variable = { zin_ui_compact_members = 0 }
 	every_country = {
 		limit = {

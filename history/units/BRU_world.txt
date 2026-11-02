@@ -12,13 +12,13 @@ division_template = {
 	}
 }
 units = {
-	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 4651 division_template = "Levy Garrison" start_experience_factor = 0.05 start_equipment_factor = 1 }
+	division = { division_name = { is_name_ordered = yes name_order = 1 } location = 8480 division_template = "Levy Garrison" start_experience_factor = 0.05 start_equipment_factor = 1 }
 	fleet = {
 		name = "Brundahrim Fleet"
-		naval_base = 4651
+		naval_base = 9340
 		task_force = {
 			name = "Brundahrim Squadron"
-			location = 4651
+			location = 9340
 			ship = { name = "Horrgurl" definition = zin_ship_galley equipment = { zin_hull_galley_0 = { amount = 1 owner = BRU version_name = "Oared Galley" } } }
 		}
 	}

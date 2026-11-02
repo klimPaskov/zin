@@ -973,4 +973,45 @@ focus_tree = {
 			add_stability = 0.02
 		}
 	}
+	focus = {
+		id = zin_regional_nondondor_the_high_speakers_seat
+		icon = GFX_focus_zin_seal_chancellor
+		x = 1
+		y = 5
+		prerequisite = {
+			focus = zin_regional_nondondor_the_banks_by_right
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			zin_deep_open_sea_roads = yes
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = zin_regional_nondondor_the_sea_roads_by_the_crown
+		icon = GFX_focus_zin_great_warship
+		x = 1
+		y = 6
+		prerequisite = {
+			focus = zin_regional_nondondor_the_high_speakers_seat
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_ANNEXATION }
+		cost = 15
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 15
+				naval_strength_comparison = { other = RAE ratio > 1 }
+			}
+		}
+		completion_reward = {
+			set_country_flag = zin_deep_crown_route
+			set_country_flag = zin_deep_sea_roads_route
+			navy_experience = 25
+		}
+	}
 }

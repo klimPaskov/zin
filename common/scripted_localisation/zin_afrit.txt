@@ -1325,6 +1325,16 @@ defined_text = {
 	text = { localization_key = ZIN_COUNCIL_ART_BRACELET_HELD_hub }
 }
 defined_text = {
+	name = zin_council_veil_line
+	text = {
+		trigger = {
+			has_global_flag = zin_afrit_revealed
+		}
+		localization_key = ZIN_COUNCIL_T1_KNOWN_hub
+	}
+	text = { localization_key = ZIN_COUNCIL_T1_VEILED_hub }
+}
+defined_text = {
 	name = zin_council_suspicion_word
 	text = {
 		trigger = {
