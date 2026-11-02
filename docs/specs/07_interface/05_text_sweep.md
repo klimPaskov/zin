@@ -340,7 +340,7 @@ Created by this spec: `zin_term_<id>` (scripted localisation names, one per glos
 - The 23 colour codes of the `textcolors` block in `interface/core.gfx`.
 - The GUI attributes that carry keys (section 6), measured over the 130 `.gui` files directly in `interface/`; the files in its subfolders are read the same way.
 - The console commands `loc_check`, `loc_check_decisions`, `loc_check_events`, `loc_check_focuses`, `loc_check_modifiers`, `loc_check_national_spirits`, `loc_check_characters` and `dump_equipment_loc` in `documentation/console_commands_documentation.md`; the documented formatters in `loc_formatter_documentation.md`.
-- The `localisation/replace` priority rule, the BOM and header rules, the colour-code errors and the `pdx_tooltip` nesting limit are the Localisation wiki's (snapshot in `paradox_wiki/`).
+- The `localisation/replace` priority rule, the BOM and header rules, the colour-code errors and the `pdx_tooltip` nesting limit are the Localisation wiki's (snapshot in `hoi4_wiki/`).
 
 **Crash and error risks.** A localisation file without the BOM or without its `l_<language>:` header breaks, and the wiki records a crash (0xC0000005) for a file with keys and no language header. A `§` followed by a multi-byte character logs "Could not find coloring". Dollar-sign nesting inside a `pdx_tooltip` shows raw dollar signs. A file named for the wrong language is not loaded. A same-name stub with only the header is expected to be valid; probe P2 proves it before the stage-4 conversion relies on it. `localisation/languages.yml` and `ignored_loc_keys.txt` are never overridden.
 

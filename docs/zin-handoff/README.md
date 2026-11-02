@@ -53,7 +53,7 @@ All paths were checked on 24 October 2026 unless marked otherwise.
 | Creature and figure drawings, bestiary cards (private) | `C:/Users/klimp/Documents/ZIN/World/Erdae/Drawings/` (67 photos of 23 October 2026 including the world map, plus three Horos drawings in `Horos/`) | catalogue in 01, section 4.3; the card text is handwritten Estonian |
 | Branding (owner's files) | `C:/Users/klimp/Documents/ZIN/Themed/Logos/` and `.../Themed/Backgrounds/` | the five required files are listed in 02, R-90 |
 | Installed game (read only) | `C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV` | 1.19.3 |
-| Offline wiki | `paradox_wiki/` in the mod | |
+| Offline wiki | `hoi4_wiki/` in the mod | |
 | Reference mods for design study only | Steam Workshop ids 1314446921 (LOTR), 3103846888 (LOTR Expanded), 2265420196 (Old World Blues) | lessons in `docs/specs/00_reference_mod_lessons.md`; never copy |
 | Linux acceptance harness | `tools/acceptance/` in the mod; WSL lock `/tmp/hoi4_wsl.lock` | the only allowed way to run the game |
 

@@ -46,6 +46,7 @@ Every check follows `lib/report.py`: an `error` is an exact rule and fails the r
 | `asset-wiring` | `audits/audit_asset_wiring_static.py` | Does every `GFX_` name, texture, mesh and implicit engine lookup (idea, decision, focus shine, flag, achievement art) resolve? Is every custom 3D model registered: `.mesh` and `.anim` files present, `pdxmesh` animations defined, each `entity` on a defined `pdxmesh`, each sub-unit `sprite` backed by `<sprite>_entity`, `meshsettings` names matching the objects read from the `.mesh`, and model textures present (`GFX-3D-*`)? Unreferenced sprites are review items. | yes |
 | `script-rules` | `audits/audit_script_rules.py` | Does script use `<=` or `>=`, unary minus on a variable token, or `§`/`£` written into scripted localisation? Lexical only; fixtures in `tests/fixtures/script_rules/`. | no |
 | `gfx` | `gfx/gfx.py audit` | Frame-strip widths, the flag size ladder and TGA origin, achievement art size, LFS pointers and truncated runtime binaries, profiled icon families and report-image provenance (`gfx/README.md`). | for vanilla textures |
+| `shelf` | `audits/audit_shelf.py` | Does every PNG of the vanilla reference shelf match `gfx/shelf/catalog.json` (hash, count, contact sheet), do `CATALOG.md` and `REFERENCE_MANIFEST.md` still render from it, do the documents name only folders that exist, and do `gfx/profiles.json`, the catalog and the shelf builder input name exactly the 40 hoi4-imagegen families of `gfx/family_ids.json`? `--write-docs` rewrites the two documents after a shelf rebuild. | no |
 | `guidance` | `sync/check_guidance_size.py` | Are instructions, skills and agent prompts within the single-read ceiling? | no |
 | `generators` | `sync/generators.py --check` | Does every generated file in `sync/generators.json` (`AGENTS.md`, the generated agents, the skill copies) match its canonical source? A generator that is missing or crashes cannot run, which is never a pass. | no |
 | `tests` | `unittest` over `tests/`, `gfx/` and skill `tools/tests/` folders | Do the maintained tests pass? | no |
@@ -125,9 +126,9 @@ HOI4 Live Tools is a separate, optional MCP server that drives a running game. `
 Follow `3d_pipeline/README.md` and `hoi4-3d-model-pipeline` for dependency gates, job containment, provider evidence, test commands, and runtime ownership boundaries.
 Do not commit secrets, provider outputs, job artifacts, virtual environments, vendor caches, generated environment reports, or transient process state.
 
-### Offline Paradox wiki snapshot
+### HOI4 wiki
 
-`wiki/sync_wiki_snapshot.py` regenerates `paradox_wiki/` from the live Hearts of Iron IV wiki and keeps the kit's local additions (kit blocks and kit pages), `wiki/verify_wiki_snapshot.py` is the read-only acceptance check for the result, and `wiki/wiki_status.py` reports which pages are current for the installed game build and which to re-check after a game update.
+`wiki/sync_wiki_snapshot.py` regenerates `hoi4_wiki/` from the live Hearts of Iron IV wiki and keeps the kit's local additions (kit blocks and kit pages), `wiki/verify_wiki_snapshot.py` is the read-only acceptance check for the result, and `wiki/wiki_status.py` reports which pages are current for the installed game build and which to re-check after a game update.
 The snapshot ships as the `wiki.snapshot` manifest component and is named by the project instructions as the required modding reference, so the commands run together whenever the wiki or the game moves:
 
 ```powershell

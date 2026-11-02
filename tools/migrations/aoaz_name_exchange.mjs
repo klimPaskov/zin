@@ -26,7 +26,7 @@ export const EXCLUDED = [
   ['docs/lore/vault/Sources/', 'source snapshots keep the wording they were taken with'],
   ['docs/lore/sources/', 'transcriptions keep the source wording, with notes'],
   ['art/source/provenance.jsonl', 'the provenance log records the exact prompts that were sent'],
-  ['paradox_wiki/', 'the offline game wiki is not ZIN text'],
+  ['hoi4_wiki/', 'the offline game wiki is not ZIN text'],
   ['tools/migrations/', 'the migration scripts name both forms on purpose'],
   ['docs/generation/', 'records of the 11 to 18 October map generation (requests, request keys, handoffs) keep their wording'],
 ];
