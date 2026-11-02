@@ -111,7 +111,7 @@ test('Counts: the staged content matches the spec tables', () => {
   assert.equal(c.events, 26, 'twenty-one visible events and five hidden runners');
   assert.equal(c.aiStrategies, 2 + 2 * MAGICAL.length, 'free crowns, Aenor, and conquest plus front request toward each Magical Lands realm'); assert(MAGICAL.length > 5);
   assert.equal(c.scriptedLocs, 6);
-  assert.equal(east.statesTotal, 607, 'the East Lands hold 607 states at start (the new map)');
+  assert.equal(east.statesTotal, 608, 'the East Lands hold 608 states at start (the new map)');
   assert.equal(countries.filter(x => x.scan === 'South-Earth').length, D.roster.expectedCountries);
 });
 

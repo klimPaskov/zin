@@ -1,0 +1,18 @@
+state = {
+	id = 49
+	name = "STATE_49"
+	manpower = 213000
+	state_category = rural
+	history = {
+		owner = TLV
+		add_core_of = TLV
+		victory_points = { 3441 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			3441 = { naval_base = 3 }
+		}
+	}
+	provinces = { 3441 3459 3541 3547 3559 3579 3596 }
+}

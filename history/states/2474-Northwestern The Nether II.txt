@@ -1,0 +1,19 @@
+state = {
+	id = 2474
+	name = "STATE_2474"
+	manpower = 54000
+	state_category = town
+	history = {
+		owner = NET
+		add_core_of = NET
+		victory_points = { 15500 5 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			15446 = { naval_base = 3 }
+		}
+	}
+	provinces = { 15446 15472 15500 }
+}

@@ -1,0 +1,21 @@
+state = {
+	id = 1840
+	name = "STATE_1840"
+	manpower = 49000
+	state_category = metropolis
+	history = {
+		owner = MIR
+		add_core_of = MIR
+		victory_points = { 13172 20 }
+		victory_points = { 13153 25 }
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 6
+			arms_factory = 3
+			dockyard = 1
+			air_base = 2
+			13172 = { naval_base = 3 }
+		}
+	}
+	provinces = { 13153 13172 }
+}

@@ -1,0 +1,19 @@
+state = {
+	id = 425
+	name = "STATE_425"
+	manpower = 3000
+	state_category = town
+	history = {
+		owner = BLO
+		add_core_of = BLO
+		victory_points = { 5275 4 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			5275 = { naval_base = 3 }
+		}
+	}
+	provinces = { 5275 }
+}

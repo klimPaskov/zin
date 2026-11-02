@@ -1,0 +1,18 @@
+state = {
+	id = 143
+	name = "STATE_143"
+	manpower = 11000
+	state_category = town
+	history = {
+		owner = GHH
+		add_core_of = GHH
+		victory_points = { 708 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			708 = { naval_base = 2 }
+		}
+	}
+	provinces = { 708 }
+}

@@ -1,0 +1,19 @@
+state = {
+	id = 383
+	name = "STATE_383"
+	manpower = 24000
+	state_category = town
+	history = {
+		owner = GNW
+		add_core_of = GNW
+		victory_points = { 4990 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			4990 = { naval_base = 3 }
+		}
+	}
+	provinces = { 4990 5179 }
+}

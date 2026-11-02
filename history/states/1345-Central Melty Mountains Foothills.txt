@@ -1,0 +1,20 @@
+state = {
+	id = 1345
+	name = "STATE_1345"
+	manpower = 110000
+	state_category = rural
+	resources = {
+		steel = 7
+	}
+	history = {
+		owner = OST
+		add_core_of = OST
+		victory_points = { 10007 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10315 = { naval_base = 2 }
+		}
+	}
+	provinces = { 9845 9889 10007 10044 10068 10147 10223 10315 }
+}

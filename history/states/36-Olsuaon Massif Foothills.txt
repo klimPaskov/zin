@@ -1,10 +1,10 @@
 state = {
 	id = 36
 	name = "STATE_36"
-	manpower = 825000
+	manpower = 688000
 	state_category = large_town
 	resources = {
-		steel = 14
+		steel = 7
 	}
 	history = {
 		owner = POT
@@ -14,8 +14,10 @@ state = {
 			infrastructure = 4
 			industrial_complex = 2
 			arms_factory = 1
+			dockyard = 1
 			air_base = 2
+			390 = { naval_base = 3 }
 		}
 	}
-	provinces = { 651 679 725 765 820 846 854 858 919 1027 }
+	provinces = { 390 520 550 679 725 765 820 846 858 919 1027 }
 }

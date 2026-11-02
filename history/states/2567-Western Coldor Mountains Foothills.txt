@@ -1,0 +1,23 @@
+state = {
+	id = 2567
+	name = "STATE_2567"
+	manpower = 674000
+	state_category = city
+	resources = {
+		steel = 28
+	}
+	history = {
+		owner = GLI
+		add_core_of = GLI
+		victory_points = { 2670 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			2663 = { naval_base = 3 }
+		}
+	}
+	provinces = { 2524 2654 2663 2670 2821 }
+}

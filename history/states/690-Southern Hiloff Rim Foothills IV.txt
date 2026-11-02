@@ -1,0 +1,20 @@
+state = {
+	id = 690
+	name = "STATE_690"
+	manpower = 36000
+	state_category = rural
+	resources = {
+		steel = 5
+	}
+	history = {
+		owner = HIR
+		add_core_of = HIR
+		victory_points = { 10750 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10557 = { naval_base = 2 }
+		}
+	}
+	provinces = { 10539 10557 10750 }
+}

@@ -1,0 +1,22 @@
+state = {
+	id = 468
+	name = "STATE_468"
+	manpower = 213000
+	state_category = town
+	resources = {
+		steel = 28
+		tungsten = 28
+	}
+	history = {
+		owner = BLO
+		add_core_of = BLO
+		victory_points = { 5372 8 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			5372 = { naval_base = 2 }
+		}
+	}
+	provinces = { 5186 5372 5404 5873 5884 5904 }
+}

@@ -1,0 +1,18 @@
+state = {
+	id = 2231
+	name = "STATE_2231"
+	manpower = 10000
+	state_category = town
+	history = {
+		owner = ELV
+		add_core_of = ELV
+		victory_points = { 14740 4 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			14740 = { naval_base = 2 }
+		}
+	}
+	provinces = { 14740 14756 }
+}

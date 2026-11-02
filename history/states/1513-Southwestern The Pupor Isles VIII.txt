@@ -1,0 +1,18 @@
+state = {
+	id = 1513
+	name = "STATE_1513"
+	manpower = 10000
+	state_category = town
+	history = {
+		owner = SNT
+		add_core_of = SNT
+		victory_points = { 11011 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			11011 = { naval_base = 2 }
+		}
+	}
+	provinces = { 10882 11011 }
+}

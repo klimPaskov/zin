@@ -1,0 +1,18 @@
+state = {
+	id = 200
+	name = "STATE_200"
+	manpower = 117000
+	state_category = rural
+	history = {
+		owner = EEK
+		add_core_of = EEK
+		victory_points = { 4235 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			4235 = { naval_base = 3 }
+		}
+	}
+	provinces = { 4122 4157 4196 4229 4235 4340 }
+}

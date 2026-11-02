@@ -1,0 +1,18 @@
+state = {
+	id = 2051
+	name = "STATE_2051"
+	manpower = 10000
+	state_category = town
+	history = {
+		owner = YON
+		add_core_of = YON
+		victory_points = { 13533 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			13533 = { naval_base = 1 }
+		}
+	}
+	provinces = { 13532 13533 }
+}

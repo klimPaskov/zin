@@ -1,0 +1,19 @@
+state = {
+	id = 1502
+	name = "STATE_1502"
+	manpower = 50000
+	state_category = pastoral
+	resources = {
+		steel = 28
+	}
+	history = {
+		owner = MOA
+		add_core_of = MOA
+		victory_points = { 11667 3 }
+		buildings = {
+			infrastructure = 1
+			11868 = { naval_base = 2 }
+		}
+	}
+	provinces = { 11551 11667 11868 }
+}

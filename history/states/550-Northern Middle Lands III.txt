@@ -1,0 +1,17 @@
+state = {
+	id = 550
+	name = "STATE_550"
+	manpower = 12000
+	state_category = rural
+	history = {
+		owner = FOT
+		add_core_of = FOT
+		victory_points = { 5572 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			5572 = { naval_base = 2 }
+		}
+	}
+	provinces = { 5534 5572 5577 5578 }
+}

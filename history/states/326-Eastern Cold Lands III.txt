@@ -1,0 +1,18 @@
+state = {
+	id = 326
+	name = "STATE_326"
+	manpower = 19000
+	state_category = town
+	history = {
+		owner = FEA
+		add_core_of = FEA
+		victory_points = { 1201 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			1201 = { naval_base = 2 }
+		}
+	}
+	provinces = { 1201 }
+}

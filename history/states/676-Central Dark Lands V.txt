@@ -1,0 +1,16 @@
+state = {
+	id = 676
+	name = "STATE_676"
+	manpower = 6000
+	state_category = pastoral
+	history = {
+		owner = GOL
+		add_core_of = GOL
+		victory_points = { 6061 3 }
+		buildings = {
+			infrastructure = 2
+			6062 = { naval_base = 2 }
+		}
+	}
+	provinces = { 6023 6043 6061 6062 }
+}

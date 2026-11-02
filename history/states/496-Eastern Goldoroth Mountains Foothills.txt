@@ -1,0 +1,19 @@
+state = {
+	id = 496
+	name = "STATE_496"
+	manpower = 51000
+	state_category = town
+	history = {
+		owner = VES
+		add_core_of = VES
+		victory_points = { 6602 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 2
+			6602 = { naval_base = 3 }
+		}
+	}
+	provinces = { 6602 6660 6779 }
+}

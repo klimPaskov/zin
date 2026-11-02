@@ -1,0 +1,21 @@
+state = {
+	id = 112
+	name = "STATE_112"
+	manpower = 211000
+	state_category = metropolis
+	history = {
+		owner = LER
+		add_core_of = LER
+		victory_points = { 4677 20 }
+		victory_points = { 4613 25 }
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 3
+			dockyard = 1
+			air_base = 2
+			4677 = { naval_base = 3 }
+		}
+	}
+	provinces = { 4450 4613 4626 4648 4677 4711 4719 }
+}

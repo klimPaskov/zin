@@ -1,0 +1,18 @@
+state = {
+	id = 128
+	name = "STATE_128"
+	manpower = 11000
+	state_category = town
+	history = {
+		owner = OST
+		add_core_of = OST
+		victory_points = { 3790 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			3790 = { naval_base = 2 }
+		}
+	}
+	provinces = { 3790 3879 }
+}

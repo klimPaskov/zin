@@ -1,0 +1,18 @@
+state = {
+	id = 805
+	name = "STATE_805"
+	manpower = 87000
+	state_category = rural
+	history = {
+		owner = BLD
+		add_core_of = BLD
+		victory_points = { 7015 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			7015 = { naval_base = 3 }
+		}
+	}
+	provinces = { 6709 6762 6994 7015 7016 }
+}

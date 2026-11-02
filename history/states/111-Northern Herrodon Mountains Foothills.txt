@@ -1,0 +1,17 @@
+state = {
+	id = 111
+	name = "STATE_111"
+	manpower = 101000
+	state_category = rural
+	history = {
+		owner = ZOL
+		add_core_of = ZOL
+		victory_points = { 3703 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			3703 = { naval_base = 2 }
+		}
+	}
+	provinces = { 3703 3726 }
+}

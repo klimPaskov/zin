@@ -1,0 +1,23 @@
+state = {
+	id = 504
+	name = "STATE_504"
+	manpower = 108000
+	state_category = town
+	resources = {
+		steel = 21
+	}
+	history = {
+		owner = WIL
+		add_core_of = WIL
+		victory_points = { 6035 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			6035 = { naval_base = 3 }
+		}
+	}
+	provinces = { 6035 6197 6303 }
+}

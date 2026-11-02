@@ -1,0 +1,23 @@
+state = {
+	id = 1321
+	name = "STATE_1321"
+	manpower = 87000
+	state_category = large_town
+	resources = {
+		steel = 10
+	}
+	history = {
+		owner = BEN
+		add_core_of = BEN
+		victory_points = { 10201 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			9982 = { naval_base = 2 }
+		}
+	}
+	provinces = { 9982 10201 10267 }
+}

@@ -1,0 +1,17 @@
+state = {
+	id = 2601
+	name = "STATE_2601"
+	manpower = 17000
+	state_category = rural
+	history = {
+		owner = HOR
+		add_core_of = HOR
+		victory_points = { 2685 5 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			2685 = { naval_base = 2 }
+		}
+	}
+	provinces = { 2685 2686 2721 2724 2755 2772 }
+}

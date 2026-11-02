@@ -1,0 +1,17 @@
+state = {
+	id = 255
+	name = "STATE_255"
+	manpower = 77000
+	state_category = rural
+	history = {
+		owner = LAB
+		add_core_of = LAB
+		victory_points = { 4297 5 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			4297 = { naval_base = 2 }
+		}
+	}
+	provinces = { 4292 4293 4294 4295 4296 4297 }
+}

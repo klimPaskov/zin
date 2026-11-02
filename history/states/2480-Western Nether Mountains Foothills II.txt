@@ -1,0 +1,20 @@
+state = {
+	id = 2480
+	name = "STATE_2480"
+	manpower = 183000
+	state_category = rural
+	resources = {
+		steel = 14
+	}
+	history = {
+		owner = NET
+		add_core_of = NET
+		victory_points = { 15750 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			15778 = { naval_base = 2 }
+		}
+	}
+	provinces = { 15750 15778 15980 16009 }
+}

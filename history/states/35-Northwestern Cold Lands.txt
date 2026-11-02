@@ -1,17 +1,20 @@
 state = {
 	id = 35
 	name = "STATE_35"
-	manpower = 483000
+	manpower = 627000
 	state_category = rural
+	resources = {
+		steel = 7
+	}
 	history = {
 		owner = POT
 		add_core_of = POT
-		victory_points = { 390 5 }
+		victory_points = { 389 4 }
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
 			389 = { naval_base = 2 }
 		}
 	}
-	provinces = { 387 388 389 390 416 438 481 520 541 549 550 }
+	provinces = { 387 388 389 416 481 516 524 541 545 549 651 }
 }

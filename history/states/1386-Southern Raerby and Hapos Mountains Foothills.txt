@@ -1,0 +1,23 @@
+state = {
+	id = 1386
+	name = "STATE_1386"
+	manpower = 134000
+	state_category = large_town
+	resources = {
+		steel = 14
+	}
+	history = {
+		owner = WND
+		add_core_of = WND
+		victory_points = { 11200 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			11117 = { naval_base = 3 }
+		}
+	}
+	provinces = { 10931 11117 11200 11287 }
+}

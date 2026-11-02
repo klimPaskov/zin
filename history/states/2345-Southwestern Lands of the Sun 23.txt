@@ -1,0 +1,20 @@
+state = {
+	id = 2345
+	name = "STATE_2345"
+	manpower = 61000
+	state_category = large_town
+	history = {
+		owner = GOO
+		add_core_of = GOO
+		victory_points = { 15093 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			15032 = { naval_base = 3 }
+		}
+	}
+	provinces = { 15032 15093 15140 15175 15226 }
+}

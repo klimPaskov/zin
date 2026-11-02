@@ -1,0 +1,18 @@
+state = {
+	id = 1235
+	name = "STATE_1235"
+	manpower = 34000
+	state_category = rural
+	history = {
+		owner = BLD
+		add_core_of = BLD
+		victory_points = { 8901 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			8917 = { naval_base = 3 }
+		}
+	}
+	provinces = { 8645 8661 8832 8901 8917 }
+}

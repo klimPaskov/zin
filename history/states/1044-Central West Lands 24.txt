@@ -1,0 +1,17 @@
+state = {
+	id = 1044
+	name = "STATE_1044"
+	manpower = 3000
+	state_category = pastoral
+	history = {
+		owner = BLD
+		add_core_of = BLD
+		victory_points = { 7912 2 }
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			7810 = { naval_base = 3 }
+		}
+	}
+	provinces = { 7810 7912 }
+}

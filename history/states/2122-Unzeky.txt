@@ -1,0 +1,24 @@
+state = {
+	id = 2122
+	name = "STATE_2122"
+	manpower = 93000
+	state_category = metropolis
+	resources = {
+		steel = 7
+	}
+	history = {
+		owner = DLN
+		add_core_of = DLN
+		victory_points = { 14343 12 }
+		victory_points = { 14309 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 2
+			dockyard = 1
+			air_base = 2
+			14309 = { naval_base = 3 }
+		}
+	}
+	provinces = { 14309 14343 }
+}

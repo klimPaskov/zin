@@ -1,0 +1,19 @@
+state = {
+	id = 2518
+	name = "STATE_2518"
+	manpower = 8000
+	state_category = town
+	history = {
+		owner = WAH
+		add_core_of = WAH
+		victory_points = { 16054 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			16054 = { naval_base = 3 }
+		}
+	}
+	provinces = { 16054 }
+}

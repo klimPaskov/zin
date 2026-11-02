@@ -1,0 +1,19 @@
+state = {
+	id = 510
+	name = "STATE_510"
+	manpower = 20000
+	state_category = town
+	history = {
+		owner = DUL
+		add_core_of = DUL
+		victory_points = { 5442 4 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			5293 = { naval_base = 3 }
+		}
+	}
+	provinces = { 5293 5442 }
+}

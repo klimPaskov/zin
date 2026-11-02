@@ -1,0 +1,19 @@
+state = {
+	id = 55
+	name = "STATE_55"
+	manpower = 74000
+	state_category = town
+	history = {
+		owner = HRA
+		add_core_of = HRA
+		victory_points = { 3904 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 2
+			3868 = { naval_base = 4 }
+		}
+	}
+	provinces = { 3674 3742 3774 3845 3868 3904 }
+}

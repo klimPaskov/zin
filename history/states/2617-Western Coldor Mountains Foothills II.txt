@@ -1,0 +1,20 @@
+state = {
+	id = 2617
+	name = "STATE_2617"
+	manpower = 8000
+	state_category = rural
+	resources = {
+		steel = 7
+	}
+	history = {
+		owner = HLD
+		add_core_of = HLD
+		victory_points = { 2857 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			2857 = { naval_base = 2 }
+		}
+	}
+	provinces = { 2857 }
+}

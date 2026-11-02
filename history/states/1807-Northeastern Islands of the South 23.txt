@@ -1,0 +1,18 @@
+state = {
+	id = 1807
+	name = "STATE_1807"
+	manpower = 5000
+	state_category = town
+	history = {
+		owner = NAR
+		add_core_of = NAR
+		victory_points = { 12825 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			12825 = { naval_base = 2 }
+		}
+	}
+	provinces = { 12820 12825 }
+}

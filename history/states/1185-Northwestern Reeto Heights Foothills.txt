@@ -1,0 +1,23 @@
+state = {
+	id = 1185
+	name = "STATE_1185"
+	manpower = 198000
+	state_category = large_town
+	resources = {
+		steel = 14
+	}
+	history = {
+		owner = ELD
+		add_core_of = ELD
+		victory_points = { 10987 25 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			11061 = { naval_base = 3 }
+		}
+	}
+	provinces = { 10610 10742 10864 10987 11061 }
+}

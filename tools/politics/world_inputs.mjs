@@ -22,8 +22,11 @@ export const PATHS = Object.freeze({
   roster: 'tools/content/data/world/roster.json',
   geography: 'tools/content/data/geography/import/aoaz.geography.json',
   repaired: 'tools/content/data/geography/aoaz.repaired.json',
-  assignment: 'tools/content/data/world/state_assignment.json',
-  stateCentres: 'tools/content/data/forces_geography.json',
+  // The seeds' map-derived inputs (realm state counts, capital states, state centres) are a frozen basis: the assignment and state
+  // centres of the first map written from the drawing (d9a0e9fc), which the committed seeds were built from. The live files follow
+  // every map write, and reading them would feed each map back into the next set of seeds.
+  assignment: 'tools/politics/data/seed_basis/state_assignment.json',
+  stateCentres: 'tools/politics/data/seed_basis/forces_geography.json',
   sheets: 'tools/content/data/geography/import/aoaz.sheets.json',
   annotations: 'tools/content/data/geography/import/aoaz.annotations.json',
   drawing: 'docs/reference/originals/Erdae.png',

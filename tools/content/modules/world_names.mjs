@@ -325,7 +325,8 @@ export function nameWorld({ map, current, roster = countryTable(), naming = shar
   for (const [language, spec] of Object.entries(handNames)) {
     const info = naming.generator.infoOf(language), queue = spec.settlements.slice();
     const towns = states.flatMap(s => s.vps.map(v => ({ s, v })))
-      .filter(({ s, v }) => v.value < 25 && generic.has(`VICTORY_POINTS_${v.province}`) && tagInfo.get(ownerOf.get(s.id))?.language === language)
+      // A realm's own towns only: unowned land speaks its nearest neighbour's language but is no realm's town.
+      .filter(({ s, v }) => s.owner && v.value < 25 && generic.has(`VICTORY_POINTS_${v.province}`) && tagInfo.get(ownerOf.get(s.id))?.language === language)
       .sort((a, b) => b.v.value - a.v.value || byPoint(centre.get(a.v.province), centre.get(b.v.province)));
     let given = 0;
     for (const { v } of towns) {

@@ -1,0 +1,20 @@
+state = {
+	id = 1763
+	name = "STATE_1763"
+	manpower = 106000
+	state_category = town
+	history = {
+		owner = IHU
+		add_core_of = IHU
+		victory_points = { 12363 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			air_base = 2
+			12576 = { naval_base = 3 }
+		}
+	}
+	provinces = { 12350 12363 12557 12576 }
+}

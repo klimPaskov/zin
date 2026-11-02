@@ -1,0 +1,16 @@
+state = {
+	id = 1025
+	name = "STATE_1025"
+	manpower = 1000
+	state_category = pastoral
+	history = {
+		owner = BRT
+		add_core_of = BRT
+		victory_points = { 7701 1 }
+		buildings = {
+			infrastructure = 2
+			7701 = { naval_base = 1 }
+		}
+	}
+	provinces = { 7701 }
+}

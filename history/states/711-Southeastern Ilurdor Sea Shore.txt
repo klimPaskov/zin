@@ -1,0 +1,19 @@
+state = {
+	id = 711
+	name = "STATE_711"
+	manpower = 115000
+	state_category = pastoral
+	resources = {
+		steel = 15
+	}
+	history = {
+		owner = BLD
+		add_core_of = BLD
+		victory_points = { 8724 4 }
+		buildings = {
+			infrastructure = 2
+			8724 = { naval_base = 2 }
+		}
+	}
+	provinces = { 8336 8384 8458 8459 8557 8621 8647 8724 }
+}
