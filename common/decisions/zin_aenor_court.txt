@@ -2,7 +2,7 @@
 # Decisions of the Golden Court: the Court, the Concord, the Lost Cause, the King's Health and the Thirty Days.
 zin_aenor_cat_court = {
 	zin_aenor_court_audit = {
-		icon = ledger_coins
+		icon = GFX_decision_zin_ledger_coins
 		allowed = {
 			always = yes
 		}
@@ -35,7 +35,7 @@ zin_aenor_cat_court = {
 		}
 	}
 	zin_aenor_court_feast_of_offices = {
-		icon = feast_table
+		icon = GFX_decision_zin_feast_table
 		allowed = {
 			always = yes
 		}
@@ -66,7 +66,7 @@ zin_aenor_cat_court = {
 		}
 	}
 	zin_aenor_court_dismiss_favourites = {
-		icon = seal_royal
+		icon = GFX_decision_zin_seal_royal
 		allowed = {
 			always = yes
 		}
@@ -99,7 +99,7 @@ zin_aenor_cat_court = {
 }
 zin_aenor_cat_concord = {
 	zin_aenor_reissue_charter_old = {
-		icon = charter_old
+		icon = GFX_decision_zin_charter_old
 		allowed = {
 			always = yes
 		}
@@ -137,7 +137,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_reissue_charter_golden = {
-		icon = charter_golden
+		icon = GFX_decision_zin_charter_golden
 		allowed = {
 			always = yes
 		}
@@ -194,7 +194,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_reissue_charter_shield = {
-		icon = charter_shield
+		icon = GFX_decision_zin_charter_shield
 		allowed = {
 			always = yes
 		}
@@ -232,7 +232,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_reissue_charter_free = {
-		icon = charter_free
+		icon = GFX_decision_zin_charter_free
 		allowed = {
 			always = yes
 		}
@@ -284,7 +284,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_reissue_charter_wall = {
-		icon = charter_wall
+		icon = GFX_decision_zin_charter_wall
 		allowed = {
 			always = yes
 		}
@@ -322,7 +322,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_concord_council = {
-		icon = concord_circle
+		icon = GFX_decision_zin_concord_circle
 		allowed = {
 			always = yes
 		}
@@ -342,7 +342,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_concord_levy = {
-		icon = levy_muster
+		icon = GFX_decision_zin_levy_muster
 		allowed = {
 			always = yes
 		}
@@ -385,7 +385,7 @@ zin_aenor_cat_concord = {
 		}
 	}
 	zin_aenor_restore_charter = {
-		icon = chain_broken
+		icon = GFX_decision_zin_chain_broken
 		allowed = {
 			always = yes
 		}
@@ -428,7 +428,7 @@ zin_aenor_cat_concord = {
 }
 zin_aenor_cat_lost_cause = {
 	zin_aenor_frontier_company = {
-		icon = ranger_cloak
+		icon = GFX_decision_zin_ranger_cloak
 		allowed = {
 			always = yes
 		}
@@ -465,7 +465,7 @@ zin_aenor_cat_lost_cause = {
 		}
 	}
 	zin_aenor_invite_to_shield = {
-		icon = handshake_oath
+		icon = GFX_decision_zin_handshake_oath
 		allowed = {
 			always = yes
 		}
@@ -510,7 +510,7 @@ zin_aenor_cat_lost_cause = {
 }
 zin_aenor_cat_kings_health = {
 	zin_aenor_question_physicians = {
-		icon = healer_herbs
+		icon = GFX_decision_zin_healer_herbs
 		allowed = {
 			always = yes
 		}
@@ -542,7 +542,7 @@ zin_aenor_cat_kings_health = {
 		}
 	}
 	zin_aenor_follow_the_coin = {
-		icon = ledger_coins
+		icon = GFX_decision_zin_ledger_coins
 		allowed = {
 			always = yes
 		}
@@ -572,7 +572,7 @@ zin_aenor_cat_kings_health = {
 		}
 	}
 	zin_aenor_lay_proof = {
-		icon = seal_royal
+		icon = GFX_decision_zin_seal_royal
 		allowed = {
 			always = yes
 		}
@@ -601,7 +601,7 @@ zin_aenor_cat_kings_health = {
 }
 zin_aenor_cat_empty_throne = {
 	zin_aenor_open_treasury = {
-		icon = coin_chest
+		icon = GFX_decision_zin_coin_chest
 		allowed = {
 			always = yes
 		}
@@ -631,7 +631,7 @@ zin_aenor_cat_empty_throne = {
 		}
 	}
 	zin_aenor_temples_speak = {
-		icon = hymn_choir
+		icon = GFX_decision_zin_hymn_choir
 		allowed = {
 			always = yes
 		}
@@ -661,7 +661,7 @@ zin_aenor_cat_empty_throne = {
 		}
 	}
 	zin_aenor_charters_for_loyal = {
-		icon = charter_free
+		icon = GFX_decision_zin_charter_free
 		allowed = {
 			always = yes
 		}
@@ -691,7 +691,7 @@ zin_aenor_cat_empty_throne = {
 		}
 	}
 	zin_aenor_strangers_word = {
-		icon = banner_plain
+		icon = GFX_decision_zin_banner_plain
 		allowed = {
 			always = yes
 		}
@@ -719,7 +719,7 @@ zin_aenor_cat_empty_throne = {
 		}
 	}
 	zin_aenor_silence_dissenters = {
-		icon = seal_wax
+		icon = GFX_decision_zin_seal_wax
 		allowed = {
 			always = yes
 		}

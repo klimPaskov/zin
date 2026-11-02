@@ -2,7 +2,7 @@
 # The three drills that pay Valour in the long peace (section 3.1): a floor on top of the engine's training.
 zin_inst_valour = {
 	zin_inst_great_manoeuvres = {
-		icon = great_manoeuvres
+		icon = GFX_decision_zin_levy_muster
 		allowed = {
 			always = yes
 		}
@@ -61,7 +61,7 @@ zin_inst_valour = {
 		}
 	}
 	zin_inst_sea_trials = {
-		icon = sea_trials
+		icon = GFX_decision_zin_ship_voyage
 		allowed = {
 			always = yes
 		}
@@ -110,7 +110,7 @@ zin_inst_valour = {
 		}
 	}
 	zin_inst_wing_trials = {
-		icon = wing_trials
+		icon = GFX_decision_zin_dragon_wing
 		allowed = {
 			always = yes
 		}
