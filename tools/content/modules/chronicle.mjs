@@ -496,7 +496,7 @@ export async function emitChronicle(data, { names = {}, deepGates = {}, plateOf 
   X('zin_chr_count_unread', `set_variable = { zin_chr_unread = 0 }\nset_variable = { zin_chr_open_count = 0 }\nset_variable = { zin_chr_read_count = 0 }\n${cnt.join('\n')}`, 'Counts for the footer and the unread marker: open entries, entries with unread parts, entries read in full. Run on opening, on each entry shown, and monthly with the Aoaz bar.');
 
   // 4. scripted localisation
-  const DT = (name, branches, note) => dts.push(`${note ? `# ${note}\n` : ''}defined_text = {\n\tname = ${name}\n${branches.map(([t, k]) => `\ttext = {\n${t ? `\t\ttrigger = {\n${ind(t, 3)}\n\t\t}\n` : ''}\t\tlocalisation_key = ${k}\n\t}`).join('\n')}\n}`);
+  const DT = (name, branches, note) => dts.push(`${note ? `# ${note}\n` : ''}defined_text = {\n\tname = ${name}\n${branches.map(([t, k]) => `\ttext = {\n${t ? `\t\ttrigger = {\n${ind(t, 3)}\n\t\t}\n` : ''}\t\tlocalization_key = ${k}\n\t}`).join('\n')}\n}`);
   const groups = [];
   const all = [...data.entries].sort((a, b) => a.id - b.id);
   for (let i = 0; i < all.length; i += 16) groups.push(all.slice(i, i + 16));

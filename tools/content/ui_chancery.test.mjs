@@ -57,7 +57,7 @@ test('every realm has its roots and sign, chosen by original tag, with a fallbac
   assert.equal(realms.length, 155);
   const sloc = realmSloc(realms), loc = realmLocalisation(realms);
   assert.equal((sloc.match(/original_tag = /g) ?? []).length, realms.length);
-  assert.match(sloc, /text = \{\n\t\tlocalisation_key = zin_realm_lore_none\n\t\}\n\}/);
+  assert.match(sloc, /text = \{\n\t\tlocalization_key = zin_realm_lore_none\n\t\}\n\}/);
   for (const r of realms) { assert(loc[loreKey(r.tag)].startsWith('The Sign\n'), r.tag); assert(loc[loreKey(r.tag)].includes(currentMonths(r.roots)), r.tag); assert(!/[§$£@]/.test(loc[loreKey(r.tag)]), r.tag); }
   // A former month name used as a month shows as its god-month; the season word stays.
   assert.equal(currentMonths('the whale comes in Thaw; when the Thaw comes; 3 Harvest 4A 1750'), 'the whale comes in Lumae; when the Thaw comes; 3 Aurlan 4A 1750');

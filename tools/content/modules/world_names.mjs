@@ -3,8 +3,8 @@
 // The map tool (HOI4 Agent Tools create_world) names what the geography model names and gives every other state, strategic region and
 // victory point a machine name: a compass word with a land name and a numeral ("Southwestern Cold Lands II"), "<state> Town",
 // "<realm> District N", "<realm> Settlement N", "Region N". The tool owns localisation/replace/world_l_english.yml and rewrites it on
-// every map write, so this step never edits it. It stages localisation/replace/zin_world_names_l_english.yml, which loads after it
-// (replace files load in name order) and carries the same keys with natural values. Keys, ids and every name the model gave stay as
+// every map write, so this step never edits it. It stages localisation/replace/00_zin_world_names_l_english.yml, which loads before it
+// (replace files load in name order, and the first file keeps a key) and carries the same keys with natural values. Keys, ids and every name the model gave stay as
 // they are. docs/plans/zin-map/naming_request.md asks the tool for a naming input, which would make this file unnecessary.
 //
 // What gets a name, and in which speech
@@ -27,7 +27,7 @@
 // renumbers the states keeps each place's name while the land stays where it is.
 //
 //   nameWorld(options)      -> { names, kept, report }         pure, on a loaded map (readWorldMap) and the current names
-//   buildWorldNames(staged) stages localisation/replace/zin_world_names_l_english.yml and docs/design/world_names.json
+//   buildWorldNames(staged) stages localisation/replace/00_zin_world_names_l_english.yml and docs/design/world_names.json
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { rng } from '../lib/core.mjs';
@@ -37,7 +37,9 @@ import { fileURLToPath } from 'node:url';
 import { BANNED_SUBSTRINGS, REAL_WORLD_WORDS, composeRecipe, keyOf } from '../lib/language_generator.mjs';
 import { placeNames, sharedNaming } from './names.mjs';
 
-export const NAMES_FILE = 'localisation/replace/zin_world_names_l_english.yml';
+// For a key in two localisation/replace files the game keeps the first file in name order (text.log, 2 November 2026:
+// world_l_english.yml won over zin_world_names_l_english.yml), so the names file sorts before the tool's world_l_english.yml.
+export const NAMES_FILE = 'localisation/replace/00_zin_world_names_l_english.yml';
 export const NAMES_DOC = 'docs/design/world_names.json';
 const HAND_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '../data/world/hand_names.json');
 export const readHandNames = () => JSON.parse(readFileSync(HAND_FILE, 'utf8')).languages;

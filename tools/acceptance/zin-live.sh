@@ -103,12 +103,20 @@ start)
   for i in $(seq 1 50); do xwininfo -root >/dev/null 2>&1 && break; sleep .1; done
   glxinfo -B >"$zin_runtime/renderer.txt" 2>&1 || true
   cd "$zin_game"
-  # Owner rule: Steam must never see the game run or the owner as active. The Steam API finds its client through
-  # $HOME/.steam (steamclient.so, steam.pid); an empty private HOME and no Steam variables leave it nothing to attach to,
-  # so the game runs offline. Its data stays in the explicit -userdir profile.
-  nosteam_home="$zin_runtime/nosteam-home"; rm -rf "$nosteam_home"; mkdir -p "$nosteam_home"
+  # Steam must not see the run, and WSL has no Steam client (no ~/.steam/sdk64), so the game cannot confirm DLC ownership
+  # either way. With the real HOME, clicking Single Player makes the game call xdg-open and exit; an empty private HOME and
+  # no Steam variables avoid that. The game's data stays in the explicit -userdir profile.
+  # ZIN_DEBUG= (empty) starts without -debug, which does not pop error.log open when errors appear.
+  nosteam_home="$zin_runtime/nosteam-home"; rm -rf "$nosteam_home"; mkdir -p "$nosteam_home/bin"
+  # The game opens web pages through xdg-open; a missing one breaks the X connection and ends the game. This stand-in only
+  # records the address in xdg-open.log, so no browser ever opens from a run.
+  printf '#!/bin/sh\nprintf "%%s %%s\\n" "$(date +%%T)" "$*" >> "%s/xdg-open.log"\nexit 0\n' "$zin_runtime" > "$nosteam_home/bin/xdg-open"
+  # The Linux build passes "unset LD_LIBRARY_PATH && xdg-open" to sh as one command name, so the stand-in needs that name too.
+  cp "$nosteam_home/bin/xdg-open" "$nosteam_home/bin/unset LD_LIBRARY_PATH && xdg-open"
+  chmod +x "$nosteam_home/bin/xdg-open" "$nosteam_home/bin/unset LD_LIBRARY_PATH && xdg-open"
   nohup env -u SteamAppId -u SteamGameId -u STEAM_COMPAT_CLIENT_INSTALL_PATH -u SteamClientLaunch HOME="$nosteam_home" \
-    ./hoi4 -debug -nofilewatcher -userdir="$zin_runtime/profile" >"$zin_runtime/hoi4.stdout.log" 2>&1 </dev/null &
+    PATH="$nosteam_home/bin:$PATH" \
+    ./hoi4 ${ZIN_DEBUG--debug} -nofilewatcher -userdir="$zin_runtime/profile" >"$zin_runtime/hoi4.stdout.log" 2>&1 </dev/null &
   echo $! >"$zin_runtime/hoi4.pid"
   printf 'Started ZIN PID %s, profile %s\n' "$(cat "$zin_runtime/hoi4.pid")" "$zin_runtime/profile"
   ;;

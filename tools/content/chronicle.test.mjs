@@ -135,7 +135,9 @@ test('Chronicle: the emitted window wires every control, every text key and ever
   for (const m of a.sgui.matchAll(/_click = \{\n([\s\S]*?)\n\t{3}\}/g)) for (const call of m[1].matchAll(/([a-z0-9_]+) = yes/g)) assert.ok(effects.has(call[1]), `${call[1]} is not a Chronicle effect`);
   assert.ok(!/add_political_power|add_stability|set_global_flag|country_event|news_event|add_ideas/.test(a.effects), 'the Chronicle changes no mechanic');
   // every localisation key a scripted text can return exists
-  for (const m of a.sloc.matchAll(/localisation_key = ([A-Za-z0-9_]+)/g)) assert.ok(a.loc[m[1]] !== undefined, `${m[1]} has no text`);
+  // The engine reads localization_key (vanilla spelling); localisation_key is an unexpected token and the line is lost.
+  assert.ok(!/localisation_key/.test(a.sloc), 'scripted localisation uses localization_key');
+  for (const m of a.sloc.matchAll(/localization_key = ([A-Za-z0-9_]+)/g)) assert.ok(a.loc[m[1]] !== undefined, `${m[1]} has no text`);
   for (const m of gui.matchAll(/text = "([A-Za-z0-9_]+)"/g)) assert.ok(a.loc[m[1]] !== undefined, `${m[1]} has no text`);
   // every trigger the scripts read is written
   const trig = new Set([...a.triggers.matchAll(/^([a-z0-9_]+) = \{/gm)].map(m => m[1]));
