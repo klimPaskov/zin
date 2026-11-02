@@ -1,0 +1,42 @@
+{
+  "geometry_source_rel": "provider/downloads/animation_attack_provider.glb",
+  "geometry_source_sha256": "d05d965a3fda97441615f7bc617e12831bfbbf2b95d22a000313d0c004b674fe",
+  "problems": [],
+  "roles": {
+    "diffuse": {
+      "bound_sha256": "5305ffd256644257eb6f467630a2e91abf6f725dd5485f10a7ac26713c9355c3",
+      "bound_source_rel": "provider/downloads/remesh_model_textures/base_color.png",
+      "geometry_downloaded_rel": null,
+      "geometry_downloaded_sha256": null,
+      "geometry_embedded_sha256": [
+        "5305ffd256644257eb6f467630a2e91abf6f725dd5485f10a7ac26713c9355c3"
+      ],
+      "matched_via": "embedded_bytes",
+      "status": "pass"
+    },
+    "normal": {
+      "bound_sha256": "d790025110f0f7cd3a5d1c39f744c89f9eb63098c560a1d13b5e17a62fb3b513",
+      "bound_source_rel": "provider/downloads/remesh_model_textures/normal.png",
+      "geometry_downloaded_rel": null,
+      "geometry_downloaded_sha256": null,
+      "geometry_embedded_sha256": [
+        "d790025110f0f7cd3a5d1c39f744c89f9eb63098c560a1d13b5e17a62fb3b513"
+      ],
+      "matched_via": "embedded_bytes",
+      "status": "pass"
+    },
+    "specular": {
+      "bound_sha256": "0f173f20d5d5bd9cc4a29fab9ef28340969be657e2ab764e7cf6ea0428d07a22",
+      "bound_source_rel": "provider/downloads/remesh_model_textures/metallic_roughness.png",
+      "geometry_downloaded_rel": null,
+      "geometry_downloaded_sha256": null,
+      "geometry_embedded_sha256": [
+        "0f173f20d5d5bd9cc4a29fab9ef28340969be657e2ab764e7cf6ea0428d07a22"
+      ],
+      "matched_via": "embedded_bytes",
+      "status": "pass"
+    }
+  },
+  "schema": "hoi4_texture_lineage_v1",
+  "status": "pass"
+}

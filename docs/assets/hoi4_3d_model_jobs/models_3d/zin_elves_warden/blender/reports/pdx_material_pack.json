@@ -1,13 +1,13 @@
 {
   "channel_stats": {
     "A": {
-      "max": 172,
-      "mean": 110.3264,
-      "min": 13
+      "max": 255,
+      "mean": 110.582,
+      "min": 15
     },
     "B": {
-      "max": 146,
-      "mean": 21.6391,
+      "max": 142,
+      "mean": 20.7773,
       "min": 0
     },
     "G": {
@@ -22,8 +22,8 @@
     }
   },
   "dimensions": [
-    2048,
-    2048
+    4096,
+    4096
   ],
   "layout": {
     "alpha": "glossiness_255_minus_roughness",
@@ -32,25 +32,25 @@
     "red": "unused_mask_zero"
   },
   "output": {
-    "bytes": 2717925,
-    "path": "provider/downloads/generation_model_textures/pdx_specular.png",
-    "sha256": "22403207c5c2e16541ceae68e931692c917e82a5206ebe2354e640b286e2df49"
+    "bytes": 8343838,
+    "path": "provider/downloads/remesh_model_textures/pdx_specular.png",
+    "sha256": "aa7706b47aa1a74ece403915fc6d789f6886f5135bb8d010502a7542e4dfcae1"
   },
   "source": {
     "glTF_packed_map": {
-      "bytes": 2718111,
-      "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
-      "sha256": "383290f05bd4d516bcdec2903381da98cefe018d9e45423703ca4da47aade4db"
+      "bytes": 12667430,
+      "path": "provider/downloads/remesh_model_textures/metallic_roughness.png",
+      "sha256": "04e958a699b62705eb715938d75af3c83ced041d4663175c178ff2aab8dedfa8"
     },
     "metallic": {
-      "bytes": 988032,
-      "path": "provider/downloads/generation_model_textures/metallic.png",
-      "sha256": "547035f26e40d9265a7b175103c810174f2f8c6b3b84d7493adc00b6eff77458"
+      "bytes": 3713979,
+      "path": "provider/downloads/remesh_model_textures/metallic.png",
+      "sha256": "e51c24d4a98387860d157ffccc88265792d8760b933d757aed889b7789c55cb0"
     },
     "roughness": {
-      "bytes": 1676213,
-      "path": "provider/downloads/generation_model_textures/roughness.png",
-      "sha256": "b6c38d04f627b62949941783687091ba4c773247dd6319fa4ba761f61e3c856e"
+      "bytes": 4006837,
+      "path": "provider/downloads/remesh_model_textures/roughness.png",
+      "sha256": "1d37db14012d0de2f1527df3ae32861b4c49a3a1aca2c1bf29d06bb96046a6b1"
     }
   },
   "status": "packed"

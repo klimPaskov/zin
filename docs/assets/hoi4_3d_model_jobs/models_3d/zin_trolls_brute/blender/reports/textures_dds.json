@@ -38,6 +38,32 @@
       "width": 1024
     }
   ],
+  "dds_headers": {
+    "textures/dds/texture_0.dds": {
+      "expected_full_chain_mips": 11,
+      "format": "RGB32",
+      "height": 1024,
+      "mip_chain_present": false,
+      "mip_count": 1,
+      "width": 1024
+    },
+    "textures/dds/texture_normal.dds": {
+      "expected_full_chain_mips": 11,
+      "format": "RGB32",
+      "height": 1024,
+      "mip_chain_present": false,
+      "mip_count": 1,
+      "width": 1024
+    },
+    "textures/dds/texture_specular.dds": {
+      "expected_full_chain_mips": 11,
+      "format": "RGB32",
+      "height": 1024,
+      "mip_chain_present": false,
+      "mip_count": 1,
+      "width": 1024
+    }
+  },
   "extracted": {
     "adapter": {
       "id": "hoi4_blender_adapter",
@@ -70,9 +96,9 @@
   "pdx_normal_pack": {
     "channel_stats": {
       "A": {
-        "max": 186,
-        "mean": 127.0003,
-        "min": 62
+        "max": 254,
+        "mean": 126.4538,
+        "min": 0
       },
       "B": {
         "max": 0,
@@ -80,9 +106,9 @@
         "min": 0
       },
       "G": {
-        "max": 187,
-        "mean": 127.0025,
-        "min": 72
+        "max": 254,
+        "mean": 126.4801,
+        "min": 0
       },
       "R": {
         "max": 0,
@@ -101,27 +127,27 @@
       "red": "unused_zero"
     },
     "output": {
-      "bytes": 4779377,
-      "path": "provider/downloads/generation_model_textures/pdx_normal.png",
-      "sha256": "ea4bedc792cd6f6b0768e1ab553654c36303b6597588903c228c34cd2b8634a2"
+      "bytes": 5694363,
+      "path": "provider/downloads/remesh_model_textures/pdx_normal.png",
+      "sha256": "74be50f4fe3df3c2f31f0b2ad129d3c96d77b5355ddf48cdc967bc95821d767e"
     },
     "source": {
-      "bytes": 6076558,
-      "path": "provider/downloads/generation_model_textures/normal.png",
-      "sha256": "8fe488c6db24380a554fa348c1f01214d8cce40e819010b58ef6455bf95fd026"
+      "bytes": 6021434,
+      "path": "provider/downloads/remesh_model_textures/normal.png",
+      "sha256": "fa05c88d8911cdf282f941baeb712eb682d3d85452e55ab02515b0432503d6ad"
     },
     "status": "packed"
   },
   "pdx_specular_pack": {
     "channel_stats": {
       "A": {
-        "max": 170,
-        "mean": 95.8395,
-        "min": 53
+        "max": 255,
+        "mean": 98.9681,
+        "min": 54
       },
       "B": {
-        "max": 116,
-        "mean": 0.0028,
+        "max": 79,
+        "mean": 0.4075,
         "min": 0
       },
       "G": {
@@ -136,8 +162,8 @@
       }
     },
     "dimensions": [
-      2048,
-      2048
+      4096,
+      4096
     ],
     "layout": {
       "alpha": "glossiness_255_minus_roughness",
@@ -146,25 +172,25 @@
       "red": "unused_mask_zero"
     },
     "output": {
-      "bytes": 1731207,
-      "path": "provider/downloads/generation_model_textures/pdx_specular.png",
-      "sha256": "e99268167aee8f1254260cc0f76a6a2ecde4d868e94c8d22d3088511da48b32b"
+      "bytes": 6394533,
+      "path": "provider/downloads/remesh_model_textures/pdx_specular.png",
+      "sha256": "98f99dd09c7cb1ccbfcbb478daafb133ecda56f03eca716dc16969c2a59f291f"
     },
     "source": {
       "glTF_packed_map": {
-        "bytes": 1731587,
-        "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
-        "sha256": "170eb61df332b7d5b8b83b0743aa74e36c9228b5b90a752eda0250781fe8c69c"
+        "bytes": 10815717,
+        "path": "provider/downloads/remesh_model_textures/metallic_roughness.png",
+        "sha256": "9f1913b6d518254d46ac9a6756a1bc03f298df8811419dd772fab3ae402d0351"
       },
       "metallic": {
-        "bytes": 19477,
-        "path": "provider/downloads/generation_model_textures/metallic.png",
-        "sha256": "c0dd966a204056cb4e364b25b94f7027f9b663bb2a632d8e1f7d9868a7de8e70"
+        "bytes": 2268409,
+        "path": "provider/downloads/remesh_model_textures/metallic.png",
+        "sha256": "4db42d3af96a9856aa9f18b267481a3417047f24e4211403ebb24a3311b3584c"
       },
       "roughness": {
-        "bytes": 1639324,
-        "path": "provider/downloads/generation_model_textures/roughness.png",
-        "sha256": "1cb41a9b8f2fd12d38bd404b39aa376709e263e4ad9b99cc58d3084994f955ad"
+        "bytes": 3820817,
+        "path": "provider/downloads/remesh_model_textures/roughness.png",
+        "sha256": "815241ce96ee24adac90219b256a3370abcc925e49d20e5d10df7a57fe74bfe6"
       }
     },
     "status": "packed"
@@ -184,11 +210,44 @@
     "gamma": 0.72,
     "policy": "provider_source_rebuilt_each_run_with_single_gamma_lift",
     "processed": "textures/processed/texture_0.png",
-    "source": "provider/downloads/generation_model_textures/base_color.png"
+    "source": "provider/downloads/remesh_model_textures/base_color.png"
   },
   "runtime_texture_sources": {
-    "diffuse": "provider/downloads/generation_model_textures/base_color.png",
-    "normal": "provider/downloads/generation_model_textures/normal.png",
-    "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+    "diffuse": "provider/downloads/remesh_model_textures/base_color.png",
+    "normal": "provider/downloads/remesh_model_textures/normal.png",
+    "specular": "provider/downloads/remesh_model_textures/metallic_roughness.png"
+  },
+  "texture_lineage": {
+    "animation_attack_provider": {
+      "geometry_source_rel": "provider/downloads/animation_attack_provider.glb",
+      "geometry_source_sha256": "fd2d30a284481a6d734ab8704504336b6a272d3c1793bea54a4f8cdbae42a533",
+      "roles": {
+        "diffuse": {
+          "bound_sha256": "f4a958ad82e07d344ab73b7a633cfa17b6dbe1331ce723180d5c1b2d176435c0",
+          "geometry_downloaded_sha256": null,
+          "geometry_embedded_sha256": [
+            "f4a958ad82e07d344ab73b7a633cfa17b6dbe1331ce723180d5c1b2d176435c0"
+          ],
+          "matched_via": "embedded_bytes"
+        },
+        "normal": {
+          "bound_sha256": "fa05c88d8911cdf282f941baeb712eb682d3d85452e55ab02515b0432503d6ad",
+          "geometry_downloaded_sha256": null,
+          "geometry_embedded_sha256": [
+            "fa05c88d8911cdf282f941baeb712eb682d3d85452e55ab02515b0432503d6ad"
+          ],
+          "matched_via": "embedded_bytes"
+        },
+        "specular": {
+          "bound_sha256": "9f1913b6d518254d46ac9a6756a1bc03f298df8811419dd772fab3ae402d0351",
+          "geometry_downloaded_sha256": null,
+          "geometry_embedded_sha256": [
+            "9f1913b6d518254d46ac9a6756a1bc03f298df8811419dd772fab3ae402d0351"
+          ],
+          "matched_via": "embedded_bytes"
+        }
+      },
+      "status": "pass"
+    }
   }
 }

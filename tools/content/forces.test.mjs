@@ -551,7 +551,7 @@ test('The graphic database, window file and sprite file agree and name no vanill
     for (const slot of hullSlots.get(h)) assert(win.includes(`name = "${slot}"`), `${h}: window for ${slot}`);
   }
   assert(!/GFX_(?!zin_)/.test(gui), 'no vanilla sprite in the windows');
-  for (const f of ['gfx/interface/zin/frame.dds']) assert(existsSync(`${ZIN}/${f}`), 'the fallback picture exists');
+  for (const m of gfx.matchAll(/texturefile = "([^"]+)"/g)) assert(staged.files.has(m[1]), `${m[1]} is staged`);
 });
 test('The geography file is current with the states of the mod', async () => {
   const states = await readStates();

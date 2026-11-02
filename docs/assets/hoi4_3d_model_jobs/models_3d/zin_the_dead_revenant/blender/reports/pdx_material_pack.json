@@ -1,13 +1,13 @@
 {
   "channel_stats": {
     "A": {
-      "max": 199,
-      "mean": 109.3979,
-      "min": 65
+      "max": 255,
+      "mean": 111.0318,
+      "min": 67
     },
     "B": {
-      "max": 175,
-      "mean": 23.6636,
+      "max": 173,
+      "mean": 23.0442,
       "min": 0
     },
     "G": {
@@ -22,8 +22,8 @@
     }
   },
   "dimensions": [
-    2048,
-    2048
+    4096,
+    4096
   ],
   "layout": {
     "alpha": "glossiness_255_minus_roughness",
@@ -32,25 +32,25 @@
     "red": "unused_mask_zero"
   },
   "output": {
-    "bytes": 2924144,
-    "path": "provider/downloads/generation_model_textures/pdx_specular.png",
-    "sha256": "ee65456bd832a73aa668853b5535b5ad462232c7dee34478119799d93c50d65d"
+    "bytes": 8855423,
+    "path": "provider/downloads/remesh_model_textures/pdx_specular.png",
+    "sha256": "76a94b02aaa91a4b02ee18aa8c6fd3e287a7d3c69afcb8d548b39703641a687c"
   },
   "source": {
     "glTF_packed_map": {
-      "bytes": 2924878,
-      "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
-      "sha256": "e0e3b583ac7b52b9e756688769966c3b9c73e1db85500047b101dc572210a51a"
+      "bytes": 13142215,
+      "path": "provider/downloads/remesh_model_textures/metallic_roughness.png",
+      "sha256": "0239da3318005013bd61d1bf9a34c00b557de19b29cc30c40f11f212e8d90d2c"
     },
     "metallic": {
-      "bytes": 1189553,
-      "path": "provider/downloads/generation_model_textures/metallic.png",
-      "sha256": "5cf71d8d076dd59d08daf400b1bbf6cdce5c1b00d75f62905a8e26c1934aa5e8"
+      "bytes": 4080847,
+      "path": "provider/downloads/remesh_model_textures/metallic.png",
+      "sha256": "d2c8a84262542d3d7a941c9cf712fe6990ce4b34177e2de0dffbb0aea08816f6"
     },
     "roughness": {
-      "bytes": 1726347,
-      "path": "provider/downloads/generation_model_textures/roughness.png",
-      "sha256": "a9d2b05454428217589104cf67a3256b9da54efb5b4caed1535fde236880ae78"
+      "bytes": 4148033,
+      "path": "provider/downloads/remesh_model_textures/roughness.png",
+      "sha256": "880a9e2112f474e52aa9911a8a7ec73d04a2b6acacf3f5cf67858029c0b71a1b"
     }
   },
   "status": "packed"

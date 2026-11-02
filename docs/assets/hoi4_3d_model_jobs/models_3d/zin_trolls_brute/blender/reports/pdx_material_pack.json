@@ -1,13 +1,13 @@
 {
   "channel_stats": {
     "A": {
-      "max": 170,
-      "mean": 95.8395,
-      "min": 53
+      "max": 255,
+      "mean": 98.9681,
+      "min": 54
     },
     "B": {
-      "max": 116,
-      "mean": 0.0028,
+      "max": 79,
+      "mean": 0.4075,
       "min": 0
     },
     "G": {
@@ -22,8 +22,8 @@
     }
   },
   "dimensions": [
-    2048,
-    2048
+    4096,
+    4096
   ],
   "layout": {
     "alpha": "glossiness_255_minus_roughness",
@@ -32,25 +32,25 @@
     "red": "unused_mask_zero"
   },
   "output": {
-    "bytes": 1731207,
-    "path": "provider/downloads/generation_model_textures/pdx_specular.png",
-    "sha256": "e99268167aee8f1254260cc0f76a6a2ecde4d868e94c8d22d3088511da48b32b"
+    "bytes": 6394533,
+    "path": "provider/downloads/remesh_model_textures/pdx_specular.png",
+    "sha256": "98f99dd09c7cb1ccbfcbb478daafb133ecda56f03eca716dc16969c2a59f291f"
   },
   "source": {
     "glTF_packed_map": {
-      "bytes": 1731587,
-      "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
-      "sha256": "170eb61df332b7d5b8b83b0743aa74e36c9228b5b90a752eda0250781fe8c69c"
+      "bytes": 10815717,
+      "path": "provider/downloads/remesh_model_textures/metallic_roughness.png",
+      "sha256": "9f1913b6d518254d46ac9a6756a1bc03f298df8811419dd772fab3ae402d0351"
     },
     "metallic": {
-      "bytes": 19477,
-      "path": "provider/downloads/generation_model_textures/metallic.png",
-      "sha256": "c0dd966a204056cb4e364b25b94f7027f9b663bb2a632d8e1f7d9868a7de8e70"
+      "bytes": 2268409,
+      "path": "provider/downloads/remesh_model_textures/metallic.png",
+      "sha256": "4db42d3af96a9856aa9f18b267481a3417047f24e4211403ebb24a3311b3584c"
     },
     "roughness": {
-      "bytes": 1639324,
-      "path": "provider/downloads/generation_model_textures/roughness.png",
-      "sha256": "1cb41a9b8f2fd12d38bd404b39aa376709e263e4ad9b99cc58d3084994f955ad"
+      "bytes": 3820817,
+      "path": "provider/downloads/remesh_model_textures/roughness.png",
+      "sha256": "815241ce96ee24adac90219b256a3370abcc925e49d20e5d10df7a57fe74bfe6"
     }
   },
   "status": "packed"

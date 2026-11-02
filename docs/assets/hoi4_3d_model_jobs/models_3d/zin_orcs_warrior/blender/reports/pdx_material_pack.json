@@ -1,13 +1,13 @@
 {
   "channel_stats": {
     "A": {
-      "max": 177,
-      "mean": 99.8693,
+      "max": 255,
+      "mean": 101.1527,
       "min": 61
     },
     "B": {
-      "max": 122,
-      "mean": 0.0933,
+      "max": 106,
+      "mean": 0.6071,
       "min": 0
     },
     "G": {
@@ -22,8 +22,8 @@
     }
   },
   "dimensions": [
-    2048,
-    2048
+    4096,
+    4096
   ],
   "layout": {
     "alpha": "glossiness_255_minus_roughness",
@@ -32,25 +32,25 @@
     "red": "unused_mask_zero"
   },
   "output": {
-    "bytes": 2062163,
-    "path": "provider/downloads/generation_model_textures/pdx_specular.png",
-    "sha256": "d216dd0023440ca701ba8985ca50231b3efd2ba4fb9225d5642244b92ac4fe1f"
+    "bytes": 7639326,
+    "path": "provider/downloads/remesh_model_textures/pdx_specular.png",
+    "sha256": "1b8b4ff484b7071935b8fb354bb28ad66137d8c9bfb35793e440439f8632048d"
   },
   "source": {
     "glTF_packed_map": {
-      "bytes": 2063183,
-      "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
-      "sha256": "4243425113cdf92fcd6453f9ab960a647c08db9be60a644c72594428bb2e911b"
+      "bytes": 12380937,
+      "path": "provider/downloads/remesh_model_textures/metallic_roughness.png",
+      "sha256": "0f173f20d5d5bd9cc4a29fab9ef28340969be657e2ab764e7cf6ea0428d07a22"
     },
     "metallic": {
-      "bytes": 54844,
-      "path": "provider/downloads/generation_model_textures/metallic.png",
-      "sha256": "03f17bfbd21bace31a5393e8d217c81487e756c15da5b5610d9b171aab124c07"
+      "bytes": 2647290,
+      "path": "provider/downloads/remesh_model_textures/metallic.png",
+      "sha256": "768455926e14cf3e0145b2661b2f063f790149ee8b3ac80cc8b14959ed288e4f"
     },
     "roughness": {
-      "bytes": 1854516,
-      "path": "provider/downloads/generation_model_textures/roughness.png",
-      "sha256": "b064591c24aba264c2bbfe24c16dd69bcd0192329729374c5a7c6890caedcdd8"
+      "bytes": 4458517,
+      "path": "provider/downloads/remesh_model_textures/roughness.png",
+      "sha256": "fe80cbe65e221921f858585776179d93cba702f81014ac7f275dbc5074bb5737"
     }
   },
   "status": "packed"
