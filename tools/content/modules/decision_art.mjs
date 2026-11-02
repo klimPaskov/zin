@@ -16,6 +16,7 @@
 //   cutSealSheet(file, sheet, opts)          detects the seals and returns their 32 × 32 RGBA pieces (round alpha)
 //   rewriteSealTextures(text, accepted)      rewrites the texturefile lines of the decision sprites named in `accepted`
 //   applyDecisionArt(staged, opts)           rewrites the accepted sprites, cuts the seals they use, writes sources and manifest
+//   applyIdeaSeals(staged, opts)             lane I12: decisions whose icon names an idea picture get that picture's own seal (below)
 //   CLI: node tools/content/modules/decision_art.mjs plan                          rewrites the cell map (existing sheet status is kept)
 //        node tools/content/modules/decision_art.mjs jobs <sheet>... <jobs.json>    imagegen jobs for the named planned sheets
 //        node tools/content/modules/decision_art.mjs preview <sheet>                cuts one raw sheet and writes its contact sheets
@@ -171,7 +172,7 @@ async function acceptedSeals(cells, provenance, raw) {
 // Rewrites the decision sprites with accepted seals in the staged interface files, cuts the seals they use, writes the DDS files,
 // the sources and the manifest. Returns { rewritten, seals, unsealed } where unsealed lists the decision sprites that keep their texture.
 // Uses staged.files directly (Staged.add refuses to replace a file). `raw` maps a raw-relative path to a file (tests pass their own).
-export async function applyDecisionArt(staged, { cells = readCells(), provenance, raw = rawFile, warn = () => {} } = {}) {
+export async function applyDecisionArt(staged, { cells = readCells(), provenance, raw = rawFile, warn = () => {}, ideaRows, ideaProvenance } = {}) {
   const prov = provenance ?? (existsSync(provenanceFile()) ? (await readFile(provenanceFile(), 'utf8')).split('\n').filter(Boolean).map(l => JSON.parse(l)) : []);
   const { seals, shipped } = await acceptedSeals(cells, prov, raw);
   const declared = new Set();
@@ -201,9 +202,116 @@ export async function applyDecisionArt(staged, { cells = readCells(), provenance
     }
   }
   for (const [, s] of sources) staged.files.set(`art/source/${s.rel}`, s.bytes);
+  const idea = await applyIdeaSeals(staged, { rows: ideaRows ?? readIdeaSeals(), provenance: ideaProvenance ?? repoProvenance(), warn });
+  manifest.push(...idea.manifest);
   if (manifest.length) staged.files.set(MANIFEST_FILE, Buffer.from(JSON.stringify({ generator: 'tools/content/modules/decision_art.mjs', files: manifest.sort((a, b) => a.out.localeCompare(b.out, 'en')) }, null, 1) + '\n'));
   const unsealed = [...declared].filter(k => !used.has(k)).sort();
-  return { rewritten: used.size, seals: shippedKeys.length, unsealed };
+  return { rewritten: used.size, seals: shippedKeys.length, unsealed, idea: { icons: idea.icons, seals: idea.seals, reused: idea.reused } };
+}
+
+// ------------------------------------------------------------------------------------------------ idea-art decisions (lane I12)
+// Decisions whose icon names a ZIN idea picture get that picture's own seal. A decision icon is either `icon = GFX_idea_zin_<key>` or a
+// bare `icon = <key>` whose GFX_decision_<key> sprite is the ZIN idea picture gfx/interface/ideas/zin/<key>.dds. data/decision_idea_seals.json
+// lists one row per key: "accepted" (a 32 × 32 processed picture from hoi4-imagegen, copied to art/source/decision/idea/<key>.png; its
+// exact bytes need an accepting review line in the provenance log) or "reused" (the key already has its I11 seal GFX_decision_zin_<key>).
+// The icon line is rewritten to GFX_decision_zin_<key>; the accepted seals used by a decision are declared in interface/zin_decision_idea_seals.gfx.
+// Category icons (common/decisions/categories/) are not decision icons and are never rewritten.
+export const IDEA_SEALS_FILE = path.join(here, '..', 'data', 'decision_idea_seals.json');
+export const IDEA_GFX_FILE = 'interface/zin_decision_idea_seals.gfx';
+export const ZIN_ROOT = path.join(here, '..', '..', '..');
+
+export const readIdeaSeals = (file = IDEA_SEALS_FILE) => JSON.parse(readFileSync(file, 'utf8')).seals;
+
+function repoProvenance() {
+  const file = path.join(ZIN_ROOT, 'art', 'source', 'provenance.jsonl');
+  if (!existsSync(file)) return [];
+  return readFileSync(file, 'utf8').split(/\r?\n/).filter(l => l.trim()).map(l => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+}
+
+// Sprite name -> texturefile of every spriteType in the given .gfx texts. A texturefile belongs to the closest name before it; the \b keeps
+// animationtexturefile and animationmaskfile out of the pairing.
+export function spriteTextures(texts) {
+  const map = new Map();
+  for (const text of texts) {
+    let cur = null;
+    for (const m of text.matchAll(/\bname\s*=\s*"([^"]+)"|\btexturefile\s*=\s*"([^"]+)"/g)) {
+      if (m[1] !== undefined) cur = m[1];
+      else if (cur !== null) { map.set(cur, m[2]); cur = null; }
+    }
+  }
+  return map;
+}
+
+// The seal key of a decision icon that names a ZIN idea picture (and the key is in sealKeys), else null.
+// The key is the picture's own file name (gfx/interface/ideas/zin/<key>.dds), so a bare icon such as wing_trials can name the dragon_wing picture.
+export function ideaIconKey(icon, sealKeys, textures) {
+  const direct = /^GFX_idea_zin_[a-z0-9_]+$/.test(icon);
+  const bare = /^[a-z0-9_]+$/.test(icon);
+  const picture = direct ? textures.get(icon) : bare ? textures.get(`GFX_decision_${icon}`) : null;
+  const m = /^gfx\/interface\/ideas\/zin\/([a-z0-9_]+)\.dds$/.exec(picture ?? '');
+  const key = m ? m[1] : null;
+  return key && sealKeys.has(key) ? key : null;
+}
+
+// Rewrites the decision icon lines (two tabs: inside a decision block) of one decision file. Returns { text, keys } with the keys rewritten.
+export function rewriteIdeaIcons(text, sealKeys, textures) {
+  const keys = [];
+  const out = text.replace(/^(\t\ticon\s*=\s*)([A-Za-z0-9_]+)(\s*)$/gm, (m, pre, icon, post) => {
+    const key = ideaIconKey(icon, sealKeys, textures);
+    if (!key) return m;
+    keys.push(key);
+    return `${pre}${sealSpriteName(key)}${post}`;
+  });
+  return { text: out, keys };
+}
+
+// rows: the seal table. provenance: the log lines the accepted pictures are checked against. Returns the rewritten icon count, the seals shipped,
+// the reused seals used, and the manifest lines of the shipped DDS. Fails closed on an accepted row whose bytes or review line do not match.
+export async function applyIdeaSeals(staged, { rows = readIdeaSeals(), provenance = repoProvenance(), root = ZIN_ROOT, warn = () => {} } = {}) {
+  const textures = spriteTextures([...staged.files].filter(([k]) => /^interface\/.*\.gfx$/.test(k)).sort(([a], [b]) => a.localeCompare(b, 'en')).map(([, v]) => v.toString('utf8')));
+  const usable = new Map();
+  for (const r of rows) {
+    if (r.status === 'reused') {
+      if (textures.has(sealSpriteName(r.key))) usable.set(r.key, r);
+      else warn(`idea seals: ${sealSpriteName(r.key)} is not declared, so the ${r.key} decisions keep their idea picture`);
+    } else if (r.status === 'accepted') {
+      if (textures.has(sealSpriteName(r.key))) throw new Error(`idea seal ${r.key}: ${sealSpriteName(r.key)} is already declared`);
+      usable.set(r.key, r);
+    } else if (r.status !== 'planned') throw new Error(`idea seal ${r.key}: unknown status ${r.status}`);
+  }
+  // The decision icon lines first, so only the seals that decisions use are shipped.
+  const used = new Map();
+  for (const [rel, buf] of [...staged.files].filter(([k]) => /^common\/decisions\/zin_[^/]+\.txt$/.test(k)).sort(([a], [b]) => a.localeCompare(b, 'en'))) {
+    const r = rewriteIdeaIcons(buf.toString('utf8'), new Set(usable.keys()), textures);
+    if (!r.keys.length) continue;
+    staged.files.set(rel, Buffer.from(r.text, 'utf8'));
+    for (const k of r.keys) used.set(k, (used.get(k) ?? 0) + 1);
+  }
+  const manifest = [], declared = [];
+  let seals = 0, reused = 0;
+  for (const key of [...used.keys()].sort()) {
+    const r = usable.get(key);
+    if (r.status === 'reused') { reused++; continue; }
+    const bytes = await readFile(path.join(root, r.source)).catch(() => null);
+    if (!bytes) throw new Error(`idea seal ${key}: ${r.source} is missing`);
+    if (sha256(bytes) !== r.sha256) throw new Error(`idea seal ${key}: ${r.source} changed since its row`);
+    const acc = acceptance(provenance, r.source, bytes);
+    if (!acc.ok) throw new Error(`idea seal ${key}: ${acc.why}`);
+    const { data, info } = await sharp(bytes).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    if (info.width !== SEAL_W || info.height !== SEAL_H || info.channels !== 4) throw new Error(`idea seal ${key}: ${info.width}x${info.height}x${info.channels}, expected ${SEAL_W}x${SEAL_H}x4`);
+    const out = sealTexture(key), data2 = dds(fromRaw(data, SEAL_W, SEAL_H));
+    staged.files.set(out, data2);
+    staged.files.set(r.source, bytes);
+    declared.push(key);
+    seals++;
+    manifest.push({ out, sprite: sealSpriteName(key), source: r.source, sourceSha256: r.sha256, decisions: used.get(key), ops: ['hoi4-imagegen 0.2.1 decision recipe: fit_subject to 32 x 32, margin 1', 'dds a8r8g8b8 from the processed picture'], sha256: sha256(data2) });
+  }
+  if (declared.length) {
+    const body = declared.map(k => `\tspriteType = {\n\t\tname = "${sealSpriteName(k)}"\n\t\ttexturefile = "${sealTexture(k)}"\n\t}`).join('\n');
+    staged.files.set(IDEA_GFX_FILE, Buffer.from(`# Generated by the ZIN content builder (modules/decision_art.mjs, lane I12): the seals of the decisions whose icon names an idea picture. Do not edit by hand.\nspriteTypes = {\n${body}\n}\n`, 'utf8'));
+  }
+  const icons = [...used.values()].reduce((a, b) => a + b, 0);
+  return { icons, seals, reused, manifest };
 }
 
 function readCells() {

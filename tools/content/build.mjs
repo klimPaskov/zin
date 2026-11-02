@@ -174,6 +174,9 @@ const warEvents = await buildEventsMechWar(staged, { countries });
 // zin_story_tick calls its monthly block (storyBlocks 'deep' below).
 const deepPast = await (await import('./modules/deep_past.mjs')).buildDeepPast(staged, { countries });
 void deepPast;
+// Achievement icons (lane I11, modules/achievement_art.mjs): the processed completed, grey and not-eligible DDS of each deep-past achievement.
+const achievementArt = await (await import('./modules/achievement_art.mjs')).applyAchievementArt(staged, { warn: msg => console.error(`achievement art: ${msg}`) });
+console.error(`achievement art: ${achievementArt.staged} of 27 achievement DDS staged`);
 // The courts of the realms (data/world/characters): after the mechanic slices, whose own characters they leave to them.
 const characters = await buildCharacters(staged, { countries });
 // The country package (tags, country files, histories, names, the bookmark) and the realms' flags: after the courts (recruits), the

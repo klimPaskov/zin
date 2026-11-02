@@ -1,0 +1,489 @@
+{
+  "asset_id": "zin_decision_seals.zin_envoy",
+  "family": "decision",
+  "generated_at": "2026-11-02T10:52:06Z",
+  "last_install": {
+    "approval_id": "apr-f12599bab611cd8b",
+    "family": "decision",
+    "files": [
+      {
+        "container": "dds",
+        "path": "gfx/interface/decisions/zin_decision_seals/decision_zin_envoy.dds",
+        "pixels_sha256": "5c42c272b4ff7565632a117c19cab3d88f25fb18d6fae8597f9c87e59730b4d1",
+        "sha256": "d505e8794b951690b54c79c243d6def3e0afdd90926cc45d04b631e4f482bf92"
+      }
+    ],
+    "gfx_file": "interface/zin_decision_seals_decisions.gfx",
+    "mode": "handoff",
+    "replaced": [],
+    "sprites": [
+      "GFX_decision_zin_envoy"
+    ],
+    "target": "zin_decision_seals.zin_envoy-v1-p1"
+  },
+  "ledger_entries": [
+    {
+      "artifact_id": null,
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "estimate_usd": 0.0,
+        "model": "gpt-6-luna",
+        "plan_hash": "e16947ed21e895b67c3484d64ef16a245d3ad456779393a6c60332ab457d0fb3",
+        "plan_id": "plan-e16947ed21e895b6",
+        "provider": "chatgpt_login"
+      },
+      "hash": "3a8b2699effc78b45ba2bf0776fa233fb8802eb2c436a1d6ec53ac9ec8c05124",
+      "kind": "plan_created",
+      "prev": "73339a52d3fe22dea4edf762e90ee8dbfdf072843ffb1ca1beec31fbb435decd",
+      "seq": 6,
+      "ts": "2026-11-02T10:42:36Z"
+    },
+    {
+      "artifact_id": null,
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "asset_id": "zin_decision_seals.zin_envoy",
+        "candidate_dir": "docs/assets/zin_decision_seals/source_png",
+        "editing": false,
+        "estimated_usd": 0.0,
+        "idempotency_key": "zin-dec-envoy-1",
+        "job_id": "job-be32f6608edb",
+        "model": "gpt-6-luna",
+        "prompt": "Create one Hearts of Iron IV decision or mission icon: A round Chancery decision seal: a flat round medallion of two or three colours (dull gold rim, madder red and slate blue-grey) showing one bold flat emblem in its centre: a folded letter sealed with red wax, bound with a grey cord, beside a small pouch of salt and a iron ring. Outside the round rim the background is fully transparent. No text, no numbers, no face.\n\nRequirements:\n- One centred subject with a strong, simple silhouette that stays readable at 32x32 pixels.\n- Painterly, slightly aged texture in the style of Hearts of Iron IV interface art, with readable contrast.\n- Real transparent background: no backdrop, no frame, no border, no plate behind the subject.\n- Leave a small empty margin around the subject.\n\nStyle:\n- Match the mod's own reference shelf for decision or mission icon art: moderately muted, dark palette dominated by black and brown; partial dark outline; crisp, detailed texture; about 60% of the canvas covered by the subject (measured on 18 images).\n\nReference images, in the order attached:\n1. style anchor: match its painting style, palette and level of detail\n2. style anchor: match its painting style, palette and level of detail\n3. style anchor: match its painting style, palette and level of detail\n4. style anchor: match its painting style, palette and level of detail\n5. style anchor: match its painting style, palette and level of detail\n6. style anchor: match its painting style, palette and level of detail\n\nAvoid: text; letters or numbers; watermark or signature; a drawn checkerboard pattern; a frame or border.\n\nProduce exactly one image.\n",
+        "prompts_dir": "docs/assets/zin_decision_seals/prompts",
+        "provider": "chatgpt_login",
+        "request_hash": "7a7dfc019bd9907f5be68d28f0c16c3822bcd67a470cdac786254f9ba5b6913c",
+        "template": {
+          "asset": "zin_envoy",
+          "asset_id": "zin_decision_seals.zin_envoy",
+          "candidate_id": "",
+          "canvas": [
+            32,
+            32
+          ],
+          "cost": {
+            "actual_usd": null,
+            "basis": "ChatGPT plan quota: there is no per-image price and no usage report, so spend is recorded as unknown and no operator allowance is ever charged",
+            "estimated_usd": 0.0,
+            "funding": "plan_quota",
+            "reserved_usd": 0.0,
+            "usage_unknown": true
+          },
+          "family": "decision",
+          "feature_slug": "zin_decision_seals",
+          "has_transparency": false,
+          "idempotency_key": "zin-dec-envoy-1",
+          "model": "gpt-6-luna",
+          "note": null,
+          "parent": null,
+          "path": "",
+          "pixels_sha256": "",
+          "plan_hash": "e16947ed21e895b67c3484d64ef16a245d3ad456779393a6c60332ab457d0fb3",
+          "plan_id": "plan-e16947ed21e895b6",
+          "profile": {
+            "hash": "5d2404bdc10352e219b6d263c75e0664e7bf4969a0d9b47f00680bcaf7be3b39",
+            "id": "decision",
+            "kit_sha256": "c3f0df9a1edf27ba4d6c95214cb2a16681dd17dcb10aec4ce049a59e359e201d"
+          },
+          "prompt_sha256": "12de2d500e9727d9c6c0115e5205c320e1026a0c601d954706e5b192b49bcee9",
+          "provider": "chatgpt_login",
+          "provider_request_id": null,
+          "references": [
+            {
+              "origin": "kit_shelf",
+              "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SWI_no_elected_president.png",
+              "role": "style_anchor",
+              "sha256": "222dc91c2b23f55bd4e715250ce1fac6bb4a4a30a29f7784a3521c854b15e93f"
+            },
+            {
+              "origin": "kit_shelf",
+              "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_the_stalin_constitution.png",
+              "role": "style_anchor",
+              "sha256": "83ee0042a91645a908c917ac97e4bbdec55b782411fb2b90ea5c2c5828c923ac"
+            },
+            {
+              "origin": "kit_shelf",
+              "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_repress_bzns.png",
+              "role": "style_anchor",
+              "sha256": "5c420576d64e553b6512ccd8d68743f28b48f07d12f23969274569ca620efb7e"
+            },
+            {
+              "origin": "kit_shelf",
+              "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_exiles_state.png",
+              "role": "style_anchor",
+              "sha256": "7d5d772c3ac60e6d94646d061b2749024f9791ec2cd029dd6e44aa9b4d68978d"
+            },
+            {
+              "origin": "project",
+              "path": "art/source/decision/decision-01.png",
+              "role": "style_anchor",
+              "sha256": "86460541b60da841bdba00587e49fc98d5f825dc9fb4f483463ea975a46f1340"
+            },
+            {
+              "origin": "project",
+              "path": "art/source/decision/decision-05.png",
+              "role": "style_anchor",
+              "sha256": "c1f8ebd0420ca204e410edc039ff5aaee6bfb54e21206b69717f80d634e56a30"
+            }
+          ],
+          "request_hash": "7a7dfc019bd9907f5be68d28f0c16c3822bcd67a470cdac786254f9ba5b6913c",
+          "sha256": "",
+          "size": [
+            0,
+            0
+          ],
+          "usage": null,
+          "version": 0
+        }
+      },
+      "hash": "7c47f132a1e28cf0a42ca6af97423d48853b4712e62eff7a7aa749a9caa0958f",
+      "kind": "job_intent",
+      "prev": "3a8b2699effc78b45ba2bf0776fa233fb8802eb2c436a1d6ec53ac9ec8c05124",
+      "seq": 7,
+      "ts": "2026-11-02T10:42:50Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "asset": "zin_envoy",
+        "asset_id": "zin_decision_seals.zin_envoy",
+        "candidate_id": "zin_decision_seals.zin_envoy-v1",
+        "canvas": [
+          32,
+          32
+        ],
+        "cost": {
+          "actual_usd": null,
+          "basis": "ChatGPT plan quota: there is no per-image price and no usage report, so spend is recorded as unknown and no operator allowance is ever charged",
+          "estimated_usd": 0.0,
+          "funding": "plan_quota",
+          "reserved_usd": 0.0,
+          "usage_unknown": true
+        },
+        "family": "decision",
+        "feature_slug": "zin_decision_seals",
+        "has_transparency": true,
+        "idempotency_key": "zin-dec-envoy-1",
+        "model": "gpt-6-luna",
+        "note": "ran on gpt-6-luna at high reasoning effort, as reported by the backend; usage is not reported; image tool model (chosen by the backend): gpt-image-2-codex; image size: 1254x1254; image quality: medium; image background: transparent; image output_format: png; revised prompt: Create exactly one square Hearts of Iron IV decision/mission icon, isolated on a fully transparent background (real alpha, no checkerboard). Match the attached reference shelf: vintage painted game-interface icon, strong bold near-black outlines, crisp readable shapes, subtly aged painterly texture, restrained muted palette, dull antique gold rim, madder/deep red and slate blue-grey. A single centered round medallion occupying about 60% of canvas, with a small clear transparent margin. The round medallion itself has a thick dull-gold circular rim and a simple divided red and slate blue-grey interior. At the center, one bold, compact emblem: a folded parchment letter tied firmly with grey cord and sealed with a prominent red wax seal; immediately beside it a small tied pouch of salt and a simple iron ring. Make the objects overlap coherently as one readable heraldic still-life silhouette, high contrast and legible at 32x32 pixels. Modestly detailed but uncluttered, dark outline and subtle shadowing, no photorealism. No text, no letters, no numbers, no face, no watermark, no signature. Nothing whatsoever outside the circular rim: no backdrop, no frame, no extra border or plate; transparent outside the medallion.",
+        "parent": null,
+        "path": "docs/assets/zin_decision_seals/source_png/zin_envoy-v1.png",
+        "pixels_sha256": "f1f1702244525c7d39957bf6f8bfa8f9e3e94739cfc21128ff7cbb5982adaa0c",
+        "plan_hash": "e16947ed21e895b67c3484d64ef16a245d3ad456779393a6c60332ab457d0fb3",
+        "plan_id": "plan-e16947ed21e895b6",
+        "profile": {
+          "hash": "5d2404bdc10352e219b6d263c75e0664e7bf4969a0d9b47f00680bcaf7be3b39",
+          "id": "decision",
+          "kit_sha256": "c3f0df9a1edf27ba4d6c95214cb2a16681dd17dcb10aec4ce049a59e359e201d"
+        },
+        "prompt_sha256": "12de2d500e9727d9c6c0115e5205c320e1026a0c601d954706e5b192b49bcee9",
+        "provider": "chatgpt_login",
+        "provider_request_id": "resp_033edfab220b30f3016ae8692a607887d284cd16e6ba0f9c64",
+        "references": [
+          {
+            "origin": "kit_shelf",
+            "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SWI_no_elected_president.png",
+            "role": "style_anchor",
+            "sha256": "222dc91c2b23f55bd4e715250ce1fac6bb4a4a30a29f7784a3521c854b15e93f"
+          },
+          {
+            "origin": "kit_shelf",
+            "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_the_stalin_constitution.png",
+            "role": "style_anchor",
+            "sha256": "83ee0042a91645a908c917ac97e4bbdec55b782411fb2b90ea5c2c5828c923ac"
+          },
+          {
+            "origin": "kit_shelf",
+            "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_repress_bzns.png",
+            "role": "style_anchor",
+            "sha256": "5c420576d64e553b6512ccd8d68743f28b48f07d12f23969274569ca620efb7e"
+          },
+          {
+            "origin": "kit_shelf",
+            "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_exiles_state.png",
+            "role": "style_anchor",
+            "sha256": "7d5d772c3ac60e6d94646d061b2749024f9791ec2cd029dd6e44aa9b4d68978d"
+          },
+          {
+            "origin": "project",
+            "path": "art/source/decision/decision-01.png",
+            "role": "style_anchor",
+            "sha256": "86460541b60da841bdba00587e49fc98d5f825dc9fb4f483463ea975a46f1340"
+          },
+          {
+            "origin": "project",
+            "path": "art/source/decision/decision-05.png",
+            "role": "style_anchor",
+            "sha256": "c1f8ebd0420ca204e410edc039ff5aaee6bfb54e21206b69717f80d634e56a30"
+          }
+        ],
+        "request_hash": "7a7dfc019bd9907f5be68d28f0c16c3822bcd67a470cdac786254f9ba5b6913c",
+        "sha256": "1ec3da834f2925f36c6d4975eca6cf9454be45c474ddd03dc258ffc1858194c3",
+        "size": [
+          1254,
+          1254
+        ],
+        "usage": {
+          "input_tokens": 6601,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 275,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 6876
+        },
+        "version": 1
+      },
+      "hash": "2fb8e566b704a565ad810fe6875d0b37a822ecdf09c57e4f0d56cdf002a8c5a3",
+      "kind": "generated",
+      "prev": "7c47f132a1e28cf0a42ca6af97423d48853b4712e62eff7a7aa749a9caa0958f",
+      "seq": 8,
+      "ts": "2026-11-02T10:44:00Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "candidate_id": "zin_decision_seals.zin_envoy-v1",
+        "job_id": "job-be32f6608edb",
+        "outcome": "completed"
+      },
+      "hash": "448b91f508de350ff6d8e07e7e2b7f0c10fb13e2fe1bf541e38b4b30cf0ddf53",
+      "kind": "job_ended",
+      "prev": "2fb8e566b704a565ad810fe6875d0b37a822ecdf09c57e4f0d56cdf002a8c5a3",
+      "seq": 9,
+      "ts": "2026-11-02T10:44:00Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1-p1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "artifact_id": "zin_decision_seals.zin_envoy-v1-p1",
+        "asset_id": "zin_decision_seals.zin_envoy",
+        "canvas": [
+          32,
+          32
+        ],
+        "companions": [],
+        "family": "decision",
+        "path": "docs/assets/zin_decision_seals/processed_png/zin_envoy-v1-p1.png",
+        "pixels_sha256": "5c42c272b4ff7565632a117c19cab3d88f25fb18d6fae8597f9c87e59730b4d1",
+        "profile": {
+          "hash": "5d2404bdc10352e219b6d263c75e0664e7bf4969a0d9b47f00680bcaf7be3b39",
+          "id": "decision",
+          "kit_sha256": "c3f0df9a1edf27ba4d6c95214cb2a16681dd17dcb10aec4ce049a59e359e201d"
+        },
+        "recipe": {
+          "finishers": [],
+          "id": "icon",
+          "version": 1
+        },
+        "run": 1,
+        "sha256": "cbefd8cd31f9455a2a4e76fbc967d3bb8c61dd89551748793b6c801c16169aef",
+        "size": [
+          32,
+          32
+        ],
+        "source_id": "zin_decision_seals.zin_envoy-v1",
+        "steps": [
+          {
+            "engine": "imagegen-core/0.2.1/process-2",
+            "input_sha256": "f1f1702244525c7d39957bf6f8bfa8f9e3e94739cfc21128ff7cbb5982adaa0c",
+            "op": {
+              "erosion": 1,
+              "op": "defringe"
+            },
+            "output_sha256": "d1557cd4d545132c63a5302a3cf9114142e2385ecc510bf8bd2851631cb46a1a",
+            "output_size": [
+              1254,
+              1254
+            ]
+          },
+          {
+            "engine": "imagegen-core/0.2.1/process-2",
+            "input_sha256": "d1557cd4d545132c63a5302a3cf9114142e2385ecc510bf8bd2851631cb46a1a",
+            "op": {
+              "min_alpha": 16,
+              "op": "trim_to_subject"
+            },
+            "output_sha256": "e9d94ecab9928411b25bffad5ed4c41321c478cab39fb9a99bf2676aa9fa9835",
+            "output_size": [
+              1141,
+              1133
+            ]
+          },
+          {
+            "engine": "imagegen-core/0.2.1/process-2",
+            "input_sha256": "e9d94ecab9928411b25bffad5ed4c41321c478cab39fb9a99bf2676aa9fa9835",
+            "op": {
+              "height": 32,
+              "margin": 1,
+              "min_alpha": 16,
+              "op": "fit_subject",
+              "width": 32
+            },
+            "output_sha256": "5c42c272b4ff7565632a117c19cab3d88f25fb18d6fae8597f9c87e59730b4d1",
+            "output_size": [
+              32,
+              32
+            ]
+          }
+        ]
+      },
+      "hash": "d33f3d83ccd052d020ba448884afe89cee924653a36bf413ea8b20a7300c28e7",
+      "kind": "processed",
+      "prev": "448b91f508de350ff6d8e07e7e2b7f0c10fb13e2fe1bf541e38b4b30cf0ddf53",
+      "seq": 10,
+      "ts": "2026-11-02T10:44:07Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1-p1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "check_set_hash": "d652cd91ab6ecfda1e6f9c74189e21d3d6db3c6933930bd8096ed1732cd02a5d",
+        "checks": [
+          "size",
+          "alpha",
+          "opaque_canvas",
+          "fringe",
+          "margin",
+          "fill",
+          "checker",
+          "style",
+          "dds"
+        ],
+        "errors": 0,
+        "family": "decision",
+        "findings": [
+          {
+            "code": "GFX-STYLE-DRIFT",
+            "evidence": {
+              "furthest_dimensions": [
+                {
+                  "dimension": "lab_b_mean",
+                  "z": 4.359
+                },
+                {
+                  "dimension": "lab_l_mean",
+                  "z": 3.603
+                },
+                {
+                  "dimension": "saturation_mean",
+                  "z": 3.26
+                }
+              ],
+              "images": 18,
+              "p95_leave_one_out": 1.835,
+              "threshold": 1.835,
+              "tier": 2,
+              "tier_name": "mod asset folder copy",
+              "z_rms": 2.144
+            },
+            "frame": null,
+            "level": "warning",
+            "message": "the image is far from the mod's own reference shelf for decision or mission icon art: RMS z-score 2.14 against a threshold of 1.83 (furthest: lab_b_mean +4.4, lab_l_mean +3.6, saturation_mean +3.3). Review it against the references; this never blocks an install"
+          }
+        ],
+        "profile": {
+          "hash": "5d2404bdc10352e219b6d263c75e0664e7bf4969a0d9b47f00680bcaf7be3b39",
+          "id": "decision",
+          "kit_sha256": "c3f0df9a1edf27ba4d6c95214cb2a16681dd17dcb10aec4ce049a59e359e201d"
+        },
+        "sha256": "cbefd8cd31f9455a2a4e76fbc967d3bb8c61dd89551748793b6c801c16169aef",
+        "status": "pass",
+        "target": "zin_decision_seals.zin_envoy-v1-p1",
+        "warnings": 1
+      },
+      "hash": "2e13cd6de9815d8d913b9d1acd32b827bf5c9fbb19d1b8184cfb13a7455910bf",
+      "kind": "validated",
+      "prev": "d33f3d83ccd052d020ba448884afe89cee924653a36bf413ea8b20a7300c28e7",
+      "seq": 11,
+      "ts": "2026-11-02T10:44:49Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1-p1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "panels": [
+          "native on dark",
+          "native on light",
+          "6x on dark",
+          "6x on light",
+          "6x on checker",
+          "reference 1",
+          "reference 2"
+        ],
+        "sha256": "cbefd8cd31f9455a2a4e76fbc967d3bb8c61dd89551748793b6c801c16169aef",
+        "sheet": "docs/assets/zin_decision_seals/contact_sheets/zin_decision_seals_zin_envoy-v1-p1-preview-v1.png",
+        "sheet_sha256": "a9de0d6530bc142cecd943679899a39db9b8faa28e7512696d60e10c5b0ab6ad",
+        "target": "zin_decision_seals.zin_envoy-v1-p1"
+      },
+      "hash": "e4d6eaf6202f98401ba39995c4b1b320005858c531f7daa6181df47bbafd9cc3",
+      "kind": "previewed",
+      "prev": "2e13cd6de9815d8d913b9d1acd32b827bf5c9fbb19d1b8184cfb13a7455910bf",
+      "seq": 12,
+      "ts": "2026-11-02T10:44:55Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1-p1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "answers": {
+          "no_text_or_watermark": true,
+          "no_unintended_elements": true,
+          "period_and_theme_fit": true,
+          "readable_at_native_size": true,
+          "silhouette_clear": true,
+          "style_matches_references": true
+        },
+        "approval_id": "apr-f12599bab611cd8b",
+        "family": "decision",
+        "notes": "Round Chancery seal: gold rim, two-colour field, letter with wax seal, salt pouch and iron ring; reads at 32 px; matches decision-01 seal style.",
+        "reviewer": "claude-i12-lead-review",
+        "rubric": "icon_v1",
+        "sha256": "cbefd8cd31f9455a2a4e76fbc967d3bb8c61dd89551748793b6c801c16169aef",
+        "target": "zin_decision_seals.zin_envoy-v1-p1",
+        "verdict": "approved"
+      },
+      "hash": "4356ab56db9d807d70de76edf8d761c0ffa2592ec93dc55beb7f3996cfedadc8",
+      "kind": "reviewed",
+      "prev": "59bd14da6849ac5c06315a1dc553b2b4bfd3ad608ee9a35d10ee101f1c1cc059",
+      "seq": 50,
+      "ts": "2026-11-02T10:51:59Z"
+    },
+    {
+      "artifact_id": "zin_decision_seals.zin_envoy-v1-p1",
+      "asset_id": "zin_decision_seals.zin_envoy",
+      "data": {
+        "approval_id": "apr-f12599bab611cd8b",
+        "family": "decision",
+        "files": [
+          {
+            "container": "dds",
+            "path": "gfx/interface/decisions/zin_decision_seals/decision_zin_envoy.dds",
+            "pixels_sha256": "5c42c272b4ff7565632a117c19cab3d88f25fb18d6fae8597f9c87e59730b4d1",
+            "sha256": "d505e8794b951690b54c79c243d6def3e0afdd90926cc45d04b631e4f482bf92"
+          }
+        ],
+        "gfx_file": "interface/zin_decision_seals_decisions.gfx",
+        "mode": "handoff",
+        "replaced": [],
+        "sprites": [
+          "GFX_decision_zin_envoy"
+        ],
+        "target": "zin_decision_seals.zin_envoy-v1-p1"
+      },
+      "hash": "00c717786470d3c615272c5953e019b8896527acc978451ec04d14bd93938351",
+      "kind": "installed",
+      "prev": "4356ab56db9d807d70de76edf8d761c0ffa2592ec93dc55beb7f3996cfedadc8",
+      "seq": 51,
+      "ts": "2026-11-02T10:52:06Z"
+    }
+  ],
+  "note": "A view of .hoi4-imagegen/ledger.jsonl for this asset; the ledger is the source of truth and carries the hash chain.",
+  "schema": 1
+}

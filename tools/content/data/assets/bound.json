@@ -7,6 +7,7 @@
     { "match": "^gfx/cursors/", "reason": "cursors are bound by the engine's fixed cursor names (AC8)" },
     { "match": "^gfx/fonts/", "reason": "font pages are bound by bitmapfont entries" },
     { "match": "^map/.+\\.(bmp|dds|png|tga)$", "reason": "map textures are named by default.map or the engine and are written by the map pipeline" },
+    { "match": "^gfx/achievements/[a-z0-9_]+\\.dds$", "reason": "achievement icons are bound by achievement id: the engine reads gfx/achievements/<id>.dds, <id>_grey.dds and <id>_not_eligible.dds for each id in common/achievements (lanes I11 and I12; the rows are in art/source/achievement_art_manifest.json, and the shipped pictures are hoi4-imagegen 0.2.1 triplets under art/source/achievement/imagegen/)" },
     { "match": "^sound/", "reason": "sound files are bound by sound assets (AC6)" },
     { "match": "^music/", "reason": "music files are bound by music assets (AC6)" }
   ],

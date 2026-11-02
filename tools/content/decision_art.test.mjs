@@ -1,8 +1,9 @@
 // Decision seals (lane I11, modules/decision_art.mjs): one seal per decision sprite, round alpha, 32 × 32 shipped DDS, and the
-// texturefile rewrite that leaves every other decision sprite on its reason-listed texture.
+// texturefile rewrite that leaves every other decision sprite on its reason-listed texture. Lane I12 adds the idea-art decisions: each
+// decision icon that names a ZIN idea picture points at that picture's own seal (the tests at the end of this file).
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, mkdtemp, writeFile } from 'node:fs/promises';
+import { readFile, mkdtemp, writeFile, mkdir } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import os from 'node:os';
@@ -12,6 +13,7 @@ import sharp from 'sharp';
 import {
   planDecisionSheets, decisionSheetJobs, cutSealSheet, roundCoverage, rewriteSealTextures, applyDecisionArt,
   sealSpriteName, sealTexture, SEAL_W, SEAL_H, SEAL_DIR, PER_SHEET,
+  spriteTextures, ideaIconKey, rewriteIdeaIcons, applyIdeaSeals, readIdeaSeals, IDEA_GFX_FILE, ZIN_ROOT,
 } from './modules/decision_art.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -130,7 +132,7 @@ test('applyDecisionArt ships each accepted seal as a 32 × 32 DDS and lists ever
   ].join('\n');
   const staged = { files: new Map([['interface/zin_test.gfx', Buffer.from(gfx, 'utf8')]]) };
   const warnings = [];
-  const r = await applyDecisionArt(staged, { cells: sheetCells, provenance, raw: () => file, warn: m => warnings.push(m) });
+  const r = await applyDecisionArt(staged, { cells: sheetCells, provenance, raw: () => file, warn: m => warnings.push(m), ideaRows: [] });
   assert.equal(r.seals, 11, 'eleven accepted seals are cut (the twelfth is the unsealed sprite cell)');
   const out = staged.files.get('interface/zin_test.gfx').toString('utf8');
   const declared = [...out.matchAll(/name = "GFX_decision_zin_([A-Za-z0-9_]+)"\n\t\ttexturefile = "([^"]+)"/g)];
@@ -149,4 +151,129 @@ test('applyDecisionArt ships each accepted seal as a 32 × 32 DDS and lists ever
   assert.equal(warnings.length, 1, 'the twelfth accepted seal has no declared sprite in this fixture');
   assert.match(warnings[0], /1 accepted seals have no staged decision sprite \(k11\)/);
   assert.equal(sealSpriteName('k0'), 'GFX_decision_zin_k0');
+});
+
+// ------------------------------------------------------------------------------------------------ idea-art decisions (lane I12)
+const TEX = new Map([
+  ['GFX_idea_zin_envoy', 'gfx/interface/ideas/zin/envoy.dds'],
+  ['GFX_decision_ledger_coins', 'gfx/interface/ideas/zin/ledger_coins.dds'],
+  ['GFX_idea_zin_other', 'gfx/interface/ideas/zin/other.dds'],
+  ['GFX_decision_zin_chain_broken', 'gfx/interface/decisions/zin/chain_broken.dds'],
+]);
+
+test('spriteTextures pairs each name with its own texturefile and ignores animation files', () => {
+  const gfx = [
+    'spriteTypes = {',
+    '\tspriteType = {', '\t\tname = "GFX_a"', '\t\ttexturefile = "t1.dds"', '\t\tanimation = {', '\t\t\tanimationmaskfile = "m.dds"', '\t\t\tanimationtexturefile = "x.dds"', '\t\t}', '\t}',
+    '\tspriteType = {', '\t\tname = "GFX_b"', '\t\ttexturefile = "t2.dds"', '\t}',
+    '}',
+  ].join('\n');
+  const m = spriteTextures([gfx]);
+  assert.equal(m.get('GFX_a'), 't1.dds');
+  assert.equal(m.get('GFX_b'), 't2.dds');
+  assert.equal(m.size, 2);
+});
+
+test('ideaIconKey takes a direct idea icon or a bare icon whose sprite is the ZIN idea picture, for keys in the table only', () => {
+  const keys = new Set(['envoy', 'ledger_coins']);
+  assert.equal(ideaIconKey('GFX_idea_zin_envoy', keys, TEX), 'envoy');
+  assert.equal(ideaIconKey('ledger_coins', keys, TEX), 'ledger_coins');
+  assert.equal(ideaIconKey('GFX_idea_zin_other', keys, TEX), null, 'not in the table');
+  assert.equal(ideaIconKey('GFX_decision_zin_chain_broken', keys, TEX), null, 'a decision seal is not an idea icon');
+  assert.equal(ideaIconKey('zin_afrit_granary', keys, TEX), null, 'a bare name with no ZIN idea sprite');
+  const tex2 = new Map([...TEX, ['GFX_decision_wing_trials', 'gfx/interface/ideas/zin/envoy.dds']]);
+  assert.equal(ideaIconKey('wing_trials', keys, tex2), 'envoy', 'a bare icon takes the key of the picture its sprite names');
+});
+
+test('rewriteIdeaIcons rewrites decision icon lines only, and leaves category icons and other pictures alone', () => {
+  const text = [
+    'zin_test = {',
+    '\tzin_test_one = {',
+    '\t\ticon = GFX_idea_zin_envoy',
+    '\t\tallowed = {}',
+    '\t}',
+    '\tzin_test_two = {',
+    '\t\ticon = ledger_coins',
+    '\t}',
+    '\tzin_test_three = {',
+    '\t\ticon = GFX_idea_zin_other',
+    '\t}',
+    '}',
+    '\ticon = GFX_idea_zin_envoy',
+    '',
+  ].join('\n');
+  const r = rewriteIdeaIcons(text, new Set(['envoy', 'ledger_coins']), TEX);
+  assert.deepEqual(r.keys, ['envoy', 'ledger_coins']);
+  assert.ok(r.text.includes('\t\ticon = GFX_decision_zin_envoy\n'));
+  assert.ok(r.text.includes('\t\ticon = GFX_decision_zin_ledger_coins\n'));
+  assert.ok(r.text.includes('\t\ticon = GFX_idea_zin_other\n'), 'a picture outside the table keeps its icon');
+  assert.ok(r.text.endsWith('\ticon = GFX_idea_zin_envoy\n'), 'a one-tab icon is a category icon and stays');
+});
+
+test('the seal table has one row per key, 56 keys, and every accepted row is a 32 × 32 processed picture with an accepting review line', () => {
+  const rows = readIdeaSeals();
+  const keys = rows.map(r => r.key);
+  assert.equal(new Set(keys).size, keys.length, 'keys are unique');
+  assert.equal(rows.length, 56, 'the 56 idea pictures used as decision icons');
+  const prov = readFileSync(path.join(ZIN_ROOT, 'art', 'source', 'provenance.jsonl'), 'utf8').split(/\r?\n/).filter(Boolean).map(l => JSON.parse(l));
+  for (const r of rows) {
+    assert.ok(r.subject && r.subject.length > 10, `${r.key}: subject`);
+    assert.ok(['accepted', 'reused'].includes(r.status), `${r.key}: status`);
+    if (r.status === 'reused') { assert.equal(r.sprite, sealSpriteName(r.key)); continue; }
+    const bytes = readFileSync(path.join(ZIN_ROOT, r.source));
+    assert.equal(sha256(bytes), r.sha256, `${r.key}: source bytes`);
+    assert.ok(prov.some(l => l.sha256 === r.sha256 && l.reviewer && l.accepted === true), `${r.key}: accepting review line`);
+    assert.ok(prov.some(l => l.sha256 === r.sha256 && typeof l.prompt === 'string'), `${r.key}: generation line`);
+  }
+});
+
+test('applyIdeaSeals points each idea-art decision at its seal, ships the accepted DDS and declares only the seals in use', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'i12-idea-'));
+  const png = await sharp({ create: { width: SEAL_W, height: SEAL_H, channels: 4, background: { r: 150, g: 40, b: 40, alpha: 255 } } }).png().toBuffer();
+  await mkdir(path.join(root, 'art', 'source', 'decision', 'idea'), { recursive: true });
+  await writeFile(path.join(root, 'art', 'source', 'decision', 'idea', 'envoy.png'), png);
+  const rows = [
+    { key: 'envoy', status: 'accepted', subject: 'a sealed letter with a ribbon and a small pouch of salt', source: 'art/source/decision/idea/envoy.png', sha256: sha256(png) },
+    { key: 'chain_broken', status: 'reused', subject: 'a broken chain', sprite: 'GFX_decision_zin_chain_broken' },
+    { key: 'other', status: 'accepted', subject: 'not used by any decision', source: 'art/source/decision/idea/other.png', sha256: 'x' },
+  ];
+  const provenance = [
+    { id: 'gen-envoy', out: 'docs/assets/zin_decision_seals/processed_png/zin_envoy-v1-p1.png', sha256: sha256(png), prompt: 'fixture', accepted: true, reviewer: 'agent' },
+    { id: 'review-envoy', out: 'art/source/decision/idea/envoy.png', sha256: sha256(png), accepted: true, reviewer: 'agent' },
+  ];
+  const gfxIdeas = 'spriteTypes = {\n\tspriteType = {\n\t\tname = "GFX_idea_zin_envoy"\n\t\ttexturefile = "gfx/interface/ideas/zin/envoy.dds"\n\t}\n\tspriteType = {\n\t\tname = "GFX_idea_zin_chain_broken"\n\t\ttexturefile = "gfx/interface/ideas/zin/chain_broken.dds"\n\t}\n\tspriteType = {\n\t\tname = "GFX_decision_zin_chain_broken"\n\t\ttexturefile = "gfx/interface/decisions/zin/chain_broken.dds"\n\t}\n}\n';
+  const decisions = 'zin_test = {\n\tzin_test_send = {\n\t\ticon = GFX_idea_zin_envoy\n\t}\n\tzin_test_send_cheap = {\n\t\ticon = GFX_idea_zin_envoy\n\t}\n\tzin_test_break = {\n\t\ticon = GFX_idea_zin_chain_broken\n\t}\n}\n';
+  const staged = { files: new Map([['interface/zin_ideas_test.gfx', Buffer.from(gfxIdeas)], ['common/decisions/zin_test.txt', Buffer.from(decisions)]]) };
+  const warnings = [];
+  const r = await applyIdeaSeals(staged, { rows, provenance, root, warn: m => warnings.push(m) });
+  assert.equal(r.icons, 3);
+  assert.equal(r.seals, 1);
+  assert.equal(r.reused, 1);
+  const text = staged.files.get('common/decisions/zin_test.txt').toString('utf8');
+  assert.equal((text.match(/icon = GFX_decision_zin_envoy\n/g) ?? []).length, 2);
+  assert.ok(text.includes('icon = GFX_decision_zin_chain_broken\n'));
+  assert.ok(!text.includes('GFX_idea_zin'), 'no idea icon is left on a seal-table decision');
+  const dds = staged.files.get(sealTexture('envoy'));
+  assert.ok(dds, 'DDS staged');
+  assert.equal(dds.length, 128 + SEAL_W * SEAL_H * 4);
+  assert.equal(dds.readUInt32LE(12), SEAL_H);
+  assert.equal(dds.readUInt32LE(16), SEAL_W);
+  assert.ok(!staged.files.has(sealTexture('other')), 'an unused accepted row ships nothing');
+  const gfx = staged.files.get(IDEA_GFX_FILE).toString('utf8');
+  assert.match(gfx, /name = "GFX_decision_zin_envoy"\n\t\ttexturefile = "gfx\/interface\/decisions\/zin\/envoy\.dds"/);
+  assert.ok(!gfx.includes('chain_broken'), 'a reused seal is declared by its I11 file, not here');
+  assert.ok(staged.files.has('art/source/decision/idea/envoy.png'));
+  assert.deepEqual(warnings, []);
+});
+
+test('applyIdeaSeals fails closed on an accepted picture without an accepting review line', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'i12-idea-bad-'));
+  const png = await sharp({ create: { width: SEAL_W, height: SEAL_H, channels: 4, background: { r: 10, g: 90, b: 10, alpha: 255 } } }).png().toBuffer();
+  await mkdir(path.join(root, 'art', 'source', 'decision', 'idea'), { recursive: true });
+  await writeFile(path.join(root, 'art', 'source', 'decision', 'idea', 'envoy.png'), png);
+  const rows = [{ key: 'envoy', status: 'accepted', subject: 'a sealed letter', source: 'art/source/decision/idea/envoy.png', sha256: sha256(png) }];
+  const gfx = 'spriteTypes = {\n\tspriteType = {\n\t\tname = "GFX_idea_zin_envoy"\n\t\ttexturefile = "gfx/interface/ideas/zin/envoy.dds"\n\t}\n}\n';
+  const decisions = 'zin_test = {\n\tzin_test_send = {\n\t\ticon = GFX_idea_zin_envoy\n\t}\n}\n';
+  const staged = { files: new Map([['interface/zin_ideas_test.gfx', Buffer.from(gfx)], ['common/decisions/zin_test.txt', Buffer.from(decisions)]]) };
+  await assert.rejects(applyIdeaSeals(staged, { rows, provenance: [], root }), /idea seal envoy: no review line/);
 });

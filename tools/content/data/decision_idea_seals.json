@@ -1,0 +1,831 @@
+{
+ "note": "Lane I12 (UI overhaul): one row per idea picture that decision icons use (56). accepted: a 32 x 32 processed picture from hoi4-imagegen 0.2.1 (family decision, gpt-6-luna through the ChatGPT login), copied to source, reviewed (approval_id). reused: the key already has its I11 seal. Read by tools/content/modules/decision_art.mjs (applyIdeaSeals).",
+ "seals": [
+  {
+   "key": "ledger_coins",
+   "status": "accepted",
+   "source": "art/source/decision/idea/ledger_coins.png",
+   "sha256": "b19bf492c0e5b5704614dda20a48c241fb32c9db1005a1b1a99e6272f9ad3b30",
+   "subject": "an open account book lying flat with a stack of gold coins on its page and a ribbon marker",
+   "artifact": "zin_decision_seals.zin_ledger_coins-v1-p1",
+   "plan_id": "plan-858729d7aa825037",
+   "candidate": "zin_decision_seals.zin_ledger_coins-v1",
+   "decisions": [
+    "zin_aenor_court_audit",
+    "zin_aenor_follow_the_coin",
+    "zin_stabilo_call_in_debt",
+    "zin_stabilo_forgive_debt",
+    "zin_stabilo_great_loan",
+    "zin_stabilo_lend"
+   ],
+   "approval_id": "apr-dea6c347e24adb3d"
+  },
+  {
+   "key": "feast_table",
+   "status": "accepted",
+   "source": "art/source/decision/idea/feast_table.png",
+   "sha256": "6609c7bb521bc220429a2a82d09903a71f7677aded0d6546cf638fcbd0139544",
+   "subject": "a laden feast table seen from above, a golden goblet and a round loaf on a white cloth",
+   "artifact": "zin_decision_seals.zin_feast_table-v1-p1",
+   "plan_id": "plan-83f840cd84dfc573",
+   "candidate": "zin_decision_seals.zin_feast_table-v1",
+   "decisions": [
+    "zin_aenor_court_feast_of_offices",
+    "zin_dark_feast_the_clans"
+   ],
+   "approval_id": "apr-e72ccd24debe127d"
+  },
+  {
+   "key": "seal_royal",
+   "status": "accepted",
+   "source": "art/source/decision/idea/seal_royal.png",
+   "sha256": "eb1cfbc22ab53af500a8c9aa1d3eb7aaa71c8f9c17ef6895e76a46608d341690",
+   "subject": "a large royal wax seal with a crown impression, its red wax cracked across one side",
+   "artifact": "zin_decision_seals.zin_seal_royal-v1-p1",
+   "plan_id": "plan-c65d3d103f44ece7",
+   "candidate": "zin_decision_seals.zin_seal_royal-v1",
+   "decisions": [
+    "zin_aenor_court_dismiss_favourites",
+    "zin_aenor_lay_proof"
+   ],
+   "approval_id": "apr-0404422050980613"
+  },
+  {
+   "key": "charter_old",
+   "status": "accepted",
+   "source": "art/source/decision/idea/charter_old.png",
+   "sha256": "0c8659bcfb3cb824e1af29eb825948c83906fb90873c90cd3f8ce1cabe754f50",
+   "subject": "a rolled old parchment charter tied with a faded red ribbon and a small plain seal",
+   "artifact": "zin_decision_seals.zin_charter_old-v1-p1",
+   "plan_id": "plan-4412d34d20e1e69a",
+   "candidate": "zin_decision_seals.zin_charter_old-v1",
+   "decisions": [
+    "zin_aenor_reissue_charter_old"
+   ],
+   "approval_id": "apr-01bd670a64542251"
+  },
+  {
+   "key": "charter_golden",
+   "status": "accepted",
+   "source": "art/source/decision/idea/charter_golden.png",
+   "sha256": "d798ed3792c9a9db4aa9ab51c0985075e09a4061e4769d5979f228a4ec442bbd",
+   "subject": "an unrolled parchment charter with a gold seal disc and a small heap of gold coins at its foot",
+   "artifact": "zin_decision_seals.zin_charter_golden-v1-p1",
+   "plan_id": "plan-6de08dc0972b91f7",
+   "candidate": "zin_decision_seals.zin_charter_golden-v1",
+   "decisions": [
+    "zin_aenor_reissue_charter_golden"
+   ],
+   "approval_id": "apr-ef5581d548d96826"
+  },
+  {
+   "key": "charter_shield",
+   "status": "accepted",
+   "source": "art/source/decision/idea/charter_shield.png",
+   "sha256": "d9001cf685debcd5babd188cf07ad3b84c8ce7ec891d1951d4425289a2faddb8",
+   "subject": "a parchment charter with a round shield pressed into its lower corner and a shield-shaped wax seal",
+   "artifact": "zin_decision_seals.zin_charter_shield-v1-p1",
+   "plan_id": "plan-9f406ea8cffe3ba4",
+   "candidate": "zin_decision_seals.zin_charter_shield-v1",
+   "decisions": [
+    "zin_aenor_reissue_charter_shield"
+   ],
+   "approval_id": "apr-4cef7e3b1a3300f8"
+  },
+  {
+   "key": "charter_free",
+   "status": "accepted",
+   "source": "art/source/decision/idea/charter_free.png",
+   "sha256": "cd8cbc0e12b8e7f9c37f1ac692167fe06d3fb7f0b9dc4037de598d14048e8a6e",
+   "subject": "an open parchment charter with an unbound ribbon and a small bird in flight above it",
+   "artifact": "zin_decision_seals.zin_charter_free-v1-p1",
+   "plan_id": "plan-765e2a8137489274",
+   "candidate": "zin_decision_seals.zin_charter_free-v1",
+   "decisions": [
+    "zin_aenor_charters_for_loyal",
+    "zin_aenor_reissue_charter_free"
+   ],
+   "approval_id": "apr-99040294e0d03394"
+  },
+  {
+   "key": "charter_wall",
+   "status": "accepted",
+   "source": "art/source/decision/idea/charter_wall.png",
+   "sha256": "9c8d0eb9ed1a6da26d9dc748563fdda53e45247c2813b2b6d8911836f500510f",
+   "subject": "a parchment charter with a stone battlement drawn in its corner beside a wax seal",
+   "artifact": "zin_decision_seals.zin_charter_wall-v1-p1",
+   "plan_id": "plan-56cb1f1290abf99d",
+   "candidate": "zin_decision_seals.zin_charter_wall-v1",
+   "decisions": [
+    "zin_aenor_reissue_charter_wall"
+   ],
+   "approval_id": "apr-751e4662d6fcc33b"
+  },
+  {
+   "key": "concord_circle",
+   "status": "accepted",
+   "source": "art/source/decision/idea/concord_circle.png",
+   "sha256": "33390f7d4aba0ceebf83dc767f6d24bf18229786bf8fe8e2bd57b7741e8f8b9d",
+   "subject": "a ring of seven small tokens set around a round wooden table seen from above",
+   "artifact": "zin_decision_seals.zin_concord_circle-v1-p1",
+   "plan_id": "plan-daf49575ab0cef1c",
+   "candidate": "zin_decision_seals.zin_concord_circle-v1",
+   "decisions": [
+    "zin_aenor_concord_council",
+    "zin_dark_call_free_moot"
+   ],
+   "approval_id": "apr-e64c13569c283329"
+  },
+  {
+   "key": "levy_muster",
+   "status": "accepted",
+   "source": "art/source/decision/idea/levy_muster.png",
+   "sha256": "bd87eeeb760a316dd5090240d9cad08e449e2fed6b65b13abceb511259a32b92",
+   "subject": "a horn and a bundle of spears tied together beneath a small banner",
+   "artifact": "zin_decision_seals.zin_levy_muster-v1-p1",
+   "plan_id": "plan-293a1a2c44270597",
+   "candidate": "zin_decision_seals.zin_levy_muster-v1",
+   "decisions": [
+    "zin_aenor_concord_levy",
+    "zin_dark_muster_brutes",
+    "zin_dark_muster_brutes_drill",
+    "zin_dark_show_the_host",
+    "zin_inst_great_manoeuvres",
+    "zin_regional_buldor_recall_company"
+   ],
+   "approval_id": "apr-ed399254a2ebb524"
+  },
+  {
+   "key": "chain_broken",
+   "status": "reused",
+   "sprite": "GFX_decision_zin_chain_broken",
+   "subject": "a charter scroll with its ribbon mended and a single whole chain link laid across it",
+   "decisions": [
+    "zin_aenor_restore_charter",
+    "zin_dark_leave_free_moot",
+    "zin_dark_offer_iron_yoke",
+    "zin_dark_offer_iron_yoke_cheap"
+   ],
+   "note": "the I11 seal GFX_decision_zin_chain_broken (decision-sheet seal) is the picture of this idea icon too"
+  },
+  {
+   "key": "ranger_cloak",
+   "status": "accepted",
+   "source": "art/source/decision/idea/ranger_cloak.png",
+   "sha256": "dc4d8e3fd7224fcf63f453467ac1726c5de184a41a5c2e2ec157b69dcbf2c9c8",
+   "subject": "a hooded green ranger cloak folded over a longbow",
+   "artifact": "zin_decision_seals.zin_ranger_cloak-v1-p1",
+   "plan_id": "plan-59dfd11c0e5d58cf",
+   "candidate": "zin_decision_seals.zin_ranger_cloak-v1",
+   "decisions": [
+    "zin_aenor_frontier_company"
+   ],
+   "approval_id": "apr-fba35d3c20b28e53"
+  },
+  {
+   "key": "handshake_oath",
+   "status": "reused",
+   "sprite": "GFX_decision_zin_handshake_oath",
+   "subject": "two clasped hands above a small round shield",
+   "decisions": [
+    "zin_aenor_invite_to_shield",
+    "zin_cold_invite_to_accord",
+    "zin_dark_bind_by_marriage"
+   ],
+   "note": "the I11 seal GFX_decision_zin_handshake_oath (decision-sheet seal) is the picture of this idea icon too"
+  },
+  {
+   "key": "healer_herbs",
+   "status": "accepted",
+   "source": "art/source/decision/idea/healer_herbs.png",
+   "sha256": "8dc741d9cbab7351c5c8ff08dd4e77a9d1db2839b0ae571a79354b016ed4c7d1",
+   "subject": "a bundle of dried herbs tied with thread beside a small brass mortar and pestle",
+   "artifact": "zin_decision_seals.zin_healer_herbs-v1-p1",
+   "plan_id": "plan-0a614bfaeaa22113",
+   "candidate": "zin_decision_seals.zin_healer_herbs-v1",
+   "decisions": [
+    "zin_aenor_question_physicians"
+   ],
+   "approval_id": "apr-5ec68c8b7f0a1b91"
+  },
+  {
+   "key": "coin_chest",
+   "status": "accepted",
+   "source": "art/source/decision/idea/coin_chest.png",
+   "sha256": "ec45e31829874feeddb864b2b4d2f300d9e4f63fc14f30a88a72772a3353c41e",
+   "subject": "an iron-bound wooden chest standing open and spilling gold coins",
+   "artifact": "zin_decision_seals.zin_coin_chest-v1-p1",
+   "plan_id": "plan-33afbd4a46d07581",
+   "candidate": "zin_decision_seals.zin_coin_chest-v1",
+   "decisions": [
+    "zin_aenor_open_treasury",
+    "zin_dark_pay_blood_price",
+    "zin_regional_buldor_sell_contract"
+   ],
+   "approval_id": "apr-508d5aca93ee7210"
+  },
+  {
+   "key": "hymn_choir",
+   "status": "accepted",
+   "source": "art/source/decision/idea/hymn_choir.png",
+   "sha256": "1289e5648ff469e73445dfe41b2b60779a25c6cc90fa25d3005043298632759b",
+   "subject": "a temple bell hung in a wooden frame with three short sound strokes beside it",
+   "artifact": "zin_decision_seals.zin_hymn_choir-v1-p1",
+   "plan_id": "plan-3da66e979d0cc2e6",
+   "candidate": "zin_decision_seals.zin_hymn_choir-v1",
+   "decisions": [
+    "zin_aenor_temples_speak"
+   ],
+   "approval_id": "apr-564e7eedf8856d58"
+  },
+  {
+   "key": "banner_plain",
+   "status": "accepted",
+   "source": "art/source/decision/idea/banner_plain.png",
+   "sha256": "3d4b1a43e3c540838e6de9ad6872326be454d6a45eae34b6f0e803d00057fce9",
+   "subject": "a plain hanging banner on a tall pole with a small scroll tied to its shaft",
+   "artifact": "zin_decision_seals.zin_banner_plain-v1-p1",
+   "plan_id": "plan-8567aa7742712342",
+   "candidate": "zin_decision_seals.zin_banner_plain-v1",
+   "decisions": [
+    "zin_aenor_strangers_word"
+   ],
+   "approval_id": "apr-ddec3cf91ec91b03"
+  },
+  {
+   "key": "seal_wax",
+   "status": "accepted",
+   "source": "art/source/decision/idea/seal_wax.png",
+   "sha256": "e5b1b4be247cf12b62fe9ea1f7358acb09ce3bddb6eaff732cb79c3e807eff21",
+   "subject": "a sealed scroll bound shut with a black cord and a large drop of dark red wax",
+   "artifact": "zin_decision_seals.zin_seal_wax-v1-p1",
+   "plan_id": "plan-9386a033dd01f551",
+   "candidate": "zin_decision_seals.zin_seal_wax-v1",
+   "decisions": [
+    "zin_aenor_silence_dissenters"
+   ],
+   "approval_id": "apr-185b1526a65c67ef"
+  },
+  {
+   "key": "envoy",
+   "status": "accepted",
+   "source": "art/source/decision/idea/envoy.png",
+   "sha256": "cbefd8cd31f9455a2a4e76fbc967d3bb8c61dd89551748793b6c801c16169aef",
+   "subject": "a folded letter sealed with red wax, bound with a grey cord, beside a small pouch of salt and an iron ring",
+   "artifact": "zin_decision_seals.zin_envoy-v1-p1",
+   "plan_id": "plan-e16947ed21e895b6",
+   "candidate": "zin_decision_seals.zin_envoy-v1",
+   "decisions": [
+    "zin_cold_send_envoys",
+    "zin_cold_send_envoys_cheap",
+    "zin_dark_invite_to_accord",
+    "zin_east_court_envoys",
+    "zin_east_invite_to_league",
+    "zin_east_offer_protection",
+    "zin_east_send_court_gifts",
+    "zin_sun_audience"
+   ],
+   "approval_id": "apr-f12599bab611cd8b"
+  },
+  {
+   "key": "alms_bread",
+   "status": "accepted",
+   "source": "art/source/decision/idea/alms_bread.png",
+   "sha256": "4930af410697f5ea2d8bedb7f212d1cfadb9e01e2393341f0a7c549ffa5bdc72",
+   "subject": "a round loaf of dark bread beside a sack of grain tied at the neck",
+   "artifact": "zin_decision_seals.zin_alms_bread-v1-p1",
+   "plan_id": "plan-c7bf5a4347c2818d",
+   "candidate": "zin_decision_seals.zin_alms_bread-v1",
+   "decisions": [
+    "zin_cold_feed_the_steadings",
+    "zin_cold_feed_the_steadings_cheap",
+    "zin_cold_isengard_feeds"
+   ],
+   "approval_id": "apr-d65e2e6ae45e60ca"
+  },
+  {
+   "key": "pass_fort",
+   "status": "accepted",
+   "source": "art/source/decision/idea/pass_fort.png",
+   "sha256": "cbc72050bca72c5ce7f9d1e4217cf516f9456787861df9b813721d67acdb77d2",
+   "subject": "a small stone watchtower on a mountain pass with a pennant flying from its roof",
+   "artifact": "zin_decision_seals.zin_pass_fort-v1-p1",
+   "plan_id": "plan-9c1ebec717c39220",
+   "candidate": "zin_decision_seals.zin_pass_fort-v1",
+   "decisions": [
+    "zin_cold_offer_protection",
+    "zin_sun_ask_sun_guard"
+   ],
+   "approval_id": "apr-2b178bce86fea7f7"
+  },
+  {
+   "key": "granary",
+   "status": "accepted",
+   "source": "art/source/decision/idea/granary.png",
+   "sha256": "92d8a6c4269b7e60b5707e1470ac6f7f0211072efb81646d637c25552685dcd3",
+   "subject": "a wooden granary raised on stone stilts with a sheaf of wheat hanging from its door",
+   "artifact": "zin_decision_seals.zin_granary-v1-p1",
+   "plan_id": "plan-7fe564ec2273a979",
+   "candidate": "zin_decision_seals.zin_granary-v1",
+   "decisions": [
+    "zin_cold_bread_for_isengard",
+    "zin_east_dig_wells"
+   ],
+   "approval_id": "apr-5c27d3d334c3992f"
+  },
+  {
+   "key": "tribute_chest",
+   "status": "accepted",
+   "source": "art/source/decision/idea/tribute_chest.png",
+   "sha256": "e6aa80697342493f0ee10a5b612f86a5b12efab3f1bc3a7c861b793c7fa05e1e",
+   "subject": "a fur pelt folded over a horn drinking cup beside a small wooden chest",
+   "artifact": "zin_decision_seals.zin_tribute_chest-v1-p1",
+   "plan_id": "plan-793fa1d49265847c",
+   "candidate": "zin_decision_seals.zin_tribute_chest-v1",
+   "decisions": [
+    "zin_cold_winter_gifts",
+    "zin_dark_send_gifts",
+    "zin_dark_send_gifts_cheap"
+   ],
+   "approval_id": "apr-57972c7a3caf6378"
+  },
+  {
+   "key": "timber_mill",
+   "status": "accepted",
+   "source": "art/source/decision/idea/timber_mill.png",
+   "sha256": "88d941b7425d35fa9ee7e0a324bcf3b7b0fdcffc6a7f95aac794ffd62df54979",
+   "subject": "a bundle of cut logs bound with rope beside a single ship sail",
+   "artifact": "zin_decision_seals.zin_timber_mill-v1-p1",
+   "plan_id": "plan-f759a98e3bc2db0f",
+   "candidate": "zin_decision_seals.zin_timber_mill-v1",
+   "decisions": [
+    "zin_cold_sell_timber_west",
+    "zin_sun_ask_timber"
+   ],
+   "approval_id": "apr-fa735833a7ecbf0a"
+  },
+  {
+   "key": "yeti_claw",
+   "status": "accepted",
+   "source": "art/source/decision/idea/yeti_claw.png",
+   "sha256": "38382e1f71bcc52e456d3fe58a2a4cd56e52a2eb9192e7ab4fede16ee1b4fda4",
+   "subject": "a pale curved beast claw resting on a stone plinth beside a folded pact scroll",
+   "artifact": "zin_decision_seals.zin_yeti_claw-v1-p1",
+   "plan_id": "plan-0ff7b5a01417952f",
+   "candidate": "zin_decision_seals.zin_yeti_claw-v1",
+   "decisions": [
+    "zin_cold_renew_old_pact"
+   ],
+   "approval_id": "apr-8c7d82e57bf6ff04"
+  },
+  {
+   "key": "orc_axe",
+   "status": "accepted",
+   "source": "art/source/decision/idea/orc_axe.png",
+   "sha256": "ab9f6c21c4aa1df4efc811c57fa99e271660bfa708c0ba418ed52694d7f05ba2",
+   "subject": "a crude double-bladed war axe with a notched iron head and a leather-wrapped haft",
+   "artifact": "zin_decision_seals.zin_orc_axe-v1-p1",
+   "plan_id": "plan-92f9e506c86e5c47",
+   "candidate": "zin_decision_seals.zin_orc_axe-v1",
+   "decisions": [
+    "zin_dark_raid_marches",
+    "zin_dark_raid_marches_swift"
+   ],
+   "approval_id": "apr-3be7bde932e9e60a"
+  },
+  {
+   "key": "goblin_raiders",
+   "status": "accepted",
+   "source": "art/source/decision/idea/goblin_raiders.png",
+   "sha256": "864980121a0d85d5570c25c2de99d0b07714b2cb12ca40af05869e0c128c82b0",
+   "subject": "a burning torch and a crude round wooden shield with three crude arrows",
+   "artifact": "zin_decision_seals.zin_goblin_raiders-v1-p1",
+   "plan_id": "plan-d79f08dfd6f42a9e",
+   "candidate": "zin_decision_seals.zin_goblin_raiders-v1",
+   "decisions": [
+    "zin_dark_raid_hold"
+   ],
+   "approval_id": "apr-5f547f8419ba7093"
+  },
+  {
+   "key": "corsair_raider",
+   "status": "accepted",
+   "source": "art/source/decision/idea/corsair_raider.png",
+   "sha256": "8f54853acfaa2d8a843a58e7753ef3575329c1994da7cf3a5ef9f9e27ae35b7a",
+   "subject": "the curved prow of a black-sailed galley with a hooked iron ram",
+   "artifact": "zin_decision_seals.zin_corsair_raider-v1-p1",
+   "plan_id": "plan-8466bcaa3dbb7a32",
+   "candidate": "zin_decision_seals.zin_corsair_raider-v1",
+   "decisions": [
+    "zin_dark_corsair_raid"
+   ],
+   "approval_id": "apr-fa98a50c5688f045"
+  },
+  {
+   "key": "fort_wall",
+   "status": "accepted",
+   "source": "art/source/decision/idea/fort_wall.png",
+   "sha256": "ae9b226802bc69a201f9efbc3677bd924a8d3222c410a40eba5f3feb715ea7a0",
+   "subject": "a short length of a timber palisade with a barred gate and a row of pointed stakes",
+   "artifact": "zin_decision_seals.zin_fort_wall-v1-p1",
+   "plan_id": "plan-900ce149bd624cfc",
+   "candidate": "zin_decision_seals.zin_fort_wall-v1",
+   "decisions": [
+    "zin_dark_clash_on_the_march"
+   ],
+   "approval_id": "apr-65116c1802ba85bb"
+  },
+  {
+   "key": "council_table",
+   "status": "accepted",
+   "source": "art/source/decision/idea/council_table.png",
+   "sha256": "586ad0474933622cb0610e08476a8b467a9b325b52ff286589757ca474ce1341",
+   "subject": "a round stone table with four stone seats around a central fire",
+   "artifact": "zin_decision_seals.zin_council_table-v1-p1",
+   "plan_id": "plan-cc2368428f7107b3",
+   "candidate": "zin_decision_seals.zin_council_table-v1",
+   "decisions": [
+    "zin_dark_great_moot",
+    "zin_dark_great_moot_central"
+   ],
+   "approval_id": "apr-7d98f4ef8f89a51e"
+  },
+  {
+   "key": "spear_levy",
+   "status": "accepted",
+   "source": "art/source/decision/idea/spear_levy.png",
+   "sha256": "3f4aae9900eab2a648eb6725df7ef30d3594a7971f9d0ba86545c74a54fe4dea",
+   "subject": "a single spear with a blood-red pennant streaming from its head",
+   "artifact": "zin_decision_seals.zin_spear_levy-v1-p1",
+   "plan_id": "plan-aa35b19d14872138",
+   "candidate": "zin_decision_seals.zin_spear_levy-v1",
+   "decisions": [
+    "zin_dark_blood_contest",
+    "zin_dark_blood_contest_cheap"
+   ],
+   "approval_id": "apr-e8c62aed7ce48329"
+  },
+  {
+   "key": "crown_iron",
+   "status": "accepted",
+   "source": "art/source/decision/idea/crown_iron.png",
+   "sha256": "77c1504a23772a51766eb0d1773f9f4db090e57cc86ac78a231774a0286caf1d",
+   "subject": "a plain iron crown ring with a single flame rising beneath it",
+   "artifact": "zin_decision_seals.zin_crown_iron-v1-p1",
+   "plan_id": "plan-86580f369995a396",
+   "candidate": "zin_decision_seals.zin_crown_iron-v1",
+   "decisions": [
+    "zin_dark_one_fire",
+    "zin_dark_one_fire_hard"
+   ],
+   "approval_id": "apr-15cd45c71b908e57"
+  },
+  {
+   "key": "eye_watchful",
+   "status": "accepted",
+   "source": "art/source/decision/idea/eye_watchful.png",
+   "sha256": "333274851f233c4a5ec8dc29042cb049ad5317ddcca5dcab71a1b975f9a1c181",
+   "subject": "a single open eye set in an iron ring with a stone brow above it",
+   "artifact": "zin_decision_seals.zin_eye_watchful-v1-p1",
+   "plan_id": "plan-caa0406ce380e536",
+   "candidate": "zin_decision_seals.zin_eye_watchful-v1",
+   "decisions": [
+    "zin_dark_hunt_envoys",
+    "zin_east_feed_the_quarrel",
+    "zin_east_report",
+    "zin_east_whisper_of_the_rift"
+   ],
+   "approval_id": "apr-82badab60c266a51"
+  },
+  {
+   "key": "beacon",
+   "status": "accepted",
+   "source": "art/source/decision/idea/beacon.png",
+   "sha256": "33906cc234944e98928aba664805f2adce43ed2e553b021bd528a9a69514505e",
+   "subject": "a beacon fire blazing on a cliff top with rays of light spreading out over the sea",
+   "artifact": "zin_decision_seals.zin_beacon-v1-p1",
+   "plan_id": "plan-77325177f49f8b31",
+   "candidate": "zin_decision_seals.zin_beacon-v1",
+   "decisions": [
+    "zin_dark_light_beacons",
+    "zin_dark_light_beacons_chain"
+   ],
+   "approval_id": "apr-fa55499784297746"
+  },
+  {
+   "key": "scroll_treaty",
+   "status": "accepted",
+   "source": "art/source/decision/idea/scroll_treaty.png",
+   "sha256": "5c1dd7ac64577c7ef77d7f66c30bc80e102d675445cdebdf51d77b1a90628735",
+   "subject": "a rolled treaty scroll with a quill laid across it",
+   "artifact": "zin_decision_seals.zin_scroll_treaty-v1-p1",
+   "plan_id": "plan-bb75ba8de3410962",
+   "candidate": "zin_decision_seals.zin_scroll_treaty-v1",
+   "decisions": [
+    "zin_dark_petition_parim"
+   ],
+   "approval_id": "apr-1e2ca7602e5812d0"
+  },
+  {
+   "key": "ship_voyage",
+   "status": "accepted",
+   "source": "art/source/decision/idea/ship_voyage.png",
+   "sha256": "39b3845b8f79d2548b6f920f6299286445c303434bad9d79bbf7a3655cd32716",
+   "subject": "a small sailing ship with one square sail, its bows set toward a bright star",
+   "artifact": "zin_decision_seals.zin_ship_voyage-v1-p1",
+   "plan_id": "plan-09858a5ad7da9b79",
+   "candidate": "zin_decision_seals.zin_ship_voyage-v1",
+   "decisions": [
+    "zin_dark_call_on_the_north",
+    "zin_inst_sea_trials"
+   ],
+   "approval_id": "apr-d9ec87104626a8f6"
+  },
+  {
+   "key": "troll_club",
+   "status": "accepted",
+   "source": "art/source/decision/idea/troll_club.png",
+   "sha256": "966faead2f0e950b93479395a7270238fc9e35603b274cd36573c74957906adf",
+   "subject": "a heavy knotted wooden club with a studded stone head",
+   "artifact": "zin_decision_seals.zin_troll_club-v1-p1",
+   "plan_id": "plan-1e74a4c7e8077dc3",
+   "candidate": "zin_decision_seals.zin_troll_club-v1",
+   "decisions": [
+    "zin_dark_hire_troll_kin"
+   ],
+   "approval_id": "apr-58b6415365c9ef96"
+  },
+  {
+   "key": "toll_house",
+   "status": "accepted",
+   "source": "art/source/decision/idea/toll_house.png",
+   "sha256": "7defb8b6964680b72598ba7391069a6d8f4c5b1a50d290d73e6cf879e85b77ed",
+   "subject": "a small stone toll house beside a bridge with a chain barrier across the road",
+   "artifact": "zin_decision_seals.zin_toll_house-v1-p1",
+   "plan_id": "plan-ddf1e4475be78c6e",
+   "candidate": "zin_decision_seals.zin_toll_house-v1",
+   "decisions": [
+    "zin_dark_levy_shore_tolls"
+   ],
+   "approval_id": "apr-5de0a8788bf28867"
+  },
+  {
+   "key": "strait_chain",
+   "status": "accepted",
+   "source": "art/source/decision/idea/strait_chain.png",
+   "sha256": "dfa55f9815277ef033aee0f97d5210e177fc0d2984ff8e9c2bd7a731793378cc",
+   "subject": "a heavy iron chain stretched across a strait of dark water, its links large and round",
+   "artifact": "zin_decision_seals.zin_strait_chain-v1-p1",
+   "plan_id": "plan-75448b60f90df0df",
+   "candidate": "zin_decision_seals.zin_strait_chain-v1",
+   "decisions": [
+    "zin_dark_close_strait"
+   ],
+   "approval_id": "apr-3a520fd90b949e5b"
+  },
+  {
+   "key": "caravan",
+   "status": "accepted",
+   "source": "art/source/decision/idea/caravan.png",
+   "sha256": "246c19d3d3402e2462c858e5914fdf04a44b5cd80407775c34f6e92cffd01926",
+   "subject": "a camel carrying bundles of salt, with a water skin hanging at its side",
+   "artifact": "zin_decision_seals.zin_caravan-v1-p1",
+   "plan_id": "plan-0fd46fe91df6d666",
+   "candidate": "zin_decision_seals.zin_caravan-v1",
+   "decisions": [
+    "zin_east_buy_road_lords",
+    "zin_east_concord_of_the_roads",
+    "zin_east_send_caravan_gold",
+    "zin_east_send_caravan_lake",
+    "zin_east_send_caravan_rift",
+    "zin_east_send_caravan_salt",
+    "zin_east_send_caravan_sand",
+    "zin_east_talks_at_the_wells",
+    "zin_east_undercut_rival"
+   ],
+   "approval_id": "apr-39ba2d2fc4b028a5"
+  },
+  {
+   "key": "banner_league",
+   "status": "reused",
+   "sprite": "GFX_decision_zin_banner_league",
+   "subject": "a torn red banner on a pole with a bundle of league cords at its foot",
+   "decisions": [
+    "zin_east_rally_free_crowns",
+    "zin_sun_raise_league"
+   ],
+   "note": "the I11 seal GFX_decision_zin_banner_league (decision-sheet seal) is the picture of this idea icon too"
+  },
+  {
+   "key": "dragon_wing",
+   "status": "accepted",
+   "source": "art/source/decision/idea/dragon_wing.png",
+   "sha256": "ab1e882cf36ae9d5d4e1e09f1249b03b3f65d5e5a9c0d18d431eec7762835a9e",
+   "subject": "a leathery wing membrane spread over a wooden frame with a single feather",
+   "artifact": "zin_decision_seals.zin_dragon_wing-v2-p1",
+   "plan_id": "plan-9f9d680e1ae72b05",
+   "candidate": "zin_decision_seals.zin_dragon_wing-v2",
+   "decisions": [
+    "zin_inst_wing_trials"
+   ],
+   "approval_id": "apr-7d60e6ed73454408"
+  },
+  {
+   "key": "zol_sigil",
+   "status": "accepted",
+   "source": "art/source/decision/idea/zol_sigil.png",
+   "sha256": "1c63e820405849e5d3c366a3b7f27037f279b3d5a0f12acd07a82daa7f463cb4",
+   "subject": "a black ring pierced by a vertical bar, grey smoke curling from its edge",
+   "artifact": "zin_decision_seals.zin_zol_sigil-v1-p1",
+   "plan_id": "plan-caa3a82e6cce7803",
+   "candidate": "zin_decision_seals.zin_zol_sigil-v1",
+   "decisions": [
+    "zin_zol_second_stirring",
+    "zin_zol_send_kusven_decision",
+    "zin_zol_tend_the_presence",
+    "zin_zol_the_form_endures"
+   ],
+   "approval_id": "apr-ade712339b8251ef"
+  },
+  {
+   "key": "order_great",
+   "status": "accepted",
+   "source": "art/source/decision/idea/order_great.png",
+   "sha256": "c5866a617df31df8c8f582e4c864943c021414739a7a0f74966e19fc43e3a2bb",
+   "subject": "a tall black standing stone with a long shadow and a flat-cut top",
+   "artifact": "zin_decision_seals.zin_order_great-v1-p1",
+   "plan_id": "plan-1ba817ed0beeeb39",
+   "candidate": "zin_decision_seals.zin_order_great-v1",
+   "decisions": [
+    "zin_zol_call_upon_great"
+   ],
+   "approval_id": "apr-c511342c4e7d81e0"
+  },
+  {
+   "key": "order_lesser",
+   "status": "accepted",
+   "source": "art/source/decision/idea/order_lesser.png",
+   "sha256": "76ed4f5463117c2c80b5f593f985c658236275e6e29c7fa3ec082dd76241463e",
+   "subject": "a small grey standing stone with a cord wound around its middle",
+   "artifact": "zin_decision_seals.zin_order_lesser-v1-p1",
+   "plan_id": "plan-b140c3e9ca372e1d",
+   "candidate": "zin_decision_seals.zin_order_lesser-v1",
+   "decisions": [
+    "zin_zol_call_upon_lesser"
+   ],
+   "approval_id": "apr-338153b6ef29be04"
+  },
+  {
+   "key": "order_divine",
+   "status": "accepted",
+   "source": "art/source/decision/idea/order_divine.png",
+   "sha256": "d777451e3528cdb3adbec8859c2c56a7c44ea585172f0b5452cdff896c2dfb1f",
+   "subject": "a pale ring of light hovering over a dark stone tablet",
+   "artifact": "zin_decision_seals.zin_order_divine-v1-p1",
+   "plan_id": "plan-f142662630ffec40",
+   "candidate": "zin_decision_seals.zin_order_divine-v1",
+   "decisions": [
+    "zin_zol_call_upon_divine"
+   ],
+   "approval_id": "apr-aac976b10e1046e5"
+  },
+  {
+   "key": "black_isles",
+   "status": "accepted",
+   "source": "art/source/decision/idea/black_isles.png",
+   "sha256": "9322261aea422ee936f73f214254946f9fb96664a220e3a1ae7c72b6246b65aa",
+   "subject": "a dark island silhouette on black water with one pale light on its shore",
+   "artifact": "zin_decision_seals.zin_black_isles-v1-p1",
+   "plan_id": "plan-490fd9b03443ff80",
+   "candidate": "zin_decision_seals.zin_black_isles-v1",
+   "decisions": [
+    "zin_zol_wake_an_island"
+   ],
+   "approval_id": "apr-1aaa831a9d35af32"
+  },
+  {
+   "key": "grave_host",
+   "status": "accepted",
+   "source": "art/source/decision/idea/grave_host.png",
+   "sha256": "ccdf893811b1317aa5bafc983ae40909cb3786fb1af3b3c9cc504c606ff68978",
+   "subject": "a rank of grey helms rising out of black earth",
+   "artifact": "zin_decision_seals.zin_grave_host-v1-p1",
+   "plan_id": "plan-4af143d403450c77",
+   "candidate": "zin_decision_seals.zin_grave_host-v1",
+   "decisions": [
+    "zin_zol_raise_a_host"
+   ],
+   "approval_id": "apr-fbd0e74a67234401"
+  },
+  {
+   "key": "bones_risen",
+   "status": "accepted",
+   "source": "art/source/decision/idea/bones_risen.png",
+   "sha256": "d3384aa37d8c775e3acfb2bbc247d650d496b147aad115c4d38d9773c97bb27a",
+   "subject": "a black ship hull with bone-white oars raised from the water",
+   "artifact": "zin_decision_seals.zin_bones_risen-v1-p1",
+   "plan_id": "plan-ce92f254c7ba5d17",
+   "candidate": "zin_decision_seals.zin_bones_risen-v1",
+   "decisions": [
+    "zin_zol_call_the_rising"
+   ],
+   "approval_id": "apr-72bcf60d38d6e3bf"
+  },
+  {
+   "key": "banner_black",
+   "status": "accepted",
+   "source": "art/source/decision/idea/banner_black.png",
+   "sha256": "86a99d0d3e7b9d6031a7e0d463128c55ff07033d3e4122c51370c644860b6eeb",
+   "subject": "a tattered black banner hanging from a short pole",
+   "artifact": "zin_decision_seals.zin_banner_black-v1-p1",
+   "plan_id": "plan-4b4ec03946ac5315",
+   "candidate": "zin_decision_seals.zin_banner_black-v1",
+   "decisions": [
+    "zin_zol_shadow_on_the_land"
+   ],
+   "approval_id": "apr-6ba4602dbf9f698a"
+  },
+  {
+   "key": "silent_throne",
+   "status": "accepted",
+   "source": "art/source/decision/idea/silent_throne.png",
+   "sha256": "0d21ccfb88973d4ffeccb74053a3061dcea6323ad29737469bd050425f3af688",
+   "subject": "an empty stone throne with a still pool of black water in front of it",
+   "artifact": "zin_decision_seals.zin_silent_throne-v1-p1",
+   "plan_id": "plan-4179243b69d904ce",
+   "candidate": "zin_decision_seals.zin_silent_throne-v1",
+   "decisions": [
+    "zin_zol_stillness_before_the_form"
+   ],
+   "approval_id": "apr-fda57a57a1d9f80f"
+  },
+  {
+   "key": "dead_ranks_far",
+   "status": "accepted",
+   "source": "art/source/decision/idea/dead_ranks_far.png",
+   "sha256": "46f11592878b1aac5b787ab8b777e6452bc8b626aaf2edad0085b98c8965dd24",
+   "subject": "a broken standard with a single ash-grey feather tied to its pole",
+   "artifact": "zin_decision_seals.zin_dead_ranks_far-v1-p1",
+   "plan_id": "plan-fc4e71d516d784f6",
+   "candidate": "zin_decision_seals.zin_dead_ranks_far-v1",
+   "decisions": [
+    "zin_zol_the_dead_endure"
+   ],
+   "approval_id": "apr-727d825de39cdc8e"
+  },
+  {
+   "key": "olive_branch",
+   "status": "accepted",
+   "source": "art/source/decision/idea/olive_branch.png",
+   "sha256": "6dd233782ab6d59dd7067bc7e8df59552a122302ed90a4f7f66ca1063015f7f4",
+   "subject": "an olive branch laid across a shallow bowl of water",
+   "artifact": "zin_decision_seals.zin_olive_branch-v1-p1",
+   "plan_id": "plan-f138152f34f70a55",
+   "candidate": "zin_decision_seals.zin_olive_branch-v1",
+   "decisions": [
+    "zin_sun_speak_quarrel"
+   ],
+   "approval_id": "apr-dd428f302f11edf0"
+  },
+  {
+   "key": "mirror_rain",
+   "status": "accepted",
+   "source": "art/source/decision/idea/mirror_rain.png",
+   "sha256": "834891656ae275248aad10e37a53194e2fde3db6f7e51f27c9874b0f5b02de7b",
+   "subject": "a round silver mirror on a stand with drops of rain running across its face",
+   "artifact": "zin_decision_seals.zin_mirror_rain-v1-p1",
+   "plan_id": "plan-c35b4dc741316467",
+   "candidate": "zin_decision_seals.zin_mirror_rain-v1",
+   "decisions": [
+    "zin_sun_look_mirror"
+   ],
+   "approval_id": "apr-087888b4ad49e215"
+  },
+  {
+   "key": "scroll_sealed",
+   "status": "reused",
+   "sprite": "GFX_decision_zin_scroll_sealed",
+   "subject": "a folded guest letter sealed in plain wax",
+   "decisions": [
+    "zin_sun_send_word",
+    "zin_sun_send_word_free",
+    "zin_sun_send_word_half"
+   ],
+   "note": "the I11 seal GFX_decision_zin_scroll_sealed (decision-sheet seal) is the picture of this idea icon too"
+  },
+  {
+   "key": "forest_ancient",
+   "status": "accepted",
+   "source": "art/source/decision/idea/forest_ancient.png",
+   "sha256": "9b3a5dab1e82aacc80a500ada5609ba57e21270b35e326df6259aaa2006ff23f",
+   "subject": "an ancient oak with a single leafy branch and a bronze horn hung from a knot in its trunk",
+   "artifact": "zin_decision_seals.zin_forest_ancient-v1-p1",
+   "plan_id": "plan-0403ee8f9383c66b",
+   "candidate": "zin_decision_seals.zin_forest_ancient-v1",
+   "decisions": [
+    "zin_sun_old_lords"
+   ],
+   "approval_id": "apr-da2e9056cab1520d"
+  }
+ ]
+}

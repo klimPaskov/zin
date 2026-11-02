@@ -1,0 +1,385 @@
+{
+  "plan_id": "plan-8567aa7742712342",
+  "plan_hash": "8567aa77427123420cf53d0d59fba8bbc86ebc68228ba551d79193d01c7129bf",
+  "created": "2026-11-02T11:03:40Z",
+  "request": {
+    "family": "decision",
+    "feature_slug": "zin_decision_seals",
+    "asset": "zin_banner_plain",
+    "brief": "A round Chancery decision seal showing a plain hanging banner on a tall pole with a small scroll tied to its shaft. A flat round medallion of two or three colours with a thick plain round rim, one bold flat emblem in its centre, the same look as the other Chancery seals. Outside the round rim the background is fully transparent. No text, no numbers, no face, no human figure filling the seal, no crosses.",
+    "style": null,
+    "references": [
+      {
+        "path": "art/source/decision/decision-01.png",
+        "role": "style_anchor"
+      },
+      {
+        "path": "art/source/decision/decision-05.png",
+        "role": "style_anchor"
+      }
+    ],
+    "provider": "chatgpt_login",
+    "model": "gpt-6-luna",
+    "transparent": true,
+    "variants": 1,
+    "budget_usd": null,
+    "quality": null,
+    "canvas": null
+  },
+  "asset_id": "zin_decision_seals.zin_banner_plain",
+  "profile": {
+    "id": "decision",
+    "hash": "5d2404bdc10352e219b6d263c75e0664e7bf4969a0d9b47f00680bcaf7be3b39",
+    "kit_sha256": "c3f0df9a1edf27ba4d6c95214cb2a16681dd17dcb10aec4ce049a59e359e201d"
+  },
+  "canvas": [
+    32,
+    32
+  ],
+  "source_canvas": null,
+  "frames": 1,
+  "provider": "chatgpt_login",
+  "model": "gpt-6-luna",
+  "quality": null,
+  "generation": {
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "aspect": "1:1"
+  },
+  "prompt": {
+    "text": "Create one Hearts of Iron IV decision or mission icon: A round Chancery decision seal showing a plain hanging banner on a tall pole with a small scroll tied to its shaft. A flat round medallion of two or three colours with a thick plain round rim, one bold flat emblem in its centre, the same look as the other Chancery seals. Outside the round rim the background is fully transparent. No text, no numbers, no face, no human figure filling the seal, no crosses.\n\nRequirements:\n- One centred subject with a strong, simple silhouette that stays readable at 32x32 pixels.\n- Painterly, slightly aged texture in the style of Hearts of Iron IV interface art, with readable contrast.\n- Real transparent background: no backdrop, no frame, no border, no plate behind the subject.\n- Leave a small empty margin around the subject.\n\nStyle:\n- Match the mod's own reference shelf for decision or mission icon art: moderately muted, dark palette dominated by black and brown; partial dark outline; crisp, detailed texture; about 60% of the canvas covered by the subject (measured on 18 images).\n\nReference images, in the order attached:\n1. style anchor: match its painting style, palette and level of detail\n2. style anchor: match its painting style, palette and level of detail\n3. style anchor: match its painting style, palette and level of detail\n4. style anchor: match its painting style, palette and level of detail\n5. style anchor: match its painting style, palette and level of detail\n6. style anchor: match its painting style, palette and level of detail\n\nAvoid: text; letters or numbers; watermark or signature; a drawn checkerboard pattern; a frame or border.\n\nProduce exactly one image.\n",
+    "negative": [
+      "text",
+      "letters or numbers",
+      "watermark or signature",
+      "a drawn checkerboard pattern",
+      "a frame or border"
+    ],
+    "sha256": "4f09104766dd5f5e820524afc738fb1d2635638816e50811883b945969acf875"
+  },
+  "references": [
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SWI_no_elected_president.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "222dc91c2b23f55bd4e715250ce1fac6bb4a4a30a29f7784a3521c854b15e93f"
+    },
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_the_stalin_constitution.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "83ee0042a91645a908c917ac97e4bbdec55b782411fb2b90ea5c2c5828c923ac"
+    },
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_repress_bzns.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "5c420576d64e553b6512ccd8d68743f28b48f07d12f23969274569ca620efb7e"
+    },
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_exiles_state.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "7d5d772c3ac60e6d94646d061b2749024f9791ec2cd029dd6e44aa9b4d68978d"
+    },
+    {
+      "path": "art/source/decision/decision-01.png",
+      "role": "style_anchor",
+      "origin": "project",
+      "sha256": "86460541b60da841bdba00587e49fc98d5f825dc9fb4f483463ea975a46f1340"
+    },
+    {
+      "path": "art/source/decision/decision-05.png",
+      "role": "style_anchor",
+      "origin": "project",
+      "sha256": "c1f8ebd0420ca204e410edc039ff5aaee6bfb54e21206b69717f80d634e56a30"
+    }
+  ],
+  "style": null,
+  "style_sha256": null,
+  "style_sources": {
+    "family": "decision",
+    "chosen_tier": 2,
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "pinned style",
+        "scanned": true,
+        "found": 0,
+        "chosen": false,
+        "note": "no pinned style profile applies to this family"
+      },
+      {
+        "tier": 2,
+        "name": "mod asset folder copy",
+        "scanned": true,
+        "found": 18,
+        "chosen": true,
+        "note": "used: 18 image(s) measured"
+      },
+      {
+        "tier": 3,
+        "name": "mod assets",
+        "scanned": false,
+        "found": 0,
+        "chosen": false,
+        "note": "not scanned: a higher tier is used"
+      },
+      {
+        "tier": 4,
+        "name": "vanilla",
+        "scanned": false,
+        "found": 0,
+        "chosen": false,
+        "note": "not scanned: a higher tier is used"
+      }
+    ],
+    "send_limit": 4,
+    "method": "descriptors (Lab mean/std, saturation, Sobel edge density, alpha coverage, dark-outline share, 6-bin hue histogram) are standardised; deterministic k-medoids (PAM, no random start, candidates ordered by content hash) picks up to 4 images to send and up to 24 for statistics",
+    "chosen": [
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SWI_no_elected_president.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 1 of 18 decision images (cluster of 8)",
+        "sha256": "222dc91c2b23f55bd4e715250ce1fac6bb4a4a30a29f7784a3521c854b15e93f",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_the_stalin_constitution.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 2 of 18 decision images (cluster of 6)",
+        "sha256": "83ee0042a91645a908c917ac97e4bbdec55b782411fb2b90ea5c2c5828c923ac",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_repress_bzns.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 3 of 18 decision images (cluster of 3)",
+        "sha256": "5c420576d64e553b6512ccd8d68743f28b48f07d12f23969274569ca620efb7e",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_exiles_state.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 4 of 18 decision images (cluster of 1)",
+        "sha256": "7d5d772c3ac60e6d94646d061b2749024f9791ec2cd029dd6e44aa9b4d68978d",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_stalinist_state.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 1 of 18 for decision images (local, never sent)",
+        "sha256": "0935d1c48d12f5454d77bd27bc37b5709615e3ab5ece6d38c09cf5582e0c9274",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_POL_sanation_left_opposition_2.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 2 of 18 for decision images (local, never sent)",
+        "sha256": "1f61b046ed40dc733a579f0076a291e156ca23974c0b5dfbbaf7ab688d111ff2",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_CHL_mapuche_liberate_tahiti.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 3 of 18 for decision images (local, never sent)",
+        "sha256": "452144c51f88958c7ad07c43f17dccb71d017c61745e668ae0c63be07e0abc96",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_POL_looming_peasants_strike.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 4 of 18 for decision images (local, never sent)",
+        "sha256": "46b0f5e50ece3f46a235ae7b0d06e62450751572f7e2b4c1b73f5138da27db6a",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_speech_zveno.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 5 of 18 for decision images (local, never sent)",
+        "sha256": "548127c5ca585dc76b0ff5c57f18ba17a5ccfd7bcc13bc5e1a3ad6363b1bb082",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_CHL_mapuche_reorganize_the_bolivian_government.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 6 of 18 for decision images (local, never sent)",
+        "sha256": "648039d69603ef534e05460f71d6b3845d081fbb90e5cda1ca70ed1033425d5f",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_against_bzns.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 7 of 18 for decision images (local, never sent)",
+        "sha256": "6bb51164f3bb587729bc5bd3f03c1b9ef72b236ccf19f75c3263c5a3dcc9fa77",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_infiltrate_state.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 8 of 18 for decision images (local, never sent)",
+        "sha256": "6ee6272e70d7118cc843b768ea9b04c48cea8899a5700536cbc203b2a948b618",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_destroy_bzns.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 10 of 18 for decision images (local, never sent)",
+        "sha256": "7dcc69efae05fa64f0bd4ead6574490c54a97f2e4a923235d169c2c8a11183b7",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_bul_against_zveno.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 12 of 18 for decision images (local, never sent)",
+        "sha256": "8baf7e85e3c8eee38d092984fc55fb747ccab06b1f09d20a66c8e2a9ada23df7",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_INS_destroy_the_east_indies.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 14 of 18 for decision images (local, never sent)",
+        "sha256": "ae7cff3232f130a770a5cb776150b1bfffa27ffcf5e0c4e171adff50af3d6745",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_the_military_conspiracy.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 15 of 18 for decision images (local, never sent)",
+        "sha256": "b4c0ef49f7b0cdd7d119ba2ba991bdc9153b2120910cbd1d02bb5b75feaa34ac",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_SOV_the_bloc_of_rights_and_trotskyites.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 17 of 18 for decision images (local, never sent)",
+        "sha256": "e2ae9eccf3d20402bb2ded85c327f88af376044027a6567a301681491bcf26d0",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/decisions/decision_POL_sanation_left_opposition_4.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 18 of 18 for decision images (local, never sent)",
+        "sha256": "f7215eb009c7cb83d08a05b7603047ceffd331888021f5dffd0ad806681f1e35",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      }
+    ],
+    "statistics": {
+      "images": 18,
+      "palette": [
+        {
+          "hex": "#0d0b09",
+          "name": "black",
+          "share": 0.221
+        },
+        {
+          "hex": "#342e28",
+          "name": "brown",
+          "share": 0.101
+        },
+        {
+          "hex": "#544838",
+          "name": "brown",
+          "share": 0.062
+        },
+        {
+          "hex": "#2b251b",
+          "name": "brown",
+          "share": 0.058
+        },
+        {
+          "hex": "#281712",
+          "name": "black",
+          "share": 0.053
+        },
+        {
+          "hex": "#47392d",
+          "name": "brown",
+          "share": 0.044
+        }
+      ],
+      "saturation": {
+        "mean": 0.256,
+        "std": 0.215
+      },
+      "value": {
+        "mean": 0.261,
+        "std": 0.24
+      },
+      "edge_density": 0.736,
+      "outline_presence": 0.318,
+      "alpha_coverage": 0.599,
+      "margin_px": 0.333,
+      "subject_span": 0.942
+    },
+    "style_paragraph": "Match the mod's own reference shelf for decision or mission icon art: moderately muted, dark palette dominated by black and brown; partial dark outline; crisp, detailed texture; about 60% of the canvas covered by the subject (measured on 18 images).",
+    "drift": {
+      "images": 18,
+      "p95_leave_one_out": 1.835,
+      "threshold": 1.835,
+      "minimum_threshold": 1.75
+    },
+    "notes": []
+  },
+  "estimate": {
+    "usd_per_call": 0.0,
+    "calls": 1,
+    "usd": 0.0,
+    "basis": "ChatGPT plan quota: there is no per-image price and no usage report, so spend is recorded as unknown and no operator allowance is ever charged",
+    "usage_unknown": true,
+    "funding": "plan_quota"
+  },
+  "paths": {
+    "candidate_dir": "docs/assets/zin_decision_seals/source_png",
+    "processed_dir": "docs/assets/zin_decision_seals/processed_png",
+    "preview_dir": "docs/assets/zin_decision_seals/contact_sheets",
+    "prompts_dir": "docs/assets/zin_decision_seals/prompts",
+    "final_files": [
+      "gfx/interface/decisions/zin_decision_seals/decision_zin_banner_plain.dds"
+    ],
+    "handoff": "docs/assets/zin_decision_seals/gfx_handoff.md"
+  },
+  "variants": 1,
+  "approvals": [],
+  "warnings": [
+    "gpt-6-luna has no documented native transparency. A prompt cannot prove it: the result is validated from pixels and an opaque result is rejected. Use a model with native alpha or a matte workflow if this icon must be transparent",
+    "the canvas 32x32 comes from Kit and differs from the vanilla-measured default 33x32"
+  ]
+}

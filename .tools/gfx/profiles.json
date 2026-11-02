@@ -89,10 +89,14 @@
   },
   "decision": {
    "canvas": [
-    33,
+    32,
     32
    ],
    "accepted": [
+    [
+     32,
+     32
+    ],
     [
      33,
      32
@@ -116,7 +120,7 @@
    ],
    "margin": 1,
    "frames": 1,
-   "source": "Measured on HOI4 1.19.4.1 (decision_icon): 346 textures in gfx/interface/decisions::^decision_(?!cat); 33x32 is 223 files (64.5 percent); next: 38x35: 69, 38x37: 12, 38x38: 11. Missions use this family too. A bare icon = x in decision script resolves to GFX_decision_x.",
+   "source": "Measured on HOI4 1.19.4.1 (decision_icon): 346 textures in gfx/interface/decisions::^decision_(?!cat); 33x32 is 223 files (64.5 percent); next: 38x35: 69, 38x37: 12, 38x38: 11. Missions use this family too. A bare icon = x in decision script resolves to GFX_decision_x. ZIN override under owner decision K69: docs/specs/07_interface/07_design_system.md section 4.2 (decision seals 32 x 32, small round Chancery decision frame) and tools/content/data/ui/design_system.json iconFamilies.decision (32 x 32). The vanilla 33 x 32 and the other vanilla sizes stay accepted while ZIN still ships vanilla-sized decision pictures.",
    "off_size_level": "warning"
   },
   "category": {
@@ -399,10 +403,14 @@
   },
   "technology": {
    "canvas": [
-    146,
-    54
+    64,
+    64
    ],
    "accepted": [
+    [
+     64,
+     64
+    ],
     [
      146,
      54
@@ -414,7 +422,7 @@
    ],
    "margin": 2,
    "frames": 1,
-   "source": "Measured on HOI4 1.19.4.1 (technology_picture): 2268 textures in gfx/interface/technologies; 146x54 is 832 files (36.7 percent); next: 131x52: 341, 64x64: 274, 173x77: 91. The engine binds technology art by name (GFX_<technology key>_medium)."
+   "source": "Measured on HOI4 1.19.4.1 (technology_picture): 2268 textures in gfx/interface/technologies; 146x54 is 832 files (36.7 percent); next: 131x52: 341, 64x64: 274, 173x77: 91. The engine binds technology art by name (GFX_<technology key>_medium). ZIN override under owner decision K69: docs/specs/07_interface/07_design_system.md section 4.2 (Technology 64 x 64, Chronicle technology plate) and tools/content/data/ui/design_system.json iconFamilies.technology (64 x 64, lane I1 confirms against the technology tree slot). The vanilla 146 x 54 and 131 x 52 stay accepted while ZIN still ships vanilla-sized technology pictures."
   },
   "achievement": {
    "canvas": [

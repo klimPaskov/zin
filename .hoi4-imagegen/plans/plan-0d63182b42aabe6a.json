@@ -1,0 +1,366 @@
+{
+  "plan_id": "plan-0d63182b42aabe6a",
+  "plan_hash": "0d63182b42aabe6af747886fe37aaa71b8da5145295364a7b3d2d23ab6be1ead",
+  "created": "2026-11-02T11:54:08Z",
+  "request": {
+    "family": "achievement",
+    "feature_slug": "deep_past",
+    "asset": "zin_ach_sun_crown",
+    "brief": "a gold circlet of sun rays set over a block of pale blue ice, a single solid object, painted miniature, earthy ochre, slate and deep blue; fully transparent background, no glow, no halo, no frame",
+    "style": null,
+    "references": [],
+    "provider": "chatgpt_login",
+    "model": "gpt-6-luna",
+    "transparent": true,
+    "variants": 1,
+    "budget_usd": null,
+    "quality": null,
+    "canvas": null
+  },
+  "asset_id": "deep_past.zin_ach_sun_crown",
+  "profile": {
+    "id": "achievement",
+    "hash": "9352f210feab71d8be350fcfb119b79da2ddda304b60345ec59aee3903505623",
+    "kit_sha256": "c3f0df9a1edf27ba4d6c95214cb2a16681dd17dcb10aec4ce049a59e359e201d"
+  },
+  "canvas": [
+    64,
+    64
+  ],
+  "source_canvas": null,
+  "frames": 1,
+  "provider": "chatgpt_login",
+  "model": "gpt-6-luna",
+  "quality": null,
+  "generation": {
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "aspect": "1:1"
+  },
+  "prompt": {
+    "text": "Create one Hearts of Iron IV achievement icon: a gold circlet of sun rays set over a block of pale blue ice, a single solid object, painted miniature, earthy ochre, slate and deep blue; fully transparent background, no glow, no halo, no frame\n\nRequirements:\n- One original subject, centred, compact and readable at 64x64 pixels, with strong contrast and a simple silhouette.\n- Real transparent background: no achievement frame, no square background, no red cross, no plate behind the subject.\n- Painterly, slightly aged texture in the style of Hearts of Iron IV interface art.\n\nStyle:\n- Match the mod's own reference shelf for achievement icon art: moderately muted, dark palette dominated by dark grey, black and brown; partial dark outline; crisp, detailed texture; about 96% of the canvas covered by the subject (measured on 18 images).\n\nReference images, in the order attached:\n1. style anchor: match its painting style, palette and level of detail\n2. style anchor: match its painting style, palette and level of detail\n3. style anchor: match its painting style, palette and level of detail\n4. style anchor: match its painting style, palette and level of detail\n\nAvoid: text; letters or numbers; watermark or signature; a drawn checkerboard pattern; a frame or border; a red cross.\n\nProduce exactly one image.\n",
+    "negative": [
+      "text",
+      "letters or numbers",
+      "watermark or signature",
+      "a drawn checkerboard pattern",
+      "a frame or border",
+      "a red cross"
+    ],
+    "sha256": "914a682c9a6a8500f8d169e20200185badeef5ff0cd0882075d59f117e3e6afa"
+  },
+  "references": [
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/prussia_of_the_balkans.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "5bbe576c4bb920cae504f523ffb95d11c1549bb0431393ba359f806ef2e84ee7"
+    },
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/template/achievement_template.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "0ce8709d27d390d3df16ec497ea4c8dfa5a04472ce352c89cdcea1d9c1e52dba"
+    },
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/template/overlay.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "4158dc74cd4026b808be58d71355187bb0c7af3363977d21ce977d81382c54b4"
+    },
+    {
+      "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/a_fullmetal_brotherhood.png",
+      "role": "style_anchor",
+      "origin": "kit_shelf",
+      "sha256": "8fa66bc0a88b23786f2823ad47a7216564015252097c44c1a23ba9b59d9cd527"
+    }
+  ],
+  "style": null,
+  "style_sha256": null,
+  "style_sources": {
+    "family": "achievement",
+    "chosen_tier": 2,
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "pinned style",
+        "scanned": true,
+        "found": 0,
+        "chosen": false,
+        "note": "no pinned style profile applies to this family"
+      },
+      {
+        "tier": 2,
+        "name": "mod asset folder copy",
+        "scanned": true,
+        "found": 18,
+        "chosen": true,
+        "note": "used: 18 image(s) measured"
+      },
+      {
+        "tier": 3,
+        "name": "mod assets",
+        "scanned": false,
+        "found": 0,
+        "chosen": false,
+        "note": "not scanned: a higher tier is used"
+      },
+      {
+        "tier": 4,
+        "name": "vanilla",
+        "scanned": false,
+        "found": 0,
+        "chosen": false,
+        "note": "not scanned: a higher tier is used"
+      }
+    ],
+    "send_limit": 4,
+    "method": "descriptors (Lab mean/std, saturation, Sobel edge density, alpha coverage, dark-outline share, 6-bin hue histogram) are standardised; deterministic k-medoids (PAM, no random start, candidates ordered by content hash) picks up to 4 images to send and up to 24 for statistics",
+    "chosen": [
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/prussia_of_the_balkans.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 1 of 18 achievement images (cluster of 14)",
+        "sha256": "5bbe576c4bb920cae504f523ffb95d11c1549bb0431393ba359f806ef2e84ee7",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/template/achievement_template.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 2 of 18 achievement images (cluster of 2)",
+        "sha256": "0ce8709d27d390d3df16ec497ea4c8dfa5a04472ce352c89cdcea1d9c1e52dba",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/template/overlay.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 3 of 18 achievement images (cluster of 1)",
+        "sha256": "4158dc74cd4026b808be58d71355187bb0c7af3363977d21ce977d81382c54b4",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/a_fullmetal_brotherhood.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "mod asset folder copy: medoid 4 of 18 achievement images (cluster of 1)",
+        "sha256": "8fa66bc0a88b23786f2823ad47a7216564015252097c44c1a23ba9b59d9cd527",
+        "sent_to_provider": true,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/the_man_of_medan.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 1 of 18 for achievement images (local, never sent)",
+        "sha256": "100829f45c07a497d02337af8a1b8771ff1173eac3f9d76d136921954e612e31",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/tsar_bomba.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 2 of 18 for achievement images (local, never sent)",
+        "sha256": "119a2387e095dcb9f30a0446e042d0fccb8a248ffa49467ec5c1368afb048eb3",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/rule_britannia.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 4 of 18 for achievement images (local, never sent)",
+        "sha256": "5d2d17c86b7524c053dcbdae79b724baaa9e61eccf12152cc0090aef556a3c33",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/no_more_partitions.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 5 of 18 for achievement images (local, never sent)",
+        "sha256": "5f24531a6deac4541504087085e2088a85aed7e5736d51149ed3b49a5b953035",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/template/achievement_template_grey.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 6 of 18 for achievement images (local, never sent)",
+        "sha256": "70e073694c1a7d9fe40c63b1eb2e987a8a45b3ffd15ccf789eeaa5b843b90022",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/paradisus_paradoxum.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 7 of 18 for achievement images (local, never sent)",
+        "sha256": "84b92778dfa97cc17c5beaa9b0ac680d51bf22dd5b3f64c4445d4a967c31f086",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/our_words_are_backed.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 9 of 18 for achievement images (local, never sent)",
+        "sha256": "8c1c339a77f89962e888ce285bd1d7f351259570161b516ccc4d6f81c868064f",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/we_dont_really_like_statistics.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 10 of 18 for achievement images (local, never sent)",
+        "sha256": "966c2da59038f85b99a0d7576080c0a4bb37bfc6fd4d9bede2b34182a957d820",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/the_new_home_of_the_revolution.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 11 of 18 for achievement images (local, never sent)",
+        "sha256": "9d95cd57d838b7c315946d573a1ceb597c626e9c316055ef4542b7acda93e6f7",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/30_minutes_of_hel.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 13 of 18 for achievement images (local, never sent)",
+        "sha256": "bfd6e161bae2407f6a4b1d30927fd27c5a14dfd2026a6d1d8454d60e36e2c9e6",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/woman_in_a_high_castle.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 15 of 18 for achievement images (local, never sent)",
+        "sha256": "d87aa1c087e638fc32b0fb6d3da8b072621663c70ca17e9a616ee5d33861a3ba",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/a_bridge_too_far.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 16 of 18 for achievement images (local, never sent)",
+        "sha256": "e004906d4797015050ed31df6b964983f87012cec10d9fd702c4b1bf9682b515",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/hardly_anything_sevres.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 17 of 18 for achievement images (local, never sent)",
+        "sha256": "f576789a52ceeb1ac2cdc1c3185506f690320298f2eadd53c0dc879e0baedc35",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      },
+      {
+        "path": ".claude/skills/hoi4-feature-assets/assets/vanilla_reference/icons/achievements/med_plutonium.png",
+        "origin": "kit_shelf",
+        "tier": 2,
+        "reason": "statistics only: medoid 18 of 18 for achievement images (local, never sent)",
+        "sha256": "ff6dd2a619c222a82f2ec595c7c3cb4e25d35f6038aa81cf96041cc2080de3e9",
+        "sent_to_provider": false,
+        "used_for_statistics": true
+      }
+    ],
+    "statistics": {
+      "images": 18,
+      "palette": [
+        {
+          "hex": "#2e2d2a",
+          "name": "dark grey",
+          "share": 0.194
+        },
+        {
+          "hex": "#131311",
+          "name": "black",
+          "share": 0.138
+        },
+        {
+          "hex": "#52504b",
+          "name": "dark grey",
+          "share": 0.111
+        },
+        {
+          "hex": "#26231c",
+          "name": "black",
+          "share": 0.062
+        },
+        {
+          "hex": "#4a4439",
+          "name": "brown",
+          "share": 0.039
+        },
+        {
+          "hex": "#73726f",
+          "name": "grey",
+          "share": 0.03
+        }
+      ],
+      "saturation": {
+        "mean": 0.295,
+        "std": 0.212
+      },
+      "value": {
+        "mean": 0.346,
+        "std": 0.215
+      },
+      "edge_density": 0.381,
+      "outline_presence": 0.544,
+      "alpha_coverage": 0.956,
+      "margin_px": 0.5,
+      "subject_span": 0.984
+    },
+    "style_paragraph": "Match the mod's own reference shelf for achievement icon art: moderately muted, dark palette dominated by dark grey, black and brown; partial dark outline; crisp, detailed texture; about 96% of the canvas covered by the subject (measured on 18 images).",
+    "drift": {
+      "images": 18,
+      "p95_leave_one_out": 7.193,
+      "threshold": 7.193,
+      "minimum_threshold": 1.75
+    },
+    "notes": []
+  },
+  "estimate": {
+    "usd_per_call": 0.0,
+    "calls": 1,
+    "usd": 0.0,
+    "basis": "ChatGPT plan quota: there is no per-image price and no usage report, so spend is recorded as unknown and no operator allowance is ever charged",
+    "usage_unknown": true,
+    "funding": "plan_quota"
+  },
+  "paths": {
+    "candidate_dir": "docs/assets/deep_past/source_png",
+    "processed_dir": "docs/assets/deep_past/processed_png",
+    "preview_dir": "docs/assets/deep_past/contact_sheets",
+    "prompts_dir": "docs/assets/deep_past/prompts",
+    "final_files": [
+      "gfx/achievements/zin_ach_sun_crown.dds",
+      "gfx/achievements/zin_ach_sun_crown_grey.dds",
+      "gfx/achievements/zin_ach_sun_crown_not_eligible.dds"
+    ],
+    "handoff": "docs/assets/deep_past/gfx_handoff.md"
+  },
+  "variants": 1,
+  "approvals": [],
+  "warnings": [
+    "gpt-6-luna has no documented native transparency. A prompt cannot prove it: the result is validated from pixels and an opaque result is rejected. Use a model with native alpha or a matte workflow if this icon must be transparent"
+  ]
+}

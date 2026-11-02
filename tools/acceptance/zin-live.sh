@@ -94,8 +94,24 @@ PY
 start)
   [[ -f "$zin_runtime/profile/mod/zin/map/provinces.bmp" ]]
   if pgrep -x hoi4 >/dev/null; then echo 'Linux HOI4 already running; leaving it untouched'; exit 1; fi
-  # Owner rule: never start the game while Steam or steamcmd is active (an update or a sign-in in progress).
-  if pgrep -f 'steamcmd|steamwebhelper|/steam\.sh|ubuntu12_32/steam' >/dev/null; then echo 'Steam or steamcmd is running; refusing to start'; exit 1; fi
+  # Steam (owner, 2 November 2026). Never during a steamcmd update. The game confirms the owned DLCs only while the Steam
+  # client runs (a profile keeps none without it), so by default every run has the WSL Steam client running in Offline
+  # Mode: all DLCs load and Steam reports nothing online. The run refuses unless the account is set to Offline Mode
+  # (WantsOfflineMode in loginusers.vdf; the owner sets it in Steam). ZIN_STEAM=off runs with no Steam process and no DLC.
+  if pgrep -f steamcmd >/dev/null; then echo 'steamcmd is running; refusing to start'; exit 1; fi
+  steam_up() { pgrep -f 'steamwebhelper|ubuntu12_32/steam' >/dev/null; }
+  if [[ "${ZIN_STEAM:-offline}" == off ]]; then
+    if steam_up; then echo 'ZIN_STEAM=off: Steam is running; refusing to start'; exit 1; fi
+  else
+    grep -q '"WantsOfflineMode"[[:space:]]*"1"' "$HOME/.local/share/Steam/config/loginusers.vdf" 2>/dev/null \
+      || { echo 'Steam is not set to Offline Mode (Steam menu > Go Offline); refusing to start'; exit 1; }
+    if ! steam_up; then
+      nohup steam -silent >"$zin_runtime/steam.log" 2>&1 </dev/null &
+      for i in $(seq 1 60); do sleep 3; steam_up && break; done
+      sleep 45
+    fi
+    steam_up || { echo 'the Steam client did not start'; exit 1; }
+  fi
   if xwininfo -root >/dev/null 2>&1; then echo 'Display :96 occupied'; exit 1; fi
   (set -o noclobber; printf '%s\n' "$zin_lease" > /tmp/hoi4_wsl.lock) || { echo 'Shared game lease unavailable'; exit 1; }
   nohup Xvfb :96 -screen 0 1600x900x24 -nolisten tcp -noreset >"$zin_runtime/xvfb.log" 2>&1 </dev/null &
@@ -114,7 +130,11 @@ start)
   # The Linux build passes "unset LD_LIBRARY_PATH && xdg-open" to sh as one command name, so the stand-in needs that name too.
   cp "$nosteam_home/bin/xdg-open" "$nosteam_home/bin/unset LD_LIBRARY_PATH && xdg-open"
   chmod +x "$nosteam_home/bin/xdg-open" "$nosteam_home/bin/unset LD_LIBRARY_PATH && xdg-open"
-  nohup env -u SteamAppId -u SteamGameId -u STEAM_COMPAT_CLIENT_INSTALL_PATH -u SteamClientLaunch HOME="$nosteam_home" \
+  # Runs with Steam use the real HOME, where the Steam client keeps ~/.steam/sdk64/steamclient.so.
+  # A game started outside Steam names itself to the Steam API by app id (394360); without it the API has no game to check.
+  run_home="$nosteam_home"; steam_env=(-u SteamAppId -u SteamGameId -u STEAM_COMPAT_CLIENT_INSTALL_PATH -u SteamClientLaunch)
+  [[ "${ZIN_STEAM:-offline}" != off ]] && { run_home="$HOME"; steam_env=(SteamAppId=394360 SteamGameId=394360); }
+  nohup env "${steam_env[@]}" HOME="$run_home" \
     PATH="$nosteam_home/bin:$PATH" \
     ./hoi4 ${ZIN_DEBUG--debug} -nofilewatcher -userdir="$zin_runtime/profile" >"$zin_runtime/hoi4.stdout.log" 2>&1 </dev/null &
   echo $! >"$zin_runtime/hoi4.pid"
