@@ -432,8 +432,8 @@ test('War: the beginning, the fronts and the flags follow the spec', () => {
   assert(text('common/ideas/zin_lastwar.txt').includes('army_core_defence_factor = 0.1') && text('common/ideas/zin_lastwar.txt').includes('dig_in_speed_factor = 0.2'));
   const op = text('common/opinion_modifiers/zin_lastwar.txt');
   for (const m of [['zin_lastwar_beside_former_foes', 20], ['zin_lastwar_refused_the_claim', -50], ['zin_lastwar_recognised_the_claim', 25], ['zin_lastwar_coronation_envoy', 20], ['zin_lastwar_coronation_snub', -10]]) assert(new RegExp(`${m[0]} = \\{\\s+value = ${m[1]}`).test(op), m[0]);
-  assert.equal(evOf('zin_lastwar', 40).picture, 'mirolon_passes');
-  assert.equal(evOf('zin_lastwar', 20).picture, 'western_crossing');
+  assert.equal(evOf('zin_lastwar', 40).picture, 'beat_crowns_passes');
+  assert.equal(evOf('zin_lastwar', 20).picture, 'beat_crowns_western_quay');
   assert.deepEqual(evOf('zin_lastwar', 20).requires, ['zin_western_crossing']);
   assert(evOf('zin_lastwar', 91).options[2].ai.mods.some(m => m.factor === 0), 'recognising the claim is never the historical choice');
   assert.deepEqual(evOf('zin_lastwar', 91).options[2].if, ['check_variable = { zin_footholds > 3.999 }']);

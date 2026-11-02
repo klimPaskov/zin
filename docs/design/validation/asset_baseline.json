@@ -9480,6 +9480,22 @@
    "message": "Picture GFX_zin_evt_gala_court is used by 18 events; the cap is 8.",
    "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_gala.txt|GFX_zin_evt_gala_court",
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0022. (Re-keyed 2 November 2026: lane I10 gave Eindil beats their own pictures, so fewer events share it.)"
+  },
+  {
+   "code": "UNIQ_EVENT_PICTURE_CAP",
+   "severity": "error",
+   "path": "events/zin_deep.txt",
+   "message": "Picture GFX_zin_evt_hermitage is used by 24 events; the cap is 8.",
+   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_deep.txt|GFX_zin_evt_hermitage",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0015. (Re-keyed 2 November 2026: lane I10 gave the Afrit and Last Crowns beats their own pictures, so fewer events share it.)"
+  },
+  {
+   "code": "UNIQ_EVENT_PICTURE_CAP",
+   "severity": "error",
+   "path": "events/zin_east.txt",
+   "message": "Picture GFX_zin_evt_council_chamber is used by 14 events; the cap is 8.",
+   "key": "UNIQ_EVENT_PICTURE_CAP|events/zin_east.txt|GFX_zin_evt_council_chamber",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0014. (Re-keyed 2 November 2026: lane I10 gave the Afrit and Last Crowns beats their own pictures, so fewer events share it.)"
   }
  ]
 }

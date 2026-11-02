@@ -576,8 +576,8 @@ test('The registry reads the names that earlier modules stage', async () => {
 test('The shipped registry data and catalog load', async () => {
   const catalog = await loadCatalog();
   assert.equal(catalog.icons.size, 175);
-  // 52 catalogue event keys plus the 50 Eindil beat keys of lane I10 (tools/content/data/event_beats.json).
-  assert.equal(catalog.events.size, 102);
+  // 52 catalogue event keys plus the 87 beat keys of lane I10 (50 Eindil, 18 Afrit, 19 Last Crowns; tools/content/data/event_beats.json).
+  assert.equal(catalog.events.size, 139);
   assert.equal(catalog.events.get('unmasking').gate, 'zin_afrit_revealed');
   const prepared = prepareTrees(Object.entries(BASE).map(([name, data]) => ({ name, data })), ROSTER);
   assert.equal(prepared.problems.length, 0);

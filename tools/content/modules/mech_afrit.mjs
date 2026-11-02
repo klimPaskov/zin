@@ -192,53 +192,53 @@ export async function buildAfrit(staged, ctx) {
     'create_unit = {', 'division = "name = \\"The Hermitage Guard\\" division_template = \\"Hermitage Guard\\" start_experience_factor = 0.3 start_equipment_factor = 1"', `owner = ${HUB}`, `prioritize_location = ${capitalProv}`, 'count = 2', '}', '}');
   events.push({ id: 1, kind: 'hidden', immediate: list(hubStart, ...footholdLines, 'zin_afrit_refresh_graces = yes') });
   events.push({ id: 2, kind: 'hidden', immediate: 'zin_afrit_monthly = yes' });
-  events.push({ id: 3, kind: 'country', title: 'A House Opens in [zin_afrit_hub_target.GetName]', picture: 'houses', requires: [],
+  events.push({ id: 3, kind: 'country', title: 'A House Opens in [zin_afrit_hub_target.GetName]', picture: 'beat_veil_houses', requires: [],
     desc: 'The masons have finished their work in [zin_afrit_hub_target.GetName]. A hospital, a granary and a school of scribes have opened their doors under the First Light, and the neighbours have already begun to come.',
     options: [{ key: 'a', text: 'Let it grow quietly.' }] });
-  events.push({ id: 4, kind: 'country', title: 'Suspicion in [zin_afrit_hub_target.GetName]', picture: 'houses',
+  events.push({ id: 4, kind: 'country', title: 'Suspicion in [zin_afrit_hub_target.GetName]', picture: 'beat_veil_houses',
     desc: 'The court of [zin_afrit_hub_target.GetName] has asked what the pilgrims want, and has not liked the answers. A watcher stands at every door of the new house.',
     options: [
       { key: 'a', text: 'Withdraw the pilgrims.', ai: 30, effect: `event_target:zin_afrit_hub_target = {\n${call('zin_afrit_add_footholds', { value: -1 })}\n}\n${call('zin_afrit_add_veil', { value: 3 })}` },
       { key: 'b', text: 'Brazen it out.', ai: 50 },
       { key: 'c', text: 'Pay for silence.', ai: 20, effect: `add_political_power = -50\n${call('zin_afrit_add_veil', { value: 2 })}` },
     ] });
-  events.push({ id: 5, kind: 'country', title: 'The Houses Are Closed in [zin_afrit_hub_target.GetName]', picture: 'houses',
+  events.push({ id: 5, kind: 'country', title: 'The Houses Are Closed in [zin_afrit_hub_target.GetName]', picture: 'beat_veil_houses',
     desc: 'The doors of the First Light are shut in [zin_afrit_hub_target.GetName]. The priests have gone, and the granary is locked. It will take a long time to open them again.',
     options: [{ key: 'a', text: 'It is written in the ledger.' }] });
-  events.push({ id: 6, kind: 'country', title: 'The Faithful Ask a Favour', picture: 'houses',
+  events.push({ id: 6, kind: 'country', title: 'The Faithful Ask a Favour', picture: 'beat_veil_houses',
     desc: 'The hermitage reminds our court of its kindness. Its envoy asks, without raising his voice, for a small return: arms for the pilgrims\' guard, or passage for their column.',
     options: [
       { key: 'a', text: 'Send them the equipment.', ai: 40, effect: `add_equipment_to_stockpile = { type = zin_arms_equipment amount = -500 }\nevent_target:zin_afrit_hub = { add_equipment_to_stockpile = { type = zin_arms_equipment amount = 500 } }` },
       { key: 'b', text: 'Grant them passage.', ai: 40, effect: 'event_target:zin_afrit_hub = { give_military_access = ROOT }' },
       { key: 'c', text: 'Refuse.', ai: 20, effect: `${call('zin_afrit_add_footholds', { value: -1 })}` },
     ] });
-  events.push({ id: 7, kind: 'country', title: 'What the Confessors Heard', picture: 'council_chamber',
+  events.push({ id: 7, kind: 'country', title: 'What the Confessors Heard', picture: 'beat_veil_confessors',
     desc: 'The confessors of [zin_afrit_confessed.GetName] have written to the hermitage. The court [zin_afrit_confessed.zin_afrit_confession_word].',
     options: [{ key: 'a', text: 'The ledger is filled.' }] });
   events.push({ id: 8, kind: 'hidden', immediate: 'set_global_flag = zin_afrit_at_yeldenne' });
   events.push({ id: 9, kind: 'hidden', immediate: `set_temp_variable = { zin_nk = 0 }\nevery_country = {\n\tlimit = { has_country_flag = zin_afrit_eastern_client }\n\tadd_to_temp_variable = { zin_nk = 1 }\n}\nif = {\n\tlimit = { check_variable = { zin_nk > 1 } }\n\tzin_afrit_proclaim_king_of_east = yes\n\tnews_event = { id = zin_afrit.52 }\n}` });
-  events.push({ id: 41, kind: 'country', title: 'The Veil Thins', picture: 'council_chamber',
+  events.push({ id: 41, kind: 'country', title: 'The Veil Thins', picture: 'beat_veil_night',
     desc: 'The Veil is thin. In the Light courts the priests of the Houses are watched, and the pilgrims have begun to be asked who sent them. Another unwise week and the name will be on every tongue.',
     options: [{ key: 'a', text: 'Mend it, or hold your breath.' }] });
-  events.push({ id: 42, kind: 'country', title: 'The Name Is Spoken', picture: 'unmasking', requires: ['zin_afrit_revealed'],
+  events.push({ id: 42, kind: 'country', title: 'The Name Is Spoken', picture: 'beat_veil_unmasking', requires: ['zin_afrit_revealed'],
     desc: 'The name is spoken in the open: Afrit, in every hall that has ears. The Veil is gone. What was patient work is now a war for belief, and the Houses must choose whose servants they are.',
     options: [{ key: 'a', text: 'Then let it be known.' }] });
-  events.push({ id: 44, kind: 'country', title: 'Unmasked Too Soon', picture: 'unmasking', requires: ['zin_afrit_revealed'],
+  events.push({ id: 44, kind: 'country', title: 'Unmasked Too Soon', picture: 'beat_veil_unmasking', requires: ['zin_afrit_revealed'],
     desc: 'The name came out before the crown was taken. The kingdom has seen the thing that the temples served, and the Houses are watched in every land. This is what the Council\'s work was meant to avoid.',
     options: [{ key: 'a', text: 'We begin again from the ruin.' }] });
-  events.push({ id: 54, kind: 'country', title: 'The War Council of the East', picture: 'eastern_court', requires: ['zin_afrit_abandoned_aenor'],
+  events.push({ id: 54, kind: 'country', title: 'The War Council of the East', picture: 'beat_veil_east', requires: ['zin_afrit_abandoned_aenor'],
     desc: 'The kings of the East sit in council at the Dawn, and the Deliverer takes the marshal\'s chair himself. The Necklace is on his breast. The kings do not look at it.',
     immediate: 'zin_aurevan = {\n\tadd_field_marshal_role = {\n\t\tcharacter = zin_aurevan\n\t\tskill = 5\n\t}\n}',
     options: [{ key: 'a', text: 'Let the council sit.' }] });
-  events.push({ id: 90, kind: 'country', title: 'A Healing in [Root.GetName]', picture: 'houses',
+  events.push({ id: 90, kind: 'country', title: 'A Healing in [Root.GetName]', picture: 'beat_veil_houses',
     desc: 'A woman who had been ill for a year rose from her bed in the house of the First Light and walked to the well. The neighbours say it was the god. The physicians say it was the broth.',
     trigger: 'check_variable = { zin_footholds > 1 }\nzin_afrit_secret_kept = yes\nNOT = { zin_afrit_is_hub = yes }', mtth: 'days = 720',
     options: [{ key: 'a', text: 'Let the people believe what they will.', effect: 'add_stability = 0.01' }] });
-  events.push({ id: 91, kind: 'country', title: 'The Pilgrims\' Tale', picture: 'hermitage',
+  events.push({ id: 91, kind: 'country', title: 'The Pilgrims\' Tale', picture: 'beat_veil_confessors',
     desc: 'A pilgrim returned from the far South tells the hermitage a story that is half a song. A city by a lake, a king who wears a veil, a river that runs the wrong way. The scribes write it down.',
     trigger: `zin_afrit_is_hub = yes\nNOT = { has_global_flag = zin_afrit_dead }`, mtth: 'days = 540',
     options: [{ key: 'a', text: 'Keep it in the ledger.', effect: 'add_political_power = 15' }] });
-  events.push({ id: 92, kind: 'country', title: 'The Thief Grows Restless', picture: 'council_chamber',
+  events.push({ id: 92, kind: 'country', title: 'The Thief Grows Restless', picture: 'beat_veil_artifacts',
     desc: 'Sevrin has not been out of the Reliquary in two years. He walks the vault at night and counts the shelves. He says he has been here long enough to know when a thing is hungry.',
     trigger: `zin_afrit_is_hub = yes\nhas_character = zin_sevrin\nhas_country_flag = zin_afrit_sevrin_guest\nNOT = { has_global_flag = zin_afrit_dead }`, mtth: 'days = 730',
     options: [

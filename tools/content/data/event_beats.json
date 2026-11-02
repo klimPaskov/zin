@@ -429,6 +429,361 @@
    "scene": "A pale man sinks into a dark sea at dusk beside a broken dragon, storm waves rising around him.",
    "crop": "both",
    "raw": "eindil_heir_lost"
+  },
+  {
+   "key": "beat_veil_houses",
+   "events": [
+    3,
+    4,
+    5,
+    6,
+    45,
+    90
+   ],
+   "scene": "A stone hospital hall of the Houses of the First Light in a city of the Middle Kingdom: clean white beds in rows under high windows, a grey-robed physician with a bowl of broth, and a scribe at a desk of ledgers beside a granary door in the morning light.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_verdict",
+   "events": [
+    10,
+    22,
+    53
+   ],
+   "scene": "A cold stone room behind a great reliquary: three robed councillors sit at a bare table with a rolled ledger and a sealed box, one lamp burning, pale winter light through a slit window.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_confessors",
+   "events": [
+    7,
+    91
+   ],
+   "scene": "A dusty pilgrim in a travel cloak speaks to scribes in a lamp-lit stone hermitage, a carved wooden confessional screen behind them and an open ledger on the table.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_night",
+   "events": [
+    11,
+    14,
+    16,
+    41
+   ],
+   "scene": "A council room of conspirators at night: a table laid with a glass physician's vial, a sealed letter and a bronze incense censer, a palace map, and three shadowed men leaning over it under a single candle.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_choose_night",
+   "events": [
+    15
+   ],
+   "scene": "A great feast hall after a midwinter feast: long tables of empty goblets and spilled wine, courtiers asleep on benches, and a candle guttering beside a closed chamber door at the end of a dark corridor.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_palace_seals",
+   "events": [
+    20,
+    70,
+    76
+   ],
+   "scene": "A lantern-lit palace hall: a plain wooden box of royal seals open on a low table before a high-backed empty chair, with the old service passages dark behind a heavy door.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_artifacts",
+   "events": [
+    71,
+    72,
+    73,
+    74,
+    92
+   ],
+   "scene": "A long palace gallery at night with guards hesitating at the far end: on a velvet cushion a silver bracelet, a ring with a dark stone and a necklace of dark beads glow faintly, and open sealed chests stand behind them.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_shore",
+   "events": [
+    31,
+    32
+   ],
+   "scene": "A cold northern harbour under a grey sky: pilgrim ships with furled sails at a stone quay, a courier in a sea-salt-stained cloak stepping down a gangway, and snow on the harbour wall.",
+   "chain": "afrit",
+   "gate": "zin_eindil_named"
+  },
+  {
+   "key": "beat_veil_ambush",
+   "events": [
+    33,
+    34
+   ],
+   "scene": "A snowy shore below a silent castle on a cliff: a ship's boat with pale oars nosing into the bay at grey dawn, and armed men lying in the snow on a rise above the landing path, breath misting.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_brother",
+   "events": [
+    61
+   ],
+   "scene": "A narrow cliff road above a deep gorge in cold evening light: a small armed guard on the road, a tall man in a dark travel cloak on horseback at its edge, and bare trees bending in the wind.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_false_god",
+   "events": [
+    78
+   ],
+   "scene": "A charcoal-burner's hut in the hills at night: a small fire, three priests in dusty robes sitting by it, a mule tethered outside, and a blanket spread with gold-chased temple plate.",
+   "chain": "afrit"
+  },
+  {
+   "key": "beat_veil_east",
+   "events": [
+    51,
+    54,
+    60
+   ],
+   "scene": "A great eastern hall with kings in embroidered coats seated around a council table, and a marshal's high chair at its head where a robed man in grey and gold sits with his face in shadow and a dark stone necklace on his breast.",
+   "chain": "afrit",
+   "gate": "zin_afrit_abandoned_aenor"
+  },
+  {
+   "key": "beat_veil_unmasking",
+   "events": [
+    42,
+    44
+   ],
+   "scene": "A palace hall in late afternoon: courtiers and guardsmen turn toward a robed ruler whose shadow across the marble floor is far too tall and crowned with thin curved horns, the lamps flickering while the bells stay silent.",
+   "chain": "afrit",
+   "gate": "zin_afrit_revealed"
+  },
+  {
+   "key": "beat_veil_unmasking_news",
+   "events": [
+    43
+   ],
+   "scene": "A crowded square in a lake city: a herald on the temple steps reads a proclamation aloud, townsfolk listen with grim faces, and temple banners hang limp in the still air.",
+   "chain": "afrit",
+   "crop": "news",
+   "look": "Black-and-white press photograph of a fictional fantasy-world scene: grainy film, high contrast, documentary framing, no colour, no modern dress, no modern objects, no readable text, letters, numbers or captions.",
+   "gate": "zin_afrit_revealed"
+  },
+  {
+   "key": "beat_veil_east_news",
+   "events": [
+    52
+   ],
+   "scene": "Eastern kings kneel at a caravan-road shrine before a robed ruler on a raised dais, banners of several eastern crowns hanging over the crowd, with dust in the air.",
+   "chain": "afrit",
+   "crop": "news",
+   "look": "Black-and-white press photograph of a fictional fantasy-world scene: grainy film, high contrast, documentary framing, no colour, no modern dress, no modern objects, no readable text, letters, numbers or captions.",
+   "gate": "zin_afrit_abandoned_aenor"
+  },
+  {
+   "key": "beat_veil_golden_news",
+   "events": [
+    17,
+    62
+   ],
+   "scene": "A lake city's great temple with gilded domes under a grey sky, a crier reading a proclamation on the steps, armed guards at the gate and a crowd gathered below.",
+   "chain": "afrit",
+   "crop": "news",
+   "look": "Black-and-white press photograph of a fictional fantasy-world scene: grainy film, high contrast, documentary framing, no colour, no modern dress, no modern objects, no readable text, letters, numbers or captions."
+  },
+  {
+   "key": "beat_veil_coronation_news",
+   "events": [
+    21,
+    23
+   ],
+   "scene": "A vast hall of a lake city: a young prince kneels before a crown on a cushion as nobles and priests watch, with bells ringing above in the tall windows.",
+   "chain": "afrit",
+   "crop": "news",
+   "look": "Black-and-white press photograph of a fictional fantasy-world scene: grainy film, high contrast, documentary framing, no colour, no modern dress, no modern objects, no readable text, letters, numbers or captions.",
+   "gate": "zin_golden_king_dead"
+  },
+  {
+   "key": "beat_veil_false_god_news",
+   "events": [
+    75,
+    77,
+    79
+   ],
+   "scene": "A burnt hut in a hill valley at dawn with smoke still rising, a line of hunters with spears on the ridge above, and a single abandoned mule on the slope.",
+   "chain": "afrit",
+   "crop": "news",
+   "look": "Black-and-white press photograph of a fictional fantasy-world scene: grainy film, high contrast, documentary framing, no colour, no modern dress, no modern objects, no readable text, letters, numbers or captions."
+  },
+  {
+   "key": "beat_crowns_warnings",
+   "events": [
+    10,
+    11
+   ],
+   "scene": "Beacon fires lit on the walls of a northern city at dusk, soldiers and townsfolk on the parapet looking out over dark fields, a water basin in the foreground holding the reflected flames.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_roads",
+   "events": [
+    13
+   ],
+   "scene": "Carts and refugees on a muddy road beside a great lake, a crowded ferry landing, and a ferryman counting coins under a grey sky.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_field",
+   "events": [
+    61,
+    62,
+    80
+   ],
+   "scene": "A wide snowy plain after a battle: scattered tents and cookfires, smoke rising, and soldiers standing among the fallen, the far ridge dark against a pale sky.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_north_ships",
+   "events": [
+    14
+   ],
+   "scene": "A grey fleet of ships turning for home past a southern strait fort, the empty water behind them and the fort garrison watching from its walls.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_levies",
+   "events": [
+    12,
+    50
+   ],
+   "scene": "A great stone hall where a keeper of the muster-roll stands before a council of lords under banners of many dominions, a long roll of names held open on a lectern.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_western_quay",
+   "events": [
+    20,
+    21,
+    60
+   ],
+   "scene": "A harbour quay where foreign ships with unfamiliar sails dock beside old carved stones, armed men walking ashore past a city of pale towers.",
+   "chain": "crowns",
+   "gate": "zin_western_crossing"
+  },
+  {
+   "key": "beat_crowns_zol",
+   "events": [
+    30
+   ],
+   "scene": "A muddy camp at dawn where soldiers in silent ranks stand again in their places, faces pale and wounded, a captain's lantern held up in the grey light.",
+   "chain": "crowns",
+   "gate": "zin_zol_rising"
+  },
+  {
+   "key": "beat_crowns_passes",
+   "events": [
+    40
+   ],
+   "scene": "Burning watchtowers along a mountain pass at night, a line of soldiers below them on the road, sparks drifting over the snow.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_storm",
+   "events": [
+    41
+   ],
+   "scene": "A line of signal fires along a southern marsh and ford at dusk, wardens with spears standing at the water's edge, counting the lights on the far bank.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_houses",
+   "events": [
+    51,
+    110
+   ],
+   "scene": "A plain stone house of the First Light with its door open, bread being handed out at dawn to a quiet line of poor folk in the street.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_eastern_banners",
+   "events": [
+    52
+   ],
+   "scene": "Eastern banners folded on a baggage cart in a muddy camp, soldiers keeping their faces turned away from them.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_opposition",
+   "events": [
+    92
+   ],
+   "scene": "Lists posted on the wooden doors of a stone house at night, a lantern on a post, and two men with notices in their hands.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_dragon",
+   "events": [
+    70,
+    71,
+    72
+   ],
+   "scene": "Two camps a bowshot apart on a frozen field, with one small fire between them, and soldiers of both sides sitting in the snow looking at the flames.",
+   "chain": "crowns",
+   "gate": "zin_eindil_returned"
+  },
+  {
+   "key": "beat_crowns_shadow",
+   "events": [
+    73
+   ],
+   "scene": "Tall elves in white and gold stand on a battlefield below a vast dark shape looming over the hills, banners flying in the wind.",
+   "chain": "crowns",
+   "gate": "zin_kusven_forth"
+  },
+  {
+   "key": "beat_crowns_eastern_court",
+   "events": [
+    91
+   ],
+   "scene": "A hall where envoys in grey cloaks stand before kings, a written answer lying on a table and the eastern courts watching in silence.",
+   "chain": "crowns",
+   "gate": "zin_afrit_abandoned_aenor"
+  },
+  {
+   "key": "beat_crowns_hermitage",
+   "events": [
+    111
+   ],
+   "scene": "A quiet hermitage cloister with its doors open to pilgrims, a woman with a lamp, and an old bell tower above the hills at dusk.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_peace",
+   "events": [
+    112
+   ],
+   "scene": "Two heralds meet in a meadow under a white flag, a broken wall behind them and grey skies over the empty field.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_coronation",
+   "events": [
+    113
+   ],
+   "scene": "A royal hall with banners of many crowns, guests seated by rank, and a crown on a cushion under tall windows.",
+   "chain": "crowns"
+  },
+  {
+   "key": "beat_crowns_eastern_news",
+   "events": [
+    90
+   ],
+   "scene": "Envoys with old temple seals kneel at a caravan-road shrine before a robed envoy, crowds of eastern riders watching in the dust.",
+   "chain": "crowns",
+   "crop": "news",
+   "look": "Black-and-white press photograph of a fictional fantasy-world scene: grainy film, high contrast, documentary framing, no colour, no modern dress, no modern objects, no readable text, letters, numbers or captions.",
+   "gate": "zin_afrit_abandoned_aenor"
   }
  ]
 }

@@ -138,22 +138,23 @@ test('all 175 catalog keys have focus, shine and idea sprites, the fallback gene
 
 test('the 52 picture keys have event and news sprites per their crop', async () => {
   const { events } = await loadCells();
-  // 52 catalogue keys plus the 50 Eindil beat keys of lane I10 (tools/content/data/event_beats.json).
-  assert.equal(events.length, 102); assert.equal(new Set(events.map(e => e.key)).size, 102);
+  // 52 catalogue keys plus the 87 beat keys of lane I10 (50 Eindil, 18 Afrit, 19 Last Crowns; tools/content/data/event_beats.json).
+  assert.equal(events.length, 139); assert.equal(new Set(events.map(e => e.key)).size, 139);
   const s = new Set(sprites('interface/zin_event_pictures.gfx'));
   for (const e of events) {
     assert.equal(s.has(SPRITE.evt(e.key)), e.crop !== 'news', e.key);
     assert.equal(s.has(SPRITE.news(e.key)), e.crop !== 'standard', e.key);
   }
   assert(s.has(SPRITE.evt(FALLBACK_PICTURE)) && s.has(SPRITE.news(FALLBACK_PICTURE)));
-  // 43 catalogue event pictures plus 50 Eindil beat pictures; 28 catalogue news pictures plus 5 beat pictures with news events.
-  assert.equal(result.counts.eventPictures, 93); assert.equal(result.counts.newsPictures, 33);
+  // 43 catalogue event pictures, 50 Eindil, 13 Afrit and 18 Last Crowns beat pictures; 28 catalogue news pictures, 5 Eindil, 5 Afrit and 1 Last Crowns beat pictures with news events.
+  assert.equal(result.counts.eventPictures, 124); assert.equal(result.counts.newsPictures, 39);
 });
 
 test('the tracked cell copy matches the art working copies', async () => {
   const copy = JSON.parse(readFileSync(CELLS_COPY, 'utf8'));
   if (existsSync(`${ART}/jobs/icons-catalog-cells.json`)) assert.deepEqual(JSON.parse(readFileSync(`${ART}/jobs/icons-catalog-cells.json`, 'utf8')).map(c => ({ sheet: c.sheet, cols: c.cols, rows: c.rows, keys: c.keys })), copy.icons);
-  if (existsSync(`${ART}/jobs/events-catalog-jobs.json`)) assert.deepEqual(JSON.parse(readFileSync(`${ART}/jobs/events-catalog-jobs.json`, 'utf8')).map(e => ({ key: e.keys[0], crop: e.crop })), copy.events.map(e => ({ key: e.raw ?? e.key, crop: e.crop }))); // raw: the name a picture was generated under before a canon rename
+  // The catalogue jobs list the catalogue pictures only; the beat rows of lane I10 are generated from tools/content/data/event_beats.json.
+  if (existsSync(`${ART}/jobs/events-catalog-jobs.json`)) assert.deepEqual(JSON.parse(readFileSync(`${ART}/jobs/events-catalog-jobs.json`, 'utf8')).map(e => ({ key: e.keys[0], crop: e.crop })), copy.events.filter(e => !e.key.startsWith('beat_')).map(e => ({ key: e.raw ?? e.key, crop: e.crop }))); // raw: the name a picture was generated under before a canon rename
 });
 
 test('loading tips: every key, in order, Windows-1252, no gated or modern words', () => {
