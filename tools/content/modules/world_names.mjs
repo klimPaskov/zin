@@ -2,10 +2,11 @@
 //
 // The map tool (HOI4 Agent Tools create_world) names what the geography model names and gives every other state, strategic region and
 // victory point a machine name: a compass word with a land name and a numeral ("Southwestern Cold Lands II"), "<state> Town",
-// "<realm> District N", "<realm> Settlement N", "Region N". The tool owns localisation/replace/world_l_english.yml and rewrites it on
-// every map write, so this step never edits it. It stages localisation/replace/00_zin_world_names_l_english.yml, which loads before it
-// (replace files load in name order, and the first file keeps a key) and carries the same keys with natural values. Keys, ids and every name the model gave stay as
-// they are. docs/plans/zin-map/naming_request.md asks the tool for a naming input, which would make this file unnecessary.
+// "<realm> District N", "<realm> Settlement N", "Region N". The tool writes localisation/replace/world_l_english.yml on every map
+// write; the game keeps that file's value for a key whatever a second replace file says, so this step stages the same file with the
+// natural values written in, from a frozen copy of what the tool wrote (data/world/map_tool_names.yml, refreshed after each map
+// write). Keys, ids and every name the model gave stay as they are. docs/plans/zin-map/naming_request.md asks the tool for a naming
+// input (HOI4 Agent Tools 4.8.0, ZR-22), which would make the rewrite unnecessary.
 //
 // What gets a name, and in which speech
 //   state            a land name in the language of its owner (the placeNames "state" kind: half settlements, half land names, shaped
@@ -27,7 +28,7 @@
 // renumbers the states keeps each place's name while the land stays where it is.
 //
 //   nameWorld(options)      -> { names, kept, report }         pure, on a loaded map (readWorldMap) and the current names
-//   buildWorldNames(staged) stages localisation/replace/00_zin_world_names_l_english.yml and docs/design/world_names.json
+//   buildWorldNames(staged) stages localisation/replace/world_l_english.yml (the natural names written in) and docs/design/world_names.json
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { rng } from '../lib/core.mjs';
@@ -37,9 +38,13 @@ import { fileURLToPath } from 'node:url';
 import { BANNED_SUBSTRINGS, REAL_WORLD_WORDS, composeRecipe, keyOf } from '../lib/language_generator.mjs';
 import { placeNames, sharedNaming } from './names.mjs';
 
-// For a key in two localisation/replace files the game keeps the first file in name order (text.log, 2 November 2026:
-// world_l_english.yml won over zin_world_names_l_english.yml), so the names file sorts before the tool's world_l_english.yml.
-export const NAMES_FILE = 'localisation/replace/00_zin_world_names_l_english.yml';
+// A second localisation/replace file with the same keys does not override the tool's: in game the map tool's
+// world_l_english.yml kept every key whichever file loaded first (text.log, 2 November 2026). So the build stages the tool's
+// own file with the natural names written in (a shared world file, rehashed in .hoi4-agent-world.json by apply.mts), and reads
+// the names the tool wrote from a frozen copy, map_tool_names.yml, refreshed from the tool's file after every map write.
+// HOI4 Agent Tools 4.8.0 (ZR-22, caller names in create_world) replaces this with names passed to the map write.
+export const NAMES_FILE = 'localisation/replace/world_l_english.yml';
+const BASIS_FILE = 'tools/content/data/world/map_tool_names.yml';
 export const NAMES_DOC = 'docs/design/world_names.json';
 const HAND_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '../data/world/hand_names.json');
 export const readHandNames = () => JSON.parse(readFileSync(HAND_FILE, 'utf8')).languages;
@@ -110,10 +115,10 @@ export function readWorldMap(zin = ZIN) {
   return { defs, states, regions, centre };
 }
 
-// The current values of the keys of the map tool's localisation file.
+// The values the map tool wrote for its localisation keys (the frozen copy of its file, not the mod's file this step rewrites).
 export function readCurrentNames(zin = ZIN) {
   const out = new Map();
-  for (const l of readFileSync(path.join(zin, WORLD_FILE), 'utf8').split(/\r?\n/)) {
+  for (const l of readFileSync(path.join(zin, BASIS_FILE), 'utf8').split(/\r?\n/)) {
     const m = /^\s*([A-Za-z0-9_]+):\d?\s*"(.*)"\s*$/.exec(l);
     if (m) out.set(m[1], m[2]);
   }
@@ -428,13 +433,17 @@ const keyCompare = (a, b) => {
   return KEY_ORDER[ka] - KEY_ORDER[kb] || Number(na) - Number(nb);
 };
 
-// Stage the override file and the name document. Returns the report, or null when the map tool's file is absent.
+// Stage the tool's names file with the natural names, and the name document. Returns the report, or null without the frozen copy.
 export async function buildWorldNames(staged, { zin = ZIN } = {}) {
-  if (!existsSync(path.join(zin, WORLD_FILE))) return null;
+  if (!existsSync(path.join(zin, BASIS_FILE))) return null;
   const result = nameWorld({ map: readWorldMap(zin), current: readCurrentNames(zin) });
   const keys = [...result.names.keys()].sort(keyCompare);
-  const body = keys.map(k => ` ${k}: "${result.names.get(k).name.replace(/"/g, '\\"')}"`).join('\n');
-  staged.add(NAMES_FILE, Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), Buffer.from(`l_english:\n${body}\n`)]));
+  // The tool's file line by line, each renamed key's value replaced; the header and the names the tool gave stay as they are.
+  const merged = readFileSync(path.join(zin, BASIS_FILE), 'utf8').split('\n').map(l => {
+    const m = /^(\s*)([A-Za-z0-9_]+)(:\d?\s*)"(.*)"(\s*)$/.exec(l), n = m && result.names.get(m[2]);
+    return n ? `${m[1]}${m[2]}${m[3]}"${n.name.replace(/"/g, '\\"')}"${m[5]}` : l;
+  }).join('\n');
+  staged.add(NAMES_FILE, Buffer.from(merged, 'utf8'));
   const head = { schema: 'zin-world-names/1', spec: 'docs/specs/02_lore/06_languages.md section 8; docs/plans/zin-map/naming_request.md', generatedBy: 'tools/content/modules/world_names.mjs', counts: result.report, columns: ['key', 'name', 'language', 'layer', 'gloss', 'anchor'] };
   const entries = keys.map(k => { const n = result.names.get(k); return JSON.stringify([k, n.name, n.language, n.layer, n.gloss, n.anchor]); });
   staged.text(NAMES_DOC, `{\n${Object.entries(head).map(([k, v]) => `${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(',\n')},\n"entries": [\n${entries.join(',\n')}\n]\n}`);

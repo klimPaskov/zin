@@ -105,7 +105,7 @@ test('a state is named in the language of its owner; Zol\'s Mistake and the Mush
   assert.ok(themed > 50 && native > 1500, `${themed} themed, ${native} native`);
 });
 
-test('the same map gives the same names, and the staged file is a BOM-marked l_english file of override keys', async () => {
+test('the same map gives the same names, and the staged file is the map tool\'s names file with the natural names written in', async () => {
   const again = run();
   assert.deepEqual([...again.names].map(([k, v]) => [k, v.name]), [...first.names].map(([k, v]) => [k, v.name]));
   resetNaming();
@@ -115,12 +115,14 @@ test('the same map gives the same names, and the staged file is a BOM-marked l_e
   assert.deepEqual([...bytes.subarray(0, 3)], [0xef, 0xbb, 0xbf]);
   const lines = bytes.toString('utf8').split('\n');
   assert.equal(lines[0].replace('﻿', ''), 'l_english:');
-  const keys = lines.slice(1).filter(Boolean).map(l => /^ ([A-Z_]+_\d+): "[^"]+"$/.exec(l)?.[1]);
-  assert.ok(keys.every(Boolean) && new Set(keys).size === keys.length && keys.every(k => current.has(k)), 'every line is a key of the map tool\'s file');
-  assert.equal(keys.length, first.names.size);
+  // State, victory point, region and province keys (PROV1468), and the lowercase continent keys (world_continent_1).
+  const rows = lines.slice(1).filter(Boolean).map(l => /^ ([A-Za-z_]+_?\d+): "(.*)"$/.exec(l));
+  const keys = rows.map(r => r?.[1]);
+  assert.ok(keys.every(Boolean) && new Set(keys).size === keys.length && keys.length === current.size && keys.every(k => current.has(k)), 'every key of the map tool\'s file, once');
+  for (const [, k, v] of rows) assert.equal(v, first.names.get(k)?.name ?? current.get(k), k);
   assert.ok(!lines.some(l => /:0 /.test(l)), 'no :0 version marker');
   const doc = JSON.parse(staged.files.get(NAMES_DOC).toString('utf8'));
-  assert.equal(doc.entries.length, keys.length);
+  assert.equal(doc.entries.length, first.names.size, 'the name document lists every renamed key');
   assert.equal(report.states, first.report.states);
 });
 

@@ -70,7 +70,8 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     `check_variable = { global.zin_west_fleet > ${C.fleet_cross_at - 1} }`, `check_variable = { global.zin_west_resolve > ${C.resolve_cross_at - 1} }`,
     L('OR', gflag('zin_war_of_last_crowns'), L('AND', 'date > 1754.3.1', `check_variable = { global.zin_west_resolve > ${C.resolve_early_at - 1} }`, L('any_country', 'zin_aenor_is_realm = yes', L('OR', 'has_civil_war = yes', 'has_war = yes')))));
   T('zin_west_controls_parim', L('any_state', 'zin_is_site_parim = yes', L('controller', 'zin_west_in_crossing = yes')));
-  T('zin_west_holds_aenor_states', L('any_state', L('owner', 'zin_aenor_is_realm = yes'), L('controller', 'zin_west_in_crossing = yes')));
+  // From the realm to its owned states: any_state reaches the map's unowned states, whose owner scope is invalid.
+  T('zin_west_holds_aenor_states', L('any_country', 'zin_aenor_is_realm = yes', L('any_owned_state', L('controller', 'zin_west_in_crossing = yes'))));
   T('zin_west_strain_high', `check_variable = { global.zin_west_strain > ${C.strain_shore_calls - 1} }`);
   T('zin_west_has_divisions_in_middle_lands', `num_divisions_in_states = { count > 0 states = { ${mlList} } }`);
   // paced floor dates (R2), each an OR of the three story-pace branches

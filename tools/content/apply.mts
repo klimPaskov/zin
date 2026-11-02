@@ -27,7 +27,8 @@ const { WorkspaceResolver } = await core('workspace');
 const { TransactionManager } = await core('transactions');
 const { sha256Bytes } = await core('canonical') as { sha256Bytes: (bytes: Uint8Array) => string };
 
-const SHARED_WORLD_FILES = new Set(['descriptor.mod', 'common/bookmarks/world.txt', 'common/on_actions/world.txt']);
+// The map tool's names file carries the natural names (modules/world_names.mjs: the game keeps this file's value for a key).
+const SHARED_WORLD_FILES = new Set(['descriptor.mod', 'common/bookmarks/world.txt', 'common/on_actions/world.txt', 'localisation/replace/world_l_english.yml']);
 // The orders of battle are the forces module's; the map generator's manifest still owns the files of the same names until apply rewrites its hash.
 const SHARED_WORLD_PATTERNS = [/^history\/units\/[A-Z0-9]{3}_world(_naval)?\.txt$/];
 const CONTENT_MANIFEST = '.zin-content.json', WORLD_MANIFEST = '.hoi4-agent-world.json';

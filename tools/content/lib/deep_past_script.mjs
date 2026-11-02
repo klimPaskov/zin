@@ -29,6 +29,9 @@ const to = (t, ...b) => B(t, b);
 const tell = (t, id) => IF(exists(t), to(t, ev(id)));
 const neighbours = id => B('every_neighbor_country', ev(id));
 const site = k => `var:global.zin_deep_site_${k}`;
+// A site check in a trigger: the site variables are set at start-up, and decisions are checked before it; an unset variable scopes to
+// the country and logs an error, so the check asks for the variable first.
+const siteT = (k, ...body) => B('AND', `has_variable = global.zin_deep_site_${k}`, B(site(k), ...body));
 const pay = (type, amount) => `add_equipment_to_stockpile = { type = ${type} amount = -${amount} }`;
 const hasEq = (type, amount) => `has_equipment = { ${type} > ${amount - 1} }`;
 const opinion = (who, target, mod) => to(who, `add_opinion_modifier = { target = ${target} modifier = ${mod} }`);
@@ -65,14 +68,14 @@ export function deepScripts(D, P) {
   T.zin_deep_low_country_lost = L('# Two keepings destroyed: the Low Country can never be pieced together in this game.',
     OR(B('AND', gflag('zin_deep_cord_burned'), gflag('zin_deep_count_scattered')), B('AND', gflag('zin_deep_cord_burned'), gflag('zin_deep_tide_broken')), B('AND', gflag('zin_deep_count_scattered'), gflag('zin_deep_tide_broken'))));
   T.zin_deep_cairn_oath_kept = '# A seeker has kept the Cairn-Oath for the constant number of years (Hirolon\'s AI reads it).\nhas_global_flag = zin_deep_oath_proven';
-  T.zin_deep_halls_opened = L('# The realm owns the Kalioth state and has opened its shafts.', flag('zin_deep_kalioth_shafts'), B(site('kalioth_halls'), 'is_owned_by = ROOT'));
+  T.zin_deep_halls_opened = L('# The realm owns the Kalioth state and has opened its shafts.', flag('zin_deep_kalioth_shafts'), siteT('kalioth_halls', 'is_owned_by = ROOT'));
   T.zin_deep_holds_hearth_stone = '# The realm holds the hearth-stone of the king\'s hall under the ice.\nhas_country_flag = zin_deep_hearth_stone';
   T.zin_deep_moot_sitting = '# The Road Moot sits with all four holds.\nhas_global_flag = zin_deep_road_moot';
   const pairs = [];
   for (let i = 0; i < holds.length; i++) for (let j = i + 1; j < holds.length; j++) pairs.push(NOT(to(holds[i], `has_war_with = ${holds[j]}`)));
   T.zin_deep_all_holds_stand = L('# All four holds exist and none is at war with another.', holds.map(exists), pairs);
   T.zin_deep_square_open_to = L('# The Cursed Square\'s shore is ours, held by us, or opened to us by sale or the Charter.',
-    OR(flag('zin_deep_square_open'), B(site('cursed_square_shore'), 'is_controlled_by = ROOT')));
+    OR(flag('zin_deep_square_open'), siteT('cursed_square_shore', 'is_controlled_by = ROOT')));
   T.zin_deep_owns_ice_state = B('any_owned_state', OR('has_state_flag = zin_deep_site_frozen_lands', 'has_state_flag = zin_deep_site_far_ice'));
   T.zin_deep_long_light = L('# The Long Light after a mild winter: the Cold Lands\' winter roll (zin_cold.10) set 0 for the winter just past and the next winter has not begun.',
     NOT(gflag('zin_cold_winter_season')), 'check_variable = { global.zin_cold_winter < 0.5 }');
@@ -84,8 +87,8 @@ export function deepScripts(D, P) {
   T.zin_deep_has_pilots = L('# The crossing host has island pilots: a chart-island realm or Orohaf sails with it.',
     B('any_country', 'zin_west_in_crossing = yes', tagIs(pilots)));
 
-  const navalBase = (k, lvl) => B(site(k), `any_province_building_level = { province = { all_provinces = yes } building = naval_base level > ${lvl - 1} }`);
-  const ownedOr = k => B(site(k), OR('is_owned_by = ROOT', 'owner = { is_subject_of = ROOT }'));
+  const navalBase = (k, lvl) => siteT(k, `any_province_building_level = { province = { all_provinces = yes } building = naval_base level > ${lvl - 1} }`);
+  const ownedOr = k => siteT(k, OR('is_owned_by = ROOT', 'owner = { is_subject_of = ROOT }'));
 
   // ---------------------------------------------------------------------------------------------- the start
   const capSite = (tag, k) => to(tag, B('capital_scope', `set_state_flag = zin_deep_site_${k}`, `set_variable = { global.zin_deep_site_${k} = THIS }`));
@@ -180,7 +183,7 @@ export function deepScripts(D, P) {
   const diveVisible = L('zin_deep_has_tide = yes', OR(B('AND', 'zin_deep_has_cord = yes', 'zin_deep_has_stone = yes'), B('AND', `original_tag = ${t.ORH}`, flag('zin_deep_mound_own_name'))),
     NOT(gflag('zin_deep_mothers_stone_raised')));
   const diveAvail = L(tt('zin_deep_tt_tide_window', 'zin_deep_tide_window = yes'), tt('zin_deep_tt_dive_cooldown', NOT(flag('zin_deep_dive_cooldown'))),
-    tt('zin_deep_tt_mound_reach', OR(B(site('mothers_mound_shore'), 'is_owned_by = ROOT'), flag('zin_deep_shared_tide'))),
+    tt('zin_deep_tt_mound_reach', OR(siteT('mothers_mound_shore', 'is_owned_by = ROOT'), flag('zin_deep_shared_tide'))),
     tt('zin_deep_tt_mound_base', navalBase('mothers_mound_shore', N.dive_naval_base)), NOT('has_war = yes'));
   const divePay = mult => L(`navy_experience = -${N.dive_navy_xp * mult}`, `add_manpower = -${N.dive_manpower * mult}`, pay('convoy', N.dive_convoys * mult));
   for (const [suffix, mult, when] of [['', 1, NOT(to(t.ORH, 'is_subject = yes'))], ['_hard', 2, to(t.ORH, 'is_subject = yes')]]) {
@@ -189,7 +192,7 @@ export function deepScripts(D, P) {
       available: L(diveAvail, `navy_experience > ${N.dive_navy_xp * mult - 1}`, `has_manpower > ${N.dive_manpower * mult - 1}`, hasEq('convoy', N.dive_convoys * mult)),
       effect: L(ett(`zin_deep_dive_mothers_mound${suffix}_tt`), hidden(divePay(mult), 'set_country_flag = zin_deep_dived_mound')),
       remove: 'zin_deep_dive_outcome = yes',
-      ai: aiBase(N.ai_dive_base, ['factor', 0, NOT(B(site('mothers_mound_shore'), 'is_owned_by = ROOT'))]) });
+      ai: aiBase(N.ai_dive_base, ['factor', 0, NOT(siteT('mothers_mound_shore', 'is_owned_by = ROOT'))]) });
   }
   E.zin_deep_dive_outcome = L('# The storm roll of the dive (6.4): the Mothers\' Stone, the hall-door, or the divers lost. The Tide and Borrak\'s divers lower the risk.',
     B('random_list',
@@ -260,8 +263,8 @@ export function deepScripts(D, P) {
     effect: L(ett('zin_deep_ask_the_archive_tt'), hidden(to(t.ELD, ev(60)))), ai: aiBase(N.ai_ask_base) });
   dec('zin_deep_two_shores', { id: 'zin_deep_raise_the_bridge_road', icon: 'roads_paved', cost: N.road_pp,
     visible: L(flag('zin_deep_bridge_treaty'), NOT(gflag('zin_deep_bridge_road'))),
-    available: L(tt('zin_deep_tt_gates_held', B(site('gate_west'), OR('is_owned_by = ROOT', 'owner = { is_subject_of = ROOT }', 'owner = { is_in_faction_with = ROOT }')),
-      B(site('gate_east'), OR('is_owned_by = ROOT', 'owner = { is_subject_of = ROOT }', 'owner = { is_in_faction_with = ROOT }'))), hasEq('convoy', N.road_convoys), hasEq('zin_camp_equipment', N.road_camp)),
+    available: L(tt('zin_deep_tt_gates_held', siteT('gate_west', OR('is_owned_by = ROOT', 'owner = { is_subject_of = ROOT }', 'owner = { is_in_faction_with = ROOT }')),
+      siteT('gate_east', OR('is_owned_by = ROOT', 'owner = { is_subject_of = ROOT }', 'owner = { is_in_faction_with = ROOT }'))), hasEq('convoy', N.road_convoys), hasEq('zin_camp_equipment', N.road_camp)),
     effect: L(ett('zin_deep_raise_the_bridge_road_tt'), hidden(pay('convoy', N.road_convoys), pay('zin_camp_equipment', N.road_camp), 'set_global_flag = zin_deep_bridge_road', 'set_country_flag = zin_deep_bridge_road_raised',
       ['gate_west', 'gate_east'].map(g => B(site(g), 'add_building_construction = { type = infrastructure level = 1 instant_build = yes }',
         'add_building_construction = { type = naval_base level = 1 province = { all_provinces = yes limit_to_coastal = yes } instant_build = yes }', 'add_dynamic_modifier = { modifier = zin_deep_gates_cleared }')),
@@ -289,8 +292,8 @@ export function deepScripts(D, P) {
   // ---------------------------------------------------------------------------------------------- the Kalioth Crown (Rhabtarkia)
   E.zin_deep_open_kalioth = '# Under the Seven Forts (Erco\'s focus): the Kalioth category opens, with Open the Old Shafts.\nset_country_flag = zin_deep_kalioth_open';
   dec('zin_deep_kalioth', { id: 'zin_deep_open_the_old_shafts', icon: 'mine_cart', cost: N.shafts_pp, days: N.shafts_days,
-    visible: L(OR(flag('zin_deep_kalioth_open'), B('AND', NOT(`original_tag = ${t.ERC}`), B(site('kalioth_halls'), 'is_owned_by = ROOT'))), NOT(flag('zin_deep_kalioth_shafts')), NOT(flag('zin_deep_shafts_digging')), NOT(gflag('zin_deep_diadem_decided'))),
-    available: L(B(site('kalioth_halls'), 'is_owned_by = ROOT'), `has_manpower > ${N.shafts_manpower - 1}`, hasEq('zin_arms_equipment', N.shafts_equipment)),
+    visible: L(OR(flag('zin_deep_kalioth_open'), B('AND', NOT(`original_tag = ${t.ERC}`), siteT('kalioth_halls', 'is_owned_by = ROOT'))), NOT(flag('zin_deep_kalioth_shafts')), NOT(flag('zin_deep_shafts_digging')), NOT(gflag('zin_deep_diadem_decided'))),
+    available: L(siteT('kalioth_halls', 'is_owned_by = ROOT'), `has_manpower > ${N.shafts_manpower - 1}`, hasEq('zin_arms_equipment', N.shafts_equipment)),
     effect: L(ett('zin_deep_open_the_old_shafts_tt'), hidden(`add_manpower = -${N.shafts_manpower}`, pay('zin_arms_equipment', N.shafts_equipment), 'set_country_flag = zin_deep_shafts_digging')),
     remove: L('clr_country_flag = zin_deep_shafts_digging', 'set_country_flag = zin_deep_kalioth_shafts', 'set_country_flag = zin_deep_kalioth_open',
       B(site('kalioth_halls'), IF(NOT('has_dynamic_modifier = { modifier = zin_deep_kalioth_halls_opened }'), 'add_dynamic_modifier = { modifier = zin_deep_kalioth_halls_opened }')),
@@ -415,7 +418,7 @@ export function deepScripts(D, P) {
     'set_country_flag = zin_deep_square_known', 'set_country_flag = zin_deep_sea_roads_open');
   const seaSeeker = OR('zin_deep_charter_member = yes', `original_tag = ${t.NND}`);
   dec('zin_deep_sea_roads', { id: 'zin_deep_buy_the_square', icon: 'coin_chest', cost: N.buy_square_pp, cooldown: N.ask_cooldown_days,
-    visible: L(flag('zin_deep_square_known'), seaSeeker, NOT('zin_deep_square_open_to = yes'), exists(t.BEN), B(site('cursed_square_shore'), `is_owned_by = ${t.BEN}`)),
+    visible: L(flag('zin_deep_square_known'), seaSeeker, NOT('zin_deep_square_open_to = yes'), exists(t.BEN), siteT('cursed_square_shore', `is_owned_by = ${t.BEN}`)),
     available: L(`NOT = { has_war_with = ${t.BEN} }`, hasEq('convoy', N.buy_square_convoys), tt('zin_deep_tt_benan_refused', NOT(flag('zin_deep_benan_refused')))),
     effect: L(ett('zin_deep_buy_the_square_tt'), hidden(pay('convoy', N.buy_square_convoys), to(t.BEN, ev(202)))), ai: aiBase(N.ai_ask_base) });
   dec('zin_deep_sea_roads', { id: 'zin_deep_benan_into_the_charter', icon: 'banner_league', cost: N.charter_ask_pp, cooldown: N.ask_cooldown_days,
@@ -534,12 +537,12 @@ export function deepScripts(D, P) {
     IF(L(exists(t.ORH), to(t.ORH, B('any_owned_state', 'has_state_flag = zin_deep_site_nimlan_banks'), NOT(flag('zin_deep_nets_recent')))),
       to(t.ORH, B('random_list', B(String(N.nets_chance), B('modifier', `add = ${N.nets_chance}`, flag('zin_deep_nets_kept')), `set_country_flag = { flag = zin_deep_nets_recent days = ${N.nets_cooldown_days} }`, IF(flag('zin_deep_nets_kept'), ev(2)), ELSE(ev(1))), B(String(100 - N.nets_chance), '')))),
     '# The keepings taken by force (6.4): the Last Cord burns, the count is scattered, the queens\' divers refuse a master.',
-    IF(L(NOT(gflag('zin_deep_cord_burned')), NOT(gflag('zin_deep_last_cord_hidden')), B(site('eldest_barrow'), NOT(`is_controlled_by = ${t.CUR}`), B('controller', `has_war_with = ${t.CUR}`))),
+    IF(L(NOT(gflag('zin_deep_cord_burned')), NOT(gflag('zin_deep_last_cord_hidden')), siteT('eldest_barrow', NOT(`is_controlled_by = ${t.CUR}`), B('controller', `has_war_with = ${t.CUR}`))),
       'set_global_flag = zin_deep_cord_burned', 'set_global_flag = zin_deep_keeping_taken', IF(exists(t.CUR), to(t.CUR, 'clr_country_flag = zin_deep_keeps_cord')),
       B(site('eldest_barrow'), B('controller', 'save_event_target_as = zin_deep_taker', ev(15))),
       [t.CUR, t.BLO, t.HIR, t.ORH].map(x => IF(exists(x), opinion(x, 'event_target:zin_deep_taker', 'zin_opinion_keeping_taken'), to(x, ev(16)))),
       IF(L(exists(t.AEN), 'event_target:zin_deep_taker = { original_tag = ' + t.AEN + ' }'), [t.CUR, t.BLO].map(x => IF(exists(x), opinion(x, t.AEN, 'zin_opinion_drowned_inheritance'))))),
-    IF(L(NOT(gflag('zin_deep_count_scattered')), B(site('eldest_cairn'), NOT(`is_controlled_by = ${t.HIR}`), B('controller', `has_war_with = ${t.HIR}`))),
+    IF(L(NOT(gflag('zin_deep_count_scattered')), siteT('eldest_cairn', NOT(`is_controlled_by = ${t.HIR}`), B('controller', `has_war_with = ${t.HIR}`))),
       'set_global_flag = zin_deep_count_scattered', 'set_global_flag = zin_deep_keeping_taken', IF(exists(t.HIR), to(t.HIR, 'clr_country_flag = zin_deep_keeps_stone')),
       B(site('eldest_cairn'), B('controller', 'save_event_target_as = zin_deep_taker', ev(17))),
       [t.HIR, t.CUR, t.ORH].map(x => IF(exists(x), opinion(x, 'event_target:zin_deep_taker', 'zin_opinion_keeping_taken')))),
@@ -644,7 +647,7 @@ export function deepScripts(D, P) {
   ];
   const achievements = L(`unique_id = ${D.achievementsId}`, ach.map(([id, possible, happened]) => B(id, B('possible', 'has_start_date < 1748.3.2', possible), B('happened', happened))));
 
-  const catVisible = { zin_deep_kalioth: OR(flag('zin_deep_kalioth_open'), B('AND', NOT(`original_tag = ${t.ERC}`), B(site('kalioth_halls'), 'is_owned_by = ROOT'))) };
+  const catVisible = { zin_deep_kalioth: OR(flag('zin_deep_kalioth_open'), B('AND', NOT(`original_tag = ${t.ERC}`), siteT('kalioth_halls', 'is_owned_by = ROOT'))) };
   return { T, E, start, decisions, missions, catVisible, sloc: sloc.join('\n'), achievements, achievementIds: ach.map(a => a[0]), holds, walkers, isles, corsairs };
 }
 

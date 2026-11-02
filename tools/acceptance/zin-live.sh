@@ -106,7 +106,8 @@ start)
     grep -q '"WantsOfflineMode"[[:space:]]*"1"' "$HOME/.local/share/Steam/config/loginusers.vdf" 2>/dev/null \
       || { echo 'Steam is not set to Offline Mode (Steam menu > Go Offline); refusing to start'; exit 1; }
     if ! steam_up; then
-      nohup steam -silent >"$zin_runtime/steam.log" 2>&1 </dev/null &
+      # Steam opens its windows on WSLg (:0); this script exports DISPLAY=:96 for the game's Xvfb screen.
+      DISPLAY=:0 WAYLAND_DISPLAY=wayland-0 nohup steam -silent >"$zin_runtime/steam.log" 2>&1 </dev/null &
       for i in $(seq 1 60); do sleep 3; steam_up && break; done
       sleep 45
     fi
