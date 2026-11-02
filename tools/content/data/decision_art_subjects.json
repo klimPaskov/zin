@@ -1,0 +1,719 @@
+{
+ "about": "Subject of each decision seal (lane I11), keyed by seal key: the sprite GFX_decision_zin_<key>. Written from each decision name and description in localisation (what the decision does), one flat emblem per seal. No faces, no crosses, no real-world religious, national or political symbols, no modern objects, no demons or devils; no Afrit name or demon form before zin_afrit_revealed.",
+ "subjects": [
+  {
+   "key": "chain_broken",
+   "family": "aenor_court",
+   "decision": "zin_aenor_restore_charter",
+   "subject": "a charter scroll with its ribbon mended and a single whole chain link laid across it"
+  },
+  {
+   "key": "handshake_oath",
+   "family": "aenor_court",
+   "decision": "zin_aenor_invite_to_shield",
+   "subject": "two clasped hands above a small round shield"
+  },
+  {
+   "key": "afrit_house_first_light",
+   "family": "afrit",
+   "decision": "zin_afrit_open_house",
+   "subject": "a lantern with a rising sun behind a plain hall gate"
+  },
+  {
+   "key": "afrit_confessional",
+   "family": "afrit",
+   "decision": "zin_afrit_hear_confession",
+   "subject": "a closed wooden confessional screen with a small grille"
+  },
+  {
+   "key": "afrit_ledger_coins",
+   "family": "afrit",
+   "decision": "zin_afrit_call_debt",
+   "subject": "a stack of gold coins on an open ledger"
+  },
+  {
+   "key": "afrit_seal_wax",
+   "family": "afrit",
+   "decision": "zin_afrit_silence_dissenter",
+   "subject": "a red sealing-wax stamp pressed into a folded letter"
+  },
+  {
+   "key": "afrit_seal_chancellor",
+   "family": "afrit",
+   "decision": "zin_afrit_steer_the_court",
+   "subject": "a chancellor quill and inkwell on a folded letter"
+  },
+  {
+   "key": "afrit_scroll_sealed",
+   "family": "afrit",
+   "decision": "zin_afrit_edict_of_arms",
+   "subject": "a rolled edict scroll tied with cord and sealed in dark wax"
+  },
+  {
+   "key": "afrit_granary",
+   "family": "afrit",
+   "decision": "zin_afrit_open_famine_stores",
+   "subject": "a sack of grain and a bundle of wheat ears"
+  },
+  {
+   "key": "afrit_necklace_deep",
+   "family": "afrit",
+   "decision": "zin_afrit_draw_on_necklace",
+   "subject": "a necklace of dark beads with one deep blue stone"
+  },
+  {
+   "key": "afrit_scout_lantern",
+   "family": "afrit",
+   "decision": "zin_afrit_send_the_thief",
+   "subject": "a hooded lantern with a thin beam of light"
+  },
+  {
+   "key": "afrit_banner_plain",
+   "family": "afrit",
+   "decision": "zin_afrit_raise_the_faithful",
+   "subject": "a plain undecorated cloth banner on a pole"
+  },
+  {
+   "key": "afrit_fort_wall",
+   "family": "afrit",
+   "decision": "zin_afrit_close_houses",
+   "subject": "a stone wall with a closed iron-bound gate"
+  },
+  {
+   "key": "deep_birth_rolls",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_cord_mothers",
+   "subject": "a knotted cord wound around a wooden spindle"
+  },
+  {
+   "key": "deep_giant_hammer",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_cairn_keepers",
+   "subject": "a great stone hammer head with a worn haft"
+  },
+  {
+   "key": "deep_island_shrine",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_isle_houses",
+   "subject": "a small stone shrine standing on a rock at the tide line"
+  },
+  {
+   "key": "deep_necklace_deep",
+   "family": "deep_past",
+   "decision": "zin_deep_dive_mothers_mound",
+   "subject": "a slab of cut reef stone with a coiled diver rope"
+  },
+  {
+   "key": "deep_crown_witnesses",
+   "family": "deep_past",
+   "decision": "zin_deep_moot_of_mothers_cur",
+   "subject": "four cords tied to a central standing stone"
+  },
+  {
+   "key": "deep_river_ford",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_ferry_leave",
+   "subject": "a ferryman rope stretched across a ford"
+  },
+  {
+   "key": "deep_mushroom_grove",
+   "family": "deep_past",
+   "decision": "zin_deep_stones_under_the_caps",
+   "subject": "a fallen stone pillar with a mushroom cap growing on it"
+  },
+  {
+   "key": "deep_herds",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_fair_consent",
+   "subject": "a horse head in a leather halter"
+  },
+  {
+   "key": "deep_quarry_stone",
+   "family": "deep_past",
+   "decision": "zin_deep_pillars_of_the_fair",
+   "subject": "a fallen drum of a column, cut stone"
+  },
+  {
+   "key": "deep_scroll_treaty",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_the_archive",
+   "subject": "a rolled treaty scroll tied with a knot seal"
+  },
+  {
+   "key": "deep_roads_paved",
+   "family": "deep_past",
+   "decision": "zin_deep_raise_the_bridge_road",
+   "subject": "a paved road curving over a stone bridge arch"
+  },
+  {
+   "key": "deep_bridge_oaths",
+   "family": "deep_past",
+   "decision": "zin_deep_bridge_kingdom",
+   "subject": "a stone bridge arch with a crown set above it"
+  },
+  {
+   "key": "deep_mine_cart",
+   "family": "deep_past",
+   "decision": "zin_deep_open_the_old_shafts",
+   "subject": "an ore basket with a pick laid across it"
+  },
+  {
+   "key": "deep_crown_iron",
+   "family": "deep_past",
+   "decision": "zin_deep_kalioth_crown",
+   "subject": "an iron diadem set with dark gems"
+  },
+  {
+   "key": "deep_tribute_chest",
+   "family": "deep_past",
+   "decision": "zin_deep_demand_old_tribute",
+   "subject": "a chest bound with iron bands and a heavy lock"
+  },
+  {
+   "key": "deep_olive_branch",
+   "family": "deep_past",
+   "decision": "zin_deep_yield_the_old_blame",
+   "subject": "an olive branch tied with a cord"
+  },
+  {
+   "key": "deep_council_table",
+   "family": "deep_past",
+   "decision": "zin_deep_call_the_road_moot",
+   "subject": "a round stone table ringed by standing stones"
+  },
+  {
+   "key": "deep_ring_doors",
+   "family": "deep_past",
+   "decision": "zin_deep_the_sea_is_the_seal",
+   "subject": "a round stone door with a bronze ring handle set in an arch of stone"
+  },
+  {
+   "key": "deep_abyss_stair",
+   "family": "deep_past",
+   "decision": "zin_deep_open_the_sea_door",
+   "subject": "a spiral stair going down into the dark"
+  },
+  {
+   "key": "deep_ward_circle",
+   "family": "deep_past",
+   "decision": "zin_deep_seal_the_deep",
+   "subject": "a ring of warding stones with a bronze hook"
+  },
+  {
+   "key": "deep_coin_chest",
+   "family": "deep_past",
+   "decision": "zin_deep_buy_the_square",
+   "subject": "a small chest spilling coins"
+  },
+  {
+   "key": "deep_banner_league",
+   "family": "deep_past",
+   "decision": "zin_deep_benan_into_the_charter",
+   "subject": "a league banner on a spear"
+  },
+  {
+   "key": "deep_lighthouse",
+   "family": "deep_past",
+   "decision": "zin_deep_ask_the_lamp",
+   "subject": "a squat stone lighthouse tower with a lamp"
+  },
+  {
+   "key": "deep_lantern_chain",
+   "family": "deep_past",
+   "decision": "zin_deep_relight_the_square",
+   "subject": "a chain of three hanging lanterns"
+  },
+  {
+   "key": "deep_great_warship",
+   "family": "deep_past",
+   "decision": "zin_deep_crowns_route_to_the_isles",
+   "subject": "the curved prow of a sea-going ship with a sail"
+  },
+  {
+   "key": "deep_compass_rose",
+   "family": "deep_past",
+   "decision": "zin_deep_the_sea_roads_ade",
+   "subject": "a compass rose with eight points"
+  },
+  {
+   "key": "deep_footprints_snow",
+   "family": "deep_past",
+   "decision": "zin_deep_send_an_ice_walk",
+   "subject": "a line of footprints in snow"
+  },
+  {
+   "key": "deep_ice_cavern",
+   "family": "deep_past",
+   "decision": "zin_deep_guides_to_the_old_halls",
+   "subject": "a bronze bowl set in blue ice"
+  },
+  {
+   "key": "deep_courier_pilgrim",
+   "family": "deep_past",
+   "decision": "zin_deep_carry_a_find_west",
+   "subject": "a traveller satchel and a walking staff"
+  },
+  {
+   "key": "deep_ship_voyage",
+   "family": "deep_past",
+   "decision": "zin_deep_carry_a_find_to_the_isles",
+   "subject": "a bronze ship ornament on a rope"
+  },
+  {
+   "key": "deep_crown_radiant",
+   "family": "deep_past",
+   "decision": "zin_deep_the_sun_crown_cld",
+   "subject": "a sun crown of rays on a cushion"
+  },
+  {
+   "key": "dev_send_scholars",
+   "family": "development",
+   "decision": "zin_dev_send_scholars",
+   "subject": "an open book and a travelling satchel"
+  },
+  {
+   "key": "dev_endow_learning",
+   "family": "development",
+   "decision": "zin_dev_endow_learning",
+   "subject": "a small stone house with a lamp in its window"
+  },
+  {
+   "key": "dominion_wake_old_barrows",
+   "family": "dominion",
+   "decision": "zin_dominion_wake_old_barrows",
+   "subject": "a burial mound with a stone door set in it"
+  },
+  {
+   "key": "dominion_muster_beneath_the_storms",
+   "family": "dominion",
+   "decision": "zin_dominion_muster_beneath_the_storms",
+   "subject": "a storm cloud gathered over a banner"
+  },
+  {
+   "key": "dominion_raise_a_grave_host",
+   "family": "dominion",
+   "decision": "zin_dominion_raise_a_grave_host",
+   "subject": "a grave marker stone with a standing helm on top"
+  },
+  {
+   "key": "dominion_bind_the_restless",
+   "family": "dominion",
+   "decision": "zin_dominion_bind_the_restless",
+   "subject": "an iron chain wound around a banner pole"
+  },
+  {
+   "key": "dominion_wake_old_battlefields",
+   "family": "dominion",
+   "decision": "zin_dominion_wake_old_battlefields",
+   "subject": "a cracked round shield leaning against a standing stone"
+  },
+  {
+   "key": "dominion_summon_the_dominion",
+   "family": "dominion",
+   "decision": "zin_dominion_summon_the_dominion",
+   "subject": "a black crown on a dark banner"
+  },
+  {
+   "key": "dominion_demand_tribute",
+   "family": "dominion",
+   "decision": "zin_dominion_demand_tribute",
+   "subject": "a sheaf of grain and an iron ingot"
+  },
+  {
+   "key": "dominion_grant_spoils",
+   "family": "dominion",
+   "decision": "zin_dominion_grant_spoils",
+   "subject": "a treasure chest open with coins spilling out"
+  },
+  {
+   "key": "dominion_nether_gate",
+   "family": "dominion",
+   "decision": "zin_dominion_nether_gate",
+   "subject": "a dark arched gateway in a stone wall"
+  },
+  {
+   "key": "dominion_descend_again",
+   "family": "dominion",
+   "decision": "zin_dominion_descend_again",
+   "subject": "a rope ladder hanging into a deep pit"
+  },
+  {
+   "key": "dominion_silence_the_watchers",
+   "family": "dominion",
+   "decision": "zin_dominion_silence_the_watchers",
+   "subject": "a shuttered lantern and a bound scroll"
+  },
+  {
+   "key": "dominion_make_a_client_crown",
+   "family": "dominion",
+   "decision": "zin_dominion_make_a_client_crown",
+   "subject": "a small crown on a cushion with a short chain"
+  },
+  {
+   "key": "dominion_send_envoys",
+   "family": "dominion",
+   "decision": "zin_dominion_send_envoys",
+   "subject": "a herald staff with a pennant"
+  },
+  {
+   "key": "dominion_send_scouts_south",
+   "family": "dominion",
+   "decision": "zin_dominion_send_scouts_south",
+   "subject": "a raven on a stone post"
+  },
+  {
+   "key": "dominion_send_word_to_parim",
+   "family": "dominion",
+   "decision": "zin_dominion_send_word_to_parim",
+   "subject": "a sealed letter laid on a rolled ledger"
+  },
+  {
+   "key": "dominion_raise_the_pass_forts",
+   "family": "dominion",
+   "decision": "zin_dominion_raise_the_pass_forts",
+   "subject": "a stone watch tower on a mountain pass"
+  },
+  {
+   "key": "scroll_sealed",
+   "family": "eindil",
+   "decision": "zin_eindil_ask_counsel",
+   "subject": "a folded guest letter sealed in plain wax"
+  },
+  {
+   "key": "traders_road",
+   "family": "eindil",
+   "decision": "zin_eindil_speed_him_on",
+   "subject": "a saddle bridle and a small purse of coins"
+  },
+  {
+   "key": "grey_ford",
+   "family": "eindil",
+   "decision": "zin_eindil_enforce_peace",
+   "subject": "a shallow ford with a stone marker standing at its edge"
+  },
+  {
+   "key": "banner_league",
+   "family": "eindil",
+   "decision": "zin_eindil_call_stranded",
+   "subject": "a torn red banner on a pole with a bundle of league cords at its foot"
+  },
+  {
+   "key": "frozen_gate",
+   "family": "eindil",
+   "decision": "zin_eindil_find_passages",
+   "subject": "an iron gate half buried in fallen leaves"
+  },
+  {
+   "key": "alliance_rings",
+   "family": "eindil",
+   "decision": "zin_eindil_rally_rebels",
+   "subject": "three interlocking iron rings"
+  },
+  {
+   "key": "palace_wards",
+   "family": "eindil",
+   "decision": "zin_eindil_enter_palace",
+   "subject": "a palace door with a large iron key"
+  },
+  {
+   "key": "elves_call_elder_moot",
+   "family": "elves",
+   "decision": "zin_elves_call_elder_moot",
+   "subject": "a ring of seven standing stones and a moot horn"
+  },
+  {
+   "key": "elves_raise_the_kindred",
+   "family": "elves",
+   "decision": "zin_elves_raise_the_kindred",
+   "subject": "a bundle of oak branches bound with a cord"
+  },
+  {
+   "key": "elves_mediate_rivals",
+   "family": "elves",
+   "decision": "zin_elves_mediate_rivals",
+   "subject": "two leaves growing on one twig"
+  },
+  {
+   "key": "elves_settle_the_feud",
+   "family": "elves",
+   "decision": "zin_elves_settle_the_feud",
+   "subject": "a boundary stone set between two groves"
+  },
+  {
+   "key": "elves_wardens_for_the_passes",
+   "family": "elves",
+   "decision": "zin_elves_wardens_for_the_passes",
+   "subject": "a watch fire built on a stone ledge"
+  },
+  {
+   "key": "elves_call_wall_moot",
+   "family": "elves",
+   "decision": "zin_elves_call_wall_moot",
+   "subject": "a gate tower with a moot horn hung beside it"
+  },
+  {
+   "key": "elves_close_the_wall_roads",
+   "family": "elves",
+   "decision": "zin_elves_close_the_wall_roads",
+   "subject": "a closed wooden gate with an iron bar"
+  },
+  {
+   "key": "elves_reopen_the_wall_roads",
+   "family": "elves",
+   "decision": "zin_elves_reopen_the_wall_roads",
+   "subject": "an open gate with a road running through it"
+  },
+  {
+   "key": "elves_open_wall_gates",
+   "family": "elves",
+   "decision": "zin_elves_open_wall_gates",
+   "subject": "an arched gateway with a lantern hung over it"
+  },
+  {
+   "key": "elves_bar_wall_gates",
+   "family": "elves",
+   "decision": "zin_elves_bar_wall_gates",
+   "subject": "a heavy oak bar lying across two iron brackets"
+  },
+  {
+   "key": "elves_pilgrim_roads_open_decision",
+   "family": "elves",
+   "decision": "zin_elves_pilgrim_roads_open_decision",
+   "subject": "a pilgrim staff and a scallop shell"
+  },
+  {
+   "key": "elves_pilgrim_roads_toll_decision",
+   "family": "elves",
+   "decision": "zin_elves_pilgrim_roads_toll_decision",
+   "subject": "a toll coin set on a wooden bridge rail"
+  },
+  {
+   "key": "elves_pilgrim_roads_close_decision",
+   "family": "elves",
+   "decision": "zin_elves_pilgrim_roads_close_decision",
+   "subject": "a shut wooden door of a roadside hostel"
+  },
+  {
+   "key": "elves_seek_the_wizard",
+   "family": "elves",
+   "decision": "zin_elves_seek_the_wizard",
+   "subject": "a tall staff wrapped in leather beside a hooded cloak"
+  },
+  {
+   "key": "elves_send_healers",
+   "family": "elves",
+   "decision": "zin_elves_send_healers",
+   "subject": "a healer bowl with herbs and a bandage roll"
+  },
+  {
+   "key": "elves_send_wardens",
+   "family": "elves",
+   "decision": "zin_elves_send_wardens",
+   "subject": "a warden bow and a quiver of arrows"
+  },
+  {
+   "key": "elves_tend_the_roosts",
+   "family": "elves",
+   "decision": "zin_elves_tend_the_roosts",
+   "subject": "a dish of salt with a green sprig laid beside it"
+  },
+  {
+   "key": "glo_scroll_sealed",
+   "family": "glo",
+   "decision": "zin_glo_petition_horos",
+   "subject": "a sealed petition scroll with a green stone set on it"
+  },
+  {
+   "key": "glo_ward_circle",
+   "family": "glo",
+   "decision": "zin_glo_guard_the_hall",
+   "subject": "a warded gate with a standing spear planted before it"
+  },
+  {
+   "key": "glo_grave_host",
+   "family": "glo",
+   "decision": "zin_glo_grave_hunt",
+   "subject": "a hunting horn furred with frost"
+  },
+  {
+   "key": "glo_frozen_gate",
+   "family": "glo",
+   "decision": "zin_glo_enter_the_hall",
+   "subject": "a frozen stone door set in ice"
+  },
+  {
+   "key": "glo_abyss_stair",
+   "family": "glo",
+   "decision": "zin_glo_defile_seal",
+   "subject": "a dark cracked seal stone set in a hall floor"
+  },
+  {
+   "key": "glo_crystal_green",
+   "family": "glo",
+   "decision": "zin_glo_seek_as_bearer",
+   "subject": "a green crystal set in a bronze claw"
+  },
+  {
+   "key": "glo_new_gods_light",
+   "family": "glo",
+   "decision": "zin_glo_wave_decision",
+   "subject": "a sword driven point first into a grassy mound"
+  },
+  {
+   "key": "leren_toll_lower",
+   "family": "leren",
+   "decision": "zin_leren_toll_lower",
+   "subject": "a toll bar of a strait gate lifted open"
+  },
+  {
+   "key": "leren_toll_raise",
+   "family": "leren",
+   "decision": "zin_leren_toll_raise",
+   "subject": "a toll stone with a chain hung from it"
+  },
+  {
+   "key": "leren_appeal_to_the_treaty",
+   "family": "leren",
+   "decision": "zin_leren_appeal_to_the_treaty",
+   "subject": "a treaty scroll with a sealed clasp"
+  },
+  {
+   "key": "leren_close_the_strait",
+   "family": "leren",
+   "decision": "zin_leren_close_the_strait",
+   "subject": "a harbour chain stretched between two posts"
+  },
+  {
+   "key": "leren_send_envoys",
+   "family": "leren",
+   "decision": "zin_leren_send_envoys",
+   "subject": "an envoy letter with a seal and a ribbon"
+  },
+  {
+   "key": "leren_trade_charter",
+   "family": "leren",
+   "decision": "zin_leren_trade_charter",
+   "subject": "a merchant bale of cloth and a charter sheet"
+  },
+  {
+   "key": "leren_marriage_pact",
+   "family": "leren",
+   "decision": "zin_leren_marriage_pact",
+   "subject": "two gold rings on a cord"
+  },
+  {
+   "key": "leren_invite_to_compact",
+   "family": "leren",
+   "decision": "zin_leren_invite_to_compact",
+   "subject": "a shield bearing a ship sail"
+  },
+  {
+   "key": "leren_offer_protection",
+   "family": "leren",
+   "decision": "zin_leren_offer_protection",
+   "subject": "an open hand held over a small shield"
+  },
+  {
+   "key": "realm_heir_rolls",
+   "family": "realm_court",
+   "decision": "zin_realm_name_heir",
+   "subject": "a family tree roll and a small crown"
+  },
+  {
+   "key": "realm_two_crowns",
+   "family": "realm_court",
+   "decision": "zin_realm_seek_match",
+   "subject": "two small crowns linked by a ring"
+  },
+  {
+   "key": "realm_olive_branch",
+   "family": "realm_court",
+   "decision": "zin_realm_offer_terms",
+   "subject": "a green sprig tied around a small horn"
+  },
+  {
+   "key": "realm_exile_court",
+   "family": "realm_court",
+   "decision": "zin_realm_shelter_exiles",
+   "subject": "a travelling chest and a hall key"
+  },
+  {
+   "key": "realm_goblin_raiders",
+   "family": "realm_court",
+   "decision": "zin_realm_punish_raiders",
+   "subject": "a hooked raider axe with a wooden stake"
+  },
+  {
+   "key": "west_grey_ford",
+   "family": "west",
+   "decision": "zin_west_convene_council",
+   "subject": "a council bell hung on a grey stone"
+  },
+  {
+   "key": "west_chain_broken",
+   "family": "west",
+   "decision": "zin_west_end_the_truce",
+   "subject": "a torn truce banner on a pole with a broken chain hanging from it"
+  },
+  {
+   "key": "west_compass_rose",
+   "family": "west",
+   "decision": "zin_west_choose_course",
+   "subject": "a compass rose with a ship wheel"
+  },
+  {
+   "key": "west_shipwright_yard",
+   "family": "west",
+   "decision": "zin_west_build_crossing_ships",
+   "subject": "the frame of a ship hull on stocks"
+  },
+  {
+   "key": "west_envoy",
+   "family": "west",
+   "decision": "zin_west_send_envoys",
+   "subject": "a herald satchel and a travelling cloak"
+  },
+  {
+   "key": "west_ship_voyage",
+   "family": "west",
+   "decision": "zin_west_launch",
+   "subject": "a sailing ship under a full sail"
+  },
+  {
+   "key": "west_olive_branch",
+   "family": "west",
+   "decision": "zin_west_accept_surrenders",
+   "subject": "a sword laid on a folded cloth"
+  },
+  {
+   "key": "west_banner_laid_down",
+   "family": "west",
+   "decision": "zin_west_sound_the_retreat",
+   "subject": "a banner lowered onto a drum"
+  },
+  {
+   "key": "world_dragon_wing",
+   "family": "world_magic",
+   "decision": "zin_world_dragon_pact",
+   "subject": "a folded dragon-scale plate on a cord"
+  },
+  {
+   "key": "world_dragon_mountain",
+   "family": "world_magic",
+   "decision": "zin_world_corrupt_dragon",
+   "subject": "a mountain peak with a narrow gate cut into it"
+  },
+  {
+   "key": "world_fort_wall",
+   "family": "world_magic",
+   "decision": "zin_world_wall_watch",
+   "subject": "a stone watch tower on a pass"
+  },
+  {
+   "key": "world_wizard_tower",
+   "family": "world_magic",
+   "decision": "zin_world_send_for_bastian",
+   "subject": "a tall narrow tower with a single window"
+  }
+ ]
+}

@@ -44,6 +44,27 @@
    "sha256": "31e16ec08a2fef8a39c2a2903833fe4e83a9936a7b9d84d0438745adfd3274d0"
   },
   {
+   "out": "gfx/interface/zin/chancery/category_end.dds",
+   "source": "art/source/ui/reskin/ui-chrome-chancery.png",
+   "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",
+   "cells": [
+    "inset"
+   ],
+   "sheets": [
+    "ui-chrome-chancery"
+   ],
+   "ops": [
+    "frame_tile reduce 0.091 to 33x21",
+    "rim 1x1",
+    "repeat x 16 at 12 (step 0.003)",
+    "repeat y 9 at 10 (step 0.004)",
+    "scale 0.09",
+    "alpha opaque",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ae5fb1a4855badad07f9c5948218686e0d5b4dc316bbf4c97ece53a10d00982f"
+  },
+  {
    "out": "gfx/interface/zin/chancery/idea_entry.dds",
    "source": "art/source/ui/reskin/ui-chrome-chancery.png",
    "sourceSha256": "e6956933e54b44ef08383702b5a3f695eeedad87d6fdf9fb2d13f5611a4d1ffe",

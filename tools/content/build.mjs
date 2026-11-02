@@ -266,6 +266,9 @@ const focusTrees = await buildFocusTrees(staged, { countries });
 const decisionsRegional = await buildDecisionsRegional(staged, { countries });
 // Idea pictures (lane I5, modules/idea_art.mjs): after every idea writer, so each accepted national spirit names its own picture.
 const ideaArt = await (await import('./modules/idea_art.mjs')).applyIdeaArt(staged, { warn: msg => console.error(`idea art: ${msg}`) });
+// Decision seals (lane I11, modules/decision_art.mjs): after every decision writer, so each accepted decision sprite names its own 32 × 32 seal.
+const decisionArt = await (await import('./modules/decision_art.mjs')).applyDecisionArt(staged, { warn: msg => console.error(`decision art: ${msg}`) });
+console.error(`decision art: ${decisionArt.rewritten} decision sprites on their own seals, ${decisionArt.seals} seals shipped, ${decisionArt.unsealed.length} decision sprites keep their listed texture`);
 // The bookmark (modules/frontend.mjs): after the compiled trees and every startup spirit, which its entries name and the build checks.
 const bookmark = await frontendMod.buildBookmark(staged, { countries, table });
 console.error(`bookmark: ${bookmark.great} great realms, ${bookmark.minors} in the list, ${bookmark.labels} lands`);

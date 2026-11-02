@@ -1,0 +1,225 @@
+{
+ "source": "Layouts of the decision seal sheets (art store raw/decision/<sheet>.png, generated with gpt-6-luna). Keys only; the builder reads this file and the accepted sheets (tools/content/modules/decision_art.mjs). A decision keeps its current texture until its sheet is accepted.",
+ "complete": true,
+ "sheets": [
+  {
+   "sheet": "decision-01",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "chain_broken",
+    "handshake_oath",
+    "afrit_banner_plain",
+    "afrit_confessional",
+    "afrit_fort_wall",
+    "afrit_granary",
+    "afrit_house_first_light",
+    "afrit_ledger_coins",
+    "afrit_necklace_deep",
+    "afrit_scout_lantern",
+    "afrit_scroll_sealed",
+    "afrit_seal_chancellor"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-01"
+  },
+  {
+   "sheet": "decision-02",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "afrit_seal_wax",
+    "deep_abyss_stair",
+    "deep_banner_league",
+    "deep_birth_rolls",
+    "deep_bridge_oaths",
+    "deep_coin_chest",
+    "deep_compass_rose",
+    "deep_council_table",
+    "deep_courier_pilgrim",
+    "deep_crown_iron",
+    "deep_crown_radiant",
+    "deep_crown_witnesses"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-02"
+  },
+  {
+   "sheet": "decision-03",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "deep_footprints_snow",
+    "deep_giant_hammer",
+    "deep_great_warship",
+    "deep_herds",
+    "deep_ice_cavern",
+    "deep_island_shrine",
+    "deep_lantern_chain",
+    "deep_lighthouse",
+    "deep_mine_cart",
+    "deep_mushroom_grove",
+    "deep_necklace_deep",
+    "deep_olive_branch"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-03"
+  },
+  {
+   "sheet": "decision-04",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "deep_quarry_stone",
+    "deep_ring_doors",
+    "deep_river_ford",
+    "deep_roads_paved",
+    "deep_scroll_treaty",
+    "deep_ship_voyage",
+    "deep_tribute_chest",
+    "deep_ward_circle",
+    "dev_endow_learning",
+    "dev_send_scholars",
+    "dominion_bind_the_restless",
+    "dominion_demand_tribute"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-04"
+  },
+  {
+   "sheet": "decision-05",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "dominion_descend_again",
+    "dominion_grant_spoils",
+    "dominion_make_a_client_crown",
+    "dominion_muster_beneath_the_storms",
+    "dominion_nether_gate",
+    "dominion_raise_a_grave_host",
+    "dominion_raise_the_pass_forts",
+    "dominion_send_envoys",
+    "dominion_send_scouts_south",
+    "dominion_send_word_to_parim",
+    "dominion_silence_the_watchers",
+    "dominion_summon_the_dominion"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-05"
+  },
+  {
+   "sheet": "decision-06",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "dominion_wake_old_barrows",
+    "dominion_wake_old_battlefields",
+    "alliance_rings",
+    "banner_league",
+    "frozen_gate",
+    "grey_ford",
+    "palace_wards",
+    "scroll_sealed",
+    "traders_road",
+    "elves_bar_wall_gates",
+    "elves_call_elder_moot",
+    "elves_call_wall_moot"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-06"
+  },
+  {
+   "sheet": "decision-07",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "elves_close_the_wall_roads",
+    "elves_mediate_rivals",
+    "elves_open_wall_gates",
+    "elves_pilgrim_roads_close_decision",
+    "elves_pilgrim_roads_open_decision",
+    "elves_pilgrim_roads_toll_decision",
+    "elves_raise_the_kindred",
+    "elves_reopen_the_wall_roads",
+    "elves_seek_the_wizard",
+    "elves_send_healers",
+    "elves_send_wardens",
+    "elves_settle_the_feud"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-07"
+  },
+  {
+   "sheet": "decision-08",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "elves_tend_the_roosts",
+    "elves_wardens_for_the_passes",
+    "glo_abyss_stair",
+    "glo_crystal_green",
+    "glo_frozen_gate",
+    "glo_grave_host",
+    "glo_new_gods_light",
+    "glo_scroll_sealed",
+    "glo_ward_circle",
+    "leren_appeal_to_the_treaty",
+    "leren_close_the_strait",
+    "leren_invite_to_compact"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-08"
+  },
+  {
+   "sheet": "decision-09",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "leren_marriage_pact",
+    "leren_offer_protection",
+    "leren_send_envoys",
+    "leren_toll_lower",
+    "leren_toll_raise",
+    "leren_trade_charter",
+    "realm_exile_court",
+    "realm_goblin_raiders",
+    "realm_heir_rolls",
+    "realm_olive_branch",
+    "realm_two_crowns",
+    "west_banner_laid_down"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-09"
+  },
+  {
+   "sheet": "decision-10",
+   "method": "round",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "west_chain_broken",
+    "west_compass_rose",
+    "west_envoy",
+    "west_grey_ford",
+    "west_olive_branch",
+    "west_ship_voyage",
+    "west_shipwright_yard",
+    "world_dragon_mountain",
+    "world_dragon_wing",
+    "world_fort_wall",
+    "world_wizard_tower"
+   ],
+   "status": "accepted",
+   "review": "review-decision-decision-10"
+  }
+ ]
+}

@@ -3,11 +3,11 @@
   "files": [
     {
       "relativePath": "art/source/asset_manifest_summary.json",
-      "sha256": "4d7799e50241c087c2264ed1f5f9f62ff19ae2bdf17ce7e3f13059a13f58bd05"
+      "sha256": "cbb6d3800b5a184f6fe4823ee91f1b0e7c3926d32c6da4ce4a406546ff4a3589"
     },
     {
       "relativePath": "art/source/asset_manifest.json",
-      "sha256": "8c3ed6a64cef6ed602b22e0314463d7074eab85ace21071682d318e0cbcd8799"
+      "sha256": "c43889d278eb116aaa0ce808eebebc3da5e56201ea2e1f8e33d7fc43d11f7b2c"
     },
     {
       "relativePath": "art/source/branding/branding_emblem_v1.png",
@@ -19,7 +19,7 @@
     },
     {
       "relativePath": "art/source/chancery_manifest.json",
-      "sha256": "ac67599c57b10f8d793c9b068b91fefe66bb4f6e62d64fe35762aa8840af4bfd"
+      "sha256": "181e8f86475cae22893ed5d8a5040f5dc0ae81645487b8c8137763f38bf0fa2e"
     },
     {
       "relativePath": "art/source/chronicle/plates/aen.png",
@@ -604,6 +604,50 @@
     {
       "relativePath": "art/source/chronicle/plates/zols_mistake.png",
       "sha256": "e9b09be377b765b9b1c5ef3da027bed391326e21a3587cd81521c6268d21b2be"
+    },
+    {
+      "relativePath": "art/source/decision_art_manifest.json",
+      "sha256": "ae7dd3fbb70dfdb3f03f4c4a99cc31fee49950407c5aa0ac80d52ea26deb1de1"
+    },
+    {
+      "relativePath": "art/source/decision/decision-01.png",
+      "sha256": "a8d6944ff99f81a57d9b7191808a26d0dead9b72de960627904b989453bec55e"
+    },
+    {
+      "relativePath": "art/source/decision/decision-02.png",
+      "sha256": "9a66e34e9ec7085d6012f2a40222d492a508dada22d768c1b1ad4c1b69759921"
+    },
+    {
+      "relativePath": "art/source/decision/decision-03.png",
+      "sha256": "f5d854f0a704080fba0e5ce94e0cefa3a05cc5c099ad7d36124f95169347f3e2"
+    },
+    {
+      "relativePath": "art/source/decision/decision-04.png",
+      "sha256": "cda9c803d1ed89c389c1456605aec2d230c225bef4f0e32f972f276a4d3f2af9"
+    },
+    {
+      "relativePath": "art/source/decision/decision-05.png",
+      "sha256": "679075c40ac309284e2a47e957208b9c49f7c99a2b303b636fb3f8db5b210eed"
+    },
+    {
+      "relativePath": "art/source/decision/decision-06.png",
+      "sha256": "e37d079ca530fecfe1cc331ff159419858751968900ceb7128fa8f17e71c49f6"
+    },
+    {
+      "relativePath": "art/source/decision/decision-07.png",
+      "sha256": "6414cc8154c48d3a45f532ca038e444c7c714bf1e60d0e1074bb987c2f76e84d"
+    },
+    {
+      "relativePath": "art/source/decision/decision-08.png",
+      "sha256": "6b098e4b42ff68e9f5db780ce3ab8c5671a87550a7fc30fb52c2a447d96075f0"
+    },
+    {
+      "relativePath": "art/source/decision/decision-09.png",
+      "sha256": "8f223a2f9898fdeeb400ea8fffbfa4749325154cddbdbb9bd292c38536bd3c15"
+    },
+    {
+      "relativePath": "art/source/decision/decision-10.png",
+      "sha256": "ae2fc298628301090d4e140b801bfa0de09525a41d6dcf3dc1073359250d8a16"
     },
     {
       "relativePath": "art/source/design_refs/alleria_d.png",
@@ -2623,7 +2667,7 @@
     },
     {
       "relativePath": "art/source/provenance.jsonl",
-      "sha256": "a97c415fcaf0f36f3a7b16b6aff09d71e77b72f4d1961b17d14bcbd971a17a09"
+      "sha256": "02504fa2780df5d2a76b45cdb8366f4cf68de9ebac480579605dad3656a281e2"
     },
     {
       "relativePath": "art/source/research_ui_manifest.json",
@@ -7375,7 +7419,7 @@
     },
     {
       "relativePath": "docs/design/ui/check_report.json",
-      "sha256": "5e58d4b797f2e4c9834f64ab44c4496ec746cc5aec694fbbc8dbc40c8f0bb732"
+      "sha256": "a24bf1d6bcecdbb06cdfb273e0d24ae1b602db69e6c68f3d495c634cb4a80793"
     },
     {
       "relativePath": "docs/design/ui/report.json",
@@ -14592,6 +14636,482 @@
     {
       "relativePath": "gfx/interface/decisions/decision_infiltrate_state.dds",
       "sha256": "a767e571fe6cec8b7dd6f8b30ac7ddf3f0d987b60af2ddf80b8d58739484d5fd"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_banner_plain.dds",
+      "sha256": "0ca08c0e698f790e2a007b8521858d63c29f3a5d876f7cf25d030485634ac8be"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_confessional.dds",
+      "sha256": "2cc406ee682187e07100d2d7978a2ce0eae366977616b0a6055c1e39795c293a"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_fort_wall.dds",
+      "sha256": "dc12b689aeb8483c4cb5264d7c50def463e57fb797447dd8cbfd6db1dcaf5dbe"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_granary.dds",
+      "sha256": "9225512a6b7e109bbab96601a2f0d30b924843e5dd25d47d57fbb06efb91e7ee"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_house_first_light.dds",
+      "sha256": "720bcd5f2792290dae02d120b5a25a48b7fef9694f462e129d1c0dff599cf1b0"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_ledger_coins.dds",
+      "sha256": "6ce6924c8c5466e030e440d9098cc5aae42cbabfddbff9d0ef0eae55b1e990fb"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_necklace_deep.dds",
+      "sha256": "dd2dde902967348c14caa7a611f998823f05496fc714fb5cd908133d3bbed8e9"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_scout_lantern.dds",
+      "sha256": "2a85848a77a9eaa12bf812b0400c404c8d4a9cb1e5568bbf0bd7ade7da6f02ef"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_scroll_sealed.dds",
+      "sha256": "3363952dc701955be33425719896f4c10899c18ec4533559822c309bae263109"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_seal_chancellor.dds",
+      "sha256": "735f2adb9e90ad41f325d384345178834a31c5e570b6bc7ccaaa3d9d23fb9a49"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/afrit_seal_wax.dds",
+      "sha256": "c1e045e6cfd94eb3d9c23c85a5196f642846ecc278a8bf56940d6e2bd8f028cf"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/alliance_rings.dds",
+      "sha256": "31153834c8c1678526cee518e694effb2163c76e4884ceec860dd69b36a065a1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/banner_league.dds",
+      "sha256": "8a5bcd6a2ce1f6d047542d8a8157963f9eadc2d5d680dceb91d327da090a82f4"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/chain_broken.dds",
+      "sha256": "905b5b8aaf4bada12250adf0ddbe0cafb495db4f6522f0800a4fc9ad0876da47"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_abyss_stair.dds",
+      "sha256": "75bf0e8f60dfb79a8ad67c39fb0e615d06a11a4ba2eca64abb69aab9a4a44db0"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_banner_league.dds",
+      "sha256": "aea25851b24401f1f949fb0a59d7c09dcc20bb55aa4f61e05aaf96c46c9fc939"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_birth_rolls.dds",
+      "sha256": "b1d1f17ea9ffba98b1588cb4913c2665e7d9ed176c33f4f34c9030a628bd1b97"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_bridge_oaths.dds",
+      "sha256": "f8a8c50af68fe5f9fe1467afd39f01ac7a25d0de381b249d89d5c254094f5ec3"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_coin_chest.dds",
+      "sha256": "fa09defda22633e28e31737226b19989ce33e6dcc398db6167021473b128f473"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_compass_rose.dds",
+      "sha256": "dfd2d69a29d60b7ade50f1f48f5b8c8eca7571c9178e5a2bfcb133ae39e28522"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_council_table.dds",
+      "sha256": "9fba3ad8b4a7f015cd94b0237cb31affdb24965bf2c66cf77be60017e558a935"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_courier_pilgrim.dds",
+      "sha256": "a16b2a6414b7194bb2777f9e09711d0173983ad6e4d06d64cc2f01086ff07105"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_crown_iron.dds",
+      "sha256": "bf9c7aa216ed41266fa97cd2cb3c3e2e2f742924ea3d22e537456f0cc4d14faa"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_crown_radiant.dds",
+      "sha256": "dd6dcad60ecd8781d8bea4891e27442f9dadba436259e19d7f9a69b0dd61bd65"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_crown_witnesses.dds",
+      "sha256": "a07b745418521905139c229ea2110a5e7a40da28e0941522a32e8ebfc0816439"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_footprints_snow.dds",
+      "sha256": "163ee2d0a393d9aaa78a91c3009062f4aac3e3f7de4ecef9c1c1866408ca2cfd"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_giant_hammer.dds",
+      "sha256": "3dfbe2b5d2062f8b18ad8f60796bbe799ca5e3f94d2432d0683b8a5eea3c7fa7"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_great_warship.dds",
+      "sha256": "5222a4f41ac47fd99c6318e33b8fa59ffd223ab97932cb428be3cf116e71b671"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_herds.dds",
+      "sha256": "943bc4460f113ea2b9dbf53bd86c335c2793c253319c956a9cb46bbff5216b26"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_ice_cavern.dds",
+      "sha256": "084bc1d48a303c2730dde916a0fa31a9d569f05658562611162535c6ebc8a6c7"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_island_shrine.dds",
+      "sha256": "1c1e34de26915ffd6d91a3116852f2f91e5898493464fb6e60b9fbdb4d6c3105"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_lantern_chain.dds",
+      "sha256": "64e8b1ea17a36afef985a36c8b664ea2b83bd71b39785f2a05099bb8d498ded7"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_lighthouse.dds",
+      "sha256": "547c1220c28b05844510f63e691abc91d899c20cf9b56c69fed5bb1b98530b52"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_mine_cart.dds",
+      "sha256": "47b5a4d686046f0c1fd1529390add1801167f4ae8103a632b367b3c9ded9159b"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_mushroom_grove.dds",
+      "sha256": "c9a6c6a2fa3d5fa42557c2991ba611453404511f59ab67d66dbf11c0c01d8502"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_necklace_deep.dds",
+      "sha256": "e0062eaac1164acd051c3c60148129a075797f0fed361b7029b16f2ffcdf6342"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_olive_branch.dds",
+      "sha256": "3389395054c1dee451dc564b0738c2b779431f313aebb81ccfc8ec010f1e9f67"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_quarry_stone.dds",
+      "sha256": "b6588af7a3d536db8204bfa822bbf2f4cfa48e70616ad56f527c3e278ec851ae"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_ring_doors.dds",
+      "sha256": "3d93b2bb2bbfca90e721a588063bd2331c1a96eac6a43abc097ad5326bd83b39"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_river_ford.dds",
+      "sha256": "4043e1cceec2fad91be1b80dd24f2b9bce67ad8b9cec7ab64a38bac27f8bc7f4"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_roads_paved.dds",
+      "sha256": "4ee03cafa8faee2994e38786f2c7c8906a6875cfd383ae8128b27c766a1fcdaf"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_scroll_treaty.dds",
+      "sha256": "950bb275ee8d926ae6eefca168860c105168679129ceca92c480035f6e4c69a0"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_ship_voyage.dds",
+      "sha256": "8e12eae5b75e260442755b445be3ce6459841ebde6d463abec76b5bad6e0aa8b"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_tribute_chest.dds",
+      "sha256": "024af2746a437794f8de0878b4ac81228d739798e943621abc019b40aa97f49c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/deep_ward_circle.dds",
+      "sha256": "d229fe9c33e45e8abfa2a6680a4edad00c00a8280331692dcbbbcfecc22007e6"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dev_endow_learning.dds",
+      "sha256": "1a81360805b2837030dd0134aa1f808283dac667d416309b1f0d358f3df1e046"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dev_send_scholars.dds",
+      "sha256": "c10333ca97a796ef22a94d13fcdb54955fd1e2d91c0f1d04f686d773f67bc654"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_bind_the_restless.dds",
+      "sha256": "0252552abfa86fbc5a7783ddb24decf26d7ed42776ae56404fa08995b27bd4fa"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_demand_tribute.dds",
+      "sha256": "16c65b5c5745826837de226be6dd364236c11be5cb3568f2dddb82d7dbf3d78e"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_descend_again.dds",
+      "sha256": "2874482767c33137a30b2508ed0c509bcc6cc28260585994acc05d6407528c28"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_grant_spoils.dds",
+      "sha256": "f1cfbff2a053eca8adabeaf77ad337ba22989cbc1d4857bc1100573babcf50a4"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_make_a_client_crown.dds",
+      "sha256": "a032d9b9ffbb4baf57efa32607182ba29acb0b0e1dd68b537c1d23494069f51f"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_muster_beneath_the_storms.dds",
+      "sha256": "1fd5895ac2adc68effc6fb89699e06e4eb80a9e2fba2fd73586f79c0f1d3c475"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_nether_gate.dds",
+      "sha256": "04cb868963acd94254c8d3b177dc859fc6e6bf2003a93d6f1f018163a0a48a87"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_raise_a_grave_host.dds",
+      "sha256": "f3c3eb705c24b8ab1cdd0581686c0215ceb4cd8f2447e5132775293d40617d18"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_raise_the_pass_forts.dds",
+      "sha256": "6500ccd13a6759bfabbd1295fceb2889ed75af14ca6b1de06eeea59d90f84fd1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_send_envoys.dds",
+      "sha256": "8f4d628e124125213a39523ef19b0b97cc1f11b042e5394d24c13da51bc519fd"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_send_scouts_south.dds",
+      "sha256": "54d9fdef4b03e979f529191b5c114971969967540784b8876c37c4263f3a79dd"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_send_word_to_parim.dds",
+      "sha256": "4f4eca642b86c5567a49b04c45a1146918e23f5d63bdcab927a929536b36f7a5"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_silence_the_watchers.dds",
+      "sha256": "ca9e9cc0306c3b0652c3e102ce08567c3d225c640d6b9fba6734de0477560849"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_summon_the_dominion.dds",
+      "sha256": "327f6f9224bc5b35a95caeb3325c4ef27a3f417745c7cc93f75ba1e9977c144b"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_wake_old_barrows.dds",
+      "sha256": "5a37c1eb4f55d0333325c4b7b5163f9eb8c69f5e7d7f92c7302a4ae2f5303c73"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/dominion_wake_old_battlefields.dds",
+      "sha256": "1bb224c9741249d1d32c64809adecb7b5138750b07f33363047508e0a15be893"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_bar_wall_gates.dds",
+      "sha256": "f735c7ac57680092695fcee6de7b0a231d4a10e501d30c3ac16c0776c2ca561c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_call_elder_moot.dds",
+      "sha256": "9ffddaa7f46e7f9dd30164b8fcac34d5af033ca03b44a758f8c7dc0017d642f7"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_call_wall_moot.dds",
+      "sha256": "365eeb1e515a10bafe7ddaba5c291587706ee0e11d0a9b68e806795eb03e39ec"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_close_the_wall_roads.dds",
+      "sha256": "daadc0cea803b941a94a874ff511f7ff3f80fbb35d15676a30c849097908ce87"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_mediate_rivals.dds",
+      "sha256": "8e07e69ba63b1ba3c299a5f0765507fff0126465bf6241c39a547174007028f6"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_open_wall_gates.dds",
+      "sha256": "4425eda2a829fb9c0a4c1a7fef6856426ed37acac6df9d37f81dd70bffb9cce3"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_pilgrim_roads_close_decision.dds",
+      "sha256": "dbbf09111744f2097761be4b9647822d1b60f76fa2000a0e53d7f84330b0a464"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_pilgrim_roads_open_decision.dds",
+      "sha256": "1ef2a7339e1236ad030cd70bb5b40c1fa1bff42c757921761d58fba393a4dc92"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_pilgrim_roads_toll_decision.dds",
+      "sha256": "5ae81dd491275a372797ab00455e77b79e4c77e7e4cb7e9a2d39749515c6a611"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_raise_the_kindred.dds",
+      "sha256": "e6ffab808c1380a9073303e97ae4db5ffee119cd84e6fd770f35c296dd81f076"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_reopen_the_wall_roads.dds",
+      "sha256": "952699fccae31ab97da7deb4ba9a81b01dc2c71977795743448ecbf9b4faac2c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_seek_the_wizard.dds",
+      "sha256": "fb2d568b469926ef67af97df053956660b304bfef7e65c1dfce156a1913250f7"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_send_healers.dds",
+      "sha256": "5e8512cb1ef652a80035cd7e29e9c816a9389a554657733e280d1418d05a1aad"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_send_wardens.dds",
+      "sha256": "338125b0cd6e4dbdd4b315977df9daa254acc2c083c0aa2ed79f4f9a7eb5e9e1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_settle_the_feud.dds",
+      "sha256": "ae79c3f0c580b02cdae2ce33c4051f01f1840e9eab69ca5fdaa42f8c2217f497"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_tend_the_roosts.dds",
+      "sha256": "5f244a76f3e8e789e34e14e219060d3dc4354ac076a703e8c43af1636629c098"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/elves_wardens_for_the_passes.dds",
+      "sha256": "f96d1374c7f7799f95e14cdde3a84f76dfe2e3188f5e7460249b96a97eff666c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/frozen_gate.dds",
+      "sha256": "fe11e9909416cfc7398fc51e43a0c633fa739106295f96b589a7e1e4e80ea95b"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_abyss_stair.dds",
+      "sha256": "78a6e8d52aff71811ac235fdc1dbd573a05d74e6f1b7068f4112cef6fc0f0a66"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_crystal_green.dds",
+      "sha256": "7422e98c4593f99490f1fe768804209a92d73a797f4dab0720ba9ecf2d95a6eb"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_frozen_gate.dds",
+      "sha256": "74f395698e2421428460a0ec58df3d74cb7c97756cabaf37acd5acecb0c1a8f1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_grave_host.dds",
+      "sha256": "3c573fffc3b4426fac8406f7ed1a4960ec9c130e7807f35af075d5a10a697361"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_new_gods_light.dds",
+      "sha256": "920081bcfcda80a562ebb6e5f7dc1051ec3f3d5f61ade0be5d9cdbcb7110d16e"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_scroll_sealed.dds",
+      "sha256": "81f60eeb09e5c1d104b0c3398c72c6c288ca85d72adb45bb71e2d352d8dab256"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/glo_ward_circle.dds",
+      "sha256": "50d1acc1463901c0198b96b5187a4be3e656316640c56dcdf86f53ad86169395"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/grey_ford.dds",
+      "sha256": "3a50e952f3ee093cb056eb80ee242d0285bd62bb9b5626104f02057899aaaf2c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/handshake_oath.dds",
+      "sha256": "de663868ab69d43e88d0f5dce0bb63895c3e82ee327cd85c64a874fec4b71a1b"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_appeal_to_the_treaty.dds",
+      "sha256": "b90447b2d4219c3bbcf411872fc0aa04ead329818a7aa74be9b6ef0c21dade19"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_close_the_strait.dds",
+      "sha256": "6ae58e3baee92455be37a9835733e35cb971313149ab84f8b5aad2b9b3f4e14e"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_invite_to_compact.dds",
+      "sha256": "d3274b2dc8ece5ec800f6e2faddfb225c0747ee65c78163f72b587d42daee4f1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_marriage_pact.dds",
+      "sha256": "5c25f3c5749f3be02d39092b7522e001671ef67335254647ab56a17ae9ff3064"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_offer_protection.dds",
+      "sha256": "bd55dce63d103049479cab85b36c5e85618a5c5aac26764b24c3f5393fc2f199"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_send_envoys.dds",
+      "sha256": "b55e64dfc8b165f6153aa7c6df04e166eedb9982b63544b1b162e61d38128c3d"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_toll_lower.dds",
+      "sha256": "589e1dc6cfaee0123229527f3081b32c092234c80799de7bb129003621e385d1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_toll_raise.dds",
+      "sha256": "8398664780a9d16d942eb44e2f23ab281d976776cae9fd179200acfffe8ba5c6"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/leren_trade_charter.dds",
+      "sha256": "3636f6810ca8402e2297aa2740f9d044f084c50860e7f99f0ad8aeaf489c34da"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/palace_wards.dds",
+      "sha256": "3a643dfe7aa7b95dd4ebba763388702acc2859ef911e1af6393ba7772cad203a"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/realm_exile_court.dds",
+      "sha256": "90a59df5f1a15376137a8cdbc397c5f0b5cf251783ca5e29cb1e8ad40cecc6e6"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/realm_goblin_raiders.dds",
+      "sha256": "7fc3739125ebed30b3e053accf1cce46868ab683004fd32833db489d4766b6e9"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/realm_heir_rolls.dds",
+      "sha256": "e47e06903242149506b69c4f7dbb668bfd34daf531455ecd71c026e08e55439c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/realm_olive_branch.dds",
+      "sha256": "f88dd68f04f009eb2a8bef5b0b628a70e3d6eda1278a955068f651afe2afd787"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/realm_two_crowns.dds",
+      "sha256": "a59cc0f7f931a5058ecf81c975a27ec4db0c4f3b9166bc46cc9296a1be404003"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/scroll_sealed.dds",
+      "sha256": "e5509b525fe32b45730902592aa79ea8b500b7e8cd017db36eb53463c2b74e56"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/traders_road.dds",
+      "sha256": "97cde3cc8bf417dd5f50175699aaa79fe63fadfc75199194abcff3ad689c720f"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_banner_laid_down.dds",
+      "sha256": "eccc79d8a214a93f3918be6f12fb7ec9b013ef95052647e43afbeb9d5e94beb6"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_chain_broken.dds",
+      "sha256": "4e81ed0324a5e6ffe49ac7f2d83ee429e39933817a52ecb2cdbbacffa260ed7b"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_compass_rose.dds",
+      "sha256": "f1a4af19338353fe806237e16e824eb9415f6a806804a2b243814db9960a720d"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_envoy.dds",
+      "sha256": "d9b5ea9b48a8c4b3d76df6e96f1b91b05df39be9dd56cbe09de14332a12972a5"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_grey_ford.dds",
+      "sha256": "9043480483d7942fd07358b87fd3985f2ae15982bb1956bad4371e4e5588ca9c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_olive_branch.dds",
+      "sha256": "1152a36ca82ae418ba2f408d7707895c17cf48add1033bd9784c80e5d8261573"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_ship_voyage.dds",
+      "sha256": "892f98459021c63d1e86e31dbce62cd9b1d03001dbc6924b2893c6d01df30021"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/west_shipwright_yard.dds",
+      "sha256": "1ac3c3aa29b0c55282d595dc138e3e1c0c78206e3f5753660a9d96de39313b92"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/world_dragon_mountain.dds",
+      "sha256": "2900637d066a856f50f84857cc35428c9f6990709a88fef51e1c9f10528281f1"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/world_dragon_wing.dds",
+      "sha256": "c4f58ebf1f09425abcb047f05eb8867f4b2890f9a828096b5949bd920233acf5"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/world_fort_wall.dds",
+      "sha256": "ba2cf2ce028837d48d43124b004c5c13de35fee9bfc1d16fd278f469df13115c"
+    },
+    {
+      "relativePath": "gfx/interface/decisions/zin/world_wizard_tower.dds",
+      "sha256": "819d6221a7d1137bfd8255c3597516aa44efdb254c665d81c5c0441a93d7ec2d"
     },
     {
       "relativePath": "gfx/interface/decisionview/category_header_bg.dds",
@@ -28878,6 +29398,10 @@
       "sha256": "31e16ec08a2fef8a39c2a2903833fe4e83a9936a7b9d84d0438745adfd3274d0"
     },
     {
+      "relativePath": "gfx/interface/zin/chancery/category_end.dds",
+      "sha256": "ae5fb1a4855badad07f9c5948218686e0d5b4dc316bbf4c97ece53a10d00982f"
+    },
+    {
       "relativePath": "gfx/interface/zin/chancery/idea_entry.dds",
       "sha256": "1ecf16a641daf6bda7cdbd33d333846fff5558ef205162032209ffb749169f7c"
     },
@@ -34847,7 +35371,7 @@
     },
     {
       "relativePath": "interface/countrydecisionview.gui",
-      "sha256": "248197c958301226f163cf8a1c1f89e4f88b2ae0e065c21cad372c5ad9729abc"
+      "sha256": "056335e10b2f214e895d0e8edb557bdd431c57a77b10228d879cadab934ab67c"
     },
     {
       "relativePath": "interface/countrydiplomacyview.gui",
@@ -34959,7 +35483,7 @@
     },
     {
       "relativePath": "interface/zin_chancery.gfx",
-      "sha256": "1445e02244310aacb6c3a6314135e5fb7a784575a298e2cbe849e01b9cfb84ad"
+      "sha256": "eef1d88df1ca38e3edcf538b20d961ab49c971ffefd0139fe64970e3374a3368"
     },
     {
       "relativePath": "interface/zin_chronicle.gfx",
@@ -34975,7 +35499,7 @@
     },
     {
       "relativePath": "interface/zin_development.gfx",
-      "sha256": "31490fee08b502e3896a1fc1d54eba59583b22a165b438c4446fbfaf28c242dc"
+      "sha256": "97fc063f93a6b7e2d7c89ca9cb354e223044870b1cb9d014c033450b8385f8d9"
     },
     {
       "relativePath": "interface/zin_dialogs.gfx",
@@ -34991,7 +35515,7 @@
     },
     {
       "relativePath": "interface/zin_eindil.gfx",
-      "sha256": "56687e5a0ca2ff006f4f18f10e94e82a44b15c5ef0181d1dbc4fd0c6ef01088d"
+      "sha256": "4b84906cb242677a4ddd16e295a9512fdc688d68c2ef0474053b31d04cbe2401"
     },
     {
       "relativePath": "interface/zin_equipment_designer.gfx",
@@ -35019,7 +35543,7 @@
     },
     {
       "relativePath": "interface/zin_glo.gfx",
-      "sha256": "4f44eeb16e7f5beec1a555970bb1a51eef36d4aadbd9858c627224524a0ecd4f"
+      "sha256": "2a5619f0c13c78e6de67cb3ed7317b134310c81dafc0e716151ec12a22c6066c"
     },
     {
       "relativePath": "interface/zin_interim_inlay.gui",
@@ -35079,7 +35603,7 @@
     },
     {
       "relativePath": "interface/zin_west.gfx",
-      "sha256": "8741bdbd8ba41c30ba42865db5544bc2e3498977585b49b571a69054075ca501"
+      "sha256": "253177a889645ae9bfcb451c438103e9882fb70ed533378a2af74fad46681176"
     },
     {
       "relativePath": "interface/zin_zol_presence.gui",
@@ -35091,19 +35615,19 @@
     },
     {
       "relativePath": "interface/zz_zin_afrit.gfx",
-      "sha256": "bd4f3e8f00abbdd60254650e98dde5dd2e7f76ff2ad8b9af43fceff4a9dd073e"
+      "sha256": "94d6eb46bc1f2e7423d7b0c07c27adfe659bb6b5a1d85b622da0c6f662705284"
     },
     {
       "relativePath": "interface/zz_zin_deep_past.gfx",
-      "sha256": "38a0cee4fe420b744a66eca1cf494311a651d55a511dbbb26c9c557a159131c3"
+      "sha256": "74f65bcff584787bb8c2b10977e2c5dc339695f5b9bdb9bdde25c299f880f399"
     },
     {
       "relativePath": "interface/zz_zin_dominion.gfx",
-      "sha256": "fcbfd539b9779530c56b3fc0b418143bcc9582957595f330039b5c0cebcd1456"
+      "sha256": "8a4d812cf041491837c1e0be80e957955bce67128e548023e366727336d57bec"
     },
     {
       "relativePath": "interface/zz_zin_elves.gfx",
-      "sha256": "ff5d80cae82950df22119742219d28f8ceb60ef2cb1740b8f030705e776bb59c"
+      "sha256": "a46edfc1542f94535ea02debb444555f96fc9cf9b1c768411cf2fa2643aff3c2"
     },
     {
       "relativePath": "interface/zz_zin_institutions.gfx",
@@ -35111,11 +35635,11 @@
     },
     {
       "relativePath": "interface/zz_zin_leren.gfx",
-      "sha256": "12ed474e5eb5047851e73e3a241e2d1deb6b0a438818003b5bee0d84ec21a9b1"
+      "sha256": "ec9b99ebc25f2ce3b523605836f403bd90411d1071ad163f2f1de3807ab758d5"
     },
     {
       "relativePath": "interface/zz_zin_realm_life.gfx",
-      "sha256": "abcd0407ab0a7a534a5fe7196047161ded29a07dd4f3b231c1fdc09000660e6d"
+      "sha256": "a7412f1484a911311dd93513a3dae39f3d6b8462aa696be29a16593cfc03882c"
     },
     {
       "relativePath": "interface/zz_zin_textcolors.gfx",
@@ -35123,7 +35647,7 @@
     },
     {
       "relativePath": "interface/zz_zin_world_magic.gfx",
-      "sha256": "419ce234ac765119713a6d27dad3088b675eedab15f4bedcc0b06c4ca174663c"
+      "sha256": "0702ee162248c8491a62094967995a7376e37706636a605e287b0c789a3987a4"
     },
     {
       "relativePath": "interface/zz_zin_zol.gfx",
