@@ -20,6 +20,15 @@
         ".tools/3d_pipeline/wrappers/run_blender_hoi4_adapter.cmd"
       ],
       "env": {}
+    },
+    "hoi4_imagegen": {
+      "type": "stdio",
+      "command": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/image_generation/hoi4-imagegen/0.2.1/hoi4-imagegen-mcp.exe",
+      "args": [
+        "--project-root",
+        "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin"
+      ],
+      "env": {}
     }
   }
 }

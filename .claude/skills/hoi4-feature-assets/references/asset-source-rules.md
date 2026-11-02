@@ -32,15 +32,15 @@ Maps may still appear as secondary props when useful, but they should rarely be 
 
 ### Use the image generator for generated symbolic or fictional assets
 
-The image generator is the image-generation route selected for this project. HOI4 Mod Setup fills in the provider-specific details below from the manifest table. If no route is configured, stop and report the blocker instead of building a substitute pipeline.
+The image generator is `hoi4-imagegen`, the project's image route. HOI4 Mod Setup may replace the default below with the details of the provider selected for the project. If no route is configured, stop and report the blocker instead of building a substitute pipeline.
 
-### ChatGPT subscription (GPTImage)
-- Tools: generate: `generate_image`, auth_status: `image_auth_status`, list_references: `list_references`
-- Tool inputs: prompt: `prompt`, output_path: `out`, reference_images: `reference_images`, quality: `quality`, size: `size`
-- References: Use list_references to discover project references, then pass relevant image paths and describe each one's role. Reference count is not documented; output sizes have a maximum edge and aspect-ratio rule.
+### HOI4 image generation (hoi4-imagegen)
+- Tools: status: `hoi4.image_status`, families: `hoi4.image_families`, references: `hoi4.image_references`, icon: `hoi4.image_icon`, picture: `hoi4.image_picture`, portrait: `hoi4.image_portrait`, flag: `hoi4.image_flag`, unit: `hoi4.image_unit`, interface: `hoi4.image_interface`, generate: `hoi4.image_generate`, edit: `hoi4.image_edit`, process: `hoi4.image_process`, validate: `hoi4.image_validate`, preview: `hoi4.image_preview`, review: `hoi4.image_review`, install: `hoi4.image_install`, audit: `hoi4.image_audit`, ledger: `hoi4.image_ledger`, cancel: `hoi4.image_cancel`
+- Tool inputs: family: `family`, prompt: `brief`, output_path: not supported by this tool, reference_images: `refs`, quality: `quality`, size: not supported by this tool, transparent_background: not supported by this tool
+- References: Add references with hoi4.image_references (role and rights note). Style references come from the mod's own art first and from the kit's vanilla shelf second.
 - Size: This route uses the model's default image size; limits can vary by model.
-- Transparent backgrounds: PNG output does not guarantee a transparent background. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
-- Reference edits: not available on this route. If unavailable: Use reference_images to make a new version; choose another configured provider for precise image edits.
+- Transparent backgrounds: The tool proves transparency from the saved pixels and refuses an opaque result for a transparent family. If unavailable: Use a selected background-removal route and verify alpha; if none is configured, ask the maintainer for another route.
+- Reference edits: supported on compatible models. If unavailable: Use hoi4.image_edit with a precise instruction, then process, validate and review again.
 - Make one image per call. For a transparent image, check that the saved PNG has at least one pixel with alpha below 255; an alpha channel alone does not prove that pixels are transparent.
 
 Use the image generator by default for:

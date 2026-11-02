@@ -121,6 +121,8 @@ On Windows every project-scoped file above points at the `hoi4-agent-tools.cmd` 
 
 On native Linux, HOI4 Mod Setup adapts the registrations for every selected coding client to the verified absolute Node executable and package entry. The current-user npm prefix is `$XDG_DATA_HOME/hoi4-mod-setup/npm`, or `~/.local/share/hoi4-mod-setup/npm` when XDG_DATA_HOME is unset. The native `bin/hoi4-agent-tools` locator points to the reviewed entry; setup verifies it and launches the entry directly. Shared skill and agent projections remain identical across platforms. The source package's raw MCP examples use Windows commands, so manual Linux setup must adapt them as described in [the Linux guide](linux.md).
 
+In ZIN, the image server is `hoi4_imagegen` (owner decision K74): the verified hoi4-imagegen release binary under `.tools/image_generation/hoi4-imagegen/<version>/` (ignored by Git), registered in `.mcp.json` with absolute paths and in `.codex/config.toml` with `cwd = "."`, both with `--project-root` set to the mod root. It uses the ChatGPT sign-in shared in the operating-system credential store (`hoi4-imagegen login-status`), so no key is stored in the project.
+
 DSH has no project-scoped MCP file.
 Its servers are deployment configuration, not repository content, so the registration lives in the active profile and stays out of Git.
 One row per server, and the profile must also depend on the MCP client package:
