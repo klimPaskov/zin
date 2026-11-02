@@ -71,11 +71,18 @@ class RepositoryState(unittest.TestCase):
 
 	def test_vanilla_values(self):
 		data = gfx.PROFILE_DATA
+
+		def vanilla_or_override(name, vanilla):
+			# profiles.json lets a mod override a row; an override says so in its source and still accepts the vanilla size.
+			row = data[name]
+			if row["canvas"] != vanilla:
+				self.assertIn("override", row["source"], f"{name}: a non-vanilla canvas must be a documented mod override")
+				self.assertIn(vanilla, row["accepted"], f"{name}: the override still accepts the vanilla size")
 		self.assertEqual(data["focus"]["canvas"], [100, 88])
 		self.assertEqual(data["idea"]["canvas"], [60, 68])
 		self.assertEqual(data["idea_concern"]["canvas"], [64, 64])
 		self.assertEqual(data["advisor_card"]["canvas"], [65, 67])
-		self.assertEqual(data["decision"]["canvas"], [33, 32])
+		vanilla_or_override("decision", [33, 32])
 		self.assertEqual(data["agency_logo"]["frames"], 2)
 		self.assertEqual(data["gui_texture"]["canvas"], [0, 0])
 
@@ -111,7 +118,8 @@ class KitModFamilyChecks(unittest.TestCase):
 			("GFX-DECISION-SIZE", "warning", "big.png"),
 			("GFX-FOCUS-SIZE", "error", "odd.png"),
 		])
-		self.assertEqual(decision, (33, 32))
+		row = gfx.PROFILE_DATA["decision"]
+		self.assertTrue(decision == (33, 32) or ("override" in row["source"] and [33, 32] in row["accepted"]))
 
 
 class ShelfDrift(unittest.TestCase):
