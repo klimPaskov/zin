@@ -18,6 +18,7 @@ import { createRequire } from 'node:module';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { RELEASED_TOOL } from '../lib/paths.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DEFAULT_TOOL = process.env.HOI4_AGENT_TOOLS_DIR ?? 'C:/Users/klimp/Documents/Projects/hoi4-agent-tools';
@@ -32,8 +33,9 @@ export function toolSchema(tool, ref, file) {
   return JSON.parse(readFileSync(p, 'utf8'));
 }
 
-// The installed release of the tool (the worker keeps it current); its Ajv stands in while the checkout has no node_modules.
-export const RELEASED_TOOL = process.env.HOI4_AGENT_TOOLS_RUNTIME || 'C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v440/node_modules/hoi4-agent-tools';
+// The installed release of the tool (lib/paths.mjs: the newest runtime the worker installed); its Ajv stands in while the checkout
+// has no node_modules.
+export { RELEASED_TOOL };
 
 /** Ajv (draft 2020-12) from the tool checkout's node_modules, else from the installed release's. */
 export function toolAjv(tool) {

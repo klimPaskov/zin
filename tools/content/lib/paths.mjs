@@ -6,7 +6,7 @@
 //   HOI4_GAME         Hearts of Iron IV install (modifier documentation)
 //   ZIN_LORE_VAULT    the owner's lore vault export; when absent the copy already in docs/lore/vault/ is used
 //   GPTIMAGE_LIB      gptimage library src/ directory (imagegen.mjs)
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,6 +19,15 @@ export const AGENT_TOOLS = env('HOI4_AGENT_TOOLS', 'C:/Users/klimp/Documents/Pro
 export const ART = env('ZIN_ART', `${AGENT_TOOLS}/.tmp/zin-art`);
 export const GAME = env('HOI4_GAME', 'C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV');
 export const LORE_VAULT = env('ZIN_LORE_VAULT', 'C:/Users/klimp/Downloads/ZIN_Lore_Vault');
+// The installed release of HOI4 Agent Tools: HOI4_AGENT_TOOLS_RUNTIME, else the newest runtime-v<digits> folder the worker installed
+// (a fixed version breaks when old runtimes are cleaned up).
+const RUNTIMES = env('HOI4_AGENT_TOOLS_RUNTIMES', 'C:/Users/klimp/AppData/Local/hoi4-agent-tools');
+const newestRuntime = () => {
+  const names = existsSync(RUNTIMES) ? readdirSync(RUNTIMES).filter(n => /^runtime-v\d+$/.test(n) && existsSync(`${RUNTIMES}/${n}/node_modules/hoi4-agent-tools`)) : [];
+  names.sort((a, b) => Number(b.slice(9)) - Number(a.slice(9)));
+  return names.length ? `${RUNTIMES}/${names[0]}/node_modules/hoi4-agent-tools` : `${RUNTIMES}/runtime-v470/node_modules/hoi4-agent-tools`;
+};
+export const RELEASED_TOOL = process.env.HOI4_AGENT_TOOLS_RUNTIME || newestRuntime();
 export const GPTIMAGE_LIB = env('GPTIMAGE_LIB', 'C:/Users/klimp/tools/gptimage/src');
 // Generated sources already tracked in the mod: the fallback for any raw sheet or provenance missing from ART.
 export const ART_SOURCE = `${ZIN}/art/source`;
